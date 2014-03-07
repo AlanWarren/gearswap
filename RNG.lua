@@ -90,6 +90,7 @@
             DefaultAmmo["Atetepeyorg"] = "Achiyalabopa bolt"
 
             state.Buff.Camouflage = buffactive.camouflage or false
+            sate.Buff.Overkill = buffactive.overkill or false
            
             --add_to_chat(123,'sidecar load')
            
@@ -271,6 +272,7 @@
             })
 
             sets.buff.Camouflage =  {body="Orion Jerkin +1"}
+            sets.buff.Overkill =  {body="Arcadian Jerkin"}
     end
 
      
@@ -366,6 +368,9 @@
     	if state.Buff['Camouflage'] then
     		idleSet = set_combine(idleSet, sets.buff.Camouflage)
     	end
+    	if state.Buff['Overkill'] then
+    		idleSet = set_combine(idleSet, sets.buff.Overkill)
+    	end
         return idleSet
     end
      
@@ -373,6 +378,9 @@
         meleeSet = set_combine(meleeSet, select_earring())
 	    if state.Buff['Camouflage'] then
 	    	meleeSet = set_combine(meleeSet, sets.buff.Camouflage)
+	    end
+	    if state.Buff['Overkill'] then
+	    	meleeSet = set_combine(meleeSet, sets.buff.Overkill)
 	    end
         return meleeSet
     end
@@ -385,7 +393,7 @@
     -- buff == buff gained or lost
     -- gain == true if the buff was gained, false if it was lost.
     function job_buff_change(buff, gain)
-        if status == "Camouflage" then
+        if buff == "Camouflage" or buff == "Overkill" then
             if gain_or_loss == "gain" then
                 send_command('@wait .5;gs disable body')
             else
