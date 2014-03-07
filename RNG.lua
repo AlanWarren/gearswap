@@ -1,10 +1,8 @@
 	
 
-    -- Last Modified: 1/21/2014
-    -- Cleaned File up, Check https://github.com/Kinematics/GearSwap-Jobs/blob/master/Template.lua
-    -- Get the latest Mote-* files and examples from:
-    -- https://github.com/Kinematics/GearSwap-Jobs
-    -- for list of other functions that can be used.
+    -- Last Modified: 3/6/2014
+    -- Orinal file credit Kinematix
+    -- current file resides @ https://github.com/AlanWarren/gearswap
 
     -- //gs show_swaps()
      
