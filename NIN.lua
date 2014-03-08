@@ -1,7 +1,6 @@
 -------------------------------------------------------------------------------------------------------------------
 -- Initialization function that defines sets and variables to be used.
 -------------------------------------------------------------------------------------------------------------------
--- aw
 -- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
 
 -- Initialization function for this job file.
@@ -102,10 +101,14 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, {neck="Shadow Gorget"})
 	sets.precast.WS['Blade: Ku'].Mod = set_combine(sets.precast.WS['Blade: Ku'], {waist="Soil Belt"})
 
-	sets.precast.WS['Aeolian Edge'] = {
-		head="Felistris Mask",neck="Breeze gorget",ear1="Friomisi Earring",ear2="Hecate's Earring",
-		body="Manibozho Jerkin",hands="Mochizuki Tekko +1",ring1="Rajas Ring",ring2="Stormsoul Ring",
-		back="Toro Cape",waist="Thunder Belt",legs="Manibozho Brais",feet="Otronif Boots"}
+	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
+		neck="Breeze gorget",
+        ear1="Friomisi Earring",
+        ear2="Hecate's Earring",
+	    ring2="Stormsoul Ring",
+		back="Toro Cape",
+        waist="Thunder Belt"
+     })
 	
 	
 	-- Midcast Sets
@@ -122,7 +125,6 @@ function init_gear_sets()
 	-- any ninjutsu cast on enemies
 	sets.midcast.Ninjutsu = {
 		head="Felistris Mask",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		--ear1="Friomisi Earring",ear2="Hecate's Earring",
 		body="Hachiya Chainmail +1",hands="Mochizuki Tekko +1",
 		back="Toro Cape",waist="Twilight Belt",legs="Nahtirah Troursers",feet="Hachiya Kyahan"}
 
