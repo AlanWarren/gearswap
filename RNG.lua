@@ -88,7 +88,7 @@
             DefaultAmmo["Atetepeyorg"] = "Achiyalabopa bolt"
 
             state.Buff.Camouflage = buffactive.camouflage or false
-            sate.Buff.Overkill = buffactive.overkill or false
+            state.Buff.Overkill = buffactive.overkill or false
            
             --add_to_chat(123,'sidecar load')
            
