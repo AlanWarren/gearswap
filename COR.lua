@@ -59,7 +59,7 @@ function user_setup()
 
 
 	-- Default macro set/book
-	set_macro_page(1, 19)
+	set_macro_page(6, 1)
 end
 
 
