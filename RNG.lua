@@ -65,6 +65,11 @@
             send_command('bind ^f9 gs c cycle OffenseMode')
             send_command('bind !f9 gs c cycle WeaponskillMode')
     end
+
+    function job_setup()
+        state.Buff.Camouflage = buffactive.camouflage or false
+        state.Buff.Overkill = buffactive.overkill or false
+    end
      
     -- Called when this job file is unloaded (eg: job change)
     function file_unload()
@@ -86,9 +91,6 @@
             DefaultAmmo["Annihilator"] = "Achiyalabopa bullet"
             DefaultAmmo["Ajjub Bow"] = "Achiyalabopa arrow"
             DefaultAmmo["Atetepeyorg"] = "Achiyalabopa bolt"
-
-            state.Buff.Camouflage = buffactive.camouflage or false
-            state.Buff.Overkill = buffactive.overkill or false
            
             --add_to_chat(123,'sidecar load')
            
@@ -340,8 +342,15 @@
     -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
     function job_post_midcast(spell, action, spellMap, eventArgs)
             if buffactive["Barrage"] then
-                    equip(sets.BarrageMid)
+                equip(sets.BarrageMid)
             end
+            if state.Buff['Camouflage'] then
+                equip(sets.buff.Camouflage)
+            end
+            if state.Buff['Overkill'] then
+                equip(sets.buff.Overkill)
+            end
+
     end
      
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -391,9 +400,13 @@
     -- buff == buff gained or lost
     -- gain == true if the buff was gained, false if it was lost.
     function job_buff_change(buff, gain)
+	    if state.Buff[buff] ~= nil then
+	        state.Buff[buff] = gain
+	    end
         if buff == "Camouflage" or buff == "Overkill" then
-            if gain_or_loss == "gain" then
-                send_command('@wait .5;gs disable body')
+            if gain then
+                add_to_chat(123,'Camo or Overkill is up')
+                send_command('@wait 0.5;gs disable body;')
             else
                 enable('body')
             end

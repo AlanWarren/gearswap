@@ -395,7 +395,7 @@ function job_buff_change(buff, gain)
 	    state.Buff[buff] = gain
 	end
     --if state.Buff['Third Eye'] then
-    --    if gain_or_loss == "gain" then
+    --    if gain then
     --        send_command('@wait .5;gs disable legs')
     --    else
     --        enable('legs')
