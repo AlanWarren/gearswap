@@ -222,39 +222,88 @@
                    
             -- Weaponskill sets
            
-            sets.precast.WS = set_combine(sets.midcast.RangedAttack, {
+            sets.precast.WS = {
+                head="Arcadian Beret +1",
+                neck="Sylvan Scarf",
                 ear1="Flame pearl",
                 ear2="Flame pearl",
+                body="Orion Jerkin +1",
                 hands="Arcadian Bracers +1",
-                back="Buquwik Cape",
                 ring1="Rajas Ring",
                 ring2="Pyrosoul Ring",
-                waist="Scout's Belt", 
-                neck="Sylvan Scarf"
-            })
+                back="Buquwik Cape",
+                waist="Scout's Belt",
+                legs="Nahtirah Trousers",
+                feet="Orion Socks +1"
+            }
            
             sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-               waist="Scout's Belt", 
-               neck="Sylvan Scarf",
                hands="Sigyn's Bazubands",
                ring1="Hajduk Ring",
                ring2="Bellona's Ring",
                legs="Orion Braccae +1",
                back="Lutian Cape"
-           })
+            })
 
+            sets.precast.WS.STP = set_combine(sets.precast.WS, {
+               body="Kyujutsugi",
+               back="Sylvan Chlamys"
+            })
+            sets.precast.WS.DMG = set_combine(sets.precast.WS, {
+               head="Orion Beret +1",
+               feet="Arcadian Socks +1"
+            })
+            -- CORONACH
             sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
                neck="Breeze Gorget",
                waist="Thunder Belt"
             })
+            sets.precast.WS['Coronach'].STP = set_combine(sets.precast.WS.STP, {
+               neck="Breeze Gorget",
+               waist="Thunder Belt"
+            })
+            sets.precast.WS['Coronach'].DMG = set_combine(sets.precast.WS.DMG, {
+               neck="Breeze Gorget",
+               waist="Thunder Belt"
+            })
+            sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, {
+               neck="Breeze Gorget",
+               waist="Thunder Belt"
+            })
 
+            -- LAST STAND
             sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
+               neck="Aqua Gorget",
+               ring2="Stormsoul Ring",
+               waist="Light Belt",
+               feet="Arcadian Socks +1"
+            })
+            sets.precast.WS['Last Stand'].STP = set_combine(sets.precast.WS.STP, {
+               neck="Aqua Gorget",
+               ring2="Stormsoul Ring",
+               waist="Light Belt",
+               feet="Arcadian Socks +1"
+            })
+            sets.precast.WS['Last Stand'].DMG = set_combine(sets.precast.WS.DMG, {
+               ring2="Stormsoul Ring",
+               waist="Light Belt",
+               feet="Arcadian Socks +1"
+            })
+            sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS.Acc, {
+               ring2="Stormsoul Ring",
                neck="Aqua Gorget",
                waist="Light Belt"
             })
 
             sets.precast.WS['Sidewinder'] = sets.precast.WS['Last Stand']
+            sets.precast.WS['Sidewinder'].STP = sets.precast.WS['Last Stand'].STP
+            sets.precast.WS['Sidewinder'].DMG = sets.precast.WS['Last Stand'].DMG
+            sets.precast.WS['Sidewinder'].Acc = sets.precast.WS['Last Stand'].Acc
+
             sets.precast.WS['Refulgent Arrow'] = sets.precast.WS['Last Stand']
+            sets.precast.WS['Refulgent Arrow'].STP = sets.precast.WS['Last Stand'].STP
+            sets.precast.WS['Refulgent Arrow'].DMG = sets.precast.WS['Last Stand'].DMG
+            sets.precast.WS['Refulgent Arrow'].Acc = sets.precast.WS['Last Stand'].Acc
            
             -- Resting sets
             sets.resting = {}
