@@ -47,7 +47,8 @@ function user_setup()
 	gear.RAbullet = "Adlivun Bullet"
 	gear.WSbullet = "Adlivun Bullet"
 	gear.MAbullet = "Adlivun Bullet"
-	gear.QDbullet = "Animikii Bullet"
+	--gear.QDbullet = "Animikii Bullet"
+	gear.QDbullet = "Adlivun Bullet"
 	options.ammo_warning_limit = 15
 
 	-- Additional local binds
@@ -174,7 +175,7 @@ function init_gear_sets()
 		body="Navarch's Frac +2",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Stormsoul Ring",
 		back="Toro Cape",waist="Aquiline Belt",legs="Iuitl Tights",feet="Navarch's Bottes +2"}
 
-	sets.midcast.CorsairShot.Acc = combine_set(sets.midcast.CorsairShot, {
+	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
         ear1="Lifestorm Earring",ear2="Psystorm Earring",back="Navarch's Mantle"
     })
 
@@ -297,15 +298,15 @@ function job_precast(spell, action, spellMap, eventArgs)
 				return
 			end
 			
-			if player.inventory[check_bullet].count <= options.ammo_warning_limit and
-			   player.inventory[check_bullet].count > 1 and not state.warned then
-				add_to_chat(104, '*****************************')
-				add_to_chat(104, '*****  LOW AMMO WARNING *****')
-				add_to_chat(104, '*****************************')
-				state.warned = true
-			elseif player.inventory[check_bullet].count > warning_limit and state.warned then
-				state.warned = false
-			end
+			--if player.inventory[check_bullet].count <= options.ammo_warning_limit and
+			--   player.inventory[check_bullet].count > 1 and not state.warned then
+			--	add_to_chat(104, '*****************************')
+			--	add_to_chat(104, '*****  LOW AMMO WARNING *****')
+			--	add_to_chat(104, '*****************************')
+			--	state.warned = true
+			--elseif player.inventory[check_bullet].count > warning_limit and state.warned then
+			--	state.warned = false
+			--end
 		end
 	end
 	
