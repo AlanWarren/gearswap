@@ -326,7 +326,7 @@
             --sets.engaged['Anahera Scythe'].EmbravaHaste = sets.engaged['Anahera Scythe'].MaxHaste	        
             --sets.engaged['Anahera Scythe'].HighHaste = sets.engaged['Anahera Scythe'].MaxHaste	        
             
-            sets.engaged.Souleater = {head="Ignominy burgeonet +1"}
+            sets.buff.Souleater = {head="Ignominy burgeonet +1"}
      
     end
      
