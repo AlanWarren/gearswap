@@ -376,7 +376,9 @@
     -- eventArgs is the same one used in job_precast, in case information needs to be persisted.
     -- This is where you place gear swaps you want in precast but applied on top of the precast sets
     function job_post_precast(spell, action, spellMap, eventArgs)
-     
+        if spell.english == "Camouflage" then
+            equip(sets.buff.Camouflage)
+        end
     end
      
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -442,7 +444,14 @@
     end
      
     function job_status_change(newStatus, oldStatus, eventArgs)
-           
+          if newStatus == 'Engaged' then
+              if state.Buff['Camouflage'] then
+                  equip(sets.buff.Camouflage)
+              end
+          end
+          if camo_active() then
+              eventArgs.handled = true
+          end
     end
      
     -- Called when a player gains or loses a buff.
@@ -452,13 +461,9 @@
 	    if state.Buff[buff] ~= nil then
 	        state.Buff[buff] = gain
 	    end
-        if buff == "Camouflage" or buff == "Overkill" then
-            if gain then
-                add_to_chat(123,'Camo or Overkill is up')
-                send_command('@wait 0.5;gs disable body;')
-            else
-                enable('body')
-            end
+
+        if not camo_active() then
+            handle_equipping_gear(player.status)
         end
     end
      
@@ -522,6 +527,10 @@
     -- Set eventArgs.handled to true if we don't want the automatic display to be run.
     function display_current_job_state(eventArgs)
      
+    end
+
+    function camo_active()
+    	return state.Buff['Camouflage']
     end
      
     -------------------------------------------------------------------------------------------------------------------
