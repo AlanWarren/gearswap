@@ -169,8 +169,8 @@ function init_gear_sets()
 	-- Defense sets
 	sets.defense.PDT = {
 		head="Lithelimb Cap",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Wakido Domaru +1",hands="Otronif Gloves",ring1="K'ayres Ring",ring2="Dark Ring",
-		back="Shadow Mantle",waist="Windbuffet Belt",legs="Wakido Haidate +1",feet="Whirlpool Greaves"}
+		body="Wakido Domaru +1",hands="Wakido Kote +1",ring1="K'ayres Ring",ring2="Dark Ring",
+		back="Shadow Mantle",waist="Windbuffet Belt",legs="Wakido Haidate +1",feet="Otronif Boots"}
 
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {
 		head="Twilight Helm",
