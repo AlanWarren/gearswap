@@ -379,29 +379,30 @@
         if spell.english == "Camouflage" then
             equip(sets.buff.Camouflage)
         end
+        sets.earring = select_earring()
     end
      
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
     function job_midcast(spell, action, spellMap, eventArgs)
-            if spell.name == 'Spectral Jig' and buffactive.sneak then
-                    -- If sneak is active when using, cancel before completion
-                    send_command('cancel 71')
-            end
+        if spell.name == 'Spectral Jig' and buffactive.sneak then
+                -- If sneak is active when using, cancel before completion
+                send_command('cancel 71')
+        end
     end
      
     -- Run after the default midcast() is done.
     -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
     function job_post_midcast(spell, action, spellMap, eventArgs)
-            if buffactive["Barrage"] then
-                equip(sets.BarrageMid)
-            end
-            if state.Buff['Camouflage'] then
-                equip(sets.buff.Camouflage)
-            end
-            if state.Buff['Overkill'] then
-                equip(sets.buff.Overkill)
-            end
-
+        if buffactive["Barrage"] then
+            equip(sets.BarrageMid)
+        end
+        if state.Buff['Camouflage'] then
+            equip(sets.buff.Camouflage)
+        end
+        if state.Buff['Overkill'] then
+            equip(sets.buff.Overkill)
+        end
+        sets.earring = select_earring()
     end
      
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
