@@ -54,7 +54,6 @@ function file_unload()
 	send_command('unbind !-')
 end
 
-
 -- Define sets and vars used by this job file.
 function init_gear_sets()
 	--------------------------------------
@@ -65,7 +64,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Meditate = {head="Wakido Kabuto",hands="Saotome Kote +2"}
 	sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto"}
-    sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate",ear1="Brutal Earring",ear2="Unkai Mimikazari"}
+    --sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate",ear1="Brutal Earring",ear2="Unkai Mimikazari"}
 	--sets.precast.JA['Blade Bash'] = {hands="Saotome Kote +2"}
 
 	-- Waltz set (chr and vit)
@@ -292,8 +291,9 @@ function init_gear_sets()
 
 	sets.buff.Sekkanoki = {hands="Unkai Kote +1"}
 	sets.buff.Sengikori = {}
-	sets.buff['Third Eye'] = {legs="Wakido Haidate +1"}
 	sets.buff['Meikyou Shisui'] = {feet="Sakonji Sune-ate"}
+
+	sets.thirdeye = {legs="Sakonji Haidate"}
 end
 
 
@@ -328,7 +328,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 			equip(sets.buff['Meikyou Shisui'])
 		end
 	end
-
+    if spell.english == "Third Eye" then
+        -- Third Eye gearset is only called if we're in PDT mode
+        if state.DefenseMode == 'PDT' then
+            equip(sets.thirdeye)
+        end
+    end
 end
 
 
@@ -347,10 +352,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 		(state.Defense.Active and state.Defense.Type == 'Physical' and state.Defense.PhysicalMode == 'Reraise') then
 		equip(sets.Reraise)
 	end
-    --if state.Buff['Third Eye'] then
-    --  equip(sets.buff['Third Eye'])
-    --end
-
+    if state.Buff['Third Eye'] then
+        if state.DefenseMode == 'PDT' then
+            equip(sets.thirdeye)
+        end
+    end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -366,7 +372,9 @@ end
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
 	if state.Buff['Third Eye'] then
-		idleSet = set_combine(idleSet, sets.buff['Third Eye'])
+        if state.DefenseMode == 'PDT' then
+		    idleSet = set_combine(idleSet, sets.thirdeye)
+        end
 	end
 	return idleSet
 end
@@ -374,7 +382,9 @@ end
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
 	if state.Buff['Third Eye'] then
-		meleeSet = set_combine(meleeSet, sets.buff['Third Eye'])
+        if state.DefenseMode == 'PDT' then
+		    meleeSet = set_combine(meleeSet, sets.thirdeye)
+        end
 	end
 	return meleeSet
 end
@@ -386,13 +396,26 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- General hooks for other events.
 -------------------------------------------------------------------------------------------------------------------
-
+function job_status_change(newStatus, oldStatus, eventArgs)
+    if newStatus == 'Engaged' and state.DefenseMode == 'PDT' then
+	    if state.Buff['Third Eye'] then
+            equip(sets.thirdeye)
+        end
+    end
+    if seigan_thirdeye_active() then
+        eventArgs.handled = true
+    end
+end
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
 	if state.Buff[buff] ~= nil then
 	    state.Buff[buff] = gain
+
+        if not seigan_thirdeye_active() then
+            handle_equipping_gear(player.status)
+        end
 	end
     --if state.Buff['Third Eye'] then
     --    if gain then
@@ -417,6 +440,7 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
 	state.CombatForm = get_combat_form()
+    -- may need to check for seign/TE here
 end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
@@ -433,6 +457,11 @@ function get_combat_form()
 		return 'Adoulin'
 	end
 end
+
+function seigan_thirdeye_active()
+	return state.Buff['Seigan'] or state.Buff['Third Eye']
+end
+
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
