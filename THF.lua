@@ -208,7 +208,7 @@ function init_gear_sets()
 		back="Atheling Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Iuitl Gaiters"}
 
 	sets.defense.PDT = {
-		head="Lithlimb Cap",neck="Twilight Torque",
+		head="Lithelimb Cap",neck="Twilight Torque",
 		body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Dark Ring",ring2="Epona's Ring",
 		back="Shadow Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Iuitl Gaiters"}
 
