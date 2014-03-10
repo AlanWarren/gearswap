@@ -89,7 +89,7 @@ function init_gear_sets()
 		back="Buquwik Cape",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
-        feet="Sakonji Sune-ate"
+        feet="Sakonji Sune-ate +1"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {legs="Mikinaak Cuisses"})
 
@@ -123,15 +123,14 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Yaoyotl Helm",
 		body="Otronif Harness",hands="Otronif Gloves",
-		legs="Phorcys Dirs",feet="Whirlpool Greaves"}
-
+		legs="Phorcys Dirs",feet="Whirlpool Greaves"
+    }
 	
 	-- Sets to return to when not performing an action.
 	
 	-- Resting sets
 	sets.resting = {ring2="Paguroidea Ring"}
 	
-
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle.Town = {
         --main="Anahera Blade", 
@@ -207,7 +206,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
-        feet="Sakonji Sune-ate"
+        feet="Sakonji Sune-ate +1"
     }
 
 	sets.engaged.Acc = set_combine(sets.engaged, { 
@@ -263,7 +262,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
-        feet="Sakonji Sune-ate" -- this is 48 STP total, with Anahera Blade. Tsu needs either goading or Bloodrain, or Kappa
+        feet="Sakonji Sune-ate +1" 
     }
 	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin, {
 		body="Unkai Domaru +2",hands="Otronif Gloves",
@@ -291,7 +290,7 @@ function init_gear_sets()
 
 	sets.buff.Sekkanoki = {hands="Unkai Kote +1"}
 	sets.buff.Sengikori = {}
-	sets.buff['Meikyou Shisui'] = {feet="Sakonji Sune-ate"}
+	sets.buff['Meikyou Shisui'] = {feet="Sakonji Sune-ate +1"}
 
 	sets.thirdeye = {legs="Sakonji Haidate"}
 end
