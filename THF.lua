@@ -246,7 +246,7 @@ function init_gear_sets()
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
 		head="Whirlpool Mask",waist="Hurch'lan Sash"})
 	sets.engaged.PDT = {
-		head="Felistris Mask",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
+		head="Lithelimb Cap",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
 		body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Dark Ring",ring2="Epona's Ring",
 		back="Shadow Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Iuitl Gaiters"}
 	sets.engaged.Acc.PDT = sets.engaged.PDT
