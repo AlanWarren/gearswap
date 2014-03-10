@@ -378,6 +378,8 @@
     function job_post_precast(spell, action, spellMap, eventArgs)
         if spell.english == "Camouflage" then
             equip(sets.buff.Camouflage)
+        elseif spell.english == "Overkill" then
+            equip(sets.buff.Overkill)
         end
         sets.earring = select_earring()
     end
@@ -448,9 +450,11 @@
           if newStatus == 'Engaged' then
               if state.Buff['Camouflage'] then
                   equip(sets.buff.Camouflage)
+              elseif state.Buff['Overkill'] then
+                  equip(sets.buff.Overkill)
               end
           end
-          if camo_active() then
+          if camo_active() or overkill_active() then
               eventArgs.handled = true
           end
     end
@@ -463,7 +467,7 @@
 	        state.Buff[buff] = gain
 	    end
 
-        if not camo_active() then
+        if not camo_active() or overkill_active() then
             handle_equipping_gear(player.status)
         end
     end
@@ -532,6 +536,10 @@
 
     function camo_active()
     	return state.Buff['Camouflage']
+    end
+
+    function overkill_active()
+    	return state.Buff['Overkill']
     end
      
     -------------------------------------------------------------------------------------------------------------------
