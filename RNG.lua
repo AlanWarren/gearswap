@@ -1,7 +1,7 @@
 	
 
     -- Last Modified: 3/6/2014
-    -- Orinal file credit Kinematix
+    -- Orinal file credit KBEEZIE
     -- current file resides @ https://github.com/AlanWarren/gearswap
 
     -- //gs show_swaps()
