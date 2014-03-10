@@ -64,7 +64,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Meditate = {head="Wakido Kabuto",hands="Saotome Kote +2"}
 	sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto"}
-    --sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate",ear1="Brutal Earring",ear2="Unkai Mimikazari"}
+    sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate",ear1="Brutal Earring",ear2="Unkai Mimikazari"}
 	--sets.precast.JA['Blade Bash'] = {hands="Saotome Kote +2"}
 
 	-- Waltz set (chr and vit)
