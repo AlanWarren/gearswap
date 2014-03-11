@@ -229,7 +229,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ring1="Dark Ring",
         back="Shadow Mantle",
-        feet="Whirlpool Greaves"
+        feet="Otronif Boots"
     })
 
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, { waist="Dynamic Belt" })
