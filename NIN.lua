@@ -375,7 +375,7 @@ function init_gear_sets()
     })
 	sets.engaged.Acc.Evasion.MaxHaste = set_combine(sets.engaged.Evasion.MaxHaste, {
         head="Whirlpool Mask",
-        waist="Hurch'lan Sash"
+        waist="Hurch'lan Sash",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring"
     })
