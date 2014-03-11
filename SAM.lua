@@ -370,11 +370,6 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-	if state.Buff['Third Eye'] then
-        if state.DefenseMode == 'PDT' then
-		    idleSet = set_combine(idleSet, sets.thirdeye)
-        end
-	end
 	return idleSet
 end
 
@@ -401,9 +396,10 @@ function job_status_change(newStatus, oldStatus, eventArgs)
             equip(sets.thirdeye)
         end
     end
-    if seigan_thirdeye_active() then
-        eventArgs.handled = true
-    end
+    -- prevents equipping gear
+    --if seigan_thirdeye_active() then
+        --eventArgs.handled = true
+    --end
 end
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
