@@ -229,7 +229,11 @@ function init_gear_sets()
         neck="Twilight Torque",
         ring1="Dark Ring",
         back="Shadow Mantle",
+<<<<<<< HEAD
         feet="Otronif boots"
+=======
+        feet="Otronif Boots"
+>>>>>>> eee8671bef40f2c4e2d6f632052ba281808febb6
     })
 
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, { waist="Dynamic Belt" })
@@ -370,11 +374,6 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-	if state.Buff['Third Eye'] then
-        if state.DefenseMode == 'PDT' then
-		    idleSet = set_combine(idleSet, sets.thirdeye)
-        end
-	end
 	return idleSet
 end
 
@@ -401,9 +400,10 @@ function job_status_change(newStatus, oldStatus, eventArgs)
             equip(sets.thirdeye)
         end
     end
-    if seigan_thirdeye_active() then
-        eventArgs.handled = true
-    end
+    -- prevents equipping gear
+    --if seigan_thirdeye_active() then
+        --eventArgs.handled = true
+    --end
 end
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost

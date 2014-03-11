@@ -116,7 +116,6 @@
             sets.STPEarring = {ear2="Tripudio earring"}
             sets.NightEarring = {ear2="Fenrir's earring"}
             sets.DayEarring = {ear2="Clearview earring"}
-
             sets.earring = select_earring()
 
             select_default_macro_book()
@@ -191,8 +190,11 @@
             --    legs="Nahtirah Trousers",
             --    head="Orion Beret +1"
             --})
-     
-            sets.midcast.RangedAttack = set_combine(sets.engaged, {
+            sets.midcast.Ear = {}
+            -- combine engaged set with our earring selection
+            sets.midcast.Ear = set_combine(sets.engaged, sets.earring)
+
+            sets.midcast.RangedAttack = set_combine(sets.midcast.Ear, {
                 ring2="Hajduk Ring"
             })
                    
