@@ -1,29 +1,33 @@
 	
 
-    -- Last Modified: 3/6/2014
+    -- Current Owner: AlanWarren, aka ~ Orestes 
     -- Orinal file credit KBEEZIE
     -- current file resides @ https://github.com/AlanWarren/gearswap
 
     -- //gs show_swaps()
      
     -- === Some Notes On Sets ===
-    -- Gear is loaded from rng_gear.lua to make it easier to update this file without re-doing gear sets
-    --
-    -- I don't have a PDT/MDT set configured in this file, but the stuff is there to be filled in as needed
-    -- Engaged does have a TP set, but nothing different is filled in. I only TP off ranged attacks.
-    --
-    -- I only use the Augmented (Trial 5004) Scout's Beret +2 for TP Build.
-    -- It's not much use for recycle since 90% is capped with Base + Merits + Manibozho gloves
-    -- Getting an extra 5TP/shot with fully Merited Recycle is more useful for the head
-    -- Thus why that's in the TP set.
-    --
-    -- WeaponSkill set automatically checks for a matching elemental belt or gorget in your inventory
-    -- You can adjust UserGlobals.lua to change the default belt/gorget used when no match can be equipped
-    -- If you leave default to blank "", It'll just keep whatever belt/neck you were using.
-    --
-    -- While there is a function to check for "Unlimited Shot" before using one of the special ammo
-    -- it does not protect from loss against multi-hit weaponskills (ie: Jishnu's Radiance being a 3-hit WS)
-     
+    -- I've left in KBEEZIE's Unlimited Shot checks for now, but will remove soon since the JA no longer has
+    -- any use in the current game climate. ie. It shares a timer with Double Shot, and there's no longer any
+    -- rare/ex ammos that can beat Achiyalabopa. I can see some use for Animikii Bullet if you were using
+    -- Wildfire, but that WS tends to do very poorly on anything that matters. 
+    
+    -- === My Modes ===
+    -- 1) STP is a  4/hit with Annihilator, but sacrifices some racc/ratk to get there.
+    -- 2) DMG piles on STR / ratk without a care for racc. I use it in Abyssea mostly
+    -- 3) Normal has a nice mixture of racc and stp for hard content. 
+    -- 4) Racc is full blown racc. i.e. You're fighting VD MR and songs drop.  
+    
+    -- === Advanced Features ===
+    -- Fenrir's Earring is equipped in midcast at night, and Clearview Earring during the day...
+    -- Except in the following conditions: 
+    -- If you're in STP mode, this feature is disabled in favor of Tripudio Earring
+    -- If you have /SAM set as SJ, Tripudio is set during the day. 
+    
+    -- Orion Jerkin +1 is locked in place during Camouflage
+    -- Arcadian Jerkin is locked in place during Overkill
+    -- If Courser's Roll is active, we replace a few pieces of snapshot gear with rapidshot (still testing)
+
     -- === In Precast ===
     -- 1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
     -- 2) Checks the distance to target to prevent WS from being fired when target is too far (prevents TP loss)
@@ -55,8 +59,8 @@
             end
      
             -- Optional: load a sidecar version of the init and unload functions.
-            load_user_gear(player.main_job)
-            init_gear_sets()
+            --load_user_gear(player.main_job)
+            --init_gear_sets()
      
             -- Global default binds
             binds_on_load()
@@ -69,6 +73,7 @@
     function job_setup()
         state.Buff.Camouflage = buffactive.camouflage or false
         state.Buff.Overkill = buffactive.overkill or false
+        determine_snapshot_group()
     end
      
     -- Called when this job file is unloaded (eg: job change)
@@ -115,7 +120,9 @@
 
             sets.STPEarring = {ear2="Tripudio earring"}
             sets.NightEarring = {ear2="Fenrir's earring"}
+            sets.NightEarring.STP = {ear2="Tripudio earring"}
             sets.DayEarring = {ear2="Clearview earring"}
+            sets.DayEarring.STP = {ear2="Tripudio earring"}
             sets.earring = select_earring()
 
             select_default_macro_book()
@@ -181,9 +188,13 @@
                 head="Sylvan Gapette +2",
                 body="Sylvan Caban +2",
                 hands="Iuitl Wristbands",
-                waist="Impulse Belt",
                 legs="Nahtirah Trousers",
+                waist="Impulse Belt",
                 feet="Arcadian Socks +1"
+            })
+            sets.precast.RangedAttack.RapidShot = set_combine(sets.precast.RangedAttack, {
+                head="Orion Beret +1",
+                body="Arcadian Jerkin"
             })
 
             --sets.precast.RangedAttack.DMG = set_combine(sets.precast.RangedAttack, {
@@ -212,7 +223,7 @@
                 body="Sylvan Caban +2",
                 ring2="Pyrosoul Ring",
                 back="Buquwik Cape",
-                legs="Sylvan Bragues +2",
+                legs="Nahtirah Trousers",
                 feet="Arcadian Socks +1"
             })
 
@@ -466,7 +477,9 @@
     -- buff == buff gained or lost
     -- gain == true if the buff was gained, false if it was lost.
     function job_buff_change(buff, gain)
-	    if state.Buff[buff] ~= nil then
+	    if S{"courser's roll"}:contains(buff:lower()) then
+	    	determine_snapshot_group()
+        elseif state.Buff[buff] ~= nil then
 	        state.Buff[buff] = gain
 	    end
 
@@ -489,6 +502,14 @@
         else
             return sets.DayEarring
         end
+    end
+
+    function determine_snapshot_group()
+        classes.CustomMeleeGroups:clear()
+
+		if buffactive["Courser's Roll"] then
+		    classes.CustomMeleeGroups:append('RapidShot')
+		end
     end
     -------------------------------------------------------------------------------------------------------------------
     -- User code that supplements self-commands.
