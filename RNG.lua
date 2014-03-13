@@ -206,7 +206,8 @@
             sets.midcast.Ear = set_combine(sets.engaged, sets.earring)
 
             sets.midcast.RangedAttack = set_combine(sets.midcast.Ear, {
-                ring2="Hajduk Ring"
+                ring2="Hajduk Ring",
+                legs="Aeto. Trousers +1"
             })
                    
             sets.midcast.RangedAttack.ACC = set_combine(sets.midcast.RangedAttack, {
@@ -222,7 +223,7 @@
                 body="Sylvan Caban +2",
                 ring2="Pyrosoul Ring",
                 back="Buquwik Cape",
-                legs="Sylvan Bragues +2",
+                legs="Nahtirah Trousers",
                 feet="Arcadian Socks +1"
             })
 
@@ -230,7 +231,7 @@
                 back="Sylvan Chlamys",
                 --hands="Sylvan Glovelettes +2",
                 ear2="Tripudio earring",
-                legs="Sylvan Bragues +2"
+                legs="Aeto. Trousers +1"
             })
                    
             -- Weaponskill sets
