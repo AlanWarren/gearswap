@@ -59,8 +59,8 @@
             end
      
             -- Optional: load a sidecar version of the init and unload functions.
-            load_user_gear(player.main_job)
-            init_gear_sets()
+            --load_user_gear(player.main_job)
+            --init_gear_sets()
      
             -- Global default binds
             binds_on_load()
