@@ -69,6 +69,7 @@
     function job_setup()
         state.Buff.Camouflage = buffactive.camouflage or false
         state.Buff.Overkill = buffactive.overkill or false
+        determine_snapshot_group()
     end
      
     -- Called when this job file is unloaded (eg: job change)
@@ -181,9 +182,13 @@
                 head="Sylvan Gapette +2",
                 body="Sylvan Caban +2",
                 hands="Iuitl Wristbands",
-                waist="Impulse Belt",
                 legs="Nahtirah Trousers",
+                waist="Impulse Belt",
                 feet="Arcadian Socks +1"
+            })
+            sets.precast.RangedAttack.RapidShot = set_combine(sets.precast.RangedAttack, {
+                head="Orion Beret +1",
+                body="Arcadian Jerkin"
             })
 
             --sets.precast.RangedAttack.DMG = set_combine(sets.precast.RangedAttack, {
@@ -465,7 +470,9 @@
     -- buff == buff gained or lost
     -- gain == true if the buff was gained, false if it was lost.
     function job_buff_change(buff, gain)
-	    if state.Buff[buff] ~= nil then
+	    if S{"courser's roll"}:contains(buff:lower()) then
+	    	determine_snapshot_group()
+        elseif state.Buff[buff] ~= nil then
 	        state.Buff[buff] = gain
 	    end
 
@@ -488,6 +495,14 @@
         else
             return sets.DayEarring
         end
+    end
+
+    function determine_snapshot_group()
+        classes.CustomMeleeGroups:clear()
+
+		if buffactive["Courser's Roll"] then
+		    classes.CustomMeleeGroups:append('RapidShot')
+		end
     end
     -------------------------------------------------------------------------------------------------------------------
     -- User code that supplements self-commands.
