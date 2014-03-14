@@ -105,6 +105,11 @@ function init_gear_sets()
         neck="Breeze gorget",
 		waist="Thunder Belt"
     })
+	sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'], {
+        head="Whirlpool Mask", 
+        legs="Hachiya Hakama", 
+        back="Yokaze Mantle"
+    })
 
 	sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
         head="Uk'uxkaj Cap",
@@ -112,6 +117,11 @@ function init_gear_sets()
 		ring1="Stormsoul Ring",
         legs="Nahtirah Trousers",
         waist="Soil belt"
+    })
+	sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {
+        head="Whirlpool Mask", 
+        legs="Hachiya Hakama", 
+        back="Yokaze Mantle"
     })
 	sets.precast.WS['Blade: Hi'].Mod = set_combine(sets.precast.WS['Blade: Hi'], {waist="Soil Belt"})
 
