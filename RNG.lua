@@ -73,7 +73,7 @@
     function job_setup()
         state.Buff.Camouflage = buffactive.camouflage or false
         state.Buff.Overkill = buffactive.overkill or false
-        determine_snapshot_group()
+        --determine_snapshot_group()
     end
      
     -- Called when this job file is unloaded (eg: job change)
@@ -98,7 +98,6 @@
             DefaultAmmo["Atetepeyorg"] = "Achiyalabopa bolt"
            
             --add_to_chat(123,'sidecar load')
-           
             -- Options: Override default values
      
             options.OffenseModes = {'Normal', 'Melee'}
@@ -141,7 +140,7 @@
                 waist="Scout's Belt",
                 legs="Nahtirah Trousers",
                 feet="Orion Socks +1"
-                }
+            }
 
             sets.idle.Town = set_combine(sets.idle, {
                     neck="Ocachi Gorget",
@@ -166,7 +165,7 @@
                 waist="Scout's Belt",
                 legs="Nahtirah Trousers",
                 feet="Orion Socks +1"
-                }
+            }
 
             sets.engaged.Melee = {
                 head="Whirlpool Mask",
@@ -206,8 +205,8 @@
             sets.midcast.Ear = set_combine(sets.engaged, sets.earring)
 
             sets.midcast.RangedAttack = set_combine(sets.midcast.Ear, {
-                ring2="Hajduk Ring",
-                legs="Aetosaur Trousers +1"
+                ring2="Hajduk Ring"
+                --legs="Aetosaur Trousers +1"
             })
                    
             sets.midcast.RangedAttack.ACC = set_combine(sets.midcast.RangedAttack, {
@@ -477,9 +476,9 @@
     -- buff == buff gained or lost
     -- gain == true if the buff was gained, false if it was lost.
     function job_buff_change(buff, gain)
-	    if S{"courser's roll"}:contains(buff:lower()) then
-	    	determine_snapshot_group()
-        elseif state.Buff[buff] ~= nil then
+	    --if S{"courser's roll"}:contains(buff:lower()) then
+	    --	determine_snapshot_group()
+        if state.Buff[buff] ~= nil then
 	        state.Buff[buff] = gain
 	    end
 
@@ -507,9 +506,9 @@
     function determine_snapshot_group()
         classes.CustomMeleeGroups:clear()
 
-		if buffactive["Courser's Roll"] then
-		    classes.CustomMeleeGroups:append('RapidShot')
-		end
+		--if buffactive["Courser's Roll"] then
+		--    classes.CustomMeleeGroups:append('RapidShot')
+		--end
     end
     -------------------------------------------------------------------------------------------------------------------
     -- User code that supplements self-commands.
