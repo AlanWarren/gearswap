@@ -8,9 +8,7 @@
      
     -- === Some Notes On Sets ===
     -- I've left in KBEEZIE's Unlimited Shot checks for now, but will remove soon since the JA no longer has
-    -- any use in the current game climate. ie. It shares a timer with Double Shot, and there's no longer any
-    -- rare/ex ammos that can beat Achiyalabopa. I can see some use for Animikii Bullet if you were using
-    -- Wildfire, but that WS tends to do very poorly on anything that matters. 
+    -- any use.  
     
     -- === My Modes ===
     -- 1) STP is a  4/hit with Annihilator, but sacrifices some racc/ratk to get there.
