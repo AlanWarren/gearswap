@@ -191,7 +191,7 @@
             })
             sets.precast.RangedAttack.RapidShot = set_combine(sets.precast.RangedAttack, {
                 head="Orion Beret +1",
-                body="Arcadian Jerkin",
+                --body="Arcadian Jerkin",
                 feet="Arcadian Socks +1"
             })
 
