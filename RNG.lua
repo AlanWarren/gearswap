@@ -187,11 +187,12 @@
                 hands="Iuitl Wristbands",
                 legs="Nahtirah Trousers",
                 waist="Impulse Belt",
-                feet="Arcadian Socks +1"
+                feet="Wurrukatte Boots"
             })
             sets.precast.RangedAttack.RapidShot = set_combine(sets.precast.RangedAttack, {
                 head="Orion Beret +1",
-                body="Arcadian Jerkin"
+                body="Arcadian Jerkin",
+                feet="Arcadian Socks +1"
             })
 
             --sets.precast.RangedAttack.DMG = set_combine(sets.precast.RangedAttack, {
