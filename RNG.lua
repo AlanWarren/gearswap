@@ -203,8 +203,8 @@
             sets.midcast.Ear = set_combine(sets.engaged, sets.earring)
 
             sets.midcast.RangedAttack = set_combine(sets.midcast.Ear, {
-                ring2="Hajduk Ring"
-                --legs="Aetosaur Trousers +1"
+                ring2="Hajduk Ring",
+                legs="Aetosaur Trousers +1"
             })
                    
             sets.midcast.RangedAttack.ACC = set_combine(sets.midcast.RangedAttack, {
