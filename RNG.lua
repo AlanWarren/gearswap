@@ -208,7 +208,7 @@
                 legs="Aetosaur Trousers +1"
             })
                    
-            sets.midcast.RangedAttack.ACC = set_combine(sets.midcast.RangedAttack, {
+            sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack, {
                 neck="Huani Collar",
                 ring1="Hajduk Ring",
                 ring2="Paqichikaji Ring",
