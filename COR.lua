@@ -122,7 +122,11 @@ function init_gear_sets()
 	sets.precast.RangedAttack = {ammo=gear.RAbullet,
 		head="Navarch's Tricorne +1",
 		hands="Iuitl Wristbands",
-		back="Navarch's Mantle",waist="Impulse Belt",legs="Nahtirah Trousers"}
+		back="Navarch's Mantle",
+        waist="Impulse Belt",
+        legs="Nahtirah Trousers",
+        feet="Wurrukatte Boots"
+    }
 
        
 	-- Weaponskill sets
