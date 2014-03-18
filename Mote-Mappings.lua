@@ -156,13 +156,14 @@ areas.Adoulin = S{
 	"Cirdas Caverns [U]",
 	"Marjami Ravine",
 	"Kamihr Drifts",
-    "Outer Ra'Kaznar",
 	"Sih Gates",
 	"Moh Gates",
 	"Dho Gates",
 	"Woh Gates",
 	"Rala Waterways",
-	"Rala Waterways [U]"
+	"Rala Waterways [U]",
+    "Outer Ra'Kaznar",
+    "Outer Ra'Kaznar [U]"
 }
 
 
