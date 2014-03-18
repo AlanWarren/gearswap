@@ -119,8 +119,8 @@ function init_gear_sets()
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
 
-	sets.precast.RangedAttack = {ammo=gear.RAbullet,
-		head="Navarch's Tricorne +1",
+	sets.precast.RangedAttack = {
+        ammo=gear.RAbullet,
 		hands="Iuitl Wristbands",
 		back="Navarch's Mantle",
         waist="Impulse Belt",
@@ -206,19 +206,43 @@ function init_gear_sets()
 	
 
 	-- Idle sets
-	sets.idle = {ammo=gear.RAbullet,
-		head="Lithelimb Cap",neck="Twilight Torque",ear1="Clearview Earring",ear2="Volley Earring",
-		body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Dark Ring",ring2="Paguroidea Ring",
-		back="Shadow Mantle",waist="Commodore Belt",legs="Crimson Cuisses",feet="Iuitl Gaiters"}
+	sets.idle = {
+        ammo=gear.RAbullet,
+		head="Lithelimb Cap",
+        neck="Twilight Torque",
+        ear1="Clearview Earring",
+        ear2="Volley Earring",
+		body="Navarch's frac +2",
+        hands="Iuitl Wristbands",
+        ring1="Dark Ring",
+        ring2="Paguroidea Ring",
+		back="Shadow Mantle",
+        waist="Commodore Belt",
+        legs="Crimson Cuisses",
+        feet="Iuitl Gaiters"
+    }
 
-	sets.idle.Town = {main="Surcouf's Jambiya",range="Eminent Gun",ammo=gear.RAbullet,
-		head="Ligthelimb Cap",neck="Ocachi Gorget",ear1="Clearview Earring",ear2="Volley Earring",
-		body="Navarch's Frac +2",hands="Iuitl Wristbands",ring1="Dark Ring",ring2="Paguroidea Ring",
-		back="Shadow Mantle",waist="Commodore Belt",legs="Crimson Cuisses",feet="Iuitl Gaiters"}
+	sets.idle.Town = {
+        main="Surcouf's Jambiya",
+        range="Eminent Gun",
+        ammo=gear.RAbullet,
+		head="Ligthelimb Cap",
+        neck="Ocachi Gorget",
+        ear1="Clearview Earring",
+        ear2="Volley Earring",
+		body="Navarch's Frac +2",
+        hands="Iuitl Wristbands",
+        ring1="Dark Ring",
+        ring2="Paguroidea Ring",
+		back="Shadow Mantle",
+        waist="Commodore Belt",
+        legs="Crimson Cuisses",
+        feet="Iuitl Gaiters"}
 	
 	-- Defense sets
 	sets.defense.PDT = set_combine(sets.idle, {
-		back="Repulse Mantle",legs="Nahtirah Trousers"})
+		legs="Nahtirah Trousers"
+        })
 
 	sets.defense.MDT = sets.defense.PDT
 	
@@ -249,10 +273,21 @@ function init_gear_sets()
     })
 	
 
-	sets.engaged.Ranged = {ammo=gear.RAbullet,
-		head="Whirlpool Mask",neck="Twilight Torque",ear1="Clearview Earring",ear2="Volley Earring",
-		body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Dark Ring",ring2="Dark Ring",
-		back="Shadow Mantle",waist="Flume Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
+	sets.engaged.Ranged = {
+        ammo=gear.RAbullet,
+		head="Navarch's tricorne +1",
+        neck="Ocachi Gorget",
+        ear1="Clearview Earring",
+        ear2="Volley Earring",
+		body="Navarch's Frac +2",
+        hands="Iuitl Wristbands",
+        ring1="Rajas Ring",
+        ring2="Hajduk Ring",
+		back="Navarch's Mantle",
+        waist="Commodore Belt",
+        legs="Nahtirah Trousers",
+        feet="Iuitl Gaiters"
+    }
 end
 
 -------------------------------------------------------------------------------------------------------------------
