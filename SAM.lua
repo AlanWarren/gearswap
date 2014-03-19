@@ -124,7 +124,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Yaoyotl Helm",
 		body="Otronif Harness",hands="Otronif Gloves",
-		legs="Phorcys Dirs",feet="Whirlpool Greaves"
+		legs="Wakido Haidate +1",feet="Whirlpool Greaves"
     }
 	
 	-- Sets to return to when not performing an action.
@@ -260,7 +260,7 @@ function init_gear_sets()
         hands="Wakido Kote +1",
         ring1="Rajas Ring",
         ring2="K'ayres Ring",
-		back="Atheling Mantle",
+		back="Misuuchi kappa",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
         feet="Sakonji Sune-ate +1" 
