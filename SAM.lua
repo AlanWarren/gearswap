@@ -251,7 +251,7 @@ function init_gear_sets()
 	-- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
 	-- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
 	sets.engaged.Adoulin = {
-        ammo="Hagneia Stone",
+        ammo="Paeapua",
 		head="Yaoyotl Helm",
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
