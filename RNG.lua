@@ -329,7 +329,7 @@
             sets.BarrageMid = set_combine(sets.midcast.RangedAttack.Acc, {
                 neck="Rancor Collar",
                 hands="Orion Bracers +1",
-                legs="Sylvan Bragues +2"
+                legs="Orion Braccae +1"
             })
 
             sets.buff.Camouflage =  {body="Orion Jerkin +1"}
