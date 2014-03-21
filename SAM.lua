@@ -14,6 +14,7 @@ end
 -- Setup vars that are user-independent.
 function job_setup()
 	state.CombatForm = get_combat_form()
+	state.CombatWeapon = get_combat_weapon()
 	
 	state.Buff.Sekkanoki = buffactive.sekkanoki or false
 	state.Buff.Sengikori = buffactive.sengikori or false
@@ -25,7 +26,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-	options.OffenseModes = {'Normal', 'Acc', 'STP', 'Bow'}
+	options.OffenseModes = {'Normal', 'Acc', 'Multi'}
 	options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
 	options.WeaponskillModes = {'Normal', 'Acc', 'Att', 'Mod'}
 	options.CastingModes = {'Normal'}
@@ -35,6 +36,8 @@ function user_setup()
 	options.MagicalDefenseModes = {'MDT'}
 
 	state.Defense.PhysicalMode = 'PDT'
+
+    gear.RAarrow = "Tulfaire Arrow"
 
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
@@ -94,19 +97,60 @@ function init_gear_sets()
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {legs="Mikinaak Cuisses"})
 
-	sets.precast.WS.Bow = set_combine(sets.precast.WS, {ammo="Demo Arrow"})
+	sets.precast.WS['Namas Arrow'] = {
+        ammo=gear.RAarrow,
+        head="Lithelimb Cap",
+        neck="Aqua Gorget",
+        ear1="Flame Pearl",
+        ear2="Flame Pearl",
+        body="Phorcys Korazin",
+        hands="Unkai Kote +2",
+        back="Buquwik Cape",
+        ring1="Rajas Ring",
+        ring2="Pyrosoul Ring",
+        waist="Light Belt",
+        legs="Wakido Haidate +1",
+        feet="Wakido Sune-ate"
+    }
+    sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.Yoichi.WS, {
+        head="Sakonji Kabuto +1"
+    })
+    sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
+        neck="Breeze Gorget"
+    })
+    sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
+        head="Sakonji Kabuto +1"
+    })
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {neck="Aqua Gorget", waist="Light Belt"})
-	sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
+        neck="Aqua Gorget", 
+        waist="Light Belt"
+    })
+	sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS['Tachi: Fudo'])
 	sets.precast.WS['Tachi: Fudo'].Mod = set_combine(sets.precast.WS['Tachi: Fudo'], {})
 
-	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {neck="Breeze Gorget"})
-	sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS.Acc, {neck="Breeze Gorget"})
-	sets.precast.WS['Tachi: Shoha'].Mod = set_combine(sets.precast.WS['Tachi: Shoha'], {waist="Thunder Belt"})
 
-	sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {neck="Snow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",})
-	sets.precast.WS['Tachi: Rana'].Acc = set_combine(sets.precast.WS.Acc, {neck="Snow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",})
+	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
+        neck="Breeze Gorget"
+    })
+	sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS.Acc, {
+        neck="Breeze Gorget"
+    })
+	sets.precast.WS['Tachi: Shoha'].Mod = set_combine(sets.precast.WS['Tachi: Shoha'], {
+        waist="Thunder Belt"
+    })
+
+	sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {
+        neck="Snow Gorget",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring"
+    })
+	sets.precast.WS['Tachi: Rana'].Acc = set_combine(sets.precast.WS.Acc, {
+        neck="Snow Gorget",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring"
+    })
 	sets.precast.WS['Tachi: Rana'].Mod = set_combine(sets.precast.WS['Tachi: Rana'], {waist="Snow Belt"})
 
 	sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Flame Gorget",waist="Light Belt"})
@@ -161,9 +205,8 @@ function init_gear_sets()
 		head="Twilight Helm",
 		body="Twilight Mail"
     })
-	sets.idle.Bow = set_combine(sets.idle.Field, {
-        range="Speleogen bow",
-		ammo="Demon Arrow"
+	sets.idle.Yoichi = set_combine(sets.idle.Field, {
+		ammo=gear.RAarrow
     })
 	
 	-- Defense sets
@@ -192,38 +235,47 @@ function init_gear_sets()
 	
 	-- Normal melee group 
     -- 4-hit
-    -- Tsurumaru = 49 stp w/ ionis 
-    -- Anahera = 52 stp anywhere
-	sets.engaged = { -- 48 stp / 54 with bloodrain
-        ammo="Hagneia Stone",
-		head="Yaoyotl Helm",
-        neck="Asperity Necklace",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-		body="Wakido Domaru +1",
-        hands="Wakido Kote +1",
-        ring1="Rajas Ring",
-        ring2="K'ayres Ring",
-		back="Atheling Mantle",
+    -- Tsurumaru needs 49 stp w/ ionis 
+    -- Anahera needs 52 stp anywhere 
+    
+    -- I generally use Anahera outside of Adoulin areas, so this set aims for 52 STP (including +5 from weapon)
+	sets.engaged = { -- 54 stp with Anahera
+        ammo="Hagneia Stone", -- 3
+		head="Yaoyotl Helm", -- 4
+        neck="Asperity Necklace", -- 3
+        ear1="Bladeborn Earring", -- 1
+        ear2="Steelflash Earring", -- 1
+		body="Wakido Domaru +1", --7
+        hands="Wakido Kote +1",-- 5
+        ring1="Rajas Ring", -- 5
+        ring2="K'ayres Ring", -- 5
+		back="Atheling Mantle", 
         waist="Windbuffet Belt",
-        legs="Wakido Haidate +1",
-        feet="Sakonji Sune-ate +1"
+        legs="Wakido Haidate +1", -- 7
+        feet="Sakonji Sune-ate +1" -- 8
     }
 
 	sets.engaged.Acc = set_combine(sets.engaged, { 
         neck="Justice Torque", 
         hands="Miki. Gauntlets",
         feet="Whirlpool Greaves", 
-        waist="Dynamic Belt", 
-        legs="Unkai Haidate +2"
+        waist="Dynamic Belt"
     })
 
-	sets.engaged.Bow = set_combine(sets.engaged, { 
-        range="Speleogen bow",
-		ammo="Demon Arrow"
+	sets.engaged.Yoichi = set_combine(sets.engaged, { 
+		ammo=gear.RAarrow,
+        ear1="Trux Earring",
+        ear2="Brutal Earring",
+        waist="Cetl Belt"
     })
-
-	sets.engaged.STP = set_combine(sets.engaged, { back="Misuuchi Kappa" })
+    sets.engaged.Yoichi.Multi = sets.engaged.Yoichi
+    
+	sets.engaged.Multi = set_combine(sets.engaged, { 
+        ammo="Paeapua",
+        head="Quauhpilli Helm",
+        ear1="Trux Earring",
+        ear2="Brutal Earring"
+    })
 
 	sets.engaged.PDT = set_combine(sets.engaged, { 
         head="Lithelimb Cap", 
@@ -231,6 +283,9 @@ function init_gear_sets()
         ring1="Dark Ring",
         back="Shadow Mantle",
         feet="Otronif boots"
+    })
+    sets.engaged.Yoichi.PDT = set_combine(sets.engaged.PDT,  {
+        ammo=gear.RAarrow
     })
 
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, { waist="Dynamic Belt" })
@@ -240,6 +295,9 @@ function init_gear_sets()
         body="Twilight Mail",
         ring2="Paguroidea Ring"
     })
+    sets.engaged.Yoichi.Reraise = set_combine(sets.engaged.Reraise, {
+        ammo=gear.RAarrow
+    })
 
 	sets.engaged.Acc.Reraise = set_combine(sets.engaged.Reraise, {
         hands="Miki. Gauntlets",
@@ -247,46 +305,73 @@ function init_gear_sets()
         feet="Whirlpool Greaves", 
         waist="Dynamic Belt"
     })
+    sets.engaged.Yoichi.Acc.Reraise = set_combine(sets.engaged.Acc.Reraise, {
+        ammo=gear.RAarrow
+    })
 		
 	-- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
 	-- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
+    
+    -- This set assumes Tsurumaru 4-hit
 	sets.engaged.Adoulin = {
         ammo="Paeapua",
-		head="Yaoyotl Helm",
-        neck="Asperity Necklace",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-		body="Wakido Domaru +1",
-        hands="Wakido Kote +1",
-        ring1="Rajas Ring",
-        ring2="K'ayres Ring",
-		back="Misuuchi kappa",
-        waist="Windbuffet Belt",
-        legs="Wakido Haidate +1",
-        feet="Sakonji Sune-ate +1" 
+		head="Yaoyotl Helm", -- 4
+        neck="Asperity Necklace", -- 3
+        ear1="Bladeborn Earring", -- 1 
+        ear2="Steelflash Earring", -- 1
+		body="Wakido Domaru +1", -- 7
+        hands="Wakido Kote +1", -- 5
+        ring1="Rajas Ring", -- 5
+        ring2="K'ayres Ring", -- 5
+		back="Misuuchi Kappa", -- 3
+        waist="Cetl Belt",
+        legs="Wakido Haidate +1", -- 7
+        feet="Sakonji Sune-ate +1" -- 8
     }
+    sets.engaged.Adoulin.Yoichi = set_combine(sets.engaged.Adoulin, {
+        ammo=gear.RAarrow
+    })
 	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin, {
 		body="Unkai Domaru +2",hands="Otronif Gloves",
 	    waist="Dynamic Belt",legs="Unkai Haidate +2",
         feet="Whirlpool Greaves"
+    })
+    sets.engaged.Adoulin.Yoichi.Acc = set_combine(sets.engaged.Adoulin.Acc, {
+        ammo=gear.RAarrow
     })
 	sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {
 		neck="Twilight Torque",
         ring1="Dark Ring",
 		back="Shadow Mantle"
     })
+	sets.engaged.Adoulin.Yoichi.PDT = set_combine(sets.engaged.Adoulin.PDT, {
+        ammo=gear.RAarrow
+    })
 
-	sets.engaged.Adoulin.STP = set_combine(sets.engaged.Adoulin, { back="Misuuchi Kappa" })
+	sets.engaged.Adoulin.Multi = set_combine(sets.engaged.Adoulin, { 
+        ammo="Paeapua",
+        waist="Windbuffet Belt"
+    })
+	sets.engaged.Adoulin.Yoichi.Multi = sets.engaged.Adoulin.Yoichi
 
 	sets.engaged.Adoulin.Acc.PDT = set_combine(sets.engaged.Adoulin.PDT, { waist="Dynamic Belt" })
+	sets.engaged.Adoulin.Yoichi.Acc.PDT = set_combine(sets.engaged.Adoulin.Yoichi.PDT, { 
+        waist="Dynamic Belt" 
+    })
 
 	sets.engaged.Adoulin.Reraise = set_combine(sets.engaged.Adoulin, {
 		head="Twilight Helm",
 		body="Twilight Mail",
     })
+    sets.engaged.Adoulin.Yoichi.Reraise = set_combine(sets.engaged.Adoulin.Reraise, {
+        ammo=gear.RAarrow
+    })
 	sets.engaged.Adoulin.Acc.Reraise = set_combine(sets.engaged.Adoulin.Acc, {
 		head="Twilight Helm",
 		body="Twilight Mail"
+    })
+    sets.engaged.Adoulin.Yoichi.Acc.Reraise = set_combine(sets.engaged.Adoulin.Acc.Reraise, {
+        ammo=gear.RAarrow
     })
 
 	sets.buff.Sekkanoki = {hands="Unkai Kote +1"}
@@ -436,6 +521,7 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
 	state.CombatForm = get_combat_form()
+	state.CombatWeapon = get_combat_weapon()
     -- may need to check for seign/TE here
 end
 
@@ -447,6 +533,11 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+function get_combat_weapon()
+    if player.equipment.range == 'Yoichinoyumi' then
+        return 'Yoichi'
+    end
+end
 
 function get_combat_form()
 	if areas.Adoulin:contains(world.area) and buffactive.ionis then
