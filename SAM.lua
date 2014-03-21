@@ -97,19 +97,60 @@ function init_gear_sets()
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {legs="Mikinaak Cuisses"})
 
-	sets.precast.WS.Yoichi = set_combine(sets.precast.WS, {ammo="Demo Arrow"})
+	sets.precast.WS['Namas Arrow'] = {
+        ammo=gear.RAarrow,
+        head="Lithelimb Cap",
+        neck="Aqua Gorget",
+        ear1="Flame Pearl",
+        ear2="Flame Pearl",
+        body="Phorcys Korazin",
+        hands="Unkai Kote +2",
+        back="Buquwik Cape",
+        ring1="Rajas Ring",
+        ring2="Pyrosoul Ring",
+        waist="Light Belt",
+        legs="Wakido Haidate +1",
+        feet="Wakido Sune-ate"
+    }
+    sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.Yoichi.WS, {
+        head="Sakonji Kabuto +1"
+    })
+    sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
+        neck="Breeze Gorget"
+    })
+    sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
+        head="Sakonji Kabuto +1"
+    })
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {neck="Aqua Gorget", waist="Light Belt"})
-	sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS.Acc, {})
+	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
+        neck="Aqua Gorget", 
+        waist="Light Belt"
+    })
+	sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS['Tachi: Fudo'])
 	sets.precast.WS['Tachi: Fudo'].Mod = set_combine(sets.precast.WS['Tachi: Fudo'], {})
 
-	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {neck="Breeze Gorget"})
-	sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS.Acc, {neck="Breeze Gorget"})
-	sets.precast.WS['Tachi: Shoha'].Mod = set_combine(sets.precast.WS['Tachi: Shoha'], {waist="Thunder Belt"})
 
-	sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {neck="Snow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",})
-	sets.precast.WS['Tachi: Rana'].Acc = set_combine(sets.precast.WS.Acc, {neck="Snow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring",})
+	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
+        neck="Breeze Gorget"
+    })
+	sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS.Acc, {
+        neck="Breeze Gorget"
+    })
+	sets.precast.WS['Tachi: Shoha'].Mod = set_combine(sets.precast.WS['Tachi: Shoha'], {
+        waist="Thunder Belt"
+    })
+
+	sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {
+        neck="Snow Gorget",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring"
+    })
+	sets.precast.WS['Tachi: Rana'].Acc = set_combine(sets.precast.WS.Acc, {
+        neck="Snow Gorget",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring"
+    })
 	sets.precast.WS['Tachi: Rana'].Mod = set_combine(sets.precast.WS['Tachi: Rana'], {waist="Snow Belt"})
 
 	sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Flame Gorget",waist="Light Belt"})
@@ -221,7 +262,10 @@ function init_gear_sets()
     })
 
 	sets.engaged.Yoichi = set_combine(sets.engaged, { 
-		ammo=gear.RAarrow
+		ammo=gear.RAarrow,
+        ear1="Trux Earring",
+        ear2="Brutal Earring",
+        waist="Cetl Belt"
     })
     -- holding off on this until I get JSE back
     sets.engaged.Yoichi.STP = sets.engaged.Yoichi
