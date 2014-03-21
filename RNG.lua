@@ -159,7 +159,7 @@
                 hands="Sigyn's Bazubands",
                 ring1="Rajas Ring",
                 ring2="Paguroidea Ring",
-                back="Lutian Cape",
+                back="Shadow Mantle",
                 waist="Scout's Belt",
                 legs="Nahtirah Trousers",
                 feet="Orion Socks +1"
@@ -204,7 +204,8 @@
             sets.midcast.Ear = set_combine(sets.engaged, sets.earring)
 
             sets.midcast.RangedAttack = set_combine(sets.midcast.Ear, {
-                ring2="Hajduk Ring",
+                ring2="Paqichikaji Ring",
+                back="Lutian Cape",
                 legs="Aetosaur Trousers +1"
             })
                    
