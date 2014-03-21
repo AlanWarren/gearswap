@@ -26,7 +26,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-	options.OffenseModes = {'Normal', 'Acc', 'STP'}
+	options.OffenseModes = {'Normal', 'Acc', 'Multi'}
 	options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
 	options.WeaponskillModes = {'Normal', 'Acc', 'Att', 'Mod'}
 	options.CastingModes = {'Normal'}
@@ -235,30 +235,31 @@ function init_gear_sets()
 	
 	-- Normal melee group 
     -- 4-hit
-    -- Tsurumaru = 49 stp w/ ionis 
-    -- Anahera = 52 stp anywhere 
-	sets.engaged = { -- 46 stp / 52 with bloodrain
-        ammo="Paeapua",
-		head="Yaoyotl Helm",
-        neck="Asperity Necklace",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-		body="Wakido Domaru +1",
-        hands="Wakido Kote +1",
-        ring1="Rajas Ring",
-        ring2="K'ayres Ring",
-		back="Atheling Mantle",
+    -- Tsurumaru needs 49 stp w/ ionis 
+    -- Anahera needs 52 stp anywhere 
+    
+    -- I generally use Anahera outside of Adoulin areas, so this set aims for 52 STP (including +5 from weapon)
+	sets.engaged = { -- 54 stp with Anahera
+        ammo="Hagneia Stone", -- 3
+		head="Yaoyotl Helm", -- 4
+        neck="Asperity Necklace", -- 3
+        ear1="Bladeborn Earring", -- 1
+        ear2="Steelflash Earring", -- 1
+		body="Wakido Domaru +1", --7
+        hands="Wakido Kote +1",-- 5
+        ring1="Rajas Ring", -- 5
+        ring2="K'ayres Ring", -- 5
+		back="Atheling Mantle", 
         waist="Windbuffet Belt",
-        legs="Wakido Haidate +1",
-        feet="Sakonji Sune-ate +1"
+        legs="Wakido Haidate +1", -- 7
+        feet="Sakonji Sune-ate +1" -- 8
     }
 
 	sets.engaged.Acc = set_combine(sets.engaged, { 
         neck="Justice Torque", 
         hands="Miki. Gauntlets",
         feet="Whirlpool Greaves", 
-        waist="Dynamic Belt", 
-        legs="Unkai Haidate +2"
+        waist="Dynamic Belt"
     })
 
 	sets.engaged.Yoichi = set_combine(sets.engaged, { 
@@ -267,12 +268,13 @@ function init_gear_sets()
         ear2="Brutal Earring",
         waist="Cetl Belt"
     })
-    -- holding off on this until I get JSE back
-    sets.engaged.Yoichi.STP = sets.engaged.Yoichi
+    sets.engaged.Yoichi.Multi = sets.engaged.Yoichi
     
-	sets.engaged.STP = set_combine(sets.engaged, { 
-        ammo="Hagneia Stone",
-        back="Misuuchi Kappa"
+	sets.engaged.Multi = set_combine(sets.engaged, { 
+        ammo="Paeapua",
+        head="Quauhpilli Helm",
+        ear1="Trux Earring",
+        ear2="Brutal Earring"
     })
 
 	sets.engaged.PDT = set_combine(sets.engaged, { 
@@ -282,7 +284,7 @@ function init_gear_sets()
         back="Shadow Mantle",
         feet="Otronif boots"
     })
-    sets.engaged.Yoichi.STP = set_combine(sets.engaged.PDT,  {
+    sets.engaged.Yoichi.PDT = set_combine(sets.engaged.PDT,  {
         ammo=gear.RAarrow
     })
 
@@ -309,20 +311,22 @@ function init_gear_sets()
 		
 	-- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
 	-- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
+    
+    -- This set assumes Tsurumaru 4-hit
 	sets.engaged.Adoulin = {
         ammo="Paeapua",
-		head="Yaoyotl Helm",
-        neck="Asperity Necklace",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-		body="Wakido Domaru +1",
-        hands="Wakido Kote +1",
-        ring1="Rajas Ring",
-        ring2="K'ayres Ring",
-		back="Misuuchi Kappa",
-        waist="Windbuffet Belt",
-        legs="Wakido Haidate +1",
-        feet="Sakonji Sune-ate +1" 
+		head="Yaoyotl Helm", -- 4
+        neck="Asperity Necklace", -- 3
+        ear1="Bladeborn Earring", -- 1 
+        ear2="Steelflash Earring", -- 1
+		body="Wakido Domaru +1", -- 7
+        hands="Wakido Kote +1", -- 5
+        ring1="Rajas Ring", -- 5
+        ring2="K'ayres Ring", -- 5
+		back="Misuuchi Kappa", -- 3
+        waist="Cetl Belt",
+        legs="Wakido Haidate +1", -- 7
+        feet="Sakonji Sune-ate +1" -- 8
     }
     sets.engaged.Adoulin.Yoichi = set_combine(sets.engaged.Adoulin, {
         ammo=gear.RAarrow
@@ -344,9 +348,11 @@ function init_gear_sets()
         ammo=gear.RAarrow
     })
 
-	sets.engaged.Adoulin.STP = set_combine(sets.engaged.Adoulin, { ammo="Hagneia Stone")
-    -- waiting for JSE cape
-	sets.engaged.Adoulin.Yoichi.STP = sets.engaged.Adoulin.Yoichi
+	sets.engaged.Adoulin.Multi = set_combine(sets.engaged.Adoulin, { 
+        ammo="Paeapua",
+        waist="Windbuffet Belt"
+    })
+	sets.engaged.Adoulin.Yoichi.Multi = sets.engaged.Adoulin.Yoichi
 
 	sets.engaged.Adoulin.Acc.PDT = set_combine(sets.engaged.Adoulin.PDT, { waist="Dynamic Belt" })
 	sets.engaged.Adoulin.Yoichi.Acc.PDT = set_combine(sets.engaged.Adoulin.Yoichi.PDT, { 
