@@ -254,7 +254,7 @@
             sets.precast.WS.Acc = set_combine(sets.precast.WS, {
                hands="Sigyn's Bazubands",
                ring1="Hajduk Ring",
-               ring2="Bellona's Ring",
+               ring2="Paqichikaji Ring",
                legs="Orion Braccae +1",
                back="Lutian Cape"
             })
