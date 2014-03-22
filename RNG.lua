@@ -64,7 +64,7 @@
             binds_on_load()
      
             send_command('bind f9 gs c cycle RangedMode')
-            send_command('bind ^f9 gs c cycle OffenseMode')
+            send_command('bind ^f9 gs c cycle DefenseMode')
             send_command('bind !f9 gs c cycle WeaponskillMode')
     end
 
@@ -114,6 +114,7 @@
             sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
             sets.precast.JA['Velocity Shot'] = {body="Sylvan Caban +2"}
             sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
+            sets.precast.JA['Eagle Eye Shot'] = {feet="Scout's Braccae +2"}
 
             sets.STPEarring = {ear2="Tripudio earring"}
             sets.NightEarring = {ear2="Fenrir's earring"}
