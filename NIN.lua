@@ -591,33 +591,43 @@ function determine_haste_group()
 	classes.CustomMeleeGroups:clear()
 	
 	if buffactive.embrava and (buffactive.march == 2 or (buffactive.march and buffactive.haste)) then
-		classes.CustomMeleeGroups:append('MaxHaste')
+	    add_to_chat(121,'Max Haste Mode! - Embrava + BRD Songs + Haste')
+        if buffactive.madrigal then
+		    classes.CustomMeleeGroups:append('MaxHaste')
+        else
+		    classes.CustomMeleeGroups:append('MaxHaste')
+        end
 	elseif buffactive.march == 2 and buffactive.haste then
-        if buffactive.madrigal != 0 then
+	    add_to_chat(121,'Max Haste Mode! - BRD Songs + Haste')
+        if buffactive.madrigal then
             classes.CustomMeleeGroups:append('MaxHasteMad')
         else
 		    classes.CustomMeleeGroups:append('MaxHaste')
         end
 	elseif buffactive.embrava and (buffactive.haste or buffactive.march) then
-        if buffactive.madrigal != 0 then
+	    add_to_chat(121,'Embrava Haste Mode! - Embrava + BRD Songs OR Haste')
+        if buffactive.madrigal then
 		    classes.CustomMeleeGroups:append('EmbravaHasteMad')
         else
 		    classes.CustomMeleeGroups:append('EmbravaHaste')
         end
-	elseif buffactive.march == 1 and buffactive.haste and buffactive['haste samba'] then
-        if buffactive.madrigal != 0 then
+	elseif buffactive.march == 1 and buffactive.haste or buffactive['haste samba'] then
+	    add_to_chat(121,'High Haste Mode! - March 1 AND Haste OR Samba')
+        if buffactive.madrigal then
+		    classes.CustomMeleeGroups:append('HighHasteMad')
+        else
+		    classes.CustomMeleeGroups:append('HighHaste')
+        end
+	elseif buffactive.march == 2  or buffactive.haste and buffactive.march == 1 then
+	    add_to_chat(121,'High Haste Mode! - March 2 OR haste spell + march 1')
+        if buffactive.madrigal then
 		    classes.CustomMeleeGroups:append('HighHasteMad')
         else
 		    classes.CustomMeleeGroups:append('HighHaste')
         end
 	elseif buffactive.march == 2 then
-        if buffactive.madrigal != 0 then
-		    classes.CustomMeleeGroups:append('HighHasteMad')
-        else
-		    classes.CustomMeleeGroups:append('HighHaste')
-        end
-	elseif buffactive.march == 2 then
-        if buffactive.madrigal != 0 then
+	    add_to_chat(121,'High Haste Mode! - March 2')
+        if buffactive.madrigal then
 		    classes.CustomMeleeGroups:append('HighHasteMad')
         else
 		    classes.CustomMeleeGroups:append('HighHaste')
