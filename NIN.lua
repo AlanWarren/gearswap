@@ -114,6 +114,7 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
         head="Uk'uxkaj Cap",
         neck="Shadow gorget",
+        body="Iga Ningi +2",
 		ring1="Stormsoul Ring",
         legs="Nahtirah Trousers",
         waist="Soil belt"
