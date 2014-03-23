@@ -319,6 +319,10 @@ function init_gear_sets()
 		head="Felistris Mask",
         neck="Asperity Necklace"
     })
+    sets.engaged.HighHasteMad = set_combine(sets.engaged.HighHaste, {
+        ear1="Suppanomimi",
+        ear2="Kuwunga Earring"
+    })
 	sets.engaged.Acc.HighHaste = set_combine(sets.engaged.HighHaste, {
 		head="Whirlpool Mask",
         neck="Rancor Collar",
@@ -326,12 +330,20 @@ function init_gear_sets()
         legs="Hachiya Hakama",
 		back="Yokaze Mantle"
     })
+	sets.engaged.Acc.HighHasteMad = set_combine(sets.engaged.Acc.HighHaste, {
+        ear1="Suppanomimi",
+        ear2="Kuwunga Earring"
+    })
 	sets.engaged.Evasion.HighHaste = set_combine(sets.engaged.HighHaste, {
 		head="Felistris Mask",
 		back="Yokaze Mantle",
         feet="Otronif Boots"
     })
 
+	sets.engaged.Evasion.HighHasteMad = set_combine(sets.engaged.Evasion.HighHaste, {
+        ear1="Suppanomimi",
+        ear2="Kuwunga Earring"
+    })
 	sets.engaged.Acc.Evasion.HighHaste = set_combine(sets.engaged.Acc.HighHaste, {
         feet="Otronif Boots"
     })
@@ -348,6 +360,10 @@ function init_gear_sets()
         waist="Windbuffet Belt",
         legs="Mochizuki Hakama",
     })
+	sets.engaged.EmbravaHasteMad = set_combine(sets.engaged.EmbravaHaste, {
+        ear1="Trux Earring",
+        ear2="Kuwunga Earring"
+    })
 	sets.engaged.Acc.EmbravaHaste = set_combine(sets.engaged.EmbravaHaste, {
 		head="Whirlpool Mask",
         hands="Otronif Gloves",
@@ -357,11 +373,17 @@ function init_gear_sets()
 		back="Yokaze Mantle",
         waist="Hurch'lan Sash"
     })
+	sets.engaged.Acc.EmbravaHasteMad = set_combine(sets.engaged.Acc.EmbravaHaste, 
+            sets.engaged.EmbravaHasteMad)
+
 	sets.engaged.Evasion.EmbravaHaste = set_combine(sets.engaged.EmbravaHaste, {
 		body="Hachiya Chainmail +1",
 		back="Yokaze Mantle",
         feet="Otronif Boots"
     })
+	sets.engaged.Evasion.EmbravaHaste = set_combine(sets.engaged.Evasion.EmbravaHaste, 
+            sets.engaged.EmbravaHasteMad)
+
 	sets.engaged.Acc.Evasion.EmbravaHaste = set_combine(sets.engaged.Acc.EmbravaHaste, {
 		body="Manibozho Jerkin"
     })
@@ -373,6 +395,10 @@ function init_gear_sets()
 	sets.engaged.MaxHaste = set_combine(sets.engaged.EmbravaHaste, {
         legs="Hachiya Hakama"
     })
+	sets.engaged.MaxHasteMad = set_combine(sets.engaged.MaxHaste, {
+        ear1="Trux Earring",
+        ear2="Kuwunga Earring"
+    })
 	sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Whirlpool Mask",
         neck="Rancor Collar",
@@ -381,11 +407,16 @@ function init_gear_sets()
         back="Yokaze Mantle",
         waist="Hurch'lan Sash"
     })
+	sets.engaged.Acc.MaxHasteMad = set_combine(sets.engaged.Acc.MaxHaste, 
+            sets.engaged.MaxHasteMad)
+
 	sets.engaged.Evasion.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         body="Manibozho Jerkin",
         back="Yokaze Mantle",
         feet="Otronif Boots"
     })
+	sets.engaged.Evasion.MaxHasteMad = set_combine(sets.engaged.Evasion.MaxHaste, 
+            sets.engaged.MaxHasteMad)
 	sets.engaged.Acc.Evasion.MaxHaste = set_combine(sets.engaged.Evasion.MaxHaste, {
         head="Whirlpool Mask",
         waist="Hurch'lan Sash",
@@ -562,15 +593,35 @@ function determine_haste_group()
 	if buffactive.embrava and (buffactive.march == 2 or (buffactive.march and buffactive.haste)) then
 		classes.CustomMeleeGroups:append('MaxHaste')
 	elseif buffactive.march == 2 and buffactive.haste then
-		classes.CustomMeleeGroups:append('MaxHaste')
+        if buffactive.madrigal != 0 then
+            classes.CustomMeleeGroups:append('MaxHasteMad')
+        else
+		    classes.CustomMeleeGroups:append('MaxHaste')
+        end
 	elseif buffactive.embrava and (buffactive.haste or buffactive.march) then
-		classes.CustomMeleeGroups:append('EmbravaHaste')
+        if buffactive.madrigal != 0 then
+		    classes.CustomMeleeGroups:append('EmbravaHasteMad')
+        else
+		    classes.CustomMeleeGroups:append('EmbravaHaste')
+        end
 	elseif buffactive.march == 1 and buffactive.haste and buffactive['haste samba'] then
-		classes.CustomMeleeGroups:append('HighHaste')
+        if buffactive.madrigal != 0 then
+		    classes.CustomMeleeGroups:append('HighHasteMad')
+        else
+		    classes.CustomMeleeGroups:append('HighHaste')
+        end
 	elseif buffactive.march == 2 then
-		classes.CustomMeleeGroups:append('HighHaste')
+        if buffactive.madrigal != 0 then
+		    classes.CustomMeleeGroups:append('HighHasteMad')
+        else
+		    classes.CustomMeleeGroups:append('HighHaste')
+        end
 	elseif buffactive.march == 2 then
-		classes.CustomMeleeGroups:append('HighHaste')
+        if buffactive.madrigal != 0 then
+		    classes.CustomMeleeGroups:append('HighHasteMad')
+        else
+		    classes.CustomMeleeGroups:append('HighHaste')
+        end
 	end
 end
 
