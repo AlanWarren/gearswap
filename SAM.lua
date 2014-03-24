@@ -118,6 +118,7 @@ function init_gear_sets()
         head="Sakonji Kabuto"
     })
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
+        head="Sakonji Kabuto",
         neck="Breeze Gorget",
         body="Kyujutsugi",
         ring2="Stormsoul Ring"
