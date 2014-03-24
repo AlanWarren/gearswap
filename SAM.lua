@@ -118,7 +118,8 @@ function init_gear_sets()
         head="Sakonji Kabuto"
     })
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
-        neck="Breeze Gorget"
+        neck="Breeze Gorget",
+        ring2="Stormsoul Ring"
     })
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
         head="Sakonji Kabuto +1"
@@ -548,7 +549,7 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_weapon()
-    if player.equipment.range == 'Yoichinoyumi' then
+    if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Speleogen bow' then
         return 'Yoichi'
     end
 end
