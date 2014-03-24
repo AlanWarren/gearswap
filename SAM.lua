@@ -15,6 +15,8 @@ end
 function job_setup()
 	state.CombatForm = get_combat_form()
 	state.CombatWeapon = get_combat_weapon()
+    -- determine special equip 
+	determine_brd_songs()
 	
 	state.Buff.Sekkanoki = buffactive.sekkanoki or false
 	state.Buff.Sengikori = buffactive.sengikori or false
@@ -112,8 +114,8 @@ function init_gear_sets()
         legs="Wakido Haidate +1",
         feet="Wakido Sune-ate"
     }
-    sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.Yoichi.WS, {
-        head="Sakonji Kabuto +1"
+    sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'], {
+        head="Sakonji Kabuto"
     })
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
         neck="Breeze Gorget"
@@ -255,6 +257,11 @@ function init_gear_sets()
         feet="Sakonji Sune-ate +1" -- 8
     }
 
+    sets.engaged.MarchMad = set_combine(sets.engaged, {
+        ear1="Brutal Earring", -- 1
+        ear2="Kuwunga Earring", -- 1
+     })
+
 	sets.engaged.Acc = set_combine(sets.engaged, { 
         neck="Justice Torque", 
         hands="Miki. Gauntlets",
@@ -328,17 +335,27 @@ function init_gear_sets()
         legs="Wakido Haidate +1", -- 7
         feet="Sakonji Sune-ate +1" -- 8
     }
+
+    sets.engaged.Adoulin.MarchMad = set_combine(sets.engaged.Adoulin, {
+        head="Sakonji Kabuto",
+        ear1="Brutal Earring",
+        ear2="Kuwunga Earring"
+    })
+
     sets.engaged.Adoulin.Yoichi = set_combine(sets.engaged.Adoulin, {
         ammo=gear.RAarrow
     })
+
 	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin, {
 		body="Unkai Domaru +2",hands="Otronif Gloves",
 	    waist="Dynamic Belt",legs="Unkai Haidate +2",
         feet="Whirlpool Greaves"
     })
+
     sets.engaged.Adoulin.Yoichi.Acc = set_combine(sets.engaged.Adoulin.Acc, {
         ammo=gear.RAarrow
     })
+
 	sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {
 		neck="Twilight Torque",
         ring1="Dark Ring",
@@ -491,20 +508,16 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-	if state.Buff[buff] ~= nil then
-	    state.Buff[buff] = gain
-
+	if S{'madrigal','march'}:contains(buff:lower()) then
+		determine_brd_songs()
+		handle_equipping_gear(player.status)
+	elseif state.Buff[buff] ~= nil then
+		state.Buff[buff] = gain
+        -- if seign or TE is up, don't swap
         if not seigan_thirdeye_active() then
             handle_equipping_gear(player.status)
         end
 	end
-    --if state.Buff['Third Eye'] then
-    --    if gain then
-    --        send_command('@wait .5;gs disable legs')
-    --    else
-    --        enable('legs')
-    --    end
-    --end
 
 end
 
@@ -522,7 +535,7 @@ end
 function job_update(cmdParams, eventArgs)
 	state.CombatForm = get_combat_form()
 	state.CombatWeapon = get_combat_weapon()
-    -- may need to check for seign/TE here
+    determine_brd_songs()
 end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
@@ -549,6 +562,13 @@ function seigan_thirdeye_active()
 	return state.Buff['Seigan'] or state.Buff['Third Eye']
 end
 
+function determine_brd_songs()
+	classes.CustomMeleeGroups:clear()
+	if buffactive.madrigal and buffactive.march then
+	    add_to_chat(121,'Mad + March Active - Using Special Earrings!')
+		classes.CustomMeleeGroups:append('MarchMad')
+	end
+end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
