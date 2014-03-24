@@ -399,6 +399,7 @@ function init_gear_sets()
 	sets.buff['Meikyou Shisui'] = {feet="Sakonji Sune-ate +1"}
 
 	sets.thirdeye = {legs="Sakonji Haidate"}
+    sets.bow = {ammo=gear.RAarrow}
 end
 
 
@@ -486,6 +487,9 @@ function customize_melee_set(meleeSet)
 		    meleeSet = set_combine(meleeSet, sets.thirdeye)
         end
 	end
+    if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Speleogen bow' then
+        meleeSet = set_combine(meleeSet, sets.bow)
+    end
 	return meleeSet
 end
 
