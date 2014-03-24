@@ -302,7 +302,7 @@ function init_gear_sets()
         body="Twilight Mail",
         ring2="Paguroidea Ring"
     })
-    sets.engaged.Yoichi.Reraise = set_combine(sets.engaged.Reraise, {
+    sets.engaged.Reraise.Yoichi = set_combine(sets.engaged.Reraise, {
         ammo=gear.RAarrow
     })
 
@@ -312,7 +312,8 @@ function init_gear_sets()
         feet="Whirlpool Greaves", 
         waist="Dynamic Belt"
     })
-    sets.engaged.Yoichi.Acc.Reraise = set_combine(sets.engaged.Acc.Reraise, {
+
+    sets.engaged.Acc.Reraise.Yoichi = set_combine(sets.engaged.Acc.Reraise, {
         ammo=gear.RAarrow
     })
 		
