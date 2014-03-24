@@ -119,6 +119,7 @@ function init_gear_sets()
     })
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
         neck="Breeze Gorget",
+        body="Kyujutsugi",
         ring2="Stormsoul Ring"
     })
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
