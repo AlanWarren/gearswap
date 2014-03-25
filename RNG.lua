@@ -507,9 +507,9 @@
     function determine_snapshot_group()
         classes.CustomMeleeGroups:clear()
 
-		--if buffactive["Courser's Roll"] then
-		--    classes.CustomMeleeGroups:append('RapidShot')
-		--end
+		if buffactive["Courser's Roll"] then
+		    classes.CustomMeleeGroups:append('RapidShot')
+		end
     end
     -------------------------------------------------------------------------------------------------------------------
     -- User code that supplements self-commands.
