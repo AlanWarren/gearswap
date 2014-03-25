@@ -116,7 +116,7 @@ function init_gear_sets()
 	sets.precast.WS = {
 		head="Felistris Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
 		body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Cetl Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
+		back="Atheling Mantle",waist="Cetl Belt",legs="Nahtirah Trousers",feet="Assassin's Poulaines +2"}
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -228,17 +228,39 @@ function init_gear_sets()
 	
 	-- Normal melee group
 	sets.engaged = {
-		head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Thaumas Coat",hands="Plunderer's Armlets",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Nusku's Sash",legs="Manibozho Brais",feet="Manibozho Boots"}
-	sets.engaged.Acc = {
-		head="Whirlpool Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Thaumas Coat",hands="Plunderer's Armlets",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Hurch'lan Sash",legs="Manibozho Brais",feet="Manibozho Boots"}
+		head="Felistris Mask",
+        neck="Asperity Necklace",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+		body="Thaumas Coat",
+        hands="Plunderer's Armlets",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+		back="Atheling Mantle",
+        waist="Nusku's Sash",
+        legs="Manibozho Brais",
+        feet="Assassin's Poulaines +2"
+    }
+	sets.engaged.Acc = set_combine(sets.engaged, {
+		head="Whirlpool Mask",
+        neck="Rancor Collar",
+        waist="Hurch'lan Sash",
+        feet="Manibozho Boots"
+    })
 	sets.engaged.iLvl = {
-		head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Thaumas Coat",hands="Plunderer's Armlets",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Nusku's Sash",legs="Manibozho Brais",feet="Iuitl Gaiters"}
+		head="Felistris Mask",
+        neck="Asperity Necklace",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+		body="Thaumas Coat",
+        hands="Plunderer's Armlets",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+		back="Atheling Mantle",
+        waist="Nusku's Sash",
+        legs="Manibozho Brais",
+        feet="Iuitl Gaiters"
+    }
 	sets.engaged.Evasion = {
 		head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
 		body="Manibozho Jerkin",hands="Plunderer's Armlets",ring1="Rajas Ring",ring2="Epona's Ring",
