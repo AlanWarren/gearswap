@@ -611,7 +611,7 @@ function determine_haste_group()
         else
 		    classes.CustomMeleeGroups:append('EmbravaHaste')
         end
-	elseif buffactive.march == 1 and buffactive.haste or buffactive['haste samba'] then
+	elseif buffactive.march and (buffactive.haste or buffactive['haste samba']) then
 	    add_to_chat(121,'High Haste Mode! - March 1 AND Haste OR Samba')
         if buffactive.madrigal then
 		    classes.CustomMeleeGroups:append('HighHasteMad')
