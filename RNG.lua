@@ -71,7 +71,7 @@
     function job_setup()
         state.Buff.Camouflage = buffactive.camouflage or false
         state.Buff.Overkill = buffactive.overkill or false
-        --determine_snapshot_group()
+        determine_snapshot_group()
     end
      
     -- Called when this job file is unloaded (eg: job change)
@@ -462,6 +462,7 @@
      
     function job_status_change(newStatus, oldStatus, eventArgs)
           if newStatus == 'Engaged' then
+	   	      determine_snapshot_group()
               if state.Buff['Camouflage'] then
                   equip(sets.buff.Camouflage)
               elseif state.Buff['Overkill'] then
@@ -478,7 +479,7 @@
     -- gain == true if the buff was gained, false if it was lost.
     function job_buff_change(buff, gain)
 	    --if S{"courser's roll"}:contains(buff:lower()) then
-	    --	determine_snapshot_group()
+	   	determine_snapshot_group()
         if state.Buff[buff] ~= nil then
 	        state.Buff[buff] = gain
 	    end
