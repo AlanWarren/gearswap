@@ -12,7 +12,6 @@
     
     -- === My Modes ===
     -- 1) STP is a  4/hit with Annihilator, but sacrifices some racc/ratk to get there.
-    -- 2) DMG piles on STR / ratk without a care for racc. I use it in Abyssea mostly
     -- 3) Normal has a nice mixture of racc and stp for hard content. 
     -- 4) Racc is full blown racc. i.e. You're fighting VD MR and songs drop.  
     
@@ -99,7 +98,7 @@
             -- Options: Override default values
      
             options.OffenseModes = {'Normal', 'Melee'}
-            options.RangedModes = {'Normal', 'ACC', 'STP', 'DMG'}
+            options.RangedModes = {'Normal', 'ACC', 'STP' }
             options.DefenseModes = {'Normal', 'PDT'}
             options.WeaponskillModes = {'Normal', 'ACC'}
             options.PhysicalDefenseModes = {'PDT'}
@@ -124,6 +123,9 @@
             sets.earring = select_earring()
 
             select_default_macro_book()
+
+            snapshot_mode = { "Normal", "Rapid" }
+            snapshot_index = 1
            
             -- Idle Set (My 'base')
             sets.idle = {
@@ -165,6 +167,10 @@
                 legs="Nahtirah Trousers",
                 feet="Orion Socks +1"
             }
+            sets.engaged.Yoichinoyumi = set_combine(sets.engaged, {
+                hands="Manibozho Gloves",
+                feet="Arcadian Socks +1"
+            })
 
             sets.engaged.Melee = {
                 head="Whirlpool Mask",
@@ -192,46 +198,46 @@
             })
             sets.precast.RangedAttack.RapidShot = set_combine(sets.precast.RangedAttack, {
                 head="Orion Beret +1",
-                --body="Arcadian Jerkin",
                 feet="Arcadian Socks +1"
             })
 
-            --sets.precast.RangedAttack.DMG = set_combine(sets.precast.RangedAttack, {
-            --    legs="Nahtirah Trousers",
-            --    head="Orion Beret +1"
-            --})
             sets.midcast.Ear = {}
-            -- combine engaged set with our earring selection
             sets.midcast.Ear = set_combine(sets.engaged, sets.earring)
+
+            sets.midcast.Yoichinoyumi.Ear = {}
+            sets.midcast.Yoichinoyumi.Ear = set_combine(sets.engaged.Yoichinoyumi, sets.earring)
 
             sets.midcast.RangedAttack = set_combine(sets.midcast.Ear, {
                 ring2="Paqichikaji Ring",
                 back="Lutian Cape",
                 legs="Aetosaur Trousers +1"
             })
-                   
             sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack, {
                 neck="Huani Collar",
                 ring1="Hajduk Ring",
                 ring2="Paqichikaji Ring",
                 legs="Aetosaur Trousers +1"
             })
-                   
-            sets.midcast.RangedAttack.DMG = set_combine(sets.midcast.RangedAttack, {
-                ear1="Flame Pearl",
-                ear2="Flame Pearl",
-                body="Sylvan Caban +2",
-                ring2="Pyrosoul Ring",
-                back="Buquwik Cape",
-                legs="Nahtirah Trousers",
-                feet="Arcadian Socks +1"
-            })
-
             sets.midcast.RangedAttack.STP = set_combine(sets.midcast.RangedAttack, {
                 back="Sylvan Chlamys",
-                --hands="Sylvan Glovelettes +2",
                 ear2="Tripudio earring",
                 legs="Aetosaur Trousers +1"
+            })
+            
+            -- Yoichi
+            sets.midcast.RangedAttack.Yoichinoyumi = set_combine(sets.midcast.Yoichinoyumi.Ear, {
+                ring2="Paqichikaji Ring",
+                back="Sylvan Chlamys",
+                legs="Aetosaur Trousers +1",
+            })
+            sets.midcast.RangedAttack.Yoichinoyumi.Acc = set_combine(sets.midcast.RangedAttack.Yoichinoyumi, {
+                neck="Huani Collar",
+                ring1="Hajduk Ring",
+                ring2="Paqichikaji Ring",
+                legs="Aetosaur Trousers +1"
+            })
+            sets.midcast.RangedAttack.Yoichinoyumi.STP = set_combine(sets.midcast.RangedAttack.Yoichinoyumi, {
+               hands="Sylvan Glovelettes +2"
             })
                    
             -- Weaponskill sets
@@ -239,50 +245,38 @@
             sets.precast.WS = {
                 head="Arcadian Beret +1",
                 neck="Sylvan Scarf",
-                ear1="Flame pearl",
-                ear2="Tripudio Earring",
+                ear1="Flame Pearl",
+                ear2="Flame Pearl",
                 body="Kyujutsugi",
                 hands="Arcadian Bracers +1",
                 ring1="Rajas Ring",
                 ring2="Pyrosoul Ring",
-                back="Sylvan Chlamys",
+                back="Buquwik Cape",
                 waist="Scout's Belt",
                 legs="Nahtirah Trousers",
                 feet="Orion Socks +1"
             }
            
             sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-               hands="Sigyn's Bazubands",
-               ring1="Hajduk Ring",
-               ring2="Paqichikaji Ring",
                legs="Orion Braccae +1",
                back="Lutian Cape"
             })
 
             sets.precast.WS.STP = set_combine(sets.precast.WS, {
-               body="Kyujutsugi",
+               ear2="Tripudio Earring",
                back="Sylvan Chlamys"
             })
-            sets.precast.WS.DMG = set_combine(sets.precast.WS, {
-               head="Orion Beret +1",
-               feet="Arcadian Socks +1"
-            })
+
             -- CORONACH
             sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
                neck="Breeze Gorget",
                waist="Thunder Belt"
             })
-            sets.precast.WS['Coronach'].STP = set_combine(sets.precast.WS.STP, {
-               neck="Breeze Gorget",
-               waist="Thunder Belt"
-            })
-            sets.precast.WS['Coronach'].DMG = set_combine(sets.precast.WS.DMG, {
-               neck="Breeze Gorget",
-               waist="Thunder Belt"
-            })
+            sets.precast.WS['Coronach'].STP = set_combine(sets.precast.WS.STP, sets.precast.WS['Coronach'])
             sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, {
-               neck="Breeze Gorget",
-               waist="Thunder Belt"
+                neck="Breeze Gorget",
+                waist="Thunder Belt",
+                hands="Sigyn's Bazubands"
             })
 
             -- LAST STAND
@@ -292,32 +286,87 @@
                waist="Light Belt",
                feet="Arcadian Socks +1"
             })
-            sets.precast.WS['Last Stand'].STP = set_combine(sets.precast.WS.STP, {
-               neck="Aqua Gorget",
-               ring2="Stormsoul Ring",
-               waist="Light Belt",
-               feet="Arcadian Socks +1"
-            })
-            sets.precast.WS['Last Stand'].DMG = set_combine(sets.precast.WS.DMG, {
-               ring2="Stormsoul Ring",
-               waist="Light Belt",
-               feet="Arcadian Socks +1"
-            })
+            sets.precast.WS['Last Stand'].STP = set_combine(sets.precast.WS.STP, sets.precast.WS['Last Stand'])
             sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS.Acc, {
-               ring2="Stormsoul Ring",
-               neck="Aqua Gorget",
-               waist="Light Belt"
+                neck="Aqua Gorget",
+                ring2="Stormsoul Ring",
+                waist="Light Belt",
+                hands="Sigyn's Bazubands"
+            })
+            
+            -- DETONATOR
+            sets.precast.WS['Detonator'] = set_combine(sets.precast.WS, {
+               neck="Flame Gorget",
+               waist="Light Belt",
+               feet="Arcadian Socks +1"
+            })
+            sets.precast.WS['Detonator'].STP = set_combine(sets.precast.WS.STP, sets.precast.WS['Detonator'])
+            sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS.Acc, {
+               neck="Flame Gorget",
+               waist="Light Belt",
+               feet="Arcadian Socks +1",
+               hands="Sigyn's Bazubands"
             })
 
-            sets.precast.WS['Sidewinder'] = sets.precast.WS['Last Stand']
-            sets.precast.WS['Sidewinder'].STP = sets.precast.WS['Last Stand'].STP
-            sets.precast.WS['Sidewinder'].DMG = sets.precast.WS['Last Stand'].DMG
-            sets.precast.WS['Sidewinder'].Acc = sets.precast.WS['Last Stand'].Acc
+            -- BOW
 
-            sets.precast.WS['Refulgent Arrow'] = sets.precast.WS['Last Stand']
-            sets.precast.WS['Refulgent Arrow'].STP = sets.precast.WS['Last Stand'].STP
-            sets.precast.WS['Refulgent Arrow'].DMG = sets.precast.WS['Last Stand'].DMG
-            sets.precast.WS['Refulgent Arrow'].Acc = sets.precast.WS['Last Stand'].Acc
+            sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS, {
+                neck="Aqua Gorget",
+                waist="Light Belt",
+                back="Sylvan Chlamys",
+                feet="Arcadian Socks +1"
+            })
+            sets.precast.WS['Namas Arrow'].STP = set_combine(sets.precast.WS['Namas Arrow'], {
+                ear2="Tripudio Earring",
+                hands="Sylvan Glovelettes +2"
+            })
+            sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'], {
+                back="Lutian Cape",
+                ring2="Paqichikaji Ring",
+                legs="Orion Braccae +1"
+            })
+
+            sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
+                head="Uk'uxkaj Cap",
+                neck="Flame Gorget",
+                waist="Light Belt",
+                feet="Arcadian Socks +1",
+                back="Rancorous Mantle"
+            })
+            sets.precast.WS['Jishnu\'s Radiance'].STP = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
+                ear2="Tripudio Earring",
+                legs="Sylvan Bragues +2",
+                hands="Sylvan Glovelettes +2",
+                back="Sylvan Chlamys"
+            })
+
+            sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
+                back="Lutian Cape",
+                ring2="Paqichikaji Ring",
+                legs="Orion Braccae +1"
+            })
+
+            sets.precast.WS['Sidewinder'] = set_combine(sets.precast.WS, {
+                neck="Aqua Gorget",
+                waist="Light Belt",
+                hands="Arcadian Bracers +1",
+                back="Sylvan Chlamys",
+                feet="Arcadian Socks +1"
+            })
+            sets.precast.WS['Sidewinder'].STP = set_combine(sets.precast.WS['Sidewinder'], {
+                ring2="Tripudio Earring",
+                hands="Sylvan Glovelettes +2",
+                legs="Aetosaur Trousers +1"
+            })
+            sets.precast.WS['Sidewinder'].Acc = set_combine(sets.precast.WS['Sidewinder'], {
+                legs="Aetosaur Trousers +1",
+                hands="Manibozho Gloves",
+                back="Lutian Cape"
+            })
+
+            sets.precast.WS['Refulgent Arrow'] = sets.precast.WS['Sidewinder']
+            sets.precast.WS['Refulgent Arrow'].STP = sets.precast.WS['Sidewinder'].STP
+            sets.precast.WS['Refulgent Arrow'].Acc = sets.precast.WS['Sidewinder'].Acc
            
             -- Resting sets
             sets.resting = {}
@@ -468,6 +517,10 @@
               elseif state.Buff['Overkill'] then
                   equip(sets.buff.Overkill)
               end
+          else 
+              if state.Buff['Camouflage'] then
+                  equip(sets.buff.Camouflage)
+              end
           end
           if camo_active() or overkill_active() then
               eventArgs.handled = true
@@ -524,7 +577,7 @@
     -- Called by the 'update' self-command, for common needs.
     -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
     function job_update(cmdParams, eventArgs)
-     
+    	state.CombatWeapon = player.equipment.range
     end
      
     -- Job-specific toggles.
@@ -566,6 +619,8 @@
     function overkill_active()
     	return state.Buff['Overkill']
     end
+
+    function self_command
      
     -------------------------------------------------------------------------------------------------------------------
     -- Utility functions specific to this job.
