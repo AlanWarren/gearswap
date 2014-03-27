@@ -560,33 +560,6 @@ function select_movement()
 end
 
 function determine_haste_group()
-	-- We have three groups of DW in gear: Hachiya body/legs, Iga head + Nusku's Sash, and DW earrings
-	
-	-- Standard gear set reaches near capped delay with just Haste (77%-78%, depending on HQs)
-
-	-- For high haste, we want to be able to drop one of the 10% groups.
-	-- Basic gear hits capped delay (roughly) with:
-	-- 1 March + Haste
-	-- 2 March
-	-- Haste + Haste Samba
-	-- 1 March + Haste Samba
-	-- Embrava
-	
-	-- High haste buffs:
-	-- 2x Marches + Haste Samba == 19% DW in gear
-	-- 1x March + Haste + Haste Samba == 22% DW in gear
-	-- Embrava + Haste or 1x March == 7% DW in gear
-	
-	-- For max haste (capped magic haste + 25% gear haste), we can drop all DW gear.
-	-- Max haste buffs:
-	-- Embrava + Haste+March or 2x March
-	-- 2x Marches + Haste
-	
-	-- So we want four tiers:
-	-- Normal DW
-	-- 20% DW -- High Haste
-	-- 7% DW (earrings) - Embrava Haste (specialized situation with embrava and haste, but no marches)
-	-- 0 DW - Max Haste
 	
 	classes.CustomMeleeGroups:clear()
 	
@@ -611,15 +584,15 @@ function determine_haste_group()
         else
 		    classes.CustomMeleeGroups:append('EmbravaHaste')
         end
-	elseif buffactive.march and (buffactive.haste or buffactive['haste samba']) then
-	    add_to_chat(121,'High Haste Mode! - March 1 AND Haste OR Samba')
+	elseif buffactive.haste and buffactive.march == 1 then
+	    add_to_chat(121,'High Haste Mode! - 1 March + Haste Spell')
         if buffactive.madrigal then
 		    classes.CustomMeleeGroups:append('HighHasteMad')
         else
 		    classes.CustomMeleeGroups:append('HighHaste')
         end
-	elseif buffactive.march == 2  or buffactive.haste and buffactive.march == 1 then
-	    add_to_chat(121,'High Haste Mode! - March 2 OR haste spell + march 1')
+	elseif buffactive.march and (buffactive.haste or buffactive['haste samba']) then
+	    add_to_chat(121,'High Haste Mode! - March 1 AND Haste OR Samba')
         if buffactive.madrigal then
 		    classes.CustomMeleeGroups:append('HighHasteMad')
         else
