@@ -627,7 +627,7 @@
             snapshot_index = snapshot_index + 1
             if snapshot_index > #snapshot_index then 
                 snapshot_index = 1 
-                if next(classes.CustomMeleeGroups) != nil then
+                if next(classes.CustomMeleeGroups) ~= nil then
 		            classes.CustomMeleeGroups:remove(snapshot_mode[snapshot_index])
                 end
             end
