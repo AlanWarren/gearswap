@@ -124,9 +124,9 @@
 
             select_default_macro_book()
 
-            snapshot_mode = { "Normal", "Rapid" }
+            snapshot_mode = { "Normal", "RapidShot" }
             snapshot_index = 1
-           
+
             -- Idle Set (My 'base')
             sets.idle = {
                 head="Arcadian Beret +1",
@@ -196,6 +196,8 @@
                 waist="Impulse Belt",
                 feet="Wurrukatte Boots"
             })
+            -- we have a toggle for this in self_command()
+            sets.precast.RangedAttack.Normal = sets.precast.RangedAttack
             sets.precast.RangedAttack.RapidShot = set_combine(sets.precast.RangedAttack, {
                 head="Orion Beret +1",
                 feet="Arcadian Socks +1"
@@ -241,7 +243,6 @@
             })
                    
             -- Weaponskill sets
-           
             sets.precast.WS = {
                 head="Arcadian Beret +1",
                 neck="Sylvan Scarf",
@@ -562,7 +563,7 @@
         classes.CustomMeleeGroups:clear()
 
 		if buffactive["Courser's Roll"] then
-		    classes.CustomMeleeGroups:append('RapidShot')
+		    classes.CustomMeleeGroups:append(snapshot_mode[snapshot_index])
 		end
     end
     -------------------------------------------------------------------------------------------------------------------
@@ -620,7 +621,18 @@
     	return state.Buff['Overkill']
     end
 
-    function self_command
+    -- //gs c Toggle Snapshot Mode 
+    function self_command(command)
+        if command == 'Toggle Snapshot Mode' then
+            snapshot_index = snapshot_index + 1
+            if snapshot_index > #snapshot_index then 
+                snapshot_index = 1 
+		        classes.CustomMeleeGroups:remove(snapshot_mode[snapshot_index])
+            end
+		    classes.CustomMeleeGroups:append(snapshot_mode[snapshot_index])
+            windower.add_to_chat(8, 'Switching snapshot mode to ' .. snapshot_mode[snapshot_index])
+        end
+    end
      
     -------------------------------------------------------------------------------------------------------------------
     -- Utility functions specific to this job.
