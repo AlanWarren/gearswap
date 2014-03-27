@@ -314,119 +314,156 @@ function init_gear_sets()
         legs="Hachiya Hakama"
     })
 
-	-- Custom melee group: High Haste (~20% DW)
-	sets.engaged.HighHaste = set_combine(sets.engaged, {
+	-- Custom haste groups
+    --ammo="Qirmiz Tathlum",
+	--head="Iga Zukin +2",
+    --neck="Asperity Necklace",
+    --ear1="Dudgeon Earring",
+    --ear2="Heartseeker Earring",
+	--body="Hachiya Chainmail +1",
+    --hands="Mochizuki Tekko +1",
+    --ring1="Rajas Ring",
+    --ring2="Epona's Ring",
+	--back="Atheling Mantle",
+    --waist="Nusku's Sash",
+    --legs="Mochizuki Hakama",
+    --feet="Manibozho Boots"
+    sets.engaged.Haste_43 = {}
+    sets.engaged.Haste_40 = {}
+    sets.engaged.Haste_35 = {}
+    sets.engaged.Haste_30 = {}
+    sets.engaged.Haste_25 = {}
+    sets.engaged.Haste_20 = {}
+
+    -- 43
+    sets.engaged.Haste_43 = set_combine(sets.engaged, {
 		head="Felistris Mask",
-        neck="Asperity Necklace"
-    })
-    sets.engaged.HighHasteMad = set_combine(sets.engaged.HighHaste, {
-        ear1="Suppanomimi",
-        ear2="Kuwunga Earring"
-    })
-	sets.engaged.Acc.HighHaste = set_combine(sets.engaged.HighHaste, {
-		head="Whirlpool Mask",
         neck="Rancor Collar",
-        hands="Otronif Gloves",
-        legs="Hachiya Hakama",
-		back="Yokaze Mantle"
-    })
-	sets.engaged.Acc.HighHasteMad = set_combine(sets.engaged.Acc.HighHaste, {
-        ear1="Suppanomimi",
-        ear2="Kuwunga Earring"
-    })
-	sets.engaged.Evasion.HighHaste = set_combine(sets.engaged.HighHaste, {
-		head="Felistris Mask",
-		back="Yokaze Mantle",
-        feet="Otronif Boots"
-    })
-
-	sets.engaged.Evasion.HighHasteMad = set_combine(sets.engaged.Evasion.HighHaste, {
-        ear1="Suppanomimi",
-        ear2="Kuwunga Earring"
-    })
-	sets.engaged.Acc.Evasion.HighHaste = set_combine(sets.engaged.Acc.HighHaste, {
-        feet="Otronif Boots"
-    })
-
-	sets.engaged.PDT.HighHaste = set_combine(sets.engaged.HighHaste, sets.engaged.PDT)
-
-	sets.engaged.Acc.PDT.HighHaste = set_combine(sets.engaged.PDT.HighHaste, sets.engaged.Acc.HighHaste)
-
-	-- Custom melee group: Embrava Haste (7% DW)
-	sets.engaged.EmbravaHaste = set_combine(sets.engaged.HighHaste, {
-        ear1="Brutal Earring",
-        ear2="Trux Earring",
-		body="Thaumas Coat",
-        waist="Windbuffet Belt",
-        legs="Mochizuki Hakama",
-    })
-	sets.engaged.EmbravaHasteMad = set_combine(sets.engaged.EmbravaHaste, {
         ear1="Trux Earring",
-        ear2="Kuwunga Earring"
-    })
-	sets.engaged.Acc.EmbravaHaste = set_combine(sets.engaged.EmbravaHaste, {
-		head="Whirlpool Mask",
-        hands="Otronif Gloves",
-        neck="Rancor Collar",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-		back="Yokaze Mantle",
-        waist="Hurch'lan Sash"
-    })
-	sets.engaged.Acc.EmbravaHasteMad = set_combine(sets.engaged.Acc.EmbravaHaste, 
-            sets.engaged.EmbravaHasteMad)
-
-	sets.engaged.Evasion.EmbravaHaste = set_combine(sets.engaged.EmbravaHaste, {
-		body="Hachiya Chainmail +1",
-		back="Yokaze Mantle",
-        feet="Otronif Boots"
-    })
-	sets.engaged.Evasion.EmbravaHaste = set_combine(sets.engaged.Evasion.EmbravaHaste, 
-            sets.engaged.EmbravaHasteMad)
-
-	sets.engaged.Acc.Evasion.EmbravaHaste = set_combine(sets.engaged.Acc.EmbravaHaste, {
-		body="Manibozho Jerkin"
-    })
-	sets.engaged.PDT.EmbravaHaste = set_combine(sets.engaged.EmbravaHaste, sets.engaged.PDT)
-
-	sets.engaged.Acc.PDT.EmbravaHaste = set_combine(sets.engaged.PDT.EmbravaHaste, sets.engaged.Acc.EmbravaHaste)
-
-	-- Custom melee group: Max Haste (0% DW)
-	sets.engaged.MaxHaste = set_combine(sets.engaged.EmbravaHaste, {
+        ear2="Brutal Earring",
+        body="Thaumas Coat",
+        waist="Windbuffet Belt",
         legs="Hachiya Hakama"
     })
-	sets.engaged.MaxHasteMad = set_combine(sets.engaged.MaxHaste, {
-        ear1="Trux Earring",
-        ear2="Kuwunga Earring"
+    sets.engaged.Haste_43.Acc = set_combine(sets.engaged.Haste_43, {
+		head="Whirlpool Mask",
+        hands="Otronif Gloves",
+        waist="Hurch'lan Sash",
+		back="Yokaze Mantle"
     })
-	sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        head="Whirlpool Mask",
-        neck="Rancor Collar",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-        back="Yokaze Mantle",
-        waist="Hurch'lan Sash"
-    })
-	sets.engaged.Acc.MaxHasteMad = set_combine(sets.engaged.Acc.MaxHaste, 
-            sets.engaged.MaxHasteMad)
-
-	sets.engaged.Evasion.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        body="Manibozho Jerkin",
-        back="Yokaze Mantle",
+    sets.engaged.Haste_43.Evasion = set_combine(sets.engaged.Haste_43, {
+        neck="Asperity Necklace",
+		back="Yokaze Mantle",
         feet="Otronif Boots"
     })
-	sets.engaged.Evasion.MaxHasteMad = set_combine(sets.engaged.Evasion.MaxHaste, 
-            sets.engaged.MaxHasteMad)
-	sets.engaged.Acc.Evasion.MaxHaste = set_combine(sets.engaged.Evasion.MaxHaste, {
-        head="Whirlpool Mask",
-        waist="Hurch'lan Sash",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring"
+
+	sets.engaged.Haste_43.Acc.Evasion = set_combine(sets.engaged.Haste_43.Acc, sets.engaged.Haste_43.Evasion)
+	sets.engaged.Haste_43.PDT = set_combine(sets.engaged.Haste_43, sets.engaged.PDT)
+	sets.engaged.Haste_43.Acc.PDT = set_combine(sets.engaged.Haste_43.PDT, sets.engaged.Haste_43.Acc)
+
+    -- 40
+    sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
+        legs="Mochizuki Hakama"
     })
-	sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.PDT)
+    sets.engaged.Haste_40.Acc = sets.engaged.Haste_43.Acc
+    sets.engaged.Haste_40.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
+        legs="Mochizuki Hakama"
+    })
 
-	sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.engaged.PDT.MaxHaste)
+	sets.engaged.Haste_40.Acc.Evasion = set_combine(sets.engaged.Haste_40.Acc, sets.engaged.Haste_40.Evasion)
+	sets.engaged.Haste_40.PDT = set_combine(sets.engaged.Haste_40, sets.engaged.PDT)
+	sets.engaged.Haste_40.Acc.PDT = set_combine(sets.engaged.Haste_40.PDT, sets.engaged.Haste_40.Acc)
 
+    -- 35
+    sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_43, {
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        legs="Mochizuki Hakama"
+    })
+    sets.engaged.Haste_35.Acc = set_combine(sets.engaged.Haste_43.Acc, {
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring"
+    })
+    sets.engaged.Haste_35.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        legs="Mochizuki Hakama"
+    })
+
+	sets.engaged.Haste_35.Acc.Evasion = set_combine(sets.engaged.Haste_35.Acc, sets.engaged.Haste_35.Evasion)
+	sets.engaged.Haste_35.PDT = set_combine(sets.engaged.Haste_35, sets.engaged.PDT)
+	sets.engaged.Haste_35.Acc.PDT = set_combine(sets.engaged.Haste_35.PDT, sets.engaged.Haste_35.Acc)
+
+    -- 30
+    sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_43, {
+        head="Iga Zukin +2",
+        ear1="Brutal Earring",
+        ear2="Suppanomimi",
+        waist="Nusku's Sash",
+        legs="Mochizuki Hakama"
+    })
+    sets.engaged.Haste_30.Acc = set_combine(sets.engaged.Haste_43.Acc, {
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring"
+    })
+    sets.engaged.Haste_30.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        legs="Mochizuki Hakama"
+    })
+
+	sets.engaged.Haste_30.Acc.Evasion = set_combine(sets.engaged.Haste_30.Acc, sets.engaged.Haste_30.Evasion)
+	sets.engaged.Haste_30.PDT = set_combine(sets.engaged.Haste_30, sets.engaged.PDT)
+	sets.engaged.Haste_30.Acc.PDT = set_combine(sets.engaged.Haste_30.PDT, sets.engaged.Haste_30.Acc)
+
+    -- 25
+    sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_43, {
+		body="Hachiya Chainmail +1",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring"
+        waist="Nusku's Sash",
+        legs="Mochizuki Hakama"
+    })
+    sets.engaged.Haste_25.Acc = set_combine(sets.engaged.Haste_43.Acc, {
+        ear1="Dudgeon Earring",
+		body="Hachiya Chainmail +1",
+        ear2="Heartseeker Earring"
+    })
+    sets.engaged.Haste_25.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+		body="Hachiya Chainmail +1",
+        legs="Mochizuki Hakama"
+    })
+
+	sets.engaged.Haste_25.Acc.Evasion = set_combine(sets.engaged.Haste_25.Acc, sets.engaged.Haste_25.Evasion)
+	sets.engaged.Haste_25.PDT = set_combine(sets.engaged.Haste_25, sets.engaged.PDT)
+	sets.engaged.Haste_25.Acc.PDT = set_combine(sets.engaged.Haste_25.PDT, sets.engaged.Haste_25.Acc)
+
+    -- 20
+    sets.engaged.Haste_20 = set_combine(sets.engaged.Haste_43, {
+        head="Iga Zukin +2",
+		body="Hachiya Chainmail +1",
+        ear1="Brutal Earring",
+        ear2="Suppanomimi",
+        waist="Nusku's Sash",
+        legs="Mochizuki Hakama"
+    })
+    sets.engaged.Haste_20.Acc = set_combine(sets.engaged.Haste_43.Acc, {
+		body="Hachiya Chainmail +1",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring"
+    })
+    sets.engaged.Haste_20.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+		body="Hachiya Chainmail +1",
+        legs="Mochizuki Hakama"
+    })
+
+	sets.engaged.Haste_20.Acc.Evasion = set_combine(sets.engaged.Haste_20.Acc, sets.engaged.Haste_20.Evasion)
+	sets.engaged.Haste_20.PDT = set_combine(sets.engaged.Haste_20, sets.engaged.PDT)
+	sets.engaged.Haste_20.Acc.PDT = set_combine(sets.engaged.Haste_20.PDT, sets.engaged.Haste_20.Acc)
 
 	sets.buff.Migawari = {body="Iga Ningi +2"}
 	sets.buff.Doomed = {}
@@ -562,50 +599,33 @@ end
 function determine_haste_group()
 	
 	classes.CustomMeleeGroups:clear()
-	
-	if buffactive.embrava and (buffactive.march == 2 or (buffactive.march and buffactive.haste)) then
-	    add_to_chat(121,'Max Haste Mode! - Embrava + BRD Songs + Haste')
-        if buffactive.madrigal then
-		    classes.CustomMeleeGroups:append('MaxHaste')
-        else
-		    classes.CustomMeleeGroups:append('MaxHaste')
-        end
-	elseif buffactive.march == 2 and buffactive.haste then
-	    add_to_chat(121,'Max Haste Mode! - BRD Songs + Haste')
-        if buffactive.madrigal then
-            classes.CustomMeleeGroups:append('MaxHasteMad')
-        else
-		    classes.CustomMeleeGroups:append('MaxHaste')
-        end
-	elseif buffactive.embrava and (buffactive.haste or buffactive.march) then
-	    add_to_chat(121,'Embrava Haste Mode! - Embrava + BRD Songs OR Haste')
-        if buffactive.madrigal then
-		    classes.CustomMeleeGroups:append('EmbravaHasteMad')
-        else
-		    classes.CustomMeleeGroups:append('EmbravaHaste')
-        end
-	elseif buffactive.haste and buffactive.march == 1 then
-	    add_to_chat(121,'High Haste Mode! - 1 March + Haste Spell')
-        if buffactive.madrigal then
-		    classes.CustomMeleeGroups:append('HighHasteMad')
-        else
-		    classes.CustomMeleeGroups:append('HighHaste')
-        end
-	elseif buffactive.march and (buffactive.haste or buffactive['haste samba']) then
-	    add_to_chat(121,'High Haste Mode! - March 1 AND Haste OR Samba')
-        if buffactive.madrigal then
-		    classes.CustomMeleeGroups:append('HighHasteMad')
-        else
-		    classes.CustomMeleeGroups:append('HighHaste')
-        end
-	elseif buffactive.march == 2 then
-	    add_to_chat(121,'High Haste Mode! - March 2')
-        if buffactive.madrigal then
-		    classes.CustomMeleeGroups:append('HighHasteMad')
-        else
-		    classes.CustomMeleeGroups:append('HighHaste')
-        end
-	end
+    -- Haste (white magic) 15%
+    -- Haste Samba (Sub) 5%
+    -- Haste (Merited DNC) 10%
+    -- Victory March +3/+4/+5 14%/15.6%/17.1%
+    -- Advancing March +3/+4/+5 10.9%/12.5%/14%
+    -- Embrava 25%
+
+    if (buffactive.embrava or buffactive.haste) and buffactive.march == 2 then
+        add_to_chat(8, '-------------Haste 43%-------------')
+        classes.CustomMeleeGroups:appen('Haste_43')
+    elseif buffactive.embrava and buffactive.haste then
+        add_to_chat(8, '-------------Haste 40%-------------')
+        classes.CustomMeleeGroups:appen('Haste_40')
+    elseif buffactive.haste and buffactive['haste samba'] and buffactive.march == 1 then
+        add_to_chat(8, '-------------Haste 35%-------------')
+        classes.CustomMeleeGroups:appen('Haste_35')
+    elseif (buffactive.haste and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) then
+        add_to_chat(8, '-------------Haste 30%-------------')
+        classes.CustomMeleeGroups:appen('Haste_30')
+    elseif buffactive.embrava or buffactive.march == 2 then
+        add_to_chat(8, '-------------Haste 25%-------------')
+        classes.CustomMeleeGroups:appen('Haste_25')
+    elseif buffactive.haste or buffactive['haste samba'] then
+        add_to_chat(8, '-------------Haste 20%-------------')
+        classes.CustomMeleeGroups:appen('Haste_20')
+    end
+
 end
 
 

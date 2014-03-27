@@ -153,6 +153,7 @@
             })
      
             -- Engaged sets
+
             sets.engaged =  {
                 head="Arcadian Beret +1",
                 neck="Ocachi Gorget",
@@ -167,10 +168,6 @@
                 legs="Nahtirah Trousers",
                 feet="Orion Socks +1"
             }
-            sets.engaged.Yoichinoyumi = set_combine(sets.engaged, {
-                hands="Manibozho Gloves",
-                feet="Arcadian Socks +1"
-            })
 
             sets.engaged.Melee = {
                 head="Whirlpool Mask",
@@ -186,8 +183,15 @@
                 legs="Manibozho Brais",
                 feet="Manibozho Boots"
             }
+            -- Custom Sets
+            sets.engaged.Yoichinoyumi = {}
+
+            sets.engaged.Yoichinoyumi = set_combine(sets.engaged, {
+                hands="Manibozho Gloves",
+                feet="Arcadian Socks +1"
+            })
            
-            -- Ranged Attack
+            -- Ranged Attack Sets
             sets.precast.RangedAttack = set_combine(sets.engaged, {
                 head="Sylvan Gapette +2",
                 body="Sylvan Caban +2",
@@ -205,7 +209,8 @@
 
             sets.midcast.Ear = {}
             sets.midcast.Ear = set_combine(sets.engaged, sets.earring)
-
+            
+            sets.midcast.Yoichinoyumi = {}
             sets.midcast.Yoichinoyumi.Ear = {}
             sets.midcast.Yoichinoyumi.Ear = set_combine(sets.engaged.Yoichinoyumi, sets.earring)
 
@@ -227,6 +232,7 @@
             })
             
             -- Yoichi
+            sets.midcast.RangedAttack.Yoichinoyumi = {}
             sets.midcast.RangedAttack.Yoichinoyumi = set_combine(sets.midcast.Yoichinoyumi.Ear, {
                 ring2="Paqichikaji Ring",
                 back="Sylvan Chlamys",
