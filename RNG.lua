@@ -627,7 +627,9 @@
             snapshot_index = snapshot_index + 1
             if snapshot_index > #snapshot_index then 
                 snapshot_index = 1 
-		        classes.CustomMeleeGroups:remove(snapshot_mode[snapshot_index])
+                if next(classes.CustomMeleeGroups) != nil then
+		            classes.CustomMeleeGroups:remove(snapshot_mode[snapshot_index])
+                end
             end
 		    classes.CustomMeleeGroups:append(snapshot_mode[snapshot_index])
             windower.add_to_chat(8, 'Switching snapshot mode to ' .. snapshot_mode[snapshot_index])
