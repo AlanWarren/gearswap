@@ -123,9 +123,6 @@
 
             select_default_macro_book()
 
-            snapshot_mode = { "Normal", "RapidShot" }
-            snapshot_index = 1
-
             -- Idle Set (My 'base')
             sets.idle = {
                 head="Arcadian Beret +1",
@@ -198,12 +195,6 @@
                 legs="Nahtirah Trousers",
                 waist="Impulse Belt",
                 feet="Wurrukatte Boots"
-            })
-            -- we have a toggle for this in self_command()
-            sets.precast.RangedAttack.Normal = sets.precast.RangedAttack
-            sets.precast.RangedAttack.RapidShot = set_combine(sets.precast.RangedAttack, {
-                head="Orion Beret +1",
-                feet="Arcadian Socks +1"
             })
 
             sets.midcast.Ear = {}
@@ -568,7 +559,7 @@
      
     -- Called for custom player commands.
     function job_self_command(cmdParams, eventArgs)
-     
+            --add_to_chat(8, 'Switching snapshot mode to ' .. snapshot_mode[snapshot_index])
     end
      
     -- Called by the 'update' self-command, for common needs.
@@ -579,7 +570,15 @@
      
     -- Job-specific toggles.
     function job_toggle(field)
-     
+	   -- if field:lower() == 'snapshot' then
+       --     snapshot_index = snapshot_index + 1
+       --     if snapshot_index > 2 then 
+       --         snapshot_index = 1 
+       --         sets.precast.RangedAttack = sets.precast.RangedAttack
+       --     end
+       --     sets.precast.RangedAttack = sets.precast.RangedAttack.Rapidshot
+       --     add_to_chat(8, 'Switching snapshot mode to ' .. snapshot_mode[snapshot_index])
+       -- end
     end
      
     -- Request job-specific mode lists.
@@ -617,19 +616,6 @@
     	return state.Buff['Overkill']
     end
 
-    -- //gs c Toggle Snapshot Mode 
-    function self_command(command)
-        if command == 'Toggle' then
-            snapshot_index = snapshot_index + 1
-            if snapshot_index > #snapshot_index then 
-                snapshot_index = 1 
-                sets.precast.RangedAttack = sets.precast.RangedAttack.Normal
-            end
-            sets.precast.RangedAttack = sets.precast.RangedAttack.Rapid
-            add_to_chat(8, 'Switching snapshot mode to ' .. snapshot_mode[snapshot_index])
-        end
-    end
-     
     -------------------------------------------------------------------------------------------------------------------
     -- Utility functions specific to this job.
     -------------------------------------------------------------------------------------------------------------------
