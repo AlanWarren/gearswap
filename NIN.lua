@@ -413,7 +413,7 @@ function init_gear_sets()
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_43, {
 		body="Hachiya Chainmail +1",
         ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring"
+        ear2="Heartseeker Earring",
         waist="Nusku's Sash",
         legs="Mochizuki Hakama"
     })
