@@ -619,13 +619,13 @@
 
     -- //gs c Toggle Snapshot Mode 
     function self_command(command)
-        if command == 'Toggle Snapshot Mode' then
-            classes.CustomMeleeGroups:clear()
+        if command == 'Toggle' then
             snapshot_index = snapshot_index + 1
             if snapshot_index > #snapshot_index then 
                 snapshot_index = 1 
+                sets.precast.RangedAttack = sets.precast.RangedAttack.Normal
             end
-		    classes.CustomMeleeGroups:append(snapshot_mode[snapshot_index])
+            sets.precast.RangedAttack = sets.precast.RangedAttack.Rapid
             add_to_chat(8, 'Switching snapshot mode to ' .. snapshot_mode[snapshot_index])
         end
     end
