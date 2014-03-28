@@ -82,10 +82,13 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	sets.precast.FC = {}
 	--sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
+    
+    --earrings for WS
+    sets.WsEarNoMadrigal = {ear2="Trux Earring"}
+    sets.WsEarMadrigal = {ear2="Kuwunga Earring"}
+    sets.earring = select_earring()
        
-	-- Weaponskill sets
-	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {
+    sets.precast.WSHolder = {
 		head="Felistris Mask",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
@@ -99,6 +102,10 @@ function init_gear_sets()
         legs="Manibozho Brais",
         feet="Otronif Boots"
     }
+    
+	-- Weaponskill sets
+	-- Default set for any weaponskill that isn't any more specifically defined
+	sets.precast.WS = set_combine(sets.precast.WSHolder, sets.earring)
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, {
@@ -314,20 +321,6 @@ function init_gear_sets()
         legs="Hachiya Hakama"
     })
 
-	-- Custom haste groups
-    --ammo="Qirmiz Tathlum",
-	--head="Iga Zukin +2",
-    --neck="Asperity Necklace",
-    --ear1="Dudgeon Earring",
-    --ear2="Heartseeker Earring",
-	--body="Hachiya Chainmail +1",
-    --hands="Mochizuki Tekko +1",
-    --ring1="Rajas Ring",
-    --ring2="Epona's Ring",
-	--back="Atheling Mantle",
-    --waist="Nusku's Sash",
-    --legs="Mochizuki Hakama",
-    --feet="Manibozho Boots"
     sets.engaged.Haste_43 = {}
     sets.engaged.Haste_40 = {}
     sets.engaged.Haste_35 = {}
@@ -489,6 +482,10 @@ function job_precast(spell, action, spellMap, eventArgs)
 
 end
 
+function job_post_precast(spell, action, spellMap, eventArgs)
+    sets.earring = select_earring()
+end
+
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
 	if spell.action_type == 'Magic' then
@@ -503,6 +500,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 	if state.Buff.Doomed then
 		equip(sets.buff.Doomed)
 	end
+    sets.earring = select_earring()
 end
 
 
@@ -513,7 +511,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 	end
 end
 
-
 -------------------------------------------------------------------------------------------------------------------
 -- Customization hooks for idle and melee sets, after they've been automatically constructed.
 -------------------------------------------------------------------------------------------------------------------
@@ -523,6 +520,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
 	sets.Kiting = select_movement()
+    sets.earring = select_earring()
 end
 
 -- Modify the default idle set after it was constructed.
@@ -539,6 +537,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+    meleeSet = set_combine(meleeSet, select_earring())
 	if state.Buff.Migawari then
 		meleeSet = set_combine(meleeSet, sets.buff.Migawari)
 	end
@@ -602,10 +601,9 @@ function determine_haste_group()
     -- Haste (white magic) 15%
     -- Haste Samba (Sub) 5%
     -- Haste (Merited DNC) 10%
-    -- Victory March +3/+4/+5 14%/15.6%/17.1%
-    -- Advancing March +3/+4/+5 10.9%/12.5%/14%
+    -- Victory March +3/+4/+5     14%/15.6%/17.1%
+    -- Advancing March +3/+4/+5   10.9%/12.5%/14%
     -- Embrava 25%
-
     if (buffactive.embrava or buffactive.haste) and buffactive.march == 2 then
         add_to_chat(8, '-------------Haste 43%-------------')
         classes.CustomMeleeGroups:appen('Haste_43')
@@ -628,6 +626,14 @@ function determine_haste_group()
 
 end
 
+function select_earring()
+	if buffactive.madrigal and buffactive.march then
+	    add_to_chat(8,'Madrigal + March Active - Using Special Earrings!')
+        return sets.WsEarMadrigal
+    else
+        return sets.WsEarNoMadrigal
+    end
+end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
