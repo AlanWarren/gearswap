@@ -70,7 +70,6 @@
     function job_setup()
         state.Buff.Camouflage = buffactive.camouflage or false
         state.Buff.Overkill = buffactive.overkill or false
-        determine_snapshot_group()
     end
      
     -- Called when this job file is unloaded (eg: job change)
@@ -518,7 +517,6 @@
      
     function job_status_change(newStatus, oldStatus, eventArgs)
           if newStatus == 'Engaged' then
-	   	      determine_snapshot_group()
               if state.Buff['Camouflage'] then
                   equip(sets.buff.Camouflage)
               elseif state.Buff['Overkill'] then
@@ -539,7 +537,6 @@
     -- gain == true if the buff was gained, false if it was lost.
     function job_buff_change(buff, gain)
 	    --if S{"courser's roll"}:contains(buff:lower()) then
-	   	determine_snapshot_group()
         if state.Buff[buff] ~= nil then
 	        state.Buff[buff] = gain
 	    end
@@ -565,13 +562,6 @@
         end
     end
 
-    function determine_snapshot_group()
-        classes.CustomMeleeGroups:clear()
-
-		if buffactive["Courser's Roll"] then
-		    classes.CustomMeleeGroups:append(snapshot_mode[snapshot_index])
-		end
-    end
     -------------------------------------------------------------------------------------------------------------------
     -- User code that supplements self-commands.
     -------------------------------------------------------------------------------------------------------------------
@@ -630,12 +620,10 @@
     -- //gs c Toggle Snapshot Mode 
     function self_command(command)
         if command == 'Toggle Snapshot Mode' then
+            classes.CustomMeleeGroups:clear()
             snapshot_index = snapshot_index + 1
             if snapshot_index > #snapshot_index then 
                 snapshot_index = 1 
-                if next(classes.CustomMeleeGroups) ~= nil then
-		            classes.CustomMeleeGroups:remove(snapshot_mode[snapshot_index])
-                end
             end
 		    classes.CustomMeleeGroups:append(snapshot_mode[snapshot_index])
             windower.add_to_chat(8, 'Switching snapshot mode to ' .. snapshot_mode[snapshot_index])
