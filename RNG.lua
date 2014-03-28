@@ -626,7 +626,7 @@
                 snapshot_index = 1 
             end
 		    classes.CustomMeleeGroups:append(snapshot_mode[snapshot_index])
-            windower.add_to_chat(8, 'Switching snapshot mode to ' .. snapshot_mode[snapshot_index])
+            add_to_chat(8, 'Switching snapshot mode to ' .. snapshot_mode[snapshot_index])
         end
     end
      
