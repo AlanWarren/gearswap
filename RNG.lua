@@ -209,10 +209,6 @@
             sets.midcast.Ear = {}
             sets.midcast.Ear = set_combine(sets.engaged, sets.earring)
             
-            sets.midcast.Yoichinoyumi = {}
-            sets.midcast.Yoichinoyumi.Ear = {}
-            sets.midcast.Yoichinoyumi.Ear = set_combine(sets.engaged.Yoichinoyumi, sets.earring)
-
             sets.midcast.RangedAttack = set_combine(sets.midcast.Ear, {
                 ring2="Paqichikaji Ring",
                 back="Lutian Cape",
@@ -231,6 +227,10 @@
             })
             
             -- Yoichi
+            sets.midcast.Yoichinoyumi = {}
+            sets.midcast.Yoichinoyumi.Ear = {}
+            sets.midcast.Yoichinoyumi.Ear = set_combine(sets.engaged.Yoichinoyumi, sets.earring)
+
             sets.midcast.RangedAttack.Yoichinoyumi = {}
             sets.midcast.RangedAttack.Yoichinoyumi = set_combine(sets.midcast.Yoichinoyumi.Ear, {
                 ring2="Paqichikaji Ring",
