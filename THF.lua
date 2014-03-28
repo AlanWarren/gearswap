@@ -116,7 +116,7 @@ function init_gear_sets()
 	sets.precast.WS = {
 		head="Felistris Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
 		body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Cetl Belt",legs="Nahtirah Trousers",feet="Assassin's Poulaines +2"}
+		back="Atheling Mantle",waist="Cetl Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -239,7 +239,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Nusku's Sash",
         legs="Manibozho Brais",
-        feet="Assassin's Poulaines +2"
+        feet="Plunderer's Poulaines"
     }
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		head="Whirlpool Mask",
@@ -259,12 +259,12 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Nusku's Sash",
         legs="Manibozho Brais",
-        feet="Iuitl Gaiters"
+        feet="Plunderer's Poulaines"
     }
 	sets.engaged.Evasion = {
 		head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
 		body="Manibozho Jerkin",hands="Plunderer's Armlets",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Iuitl Gaiters"}
+		back="Atheling Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Plunderer's Poulaines"}
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
 		head="Whirlpool Mask",waist="Hurch'lan Sash"})
 	sets.engaged.PDT = {
