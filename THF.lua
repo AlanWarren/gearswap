@@ -87,7 +87,7 @@ function init_gear_sets()
 
 	sets.precast.JA['Trick Attack'] = {
 		head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Manibozho Jerkin",hands="Iuitl Wristbands",ring1="Stormsoul Ring",ring2="Epona's Ring",
+		body="Manibozho Jerkin",hands="Iuitl Wristbands +1",ring1="Stormsoul Ring",ring2="Epona's Ring",
 		back="Atheling Mantle",waist="Nusku's Sash",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
 
 
@@ -106,7 +106,7 @@ function init_gear_sets()
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
 	-- Ranged snapshot gear
-	sets.precast.RangedAttack = {hands="Iuitl Wristbands",legs="Nahtirah Trousers"}
+	sets.precast.RangedAttack = {hands="Iuitl Wristbands +1",legs="Nahtirah Trousers"}
 
        
 	-- Weaponskill sets
@@ -115,7 +115,7 @@ function init_gear_sets()
 	gear.default.weaponskill_waist = "Cetl Belt"
 	sets.precast.WS = {
 		head="Felistris Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Epona's Ring",
+		body="Iuitl Vest",hands="Iuitl Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
 		back="Atheling Mantle",waist="Cetl Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
@@ -153,25 +153,25 @@ function init_gear_sets()
 
 	sets.precast.WS['Aeolian Edge'] = {
 		neck="Atzintli Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-		body="Manibozho Jerkin",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Stormsoul Ring",
+		body="Manibozho Jerkin",hands="Iuitl Wristbands +1",ring1="Rajas Ring",ring2="Stormsoul Ring",
 		back="Toro Cape",waist="Thunder Belt",legs="Iuitl Tights",feet="Iuitl Gaiters"}
 	
         -- Midcast Sets
 	sets.midcast.FastRecast = {
 		head="Felistris Mask",
-		body="Iuitl Vest",hands="Iuitl Wristbands",
+		body="Iuitl Vest",hands="Iuitl Wristbands +1",
 		waist="Twilight Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
 		
 	-- Specific spells
 	sets.midcast.Utsusemi = {
 		head="Felistris Mask",
-		body="Iuitl Vest",hands="Iuitl Wristbands",
+		body="Iuitl Vest",hands="Iuitl Wristbands +1",
 		waist="Twilight Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
 
 	-- Ranged gear -- acc + TH
 	sets.midcast.RangedAttack = {
 		head="Uk'uxkaj Cap",neck="Huani Collar",ear1="Clearview Earring",ear2="Volley Earring",
-		body="Thaumas Coat",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Hajduk Ring",
+		body="Thaumas Coat",hands="Iuitl Wristbands +1",ring1="Rajas Ring",ring2="Hajduk Ring",
 		back="Libeccio Mantle",waist="Aquiline Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
 
 	sets.midcast.RangedAttack.TH = set_combine(sets.midcast.RangedAttack, set.TreasureHunter)
@@ -188,7 +188,7 @@ function init_gear_sets()
 
 	sets.idle = {
 		head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Thaumas Coat",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Paguroidea Ring",
+		body="Thaumas Coat",hands="Iuitl Wristbands +1",ring1="Rajas Ring",ring2="Paguroidea Ring",
 		back="Shadow Mantle",waist="Nusku's Sash",legs="Nahtirah Trousers",feet="Trotter Boots"}
 
 	sets.idle.Town = {main="Izhiikoh", sub="Eminent Dagger",ranged="Raider's Boomerang",
@@ -204,17 +204,17 @@ function init_gear_sets()
 
 	sets.defense.Evasion = {
 		head="Felistris Mask",neck="Asperity Necklace",
-		body="Manibozho Jerkin",hands="Iuitl Wristbands",ring1="Rajas Ring",ring2="Epona's Ring",
+		body="Manibozho Jerkin",hands="Iuitl Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
 		back="Atheling Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Iuitl Gaiters"}
 
 	sets.defense.PDT = {
 		head="Lithelimb Cap",neck="Twilight Torque",
-		body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Dark Ring",ring2="Epona's Ring",
+		body="Iuitl Vest",hands="Iuitl Wristbands +1",ring1="Dark Ring",ring2="Epona's Ring",
 		back="Shadow Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Iuitl Gaiters"}
 
 	sets.defense.MDT = {
 		head="Whirlpool Mask",neck="Twilight Torque",
-		body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Dark Ring",ring2="Epona's Ring",
+		body="Iuitl Vest",hands="Iuitl Wristbands +1",ring1="Dark Ring",ring2="Epona's Ring",
 		back="Atheling Mantle",waist="Twilight Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
 
 	sets.Kiting = {feet="Trotter Boots"}
@@ -233,7 +233,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Thaumas Coat",
-        hands="Plunderer's Armlets",
+        hands="Iuitl Wristbands +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
 		back="Atheling Mantle",
@@ -269,7 +269,7 @@ function init_gear_sets()
 		head="Whirlpool Mask",waist="Hurch'lan Sash"})
 	sets.engaged.PDT = {
 		head="Lithelimb Cap",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Iuitl Vest",hands="Iuitl Wristbands",ring1="Dark Ring",ring2="Epona's Ring",
+		body="Iuitl Vest",hands="Iuitl Wristbands +1",ring1="Dark Ring",ring2="Epona's Ring",
 		back="Shadow Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Iuitl Gaiters"}
 	sets.engaged.Acc.PDT = sets.engaged.PDT
 
