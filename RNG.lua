@@ -130,7 +130,7 @@
                 ear1="Volley Earring",
                 ear2="Clearview Earring",
                 body="Kyujutsugi",
-                hands="Iuitl Wristbands",
+                hands="Iuitl Wristbands +1",
                 ring1="Dark Ring",
                 ring2="Paguroidea Ring",
                 back="Shadow Mantle",
@@ -171,7 +171,7 @@
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
                 body="Thaumas Coat",
-                hands="Iuitl Wristbands",
+                hands="Iuitl Wristbands +1",
                 ring1="Rajas Ring",
                 ring2="Epona's Ring",
                 back="Atheling Mantle",
@@ -191,7 +191,7 @@
             sets.precast.RangedAttack = set_combine(sets.engaged, {
                 head="Sylvan Gapette +2",
                 body="Sylvan Caban +2",
-                hands="Iuitl Wristbands",
+                hands="Iuitl Wristbands +1",
                 legs="Nahtirah Trousers",
                 waist="Impulse Belt",
                 feet="Wurrukatte Boots"
