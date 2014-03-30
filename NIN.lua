@@ -133,7 +133,10 @@ function init_gear_sets()
     })
 	sets.precast.WS['Blade: Hi'].Mod = set_combine(sets.precast.WS['Blade: Hi'], {waist="Soil Belt"})
 
-	sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {neck="Breeze Gorget",waist="Thunder Belt"})
+	sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {neck="Breeze Gorget",
+            waist="Thunder Belt",
+            legs="Manibozho Brais"
+            })
 
 	sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, {neck="Thunder Gorget"})
 	sets.precast.WS['Blade: Kamu'].Mod = set_combine(sets.precast.WS['Blade: Kamu'], {waist="Thunder Belt"})
