@@ -68,6 +68,7 @@
     end
 
     function job_setup()
+	    state.CombatWeapon = get_combat_weapon()
         state.Buff.Camouflage = buffactive.camouflage or false
         state.Buff.Overkill = buffactive.overkill or false
     end
@@ -91,6 +92,7 @@
             DefaultAmmo = {}
             DefaultAmmo["Annihilator"] = "Achiyalabopa bullet"
             DefaultAmmo["Ajjub Bow"] = "Achiyalabopa arrow"
+            DefaultAmmo["Yoichinoyumi"] = "Achiyalabopa arrow"
             DefaultAmmo["Atetepeyorg"] = "Achiyalabopa bolt"
            
             --add_to_chat(123,'sidecar load')
@@ -112,7 +114,15 @@
             sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
             sets.precast.JA['Velocity Shot'] = {body="Sylvan Caban +2"}
             sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
-            sets.precast.JA['Eagle Eye Shot'] = {feet="Arcadian Braccae"}
+            sets.precast.JA['Eagle Eye Shot'] = {
+                head="Ux'uxkaj Cap", 
+                neck="Rancor Collar",
+                hands="Iuitl Wristbands +1",  -- only while they have crit+1
+                back="Buquwik Cape",
+                ring2="Pyrosoul Ring",
+                legs="Arcadian Braccae", 
+                feet="Arcadian Socks +1"
+            }
 
             sets.STPEarring = {ear2="Tripudio earring"}
             sets.NightEarring = {ear2="Fenrir's earring"}
@@ -180,9 +190,9 @@
                 feet="Manibozho Boots"
             }
             -- Custom Sets
-            sets.engaged.Yoichinoyumi = {}
+            sets.engaged.Bow = {}
 
-            sets.engaged.Yoichinoyumi = set_combine(sets.engaged, {
+            sets.engaged.Bow = set_combine(sets.engaged, {
                 hands="Manibozho Gloves",
                 feet="Arcadian Socks +1"
             })
@@ -217,24 +227,24 @@
                 legs="Aetosaur Trousers +1"
             })
             
-            -- Yoichi
-            sets.midcast.Yoichinoyumi = {}
-            sets.midcast.Yoichinoyumi.Ear = {}
-            sets.midcast.Yoichinoyumi.Ear = set_combine(sets.engaged.Yoichinoyumi, sets.earring)
+            -- Bow
+            sets.midcast.Bow = {}
+            sets.midcast.Bow.Ear = {}
+            sets.midcast.Bow.Ear = set_combine(sets.engaged.Bow, sets.earring)
 
-            sets.midcast.RangedAttack.Yoichinoyumi = {}
-            sets.midcast.RangedAttack.Yoichinoyumi = set_combine(sets.midcast.Yoichinoyumi.Ear, {
+            sets.midcast.RangedAttack.Bow = {}
+            sets.midcast.RangedAttack.Bow = set_combine(sets.midcast.Bow.Ear, {
                 ring2="Paqichikaji Ring",
                 back="Sylvan Chlamys",
                 legs="Aetosaur Trousers +1",
             })
-            sets.midcast.RangedAttack.Yoichinoyumi.Acc = set_combine(sets.midcast.RangedAttack.Yoichinoyumi, {
+            sets.midcast.RangedAttack.Bow.Acc = set_combine(sets.midcast.RangedAttack.Bow, {
                 neck="Huani Collar",
                 ring1="Hajduk Ring",
                 ring2="Paqichikaji Ring",
                 legs="Aetosaur Trousers +1"
             })
-            sets.midcast.RangedAttack.Yoichinoyumi.STP = set_combine(sets.midcast.RangedAttack.Yoichinoyumi, {
+            sets.midcast.RangedAttack.Bow.STP = set_combine(sets.midcast.RangedAttack.Bow, {
                hands="Sylvan Glovelettes +2"
             })
                    
@@ -565,7 +575,7 @@
     -- Called by the 'update' self-command, for common needs.
     -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
     function job_update(cmdParams, eventArgs)
-    	state.CombatWeapon = player.equipment.range
+	    state.CombatWeapon = get_combat_weapon()
     end
      
     -- Job-specific toggles.
@@ -606,6 +616,12 @@
     -- Set eventArgs.handled to true if we don't want the automatic display to be run.
     function display_current_job_state(eventArgs)
      
+    end
+
+    function get_combat_weapon()
+        if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Ajjub Bow' then
+            return 'Bow'
+        end
     end
 
     function camo_active()
