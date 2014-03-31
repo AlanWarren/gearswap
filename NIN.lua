@@ -62,7 +62,7 @@ function init_gear_sets()
 		body="Hachiya Chainmail +1",
         hands="Otronif Gloves",
         legs="Nahtirah Trousers",
-        feet="Otronif Boots"
+        feet="Otronif Boots +1"
     }
 		
 	-- Don't need any special gear for Healing Waltz.
@@ -100,7 +100,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Manibozho Brais",
-        feet="Otronif Boots"
+        feet="Otronif Boots +1"
     }
     
 	-- Weaponskill sets
@@ -161,7 +161,7 @@ function init_gear_sets()
         hands="Mochizuki Tekko +1",
 		waist="Twilight Belt",
         legs="Mochizuki Hakama",
-        feet="Otronif Boots"
+        feet="Otronif Boots +1"
     }
 		
 	-- any ninjutsu cast on self
@@ -225,7 +225,7 @@ function init_gear_sets()
 		back="Yokaze Mantle",
         waist="Nusku's Sash",
         legs="Mochizuki Hakama",
-        feet="Otronif Boots"
+        feet="Otronif Boots +1"
     }
 
 	sets.defense.PDT = set_combine(sets.defense.Evasion, {
@@ -274,7 +274,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Nusku's Sash",
         legs="Mochizuki Hakama",
-        feet="Manibozho Boots"
+        feet="Otronif Boots +1"
     }
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		head="Whirlpool Mask",
@@ -301,7 +301,7 @@ function init_gear_sets()
 	sets.engaged.Evasion = set_combine(sets.engaged, {
 		head="Felistris Mask",
 		back="Yokaze Mantle",
-        feet="Otronif Boots"
+        feet="Otronif Boots +1"
     })
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
 		head="Whirlpool Mask",
@@ -315,8 +315,8 @@ function init_gear_sets()
         hands="Otronif Gloves",
         ring1="Dark Ring",
 		back="Shadow Mantle",
-        legs="Otronif Brais",
-        feet="Otronif Boots"
+        legs="Nahtirah Trousers",
+        feet="Otronif Boots +1"
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
 		head="Whirlpool Mask",
@@ -350,7 +350,7 @@ function init_gear_sets()
     sets.engaged.Haste_43.Evasion = set_combine(sets.engaged.Haste_43, {
         neck="Asperity Necklace",
 		back="Yokaze Mantle",
-        feet="Otronif Boots"
+        feet="Otronif Boots +1"
     })
 
 	sets.engaged.Haste_43.Acc.Evasion = set_combine(sets.engaged.Haste_43.Acc, sets.engaged.Haste_43.Evasion)
