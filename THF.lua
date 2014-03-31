@@ -262,15 +262,37 @@ function init_gear_sets()
         feet="Plunderer's Poulaines"
     }
 	sets.engaged.Evasion = {
-		head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Manibozho Jerkin",hands="Plunderer's Armlets",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Plunderer's Poulaines"}
+		head="Felistris Mask",
+        neck="Asperity Necklace",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+		body="Manibozho Jerkin",
+        hands="Plunderer's Armlets",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+		back="Atheling Mantle",
+        waist="Nusku's Sash",
+        legs="Iuitl Tights",
+        feet="Plunderer's Poulaines"
+    }
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
-		head="Whirlpool Mask",waist="Hurch'lan Sash"})
+		head="Whirlpool Mask",
+        waist="Hurch'lan Sash"
+    })
 	sets.engaged.PDT = {
-		head="Lithelimb Cap",neck="Twilight Torque",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Iuitl Vest",hands="Iuitl Wristbands +1",ring1="Dark Ring",ring2="Epona's Ring",
-		back="Shadow Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Iuitl Gaiters"}
+		head="Lithelimb Cap",
+        neck="Twilight Torque",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+		body="Iuitl Vest",
+        hands="Iuitl Wristbands +1",
+        ring1="Dark Ring",
+        ring2="Epona's Ring",
+		back="Shadow Mantle",
+        waist="Nusku's Sash",
+        legs="Iuitl Tights",
+        feet="Iuitl Gaiters"
+    }
 	sets.engaged.Acc.PDT = sets.engaged.PDT
 
 end
