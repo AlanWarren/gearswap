@@ -83,7 +83,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-        ammo="Hagnia Stone",
+        ammo="Paeapua",
 		head="Yaoyotl Helm",
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
@@ -101,7 +101,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Namas Arrow'] = {
         ammo=gear.RAarrow,
-        head="Lithelimb Cap",
+        head="Sakonji Kabuto",
         neck="Aqua Gorget",
         ear1="Flame Pearl",
         ear2="Flame Pearl",
@@ -118,17 +118,17 @@ function init_gear_sets()
         head="Sakonji Kabuto"
     })
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
-        head="Sakonji Kabuto",
         neck="Breeze Gorget",
         body="Kyujutsugi",
         ring2="Stormsoul Ring"
     })
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
-        head="Sakonji Kabuto +1"
+        head="Sakonji Kabuto"
     })
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
+        hands="Boor Bracelets",
         neck="Aqua Gorget", 
         waist="Light Belt"
     })
@@ -137,7 +137,10 @@ function init_gear_sets()
 
 
 	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
-        neck="Breeze Gorget"
+        feet="Mikinaak Greaves",
+        back="Atheling Mantle",
+        neck="Breeze Gorget",
+        waist="Windbuffet Belt"
     })
 	sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS.Acc, {
         neck="Breeze Gorget"
@@ -218,7 +221,7 @@ function init_gear_sets()
 	sets.defense.PDT = {
 		head="Lithelimb Cap",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
 		body="Wakido Domaru +1",hands="Wakido Kote +1",ring1="K'ayres Ring",ring2="Dark Ring",
-		back="Shadow Mantle",waist="Windbuffet Belt",legs="Wakido Haidate +1",feet="Otronif Boots"}
+		back="Shadow Mantle",waist="Windbuffet Belt",legs="Wakido Haidate +1",feet="Otronif Boots +1"}
 
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {
 		head="Twilight Helm",
@@ -244,7 +247,7 @@ function init_gear_sets()
     -- Anahera needs 52 stp anywhere 
     
     -- I generally use Anahera outside of Adoulin areas, so this set aims for 52 STP (including +5 from weapon)
-	sets.engaged = { -- 54 stp with Anahera
+	sets.engaged = { -- 53 stp with Anahera
         ammo="Hagneia Stone", -- 3
 		head="Yaoyotl Helm", -- 4
         neck="Asperity Necklace", -- 3
@@ -257,7 +260,7 @@ function init_gear_sets()
 		back="Atheling Mantle", 
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 7
-        feet="Sakonji Sune-ate +1" -- 8
+        feet="Otronif Boots +1" -- 7
     }
 
     sets.engaged.MarchMad = set_combine(sets.engaged, {
@@ -278,6 +281,7 @@ function init_gear_sets()
         ear2="Brutal Earring",
         waist="Cetl Belt"
     })
+
     sets.engaged.Yoichi.Multi = sets.engaged.Yoichi
     
 	sets.engaged.Multi = set_combine(sets.engaged, { 
@@ -292,8 +296,9 @@ function init_gear_sets()
         neck="Twilight Torque",
         ring1="Dark Ring",
         back="Shadow Mantle",
-        feet="Otronif boots"
+        feet="Otronif boots +1"
     })
+
     sets.engaged.Yoichi.PDT = set_combine(sets.engaged.PDT,  {
         ammo=gear.RAarrow
     })
@@ -305,6 +310,7 @@ function init_gear_sets()
         body="Twilight Mail",
         ring2="Paguroidea Ring"
     })
+
     sets.engaged.Reraise.Yoichi = set_combine(sets.engaged.Reraise, {
         ammo=gear.RAarrow
     })
