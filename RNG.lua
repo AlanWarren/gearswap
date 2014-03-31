@@ -112,7 +112,7 @@
             sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
             sets.precast.JA['Velocity Shot'] = {body="Sylvan Caban +2"}
             sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
-            sets.precast.JA['Eagle Eye Shot'] = {feet="Scout's Braccae +2"}
+            sets.precast.JA['Eagle Eye Shot'] = {feet="Arcadian Braccae"}
 
             sets.STPEarring = {ear2="Tripudio earring"}
             sets.NightEarring = {ear2="Fenrir's earring"}
