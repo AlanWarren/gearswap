@@ -86,7 +86,7 @@ function init_gear_sets()
     --earrings for WS
     sets.WsEarNoMadrigal = {ear2="Trux Earring"}
     sets.WsEarMadrigal = {ear2="Kuwunga Earring"}
-    sets.earring = select_earring()
+    --sets.earring = select_earring()
        
     sets.precast.WSHolder = {
 		head="Felistris Mask",
@@ -486,7 +486,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-    sets.earring = select_earring()
+    --sets.earring = select_earring()
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -503,7 +503,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 	if state.Buff.Doomed then
 		equip(sets.buff.Doomed)
 	end
-    sets.earring = select_earring()
+    --sets.earring = select_earring()
 end
 
 
@@ -523,7 +523,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
 	sets.Kiting = select_movement()
-    sets.earring = select_earring()
+    --sets.earring = select_earring()
 end
 
 -- Modify the default idle set after it was constructed.
@@ -540,7 +540,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-    meleeSet = set_combine(meleeSet, select_earring())
+    --meleeSet = set_combine(meleeSet, select_earring())
 	if state.Buff.Migawari then
 		meleeSet = set_combine(meleeSet, sets.buff.Migawari)
 	end
