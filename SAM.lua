@@ -341,7 +341,7 @@ function init_gear_sets()
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
 		back="Misuuchi Kappa", -- 3
-        waist="Cetl Belt",
+        waist="Windbuffet belt",
         legs="Wakido Haidate +1", -- 7
         feet="Sakonji Sune-ate +1" -- 8
     }
