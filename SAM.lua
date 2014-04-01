@@ -350,7 +350,7 @@ function init_gear_sets()
         head="Sakonji Kabuto",
         ear1="Brutal Earring",
         ear2="Kuwunga Earring",
-        feet="Otronif boots +1" -- 7
+        --feet="Otronif boots +1" -- 7
     })
 
     sets.engaged.Adoulin.Yoichi = set_combine(sets.engaged.Adoulin, {
