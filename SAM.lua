@@ -101,7 +101,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Namas Arrow'] = {
         ammo=gear.RAarrow,
-        head="Sakonji Kabuto",
+        head="Sakonji Kabuto +1",
         neck="Aqua Gorget",
         ear1="Flame Pearl",
         ear2="Flame Pearl",
@@ -115,7 +115,7 @@ function init_gear_sets()
         feet="Wakido Sune-ate"
     }
     sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'], {
-        head="Sakonji Kabuto"
+        head="Sakonji Kabuto +1"
     })
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
         neck="Breeze Gorget",
@@ -123,7 +123,7 @@ function init_gear_sets()
         ring2="Stormsoul Ring"
     })
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
-        head="Sakonji Kabuto"
+        head="Sakonji Kabuto +1"
     })
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -332,7 +332,7 @@ function init_gear_sets()
     -- This set assumes Tsurumaru 4-hit
 	sets.engaged.Adoulin = {
         ammo="Paeapua",
-		head="Yaoyotl Helm", -- 4
+		head="Sakonji Kabuto +1", -- 4
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
@@ -343,11 +343,12 @@ function init_gear_sets()
 		back="Misuuchi Kappa", -- 3
         waist="Windbuffet belt",
         legs="Wakido Haidate +1", -- 7
-        feet="Sakonji Sune-ate +1" -- 8
+        --feet="Sakonji Sune-ate +1" -- 8
+        feet="Otronif Boots +1" -- 8
     }
 
     sets.engaged.Adoulin.MarchMad = set_combine(sets.engaged.Adoulin, {
-        head="Sakonji Kabuto",
+        head="Sakonji Kabuto +1",
         ear1="Brutal Earring",
         ear2="Kuwunga Earring",
         --feet="Otronif boots +1" -- 7
