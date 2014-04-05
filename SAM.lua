@@ -188,7 +188,7 @@ function init_gear_sets()
 	sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
-		head="Yaoyotl Helm",
+		head="Sakonji Kabuto +1",
         neck="Justice Torque",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
