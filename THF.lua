@@ -81,20 +81,42 @@ function init_gear_sets()
 	sets.precast.JA['Feint'] = {hands="Plunderer's Armlets"} -- {legs="Assassin's Culottes +2"}
 	
 	sets.precast.JA['Sneak Attack'] = {
-		head="Uk'uxkaj Cap",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Manibozho Jerkin",hands="Raider's Armlets +2",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Twilight Belt",legs="Manibozho Brais",feet="Iuitl Gaiters"}
+		head="Uk'uxkaj Cap",
+        neck="Asperity Necklace",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+		body="Manibozho Jerkin",
+        hands="Raider's Armlets +2",
+        ring1="Thundersoul Ring",
+        ring2="Epona's Ring",
+		back="Atheling Mantle",
+        waist="Cetl Belt",
+        legs="Manibozho Brais",
+        feet="Iuitl Gaiters"
+    }
 
 	sets.precast.JA['Trick Attack'] = {
-		head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Manibozho Jerkin",hands="Iuitl Wristbands +1",ring1="Stormsoul Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Nusku's Sash",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
+		head="Felistris Mask",
+        neck="Asperity Necklace",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+		body="Manibozho Jerkin",
+        hands="Iuitl Wristbands +1",
+        ring1="Stormsoul Ring",
+        ring2="Epona's Ring",
+		back="Canny Cape",
+        waist="Elanid Belt",
+        legs="Nahtirah Trousers",
+        feet="Iuitl Gaiters"
+    }
 
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		head="Whirlpool Mask",
-		legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
+		legs="Nahtirah Trousers",
+        feet="Iuitl Gaiters"
+    }
 		
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
@@ -114,15 +136,35 @@ function init_gear_sets()
 	gear.default.weaponskill_neck = "Asperity Necklace"
 	gear.default.weaponskill_waist = "Cetl Belt"
 	sets.precast.WS = {
-		head="Felistris Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Iuitl Vest",hands="Iuitl Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Cetl Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
-	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
+		head="Felistris Mask",
+        neck="Asperity Necklace",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+		body="Iuitl Vest",
+        hands="Iuitl Wristbands +1",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+		back="Atheling Mantle",
+        waist="Cetl Belt",
+        legs="Nahtirah Trousers",
+        feet="Iuitl Gaiters"
+    }
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+            head="Whirlpool Mask",
+            back="Canny Cape"
+    })
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {neck="Breeze Gorget",ring1="Stormsoul Ring",
-		legs="Nahtirah Trousers", wasit="Thunder Belt"})
-	sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {head="Whirlpool Mask"})
+	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
+            neck="Breeze Gorget",
+            ring1="Stormsoul Ring",
+		    legs="Nahtirah Trousers", 
+            wasit="Elanid Belt"
+    })
+	sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {
+            head="Whirlpool Mask",
+            back="Canny Cape"
+    })
 	sets.precast.WS['Exenterator'].Mod = set_combine(sets.precast.WS['Exenterator'], {waist="Thunder Belt"})
 	sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mod, {neck="Breeze Gorget"})
 	sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'].Mod, {neck="Breeze Gorget"})
@@ -135,9 +177,18 @@ function init_gear_sets()
 	sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {neck="Breeze Gorget"})
 	sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mod, {neck="Breeze Gorget"})
 
-	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {head="Uk'uxkaj Cap",neck="Shadow Gorget",
-		ear1="Brutal Earring",ear2="Trux Earring",waist="Light Belt"})
-	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {head="Whirlpool Mask"})
+	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+            head="Uk'uxkaj Cap",
+            neck="Shadow Gorget",
+		    ear1="Brutal Earring",
+            ear2="Trux Earring",
+            ring1="Thundersoul Ring",
+            waist="Light Belt"
+    })
+	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
+            head="Whirlpool Mask",
+            back="Canny Cape"
+    })
 	sets.precast.WS['Evisceration'].Mod = set_combine(sets.precast.WS['Evisceration'], {waist="Soil Belt"})
 	sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'].Mod, {neck="Shadow Gorget"})
 	sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'].Mod, {neck="Shadow Gorget"})
@@ -160,13 +211,13 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Felistris Mask",
 		body="Iuitl Vest",hands="Iuitl Wristbands +1",
-		waist="Twilight Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
+		waist="Hurch'lan Sash",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
 		
 	-- Specific spells
 	sets.midcast.Utsusemi = {
 		head="Felistris Mask",
 		body="Iuitl Vest",hands="Iuitl Wristbands +1",
-		waist="Twilight Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
+		waist="Hurch'lan Sash",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
 
 	-- Ranged gear -- acc + TH
 	sets.midcast.RangedAttack = {
@@ -194,7 +245,7 @@ function init_gear_sets()
 	sets.idle.Town = {main="Izhiikoh", sub="Eminent Dagger",ranged="Raider's Boomerang",
 		head="Felistris Mask",neck="Rancor Collar",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
 		body="Thaumas Coat",hands="Raider's Armlets +2",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Nusku's Sash",legs="Manibozho Brais",feet="Trotter Boots"}
+		back="Canny Cape",waist="Nusku's Sash",legs="Manibozho Brais",feet="Trotter Boots"}
 	
 	sets.idle.Weak = sets.idle
 	
@@ -203,9 +254,17 @@ function init_gear_sets()
 	-- Defense sets
 
 	sets.defense.Evasion = {
-		head="Felistris Mask",neck="Asperity Necklace",
-		body="Manibozho Jerkin",hands="Iuitl Wristbands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Iuitl Gaiters"}
+		head="Felistris Mask",
+        neck="Asperity Necklace",
+		body="Manibozho Jerkin",
+        hands="Iuitl Wristbands +1",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+		back="Canny Cape",
+        waist="Nusku's Sash",
+        legs="Iuitl Tights",
+        feet="Iuitl Gaiters"
+    }
 
 	sets.defense.PDT = {
 		head="Lithelimb Cap",neck="Twilight Torque",
@@ -215,7 +274,7 @@ function init_gear_sets()
 	sets.defense.MDT = {
 		head="Whirlpool Mask",neck="Twilight Torque",
 		body="Iuitl Vest",hands="Iuitl Wristbands +1",ring1="Dark Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Twilight Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
+		back="Atheling Mantle",waist="Hurch'lan Sash",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
 
 	sets.Kiting = {feet="Trotter Boots"}
 
@@ -236,7 +295,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
-		back="Atheling Mantle",
+		back="Canny Cape",
         waist="Nusku's Sash",
         legs="Manibozho Brais",
         feet="Plunderer's Poulaines"
