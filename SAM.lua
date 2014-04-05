@@ -585,6 +585,21 @@ function determine_brd_songs()
 		classes.CustomMeleeGroups:append('MarchMad')
 	end
 end
+-- will try and bend this to work for cor rolls
+--windower.register_event('incoming text', function(original, new, color)
+--    local name, count = original:match('Additional effect: Treasure Hunter effectiveness against the (.*) increases to (%d+).')
+--    if name and count then
+--        mob = name
+--        th:text(' '..name..'\n TH: '..count);
+--        th:show()
+--    end
+--
+--    name = original:match('%w+ defeats the (.*).')
+--    if name and mob == name then
+--        th:text('')
+--        th:hide()
+--    end
+--end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
