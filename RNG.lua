@@ -283,6 +283,7 @@
             sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, {
                 neck="Breeze Gorget",
                 waist="Thunder Belt",
+                legs="Orion Braccae +1",
                 hands="Sigyn's Bazubands"
             })
 
