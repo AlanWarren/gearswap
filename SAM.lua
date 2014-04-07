@@ -350,7 +350,7 @@ function init_gear_sets()
     sets.engaged.Adoulin.MarchMad = set_combine(sets.engaged.Adoulin, {
         head="Sakonji Kabuto +1",
         ear1="Brutal Earring",
-        ear2="Kuwunga Earring",
+        ear2="Kuwunga Earring"
         --feet="Otronif boots +1" -- 7
     })
 
@@ -499,7 +499,7 @@ function customize_melee_set(meleeSet)
 		    meleeSet = set_combine(meleeSet, sets.thirdeye)
         end
 	end
-    if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Speleogen bow' then
+    if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Speleogen Bow' then
         meleeSet = set_combine(meleeSet, sets.bow)
     end
 	return meleeSet

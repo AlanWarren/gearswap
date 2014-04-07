@@ -133,7 +133,7 @@
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {neck="Breeze Gorget",legs="Mikinaak Cuisses",waist="Soil Belt"})
             sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Breeze Gorget",legs="Mikinaak Cuisses",waist="Soil Belt"})
-            sets.precast.WS['Resolution'].Mod = set_combine(sets.precast.WS['Resolution'], {Breeze="Shadow Gorget",legs="Mikinaak Cuisses",waist="Soil Belt"})
+            sets.precast.WS['Resolution'].Mod = set_combine(sets.precast.WS['Resolution'], {neck="Shadow Gorget",legs="Mikinaak Cuisses",waist="Soil Belt"})
      
            
             -- Sets to return to when not performing an action.
@@ -261,72 +261,74 @@
 					
 
             -- Custom Melee Group
-            --sets.engaged['Anahera Scythe'] = {
-            --    ammo="Hagneia Stone",
-            --    head="Yaoyotl Helm",
-            --    neck="Asperity Necklace",
-            --    ear1="Bladeborn Earring",
-            --    ear2="Steelflash Earring",
-            --    body="Pak Corselet",
-            --    hands="Cizin Mufflers",
-            --    ring1="Rajas Ring",
-            --    ring2="K'ayres Ring",
-            --    back="Atheling Mantle",
-            --    waist="Cetl Belt",
-            --    legs="Cizin Breeches",
-            --    feet="Mikinaak Greaves"
-            --}
+            sets.engaged['Anahera Scythe'] = {
+                ammo="Hagneia Stone",
+                head="Yaoyotl Helm",
+                neck="Asperity Necklace",
+                ear1="Bladeborn Earring",
+                ear2="Steelflash Earring",
+                body="Pak Corselet",
+                hands="Cizin Mufflers",
+                ring1="Rajas Ring",
+                ring2="K'ayres Ring",
+                back="Atheling Mantle",
+                waist="Cetl Belt",
+                legs="Cizin Breeches",
+                feet="Mikinaak Greaves"
+            }
 
-            --sets.engaged['Anahera Scythe'].Acc = set_combine(sets.engaged['Anahera Scythe'], {
-            --    neck="Bale Choker",
-            --    body="Mikinaak Breastplate",
-            --    waist="Dynamic Belt",
-            --    feet="Whirlpool Greaves"
-            --})
+            sets.engaged['Anahera Scythe'].Acc = set_combine(sets.engaged['Anahera Scythe'], {
+                neck="Bale Choker",
+                body="Mikinaak Breastplate",
+                waist="Dynamic Belt",
+                feet="Whirlpool Greaves"
+            })
 
-            --sets.engaged['Senbaak Nagan'].Multi = set_combine(sets.engaged['Anahera Scythe'], {
-            --    head="Quauhpilli Helm",
-            --    ear1="Brutal Earring",
-            --    ear2="Trux Earring",
-            --    waist="Windbuffet Belt"
-            --})
+            sets.engaged['Anahera Scythe'].Multi = set_combine(sets.engaged['Anahera Scythe'], {
+                head="Quauhpilli Helm",
+                ear1="Brutal Earring",
+                ear2="Trux Earring",
+                waist="Windbuffet Belt"
+            })
 
-            --sets.engaged['Anahera Scythe'].Multi.PDT = set_combine(sets.engaged['Anahera Scythe'].Multi, {
-            --    body="Cizin Mail",
-            --    feet="Cizin Greaves"
-            --})
+            sets.engaged['Anahera Scythe'].Multi.PDT = set_combine(sets.engaged['Anahera Scythe'].Multi, {
+                body="Cizin Mail",
+                feet="Cizin Greaves"
+            })
 
-            --sets.engaged['Anahera Scythe'].Multi.Reraise = set_combine(sets.engaged['Anahera Scythe'].Multi, {
-            --    head="Twilight Helm",
-            --    neck="Bale Choker",
-            --    body="Twilight Mail"
-            --})
+            sets.engaged['Anahera Scythe'].Multi.Reraise = set_combine(sets.engaged['Anahera Scythe'].Multi, {
+                head="Twilight Helm",
+                neck="Bale Choker",
+                body="Twilight Mail"
+            })
 
-            --sets.engaged['Anahera Scythe'].PDT = set_combine(sets.engaged['Anahera Scythe'], {
-            --    neck="Twilight Torque",
-            --    body="Cizin Mail",
-            --    ring2="Dark Ring",
-            --    feet="Cizin Greaves"
-            --})
+            sets.engaged['Anahera Scythe'].PDT = set_combine(sets.engaged['Anahera Scythe'], {
+                neck="Twilight Torque",
+                body="Cizin Mail",
+                ring2="Dark Ring",
+                feet="Cizin Greaves"
+            })
 
-            --sets.engaged['Anahera Scythe'].Acc.PDT = set_combine(sets.engaged['Anahera Scythe'].PDT, {
-            --    waist="Dynamic Belt",
-            --    feet="Whirlpool Greaves"
-            --})
+            sets.engaged['Anahera Scythe'].Acc.PDT = set_combine(sets.engaged['Anahera Scythe'].PDT, {
+                waist="Dynamic Belt",
+                feet="Whirlpool Greaves"
+            })
 
-            --sets.engaged['Anahera Scythe'].Acc.Reraise = set_combine(sets.engaged['Anahera Scythe'].Acc, {
-            --    head="Twilight Helm",
-            --    body="Twilight Mail"
-            --})
+            sets.engaged['Anahera Scythe'].Acc.Reraise = set_combine(sets.engaged['Anahera Scythe'].Acc, {
+                head="Twilight Helm",
+                body="Twilight Mail"
+            })
 
-            --sets.engaged['Anahera Scythe'].MaxHaste = set_combine(sets.engaged['Anahera Scythe'].Multi, {
-            --    head="Yaoyotl Helm"
-            --})
+            sets.engaged['Anahera Scythe'].MaxHaste = set_combine(sets.engaged['Anahera Scythe'].Multi, {
+                head="Yaoyotl Helm"
+            })
 
-            --sets.engaged['Anahera Scythe'].EmbravaHaste = sets.engaged['Anahera Scythe'].MaxHaste	        
-            --sets.engaged['Anahera Scythe'].HighHaste = sets.engaged['Anahera Scythe'].MaxHaste	        
+            sets.engaged['Anahera Scythe'].EmbravaHaste = sets.engaged['Anahera Scythe'].MaxHaste	        
+            sets.engaged['Anahera Scythe'].HighHaste = sets.engaged['Anahera Scythe'].MaxHaste	        
             
             sets.buff.Souleater = {head="Ignominy burgeonet +1"}
+            sets.engaged.Souleater = sets.buff.Souleater
+            sets.engaged['Anahera Scythe'].Souleater = sets.buff.Souleater
      
     end
      
@@ -403,15 +405,11 @@
     -- gain == true if the buff was gained, false if it was lost.
     function job_buff_change(buff, gain)
 
-        if buff == "Souleater" then
+        if S{'souleater'}:containes(buff:lower()) then
             state.CombatForm = 'Souleater'
         end
 
-        if buff == "Last Resort" then
-            determine_haste_group()
-        end
-
-	    if S{'haste','march','embrava','haste samba'}:contains(buff:lower()) then
+	    if S{'haste','march','embrava','haste samba', 'last resort'}:contains(buff:lower()) then
 	    	determine_haste_group()
 	    	handle_equipping_gear(player.status)
        -- elseif buff:startswith('Aftermath') then

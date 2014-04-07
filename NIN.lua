@@ -374,6 +374,7 @@ function init_gear_sets()
 
     -- 35
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_43, {
+		body="Mochizuki Chainmail",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         legs="Mochizuki Hakama"
@@ -395,6 +396,7 @@ function init_gear_sets()
     -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_43, {
         head="Iga Zukin +2",
+		body="Mochizuki Chainmail",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         waist="Nusku's Sash",
@@ -416,7 +418,7 @@ function init_gear_sets()
 
     -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_43, {
-		body="Hachiya Chainmail +1",
+		body="Mochizuki Chainmail",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         waist="Nusku's Sash",
