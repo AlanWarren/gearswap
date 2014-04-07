@@ -619,7 +619,7 @@
     end
 
     function get_combat_weapon()
-        if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Ajjub Bow' then
+        if player.equipment.range == 'Yoichinoyumi' then
             return 'Bow'
         end
     end
