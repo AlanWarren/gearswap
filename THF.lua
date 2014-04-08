@@ -159,7 +159,7 @@ function init_gear_sets()
             neck="Breeze Gorget",
             ring1="Stormsoul Ring",
 		    legs="Nahtirah Trousers", 
-            wasit="Elanid Belt"
+            waist="Elanid Belt"
     })
 	sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {
             head="Whirlpool Mask",
