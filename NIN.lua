@@ -159,7 +159,7 @@ function init_gear_sets()
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
 		head="Felistris Mask",
-		body="Hachiya Chainmail +1",
+		body="Mochi. Chainmail",
         hands="Mochizuki Tekko +1",
 		waist="Twilight Belt",
         legs="Mochizuki Hakama",
