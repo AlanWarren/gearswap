@@ -16,7 +16,7 @@ function job_setup()
 	state.CombatForm = get_combat_form()
 	state.CombatWeapon = get_combat_weapon()
     -- determine special equip 
-	determine_brd_songs()
+	--determine_brd_songs()
 	
 	state.Buff.Sekkanoki = buffactive.sekkanoki or false
 	state.Buff.Sengikori = buffactive.sengikori or false
@@ -83,7 +83,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-        ammo="Paeapua",
+        --ammo="Paeapua",
 		head="Yaoyotl Helm",
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
@@ -101,7 +101,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Namas Arrow'] = {
         ammo=gear.RAarrow,
-        head="Sakonji Kabuto",
+        head="Sakonji Kabuto +1",
         neck="Aqua Gorget",
         ear1="Flame Pearl",
         ear2="Flame Pearl",
@@ -115,7 +115,7 @@ function init_gear_sets()
         feet="Wakido Sune-ate"
     }
     sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'], {
-        head="Sakonji Kabuto"
+        head="Sakonji Kabuto +1"
     })
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
         neck="Breeze Gorget",
@@ -123,7 +123,7 @@ function init_gear_sets()
         ring2="Stormsoul Ring"
     })
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
-        head="Sakonji Kabuto"
+        head="Sakonji Kabuto +1"
     })
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -188,7 +188,7 @@ function init_gear_sets()
 	sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
-		head="Yaoyotl Helm",
+		head="Sakonji Kabuto +1",
         neck="Justice Torque",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
@@ -332,7 +332,7 @@ function init_gear_sets()
     -- This set assumes Tsurumaru 4-hit
 	sets.engaged.Adoulin = {
         ammo="Paeapua",
-		head="Yaoyotl Helm", -- 4
+		head="Sakonji Kabuto +1", -- 4
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
@@ -341,18 +341,23 @@ function init_gear_sets()
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
 		back="Misuuchi Kappa", -- 3
-        waist="Cetl Belt",
+        waist="Windbuffet belt",
         legs="Wakido Haidate +1", -- 7
-        feet="Sakonji Sune-ate +1" -- 8
+        --feet="Sakonji Sune-ate +1" -- 8
+        feet="Otronif Boots +1" -- 8
     }
 
     sets.engaged.Adoulin.MarchMad = set_combine(sets.engaged.Adoulin, {
-        head="Sakonji Kabuto",
+        head="Sakonji Kabuto +1",
         ear1="Brutal Earring",
-        ear2="Kuwunga Earring"
+        ear2="Kuwunga Earring",
+        --feet="Otronif boots +1" -- 7
     })
 
     sets.engaged.Adoulin.Yoichi = set_combine(sets.engaged.Adoulin, {
+        ammo=gear.RAarrow
+    })
+    sets.engaged.Adoulin.MarchMad.Yoichi = set_combine(sets.engaged.Adoulin, {
         ammo=gear.RAarrow
     })
 
@@ -522,10 +527,10 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-	if S{'madrigal','march'}:contains(buff:lower()) then
-		determine_brd_songs()
-		handle_equipping_gear(player.status)
-	elseif state.Buff[buff] ~= nil then
+	--if S{'madrigal','march'}:contains(buff:lower()) then
+		--determine_brd_songs()
+		--handle_equipping_gear(player.status)
+	if state.Buff[buff] ~= nil then
 		state.Buff[buff] = gain
         -- if seign or TE is up, don't swap
         if not seigan_thirdeye_active() then
@@ -548,8 +553,7 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
 	state.CombatForm = get_combat_form()
-	state.CombatWeapon = get_combat_weapon()
-    determine_brd_songs()
+    state.CombatWeapon = get_combat_weapon()
 end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
@@ -561,7 +565,8 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_weapon()
-    if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Speleogen bow' then
+    if player.equipment.range == 'Speleogen Bow' then
+	    add_to_chat(121,'Bow Set!')
         return 'Yoichi'
     end
 end
@@ -581,6 +586,13 @@ function determine_brd_songs()
 	if buffactive.madrigal and buffactive.march then
 	    add_to_chat(121,'Mad + March Active - Using Special Earrings!')
 		classes.CustomMeleeGroups:append('MarchMad')
+	end
+end
+function determine_bow()
+	classes.CustomMeleeGroups:clear()
+    if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Speleogen bow' then
+	    add_to_chat(121,'Bow Set!')
+		classes.CustomMeleeGroups:append('Yoichi')
 	end
 end
 -- will try and bend this to work for cor rolls

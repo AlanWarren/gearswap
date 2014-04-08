@@ -133,10 +133,12 @@ function init_gear_sets()
     })
 	sets.precast.WS['Blade: Hi'].Mod = set_combine(sets.precast.WS['Blade: Hi'], {waist="Soil Belt"})
 
-	sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {neck="Breeze Gorget",
+	sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {
+            neck="Breeze Gorget",
             waist="Thunder Belt",
-            legs="Manibozho Brais"
-            })
+            legs="Manibozho Brais",
+            ring1="Thundersoul Ring"
+    })
 
 	sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, {neck="Thunder Gorget"})
 	sets.precast.WS['Blade: Kamu'].Mod = set_combine(sets.precast.WS['Blade: Kamu'], {waist="Thunder Belt"})
@@ -609,22 +611,22 @@ function determine_haste_group()
     -- Embrava 25%
     if (buffactive.embrava or buffactive.haste) and buffactive.march == 2 then
         add_to_chat(8, '-------------Haste 43%-------------')
-        classes.CustomMeleeGroups:appen('Haste_43')
+        classes.CustomMeleeGroups:append('Haste_43')
     elseif buffactive.embrava and buffactive.haste then
         add_to_chat(8, '-------------Haste 40%-------------')
-        classes.CustomMeleeGroups:appen('Haste_40')
+        classes.CustomMeleeGroups:append('Haste_40')
     elseif buffactive.haste and buffactive['haste samba'] and buffactive.march == 1 then
         add_to_chat(8, '-------------Haste 35%-------------')
-        classes.CustomMeleeGroups:appen('Haste_35')
+        classes.CustomMeleeGroups:append('Haste_35')
     elseif (buffactive.haste and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) then
         add_to_chat(8, '-------------Haste 30%-------------')
-        classes.CustomMeleeGroups:appen('Haste_30')
+        classes.CustomMeleeGroups:append('Haste_30')
     elseif buffactive.embrava or buffactive.march == 2 then
         add_to_chat(8, '-------------Haste 25%-------------')
-        classes.CustomMeleeGroups:appen('Haste_25')
+        classes.CustomMeleeGroups:append('Haste_25')
     elseif buffactive.haste or buffactive['haste samba'] then
         add_to_chat(8, '-------------Haste 20%-------------')
-        classes.CustomMeleeGroups:appen('Haste_20')
+        classes.CustomMeleeGroups:append('Haste_20')
     end
 
 end

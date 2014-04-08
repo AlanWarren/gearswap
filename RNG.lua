@@ -83,7 +83,7 @@
             -- gear.Staff = {} no need to set this, it's already set
             gear.Staff.PDT = ""
             gear.default.weaponskill_neck = "Sylvan Scarf"
-            gear.default.weaponskill_waist = "Scout's Belt"
+            gear.default.weaponskill_waist = "Elanid Belt"
      
             -- List of ammunition that should only be used under unlimited shot
             U_Shot_Ammo = S{'Animikii Bullet'}
@@ -144,7 +144,7 @@
                 ring1="Dark Ring",
                 ring2="Paguroidea Ring",
                 back="Shadow Mantle",
-                waist="Scout's Belt",
+                waist="Elanid Belt",
                 legs="Nahtirah Trousers",
                 feet="Orion Socks +1"
             }
@@ -170,7 +170,7 @@
                 ring1="Rajas Ring",
                 ring2="Paguroidea Ring",
                 back="Shadow Mantle",
-                waist="Scout's Belt",
+                waist="Elanid Belt",
                 legs="Nahtirah Trousers",
                 feet="Orion Socks +1"
             }
@@ -259,7 +259,7 @@
                 ring1="Rajas Ring",
                 ring2="Pyrosoul Ring",
                 back="Buquwik Cape",
-                waist="Scout's Belt",
+                waist="Elanid Belt",
                 legs="Nahtirah Trousers",
                 feet="Orion Socks +1"
             }
@@ -283,6 +283,7 @@
             sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, {
                 neck="Breeze Gorget",
                 waist="Thunder Belt",
+                legs="Orion Braccae +1",
                 hands="Sigyn's Bazubands"
             })
 
@@ -338,7 +339,8 @@
                 neck="Flame Gorget",
                 waist="Light Belt",
                 feet="Arcadian Socks +1",
-                back="Rancorous Mantle"
+                ring2="Thundersoul Ring"
+                --back="Rancorous Mantle"
             })
             sets.precast.WS['Jishnu\'s Radiance'].STP = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
                 ear2="Tripudio Earring",
