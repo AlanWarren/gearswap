@@ -244,7 +244,7 @@ function init_gear_sets()
         feet="Cizin Greaves"
     }
 
-	sets.defense.Reraise = set_combine(sets.defnese.PDT, {
+	sets.defense.Reraise = set_combine(sets.defense.PDT, {
 		head="Twilight Helm",
 		body="Twilight Mail"
     })
