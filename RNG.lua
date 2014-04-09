@@ -457,7 +457,7 @@
         if spell.english == "Camouflage" then
             equip(sets.buff.Camouflage)
         elseif spell.english == "Overkill" then
-            equip(sets.Overkill.Preshot)
+            equip(sets.Overkill.PreShot)
         end
         sets.earring = select_earring()
     end
