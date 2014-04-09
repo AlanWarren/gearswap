@@ -70,7 +70,6 @@
     function job_setup()
 	    state.CombatWeapon = get_combat_weapon()
         state.Buff.Camouflage = buffactive.camouflage or false
-        state.Buff.Overkill = buffactive.overkill or false
     end
      
     -- Called when this job file is unloaded (eg: job change)
@@ -393,7 +392,14 @@
             })
 
             sets.buff.Camouflage =  {body="Orion Jerkin +1"}
-            sets.buff.Overkill =  {body="Arcadian Jerkin"}
+
+            sets.Overkill =  {
+                body="Arcadian Jerkin",
+                feet="Arcadian Socks +1"
+            }
+            sets.Overkill.PreShot =  set_combine(sets.Overkill, {
+                head="Orion Beret +1"
+            })
     end
 
      
@@ -451,7 +457,7 @@
         if spell.english == "Camouflage" then
             equip(sets.buff.Camouflage)
         elseif spell.english == "Overkill" then
-            equip(sets.buff.Overkill)
+            equip(sets.Overkill.PreShot)
         end
         sets.earring = select_earring()
     end
@@ -474,7 +480,7 @@
             equip(sets.buff.Camouflage)
         end
         if state.Buff['Overkill'] then
-            equip(sets.buff.Overkill)
+            equip(sets.Overkill)
         end
         sets.earring = select_earring()
     end
@@ -501,9 +507,6 @@
     	if state.Buff['Camouflage'] then
     		idleSet = set_combine(idleSet, sets.buff.Camouflage)
     	end
-    	if state.Buff['Overkill'] then
-    		idleSet = set_combine(idleSet, sets.buff.Overkill)
-    	end
         return idleSet
     end
      
@@ -513,7 +516,7 @@
 	    	meleeSet = set_combine(meleeSet, sets.buff.Camouflage)
 	    end
 	    if state.Buff['Overkill'] then
-	    	meleeSet = set_combine(meleeSet, sets.buff.Overkill)
+	    	meleeSet = set_combine(meleeSet, sets.Overkill)
 	    end
         return meleeSet
     end
@@ -523,14 +526,14 @@
               if state.Buff['Camouflage'] then
                   equip(sets.buff.Camouflage)
               elseif state.Buff['Overkill'] then
-                  equip(sets.buff.Overkill)
+                  equip(sets.Overkill)
               end
           else 
               if state.Buff['Camouflage'] then
                   equip(sets.buff.Camouflage)
               end
           end
-          if camo_active() or overkill_active() then
+          if camo_active() then
               eventArgs.handled = true
           end
     end
@@ -544,7 +547,7 @@
 	        state.Buff[buff] = gain
 	    end
 
-        if not camo_active() or overkill_active() then
+        if not camo_active() then
             handle_equipping_gear(player.status)
         end
     end
@@ -621,7 +624,7 @@
     end
 
     function get_combat_weapon()
-        if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Ajjub Bow' then
+        if player.equipment.range == 'Yoichinoyumi' then
             return 'Bow'
         end
     end
