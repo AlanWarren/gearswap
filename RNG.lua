@@ -70,6 +70,7 @@
     function job_setup()
 	    state.CombatWeapon = get_combat_weapon()
         state.Buff.Camouflage = buffactive.camouflage or false
+        state.Buff.Overkill = buffactive.overkill or false
     end
      
     -- Called when this job file is unloaded (eg: job change)
@@ -339,7 +340,7 @@
                 waist="Light Belt",
                 feet="Arcadian Socks +1",
                 ring2="Thundersoul Ring"
-                --back="Rancorous Mantle"
+                back="Rancorous Mantle"
             })
             sets.precast.WS['Jishnu\'s Radiance'].STP = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
                 ear2="Tripudio Earring",
@@ -414,7 +415,7 @@
                     end
                     if (spell.target.distance >8 and not bow_gun_weaponskills:contains(spell.english)) or (spell.target.distance >21) then
                             -- Cancel Action if distance is too great, saving TP
-                            add_to_chat(122,"Distance too great for WeaponSkill /Canceling")
+                            add_to_chat(122,"Move closer DUMBASS! /Canceling")
                             eventArgs.cancel = true
                             return
                     elseif state.Defense.Active then
@@ -434,7 +435,7 @@
                                     add_to_chat(122,"Unlimited Shot not Active or Ammo Empty, Using Default Ammo")
                                     equip({ammo=DefaultAmmo[player.equipment.range]})
                             else
-                                    add_to_chat(122,"Either Defaul Ammo is Unavailable or Unknown Weapon. Staying empty")
+                                    add_to_chat(122,"Either Default Ammo is Unavailable or Unknown Weapon. Staying empty")
                                     equip({ammo=empty})
                             end
                     end
@@ -447,6 +448,11 @@
                                     end
                             end
                     end
+                    if buffactive.camoflauge then
+                        send_command('gs disable body')
+                    else
+                        enable('body')
+                    end
             end
     end
      
@@ -456,7 +462,7 @@
     function job_post_precast(spell, action, spellMap, eventArgs)
         if spell.english == "Camouflage" then
             equip(sets.buff.Camouflage)
-        elseif spell.english == "Overkill" then
+        elseif spell.english == "Overkill" or buffactive.overkill then
             equip(sets.Overkill.PreShot)
         end
         sets.earring = select_earring()
@@ -465,21 +471,21 @@
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
     function job_midcast(spell, action, spellMap, eventArgs)
         if spell.name == 'Spectral Jig' and buffactive.sneak then
-                -- If sneak is active when using, cancel before completion
-                send_command('cancel 71')
+            -- If sneak is active when using, cancel before completion
+            send_command('cancel 71')
         end
     end
      
     -- Run after the default midcast() is done.
     -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
     function job_post_midcast(spell, action, spellMap, eventArgs)
-        if buffactive["Barrage"] then
+        if buffactive.barrage then
             equip(sets.BarrageMid)
         end
-        if state.Buff['Camouflage'] then
+        if state.Buff.Camouflage then
             equip(sets.buff.Camouflage)
         end
-        if state.Buff['Overkill'] then
+        if state.Buff.Overkill then
             equip(sets.Overkill)
         end
         sets.earring = select_earring()
@@ -504,7 +510,7 @@
     end
      
     function customize_idle_set(idleSet)
-    	if state.Buff['Camouflage'] then
+    	if state.Buff.Camouflage then
     		idleSet = set_combine(idleSet, sets.buff.Camouflage)
     	end
         return idleSet
@@ -512,10 +518,10 @@
      
     function customize_melee_set(meleeSet)
         meleeSet = set_combine(meleeSet, select_earring())
-	    if state.Buff['Camouflage'] then
+	    if state.Buff.Camouflage then
 	    	meleeSet = set_combine(meleeSet, sets.buff.Camouflage)
 	    end
-	    if state.Buff['Overkill'] then
+	    if state.Buff.Overkill then
 	    	meleeSet = set_combine(meleeSet, sets.Overkill)
 	    end
         return meleeSet
@@ -523,13 +529,13 @@
      
     function job_status_change(newStatus, oldStatus, eventArgs)
           if newStatus == 'Engaged' then
-              if state.Buff['Camouflage'] then
+              if state.Buff.Camouflage then
                   equip(sets.buff.Camouflage)
-              elseif state.Buff['Overkill'] then
+              elseif state.Buff.Overkill then
                   equip(sets.Overkill)
               end
           else 
-              if state.Buff['Camouflage'] then
+              if state.Buff.Camouflage then
                   equip(sets.buff.Camouflage)
               end
           end
@@ -630,11 +636,11 @@
     end
 
     function camo_active()
-    	return state.Buff['Camouflage']
+    	return state.Buff.Camouflage
     end
 
     function overkill_active()
-    	return state.Buff['Overkill']
+    	return state.Buff.Overkill
     end
 
     -------------------------------------------------------------------------------------------------------------------
