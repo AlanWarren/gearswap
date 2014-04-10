@@ -90,16 +90,16 @@
            
             -- Simply add a line of DefaultAmmo["Weapon"] = "Ammo Name"
             DefaultAmmo = {}
-            DefaultAmmo["Annihilator"] = "Achiyalabopa bullet"
-            DefaultAmmo["Ajjub Bow"] = "Achiyalabopa arrow"
-            DefaultAmmo["Yoichinoyumi"] = "Achiyalabopa arrow"
-            DefaultAmmo["Atetepeyorg"] = "Achiyalabopa bolt"
+            DefaultAmmo["Annihilator"] = "Achiyalabopa Bullet"
+            DefaultAmmo["Ajjub Bow"] = "Achiyalabopa Arrow"
+            DefaultAmmo["Yoichinoyumi"] = "Achiyalabopa Arrow"
+            DefaultAmmo["Atetepeyorg"] = "Achiyalabopa Bolt"
            
             --add_to_chat(123,'sidecar load')
             -- Options: Override default values
      
             options.OffenseModes = {'Normal', 'Melee'}
-            options.RangedModes = {'Normal', 'ACC', 'STP' }
+            options.RangedModes = {'Normal', 'ACC', 'STP'}
             options.DefenseModes = {'Normal', 'PDT'}
             options.WeaponskillModes = {'Normal', 'ACC'}
             options.PhysicalDefenseModes = {'PDT'}
@@ -114,9 +114,10 @@
             sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
             sets.precast.JA['Velocity Shot'] = {body="Sylvan Caban +2"}
             sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
+
             sets.precast.JA['Eagle Eye Shot'] = {
                 head="Ux'uxkaj Cap", 
-                neck="Rancor Collar",
+                neck="Raqncor Collar",
                 hands="Iuitl Wristbands +1",  -- only while they have crit+1
                 back="Buquwik Cape",
                 ring2="Pyrosoul Ring",
@@ -159,7 +160,6 @@
             })
      
             -- Engaged sets
-
             sets.engaged =  {
                 head="Arcadian Beret +1",
                 neck="Ocachi Gorget",
@@ -193,7 +193,7 @@
             sets.engaged.Bow = {}
 
             sets.engaged.Bow = set_combine(sets.engaged, {
-                hands="Manibozho Gloves",
+                hands="Arcadian Bracers +1",
                 feet="Arcadian Socks +1"
             })
            
@@ -245,7 +245,30 @@
                 legs="Aetosaur Trousers +1"
             })
             sets.midcast.RangedAttack.Bow.STP = set_combine(sets.midcast.RangedAttack.Bow, {
-               hands="Sylvan Glovelettes +2"
+                hands="Sylvan Glovelettes +2"
+            })
+
+            -- -Enmity goal
+            sets.midcast.RangedAttack.Bow.Enmity = set_combine(sets.midcast.RangedAttack.Bow, {
+                hands="Iuitl Wristbands +1",
+                ring2="Paqichikaji Ring",
+                neck="Huani Collar",
+                back="Sylvan Chlamys",
+                legs="Orion Braccae +1",
+                feet="Arcadian Socks +1"
+            })
+            sets.midcast.RangedAttack.Bow.Acc.Enmity = set_combine(sets.midcast.RangedAttack.Bow.Enmity, {
+                hands="Iuitl Wristbands +1",
+                ring1="Hajduk Ring",
+                ring2="Paqichikaji Ring",
+                neck="Huani Collar",
+                back="Lutian Cape",
+                legs="Orion Braccae +1",
+                feet="Arcadian Socks +1"
+            })
+            sets.midcast.RangedAttack.Bow.STP.Enmity = set_combine(sets.midcast.RangedAttack.Bow, {
+                hands="Sylvan Glovelettes +2",
+                back="Sylvan Chlamys"
             })
                    
             -- Weaponskill sets
@@ -317,7 +340,6 @@
             })
 
             -- BOW
-
             sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS, {
                 neck="Aqua Gorget",
                 waist="Light Belt",
@@ -362,11 +384,13 @@
                 back="Sylvan Chlamys",
                 feet="Arcadian Socks +1"
             })
+
             sets.precast.WS['Sidewinder'].STP = set_combine(sets.precast.WS['Sidewinder'], {
                 ring2="Tripudio Earring",
                 hands="Sylvan Glovelettes +2",
                 legs="Aetosaur Trousers +1"
             })
+
             sets.precast.WS['Sidewinder'].Acc = set_combine(sets.precast.WS['Sidewinder'], {
                 legs="Aetosaur Trousers +1",
                 hands="Manibozho Gloves",
@@ -552,6 +576,12 @@
         if state.Buff[buff] ~= nil then
 	        state.Buff[buff] = gain
 	    end
+        -- If Decoy Shot drops, and we're using Yoichi... we make tiny effort to use -enmity
+        if buff == 'Decoy Shot' not gain and player.equipment.range == 'Yoichinoyumi' then
+            classes.CustomMeleeGroups:append('Enmity')
+        else
+	        classes.CustomMeleeGroups:clear()
+        end
 
         if not camo_active() then
             handle_equipping_gear(player.status)
