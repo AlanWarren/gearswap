@@ -121,8 +121,8 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
         head="Uk'uxkaj Cap",
         neck="Shadow gorget",
-        body="Iga Ningi +2",
 		ring1="Stormsoul Ring",
+        --back="Rancorous Mantle",
         legs="Nahtirah Trousers",
         waist="Soil belt"
     })
@@ -451,8 +451,8 @@ function init_gear_sets()
     })
     sets.engaged.Haste_20.Acc = set_combine(sets.engaged.Haste_43.Acc, {
 		body="Hachiya Chainmail +1",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring"
+        ear1="Trux Earring",
+        ear2="Brutal Earring"
     })
     sets.engaged.Haste_20.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
         ear1="Dudgeon Earring",

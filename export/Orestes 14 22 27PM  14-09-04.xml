@@ -1,0 +1,23 @@
+<spellcast>
+  <sets>
+    <group name="exported">
+      <set name="exported">
+        <main>Izhiikoh</main>
+        <sub>Eminent Dagger</sub>
+        <range>Raider's Bmrng.</range>
+        <head>Felistris Mask</head>
+        <body>Thaumas Coat</body>
+        <hands>Iuitl Wristbands +1</hands>
+        <legs>Nahtirah Trousers</legs>
+        <feet>Trotter Boots</feet>
+        <neck>Rancor Collar</neck>
+        <waist>Nusku's Sash</waist>
+        <left_ear>Dudgeon Earring</left_ear>
+        <right_ear>Heartseeker Earring</right_ear>
+        <left_ring>Rajas Ring</left_ring>
+        <right_ring>Epona's Ring</right_ring>
+        <back>Rancorous Mantle</back>
+      </set>
+    </group>
+  </sets>
+</spellcast>
