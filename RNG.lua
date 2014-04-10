@@ -339,7 +339,7 @@
                 neck="Flame Gorget",
                 waist="Light Belt",
                 feet="Arcadian Socks +1",
-                ring2="Thundersoul Ring"
+                ring2="Thundersoul Ring",
                 back="Rancorous Mantle"
             })
             sets.precast.WS['Jishnu\'s Radiance'].STP = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
