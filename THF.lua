@@ -183,7 +183,8 @@ function init_gear_sets()
 		    ear1="Brutal Earring",
             ear2="Trux Earring",
             ring1="Thundersoul Ring",
-            waist="Light Belt"
+            waist="Light Belt",
+            back="Rancorous Mantle"
     })
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
             head="Whirlpool Mask",
