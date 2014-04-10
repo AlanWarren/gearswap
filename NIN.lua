@@ -281,8 +281,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		head="Whirlpool Mask",
         neck="Rancor Collar",
-		body="Hachiya Chainmail +1", -- temp until Mochizuki chainmail
-        hands="Otronif Gloves",
+		body="Mochizuki Chainmail", 
 		back="Yokaze Mantle",
         waist="Hurch'lan Sash",
         legs="Hachiya Hakama",
@@ -296,7 +295,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
 		body="Thaumas Coat",
         hands="Otronif Gloves",
-        ring1="Dark Ring",
+        ring1="Thundersoul Ring",
         waist="Cetl Belt"
     })
 
@@ -307,18 +306,7 @@ function init_gear_sets()
     })
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
 		head="Whirlpool Mask",
-        hands="Otronif Gloves",
-        waist="Hurch'lan Sash",
-    })
-	sets.engaged.PDT = set_combine(sets.engaged, {
-		head="Felistris Mask",
-        neck="Twilight Torque",
-		body="Otronif Harness",
-        hands="Otronif Gloves",
-        ring1="Dark Ring",
-		back="Shadow Mantle",
-        legs="Nahtirah Trousers",
-        feet="Otronif Boots +1"
+        waist="Hurch'lan Sash"
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
 		head="Whirlpool Mask",
@@ -345,11 +333,12 @@ function init_gear_sets()
     })
     sets.engaged.Haste_43.Acc = set_combine(sets.engaged.Haste_43, {
 		head="Whirlpool Mask",
-        hands="Otronif Gloves",
+        body="Mochizuki Chainmail",
         waist="Hurch'lan Sash",
 		back="Yokaze Mantle"
     })
     sets.engaged.Haste_43.Evasion = set_combine(sets.engaged.Haste_43, {
+        body="Mochizuki Chainmail",
         neck="Asperity Necklace",
 		back="Yokaze Mantle",
         feet="Otronif Boots +1"
@@ -363,7 +352,10 @@ function init_gear_sets()
     sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
         legs="Mochizuki Hakama"
     })
-    sets.engaged.Haste_40.Acc = sets.engaged.Haste_43.Acc
+    sets.engaged.Haste_40.Acc = set_combine(sets.engaged.Haste_43.Acc, {
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring"
+    })
     sets.engaged.Haste_40.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
         legs="Mochizuki Hakama"
     })
@@ -374,7 +366,6 @@ function init_gear_sets()
 
     -- 35
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_43, {
-		body="Mochizuki Chainmail",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         legs="Mochizuki Hakama"
@@ -396,7 +387,6 @@ function init_gear_sets()
     -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_43, {
         head="Iga Zukin +2",
-		body="Mochizuki Chainmail",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         waist="Nusku's Sash",
@@ -426,13 +416,11 @@ function init_gear_sets()
     })
     sets.engaged.Haste_25.Acc = set_combine(sets.engaged.Haste_43.Acc, {
         ear1="Dudgeon Earring",
-		body="Hachiya Chainmail +1",
         ear2="Heartseeker Earring"
     })
     sets.engaged.Haste_25.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-		body="Hachiya Chainmail +1",
         legs="Mochizuki Hakama"
     })
 
@@ -450,9 +438,9 @@ function init_gear_sets()
         legs="Mochizuki Hakama"
     })
     sets.engaged.Haste_20.Acc = set_combine(sets.engaged.Haste_43.Acc, {
-		body="Hachiya Chainmail +1",
-        ear1="Trux Earring",
-        ear2="Brutal Earring"
+		body="Mochizuki Chainmail",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring"
     })
     sets.engaged.Haste_20.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
         ear1="Dudgeon Earring",
