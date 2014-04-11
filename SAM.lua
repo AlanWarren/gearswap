@@ -105,7 +105,7 @@ function init_gear_sets()
         neck="Aqua Gorget",
         ear1="Flame Pearl",
         ear2="Flame Pearl",
-        body="Phorcys Korazin",
+        body="Kyujutsugi",
         hands="Unkai Kote +2",
         back="Buquwik Cape",
         ring1="Rajas Ring",
