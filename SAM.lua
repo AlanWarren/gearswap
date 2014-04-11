@@ -332,7 +332,7 @@ function init_gear_sets()
     -- This set assumes Tsurumaru 4-hit
 	sets.engaged.Adoulin = {
         ammo="Paeapua",
-		head="Sakonji Kabuto +1", -- 4
+		head="Sakonji Kabuto +1", -- 6
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
@@ -344,7 +344,7 @@ function init_gear_sets()
         waist="Windbuffet belt",
         legs="Wakido Haidate +1", -- 7
         --feet="Sakonji Sune-ate +1" -- 8
-        feet="Otronif Boots +1" -- 8
+        feet="Otronif Boots +1" -- 7
     }
 
     sets.engaged.Adoulin.MarchMad = set_combine(sets.engaged.Adoulin, {
