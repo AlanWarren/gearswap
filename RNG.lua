@@ -235,6 +235,7 @@
             sets.midcast.RangedAttack.Bow = {}
             sets.midcast.RangedAttack.Bow = set_combine(sets.midcast.Bow.Ear, {
                 ring2="Paqichikaji Ring",
+                hands="Arcadian Bracers +1",
                 back="Sylvan Chlamys",
                 legs="Aetosaur Trousers +1",
             })
@@ -617,6 +618,7 @@
     -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
     function job_update(cmdParams, eventArgs)
 	    state.CombatWeapon = get_combat_weapon()
+        --add_to_chat(121, tostring(state.CombatWeapon))
     end
      
     -- Job-specific toggles.
