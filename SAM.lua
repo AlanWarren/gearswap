@@ -499,7 +499,7 @@ function customize_melee_set(meleeSet)
 		    meleeSet = set_combine(meleeSet, sets.thirdeye)
         end
 	end
-    if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Speleogen Bow' then
+    if player.equipment.range == 'Yoichinoyumi' then
         meleeSet = set_combine(meleeSet, sets.bow)
     end
 	return meleeSet
@@ -566,7 +566,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_weapon()
     if player.equipment.range == 'Yoichinoyumi' then
-	    add_to_chat(121,'Bow Set!')
         return 'Yoichi'
     end
 end
@@ -590,8 +589,8 @@ function determine_brd_songs()
 end
 function determine_bow()
 	classes.CustomMeleeGroups:clear()
-    if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Speleogen bow' then
-	    add_to_chat(121,'Bow Set!')
+    if player.equipment.range == 'Yoichinoyumi' then
+	    add_to_chat(121,'Yoichinoyumi Equipped!')
 		classes.CustomMeleeGroups:append('Yoichi')
 	end
 end
