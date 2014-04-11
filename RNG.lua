@@ -235,7 +235,6 @@
             sets.midcast.RangedAttack.Bow = {}
             sets.midcast.RangedAttack.Bow = set_combine(sets.midcast.Bow.Ear, {
                 ring2="Paqichikaji Ring",
-                hands="Arcadian Bracers +1",
                 back="Sylvan Chlamys",
                 legs="Aetosaur Trousers +1",
             })
