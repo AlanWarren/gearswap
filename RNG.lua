@@ -68,7 +68,7 @@
     end
 
     function job_setup()
-	    state.CombatWeapon = get_combat_weapon()
+        determine_ranged()
         state.Buff.Camouflage = buffactive.camouflage or false
         state.Buff.Overkill = buffactive.overkill or false
     end
@@ -91,7 +91,6 @@
             -- Simply add a line of DefaultAmmo["Weapon"] = "Ammo Name"
             DefaultAmmo = {}
             DefaultAmmo["Annihilator"] = "Achiyalabopa Bullet"
-            DefaultAmmo["Ajjub Bow"] = "Achiyalabopa Arrow"
             DefaultAmmo["Yoichinoyumi"] = "Achiyalabopa Arrow"
             DefaultAmmo["Atetepeyorg"] = "Achiyalabopa Bolt"
            
@@ -189,13 +188,6 @@
                 legs="Manibozho Brais",
                 feet="Manibozho Boots"
             }
-            -- Custom Sets
-            sets.engaged.Bow = {}
-
-            sets.engaged.Bow = set_combine(sets.engaged, {
-                hands="Arcadian Bracers +1",
-                feet="Arcadian Socks +1"
-            })
            
             -- Ranged Attack Sets
             sets.precast.RangedAttack = set_combine(sets.engaged, {
@@ -228,23 +220,19 @@
             })
             
             -- Bow
-            sets.midcast.Bow = {}
-            sets.midcast.Bow.Ear = {}
-            sets.midcast.Bow.Ear = set_combine(sets.engaged.Bow, sets.earring)
-
-            sets.midcast.RangedAttack.Bow = {}
-            sets.midcast.RangedAttack.Bow = set_combine(sets.midcast.Bow.Ear, {
-                ring2="Paqichikaji Ring",
+            sets.midcast.RangedAttack.Bow = set_combine(sets.midcast.RangedAttack, {
+                hands="Arcadian Bracers +1",
+                ear2="Tripudio earring",
                 back="Sylvan Chlamys",
-                legs="Aetosaur Trousers +1",
+                legs="Aetosaur Trousers +1"
             })
-            sets.midcast.RangedAttack.Bow.Acc = set_combine(sets.midcast.RangedAttack.Bow, {
+            sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
                 neck="Huani Collar",
                 ring1="Hajduk Ring",
                 ring2="Paqichikaji Ring",
-                legs="Aetosaur Trousers +1"
+                back="Lutian Cape"
             })
-            sets.midcast.RangedAttack.Bow.STP = set_combine(sets.midcast.RangedAttack.Bow, {
+            sets.midcast.RangedAttack.STP.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
                 hands="Sylvan Glovelettes +2"
             })
 
@@ -254,19 +242,15 @@
                 ring2="Paqichikaji Ring",
                 neck="Huani Collar",
                 back="Sylvan Chlamys",
-                legs="Orion Braccae +1",
                 feet="Arcadian Socks +1"
             })
-            sets.midcast.RangedAttack.Bow.Acc.Enmity = set_combine(sets.midcast.RangedAttack.Bow.Enmity, {
-                hands="Iuitl Wristbands +1",
+            sets.midcast.RangedAttack.Acc.Bow.Enmity = set_combine(sets.midcast.RangedAttack.Bow.Enmity, {
                 ring1="Hajduk Ring",
-                ring2="Paqichikaji Ring",
-                neck="Huani Collar",
                 back="Lutian Cape",
                 legs="Orion Braccae +1",
-                feet="Arcadian Socks +1"
+                feet="Orion Socks +1"
             })
-            sets.midcast.RangedAttack.Bow.STP.Enmity = set_combine(sets.midcast.RangedAttack.Bow, {
+            sets.midcast.RangedAttack.STP.Bow.Enmity = set_combine(sets.midcast.RangedAttack.Bow.Enmity, {
                 hands="Sylvan Glovelettes +2",
                 back="Sylvan Chlamys"
             })
@@ -439,7 +423,7 @@
                     end
                     if (spell.target.distance >8 and not bow_gun_weaponskills:contains(spell.english)) or (spell.target.distance >21) then
                             -- Cancel Action if distance is too great, saving TP
-                            add_to_chat(122,"Move closer DUMBASS! /Canceling")
+                            add_to_chat(122,"OUTSIDE WS RANGE! /Canceling")
                             eventArgs.cancel = true
                             return
                     elseif state.Defense.Active then
@@ -576,13 +560,20 @@
         if state.Buff[buff] ~= nil then
 	        state.Buff[buff] = gain
 	    end
-        -- If Decoy Shot drops, and we're using Yoichi... we make tiny effort to use -enmity
-        if state.Buff['Decoy Shot'] ~= gain and player.equipment.range == 'Yoichinoyumi' then
-            classes.CustomMeleeGroups:append('Enmity')
-        else
-	        classes.CustomMeleeGroups:clear()
+        -- If Decoy Shot is down, and we're using Bow... we use Enmity set
+        if (classes.CustomRangedGroups:contains('Bow')) then
+            if state.Buff['Decoy Shot'] ~= gain then
+                -- Equip low enmity set, unless we have Acc mode active.
+                if state.RangedMode ~= 'Acc' then
+                    classes.CustomRangedGroups:append('Enmity')
+                end
+            else
+                -- This will remove Enmity from the group, while keeping Bow in tact
+	            classes.CustomRangedGroups:filter(function(x) return x:startswith('Bow') end)
+            end
         end
 
+		determine_ranged()
         if not camo_active() then
             handle_equipping_gear(player.status)
         end
@@ -616,8 +607,7 @@
     -- Called by the 'update' self-command, for common needs.
     -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
     function job_update(cmdParams, eventArgs)
-	    state.CombatWeapon = get_combat_weapon()
-        --add_to_chat(121, tostring(state.CombatWeapon))
+        determine_ranged()
     end
      
     -- Job-specific toggles.
@@ -660,10 +650,17 @@
      
     end
 
-    function get_combat_weapon()
-        if player.equipment.range == 'Yoichinoyumi' then
-            return 'Bow'
+    function determine_ranged()
+        -- Table may already contain Enmity, in which case we'd like to preserve it
+        if(classes.CustomRangedGroups:contains('Enmity')) then
+	        classes.CustomRangedGroups:filter(function(x) return x:startswith('Enmity') end)
+        else
+    	    classes.CustomRangedGroups:clear()
         end
+
+        if player.equipment.range == 'Yoichinoyumi' then
+    		classes.CustomRangedGroups:append('Bow')
+    	end
     end
 
     function camo_active()
@@ -684,9 +681,9 @@ function select_default_macro_book()
 	if player.sub_job == 'WAR' then
 		set_macro_page(3, 5)
 	elseif player.sub_job == 'SAM' then
-		set_macro_page(3, 2)
+		set_macro_page(4, 5)
 	else
-		set_macro_page(3, 1)
+		set_macro_page(3, 5)
 	end
 end
 
