@@ -577,7 +577,7 @@
 	        state.Buff[buff] = gain
 	    end
         -- If Decoy Shot drops, and we're using Yoichi... we make tiny effort to use -enmity
-        if buff == 'Decoy Shot' not gain and player.equipment.range == 'Yoichinoyumi' then
+        if state.Buff['Decoy Shot'] ~= gain and player.equipment.range == 'Yoichinoyumi' then
             classes.CustomMeleeGroups:append('Enmity')
         else
 	        classes.CustomMeleeGroups:clear()

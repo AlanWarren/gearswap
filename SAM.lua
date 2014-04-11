@@ -565,7 +565,7 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_weapon()
-    if player.equipment.range == 'Speleogen Bow' then
+    if player.equipment.range == 'Yoichinoyumi' then
 	    add_to_chat(121,'Bow Set!')
         return 'Yoichi'
     end
