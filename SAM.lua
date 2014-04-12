@@ -39,7 +39,7 @@ function user_setup()
 
 	state.Defense.PhysicalMode = 'PDT'
 
-    gear.RAarrow = "Tulfaire Arrow"
+    gear.RAarrow = "Demon Arrow"
 
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
