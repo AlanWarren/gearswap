@@ -15,8 +15,6 @@ end
 function job_setup()
 	state.CombatForm = get_combat_form()
 	state.CombatWeapon = get_combat_weapon()
-    -- determine special equip 
-	--determine_brd_songs()
 	
 	state.Buff.Sekkanoki = buffactive.sekkanoki or false
 	state.Buff.Sengikori = buffactive.sengikori or false
@@ -263,11 +261,6 @@ function init_gear_sets()
         feet="Otronif Boots +1" -- 7
     }
 
-    sets.engaged.MarchMad = set_combine(sets.engaged, {
-        ear1="Brutal Earring", -- 1
-        ear2="Kuwunga Earring", -- 1
-     })
-
 	sets.engaged.Acc = set_combine(sets.engaged, { 
         neck="Justice Torque", 
         hands="Miki. Gauntlets",
@@ -347,17 +340,7 @@ function init_gear_sets()
         feet="Otronif Boots +1" -- 7
     }
 
-    sets.engaged.Adoulin.MarchMad = set_combine(sets.engaged.Adoulin, {
-        head="Sakonji Kabuto +1",
-        ear1="Brutal Earring",
-        ear2="Kuwunga Earring"
-        --feet="Otronif boots +1" -- 7
-    })
-
     sets.engaged.Adoulin.Yoichi = set_combine(sets.engaged.Adoulin, {
-        ammo=gear.RAarrow
-    })
-    sets.engaged.Adoulin.MarchMad.Yoichi = set_combine(sets.engaged.Adoulin, {
         ammo=gear.RAarrow
     })
 
@@ -528,7 +511,6 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
 	--if S{'madrigal','march'}:contains(buff:lower()) then
-		--determine_brd_songs()
 		--handle_equipping_gear(player.status)
 	if state.Buff[buff] ~= nil then
 		state.Buff[buff] = gain
@@ -581,16 +563,9 @@ function seigan_thirdeye_active()
 	return state.Buff['Seigan'] or state.Buff['Third Eye']
 end
 
-function determine_brd_songs()
-	classes.CustomMeleeGroups:clear()
-	if buffactive.madrigal and buffactive.march then
-	    add_to_chat(121,'Mad + March Active - Using Special Earrings!')
-		classes.CustomMeleeGroups:append('MarchMad')
-	end
-end
 function determine_bow()
 	classes.CustomMeleeGroups:clear()
-    if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Speleogen bow' then
+    if player.equipment.range == 'Yoichinoyumi' then
 	    add_to_chat(121,'Bow Set!')
 		classes.CustomMeleeGroups:append('Yoichi')
 	end
