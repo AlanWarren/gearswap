@@ -176,7 +176,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Yaoyotl Helm",
 		body="Otronif Harness",hands="Otronif Gloves",
-		legs="Wakido Haidate +1",feet="Whirlpool Greaves"
+		legs="Wakido Haidate +1",feet="Otronif Boots +1"
     }
 	
 	-- Sets to return to when not performing an action.
@@ -188,7 +188,7 @@ function init_gear_sets()
 	sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
-		head="Sakonji Kabuto +1",
+		head="Yaoyotl helm",
         neck="Justice Torque",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
@@ -271,7 +271,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged, { 
         neck="Justice Torque", 
         hands="Miki. Gauntlets",
-        feet="Whirlpool Greaves", 
+        feet="Wakido Sune-Ate", 
         waist="Dynamic Belt"
     })
 
@@ -318,7 +318,7 @@ function init_gear_sets()
 	sets.engaged.Acc.Reraise = set_combine(sets.engaged.Reraise, {
         hands="Miki. Gauntlets",
         ring1="Beeline Ring",
-        feet="Whirlpool Greaves", 
+        feet="Wakido Sune-Ate", 
         waist="Dynamic Belt"
     })
 
@@ -364,7 +364,7 @@ function init_gear_sets()
 	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin, {
 		body="Unkai Domaru +2",hands="Otronif Gloves",
 	    waist="Dynamic Belt",legs="Unkai Haidate +2",
-        feet="Whirlpool Greaves"
+        feet="Wakido Sune-Ate"
     })
 
     sets.engaged.Adoulin.Yoichi.Acc = set_combine(sets.engaged.Adoulin.Acc, {
