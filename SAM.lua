@@ -362,8 +362,8 @@ function init_gear_sets()
     })
 
 	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin, {
-		body="Unkai Domaru +2",hands="Otronif Gloves",
-	    waist="Dynamic Belt",legs="Unkai Haidate +2",
+		body="Wakido Domaru +1",hands="Wakido Kote +1",
+	    waist="Dynamic Belt",legs="Wakido Haidate +1",
         feet="Wakido Sune-Ate"
     })
 
