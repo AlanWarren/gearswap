@@ -658,7 +658,9 @@
     	--    classes.CustomRangedGroups:clear()
         --end
     	classes.CustomRangedGroups:clear()
+    	classes.CustomMeleeGroups:clear()
         if player.equipment.range == 'Yoichinoyumi' then
+    		classes.CustomMeleeGroups:append('Bow')
     		classes.CustomRangedGroups:append('Bow')
     	end
     end

@@ -37,7 +37,7 @@ function user_setup()
 
 	state.Defense.PhysicalMode = 'PDT'
 
-    gear.RAarrow = "Demon Arrow"
+    gear.RAarrow = "Tulfaire Arrow"
 
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
@@ -270,9 +270,8 @@ function init_gear_sets()
 
 	sets.engaged.Yoichi = set_combine(sets.engaged, { 
 		ammo=gear.RAarrow,
-        ear1="Trux Earring",
-        ear2="Brutal Earring",
-        waist="Cetl Belt"
+        waist="Cetl Belt",
+        feet="Sakonji Sune-Ate +1"
     })
 
     sets.engaged.Yoichi.Multi = sets.engaged.Yoichi
