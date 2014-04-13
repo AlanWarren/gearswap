@@ -561,17 +561,17 @@
 	        state.Buff[buff] = gain
 	    end
         -- If Decoy Shot is down, and we're using Bow... we use Enmity set
-        if (classes.CustomRangedGroups:contains('Bow')) then
-            if state.Buff['Decoy Shot'] ~= gain then
-                -- Equip low enmity set, unless we have Acc mode active.
-                if state.RangedMode ~= 'Acc' then
-                    classes.CustomRangedGroups:append('Enmity')
-                end
-            else
-                -- This will remove Enmity from the group, while keeping Bow in tact
-	            classes.CustomRangedGroups:filter(function(x) return x:startswith('Bow') end)
-            end
-        end
+        --if (classes.CustomRangedGroups:contains('Bow')) then
+        --    if state.Buff['Decoy Shot'] ~= gain then
+        --        -- Equip low enmity set, unless we have Acc mode active.
+        --        if state.RangedMode ~= 'Acc' then
+        --            --classes.CustomRangedGroups:append('Enmity')
+        --        end
+        --    else
+        --        -- This will remove Enmity from the group, while keeping Bow in tact
+	    --        classes.CustomRangedGroups:filter(function(x) return x:startswith('Bow') end)
+        --    end
+        --end
 
 		determine_ranged()
         if not camo_active() then
@@ -652,12 +652,12 @@
 
     function determine_ranged()
         -- Table may already contain Enmity, in which case we'd like to preserve it
-        if(classes.CustomRangedGroups:contains('Enmity')) then
-	        classes.CustomRangedGroups:filter(function(x) return x:startswith('Enmity') end)
-        else
-    	    classes.CustomRangedGroups:clear()
-        end
-
+        --if(classes.CustomRangedGroups:contains('Enmity')) then
+	    --    classes.CustomRangedGroups:filter(function(x) return x:startswith('Enmity') end)
+        --else
+    	--    classes.CustomRangedGroups:clear()
+        --end
+    	classes.CustomRangedGroups:clear()
         if player.equipment.range == 'Yoichinoyumi' then
     		classes.CustomRangedGroups:append('Bow')
     	end
