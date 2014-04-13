@@ -190,7 +190,7 @@ function init_gear_sets()
         neck="Justice Torque",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Wakido Domaru +1",
+		body="Hachiryu haramaki",
         hands="Wakido Kote +1",
         ring1="Rajas Ring",
         ring2="K'ayres Ring",
