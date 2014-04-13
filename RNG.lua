@@ -174,6 +174,10 @@
                 feet="Orion Socks +1"
             }
 
+            sets.engaged.Bow = set_combine(sets.engaged, {
+                    hands="Arcadian Bracer's +1"
+            })
+
             sets.engaged.Melee = {
                 head="Whirlpool Mask",
                 neck="Asperity Necklace",
@@ -370,7 +374,7 @@
             })
 
             sets.precast.WS['Sidewinder'].STP = set_combine(sets.precast.WS['Sidewinder'], {
-                ring2="Tripudio Earring",
+                ear2="Tripudio Earring",
                 hands="Sylvan Glovelettes +2",
                 legs="Aetosaur Trousers +1"
             })
