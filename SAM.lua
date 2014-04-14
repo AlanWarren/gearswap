@@ -42,6 +42,7 @@ function user_setup()
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
 	send_command('bind !` input /ja "Seigan" <me>')
+	send_command('bind ^[ input /lockstyle on')
 
 	select_default_macro_book()
 end
@@ -203,6 +204,7 @@ function init_gear_sets()
 	sets.idle.Field = set_combine(sets.idle.Town, {
 		neck="Twilight Torque",
 		ring2="Paguroidea Ring",
+        body="Wakido Domaru +1",
 		back="Shadow Mantle",
         feet="Danzo Sune-ate"
     })
