@@ -204,27 +204,48 @@ function init_gear_sets()
 	sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mod, {neck="Breeze Gorget"})
 
 	sets.precast.WS['Aeolian Edge'] = {
-		neck="Atzintli Necklace",ear1="Friomisi Earring",ear2="Hecate's Earring",
-		body="Manibozho Jerkin",hands="Iuitl Wristbands +1",ring1="Rajas Ring",ring2="Stormsoul Ring",
-		back="Toro Cape",waist="Thunder Belt",legs="Iuitl Tights",feet="Iuitl Gaiters"}
+		neck="Atzintli Necklace",
+        ear1="Friomisi Earring",
+        ear2="Hecate's Earring",
+		body="Manibozho Jerkin",
+        hands="Iuitl Wristbands +1",
+        ring1="Rajas Ring",
+        ring2="Stormsoul Ring",
+		back="Toro Cape",
+        waist="Thunder Belt",
+        legs="Iuitl Tights",
+        feet="Iuitl Gaiters"
+    }
 	
         -- Midcast Sets
 	sets.midcast.FastRecast = {
 		head="Felistris Mask",
-		body="Iuitl Vest",hands="Iuitl Wristbands +1",
-		waist="Hurch'lan Sash",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
+        hands="Iuitl Wristbands +1",
+		waist="Hurch'lan Sash"
+    }
 		
 	-- Specific spells
 	sets.midcast.Utsusemi = {
 		head="Felistris Mask",
-		body="Iuitl Vest",hands="Iuitl Wristbands +1",
-		waist="Hurch'lan Sash",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
+        hands="Iuitl Wristbands +1",
+		waist="Hurch'lan Sash"
+    }
 
 	-- Ranged gear -- acc + TH
 	sets.midcast.RangedAttack = {
-		head="Uk'uxkaj Cap",neck="Huani Collar",ear1="Clearview Earring",ear2="Volley Earring",
-		body="Thaumas Coat",hands="Iuitl Wristbands +1",ring1="Rajas Ring",ring2="Hajduk Ring",
-		back="Libeccio Mantle",waist="Aquiline Belt",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
+		head="Uk'uxkaj Cap",
+        neck="Huani Collar",
+        ear1="Clearview Earring",
+        ear2="Volley Earring",
+		body="Thaumas Coat",
+        hands="Iuitl Wristbands +1",
+        ring1="Rajas Ring",
+        ring2="Hajduk Ring",
+		back="Libeccio Mantle",
+        waist="Aquiline Belt",
+        legs="Nahtirah Trousers",
+        feet="Iuitl Gaiters"
+    }
 
 	sets.midcast.RangedAttack.TH = set_combine(sets.midcast.RangedAttack, set.TreasureHunter)
 
@@ -239,16 +260,26 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
 	sets.idle = {
-		head="Felistris Mask",neck="Asperity Necklace",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Thaumas Coat",hands="Iuitl Wristbands +1",ring1="Rajas Ring",ring2="Paguroidea Ring",
-		back="Shadow Mantle",waist="Nusku's Sash",legs="Nahtirah Trousers",feet="Trotter Boots"}
+		head="Felistris Mask",
+        neck="Asperity Necklace",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+		body="Thaumas Coat",
+        hands="Iuitl Wristbands +1",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+		back="Shadow Mantle",
+        waist="Nusku's Sash",
+        legs="Nahtirah Trousers",
+        feet="Trotter Boots"
+    }
 
-	sets.idle.Town = {main="Izhiikoh", sub="Eminent Dagger",ranged="Raider's Boomerang",
-		head="Felistris Mask",neck="Rancor Collar",ear1="Dudgeon Earring",ear2="Heartseeker Earring",
-		body="Thaumas Coat",hands="Raider's Armlets +2",ring1="Rajas Ring",ring2="Epona's Ring",
-		back="Canny Cape",waist="Nusku's Sash",legs="Manibozho Brais",feet="Trotter Boots"}
+	sets.idle.Town = set_combine(sets.idle, {
+        ring1="Patricius Ring",
+		back="Canny Cape"
+    })
 	
-	sets.idle.Weak = sets.idle
+	sets.idle.Weak = sets.idle.Town
 	
 	sets.ExtraRegen = {ring2="Paguroidea Ring"}
 
@@ -257,9 +288,9 @@ function init_gear_sets()
 	sets.defense.Evasion = {
 		head="Felistris Mask",
         neck="Asperity Necklace",
-		body="Manibozho Jerkin",
+		body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
-        ring1="Rajas Ring",
+        ring1="Patricius Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
         waist="Nusku's Sash",
@@ -268,14 +299,30 @@ function init_gear_sets()
     }
 
 	sets.defense.PDT = {
-		head="Lithelimb Cap",neck="Twilight Torque",
-		body="Iuitl Vest",hands="Iuitl Wristbands +1",ring1="Dark Ring",ring2="Epona's Ring",
-		back="Shadow Mantle",waist="Nusku's Sash",legs="Iuitl Tights",feet="Iuitl Gaiters"}
+		head="Lithelimb Cap",
+        neck="Twilight Torque",
+		body="Iuitl Vest",
+        hands="Iuitl Wristbands +1",
+        ring1="Patricius Ring",
+        ring2="Epona's Ring",
+		back="Shadow Mantle",
+        waist="Nusku's Sash",
+        legs="Iuitl Tights",
+        feet="Iuitl Gaiters"
+    }
 
 	sets.defense.MDT = {
-		head="Whirlpool Mask",neck="Twilight Torque",
-		body="Iuitl Vest",hands="Iuitl Wristbands +1",ring1="Dark Ring",ring2="Epona's Ring",
-		back="Atheling Mantle",waist="Hurch'lan Sash",legs="Nahtirah Trousers",feet="Iuitl Gaiters"}
+		head="Whirlpool Mask",
+        neck="Twilight Torque",
+		body="Iuitl Vest",
+        hands="Iuitl Wristbands +1",
+        ring1="Dark Ring",
+        ring2="Epona's Ring",
+		back="Atheling Mantle",
+        waist="Hurch'lan Sash",
+        legs="Nahtirah Trousers",
+        feet="Iuitl Gaiters"
+    }
 
 	sets.Kiting = {feet="Trotter Boots"}
 
@@ -304,37 +351,20 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		head="Whirlpool Mask",
         neck="Rancor Collar",
+        ring1="Patricius Ring",
         waist="Hurch'lan Sash",
         feet="Manibozho Boots"
     })
-	sets.engaged.iLvl = {
-		head="Felistris Mask",
-        neck="Asperity Necklace",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-		body="Thaumas Coat",
-        hands="Plunderer's Armlets",
-        ring1="Rajas Ring",
-        ring2="Epona's Ring",
-		back="Atheling Mantle",
-        waist="Nusku's Sash",
-        legs="Manibozho Brais",
-        feet="Plunderer's Poulaines"
-    }
-	sets.engaged.Evasion = {
-		head="Felistris Mask",
-        neck="Asperity Necklace",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-		body="Manibozho Jerkin",
-        hands="Plunderer's Armlets",
-        ring1="Rajas Ring",
-        ring2="Epona's Ring",
-		back="Atheling Mantle",
-        waist="Nusku's Sash",
+	sets.engaged.iLvl = set_combine(sets.engaged, {
+		body="Qaaxo Harness",
+        ring1="Patricius Ring"
+    })
+	sets.engaged.Evasion = set_combine(sets.engaged, {
+		body="Qaaxo Harness",
+        ring1="Patricius Ring",
         legs="Iuitl Tights",
-        feet="Plunderer's Poulaines"
-    }
+        feet="Iuitl Gaiters"
+    })
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
 		head="Whirlpool Mask",
         waist="Hurch'lan Sash"
