@@ -267,7 +267,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged, { 
         neck="Iqabi Necklace", 
         hands="Miki. Gauntlets",
-        ring2="Patricius Ring",
+        ring1="Patricius Ring",
         feet="Wakido Sune-Ate", 
         waist="Dynamic Belt"
     })
@@ -290,7 +290,7 @@ function init_gear_sets()
 	sets.engaged.PDT = set_combine(sets.engaged, { 
         head="Lithelimb Cap", 
         neck="Twilight Torque",
-        ring1="Dark Ring",
+        ring1="Patricius Ring",
         back="Shadow Mantle",
         feet="Otronif boots +1"
     })
@@ -362,8 +362,9 @@ function init_gear_sets()
     })
 
 	sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {
+        head="Lithelimb Cap",
 		neck="Twilight Torque",
-        ring1="Dark Ring",
+        ring1="Patricius Ring",
 		back="Shadow Mantle"
     })
 	sets.engaged.Adoulin.Yoichi.PDT = set_combine(sets.engaged.Adoulin.PDT, {
