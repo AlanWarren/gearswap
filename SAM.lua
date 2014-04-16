@@ -188,7 +188,7 @@ function init_gear_sets()
         --main="Anahera Blade", 
         --sub="Pole Grip",
 		head="Yaoyotl helm",
-        neck="Justice Torque",
+        neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
 		body="Hachiryu haramaki",
