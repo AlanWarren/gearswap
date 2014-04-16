@@ -129,6 +129,7 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {
         head="Whirlpool Mask", 
         legs="Hachiya Hakama", 
+        ring1="Patricius Ring",
         back="Yokaze Mantle"
     })
 	sets.precast.WS['Blade: Hi'].Mod = set_combine(sets.precast.WS['Blade: Hi'], {waist="Soil Belt"})
@@ -280,13 +281,21 @@ function init_gear_sets()
     }
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		head="Whirlpool Mask",
-        neck="Rancor Collar",
+        neck="Iqabi Necklace",
 		body="Mochizuki Chainmail", 
 		back="Yokaze Mantle",
         waist="Hurch'lan Sash",
         ring1="Patricius Ring",
         legs="Hachiya Hakama",
         feet="Manibozho Boots"
+    })
+	sets.engaged.PDT = set_combine(sets.engaged, {
+		head="Whirlpool Mask",
+        neck="Twilight Torque",
+        ring1="Patricius Ring",
+        ring2="Epona's Ring",
+		back="Shadow Mantle",
+        legs="Nahtirah Trousers"
     })
     -- I do salvage v2 on nin, and this set's only
     -- purpose is to NOT USE subtle blow, so the stupid
@@ -303,6 +312,7 @@ function init_gear_sets()
 	sets.engaged.Evasion = set_combine(sets.engaged, {
 		head="Felistris Mask",
 		back="Yokaze Mantle",
+        ring1="Patricius Ring",
         feet="Otronif Boots +1"
     })
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
