@@ -438,6 +438,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.thirdeye)
         end
     end
+    if spell.name == 'Spectral Jig' and buffactive.sneak then
+            -- If sneak is active when using, cancel before completion
+            send_command('cancel 71')
+    end
 end
 
 
