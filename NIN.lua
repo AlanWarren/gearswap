@@ -234,7 +234,7 @@ function init_gear_sets()
 		head="Whirlpool Mask",
         neck="Twilight Torque",
         hands="Otronif Gloves",
-        ring1="Dark Ring",
+        ring1="Patricius Ring",
         ring2="Epona's Ring",
 		back="Shadow Mantle",
         legs="Nahtirah Trousers",
@@ -284,6 +284,7 @@ function init_gear_sets()
 		body="Mochizuki Chainmail", 
 		back="Yokaze Mantle",
         waist="Hurch'lan Sash",
+        ring1="Patricius Ring",
         legs="Hachiya Hakama",
         feet="Manibozho Boots"
     })

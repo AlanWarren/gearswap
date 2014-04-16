@@ -203,6 +203,7 @@ function init_gear_sets()
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
 		neck="Twilight Torque",
+        ring1="Patricius Ring",
 		ring2="Paguroidea Ring",
         body="Wakido Domaru +1",
 		back="Shadow Mantle",
@@ -266,6 +267,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged, { 
         neck="Justice Torque", 
         hands="Miki. Gauntlets",
+        ring2="Patricius Ring",
         feet="Wakido Sune-Ate", 
         waist="Dynamic Belt"
     })
