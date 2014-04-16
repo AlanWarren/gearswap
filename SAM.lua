@@ -194,7 +194,7 @@ function init_gear_sets()
 		body="Hachiryu haramaki",
         hands="Wakido Kote +1",
         ring1="Rajas Ring",
-        ring2="K'ayres Ring",
+        ring2="Patricius Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
