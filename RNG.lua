@@ -243,7 +243,7 @@ function init_gear_sets()
         })
 
         -- -Enmity goal
-        sets.midcast.RangedAttack.Enmity.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
+        sets.midcast.RangedAttack.Enmity = set_combine(sets.midcast.RangedAttack.Bow, {
             hands="Iuitl Wristbands +1",
             ring2="Paqichikaji Ring",
             --ear1="Novia Earring",
@@ -252,14 +252,14 @@ function init_gear_sets()
             feet="Arcadian Socks +1"
         })
 
-        sets.midcast.RangedAttack.Acc.Enmity.Bow = set_combine(sets.midcast.RangedAttack.Enmity.Bow, {
+        sets.midcast.RangedAttack.Acc.Enmity = set_combine(sets.midcast.RangedAttack.Enmity, {
             ring1="Hajduk Ring",
             back="Lutian Cape",
             legs="Orion Braccae +1",
             feet="Orion Socks +1"
         })
 
-        sets.midcast.RangedAttack.STP.Enmity.Bow = set_combine(sets.midcast.RangedAttack.Enmity.Bow, {
+        sets.midcast.RangedAttack.STP.Enmity = set_combine(sets.midcast.RangedAttack.Enmity, {
             neck="Ocachi Gorget",
             hands="Sylvan Glovelettes +2",
             back="Sylvan Chlamys"
@@ -585,21 +585,15 @@ function job_buff_change(buff, gain)
     -- If Decoy Shot is down, and we're already using Bow... we use -Enmity set
     if (classes.CustomRangedGroups:contains('Bow')) then
         if state.Buff['Decoy Shot'] ~= gain then
-            -- This is stupid, but I destroy and create this table each time
-            classes.CustomRangedGroups:clear()
-            classes.CustomRangedGroups:append('Enmity')
-
-            if player.equipment.range == 'Yoichinoyumi' then
-                classes.CustomRangedGroups:append('Bow')
+            if classes.CustomRangedGroups:contains('Enmity') then
+                -- do nothing
+            else
+                classes.CustomRangedGroups:append('Enmity')
             end
+
         else
 	        classes.CustomMeleeGroups:clear()
             classes.CustomRangedGroups:clear()
-
-            if player.equipment.range == 'Yoichinoyumi' then
-                classes.CustomRangedGroups:append('Bow')
-                classes.CustomMeleeGroups:append('Bow')
-            end
         end
     end
 
@@ -680,7 +674,7 @@ end
 
 function determine_ranged()
     -- Table may already contain Enmity, in which case we'd like to preserve it
-    if(classes.CustomRangedGroups:contains('Enmity')) then
+    if classes.CustomRangedGroups:contains('Enmity') then
         -- Going to be overlay safe about how many items this table contains
 	    classes.CustomRangedGroups:clear()
 		classes.CustomRangedGroups:append('Enmity')
