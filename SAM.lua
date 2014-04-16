@@ -265,7 +265,7 @@ function init_gear_sets()
     }
 
 	sets.engaged.Acc = set_combine(sets.engaged, { 
-        neck="Justice Torque", 
+        neck="Iqabi Necklace", 
         hands="Miki. Gauntlets",
         ring2="Patricius Ring",
         feet="Wakido Sune-Ate", 
@@ -348,8 +348,12 @@ function init_gear_sets()
     })
 
 	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin, {
-		body="Wakido Domaru +1",hands="Wakido Kote +1",
-	    waist="Dynamic Belt",legs="Wakido Haidate +1",
+		body="Wakido Domaru +1",
+        hands="Wakido Kote +1",
+        neck="Iqabi Necklace",
+        ring1="Patricius Ring",
+	    waist="Dynamic Belt",
+        legs="Wakido Haidate +1",
         feet="Wakido Sune-Ate"
     })
 
