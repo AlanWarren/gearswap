@@ -232,7 +232,7 @@ function init_gear_sets()
         })
 
         sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
-            neck="Huani Collar",
+            neck="Iqabi Necklace",
             ring1="Hajduk Ring",
             ring2="Paqichikaji Ring",
             back="Lutian Cape"
@@ -247,7 +247,7 @@ function init_gear_sets()
             hands="Iuitl Wristbands +1",
             ring2="Paqichikaji Ring",
             --ear1="Novia Earring",
-            neck="Sylvan Scarf",
+            neck="Huani Collar",
             back="Sylvan Chlamys",
             feet="Arcadian Socks +1"
         })
@@ -255,7 +255,6 @@ function init_gear_sets()
         sets.midcast.RangedAttack.Acc.Enmity = set_combine(sets.midcast.RangedAttack.Enmity, {
             ring1="Hajduk Ring",
             back="Lutian Cape",
-            neck="Huani Collar",
             legs="Orion Braccae +1",
             feet="Orion Socks +1"
         })
