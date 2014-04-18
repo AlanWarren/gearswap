@@ -11,9 +11,12 @@
 -- This file is currently under development, with the addition of Yoichi recently. 
 
 -- === My Modes ===
--- 1) STP is a  4/hit with Annihilator, but sacrifices some racc/ratk to get there.
+-- 1) STP is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
 -- 3) Normal has a nice mixture of racc and stp for hard content. 
 -- 4) Racc is full blown racc. i.e. You're fighting VD MR and songs drop.  
+-- 5) Bow set will activate by equipping whichever bow you define in settings
+-- 6) Enmity mode is a work in progress. When decoy is down, it tries to use a few extra 
+-- pieces of -enmity gear
 
 -- === Advanced Features ===
 -- Fenrir's Earring is equipped in midcast at night, and Clearview Earring during the day...
@@ -22,8 +25,7 @@
 -- If you have /SAM set as SJ, Tripudio is set during the day. 
 
 -- Orion Jerkin +1 is locked in place during Camouflage
--- Arcadian Jerkin is locked in place during Overkill
--- If Courser's Roll is active, we replace a few pieces of snapshot gear with rapidshot (still testing)
+-- During Overkill, we use a special set for preshot containing rapidshot gears
 
 -- === In Precast ===
 -- 1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
@@ -80,7 +82,7 @@ end
 function init_gear_sets()
         -- Overriding Global Defaults for this job
         -- gear.Staff = {} no need to set this, it's already set
-        gear.Staff.PDT = ""
+        gear.Bow = "Yoichinoyumi"
         gear.default.weaponskill_neck = "Sylvan Scarf"
         gear.default.weaponskill_waist = "Elanid Belt"
  
@@ -683,7 +685,7 @@ function determine_ranged()
     end
 	--classes.CustomRangedGroups:clear()
 	classes.CustomMeleeGroups:clear()
-    if player.equipment.range == 'Yoichinoyumi' then
+    if player.equipment.range == gear.Bow then
 		classes.CustomMeleeGroups:append('Bow')
 		classes.CustomRangedGroups:append('Bow')
 	end
