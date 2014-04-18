@@ -14,15 +14,15 @@
 
 -- === My Modes ===
 -- 1) Normal is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
--- 3) Mid has a nice mixture of racc and stp for hard content. 
--- 4) Racc is full blown racc. i.e. You're fighting VD MR and songs drop.  
--- 5) Bow set will activate by equipping whichever bow you defined in gear.Bow
--- 6) Enmity mode is a work in progress. When decoy is down AND Bow is equipped, 
--- it tries to use a few extra pieces of -enmity gear. Again.. this does NOT apply to Annihilator
--- 7) We use Fenrir's earring at night during WS
+-- 2) Mid has a nice mixture of racc and stp for hard content. 
+-- 3) Racc is full blown racc. i.e. You're fighting VD MR and songs drop.  
 
--- Orion Jerkin +1 is locked in place during Camouflage
--- During Overkill, we use a special set for precast/midcast containing rapidshot gears
+-- === Features ===
+-- 1) Bow set will activate by equipping whichever bow you defined in gear.Bow
+-- 2) Enmity mode is a work in progress. When decoy is down AND Bow is equipped, 
+-- it tries to use a few extra pieces of -enmity gear. Again.. this does NOT apply to Annihilator
+-- 3) We use Fenrir's earring at night during WS, you can disable this with use_night_earring
+-- 4) During Overkill, we use a special set for precast/midcast containing rapidshot gears
 
 -- === In Precast ===
 -- 1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
