@@ -14,7 +14,7 @@
 -- 1) STP is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
 -- 3) Normal has a nice mixture of racc and stp for hard content. 
 -- 4) Racc is full blown racc. i.e. You're fighting VD MR and songs drop.  
--- 5) Bow set will activate by equipping whichever bow you define in settings
+-- 5) Bow set will activate by equipping whichever bow you defined in gear.Bow
 -- 6) Enmity mode is a work in progress. When decoy is down, it tries to use a few extra 
 -- pieces of -enmity gear
 
