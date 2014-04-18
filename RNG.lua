@@ -169,7 +169,8 @@ function init_gear_sets()
         }
 
         sets.engaged.Bow = set_combine(sets.engaged, {
-                hands="Arcadian Bracer's +1"
+                hands="Arcadian Bracer's +1",
+                feet="Arcadian Socks +1"
         })
 
         sets.engaged.Melee = {
