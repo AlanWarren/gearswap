@@ -348,7 +348,6 @@ function init_gear_sets()
         })
 
         sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
-            head="Ux'uxkaj Cap",
             neck="Flame Gorget",
             waist="Light Belt",
             feet="Arcadian Socks +1",
