@@ -8,24 +8,21 @@
 -- I've left in KBEEZIE's Unlimited Shot checks for now, but will remove soon since the JA no longer has
 -- any use.  
 
--- This file is currently under development, with the addition of Yoichi recently. 
+-- This file is currently under development. 
+-- Recently added automatic handling for Bows. Just change gear.Bow to whatever you're using.
+-- Recently added support for Enmity control, but only when using Bow since Annihilator doesn't need this.
 
 -- === My Modes ===
--- 1) STP is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
--- 3) Normal has a nice mixture of racc and stp for hard content. 
--- 4) Racc is full blown racc. i.e. You're fighting VD MR and songs drop.  
--- 5) Bow set will activate by equipping whichever bow you defined in gear.Bow
--- 6) Enmity mode is a work in progress. When decoy is down, it tries to use a few extra 
--- pieces of -enmity gear
+-- 1) Normal is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
+-- 2) Mid has a nice mixture of racc and stp for hard content. 
+-- 3) Racc is full blown racc. i.e. You're fighting VD MR and songs drop.  
 
--- === Advanced Features ===
--- Fenrir's Earring is equipped in midcast at night, and Clearview Earring during the day...
--- Except in the following conditions: 
--- If you're in STP mode, this feature is disabled in favor of Tripudio Earring
--- If you have /SAM set as SJ, Tripudio is set during the day. 
-
--- Orion Jerkin +1 is locked in place during Camouflage
--- During Overkill, we use a special set for preshot containing rapidshot gears
+-- === Features ===
+-- 1) Bow set will activate by equipping whichever bow you defined in gear.Bow
+-- 2) Enmity mode is a work in progress. When decoy is down AND Bow is equipped, 
+-- it tries to use a few extra pieces of -enmity gear. Again.. this does NOT apply to Annihilator
+-- 3) We use Fenrir's earring at night during WS, you can disable this with use_night_earring
+-- 4) During Overkill, we use a special set for precast/midcast containing rapidshot gears
 
 -- === In Precast ===
 -- 1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
@@ -99,9 +96,9 @@ function init_gear_sets()
         -- Options: Override default values
  
         options.OffenseModes = {'Normal', 'Melee'}
-        options.RangedModes = {'Normal', 'ACC', 'STP'}
+        options.RangedModes = {'Normal', 'Mid', 'Acc'}
         options.DefenseModes = {'Normal', 'PDT'}
-        options.WeaponskillModes = {'Normal', 'ACC'}
+        options.WeaponskillModes = {'Normal', 'Acc'}
         options.PhysicalDefenseModes = {'PDT'}
         options.MagicalDefenseModes = {'MDT'}
         state.Defense.PhysicalMode = 'PDT'
@@ -118,7 +115,6 @@ function init_gear_sets()
         sets.precast.JA['Eagle Eye Shot'] = {
             head="Ux'uxkaj Cap", 
             neck="Rancor Collar",
-            hands="Iuitl Wristbands +1",  -- only while they have crit+1
             back="Buquwik Cape",
             ring2="Pyrosoul Ring",
             legs="Arcadian Braccae", 
@@ -126,9 +122,7 @@ function init_gear_sets()
         }
 
         sets.NightEarring = {ear2="Fenrir's earring"}
-        sets.NightEarring.STP = {ear2="Tripudio earring"}
-        sets.DayEarring = {ear2="Clearview earring"}
-        sets.DayEarring.STP = sets.NightEarring.STP
+        sets.DayEarring = {ear2="Flame Pearl"}
 
         sets.earring = select_earring()
 
@@ -163,7 +157,7 @@ function init_gear_sets()
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
             ear1="Volley Earring",
-            ear2="Clearview Earring",
+            ear2="Tripudio Earring",
             body="Kyujutsugi",
             hands="Sigyn's Bazubands",
             ring1="Rajas Ring",
@@ -203,72 +197,61 @@ function init_gear_sets()
             feet="Wurrukatte Boots"
         })
 
-        sets.midcast.Ear = {}
-        sets.midcast.Ear = earring_selector()
-        
-        sets.midcast.RangedAttack = set_combine(sets.midcast.Ear, {
+        sets.midcast.RangedAttack = set_combine(sets.engaged, {
             ring2="Paqichikaji Ring",
-            back="Lutian Cape",
+            back="Sylvan Chlamys",
             legs="Aetosaur Trousers +1"
         })
+        
+        sets.midcast.RangedAttack.Mid = set_combine(sets.midcast.RangedAttack, {
+            back="Lutian Cape"
+        })
 
-        sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack, {
+        sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack.Mid, {
+            ear2="Clearview Earring",
             neck="Iqabi Necklace",
             ring1="Hajduk Ring",
-            ring2="Paqichikaji Ring",
-            legs="Aetosaur Trousers +1"
-        })
-
-        sets.midcast.RangedAttack.STP = set_combine(sets.midcast.RangedAttack, {
-            back="Sylvan Chlamys",
-            ear2="Tripudio earring",
-            legs="Aetosaur Trousers +1"
+            legs="Orion Braccae +1"
         })
         
         -- Bow
         sets.midcast.RangedAttack.Bow = set_combine(sets.midcast.RangedAttack, {
-            hands="Arcadian Bracers +1",
-            ear2="Tripudio earring",
-            back="Sylvan Chlamys",
-            legs="Aetosaur Trousers +1"
+            hands="Sylvan Glovelettes +2"
         })
 
-        sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
-            neck="Iqabi Necklace",
-            ring1="Hajduk Ring",
-            ring2="Paqichikaji Ring",
+        sets.midcast.RangedAttack.Mid.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
+            hands="Arcadian Bracers +1",
             back="Lutian Cape"
-        }
-        )
-        sets.midcast.RangedAttack.STP.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
-            hands="Sylvan Glovelettes +2"
+        })
+
+        sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Mid.Bow, {
+            neck="Iqabi Necklace",
+            ring1="Hajduk Ring"
         })
 
         -- -Enmity goal
         sets.midcast.RangedAttack.Enmity = set_combine(sets.midcast.RangedAttack.Bow, {
-            hands="Iuitl Wristbands +1",
-            ring2="Paqichikaji Ring",
             --ear1="Novia Earring",
-            neck="Huani Collar",
+            neck="Ocachi Gorget",
             back="Sylvan Chlamys",
             feet="Arcadian Socks +1"
         })
 
-        sets.midcast.RangedAttack.Acc.Enmity = set_combine(sets.midcast.RangedAttack.Enmity, {
+        sets.midcast.RangedAttack.Mid.Enmity = set_combine(sets.midcast.RangedAttack.Enmity, {
+            neck="Huani Collar",
+            hands="Iuitl Wristbands +1"
+        })
+
+        sets.midcast.RangedAttack.Acc.Enmity = set_combine(sets.midcast.RangedAttack.Mid.Enmity, {
             ring1="Hajduk Ring",
             back="Lutian Cape",
             legs="Orion Braccae +1",
             feet="Orion Socks +1"
         })
 
-        sets.midcast.RangedAttack.STP.Enmity = set_combine(sets.midcast.RangedAttack.Enmity, {
-            neck="Ocachi Gorget",
-            hands="Sylvan Glovelettes +2",
-            back="Sylvan Chlamys"
-        })
-               
-        -- Weaponskill sets
-        sets.precast.WS = {
+        -- Weaponskill sets  
+        sets.precast.CustomWS = {}
+        sets.precast.CustomWS = {
             head="Arcadian Beret +1",
             neck="Sylvan Scarf",
             ear1="Flame Pearl",
@@ -282,16 +265,19 @@ function init_gear_sets()
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
+
+        sets.precast.WS = set_combine(sets.precast.CustomWS, sets.earring)
        
+        sets.precast.WS.Mid = set_combine(sets.precast.WS, {
+           back="Lutian Cape"
+        })
+        
         sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+           ear2="Clearview Earring",
            legs="Orion Braccae +1",
            back="Lutian Cape"
         })
 
-        sets.precast.WS.STP = set_combine(sets.precast.WS, {
-           ear2="Tripudio Earring",
-           back="Sylvan Chlamys"
-        })
 
         -- CORONACH
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
@@ -299,7 +285,7 @@ function init_gear_sets()
            waist="Thunder Belt"
         })
 
-        sets.precast.WS['Coronach'].STP = set_combine(sets.precast.WS.STP, sets.precast.WS['Coronach'])
+        sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.precast.WS['Coronach'])
 
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, {
             neck="Breeze Gorget",
@@ -316,7 +302,7 @@ function init_gear_sets()
            feet="Arcadian Socks +1"
         })
 
-        sets.precast.WS['Last Stand'].STP = set_combine(sets.precast.WS.STP, sets.precast.WS['Last Stand'])
+        sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS.Mid, sets.precast.WS['Last Stand'])
 
         sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS.Acc, {
             neck="Aqua Gorget",
@@ -332,7 +318,7 @@ function init_gear_sets()
            feet="Arcadian Socks +1"
         })
 
-        sets.precast.WS['Detonator'].STP = set_combine(sets.precast.WS.STP, sets.precast.WS['Detonator'])
+        sets.precast.WS['Detonator'].Mid = set_combine(sets.precast.WS.Mid, sets.precast.WS['Detonator'])
 
         sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS.Acc, {
            neck="Flame Gorget",
@@ -349,9 +335,9 @@ function init_gear_sets()
             feet="Arcadian Socks +1"
         })
 
-        sets.precast.WS['Namas Arrow'].STP = set_combine(sets.precast.WS['Namas Arrow'], {
-            ear2="Tripudio Earring",
-            hands="Sylvan Glovelettes +2"
+        sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS['Namas Arrow'], {
+            hands="Iuitl Wristbands +1",
+            back="Lutian Cape"
         })
 
         sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'], {
@@ -361,7 +347,7 @@ function init_gear_sets()
         })
 
         sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
-            head="Arcadian Beret +1",
+            head="Ux'uxkaj Cap",
             neck="Flame Gorget",
             waist="Light Belt",
             feet="Arcadian Socks +1",
@@ -369,41 +355,36 @@ function init_gear_sets()
             back="Rancorous Mantle"
         })
 
-        sets.precast.WS['Jishnu\'s Radiance'].STP = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
-            ear2="Tripudio Earring",
-            legs="Sylvan Bragues +2",
-            hands="Sylvan Glovelettes +2",
-            back="Sylvan Chlamys"
+        sets.precast.WS['Jishnu\'s Radiance'].Mid = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
+            legs="Orion Braccae +1",
+            feet="Orion Socks +1"
         })
 
         sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
             back="Lutian Cape",
             ring2="Paqichikaji Ring",
-            legs="Orion Braccae +1"
+            legs="Orion Braccae +1",
+            feet="Orion Socks +1"
         })
 
         sets.precast.WS['Sidewinder'] = set_combine(sets.precast.WS, {
             neck="Aqua Gorget",
             waist="Light Belt",
-            hands="Arcadian Bracers +1",
-            back="Sylvan Chlamys",
+            back="Buquwik Cape",
             feet="Arcadian Socks +1"
         })
 
-        sets.precast.WS['Sidewinder'].STP = set_combine(sets.precast.WS['Sidewinder'], {
-            ear2="Tripudio Earring",
-            hands="Sylvan Glovelettes +2",
+        sets.precast.WS['Sidewinder'].Mid = set_combine(sets.precast.WS['Sidewinder'], {
             legs="Aetosaur Trousers +1"
         })
 
         sets.precast.WS['Sidewinder'].Acc = set_combine(sets.precast.WS['Sidewinder'], {
             legs="Aetosaur Trousers +1",
-            hands="Manibozho Gloves",
             back="Lutian Cape"
         })
 
         sets.precast.WS['Refulgent Arrow'] = sets.precast.WS['Sidewinder']
-        sets.precast.WS['Refulgent Arrow'].STP = sets.precast.WS['Sidewinder'].STP
+        sets.precast.WS['Refulgent Arrow'].Mid = sets.precast.WS['Sidewinder'].Mid
         sets.precast.WS['Refulgent Arrow'].Acc = sets.precast.WS['Sidewinder'].Acc
        
         -- Resting sets
@@ -517,7 +498,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.Buff.Overkill then
         equip(sets.Overkill)
     end
-    sets.earring = select_earring()
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -546,7 +526,6 @@ function customize_idle_set(idleSet)
 end
  
 function customize_melee_set(meleeSet)
-    meleeSet = set_combine(meleeSet, select_earring())
     if state.Buff.Camouflage then
     	meleeSet = set_combine(meleeSet, sets.buff.Camouflage)
     end
@@ -610,25 +589,13 @@ function select_earring()
     -- world.time is given in minutes into each day
     -- 7:00 AM would be 420 minutes
     -- 17:00 PM would be 1020 minutes
-    -- If I'm rng/sam use STP earring
-    -- otherwise, STP isn't going to make or break me
-    -- so I'd like to use Fenrir's at night
-    if player.sub_job == 'SAM' then
-        return sets.NightEarring.STP
-    elseif world.time >= (18*60) or world.time <= (8*60) then
+    if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
         return sets.NightEarring
     else
         return sets.DayEarring
     end
 end
 
-function earring_selector()
-    if use_night_earring then
-        return set_combine(sets.engaged, sets.earring)
-    else
-        return sets.engaged
-    end
-end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------
