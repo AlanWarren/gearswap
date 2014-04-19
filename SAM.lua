@@ -96,7 +96,10 @@ function init_gear_sets()
         legs="Wakido Haidate +1",
         feet="Sakonji Sune-ate +1"
     }
-	sets.precast.WS.Acc = set_combine(sets.precast.WS, {legs="Mikinaak Cuisses"})
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+            ring2="Mars's Ring",
+            legs="Mikinaak Cuisses"
+    })
 
 	sets.precast.WS['Namas Arrow'] = {
         ammo=gear.RAarrow,
@@ -268,6 +271,7 @@ function init_gear_sets()
         neck="Iqabi Necklace", 
         hands="Miki. Gauntlets",
         ring1="Patricius Ring",
+        ring2="Mars's Ring",
         feet="Wakido Sune-Ate", 
         waist="Dynamic Belt"
     })
@@ -299,7 +303,11 @@ function init_gear_sets()
         ammo=gear.RAarrow
     })
 
-	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, { waist="Dynamic Belt" })
+	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, { 
+            waist="Dynamic Belt"
+            ring1="Patricius Ring",
+            ring2="Mars's Ring"
+    })
 
 	sets.engaged.Reraise = set_combine(sets.engaged.PDT, {
         head="Twilight Helm", 
@@ -313,7 +321,7 @@ function init_gear_sets()
 
 	sets.engaged.Acc.Reraise = set_combine(sets.engaged.Reraise, {
         hands="Miki. Gauntlets",
-        ring1="Beeline Ring",
+        ring1="Patricius Ring",
         feet="Wakido Sune-Ate", 
         waist="Dynamic Belt"
     })
@@ -352,6 +360,7 @@ function init_gear_sets()
         hands="Wakido Kote +1",
         neck="Iqabi Necklace",
         ring1="Patricius Ring",
+        ring2="Mars's Ring",
 	    waist="Dynamic Belt",
         legs="Wakido Haidate +1",
         feet="Wakido Sune-Ate"

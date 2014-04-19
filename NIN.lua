@@ -129,7 +129,7 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {
         head="Whirlpool Mask", 
         legs="Hachiya Hakama", 
-        ring1="Patricius Ring",
+        ring1="Mars's Ring",
         back="Yokaze Mantle"
     })
 	sets.precast.WS['Blade: Hi'].Mod = set_combine(sets.precast.WS['Blade: Hi'], {waist="Soil Belt"})
@@ -272,7 +272,7 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
 		body="Hachiya Chainmail +1",
         hands="Mochizuki Tekko +1",
-        ring1="Rajas Ring",
+        ring1="Patricius Ring",
         ring2="Epona's Ring",
 		back="Atheling Mantle",
         waist="Nusku's Sash",
@@ -286,6 +286,7 @@ function init_gear_sets()
 		back="Yokaze Mantle",
         waist="Hurch'lan Sash",
         ring1="Patricius Ring",
+        ring2="Mars's Ring",
         legs="Hachiya Hakama",
         feet="Manibozho Boots"
     })
@@ -322,6 +323,7 @@ function init_gear_sets()
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
 		head="Whirlpool Mask",
 		waist="Hurch'lan Sash",
+        ring1="Patricius Ring",
         legs="Hachiya Hakama"
     })
 
@@ -345,6 +347,8 @@ function init_gear_sets()
     sets.engaged.Haste_43.Acc = set_combine(sets.engaged.Haste_43, {
 		head="Whirlpool Mask",
         body="Mochizuki Chainmail",
+        ring1="Patricius Ring",
+        ring2="Mars's Ring",
         waist="Hurch'lan Sash",
 		back="Yokaze Mantle"
     })
@@ -352,6 +356,7 @@ function init_gear_sets()
         body="Mochizuki Chainmail",
         neck="Asperity Necklace",
 		back="Yokaze Mantle",
+        ring2="Epona's Ring",
         feet="Otronif Boots +1"
     })
 
@@ -368,7 +373,8 @@ function init_gear_sets()
         ear2="Heartseeker Earring"
     })
     sets.engaged.Haste_40.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
-        legs="Mochizuki Hakama"
+        legs="Mochizuki Hakama",
+        ring2="Epona's Ring"
     })
 
 	sets.engaged.Haste_40.Acc.Evasion = set_combine(sets.engaged.Haste_40.Acc, sets.engaged.Haste_40.Evasion)

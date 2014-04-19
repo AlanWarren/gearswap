@@ -217,11 +217,13 @@ function init_gear_sets()
         
         -- Bow
         sets.midcast.RangedAttack.Bow = set_combine(sets.midcast.RangedAttack, {
-            hands="Sylvan Glovelettes +2"
+            hands="Sylvan Glovelettes +2",
+            ring2="Bellona's Ring"
         })
 
         sets.midcast.RangedAttack.Mid.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
             hands="Arcadian Bracers +1",
+            ring2="Paqichikaji Ring",
             back="Lutian Cape"
         })
 
@@ -232,14 +234,14 @@ function init_gear_sets()
 
         -- -Enmity goal
         sets.midcast.RangedAttack.Enmity = set_combine(sets.midcast.RangedAttack.Bow, {
-            --ear1="Novia Earring",
-            neck="Ocachi Gorget",
+            ear1="Novia Earring",
+            neck="Huani Collar",
             back="Sylvan Chlamys",
+            ring2="Paqichikaji Ring",
             feet="Arcadian Socks +1"
         })
 
         sets.midcast.RangedAttack.Mid.Enmity = set_combine(sets.midcast.RangedAttack.Enmity, {
-            neck="Huani Collar",
             hands="Iuitl Wristbands +1"
         })
 
