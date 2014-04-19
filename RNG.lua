@@ -80,7 +80,7 @@ function init_gear_sets()
         -- Overriding Global Defaults for this job
         -- gear.Staff = {} no need to set this, it's already set
         gear.Bow = "Yoichinoyumi"
-        gear.default.weaponskill_neck = "Sylvan Scarf"
+        gear.default.weaponskill_neck = "Ocachi Gorget"
         gear.default.weaponskill_waist = "Elanid Belt"
  
         -- List of ammunition that should only be used under unlimited shot
@@ -256,7 +256,7 @@ function init_gear_sets()
         sets.precast.CustomWS = {}
         sets.precast.CustomWS = {
             head="Arcadian Beret +1",
-            neck="Sylvan Scarf",
+            neck="Ocachi Gorget",
             ear1="Flame Pearl",
             ear2="Flame Pearl",
             body="Kyujutsugi",
