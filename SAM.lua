@@ -304,7 +304,7 @@ function init_gear_sets()
     })
 
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, { 
-            waist="Dynamic Belt"
+            waist="Dynamic Belt",
             ring1="Patricius Ring",
             ring2="Mars's Ring"
     })
