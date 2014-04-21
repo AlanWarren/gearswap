@@ -208,7 +208,8 @@ function init_gear_sets()
 		neck="Twilight Torque",
         ring1="Patricius Ring",
 		ring2="Paguroidea Ring",
-        body="Wakido Domaru +1",
+        head="Twilight Helm",
+        body="Twilight Mail",
 		back="Shadow Mantle",
         feet="Danzo Sune-ate"
     })
