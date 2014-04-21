@@ -272,7 +272,7 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
 		body="Hachiya Chainmail +1",
         hands="Mochizuki Tekko +1",
-        ring1="Patricius Ring",
+        ring1="Rajas Ring",
         ring2="Epona's Ring",
 		back="Atheling Mantle",
         waist="Nusku's Sash",
