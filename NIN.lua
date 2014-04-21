@@ -304,7 +304,7 @@ function init_gear_sets()
 	sets.engaged.Att = set_combine(sets.engaged, {
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-		body="Thaumas Coat",
+		body="Mochizuki Chainmail",
         hands="Otronif Gloves",
         ring1="Thundersoul Ring",
         waist="Cetl Belt"
