@@ -103,11 +103,11 @@ function init_gear_sets()
 
 	sets.precast.WS['Namas Arrow'] = {
         ammo=gear.RAarrow,
-        head="Sakonji Kabuto +1",
+        head="Lithelimb Cap",
         neck="Aqua Gorget",
         ear1="Flame Pearl",
         ear2="Flame Pearl",
-        body="Kyujutsugi",
+        body="Phorcys Korazin",
         hands="Unkai Kote +2",
         back="Buquwik Cape",
         ring1="Rajas Ring",
@@ -117,6 +117,8 @@ function init_gear_sets()
         feet="Wakido Sune-ate"
     }
     sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'], {
+        head="Sakonji Kabuto +1",
+        body="Kyujutsugi",
         head="Sakonji Kabuto +1"
     })
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
@@ -194,13 +196,13 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Hachiryu haramaki",
+		body="Sakonji Domaru +1",
         hands="Wakido Kote +1",
         ring1="Patricius Ring",
         ring2="K'ayres Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
-        legs="Wakido Haidate +1",
+        legs="Hachiryu Haidate",
         feet="Danzo Sune-ate"
     }
 	
@@ -258,7 +260,7 @@ function init_gear_sets()
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1
         ear2="Steelflash Earring", -- 1
-		body="Wakido Domaru +1", --7
+		body="Sakonji Domaru +1", --7
         hands="Wakido Kote +1",-- 5
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
@@ -341,7 +343,7 @@ function init_gear_sets()
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
-		body="Wakido Domaru +1", -- 7
+		body="Sakonji Domaru +1", --7
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
@@ -357,7 +359,7 @@ function init_gear_sets()
     })
 
 	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin, {
-		body="Wakido Domaru +1",
+		body="Sakonji Domaru +1", --7
         hands="Wakido Kote +1",
         neck="Iqabi Necklace",
         ring1="Patricius Ring",
