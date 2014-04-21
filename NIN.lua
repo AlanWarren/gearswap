@@ -71,7 +71,7 @@ function init_gear_sets()
 	-- Set for acc on steps, since Yonin drops acc a fair bit
 	sets.precast.Step = {
 		head="Whirlpool Mask",
-		body="Manibozho Jerkin",
+		body="Mochizuki Chainmail",
         hands="Otronif Gloves",
 		back="Yokaze Mantle",
         waist="Hurch'lan Sash",
