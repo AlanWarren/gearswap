@@ -179,6 +179,7 @@ function init_gear_sets()
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
 		head="Yaoyotl Helm",
+        body="Kyujutsugi",
 		hands="Otronif Gloves",
 		legs="Wakido Haidate +1",feet="Otronif Boots +1"
     }
