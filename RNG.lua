@@ -566,19 +566,19 @@ function job_buff_change(buff, gain)
     end
 
     -- If Decoy Shot is down, and we're already using Bow... we use -Enmity set
-    if (classes.CustomRangedGroups:contains('Bow')) then
-        if state.Buff['Decoy Shot'] ~= gain then
-            if classes.CustomRangedGroups:contains('Enmity') then
-                -- do nothing
-            else
-                classes.CustomRangedGroups:append('Enmity')
-            end
+    --if (classes.CustomRangedGroups:contains('Bow')) then
+    --    if state.Buff['Decoy Shot'] ~= gain then
+    --        if classes.CustomRangedGroups:contains('Enmity') then
+    --            -- do nothing
+    --        else
+    --            classes.CustomRangedGroups:append('Enmity')
+    --        end
 
-        else
-	        classes.CustomMeleeGroups:clear()
-            classes.CustomRangedGroups:clear()
-        end
-    end
+    --    else
+	--        classes.CustomMeleeGroups:clear()
+    --        classes.CustomRangedGroups:clear()
+    --    end
+    --end
 
 	determine_ranged()
 
