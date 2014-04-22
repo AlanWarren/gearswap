@@ -217,8 +217,7 @@ function init_gear_sets()
         
         -- Bow
         sets.midcast.RangedAttack.Bow = set_combine(sets.midcast.RangedAttack, {
-            hands="Sylvan Glovelettes +2",
-            ring2="Bellona's Ring"
+            hands="Sylvan Glovelettes +2"
         })
 
         sets.midcast.RangedAttack.Mid.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
