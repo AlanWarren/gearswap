@@ -1,6 +1,17 @@
 -------------------------------------------------------------------------------------------------------------------
 -- Initialization function that defines sets and variables to be used.
 -------------------------------------------------------------------------------------------------------------------
+--Ionis Zones
+--Anahera Blade (4 hit): 52
+--Tsurumaru (4 hit): 49
+--Kogarasumaru (or generic 450 G.katana) (5 hit): 40
+--Amanomurakumo/Masamune 437 (5 hit): 46
+--
+--Non Ionis Zones:
+--Anahera Blade (4 hit): 52
+--Tsurumaru (5 hit): 24
+--Kogarasumaru (5 hit): 40
+--Amanomurakumo/Masamune 437 (5 hit): 46
 
 -- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
 
@@ -26,9 +37,9 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-	options.OffenseModes = {'Normal', 'Acc', 'Multi'}
+	options.OffenseModes = {'Normal', 'Mid', 'Acc'}
 	options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
-	options.WeaponskillModes = {'Normal', 'Acc', 'Att', 'Mod'}
+	options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
 	options.CastingModes = {'Normal'}
 	options.IdleModes = {'Normal'}
 	options.RestingModes = {'Normal'}
@@ -83,7 +94,7 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
         --ammo="Paeapua",
-		head="Yaoyotl Helm",
+		head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
@@ -96,9 +107,14 @@ function init_gear_sets()
         legs="Wakido Haidate +1",
         feet="Sakonji Sune-ate +1"
     }
-	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+    sets.precast.WS.Mid = set_combine(sets.precast.WS, {
+        head="Yaoyotl Helm",
+        body="Sakonji Domaru +1"
+    })
+	sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
             ring2="Mars's Ring",
-            legs="Mikinaak Cuisses"
+            legs="Mikinaak Cuisses",
+            feet="Wakido Sune-Ate"
     })
 
 	sets.precast.WS['Namas Arrow'] = {
@@ -116,41 +132,51 @@ function init_gear_sets()
         legs="Wakido Haidate +1",
         feet="Wakido Sune-ate"
     }
-    sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'], {
+    sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS['Namas Arrow'], {
         head="Sakonji Kabuto +1",
         body="Kyujutsugi",
-        head="Sakonji Kabuto +1"
     })
+    sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'].Mid, {
+        ring2="Hajduk Ring"
+    })
+
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
         neck="Breeze Gorget",
         body="Kyujutsugi",
         ring2="Stormsoul Ring"
     })
+    sets.precast.WS['Apex Arrow'].Mid = sets.precast.WS['Apex Arrow']
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
         head="Sakonji Kabuto +1"
     })
 
-	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
         hands="Boor Bracelets",
         neck="Aqua Gorget", 
         waist="Light Belt"
     })
-	sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS['Tachi: Fudo'])
-	sets.precast.WS['Tachi: Fudo'].Mod = set_combine(sets.precast.WS['Tachi: Fudo'], {})
-
+	sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
+        head="Yaoyotl Helm",
+        ring2="Mars's Ring"
+    })
+	sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
+        body="Mikinaak Breastplate",
+        feet="Wakido Sune-Ate"
+    })
 
 	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
         feet="Mikinaak Greaves",
-        back="Atheling Mantle",
         neck="Breeze Gorget",
         waist="Windbuffet Belt"
     })
-	sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS.Acc, {
-        neck="Breeze Gorget"
-    })
-	sets.precast.WS['Tachi: Shoha'].Mod = set_combine(sets.precast.WS['Tachi: Shoha'], {
+	sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS['Tachi: Shoha'], {
+        head="Yaoyotl Helm",
+        ring2="Mars's Ring"
         waist="Thunder Belt"
+    })
+	sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {
+        body="Mikinaak Breastplate",
+        feet="Wakido Sune-Ate"
     })
 
 	sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {
@@ -163,8 +189,6 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring"
     })
-	sets.precast.WS['Tachi: Rana'].Mod = set_combine(sets.precast.WS['Tachi: Rana'], {waist="Snow Belt"})
-
 	sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Flame Gorget",waist="Light Belt"})
 
 	sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {neck="Aqua Gorget",waist="Windbuffet Belt"})
@@ -178,22 +202,26 @@ function init_gear_sets()
 
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
-		head="Yaoyotl Helm",
+		head="Otomi Helm",
         body="Kyujutsugi",
-		hands="Otronif Gloves",
-		legs="Wakido Haidate +1",feet="Otronif Boots +1"
+		legs="Wakido Haidate +1",
+        feet="Otronif Boots +1"
     }
 	
 	-- Sets to return to when not performing an action.
 	
 	-- Resting sets
-	sets.resting = {ring2="Paguroidea Ring"}
+	sets.resting = {
+        head="Twilight Helm",
+        body="Twilight Mail",
+        ring2="Paguroidea Ring"
+    }
 	
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
-		head="Yaoyotl helm",
+		head="Otomi helm",
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
@@ -201,9 +229,9 @@ function init_gear_sets()
         hands="Wakido Kote +1",
         ring1="Patricius Ring",
         ring2="K'ayres Ring",
-		back="Atheling Mantle",
+		back="Takaha Mantle",
         waist="Windbuffet Belt",
-        legs="Hachiryu Haidate",
+        legs="Wakido Haidate +1",
         feet="Danzo Sune-ate"
     }
 	
@@ -227,9 +255,19 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = {
-		head="Lithelimb Cap",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Wakido Domaru +1",hands="Wakido Kote +1",ring1="K'ayres Ring",ring2="Dark Ring",
-		back="Shadow Mantle",waist="Windbuffet Belt",legs="Wakido Haidate +1",feet="Otronif Boots +1"}
+		head="Lithelimb Cap",
+        neck="Twilight Torque",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+		body="Sakonji Domaru +1",
+        hands="Wakido Kote +1",
+        ring1="Dark Ring",
+        ring2="Patricius Ring",
+		back="Shadow Mantle",
+        waist="Windbuffet Belt",
+        legs="Wakido Haidate +1",
+        feet="Otronif Boots +1"
+    }
 
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {
 		head="Twilight Helm",
@@ -254,47 +292,44 @@ function init_gear_sets()
     -- Tsurumaru needs 49 stp w/ ionis 
     -- Anahera needs 52 stp anywhere 
     
-    -- I generally use Anahera outside of Adoulin areas, so this set aims for 52 STP (including +5 from weapon)
-	sets.engaged = { -- 53 stp with Anahera
-        ammo="Hagneia Stone", -- 3
-		head="Yaoyotl Helm", -- 4
+    -- I generally use Anahera outside of Adoulin areas, so this set aims for 47 STP + 5 from Anahera (52 total)
+    -- When you get Mala, put K'ayres back on ring2
+	sets.engaged = {
+        ammo="Paeapua",
+		head="Otomi Helm",
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1
         ear2="Steelflash Earring", -- 1
-		body="Sakonji Domaru +1", --7
+		body="Sakonji Domaru +1", -- 8
         hands="Wakido Kote +1",-- 5
         ring1="Rajas Ring", -- 5
-        ring2="K'ayres Ring", -- 5
-		back="Atheling Mantle", 
+        ring2="Mars's Ring", 
+		back="Takaha Mantle",  -- 10
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 7
-        feet="Otronif Boots +1" -- 7
+        feet="Otronif boots +1" -- 7
     }
 
-	sets.engaged.Acc = set_combine(sets.engaged, { 
+    sets.engaged.Mid = set_combine(sets.engaged, {
+        head="Yaoyotl Helm",
         neck="Iqabi Necklace", 
-        hands="Miki. Gauntlets",
-        ring1="Patricius Ring",
-        ring2="Mars's Ring",
-        feet="Wakido Sune-Ate", 
         waist="Dynamic Belt"
     })
 
+	sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
+        ring1="Patricius Ring",
+        ring2="Mars's Ring",
+        feet="Wakido Sune-Ate"
+    })
+
 	sets.engaged.Yoichi = set_combine(sets.engaged, { 
-		ammo=gear.RAarrow,
-        waist="Cetl Belt",
-        feet="Sakonji Sune-Ate +1"
+		ammo=gear.RAarrow
     })
 
-    sets.engaged.Yoichi.Multi = sets.engaged.Yoichi
+    sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, sets.engaged.Mid)
+
+    sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, sets.engaged.Acc)
     
-	sets.engaged.Multi = set_combine(sets.engaged, { 
-        ammo="Paeapua",
-        head="Quauhpilli Helm",
-        ear1="Trux Earring",
-        ear2="Brutal Earring"
-    })
-
 	sets.engaged.PDT = set_combine(sets.engaged, { 
         head="Lithelimb Cap", 
         neck="Twilight Torque",
@@ -340,18 +375,17 @@ function init_gear_sets()
     -- This set assumes Tsurumaru 4-hit
 	sets.engaged.Adoulin = {
         ammo="Paeapua",
-		head="Sakonji Kabuto +1", -- 6
+		head="Otomi Helm",
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
-		body="Sakonji Domaru +1", --7
+		body="Sakonji Domaru +1", -- 8
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
-		back="Misuuchi Kappa", -- 3
+		back="Takaha Mantle", -- 10
         waist="Windbuffet belt",
         legs="Wakido Haidate +1", -- 7
-        --feet="Sakonji Sune-ate +1" -- 8
         feet="Otronif Boots +1" -- 7
     }
 
@@ -359,15 +393,20 @@ function init_gear_sets()
         ammo=gear.RAarrow
     })
 
-	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin, {
-		body="Sakonji Domaru +1", --7
-        hands="Wakido Kote +1",
+	sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, {
+        head="Yaoyotl Helm",
         neck="Iqabi Necklace",
+	    waist="Dynamic Belt"
+    })
+
+	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, {
         ring1="Patricius Ring",
         ring2="Mars's Ring",
-	    waist="Dynamic Belt",
-        legs="Wakido Haidate +1",
         feet="Wakido Sune-Ate"
+    })
+
+    sets.engaged.Adoulin.Yoichi.Mid = set_combine(sets.engaged.Adoulin.Mid, {
+        ammo=gear.RAarrow
     })
 
     sets.engaged.Adoulin.Yoichi.Acc = set_combine(sets.engaged.Adoulin.Acc, {
@@ -380,15 +419,10 @@ function init_gear_sets()
         ring1="Patricius Ring",
 		back="Shadow Mantle"
     })
+
 	sets.engaged.Adoulin.Yoichi.PDT = set_combine(sets.engaged.Adoulin.PDT, {
         ammo=gear.RAarrow
     })
-
-	sets.engaged.Adoulin.Multi = set_combine(sets.engaged.Adoulin, { 
-        ammo="Paeapua",
-        waist="Windbuffet Belt"
-    })
-	sets.engaged.Adoulin.Yoichi.Multi = sets.engaged.Adoulin.Yoichi
 
 	sets.engaged.Adoulin.Acc.PDT = set_combine(sets.engaged.Adoulin.PDT, { waist="Dynamic Belt" })
 	sets.engaged.Adoulin.Yoichi.Acc.PDT = set_combine(sets.engaged.Adoulin.Yoichi.PDT, { 
