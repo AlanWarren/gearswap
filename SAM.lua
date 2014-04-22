@@ -171,7 +171,7 @@ function init_gear_sets()
     })
 	sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS['Tachi: Shoha'], {
         head="Yaoyotl Helm",
-        ring2="Mars's Ring"
+        ring2="Mars's Ring",
         waist="Thunder Belt"
     })
 	sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {
