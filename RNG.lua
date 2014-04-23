@@ -8,20 +8,16 @@
 -- I've left in KBEEZIE's Unlimited Shot checks for now, but will remove soon since the JA no longer has
 -- any use.  
 
--- This file is currently under development. 
--- Recently added automatic handling for Bows. Just change gear.Bow to whatever you're using.
--- Recently added support for Enmity control, but only when using Bow since Annihilator doesn't need this.
-
 -- === My Modes ===
 -- 1) Normal is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
--- 2) Mid has a nice mixture of racc and stp for hard content. 
+-- 2) Mid has a nice mixture of racc and stp for hard content. Should 4-hit with 4 recycle procs
 -- 3) Racc is full blown racc. i.e. You're fighting VD MR and songs drop.  
 
 -- === Features ===
 -- 1) Bow set will activate by equipping whichever bow you defined in gear.Bow
--- 2) Enmity mode is a work in progress. When decoy is down AND Bow is equipped, 
--- it tries to use a few extra pieces of -enmity gear. Again.. this does NOT apply to Annihilator
--- 3) We use Fenrir's earring at night during WS, you can disable this with use_night_earring
+-- 2) Decoy set only applies while decoy is active AND you're using Bow. Standard Bow set uses
+-- -enmity gear, while maintaining 4-hit with lucky recycle procs + bloodrain
+-- 3) We use Fenrir's earring at night during WS, you can disable this with use_night_earring = false
 -- 4) During Overkill, we use a special set for precast/midcast containing rapidshot gears
 
 -- === In Precast ===
@@ -215,38 +211,56 @@ function init_gear_sets()
             legs="Orion Braccae +1"
         })
         
-        -- Bow
-        sets.midcast.RangedAttack.Bow = set_combine(sets.midcast.RangedAttack, {
-            hands="Sylvan Glovelettes +2"
-        })
-
+        -- Bow 35 STP (with Bloodrain) needs 4/4 recycle proc (while decoy is down)
+        -- -47 Enmity
+        sets.midcast.RangedAttack.Bow = {
+            head="Arcadian Beret +1", -- Enmity -6
+            neck="Huani Collar", -- Enmity -3
+            ear1="Novia Earring", -- Enmity -7
+            ear2="Tripudio Earring", -- STP 5
+            body="Kyujutsugi", -- STP 5 Enmity -9
+            hands="Manibozho Gloves", -- Enmity -7
+            ring1="Rajas Ring", -- STP 5
+            ring2="Paqichikaji Ring", -- Enmity -3
+            back="Sylvan Chlamys", -- STP 5 Enmity -3
+            waist="Elanid Belt", -- Enmity -3
+            legs="Sylvan Bragues +2", -- STP 9
+            feet="Arcadian Socks +1" -- Enmity -6
+        }
+        -- 31 STP with bloodrain. 5 hit until Mekki Shakki
         sets.midcast.RangedAttack.Mid.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
-            hands="Arcadian Bracers +1",
-            ring2="Paqichikaji Ring",
-            back="Lutian Cape"
+            neck="Ocachi Gorget", -- STP 5
+            hands="Iuitl Wristbands +1", -- 18 racc Enmity -6
+            back="Lutian Cape", -- Enmity -5
+            legs="Aetosaur Trousers +1" -- STP 5
         })
-
+        -- 5 hit
         sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Mid.Bow, {
-            neck="Iqabi Necklace",
-            ring1="Hajduk Ring"
-        })
-
-        -- -Enmity goal
-        sets.midcast.RangedAttack.Enmity = set_combine(sets.midcast.RangedAttack.Bow, {
-            ear1="Novia Earring",
-            neck="Huani Collar",
-            back="Sylvan Chlamys",
-            ring2="Paqichikaji Ring",
-            feet="Arcadian Socks +1"
-        })
-
-        sets.midcast.RangedAttack.Mid.Enmity = set_combine(sets.midcast.RangedAttack.Enmity, {
-            hands="Iuitl Wristbands +1"
-        })
-
-        sets.midcast.RangedAttack.Acc.Enmity = set_combine(sets.midcast.RangedAttack.Mid.Enmity, {
             ring1="Hajduk Ring",
+            legs="Orion Braccae +1",
+            feet="Orion Socks +1"
+        })
+
+        -- Docoy is Up - don't care about -enmity so much (Bow only)
+        -- 2/4 recycle necessary to 4 hit
+        sets.midcast.RangedAttack.Decoy = set_combine(sets.midcast.RangedAttack.Bow, {
+            ear1="Volley Earring",
+            neck="Ocachi Gorget",
+            hands="Sylvan Glovelettes +2",
+            ring2="K'ayres Ring",
+            legs="Aetosaur Trousers +1",
+            feet="Orion Socks +1"
+        })
+        -- 4/4 recycle proc necessary
+        sets.midcast.RangedAttack.Decoy.Mid = set_combine(sets.midcast.RangedAttack.Decoy, {
+            hands="Manibozho Gloves",
             back="Lutian Cape",
+            ring2="Paqichikaji Ring"
+        })
+        -- 5 hit
+        sets.midcast.RangedAttack.Decoy.Acc = set_combine(sets.midcast.RangedAttack.Decoy.Mid, {
+            neck="Iqabi Necklace",
+            ring1="Hajduk Ring",
             legs="Orion Braccae +1",
             feet="Orion Socks +1"
         })
@@ -564,20 +578,12 @@ function job_buff_change(buff, gain)
         state.Buff[buff] = gain
     end
 
-    -- If Decoy Shot is down, and we're already using Bow... we use -Enmity set
-    --if (classes.CustomRangedGroups:contains('Bow')) then
-    --    if state.Buff['Decoy Shot'] ~= gain then
-    --        if classes.CustomRangedGroups:contains('Enmity') then
-    --            -- do nothing
-    --        else
-    --            classes.CustomRangedGroups:append('Enmity')
-    --        end
-
-    --    else
-	--        classes.CustomMeleeGroups:clear()
-    --        classes.CustomRangedGroups:clear()
-    --    end
-    --end
+    -- Special setup for Bow, if decoy shot is up
+    if (classes.CustomRangedGroups:contains('Bow')) then
+        if state.Buff['Decoy Shot'] == gain then
+		    classes.CustomClass = "Decoy"
+        end
+    end
 
 	determine_ranged()
 
@@ -643,16 +649,9 @@ function display_current_job_state(eventArgs)
 end
 
 function determine_ranged()
-    -- Table may already contain Enmity, in which case we'd like to preserve it
-    if classes.CustomRangedGroups:contains('Enmity') then
-        -- Going to be overlay safe about how many items this table contains
-	    classes.CustomRangedGroups:clear()
-		classes.CustomRangedGroups:append('Enmity')
-    else
-	    classes.CustomRangedGroups:clear()
-    end
-	--classes.CustomRangedGroups:clear()
+	classes.CustomRangedGroups:clear()
 	classes.CustomMeleeGroups:clear()
+
     if player.equipment.range == gear.Bow then
 		classes.CustomMeleeGroups:append('Bow')
 		classes.CustomRangedGroups:append('Bow')
