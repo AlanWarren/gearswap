@@ -649,16 +649,9 @@ function display_current_job_state(eventArgs)
 end
 
 function determine_ranged()
-    -- Table may already contain Enmity, in which case we'd like to preserve it
-    if classes.CustomRangedGroups:contains('Enmity') then
-        -- Going to be overlay safe about how many items this table contains
-	    classes.CustomRangedGroups:clear()
-		classes.CustomRangedGroups:append('Enmity')
-    else
-	    classes.CustomRangedGroups:clear()
-    end
-	--classes.CustomRangedGroups:clear()
+	classes.CustomRangedGroups:clear()
 	classes.CustomMeleeGroups:clear()
+
     if player.equipment.range == gear.Bow then
 		classes.CustomMeleeGroups:append('Bow')
 		classes.CustomRangedGroups:append('Bow')
