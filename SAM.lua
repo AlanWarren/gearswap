@@ -317,8 +317,7 @@ function init_gear_sets()
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
-        ring1="Patricius Ring",
-        ring2="Mars's Ring",
+        head="Sakonji Kabuto +1",
         feet="Wakido Sune-Ate"
     })
 
@@ -372,7 +371,7 @@ function init_gear_sets()
 	-- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
 	-- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
     
-    -- This set assumes Tsurumaru 4-hit
+    -- This set assumes Tsurumaru 4-hit with Bloodrain Strap
 	sets.engaged.Adoulin = {
         ammo="Paeapua",
 		head="Otomi Helm",
@@ -383,10 +382,10 @@ function init_gear_sets()
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
-		back="Takaha Mantle", -- 10
-        waist="Windbuffet belt",
+		back="Atheling Mantle", -- 10
+        waist="Cetl Belt",
         legs="Wakido Haidate +1", -- 7
-        feet="Otronif Boots +1" -- 7
+        feet="Sakonji Sune-Ate +1" -- 8
     }
 
     sets.engaged.Adoulin.Yoichi = set_combine(sets.engaged.Adoulin, {
@@ -400,9 +399,11 @@ function init_gear_sets()
     })
 
 	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, {
-        ring1="Patricius Ring",
+        head="Sakonji Kabuto +1",
+        ring1="Rajas Ring",
         ring2="Mars's Ring",
-        feet="Wakido Sune-Ate"
+        feet="Wakido Sune-Ate",
+        back="Takaha Mantle"
     })
 
     sets.engaged.Adoulin.Yoichi.Mid = set_combine(sets.engaged.Adoulin.Mid, {
