@@ -304,7 +304,7 @@ function init_gear_sets()
 		body="Mochizuki Chainmail",
         hands="Otronif Gloves",
         ring1="Thundersoul Ring",
-        waist="Cetl Belt"
+        waist="Hurch'lan Sash"
     })
 
 	sets.engaged.Evasion = set_combine(sets.engaged, {
