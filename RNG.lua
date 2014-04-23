@@ -8,20 +8,16 @@
 -- I've left in KBEEZIE's Unlimited Shot checks for now, but will remove soon since the JA no longer has
 -- any use.  
 
--- This file is currently under development. 
--- Recently added automatic handling for Bows. Just change gear.Bow to whatever you're using.
--- Recently added support for Enmity control, but only when using Bow since Annihilator doesn't need this.
-
 -- === My Modes ===
 -- 1) Normal is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
--- 2) Mid has a nice mixture of racc and stp for hard content. 
+-- 2) Mid has a nice mixture of racc and stp for hard content. Should 4-hit with 4 recycle procs
 -- 3) Racc is full blown racc. i.e. You're fighting VD MR and songs drop.  
 
 -- === Features ===
 -- 1) Bow set will activate by equipping whichever bow you defined in gear.Bow
--- 2) Enmity mode is a work in progress. When decoy is down AND Bow is equipped, 
--- it tries to use a few extra pieces of -enmity gear. Again.. this does NOT apply to Annihilator
--- 3) We use Fenrir's earring at night during WS, you can disable this with use_night_earring
+-- 2) Decoy set only applies while decoy is active AND you're using Bow. Standard Bow set uses
+-- -enmity gear, while maintaining 4-hit with lucky recycle procs + bloodrain
+-- 3) We use Fenrir's earring at night during WS, you can disable this with use_night_earring = false
 -- 4) During Overkill, we use a special set for precast/midcast containing rapidshot gears
 
 -- === In Precast ===
