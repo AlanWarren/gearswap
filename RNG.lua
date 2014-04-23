@@ -88,7 +88,6 @@ function init_gear_sets()
         DefaultAmmo["Yoichinoyumi"] = "Achiyalabopa Arrow"
         DefaultAmmo["Atetepeyorg"] = "Achiyalabopa Bolt"
        
-        --add_to_chat(123,'sidecar load')
         -- Options: Override default values
  
         options.OffenseModes = {'Normal', 'Melee'}
@@ -100,7 +99,6 @@ function init_gear_sets()
         state.Defense.PhysicalMode = 'PDT'
  
         -- Misc. Job Ability precasts
-        --sets.precast.Step = {ear2="Choreia Earring"}
         sets.precast.JA['Bounty Shot'] = {hands="Sylvan Glovelettes +2"}
         sets.precast.JA['Double Shot'] = {head="Sylvan Gapette +2"}
         sets.precast.JA['Camouflage'] = {body="Orion Jerkin +1"}
@@ -194,6 +192,11 @@ function init_gear_sets()
             feet="Wurrukatte Boots"
         })
 
+        sets.precast.RangedAttack.Rapid = set_combine(sets.precast.RangedAttack, {
+            head="Orion Beret +1",
+            feet="Arcadian Socks +1"
+        })
+
         sets.midcast.RangedAttack = set_combine(sets.engaged, {
             ring2="Paqichikaji Ring",
             back="Sylvan Chlamys",
@@ -212,14 +215,14 @@ function init_gear_sets()
         })
         
         -- Bow 35 STP (with Bloodrain) needs 4/4 recycle proc (while decoy is down)
-        -- -47 Enmity
+        -- -46 Enmity
         sets.midcast.RangedAttack.Bow = {
             head="Arcadian Beret +1", -- Enmity -6
             neck="Huani Collar", -- Enmity -3
             ear1="Novia Earring", -- Enmity -7
             ear2="Tripudio Earring", -- STP 5
             body="Kyujutsugi", -- STP 5 Enmity -9
-            hands="Manibozho Gloves", -- Enmity -7
+            hands="Iuitl Wristbands +1", -- Enmity -6
             ring1="Rajas Ring", -- STP 5
             ring2="Paqichikaji Ring", -- Enmity -3
             back="Sylvan Chlamys", -- STP 5 Enmity -3
@@ -227,10 +230,9 @@ function init_gear_sets()
             legs="Sylvan Bragues +2", -- STP 9
             feet="Arcadian Socks +1" -- Enmity -6
         }
-        -- 31 STP with bloodrain. 5 hit until Mekki Shakki
+        -- 33 STP with bloodrain. 4/4 recycle proc necessary for 4-hit
         sets.midcast.RangedAttack.Mid.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
-            neck="Ocachi Gorget", -- STP 5
-            hands="Iuitl Wristbands +1", -- 18 racc Enmity -6
+            hands="Sylvan Glovelettes +2",  -- STP 7
             back="Lutian Cape", -- Enmity -5
             legs="Aetosaur Trousers +1" -- STP 5
         })
@@ -651,6 +653,10 @@ end
 function determine_ranged()
 	classes.CustomRangedGroups:clear()
 	classes.CustomMeleeGroups:clear()
+    
+    if buffactive['courser\'s roll'] then
+		classes.CustomRangedGroups:append('Rapid')
+    end
 
     if player.equipment.range == gear.Bow then
 		classes.CustomMeleeGroups:append('Bow')

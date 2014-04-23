@@ -245,13 +245,11 @@ function init_gear_sets()
         feet="Hachiya Kyahan"
     })
 
-
 	sets.DayMovement = {feet="Danzo sune-ate"}
 
 	sets.NightMovement = {feet="Hachiya Kyahan"}
 
 	sets.Kiting = select_movement()
-
 
 	-- Engaged sets
 
@@ -567,11 +565,11 @@ function job_buff_change(buff, gain)
 	-- If we gain or lose any haste buffs, adjust which gear set we target.
 	if S{'haste','march', 'madrigal','embrava','haste samba'}:contains(buff:lower()) then
 		determine_haste_group()
-		handle_equipping_gear(player.status)
-	elseif state.Buff[buff] ~= nil then
+    end
+	if state.Buff[buff] ~= nil then
 		state.Buff[buff] = gain
-		handle_equipping_gear(player.status)
 	end
+    handle_equipping_gear(player.status)
 end
 
 -- Called when the player's subjob changes.
