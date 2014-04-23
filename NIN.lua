@@ -88,7 +88,7 @@ function init_gear_sets()
     sets.WsEarMadrigal = {ear2="Kuwunga Earring"}
     --sets.earring = select_earring()
        
-    sets.precast.WSHolder = {
+    sets.precast.WS = {
 		head="Felistris Mask",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
@@ -102,10 +102,6 @@ function init_gear_sets()
         legs="Manibozho Brais",
         feet="Otronif Boots +1"
     }
-    
-	-- Weaponskill sets
-	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = set_combine(sets.precast.WSHolder, sets.earring)
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, {
@@ -122,7 +118,8 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         neck="Shadow gorget",
 		ring1="Stormsoul Ring",
-        --back="Rancorous Mantle",
+        back="Rancorous Mantle",
+        body="Hachi. Chainmail +1",
         legs="Nahtirah Trousers",
         waist="Soil belt"
     })
