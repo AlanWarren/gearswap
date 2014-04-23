@@ -59,7 +59,7 @@ function init_gear_sets()
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		head="Felistris Mask",
-		body="Hachiya Chainmail +1",
+		body="Mochizuki Chainmail +1",
         hands="Otronif Gloves",
         legs="Nahtirah Trousers",
         feet="Otronif Boots +1"
@@ -93,7 +93,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-		body="Hachiya chainmail +1",
+		body="Mochizuki chainmail +1",
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
@@ -177,7 +177,7 @@ function init_gear_sets()
 		head="Felistris Mask",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
-		body="Hachiya Chainmail +1",
+		body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
 		back="Yokaze Mantle",
         waist="Twilight Belt",
@@ -221,7 +221,7 @@ function init_gear_sets()
 	sets.defense.Evasion = {
 		head="Felistris Mask",
         neck="Asperity Necklace",
-		body="Hachiya Chainmail +1",
+		body="Qaaxo Harness",
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
@@ -270,7 +270,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-		body="Hachiya Chainmail +1",
+		body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
@@ -448,7 +448,7 @@ function init_gear_sets()
     -- 20
     sets.engaged.Haste_20 = set_combine(sets.engaged.Haste_43, {
         head="Iga Zukin +2",
-		body="Hachiya Chainmail +1",
+		body="Mochizuki Chainmail +1",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         waist="Nusku's Sash",
@@ -462,7 +462,7 @@ function init_gear_sets()
     sets.engaged.Haste_20.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-		body="Hachiya Chainmail +1",
+		body="Mochizuki Chainmail +1",
         legs="Mochizuki Hakama"
     })
 
