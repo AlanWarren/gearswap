@@ -159,7 +159,7 @@ function init_gear_sets()
 		head="Felistris Mask",
 		body="Mochi. Chainmail",
         hands="Mochizuki Tekko +1",
-		waist="Twilight Belt",
+		waist="Hurch'lan Sash",
         legs="Mochizuki Hakama",
         feet="Otronif Boots +1"
     }
@@ -177,7 +177,7 @@ function init_gear_sets()
 		body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
 		back="Yokaze Mantle",
-        waist="Twilight Belt",
+        waist="Hurch'lan Sash",
         legs="Hachiya Hakama",
         feet="Hachiya Kyahan"
     }
