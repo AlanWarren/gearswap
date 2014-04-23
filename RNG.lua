@@ -215,39 +215,56 @@ function init_gear_sets()
             legs="Orion Braccae +1"
         })
         
-        -- Bow
-        sets.midcast.RangedAttack.Bow = set_combine(sets.midcast.RangedAttack, {
-            hands="Sylvan Glovelettes +2",
-            ring2="Bellona's Ring"
-        })
-
+        -- Bow 35 STP (with Bloodrain) needs 4/4 recycle proc (while decoy is down)
+        -- -47 Enmity
+        sets.midcast.RangedAttack.Bow = {
+            head="Arcadian Beret +1", -- Enmity -6
+            neck="Huani Collar", -- Enmity -3
+            ear1="Novia Earring", -- Enmity -7
+            ear2="Tripudio Earring", -- STP 5
+            body="Kyujutsugi", -- STP 5 Enmity -9
+            hands="Manibozho Gloves", -- Enmity -7
+            ring1="Rajas Ring", -- STP 5
+            ring2="Paqichikaji Ring", -- Enmity -3
+            back="Sylvan Chlamys", -- STP 5 Enmity -3
+            waist="Elanid Belt", -- Enmity -3
+            legs="Sylvan Bragues +2", -- STP 9
+            feet="Arcadian Socks +1" -- Enmity -6
+        }
+        -- 31 STP with bloodrain. 5 hit until Mekki Shakki
         sets.midcast.RangedAttack.Mid.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
-            hands="Arcadian Bracers +1",
-            ring2="Paqichikaji Ring",
-            back="Lutian Cape"
+            neck="Ocachi Gorget", -- STP 5
+            hands="Iuitl Wristbands +1", -- 18 racc Enmity -6
+            back="Lutian Cape", -- Enmity -5
+            legs="Aetosaur Trousers +1" -- STP 5
         })
-
+        -- 5 hit
         sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Mid.Bow, {
-            neck="Iqabi Necklace",
-            ring1="Hajduk Ring"
-        })
-
-        -- -Enmity goal
-        sets.midcast.RangedAttack.Enmity = set_combine(sets.midcast.RangedAttack.Bow, {
-            ear1="Novia Earring",
-            neck="Huani Collar",
-            back="Sylvan Chlamys",
-            ring2="Paqichikaji Ring",
-            feet="Arcadian Socks +1"
-        })
-
-        sets.midcast.RangedAttack.Mid.Enmity = set_combine(sets.midcast.RangedAttack.Enmity, {
-            hands="Iuitl Wristbands +1"
-        })
-
-        sets.midcast.RangedAttack.Acc.Enmity = set_combine(sets.midcast.RangedAttack.Mid.Enmity, {
             ring1="Hajduk Ring",
+            legs="Orion Braccae +1",
+            feet="Orion Socks +1"
+        })
+
+        -- Docoy is Up - don't care about -enmity so much (Bow only)
+        -- 2/4 recycle necessary to 4 hit
+        sets.midcast.RangedAttack.Decoy = set_combine(sets.midcast.RangedAttack.Bow, {
+            ear1="Volley Earring",
+            neck="Ocachi Gorget",
+            hands="Sylvan Glovelettes +2",
+            ring2="K'ayres Ring",
+            legs="Aetosaur Trousers +1",
+            feet="Orion Socks +1"
+        })
+        -- 4/4 recycle proc necessary
+        sets.midcast.RangedAttack.Decoy.Mid = set_combine(sets.midcast.RangedAttack.Decoy, {
+            hands="Manibozho Gloves",
             back="Lutian Cape",
+            ring2="Paqichikaji Ring"
+        })
+        -- 5 hit
+        sets.midcast.RangedAttack.Decoy.Acc = set_combine(sets.midcast.RangedAttack.Decoy.Mid, {
+            neck="Iqabi Necklace",
+            ring1="Hajduk Ring",
             legs="Orion Braccae +1",
             feet="Orion Socks +1"
         })
@@ -565,20 +582,12 @@ function job_buff_change(buff, gain)
         state.Buff[buff] = gain
     end
 
-    -- If Decoy Shot is down, and we're already using Bow... we use -Enmity set
-    --if (classes.CustomRangedGroups:contains('Bow')) then
-    --    if state.Buff['Decoy Shot'] ~= gain then
-    --        if classes.CustomRangedGroups:contains('Enmity') then
-    --            -- do nothing
-    --        else
-    --            classes.CustomRangedGroups:append('Enmity')
-    --        end
-
-    --    else
-	--        classes.CustomMeleeGroups:clear()
-    --        classes.CustomRangedGroups:clear()
-    --    end
-    --end
+    -- Special setup for Bow, if decoy shot is up
+    if (classes.CustomRangedGroups:contains('Bow')) then
+        if state.Buff['Decoy Shot'] == gain then
+		    classes.CustomClass = "Decoy"
+        end
+    end
 
 	determine_ranged()
 
