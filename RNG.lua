@@ -192,11 +192,6 @@ function init_gear_sets()
             feet="Wurrukatte Boots"
         })
 
-        sets.precast.RangedAttack.Rapid = set_combine(sets.precast.RangedAttack, {
-            head="Orion Beret +1",
-            feet="Arcadian Socks +1"
-        })
-
         sets.midcast.RangedAttack = set_combine(sets.engaged, {
             ring2="Paqichikaji Ring",
             back="Sylvan Chlamys",
@@ -647,15 +642,12 @@ function determine_ranged()
 	classes.CustomRangedGroups:clear()
 	classes.CustomMeleeGroups:clear()
 
-    if buffactive['courser\'s roll'] then
-		classes.CustomRangedGroups:append('Rapid')
-    end
-
     if player.equipment.range == gear.Bow then
-		classes.CustomMeleeGroups:append('Bow')
+	
+        classes.CustomMeleeGroups:append('Bow')
 		classes.CustomRangedGroups:append('Bow')
+   
         if buffactive['Decoy Shot'] then
-            add_to_chat(122,"Decoy UP")
 		    classes.CustomClass = "Decoy"
         end
 	end
