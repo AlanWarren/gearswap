@@ -119,7 +119,7 @@ function init_gear_sets()
         neck="Shadow gorget",
 		ring1="Stormsoul Ring",
         back="Rancorous Mantle",
-        body="Hachi. Chainmail +1",
+        body="Hachiya Chainmail +1",
         legs="Nahtirah Trousers",
         waist="Soil belt"
     })
