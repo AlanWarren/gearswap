@@ -169,7 +169,7 @@ function init_gear_sets()
 
         sets.engaged.Melee = {
             head="Whirlpool Mask",
-            neck="Asperity Necklace",
+            neck="Rancor Collar",
             ear1="Bladeborn Earring",
             ear2="Steelflash Earring",
             body="Thaumas Coat",
@@ -470,11 +470,6 @@ function job_precast(spell, action, spellMap, eventArgs)
                                 end
                         end
                 end
-                if buffactive.camoflauge then
-                    send_command('gs disable body')
-                else
-                    enable('body')
-                end
         end
 end
  
@@ -482,9 +477,9 @@ end
 -- eventArgs is the same one used in job_precast, in case information needs to be persisted.
 -- This is where you place gear swaps you want in precast but applied on top of the precast sets
 function job_post_precast(spell, action, spellMap, eventArgs)
-    if spell.english == "Camouflage" then
+    if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
-    elseif spell.english == "Overkill" or buffactive.overkill then
+    elseif state.Buff.Overkill then
         equip(sets.Overkill.PreShot)
     end
     sets.earring = select_earring()
@@ -514,7 +509,12 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
- 
+	if buffactive.camouflage then
+		state.Buff.Camouflage = true
+	end
+    if buffactive.overkill then
+        state.Buff.Overkill = true
+    end
 end
  
 -- Run after the default aftercast() is done.
@@ -548,19 +548,8 @@ function customize_melee_set(meleeSet)
 end
  
 function job_status_change(newStatus, oldStatus, eventArgs)
-      if newStatus == 'Engaged' then
-          if state.Buff.Camouflage then
-              equip(sets.buff.Camouflage)
-          elseif state.Buff.Overkill then
-              equip(sets.Overkill)
-          end
-      else 
-          if state.Buff.Camouflage then
-              equip(sets.buff.Camouflage)
-          end
-      end
-      if camo_active() then
-          eventArgs.handled = true
+      if state.Buff.Camouflage then
+          equip(sets.buff.Camouflage)
       end
 end
  
@@ -577,7 +566,7 @@ function job_buff_change(buff, gain)
 
 	determine_ranged()
 
-    if not camo_active() then
+    if not state.Buff.Camouflage then
         handle_equipping_gear(player.status)
     end
 end
@@ -651,14 +640,6 @@ function determine_ranged()
 		    classes.CustomClass = "Decoy"
         end
 	end
-end
-
-function camo_active()
-	return state.Buff.Camouflage
-end
-
-function overkill_active()
-	return state.Buff.Overkill
 end
 
 -------------------------------------------------------------------------------------------------------------------
