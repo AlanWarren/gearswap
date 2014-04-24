@@ -580,13 +580,6 @@ function job_buff_change(buff, gain)
         state.Buff[buff] = gain
     end
 
-    -- Special setup for Bow, if decoy shot is up
-    if (classes.CustomRangedGroups:contains('Bow')) then
-        if state.Buff['Decoy Shot'] == gain then
-		    classes.CustomClass = "Decoy"
-        end
-    end
-
 	determine_ranged()
 
     if not camo_active() then
@@ -653,7 +646,7 @@ end
 function determine_ranged()
 	classes.CustomRangedGroups:clear()
 	classes.CustomMeleeGroups:clear()
-    
+
     if buffactive['courser\'s roll'] then
 		classes.CustomRangedGroups:append('Rapid')
     end
@@ -662,6 +655,13 @@ function determine_ranged()
 		classes.CustomMeleeGroups:append('Bow')
 		classes.CustomRangedGroups:append('Bow')
 	end
+    -- Special setup for Bow, if decoy shot is up
+    if classes.CustomRangedGroups:contains('Bow') then
+        if buffactive['Decoy Shot'] then
+            add_to_chat(122,"Decoy UP")
+		    classes.CustomClass = "Decoy"
+        end
+    end
 end
 
 function camo_active()
