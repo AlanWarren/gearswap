@@ -654,14 +654,11 @@ function determine_ranged()
     if player.equipment.range == gear.Bow then
 		classes.CustomMeleeGroups:append('Bow')
 		classes.CustomRangedGroups:append('Bow')
-	end
-    -- Special setup for Bow, if decoy shot is up
-    if classes.CustomRangedGroups:contains('Bow') then
         if buffactive['Decoy Shot'] then
             add_to_chat(122,"Decoy UP")
 		    classes.CustomClass = "Decoy"
         end
-    end
+	end
 end
 
 function camo_active()
