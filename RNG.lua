@@ -680,17 +680,9 @@ end
 function select_default_macro_book()
 	-- Default macro set/book
 	if player.sub_job == 'WAR'then
-        if player.equipment.range == 'Annihilator' then
 		    set_macro_page(3, 5)
-        else
-		    set_macro_page(5, 5)
-        end
 	elseif player.sub_job == 'SAM' then
-        if player.equipment.range == 'Annihilator' then
 		    set_macro_page(4, 5)
-        else
-		    set_macro_page(5, 6)
-        end
 	else
 		set_macro_page(3, 5)
 	end
