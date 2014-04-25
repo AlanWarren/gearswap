@@ -541,7 +541,6 @@ end
  
 function customize_idle_set(idleSet)
 	if state.Buff.Camouflage then
-        add_to_chat(122,"Camo is active - Idle")
 		idleSet = set_combine(idleSet, sets.buff.Camouflage)
 	end
     return idleSet
@@ -579,9 +578,7 @@ function job_buff_change(buff, gain)
 
 	determine_ranged()
 
-    if not state.Buff.Camouflage then
-        handle_equipping_gear(player.status)
-    end
+    handle_equipping_gear(player.status) -- XXX: this may not be necessary to call for each buff. See Mote's MNK/DNC.lua's
 end
  
 function select_earring()
