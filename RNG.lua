@@ -574,12 +574,13 @@ function job_buff_change(buff, gain)
 
     if state.Buff[buff] ~= nil then
         state.Buff[buff] = gain
+        --handle_equipping_gear(player.status)
     end
 
 	determine_ranged()
 
     if buff == "Overkill" or buff == "Camouflage" then
-        handle_equipping_gear(player.status) -- XXX: this may not be necessary to call for each buff. See Mote's MNK/DNC.lua's
+       handle_equipping_gear(player.status) -- XXX: this may not be necessary to call for each buff. See Mote's MNK/DNC.lua's
     end
 end
  
