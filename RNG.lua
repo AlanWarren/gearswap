@@ -578,7 +578,9 @@ function job_buff_change(buff, gain)
 
 	determine_ranged()
 
-    handle_equipping_gear(player.status) -- XXX: this may not be necessary to call for each buff. See Mote's MNK/DNC.lua's
+    if buff == "Overkill" or buff == "Camouflage" then
+        handle_equipping_gear(player.status) -- XXX: this may not be necessary to call for each buff. See Mote's MNK/DNC.lua's
+    end
 end
  
 function select_earring()
