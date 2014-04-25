@@ -532,6 +532,7 @@ end
  
 function customize_idle_set(idleSet)
 	if state.Buff.Camouflage then
+        add_to_chat(122,"Camo is active - Idle")
 		idleSet = set_combine(idleSet, sets.buff.Camouflage)
 	end
     return idleSet
@@ -548,9 +549,12 @@ function customize_melee_set(meleeSet)
 end
  
 function job_status_change(newStatus, oldStatus, eventArgs)
-      if state.Buff.Camouflage then
-          equip(sets.buff.Camouflage)
-      end
+	if buffactive.camouflage then
+		state.Buff.Camouflage = true
+	end
+    if buffactive.overkill then
+        state.Buff.Overkill = true
+    end
 end
  
 -- Called when a player gains or loses a buff.
