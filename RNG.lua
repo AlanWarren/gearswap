@@ -138,12 +138,12 @@ function init_gear_sets()
         }
 
         sets.idle.Town = set_combine(sets.idle, {
-                neck="Ocachi Gorget",
-                ear1="Fenrir's Earring",
-                ear2="Tripudio Earring",
-                ring1="Rajas Ring",
-                ring2="Pyrosoul Ring",
-                back="Lutian Cape"
+            neck="Ocachi Gorget",
+            ear1="Fenrir's Earring",
+            ear2="Tripudio Earring",
+            ring1="Rajas Ring",
+            ring2="Pyrosoul Ring",
+            back="Lutian Cape"
         })
  
         -- Engaged sets
@@ -163,8 +163,8 @@ function init_gear_sets()
         }
 
         sets.engaged.Bow = set_combine(sets.engaged, {
-                hands="Arcadian Bracer's +1",
-                feet="Arcadian Socks +1"
+            hands="Arcadian Bracers +1",
+            feet="Arcadian Socks +1"
         })
 
         sets.engaged.Melee = {
@@ -408,11 +408,20 @@ function init_gear_sets()
         --sets.Kiting = {feet="Fajin Boots"}
        
         -- Barrage Set
-        sets.BarrageMid = set_combine(sets.midcast.RangedAttack.Acc, {
+        sets.BarrageMid = {
+            head="Arcadian Beret +1",
             neck="Rancor Collar",
+            ear1="Flame Pearl",
+            ear2="Flame Pearl",
+            body="Kyujutsugi",
             hands="Orion Bracers +1",
-            legs="Orion Braccae +1"
-        })
+            ring1="Rajas Ring",
+            ring2="Hajduk Ring",
+            back="Buquwik Cape",
+            waist="Elanid Belt",
+            legs="Orion Braccae +1",
+            feet="Orion Socks +1"
+        }
 
         sets.buff.Camouflage =  {body="Orion Jerkin +1"}
 
