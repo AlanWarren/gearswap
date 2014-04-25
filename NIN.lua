@@ -54,7 +54,7 @@ function init_gear_sets()
 	-- Precast Sets
 
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Mijin Gakure'] = {legs="Mochizuki Hakama"}
+	sets.precast.JA['Mijin Gakure'] = {legs="Mochizuki Hakama +1"}
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
@@ -110,7 +110,7 @@ function init_gear_sets()
     })
 	sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'], {
         head="Whirlpool Mask", 
-        legs="Hachiya Hakama", 
+        legs="Hachiya Hakama +1", 
         back="Yokaze Mantle"
     })
 
@@ -125,7 +125,7 @@ function init_gear_sets()
     })
 	sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {
         head="Whirlpool Mask", 
-        legs="Hachiya Hakama", 
+        legs="Hachiya Hakama +1", 
         ring1="Mars's Ring",
         back="Yokaze Mantle"
     })
@@ -160,7 +160,7 @@ function init_gear_sets()
 		body="Mochi. Chainmail",
         hands="Mochizuki Tekko +1",
 		waist="Hurch'lan Sash",
-        legs="Mochizuki Hakama",
+        legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
 		
@@ -201,7 +201,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
 		back="Shadow Mantle",
         waist="Nusku's Sash",
-        legs="Mochizuki Hakama",
+        legs="Mochizuki Hakama +1",
         feet="Danzo sune-ate"
     }
 
@@ -224,7 +224,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
 		back="Yokaze Mantle",
         waist="Nusku's Sash",
-        legs="Mochizuki Hakama",
+        legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
 
@@ -271,7 +271,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
 		back="Atheling Mantle",
         waist="Nusku's Sash",
-        legs="Mochizuki Hakama",
+        legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
 	sets.engaged.Acc = set_combine(sets.engaged, {
@@ -364,7 +364,7 @@ function init_gear_sets()
 
     -- 40
     sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
-        legs="Mochizuki Hakama"
+        legs="Mochizuki Hakama +1"
     })
     sets.engaged.Haste_40.Acc = set_combine(sets.engaged.Haste_43.Acc, {
         ear1="Dudgeon Earring",
@@ -373,7 +373,7 @@ function init_gear_sets()
         ring2="Mars's Ring"
     })
     sets.engaged.Haste_40.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
-        legs="Mochizuki Hakama",
+        legs="Mochizuki Hakama +1",
         ring2="Epona's Ring"
     })
 
@@ -385,7 +385,7 @@ function init_gear_sets()
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_43, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        legs="Mochizuki Hakama"
+        legs="Mochizuki Hakama +1"
     })
     sets.engaged.Haste_35.Acc = set_combine(sets.engaged.Haste_43.Acc, {
         ear1="Dudgeon Earring",
@@ -396,7 +396,7 @@ function init_gear_sets()
     sets.engaged.Haste_35.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        legs="Mochizuki Hakama"
+        legs="Mochizuki Hakama +1"
     })
 
 	sets.engaged.Haste_35.Acc.Evasion = set_combine(sets.engaged.Haste_35.Acc, sets.engaged.Haste_35.Evasion)
@@ -409,7 +409,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         waist="Nusku's Sash",
-        legs="Mochizuki Hakama"
+        legs="Mochizuki Hakama +1"
     })
     sets.engaged.Haste_30.Acc = set_combine(sets.engaged.Haste_43.Acc, {
         ear1="Dudgeon Earring",
@@ -420,7 +420,7 @@ function init_gear_sets()
     sets.engaged.Haste_30.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        legs="Mochizuki Hakama"
+        legs="Mochizuki Hakama +1"
     })
 
 	sets.engaged.Haste_30.Acc.Evasion = set_combine(sets.engaged.Haste_30.Acc, sets.engaged.Haste_30.Evasion)
@@ -433,7 +433,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         waist="Nusku's Sash",
-        legs="Mochizuki Hakama"
+        legs="Mochizuki Hakama +1"
     })
     sets.engaged.Haste_25.Acc = set_combine(sets.engaged.Haste_43.Acc, {
         ear1="Dudgeon Earring",
@@ -444,7 +444,7 @@ function init_gear_sets()
     sets.engaged.Haste_25.Evasion = set_combine(sets.engaged.Haste_43.Evasion, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        legs="Mochizuki Hakama"
+        legs="Mochizuki Hakama +1"
     })
 
 	sets.engaged.Haste_25.Acc.Evasion = set_combine(sets.engaged.Haste_25.Acc, sets.engaged.Haste_25.Evasion)
@@ -458,7 +458,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         waist="Nusku's Sash",
-        legs="Mochizuki Hakama"
+        legs="Mochizuki Hakama +1"
     })
     sets.engaged.Haste_20.Acc = set_combine(sets.engaged.Haste_43.Acc, {
 		body="Mochizuki Chainmail +1",
@@ -471,7 +471,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Mochizuki Chainmail +1",
-        legs="Mochizuki Hakama"
+        legs="Mochizuki Hakama +1"
     })
 
 	sets.engaged.Haste_20.Acc.Evasion = set_combine(sets.engaged.Haste_20.Acc, sets.engaged.Haste_20.Evasion)
