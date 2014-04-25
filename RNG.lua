@@ -138,12 +138,12 @@ function init_gear_sets()
         }
 
         sets.idle.Town = set_combine(sets.idle, {
-                neck="Ocachi Gorget",
-                ear1="Fenrir's Earring",
-                ear2="Tripudio Earring",
-                ring1="Rajas Ring",
-                ring2="Pyrosoul Ring",
-                back="Lutian Cape"
+            neck="Ocachi Gorget",
+            ear1="Fenrir's Earring",
+            ear2="Tripudio Earring",
+            ring1="Rajas Ring",
+            ring2="Pyrosoul Ring",
+            back="Lutian Cape"
         })
  
         -- Engaged sets
@@ -163,8 +163,8 @@ function init_gear_sets()
         }
 
         sets.engaged.Bow = set_combine(sets.engaged, {
-                hands="Arcadian Bracer's +1",
-                feet="Arcadian Socks +1"
+            hands="Arcadian Bracers +1",
+            feet="Arcadian Socks +1"
         })
 
         sets.engaged.Melee = {
