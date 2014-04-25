@@ -408,11 +408,20 @@ function init_gear_sets()
         --sets.Kiting = {feet="Fajin Boots"}
        
         -- Barrage Set
-        sets.BarrageMid = set_combine(sets.midcast.RangedAttack.Acc, {
+        sets.BarrageMid = {
+            head="Arcadian Beret +1",
             neck="Rancor Collar",
+            ear1="Flame Pearl",
+            ear2="Flame Pearl",
+            body="Kyujutsugi",
             hands="Orion Bracers +1",
-            legs="Orion Braccae +1"
-        })
+            ring1="Rajas Ring",
+            ring2="Hajduk Ring",
+            back="Buquwik Cape",
+            waist="Elanid Belt",
+            legs="Orion Braccae +1",
+            feet="Orion Socks +1"
+        }
 
         sets.buff.Camouflage =  {body="Orion Jerkin +1"}
 
