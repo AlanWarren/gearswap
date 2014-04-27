@@ -127,7 +127,7 @@ function init_gear_sets()
             neck="Twilight torque",
             ear1="Volley Earring",
             ear2="Clearview Earring",
-            body="Kyujutsugi",
+            body="Kheper Jacket",
             hands="Iuitl Wristbands +1",
             ring1="Dark Ring",
             ring2="Paguroidea Ring",
@@ -222,7 +222,7 @@ function init_gear_sets()
             ring2="Paqichikaji Ring", -- Enmity -3
             back="Sylvan Chlamys", -- STP 5 Enmity -3
             waist="Elanid Belt", -- Enmity -3
-            legs="Sylvan Bragues +2", -- STP 9
+            legs="Nahtirah Trousers", -- STP 9
             feet="Arcadian Socks +1" -- Enmity -6
         }
         -- 33 STP with bloodrain. 4/4 recycle proc necessary for 4-hit
