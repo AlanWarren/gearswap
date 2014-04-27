@@ -195,7 +195,7 @@ function init_gear_sets()
         sets.midcast.RangedAttack = set_combine(sets.engaged, {
             ring2="Paqichikaji Ring",
             back="Sylvan Chlamys",
-            legs="Aetosaur Trousers +1"
+            legs="Nahtirah Trousers"
         })
         
         sets.midcast.RangedAttack.Mid = set_combine(sets.midcast.RangedAttack, {
