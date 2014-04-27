@@ -272,7 +272,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Nusku's Sash",
         legs="Mochizuki Hakama +1",
-        feet="Otronif Boots +1"
+        feet="Manibozho Boots"
     }
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		head="Whirlpool Mask",
