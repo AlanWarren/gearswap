@@ -157,7 +157,7 @@ function init_gear_sets()
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
 		head="Felistris Mask",
-		body="Mochi. Chainmail",
+		body="Mochi. Chainmail +1",
         hands="Mochizuki Tekko +1",
 		waist="Hurch'lan Sash",
         legs="Mochizuki Hakama +1",
@@ -178,7 +178,7 @@ function init_gear_sets()
         hands="Mochizuki Tekko +1",
 		back="Yokaze Mantle",
         waist="Hurch'lan Sash",
-        legs="Hachiya Hakama",
+        legs="Mochizuki Hakama +1",
         feet="Hachiya Kyahan"
     }
 

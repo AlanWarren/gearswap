@@ -140,7 +140,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Iuitl Vest",
+		body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
@@ -301,7 +301,7 @@ function init_gear_sets()
 	sets.defense.PDT = {
 		head="Lithelimb Cap",
         neck="Twilight Torque",
-		body="Iuitl Vest",
+		body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
@@ -314,7 +314,7 @@ function init_gear_sets()
 	sets.defense.MDT = {
 		head="Whirlpool Mask",
         neck="Twilight Torque",
-		body="Iuitl Vest",
+		body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
         ring1="Dark Ring",
         ring2="Epona's Ring",
