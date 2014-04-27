@@ -31,6 +31,8 @@ function user_setup()
 	options.PhysicalDefenseModes = {'PDT', 'Evasion'}
 	options.MagicalDefenseModes = {'MDT'}
 
+    enfeeblingNinjutsu = S{"yurin: ichi", "aisha: ichi", "dokumori: ichi", "kurayami: ni", "hojo: ni", "jubaku: ichi"}
+
 	state.Defense.PhysicalMode = 'PDT'
 
 	select_default_macro_book()
@@ -174,6 +176,19 @@ function init_gear_sets()
 		head="Felistris Mask",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
+        neck="Atzintli Necklace",
+		body="Mochizuki Chainmail +1",
+        hands="Mochizuki Tekko +1",
+		back="Toro Cape",
+        waist="Hurch'lan Sash",
+        legs="Mochizuki Hakama +1",
+        feet="Hachiya Kyahan"
+    }
+    sets.midcast.EnfeebleNinjutsu = {
+		head="Felistris Mask",
+        ear1="Friomisi Earring",
+        ear2="Crematio Earring",
+        neck="Atzintli Necklace",
 		body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
 		back="Yokaze Mantle",
@@ -181,7 +196,6 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1",
         feet="Hachiya Kyahan"
     }
-
 	--sets.midcast.Ninjutsu.Resistant = set_combine(sets.midcast.Ninjutsu, {ear1="Lifestorm Earring",ear2="Psystorm Earring"})
 	
 	-- Sets to return to when not performing an action.
@@ -286,13 +300,14 @@ function init_gear_sets()
         feet="Manibozho Boots"
     })
 	sets.engaged.PDT = set_combine(sets.engaged, {
-		head="Whirlpool Mask",
+		head="Lithelimb Cap",
         body="Qaaxo Harness",
         neck="Twilight Torque",
         ring1="Patricius Ring",
-        ring2="Epona's Ring",
+        ring2="Dark Ring",
 		back="Shadow Mantle",
-        legs="Nahtirah Trousers"
+        legs="Nahtirah Trousers",
+        feet="Otronif Boots +1"
     })
     -- I do salvage v2 on nin, and this set's only
     -- purpose is to NOT USE subtle blow, so the stupid
@@ -492,6 +507,9 @@ end
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
 	refine_waltz(spell, action, spellMap, eventArgs)
+    if spell.skill == "Ninjutsu" and enfeeblingNinjutsu:contains(spell.name:lower()) then
+        classes.CustomClass = "EnfeebleNinjutsu"
+    end
 	if spell.skill == "Ninjutsu" and spell.target.type:lower() == 'self' and spellMap ~= "Utsusemi" then
 		classes.CustomClass = "SelfNinjutsu"
 	end
