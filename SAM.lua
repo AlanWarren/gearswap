@@ -160,7 +160,6 @@ function init_gear_sets()
         ring2="Mars's Ring"
     })
 	sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
-        body="Mikinaak Breastplate",
         feet="Wakido Sune-Ate"
     })
 
@@ -370,6 +369,7 @@ function init_gear_sets()
 		
 	-- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
 	-- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
+    -- GK with merits and capped skill = 682 base accuracy. Tsurumaru has +15 acc
     
     -- This set assumes Tsurumaru 4-hit with Bloodrain Strap
 	sets.engaged.Adoulin = {
@@ -392,13 +392,13 @@ function init_gear_sets()
         ammo=gear.RAarrow
     })
 
-	sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, {
+	sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         head="Yaoyotl Helm",
         neck="Iqabi Necklace",
 	    waist="Dynamic Belt"
     })
 
-	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, {
+	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { -- 878.75 Acc
         head="Sakonji Kabuto +1",
         ring1="Rajas Ring",
         ring2="Mars's Ring",
