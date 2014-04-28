@@ -114,7 +114,7 @@ function init_gear_sets()
 	sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
             ring2="Mars's Ring",
             legs="Mikinaak Cuisses",
-            feet="Wakido Sune-Ate"
+            feet="Wakido Sune-Ate +1"
     })
 
 	sets.precast.WS['Namas Arrow'] = {
@@ -130,7 +130,7 @@ function init_gear_sets()
         ring2="Pyrosoul Ring",
         waist="Light Belt",
         legs="Wakido Haidate +1",
-        feet="Wakido Sune-ate"
+        feet="Wakido Sune-ate +1"
     }
     sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS['Namas Arrow'], {
         head="Sakonji Kabuto +1",
@@ -160,22 +160,23 @@ function init_gear_sets()
         ring2="Mars's Ring"
     })
 	sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
-        feet="Wakido Sune-Ate"
+        body="Sakonji Domaru +1",
+        feet="Wakido Sune-Ate +1"
     })
 
 	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
-        feet="Mikinaak Greaves",
+        feet="Wakido Sune-Ate +1",
         neck="Breeze Gorget",
         waist="Windbuffet Belt"
     })
-	sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS['Tachi: Shoha'], {
-        head="Yaoyotl Helm",
+	sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS.Acc, {
+        neck="Breeze Gorget",
         ring2="Mars's Ring",
         waist="Thunder Belt"
     })
 	sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {
-        body="Mikinaak Breastplate",
-        feet="Wakido Sune-Ate"
+        body="Sakonji Domaru +1",
+        feet="Wakido Sune-Ate +1"
     })
 
 	sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {
@@ -317,7 +318,7 @@ function init_gear_sets()
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Sakonji Kabuto +1",
-        feet="Wakido Sune-Ate"
+        feet="Wakido Sune-Ate +1"
     })
 
 	sets.engaged.Yoichi = set_combine(sets.engaged, { 
@@ -359,7 +360,7 @@ function init_gear_sets()
 	sets.engaged.Acc.Reraise = set_combine(sets.engaged.Reraise, {
         hands="Miki. Gauntlets",
         ring1="Patricius Ring",
-        feet="Wakido Sune-Ate", 
+        feet="Wakido Sune-Ate +1", 
         waist="Dynamic Belt"
     })
 
@@ -402,7 +403,7 @@ function init_gear_sets()
         head="Sakonji Kabuto +1",
         ring1="Rajas Ring",
         ring2="Mars's Ring",
-        feet="Wakido Sune-Ate",
+        feet="Wakido Sune-Ate +1",
         back="Takaha Mantle"
     })
 
