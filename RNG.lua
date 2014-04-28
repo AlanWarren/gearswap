@@ -518,11 +518,16 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-	if buffactive.camouflage then
-		state.Buff.Camouflage = true
-	end
-    if buffactive.overkill then
-        state.Buff.Overkill = true
+    if not spell.interrupted then
+        if state.Buff[spell.name] ~= nil then
+            state.Buff[spell.name] = true
+        end
+
+        if state.Buff['Camouflage'] then
+            send_command('@wait .5;gs disable body')
+        else
+            enable('body')
+        end
     end
 end
  
@@ -557,11 +562,10 @@ function customize_melee_set(meleeSet)
 end
  
 function job_status_change(newStatus, oldStatus, eventArgs)
-	if buffactive.camouflage then
-		state.Buff.Camouflage = true
-	end
-    if buffactive.overkill then
-        state.Buff.Overkill = true
+    if camo_active() then
+        send_command('@wait .5;gs disable body')
+    else
+        enable('body')
     end
 end
  
@@ -574,14 +578,14 @@ function job_buff_change(buff, gain)
 
     if state.Buff[buff] ~= nil then
         state.Buff[buff] = gain
-        --handle_equipping_gear(player.status)
+        handle_equipping_gear(player.status)
     end
 
 	determine_ranged()
 
-    if buff == "Overkill" or buff == "Camouflage" then
-       handle_equipping_gear(player.status) -- XXX: this may not be necessary to call for each buff. See Mote's MNK/DNC.lua's
-    end
+    --if not camo_active() then
+    --   handle_equipping_gear(player.status) -- XXX: this may not be necessary to call for each buff. See Mote's MNK/DNC.lua's
+    --end
 end
  
 function select_earring()
@@ -607,6 +611,15 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
     determine_ranged()
+    -- called here incase buff_change failed to update value
+    state.Buff.Camouflage = buffactive.camouflage or false
+    state.Buff.Overkill = buffactive.overkill or false
+
+    if camo_active() then
+        send_command('@wait .5;gs disable body')
+    else
+        enable('body')
+    end
 end
  
 -- Job-specific toggles.
@@ -646,11 +659,7 @@ function determine_ranged()
 
     if player.equipment.range == gear.Bow then
 	
-        --classes.CustomMeleeGroups:append('Bow')
-		--classes.CustomRangedGroups:append('Bow')
-   
         if buffactive['Decoy Shot'] then
-		    --classes.CustomClass = "Decoy"
             classes.CustomMeleeGroups:append('Decoy')
 		    classes.CustomRangedGroups:append('Decoy')
         else
@@ -660,6 +669,9 @@ function determine_ranged()
 	end
 end
 
+function camo_active()
+    return state.Buff['Camouflage']
+end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
