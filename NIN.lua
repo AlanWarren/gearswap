@@ -174,8 +174,8 @@ function init_gear_sets()
 	-- any ninjutsu cast on enemies
 	sets.midcast.Ninjutsu = {
 		head="Felistris Mask",
-        ear1="Lifestorm Earring",
-        ear2="Psystorm Earring",
+        ear1="Friomisi Earring",
+        ear2="Crematio Earring",
         neck="Atzintli Necklace",
 		body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
@@ -186,8 +186,8 @@ function init_gear_sets()
     }
     sets.midcast.EnfeebleNinjutsu = {
 		head="Felistris Mask",
-        ear1="Friomisi Earring",
-        ear2="Crematio Earring",
+        ear1="Lifestorm Earring",
+        ear2="Psystorm Earring",
         neck="Atzintli Necklace",
 		body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
