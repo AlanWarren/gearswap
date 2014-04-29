@@ -76,6 +76,8 @@ function init_gear_sets()
         -- Overriding Global Defaults for this job
         -- gear.Staff = {} no need to set this, it's already set
         gear.Bow = "Yoichinoyumi"
+        gear.Legs = "Nahtirah Trousers"
+
         gear.default.weaponskill_neck = "Ocachi Gorget"
         gear.default.weaponskill_waist = "Elanid Belt"
  
@@ -93,7 +95,7 @@ function init_gear_sets()
         options.OffenseModes = {'Normal', 'Melee'}
         options.RangedModes = {'Normal', 'Mid', 'Acc'}
         options.DefenseModes = {'Normal', 'PDT'}
-        options.WeaponskillModes = {'Normal', 'Acc'}
+        options.WeaponskillModes = {'Normal', 'Acc', 'Mod'}
         options.PhysicalDefenseModes = {'PDT'}
         options.MagicalDefenseModes = {'MDT'}
         state.Defense.PhysicalMode = 'PDT'
@@ -195,7 +197,7 @@ function init_gear_sets()
         sets.midcast.RangedAttack = set_combine(sets.engaged, {
             ring2="Paqichikaji Ring",
             back="Sylvan Chlamys",
-            legs="Nahtirah Trousers"
+            legs=gear.Legs
         })
         
         sets.midcast.RangedAttack.Mid = set_combine(sets.midcast.RangedAttack, {
@@ -222,7 +224,7 @@ function init_gear_sets()
             ring2="Paqichikaji Ring", -- Enmity -3
             back="Sylvan Chlamys", -- STP 5 Enmity -3
             waist="Elanid Belt", -- Enmity -3
-            legs="Nahtirah Trousers", -- STP 9
+            legs="Sylvan Bragues +2", -- STP 9
             feet="Arcadian Socks +1" -- Enmity -6
         }
         -- 33 STP with bloodrain. 4/4 recycle proc necessary for 4-hit
@@ -244,8 +246,7 @@ function init_gear_sets()
             ear1="Volley Earring",
             neck="Ocachi Gorget",
             hands="Sylvan Glovelettes +2",
-            ring2="K'ayres Ring",
-            legs="Aetosaur Trousers +1",
+            legs=gear.Legs,
             feet="Orion Socks +1"
         })
         -- 4/4 recycle proc necessary
@@ -281,8 +282,10 @@ function init_gear_sets()
 
         sets.precast.WS = set_combine(sets.precast.CustomWS, sets.earring)
        
-        sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-           back="Lutian Cape"
+        sets.precast.WS.Mod = set_combine(sets.precast.WS, {
+            ear2="Tripudio Earring",
+            back="Sylvan Chlamys",
+            legs="Aetosaur Trousers +1"
         })
         
         sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -298,7 +301,7 @@ function init_gear_sets()
            waist="Thunder Belt"
         })
 
-        sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.precast.WS['Coronach'])
+        sets.precast.WS['Coronach'].Mod = set_combine(sets.precast.WS.Mod, sets.precast.WS['Coronach'])
 
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, {
             neck="Breeze Gorget",
@@ -315,7 +318,7 @@ function init_gear_sets()
            feet="Arcadian Socks +1"
         })
 
-        sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS.Mid, sets.precast.WS['Last Stand'])
+        sets.precast.WS['Last Stand'].Mod = set_combine(sets.precast.WS.Mod, sets.precast.WS['Last Stand'])
 
         sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS.Acc, {
             neck="Aqua Gorget",
@@ -331,7 +334,7 @@ function init_gear_sets()
            feet="Arcadian Socks +1"
         })
 
-        sets.precast.WS['Detonator'].Mid = set_combine(sets.precast.WS.Mid, sets.precast.WS['Detonator'])
+        sets.precast.WS['Detonator'].Mod = set_combine(sets.precast.WS.Mod, sets.precast.WS['Detonator'])
 
         sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS.Acc, {
            neck="Flame Gorget",
@@ -348,9 +351,10 @@ function init_gear_sets()
             feet="Arcadian Socks +1"
         })
 
-        sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS['Namas Arrow'], {
-            hands="Iuitl Wristbands +1",
-            back="Lutian Cape"
+        sets.precast.WS['Namas Arrow'].Mod = set_combine(sets.precast.WS['Namas Arrow'], {
+            ear2="Tripudio Earring",
+            hands="Sylvan Glovelettes +2",
+            legs="Aetosaur Trousers +1"
         })
 
         sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'], {
@@ -367,9 +371,10 @@ function init_gear_sets()
             back="Rancorous Mantle"
         })
 
-        sets.precast.WS['Jishnu\'s Radiance'].Mid = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
-            legs="Orion Braccae +1",
-            feet="Orion Socks +1"
+        sets.precast.WS['Jishnu\'s Radiance'].Mod = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
+            ear2="Tripudio Earring",
+            legs="Sylvan Bragues +2",
+            hands="Sylvan Glovelettes +2"
         })
 
         sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
@@ -386,8 +391,10 @@ function init_gear_sets()
             feet="Arcadian Socks +1"
         })
 
-        sets.precast.WS['Sidewinder'].Mid = set_combine(sets.precast.WS['Sidewinder'], {
-            legs="Aetosaur Trousers +1"
+        sets.precast.WS['Sidewinder'].Mod = set_combine(sets.precast.WS['Sidewinder'], {
+            ear2="Tripudio Earring",
+            legs="Aetosaur Trousers +1",
+            back="Sylvan Chlamys"
         })
 
         sets.precast.WS['Sidewinder'].Acc = set_combine(sets.precast.WS['Sidewinder'], {
@@ -396,7 +403,7 @@ function init_gear_sets()
         })
 
         sets.precast.WS['Refulgent Arrow'] = sets.precast.WS['Sidewinder']
-        sets.precast.WS['Refulgent Arrow'].Mid = sets.precast.WS['Sidewinder'].Mid
+        sets.precast.WS['Refulgent Arrow'].Mod = sets.precast.WS['Sidewinder'].Mod
         sets.precast.WS['Refulgent Arrow'].Acc = sets.precast.WS['Sidewinder'].Acc
        
         -- Resting sets
@@ -614,6 +621,7 @@ function job_update(cmdParams, eventArgs)
     -- called here incase buff_change failed to update value
     state.Buff.Camouflage = buffactive.camouflage or false
     state.Buff.Overkill = buffactive.overkill or false
+    state.Buff['Decoy Shot'] = buffactive['Decoy Shot'] or false
 
     if camo_active() then
         send_command('@wait .5;gs disable body')
@@ -658,8 +666,7 @@ function determine_ranged()
 	classes.CustomMeleeGroups:clear()
 
     if player.equipment.range == gear.Bow then
-	
-        if buffactive['Decoy Shot'] then
+        if buffactive['Decoy Shot'] or state.Buff['Decoy Shot'] then
             classes.CustomMeleeGroups:append('Decoy')
 		    classes.CustomRangedGroups:append('Decoy')
         else
@@ -667,6 +674,12 @@ function determine_ranged()
 		    classes.CustomRangedGroups:append('Bow')
         end
 	end
+
+    if player.equipment.main == "Hurlbat" then
+        gear.Legs = "Aetosaur Trousers +1"
+    else
+        gear.Legs = "Nahtirah Trousers"
+    end
 end
 
 function camo_active()
