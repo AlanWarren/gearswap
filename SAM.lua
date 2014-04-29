@@ -400,8 +400,8 @@ function init_gear_sets()
     })
 
 	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { -- 878.75 Acc
-        head="Sakonji Kabuto +1",
-        ring1="Rajas Ring",
+        head="Lithelimb Cap",
+        ring1="Patricius Ring",
         ring2="Mars's Ring",
         feet="Wakido Sune-Ate +1",
         back="Takaha Mantle"
