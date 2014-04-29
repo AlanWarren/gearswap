@@ -100,7 +100,7 @@ function init_gear_sets()
         -- Options: Override default values
  
         options.OffenseModes = {'Normal', 'Melee'}
-        options.RangedModes = {'Normal', 'Mid', 'Acc'}
+        options.RangedModes = {'Normal', 'Acc', 'Mod'}
         options.DefenseModes = {'Normal', 'PDT'}
         options.WeaponskillModes = {'Normal', 'Acc', 'Mod'}
         options.PhysicalDefenseModes = {'PDT'}
@@ -206,15 +206,17 @@ function init_gear_sets()
             back=gear.Waist,
             legs=gear.Legs
         })
-        
-        sets.midcast.RangedAttack.Mid = set_combine(sets.midcast.RangedAttack, {
-            back="Lutian Cape"
+        -- stack as much STP as we can.
+        sets.midcast.RangedAttack.Mod = set_combine(sets.midcast.RangedAttack, {
+            hands="Sylvan Glovelettes +2",
+            legs="Sylvan Bragues +2"
         })
 
-        sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack.Mid, {
+        sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack, {
             ear2="Clearview Earring",
             neck="Iqabi Necklace",
             ring1="Hajduk Ring",
+            back="Lutian Cape",
             legs="Orion Braccae +1"
         })
         
@@ -234,21 +236,24 @@ function init_gear_sets()
             legs="Sylvan Bragues +2", -- STP 9
             feet="Arcadian Socks +1" -- Enmity -6
         }
-        -- 33 STP with bloodrain. 4/4 recycle proc necessary for 4-hit
-        sets.midcast.RangedAttack.Mid.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
-            hands="Sylvan Glovelettes +2",  -- STP 7
-            back="Lutian Cape", -- Enmity -5
-            legs="Aetosaur Trousers +1" -- STP 5
+        -- Mod for Bow ignores any attempt to stack -enmity in favor of STP
+        sets.midcast.RangedAttack.Mod.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
+            neck="Ocachi Gorget",
+            ear1="Volley Earring",
+            hands="Sylvan Glovelettes +2",
+            legs="Aetosaur Trousers +1"
         })
         -- 5 hit
-        sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Mid.Bow, {
+        sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
+            hands="Seiryu's Kote",  -- STP 4 for now
             ring1="Hajduk Ring",
             legs="Orion Braccae +1",
+            back="Lutian Cape", -- Enmity -5
             feet="Orion Socks +1"
         })
 
         -- Docoy is Up - don't care about -enmity so much (Bow only)
-        -- 2/4 recycle necessary to 4 hit
+        -- 3/4 recycle necessary to 4 hit
         sets.midcast.RangedAttack.Decoy = set_combine(sets.midcast.RangedAttack.Bow, {
             ear1="Volley Earring",
             neck="Ocachi Gorget",
@@ -257,16 +262,13 @@ function init_gear_sets()
             feet="Orion Socks +1"
         })
         -- 4/4 recycle proc necessary
-        sets.midcast.RangedAttack.Decoy.Mid = set_combine(sets.midcast.RangedAttack.Decoy, {
-            hands="Manibozho Gloves",
-            back="Lutian Cape",
-            ring2="Paqichikaji Ring"
+        sets.midcast.RangedAttack.Decoy.Mod = set_combine(sets.midcast.RangedAttack.Decoy, {
+            legs="Aetosaur Trousers +1"
         })
         -- 5 hit
-        sets.midcast.RangedAttack.Decoy.Acc = set_combine(sets.midcast.RangedAttack.Decoy.Mid, {
+        sets.midcast.RangedAttack.Decoy.Acc = set_combine(sets.midcast.RangedAttack.Decoy.Mod, {
             neck="Iqabi Necklace",
             ring1="Hajduk Ring",
-            legs="Orion Braccae +1",
             feet="Orion Socks +1"
         })
 
