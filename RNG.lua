@@ -85,6 +85,8 @@ function init_gear_sets()
         -- add gear.Legs, gear.Ring2 to the Bow and Decoy tables. see determine_ranged()
         gear.Legs = "Aetosaur Trousers +1"
         gear.Ring2 = "K'ayres Ring"
+        gear.RingD = "K'ayres Ring"
+        gear.Back = "Sylvan Chlamys"
 
         gear.default.weaponskill_neck = "Ocachi Gorget"
         gear.default.weaponskill_waist = "Elanid Belt"
@@ -192,6 +194,8 @@ function init_gear_sets()
         }
        
         -- Ranged Attack Sets
+
+        -- Snapshot 
         sets.precast.RangedAttack = {
             head="Sylvan Gapette +2",
             body="Sylvan Caban +2",
@@ -201,8 +205,12 @@ function init_gear_sets()
             feet="Wurrukatte Boots"
         }
 
-        -- Default midcast for gun
-        -- Hurlbat = +230 Ratk +274 Racc
+        -- Annihilator Default 
+        -- Ratk: 253.5
+        -- Racc: 252.5
+        -- STP: 32 ~ 87.6 TP after 4 hits 
+        -- Hurlbat = K'ayres + Nahtirah + Chlamys
+        -- Mekki Shakki  = Pyrosoul + Nahtirah + Lutian (ratk: 268 racc: 241)
         sets.midcast.RangedAttack = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
@@ -211,26 +219,29 @@ function init_gear_sets()
             body="Kyujutsugi",
             hands="Sigyn's Bazubands",
             ring1="Rajas Ring",
-            ring2=gear.Ring2,
-            back="Lutian Cape",
+            ring2=gear.RingD,
+            back=gear.Back,
             waist="Elanid Belt",
-            legs=gear.Legs,
+            legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
 
-        -- Mod with Hurlbat
-        -- +253 Ratk +252 Racc
+        -- Annihilator Mod 
+        -- Ratk: 230.25
+        -- Racc: 274.5
+        -- STP: 32 ~ 87.6 TP after 4 hits
+        -- Hurlbat = K'ayres + Aetosaur + Lutian
+        -- Mekki Shakki = Paqichikaji + Nahtirah + Lutian (ratk:262.75 racc:255.75)
         sets.midcast.RangedAttack.Mod = set_combine(sets.midcast.RangedAttack, {
-            back="Sylvan Chlamys",
-            ring2=gear.Ring2,
-            legs="Nahtirah Trousers" -- Use these regardless of main weapon
+            back="Lutian Cape",
+            legs=gear.Legs,
+            ring2=gear.Ring2
         })
 
         sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack, {
             neck="Iqabi Necklace",
             ring1="Hajduk Ring",
             ring2="Paqichikaji Ring",
-            back="Lutian Cape",
             legs="Orion Braccae +1"
         })
         
@@ -701,9 +712,13 @@ function determine_ranged()
     if player.equipment.main == 'Mekki Shakki' then
         gear.Legs = "Nahtirah Trousers"
         gear.Ring2 = "Paqichikaji Ring"
+        gear.RingD = "Pyrosoul Ring"
+        gear.Back = "Lutian Cape"
     else -- Hurlbat
         gear.Legs = "Aetosaur Trousers +1"
         gear.Ring2 = "K'ayres Ring"
+        gear.RingD = "K'ayres Ring"
+        gear.Back = "Sylvan Chlamys"
     end
 end
 
