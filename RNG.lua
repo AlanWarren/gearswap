@@ -10,15 +10,18 @@
 
 -- === My Modes ===
 -- 1) Normal is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
--- 2) Mid has a nice mixture of racc and stp for hard content. Should 4-hit with 4 recycle procs
--- 3) Racc is full blown racc. i.e. You're fighting VD MR and songs drop.  
+-- 2) Mod adds STP to WS set, and either STP or Crit to normal build. 
+-- 3) Racc is full blown racc with minimal concern on maintaining x-hit.
 
 -- === Features ===
 -- 1) Bow set will activate by equipping whichever bow you defined in gear.Bow
 -- 2) Decoy set only applies while decoy is active AND you're using Bow. Standard Bow set uses
--- -enmity gear, while maintaining 4-hit with lucky recycle procs + bloodrain
--- 3) We use Fenrir's earring at night during WS, you can disable this with use_night_earring = false
--- 4) During Overkill, we use a special set for precast/midcast containing rapidshot gears
+-- -enmity gear, while maintaining 4-hit with 4/4 recycle procs. When Decoy is up, 3/4 recycle for 4-hit.
+-- 3) Gun only: Legs & Back STP pieces are dynamically added, depending on main equipment slot. If you're using Hurlbat
+-- with shield, Sylvan Chlamys and Aetosaur Trousers +1 will be equipped in midcast to maintain 4-hit. 
+-- Otherwise, if you're using Mekki Shakki / Bloodrain, we use Lutian Cape + Nahtirah trousers. 
+-- 3) I use Fenrir's earring at night during WS. You can disable this by setting use_night_earring = false
+-- 4) During Overkill, I use a special set for precast/midcast containing rapidshot gear. 
 
 -- === In Precast ===
 -- 1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
