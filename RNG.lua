@@ -74,9 +74,14 @@ end
  
 function init_gear_sets()
         -- Overriding Global Defaults for this job
-        -- gear.Staff = {} no need to set this, it's already set
+        gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
+
+        -- legs/waist are dynamic depending on hurlbat/mekki shakki, with gun only
+        -- it's assumed you'll use Mekki Shakki with Bow. If you don't, then
+        -- add gear.Legs and gear.Waist to the Bow and Decoy tables. see determine_ranged()
         gear.Legs = "Nahtirah Trousers"
+        gear.Waist = "Lutian Cape"
 
         gear.default.weaponskill_neck = "Ocachi Gorget"
         gear.default.weaponskill_waist = "Elanid Belt"
@@ -86,9 +91,8 @@ function init_gear_sets()
        
         -- Simply add a line of DefaultAmmo["Weapon"] = "Ammo Name"
         DefaultAmmo = {}
-        DefaultAmmo["Annihilator"] = "Achiyalabopa Bullet"
-        DefaultAmmo["Yoichinoyumi"] = "Achiyalabopa Arrow"
-        DefaultAmmo["Atetepeyorg"] = "Achiyalabopa Bolt"
+        DefaultAmmo[gear.Gun] = "Achiyalabopa Bullet"
+        DefaultAmmo[gear.Bow] = "Achiyalabopa Arrow"
        
         -- Options: Override default values
  
@@ -196,7 +200,7 @@ function init_gear_sets()
 
         sets.midcast.RangedAttack = set_combine(sets.engaged, {
             ring2="Paqichikaji Ring",
-            back="Sylvan Chlamys",
+            back=gear.Waist,
             legs=gear.Legs
         })
         
@@ -246,7 +250,7 @@ function init_gear_sets()
             ear1="Volley Earring",
             neck="Ocachi Gorget",
             hands="Sylvan Glovelettes +2",
-            legs=gear.Legs,
+            legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         })
         -- 4/4 recycle proc necessary
@@ -674,11 +678,13 @@ function determine_ranged()
 		    classes.CustomRangedGroups:append('Bow')
         end
 	end
-
+    -- We either use Hurlbat or Mekki Shakki
     if player.equipment.main == "Hurlbat" then
         gear.Legs = "Aetosaur Trousers +1"
+        gear.Waist = "Sylvan Chlamys"
     else
         gear.Legs = "Nahtirah Trousers"
+        gear.Waist = "Lutian Cape"
     end
 end
 
