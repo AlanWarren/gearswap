@@ -373,9 +373,7 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     })
 
-	sets.engaged.Acc.Evasion.Haste_43 = set_combine(sets.engaged.Acc.Haste_43, sets.engaged.Evasion.Haste_43)
 	sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.PDT)
-	sets.engaged.Acc.PDT.Haste_43 = set_combine(sets.engaged.PDT.Haste_43, sets.engaged.Acc.Haste_43)
 
     -- 40
     sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
