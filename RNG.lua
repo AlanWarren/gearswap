@@ -16,9 +16,10 @@
 -- === Features ===
 -- 1) Bow set will activate by equipping whichever bow you defined in gear.Bow
 -- 2) Decoy set only applies while decoy is active AND you're using Bow. Standard Bow set uses
--- -enmity gear, while maintaining 4-hit with 4/4 recycle procs. When Decoy is up, 3/4 recycle for 4-hit.
--- 3) Gun only: Legs & Ring2 STP pieces are dynamically added, depending on main equipment slot. If you're using Hurlbat
--- with shield, K'ayres and Aetosaur Trousers +1 will be equipped in midcast to maintain 4-hit. 
+-- -enmity gear, while maintaining 4-hit with 4/4 recycle procs. When Decoy is up, 3/4 recycle for 4-hit using DD gear.
+-- If you want to ignore this feature, switch to Mod mode when using Bow. 
+-- 3) Gun only: Legs & Ring2 STP pieces are dynamically added, depending on main equipment slot. If you're using
+-- dagger/axe with shield, K'ayres and Aetosaur Trousers +1 will be equipped in midcast to maintain 4-hit. 
 -- Otherwise, if you're using Mekki Shakki / Bloodrain, we use Lutian Cape + Nahtirah trousers. 
 -- 3) I use Fenrir's earring at night during WS. You can disable this by setting use_night_earring = false
 -- 4) During Overkill, I use a special set for precast/midcast containing rapidshot gear. 
@@ -261,7 +262,7 @@ function init_gear_sets()
             legs="Sylvan Bragues +2", -- STP 9
             feet="Arcadian Socks +1" -- Enmity -6
         }
-        -- Mod for Bow ignores any attempt to stack -enmity in favor of STP
+        -- Mod for Bow ignores any attempt to stack -enmity 
         sets.midcast.RangedAttack.Mod.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
             neck="Ocachi Gorget",
             ear1="Volley Earring",
