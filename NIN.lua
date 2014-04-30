@@ -365,7 +365,7 @@ function init_gear_sets()
 		back="Yokaze Mantle"
     })
     sets.engaged.Haste_43.Evasion = set_combine(sets.engaged.Haste_43, {
-        body="Mochizuki Chainmail +1",
+        body="Qaaxo Harness",
         neck="Asperity Necklace",
 		back="Yokaze Mantle",
         ring1="Patricius Ring",
