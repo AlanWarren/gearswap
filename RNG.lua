@@ -722,7 +722,7 @@ function determine_ranged()
         gear.Ring2 = "Paqichikaji Ring"
         gear.RingD = "Pyrosoul Ring"
         gear.Back = "Lutian Cape"
-    else -- Hurlbat
+    else -- Hurlbat or Aphotic Kukri
         gear.Legs = "Aetosaur Trousers +1"
         gear.Ring2 = "K'ayres Ring"
         gear.RingD = "K'ayres Ring"
