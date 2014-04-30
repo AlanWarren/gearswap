@@ -10,19 +10,21 @@
 
 -- === My Modes ===
 -- 1) Normal is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
--- 2) Mod adds STP to WS set, and either STP or Crit to normal build. 
--- 3) Racc is full blown racc with minimal concern on maintaining x-hit.
+-- 2) Mod adds a bit more acc for Gun, and removes the -enmity functionality from Bow
+-- 3) Racc is full blown racc with minimal concern for anything else. 
 
 -- === Features ===
--- 1) Bow set will activate by equipping whichever bow you defined in gear.Bow
--- 2) Decoy set only applies while decoy is active AND you're using Bow. Standard Bow set uses
--- -enmity gear, while maintaining 4-hit with 4/4 recycle procs. When Decoy is up, 3/4 recycle for 4-hit using DD gear.
--- If you want to ignore this feature, switch to Mod mode when using Bow. 
+-- NOTE: The default sets all apply to Gun. x-hits mostly assume Ionis
+-- 1) Bow sets will activate by equipping whichever bow you defined in gear.Bow
+-- 2) Decoy set only applies while decoy is active AND you're using Bow. 
+-- 3) Standard Bow set uses -enmity gear, while maintaining 4-hit, but only if recycle proc's 4/4 shots.
+-- * However, when Decoy is up it will 4-hit with 3/4 recycle procs.
+-- * If you want to ignore this feature, switch to Mod mode when using Bow. 
 -- 3) Gun only: Legs & Ring2 STP pieces are dynamically added, depending on main equipment slot. If you're using
 -- dagger/axe with shield, K'ayres and Aetosaur Trousers +1 will be equipped in midcast to maintain 4-hit. 
--- Otherwise, if you're using Mekki Shakki / Bloodrain, we use Lutian Cape + Nahtirah trousers. 
--- 3) I use Fenrir's earring at night during WS. You can disable this by setting use_night_earring = false
--- 4) During Overkill, I use a special set for precast/midcast containing rapidshot gear. 
+-- * Otherwise, if you're using Mekki Shakki / Bloodrain, we use Lutian Cape + Nahtirah trousers. 
+-- 4) I use Fenrir's earring at night during WS. You can disable this by setting use_night_earring = false
+-- 5) During Overkill, I use a special set for precast/midcast containing rapidshot gear. 
 
 -- === In Precast ===
 -- 1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
