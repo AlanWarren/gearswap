@@ -241,6 +241,10 @@ function init_gear_sets()
             ring2=gear.Ring2
         })
 
+        -- Annihilator Acc 
+        -- Ratk: approximately 200 ratk
+        -- Racc: approximately 300 racc
+        -- This is a 5-hit with Hurlbat, 4-hit with Mekki assuming 4/4 recycle procs
         sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack, {
             neck="Iqabi Necklace",
             ring1="Hajduk Ring",
