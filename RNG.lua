@@ -102,9 +102,9 @@ function init_gear_sets()
         -- Options: Override default values
  
         options.OffenseModes = {'Normal', 'Melee'}
-        options.RangedModes = {'Normal', 'Acc', 'Mod'}
+        options.RangedModes = {'Normal', 'Mod', 'Acc'}
         options.DefenseModes = {'Normal', 'PDT'}
-        options.WeaponskillModes = {'Normal', 'Acc', 'Mod'}
+        options.WeaponskillModes = {'Normal', 'Mod', 'Acc'}
         options.PhysicalDefenseModes = {'PDT'}
         options.MagicalDefenseModes = {'MDT'}
         state.Defense.PhysicalMode = 'PDT'
