@@ -700,7 +700,7 @@ function determine_ranged()
 	classes.CustomMeleeGroups:clear()
 
     if player.equipment.range == gear.Bow then
-        if buffactive['Decoy Shot'] or state.Buff['Decoy Shot'] then
+        if buffactive['Decoy Shot'] then
             classes.CustomMeleeGroups:append('Decoy')
 		    classes.CustomRangedGroups:append('Decoy')
         else
