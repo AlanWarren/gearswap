@@ -608,6 +608,7 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     else
         enable('body')
     end
+	determine_ranged()
 end
  
 -- Called when a player gains or loses a buff.
