@@ -701,10 +701,13 @@ function determine_ranged()
 	classes.CustomMeleeGroups:clear()
 
     if player.equipment.range == gear.Bow then
+        add_to_chat(122,"Yoichi!")
         if buffactive['Decoy Shot'] then
+            add_to_chat(122,"Decoy Up")
             classes.CustomMeleeGroups:append('Decoy')
 		    classes.CustomRangedGroups:append('Decoy')
         else
+            add_to_chat(122,"Decoy Down")
             classes.CustomMeleeGroups:append('Bow')
 		    classes.CustomRangedGroups:append('Bow')
         end
