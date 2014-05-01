@@ -31,6 +31,9 @@ function init_include()
 	-- so load it up front.
 	include('Mote-Mappings')
 
+	-- Var for tracking misc info
+	info = {}
+
 	-- Var for tracking state values
 	state = {}
 
@@ -192,7 +195,7 @@ init_include()
 -- This is the only function where it will be valid to use change_target().
 function pretarget(spell,action)
 	-- Get the spell mapping, since we'll be passing it to various functions and checks.
-	local spellMap = classes.SpellMaps[spell.english]
+	local spellMap = get_spell_map(spell)
 
 	-- Init an eventArgs that allows cancelling.
 	local eventArgs = {handled = false, cancel = false}
@@ -221,7 +224,7 @@ end
 -- Equip any gear that should be on before the spell or ability is used.
 function precast(spell, action)
 	-- Get the spell mapping, since we'll be passing it to various functions and checks.
-	local spellMap = classes.SpellMaps[spell.english]
+	local spellMap = get_spell_map(spell)
 
 	-- Init an eventArgs that allows cancelling.
 	local eventArgs = {handled = false, cancel = false}
@@ -265,7 +268,7 @@ function midcast(spell,action)
 	end
 
 	-- Get the spell mapping, since we'll be passing it to various functions and checks.
-	local spellMap = classes.SpellMaps[spell.english]
+	local spellMap = get_spell_map(spell)
 
 	-- Init a new eventArgs
 	local eventArgs = {handled = false}
@@ -310,7 +313,7 @@ function aftercast(spell,action)
 	end
 
 	-- Get the spell mapping, since we'll be passing it to various functions and checks.
-	local spellMap = classes.SpellMaps[spell.english]
+	local spellMap = get_spell_map(spell)
 
 	-- Init a new eventArgs
 	local eventArgs = {handled = false}
@@ -355,7 +358,7 @@ function pet_midcast(spell,action)
 	end
 
 	-- Get the spell mapping, since we'll be passing it to various functions and checks.
-	local spellMap = classes.SpellMaps[spell.english]
+	local spellMap = get_spell_map(spell)
 
 	-- Init a new eventArgs
 	local eventArgs = {handled = false}
@@ -391,7 +394,7 @@ function pet_aftercast(spell,action)
 	end
 
 	-- Get the spell mapping, since we'll be passing it to various functions and checks.
-	local spellMap = classes.SpellMaps[spell.english]
+	local spellMap = get_spell_map(spell)
 
 	-- Init a new eventArgs
 	local eventArgs = {handled = false}
@@ -555,6 +558,18 @@ end
 -- Functions for constructing default sets.
 -------------------------------------------------------------------------------------------------------------------
 
+-- Get a spell mapping for the spell.
+function get_spell_map(spell)
+	local spellMap = classes.SpellMaps[spell.english]
+	
+    if not spellMap and job_get_spell_map then
+		spellMap = job_get_spell_map(spell)
+    end
+	
+    return spellMap
+end
+
+
 -- Get the default precast gear set.
 function get_default_precast_set(spell, action, spellMap, eventArgs)
 	local equipSet = {}
@@ -593,7 +608,7 @@ function get_default_precast_set(spell, action, spellMap, eventArgs)
 			equipSet = equipSet[state.CastingMode]
 		end
 	elseif spell.action_type == 'Ranged Attack' then
-		-- Ranged attacks use sets.precast.Ranged.
+		-- Ranged attacks use sets.precast.RangedAttack (since Ranged is a gear slot).
 		equipSet = sets.precast.RangedAttack
 
 		-- Custom class modification
@@ -606,6 +621,7 @@ function get_default_precast_set(spell, action, spellMap, eventArgs)
 			equipSet = equipSet[state.RangedMode]
 		end
 
+		-- Tack on any additionally specified custom groups, if the sets are defined.
 		for _,group in ipairs(classes.CustomRangedGroups) do
 			if equipSet[group] then
 				equipSet = equipSet[group]
@@ -643,14 +659,17 @@ function get_default_precast_set(spell, action, spellMap, eventArgs)
 				end
 			end
 			
+			-- Base table for all weaponskills
 			equipSet = sets.precast.WS
 
-			if equipSet[spell.english] then
-				equipSet = equipSet[spell.english]
-			elseif classes.CustomClass and equipSet[classes.CustomClass] then
+			-- If the user specifies a custom class, use that. Otherwise, use the weaponskill name.
+			if classes.CustomClass and equipSet[classes.CustomClass] then
 				equipSet = equipSet[classes.CustomClass]
+			elseif equipSet[spell.english] then
+				equipSet = equipSet[spell.english]
 			end
 
+			-- And if a weaponskill mode is specified, tack that on to the end.
 			if equipSet[ws_mode] then
 				equipSet = equipSet[ws_mode]
 			end
@@ -658,6 +677,7 @@ function get_default_precast_set(spell, action, spellMap, eventArgs)
 			-- All other ability types, such as Waltz, Jig, Scholar, etc.
 			-- These may use the generic type, or be refined for the individual action,
 			-- either by name or by spell map.
+			-- Otherwise check for a naked handling of a custom class or spell map.
 			if sets.precast[spell.type] then
 				equipSet = sets.precast[spell.type]
 				
@@ -734,6 +754,8 @@ function get_default_midcast_set(spell, action, spellMap, eventArgs)
 			end
 		end
 	elseif spell.action_type == 'Ability' then
+		-- Midcast handling of abilities does not break them down into JA/Weaponskill/other.
+		-- Process all actions as if they were in the 'other' category.
 		if sets.midcast[spell.type] then
 			equipSet = sets.midcast[spell.type]
 			
@@ -797,7 +819,7 @@ end
 
 -- Returns the appropriate idle set based on current state.
 -- Set construction order (all of which are optional):
--- sets.idle[idleScope][state.IdleMode][Pet][CustomIdleGroups]
+-- sets.idle[idleScope][state.IdleMode][Pet[.Engaged]][CustomIdleGroups]
 function get_current_idle_set()
 	local idleSet = sets.idle
 	local idleScope
@@ -886,10 +908,12 @@ end
 function get_current_resting_set()
 	local restingSet = {}
 
-	if sets.resting[state.RestingMode] then
-		restingSet = sets.resting[state.RestingMode]
-	else
+	if sets.resting then
 		restingSet = sets.resting
+
+		if restingSet[state.RestingMode] then
+			restingSet = restingSet[state.RestingMode]
+		end
 	end
 
 	return restingSet
@@ -948,5 +972,4 @@ function apply_kiting(baseSet)
 
 	return baseSet
 end
-
 
