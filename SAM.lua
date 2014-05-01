@@ -293,9 +293,9 @@ function init_gear_sets()
     -- Anahera needs 52 stp anywhere 
     
     -- I generally use Anahera outside of Adoulin areas, so this set aims for 47 STP + 5 from Anahera (52 total)
-    -- When you get Mala, put K'ayres back on ring2
 	sets.engaged = {
-        ammo="Paeapua",
+        sub="Pole Grip",
+        ammo=gear.RAarrow,
 		head="Otomi Helm",
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1
@@ -303,8 +303,8 @@ function init_gear_sets()
 		body="Sakonji Domaru +1", -- 8
         hands="Wakido Kote +1",-- 5
         ring1="Rajas Ring", -- 5
-        ring2="Mars's Ring", 
-		back="Takaha Mantle",  -- 10
+        ring2="K'ayres Ring", 
+		back="Atheling Mantle",  -- 10
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 7
         feet="Otronif boots +1" -- 7
@@ -318,16 +318,28 @@ function init_gear_sets()
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Sakonji Kabuto +1",
-        feet="Wakido Sune-Ate +1"
+        ring2="Mars's Ring",
+        feet="Wakido Sune-Ate +1",
+        back="Takaha Mantle"
     })
 
 	sets.engaged.Yoichi = set_combine(sets.engaged, { 
+        sub="Bloodrain Strap",
 		ammo=gear.RAarrow
     })
 
-    sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, sets.engaged.Mid)
+    sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
+        head="Yaoyotl Helm",
+        neck="Iqabi Necklace",
+        waist="Dynamic Belt"
+    })
 
-    sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, sets.engaged.Acc)
+    sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, {
+        head="Sakonji Kabuto +1",
+        ring2="Mars's Ring",
+        feet="Wakido Sune-Ate +1",
+        back="Takaha Mantle"
+    })
     
 	sets.engaged.PDT = set_combine(sets.engaged, { 
         head="Lithelimb Cap", 
@@ -338,13 +350,14 @@ function init_gear_sets()
     })
 
     sets.engaged.Yoichi.PDT = set_combine(sets.engaged.PDT,  {
+        sub="Bloodrain Strap",
         ammo=gear.RAarrow
     })
 
-	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, { 
-            waist="Dynamic Belt",
-            ring1="Patricius Ring",
-            ring2="Mars's Ring"
+	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, { 
+         head="Lithelimb Cap",
+         ring1="Patricius Ring",
+         ring2="Dark Ring"
     })
 
 	sets.engaged.Reraise = set_combine(sets.engaged.PDT, {
@@ -354,6 +367,7 @@ function init_gear_sets()
     })
 
     sets.engaged.Reraise.Yoichi = set_combine(sets.engaged.Reraise, {
+        sub="Bloodrain Strap",
         ammo=gear.RAarrow
     })
 
@@ -365,16 +379,63 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc.Reraise.Yoichi = set_combine(sets.engaged.Acc.Reraise, {
+        sub="Bloodrain Strap",
         ammo=gear.RAarrow
     })
 		
-	-- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
+	-- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills and 1% gear haste. 
 	-- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
     -- GK with merits and capped skill = 682 base accuracy. Tsurumaru has +15 acc
     
-    -- This set assumes Tsurumaru 4-hit with Bloodrain Strap
+    -- This set aims for Tsurumaru 4-hit. 19% DA, 25% haste
 	sets.engaged.Adoulin = {
-        ammo="Paeapua",
+        sub="Pole Grip",
+        ammo=gear.RAarrow,
+		head="Otomi Helm",
+        neck="Asperity Necklace", -- 3
+        ear1="Bladeborn Earring", -- 1 
+        ear2="Steelflash Earring", -- 1
+		body="Sakonji Domaru +1", -- 8
+        hands="Wakido Kote +1", -- 5
+        ring1="Rajas Ring", -- 5
+        ring2="K'ayres Ring", -- 5
+		back="Atheling Mantle", -- 10
+        waist="Windbuffet Belt",
+        legs="Wakido Haidate +1", -- 7
+        feet="Otronif Boots +1" -- 7
+    }
+	sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
+        head="Yaoyotl Helm",
+        neck="Iqabi Necklace",
+	    waist="Dynamic Belt"
+    })
+
+	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
+        sub="Bloodrain Strap",
+        ring1="Patricius Ring",
+        ring2="Mars's Ring",
+        feet="Wakido Sune-Ate +1",
+        back="Takaha Mantle"
+    })
+	
+    sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {
+        head="Lithelimb Cap",
+		neck="Twilight Torque",
+        ring1="Patricius Ring",
+        ring2="Dark Ring",
+		back="Shadow Mantle"
+    })
+
+	sets.engaged.Adoulin.Acc.PDT = set_combine(sets.engaged.Adoulin.Acc, {
+        head="Lithelimb Cap",
+        neck="Twilight Torque",
+        ring2="Dark Ring"
+    })
+
+    -- Tsurumaru 4-hit 19% DA, 28% haste 
+    sets.engaged.Adoulin.Yoichi = {
+        sub="Bloodrain Strap",
+        ammo=gear.RAarrow,
 		head="Otomi Helm",
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
@@ -389,46 +450,30 @@ function init_gear_sets()
         feet="Sakonji Sune-Ate +1" -- 8
     }
 
-    sets.engaged.Adoulin.Yoichi = set_combine(sets.engaged.Adoulin, {
-        ammo=gear.RAarrow
-    })
-
-	sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
+    sets.engaged.Adoulin.Yoichi.Mid = set_combine(sets.engaged.Adoulin.Yoichi, {
+        ammo=gear.RAarrow,
         head="Yaoyotl Helm",
         neck="Iqabi Necklace",
-	    waist="Dynamic Belt"
+	    waist="Dynamic Belt",
+        feet="Otronif Boots +1"
     })
 
-	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { -- 878.75 Acc
-        head="Lithelimb Cap",
+    sets.engaged.Adoulin.Yoichi.Acc = set_combine(sets.engaged.Adoulin.Yoichi.Mid, {
+        ammo=gear.RAarrow,
         ring1="Patricius Ring",
         ring2="Mars's Ring",
-        feet="Wakido Sune-Ate +1",
         back="Takaha Mantle"
     })
 
-    sets.engaged.Adoulin.Yoichi.Mid = set_combine(sets.engaged.Adoulin.Mid, {
-        ammo=gear.RAarrow
-    })
-
-    sets.engaged.Adoulin.Yoichi.Acc = set_combine(sets.engaged.Adoulin.Acc, {
-        ammo=gear.RAarrow
-    })
-
-	sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {
-        head="Lithelimb Cap",
-		neck="Twilight Torque",
-        ring1="Patricius Ring",
-		back="Shadow Mantle"
-    })
-
 	sets.engaged.Adoulin.Yoichi.PDT = set_combine(sets.engaged.Adoulin.PDT, {
+        sub="Bloodrain Strap",
         ammo=gear.RAarrow
     })
 
-	sets.engaged.Adoulin.Acc.PDT = set_combine(sets.engaged.Adoulin.PDT, { waist="Dynamic Belt" })
-	sets.engaged.Adoulin.Yoichi.Acc.PDT = set_combine(sets.engaged.Adoulin.Yoichi.PDT, { 
-        waist="Dynamic Belt" 
+	sets.engaged.Adoulin.Yoichi.Acc.PDT = set_combine(sets.engaged.Adoulin.Yoichi.Acc, { 
+        head="Lithelimb Cap",
+        neck="Twilight Torque",
+        ring2="Dark Ring"
     })
 
 	sets.engaged.Adoulin.Reraise = set_combine(sets.engaged.Adoulin, {
@@ -446,7 +491,7 @@ function init_gear_sets()
         ammo=gear.RAarrow
     })
 
-	sets.buff.Sekkanoki = {hands="Unkai Kote +1"}
+	sets.buff.Sekkanoki = {hands="Unkai Kote +2"}
 	sets.buff.Sengikori = {}
 	sets.buff['Meikyou Shisui'] = {feet="Sakonji Sune-ate +1"}
 
