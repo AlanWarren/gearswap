@@ -229,24 +229,24 @@ function init_gear_sets()
         hands="Wakido Kote +1",
         ring1="Patricius Ring",
         ring2="K'ayres Ring",
-		back="Takaha Mantle",
+        back="Takaha Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
         feet="Danzo Sune-ate"
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
-		neck="Twilight Torque",
+        neck="Twilight Torque",
         ring1="Patricius Ring",
-		ring2="Paguroidea Ring",
+        ring2="Paguroidea Ring",
         head="Twilight Helm",
         body="Twilight Mail",
-		back="Shadow Mantle",
+        back="Shadow Mantle",
         feet="Danzo Sune-ate"
     })
 
 	sets.idle.Weak = set_combine(sets.idle.Field, {
-		head="Twilight Helm",
+        head="Twilight Helm",
 		body="Twilight Mail"
     })
 	sets.idle.Yoichi = set_combine(sets.idle.Field, {
@@ -255,15 +255,15 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = {
-		head="Lithelimb Cap",
+        head="Lithelimb Cap",
         neck="Twilight Torque",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Sakonji Domaru +1",
+        body="Sakonji Domaru +1",
         hands="Wakido Kote +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
-		back="Shadow Mantle",
+        back="Shadow Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
         feet="Otronif Boots +1"
@@ -296,15 +296,15 @@ function init_gear_sets()
 	sets.engaged = {
         sub="Pole Grip",
         ammo=gear.RAarrow,
-		head="Otomi Helm",
+        head="Otomi Helm",
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1
         ear2="Steelflash Earring", -- 1
-		body="Sakonji Domaru +1", -- 8
+        body="Sakonji Domaru +1", -- 8
         hands="Wakido Kote +1",-- 5
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", 
-		back="Atheling Mantle",  -- 10
+        back="Atheling Mantle",  -- 10
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 7
         feet="Otronif boots +1" -- 7
@@ -325,7 +325,7 @@ function init_gear_sets()
 
 	sets.engaged.Yoichi = set_combine(sets.engaged, { 
         sub="Bloodrain Strap",
-		ammo=gear.RAarrow
+        ammo=gear.RAarrow
     })
 
     sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
@@ -391,15 +391,15 @@ function init_gear_sets()
 	sets.engaged.Adoulin = {
         sub="Pole Grip",
         ammo=gear.RAarrow,
-		head="Otomi Helm",
+        head="Otomi Helm",
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
-		body="Sakonji Domaru +1", -- 8
+        body="Sakonji Domaru +1", -- 8
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
-		back="Atheling Mantle", -- 10
+        back="Atheling Mantle", -- 10
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 7
         feet="Otronif Boots +1" -- 7
@@ -407,7 +407,7 @@ function init_gear_sets()
 	sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         head="Yaoyotl Helm",
         neck="Iqabi Necklace",
-	    waist="Dynamic Belt"
+        waist="Dynamic Belt"
     })
 
 	sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
@@ -420,10 +420,10 @@ function init_gear_sets()
 	
     sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {
         head="Lithelimb Cap",
-		neck="Twilight Torque",
+        neck="Twilight Torque",
         ring1="Patricius Ring",
         ring2="Dark Ring",
-		back="Shadow Mantle"
+        back="Shadow Mantle"
     })
 
 	sets.engaged.Adoulin.Acc.PDT = set_combine(sets.engaged.Adoulin.Acc, {
@@ -436,15 +436,15 @@ function init_gear_sets()
     sets.engaged.Adoulin.Yoichi = {
         sub="Bloodrain Strap",
         ammo=gear.RAarrow,
-		head="Otomi Helm",
+        head="Otomi Helm",
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
-		body="Sakonji Domaru +1", -- 8
+        body="Sakonji Domaru +1", -- 8
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
-		back="Atheling Mantle", -- 10
+        back="Atheling Mantle", -- 10
         waist="Cetl Belt",
         legs="Wakido Haidate +1", -- 7
         feet="Sakonji Sune-Ate +1" -- 8
@@ -454,7 +454,7 @@ function init_gear_sets()
         ammo=gear.RAarrow,
         head="Yaoyotl Helm",
         neck="Iqabi Necklace",
-	    waist="Dynamic Belt",
+        waist="Dynamic Belt",
         feet="Otronif Boots +1"
     })
 
@@ -477,15 +477,15 @@ function init_gear_sets()
     })
 
 	sets.engaged.Adoulin.Reraise = set_combine(sets.engaged.Adoulin, {
-		head="Twilight Helm",
-		body="Twilight Mail",
+        head="Twilight Helm",
+        body="Twilight Mail",
     })
     sets.engaged.Adoulin.Yoichi.Reraise = set_combine(sets.engaged.Adoulin.Reraise, {
         ammo=gear.RAarrow
     })
 	sets.engaged.Adoulin.Acc.Reraise = set_combine(sets.engaged.Adoulin.Acc, {
-		head="Twilight Helm",
-		body="Twilight Mail"
+        head="Twilight Helm",
+        body="Twilight Mail"
     })
     sets.engaged.Adoulin.Yoichi.Acc.Reraise = set_combine(sets.engaged.Adoulin.Acc.Reraise, {
         ammo=gear.RAarrow
