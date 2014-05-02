@@ -140,7 +140,7 @@ function init_gear_sets()
             head="Arcadian Beret +1",
             neck="Twilight torque",
             ear1="Volley Earring",
-            ear2="Clearview Earring",
+            ear2="Tripudio Earring",
             body="Kheper Jacket",
             hands="Iuitl Wristbands +1",
             ring1="Dark Ring",
@@ -338,20 +338,24 @@ function init_gear_sets()
             feet="Orion Socks +1"
         }
 
-        sets.precast.WS = set_combine(sets.precast.CustomWS, sets.earring)
+        sets.precast.WS = set_combine(sets.precast.CustomWS, {
+            ear2="Tripudio Earring",
+            back="Sylvan Chlamys"
+        })
        
         sets.precast.WS.Mod = set_combine(sets.precast.WS, {
-            ear2="Tripudio Earring",
-            back="Sylvan Chlamys",
             legs="Aetosaur Trousers +1"
         })
+
+        sets.precast.WS.Adoulin = set_combine(sets.precast.WS, sets.earring)
+        sets.precast.WS.Mekki = sets.precast.WS.Adoulin
+        sets.precast.WS.AdoulinMekki = sets.precast.WS.Adoulin
         
         sets.precast.WS.Acc = set_combine(sets.precast.WS, {
            ear2="Clearview Earring",
            legs="Orion Braccae +1",
            back="Lutian Cape"
         })
-
 
         -- CORONACH
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
