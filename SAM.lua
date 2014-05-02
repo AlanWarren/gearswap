@@ -94,15 +94,15 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
         --ammo="Paeapua",
-		head="Otomi Helm",
+        head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Phorcys Korazin",
+        body="Phorcys Korazin",
         hands="Mikinaak Gauntlets",
         ring1="Rajas Ring",
         ring2="Pyrosoul Ring",
-		back="Buquwik Cape",
+        back="Buquwik Cape",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
         feet="Sakonji Sune-ate +1"
@@ -112,9 +112,9 @@ function init_gear_sets()
         body="Sakonji Domaru +1"
     })
 	sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-            ring2="Mars's Ring",
-            legs="Mikinaak Cuisses",
-            feet="Wakido Sune-Ate +1"
+        ring2="Mars's Ring",
+        legs="Mikinaak Cuisses",
+        feet="Wakido Sune-Ate +1"
     })
 
 	sets.precast.WS['Namas Arrow'] = {
@@ -221,11 +221,11 @@ function init_gear_sets()
 	sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
-		head="Otomi helm",
+        head="Otomi helm",
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Sakonji Domaru +1",
+        body="Sakonji Domaru +1",
         hands="Wakido Kote +1",
         ring1="Patricius Ring",
         ring2="K'ayres Ring",
