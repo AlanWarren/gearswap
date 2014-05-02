@@ -209,7 +209,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-		body="Kheper Jacket",
+		body="War Shinobi Gi",
         hands="Mochizuki Tekko +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -313,12 +313,15 @@ function init_gear_sets()
     -- purpose is to NOT USE subtle blow, so the stupid
     -- ramparts will pop mobs. otherwise, it never happens
 	sets.engaged.Att = set_combine(sets.engaged, {
-        ear1="Brutal Earring",
-        ear2="Suppanomimi",
-		body="Mochizuki Chainmail +1",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+        head="Felistris Mask",
+		body="Thaumas Coat",
+        legs="Manibozho Brais",
+        feet="Manibozho Boots",
         hands="Otronif Gloves",
-        ring1="Thundersoul Ring",
-        waist="Hurch'lan Sash"
+        ring1="Patricius Ring",
+        waist="Windbuffet Belt"
     })
 
 	sets.engaged.Evasion = set_combine(sets.engaged, {
@@ -373,9 +376,7 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     })
 
-	sets.engaged.Acc.Evasion.Haste_43 = set_combine(sets.engaged.Acc.Haste_43, sets.engaged.Evasion.Haste_43)
 	sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.PDT)
-	sets.engaged.Acc.PDT.Haste_43 = set_combine(sets.engaged.PDT.Haste_43, sets.engaged.Acc.Haste_43)
 
     -- 40
     sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
