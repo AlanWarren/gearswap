@@ -20,9 +20,8 @@
 -- 3) Standard Bow set uses -enmity gear, while maintaining 4-hit, but only if recycle proc's 4/4 shots.
 -- * However, when Decoy is up it will 4-hit with 3/4 recycle procs.
 -- * If you want to ignore this feature, switch to Mod mode when using Bow. 
--- 3) Gun only: Legs & Ring2 STP pieces are dynamically added, depending on main equipment slot. If you're using
--- dagger/axe with shield, K'ayres and Aetosaur Trousers +1 will be equipped in midcast to maintain 4-hit. 
--- * Otherwise, if you're using Mekki Shakki / Bloodrain, we use Lutian Cape + Nahtirah trousers. 
+-- 3) Gun only: custom sets for Mekki Shakki and Adoulin are present. Adoulin is mostly there to remove some
+-- STP from WS, since we get 10 save TP 
 -- 4) I use Fenrir's earring at night during WS. You can disable this by setting use_night_earring = false
 -- 5) During Overkill, I use a special set for precast/midcast containing rapidshot gear. 
 
@@ -82,14 +81,6 @@ function init_gear_sets()
         -- Overriding Global Defaults for this job
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
-
-        -- legs & ring2 are dynamic depending on hurlbat/mekki shakki, with gun only
-        -- it's assumed you'll use Mekki Shakki with Bow. If you don't, then
-        -- add gear.Legs, gear.Ring2 to the Bow and Decoy tables. see determine_ranged()
-        gear.Legs = "Aetosaur Trousers +1"
-        gear.Ring2 = "K'ayres Ring"
-        gear.Back = "Sylvan Chlamys"
-        gear.WSback = "Sylvan Chlamys"
 
         gear.default.weaponskill_neck = "Ocachi Gorget"
         gear.default.weaponskill_waist = "Elanid Belt"
@@ -221,37 +212,25 @@ function init_gear_sets()
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
             waist="Elanid Belt",
-            legs="Aetosaur Trousers +1",
+            legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
 
+        sets.midcast.RangedAttack.Adoulin = sets.midcast.RangedAttack
         sets.midcast.RangedAttack.Mekki = set_combine(sets.midcast.RangedAttack, {
-            legs="Nahtirah Trousers",
-            back="Lutian Cape"
-        })
-        sets.midcast.RangedAttack.Adoulin = set_combine(sets.midcast.RangedAttack, {
-            legs="Nahtirah Trousers"
-        })
-        sets.midcast.RangedAttack.AdoulinMekki = set_combine(sets.midcast.RangedAttack, {
             ring2="Paqichikaji Ring",
-            legs="Nahtirah Trousers",
             back="Lutian Cape"
         })
 
         -- Annihilator Mod 
         sets.midcast.RangedAttack.Mod = set_combine(sets.midcast.RangedAttack, {
+            legs="Aetosaur Trousers +1",
             back="Lutian Cape"
         })
         sets.midcast.RangedAttack.Mod.Mekki = set_combine(sets.midcast.RangedAttack.Mod, {
             ring2="Paqichikaji Ring"
         })
-        sets.midcast.RangedAttack.Mod.Adoulin = set_combine(sets.midcast.RangedAttack.Mod, {
-            ring2="Paqichikaji Ring"
-        })
-        sets.midcast.RangedAttack.Mod.AdoulinMekki = set_combine(sets.midcast.RangedAttack.Mod, {
-            ring1="Hajduk Ring",
-            ring2="Paqichikaji Ring"
-        })
+        sets.midcast.RangedAttack.Mod.Adoulin = sets.midcast.RangedAttack.Mod
 
         -- Annihilator Acc 
         -- This requires 4/4 recycle procs
@@ -342,15 +321,18 @@ function init_gear_sets()
             ear2="Tripudio Earring",
             back="Sylvan Chlamys"
         })
+        sets.precast.WS.Adoulin = set_combine(sets.precast.WS, sets.earring)
+        sets.precast.WS.Mekki = sets.precast.WS.Adoulin
        
         sets.precast.WS.Mod = set_combine(sets.precast.WS, {
+            back="Lutian Cape",
+            legs="Aetosaur Trousers +1"
+        })
+        sets.precast.WS.Mod.Mekki = set_combine(sets.precast.WS.Adoulin, {
+            back="Lutian Cape",
             legs="Aetosaur Trousers +1"
         })
 
-        sets.precast.WS.Adoulin = set_combine(sets.precast.WS, sets.earring)
-        sets.precast.WS.Mekki = sets.precast.WS.Adoulin
-        sets.precast.WS.AdoulinMekki = sets.precast.WS.Adoulin
-        
         sets.precast.WS.Acc = set_combine(sets.precast.WS, {
            ear2="Clearview Earring",
            legs="Orion Braccae +1",
@@ -745,8 +727,8 @@ function determine_ranged()
 	    if areas.Adoulin:contains(world.area) and buffactive.ionis then
 
             if player.equipment.main == 'Mekki Shakki' then
-	            classes.CustomRangedGroups:append('AdoulinMekki')
-                classes.CustomMeleeGroups:append('AdoulinMekki')
+	            classes.CustomRangedGroups:append('Mekki')
+                classes.CustomMeleeGroups:append('Mekki')
             else
 	            classes.CustomRangedGroups:append('Adoulin')
 	            classes.CustomMeleeGroups:append('Adoulin')
@@ -765,15 +747,6 @@ function determine_ranged()
         end
 
     end
-    --[[ We either use Hurlbat or Mekki Shakki
-    if player.equipment.main == 'Mekki Shakki' then
-        gear.Ring2 = "Paqichikaji Ring"
-        gear.Back = "Lutian Cape"
-    else -- Hurlbat or Aphotic Kukri
-        gear.Ring2 = "K'ayres Ring"
-        gear.Back = "Sylvan Chlamys"
-    end
-    --]]
 end
 
 function camo_active()
