@@ -313,12 +313,15 @@ function init_gear_sets()
     -- purpose is to NOT USE subtle blow, so the stupid
     -- ramparts will pop mobs. otherwise, it never happens
 	sets.engaged.Att = set_combine(sets.engaged, {
-        ear1="Brutal Earring",
-        ear2="Suppanomimi",
-		body="Mochizuki Chainmail +1",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+        head="Felistris Mask",
+		body="Thaumas Coat",
+        legs="Manibozho Brais",
+        feet="Manibozho Boots",
         hands="Otronif Gloves",
-        ring1="Thundersoul Ring",
-        waist="Hurch'lan Sash"
+        ring1="Patricius Ring",
+        waist="Windbuffet Belt"
     })
 
 	sets.engaged.Evasion = set_combine(sets.engaged, {
