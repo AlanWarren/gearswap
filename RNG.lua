@@ -88,8 +88,8 @@ function init_gear_sets()
         -- add gear.Legs, gear.Ring2 to the Bow and Decoy tables. see determine_ranged()
         gear.Legs = "Aetosaur Trousers +1"
         gear.Ring2 = "K'ayres Ring"
-        gear.RingD = "K'ayres Ring"
         gear.Back = "Sylvan Chlamys"
+        gear.WSback = "Sylvan Chlamys"
 
         gear.default.weaponskill_neck = "Ocachi Gorget"
         gear.default.weaponskill_waist = "Elanid Belt"
@@ -209,11 +209,7 @@ function init_gear_sets()
         }
 
         -- Annihilator Default 
-        -- Ratk: 253.5
-        -- Racc: 252.5
-        -- STP: 32 ~ 87.6 TP after 4 hits 
-        -- Hurlbat = K'ayres + Nahtirah + Chlamys
-        -- Mekki Shakki  = Pyrosoul + Nahtirah + Lutian (ratk: 268 racc: 241)
+        -- STP: 37 ~ 90.8 TP after 4 hits 
         sets.midcast.RangedAttack = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
@@ -222,33 +218,54 @@ function init_gear_sets()
             body="Kyujutsugi",
             hands="Sigyn's Bazubands",
             ring1="Rajas Ring",
-            ring2=gear.RingD,
-            back=gear.Back,
+            ring2="K'ayres Ring",
+            back="Sylvan Chlamys",
             waist="Elanid Belt",
-            legs="Nahtirah Trousers",
+            legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         }
 
+        sets.midcast.RangedAttack.Mekki = set_combine(sets.midcast.RangedAttack, {
+            legs="Nahtirah Trousers",
+            back="Lutian Cape"
+        })
+        sets.midcast.RangedAttack.Adoulin = set_combine(sets.midcast.RangedAttack, {
+            legs="Nahtirah Trousers"
+        })
+        sets.midcast.RangedAttack.AdoulinMekki = set_combine(sets.midcast.RangedAttack, {
+            ring2="Paqichikaji Ring",
+            legs="Nahtirah Trousers",
+            back="Lutian Cape"
+        })
+
         -- Annihilator Mod 
-        -- Ratk: 230.25
-        -- Racc: 274.5
-        -- STP: 32 ~ 87.6 TP after 4 hits
-        -- Hurlbat = K'ayres + Aetosaur + Lutian
-        -- Mekki Shakki = Paqichikaji + Nahtirah + Lutian (ratk:262.75 racc:255.75)
         sets.midcast.RangedAttack.Mod = set_combine(sets.midcast.RangedAttack, {
-            back="Lutian Cape",
-            legs=gear.Legs,
-            ring2=gear.Ring2
+            back="Lutian Cape"
+        })
+        sets.midcast.RangedAttack.Mod.Mekki = set_combine(sets.midcast.RangedAttack.Mod, {
+            ring2="Paqichikaji Ring"
+        })
+        sets.midcast.RangedAttack.Mod.Adoulin = set_combine(sets.midcast.RangedAttack.Mod, {
+            ring2="Paqichikaji Ring"
+        })
+        sets.midcast.RangedAttack.Mod.AdoulinMekki = set_combine(sets.midcast.RangedAttack.Mod, {
+            ring1="Hajduk Ring",
+            ring2="Paqichikaji Ring"
         })
 
         -- Annihilator Acc 
-        -- Ratk: approximately 200 ratk
-        -- Racc: approximately 300 racc
-        -- This is a 5-hit with Hurlbat, 4-hit with Mekki assuming 4/4 recycle procs
+        -- This requires 4/4 recycle procs
         sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack, {
             neck="Iqabi Necklace",
+            hands="Seiryu's Kote",
             ring1="Hajduk Ring",
             ring2="Paqichikaji Ring",
+            back="Lutian Cape",
+            legs="Aetosaur Trousers +1",
+        })
+
+        sets.midcast.RangedAttack.Acc.Mekki = set_combine(sets.midcast.RangedAttack.Acc, {
+            hands="Sigyn's Bazubands",
             legs="Orion Braccae +1"
         })
         
@@ -615,6 +632,7 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     else
         enable('body')
     end
+    --XXX: testing
 	determine_ranged()
 end
  
@@ -627,10 +645,11 @@ function job_buff_change(buff, gain)
 
     if state.Buff[buff] ~= nil then
         state.Buff[buff] = gain
+        -- XXX: testing
+	    determine_ranged()
         handle_equipping_gear(player.status)
     end
 
-	determine_ranged()
 
     --if not camo_active() then
     --   handle_equipping_gear(player.status) -- XXX: this may not be necessary to call for each buff. See Mote's MNK/DNC.lua's
@@ -708,6 +727,7 @@ function determine_ranged()
 	classes.CustomMeleeGroups:clear()
 
     if player.equipment.range == gear.Bow then
+
         if buffactive['Decoy Shot'] then
             classes.CustomMeleeGroups:append('Decoy')
 		    classes.CustomRangedGroups:append('Decoy')
@@ -715,19 +735,41 @@ function determine_ranged()
             classes.CustomMeleeGroups:append('Bow')
 		    classes.CustomRangedGroups:append('Bow')
         end
-	end
-    -- We either use Hurlbat or Mekki Shakki
+
+    elseif player.equipment.range == gear.Gun then
+
+	    if areas.Adoulin:contains(world.area) and buffactive.ionis then
+
+            if player.equipment.main == 'Mekki Shakki' then
+	            classes.CustomRangedGroups:append('AdoulinMekki')
+                classes.CustomMeleeGroups:append('AdoulinMekki')
+            else
+	            classes.CustomRangedGroups:append('Adoulin')
+	            classes.CustomMeleeGroups:append('Adoulin')
+            end
+
+        else 
+
+            if player.equipment.main == 'Mekki Shakki' then
+	            classes.CustomRangedGroups:append('Mekki')
+	            classes.CustomMeleeGroups:append('Mekki')
+            else
+	            classes.CustomRangedGroups:clear()
+	            classes.CustomMeleeGroups:clear()
+            end
+
+        end
+
+    end
+    --[[ We either use Hurlbat or Mekki Shakki
     if player.equipment.main == 'Mekki Shakki' then
-        gear.Legs = "Nahtirah Trousers"
         gear.Ring2 = "Paqichikaji Ring"
-        gear.RingD = "Pyrosoul Ring"
         gear.Back = "Lutian Cape"
     else -- Hurlbat or Aphotic Kukri
-        gear.Legs = "Aetosaur Trousers +1"
         gear.Ring2 = "K'ayres Ring"
-        gear.RingD = "K'ayres Ring"
         gear.Back = "Sylvan Chlamys"
     end
+    --]]
 end
 
 function camo_active()

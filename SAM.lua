@@ -653,7 +653,7 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_weapon()
-    if player.equipment.range == 'Yoichinoyumi' or player.equipment.range == 'Cibitshavore' then
+    if player.equipment.range == 'Yoichinoyumi' then
         return 'Yoichi'
     end
 end
