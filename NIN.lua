@@ -209,7 +209,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-		body="War Shinobi Gi",
+		body="Kheper Jacket",
         hands="Mochizuki Tekko +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
