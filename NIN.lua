@@ -194,7 +194,7 @@ function init_gear_sets()
 		back="Yokaze Mantle",
         waist="Hurch'lan Sash",
         legs="Mochizuki Hakama +1",
-        feet="Hachiya Kyahan"
+        feet="Scamp's Sollerets"
     }
 	--sets.midcast.Ninjutsu.Resistant = set_combine(sets.midcast.Ninjutsu, {ear1="Lifestorm Earring",ear2="Psystorm Earring"})
 	
