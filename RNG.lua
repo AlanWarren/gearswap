@@ -14,14 +14,16 @@
 
  === Features ===
  1) Bow sets will activate by equipping whichever bow you defined in gear.Bow
- 2) Decoy set only applies while decoy is active AND you're using Bow.
+ 2) Decoy set only applies while decoy is active AND you're using Bow AND you're not in Mod
     * Standard Bow set uses -enmity gear, while maintaining 4-hit (with 4/4 recycle proc)
     * Decoy set removes -enmity gear for a normal 4-hit setup (3/4 or 2/4 recycle proc)
-    * Bow.Mod will ignore this feature, and always use standard set.
+    * Mod RangedMode will ignore this feature, and always use standard set.
  3) Mekki set takes off some STP pieces since I assume bloodrain + mekki combo.
- 4) Adoulin set moves around a few STP pieces, since Ionis gives save tp +10
- 5) Fenrir's earring is equipped at night for WS. You can disable this by setting use_night_earring = false
- 6) During Overkill, I use a special set for precast/midcast containing rapidshot gear. 
+ 4) The 1H (1 handed) sets are for Axes, daggers, etc. These sets try to add more STP
+ 5) Adoulin set moves around a few STP pieces, since Ionis gives save tp +10. This is very subtle, and
+    perhaps not entirely necessary, but WS TP returns are lower without Ionis, and x-hits are affected.
+ 6) Fenrir's earring is equipped at night for WS. You can disable this by setting use_night_earring = false
+ 7) During Overkill, I use a special set for precast/midcast containing rapidshot / doubleshot gear. 
 
  === In Precast ===
  1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
