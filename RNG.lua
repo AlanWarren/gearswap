@@ -16,9 +16,9 @@
  1) Bow sets will activate by equipping whichever bow you defined in gear.Bow
  2) Decoy set only applies while decoy is active AND you're using Bow.
     * Standard Bow set uses -enmity gear, while maintaining 4-hit (with 4/4 recycle proc)
-    * Decoy set removes -enmity gear for a normal 4-hit setup
+    * Decoy set removes -enmity gear for a normal 4-hit setup (3/4 or 2/4 recycle proc)
     * Bow.Mod will ignore this feature, and always use standard set.
- 3) Mekki Shakki set removes some STP since I assume bloodrain + mekki combo.
+ 3) Mekki set takes off some STP pieces since I assume bloodrain + mekki combo.
  4) Adoulin set moves around a few STP pieces, since Ionis gives save tp +10
  5) Fenrir's earring is equipped at night for WS. You can disable this by setting use_night_earring = false
  6) During Overkill, I use a special set for precast/midcast containing rapidshot gear. 
@@ -247,7 +247,7 @@ function init_gear_sets()
             legs="Orion Braccae +1"
         })
         
-        -- Bow 35 STP (with Bloodrain) needs 4/4 recycle proc (while decoy is down)
+        -- Bow 40 STP (with Mekki/Bloodrain) needs 4/4 recycle proc (while decoy is down)
         -- -46 Enmity
         sets.midcast.RangedAttack.Bow = {
             head="Arcadian Beret +1", -- Enmity -6
@@ -279,6 +279,18 @@ function init_gear_sets()
             feet="Orion Socks +1"
         })
 
+        sets.midcast.RangedAttack.Bow1H = set_combine(sets.midcast.RangedAttack.Bow, {
+            neck="Ocachi Gorget",
+            ring2="K'ayres Ring"
+        })
+        sets.midcast.RangedAttack.Mod.Bow1H = set_combine(sets.midcast.RangedAttack.Bow1H, {
+            ear1="Volley Earring",
+            hands="Sylvan Glovelettes +2",
+            ring2="Paqichikaji Ring",
+            legs="Aetosaur Trousers +1"
+        })
+        sets.midcast.RangedAttack.Acc.Bow1H = sets.midcast.RangedAttack.Acc.Bow
+
         -- Docoy is Up - don't care about -enmity so much (Bow only)
         -- 3/4 recycle necessary to 4 hit
         sets.midcast.RangedAttack.Decoy = set_combine(sets.midcast.RangedAttack.Bow, {
@@ -288,14 +300,22 @@ function init_gear_sets()
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         })
-        -- 4/4 recycle proc necessary
-        sets.midcast.RangedAttack.Decoy.Mod = set_combine(sets.midcast.RangedAttack.Decoy, {
+        sets.midcast.RangedAttack.Decoy1H = set_combine(sets.midcast.RangedAttack.Decoy, {
+            ring2="K'ayres Ring",
             legs="Aetosaur Trousers +1"
         })
         -- 5 hit
-        sets.midcast.RangedAttack.Decoy.Acc = set_combine(sets.midcast.RangedAttack.Decoy.Mod, {
+        sets.midcast.RangedAttack.Decoy.Acc = set_combine(sets.midcast.RangedAttack.Decoy, {
             neck="Iqabi Necklace",
             ring1="Hajduk Ring",
+            legs="Aetosaur Trousers +1",
+            feet="Orion Socks +1"
+        })
+        sets.midcast.RangedAttack.Decoy1H.Acc = set_combine(sets.midcast.RangedAttack.Decoy1H, {
+            neck="Iqabi Necklace",
+            ring1="Hajduk Ring",
+            ring2="Paqichikaji Ring",
+            legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         })
 
@@ -352,9 +372,19 @@ function init_gear_sets()
             legs="Orion Braccae +1",
             hands="Sigyn's Bazubands"
         })
+        sets.precast.WS['Coronach'].Adoulin = set_combine(sets.precast.WS.Adoulin, {
+            neck="Breeze Gorget",
+            waist="Thunder Belt"
+        })
 
         -- LAST STAND
         sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
+           neck="Aqua Gorget",
+           ring2="Stormsoul Ring",
+           waist="Light Belt",
+           feet="Arcadian Socks +1"
+        })
+        sets.precast.WS['Last Stand'].Adoulin = set_combine(sets.precast.WS.Adoulin, {
            neck="Aqua Gorget",
            ring2="Stormsoul Ring",
            waist="Light Belt",
@@ -393,6 +423,12 @@ function init_gear_sets()
             back="Sylvan Chlamys",
             feet="Arcadian Socks +1"
         })
+        sets.precast.WS['Namas Arrow'].Adoulin = set_combine(sets.precast.WS.Adoulin, {
+            neck="Aqua Gorget",
+            waist="Light Belt",
+            back="Sylvan Chlamys",
+            feet="Arcadian Socks +1"
+        })
 
         sets.precast.WS['Namas Arrow'].Mod = set_combine(sets.precast.WS['Namas Arrow'], {
             ear2="Tripudio Earring",
@@ -407,6 +443,13 @@ function init_gear_sets()
         })
 
         sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
+            neck="Flame Gorget",
+            waist="Light Belt",
+            feet="Arcadian Socks +1",
+            ring2="Thundersoul Ring",
+            back="Rancorous Mantle"
+        })
+        sets.precast.WS['Jishnu\'s Radiance'].Adoulin = set_combine(sets.precast.WS.Adoulin, {
             neck="Flame Gorget",
             waist="Light Belt",
             feet="Arcadian Socks +1",
@@ -708,43 +751,45 @@ function display_current_job_state(eventArgs)
 end
 
 function determine_ranged()
+    -- cleanup everything each time function is called
 	classes.CustomRangedGroups:clear()
 	classes.CustomMeleeGroups:clear()
 
     if player.equipment.range == gear.Bow then
-
-        if buffactive['Decoy Shot'] then
-            classes.CustomMeleeGroups:append('Decoy')
-		    classes.CustomRangedGroups:append('Decoy')
+        -- if decoy is up and we're not in Mod s
+        if buffactive['Decoy Shot'] and state.RangedMode ~= 'Mod' then
+            if player.equipment.main == 'Mekki Shakki' then
+                classes.CustomMeleeGroups:append('Decoy')
+		        classes.CustomRangedGroups:append('Decoy')
+            else
+                classes.CustomMeleeGroups:append('Decoy1H')
+		        classes.CustomRangedGroups:append('Decoy1H')
+            end
         else
-            classes.CustomMeleeGroups:append('Bow')
-		    classes.CustomRangedGroups:append('Bow')
+            if player.equipment.main == 'Mekki Shakki' then
+                classes.CustomMeleeGroups:append('Bow')
+		        classes.CustomRangedGroups:append('Bow')
+            else -- one handed weapon setup
+                classes.CustomMeleeGroups:append('Bow1H')
+		        classes.CustomRangedGroups:append('Bow1H')
+            end
         end
 
     elseif player.equipment.range == gear.Gun then
 
-	    if areas.Adoulin:contains(world.area) and buffactive.ionis then
-
-            if player.equipment.main == 'Mekki Shakki' then
-	            classes.CustomRangedGroups:append('Mekki')
-                classes.CustomMeleeGroups:append('Mekki')
-            else
-	            classes.CustomRangedGroups:append('Adoulin')
-	            classes.CustomMeleeGroups:append('Adoulin')
-            end
-
-        else 
-
-            if player.equipment.main == 'Mekki Shakki' then
-	            classes.CustomRangedGroups:append('Mekki')
-	            classes.CustomMeleeGroups:append('Mekki')
-            else
-	            classes.CustomRangedGroups:clear()
-	            classes.CustomMeleeGroups:clear()
-            end
-
+        if player.equipment.main == 'Mekki Shakki' then
+	        classes.CustomRangedGroups:append('Mekki')
+            classes.CustomMeleeGroups:append('Mekki')
+        else -- The default sets.midcast.RangedAttack applies
+	        classes.CustomRangedGroups:clear()
+	        classes.CustomMeleeGroups:clear()
         end
 
+    end
+    -- Add Adoulin to custom groups
+	if areas.Adoulin:contains(world.area) and buffactive.ionis then
+	    classes.CustomRangedGroups:append('Adoulin')
+	    classes.CustomMeleeGroups:append('Adoulin')
     end
 end
 
