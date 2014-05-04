@@ -296,7 +296,8 @@ function init_gear_sets()
 		back="Yokaze Mantle",
         waist="Hurch'lan Sash",
         ring1="Patricius Ring",
-        ring2="Mars's Ring",
+        --ring2="Mars's Ring",
+        ring2="Epona's Ring",
         legs="Hachiya Hakama",
         feet="Scamp's Sollerets"
     })
