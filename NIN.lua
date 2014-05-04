@@ -297,7 +297,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         legs="Hachiya Hakama",
-        feet="Manibozho Boots"
+        feet="Scamp's Sollerets"
     })
 	sets.engaged.PDT = set_combine(sets.engaged, {
 		head="Lithelimb Cap",
