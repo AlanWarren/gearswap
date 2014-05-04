@@ -289,6 +289,7 @@ function init_gear_sets()
         feet="Manibozho Boots"
     }
 	sets.engaged.Acc = set_combine(sets.engaged, {
+        ammo="Fire Bomblet",
 		head="Whirlpool Mask",
         neck="Iqabi Necklace",
 		body="Mochizuki Chainmail +1", 
