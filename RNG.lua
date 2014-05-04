@@ -2,48 +2,47 @@
 -- Orinal file credit KBEEZIE
 -- current file resides @ https://github.com/AlanWarren/gearswap
 
--- //gs show_swaps()
- 
--- === Some Notes On Sets ===
--- I've left in KBEEZIE's Unlimited Shot checks for now, but will remove soon since the JA no longer has
--- any use.  
+--[[ 
+ === Some Notes On Sets ===
+ I've left in KBEEZIE's Unlimited Shot checks for now, but will remove soon since the JA no longer has
+ any use.  
 
--- === My Modes ===
--- 1) Normal is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
--- 2) Mod adds a bit more acc for Gun, and removes the -enmity functionality from Bow
--- 3) Racc is full blown racc with minimal concern for anything else. 
+=== My Modes ===
+ 1) Normal is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
+ 2) Mod adds a bit more acc for Gun, and removes the -enmity functionality from Bow
+ 3) Racc is full blown racc with minimal concern for anything else. 
 
--- === Features ===
--- NOTE: The default sets all apply to Gun. x-hits mostly assume Ionis
--- 1) Bow sets will activate by equipping whichever bow you defined in gear.Bow
--- 2) Decoy set only applies while decoy is active AND you're using Bow. 
--- 3) Standard Bow set uses -enmity gear, while maintaining 4-hit, but only if recycle proc's 4/4 shots.
--- * However, when Decoy is up it will 4-hit with 3/4 recycle procs.
--- * If you want to ignore this feature, switch to Mod mode when using Bow. 
--- 3) Gun only: custom sets for Mekki Shakki and Adoulin are present. Adoulin is mostly there to remove some
--- STP from WS, since we get 10 save TP 
--- 4) I use Fenrir's earring at night during WS. You can disable this by setting use_night_earring = false
--- 5) During Overkill, I use a special set for precast/midcast containing rapidshot gear. 
+ === Features ===
+ 1) Bow sets will activate by equipping whichever bow you defined in gear.Bow
+ 2) Decoy set only applies while decoy is active AND you're using Bow.
+    * Standard Bow set uses -enmity gear, while maintaining 4-hit (with 4/4 recycle proc)
+    * Decoy set removes -enmity gear for a normal 4-hit setup
+    * Bow.Mod will ignore this feature, and always use standard set.
+ 3) Mekki Shakki set removes some STP since I assume bloodrain + mekki combo.
+ 4) Adoulin set moves around a few STP pieces, since Ionis gives save tp +10
+ 5) Fenrir's earring is equipped at night for WS. You can disable this by setting use_night_earring = false
+ 6) During Overkill, I use a special set for precast/midcast containing rapidshot gear. 
 
--- === In Precast ===
--- 1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
--- 2) Checks the distance to target to prevent WS from being fired when target is too far (prevents TP loss)
--- 3) Does not allow gear-swapping on weaponskills when Defense mode is enabled
--- 4) Checks to see of "Unlimited Shot" buff is on, if there's any special ammo defined in sets equipped
--- 5) Checks for empty ammo (or special without buff) and fills in the default ammunition for that weapon
---    ^ keeps empty if that ammo cannot be found, or there is no match to the weapon equipped
--- 6) Provides a low ammunition warning if current ammo in slot (counts all in inventory) is less than 15
---    ^ If you have 5 Tulfaire arrows in slot, but 20 also in inventory it see's it as 25 total
- 
--- === In Midcast ===
--- If Sneak is active, sends the cancel command before Spectral Jig finish casting
- 
--- === In Post-Midcast ===
--- If Barrage Buff is active, equips sets.BarrageMid
- 
--- === In Buff Change ===
--- If Camouflage is active, disable body swaping
--- This is done to preserve the +100 Camouflage Duration given by Orion Jerkin
+ === In Precast ===
+ 1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
+ 2) Checks the distance to target to prevent WS from being fired when target is too far (prevents TP loss)
+ 3) Does not allow gear-swapping on weaponskills when Defense mode is enabled
+ 4) Checks to see of "Unlimited Shot" buff is on, if there's any special ammo defined in sets equipped
+ 5) Checks for empty ammo (or special without buff) and fills in the default ammunition for that weapon
+    ^ keeps empty if that ammo cannot be found, or there is no match to the weapon equipped
+ 6) Provides a low ammunition warning if current ammo in slot (counts all in inventory) is less than 15
+    ^ If you have 5 Tulfaire arrows in slot, but 20 also in inventory it see's it as 25 total
+
+ === In Midcast ===
+ If Sneak is active, sends the cancel command before Spectral Jig finish casting
+
+ === In Post-Midcast ===
+ If Barrage Buff is active, equips sets.BarrageMid
+
+ === In Buff Change ===
+ If Camouflage is active, disable body swaping
+ This is done to preserve the +100 Camouflage Duration given by Orion Jerkin
+--]]
  
 function get_sets()
         -- Load and initialize the include file.
