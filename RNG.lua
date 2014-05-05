@@ -13,17 +13,17 @@
  3) Racc is full blown racc with minimal concern for anything else. 
 
  === Features ===
+ 1) Non-specific default sets are for Gun. They assume a 1 handed weapon since Hurlbat is my default for Annihilator.
+    * Gun2H set is used whenever your main weapon is equal to gear.Stave. This set was designed for Mekki + Bloodrain
  1) Bow sets will activate by equipping whichever bow you defined in gear.Bow
- 2) Decoy set only applies while decoy is active AND you're using Bow AND you're not in Mod
+    * Bow sets assume a stave + strap combination
+    * Decoy1H and Bow1H will be used whenever you're NOT using gear.Stave i.e. Hurlbat
+ 2) Decoy set only applies while decoy is active AND you're using Bow
     * Standard Bow set uses -enmity gear, while maintaining 4-hit (with 4/4 recycle proc)
     * Decoy set removes -enmity gear for a normal 4-hit setup (3/4 or 2/4 recycle proc)
     * Mod RangedMode will ignore this feature, and always use standard set.
- 3) Mekki set takes off some STP pieces since I assume bloodrain + mekki combo.
- 4) The 1H (1 handed) sets are for Axes, daggers, etc. These sets try to add more STP
- 5) Adoulin set moves around a few STP pieces, since Ionis gives save tp +10. This is very subtle, and
-    perhaps not entirely necessary, but WS TP returns are lower without Ionis, and x-hits are affected.
- 6) Fenrir's earring is equipped at night for WS. You can disable this by setting use_night_earring = false
- 7) During Overkill, I use a special set for precast/midcast containing rapidshot / doubleshot gear. 
+ 3) Fenrir's earring is equipped at night for WS. You can disable this by setting use_night_earring = false
+ 4) During Overkill, I use a special set for precast/midcast containing rapidshot / doubleshot dmg gear. 
 
  === In Precast ===
  1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
@@ -79,10 +79,11 @@ function file_unload()
 end
  
 function init_gear_sets()
-        -- Overriding Global Defaults for this job
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
+        gear.Stave = "Mekki Shakki"
 
+        -- Overriding Global Defaults for this job
         gear.default.weaponskill_neck = "Ocachi Gorget"
         gear.default.weaponskill_waist = "Elanid Belt"
  
@@ -95,7 +96,6 @@ function init_gear_sets()
         DefaultAmmo[gear.Bow] = "Achiyalabopa Arrow"
        
         -- Options: Override default values
- 
         options.OffenseModes = {'Normal', 'Melee'}
         options.RangedModes = {'Normal', 'Mod', 'Acc'}
         options.DefenseModes = {'Normal', 'PDT'}
@@ -217,8 +217,7 @@ function init_gear_sets()
             feet="Orion Socks +1"
         }
 
-        sets.midcast.RangedAttack.Adoulin = sets.midcast.RangedAttack
-        sets.midcast.RangedAttack.Mekki = set_combine(sets.midcast.RangedAttack, {
+        sets.midcast.RangedAttack.Gun2H = set_combine(sets.midcast.RangedAttack, {
             ring2="Paqichikaji Ring",
             back="Lutian Cape"
         })
@@ -228,10 +227,9 @@ function init_gear_sets()
             legs="Aetosaur Trousers +1",
             back="Lutian Cape"
         })
-        sets.midcast.RangedAttack.Mod.Mekki = set_combine(sets.midcast.RangedAttack.Mod, {
+        sets.midcast.RangedAttack.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.Mod, {
             ring2="Paqichikaji Ring"
         })
-        sets.midcast.RangedAttack.Mod.Adoulin = sets.midcast.RangedAttack.Mod
 
         -- Annihilator Acc 
         -- This requires 4/4 recycle procs
@@ -244,13 +242,13 @@ function init_gear_sets()
             legs="Aetosaur Trousers +1",
         })
 
-        sets.midcast.RangedAttack.Acc.Mekki = set_combine(sets.midcast.RangedAttack.Acc, {
-            hands="Sigyn's Bazubands",
+        sets.midcast.RangedAttack.Acc.Gun2H = set_combine(sets.midcast.RangedAttack.Acc, {
+            hands="Seiryu's Kote",
             legs="Orion Braccae +1"
         })
         
         -- Bow 40 STP (with Mekki/Bloodrain) needs 4/4 recycle proc (while decoy is down)
-        -- -46 Enmity
+        -- -Enmity is the goal, while keeping STP in slots with little sacrifice.
         sets.midcast.RangedAttack.Bow = {
             head="Arcadian Beret +1", -- Enmity -6
             neck="Huani Collar", -- Enmity -3
@@ -265,7 +263,7 @@ function init_gear_sets()
             legs="Sylvan Bragues +2", -- STP 9
             feet="Arcadian Socks +1" -- Enmity -6
         }
-        -- Mod for Bow ignores any attempt to stack -enmity 
+        -- Mod for Bow ignores -enmity.
         sets.midcast.RangedAttack.Mod.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
             neck="Ocachi Gorget",
             ear1="Volley Earring",
@@ -280,7 +278,7 @@ function init_gear_sets()
             back="Lutian Cape", -- Enmity -5
             feet="Orion Socks +1"
         })
-
+        -- If you use axe/dagger with bow, this will be used.  
         sets.midcast.RangedAttack.Bow1H = set_combine(sets.midcast.RangedAttack.Bow, {
             neck="Ocachi Gorget",
             ring2="K'ayres Ring"
@@ -307,21 +305,22 @@ function init_gear_sets()
             legs="Aetosaur Trousers +1"
         })
         -- 5 hit
-        sets.midcast.RangedAttack.Decoy.Acc = set_combine(sets.midcast.RangedAttack.Decoy, {
+        sets.midcast.RangedAttack.Acc.Decoy = set_combine(sets.midcast.RangedAttack.Decoy, {
             neck="Iqabi Necklace",
             ring1="Hajduk Ring",
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         })
-        sets.midcast.RangedAttack.Decoy1H.Acc = set_combine(sets.midcast.RangedAttack.Decoy1H, {
-            neck="Iqabi Necklace",
-            ring1="Hajduk Ring",
-            ring2="Paqichikaji Ring",
-            legs="Aetosaur Trousers +1",
-            feet="Orion Socks +1"
-        })
+        sets.midcast.RangedAttack.Acc.Decoy1H = sets.midcast.RangedAttack.Acc.Decoy
 
         -- Weaponskill sets  
+        sets.Coronach = {}
+        sets.Detonator = {}
+        sets.LastStand = {}
+        sets.Namas = {}
+        sets.Jishnus = {}
+        sets.Sidewinder = {}
+
         sets.precast.CustomWS = {}
         sets.precast.CustomWS = {
             head="Arcadian Beret +1",
@@ -337,158 +336,81 @@ function init_gear_sets()
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
-
-        sets.precast.WS = set_combine(sets.precast.CustomWS, {
-            ear2="Tripudio Earring",
-            back="Sylvan Chlamys"
-        })
-        sets.precast.WS.Adoulin = set_combine(sets.precast.WS, sets.earring)
-        sets.precast.WS.Mekki = sets.precast.WS.Adoulin
-       
+        sets.precast.WS = set_combine(sets.precast.CustomWS, sets.earring)
         sets.precast.WS.Mod = set_combine(sets.precast.WS, {
             back="Lutian Cape",
             legs="Aetosaur Trousers +1"
         })
-        sets.precast.WS.Mod.Mekki = set_combine(sets.precast.WS.Adoulin, {
-            back="Lutian Cape",
-            legs="Aetosaur Trousers +1"
-        })
-
         sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-           ear2="Clearview Earring",
-           legs="Orion Braccae +1",
+           ear2="Tripudio Earring",
+           legs="Aetosaur Trousers +1",
+           hands="Sigyn's Bazubands",
            back="Lutian Cape"
         })
 
         -- CORONACH
-        sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
+        sets.Coronach = {
            neck="Breeze Gorget",
            waist="Thunder Belt"
-        })
-
-        sets.precast.WS['Coronach'].Mod = set_combine(sets.precast.WS.Mod, sets.precast.WS['Coronach'])
-
-        sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, {
-            neck="Breeze Gorget",
-            waist="Thunder Belt",
-            legs="Orion Braccae +1",
-            hands="Sigyn's Bazubands"
-        })
-        sets.precast.WS['Coronach'].Adoulin = set_combine(sets.precast.WS.Adoulin, {
-            neck="Breeze Gorget",
-            waist="Thunder Belt"
-        })
+        }
+        sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
+        sets.precast.WS['Coronach'].Mod = set_combine(sets.precast.WS.Mod, sets.Coronach)
+        sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, sets.Coronach)
 
         -- LAST STAND
-        sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
+        sets.LastStand = {
            neck="Aqua Gorget",
            ring2="Stormsoul Ring",
            waist="Light Belt",
            feet="Arcadian Socks +1"
-        })
-        sets.precast.WS['Last Stand'].Adoulin = set_combine(sets.precast.WS.Adoulin, {
-           neck="Aqua Gorget",
-           ring2="Stormsoul Ring",
-           waist="Light Belt",
-           feet="Arcadian Socks +1"
-        })
-
-        sets.precast.WS['Last Stand'].Mod = set_combine(sets.precast.WS.Mod, sets.precast.WS['Last Stand'])
-
-        sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS.Acc, {
-            neck="Aqua Gorget",
-            ring2="Stormsoul Ring",
-            waist="Light Belt",
-            hands="Sigyn's Bazubands"
-        })
+        }
+        sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, sets.LastStand)
+        sets.precast.WS['Last Stand'].Mod = set_combine(sets.precast.WS.Mod, sets.LastStand)
+        sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS.Acc, sets.LastStand)
         
         -- DETONATOR
-        sets.precast.WS['Detonator'] = set_combine(sets.precast.WS, {
+        sets.Detonator = {
            neck="Flame Gorget",
            waist="Light Belt",
            feet="Arcadian Socks +1"
-        })
+        }
+        sets.precast.WS['Detonator'] = set_combine(sets.precast.WS, sets.Detonator)
+        sets.precast.WS['Detonator'].Mod = set_combine(sets.precast.WS.Mod, sets.Detonator)
+        sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS.Acc, sets.Detonator)
 
-        sets.precast.WS['Detonator'].Mod = set_combine(sets.precast.WS.Mod, sets.precast.WS['Detonator'])
-
-        sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS.Acc, {
-           neck="Flame Gorget",
-           waist="Light Belt",
-           feet="Arcadian Socks +1",
-           hands="Sigyn's Bazubands"
-        })
-
-        -- BOW
-        sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS, {
+        -- NAMAS
+        sets.Namas = {
             neck="Aqua Gorget",
             waist="Light Belt",
             back="Sylvan Chlamys",
             feet="Arcadian Socks +1"
-        })
-        sets.precast.WS['Namas Arrow'].Adoulin = set_combine(sets.precast.WS.Adoulin, {
-            neck="Aqua Gorget",
-            waist="Light Belt",
-            back="Sylvan Chlamys",
-            feet="Arcadian Socks +1"
-        })
+        }
+        sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS, sets.Namas)
+        sets.precast.WS['Namas Arrow'].Mod = set_combine(sets.precast.WS.Mod, sets.Namas)
+        sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS.Acc, sets.Namas)
 
-        sets.precast.WS['Namas Arrow'].Mod = set_combine(sets.precast.WS['Namas Arrow'], {
-            ear2="Tripudio Earring",
-            hands="Sylvan Glovelettes +2",
-            legs="Aetosaur Trousers +1"
-        })
-
-        sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'], {
-            back="Lutian Cape",
-            ring2="Paqichikaji Ring",
-            legs="Orion Braccae +1"
-        })
-
-        sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
+        -- JISHNUS
+        sets.Jishnus = {
             neck="Flame Gorget",
             waist="Light Belt",
             feet="Arcadian Socks +1",
             ring2="Thundersoul Ring",
             back="Rancorous Mantle"
-        })
-        sets.precast.WS['Jishnu\'s Radiance'].Adoulin = set_combine(sets.precast.WS.Adoulin, {
-            neck="Flame Gorget",
-            waist="Light Belt",
-            feet="Arcadian Socks +1",
-            ring2="Thundersoul Ring",
-            back="Rancorous Mantle"
-        })
+        }
+        sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, sets.Jishnus)
+        sets.precast.WS['Jishnu\'s Radiance'].Mod = set_combine(sets.precast.WS.Mod, sets.Jishnus)
+        sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS.Acc, sets.Jishnus)
 
-        sets.precast.WS['Jishnu\'s Radiance'].Mod = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
-            ear2="Tripudio Earring",
-            legs="Sylvan Bragues +2",
-            hands="Sylvan Glovelettes +2"
-        })
-
-        sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
-            back="Lutian Cape",
-            ring2="Paqichikaji Ring",
-            legs="Orion Braccae +1",
-            feet="Orion Socks +1"
-        })
-
-        sets.precast.WS['Sidewinder'] = set_combine(sets.precast.WS, {
+        -- SIDEWINDER
+        sets.Sidewinder = {
             neck="Aqua Gorget",
             waist="Light Belt",
             back="Buquwik Cape",
             feet="Arcadian Socks +1"
-        })
-
-        sets.precast.WS['Sidewinder'].Mod = set_combine(sets.precast.WS['Sidewinder'], {
-            ear2="Tripudio Earring",
-            legs="Aetosaur Trousers +1",
-            back="Sylvan Chlamys"
-        })
-
-        sets.precast.WS['Sidewinder'].Acc = set_combine(sets.precast.WS['Sidewinder'], {
-            legs="Aetosaur Trousers +1",
-            back="Lutian Cape"
-        })
+        }
+        sets.precast.WS['Sidewinder'] = set_combine(sets.precast.WS, sets.Sidewinder)
+        sets.precast.WS['Sidewinder'].Mod = set_combine(sets.precast.WS.Mod, sets.Sidewinder)
+        sets.precast.WS['Sidewinder'].Acc = set_combine(sets.precast.WS.Acc, sets.Sidewinder)
 
         sets.precast.WS['Refulgent Arrow'] = sets.precast.WS['Sidewinder']
         sets.precast.WS['Refulgent Arrow'].Mod = sets.precast.WS['Sidewinder'].Mod
@@ -760,7 +682,7 @@ function determine_ranged()
     if player.equipment.range == gear.Bow then
         -- if decoy is up and we're not in Mod s
         if buffactive['Decoy Shot'] and state.RangedMode ~= 'Mod' then
-            if player.equipment.main == 'Mekki Shakki' then
+            if player.equipment.main == gear.Stave then
                 classes.CustomMeleeGroups:append('Decoy')
 		        classes.CustomRangedGroups:append('Decoy')
             else
@@ -768,7 +690,7 @@ function determine_ranged()
 		        classes.CustomRangedGroups:append('Decoy1H')
             end
         else
-            if player.equipment.main == 'Mekki Shakki' then
+            if player.equipment.main == gear.Stave then
                 classes.CustomMeleeGroups:append('Bow')
 		        classes.CustomRangedGroups:append('Bow')
             else -- one handed weapon setup
@@ -779,19 +701,14 @@ function determine_ranged()
 
     elseif player.equipment.range == gear.Gun then
 
-        if player.equipment.main == 'Mekki Shakki' then
-	        classes.CustomRangedGroups:append('Mekki')
-            classes.CustomMeleeGroups:append('Mekki')
+        if player.equipment.main == gear.Stave then
+	        classes.CustomRangedGroups:append('Gun2H')
+            classes.CustomMeleeGroups:append('Gun2H')
         else -- The default sets.midcast.RangedAttack applies
 	        classes.CustomRangedGroups:clear()
 	        classes.CustomMeleeGroups:clear()
         end
 
-    end
-    -- Add Adoulin to custom groups
-	if areas.Adoulin:contains(world.area) and buffactive.ionis then
-	    classes.CustomRangedGroups:append('Adoulin')
-	    classes.CustomMeleeGroups:append('Adoulin')
     end
 end
 
