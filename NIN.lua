@@ -22,9 +22,9 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-	options.OffenseModes = {'Normal', 'Acc', 'Att'}
+	options.OffenseModes = {'Normal', 'Mid', 'Acc', 'Subtle'}
 	options.DefenseModes = {'Normal', 'Evasion', 'PDT'}
-	options.WeaponskillModes = {'Normal', 'Acc', 'Att', 'Mod'}
+	options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
 	options.CastingModes = {'Normal'}
 	options.IdleModes = {'Normal'}
 	options.RestingModes = {'Normal'}
@@ -85,11 +85,6 @@ function init_gear_sets()
 	sets.precast.FC = {}
 	--sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
     
-    --earrings for WS
-    sets.WsEarNoMadrigal = {ear2="Trux Earring"}
-    sets.WsEarMadrigal = {ear2="Kuwunga Earring"}
-    --sets.earring = select_earring()
-       
     sets.precast.WS = {
 		head="Felistris Mask",
         neck="Asperity Necklace",
@@ -514,7 +509,6 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-    --sets.earring = select_earring()
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -531,7 +525,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 	if state.Buff.Doomed then
 		equip(sets.buff.Doomed)
 	end
-    --sets.earring = select_earring()
 end
 
 
@@ -551,7 +544,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
 	sets.Kiting = select_movement()
-    --sets.earring = select_earring()
 end
 
 -- Modify the default idle set after it was constructed.
@@ -568,7 +560,6 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-    --meleeSet = set_combine(meleeSet, select_earring())
 	if state.Buff.Migawari then
 		meleeSet = set_combine(meleeSet, sets.buff.Migawari)
 	end
@@ -656,15 +647,6 @@ function determine_haste_group()
         classes.CustomMeleeGroups:append('Haste_20')
     end
 
-end
-
-function select_earring()
-	if buffactive.madrigal and buffactive.march then
-	    add_to_chat(8,'Madrigal + March Active - Using Special Earrings!')
-        return sets.WsEarMadrigal
-    else
-        return sets.WsEarNoMadrigal
-    end
 end
 
 -- Select default macro book on initial load or subjob change.
