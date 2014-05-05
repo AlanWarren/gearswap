@@ -80,7 +80,7 @@ function init_gear_sets()
 	sets.precast.JA.Meditate = {head="Wakido Kabuto",hands="Saotome Kote +2"}
 	sets.precast.JA.Seigan = {head="Unkai kabuto +2"}
 	sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto"}
-    sets.precast.JA['Third Eye'] = {head="Unkai kabuto +2", legs="Sakonji Haidate",ear1="Brutal Earring",ear2="Unkai Mimikazari"}
+    sets.precast.JA['Third Eye'] = {head="Unkai kabuto +2", legs="Sakonji Haidate"}
 	--sets.precast.JA['Blade Bash'] = {hands="Saotome Kote +2"}
 
 	-- Waltz set (chr and vit)
@@ -217,7 +217,6 @@ function init_gear_sets()
         ring2="Paguroidea Ring"
     }
 	
-	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
@@ -293,6 +292,7 @@ function init_gear_sets()
     -- Anahera needs 52 stp anywhere 
     
     -- I generally use Anahera outside of Adoulin areas, so this set aims for 47 STP + 5 from Anahera (52 total)
+    -- Note, this set assumes use of Cibitshavore (hence the arrow as ammo)
 	sets.engaged = {
         sub="Pole Grip",
         ammo=gear.RAarrow,
@@ -388,6 +388,7 @@ function init_gear_sets()
     -- GK with merits and capped skill = 682 base accuracy. Tsurumaru has +15 acc
     
     -- This set aims for Tsurumaru 4-hit. 19% DA, 25% haste
+    -- Assumes use of Cibitshavore
 	sets.engaged.Adoulin = {
         sub="Pole Grip",
         ammo=gear.RAarrow,
@@ -445,7 +446,7 @@ function init_gear_sets()
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
         back="Atheling Mantle", -- 10
-        waist="Cetl Belt",
+        waist="Cetl Belt", -- needed to cap haste
         legs="Wakido Haidate +1", -- 7
         feet="Sakonji Sune-Ate +1" -- 8
     }
