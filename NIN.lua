@@ -131,7 +131,8 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
 	sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         head="Whirlpool Mask",
-        back="Yokaze Mantle"
+        back="Yokaze Mantle",
+        legs="Hachiya Hakama +1"
     })
 	sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {
         head="Whirlpool Mask", 
@@ -300,7 +301,7 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1",
         ring1="Mars's Ring",
         back="Yokaze Mantle",
-        legs="Hachiya Hakama",
+        legs="Hachiya Hakama +1",
         feet="Scamp's Sollerets"
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -352,7 +353,7 @@ function init_gear_sets()
         ear2="Brutal Earring",
         body="Thaumas Coat",
         waist="Windbuffet Belt",
-        legs="Hachiya Hakama"
+        legs="Hachiya Hakama +1"
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, {
         ammo="Fire Bomblet",
@@ -411,7 +412,7 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
         ring2="Patricius Ring",
         waist="Hurch'lan Sash",
-        legs="Hachiya Hakama"
+        legs="Hachiya Hakama +1"
     })
     sets.engaged.Evasion.Haste_35 = set_combine(sets.engaged.Evasion.Haste_43, {
         ear1="Dudgeon Earring",
@@ -445,7 +446,7 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
         ring1="Mars's Ring",
         ring2="Patricius Ring",
-        legs="Hachiya Hakama"
+        legs="Hachiya Hakama +1"
     })
     sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Evasion.Haste_43, {
         ear1="Dudgeon Earring",
@@ -474,7 +475,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ring2="Patricius Ring",
         waist="Hurch'lan Sash",
-        legs="Hachiya Hakama"
+        legs="Hachiya Hakama +1"
     })
     sets.engaged.Evasion.Haste_25 = set_combine(sets.engaged.Evasion.Haste_43, {
         ear1="Dudgeon Earring",
@@ -505,7 +506,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         ring2="Patricius Ring",
-        legs="Hachiya Hakama"
+        legs="Hachiya Hakama +1"
     })
     sets.engaged.Evasion.Haste_20 = set_combine(sets.engaged.Evasion.Haste_43, {
         ear1="Dudgeon Earring",
