@@ -201,7 +201,7 @@ function init_gear_sets()
         }
 
         -- Annihilator Default 
-        -- STP: 37 ~ 90.8 TP after 4 hits 
+        -- STP: 37 ~ 90.8 TP after 4 hits (2/4 recycle required)
         sets.midcast.RangedAttack = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
