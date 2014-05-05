@@ -24,11 +24,11 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
-	state.CombatForm = get_combat_form()
-	state.CombatWeapon = get_combat_weapon()
-	
-	state.Buff.Sekkanoki = buffactive.sekkanoki or false
-	state.Buff.Sengikori = buffactive.sengikori or false
+    state.CombatForm = get_combat_form()
+    state.CombatWeapon = get_combat_weapon()
+    
+    state.Buff.Sekkanoki = buffactive.sekkanoki or false
+    state.Buff.Sengikori = buffactive.sengikori or false
     state.Buff['Third Eye'] = buffactive['Third Eye'] or false
     state.Buff['Meikyou Shisui'] = buffactive['Meikyou Shisui'] or false
 end
