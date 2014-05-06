@@ -133,7 +133,7 @@ function init_gear_sets()
             neck="Twilight torque",
             ear1="Volley Earring",
             ear2="Tripudio Earring",
-            body="Kheper Jacket",
+            body="Kyujutsugi",
             hands="Iuitl Wristbands +1",
             ring1="Dark Ring",
             ring2="Paguroidea Ring",
