@@ -15,8 +15,8 @@ end
 -- Setup vars that are user-independent.
 function job_setup()
 	state.Buff.Migawari = buffactive.migawari or false
-	state.Buff.Doomed = buffactive.doomed or false
     state.Buff.Innin = buffactive.innin or false
+    state.Buff.Yonin = buffactive.yonin or false
 
 	determine_haste_group()
 end
@@ -59,6 +59,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
     sets.precast.JA['Innin'] = { head="Iga Zukin +2" }
+    sets.precast.JA['Yonin'] = { legs="Iga Hakama +2" }
     
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -520,8 +521,7 @@ function init_gear_sets()
     sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.PDT)
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
-    sets.buff.Doomed = {}
-    sets.buff.Yonin = {}
+    sets.buff.Yonin = { legs="Iga Hakama +2" }
     sets.buff.Innin = { head="Iga Zukin +2" }
 end
 
@@ -560,8 +560,11 @@ end
 -- Run after the general midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-	if state.Buff.Doomed then
-		equip(sets.buff.Doomed)
+	if state.Buff.Yonin then
+		equip(sets.buff.Yonin)
+	end
+	if state.Buff.Innin then
+		equip(sets.buff.Innin)
 	end
 end
 
@@ -570,7 +573,14 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
 	if not spell.interrupted then
         if state.Buff[spell.name] ~= nil then
-            state.Buff[spell.name] = true
+            if state.Buff[spell.name] ~= 'Yonin' then
+                state.Buff[spell.name] = true
+            else
+                if not buffactive['Utsusemi: Ichi'] and not buffactive['Utsusemi: Ni'] then
+                    state.Buff.Yonin = true
+                end
+            end
+
         end
 	end
 end
@@ -592,9 +602,6 @@ function customize_idle_set(idleSet)
 	if state.Buff.Migawari then
 		idleSet = set_combine(idleSet, sets.buff.Migawari)
 	end
-	if state.Buff.Doomed then
-		idleSet = set_combine(idleSet, sets.buff.Doomed)
-	end
 	return idleSet
 end
 
@@ -603,12 +610,13 @@ function customize_melee_set(meleeSet)
 	if state.Buff.Migawari then
 		meleeSet = set_combine(meleeSet, sets.buff.Migawari)
 	end
-	if state.Buff.Doomed then
-		meleeSet = set_combine(meleeSet, sets.buff.Doomed)
-	end
     if state.Buff.Innin then
         meleeSet = set_combine(meleeSet, sets.buff.Innin)
     end
+    if state.Buff.Yonin then
+        meleeSet = set_combine(meleeSet, sets.buff.Yonin)
+    end
+
 	return meleeSet
 end
 
@@ -625,16 +633,25 @@ function job_buff_change(buff, gain)
 		determine_haste_group()
         handle_equipping_gear(player.status)
     end
-    if string.find(buff:lower(), 'utsusemi') then
-        if gain == false  then
-            -- we just lost utsusemi
-            add_to_chat(8, 'Utsusemi Lost')
+    if buff:lower() == 'innin' or buffactive.innin then
+        state.Buff.Innin = true
+        handle_equipping_gear(player.status)
+    end
+    if state.Buff.Migawari then
+        state.Buff.Migawari = true
+    end
+	--if state.Buff[buff] ~= nil then
+	--	state.Buff[buff] = gain
+    --    handle_equipping_gear(player.status)
+	--end
+    -- Counter setup
+    if string.find(buff:lower(), 'utsusemi') and gain == false then
+        if buff:lower() == 'yonin' or buffactive.yonin then
+            add_to_chat(8, 'Counter Mode Enabled!')
+            state.Buff.Yonin = true
+            handle_equipping_gear(player.status)
         end
     end
-	if state.Buff[buff] ~= nil then
-		state.Buff[buff] = gain
-        handle_equipping_gear(player.status)
-	end
 end
 
 -- Called when the player's subjob changes.
