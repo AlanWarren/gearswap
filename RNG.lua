@@ -602,6 +602,13 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
     end
 
+    -- automatically keep up these JA's
+    if buff:lower() == 'velocity shot' and gain == false then
+        send_command('@input /ja "Velocity Shot" <me>')
+    end
+    if buff:lower() == 'double shot' and gain == false then
+        send_command('@input /ja "Double Shot" <me>')
+    end
 
     --if not camo_active() then
     --   handle_equipping_gear(player.status) -- XXX: this may not be necessary to call for each buff. See Mote's MNK/DNC.lua's
