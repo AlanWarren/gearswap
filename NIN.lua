@@ -571,7 +571,7 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-	if not spell.interrupted then
+	if not spell.interrupted  then
         if state.Buff[spell.name] ~= nil then
             if state.Buff[spell.name] ~= 'Yonin' then
                 state.Buff[spell.name] = true
@@ -633,17 +633,11 @@ function job_buff_change(buff, gain)
 		determine_haste_group()
         handle_equipping_gear(player.status)
     end
-    if buff:lower() == 'innin' or buffactive.innin then
-        state.Buff.Innin = true
+    -- we don't want yonin to be true unless utsusemi is down. 
+	if state.Buff[buff] ~= nil and buff:lower() ~= 'yonin' then
+		state.Buff[buff] = gain
         handle_equipping_gear(player.status)
-    end
-    if state.Buff.Migawari then
-        state.Buff.Migawari = true
-    end
-	--if state.Buff[buff] ~= nil then
-	--	state.Buff[buff] = gain
-    --    handle_equipping_gear(player.status)
-	--end
+	end
     -- Counter setup
     if string.find(buff:lower(), 'utsusemi') and gain == false then
         if buff:lower() == 'yonin' or buffactive.yonin then
