@@ -104,9 +104,11 @@ function init_gear_sets()
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         head="Whirlpool Mask",
+        hands="Umuthi Gloves",
         back="Yokaze Mantle"
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
+        hands="Umuthi Gloves",
         legs="Hachiya Hakama +1",
         ring1="Mars's Ring",
         feet="Scamp's Sollerets"
@@ -301,6 +303,7 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged, {
         ammo="Fire Bomblet",
         head="Whirlpool Mask",
+        hands="Umuthi Gloves",
         body="Mochizuki Chainmail +1",
         ring1="Mars's Ring",
         back="Yokaze Mantle",
@@ -317,6 +320,7 @@ function init_gear_sets()
     	head="Lithelimb Cap",
         body="Qaaxo Harness",
         neck="Twilight Torque",
+        hands="Umuthi Gloves",
         ring1="Patricius Ring",
         ring2="Dark Ring",
     	back="Shadow Mantle",
@@ -333,6 +337,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Evasion = set_combine(sets.engaged.Evasion, {
     	head="Whirlpool Mask",
+        hands="Umuthi Gloves",
         body="Mochizuki Chainmail +1"
     })
     sets.engaged.Acc.Evasion = set_combine(sets.engaged.Mid.Evasion, {
@@ -361,6 +366,7 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, {
         ammo="Fire Bomblet",
         head="Whirlpool Mask",
+        hands="Umuthi Gloves",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         ring1="Mars's Ring",
@@ -408,6 +414,7 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Haste_35, {
         ammo="Fire Bomblet",
         head="Whirlpool Mask",
+        hands="Umuthi Gloves",
         ring1="Mars's Ring",
         back="Yokaze Mantle",
         feet="Scamp's Sollerets"
@@ -438,6 +445,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Trux Earring",
         body="Mochizuki Chainmail +1",
+        hands="Umuthi Gloves",
         waist="Hurch'lan Sash",
         ring1="Mars's Ring",
         back="Yokaze Mantle",
@@ -471,6 +479,7 @@ function init_gear_sets()
         ammo="Fire Bomblet",
         head="Whirlpool Mask",
         ring1="Mars's Ring",
+        hands="Umuthi Gloves",
         feet="Scamp's Sollerets",
         back="Yokaze Mantle"
     })
@@ -500,6 +509,7 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_20 = set_combine(sets.engaged.Haste_20, {
         ammo="Fire Bomblet",
         ear1="Trux Earring",
+        hands="Umuthi Gloves",
         neck="Iqabi Necklace",
         back="Yokaze Mantle",
         ring1="Mars's Ring",
