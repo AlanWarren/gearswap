@@ -533,7 +533,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
     end
-    if state.Buff['Double Shot'] then
+    if state.Buff['Double Shot'] and player.equipment.range == 'Yoichinoyumi' then
         equip(sets.buff['Double Shot'])
     end
     if state.Buff.Overkill then
