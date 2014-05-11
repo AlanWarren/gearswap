@@ -289,7 +289,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-    	body="Hachiya Chainmail +1",
+    	body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
