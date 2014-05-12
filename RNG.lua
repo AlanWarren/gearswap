@@ -322,6 +322,7 @@ function init_gear_sets()
         sets.Namas = {}
         sets.Jishnus = {}
         sets.Sidewinder = {}
+        sets.Wildfire = {}
 
         sets.precast.CustomWS = {}
         sets.precast.CustomWS = {
@@ -349,6 +350,17 @@ function init_gear_sets()
            hands="Sigyn's Bazubands",
            back="Lutian Cape"
         })
+
+        -- WILDFIRE
+        sets.Wildfire = {
+            body="Orion Jerkin +1",
+            ear1="Crematio Earring",
+            ear2="Friomisi Earring",
+            waist="Aquiline Belt"
+        }
+        sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
+        sets.precast.WS['Wildfire'].Mod = set_combine(sets.precast.WS.Mod, sets.Wildfire)
+        sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS.Acc, sets.Wildfire)
 
         -- CORONACH
         sets.Coronach = {
@@ -534,7 +546,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
     end
-    if state.Buff['Double Shot'] and player.equipment.range == 'Yoichinoyumi' then
+    if state.Buff['Double Shot'] and player.equipment.range == gear.Bow then
         equip(sets.buff['Double Shot'])
     end
     if state.Buff.Overkill then
@@ -584,7 +596,7 @@ function customize_melee_set(meleeSet)
     if state.Buff.Overkill then
     	meleeSet = set_combine(meleeSet, sets.Overkill)
     end
-    if state.Buff['Double Shot'] then
+    if state.Buff['Double Shot'] and player.equipment.range == gear.Bow then
     	meleeSet = set_combine(meleeSet, sets.buff['Double Shot'])
     end
     return meleeSet
