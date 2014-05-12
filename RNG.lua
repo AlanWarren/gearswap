@@ -356,7 +356,9 @@ function init_gear_sets()
             body="Orion Jerkin +1",
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
-            waist="Aquiline Belt"
+            waist="Aquiline Belt",
+            legs="Shneddick Tights",
+            back="Toro Cape"
         }
         sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
         sets.precast.WS['Wildfire'].Mod = set_combine(sets.precast.WS.Mod, sets.Wildfire)
