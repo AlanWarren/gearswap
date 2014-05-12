@@ -69,7 +69,6 @@ function job_setup()
     determine_ranged()
     state.Buff.Camouflage = buffactive.camouflage or false
     state.Buff.Overkill = buffactive.overkill or false
-    state.Buff['Double Shot'] = buffactive['Double Shot'] or false
 
     use_night_earring = true
 end
@@ -217,9 +216,8 @@ function init_gear_sets()
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
-
+        -- Stave set for Gun
         sets.midcast.RangedAttack.Gun2H = set_combine(sets.midcast.RangedAttack, {
-            body="Sylvan Caban +2",
             back="Lutian Cape"
         })
 
@@ -245,12 +243,12 @@ function init_gear_sets()
         })
 
         sets.midcast.RangedAttack.Acc.Gun2H = set_combine(sets.midcast.RangedAttack.Acc, {
-            hands="Seiryu's Kote",
             legs="Orion Braccae +1"
         })
         
-        -- Bow 40 STP (with Mekki/Bloodrain) needs 4/4 recycle proc (while decoy is down)
-        -- -Enmity is the goal, while keeping STP in slots with little sacrifice.
+        -- Bow 40 STP (with Mekki/Bloodrain) needs 4/4 recycle proc.
+        -- This set is only used while Decoy Shot is OFF
+        -- -Enmity is the goal, while keeping STP in slots with little sacrifice to -enmity.
         sets.midcast.RangedAttack.Bow = {
             head="Arcadian Beret +1", -- Enmity -6
             neck="Huani Collar", -- Enmity -3
@@ -265,14 +263,14 @@ function init_gear_sets()
             legs="Sylvan Bragues +2", -- STP 9
             feet="Arcadian Socks +1" -- Enmity -6
         }
-        -- Mod for Bow ignores -enmity.
+        -- Mod toggle for Bow. This set ignores the decoy shot feature, and gears for damage.
         sets.midcast.RangedAttack.Mod.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
             neck="Ocachi Gorget",
             ear1="Volley Earring",
             hands="Sylvan Glovelettes +2",
             legs="Aetosaur Trousers +1"
         })
-        -- 5 hit
+        -- High accuracy set
         sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
             hands="Seiryu's Kote",  -- STP 4 for now
             ring1="Hajduk Ring",
@@ -280,11 +278,12 @@ function init_gear_sets()
             back="Lutian Cape", -- Enmity -5
             feet="Orion Socks +1"
         })
-        -- If you use axe/dagger with bow, this will be used.  
+        -- 1 handed weapon set for Bow. (Hurlbat, etc.)
         sets.midcast.RangedAttack.Bow1H = set_combine(sets.midcast.RangedAttack.Bow, {
             neck="Ocachi Gorget",
             ring2="K'ayres Ring"
         })
+        -- Mod toggle for 1-handed wpn. with Bow. Full DD set. 
         sets.midcast.RangedAttack.Mod.Bow1H = set_combine(sets.midcast.RangedAttack.Bow1H, {
             ear1="Volley Earring",
             hands="Sylvan Glovelettes +2",
@@ -293,8 +292,7 @@ function init_gear_sets()
         })
         sets.midcast.RangedAttack.Acc.Bow1H = sets.midcast.RangedAttack.Acc.Bow
 
-        -- Docoy is Up - don't care about -enmity so much (Bow only)
-        -- 3/4 recycle necessary to 4 hit
+        -- This set will activate when using Bow, and Decoy Shot is ON
         sets.midcast.RangedAttack.Decoy = set_combine(sets.midcast.RangedAttack.Bow, {
             ear1="Volley Earring",
             neck="Ocachi Gorget",
@@ -302,11 +300,12 @@ function init_gear_sets()
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         })
+        -- 1-handed weapon set used when decoy shot is ON
         sets.midcast.RangedAttack.Decoy1H = set_combine(sets.midcast.RangedAttack.Decoy, {
             ring2="K'ayres Ring",
             legs="Aetosaur Trousers +1"
         })
-        -- 5 hit
+        -- High Accuracy set
         sets.midcast.RangedAttack.Acc.Decoy = set_combine(sets.midcast.RangedAttack.Decoy, {
             neck="Iqabi Necklace",
             ring1="Hajduk Ring",
@@ -353,12 +352,15 @@ function init_gear_sets()
 
         -- WILDFIRE
         sets.Wildfire = {
+            head="Seiokona Beret",
             body="Orion Jerkin +1",
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
+            neck="Stoicheion Medal",
             waist="Aquiline Belt",
             legs="Shneddick Tights",
-            back="Toro Cape"
+            back="Toro Cape",
+            feet="Arcadian Socks +1"
         }
         sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
         sets.precast.WS['Wildfire'].Mod = set_combine(sets.precast.WS.Mod, sets.Wildfire)
@@ -408,6 +410,7 @@ function init_gear_sets()
         -- JISHNUS
         sets.Jishnus = {
             neck="Flame Gorget",
+            ear2="Novia Earring",
             waist="Light Belt",
             feet="Arcadian Socks +1",
             ring2="Thundersoul Ring",
@@ -454,10 +457,6 @@ function init_gear_sets()
             waist="Elanid Belt",
             legs="Orion Braccae +1",
             feet="Orion Socks +1"
-        }
-
-        sets.buff['Double Shot'] = {
-            head="Sylvan Gapette +2"
         }
 
         sets.buff.Camouflage =  {body="Orion Jerkin +1"}
@@ -548,9 +547,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
     end
-    if state.Buff['Double Shot'] and player.equipment.range == gear.Bow then
-        equip(sets.buff['Double Shot'])
-    end
     if state.Buff.Overkill then
         equip(sets.Overkill)
     end
@@ -597,9 +593,6 @@ function customize_melee_set(meleeSet)
     end
     if state.Buff.Overkill then
     	meleeSet = set_combine(meleeSet, sets.Overkill)
-    end
-    if state.Buff['Double Shot'] and player.equipment.range == gear.Bow then
-    	meleeSet = set_combine(meleeSet, sets.buff['Double Shot'])
     end
     return meleeSet
 end
@@ -667,7 +660,6 @@ function job_update(cmdParams, eventArgs)
     -- called here incase buff_change failed to update value
     state.Buff.Camouflage = buffactive.camouflage or false
     state.Buff.Overkill = buffactive.overkill or false
-    state.Buff['Double Shot'] = buffactive['Double Shot'] or false
     state.Buff['Decoy Shot'] = buffactive['Decoy Shot'] or false
 
     if camo_active() then
