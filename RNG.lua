@@ -69,6 +69,7 @@ function job_setup()
     determine_ranged()
     state.Buff.Camouflage = buffactive.camouflage or false
     state.Buff.Overkill = buffactive.overkill or false
+    state.Buff['Double Shot'] = buffactive['Double Shot'] or false
 
     use_night_earring = true
 end
@@ -218,13 +219,14 @@ function init_gear_sets()
         }
 
         sets.midcast.RangedAttack.Gun2H = set_combine(sets.midcast.RangedAttack, {
-            ring2="Paqichikaji Ring",
+            body="Sylvan Caban +2",
             back="Lutian Cape"
         })
 
         -- Annihilator Mod 
         sets.midcast.RangedAttack.Mod = set_combine(sets.midcast.RangedAttack, {
             legs="Aetosaur Trousers +1",
+            ring2="Paqichikaji Ring",
             back="Lutian Cape"
         })
         sets.midcast.RangedAttack.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.Mod, {
@@ -320,6 +322,7 @@ function init_gear_sets()
         sets.Namas = {}
         sets.Jishnus = {}
         sets.Sidewinder = {}
+        sets.Wildfire = {}
 
         sets.precast.CustomWS = {}
         sets.precast.CustomWS = {
@@ -347,6 +350,19 @@ function init_gear_sets()
            hands="Sigyn's Bazubands",
            back="Lutian Cape"
         })
+
+        -- WILDFIRE
+        sets.Wildfire = {
+            body="Orion Jerkin +1",
+            ear1="Crematio Earring",
+            ear2="Friomisi Earring",
+            waist="Aquiline Belt",
+            legs="Shneddick Tights",
+            back="Toro Cape"
+        }
+        sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
+        sets.precast.WS['Wildfire'].Mod = set_combine(sets.precast.WS.Mod, sets.Wildfire)
+        sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS.Acc, sets.Wildfire)
 
         -- CORONACH
         sets.Coronach = {
@@ -440,6 +456,10 @@ function init_gear_sets()
             feet="Orion Socks +1"
         }
 
+        sets.buff['Double Shot'] = {
+            head="Sylvan Gapette +2"
+        }
+
         sets.buff.Camouflage =  {body="Orion Jerkin +1"}
 
         sets.Overkill =  {
@@ -528,6 +548,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
     end
+    if state.Buff['Double Shot'] and player.equipment.range == gear.Bow then
+        equip(sets.buff['Double Shot'])
+    end
     if state.Buff.Overkill then
         equip(sets.Overkill)
     end
@@ -574,6 +597,9 @@ function customize_melee_set(meleeSet)
     end
     if state.Buff.Overkill then
     	meleeSet = set_combine(meleeSet, sets.Overkill)
+    end
+    if state.Buff['Double Shot'] and player.equipment.range == gear.Bow then
+    	meleeSet = set_combine(meleeSet, sets.buff['Double Shot'])
     end
     return meleeSet
 end
@@ -641,6 +667,7 @@ function job_update(cmdParams, eventArgs)
     -- called here incase buff_change failed to update value
     state.Buff.Camouflage = buffactive.camouflage or false
     state.Buff.Overkill = buffactive.overkill or false
+    state.Buff['Double Shot'] = buffactive['Double Shot'] or false
     state.Buff['Decoy Shot'] = buffactive['Decoy Shot'] or false
 
     if camo_active() then

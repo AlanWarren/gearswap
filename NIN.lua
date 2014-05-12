@@ -16,7 +16,7 @@ end
 function job_setup()
 	state.Buff.Migawari = buffactive.migawari or false
     state.Buff.Innin = buffactive.innin or false
-    state.Buff.Yonin = buffactive.yonin or false
+    --state.Buff.Yonin = buffactive.yonin or false
 
 	determine_haste_group()
 end
@@ -59,7 +59,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
     sets.precast.JA['Innin'] = { head="Iga Zukin +2" }
-    sets.precast.JA['Yonin'] = { legs="Iga Hakama +2" }
+    --sets.precast.JA['Yonin'] = { legs="Iga Hakama +2" }
     
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -290,7 +290,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-    	body="Hachiya Chainmail +1",
+    	body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
@@ -305,6 +305,7 @@ function init_gear_sets()
         head="Whirlpool Mask",
         hands="Umuthi Gloves",
         body="Mochizuki Chainmail +1",
+        hands="Umuthi Gloves",
         ring1="Mars's Ring",
         back="Yokaze Mantle",
         legs="Hachiya Hakama +1",
@@ -319,6 +320,7 @@ function init_gear_sets()
     sets.engaged.PDT = set_combine(sets.engaged, {
     	head="Lithelimb Cap",
         body="Qaaxo Harness",
+        hands="Umuthi Gloves",
         neck="Twilight Torque",
         hands="Umuthi Gloves",
         ring1="Patricius Ring",
@@ -369,6 +371,7 @@ function init_gear_sets()
         hands="Umuthi Gloves",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
+        hands="Umuthi Gloves",
         ring1="Mars's Ring",
     	back="Yokaze Mantle",
         feet="Scamp's Sollerets"
@@ -421,6 +424,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
         ring2="Patricius Ring",
+        hands="Umuthi Gloves",
         waist="Hurch'lan Sash",
         legs="Hachiya Hakama +1"
     })
@@ -444,6 +448,7 @@ function init_gear_sets()
         ammo="Fire Bomblet",
         neck="Iqabi Necklace",
         ear1="Trux Earring",
+        hands="Umuthi Gloves",
         body="Mochizuki Chainmail +1",
         hands="Umuthi Gloves",
         waist="Hurch'lan Sash",
@@ -478,6 +483,7 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, {
         ammo="Fire Bomblet",
         head="Whirlpool Mask",
+        hands="Umuthi Gloves",
         ring1="Mars's Ring",
         hands="Umuthi Gloves",
         feet="Scamp's Sollerets",
@@ -531,7 +537,7 @@ function init_gear_sets()
     sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.PDT)
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
-    sets.buff.Yonin = { legs="Iga Hakama +2" }
+    sets.Counter = { legs="Iga Hakama +2" }
     sets.buff.Innin = { head="Iga Zukin +2" }
 end
 
@@ -570,9 +576,6 @@ end
 -- Run after the general midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-	if state.Buff.Yonin then
-		equip(sets.buff.Yonin)
-	end
 	if state.Buff.Innin then
 		equip(sets.buff.Innin)
 	end
@@ -581,16 +584,11 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-	if not spell.interrupted  then
-        if state.Buff[spell.name] ~= nil then
-            if state.Buff[spell.name] ~= 'Yonin' then
-                state.Buff[spell.name] = true
-            else
-                if not buffactive['Utsusemi: Ichi'] and not buffactive['Utsusemi: Ni'] then
-                    state.Buff.Yonin = true
-                end
-            end
-
+	if not spell.interrupted then
+        if spell.english == "Migawari: Ichi" then
+           state.Buff.Migawari = true
+        elseif spell.english == "Innin" then
+           state.Buff.Innin = true
         end
 	end
 end
@@ -623,9 +621,6 @@ function customize_melee_set(meleeSet)
     if state.Buff.Innin then
         meleeSet = set_combine(meleeSet, sets.buff.Innin)
     end
-    if state.Buff.Yonin then
-        meleeSet = set_combine(meleeSet, sets.buff.Yonin)
-    end
 
 	return meleeSet
 end
@@ -649,13 +644,16 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
 	end
     -- Counter setup
-    if string.find(buff:lower(), 'utsusemi') and gain == false then
-        if buff:lower() == 'yonin' or buffactive.yonin then
-            add_to_chat(8, 'Counter Mode Enabled!')
-            state.Buff.Yonin = true
-            handle_equipping_gear(player.status)
-        end
-    end
+    --if string.find(buff:lower(), 'utsusemi') and gain == false then
+    --    if buffactive.yonin then
+    --        add_to_chat(8, 'Counter Mode Enabled!')
+    --        state.Buff.Yonin = true
+    --        handle_equipping_gear(player.status)
+    --    end
+    -- elseif string.find(buff:lower(), 'utsusemi') and gain then
+    --    state.Buff.Yonin = false
+    --    handle_equipping_gear(player.status)
+    -- end
 end
 
 -- Called when the player's subjob changes.
