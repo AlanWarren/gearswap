@@ -219,13 +219,14 @@ function init_gear_sets()
         }
 
         sets.midcast.RangedAttack.Gun2H = set_combine(sets.midcast.RangedAttack, {
-            ring2="Paqichikaji Ring",
+            body="Sylvan Caban +2",
             back="Lutian Cape"
         })
 
         -- Annihilator Mod 
         sets.midcast.RangedAttack.Mod = set_combine(sets.midcast.RangedAttack, {
             legs="Aetosaur Trousers +1",
+            ring2="Paqichikaji Ring",
             back="Lutian Cape"
         })
         sets.midcast.RangedAttack.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.Mod, {
