@@ -189,13 +189,27 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring"
     })
+    -- CHR Mod
+    sets.precast.WS['Tachi: Ageha'] = {
+        head="Sakonji Kabuto +1",
+        neck="Shadow Gorget",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+        body="Phorcys Korazin",
+        hands="Wakido Kote +1",
+        ring1="Rajas Ring",
+        ring2="Pyrosoul Ring",
+        back="Buquwik Cape",
+        waist="Soil Belt",
+        legs="Wakido Haidate +1",
+        feet="Sakonji Sune-ate +1"
+    }
+    
     sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Flame Gorget",waist="Light Belt"})
     
     sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {neck="Aqua Gorget",waist="Windbuffet Belt"})
     
     sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {neck="Breeze Gorget",waist="Windbuffet Belt"})
-    
-    sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",waist="Soil Belt"})
     
     sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",waist="Soil Belt"})
     
@@ -297,17 +311,17 @@ function init_gear_sets()
         sub="Pole Grip",
         ammo=gear.RAarrow,
         head="Otomi Helm",
-        neck="Asperity Necklace", -- 3
-        ear1="Bladeborn Earring", -- 1
-        ear2="Steelflash Earring", -- 1
-        body="Sakonji Domaru +1", -- 8
-        hands="Wakido Kote +1",-- 5
-        ring1="Rajas Ring", -- 5
+        neck="Asperity Necklace",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+        body="Sakonji Domaru +1",
+        hands="Wakido Kote +1",
+        ring1="Rajas Ring", 
         ring2="K'ayres Ring", 
-        back="Atheling Mantle",  -- 10
+        back="Atheling Mantle", 
         waist="Windbuffet Belt",
-        legs="Wakido Haidate +1", -- 7
-        feet="Otronif boots +1" -- 7
+        legs="Wakido Haidate +1",
+        feet="Otronif boots +1"
     }
     
     sets.engaged.Mid = set_combine(sets.engaged, {
