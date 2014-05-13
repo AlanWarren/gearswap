@@ -446,14 +446,14 @@ function init_gear_sets()
         -- Barrage Set
         sets.BarrageMid = {
             head="Arcadian Beret +1",
-            neck="Rancor Collar",
-            ear1="Flame Pearl",
-            ear2="Flame Pearl",
+            neck="Iqabi Necklace",
+            ear1="Volley Earring",
+            ear2="Clearview Earring",
             body="Kyujutsugi",
             hands="Orion Bracers +1",
-            ring1="Rajas Ring",
+            ring1="Paqichikaji Ring",
             ring2="Hajduk Ring",
-            back="Buquwik Cape",
+            back="Lutian Cape",
             waist="Elanid Belt",
             legs="Orion Braccae +1",
             feet="Orion Socks +1"
