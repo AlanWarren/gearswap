@@ -87,7 +87,7 @@ function init_gear_sets()
 	sets.precast.JA['Triple Shot'] = {body="Navarch's Frac +2"}
 	sets.precast.JA['Snake Eye'] = {legs="Commodore Culottes +1"}
 	sets.precast.JA['Wild Card'] = {feet="Commodore Bottes +2"}
-	sets.precast.JA['Random Deal'] = {body="Commodore Frac"}
+	sets.precast.JA['Random Deal'] = {body="Lanun Frac"}
 	sets.precast.JA['Fold'] = {body="Commodore Gants +2"}
 
 	
@@ -179,7 +179,7 @@ function init_gear_sets()
         neck="Stoicheion Medal",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
-		body="Manibozho Jerkin",
+		body="Lanun Frac",
         hands="Iuitl Wristbands +1",
         ring1="Stormsoul Ring",
         ring2="Stormsoul Ring",
@@ -210,7 +210,7 @@ function init_gear_sets()
         neck="Atzintli Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-		body="Navarch's Frac +2",
+		body="Lanun Frac",
         hands="Iuitl Wristbands +1",
         ring1="Rajas Ring",
         ring2="Stormsoul Ring",
@@ -223,6 +223,7 @@ function init_gear_sets()
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
         head="Lithelimb Cap",
         hands="Sigyn's Bazubands",
+		body="Navarch's Frac +2",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         back="Navarch's Mantle"
@@ -265,12 +266,12 @@ function init_gear_sets()
         ammo=gear.RAbullet,
 		head="Lithelimb Cap",
         neck="Twilight Torque",
-        ear1="Clearview Earring",
-        ear2="Volley Earring",
-		body="Kheper Jacket",
+        ear1="Volley Earring",
+        ear2="Clearview Earring",
+		body="Lanun Frac",
         hands="Iuitl Wristbands +1",
-        ring1="Dark Ring",
-        ring2="Paguroidea Ring",
+        ring1="Patricius Ring",
+        ring2="Dark Ring",
 		back="Shadow Mantle",
         waist="Commodore Belt",
         legs="Crimson Cuisses",
