@@ -221,6 +221,7 @@ function init_gear_sets()
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
         head="Lithelimb Cap",
+        hands="Sigyn's Bazubands",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         back="Navarch's Mantle"
@@ -238,12 +239,12 @@ function init_gear_sets()
         ear1="Clearview Earring",
         ear2="Volley Earring",
 		body="Navarch's Frac +2",
-        hands="Iuitl Wristbands +1",
+        hands="Sigyn's Bazubands",
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
 		back="Libeccio Mantle",
         waist="Commodore Belt",
-        legs="Nahtirah Trousers",
+        legs="Aetosaur Trousers +1",
         feet="Iuitl Gaiters"
     }
 
@@ -284,7 +285,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
 		body="Navarch's Frac +2",
-        hands="Iuitl Wristbands +1",
+        hands="Sigyn's Bazubands",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
 		back="Shadow Mantle",
