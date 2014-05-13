@@ -279,10 +279,9 @@ function init_gear_sets()
     }
 
 	sets.idle.Town = {
-        main="Surcouf's Jambiya",
         range="Vanir Gun",
         ammo=gear.RAbullet,
-		head="Ligthelimb Cap",
+		head="Lithelimb Cap",
         neck="Ocachi Gorget",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
