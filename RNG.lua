@@ -462,12 +462,18 @@ function init_gear_sets()
         sets.buff.Camouflage =  {body="Orion Jerkin +1"}
 
         sets.Overkill =  {
+            head="Arcadian Beret +1",
+            neck="Ocachi Gorget",
+            ear1="Volley Earring",
+            ear2="Tripudio Earring",
             body="Arcadian Jerkin",
+            hands="Arcadian Bracers +1",
+            ring1="Rajas Ring",
+            ring2="Paqichikaji Ring",
+            back="Lutian Cape",
+            waist="Elanid Belt",
             feet="Arcadian Socks +1"
         }
-        sets.Overkill.PreShot =  set_combine(sets.Overkill, {
-            head="Orion Beret +1"
-        })
 end
 
  
@@ -525,7 +531,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
     elseif state.Buff.Overkill then
-        equip(sets.Overkill.PreShot)
+        equip(sets.Overkill)
     end
     sets.earring = select_earring()
 end
