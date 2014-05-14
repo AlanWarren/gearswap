@@ -560,6 +560,14 @@ function job_precast(spell, action, spellMap, eventArgs)
             -- If sneak is active when using, cancel before completion
             send_command('cancel 71')
     end
+    -- cancel utsusemi if shadows are up already
+    if string.find(spell.english, 'Utsusemi') then
+        if buffactive['Copy Image (3)'] or buffactive['Copy Image (4)'] then
+            cancel_spell()
+            add_to_chat(123, spell.english .. ' Canceled: [3+ Images]')
+            return
+        end
+    end
 
 end
 
@@ -572,6 +580,11 @@ function job_midcast(spell, action, spellMap, eventArgs)
 		-- Default base equipment layer of fast recast.
 		equip(sets.midcast.FastRecast)
 	end
+    if spell.english == "Monomi: Ichi" then
+        if buffactive['Sneak'] then
+            send_command('@wait 1.7;cancel sneak')
+        end
+    end
 end
 
 -- Run after the general midcast() is done.
