@@ -224,7 +224,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
     	back="Shadow Mantle",
-        waist="Nusku's Sash",
+        waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
         feet="Danzo sune-ate"
     }
@@ -248,7 +248,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Epona's Ring",
     	back="Yokaze Mantle",
-        waist="Nusku's Sash",
+        waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
@@ -295,7 +295,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Epona's Ring",
     	back="Atheling Mantle",
-        waist="Nusku's Sash",
+        waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
         feet="Manibozho Boots"
     }
@@ -441,7 +441,7 @@ function init_gear_sets()
         head="Iga Zukin +2",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        waist="Nusku's Sash",
+        waist="Patentia Sash",
         legs="Mochizuki Hakama +1"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
@@ -477,7 +477,7 @@ function init_gear_sets()
     	body="Mochizuki Chainmail +1",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        waist="Nusku's Sash",
+        waist="Patentia Sash",
         legs="Mochizuki Hakama +1"
     })
     sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, {
@@ -509,7 +509,7 @@ function init_gear_sets()
     	body="Mochizuki Chainmail +1",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        waist="Nusku's Sash",
+        waist="Patentia Sash",
         legs="Mochizuki Hakama +1"
     })
     sets.engaged.Mid.Haste_20 = set_combine(sets.engaged.Haste_20, {

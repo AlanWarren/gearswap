@@ -269,7 +269,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Epona's Ring",
 		back="Shadow Mantle",
-        waist="Nusku's Sash",
+        waist="Patentia Sash",
         legs="Nahtirah Trousers",
         feet="Trotter Boots"
     }
@@ -293,7 +293,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
-        waist="Nusku's Sash",
+        waist="Patentia Sash",
         legs="Iuitl Tights",
         feet="Iuitl Gaiters"
     }
@@ -306,7 +306,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Epona's Ring",
 		back="Shadow Mantle",
-        waist="Nusku's Sash",
+        waist="Patentia Sash",
         legs="Iuitl Tights",
         feet="Iuitl Gaiters"
     }
@@ -344,7 +344,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
-        waist="Nusku's Sash",
+        waist="Patentia Sash",
         legs="Manibozho Brais",
         feet="Plunderer's Poulaines"
     }
@@ -379,7 +379,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Epona's Ring",
 		back="Shadow Mantle",
-        waist="Nusku's Sash",
+        waist="Patentia Sash",
         legs="Iuitl Tights",
         feet="Iuitl Gaiters"
     }
