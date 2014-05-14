@@ -145,9 +145,9 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Epona's Ring",
 		back="Atheling Mantle",
-        waist="Cetl Belt",
+        waist="Elanid Belt",
         legs="Nahtirah Trousers",
-        feet="Iuitl Gaiters"
+        feet="Plunderer's Poulaines"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
             head="Whirlpool Mask",
