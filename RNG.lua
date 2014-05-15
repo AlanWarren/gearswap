@@ -298,6 +298,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             hands="Sylvan Glovelettes +2",
             legs="Nahtirah Trousers",
+            waist="Elanid Belt",
             feet="Orion Socks +1"
         })
         -- 1-handed weapon set used when decoy shot is ON
