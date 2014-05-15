@@ -375,7 +375,7 @@ function set_spell_obi_cape_ring(spell)
 			cape.name = "Twilight Cape"
 		end
 		if player.inventory['Zodiac Ring'] and spell.english ~= 'Impact' and
-			not S{'DivineMagic','DarkMagic','HealingMagic'}:contains(spell.skill) then
+			not S{'Divine Magic','Dark Magic','Healing Magic'}:contains(spell.skill) then
 			ring.name = "Zodiac Ring"
 		end
 	end
