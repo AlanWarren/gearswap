@@ -297,7 +297,7 @@ function init_gear_sets()
     	back="Atheling Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Manibozho Boots"
+        feet="Otronif Boots +1"
     }
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
