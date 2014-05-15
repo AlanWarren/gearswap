@@ -30,7 +30,7 @@ function job_setup()
     state.Buff.Sekkanoki = buffactive.sekkanoki or false
     state.Buff.Sengikori = buffactive.sengikori or false
     state.Buff['Third Eye'] = buffactive['Third Eye'] or false
-    state.Buff['Meikyou Shisui'] = buffactive['Meikyou Shisui'] or false
+    state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
 end
 
 
@@ -508,7 +508,7 @@ function init_gear_sets()
     
     sets.buff.Sekkanoki = {hands="Unkai Kote +2"}
     sets.buff.Sengikori = {}
-    sets.buff['Meikyou Shisui'] = {feet="Sakonji Sune-ate +1"}
+    sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate +1"}
     
     sets.thirdeye = {legs="Sakonji Haidate"}
     sets.bow = {ammo=gear.RAarrow}
@@ -542,8 +542,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 		if state.Buff.Sengikori then
 			equip(sets.buff.Sengikori)
 		end
-		if state.Buff['Meikyou Shisui'] then
-			equip(sets.buff['Meikyou Shisui'])
+		if state.Buff['Meikyo Shisui'] then
+			equip(sets.buff['Meikyo Shisui'])
 		end
 	end
     if spell.english == "Third Eye" then
