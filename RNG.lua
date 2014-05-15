@@ -538,6 +538,9 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
+    --if spell.action_type == 'Ranged Attack' then
+    --    classes.CustomClass = player.equipment.ranged
+    --end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
         -- If sneak is active when using, cancel before completion
         send_command('cancel 71')
