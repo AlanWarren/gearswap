@@ -86,8 +86,8 @@ function init_gear_sets()
     }
     
     -- Fast cast sets for spells
-    sets.precast.FC = {}
-    --sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
+    sets.precast.FC = {waist="Hurch'lan Sash"}
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {body="Mochizuki Chainmail +1"})
     
     sets.precast.WS = {
     	head="Felistris Mask",
