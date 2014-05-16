@@ -599,3 +599,4 @@ selfCommandMaps = {
 	['naked']    = handle_naked,
 	['test']     = handle_test}
 
+

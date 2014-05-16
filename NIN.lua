@@ -16,7 +16,7 @@ end
 function job_setup()
 	state.Buff.Migawari = buffactive.migawari or false
     state.Buff.Innin = buffactive.innin or false
-    --state.Buff.Yonin = buffactive.yonin or false
+    state.Buff.Yonin = buffactive.yonin or false
 
 	determine_haste_group()
 end
@@ -59,7 +59,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
     sets.precast.JA['Innin'] = { head="Iga Zukin +2" }
-    --sets.precast.JA['Yonin'] = { legs="Iga Hakama +2" }
+    sets.precast.JA['Yonin'] = { legs="Iga Hakama +2" }
     
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -77,11 +77,12 @@ function init_gear_sets()
     sets.precast.Step = {
     	head="Whirlpool Mask",
     	body="Mochizuki Chainmail +1",
-        hands="Otronif Gloves",
+        neck="Iqabi Necklace",
+        hands="Umuthi Gloves",
     	back="Yokaze Mantle",
         waist="Hurch'lan Sash",
-        legs="Manibozho Brais",
-        feet="Manibozho Boots"
+        legs="Hachiya Hakama +1",
+        feet="Scamp's Sollerets"
     }
     
     -- Fast cast sets for spells
@@ -559,6 +560,14 @@ function job_precast(spell, action, spellMap, eventArgs)
             -- If sneak is active when using, cancel before completion
             send_command('cancel 71')
     end
+    -- cancel utsusemi if shadows are up already
+    if string.find(spell.english, 'Utsusemi') then
+        if buffactive['Copy Image (3)'] or buffactive['Copy Image (4)'] then
+            cancel_spell()
+            add_to_chat(123, spell.english .. ' Canceled: [3+ Images]')
+            return
+        end
+    end
 
 end
 
@@ -571,6 +580,11 @@ function job_midcast(spell, action, spellMap, eventArgs)
 		-- Default base equipment layer of fast recast.
 		equip(sets.midcast.FastRecast)
 	end
+    if spell.english == "Monomi: Ichi" then
+        if buffactive['Sneak'] then
+            send_command('@wait 1.7;cancel sneak')
+        end
+    end
 end
 
 -- Run after the general midcast() is done.
@@ -584,11 +598,22 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-	if not spell.interrupted then
-        if spell.english == "Migawari: Ichi" then
-           state.Buff.Migawari = true
-        elseif spell.english == "Innin" then
-           state.Buff.Innin = true
+    -- If spell is not interrupted. This also applies when you try using a JA with it's timer down.
+    -- If the recast timer isn't ready, aftercast is called with spell.interrupted == true
+	if not spell.interrupted  then
+        -- We check if state.Buff.spell is defined, so we don't created variable instances for every action taken
+        if state.Buff[spell.name] ~= nil then
+            -- We need to set the spell being used to true, but only if the spell is not Yonin.
+            -- I only want yonin to be true if utsusemi shadows are down.
+            if state.Buff[spell.name] ~= 'Yonin' then 
+                state.Buff[spell.name] = true
+            else
+                -- we must have used Yonin. check if shadows are down
+                if not buffactive['Copy Image'] then
+                    state.Buff.Yonin = true
+                end
+            end
+
         end
 	end
 end
@@ -621,6 +646,9 @@ function customize_melee_set(meleeSet)
     if state.Buff.Innin then
         meleeSet = set_combine(meleeSet, sets.buff.Innin)
     end
+    if state.Buff.Yonin then
+        meleeSet = set_combine(meleeSet, sets.buff.Yonin)
+    end
 
 	return meleeSet
 end
@@ -644,16 +672,18 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
 	end
     -- Counter setup
-    --if string.find(buff:lower(), 'utsusemi') and gain == false then
-    --    if buffactive.yonin then
-    --        add_to_chat(8, 'Counter Mode Enabled!')
-    --        state.Buff.Yonin = true
-    --        handle_equipping_gear(player.status)
-    --    end
-    -- elseif string.find(buff:lower(), 'utsusemi') and gain then
-    --    state.Buff.Yonin = false
-    --    handle_equipping_gear(player.status)
-    -- end
+    -- if we just lost utsusemi, check if yonin is active and set it to true
+    if string.find(buff:lower(), 'copy image') and gain == false then
+        if buffactive.yonin then
+            add_to_chat(8, 'Counter Mode Enabled!')
+            state.Buff.Yonin = true
+            handle_equipping_gear(player.status)
+        end
+    -- if we just gained utsusemi, make sure we disable yonin mode
+    elseif string.find(buff:lower(), 'copy image') and gain then
+        state.Buff.Yonin = false
+        handle_equipping_gear(player.status)
+    end
 end
 
 -- Called when the player's subjob changes.
