@@ -192,17 +192,17 @@ function init_gear_sets()
     -- CHR Mod
     sets.precast.WS['Tachi: Ageha'] = {
         head="Sakonji Kabuto +1",
-        neck="Shadow Gorget",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-        body="Phorcys Korazin",
+        neck="Justice Torque",
+        ear1="Psystorm Earring",
+        ear2="Lifestorm Earring",
+        body="Unkai Domaru +2",
         hands="Wakido Kote +1",
         ring1="Rajas Ring",
         ring2="Pyrosoul Ring",
         back="Buquwik Cape",
         waist="Soil Belt",
         legs="Wakido Haidate +1",
-        feet="Sakonji Sune-ate +1"
+        feet="Scamp's Sollerets"
     }
     
     sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Flame Gorget",waist="Light Belt"})
