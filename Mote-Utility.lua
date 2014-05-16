@@ -511,6 +511,3 @@ function get_expanded_set(baseSet, str)
 	
 	return cur
 end
-
-
-

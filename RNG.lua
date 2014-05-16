@@ -259,7 +259,7 @@ function init_gear_sets()
             ring1="Rajas Ring", -- STP 5
             ring2="Paqichikaji Ring", -- Enmity -3
             back="Sylvan Chlamys", -- STP 5 Enmity -3
-            waist="Elanid Belt", -- Enmity -3
+            waist="Patentia Sash", -- Enmity -3
             legs="Sylvan Bragues +2", -- STP 9
             feet="Arcadian Socks +1" -- Enmity -6
         }
@@ -298,6 +298,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             hands="Sylvan Glovelettes +2",
             legs="Nahtirah Trousers",
+            waist="Elanid Belt",
             feet="Orion Socks +1"
         })
         -- 1-handed weapon set used when decoy shot is ON
