@@ -670,7 +670,7 @@ function job_buff_change(buff, gain)
 	end
     -- Counter setup
     -- if we just lost utsusemi, check if yonin is active and set it to true
-    if string.find(buff:lower(), 'copy image') and gain == false then
+    if buff == 'Copy Image (1)' and gain == false then
         if buffactive.yonin then
             add_to_chat(8, 'Counter Mode Enabled!')
             state.Buff.Yonin = true
