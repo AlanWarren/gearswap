@@ -298,7 +298,7 @@ function init_gear_sets()
     	back="Atheling Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Otronif Boots +1"
+        feet="Koga Kyahan +2"
     }
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
@@ -508,7 +508,8 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         waist="Patentia Sash",
-        legs="Mochizuki Hakama +1"
+        legs="Mochizuki Hakama +1",
+        feet="Koga Kyahan +2"
     })
     sets.engaged.Mid.Haste_20 = set_combine(sets.engaged.Haste_20, {
         ammo="Fire Bomblet",
