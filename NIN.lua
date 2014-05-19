@@ -133,7 +133,7 @@ function init_gear_sets()
         body="Qaaxo Harness",
         legs="Nahtirah Trousers",
         waist="Soil belt",
-        feet="Koga Kyahan +2"
+        feet="Otronif Boots +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
@@ -299,7 +299,7 @@ function init_gear_sets()
     	back="Atheling Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Koga Kyahan +2"
+        feet="Otronif Boots +1"
     }
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
@@ -337,7 +337,7 @@ function init_gear_sets()
         body="Qaaxo Harness",
     	back="Yokaze Mantle",
         ring1="Patricius Ring",
-        feet="Koga Kyahan +2"
+        feet="Otronif Boots +1"
     })
     sets.engaged.Mid.Evasion = set_combine(sets.engaged.Evasion, {
     	head="Whirlpool Mask",
@@ -509,8 +509,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         waist="Patentia Sash",
-        legs="Mochizuki Hakama +1",
-        feet="Koga Kyahan +2"
+        legs="Mochizuki Hakama +1"
     })
     sets.engaged.Mid.Haste_20 = set_combine(sets.engaged.Haste_20, {
         ammo="Fire Bomblet",
