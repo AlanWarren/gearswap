@@ -174,7 +174,7 @@ function init_gear_sets()
         hands="Mochizuki Tekko +1",
     	waist="Hurch'lan Sash",
         legs="Mochizuki Hakama +1",
-        feet="Otronif Boots +1"
+        feet="Mochizuki Kyahan +1"
     }
     	
     -- any ninjutsu cast on self
@@ -193,7 +193,7 @@ function init_gear_sets()
     	back="Toro Cape",
         waist="Hurch'lan Sash",
         legs="Mochizuki Hakama +1",
-        feet="Hachiya Kyahan"
+        feet="Mochizuki Kyahan +1"
     }
     -- Enfeebling Ninjutsu (skill)
     sets.midcast.EnfeebleNinjutsu = {
@@ -206,7 +206,7 @@ function init_gear_sets()
     	back="Yokaze Mantle",
         waist="Hurch'lan Sash",
         legs="Mochizuki Hakama +1",
-        feet="Scamp's Sollerets"
+        feet="Mochizuki Kyahan +1"
     }
     --sets.midcast.Ninjutsu.Resistant = set_combine(sets.midcast.Ninjutsu, {ear1="Lifestorm Earring",ear2="Psystorm Earring"})
     
@@ -311,7 +311,7 @@ function init_gear_sets()
         ring1="Mars's Ring",
         back="Yokaze Mantle",
         legs="Hachiya Hakama +1",
-        feet="Scamp's Sollerets"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
@@ -337,7 +337,7 @@ function init_gear_sets()
         body="Qaaxo Harness",
     	back="Yokaze Mantle",
         ring1="Patricius Ring",
-        feet="Otronif Boots +1"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Mid.Evasion = set_combine(sets.engaged.Evasion, {
     	head="Whirlpool Mask",
@@ -375,7 +375,7 @@ function init_gear_sets()
         hands="Umuthi Gloves",
         ring1="Mars's Ring",
     	back="Yokaze Mantle",
-        feet="Scamp's Sollerets"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, {
         neck="Iqabi Necklace",
@@ -421,7 +421,7 @@ function init_gear_sets()
         hands="Umuthi Gloves",
         ring1="Mars's Ring",
         back="Yokaze Mantle",
-        feet="Scamp's Sollerets"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
         ring2="Patricius Ring",
@@ -454,7 +454,7 @@ function init_gear_sets()
         waist="Hurch'lan Sash",
         ring1="Mars's Ring",
         back="Yokaze Mantle",
-        feet="Scamp's Sollerets"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         head="Whirlpool Mask",
@@ -485,8 +485,8 @@ function init_gear_sets()
         head="Whirlpool Mask",
         hands="Umuthi Gloves",
         ring1="Mars's Ring",
-        feet="Scamp's Sollerets",
-        back="Yokaze Mantle"
+        back="Yokaze Mantle",
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, {
         neck="Iqabi Necklace",
@@ -518,7 +518,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         back="Yokaze Mantle",
         ring1="Mars's Ring",
-        feet="Scamp's Sollerets"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, {
         ear1="Dudgeon Earring",
@@ -670,7 +670,7 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
 	end
     -- Counter setup
-    -- if we just lost utsusemi, check if yonin is active and set it to true
+    -- if we just lost our last shadow, check if yonin is active and set it to true
     if buff == 'Copy Image (1)' and gain == false then
         if buffactive.yonin then
             add_to_chat(8, 'Counter Mode Enabled!')
@@ -679,6 +679,7 @@ function job_buff_change(buff, gain)
         end
     -- if we just gained utsusemi, make sure we disable yonin mode
     elseif string.find(buff:lower(), 'copy image') and gain then
+        add_to_chat(8, 'Counter Mode Disabled!')
         state.Buff.Yonin = false
         handle_equipping_gear(player.status)
     end
