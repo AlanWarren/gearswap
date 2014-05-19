@@ -336,7 +336,7 @@ function init_gear_sets()
         body="Qaaxo Harness",
     	back="Yokaze Mantle",
         ring1="Patricius Ring",
-        feet="Otronif Boots +1"
+        feet="Koga Kyahan +2"
     })
     sets.engaged.Mid.Evasion = set_combine(sets.engaged.Evasion, {
     	head="Whirlpool Mask",
