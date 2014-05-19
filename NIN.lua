@@ -132,7 +132,8 @@ function init_gear_sets()
         back="Rancorous Mantle",
         body="Qaaxo Harness",
         legs="Nahtirah Trousers",
-        waist="Soil belt"
+        waist="Soil belt",
+        feet="Koga Kyahan +2"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
