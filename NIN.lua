@@ -289,7 +289,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo="Qirmiz Tathlum",
     	head="Iga Zukin +2",
-        neck="Asperity Necklace",
+        neck="Rancor Collar",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
     	body="Mochizuki Chainmail +1",
@@ -305,24 +305,23 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged, {
         ammo="Fire Bomblet",
         head="Whirlpool Mask",
-        hands="Umuthi Gloves",
         body="Mochizuki Chainmail +1",
         hands="Umuthi Gloves",
-        ring1="Mars's Ring",
+        ring1="Patricius Ring",
         back="Yokaze Mantle",
-        legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     })
+    -- wtf I can't hit anything set
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
-        waist="Hurch'lan Sash",
+        waist="Anguinus Belt",
+        legs="Hachiya Hakama +1",
         ring2="Patricius Ring"
     })
     
     sets.engaged.PDT = set_combine(sets.engaged, {
     	head="Lithelimb Cap",
         body="Qaaxo Harness",
-        hands="Umuthi Gloves",
         neck="Twilight Torque",
         hands="Umuthi Gloves",
         ring1="Patricius Ring",
@@ -336,7 +335,6 @@ function init_gear_sets()
     	head="Felistris Mask",
         body="Qaaxo Harness",
     	back="Yokaze Mantle",
-        ring1="Patricius Ring",
         feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Mid.Evasion = set_combine(sets.engaged.Evasion, {
