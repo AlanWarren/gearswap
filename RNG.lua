@@ -476,20 +476,21 @@ end
  
 function job_precast(spell, action, spellMap, eventArgs)
         if spell.type:lower() == 'weaponskill' then
-                --if player.status ~= "Engaged" or player.tp < 100 then
-                if player.tp < 100 then
-                        eventArgs.cancel = true
-                        return
-                end
-                if (spell.target.distance >8 and not bow_gun_weaponskills:contains(spell.english)) or (spell.target.distance >21) then
-                        -- Cancel Action if distance is too great, saving TP
-                        add_to_chat(122,"OUTSIDE WS RANGE! /Canceling")
-                        eventArgs.cancel = true
-                        return
-                elseif state.Defense.Active then
-                        -- Don't gearswap for weaponskills when Defense is on.
-                        eventArgs.handled = true
-                end
+            --if player.status ~= "Engaged" or player.tp < 100 then
+            if player.tp < 100 then
+                    eventArgs.cancel = true
+                    return
+            end
+            if ((spell.target.distance >8 and spell.skill ~= 'Archery' and spell.skill ~= 'Marksmanship') or (spell.target.distance >21)) then
+                -- Cancel Action if distance is too great, saving TP
+                add_to_chat(122,"Outside Ranged WS Range! /Canceling")
+                eventArgs.cancel = true
+                return
+
+            elseif state.Defense.Active then
+                -- Don't gearswap for weaponskills when Defense is on.
+                eventArgs.handled = true
+            end
         end
        
         if spell.type == 'Waltz' then
