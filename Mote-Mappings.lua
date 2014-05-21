@@ -196,7 +196,3 @@ npcs = {}
 npcs.Trust = S{'Ayame','Naji','Nanaa Mihgo','Tenzen','Volker','Zeid',
 	'Ajido-Marujido','Shantotto','Curilla','Excenmille','Trion','Valaineral',
 	'Kupipi','Mihli Aliapoh','Joachim','Lion'}
-
-
-
-
