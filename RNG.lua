@@ -483,7 +483,8 @@ end
  
 function job_precast(spell, action, spellMap, eventArgs)
         if spell.type:lower() == 'weaponskill' then
-                if player.status ~= "Engaged" or player.tp < 100 then
+                --if player.status ~= "Engaged" or player.tp < 100 then
+                if player.tp < 100 then
                         eventArgs.cancel = true
                         return
                 end
