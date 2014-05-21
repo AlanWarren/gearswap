@@ -49,16 +49,9 @@
 function get_sets()
         -- Load and initialize the include file.
         include('Mote-Include.lua')
-        init_include()
- 
-        -- UserGlobals may define additional sets to be added to the local ones.
-        if define_global_sets then
-            define_global_sets()
-        end
- 
-        -- Global default binds
-        binds_on_load()
- 
+end
+
+function user_setup()
         send_command('bind f9 gs c cycle RangedMode')
         send_command('bind ^f9 gs c cycle DefenseMode')
         send_command('bind !f9 gs c cycle WeaponskillMode')
