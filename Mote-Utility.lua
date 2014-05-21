@@ -213,8 +213,10 @@ function auto_change_target(spell, action, spellMap)
 	
 	local validPlayers = S{'Self', 'Player', 'Party', 'Ally', 'NPC'}
 
-	local intersection = spell.targets * validPlayers
-	local canUseOnPlayer = not intersection:empty()
+    if spell.targets ~= 'Enemy' then
+	    local intersection = spell.targets * validPlayers
+	    local canUseOnPlayer = not intersection:empty()
+    end
 	
 	local newTarget
 	
