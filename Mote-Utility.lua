@@ -213,10 +213,8 @@ function auto_change_target(spell, action, spellMap)
 	
 	local validPlayers = S{'Self', 'Player', 'Party', 'Ally', 'NPC'}
 
-    if spell.targets ~= 'Enemy' then
-	    local intersection = spell.targets * validPlayers
-	    local canUseOnPlayer = not intersection:empty()
-    end
+	local intersection = spell.targets * validPlayers
+	local canUseOnPlayer = not intersection:empty()
 	
 	local newTarget
 	
@@ -446,7 +444,7 @@ end
 
 -- Attempt to include user-globals.  Return true if it exists and was loaded.
 function load_user_globals()
-	local filenames = {'user-globals.lua'}
+	local filenames = {'user-globals.lua', player.name..'-globals.lua'}
 	return optional_include(filenames)
 end
 
@@ -470,10 +468,10 @@ end
 
 -- Attempt to locate a specified name within the current alliance.
 function find_player_in_alliance(name)
-	for i,v in ipairs(alliance) do
-		for k,p in ipairs(v) do
-			if p.name == name then
-				return p
+	for party_index,ally_party in ipairs(alliance) do
+		for player_index,_player in ipairs(ally_party) do
+			if _player.name == name then
+				return _player
 			end
 		end
 	end
@@ -508,8 +506,12 @@ end
 function get_expanded_set(baseSet, str)
 	local cur = baseSet
 	for i in str:gmatch("[^.]+") do
-		cur = cur[i]
+		if cur then
+			cur = cur[i]
+		end
 	end
 	
 	return cur
 end
+
+
