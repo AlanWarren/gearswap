@@ -53,6 +53,7 @@ end
 
 function user_setup()
         send_command('bind f9 gs c cycle RangedMode')
+        send_command('bind ^] gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle DefenseMode')
         send_command('bind !f9 gs c cycle WeaponskillMode')
         send_command('bind ^[ input /lockstyle on')
@@ -226,11 +227,11 @@ function init_gear_sets()
         -- Annihilator Mod 
         sets.midcast.RangedAttack.Mod = set_combine(sets.midcast.RangedAttack, {
             legs="Aetosaur Trousers +1",
-            ring2="Paqichikaji Ring",
+            ring2="Longshot Ring",
             back="Lutian Cape"
         })
         sets.midcast.RangedAttack.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.Mod, {
-            ring2="Paqichikaji Ring"
+            legs="Nahtirah Trousers"
         })
 
         -- Annihilator Acc 
@@ -239,7 +240,7 @@ function init_gear_sets()
             neck="Iqabi Necklace",
             hands="Seiryu's Kote",
             ring1="Hajduk Ring",
-            ring2="Paqichikaji Ring",
+            ring2="Longshot Ring",
             back="Lutian Cape",
             legs="Aetosaur Trousers +1",
         })
@@ -501,6 +502,10 @@ function job_precast(spell, action, spellMap, eventArgs)
                 eventArgs.handled = true
             end
         end
+
+        if spell.english == 'Eagle Eye Shot' then
+            classes.JAMode = state.RangedMode
+        end
        
         if spell.type == 'Waltz' then
                 refine_waltz(spell, action, spellMap, eventArgs)
@@ -552,15 +557,6 @@ function job_midcast(spell, action, spellMap, eventArgs)
     end
 end
 
-function job_get_spell_map(spell, default_spell_map)
-    if spell.english == 'Eagle Eye Shot' then
-        if state.RangedMode == 'Mod' then
-            return 'Mod'
-        elseif state.RangedMode == 'Acc' then
-            return 'Acc'
-        end
-    end
-end
  
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
