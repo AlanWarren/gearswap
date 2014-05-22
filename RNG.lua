@@ -502,6 +502,10 @@ function job_precast(spell, action, spellMap, eventArgs)
                 eventArgs.handled = true
             end
         end
+
+        if spell.english == 'Eagle Eye Shot' then
+            classes.JAMode = state.RangedMode
+        end
        
         if spell.type == 'Waltz' then
                 refine_waltz(spell, action, spellMap, eventArgs)
@@ -553,15 +557,6 @@ function job_midcast(spell, action, spellMap, eventArgs)
     end
 end
 
-function job_get_spell_map(spell, default_spell_map)
-    if spell.english == 'Eagle Eye Shot' then
-        if state.RangedMode == 'Mod' then
-            return 'Mod'
-        elseif state.RangedMode == 'Acc' then
-            return 'Acc'
-        end
-    end
-end
  
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
