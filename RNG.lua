@@ -53,6 +53,7 @@ end
 
 function user_setup()
         send_command('bind f9 gs c cycle RangedMode')
+        send_command('bind ^] gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle DefenseMode')
         send_command('bind !f9 gs c cycle WeaponskillMode')
         send_command('bind ^[ input /lockstyle on')
