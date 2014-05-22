@@ -217,11 +217,11 @@ function init_gear_sets()
         -- Annihilator Mod 
         sets.midcast.RangedAttack.Mod = set_combine(sets.midcast.RangedAttack, {
             legs="Aetosaur Trousers +1",
-            ring2="Paqichikaji Ring",
+            ring2="Longshot Ring",
             back="Lutian Cape"
         })
         sets.midcast.RangedAttack.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.Mod, {
-            ring2="Paqichikaji Ring"
+            legs="Nahtirah Trousers"
         })
 
         -- Annihilator Acc 
@@ -230,7 +230,7 @@ function init_gear_sets()
             neck="Iqabi Necklace",
             hands="Seiryu's Kote",
             ring1="Hajduk Ring",
-            ring2="Paqichikaji Ring",
+            ring2="Longshot Ring",
             back="Lutian Cape",
             legs="Aetosaur Trousers +1",
         })
