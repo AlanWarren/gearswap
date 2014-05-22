@@ -82,7 +82,7 @@ function init_gear_sets()
     	back="Yokaze Mantle",
         waist="Hurch'lan Sash",
         legs="Hachiya Hakama +1",
-        feet="Scamp's Sollerets"
+        feet="Mochizuki Kyahan +1"
     }
     
     -- Fast cast sets for spells
@@ -100,8 +100,8 @@ function init_gear_sets()
         ring2="Epona's Ring",
     	back="Atheling Mantle",
         waist="Windbuffet Belt",
-        legs="Manibozho Brais",
-        feet="Otronif Boots +1"
+        legs="Hachiya Hakama +1",
+        feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         head="Whirlpool Mask",
@@ -111,8 +111,7 @@ function init_gear_sets()
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         hands="Umuthi Gloves",
         legs="Hachiya Hakama +1",
-        ring1="Mars's Ring",
-        feet="Scamp's Sollerets"
+        ring1="Mars's Ring"
     })
     
     -- BLADE: JIN
@@ -133,7 +132,7 @@ function init_gear_sets()
         body="Qaaxo Harness",
         legs="Nahtirah Trousers",
         waist="Soil belt",
-        feet="Otronif Boots +1"
+        feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
@@ -299,7 +298,7 @@ function init_gear_sets()
     	back="Atheling Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Otronif Boots +1"
+        feet="Qaaxo Leggings"
     }
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
@@ -335,7 +334,7 @@ function init_gear_sets()
     	head="Felistris Mask",
         body="Qaaxo Harness",
     	back="Yokaze Mantle",
-        feet="Mochizuki Kyahan +1"
+        feet="Qaaxo Leggings"
     })
     sets.engaged.Mid.Evasion = set_combine(sets.engaged.Evasion, {
     	head="Whirlpool Mask",
@@ -387,7 +386,7 @@ function init_gear_sets()
     	back="Yokaze Mantle",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
-        feet="Otronif Boots +1"
+        feet="Qaaxo Leggings"
     })
     
     sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.PDT)
