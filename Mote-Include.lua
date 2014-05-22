@@ -589,7 +589,7 @@ function get_default_precast_set(spell, action, spellMap, eventArgs)
 	if spell.action_type == 'Magic' then
 		equipSet = sets.precast.FC
 	elseif spell.action_type == 'Ranged Attack' then
-		equipSet = sets.precast.RA -- RangedAttack
+		equipSet = sets.precast.RA or sets.precast.RangedAttack
 	elseif spell.action_type == 'Ability' then
 		if spell.type == 'WeaponSkill' then
 			equipSet = sets.precast.WS
@@ -617,7 +617,7 @@ function get_default_precast_set(spell, action, spellMap, eventArgs)
 		equipSet = equipSet[spell.english]
 	elseif spellMap and equipSet[spellMap] then
 		equipSet = equipSet[spellMap]
-	elseif equipSet[spell.skill] then
+	elseif spell.skill and equipSet[spell.skill] then
 		equipSet = equipSet[spell.skill]
 
 		-- Skills may define sub-categories that use the same standard checks.
@@ -708,7 +708,7 @@ function get_default_midcast_set(spell, action, spellMap, eventArgs)
 	-- Only ranged attacks and items get specific sub-categories here.
 	
 	if spell.action_type == 'Ranged Attack' then
-		equipSet = sets.midcast.RA -- RangedAttack
+		equipSet = sets.midcast.RA or sets.midcast.RangedAttack
 	elseif spell.action_type == 'Item' then
 		equipSet = sets.midcast.Item
 	else
@@ -729,7 +729,7 @@ function get_default_midcast_set(spell, action, spellMap, eventArgs)
 		equipSet = equipSet[spell.english]
 	elseif spellMap and equipSet[spellMap] then
 		equipSet = equipSet[spellMap]
-	elseif equipSet[spell.skill] then
+	elseif spell.skill and equipSet[spell.skill] then
 		-- Certain spells get excluded from selecting the skill gear set.
 		if not (classes.NoSkillSpells:contains(spell.english) or classes.NoSkillSpells:contains(spellMap)) then	
 			equipSet = equipSet[spell.skill]
@@ -793,7 +793,7 @@ function get_default_pet_midcast_set(spell, action, spellMap, eventArgs)
 	-- Class mapping
 	-- Skill is not checked, since that's meaningless for pet actions
 	-- Spell type
-	if sets.midcast.Pet then
+	if sets.midcast and sets.midcast.Pet then
 		equipSet = sets.midcast.Pet
 
 		if classes.CustomClass and equipSet[classes.CustomClass] then
@@ -971,3 +971,5 @@ function apply_kiting(baseSet)
 
 	return baseSet
 end
+
+
