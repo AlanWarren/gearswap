@@ -114,6 +114,15 @@ function init_gear_sets()
             legs="Arcadian Braccae", 
             feet="Arcadian Socks +1"
         }
+        sets.precast.JA['Eagle Eye Shot'].Mod = set_combine(sets.precast.JA['Eagle Eye Shot'], {
+            back="Lutian Cape",
+            ring2="Longshot Ring",
+            feet="Orion Socks +1"
+        })
+        sets.precast.JA['Eagle Eye Shot'].Acc = set_combine(sets.precast.JA['Eagle Eye Shot'].Mod, {
+            neck="Iqabi Necklace",
+            waist="Elanid Belt"
+        })
 
         sets.NightEarring = {ear2="Fenrir's earring"}
         sets.DayEarring = {ear2="Flame Pearl"}
@@ -541,6 +550,16 @@ function job_midcast(spell, action, spellMap, eventArgs)
     if spell.name == 'Spectral Jig' and buffactive.sneak then
         -- If sneak is active when using, cancel before completion
         send_command('cancel 71')
+    end
+end
+
+function job_get_spell_map(spell, default_spell_map)
+    if spell.english == 'Eagle Eye Shot' then
+        if state.RangedMode == 'Mod' then
+            return 'Mod'
+        elseif state.RangedMode == 'Acc' then
+            return 'Acc'
+        end
     end
 end
  
