@@ -92,7 +92,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Cetl Belt",
         legs="Manibozho Brais",
-        feet="Iuitl Gaiters"
+        feet="Qaaxo Leggings"
     }
 
 	sets.precast.JA['Trick Attack'] = {
@@ -147,7 +147,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Elanid Belt",
         legs="Nahtirah Trousers",
-        feet="Plunderer's Poulaines"
+        feet="Qaaxo Leggings"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
             head="Whirlpool Mask",
@@ -295,7 +295,7 @@ function init_gear_sets()
 		back="Canny Cape",
         waist="Patentia Sash",
         legs="Iuitl Tights",
-        feet="Iuitl Gaiters"
+        feet="Qaaxo Leggings"
     }
 
 	sets.defense.PDT = {
@@ -308,7 +308,7 @@ function init_gear_sets()
 		back="Shadow Mantle",
         waist="Patentia Sash",
         legs="Iuitl Tights",
-        feet="Iuitl Gaiters"
+        feet="Qaaxo Leggings"
     }
 
 	sets.defense.MDT = {
@@ -321,7 +321,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Hurch'lan Sash",
         legs="Nahtirah Trousers",
-        feet="Iuitl Gaiters"
+        feet="Qaaxo Leggings"
     }
 
 	sets.Kiting = {feet="Trotter Boots"}
@@ -353,7 +353,7 @@ function init_gear_sets()
         neck="Rancor Collar",
         ring1="Patricius Ring",
         waist="Hurch'lan Sash",
-        feet="Manibozho Boots"
+        feet="Qaaxo Leggings"
     })
 	sets.engaged.iLvl = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
@@ -363,7 +363,7 @@ function init_gear_sets()
 		body="Qaaxo Harness",
         ring1="Patricius Ring",
         legs="Iuitl Tights",
-        feet="Iuitl Gaiters"
+        feet="Qaaxo Leggings"
     })
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
 		head="Whirlpool Mask",
@@ -381,7 +381,7 @@ function init_gear_sets()
 		back="Shadow Mantle",
         waist="Patentia Sash",
         legs="Iuitl Tights",
-        feet="Iuitl Gaiters"
+        feet="Qaaxo Leggings"
     }
 	sets.engaged.Acc.PDT = sets.engaged.PDT
 
