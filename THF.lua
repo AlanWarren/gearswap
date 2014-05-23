@@ -363,7 +363,7 @@ function init_gear_sets()
 	sets.engaged.Evasion = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
         ring1="Patricius Ring",
-        legs="Iuitl Tights",
+        hands="Plunderer's Armlets +1",
         feet="Qaaxo Leggings"
     })
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
@@ -375,7 +375,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-		body="Iuitl Vest",
+		body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
         ring1="Dark Ring",
         ring2="Epona's Ring",
