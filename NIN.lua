@@ -676,7 +676,7 @@ function job_buff_change(buff, gain)
         end
     -- if we just gained utsusemi, make sure we disable yonin mode
     elseif string.find(buff:lower(), 'copy image') and gain then
-        add_to_chat(8, 'Counter Mode Disabled!')
+        --add_to_chat(8, 'Counter Mode Disabled!')
         state.Buff.Yonin = false
         handle_equipping_gear(player.status)
     end
