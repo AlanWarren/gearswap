@@ -65,7 +65,7 @@ function init_gear_sets()
 	-- Start defining the sets
 	--------------------------------------
 	
-	sets.TreasureHunter = {hands="Plunderer's Armlets", feet="Raider's Poulaines +2"}
+	sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2"}
 	
 	-- Precast Sets
 	
@@ -77,8 +77,8 @@ function init_gear_sets()
 	sets.precast.JA['Conspirator'] = {} -- {body="Raider's Vest +2"}
 	sets.precast.JA['Steal'] = {}
 	sets.precast.JA['Despoil'] = {}
-	sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets"}
-	sets.precast.JA['Feint'] = {hands="Plunderer's Armlets"} -- {legs="Assassin's Culottes +2"}
+	sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
+	sets.precast.JA['Feint'] = {hands="Plunderer's Armlets +1"} -- {legs="Assassin's Culottes +2"}
 	
 	sets.precast.JA['Sneak Attack'] = {
 		head="Uk'uxkaj Cap",
@@ -352,6 +352,7 @@ function init_gear_sets()
 		head="Whirlpool Mask",
         neck="Rancor Collar",
         ring1="Patricius Ring",
+        hands="Plunderer's Armlets +1",
         waist="Hurch'lan Sash",
         feet="Qaaxo Leggings"
     })
