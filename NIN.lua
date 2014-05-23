@@ -129,7 +129,7 @@ function init_gear_sets()
         neck="Shadow gorget",
     	ring1="Stormsoul Ring",
         back="Rancorous Mantle",
-        body="Kheper Jacket",
+        body="Qaaxo Harness",
         legs="Nahtirah Trousers",
         waist="Soil belt",
         feet="Mochizuki Kyahan +1"
@@ -554,6 +554,10 @@ function job_precast(spell, action, spellMap, eventArgs)
     if spell.name == 'Spectral Jig' and buffactive.sneak then
             -- If sneak is active when using, cancel before completion
             send_command('cancel 71')
+    end
+    -- trying to disable iga zukin for ws when innin is up
+    if spell.type:lower() == 'weaponskill' then
+        state.Buff.Innin = false
     end
     -- cancel utsusemi if shadows are up already
     if string.find(spell.english, 'Utsusemi') then
