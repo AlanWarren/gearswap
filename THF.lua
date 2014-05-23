@@ -289,7 +289,7 @@ function init_gear_sets()
 		head="Felistris Mask",
         neck="Asperity Necklace",
 		body="Qaaxo Harness",
-        hands="Iuitl Wristbands +1",
+        hands="Plunderer's Armlets +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
