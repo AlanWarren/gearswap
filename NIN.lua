@@ -291,7 +291,7 @@ function init_gear_sets()
         neck="Rancor Collar",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-    	body="Mochizuki Chainmail +1",
+    	body="Hachiya Chainmail +1",
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
