@@ -111,7 +111,7 @@ function init_gear_sets()
             neck="Rancor Collar",
             back="Buquwik Cape",
             ring2="Pyrosoul Ring",
-            legs="Arcadian Braccae", 
+            legs="Arcadian Braccae +1", 
             feet="Arcadian Socks +1"
         }
         sets.precast.JA['Eagle Eye Shot'].Mod = set_combine(sets.precast.JA['Eagle Eye Shot'], {
@@ -231,7 +231,7 @@ function init_gear_sets()
             back="Lutian Cape"
         })
         sets.midcast.RangedAttack.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.Mod, {
-            legs="Nahtirah Trousers"
+            legs="Arcadian Braccae +1"
         })
 
         -- Annihilator Acc 
@@ -246,7 +246,7 @@ function init_gear_sets()
         })
 
         sets.midcast.RangedAttack.Acc.Gun2H = set_combine(sets.midcast.RangedAttack.Acc, {
-            legs="Orion Braccae +1"
+            legs="Arcadian Braccae +1"
         })
         
         -- Bow 40 STP (with Mekki/Bloodrain) needs 4/4 recycle proc.
