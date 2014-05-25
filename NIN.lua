@@ -183,7 +183,7 @@ function init_gear_sets()
     
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.Ninjutsu = {
-    	head="Felistris Mask",
+    	head="Umbani Cap",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         neck="Atzintli Necklace",
