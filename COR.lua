@@ -236,7 +236,7 @@ function init_gear_sets()
 	-- Ranged gear
 	sets.midcast.RangedAttack = {
         ammo=gear.RAbullet,
-		head="Navarch's Tricorne +1",
+		head="Umbani Cap",
         neck="Ocachi Gorget",
         ear1="Clearview Earring",
         ear2="Volley Earring",
