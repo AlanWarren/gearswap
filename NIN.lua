@@ -150,7 +150,7 @@ function init_gear_sets()
     sets.Shun = {
         neck="Breeze Gorget",
         waist="Thunder Belt",
-        ing1="Thundersoul Ring"
+        ring1="Thundersoul Ring"
     }
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
     sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
