@@ -611,7 +611,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
             else
                 -- we must have used Yonin. check if shadows are down
                 if not buffactive['Copy Image'] then
-                    add_to_chat(8, 'Utsusemi Down - Yonin = TRUE')
+                    --add_to_chat(8, 'Utsusemi Down - Yonin = TRUE')
                     state.Buff.Yonin = true
                 else 
                     state.Buff.Yonin = false
