@@ -361,6 +361,8 @@ function init_gear_sets()
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
             neck="Stoicheion Medal",
+            ring1="Acumen Ring",
+            ring2="Stormsoul Ring",
             waist="Aquiline Belt",
             legs="Shneddick Tights",
             back="Toro Cape",
