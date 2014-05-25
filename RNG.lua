@@ -271,7 +271,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Volley Earring",
             hands="Sylvan Glovelettes +2",
-            legs="Nahtirah Trousers"
+            legs="Arcadian Braccae +1"
         })
         -- High accuracy set
         sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
