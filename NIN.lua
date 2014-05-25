@@ -286,7 +286,7 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {
-        ammo="Qirmiz Tathlum",
+        ammo="Yetshila",
     	head="Iga Zukin +2",
         neck="Rancor Collar",
         ear1="Dudgeon Earring",
@@ -302,7 +302,7 @@ function init_gear_sets()
     }
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
-        ammo="Fire Bomblet",
+        ammo="Yetshila",
         head="Whirlpool Mask",
         body="Mochizuki Chainmail +1",
         hands="Umuthi Gloves",
@@ -312,6 +312,7 @@ function init_gear_sets()
     })
     -- wtf I can't hit anything set
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        ammo="Fire Bomblet",
         neck="Iqabi Necklace",
         waist="Anguinus Belt",
         legs="Hachiya Hakama +1",
