@@ -175,7 +175,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
-		head="Seiokona Beret",
+		head="Umbani Cap",
         neck="Stoicheion Medal",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
@@ -206,7 +206,7 @@ function init_gear_sets()
 
 	sets.midcast.CorsairShot = {
         ammo=gear.QDbullet,
-		head="Seiokona Beret",
+		head="Umbani Cap",
         neck="Atzintli Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -221,7 +221,7 @@ function init_gear_sets()
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
-        head="Lithelimb Cap",
+        head="Umbani Cap",
         hands="Sigyn's Bazubands",
 		body="Navarch's Frac +2",
         ear1="Lifestorm Earring",
