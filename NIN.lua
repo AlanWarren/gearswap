@@ -537,6 +537,7 @@ function init_gear_sets()
     sets.buff.Migawari = {body="Iga Ningi +2"}
     sets.Counter = { legs="Iga Hakama +2" }
     sets.buff.Innin = { head="Iga Zukin +2" }
+    sets.buff.Yonin = { head="Iga Hakama +2" }
 end
 
 -------------------------------------------------------------------------------------------------------------------
