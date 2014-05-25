@@ -356,7 +356,7 @@ function init_gear_sets()
 
         -- WILDFIRE
         sets.Wildfire = {
-            head="Seiokona Beret",
+            head="Umbani Cap",
             body="Orion Jerkin +1",
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
@@ -451,7 +451,7 @@ function init_gear_sets()
        
         -- Barrage Set
         sets.BarrageMid = {
-            head="Arcadian Beret +1",
+            head="Umbani Cap",
             neck="Iqabi Necklace",
             ear1="Volley Earring",
             ear2="Clearview Earring",
