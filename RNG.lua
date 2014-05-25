@@ -216,7 +216,7 @@ function init_gear_sets()
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
             waist="Elanid Belt",
-            legs="Arcadian Braccae +1",
+            legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
         -- Stave set for Gun
