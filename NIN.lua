@@ -190,6 +190,7 @@ function init_gear_sets()
     	body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
     	back="Toro Cape",
+        ring2="Acumen Ring",
         waist="Hurch'lan Sash",
         legs="Mochizuki Hakama +1",
         feet="Mochizuki Kyahan +1"
@@ -605,12 +606,15 @@ function job_aftercast(spell, action, spellMap, eventArgs)
         if state.Buff[spell.name] ~= nil then
             -- We need to set the spell being used to true, but only if the spell is not Yonin.
             -- I only want yonin to be true if utsusemi shadows are down.
-            if state.Buff[spell.name] ~= 'Yonin' then 
+            if spell.name ~= 'Yonin' then 
                 state.Buff[spell.name] = true
             else
                 -- we must have used Yonin. check if shadows are down
                 if not buffactive['Copy Image'] then
+                    add_to_chat(8, 'Utsusemi Down - Yonin = TRUE')
                     state.Buff.Yonin = true
+                else 
+                    state.Buff.Yonin = false
                 end
             end
 
@@ -673,7 +677,7 @@ function job_buff_change(buff, gain)
 	end
     -- Counter setup
     -- if we just lost our last shadow, check if yonin is active and set it to true
-    if buff == 'Copy Image (1)' and gain == false then
+    if buff == 'Copy Image' and not gain then
         if buffactive.yonin then
             add_to_chat(8, 'Counter Mode Enabled!')
             state.Buff.Yonin = true
