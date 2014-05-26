@@ -452,7 +452,7 @@ function init_gear_sets()
         -- Barrage Set
         sets.BarrageMid = {
             head="Umbani Cap",
-            neck="Iqabi Necklace",
+            neck="Rancor Collar",
             ear1="Volley Earring",
             ear2="Clearview Earring",
             body="Kyujutsugi",
