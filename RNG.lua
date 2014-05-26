@@ -349,8 +349,7 @@ function init_gear_sets()
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS, {
            ear2="Tripudio Earring",
-           legs="Aetosaur Trousers +1",
-           hands="Sigyn's Bazubands",
+           legs="Arcadian Braccae +1",
            back="Lutian Cape"
         })
 
@@ -461,7 +460,7 @@ function init_gear_sets()
             ring2="Hajduk Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
-            legs="Orion Braccae +1",
+            legs="Arcadian Braccae +1",
             feet="Orion Socks +1"
         }
 
@@ -477,6 +476,7 @@ function init_gear_sets()
             ring1="Rajas Ring",
             ring2="Paqichikaji Ring",
             back="Lutian Cape",
+            legs="Arcadian Braccae +1",
             waist="Elanid Belt",
             feet="Arcadian Socks +1"
         }
