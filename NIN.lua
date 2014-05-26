@@ -680,7 +680,7 @@ function job_buff_change(buff, gain)
 	end
     -- Counter setup
     -- if we just lost our last shadow, check if yonin is active and set it to true
-    if buff == 'Copy Image' and not gain then
+    if buff == 'Copy Image (1)' and not gain then
         if buffactive.yonin then
             add_to_chat(8, 'Counter Mode Enabled!')
             state.Buff.Yonin = true
