@@ -299,7 +299,8 @@ function init_gear_sets()
     	back="Atheling Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Qaaxo Leggings"
+        --feet="Qaaxo Leggings"
+        feet="Otronif Boots +1"
     }
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
@@ -336,7 +337,8 @@ function init_gear_sets()
     	head="Felistris Mask",
         body="Mochizuki Chainmail +1",
     	back="Yokaze Mantle",
-        feet="Qaaxo Leggings"
+        feet="Otronif Boots +1"
+        --feet="Qaaxo Leggings"
     })
     sets.engaged.Mid.Evasion = set_combine(sets.engaged.Evasion, {
     	head="Whirlpool Mask",
