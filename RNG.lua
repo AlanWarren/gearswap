@@ -132,7 +132,7 @@ function init_gear_sets()
         select_default_macro_book()
 
         sets.idle = {
-            head="Arcadian Beret +1",
+            head="Umbani Cap",
             neck="Twilight torque",
             ear1="Volley Earring",
             ear2="Tripudio Earring",
