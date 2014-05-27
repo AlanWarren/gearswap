@@ -203,50 +203,88 @@ function init_gear_sets()
             feet="Wurrukatte Boots"
         }
 
-        -- Annihilator Default 
+        -- Annihilator Default : Stats from set -
         -- STP: 37 ~ 90.8 TP after 4 hits (2/4 recycle required)
-        sets.midcast.RangedAttack = {
+        -- Racc: 264
+        -- Ratk: 219.75
+        -- AGI: 148
+        -- STR: 105
+        sets.midcast.RangedAttack = { 
+            -- main="Hurlbat",
+            -- sub="Legion Scutum", 
+            -- range="Annihilator", 
+            -- ammo="Achiyal. Bullet", 
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
-            ear1="Volley Earring",
-            ear2="Tripudio Earring",
+            ear1="Volley Earring", 
+            ear2="Tripudio Earring", 
             body="Kyujutsugi",
             hands="Sigyn's Bazubands",
-            ring1="Rajas Ring",
+            ring1="Rajas Ring", 
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
-            waist="Elanid Belt",
-            legs="Nahtirah Trousers",
+            waist="Elanid Belt", 
+            legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         }
-        -- Stave set for Gun
-        sets.midcast.RangedAttack.Gun2H = set_combine(sets.midcast.RangedAttack, {
-            back="Lutian Cape"
-        })
-
         -- Annihilator Mod 
+        -- STP: 31 ~ 86.8 TP after 4 hits (3/4 recycle required)
+        -- Racc: 287.25
+        -- Ratk: 206.25
+        -- AGI: 151
+        -- STR: 91
         sets.midcast.RangedAttack.Mod = set_combine(sets.midcast.RangedAttack, {
-            legs="Aetosaur Trousers +1",
+            hands="Seiryu's Kote",
             ring2="Longshot Ring",
             back="Lutian Cape"
         })
-        sets.midcast.RangedAttack.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.Mod, {
-            legs="Arcadian Braccae +1"
-        })
-
+        
         -- Annihilator Acc 
-        -- This requires 4/4 recycle procs
-        sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack, {
+        -- STP: 21 ~ 80 TP after 4 hits (4/4 recycle required)
+        -- Racc: 316.25
+        -- Ratk: 177.75
+        -- AGI: 151
+        -- STR: 86
+        sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack.Mod, {
             neck="Iqabi Necklace",
-            hands="Seiryu's Kote",
-            ring1="Hajduk Ring",
-            ring2="Longshot Ring",
-            back="Lutian Cape",
-            legs="Aetosaur Trousers +1",
+            ring1="Hajduk Ring"
         })
 
-        sets.midcast.RangedAttack.Acc.Gun2H = set_combine(sets.midcast.RangedAttack.Acc, {
-            legs="Arcadian Braccae +1"
+
+        -- Stave + Strap set for Gun
+        -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
+        -- Racc: 242
+        -- Ratk: 262.75
+        -- AGI: 136
+        -- STR: 109
+        sets.midcast.RangedAttack.Gun2H = set_combine(sets.midcast.RangedAttack, {
+            --main="Mekki Shakki",
+            --sub="Bloodrain Strap",
+            -- range="Annihilator", 
+            -- ammo="Achiyal. Bullet", 
+            legs="Nahtirah Trousers",
+            back="Lutian Cape",
+        })
+
+        -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
+        -- Racc: 269
+        -- Ratk: 229
+        -- AGI: 134
+        -- STR: 104
+        sets.midcast.RangedAttack.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.Gun2H, {
+            legs="Aetosaur Trousers +1",
+            ring2="Longshot Ring"
+        })
+
+        -- STP: 32 ~ 87.6 TP after 4 hits (3/4 recycle required)
+        -- Racc: 295.25
+        -- Ratk: 176.5
+        -- AGI: 141
+        -- STR: 91
+        sets.midcast.RangedAttack.Acc.Gun2H = set_combine(sets.midcast.RangedAttack.Mod.Gun2H, {
+            hands="Seiryu's Kote",
+            neck="Iqabi Necklace",
+            ring1="Hajduk Ring"
         })
         
         -- Bow 40 STP (with Mekki/Bloodrain) needs 4/4 recycle proc.
@@ -340,17 +378,16 @@ function init_gear_sets()
             back="Buquwik Cape",
             waist="Elanid Belt",
             legs="Nahtirah Trousers",
-            feet="Orion Socks +1"
+            feet="Arcadian Socks +1"
         }
         sets.precast.WS = set_combine(sets.precast.CustomWS, sets.earring)
         sets.precast.WS.Mod = set_combine(sets.precast.WS, {
-            back="Lutian Cape",
-            legs="Aetosaur Trousers +1"
+            legs="Arcadian Braccae +1",
+            feet="Orion Socks +1"
         })
-        sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-           ear2="Tripudio Earring",
-           legs="Arcadian Braccae +1",
-           back="Lutian Cape"
+        sets.precast.WS.Acc = set_combine(sets.precast.WS.Mod, {
+            hands="Sigyn's Bazubands",
+            back="Lutian Cape"
         })
 
         -- WILDFIRE
@@ -385,7 +422,8 @@ function init_gear_sets()
            neck="Aqua Gorget",
            ring2="Stormsoul Ring",
            waist="Light Belt",
-           feet="Arcadian Socks +1"
+           legs="Arcadian Braccae +1",
+           feet="Orion Socks +1"
         }
         sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, sets.LastStand)
         sets.precast.WS['Last Stand'].Mod = set_combine(sets.precast.WS.Mod, sets.LastStand)
@@ -405,6 +443,7 @@ function init_gear_sets()
         sets.Namas = {
             neck="Aqua Gorget",
             waist="Light Belt",
+            hands="Arcadian Bracers +1", -- override since we don't want sigyns in Mod or Acc
             back="Sylvan Chlamys",
             feet="Arcadian Socks +1"
         }
@@ -417,7 +456,8 @@ function init_gear_sets()
             neck="Flame Gorget",
             ear2="Novia Earring",
             waist="Light Belt",
-            feet="Arcadian Socks +1",
+            hands="Arcadian Bracers +1", -- override 
+            legs="Arcadian Braccae +1",
             ring2="Thundersoul Ring",
             back="Rancorous Mantle"
         }
@@ -429,6 +469,7 @@ function init_gear_sets()
         sets.Sidewinder = {
             neck="Aqua Gorget",
             waist="Light Belt",
+            hands="Arcadian Bracers +1",
             back="Buquwik Cape",
             feet="Arcadian Socks +1"
         }
@@ -454,10 +495,10 @@ function init_gear_sets()
             neck="Rancor Collar",
             ear1="Volley Earring",
             ear2="Clearview Earring",
-            body="Kyujutsugi",
+            body="Orion Jerkin +1",
             hands="Orion Bracers +1",
             ring1="Paqichikaji Ring",
-            ring2="Hajduk Ring",
+            ring2="Longshot Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
             legs="Arcadian Braccae +1",
@@ -466,19 +507,13 @@ function init_gear_sets()
 
         sets.buff.Camouflage =  {body="Orion Jerkin +1"}
 
-        sets.Overkill =  {
-            head="Arcadian Beret +1",
-            neck="Ocachi Gorget",
-            ear1="Volley Earring",
-            ear2="Tripudio Earring",
-            body="Arcadian Jerkin",
-            hands="Arcadian Bracers +1",
-            ring1="Rajas Ring",
-            ring2="Paqichikaji Ring",
-            back="Lutian Cape",
-            legs="Arcadian Braccae +1",
-            waist="Elanid Belt",
+        sets.Overkill.Preshot = set_combine(sets.precast.RangedAttack, {
+            head="Orion Beret +1",
             feet="Arcadian Socks +1"
+        })
+
+        sets.Overkill =  {
+            body="Arcadian Jerkin"
         }
 end
 
@@ -543,7 +578,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
     elseif state.Buff.Overkill then
-        equip(sets.Overkill)
+        equip(sets.Overkill.Preshot)
     end
     sets.earring = select_earring()
 end
@@ -625,7 +660,6 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     else
         enable('body')
     end
-    --XXX: testing
 	determine_ranged()
 end
  
@@ -638,22 +672,10 @@ function job_buff_change(buff, gain)
 
     if state.Buff[buff] ~= nil then
         state.Buff[buff] = gain
-        -- XXX: testing
 	    determine_ranged()
         handle_equipping_gear(player.status)
     end
 
-    -- automatically keep up these JA's
-    if buff == 'Velocity Shot' and gain == false then
-        send_command('@wait .9;/ja "Velocity Shot" <me>')
-    end
-    if buff == 'Double Shot' and gain == false then
-        send_command('@wait .9;/ja "Double Shot" <me>')
-    end
-
-    --if not camo_active() then
-    --   handle_equipping_gear(player.status) -- XXX: this may not be necessary to call for each buff. See Mote's MNK/DNC.lua's
-    --end
 end
  
 function select_earring()
