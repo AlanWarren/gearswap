@@ -203,7 +203,7 @@ function init_gear_sets()
             feet="Wurrukatte Boots"
         }
 
-        -- Gun Default : Stats from set -
+        -- Gun Default : (822 total delay)
         -- STP: 37 ~ 90.8 TP after 4 hits (2/4 recycle required)
         -- Racc: 264
         -- Ratk: 219.75
@@ -283,20 +283,21 @@ function init_gear_sets()
             ring1="Hajduk Ring"
         })
         
-        -- Bow 40 STP (with Mekki/Bloodrain) needs 4/4 recycle proc.
+        -- Bow Default (614 total delay)
         -- This set is only used while Decoy Shot is OFF
-        -- -Enmity is the goal, while keeping STP in slots with little sacrifice to -enmity.
+        -- Enmity: -40
+        -- STP: 45
         sets.midcast.RangedAttack.Bow = {
             head="Arcadian Beret +1", -- Enmity -6
-            neck="Huani Collar", -- Enmity -3
+            neck="Ocachi Gorget",
             ear1="Novia Earring", -- Enmity -7
             ear2="Tripudio Earring", -- STP 5
             body="Kyujutsugi", -- STP 5 Enmity -9
             hands="Iuitl Wristbands +1", -- Enmity -6
             ring1="Rajas Ring", -- STP 5
-            ring2="Paqichikaji Ring", -- Enmity -3
+            ring2="K'ayres Ring", -- STP 5
             back="Sylvan Chlamys", -- STP 5 Enmity -3
-            waist="Patentia Sash", -- Enmity -3
+            waist="Elanid Belt",  -- Enmity -3
             legs="Sylvan Bragues +2", -- STP 9
             feet="Arcadian Socks +1" -- Enmity -6
         }
