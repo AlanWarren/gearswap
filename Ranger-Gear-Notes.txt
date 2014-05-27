@@ -1,5 +1,5 @@
-This is a breakdown of the most valuable stats from each piece of equipment, with the stat vomit
-broken down. I'm going on the assumption that 1 STR = 0.75 Ranged Attack, 
+This is a breakdown of the most valuable stats from each piece of equipment, with the base 
+attributes broken down. I'm going on the assumption that 1 STR = 0.75 Ranged Attack, 
 and 1 AGI = 0.75 Ranged Accuracy. 
 
 ----------------------------------------------------------------------------------------------
