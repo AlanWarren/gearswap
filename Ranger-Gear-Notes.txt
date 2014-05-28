@@ -61,7 +61,7 @@ Ranged & Ammo
 -------------------------------------------------------------------------------------------------------------------------
   Rajas Ring:         |  Longshot Ring:     |  K'ayres Ring:       |  Hajduk Ring:
   Racc:               |  Racc: 15.5         |  Racc:               |  Racc: 16 
-  Ratk: 3.5           |  Ratk:              |  Ratk:               |  Ratk: 
+  Ratk: 3.75          |  Ratk:              |  Ratk:               |  Ratk: 
   STP:  5             |  STP:               |  STP: 5              |  STP:
   AGI:                |  AGI: 2             |  AGI:                |  AGI: 
   STR: 5              |  STR:               |  STR:                |  STR: 
