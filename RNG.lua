@@ -3,16 +3,29 @@
 -- current file resides @ https://github.com/AlanWarren/gearswap
 
 --[[ 
+ === General Notes ===
+ I've added options so anyone can use this script with any weapon they want. Look towards the top of this script for
+ gear.Bow, gear.Gun, and gear.Stave. There's also a toggle for use_night_earring that you can set to false if you
+ don't have or want to use Fenrir's Earring.
+
  === Some Notes On Sets ===
- I've left in KBEEZIE's Unlimited Shot checks for now, but will remove soon since the JA no longer has
- any use.  
+ 1) Annihilator + Hurlbat - This is used whenever ranged accuracy is a concern, or when I want war SJ's fencer bonus
+ 2) Annihilator + Mekki Shakki - These sets have higher ranged attack, and generally do more damage at the cost of some racc.
+ 3) Yoichi + Mekki Shakki + Decoy Down - This set is a bit light on racc/ratk, with focus on 4-hit and -enmity
+ 4) Yoichi + Mekki Shakki + Decoy Up - This set is high ratk, with less focus on racc since Yoichi's aftermath provides a bit
+ 5) Yoichi + Hurlbat - This set is pretty much a wash since bow needs so much STP to x-hit. Normally this would be a higher
+    racc set for Bow, but it doesn't really accomplish this well right now. Stick to staves for bow.. 
+ 6) Annihilator + SAM Subjob - This is "messing around" set that will 3-hit with all 3 shots proc'ing recycle! 
 
-=== My Modes ===
- 1) Normal is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
+ === Toggles ===
+ 1) Normal aims to be a 4-hit with as few recycle procs as I can possibly gear for without sacrificing too much.
+    I will usually start out with this set, and occasionaly stick with it if my food allows decent racc.
  2) Mod adds a bit more acc, while maintaining 4 hit (may require more recycle procs) 
- 3) Racc is full blown racc with minimal concern for anything else. 
+    I generally use this set on anything Difficult+, or delve2. Sometimes it allows me to eat meat. 
+ 3) Acc is full blown racc with minimal concern for anything else. Some sets will 4-hit with with all 4 shots proc'ing recycle
+    This mode is only used when fighting difficult content, and all buffs drop. 
 
- === Features ===
+ === Modes ===
  1) Non-specific default sets are for Gun. They assume a 1 handed weapon since Hurlbat is my default for Annihilator.
     * Gun2H set is used whenever your main weapon is equal to gear.Stave. This set was designed for Mekki + Bloodrain
  1) Bow sets will activate by equipping whichever bow you defined in gear.Bow
