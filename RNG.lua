@@ -325,10 +325,14 @@ function init_gear_sets()
         })
 
         
-        -- Bow Default (614 total delay)
+        -- Bow Default (614 total delay) 4-hit with 3/4 recycle
         -- This set is only used while Decoy Shot is OFF
         -- Enmity: -40
-        -- STP: 45
+        -- STP: 46
+        -- Racc: 219.75
+        -- Ratk: 206.75 
+        -- AGI: 149
+        -- STR: 113 
         sets.midcast.RangedAttack.Bow = {
             head="Arcadian Beret +1", -- Enmity -6
             neck="Ocachi Gorget",
@@ -340,10 +344,11 @@ function init_gear_sets()
             ring2="K'ayres Ring", -- STP 5
             back="Sylvan Chlamys", -- STP 5 Enmity -3
             waist="Elanid Belt",  -- Enmity -3
-            legs="Sylvan Bragues +2", -- STP 9
+            legs="Aetosaur Trousers +1", -- STP 5
             feet="Arcadian Socks +1" -- Enmity -6
         }
-        -- Mod toggle for Bow. This set ignores the decoy shot feature, and gears for damage.
+        -- Mod toggle for Bow. This set ignores the decoy shot feature, and gears 
+        -- for damage, and medium level of ranged accuracy + 4 hit. 
         sets.midcast.RangedAttack.Mod.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
             neck="Ocachi Gorget",
             ear1="Volley Earring",
@@ -792,12 +797,13 @@ function determine_ranged()
 	classes.CustomMeleeGroups:clear()
 
     if player.equipment.range == gear.Bow then
-        -- if decoy is up and we're not in Mod s
-        if buffactive['Decoy Shot'] and state.RangedMode ~= 'Mod' then
+        -- if decoy is up 
+        if buffactive['Decoy Shot'] then
+            -- default decoy set assumes staff is used. 
             if player.equipment.main == gear.Stave then
                 classes.CustomMeleeGroups:append('Decoy')
 		        classes.CustomRangedGroups:append('Decoy')
-            else
+            else -- append the 1 handed weapon class
                 classes.CustomMeleeGroups:append('Decoy1H')
 		        classes.CustomRangedGroups:append('Decoy1H')
             end
