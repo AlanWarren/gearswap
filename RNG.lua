@@ -91,7 +91,7 @@ function init_gear_sets()
        
         -- Options: Override default values
         options.OffenseModes = {'Normal', 'Melee'}
-        options.RangedModes = {'Normal', 'Mod', 'Acc', 'STP'}
+        options.RangedModes = {'Normal', 'Mod', 'Acc'}
         options.DefenseModes = {'Normal', 'PDT'}
         options.WeaponskillModes = {'Normal', 'Mod', 'Acc'}
         options.PhysicalDefenseModes = {'PDT'}
@@ -190,6 +190,15 @@ function init_gear_sets()
             legs="Manibozho Brais",
             feet="Manibozho Boots"
         }
+
+        -- haste gear
+        sets.precast.FC.Utsusemi = {
+            head="Arcadian Beret +1",
+            body="Kyujutsugi",
+            hands="Arcadian Bracers +1",
+            legs="Arcadian Braccae +1",
+            feet="Arcadian Socks +1"
+        }
        
         -- Ranged Attack Sets
 
@@ -225,6 +234,7 @@ function init_gear_sets()
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         }
+        sets.midcast.RangedAttack.SAM = sets.midcast.RangedAttack
         -- Gun Mod 
         -- STP: 31 ~ 86.8 TP after 4 hits (3/4 recycle required)
         -- Racc: 287.25
@@ -261,11 +271,6 @@ function init_gear_sets()
             legs="Nahtirah Trousers",
             back="Lutian Cape",
         })
-        sets.midcast.RangedAttack.STP.Gun2H = set_combine(sets.midcast.RangedAttack.Gun2H, {
-                legs="Sylvan Bragues +1",
-                waist="Patentia Sash",
-                back="Sylvan Chlamys"
-        })
 
         -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
         -- Racc: 269
@@ -287,6 +292,38 @@ function init_gear_sets()
             neck="Iqabi Necklace",
             ring1="Hajduk Ring"
         })
+        
+        -- This is a 3-hit build with 3 out of 3 recycle procs and /sam sub. 
+        -- It's used automatically by having /sam and gear.Stave equipped. (sacrifices should be obvious)
+        -- STP: 57
+        -- Racc: 200.5
+        -- Ratk: 201.5 
+        -- AGI: 110
+        -- STR: 81 
+        sets.midcast.RangedAttack.SAM.Gun2H = {
+            head="Arcadian Beret +1",
+            neck="Ocachi Gorget",
+            ear1="Volley Earring", 
+            ear2="Tripudio Earring", 
+            body="Kyujutsugi",
+            hands="Sigyn's Bazubands",
+            ring1="Rajas Ring", 
+            ring2="K'ayres Ring",
+            back="Sylvan Chlamys",
+            waist="Patentia Sash",
+            legs="Sylvan Bragues +2",
+            feet="Orion Socks +1"
+        }
+        sets.midcast.RangedAttack.SAM.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.SAM.Gun2H, {
+            waist="Elanid Belt",
+            legs="Aetosaur Trousers +1"
+        })
+        sets.midcast.RangedAttack.SAM.Acc.Gun2H = set_combine(sets.midcast.RangedAttack.SAM.Mod.Gun2H, {
+            ring1="Longshot Ring",
+            ring2="Paqichikaji Ring",
+            back="Lutian Cape"
+        })
+
         
         -- Bow Default (614 total delay)
         -- This set is only used while Decoy Shot is OFF
@@ -541,7 +578,7 @@ function job_precast(spell, action, spellMap, eventArgs)
                 eventArgs.handled = true
             end
         end
-
+        -- add support for RangedMode toggles to EES
         if spell.english == 'Eagle Eye Shot' then
             classes.JAMode = state.RangedMode
         end
@@ -587,9 +624,12 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-    --if spell.action_type == 'Ranged Attack' then
-    --    classes.CustomClass = player.equipment.ranged
-    --end
+    -- add support for SAM set
+    if spell.action_type == 'Ranged Attack' then
+	    if player.sub_job == 'SAM' then
+            classes.CustomClass = 'SAM'
+        end
+    end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
         -- If sneak is active when using, cancel before completion
         send_command('cancel 71')
