@@ -250,6 +250,7 @@ function handle_set(cmdParams)
 		-- identifier for the field we're setting
 		local field = cmdParams[1]
 		local lowerField = field:lower()
+		local capField = lowerField:gsub("%a", string.upper, 1)
 		local setField = cmdParams[2]
 		local reportDescription
 		local notifyDescription
@@ -304,9 +305,13 @@ function handle_set(cmdParams)
 				add_to_chat(123,'Mote-GearSwap: Set: Unknown field ['..field..']')
 			end
 		-- Check if we're dealing with some sort of cycle field (ends with 'mode').
-		elseif lowerField:endswith('mode') then
+		elseif lowerField:endswith('mode') or type(state[capField..'Mode']) == 'string' then
+			local modeField = lowerField
+			
 			-- Remove 'mode' from the end of the string
-			local modeField = lowerField:sub(1,#lowerField-4)
+			if modeField:endswith('mode') then
+				modeField = lowerField:sub(1,#lowerField-4)
+			end
 
 			-- Convert WS to Weaponskill
 			if modeField == "ws" then
@@ -326,7 +331,7 @@ function handle_set(cmdParams)
 			end
 
 			-- And save that to the appropriate state field.
-			set_mode(modeField, setField)
+			set_option_mode(modeField, setField)
 
 			-- Notify the job script of the change.
 			if job_state_change and setField ~= oldVal then
@@ -455,7 +460,7 @@ function handle_reset(cmdParams)
 	elseif resetState == 'distance' then
 		state.MaxWeaponskillDistance = 0
 		add_to_chat(122,'Max weaponskill distance limitations have been removed.')
-	elseif resetState == 'pctarget' then
+	elseif resetState == 'target' then
 		state.SelectNPCTargets = false
 		state.PCTargetMode = 'default'
 		add_to_chat(122,'Adjusting target selection has been turned off.')
@@ -473,6 +478,9 @@ function handle_reset(cmdParams)
 		state.SelectNPCTargets = false
 		state.PCTargetMode = 'default'
 		mote_flags.show_set = nil
+		if job_reset then
+			job_reset(resetState)
+		end
 		add_to_chat(122,'Everything has been reset to defaults.')
 	elseif job_reset then
 		job_reset(resetState)
@@ -501,7 +509,7 @@ function handle_update(cmdParams)
 		job_update(cmdParams, eventArgs)
 	end
 
-	if not eventArgs.handled then
+	if not eventArgs.handled and handle_equipping_gear then
 		handle_equipping_gear(player.status)
 	end
 
