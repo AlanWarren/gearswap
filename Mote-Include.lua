@@ -95,7 +95,7 @@ function init_include()
 	-- Takes precedence over default spell maps.
 	-- Is reset at the end of each spell casting cycle (ie: at the end of aftercast).
 	classes.CustomClass = nil
-    classes.JAMode = nil
+	classes.JAMode = nil
 	-- Custom groups used for defining melee and idle sets.  Persists long-term.
 	classes.CustomMeleeGroups = L{}
 	classes.CustomRangedGroups = L{}
@@ -109,6 +109,8 @@ function init_include()
 
 	-- Display text mapping.
 	on_off_names = {[true] = 'on', [false] = 'off'}
+	on_off_values = T{'on', 'off', 'true', 'false'}
+	true_values = T{'on', 'true'}
 
 
 	-- Subtables within the sets table that we expect to exist, and are annoying to have to
@@ -119,9 +121,9 @@ function init_include()
 	sets.precast.FC = {}
 	sets.precast.JA = {}
 	sets.precast.WS = {}
-	sets.precast.RangedAttack = {}
+	sets.precast.RA = {}
 	sets.midcast = {}
-	sets.midcast.RangedAttack = {}
+	sets.midcast.RA = {}
 	sets.midcast.Pet = {}
 	sets.idle = {}
 	sets.resting = {}
@@ -428,8 +430,16 @@ end
 -- Hooks for non-action events.
 -------------------------------------------------------------------------------------------------------------------
 
--- sub_job_change is not handled by this include.
--- sub_job_change(new_subjob, old_subjob)
+-- Called when the player's subjob changes.
+function sub_job_change(newSubjob, oldSubjob)
+	if user_setup then
+		user_setup()
+	end
+	
+	if job_sub_job_change then
+		job_sub_job_change(newSubjob, oldSubjob)
+	end
+end
 
 
 
@@ -576,15 +586,52 @@ function get_spell_map(spell)
 end
 
 
+-- Simple utility function to handle a portion of the equipment set determination.
+-- It attempts to select a sub-table of the provided equipment set based on the
+-- standard search order of custom class, spell name, and spell map.
+-- If no such set is found, it returns the original base set (equipSet) provided.
+function get_named_set(equipSet, spell, spellMap)
+	if equipSet then
+		return  (classes.CustomClass and equipSet[classes.CustomClass]) or
+			 equipSet[spell.english] or
+			(spellMap and equipSet[spellMap]) or
+			 equipSet
+	end
+end
+
+
+-- Select the equipment set to equip from a given starting table, based on standard
+-- selection order: custom class, spell name, spell map, spell skill, and spell type.
+-- Spell skill and spell type may further refine their selections based on
+-- custom class, spell name and spell map.
+function select_specific_set(equipSet, spell, spellMap)
+	-- Take the determined base equipment set and try to get the simple naming extensions that
+	-- may apply to it (class, spell name, spell map).
+	local namedSet = get_named_set(equipSet, spell, spellMap)
+	
+	-- If no simple naming sub-tables were found, and we simply got back the original equip set,
+	-- check for spell.skill and spell.type, and check the simple naming extensions again.
+	if namedSet == equipSet then
+		namedSet = (spell.skill and equipSet[spell.skill]) or
+			   (spell.type and equipSet[spell.type])
+
+		-- If namedSet is nil at this point, we end up returning to equipSet
+		namedSet = get_named_set(namedSet, spell, spellMap) or equipSet
+	end
+
+	return namedSet
+end
+
+
 -- Get the default precast gear set.
 function get_default_precast_set(spell, action, spellMap, eventArgs)
-	local equipSet
-
 	-- If there are no precast sets defined, bail out.
 	if not sets.precast then
 		return {}
 	end
 	
+	local equipSet = sets.precast
+
 	-- Determine base sub-table from type of action being performed.
 	
 	if spell.action_type == 'Magic' then
@@ -597,7 +644,8 @@ function get_default_precast_set(spell, action, spellMap, eventArgs)
 		elseif spell.type == 'JobAbility' then
 			equipSet = sets.precast.JA
 		else
-			equipSet = sets.precast[spell.type]
+			-- Allow fallback to .JA table if spell.type isn't found, for all non-weaponskill abilities.
+			equipSet = sets.precast[spell.type] or sets.precast.JA
 		end
 	elseif spell.action_type == 'Item' then
 		equipSet = sets.precast.Item
@@ -608,42 +656,11 @@ function get_default_precast_set(spell, action, spellMap, eventArgs)
 		return {}
 	end
 
-	
-	-- Default order to check for set refinement is custom class, name, map, skill and type.
-	-- Type should only come into play as a sub-category of FC.
-	
-	if classes.CustomClass and equipSet[classes.CustomClass] then
-		equipSet = equipSet[classes.CustomClass]
-	elseif equipSet[spell.english] then
-		equipSet = equipSet[spell.english]
-	elseif spellMap and equipSet[spellMap] then
-		equipSet = equipSet[spellMap]
-	elseif spell.skill and equipSet[spell.skill] then
-		equipSet = equipSet[spell.skill]
+	-- Handle automatic selection of set based on spell class/name/map/skill/type.
+	equipSet = select_specific_set(equipSet, spell, spellMap)
 
-		-- Skills may define sub-categories that use the same standard checks.
-		if classes.CustomClass and equipSet[classes.CustomClass] then
-			equipSet = equipSet[classes.CustomClass]
-		elseif equipSet[spell.english] then
-			equipSet = equipSet[spell.english]
-		elseif spellMap and equipSet[spellMap] then
-			equipSet = equipSet[spellMap]
-		end
-	elseif equipSet[spell.type] then
-		equipSet = equipSet[spell.type]
-
-		-- Types may define sub-categories that use the same standard checks.
-		if classes.CustomClass and equipSet[classes.CustomClass] then
-			equipSet = equipSet[classes.CustomClass]
-		elseif equipSet[spell.english] then
-			equipSet = equipSet[spell.english]
-		elseif spellMap and equipSet[spellMap] then
-			equipSet = equipSet[spellMap]
-		end
-	end
 	
-	
-	-- After the default checks, do checks for specialized modes (casting mode, weaponskill mode, etc).
+	-- Once we have a named base set, do checks for specialized modes (casting mode, weaponskill mode, etc).
 	
 	if spell.action_type == 'Magic' then
 		if equipSet[state.CastingMode] then
@@ -673,10 +690,10 @@ function get_default_precast_set(spell, action, spellMap, eventArgs)
 		if equipSet[ws_mode] then
 			equipSet = equipSet[ws_mode]
 		end
-    elseif spell.action_type == 'Ability' then
-        if classes.JAMode and equipSet[classes.JAMode] then
-            equipSet = equipSet[classes.JAMode]
-        end
+	elseif spell.action_type == 'Ability' then
+		if classes.JAMode and equipSet[classes.JAMode] then
+			equipSet = equipSet[classes.JAMode]
+		end
 	elseif spell.action_type == 'Ranged Attack' then
 		-- Check for specific mode for ranged attacks (eg: Acc, Att, etc)
 		if equipSet[state.RangedMode] then
@@ -725,42 +742,9 @@ function get_default_midcast_set(spell, action, spellMap, eventArgs)
 		return {}
 	end
 
-	
-	-- Default order to check for set refinement is custom class, name, map, skill and type.
-	
-	if classes.CustomClass and equipSet[classes.CustomClass] then
-		equipSet = equipSet[classes.CustomClass]
-	elseif equipSet[spell.english] then
-		equipSet = equipSet[spell.english]
-	elseif spellMap and equipSet[spellMap] then
-		equipSet = equipSet[spellMap]
-	elseif spell.skill and equipSet[spell.skill] then
-		-- Certain spells get excluded from selecting the skill gear set.
-		if not (classes.NoSkillSpells:contains(spell.english) or classes.NoSkillSpells:contains(spellMap)) then	
-			equipSet = equipSet[spell.skill]
-	
-			-- Skills may define sub-categories that use the same standard checks.
-			if classes.CustomClass and equipSet[classes.CustomClass] then
-				equipSet = equipSet[classes.CustomClass]
-			elseif equipSet[spell.english] then
-				equipSet = equipSet[spell.english]
-			elseif spellMap and equipSet[spellMap] then
-				equipSet = equipSet[spellMap]
-			end
-		end
-	elseif equipSet[spell.type] then
-		equipSet = equipSet[spell.type]
+	-- Handle automatic selection of set based on spell class/name/map/skill/type.
+	equipSet = select_specific_set(equipSet, spell, spellMap)
 
-		-- Types may define sub-categories that use the same standard checks.
-		if classes.CustomClass and equipSet[classes.CustomClass] then
-			equipSet = equipSet[classes.CustomClass]
-		elseif equipSet[spell.english] then
-			equipSet = equipSet[spell.english]
-		elseif spellMap and equipSet[spellMap] then
-			equipSet = equipSet[spellMap]
-		end
-	end
-	
 	
 	-- After the default checks, do checks for specialized modes (casting mode, etc).
 	
@@ -792,28 +776,23 @@ end
 function get_default_pet_midcast_set(spell, action, spellMap, eventArgs)
 	local equipSet = {}
 
-	-- Set selection ordering:
-	-- Custom class
-	-- Specific spell name
-	-- Class mapping
-	-- Skill is not checked, since that's meaningless for pet actions
-	-- Spell type
 	if sets.midcast and sets.midcast.Pet then
 		equipSet = sets.midcast.Pet
 
-		if classes.CustomClass and equipSet[classes.CustomClass] then
-			equipSet = equipSet[classes.CustomClass]
-		elseif equipSet[spell.english] then
-			equipSet = equipSet[spell.english]
-		elseif spellMap and equipSet[spellMap] then
-			equipSet = equipSet[spellMap]
-		elseif equipSet[spell.type] then
-			equipSet = equipSet[spell.type]
-		end
+		equipSet = select_specific_set(equipSet, spell, spellMap)
 
-		-- Check for specialized casting modes for any given set selection.
-		if equipSet[state.CastingMode] then
-			equipSet = equipSet[state.CastingMode]
+		-- We can only generally be certain about whether the pet's action is
+		-- Magic (ie: it cast a spell of its own volition) or Ability (it performed
+		-- an action at the request of the player).  Allow CastinMode and
+		-- OffenseMode to refine whatever set was selected above.
+		if spell.action_type == 'Magic' then
+			if equipSet[state.CastingMode] then
+				equipSet = equipSet[state.CastingMode]
+			end
+		elseif spell.action_type == 'Ability' then
+			if equipSet[state.OffenseMode] then
+				equipSet = equipSet[state.OffenseMode]
+			end
 		end
 	end
 
@@ -932,19 +911,14 @@ end
 function apply_defense(baseSet)
 	if state.Defense.Active then
 		local defenseSet
-		local defMode
 
 		if state.Defense.Type == 'Physical' then
-			defMode = state.Defense.PhysicalMode
-
 			if sets.defense[state.Defense.PhysicalMode] then
 				defenseSet = sets.defense[state.Defense.PhysicalMode]
 			else
 				defenseSet = sets.defense
 			end
 		else
-			defMode = state.Defense.MagicalMode
-
 			if sets.defense[state.Defense.MagicalMode] then
 				defenseSet = sets.defense[state.Defense.MagicalMode]
 			else
@@ -977,6 +951,7 @@ function apply_kiting(baseSet)
 	return baseSet
 end
 
+
 -------------------------------------------------------------------------------------------------------------------
 -- Functions for refactoring code.
 -------------------------------------------------------------------------------------------------------------------
@@ -986,4 +961,6 @@ function reset_transitory_classes()
 	classes.CustomClass = nil
 	classes.JAMode = nil
 end
+
+
 
