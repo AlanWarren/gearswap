@@ -91,7 +91,7 @@ function init_gear_sets()
        
         -- Options: Override default values
         options.OffenseModes = {'Normal', 'Melee'}
-        options.RangedModes = {'Normal', 'Mod', 'Acc'}
+        options.RangedModes = {'Normal', 'Mod', 'Acc', 'STP'}
         options.DefenseModes = {'Normal', 'PDT'}
         options.WeaponskillModes = {'Normal', 'Mod', 'Acc'}
         options.PhysicalDefenseModes = {'PDT'}
@@ -260,6 +260,11 @@ function init_gear_sets()
             --sub="Bloodrain Strap",
             legs="Nahtirah Trousers",
             back="Lutian Cape",
+        })
+        sets.midcast.RangedAttack.STP.Gun2H = set_combine(sets.midcast.RangedAttack.Gun2H, {
+                legs="Sylvan Bragues +1",
+                waist="Patentia Sash",
+                back="Sylvan Chlamys"
         })
 
         -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
