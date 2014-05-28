@@ -9,7 +9,7 @@
 
 === My Modes ===
  1) Normal is a  4/hit with Annihilator and Yoichi, but sacrifices some racc/ratk to get there.
- 2) Mod adds a bit more acc for Gun, and removes the -enmity functionality from Bow
+ 2) Mod adds a bit more acc, while maintaining 4 hit (may require more recycle procs) 
  3) Racc is full blown racc with minimal concern for anything else. 
 
  === Features ===
@@ -21,7 +21,6 @@
  2) Decoy set only applies while decoy is active AND you're using Bow
     * Standard Bow set uses -enmity gear, while maintaining 4-hit (with 4/4 recycle proc)
     * Decoy set removes -enmity gear for a normal 4-hit setup (3/4 or 2/4 recycle proc)
-    * Mod RangedMode will ignore this feature, and always use standard set.
  3) Fenrir's earring is equipped at night for WS. You can disable this by setting use_night_earring = false
  4) During Overkill, I use a special set for precast/midcast containing rapidshot / doubleshot dmg gear. 
 
@@ -234,7 +233,7 @@ function init_gear_sets()
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         }
-        sets.midcast.RangedAttack.SAM = sets.midcast.RangedAttack
+
         -- Gun Mod 
         -- STP: 31 ~ 86.8 TP after 4 hits (3/4 recycle required)
         -- Racc: 287.25
@@ -246,7 +245,7 @@ function init_gear_sets()
             ring2="Longshot Ring",
             back="Lutian Cape"
         })
-        
+
         -- Gun Acc 
         -- STP: 21 ~ 80 TP after 4 hits (4/4 recycle required)
         -- Racc: 316.25
@@ -257,6 +256,11 @@ function init_gear_sets()
             neck="Iqabi Necklace",
             ring1="Hajduk Ring"
         })
+
+        -- sam subjob 
+        sets.midcast.RangedAttack.SAM = sets.midcast.RangedAttack
+        sets.midcast.RangedAttack.SAM.Mod = sets.midcast.RangedAttack.Mod
+        sets.midcast.RangedAttack.SAM.Acc = sets.midcast.RangedAttack.Acc
 
 
         -- Stave + Strap set for Gun
@@ -334,63 +338,75 @@ function init_gear_sets()
         -- AGI: 149
         -- STR: 113 
         sets.midcast.RangedAttack.Bow = {
-            head="Arcadian Beret +1", -- Enmity -6
+            head="Arcadian Beret +1",
             neck="Ocachi Gorget",
-            ear1="Novia Earring", -- Enmity -7
-            ear2="Tripudio Earring", -- STP 5
-            body="Kyujutsugi", -- STP 5 Enmity -9
-            hands="Iuitl Wristbands +1", -- Enmity -6
-            ring1="Rajas Ring", -- STP 5
-            ring2="K'ayres Ring", -- STP 5
-            back="Sylvan Chlamys", -- STP 5 Enmity -3
-            waist="Elanid Belt",  -- Enmity -3
-            legs="Aetosaur Trousers +1", -- STP 5
-            feet="Arcadian Socks +1" -- Enmity -6
+            ear1="Novia Earring", 
+            ear2="Tripudio Earring",
+            body="Kyujutsugi",
+            hands="Iuitl Wristbands +1",
+            ring1="Rajas Ring",
+            ring2="K'ayres Ring",
+            back="Sylvan Chlamys",
+            waist="Elanid Belt", 
+            legs="Aetosaur Trousers +1", 
+            feet="Arcadian Socks +1"
         }
-        -- Mod toggle for Bow. This set ignores the decoy shot feature, and gears 
-        -- for damage, and medium level of ranged accuracy + 4 hit. 
+        -- Mod toggle for Bow.
+        -- All around good set for events, but not when you care a lot about -enmity
+        -- Enmity: -29
+        -- STP: 45 
+        -- Racc: 240.5 
+        -- Ratk: 240.25 
+        -- AGI: 126
+        -- STR: 111 
         sets.midcast.RangedAttack.Mod.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
-            neck="Ocachi Gorget",
             ear1="Volley Earring",
             hands="Sylvan Glovelettes +2",
-            legs="Arcadian Braccae +1"
-        })
-        -- High accuracy set
-        sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
-            hands="Seiryu's Kote",  -- STP 4 for now
-            ring1="Hajduk Ring",
-            legs="Orion Braccae +1",
-            back="Lutian Cape", -- Enmity -5
+            back="Lutian Cape",
+            legs="Arcadian Braccae +1",
             feet="Orion Socks +1"
         })
+
+        -- High accuracy set
+        sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
+            hands="Seiryu's Kote", 
+            ring1="Hajduk Ring",
+            legs="Arcadian Braccae +1",
+            back="Lutian Cape", 
+            feet="Orion Socks +1"
+        })
+
         -- 1 handed weapon set for Bow. (Hurlbat, etc.)
         sets.midcast.RangedAttack.Bow1H = set_combine(sets.midcast.RangedAttack.Bow, {
-            neck="Ocachi Gorget",
-            ring2="K'ayres Ring"
+            hands="Sylvan Glovelettes +2"
         })
-        -- Mod toggle for 1-handed wpn. with Bow. Full DD set. 
+        -- Mod toggle for 1-handed wpn. with Bow.
         sets.midcast.RangedAttack.Mod.Bow1H = set_combine(sets.midcast.RangedAttack.Bow1H, {
             ear1="Volley Earring",
-            hands="Sylvan Glovelettes +2",
-            ring2="Paqichikaji Ring",
-            legs="Aetosaur Trousers +1"
+            feet="Orion Socks +1"
         })
         sets.midcast.RangedAttack.Acc.Bow1H = sets.midcast.RangedAttack.Acc.Bow
 
         -- This set will activate when using Bow, and Decoy Shot is ON
+        -- STP: 45 
+        -- Racc: 225
+        -- Ratk: 253.25 
+        -- AGI: 128 
+        -- STR: 111 
         sets.midcast.RangedAttack.Decoy = set_combine(sets.midcast.RangedAttack.Bow, {
             ear1="Volley Earring",
-            neck="Ocachi Gorget",
             hands="Sylvan Glovelettes +2",
             legs="Nahtirah Trousers",
             waist="Elanid Belt",
             feet="Orion Socks +1"
         })
+        sets.midcast.RangedAttack.Mod.Decoy = sets.midcast.RangedAttack.Mod.Bow
         -- 1-handed weapon set used when decoy shot is ON
         sets.midcast.RangedAttack.Decoy1H = set_combine(sets.midcast.RangedAttack.Decoy, {
-            ring2="K'ayres Ring",
+            back="Sylvan Chlamys",
             legs="Aetosaur Trousers +1"
         })
+        sets.midcast.RangedAttack.Mod.Decoy1H = sets.midcast.RangedAttack.Mod.Bow1H
         -- High Accuracy set
         sets.midcast.RangedAttack.Acc.Decoy = set_combine(sets.midcast.RangedAttack.Decoy, {
             neck="Iqabi Necklace",
