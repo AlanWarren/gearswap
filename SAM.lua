@@ -204,6 +204,7 @@ function init_gear_sets()
         legs="Wakido Haidate +1",
         feet="Scamp's Sollerets"
     }
+    sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS['Tachi: Ageha']
     
     sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Flame Gorget",waist="Light Belt"})
     
