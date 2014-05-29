@@ -271,9 +271,9 @@ function init_gear_sets()
         })
 
         -- sam subjob 
-        sets.midcast.RangedAttack.SAM = sets.midcast.RangedAttack
-        sets.midcast.RangedAttack.SAM.Mod = sets.midcast.RangedAttack.Mod
-        sets.midcast.RangedAttack.SAM.Acc = sets.midcast.RangedAttack.Acc
+        sets.midcast.RA.SAM = sets.midcast.RA
+        sets.midcast.RA.SAM.Mod = sets.midcast.RA.Mod
+        sets.midcast.RA.SAM.Acc = sets.midcast.RA.Acc
 
 
         -- Stave + Strap set for Gun
