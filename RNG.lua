@@ -317,7 +317,7 @@ function init_gear_sets()
         -- Ratk: 201.5 
         -- AGI: 110
         -- STR: 81 
-        sets.midcast.RangedAttack.SAM.Gun2H = {
+        sets.midcast.RA.SAM.Gun2H = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
             ear1="Volley Earring", 
@@ -331,11 +331,11 @@ function init_gear_sets()
             legs="Sylvan Bragues +2",
             feet="Orion Socks +1"
         }
-        sets.midcast.RangedAttack.SAM.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.SAM.Gun2H, {
+        sets.midcast.RA.SAM.Mod.Gun2H = set_combine(sets.midcast.RA.SAM.Gun2H, {
             waist="Elanid Belt",
             legs="Aetosaur Trousers +1"
         })
-        sets.midcast.RangedAttack.SAM.Acc.Gun2H = set_combine(sets.midcast.RangedAttack.SAM.Mod.Gun2H, {
+        sets.midcast.RA.SAM.Acc.Gun2H = set_combine(sets.midcast.RA.SAM.Mod.Gun2H, {
             ring1="Longshot Ring",
             ring2="Paqichikaji Ring",
             back="Lutian Cape"
