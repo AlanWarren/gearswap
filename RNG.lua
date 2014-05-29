@@ -311,20 +311,20 @@ function init_gear_sets()
         -- Ratk: 201.5 
         -- AGI: 110
         -- STR: 81 
-        sets.midcast.RangedAttack.SAM.Gun2H = {
-            head="Arcadian Beret +1",
-            neck="Ocachi Gorget",
-            ear1="Volley Earring", 
-            ear2="Tripudio Earring", 
-            body="Kyujutsugi",
-            hands="Sigyn's Bazubands",
-            ring1="Rajas Ring", 
-            ring2="K'ayres Ring",
-            back="Sylvan Chlamys",
-            waist="Patentia Sash",
-            legs="Sylvan Bragues +2",
-            feet="Orion Socks +1"
-        }
+        --sets.midcast.RangedAttack.SAM.Gun2H = {
+        --    head="Arcadian Beret +1",
+        --    neck="Ocachi Gorget",
+        --    ear1="Volley Earring", 
+        --    ear2="Tripudio Earring", 
+        --    body="Kyujutsugi",
+        --    hands="Sigyn's Bazubands",
+        --    ring1="Rajas Ring", 
+        --    ring2="K'ayres Ring",
+        --    back="Sylvan Chlamys",
+        --    waist="Patentia Sash",
+        --    legs="Sylvan Bragues +2",
+        --    feet="Orion Socks +1"
+        --}
 
         
         -- Bow Default (614 total delay) 4-hit with 3/4 recycle
