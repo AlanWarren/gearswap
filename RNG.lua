@@ -580,14 +580,15 @@ function init_gear_sets()
 
         sets.buff.Camouflage =  {body="Orion Jerkin +1"}
 
-        sets.Overkill.Preshot = set_combine(sets.precast.RangedAttack, {
-            head="Orion Beret +1",
-            feet="Arcadian Socks +1"
-        })
 
         sets.Overkill =  {
             body="Arcadian Jerkin"
         }
+
+        sets.Overkill.Preshot = set_combine(sets.precast.RangedAttack, {
+            head="Orion Beret +1",
+            feet="Arcadian Socks +1"
+        })
 end
 
  
