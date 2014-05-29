@@ -103,7 +103,7 @@ function init_gear_sets()
        
         -- Options: Override default values
         options.OffenseModes = {'Normal', 'Melee'}
-        options.RangedModes = {'Normal', 'Mod', 'Acc'}
+        options.RangedModes = {'Normal', 'Mod', 'Acc', 'SAM'}
         options.DefenseModes = {'Normal', 'PDT'}
         options.WeaponskillModes = {'Normal', 'Mod', 'Acc'}
         options.PhysicalDefenseModes = {'PDT'}
@@ -272,9 +272,6 @@ function init_gear_sets()
 
         -- sam subjob 
         sets.midcast.RangedAttack.SAM = sets.midcast.RangedAttack
-        sets.midcast.RangedAttack.SAM.Mod = sets.midcast.RangedAttack.Mod
-        sets.midcast.RangedAttack.SAM.Acc = sets.midcast.RangedAttack.Acc
-
 
         -- Stave + Strap set for Gun
         -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
@@ -331,15 +328,6 @@ function init_gear_sets()
             legs="Sylvan Bragues +2",
             feet="Orion Socks +1"
         }
-        sets.midcast.RangedAttack.SAM.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.SAM.Gun2H, {
-            waist="Elanid Belt",
-            legs="Aetosaur Trousers +1"
-        })
-        sets.midcast.RangedAttack.SAM.Acc.Gun2H = set_combine(sets.midcast.RangedAttack.SAM.Mod.Gun2H, {
-            ring1="Longshot Ring",
-            ring2="Paqichikaji Ring",
-            back="Lutian Cape"
-        })
 
         
         -- Bow Default (614 total delay) 4-hit with 3/4 recycle
@@ -660,11 +648,11 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
     -- add support for SAM set
-    if spell.action_type == 'Ranged Attack' then
-	    if player.sub_job == 'SAM' then
-            classes.CustomClass = 'SAM'
-        end
-    end
+    --if spell.action_type == 'Ranged Attack' then
+	    --if player.sub_job == 'SAM' then
+            --classes.CustomClass = 'SAM'
+        --end
+    --end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
         -- If sneak is active when using, cancel before completion
         send_command('cancel 71')
