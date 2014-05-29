@@ -215,7 +215,7 @@ function init_gear_sets()
         -- Ranged Attack Sets
 
         -- Snapshot 
-        sets.precast.RangedAttack = {
+        sets.precast.RA = {
             head="Sylvan Gapette +2",
             body="Sylvan Caban +2",
             hands="Iuitl Wristbands +1",
@@ -230,7 +230,7 @@ function init_gear_sets()
         -- Ratk: 219.75
         -- AGI: 148
         -- STR: 105
-        sets.midcast.RangedAttack = { 
+        sets.midcast.RA = { 
             -- main="Hurlbat",
             -- sub="Legion Scutum", 
             head="Arcadian Beret +1",
@@ -253,7 +253,7 @@ function init_gear_sets()
         -- Ratk: 206.25
         -- AGI: 151
         -- STR: 91
-        sets.midcast.RangedAttack.Mod = set_combine(sets.midcast.RangedAttack, {
+        sets.midcast.RA.Mod = set_combine(sets.midcast.RA, {
             hands="Seiryu's Kote",
             ring2="Longshot Ring",
             back="Lutian Cape"
@@ -265,7 +265,7 @@ function init_gear_sets()
         -- Ratk: 177.75
         -- AGI: 151
         -- STR: 86
-        sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack.Mod, {
+        sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mod, {
             neck="Iqabi Necklace",
             ring1="Hajduk Ring"
         })
@@ -276,7 +276,7 @@ function init_gear_sets()
         -- Ratk: 262.75
         -- AGI: 136
         -- STR: 109
-        sets.midcast.RangedAttack.Gun2H = set_combine(sets.midcast.RangedAttack, {
+        sets.midcast.RA.Gun2H = set_combine(sets.midcast.RA, {
             --main="Mekki Shakki",
             --sub="Bloodrain Strap",
             legs="Nahtirah Trousers",
@@ -288,7 +288,7 @@ function init_gear_sets()
         -- Ratk: 229
         -- AGI: 134
         -- STR: 104
-        sets.midcast.RangedAttack.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.Gun2H, {
+        sets.midcast.RA.Mod.Gun2H = set_combine(sets.midcast.RA.Gun2H, {
             legs="Aetosaur Trousers +1",
             ring2="Longshot Ring"
         })
@@ -298,7 +298,7 @@ function init_gear_sets()
         -- Ratk: 176.5
         -- AGI: 141
         -- STR: 91
-        sets.midcast.RangedAttack.Acc.Gun2H = set_combine(sets.midcast.RangedAttack.Mod.Gun2H, {
+        sets.midcast.RA.Acc.Gun2H = set_combine(sets.midcast.RA.Mod.Gun2H, {
             hands="Seiryu's Kote",
             neck="Iqabi Necklace",
             ring1="Hajduk Ring"
@@ -335,7 +335,7 @@ function init_gear_sets()
         -- Ratk: 206.75 
         -- AGI: 149
         -- STR: 113 
-        sets.midcast.RangedAttack.Bow = {
+        sets.midcast.RA.Bow = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
             ear1="Novia Earring", 
@@ -357,7 +357,7 @@ function init_gear_sets()
         -- Ratk: 240.25 
         -- AGI: 126
         -- STR: 111 
-        sets.midcast.RangedAttack.Mod.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
+        sets.midcast.RA.Mod.Bow = set_combine(sets.midcast.RA.Bow, {
             ear1="Volley Earring",
             hands="Sylvan Glovelettes +2",
             back="Lutian Cape",
@@ -366,7 +366,7 @@ function init_gear_sets()
         })
 
         -- High accuracy set
-        sets.midcast.RangedAttack.Acc.Bow = set_combine(sets.midcast.RangedAttack.Bow, {
+        sets.midcast.RA.Acc.Bow = set_combine(sets.midcast.RA.Bow, {
             hands="Seiryu's Kote", 
             ring1="Hajduk Ring",
             legs="Arcadian Braccae +1",
@@ -375,15 +375,15 @@ function init_gear_sets()
         })
 
         -- 1 handed weapon set for Bow. (Hurlbat, etc.)
-        sets.midcast.RangedAttack.Bow1H = set_combine(sets.midcast.RangedAttack.Bow, {
+        sets.midcast.RA.Bow1H = set_combine(sets.midcast.RA.Bow, {
             hands="Sylvan Glovelettes +2"
         })
         -- Mod toggle for 1-handed wpn. with Bow.
-        sets.midcast.RangedAttack.Mod.Bow1H = set_combine(sets.midcast.RangedAttack.Bow1H, {
+        sets.midcast.RA.Mod.Bow1H = set_combine(sets.midcast.RA.Bow1H, {
             ear1="Volley Earring",
             feet="Orion Socks +1"
         })
-        sets.midcast.RangedAttack.Acc.Bow1H = sets.midcast.RangedAttack.Acc.Bow
+        sets.midcast.RA.Acc.Bow1H = sets.midcast.RA.Acc.Bow
 
         -- This set will activate when using Bow, and Decoy Shot is ON
         -- STP: 45 
@@ -391,28 +391,28 @@ function init_gear_sets()
         -- Ratk: 253.25 
         -- AGI: 128 
         -- STR: 111 
-        sets.midcast.RangedAttack.Decoy = set_combine(sets.midcast.RangedAttack.Bow, {
+        sets.midcast.RA.Decoy = set_combine(sets.midcast.RA.Bow, {
             ear1="Volley Earring",
             hands="Sylvan Glovelettes +2",
             legs="Nahtirah Trousers",
             waist="Elanid Belt",
             feet="Orion Socks +1"
         })
-        sets.midcast.RangedAttack.Mod.Decoy = sets.midcast.RangedAttack.Mod.Bow
+        sets.midcast.RA.Mod.Decoy = sets.midcast.RA.Mod.Bow
         -- 1-handed weapon set used when decoy shot is ON
-        sets.midcast.RangedAttack.Decoy1H = set_combine(sets.midcast.RangedAttack.Decoy, {
+        sets.midcast.RA.Decoy1H = set_combine(sets.midcast.RA.Decoy, {
             back="Sylvan Chlamys",
             legs="Aetosaur Trousers +1"
         })
-        sets.midcast.RangedAttack.Mod.Decoy1H = sets.midcast.RangedAttack.Mod.Bow1H
+        sets.midcast.RA.Mod.Decoy1H = sets.midcast.RA.Mod.Bow1H
         -- High Accuracy set
-        sets.midcast.RangedAttack.Acc.Decoy = set_combine(sets.midcast.RangedAttack.Decoy, {
+        sets.midcast.RA.Acc.Decoy = set_combine(sets.midcast.RA.Decoy, {
             neck="Iqabi Necklace",
             ring1="Hajduk Ring",
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         })
-        sets.midcast.RangedAttack.Acc.Decoy1H = sets.midcast.RangedAttack.Acc.Decoy
+        sets.midcast.RA.Acc.Decoy1H = sets.midcast.RA.Acc.Decoy
 
         -- Weaponskill sets  
         sets.Coronach = {}
@@ -570,7 +570,7 @@ function init_gear_sets()
             body="Arcadian Jerkin"
         }
 
-        sets.Overkill.Preshot = set_combine(sets.precast.RangedAttack, {
+        sets.Overkill.Preshot = set_combine(sets.precast.RA, {
             head="Orion Beret +1",
             feet="Arcadian Socks +1"
         })
