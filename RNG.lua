@@ -103,7 +103,7 @@ function init_gear_sets()
        
         -- Options: Override default values
         options.OffenseModes = {'Normal', 'Melee'}
-        options.RangedModes = {'Normal', 'Mod', 'Acc', 'SAM'}
+        options.RangedModes = {'Normal', 'Mod', 'Acc'}
         options.DefenseModes = {'Normal', 'PDT'}
         options.WeaponskillModes = {'Normal', 'Mod', 'Acc'}
         options.PhysicalDefenseModes = {'PDT'}
@@ -269,9 +269,6 @@ function init_gear_sets()
             neck="Iqabi Necklace",
             ring1="Hajduk Ring"
         })
-
-        -- sam subjob 
-        sets.midcast.RangedAttack.SAM = sets.midcast.RangedAttack
 
         -- Stave + Strap set for Gun
         -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
