@@ -8,6 +8,12 @@
  gear.Bow, gear.Gun, and gear.Stave. There's also a toggle for use_night_earring that you can set to false if you
  don't have or want to use Fenrir's Earring.
 
+ Debug: //gs debugmode
+       //gs showswaps
+
+ Auto RA: 
+ gs c toggle autora
+
  === Some Notes On Sets ===
  1) Annihilator + Hurlbat - This is used whenever ranged accuracy is a concern, or when I want war SJ's fencer bonus
  2) Annihilator + Mekki Shakki - These sets have higher ranged attack, and generally do more damage at the cost of some racc.
@@ -68,6 +74,7 @@ function user_setup()
         send_command('bind ^] gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle DefenseMode')
         send_command('bind !f9 gs c cycle WeaponskillMode')
+        send_command('bind ^- gs c toggle autora')
         send_command('bind ^[ input /lockstyle on')
 end
 
@@ -88,7 +95,9 @@ function init_gear_sets()
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
         gear.Stave = "Mekki Shakki"
-
+        
+        -- Auto RA + WS
+        state.AutoRA = false
         -- Overriding Global Defaults for this job
         gear.default.weaponskill_neck = "Ocachi Gorget"
         gear.default.weaponskill_waist = "Elanid Belt"
@@ -579,18 +588,26 @@ function init_gear_sets()
         }
 
         sets.buff.Camouflage =  {body="Orion Jerkin +1"}
+        
+        sets.Overkill =  {
+            body="Arcadian Jerkin"
+        }
 
         sets.Overkill.Preshot = set_combine(sets.precast.RangedAttack, {
             head="Orion Beret +1",
             feet="Arcadian Socks +1"
         })
 
-        sets.Overkill =  {
-            body="Arcadian Jerkin"
-        }
 end
 
- 
+function job_pretarget(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Ranged Attack' then -- Auto WS/Decoy Shot/Double Shot --
+        if player.tp >= 100 and state.AutoRA and not buffactive.amnesia then
+            cancel_spell()
+            use_weaponskill()
+        end
+    end
+end 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
  
@@ -687,6 +704,9 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Ranged Attack' and state.AutoRA then
+        use_ra()
+    end
     if not spell.interrupted then
         if state.Buff[spell.name] ~= nil then
             state.Buff[spell.name] = true
@@ -791,14 +811,18 @@ end
  
 -- Return a customized weaponskill mode to use for weaponskill sets.
 -- Don't return anything if you're not overriding the default value.
-function get_custom_wsmode(spell, action, default_wsmode)
-	if state.RangedMode ~= 'Normal' and S(options.WeaponskillModes):contains(state.RangedMode) then
-		return state.RangedMode
-	end
-end
+--function get_custom_wsmode(spell, action, default_wsmode)
+--	if state.RangedMode ~= 'Normal' and S(options.WeaponskillModes):contains(state.RangedMode) then
+--		return state.RangedMode
+--	end
+--end
 
 -- Job-specific toggles.
 function job_toggle(field)
+    if field:lower() == 'autora' then
+        state.AutoRA = not state.AutoRA
+        return "Use Auto RA", state.AutoRA
+    end
 end
  
 -- Request job-specific mode lists.
@@ -825,6 +849,16 @@ end
  
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
+    local msg = ''
+    if state.AutoRA then
+        msg = '[Auto RA: ON]'
+    else
+        msg = '[Auto RA: OFF]'
+    end
+
+    add_to_chat(122, 'Ranged: '..state.RangedMode..'/'..state.DefenseMode..', WS: '..state.WeaponskillMode..', '..msg)
+    
+    eventArgs.handled = true
  
 end
 
@@ -865,6 +899,18 @@ function determine_ranged()
         end
 
     end
+end
+
+function use_weaponskill()
+    if player.equipment.range == gear.Gun then
+        send_command('input /ws "Namas Arrow" <t>')
+    elseif player.equipment.range == gear.Bow then
+        send_command('input /ws "Coronach" <t>')
+    end
+end
+
+function use_ra()
+    send_command('@wait 2.7; input /ra <t>')
 end
 
 function camo_active()
