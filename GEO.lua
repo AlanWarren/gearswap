@@ -240,10 +240,8 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
 	if spell.action_type == 'Magic' then
-        if not spellMap:match('TierNuke$') then
-		    -- Default base equipment layer of fast recast.
-		    equip(sets.midcast.FastRecast)
-        end
+		-- Default base equipment layer of fast recast.
+		equip(sets.midcast.FastRecast)
 
         if spell.skill == 'Elemental Magic' and state.CastingMode == 'Proc' then
             add_to_chat(15, 'Proc mode, no damage gear for midcast.')

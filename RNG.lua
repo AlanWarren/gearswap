@@ -8,6 +8,12 @@
  gear.Bow, gear.Gun, and gear.Stave. There's also a toggle for use_night_earring that you can set to false if you
  don't have or want to use Fenrir's Earring.
 
+ Debug: //gs debugmode
+       //gs showswaps
+
+ Auto RA: 
+ gs c toggle autora
+
  === Some Notes On Sets ===
  1) Annihilator + Hurlbat - This is used whenever ranged accuracy is a concern, or when I want war SJ's fencer bonus
  2) Annihilator + Mekki Shakki - These sets have higher ranged attack, and generally do more damage at the cost of some racc.
@@ -68,6 +74,7 @@ function user_setup()
         send_command('bind ^] gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle DefenseMode')
         send_command('bind !f9 gs c cycle WeaponskillMode')
+        send_command('bind ^- gs c toggle autora')
         send_command('bind ^[ input /lockstyle on')
 end
 
@@ -88,7 +95,9 @@ function init_gear_sets()
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
         gear.Stave = "Mekki Shakki"
-
+        
+        -- Auto RA + WS
+        state.AutoRA = false
         -- Overriding Global Defaults for this job
         gear.default.weaponskill_neck = "Ocachi Gorget"
         gear.default.weaponskill_waist = "Elanid Belt"
@@ -261,6 +270,12 @@ function init_gear_sets()
             ring1="Hajduk Ring"
         })
 
+        -- sam subjob 
+        sets.midcast.RangedAttack.SAM = sets.midcast.RangedAttack
+        sets.midcast.RangedAttack.SAM.Mod = sets.midcast.RangedAttack.Mod
+        sets.midcast.RangedAttack.SAM.Acc = sets.midcast.RangedAttack.Acc
+
+
         -- Stave + Strap set for Gun
         -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
         -- Racc: 242
@@ -302,20 +317,29 @@ function init_gear_sets()
         -- Ratk: 201.5 
         -- AGI: 110
         -- STR: 81 
-        --sets.midcast.RangedAttack.SAM.Gun2H = {
-        --    head="Arcadian Beret +1",
-        --    neck="Ocachi Gorget",
-        --    ear1="Volley Earring", 
-        --    ear2="Tripudio Earring", 
-        --    body="Kyujutsugi",
-        --    hands="Sigyn's Bazubands",
-        --    ring1="Rajas Ring", 
-        --    ring2="K'ayres Ring",
-        --    back="Sylvan Chlamys",
-        --    waist="Patentia Sash",
-        --    legs="Sylvan Bragues +2",
-        --    feet="Orion Socks +1"
-        --}
+        sets.midcast.RangedAttack.SAM.Gun2H = {
+            head="Arcadian Beret +1",
+            neck="Ocachi Gorget",
+            ear1="Volley Earring", 
+            ear2="Tripudio Earring", 
+            body="Kyujutsugi",
+            hands="Sigyn's Bazubands",
+            ring1="Rajas Ring", 
+            ring2="K'ayres Ring",
+            back="Sylvan Chlamys",
+            waist="Patentia Sash",
+            legs="Sylvan Bragues +2",
+            feet="Orion Socks +1"
+        }
+        sets.midcast.RangedAttack.SAM.Mod.Gun2H = set_combine(sets.midcast.RangedAttack.SAM.Gun2H, {
+            waist="Elanid Belt",
+            legs="Aetosaur Trousers +1"
+        })
+        sets.midcast.RangedAttack.SAM.Acc.Gun2H = set_combine(sets.midcast.RangedAttack.SAM.Mod.Gun2H, {
+            ring1="Longshot Ring",
+            ring2="Paqichikaji Ring",
+            back="Lutian Cape"
+        })
 
         
         -- Bow Default (614 total delay) 4-hit with 3/4 recycle
@@ -567,7 +591,14 @@ function init_gear_sets()
         })
 end
 
- 
+function job_pretarget(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Ranged Attack' then -- Auto WS/Decoy Shot/Double Shot --
+        if player.tp >= 100 and state.AutoRA and not buffactive.amnesia then
+            cancel_spell()
+            use_weaponskill()
+        end
+    end
+end 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
  
@@ -636,11 +667,11 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
     -- add support for SAM set
-    --if spell.action_type == 'Ranged Attack' then
-	    --if player.sub_job == 'SAM' then
-            --classes.CustomClass = 'SAM'
-        --end
-    --end
+    if spell.action_type == 'Ranged Attack' then
+	    if player.sub_job == 'SAM' then
+            classes.CustomClass = 'SAM'
+        end
+    end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
         -- If sneak is active when using, cancel before completion
         send_command('cancel 71')
@@ -664,6 +695,9 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Ranged Attack' and state.AutoRA then
+        use_ra()
+    end
     if not spell.interrupted then
         if state.Buff[spell.name] ~= nil then
             state.Buff[spell.name] = true
@@ -776,6 +810,10 @@ end
 
 -- Job-specific toggles.
 function job_toggle(field)
+    if field:lower() == 'autora' then
+        state.AutoRA = not state.AutoRA
+        return "Use Auto RA", state.AutoRA
+    end
 end
  
 -- Request job-specific mode lists.
@@ -802,6 +840,16 @@ end
  
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
+    local msg = ''
+    if state.AutoRA then
+        msg = '[Auto RA: ON]'
+    else
+        msg = '[Auto RA: OFF]'
+    end
+
+    add_to_chat(122, 'Ranged: '..state.RangedMode..'/'..state.DefenseMode..', WS: '..state.WeaponskillMode..', '..msg)
+    
+    eventArgs.handled = true
  
 end
 
@@ -842,6 +890,18 @@ function determine_ranged()
         end
 
     end
+end
+
+function use_weaponskill()
+    if player.equipment.range == gear.Bow then
+        send_command('input /ws "Namas Arrow" <t>')
+    elseif player.equipment.range == gear.Gun then
+        send_command('input /ws "Coronach" <t>')
+    end
+end
+
+function use_ra()
+    send_command('@wait 2.7; input /ra <t>')
 end
 
 function camo_active()
