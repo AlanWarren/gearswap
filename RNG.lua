@@ -789,6 +789,14 @@ function job_update(cmdParams, eventArgs)
     end
 end
  
+-- Return a customized weaponskill mode to use for weaponskill sets.
+-- Don't return anything if you're not overriding the default value.
+function get_custom_wsmode(spell, action, default_wsmode)
+	if state.RangedMode ~= 'Normal' and S(options.WeaponskillModes):contains(state.RangedMode) then
+		return state.RangedMode
+	end
+end
+
 -- Job-specific toggles.
 function job_toggle(field)
 end
