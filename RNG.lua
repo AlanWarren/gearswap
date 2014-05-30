@@ -74,7 +74,7 @@ function user_setup()
         send_command('bind ^] gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle DefenseMode')
         send_command('bind !f9 gs c cycle WeaponskillMode')
-        send_command('bind ^- gs c toggle autora')
+        send_command('bind ^- gs c toggle AutoRA')
         send_command('bind ^[ input /lockstyle on')
 end
 
