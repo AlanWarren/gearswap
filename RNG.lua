@@ -813,14 +813,15 @@ end
 function job_toggle(field)
     if field:lower() == 'autora' then
         state.AutoRA = not state.AutoRA
-        return "Use Auto RA", state.AutoRA
+        --return "Use Auto RA", state.AutoRA
+        return state.AutoRA
     end
 end
  
 -- Request job-specific mode lists.
 -- Return the list, and the current value for the requested field.
 function job_get_option_modes(field)
-    if field == 'autora' then
+    if field:lower() == 'autora' then
         return state.AutoRA
     end
 end
@@ -828,7 +829,7 @@ end
 -- Set job-specific mode values.
 -- Return true if we recognize and set the requested field.
 function job_set_option_mode(field, val)
-    if field == 'autora' then
+    if field:lower() == 'autora' then
         state.AutoRA = val
         return true
     end
