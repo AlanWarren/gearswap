@@ -828,7 +828,10 @@ end
 -- Set job-specific mode values.
 -- Return true if we recognize and set the requested field.
 function job_set_option_mode(field, val)
- 
+    if field == 'autora' then
+        state.AutoRA = val
+        return true
+    end
 end
  
 -- Handle auto-targetting based on local setup.
