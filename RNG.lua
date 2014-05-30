@@ -820,7 +820,9 @@ end
 -- Request job-specific mode lists.
 -- Return the list, and the current value for the requested field.
 function job_get_option_modes(field)
- 
+    if field == 'autora' then
+        return state.AutoRA
+    end
 end
  
 -- Set job-specific mode values.
