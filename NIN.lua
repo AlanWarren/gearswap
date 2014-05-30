@@ -336,6 +336,7 @@ function init_gear_sets()
     
     sets.engaged.Evasion = set_combine(sets.engaged, {
     	head="Felistris Mask",
+        neck="Iga Erimaki",
         body="Mochizuki Chainmail +1",
     	back="Yokaze Mantle",
         --feet="Otronif Boots +1"
