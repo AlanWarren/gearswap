@@ -172,6 +172,7 @@ function init_gear_sets()
     	body="Mochi. Chainmail +1",
         hands="Mochizuki Tekko +1",
     	waist="Hurch'lan Sash",
+        ring1="Prolix Ring",
         legs="Mochizuki Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
@@ -197,7 +198,7 @@ function init_gear_sets()
     }
     -- Enfeebling Ninjutsu (skill)
     sets.midcast.EnfeebleNinjutsu = {
-    	head="Felistris Mask",
+    	head="Hachiya Hatsuburi",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         neck="Atzintli Necklace",
