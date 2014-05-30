@@ -669,6 +669,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
     -- add support for SAM set
     if spell.action_type == 'Ranged Attack' then
 	    if player.sub_job == 'SAM' then
+            add_to_chat(122, 'SAM SUB')
             classes.CustomClass = 'SAM'
         end
     end
