@@ -118,7 +118,7 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	sets.precast.FC = {}
+	sets.precast.FC = {ring1="Prolix Ring"}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
