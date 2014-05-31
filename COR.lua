@@ -183,7 +183,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Acumen Ring",
         ring2="Stormsoul Ring",
-		back="Toro Cape",
+		back="Gunslinger's Cape",
         waist="Aquiline Belt",
         legs="Shneddick Tights",
         feet="Iuitl Gaiters"
@@ -214,7 +214,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Acumen Ring",
         ring2="Stormsoul Ring",
-		back="Toro Cape",
+		back="Gunslinger's Cape",
         waist="Aquiline Belt",
         legs="Shneddick Tights",
         feet="Navarch's Bottes +2"
@@ -226,7 +226,7 @@ function init_gear_sets()
 		body="Navarch's Frac +2",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
-        back="Navarch's Mantle"
+        back="Gunslinger's Cape"
     })
 
     sets.midcast.CorsairShot['Light Shot'] = sets.midcast.CorsairShot.Acc
@@ -244,7 +244,7 @@ function init_gear_sets()
         hands="Sigyn's Bazubands",
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
-		back="Libeccio Mantle",
+		back="Gunslinger's Cape",
         waist="Commodore Belt",
         legs="Aetosaur Trousers +1",
         feet="Iuitl Gaiters"
