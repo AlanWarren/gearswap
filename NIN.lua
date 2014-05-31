@@ -637,7 +637,6 @@ end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
     if utsusemi_active() then
-        add_to_chat(8, 'Counter Mode Disabled!')
         state.Buff.Yonin = false
     elseif buffactive.Yonin then
         state.Buff.Yonin = true
