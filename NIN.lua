@@ -25,7 +25,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     -- Options: Override default values
-    options.OffenseModes = {'Normal', 'Mid', 'Acc' }
+    options.OffenseModes = {'Normal', 'Mid', 'Acc', 'Subtle'}
     options.DefenseModes = {'Normal', 'Evasion', 'PDT'}
     options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
     options.CastingModes = {'Normal'}
@@ -314,6 +314,19 @@ function init_gear_sets()
         ring2="Patricius Ring",
         waist="Anguinus Belt",
         legs="Hachiya Hakama +1",
+    })
+
+    sets.engaged.Subtle = set_combine(sets.engaged, {
+            head="Hachiya Hatsuburi",
+            neck="Iga Erimaki",
+            body="Hachiya Chainmail +1",
+            hands="Mochizuki Tekko +1",
+            left_ring="Beeline Ring",
+            right_ring="Epona's Ring",
+            back="Yokaze Mantle",
+            waist="Nusku's Sash",
+            legs="Hachiya Hakama +1",
+            feet="Qaaxo Leggings"
     })
     
     sets.engaged.PDT = set_combine(sets.engaged, {
