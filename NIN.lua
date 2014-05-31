@@ -15,7 +15,6 @@ end
 -- Setup vars that are user-independent.
 function job_setup()
 	state.Buff.Migawari = buffactive.migawari or false
-    state.Buff.Innin = buffactive.innin or false
     state.Buff.Yonin = buffactive.yonin or false
 
 	determine_haste_group()
@@ -58,7 +57,6 @@ function init_gear_sets()
     
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
-    sets.precast.JA['Innin'] = { head="Iga Zukin +2" }
     sets.precast.JA['Yonin'] = { legs="Iga Hakama +2" }
     sets.precast.JA['Provoke'] = { 
         ear1="Trux Earring", 
@@ -479,7 +477,6 @@ function init_gear_sets()
     
     sets.buff.Migawari = {}
     sets.Counter = { legs="Iga Hakama +2" }
-    sets.buff.Innin = { head="Iga Zukin +2" }
     sets.buff.Yonin = { legs="Iga Hakama +2" }
 end
 
@@ -500,10 +497,6 @@ function job_precast(spell, action, spellMap, eventArgs)
     if spell.name == 'Spectral Jig' and buffactive.sneak then
             -- If sneak is active when using, cancel before completion
             send_command('cancel 71')
-    end
-    -- trying to disable iga zukin for ws when innin is up
-    if spell.type:lower() == 'weaponskill' then
-        state.Buff.Innin = false
     end
     -- cancel utsusemi if shadows are up already
     if string.find(spell.english, 'Utsusemi') then
@@ -535,9 +528,6 @@ end
 -- Run after the general midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-	if state.Buff.Innin then
-		equip(sets.buff.Innin)
-	end
 end
 
 
@@ -591,9 +581,6 @@ function customize_melee_set(meleeSet)
 	if state.Buff.Migawari then
 		meleeSet = set_combine(meleeSet, sets.buff.Migawari)
 	end
-    if state.Buff.Innin then
-        meleeSet = set_combine(meleeSet, sets.buff.Innin)
-    end
     if state.Buff.Yonin then
         meleeSet = set_combine(meleeSet, sets.buff.Yonin)
     end
