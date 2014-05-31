@@ -635,6 +635,12 @@ function job_buff_change(buff, gain)
     end
 end
 
+function job_status_change(newStatus, oldStatus, eventArgs)
+    if buffactive['Copy Image'] then
+        state.Buff.Yonin = false
+    end
+end
+
 -- Called when the player's subjob changes.
 function sub_job_change(newSubjob, oldSubjob)
 	select_default_macro_book()
