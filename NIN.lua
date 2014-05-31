@@ -311,7 +311,7 @@ function init_gear_sets()
         ammo="Fire Bomblet",
         head="Whirlpool Mask",
         neck="Iqabi Necklace",
-        ring2="Patricius Ring"
+        ring2="Patricius Ring",
         waist="Anguinus Belt",
         legs="Hachiya Hakama +1",
     })
