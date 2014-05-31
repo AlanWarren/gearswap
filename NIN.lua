@@ -554,8 +554,8 @@ function job_aftercast(spell, action, spellMap, eventArgs)
                 state.Buff[spell.name] = true
             else
                 -- we must have used Yonin. check if shadows are down
-                if not buffactive['Copy Image'] then
-                    --add_to_chat(8, 'Utsusemi Down - Yonin = TRUE')
+                if not utsusemi_active() then
+                    add_to_chat(8, 'Utsusemi Down - Yonin = TRUE')
                     state.Buff.Yonin = true
                 else 
                     state.Buff.Yonin = false
@@ -621,7 +621,7 @@ function job_buff_change(buff, gain)
 	end
     -- Counter setup
     -- if we just lost our last shadow, check if yonin is active and set it to true
-    if buff == 'Copy Image (1)' and not gain then
+    if buff == 'Copy Image' and not gain then
         if buffactive.yonin then
             add_to_chat(8, 'Counter Mode Enabled!')
             state.Buff.Yonin = true
@@ -636,7 +636,8 @@ function job_buff_change(buff, gain)
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
-    if buffactive['Copy Image'] then
+    if utsusemi_active() then
+        add_to_chat(8, 'Counter Mode Disabled!')
         state.Buff.Yonin = false
     end
 end
@@ -700,6 +701,14 @@ function determine_haste_group()
         classes.CustomMeleeGroups:append('Haste_20')
     end
 
+end
+
+function utsusemi_active()
+    if buffactive['Copy Image'] or buffactive['Copy Image (2)'] or buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
+        return true
+    else
+        return false
+    end
 end
 
 -- Select default macro book on initial load or subjob change.
