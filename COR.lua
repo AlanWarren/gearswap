@@ -123,7 +123,7 @@ function init_gear_sets()
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
 
-	sets.precast.RangedAttack = {
+	sets.precast.RA = {
         ammo=gear.RAbullet,
 		hands="Iuitl Wristbands +1",
 		back="Navarch's Mantle",
@@ -234,7 +234,7 @@ function init_gear_sets()
 
 
 	-- Ranged gear
-	sets.midcast.RangedAttack = {
+	sets.midcast.RA = {
         ammo=gear.RAbullet,
 		head="Umbani Cap",
         neck="Ocachi Gorget",
@@ -250,7 +250,7 @@ function init_gear_sets()
         feet="Iuitl Gaiters"
     }
 
-	sets.midcast.RangedAttack.Acc = set_combine(sets.midcast.RangedAttack, {
+	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
         neck="Iqabi Necklace",
         hands="Navarch's Gants +2",
         ring1="Paqichikaji Ring"
