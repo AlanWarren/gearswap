@@ -152,7 +152,8 @@ function init_gear_sets()
     sets.Shun = {
         neck="Breeze Gorget",
         waist="Thunder Belt",
-        ring1="Thundersoul Ring"
+        ring1="Thundersoul Ring",
+        ear1="Dawn Earring"
     }
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
     sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
@@ -222,8 +223,8 @@ function init_gear_sets()
     sets.idle = {
     	head="Felistris Mask",
         neck="Twilight Torque",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
+        ear1="Trux Earring",
+        ear2="Dawn Earring",
     	body="Kheper Jacket",
         hands="Mochizuki Tekko +1",
         ring1="Dark Ring",
