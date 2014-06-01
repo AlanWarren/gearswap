@@ -88,7 +88,10 @@ function init_gear_sets()
     }
     
     -- Fast cast sets for spells
-    sets.precast.FC = {waist="Hurch'lan Sash"}
+    sets.precast.FC = {
+        ring1="Prolix Ring",
+        waist="Hurch'lan Sash",
+    }
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {body="Mochizuki Chainmail +1"})
     
     sets.precast.WS = {
@@ -176,6 +179,7 @@ function init_gear_sets()
         hands="Mochizuki Tekko +1",
     	waist="Hurch'lan Sash",
         ring1="Prolix Ring",
+        ring1="Diamond Ring",
         legs="Mochizuki Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
@@ -194,6 +198,7 @@ function init_gear_sets()
     	body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
     	back="Toro Cape",
+        ring1="Diamond Ring",
         ring2="Acumen Ring",
         waist="Hurch'lan Sash",
         legs="Mochizuki Hakama +1",
@@ -208,6 +213,8 @@ function init_gear_sets()
     	body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
     	back="Yokaze Mantle",
+        ring1="Diamond Ring",
+        ring2="Acumen Ring",
         waist="Hurch'lan Sash",
         legs="Mochizuki Hakama +1",
         feet="Mochizuki Kyahan +1"
