@@ -528,7 +528,7 @@ function init_gear_sets()
         -- JISHNUS
         sets.Jishnus = {
             neck="Flame Gorget",
-            ear2="Novia Earring",
+            ear2="Dawn Earring",
             waist="Light Belt",
             hands="Arcadian Bracers +1", -- override 
             legs="Arcadian Braccae +1",
