@@ -131,7 +131,7 @@ function init_gear_sets()
         neck="Shadow gorget",
     	ring1="Stormsoul Ring",
         back="Rancorous Mantle",
-        body="Qaaxo Harness",
+        body="Mochizuki Chainmail",
         legs="Nahtirah Trousers",
         waist="Soil belt",
         feet="Mochizuki Kyahan +1"
