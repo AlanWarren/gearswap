@@ -156,7 +156,7 @@ function init_gear_sets()
             head="Umbani Cap",
             neck="Twilight torque",
             ear1="Volley Earring",
-            ear2="Tripudio Earring",
+            ear2="Dawn Earring",
             body="Kheper Jacket",
             hands="Iuitl Wristbands +1",
             ring1="Dark Ring",
@@ -170,7 +170,7 @@ function init_gear_sets()
         sets.idle.Town = set_combine(sets.idle, {
             neck="Ocachi Gorget",
             ear1="Fenrir's Earring",
-            ear2="Tripudio Earring",
+            ear2="Dawn Earring",
             ring1="Rajas Ring",
             ring2="Pyrosoul Ring",
             back="Lutian Cape"
@@ -484,7 +484,8 @@ function init_gear_sets()
         -- CORONACH
         sets.Coronach = {
            neck="Breeze Gorget",
-           waist="Thunder Belt"
+           waist="Thunder Belt",
+           ear1="Dawn Earring"
         }
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
         sets.precast.WS['Coronach'].Mod = set_combine(sets.precast.WS.Mod, sets.Coronach)
