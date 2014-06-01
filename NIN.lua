@@ -132,7 +132,7 @@ function init_gear_sets()
     	ring1="Stormsoul Ring",
         back="Rancorous Mantle",
         body="Mochizuki Chainmail",
-        legs="Nahtirah Trousers",
+        legs="Mochizuki Hakama +1",
         waist="Soil belt",
         feet="Mochizuki Kyahan +1"
     }
