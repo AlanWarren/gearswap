@@ -207,7 +207,7 @@ function init_gear_sets()
 	sets.midcast.CorsairShot = {
         ammo=gear.QDbullet,
 		head="Umbani Cap",
-        neck="Atzintli Necklace",
+        neck="Stoicheion Medal",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
 		body="Lanun Frac",
