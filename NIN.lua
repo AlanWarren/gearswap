@@ -196,7 +196,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         neck="Stoicheion Medal",
     	body="Mochizuki Chainmail +1",
-        hands="Mochizuki Tekko +1",
+        hands="Iga Tekko +1",
     	back="Toro Cape",
         ring1="Diamond Ring",
         ring2="Acumen Ring",
