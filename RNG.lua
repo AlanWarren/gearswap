@@ -811,7 +811,7 @@ end
 --end
 
 -- Job-specific toggles.
-function job_toggle(field)
+function job_toggle_state(field)
     if field:lower() == 'autora' then
         state.AutoRA = not state.AutoRA
         --return "Use Auto RA", state.AutoRA

@@ -110,4 +110,3 @@ Ranged & Ammo
   STR: 12             |  STR: 14
   Enmity: -4          |  Enmity: -6
 
-
