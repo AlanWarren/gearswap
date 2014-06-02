@@ -448,14 +448,14 @@ function init_gear_sets()
             hands="Arcadian Bracers +1",
             ring1="Rajas Ring",
             ring2="Pyrosoul Ring",
-            back="Buquwik Cape",
+            back="Sylvan Chlamys",
             waist="Elanid Belt",
             legs="Nahtirah Trousers",
             feet="Arcadian Socks +1"
         }
         sets.precast.WS = set_combine(sets.precast.CustomWS, sets.earring)
         sets.precast.WS.Mod = set_combine(sets.precast.WS, {
-            legs="Arcadian Braccae +1",
+            legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mod, {
