@@ -151,6 +151,9 @@ function init_gear_sets()
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
             head="Whirlpool Mask",
+            hands="Plunderer's Armlets +1",
+            ring1="Mars's Ring",
+            ring2="Patricius Ring",
             back="Canny Cape"
     })
 
@@ -163,6 +166,9 @@ function init_gear_sets()
     })
 	sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {
             head="Whirlpool Mask",
+            hands="Plunderer's Armlets +1",
+            ring1="Mars's Ring",
+            ring2="Patricius Ring",
             back="Canny Cape"
     })
 	sets.precast.WS['Exenterator'].Mod = set_combine(sets.precast.WS['Exenterator'], {waist="Thunder Belt"})
@@ -188,6 +194,9 @@ function init_gear_sets()
     })
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
             head="Whirlpool Mask",
+            hands="Plunderer's Armlets +1",
+            ring1="Mars's Ring",
+            ring2="Patricius Ring",
             back="Canny Cape"
     })
 	sets.precast.WS['Evisceration'].Mod = set_combine(sets.precast.WS['Evisceration'], {waist="Soil Belt"})
@@ -204,16 +213,17 @@ function init_gear_sets()
 	sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mod, {neck="Breeze Gorget"})
 
 	sets.precast.WS['Aeolian Edge'] = {
-		neck="Atzintli Necklace",
+		neck="Stoicheion Medal",
         ear1="Friomisi Earring",
-        ear2="Hecate's Earring",
-		body="Manibozho Jerkin",
+        ear2="Crematio Earring",
+        head="Umbani Cap",
+		body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
-        ring1="Rajas Ring",
+        ring1="Acumen Ring",
         ring2="Stormsoul Ring",
 		back="Toro Cape",
         waist="Thunder Belt",
-        legs="Iuitl Tights",
+        legs="Shneddick Tights",
         feet="Iuitl Gaiters"
     }
 	
@@ -350,7 +360,7 @@ function init_gear_sets()
     }
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		head="Whirlpool Mask",
-        neck="Rancor Collar",
+        neck="Iqabi Necklace",
         ring1="Patricius Ring",
         hands="Plunderer's Armlets +1",
         waist="Hurch'lan Sash",
