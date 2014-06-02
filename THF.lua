@@ -128,7 +128,7 @@ function init_gear_sets()
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
 	-- Ranged snapshot gear
-	sets.precast.RangedAttack = {hands="Iuitl Wristbands +1",legs="Nahtirah Trousers"}
+	sets.precast.RA = {hands="Iuitl Wristbands +1",legs="Nahtirah Trousers"}
 
        
 	-- Weaponskill sets
@@ -242,7 +242,7 @@ function init_gear_sets()
     }
 
 	-- Ranged gear -- acc + TH
-	sets.midcast.RangedAttack = {
+	sets.midcast.RA = {
 		head="Uk'uxkaj Cap",
         neck="Huani Collar",
         ear1="Clearview Earring",
@@ -257,9 +257,9 @@ function init_gear_sets()
         feet="Iuitl Gaiters"
     }
 
-	sets.midcast.RangedAttack.TH = set_combine(sets.midcast.RangedAttack, set.TreasureHunter)
+	sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
 
-	sets.midcast.RangedAttack.Acc = sets.midcast.RangedAttack
+	sets.midcast.RA.Acc = sets.midcast.RA
 	
 	-- Sets to return to when not performing an action.
 	
