@@ -185,7 +185,7 @@ function init_gear_sets()
         ring2="Stormsoul Ring",
 		back="Gunslinger's Cape",
         waist="Aquiline Belt",
-        legs="Shneddick Tights",
+        legs="Shneddick Tights +1",
         feet="Iuitl Gaiters"
     }
 

@@ -473,7 +473,7 @@ function init_gear_sets()
             ring1="Acumen Ring",
             ring2="Stormsoul Ring",
             waist="Aquiline Belt",
-            legs="Shneddick Tights",
+            legs="Shneddick Tights +1",
             back="Toro Cape",
             feet="Arcadian Socks +1"
         }

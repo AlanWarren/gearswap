@@ -201,7 +201,7 @@ function init_gear_sets()
         ring1="Diamond Ring",
         ring2="Acumen Ring",
         waist="Hurch'lan Sash",
-        legs="Mochizuki Hakama +1",
+        legs="Shneddick Tights +1",
         feet="Mochizuki Kyahan +1"
     }
     -- Enfeebling Ninjutsu (skill)
