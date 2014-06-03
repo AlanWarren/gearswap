@@ -943,17 +943,22 @@ end
 function use_ra(spell)
     
     local delay = '2.2'
-
+    --BOW 
     if player.equipment.range == gear.Bow then
         if spell.type:lower() == 'weaponskill' then
+        -- AFTER WS DELAY
             delay = '2.3'
         else
+        -- AFTER RA DELAY
             delay = '1.8'
         end
     else
+    -- GUN 
         if spell.type:lower() == 'weaponskill' then
+        -- AFTER WS DELAY
             delay = '2.7'
         else
+        -- AFTER RA DELAY
             delay = '2.2'
         end
     end
