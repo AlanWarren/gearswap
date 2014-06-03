@@ -489,7 +489,7 @@ function init_gear_sets()
             ring1="Acumen Ring",
             ring2="Stormsoul Ring",
             waist="Aquiline Belt",
-            legs="Shneddick Tights",
+            legs="Shneddick Tights +1",
             back="Toro Cape",
             feet="Arcadian Socks +1"
         }
@@ -507,14 +507,14 @@ function init_gear_sets()
         sets.precast.WS['Coronach'].Mod = set_combine(sets.precast.WS.Mod, sets.Coronach)
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, sets.Coronach)
 
-        sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
-            neck="Ocachi Gorget",
-            ear1="Volley Earring",
-            ear2="Tripudio Earring",
-            hands="Sylvan Glovelettes +2",
-            ring2="K'ayres Ring",
-            legs="Aetosaur Trousers +1"
-        })
+        --sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
+        --    neck="Ocachi Gorget",
+        --    ear1="Volley Earring",
+        --    ear2="Tripudio Earring",
+        --    hands="Sylvan Glovelettes +2",
+        --    ring2="K'ayres Ring",
+        --    legs="Aetosaur Trousers +1"
+        --})
 
         -- LAST STAND
         sets.LastStand = {
@@ -695,9 +695,9 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
     -- add support for SAM set
     if spell.action_type == 'Ranged Attack' then
-	    if player.sub_job == 'SAM' then
-            classes.CustomClass = 'SAM'
-        end
+	    --if player.sub_job == 'SAM' then
+        --    classes.CustomClass = 'SAM'
+        --end
         -- TESTING. This may save you from bad recycle rounds
         if player.tp > 68 and player.tp < 75 then
             classes.CustomClass = 'SAM'
@@ -726,8 +726,8 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-    if spell.action_type == 'Ranged Attack' and state.AutoRA then
-        use_ra()
+    if (spell.action_type == 'Ranged Attack' or spell.type:lower() == 'weaponskill') and state.AutoRA then
+        use_ra(spell)
     end
     if not spell.interrupted then
         if state.Buff[spell.name] ~= nil then
@@ -754,8 +754,8 @@ function get_custom_wsmode(spell, spellMap, default_wsmode)
     -- I want WS mode to be dictated by RangedMode toggle
 	if state.RangedMode ~= 'Normal' and S(options.WeaponskillModes):contains(state.RangedMode) then
 		return state.RangedMode
-    elseif player.sub_job == 'SAM' then
-        return 'SAM'
+    --elseif player.sub_job == 'SAM' then
+    --    return 'SAM'
     end
 end
 
@@ -940,8 +940,24 @@ function use_weaponskill()
     end
 end
 
-function use_ra()
-    send_command('@wait 2.7; input /ra <t>')
+function use_ra(spell)
+    
+    local delay = '2.2'
+
+    if player.equipment.range == gear.Bow then
+        if spell.type:lower() == 'weaponskill' then
+            delay = '2.3'
+        else
+            delay = '1.8'
+        end
+    else
+        if spell.type:lower() == 'weaponskill' then
+            delay = '2.7'
+        else
+            delay = '2.2'
+        end
+    end
+    send_command('@wait '..delay..'; input /ra <t>')
 end
 
 function camo_active()
