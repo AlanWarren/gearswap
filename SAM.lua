@@ -692,7 +692,7 @@ function determine_bow()
     	classes.CustomMeleeGroups:append('Yoichi')
     end
 end
--- will try and bend this to work for cor rolls
+-- will try and bend this to work for cor rolls. I'd like to know the value of sam roll
 --windower.register_event('incoming text', function(original, new, color)
 --    local name, count = original:match('Additional effect: Treasure Hunter effectiveness against the (.*) increases to (%d+).')
 --    if name and count then
