@@ -534,11 +534,11 @@ function job_pretarget(spell, action, spellMap, eventArgs)
 end
 
 function job_precast(spell, action, spellMap, eventArgs)
-    if spell.english == 'Third Eye' and not buffactive.Seigan then
-        cancel_spell()
-        send_command('@wait 0.5;input /ja Seigan <me>')
-        send_command('@wait 1;input /ja "Third Eye" <me>')
-    end
+    --if spell.english == 'Third Eye' and not buffactive.Seigan then
+    --    cancel_spell()
+    --    send_command('@wait 0.5;input /ja Seigan <me>')
+    --    send_command('@wait 1;input /ja "Third Eye" <me>')
+    --end
 end
 -- Run after the default precast() is done.
 -- eventArgs is the same one used in job_precast, in case information needs to be persisted.
