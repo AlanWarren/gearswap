@@ -271,9 +271,9 @@ function init_gear_sets()
         })
 
         -- sam subjob 
-        sets.midcast.RA.SAM = sets.midcast.RA
-        sets.midcast.RA.SAM.Mod = sets.midcast.RA.Mod
-        sets.midcast.RA.SAM.Acc = sets.midcast.RA.Acc
+        --sets.midcast.RA.SAM = sets.midcast.RA
+        --sets.midcast.RA.SAM.Mod = sets.midcast.RA.Mod
+        --sets.midcast.RA.SAM.Acc = sets.midcast.RA.Acc
 
 
         -- Stave + Strap set for Gun
@@ -317,29 +317,29 @@ function init_gear_sets()
         -- Ratk: 201.5 
         -- AGI: 110
         -- STR: 81 
-        sets.midcast.RA.SAM.Gun2H = {
-            head="Arcadian Beret +1",
-            neck="Ocachi Gorget",
-            ear1="Volley Earring", 
-            ear2="Tripudio Earring", 
-            body="Kyujutsugi",
-            hands="Sigyn's Bazubands",
-            ring1="Rajas Ring", 
-            ring2="K'ayres Ring",
-            back="Sylvan Chlamys",
-            waist="Patentia Sash",
-            legs="Sylvan Bragues +2",
-            feet="Orion Socks +1"
-        }
-        sets.midcast.RA.SAM.Mod.Gun2H = set_combine(sets.midcast.RA.SAM.Gun2H, {
-            waist="Elanid Belt",
-            legs="Aetosaur Trousers +1"
-        })
-        sets.midcast.RA.SAM.Acc.Gun2H = set_combine(sets.midcast.RA.SAM.Mod.Gun2H, {
-            ring1="Longshot Ring",
-            ring2="Paqichikaji Ring",
-            back="Lutian Cape"
-        })
+        --sets.midcast.RA.SAM.Gun2H = {
+        --    head="Arcadian Beret +1",
+        --    neck="Ocachi Gorget",
+        --    ear1="Volley Earring", 
+        --    ear2="Tripudio Earring", 
+        --    body="Kyujutsugi",
+        --    hands="Sigyn's Bazubands",
+        --    ring1="Rajas Ring", 
+        --    ring2="K'ayres Ring",
+        --    back="Sylvan Chlamys",
+        --    waist="Patentia Sash",
+        --    legs="Sylvan Bragues +2",
+        --    feet="Orion Socks +1"
+        --}
+        --sets.midcast.RA.SAM.Mod.Gun2H = set_combine(sets.midcast.RA.SAM.Gun2H, {
+        --    waist="Elanid Belt",
+        --    legs="Aetosaur Trousers +1"
+        --})
+        --sets.midcast.RA.SAM.Acc.Gun2H = set_combine(sets.midcast.RA.SAM.Mod.Gun2H, {
+        --    ring1="Longshot Ring",
+        --    ring2="Paqichikaji Ring",
+        --    back="Lutian Cape"
+        --})
 
         
         -- Bow Default (614 total delay) 4-hit with 3/4 recycle
@@ -443,7 +443,7 @@ function init_gear_sets()
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
             ear1="Flame Pearl",
-            ear2="Flame Pearl",
+            ear2="Tripudio Earring",
             body="Kyujutsugi",
             hands="Arcadian Bracers +1",
             ring1="Rajas Ring",
