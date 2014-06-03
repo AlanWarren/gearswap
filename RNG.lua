@@ -285,8 +285,7 @@ function init_gear_sets()
         sets.midcast.RA.Gun2H = set_combine(sets.midcast.RA, {
             --main="Mekki Shakki",
             --sub="Bloodrain Strap",
-            legs="Nahtirah Trousers",
-            back="Lutian Cape",
+            legs="Nahtirah Trousers"
         })
 
         -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
@@ -296,7 +295,8 @@ function init_gear_sets()
         -- STR: 104
         sets.midcast.RA.Mod.Gun2H = set_combine(sets.midcast.RA.Gun2H, {
             legs="Aetosaur Trousers +1",
-            ring2="Longshot Ring"
+            ring2="Longshot Ring",
+            back="Lutian Cape"
         })
 
         -- STP: 32 ~ 87.6 TP after 4 hits (3/4 recycle required)
