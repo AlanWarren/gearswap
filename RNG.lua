@@ -696,7 +696,7 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-    if spell.action_type == 'Ranged Attack' and state.AutoRA then
+    if (spell.action_type == 'Ranged Attack' or spell.type:lower() == 'weaponskill') and state.AutoRA then
         use_ra()
     end
     if not spell.interrupted then
@@ -908,7 +908,11 @@ function use_weaponskill()
 end
 
 function use_ra()
-    send_command('@wait 2.7; input /ra <t>')
+    if player.equipment.range == gear.Bow then
+        send_command('@wait 1.8; input /ra <t>')
+    else
+        send_command('@wait 2.2; input /ra <t>')
+    end
 end
 
 function camo_active()
