@@ -225,11 +225,11 @@ function init_gear_sets()
         }
 
         -- Gun Default : (822 total delay)
-        -- STP: 37 ~ 90.8 TP after 4 hits (2/4 recycle required)
-        -- Racc: 264
-        -- Ratk: 219.75
-        -- AGI: 148
-        -- STR: 105
+        -- STP: 42 ~ (2/4 recycle proc required)
+        -- Racc: 251.75
+        -- Ratk: 209
+        -- AGI: 141
+        -- STR: 100
         sets.midcast.RA = { 
             -- main="Hurlbat",
             -- sub="Legion Scutum", 
@@ -239,10 +239,10 @@ function init_gear_sets()
             ear2="Tripudio Earring", 
             body="Kyujutsugi",
             hands="Sigyn's Bazubands",
-            ring1="Rajas Ring", 
+            ring1="Rajas Ring",
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
-            waist="Elanid Belt", 
+            waist="Patentia Sash", 
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         }
@@ -256,7 +256,8 @@ function init_gear_sets()
         sets.midcast.RA.Mod = set_combine(sets.midcast.RA, {
             hands="Seiryu's Kote",
             ring2="Longshot Ring",
-            back="Lutian Cape"
+            back="Lutian Cape",
+            waist="Elanid Belt"
         })
 
         -- Gun Acc 
@@ -270,22 +271,18 @@ function init_gear_sets()
             ring1="Hajduk Ring"
         })
 
-        -- sam subjob 
-        --sets.midcast.RA.SAM = sets.midcast.RA
-        --sets.midcast.RA.SAM.Mod = sets.midcast.RA.Mod
-        --sets.midcast.RA.SAM.Acc = sets.midcast.RA.Acc
-
-
         -- Stave + Strap set for Gun
-        -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
-        -- Racc: 242
-        -- Ratk: 262.75
-        -- AGI: 136
-        -- STR: 109
+        -- STP: 43 ~ (2/4 recycle required)
+        -- Racc: 230
+        -- Ratk: 251.25
+        -- AGI: 142
+        -- STR: 115
         sets.midcast.RA.Gun2H = set_combine(sets.midcast.RA, {
             --main="Mekki Shakki",
             --sub="Bloodrain Strap",
-            legs="Nahtirah Trousers"
+            legs="Nahtirah Trousers",
+            back="Lutian Cape",
+            waist="Elanid Belt"
         })
 
         -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
@@ -309,10 +306,29 @@ function init_gear_sets()
             neck="Iqabi Necklace",
             ring1="Hajduk Ring"
         })
+
+        -- XXX:SAM SJ - Experimental (gun only for now)
+        -- This might be used for your 3rd shot, if recycle failed to proc
+        -- I don't know the value of this feature yet..
         
+        sets.midcast.RA.SAM = {
+            head="Arcadian Beret +1",
+            neck="Ocachi Gorget",
+            ear1="Volley Earring", 
+            ear2="Tripudio Earring", 
+            body="Kyujutsugi",
+            ring1="Rajas Ring", 
+            ring2="K'ayres Ring",
+            back="Sylvan Chlamys",
+            waist="Patentia Sash",
+            legs="Sylvan Bragues +2"
+        }
+        sets.midcast.RA.SAM.Mod = set_combine(sets.midcast.RA.Mod, sets.midcast.RA.SAM)
+        sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.Acc, sets.midcast.RA.SAM)
+
         -- This is a 3-hit build with 3 out of 3 recycle procs and /sam sub. 
-        -- It's used automatically by having /sam and gear.Stave equipped. (sacrifices should be obvious)
-        -- STP: 57
+        -- It's used automatically by having /sam and gear.Stave equipped.
+        -- STP: 57 for TP and 55 for WS 
         -- Racc: 200.5
         -- Ratk: 201.5 
         -- AGI: 110
@@ -491,6 +507,15 @@ function init_gear_sets()
         sets.precast.WS['Coronach'].Mod = set_combine(sets.precast.WS.Mod, sets.Coronach)
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, sets.Coronach)
 
+        --sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
+        --    neck="Ocachi Gorget",
+        --    ear1="Volley Earring",
+        --    ear2="Tripudio Earring",
+        --    hands="Sylvan Glovelettes +2",
+        --    ring2="K'ayres Ring",
+        --    legs="Aetosaur Trousers +1"
+        --})
+
         -- LAST STAND
         sets.LastStand = {
            neck="Aqua Gorget",
@@ -612,7 +637,7 @@ function job_precast(spell, action, spellMap, eventArgs)
             end
             if ((spell.target.distance >8 and spell.skill ~= 'Archery' and spell.skill ~= 'Marksmanship') or (spell.target.distance >21)) then
                 -- Cancel Action if distance is too great, saving TP
-                add_to_chat(122,"Outside Ranged WS Range! /Canceling")
+                add_to_chat(122,"Outside WS Range! /Canceling")
                 eventArgs.cancel = true
                 return
 
@@ -627,29 +652,30 @@ function job_precast(spell, action, spellMap, eventArgs)
         end
        
         if spell.type == 'Waltz' then
-                refine_waltz(spell, action, spellMap, eventArgs)
+            refine_waltz(spell, action, spellMap, eventArgs)
         end
        
-        if spell.name == "Ranged" or spell.type:lower() == 'weaponskill' then
-                -- If ammo is empty, or special ammo being used without buff, replace with default ammo
-                if U_Shot_Ammo[player.equipment.ammo] and not buffactive['unlimited shot'] or player.equipment.ammo == 'empty' then
-                        if DefaultAmmo[player.equipment.range] and player.inventory[DefaultAmmo[player.equipment.range]] then
-                                add_to_chat(122,"Unlimited Shot not Active or Ammo Empty, Using Default Ammo")
-                                equip({ammo=DefaultAmmo[player.equipment.range]})
-                        else
-                                add_to_chat(122,"Either Default Ammo is Unavailable or Unknown Weapon. Staying empty")
-                                equip({ammo=empty})
+        if spell.action_type == 'Ranged Attack' or spell.type:lower() == 'weaponskill' then
+            -- If ammo is empty, or special ammo being used without buff, replace with default ammo
+            if U_Shot_Ammo[player.equipment.ammo] and not buffactive['unlimited shot'] or player.equipment.ammo == 'empty' then
+                 if DefaultAmmo[player.equipment.range] and player.inventory[DefaultAmmo[player.equipment.range]] then
+                        add_to_chat(122,"Unlimited Shot not Active or Ammo Empty, Using Default Ammo")
+                        equip({ammo=DefaultAmmo[player.equipment.range]})
+                else
+                        add_to_chat(122,"Either Default Ammo is Unavailable or Unknown Weapon. Staying empty")
+                        equip({ammo=empty})
+                end
+            end
+            if not buffactive['unlimited shot'] then
+                -- If not empty, and if unlimited shot is not active
+                -- Not doing it for unlimited shot to avoid excessive log
+                if player.equipment.ammo ~= 'empty' then
+                        if player.inventory[player.equipment.ammo].count < 15 then
+                                add_to_chat(122,"Ammo '"..player.inventory[player.equipment.ammo].shortname.."' running low ("..player.inventory[player.equipment.ammo].count..")")
                         end
                 end
-                if not buffactive['unlimited shot'] then
-                        -- If not empty, and if unlimited shot is not active
-                        -- Not doing it for unlimited shot to avoid excessive log
-                        if player.equipment.ammo ~= 'empty' then
-                                if player.inventory[player.equipment.ammo].count < 15 then
-                                        add_to_chat(122,"Ammo '"..player.inventory[player.equipment.ammo].shortname.."' running low ("..player.inventory[player.equipment.ammo].count..")")
-                                end
-                        end
-                end
+            end
+
         end
 end
  
@@ -669,7 +695,11 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
     -- add support for SAM set
     if spell.action_type == 'Ranged Attack' then
-	    if player.sub_job == 'SAM' then
+	    --if player.sub_job == 'SAM' then
+        --    classes.CustomClass = 'SAM'
+        --end
+        -- TESTING. This may save you from bad recycle rounds
+        if player.tp > 68 and player.tp < 75 then
             classes.CustomClass = 'SAM'
         end
     end
@@ -712,20 +742,23 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     end
 end
  
--- Return a customized weaponskill mode to use for weaponskill sets.
--- Don't return anything if you're not overriding the default value.
-function get_custom_wsmode(spell, spellMap, default_wsmode)
-	if state.RangedMode ~= 'Normal' and S(options.WeaponskillModes):contains(state.RangedMode) then
-		return state.RangedMode
-	end
-end
-
 -- Run after the default aftercast() is done.
 -- eventArgs is the same one used in job_aftercast, in case information needs to be persisted.
 function job_post_aftercast(spell, action, spellMap, eventArgs)
  
 end
  
+-- Return a customized weaponskill mode to use for weaponskill sets.
+-- Don't return anything if you're not overriding the default value.
+function get_custom_wsmode(spell, spellMap, default_wsmode)
+    -- I want WS mode to be dictated by RangedMode toggle
+	if state.RangedMode ~= 'Normal' and S(options.WeaponskillModes):contains(state.RangedMode) then
+		return state.RangedMode
+    --elseif player.sub_job == 'SAM' then
+    --    return 'SAM'
+    end
+end
+
 -- Called before the Include starts constructing melee/idle/resting sets.
 -- Can customize state or custom melee class values at this point.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -908,13 +941,23 @@ function use_weaponskill()
 end
 
 function use_ra(spell)
+    
     local delay = '2.2'
     if player.equipment.range == gear.Bow then
         if spell.type:lower() == 'weaponskill' then
             delay = '2.6'
          else
             delay = '1.8'
-         end
+        end
+    else
+    -- GUN 
+        if spell.type:lower() == 'weaponskill' then
+        -- AFTER WS DELAY
+            delay = '3.0'
+        else
+        -- AFTER RA DELAY
+            delay = '2.2'
+        end
     end
     send_command('@wait '..delay..'; input /ra <t>')
 end

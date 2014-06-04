@@ -534,11 +534,11 @@ function job_pretarget(spell, action, spellMap, eventArgs)
 end
 
 function job_precast(spell, action, spellMap, eventArgs)
-    if spell.english == 'Third Eye' and not buffactive.Seigan then
-        cancel_spell()
-        send_command('@wait 0.5;input /ja Seigan <me>')
-        send_command('@wait 1;input /ja "Third Eye" <me>')
-    end
+    --if spell.english == 'Third Eye' and not buffactive.Seigan then
+    --    cancel_spell()
+    --    send_command('@wait 0.5;input /ja Seigan <me>')
+    --    send_command('@wait 1;input /ja "Third Eye" <me>')
+    --end
 end
 -- Run after the default precast() is done.
 -- eventArgs is the same one used in job_precast, in case information needs to be persisted.
@@ -692,21 +692,6 @@ function determine_bow()
     	classes.CustomMeleeGroups:append('Yoichi')
     end
 end
--- will try and bend this to work for cor rolls
---windower.register_event('incoming text', function(original, new, color)
---    local name, count = original:match('Additional effect: Treasure Hunter effectiveness against the (.*) increases to (%d+).')
---    if name and count then
---        mob = name
---        th:text(' '..name..'\n TH: '..count);
---        th:show()
---    end
---
---    name = original:match('%w+ defeats the (.*).')
---    if name and mob == name then
---        th:text('')
---        th:hide()
---    end
---end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()

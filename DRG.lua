@@ -328,6 +328,17 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic target handling to be done.
 function job_pretarget(spell, action, spellMap, eventArgs)
+    if spell.english == "Spirit Jump" then
+        if not pet.isvalid then
+            cancel_spell()
+            send_command('Jump')
+        end
+    elseif spell.english == "Soul Jump" then
+        if not pet.isvalid then
+            cancel_spell()
+            send_command("High Jump")
+        end
+    end
 
 end
 
