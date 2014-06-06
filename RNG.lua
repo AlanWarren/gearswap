@@ -735,7 +735,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
         end
 
         if state.Buff['Camouflage'] then
-            send_command('@wait .5;gs disable body')
+            disable('body')
         else
             enable('body')
         end
@@ -785,7 +785,7 @@ end
  
 function job_status_change(newStatus, oldStatus, eventArgs)
     if camo_active() then
-        send_command('@wait .5;gs disable body')
+        disable('body')
     else
         enable('body')
     end
@@ -836,7 +836,7 @@ function job_update(cmdParams, eventArgs)
     state.Buff['Decoy Shot'] = buffactive['Decoy Shot'] or false
 
     if camo_active() then
-        send_command('@wait .5;gs disable body')
+        disable('body')
     else
         enable('body')
     end
