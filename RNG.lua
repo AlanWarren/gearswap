@@ -624,6 +624,9 @@ function job_pretarget(spell, action, spellMap, eventArgs)
             use_weaponskill()
         end
     end
+    if state.Buff[spell.english] ~= nil then
+        state.Buff[spell.english] = true
+    end
 end 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
@@ -699,9 +702,9 @@ function job_midcast(spell, action, spellMap, eventArgs)
         --    classes.CustomClass = 'SAM'
         --end
         -- TESTING. This may save you from bad recycle rounds
-        if player.tp > 68 and player.tp < 75 then
-            classes.CustomClass = 'SAM'
-        end
+        --if player.tp > 68 and player.tp < 75 then
+        --    classes.CustomClass = 'SAM'
+        --end
     end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
         -- If sneak is active when using, cancel before completion
@@ -729,17 +732,18 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     if (spell.action_type == 'Ranged Attack' or spell.type:lower() == 'weaponskill') and state.AutoRA then
         use_ra(spell)
     end
-    if not spell.interrupted then
-        if state.Buff[spell.name] ~= nil then
-            state.Buff[spell.name] = true
-        end
 
-        if state.Buff['Camouflage'] then
-            disable('body')
-        else
-            enable('body')
-        end
+    if state.Buff[spell.name] ~= nil then
+        state.Buff[spell.name] = not spell.interrupted or buffactive[spell.english]
     end
+
+    --if not spell.interrupted then
+    --    if state.Buff['Camouflage'] then
+    --        disable('body')
+    --    else
+    --        enable('body')
+    --    end
+    --end
 end
  
 -- Run after the default aftercast() is done.
