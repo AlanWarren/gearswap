@@ -55,7 +55,7 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
     
-    sets.ammo = select_ammo()
+    gear.ammo = select_ammo()
 
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
@@ -314,7 +314,8 @@ function init_gear_sets()
         feet="Mochizuki Kyahan +1"
     })
     -- wtf I can't hit anything set
-    sets.engaged.Acc = set_combine(sets.ammo, {
+    sets.engaged.Acc = {
+        ammo=gear.ammo,
         head="Whirlpool Mask",
         neck="Iqabi Necklace",
         ear1="Dudgeon Earring",
@@ -327,9 +328,10 @@ function init_gear_sets()
         waist="Anguinus Belt",
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
-    })
+    }
 
-    sets.engaged.Subtle = set_combine(sets.ammo, {
+    sets.engaged.Subtle = {
+        ammo=gear.ammo,
         head="Hachiya Hatsuburi",
         neck="Iga Erimaki",
         ear1="Dudgeon Earring",
@@ -342,7 +344,7 @@ function init_gear_sets()
         waist="Nusku's Sash",
         legs="Hachiya Hakama +1",
         feet="Qaaxo Leggings"
-    })
+    }
     
     sets.engaged.PDT = set_combine(sets.engaged, {
     	head="Lithelimb Cap",
@@ -397,15 +399,14 @@ function init_gear_sets()
         feet="Mochizuki Kyahan +1"
     }
 
-    sets.engaged.HasteAccAmmo = set_combine(sets.engaged.HasteMid, {
-        ammo="Fire Bomblet",
+    sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
+        ammo=gear.ammo,
         neck="Iqabi Necklace",
         body="Mochizuki Chainmail +1",
         ring2="Patricius Ring",
         waist="Anguinus Belt",
         legs="Hachiya Hakama +1"
     })
-    sets.engaged.HasteAcc = set_combine(sets.engaged.HasteAccAmmo, sets.ammo)
 
     sets.engaged.HasteEvasion = {
         body="Mochizuki Chainmail +1",
@@ -528,7 +529,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-    sets.ammo = select_ammo()
+    gear.ammo = select_ammo()
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -584,7 +585,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
 	sets.Kiting = select_movement()
-    sets.ammo = select_ammo()
+    gear.ammo = select_ammo()
 end
 
 -- Modify the default idle set after it was constructed.
@@ -648,7 +649,7 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     elseif buffactive.Yonin then
         state.Buff.Yonin = true
     end
-    sets.ammo = select_ammo()
+    gear.ammo = select_ammo()
 end
 
 
