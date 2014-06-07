@@ -311,20 +311,20 @@ function init_gear_sets()
         -- This might be used for your 3rd shot, if recycle failed to proc
         -- I don't know the value of this feature yet..
         
-        sets.midcast.RA.SAM = {
-            head="Arcadian Beret +1",
-            neck="Ocachi Gorget",
-            ear1="Volley Earring", 
-            ear2="Tripudio Earring", 
-            body="Kyujutsugi",
-            ring1="Rajas Ring", 
-            ring2="K'ayres Ring",
-            back="Sylvan Chlamys",
-            waist="Patentia Sash",
-            legs="Sylvan Bragues +2"
-        }
-        sets.midcast.RA.SAM.Mod = set_combine(sets.midcast.RA.Mod, sets.midcast.RA.SAM)
-        sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.Acc, sets.midcast.RA.SAM)
+        --sets.midcast.RA.SAM = {
+        --    head="Arcadian Beret +1",
+        --    neck="Ocachi Gorget",
+        --    ear1="Volley Earring", 
+        --    ear2="Tripudio Earring", 
+        --    body="Kyujutsugi",
+        --    ring1="Rajas Ring", 
+        --    ring2="K'ayres Ring",
+        --    back="Sylvan Chlamys",
+        --    waist="Patentia Sash",
+        --    legs="Sylvan Bragues +2"
+        --}
+        --sets.midcast.RA.SAM.Mod = set_combine(sets.midcast.RA.Mod, sets.midcast.RA.SAM)
+        --sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.Acc, sets.midcast.RA.SAM)
 
         -- This is a 3-hit build with 3 out of 3 recycle procs and /sam sub. 
         -- It's used automatically by having /sam and gear.Stave equipped.
@@ -699,9 +699,9 @@ function job_midcast(spell, action, spellMap, eventArgs)
         --    classes.CustomClass = 'SAM'
         --end
         -- TESTING. This may save you from bad recycle rounds
-        if player.tp > 68 and player.tp < 75 then
-            classes.CustomClass = 'SAM'
-        end
+        --if player.tp > 68 and player.tp < 75 then
+        --    classes.CustomClass = 'SAM'
+        --end
     end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
         -- If sneak is active when using, cancel before completion
