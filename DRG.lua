@@ -63,11 +63,11 @@ function init_gear_sets()
 	sets.precast.JA.Angon = {ammo="Angon",hands="Wyrm Finger Gauntlets +2"}
 	sets.precast.JA.Jump = {
         ammo="Hagneia Stone",
-		head="Quauhpilli helm",
+		head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Steelflash Earring",
         ear2="Bladeborn Earring",
-		body="Lncr. Plackart +2",
+		body="Xaddi Mail",
         hands="Cizin Mufflers",
         ring1="Rajas Ring",
         ring2="K'ayres Ring",
@@ -153,7 +153,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-		body="Mikiknaak Breastplate",
+		body="Xaddi Mail",
         hands="Cizin Mufflers",
         ring1="Rajas Ring",
         ring2="Pyrosoul Ring",
@@ -203,7 +203,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
-		body="Lancer's plackart +2",
+		body="Xaddi Mail",
         hands="Cizin Mufflers",
         ring1="Rajas Ring",
         ring2="Paguroidea Ring",
@@ -269,7 +269,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Lncr. Plackart +2",
+		body="Xaddi Mail",
         hands="Cizin Mufflers",
         ring1="Rajas Ring",
         ring2="K'ayres Ring",
@@ -280,7 +280,6 @@ function init_gear_sets()
     }
 
 	sets.engaged.Acc = set_combine(sets.engaged, {
-        body="Mikinaak Breastplate",
         hands="Mikinaak Gauntlets",
         waist="Dynamic Belt",
         feet="Whirlpool Greaves"
@@ -293,20 +292,17 @@ function init_gear_sets()
     })
 
 	sets.engaged.STP.PDT = set_combine(sets.engaged.STP, {
-        body="Cizin Mail",
         legs="Cizin Breeches"
         ring2="Dark Ring"
         back="Repulse Mantle"
     })
     
     sets.engaged.PDT = set_combine(sets.engaged, {
-        body="Cizin Mail",
         ring2="Dark Ring",
         back="Repulse Mantle"
     })
 
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
-        body="Cizin Mail",
         hands="Cizin Mufflers",
         legs="Cizin Breeches",
         ring2="Dark Ring"
