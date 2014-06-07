@@ -55,6 +55,8 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
     
+    sets.ammo = select_ammo()
+
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
     sets.precast.JA['Yonin'] = { legs="Iga Hakama +2" }
@@ -273,7 +275,6 @@ function init_gear_sets()
     })
     
     sets.DayMovement = {feet="Danzo sune-ate"}
-    
     sets.NightMovement = {feet="Hachiya Kyahan"}
     
     sets.Kiting = select_movement()
@@ -313,26 +314,34 @@ function init_gear_sets()
         feet="Mochizuki Kyahan +1"
     })
     -- wtf I can't hit anything set
-    sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        ammo="Fire Bomblet",
+    sets.engaged.Acc = set_combine(sets.ammo, {
         head="Whirlpool Mask",
         neck="Iqabi Necklace",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        body="Mochizuki Chainmail +1",
+        hands="Umuthi Gloves",
+        ring1="Mars's Ring",
         ring2="Patricius Ring",
+        back="Yokaze Mantle",
         waist="Anguinus Belt",
         legs="Hachiya Hakama +1",
+        feet="Mochizuki Kyahan +1"
     })
 
-    sets.engaged.Subtle = set_combine(sets.engaged, {
-            head="Hachiya Hatsuburi",
-            neck="Iga Erimaki",
-            body="Hachiya Chainmail +1",
-            hands="Mochizuki Tekko +1",
-            left_ring="Beeline Ring",
-            right_ring="Epona's Ring",
-            back="Yokaze Mantle",
-            waist="Nusku's Sash",
-            legs="Hachiya Hakama +1",
-            feet="Qaaxo Leggings"
+    sets.engaged.Subtle = set_combine(sets.ammo, {
+        head="Hachiya Hatsuburi",
+        neck="Iga Erimaki",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        body="Hachiya Chainmail +1",
+        hands="Mochizuki Tekko +1",
+        ring1="Beeline Ring",
+        ring2="Epona's Ring",
+        back="Yokaze Mantle",
+        waist="Nusku's Sash",
+        legs="Hachiya Hakama +1",
+        feet="Qaaxo Leggings"
     })
     
     sets.engaged.PDT = set_combine(sets.engaged, {
@@ -388,7 +397,7 @@ function init_gear_sets()
         feet="Mochizuki Kyahan +1"
     }
 
-    sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
+    sets.engaged.HasteAccAmmo = set_combine(sets.engaged.HasteMid, {
         ammo="Fire Bomblet",
         neck="Iqabi Necklace",
         body="Mochizuki Chainmail +1",
@@ -396,6 +405,7 @@ function init_gear_sets()
         waist="Anguinus Belt",
         legs="Hachiya Hakama +1"
     })
+    sets.engaged.HasteAcc = set_combine(sets.engaged.HasteAccAmmo, sets.ammo)
 
     sets.engaged.HasteEvasion = {
         body="Mochizuki Chainmail +1",
@@ -518,6 +528,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
+    sets.ammo = select_ammo()
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -573,6 +584,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
 	sets.Kiting = select_movement()
+    sets.ammo = select_ammo()
 end
 
 -- Modify the default idle set after it was constructed.
@@ -636,6 +648,7 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     elseif buffactive.Yonin then
         state.Buff.Yonin = true
     end
+    sets.ammo = select_ammo()
 end
 
 
@@ -660,6 +673,18 @@ function select_movement()
 		return sets.NightMovement
 	else
 		return sets.DayMovement
+	end
+end
+
+function select_ammo()
+	if world.time >= (17*60) or world.time <= (7*60) then
+        if state.OffenseMode == 'Acc' then
+            return "Fire Bomblet"
+        else
+		    return "Yetshila"
+        end
+    else
+        return "Tengu-no-Hane"
 	end
 end
 
