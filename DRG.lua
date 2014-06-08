@@ -352,7 +352,6 @@ end
 -- eventArgs is the same one used in job_precast, in case information needs to be persisted.
 function job_post_precast(spell, action, spellMap, eventArgs)
 	if player.hpp < 51 then
-        classes.CustomClass:clear()
 		classes.CustomClass = "Breath" -- This would cause it to look for sets.midcast.Breath 
 	end
 end
@@ -360,7 +359,6 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-	    classes.CustomClass:clear()
 		if spell.action_type == 'Magic' then
 		equip(sets.midcast.FastRecast)
 		if player.hpp < 51 then
