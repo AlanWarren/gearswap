@@ -351,8 +351,8 @@ end
 -- Run after the default precast() is done.
 -- eventArgs is the same one used in job_precast, in case information needs to be persisted.
 function job_post_precast(spell, action, spellMap, eventArgs)
-    classes.CustomClass:clear()
 	if player.hpp < 51 then
+        classes.CustomClass:clear()
 		classes.CustomClass = "Breath" -- This would cause it to look for sets.midcast.Breath 
 	end
 end
