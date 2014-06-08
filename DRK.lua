@@ -181,10 +181,21 @@
             sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
      
             -- Engaged sets
-            sets.engaged = {ammo="Hagneia Stone",
-	        	head="Yaoyotl Helm",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-	        	body="Xaddi Mail",hands="Cizin Mufflers",ring1="Rajas Ring",ring2="K'ayres Ring",
-	        	back="Atheling Mantle",waist="Cetl Belt",legs="Phorcys Dirs",feet="Mikinaak Greaves"}
+            sets.engaged = {
+                ammo="Yetshila",
+	        	head="Otomi Helm",
+                neck="Asperity Necklace",
+                ear1="Brutal Earring",
+                ear2="Tripudio Earring",
+	        	body="Xaddi Mail",
+                hands="Cizin Mufflers",
+                ring1="Rajas Ring",
+                ring2="K'ayres Ring",
+	        	back="Atheling Mantle",
+                waist="Windbuffet Belt",
+                legs="Cizin Breeches",
+                feet="Mikinaak Greaves"
+            }
 
 	        sets.engaged.Acc = set_combine(sets.engaged, {
 	        	neck="Bale Choker",
@@ -262,17 +273,17 @@
 
             -- Custom Melee Group
             sets.engaged['Anahera Scythe'] = {
-                ammo="Hagneia Stone",
-                head="Yaoyotl Helm",
+                ammo="Yetshila",
+                head="Otomi Helm",
                 neck="Asperity Necklace",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
                 body="Xaddi Mail",
                 hands="Cizin Mufflers",
                 ring1="Rajas Ring",
-                ring2="K'ayres Ring",
+                ring2="Mars's Ring",
                 back="Atheling Mantle",
-                waist="Cetl Belt",
+                waist="Windbuffet Belt",
                 legs="Cizin Breeches",
                 feet="Mikinaak Greaves"
             }
