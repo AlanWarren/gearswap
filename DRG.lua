@@ -132,7 +132,7 @@ function init_gear_sets()
 	
 	-- Fast cast sets for spells
 	
-	sets.precast.FC = {head="Cizin Helm"}
+	sets.precast.FC = {head="Cizin Helm", ring1="Prolix Ring"}
     
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
@@ -266,7 +266,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
         ammo="Hagneia Stone",
-		head="Yaoyotl Helm",
+		head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
