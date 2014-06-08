@@ -217,8 +217,9 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Cizin Mail",
-        ring1="Dark Ring"
+		body="Xaddi Mail",
+        ring1="Dark Ring",
+        ring2="Patricius Ring"
     })
 
 	sets.idle.Weak = set_combine(sets.idle.Field, {
@@ -292,8 +293,8 @@ function init_gear_sets()
     })
 
 	sets.engaged.STP.PDT = set_combine(sets.engaged.STP, {
-        legs="Cizin Breeches"
-        ring2="Dark Ring"
+        legs="Cizin Breeches",
+        ring2="Dark Ring",
         back="Repulse Mantle"
     })
     
