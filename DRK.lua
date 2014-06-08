@@ -81,6 +81,7 @@
             sets.precast.Waltz['Healing Waltz'] = {}
            
             -- Fast cast sets for spells
+            sets.precast.FC = {head="Cizin Helm", ring1="Prolix Ring"}
                      
             -- Midcast Sets
             sets.midcast.FastRecast = {
@@ -95,7 +96,7 @@
      
             sets.midcast.DarkMagic = {
                     head="Ignominy burgeonet +1",neck="Dark Torque",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-                    body="Demon's harness",hands="Abyss gauntlets +2",ring1="Diamond Ring",ring2="K'ayres Ring",
+                    body="Demon's harness",hands="Abyss gauntlets +2",ring1="Diamond Ring",ring2="Acumen Ring",
                     back="Abyss Cape",waist="Zoran's Belt",legs="Bale Flanchard +2",feet="Ignominy sollerets"}
            
 		    sets.midcast.EnfeeblingMagic = set_combine(sets.midcast.DarkMagic, {
