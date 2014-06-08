@@ -16,6 +16,7 @@ end
 function job_setup()
 	state.Buff.Migawari = buffactive.migawari or false
     state.Buff.Yonin = buffactive.yonin or false
+    state.CombatWeapon = get_combat_weapon()
 
 	determine_haste_group()
 end
@@ -56,6 +57,7 @@ function init_gear_sets()
     --------------------------------------
     
     gear.ammo = select_ammo()
+    gear.Stave = "Mekki Shakki"
 
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
@@ -110,6 +112,10 @@ function init_gear_sets()
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
+    sets.precast.WS.Stave = set_combine(sets.precast.WS, {
+        head="Hakke Hachimaki"
+    }
+
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         head="Whirlpool Mask",
         hands="Umuthi Gloves",
@@ -302,6 +308,9 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1",
         feet="Qaaxo Leggings"
         --feet="Otronif Boots +1"
+    }
+    sets.engaged.Stave = set_combine(sets.engaged, {
+        head="Hakke hachimaki"
     }
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
@@ -660,6 +669,7 @@ end
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
 	determine_haste_group()
+    state.CombatWeapon = get_combat_weapon()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -687,6 +697,12 @@ function select_ammo()
     else
         return "Tengu-no-Hane"
 	end
+end
+
+function get_combat_weapon()
+    if player.equipment.main == gear.Stave then
+        return 'Stave'
+    end
 end
 
 function determine_haste_group()
