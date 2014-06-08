@@ -183,7 +183,7 @@
             -- Engaged sets
             sets.engaged = {ammo="Hagneia Stone",
 	        	head="Yaoyotl Helm",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-	        	body="Pak Corselet",hands="Cizin Mufflers",ring1="Rajas Ring",ring2="K'ayres Ring",
+	        	body="Xaddi Mail",hands="Cizin Mufflers",ring1="Rajas Ring",ring2="K'ayres Ring",
 	        	back="Atheling Mantle",waist="Cetl Belt",legs="Phorcys Dirs",feet="Mikinaak Greaves"}
 
 	        sets.engaged.Acc = set_combine(sets.engaged, {
@@ -267,7 +267,7 @@
                 neck="Asperity Necklace",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
-                body="Pak Corselet",
+                body="Xaddi Mail",
                 hands="Cizin Mufflers",
                 ring1="Rajas Ring",
                 ring2="K'ayres Ring",
