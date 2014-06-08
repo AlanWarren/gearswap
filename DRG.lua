@@ -199,7 +199,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle.Town = {
         ammo="Thew Bomblet",
-		head="Yaoyotl Helm",
+		head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
@@ -214,10 +214,11 @@ function init_gear_sets()
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
+        head="Twilight Helm",
         neck="Twilight Torque",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Xaddi Mail",
+		body="Twilight Mail",
         ring1="Dark Ring",
         ring2="Patricius Ring"
     })
