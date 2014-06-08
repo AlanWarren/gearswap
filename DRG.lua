@@ -509,6 +509,14 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+-- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-	set_macro_page(1, 16)
+    -- Default macro set/book
+    if player.sub_job == 'WAR' then
+    	set_macro_page(8, 1)
+    elseif player.sub_job == 'WHM' then
+    	set_macro_page(8, 2)
+    else
+    	set_macro_page(8, 1)
+    end
 end
