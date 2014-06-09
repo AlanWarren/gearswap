@@ -621,7 +621,9 @@ function job_buff_change(buff, gain)
 	if state.Buff[buff] ~= nil and buff:lower() ~= 'yonin' then
 		state.Buff[buff] = gain
         handle_equipping_gear(player.status)
-	end
+	elseif buff:lower() == 'yonin' and not gain then
+        state.Buff.Yonin = false
+    end
     -- Counter setup
     -- if we just lost our last shadow, check if yonin is active and set it to true
     if buff == 'Copy Image' and not gain then
