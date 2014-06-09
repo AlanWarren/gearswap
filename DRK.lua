@@ -19,7 +19,8 @@
         --buffactive['Aftermath: Lv.2'] or
         --buffactive['Aftermath: Lv.3']
         --or false
-    	state.CombatForm = get_combat_form()
+        state.Buff.Souleater = buffactive.souleater or false
+    	--state.CombatForm = get_combat_form()
 	    adjust_engaged_sets()
     end
      
@@ -81,12 +82,18 @@
             sets.precast.Waltz['Healing Waltz'] = {}
            
             -- Fast cast sets for spells
-            sets.precast.FC = {head="Cizin Helm", ring1="Prolix Ring"}
+            sets.precast.FC = {
+                head="Cizin Helm",
+                ring2="Prolix Ring"
+            }
                      
             -- Midcast Sets
             sets.midcast.FastRecast = {
-                    head="Cizin Helm"
-                }
+                head="Otomi Helm",
+                hands="Cizin Mufflers",
+                waist="Zoran's Belt",
+                feet="Whirlpool Greaves"
+            }
                    
             -- Specific spells
             sets.midcast.Utsusemi = {
@@ -339,50 +346,58 @@
             sets.engaged['Anahera Scythe'].HighHaste = sets.engaged['Anahera Scythe'].MaxHaste	        
             
             sets.buff.Souleater = {head="Ignominy burgeonet +1"}
-            sets.engaged.Souleater = sets.buff.Souleater
-            sets.engaged['Anahera Scythe'].Souleater = sets.buff.Souleater
      
     end
      
     -------------------------------------------------------------------------------------------------------------------
     -- Job-specific hooks that are called to process player actions at specific points in time.
     -------------------------------------------------------------------------------------------------------------------
+    function job_pretarget(spell, action, spellMap, eventArgs)
+        if state.Buff[spell.english] ~= nil then
+            state.Buff[spell.english] = true
+        end
+    end
      
   
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
     -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
     function job_precast(spell, action, spellMap, eventArgs)
-            if spell.action_type == 'Magic' then
+        if spell.action_type == 'Magic' then
             equip(sets.precast.FC)
-            end
+        end
     end
- 
      
+    function job_post_precast(spell, action, spellMap, eventArgs)
+        if state.Buff.Souleater then
+            equip(sets.buff.Souleater)
+        end
+    end
      
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
     function job_midcast(spell, action, spellMap, eventArgs)
-            if spell.action_type == 'Magic' then
-                equip(sets.midcast.FastRecast)
-            end
+        if spell.action_type == 'Magic' then
+            equip(sets.midcast.FastRecast)
+        end
     end
      
     -- Run after the default midcast() is done.
     -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
     function job_post_midcast(spell, action, spellMap, eventArgs)
-            if state.DefenseMode == 'Reraise' or
-                    (state.Defense.Active and state.Defense.Type == 'Physical' and state.Defense.PhysicalMode == 'Reraise') then
-                    equip(sets.Reraise)
-            end
+        if state.DefenseMode == 'Reraise' or
+            (state.Defense.Active and state.Defense.Type == 'Physical' and state.Defense.PhysicalMode == 'Reraise') then
+            equip(sets.Reraise)
+        end
+        if state.Buff.Souleater then
+            equip(sets.buff.Souleater)
+        end
     end
      
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
-  --  function job_aftercast(spell, action, spellMap, eventArgs)
-  --      if not spell.interrupted then
-  --              if state.Buff[spell.english] ~= nil then
-  --                      state.Buff[spell.english] = true
-  --              end
-  --       end
-  --  end
+    function job_aftercast(spell, action, spellMap, eventArgs)
+        if state.Buff[spell.english] ~= nil then
+            state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
+        end
+    end
      
     -------------------------------------------------------------------------------------------------------------------
     -- Customization hooks for idle and melee sets, after they've been automatically constructed.
@@ -409,7 +424,11 @@
      
     -- Called when the player's status changes.
     function job_status_change(newStatus, oldStatus, eventArgs)
-     
+        if souleater_active() then
+            disable('head')
+        else
+            enable('head')
+        end
     end
      
     -- Called when a player gains or loses a buff.
@@ -417,17 +436,9 @@
     -- gain == true if the buff was gained, false if it was lost.
     function job_buff_change(buff, gain)
 
-        if S{'souleater'}:containes(buff:lower()) then
-            state.CombatForm = 'Souleater'
-        end
-
 	    if S{'haste','march','embrava','haste samba', 'last resort'}:contains(buff:lower()) then
 	    	determine_haste_group()
 	    	handle_equipping_gear(player.status)
-       -- elseif buff:startswith('Aftermath') then
-       --     state.Buff.Aftermath = gain
-       --     adjust_melee_groups()
-       --     handle_equipping_gear(player.status)
         end
 
 	    if state.Buff[buff] ~= nil then
@@ -445,8 +456,15 @@
     -- Called by the 'update' self-command, for common needs.
     -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
-    state.CombatForm = get_combat_form()
+    --state.CombatForm = get_combat_form()
+    state.Buff.Souleater = buffactive.souleater or false
 	adjust_engaged_sets()
+
+    if souleater_active() then
+        disable('head')
+    else
+        enable('head')
+    end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -456,6 +474,10 @@ function get_combat_form()
     if buffactive.souleater then
         return 'Souleater'
     end
+end
+
+function souleater_active()
+    return state.Buff.Souleater
 end
 
 function adjust_engaged_sets()

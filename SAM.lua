@@ -531,6 +531,9 @@ function job_pretarget(spell, action, spellMap, eventArgs)
 			end
 		end
 	end
+    if state.Buff[spell.english] ~= nil then
+        state.Buff[spell.english] = true
+    end
 end
 
 function job_precast(spell, action, spellMap, eventArgs)
@@ -591,11 +594,8 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-	if not spell.interrupted then
-		if state.Buff[spell.english] ~= nil then
-			state.Buff[spell.english] = true
-		end
-
+	if state.Buff[spell.english] ~= nil then
+		state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
 	end
 end
 

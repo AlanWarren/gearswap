@@ -509,7 +509,7 @@ function init_gear_sets()
     sets.engaged.Evasion.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.PDT)
     
-    sets.buff.Migawari = {}
+    sets.buff.Migawari = {body="Iga Ningi +2"}
     sets.Counter = { legs="Iga Hakama +2" }
     sets.buff.Yonin = { legs="Iga Hakama +2" }
 end
@@ -522,6 +522,14 @@ function job_pretarget(spell, action, spellMap, eventArgs)
 		-- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
 		if player.equipment.main=='Mekki Shakki' then
             disable('head')
+        end
+    end
+    if state.Buff[spell.english] ~= nil and spell.english ~= 'Yonin' then
+        state.Buff[spell.english] = true
+    else
+        if not utsusemi_active() then
+            --add_to_chat(8, 'pretarget: Counter Mode Enabled')
+            state.Buff.Yonin = true
         end
     end
 end
@@ -584,23 +592,20 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
     -- If spell is not interrupted. This also applies when you try using a JA with it's timer down.
     -- If the recast timer isn't ready, aftercast is called with spell.interrupted == true
-	if not spell.interrupted  then
-        -- We check if state.Buff.spell is defined, so we don't created variable instances for every action taken
-        if state.Buff[spell.name] ~= nil then
-            -- We need to set the spell being used to true, but only if the spell is not Yonin.
-            -- I only want yonin to be true if utsusemi shadows are down.
-            if spell.name ~= 'Yonin' then 
-                state.Buff[spell.name] = true
-            else
-                -- we must have used Yonin. check if shadows are down
-                if not utsusemi_active() then
-                    add_to_chat(8, 'Utsusemi Down - Yonin = TRUE')
-                    state.Buff.Yonin = true
-                else 
-                    state.Buff.Yonin = false
-                end
+    -- We check if state.Buff.spell is defined, so we don't created variable instances for every action taken
+    if state.Buff[spell.english] ~= nil then
+        -- We need to set the spell being used to true, but only if the spell is not Yonin.
+        -- I only want yonin to be true if utsusemi shadows are down.
+        if spell.english ~= 'Yonin' then 
+            state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
+        else
+            -- we must have used Yonin. check if shadows are down
+            if not utsusemi_active() then
+                add_to_chat(8, 'aftercast: Utsusemi Down - Counter Mode Enabled')
+                state.Buff.Yonin = not spell.interrupted or buffactive[spell.english]
+            else 
+                state.Buff.Yonin = false
             end
-
         end
 	end
 	if player.equipment.main=='Mekki Shakki' then
@@ -658,7 +663,9 @@ function job_buff_change(buff, gain)
 	if state.Buff[buff] ~= nil and buff:lower() ~= 'yonin' then
 		state.Buff[buff] = gain
         handle_equipping_gear(player.status)
-	end
+	elseif buff:lower() == 'yonin' and not gain then
+        state.Buff.Yonin = false
+    end
     -- Counter setup
     -- if we just lost our last shadow, check if yonin is active and set it to true
     if buff == 'Copy Image' and not gain then
