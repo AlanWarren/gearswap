@@ -114,7 +114,7 @@ function init_gear_sets()
     }
     sets.precast.WS.Stave = set_combine(sets.precast.WS, {
         head="Hakke Hachimaki"
-    }
+    })
 
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         head="Whirlpool Mask",
@@ -311,7 +311,13 @@ function init_gear_sets()
     }
     sets.engaged.Stave = set_combine(sets.engaged, {
         head="Hakke hachimaki"
-    }
+    })
+    sets.engaged.GK = set_combine(sets.engaged, {
+        head="Felistris Mask",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+        legs="Hachiya Hakama +1"
+    })
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
         ammo="Yetshila",
@@ -511,7 +517,14 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks that are called to process player actions at specific points in time.
 -------------------------------------------------------------------------------------------------------------------
-
+function job_pretarget(spell, action, spellMap, eventArgs)
+	if spell.type:lower() == 'weaponskill' then
+		-- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
+		if player.equipment.main=='Mekki Shakki' then
+            disable('head')
+        end
+    end
+end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
@@ -539,6 +552,12 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
     gear.ammo = select_ammo()
+	if spell.type:lower() == 'weaponskill' then
+		-- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
+		if player.equipment.main=='Mekki Shakki' then
+            equip(sets.precast.WS.Stave)
+        end
+    end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -557,6 +576,7 @@ end
 -- Run after the general midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
+    state.CombatWeapon = get_combat_weapon()
 end
 
 
@@ -583,6 +603,9 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
         end
 	end
+	if player.equipment.main=='Mekki Shakki' then
+        enable('head')
+    end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -702,6 +725,8 @@ end
 function get_combat_weapon()
     if player.equipment.main == gear.Stave then
         return 'Stave'
+    elseif player.equipment.main == 'Taimakuniyuki' or player.equipment.main == 'Ark Scythe' then
+        return 'GK'
     end
 end
 
