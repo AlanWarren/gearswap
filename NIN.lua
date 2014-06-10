@@ -57,7 +57,7 @@ function init_gear_sets()
     --------------------------------------
     
     gear.ammo = select_ammo()
-    gear.Stave = "Iridal Staff"
+    gear.Stave = "Iridal staff"
 
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
@@ -520,7 +520,7 @@ end
 function job_pretarget(spell, action, spellMap, eventArgs)
 	if spell.type:lower() == 'weaponskill' then
 		-- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
-		if player.equipment.main=='Mekki Shakki' then
+		if player.equipment.main== gear.Stave then
             disable('head')
         end
     end
@@ -562,7 +562,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     gear.ammo = select_ammo()
 	if spell.type:lower() == 'weaponskill' then
 		-- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
-		if player.equipment.main=='Mekki Shakki' then
+		if player.equipment.main== gear.Stave then
             equip(sets.precast.WS.Stave)
         end
     end
@@ -608,7 +608,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
             end
         end
 	end
-	if player.equipment.main=='Mekki Shakki' then
+	if player.equipment.main== gear.Stave then
         enable('head')
     end
 end
