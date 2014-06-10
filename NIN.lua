@@ -3,8 +3,6 @@
 -------------------------------------------------------------------------------------------------------------------
 -- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
 
--- TODO: Add a fancy rule so that Iga Hakama +2 is equipped when shadows are down and yonin is up. 
-
 -- Initialization function for this job file.
 function get_sets()
 	-- Load and initialize the include file.
@@ -15,7 +13,6 @@ end
 -- Setup vars that are user-independent.
 function job_setup()
 	state.Buff.Migawari = buffactive.migawari or false
-    state.Buff.Yonin = buffactive.yonin or false
     state.CombatWeapon = get_combat_weapon()
 
 	determine_haste_group()
@@ -61,7 +58,6 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
-    sets.precast.JA['Yonin'] = { legs="Iga Hakama +2" }
     sets.precast.JA['Provoke'] = { 
         ear1="Trux Earring", 
         feet="Mochizuki Kyahan +1"
@@ -511,7 +507,6 @@ function init_gear_sets()
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
     sets.Counter = { legs="Iga Hakama +2" }
-    sets.buff.Yonin = { legs="Iga Hakama +2" }
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -524,13 +519,8 @@ function job_pretarget(spell, action, spellMap, eventArgs)
             disable('head')
         end
     end
-    if state.Buff[spell.english] ~= nil and spell.english ~= 'Yonin' then
+    if state.Buff[spell.english] ~= nil then
         state.Buff[spell.english] = true
-    else
-        if not utsusemi_active() then
-            --add_to_chat(8, 'pretarget: Counter Mode Enabled')
-            state.Buff.Yonin = true
-        end
     end
 end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -594,19 +584,8 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     -- If the recast timer isn't ready, aftercast is called with spell.interrupted == true
     -- We check if state.Buff.spell is defined, so we don't created variable instances for every action taken
     if state.Buff[spell.english] ~= nil then
-        -- We need to set the spell being used to true, but only if the spell is not Yonin.
-        -- I only want yonin to be true if utsusemi shadows are down.
-        if spell.english ~= 'Yonin' then 
-            state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
-        else
-            -- we must have used Yonin. check if shadows are down
-            if not utsusemi_active() then
-                add_to_chat(8, 'aftercast: Utsusemi Down - Counter Mode Enabled')
-                state.Buff.Yonin = not spell.interrupted or buffactive[spell.english]
-            else 
-                state.Buff.Yonin = false
-            end
-        end
+    -- We need to set the spell being used to true, but only if the spell is not Yonin.
+        state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
 	end
 	if player.equipment.main== gear.Stave then
         enable('head')
@@ -639,10 +618,6 @@ function customize_melee_set(meleeSet)
 	if state.Buff.Migawari then
 		meleeSet = set_combine(meleeSet, sets.buff.Migawari)
 	end
-    if state.Buff.Yonin then
-        meleeSet = set_combine(meleeSet, sets.buff.Yonin)
-    end
-
 	return meleeSet
 end
 
@@ -659,35 +634,13 @@ function job_buff_change(buff, gain)
 		determine_haste_group()
         handle_equipping_gear(player.status)
     end
-    -- we don't want yonin to be true unless utsusemi is down. 
-	if state.Buff[buff] ~= nil and buff:lower() ~= 'yonin' then
+	if state.Buff[buff] ~= nil then
 		state.Buff[buff] = gain
-        handle_equipping_gear(player.status)
-	elseif buff:lower() == 'yonin' and not gain then
-        state.Buff.Yonin = false
-    end
-    -- Counter setup
-    -- if we just lost our last shadow, check if yonin is active and set it to true
-    if buff == 'Copy Image' and not gain then
-        if buffactive.yonin then
-            add_to_chat(8, 'Counter Mode Enabled!')
-            state.Buff.Yonin = true
-            handle_equipping_gear(player.status)
-        end
-    -- if we just gained utsusemi, make sure we disable yonin mode
-    elseif string.find(buff:lower(), 'copy image') and gain then
-        --add_to_chat(8, 'Counter Mode Disabled!')
-        state.Buff.Yonin = false
         handle_equipping_gear(player.status)
     end
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
-    if utsusemi_active() then
-        state.Buff.Yonin = false
-    elseif buffactive.Yonin then
-        state.Buff.Yonin = true
-    end
     gear.ammo = select_ammo()
 end
 
@@ -731,6 +684,7 @@ end
 
 function get_combat_weapon()
     if player.equipment.main == gear.Stave then
+        add_to_chat(122, 'Stave')
         return 'Stave'
     elseif player.equipment.main == 'Taimakuniyuki' or player.equipment.main == 'Ark Scythe' then
         return 'GK'
