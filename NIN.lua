@@ -641,6 +641,7 @@ function job_buff_change(buff, gain)
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
+    state.CombatWeapon = get_combat_weapon()
     gear.ammo = select_ammo()
 end
 
