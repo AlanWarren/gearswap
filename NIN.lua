@@ -57,7 +57,7 @@ function init_gear_sets()
     --------------------------------------
     
     gear.ammo = select_ammo()
-    gear.Stave = "Mekki Shakki"
+    gear.Stave = "Iridal Staff"
 
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
