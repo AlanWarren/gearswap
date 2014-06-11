@@ -69,47 +69,13 @@ function get_sets()
         include('Mote-Include.lua')
 end
 
-function user_setup()
-        send_command('bind f9 gs c cycle RangedMode')
-        send_command('bind ^] gs c cycle OffenseMode')
-        send_command('bind ^f9 gs c cycle DefenseMode')
-        send_command('bind !f9 gs c cycle WeaponskillMode')
-        send_command('bind ^- gs c toggle AutoRA')
-        send_command('bind ^[ input /lockstyle on')
-end
-
+-- setup vars that are user-independent.
 function job_setup()
-    determine_ranged()
-    state.Buff.Camouflage = buffactive.camouflage or false
-    state.Buff.Overkill = buffactive.overkill or false
 
-    use_night_earring = true
 end
  
--- Called when this job file is unloaded (eg: job change)
-function file_unload()
-    binds_on_unload()
-end
- 
-function init_gear_sets()
-        gear.Gun = "Annihilator"
-        gear.Bow = "Yoichinoyumi"
-        gear.Stave = "Mekki Shakki"
-        
-        -- Auto RA + WS
-        state.AutoRA = false
-        -- Overriding Global Defaults for this job
-        gear.default.weaponskill_neck = "Ocachi Gorget"
-        gear.default.weaponskill_waist = "Elanid Belt"
- 
-        -- List of ammunition that should only be used under unlimited shot
-        U_Shot_Ammo = S{'Animikii Bullet'}
-       
-        -- Simply add a line of DefaultAmmo["Weapon"] = "Ammo Name"
-        DefaultAmmo = {}
-        DefaultAmmo[gear.Gun] = "Achiyalabopa Bullet"
-        DefaultAmmo[gear.Bow] = "Achiyalabopa Arrow"
-       
+-- setup vars that are user-dependent. 
+function user_setup()
         -- Options: Override default values
         options.OffenseModes = {'Normal', 'Melee'}
         options.RangedModes = {'Normal', 'Mod', 'Acc'}
@@ -119,6 +85,49 @@ function init_gear_sets()
         options.MagicalDefenseModes = {'MDT'}
         state.Defense.PhysicalMode = 'PDT'
  
+        state.Buff.Barrage = buffactive.Barrage or false
+        state.Buff.Camouflage = buffactive.Camouflage or false
+        state.Buff.Overkill = buffactive.Overkill or false
+        
+        -- settings
+        state.AutoRA = false
+        use_night_earring = true
+
+        gear.Gun = "Annihilator"
+        gear.Bow = "Yoichinoyumi"
+        gear.Stave = "Mekki Shakki"
+
+        -- Overriding Global Defaults for this job
+        gear.default.weaponskill_neck = "Ocachi Gorget"
+        gear.default.weaponskill_waist = "Elanid Belt"
+ 
+      	DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"}
+	    U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"} 
+        
+        determine_ranged()
+        select_default_macro_book()
+
+        send_command('bind f9 gs c cycle RangedMode')
+        send_command('bind ^] gs c cycle OffenseMode')
+        send_command('bind ^f9 gs c cycle DefenseMode')
+        send_command('bind !f9 gs c cycle WeaponskillMode')
+        send_command('bind ^- gs c toggle AutoRA')
+        send_command('bind ^[ input /lockstyle on')
+end
+
+-- Called when this job file is unloaded (eg: job change)
+function file_unload()
+    if binds_on_unload then
+        binds_on_unload()
+    end
+    send_command('unbind f9')
+    send_command('unbind ^f9')
+    send_command('unbind ^[')
+    send_command('unbind ^-')
+end
+ 
+function init_gear_sets()
+
         -- Misc. Job Ability precasts
         sets.precast.JA['Bounty Shot'] = {hands="Sylvan Glovelettes +2"}
         sets.precast.JA['Double Shot'] = {head="Sylvan Gapette +2"}
@@ -145,12 +154,14 @@ function init_gear_sets()
             waist="Elanid Belt"
         })
 
+        sets.precast.FC = {
+            ring1="Prolix Ring"
+        }
+
         sets.NightEarring = {ear2="Fenrir's earring"}
         sets.DayEarring = {ear2="Flame Pearl"}
 
         sets.earring = select_earring()
-
-        select_default_macro_book()
 
         sets.idle = {
             head="Umbani Cap",
@@ -211,8 +222,6 @@ function init_gear_sets()
             legs="Manibozho Brais",
             feet="Manibozho Boots"
         }
-
-        -- Ranged Attack Sets
 
         -- Snapshot 
         sets.precast.RA = {
@@ -307,24 +316,21 @@ function init_gear_sets()
             ring1="Hajduk Ring"
         })
 
-        -- XXX:SAM SJ - Experimental (gun only for now)
-        -- This might be used for your 3rd shot, if recycle failed to proc
-        -- I don't know the value of this feature yet..
-        
-        --sets.midcast.RA.SAM = {
-        --    head="Arcadian Beret +1",
-        --    neck="Ocachi Gorget",
-        --    ear1="Volley Earring", 
-        --    ear2="Tripudio Earring", 
-        --    body="Kyujutsugi",
-        --    ring1="Rajas Ring", 
-        --    ring2="K'ayres Ring",
-        --    back="Sylvan Chlamys",
-        --    waist="Patentia Sash",
-        --    legs="Sylvan Bragues +2"
-        --}
-        --sets.midcast.RA.SAM.Mod = set_combine(sets.midcast.RA.Mod, sets.midcast.RA.SAM)
-        --sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.Acc, sets.midcast.RA.SAM)
+        -- XXX:SAM SJ - Experimental (gun only)
+        sets.midcast.RA.SAM = {
+            head="Arcadian Beret +1",
+            neck="Ocachi Gorget",
+            ear1="Volley Earring", 
+            ear2="Tripudio Earring", 
+            body="Kyujutsugi",
+            ring1="Rajas Ring", 
+            ring2="K'ayres Ring",
+            back="Sylvan Chlamys",
+            waist="Patentia Sash",
+            legs="Sylvan Bragues +2"
+        }
+        sets.midcast.RA.Mod.SAM = set_combine(sets.midcast.RA.Mod, sets.midcast.RA.SAM)
+        sets.midcast.RA.Acc.SAM = set_combine(sets.midcast.RA.Acc, sets.midcast.RA.SAM)
 
         -- This is a 3-hit build with 3 out of 3 recycle procs and /sam sub. 
         -- It's used automatically by having /sam and gear.Stave equipped.
@@ -333,31 +339,30 @@ function init_gear_sets()
         -- Ratk: 201.5 
         -- AGI: 110
         -- STR: 81 
-        --sets.midcast.RA.SAM.Gun2H = {
-        --    head="Arcadian Beret +1",
-        --    neck="Ocachi Gorget",
-        --    ear1="Volley Earring", 
-        --    ear2="Tripudio Earring", 
-        --    body="Kyujutsugi",
-        --    hands="Sigyn's Bazubands",
-        --    ring1="Rajas Ring", 
-        --    ring2="K'ayres Ring",
-        --    back="Sylvan Chlamys",
-        --    waist="Patentia Sash",
-        --    legs="Sylvan Bragues +2",
-        --    feet="Orion Socks +1"
-        --}
-        --sets.midcast.RA.SAM.Mod.Gun2H = set_combine(sets.midcast.RA.SAM.Gun2H, {
-        --    waist="Elanid Belt",
-        --    legs="Aetosaur Trousers +1"
-        --})
-        --sets.midcast.RA.SAM.Acc.Gun2H = set_combine(sets.midcast.RA.SAM.Mod.Gun2H, {
-        --    ring1="Longshot Ring",
-        --    ring2="Paqichikaji Ring",
-        --    back="Lutian Cape"
-        --})
+        sets.midcast.RA.SAM2H = {
+            head="Arcadian Beret +1",
+            neck="Ocachi Gorget",
+            ear1="Volley Earring", 
+            ear2="Tripudio Earring", 
+            body="Kyujutsugi",
+            hands="Sigyn's Bazubands",
+            ring1="Rajas Ring", 
+            ring2="K'ayres Ring",
+            back="Sylvan Chlamys",
+            waist="Patentia Sash",
+            legs="Sylvan Bragues +2",
+            feet="Orion Socks +1"
+        }
+        sets.midcast.RA.Mod.SAM2H = set_combine(sets.midcast.RA.SAM2H, {
+            waist="Elanid Belt",
+            legs="Aetosaur Trousers +1"
+        })
+        sets.midcast.RA.Acc.SAM2H = set_combine(sets.midcast.RA.Mod.SAM2H, {
+            ring1="Longshot Ring",
+            ring2="Paqichikaji Ring",
+            back="Lutian Cape"
+        })
 
-        
         -- Bow Default (614 total delay) 4-hit with 3/4 recycle
         -- This set is only used while Decoy Shot is OFF
         -- Enmity: -40
@@ -507,14 +512,15 @@ function init_gear_sets()
         sets.precast.WS['Coronach'].Mod = set_combine(sets.precast.WS.Mod, sets.Coronach)
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, sets.Coronach)
 
-        --sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
-        --    neck="Ocachi Gorget",
-        --    ear1="Volley Earring",
-        --    ear2="Tripudio Earring",
-        --    hands="Sylvan Glovelettes +2",
-        --    ring2="K'ayres Ring",
-        --    legs="Aetosaur Trousers +1"
-        --})
+        sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
+            neck="Ocachi Gorget",
+            ear1="Volley Earring",
+            ear2="Tripudio Earring",
+            hands="Sylvan Glovelettes +2",
+            ring2="K'ayres Ring",
+            legs="Aetosaur Trousers +1"
+        })
+        sets.precast.WS['Coronach'].SAM2H = sets.precast.WS['Coronach'].SAM
 
         -- LAST STAND
         sets.LastStand = {
@@ -588,8 +594,7 @@ function init_gear_sets()
         sets.defense.MDT = set_combine(sets.idle, {})
         --sets.Kiting = {feet="Fajin Boots"}
        
-        -- Barrage Set
-        sets.BarrageMid = {
+        sets.buff.Barrage = {
             head="Umbani Cap",
             neck="Rancor Collar",
             ear1="Volley Earring",
@@ -600,7 +605,7 @@ function init_gear_sets()
             ring2="Longshot Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
-            legs="Arcadian Braccae +1",
+            legs="Sylvan Bragues +2",
             feet="Orion Socks +1"
         }
 
@@ -618,22 +623,31 @@ function init_gear_sets()
 end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
-    if spell.action_type == 'Ranged Attack' then -- Auto WS/Decoy Shot/Double Shot --
+    -- If autora enabled, use WS automatically at 100+ TP
+    if spell.action_type == 'Ranged Attack' then
         if player.tp >= 100 and state.AutoRA and not buffactive.amnesia then
             cancel_spell()
             use_weaponskill()
         end
-    end
-    if state.Buff[spell.english] ~= nil then
-        state.Buff[spell.english] = true
     end
 end 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
  
 function job_precast(spell, action, spellMap, eventArgs)
+        
+        cancel_conflicting_buffs(spell, action, spellMap, eventArgs)
+        refine_waltz(spell, action, spellMap, eventArgs)
+
+        if state.Buff[spell.english] ~= nil then
+            state.Buff[spell.english] = true
+        end
+        -- add support for RangedMode toggles to EES
+        if spell.english == 'Eagle Eye Shot' then
+            classes.JAMode = state.RangedMode
+        end
+        -- Safety checks for weaponskills 
         if spell.type:lower() == 'weaponskill' then
-            --if player.status ~= "Engaged" or player.tp < 100 then
             if player.tp < 100 then
                     eventArgs.cancel = true
                     return
@@ -649,36 +663,10 @@ function job_precast(spell, action, spellMap, eventArgs)
                 eventArgs.handled = true
             end
         end
-        -- add support for RangedMode toggles to EES
-        if spell.english == 'Eagle Eye Shot' then
-            classes.JAMode = state.RangedMode
-        end
-       
-        if spell.type == 'Waltz' then
-            refine_waltz(spell, action, spellMap, eventArgs)
-        end
-       
-        if spell.action_type == 'Ranged Attack' or spell.type:lower() == 'weaponskill' then
-            -- If ammo is empty, or special ammo being used without buff, replace with default ammo
-            if U_Shot_Ammo[player.equipment.ammo] and not buffactive['unlimited shot'] or player.equipment.ammo == 'empty' then
-                 if DefaultAmmo[player.equipment.range] and player.inventory[DefaultAmmo[player.equipment.range]] then
-                        add_to_chat(122,"Unlimited Shot not Active or Ammo Empty, Using Default Ammo")
-                        equip({ammo=DefaultAmmo[player.equipment.range]})
-                else
-                        add_to_chat(122,"Either Default Ammo is Unavailable or Unknown Weapon. Staying empty")
-                        equip({ammo=empty})
-                end
-            end
-            if not buffactive['unlimited shot'] then
-                -- If not empty, and if unlimited shot is not active
-                -- Not doing it for unlimited shot to avoid excessive log
-                if player.equipment.ammo ~= 'empty' then
-                        if player.inventory[player.equipment.ammo].count < 15 then
-                                add_to_chat(122,"Ammo '"..player.inventory[player.equipment.ammo].shortname.."' running low ("..player.inventory[player.equipment.ammo].count..")")
-                        end
-                end
-            end
-
+        -- Ammo checks
+	    if spell.action_type == 'Ranged Attack' or
+          (spell.type == 'WeaponSkill' and (spell.skill == 'Marksmanship' or spell.skill == 'Archery')) then
+            check_ammo(spell, action, spellMap, eventArgs)
         end
 end
  
@@ -696,28 +684,10 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-    -- add support for SAM set
-    if spell.action_type == 'Ranged Attack' then
-	    --if player.sub_job == 'SAM' then
-        --    classes.CustomClass = 'SAM'
-        --end
-        -- TESTING. This may save you from bad recycle rounds
-        --if player.tp > 68 and player.tp < 75 then
-        --    classes.CustomClass = 'SAM'
-        --end
-    end
-    if spell.name == 'Spectral Jig' and buffactive.sneak then
-        -- If sneak is active when using, cancel before completion
-        send_command('cancel 71')
-    end
-end
-
- 
--- Run after the default midcast() is done.
--- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
-function job_post_midcast(spell, action, spellMap, eventArgs)
-    if buffactive.barrage then
-        equip(sets.BarrageMid)
+    -- Barrage
+    if spell.action_type == 'Ranged Attack' and state.Buff.Barrage then
+        equip(sets.buff.Barrage)
+        eventArgs.handled = true
     end
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
@@ -726,9 +696,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         equip(sets.Overkill)
     end
 end
+
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
+    -- autora
     if (spell.action_type == 'Ranged Attack' or spell.type:lower() == 'weaponskill') and state.AutoRA then
         use_ra(spell)
     end
@@ -737,32 +709,29 @@ function job_aftercast(spell, action, spellMap, eventArgs)
         state.Buff[spell.name] = not spell.interrupted or buffactive[spell.english]
     end
 
-    --if not spell.interrupted then
-    --    if state.Buff['Camouflage'] then
-    --        disable('body')
-    --    else
-    --        enable('body')
-    --    end
-    --end
 end
  
--- Run after the default aftercast() is done.
--- eventArgs is the same one used in job_aftercast, in case information needs to be persisted.
-function job_post_aftercast(spell, action, spellMap, eventArgs)
- 
-end
- 
--- Return a customized weaponskill mode to use for weaponskill sets.
--- Don't return anything if you're not overriding the default value.
-function get_custom_wsmode(spell, spellMap, default_wsmode)
-    -- I want WS mode to be dictated by RangedMode toggle
-	if state.RangedMode ~= 'Normal' and S(options.WeaponskillModes):contains(state.RangedMode) then
-		return state.RangedMode
-    --elseif player.sub_job == 'SAM' then
-    --    return 'SAM'
-    end
-end
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
+function job_buff_change(buff, gain)
+    --if S{"courser's roll"}:contains(buff:lower()) then
+    --if string.find(buff:lower(), 'samba') then
 
+    if state.Buff[buff] ~= nil then
+        state.Buff[buff] = gain
+    end
+    if buff == "Camouflage" then
+        if gain then
+            equip(sets.buff.Camouflage)
+            disable('body')
+        else
+            enable('body')
+        end
+    end
+	determine_ranged()
+end
+ 
 -- Called before the Include starts constructing melee/idle/resting sets.
 -- Can customize state or custom melee class values at this point.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -794,21 +763,6 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         enable('body')
     end
 	determine_ranged()
-end
- 
--- Called when a player gains or loses a buff.
--- buff == buff gained or lost
--- gain == true if the buff was gained, false if it was lost.
-function job_buff_change(buff, gain)
-    --if S{"courser's roll"}:contains(buff:lower()) then
-    --if string.find(buff:lower(), 'samba') then
-
-    if state.Buff[buff] ~= nil then
-        state.Buff[buff] = gain
-	    determine_ranged()
-        handle_equipping_gear(player.status)
-    end
-
 end
  
 function select_earring()
@@ -850,7 +804,6 @@ end
 function job_toggle_state(field)
     if field:lower() == 'autora' then
         state.AutoRA = not state.AutoRA
-        --return "Use Auto RA", state.AutoRA
         return state.AutoRA
     end
 end
@@ -897,6 +850,17 @@ function display_current_job_state(eventArgs)
  
 end
 
+function get_custom_wsmode(spell, spellMap, ws_mode)
+    if spell.skill == 'Archery' or spell.skill == 'Marksmanship' then
+        if player.sub_job == 'SAM' then
+            return 'SAM'
+        end
+    end
+end
+-------------------------------------------------------------------------------------------------------------------
+-- Utility functions specific to this job.
+-------------------------------------------------------------------------------------------------------------------
+
 function determine_ranged()
     -- cleanup everything each time function is called
 	classes.CustomRangedGroups:clear()
@@ -926,11 +890,21 @@ function determine_ranged()
     elseif player.equipment.range == gear.Gun then
 
         if player.equipment.main == gear.Stave then
-	        classes.CustomRangedGroups:append('Gun2H')
-            classes.CustomMeleeGroups:append('Gun2H')
-        else -- The default sets.midcast.RangedAttack applies
-	        classes.CustomRangedGroups:clear()
-	        classes.CustomMeleeGroups:clear()
+
+	        if player.sub_job == 'SAM' then
+	            classes.CustomRangedGroups:append('SAM2H')
+            else
+	            classes.CustomRangedGroups:append('Gun2H')
+                classes.CustomMeleeGroups:append('Gun2H')
+            end
+        else 
+	        if player.sub_job == 'SAM' then
+	            classes.CustomRangedGroups:append('SAM')
+            else
+                -- The default sets.midcast.RA applies
+	            classes.CustomRangedGroups:clear()
+	            classes.CustomMeleeGroups:clear()
+            end
         end
 
     end
@@ -947,20 +921,27 @@ end
 function use_ra(spell)
     
     local delay = '2.2'
+    -- BOW
     if player.equipment.range == gear.Bow then
         if spell.type:lower() == 'weaponskill' then
             delay = '2.6'
          else
-            delay = '1.8'
+            if buffactive["Courser's Roll"] then
+                delay = '1.6'
+            else
+                delay = '1.8'
+            end
         end
     else
     -- GUN 
         if spell.type:lower() == 'weaponskill' then
-        -- AFTER WS DELAY
             delay = '3.0'
         else
-        -- AFTER RA DELAY
-            delay = '2.2'
+            if buffactive["Courser's Roll"] then
+                delay = '2.0'
+            else
+                delay = '2.2'
+            end
         end
     end
     send_command('@wait '..delay..'; input /ra <t>')
@@ -969,10 +950,51 @@ end
 function camo_active()
     return state.Buff['Camouflage']
 end
--------------------------------------------------------------------------------------------------------------------
--- Utility functions specific to this job.
--------------------------------------------------------------------------------------------------------------------
-
+-- Check for proper ammo when shooting or weaponskilling
+function check_ammo(spell, action, spellMap, eventArgs)
+	-- Filter ammo checks depending on Unlimited Shot
+	if state.Buff['Unlimited Shot'] then
+		if player.equipment.ammo ~= U_Shot_Ammo[player.equipment.range] then
+			if player.inventory[U_Shot_Ammo[player.equipment.range]] or player.wardrobe[U_Shot_Ammo[player.equipment.range]] then
+				add_to_chat(122,"Unlimited Shot active. Using custom ammo.")
+				equip({ammo=U_Shot_Ammo[player.equipment.range]})
+			elseif player.inventory[DefaultAmmo[player.equipment.range]] or player.wardrobe[DefaultAmmo[player.equipment.range]] then
+				add_to_chat(122,"Unlimited Shot active but no custom ammo available. Using default ammo.")
+				equip({ammo=DefaultAmmo[player.equipment.range]})
+			else
+				add_to_chat(122,"Unlimited Shot active but unable to find any custom or default ammo.")
+			end
+		end
+	else
+		if player.equipment.ammo == U_Shot_Ammo[player.equipment.range] and player.equipment.ammo ~= DefaultAmmo[player.equipment.range] then
+			if DefaultAmmo[player.equipment.range] then
+				if player.inventory[DefaultAmmo[player.equipment.range]] then
+					add_to_chat(122,"Unlimited Shot not active. Using Default Ammo")
+					equip({ammo=DefaultAmmo[player.equipment.range]})
+				else
+					add_to_chat(122,"Default ammo unavailable.  Removing Unlimited Shot ammo.")
+					equip({ammo=empty})
+				end
+			else
+				add_to_chat(122,"Unable to determine default ammo for current weapon.  Removing Unlimited Shot ammo.")
+				equip({ammo=empty})
+			end
+		elseif player.equipment.ammo == 'empty' then
+			if DefaultAmmo[player.equipment.range] then
+				if player.inventory[DefaultAmmo[player.equipment.range]] then
+					add_to_chat(122,"Using Default Ammo")
+					equip({ammo=DefaultAmmo[player.equipment.range]})
+				else
+					add_to_chat(122,"Default ammo unavailable.  Leaving empty.")
+				end
+			else
+				add_to_chat(122,"Unable to determine default ammo for current weapon.  Leaving empty.")
+			end
+		elseif player.inventory[player.equipment.ammo].count < 15 then
+			add_to_chat(122,"Ammo '"..player.inventory[player.equipment.ammo].shortname.."' running low ("..player.inventory[player.equipment.ammo].count..")")
+		end
+	end
+end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	-- Default macro set/book
