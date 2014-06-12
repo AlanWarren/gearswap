@@ -105,7 +105,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
     	back="Atheling Mantle",
         waist="Windbuffet Belt",
-        legs="Hachiya Hakama +1",
+        legs="Manibozho Brais",
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS.Stave = set_combine(sets.precast.WS, {
@@ -125,8 +125,11 @@ function init_gear_sets()
     
     -- BLADE: JIN
     sets.Jin = {
+        head="Uk'uxkaj Cap",
         neck="Breeze Gorget",
-        waist="Thunder Belt"
+        ring1="Thundersoul Ring",
+        waist="Thunder Belt",
+        back="Rancorous Mantle"
     }
     sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
     sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS.Mid, sets.Jin)
@@ -139,8 +142,7 @@ function init_gear_sets()
     	ring1="Stormsoul Ring",
         back="Rancorous Mantle",
         legs="Mochizuki Hakama +1",
-        waist="Soil belt",
-        feet="Mochizuki Kyahan +1"
+        waist="Soil belt"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
