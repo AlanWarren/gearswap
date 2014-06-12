@@ -176,6 +176,16 @@ function init_gear_sets()
     sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
     sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin)
     
+    -- BLADE: KU 
+    sets.Ku = {
+        neck="Shadow Gorget",
+        waist="Soil Belt",
+        ring1="Thundersoul Ring",
+    }
+    sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
+    sets.precast.WS['Blade: Ku'].Mid = set_combine(sets.precast.WS.Mid, sets.Ku)
+    sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS.Acc, sets.Ku)
+    
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     	neck="Breeze gorget",
         ear1="Friomisi Earring",
