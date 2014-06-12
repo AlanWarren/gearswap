@@ -9,7 +9,7 @@ function init_gear_sets()
         sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
 
         sets.precast.JA['Eagle Eye Shot'] = {
-            head="Ux'uxkaj Cap", 
+            head="Uk'uxkaj Cap", 
             neck="Rancor Collar",
             back="Buquwik Cape",
             ring2="Pyrosoul Ring",
@@ -29,11 +29,6 @@ function init_gear_sets()
         sets.precast.FC = {
             ring1="Prolix Ring"
         }
-
-        sets.NightEarring = {ear2="Fenrir's earring"}
-        sets.DayEarring = {ear2="Flame Pearl"}
-
-        sets.earring = select_earring()
 
         sets.idle = {
             head="Umbani Cap",
@@ -121,9 +116,9 @@ function init_gear_sets()
             body="Kyujutsugi",
             hands="Sigyn's Bazubands",
             ring1="Rajas Ring",
-            ring2="K'ayres Ring",
+            ring2=gear.samrollring2,
             back="Sylvan Chlamys",
-            waist="Patentia Sash", 
+            waist=gear.samrollwaist, 
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         }
@@ -138,7 +133,8 @@ function init_gear_sets()
             hands="Seiryu's Kote",
             ring2="Longshot Ring",
             back="Lutian Cape",
-            waist="Elanid Belt"
+            waist="Elanid Belt",
+            legs=gear.samrolllegs
         })
 
         -- Gun Acc 
@@ -152,18 +148,27 @@ function init_gear_sets()
             ring1="Hajduk Ring"
         })
 
-        -- Stave + Strap set for Gun
-        -- STP: 43 ~ (2/4 recycle required)
-        -- Racc: 230
-        -- Ratk: 251.25
-        -- AGI: 142
-        -- STR: 115
+        -- Stave + Strap set for Gun (stats are approx since we swap stuff)
+        -- STP: 41 ~ (2/4 recycle in adoulin 3/4 out)
+        -- Racc: 225.75
+        -- Ratk: 255.75 day / 262 at night
+        -- AGI: 129
+        -- STR: 107 day / 104 night
         sets.midcast.RA.Gun2H = set_combine(sets.midcast.RA, {
             --main="Mekki Shakki",
             --sub="Bloodrain Strap",
-            legs="Nahtirah Trousers",
+            head="Arcadian Beret +1",
+            neck="Ocachi Gorget",
+            ear1=gear.nightearring,
+            ear2="Tripudio Earring", 
+            body="Kyujutsugi",
+            hands="Sigyn's Bazubands",
+            ring1="Rajas Ring",
+            ring2=gear.samrollring2,
             back="Lutian Cape",
-            waist="Elanid Belt"
+            waist=gear.samrollwaist,
+            legs="Nahtirah Trousers",
+            feet="Orion Socks +1"
         })
 
         -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
@@ -172,7 +177,7 @@ function init_gear_sets()
         -- AGI: 134
         -- STR: 104
         sets.midcast.RA.Mod.Gun2H = set_combine(sets.midcast.RA.Gun2H, {
-            legs="Aetosaur Trousers +1",
+            legs=gear.samrolllegs,
             ring2="Longshot Ring",
             back="Lutian Cape"
         })
@@ -251,10 +256,10 @@ function init_gear_sets()
             body="Kyujutsugi",
             hands="Iuitl Wristbands +1",
             ring1="Rajas Ring",
-            ring2="K'ayres Ring",
+            ring2=gear.samrollring2,
             back="Sylvan Chlamys",
             waist="Elanid Belt", 
-            legs="Aetosaur Trousers +1", 
+            legs=gear.samrolllegs, 
             feet="Arcadian Socks +1"
         }
         -- Mod toggle for Bow.
@@ -306,11 +311,13 @@ function init_gear_sets()
             waist="Elanid Belt",
             feet="Orion Socks +1"
         })
-        sets.midcast.RA.Mod.Decoy = sets.midcast.RA.Mod.Bow
+        sets.midcast.RA.Mod.Decoy = set_combine(sets.midcast.RA.Decoy, {
+            legs=gear.samrolllegs
+        })
         -- 1-handed weapon set used when decoy shot is ON
         sets.midcast.RA.Decoy1H = set_combine(sets.midcast.RA.Decoy, {
             back="Sylvan Chlamys",
-            legs="Aetosaur Trousers +1"
+            legs=gear.samrolllegs
         })
         sets.midcast.RA.Mod.Decoy1H = sets.midcast.RA.Mod.Bow1H
         -- High Accuracy set
@@ -323,32 +330,20 @@ function init_gear_sets()
         sets.midcast.RA.Acc.Decoy1H = sets.midcast.RA.Acc.Decoy
 
         -- Weaponskill sets  
-        sets.Coronach = {}
-        sets.Detonator = {}
-        sets.LastStand = {}
-        sets.Namas = {}
-        sets.Jishnus = {}
-        sets.Sidewinder = {}
-        sets.Wildfire = {}
-        sets.SlugShot = {}
-        sets.Refulgent = {}
-
-        sets.precast.CustomWS = {}
-        sets.precast.CustomWS = {
+        sets.precast.WS = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
-            ear1="Flame Pearl",
-            ear2="Tripudio Earring",
+            ear1=gear.nightearring,
+            ear2=gear.outsideearring,
             body="Kyujutsugi",
             hands="Arcadian Bracers +1",
             ring1="Rajas Ring",
             ring2="Pyrosoul Ring",
-            back="Sylvan Chlamys",
+            back="Buquwik Cape",
             waist="Elanid Belt",
             legs="Nahtirah Trousers",
             feet="Arcadian Socks +1"
         }
-        sets.precast.WS = set_combine(sets.precast.CustomWS, sets.earring)
         sets.precast.WS.Mod = set_combine(sets.precast.WS, {
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
@@ -483,7 +478,7 @@ function init_gear_sets()
         --sets.Kiting = {feet="Fajin Boots"}
        
         sets.buff.Barrage = {
-            head="Umbani Cap",
+            head="Ux'uxkaj Cap",
             neck="Rancor Collar",
             ear1="Volley Earring",
             ear2="Clearview Earring",
@@ -498,7 +493,6 @@ function init_gear_sets()
         }
 
         sets.buff.Camouflage =  {body="Orion Jerkin +1"}
-
 
         sets.Overkill =  {
             body="Arcadian Jerkin"

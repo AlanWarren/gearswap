@@ -91,11 +91,35 @@ function user_setup()
         
         -- settings
         state.AutoRA = false
+        -- Do you want to use Fenrir's Earring at night?
         use_night_earring = true
 
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
         gear.Stave = "Mekki Shakki"
+        
+        -- Special Circumstance Equipment
+        Earrings = { 
+            "Night" = "Fenrir's Earring", 
+            "Day"   = "Flame Pearl", 
+            "STP"   = "Tripudio Earring" 
+        }
+
+        Sam_Roll_Gear = {
+            'WaistDown' = "Patientia Sash", 
+            'WaistUp'   = "Elanid Belt",
+            'Ring1Down' = "K'ayres Ring",
+            'Ring1Up'   = "Pyrosoul Ring",
+            'LegsDown'  = "Aetosaur Trousers +1",
+            'LegsUp'    = "Nahtirah Trousers"
+        }
+
+        -- dynamically assigned equip  based on time of day / adoulin
+        gear.nightearring = select_earring('night')
+        gear.outsideearring = select_earring('adoulin')
+        gear.samrollwaist = select_roll_gear('waist')
+        gear.samrollring2 = select_roll_gear('ring2')
+        gear.samrolllegs = select_roll_gear('legs')
 
         -- Overriding Global Defaults for this job
         gear.default.weaponskill_neck = "Ocachi Gorget"
@@ -187,7 +211,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     elseif state.Buff.Overkill then
         equip(sets.Overkill.Preshot)
     end
-    sets.earring = select_earring()
+    gear.nightearring = select_earring('night')
+    gear.outsideearring = select_earring('adoulin')
+    gear.samrollwaist = select_roll_gear('waist')
+    gear.samrollring2 = select_roll_gear('ring2')
+    gear.samrolllegs = select_roll_gear('legs')
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -244,7 +272,11 @@ end
 -- Can customize state or custom melee class values at this point.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
-    sets.earring = select_earring()
+    gear.nightearring = select_earring('night')
+    gear.outsideearring = select_earring('adoulin')
+    gear.samrollwaist = select_roll_gear('waist')
+    gear.samrollring2 = select_roll_gear('ring2')
+    gear.samrolllegs = select_roll_gear('legs')
 end
  
 function customize_idle_set(idleSet)
@@ -273,17 +305,45 @@ function job_status_change(newStatus, oldStatus, eventArgs)
 	determine_ranged()
 end
  
-function select_earring()
-    -- world.time is given in minutes into each day
-    -- 7:00 AM would be 420 minutes
-    -- 17:00 PM would be 1020 minutes
-    if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
-        return sets.NightEarring
-    else
-        return sets.DayEarring
+
+function select_earring(equip)
+    if equip == 'night' then
+        if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
+            return Earrings["Night"]
+        else
+            return Earrings["Day"]
+        end
+    elseif equip == 'adoulin' then
+        --If we're outside Adoulin, WS won't return enough TP 
+        if areas.Adoulin:contains(world.area) and buffactive.ionis then
+            return Earrings["Day"]
+        else
+            return Earrings["STP"]
+        end
     end
 end
 
+function select_roll_gear(equip)
+    if equip == 'waist' then
+        if buffactive['Samurai Roll'] then
+            return Sam_Roll_Gear['WaistUp']
+        else
+            return Sam_Roll_Gear['WaistDown']
+        end
+    elseif equip == 'ring2' then
+        if buffactive['Samurai Roll'] then
+            return Sam_Roll_Gear['Ring1Up']
+        else
+            return Sam_Roll_Gear['Ring1Down']
+        end
+    elseif equip == 'legs' then
+        if buffactive['Samurai Roll'] then
+            return Sam_Roll_Gear['LegsUp']
+        else
+            return Sam_Roll_Gear['LegsDown']
+        end
+    end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------
