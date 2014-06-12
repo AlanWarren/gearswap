@@ -20,8 +20,20 @@ function job_setup()
 	options.TreasureModes = {'None','Tag','SATA','Fulltime'}
 	state.TreasureMode = 'Tag'
 
-	tag_with_th = false	
-	tp_on_engage = 0
+	-- Tracking vars for TH.
+	tagged_mobs = T{}
+	state.th_gear_is_locked = false
+	state.show_th_message = false
+	
+	-- JA IDs for actions that always have TH: Provoke, Animated Flourish
+	info.ja_ids = S{35, 204}
+	-- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
+	info.u_ja_ids = S{201, 202, 203, 205, 207}
+	
+	-- Register events to allow us to manage TH application.
+	windower.register_event('target change', on_target_change)
+	windower.raw_register_event('action', on_action)
+	windower.raw_register_event('action message', on_action_message)
 end
 
 
@@ -30,15 +42,18 @@ function user_setup()
 	-- Options: Override default values
 	options.OffenseModes = {'Normal', 'Acc', 'iLvl'}
 	options.DefenseModes = {'Normal', 'Evasion', 'PDT'}
-	options.RangedModes = {'Normal', 'TH', 'Acc'}
+	options.RangedModes = {'Normal', 'Acc'}
 	options.WeaponskillModes = {'Normal', 'Acc', 'Att', 'Mod'}
 	options.IdleModes = {'Normal'}
 	options.RestingModes = {'Normal'}
 	options.PhysicalDefenseModes = {'Evasion', 'PDT'}
 	options.MagicalDefenseModes = {'MDT'}
 
-	state.RangedMode = 'TH'
+	state.RangedMode = 'Normal'
 	state.Defense.PhysicalMode = 'Evasion'
+	
+	gear.default.weaponskill_neck = "Asperity Necklace"
+	gear.default.weaponskill_waist = "Caudata Belt"
 
 	-- Additional local binds
 	send_command('bind ^` input /ja "Flee" <me>')
@@ -67,7 +82,36 @@ function init_gear_sets()
 	
 	sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2"}
 	
-	-- Precast Sets
+	sets.buff['Sneak Attack'] = {
+		head="Uk'uxkaj Cap",
+        neck="Asperity Necklace",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+		body="Qaaxo Harness",
+        hands="Raider's Armlets +2",
+        ring1="Thundersoul Ring",
+        ring2="Epona's Ring",
+		back="Atheling Mantle",
+        waist="Cetl Belt",
+        legs="Manibozho Brais",
+        feet="Qaaxo Leggings"
+    }
+
+	sets.buff['Trick Attack'] = {
+		head="Felistris Mask",
+        neck="Asperity Necklace",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+		body="Qaaxo Harness",
+        hands="Iuitl Wristbands +1",
+        ring1="Stormsoul Ring",
+        ring2="Epona's Ring",
+		back="Canny Cape",
+        waist="Elanid Belt",
+        legs="Nahtirah Trousers",
+        feet="Iuitl Gaiters"
+    }
+    -- Precast Sets
 	
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Collaborator'] = {}
@@ -80,36 +124,8 @@ function init_gear_sets()
 	sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
 	sets.precast.JA['Feint'] = {hands="Plunderer's Armlets +1"} -- {legs="Assassin's Culottes +2"}
 	
-	sets.precast.JA['Sneak Attack'] = {
-		head="Uk'uxkaj Cap",
-        neck="Asperity Necklace",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-		body="Manibozho Jerkin",
-        hands="Raider's Armlets +2",
-        ring1="Thundersoul Ring",
-        ring2="Epona's Ring",
-		back="Atheling Mantle",
-        waist="Cetl Belt",
-        legs="Manibozho Brais",
-        feet="Qaaxo Leggings"
-    }
-
-	sets.precast.JA['Trick Attack'] = {
-		head="Felistris Mask",
-        neck="Asperity Necklace",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-		body="Manibozho Jerkin",
-        hands="Iuitl Wristbands +1",
-        ring1="Stormsoul Ring",
-        ring2="Epona's Ring",
-		back="Canny Cape",
-        waist="Elanid Belt",
-        legs="Nahtirah Trousers",
-        feet="Iuitl Gaiters"
-    }
-
+	sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
+	sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
@@ -117,19 +133,17 @@ function init_gear_sets()
 		legs="Nahtirah Trousers",
         feet="Iuitl Gaiters"
     }
-		
-	-- Don't need any special gear for Healing Waltz.
-	sets.precast.Waltz['Healing Waltz'] = {}
-	
-	-- Fast cast sets for spells
-	
-	sets.precast.FC = {}
+	-- TH actions
+	sets.precast.Step = sets.TreasureHunter
+	sets.precast.Flourish1 = sets.TreasureHunter
+	sets.precast.JA.Provoke = sets.TreasureHunter
 
+	-- Fast cast sets for spells
+	sets.precast.FC = {ring1="Prolix Ring"}
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
 	-- Ranged snapshot gear
-	sets.precast.RA = {hands="Iuitl Wristbands +1",legs="Nahtirah Trousers"}
-
+	sets.precast.RA = {hands="Iuitl Wristbands +1",legs="Nahtirah Trousers", feet="Wurrukatte Boots"}
        
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
@@ -405,13 +419,10 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
-	if spell.type == 'Waltz' then
-		refine_waltz(spell, action, spellMap, eventArgs)
+	refine_waltz(spell, action, spellMap, eventArgs)
+	if state.Buff[spell.english] ~= nil then
+		state.Buff[spell.english] = true
 	end
-    if spell.name == 'Spectral Jig' and buffactive.sneak then
-            -- If sneak is active when using, cancel before completion
-            send_command('cancel 71')
-    end
 end
 
 
@@ -422,84 +433,68 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 			equip(sets.TreasureHunter)
 		end
 	elseif spell.english=='Sneak Attack' or spell.english=='Trick Attack' then
-		if state.TreasureMode == 'SATA' or state.TreasureMode == 'Fulltime' or tag_with_th then
+		if state.TreasureMode == 'SATA' or state.TreasureMode == 'Fulltime' then
+			equip(sets.TreasureHunter)
+		end
+	end
+end
+
+-- Run after the general midcast() set is constructed.
+function job_post_midcast(spell, action, spellMap, eventArgs)
+	if state.TreasureMode ~= 'None' then
+		if (spell.action_type == 'Ranged Attack' or spell.action_type == 'Magic') and spell.target.type == 'MONSTER' then
 			equip(sets.TreasureHunter)
 		end
 	end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
-function job_midcast(spell, action, spellMap, eventArgs)
-	if spell.action_type == 'Magic' then
-		-- Default base equipment layer of fast recast.
-		equip(sets.midcast.FastRecast)
-	end
-end
-
--- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
+	if state.Buff[spell.english] ~= nil then
+		state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
+	end
+
 	-- Update the state of certain buff JAs if the action wasn't interrupted.
 	if not spell.interrupted then
-		if state.Buff[spell.name] ~= nil then
-			state.Buff[spell.name] = true
-		end
-		
-		-- Don't let aftercast revert gear set for SA/TA/Feint
-		if S{'Sneak Attack', 'Trick Attack', 'Feint'}:contains(spell.english) then
-			eventArgs.handled = true
-		end
-		
-		-- If this wasn't an action that would have used up SATA/Feint, make sure to put gear back on.
-		if spell.type:lower() ~= 'weaponskill' and spell.type:lower() ~= 'step' then
+		-- If this wasn't an action that would have used up SATA/Feint, make sure to keep gear on.
+		if spell.type ~= 'WeaponSkill' and spell.type ~= 'Step' then
 			-- If SA/TA/Feint are active, put appropriate gear back on (including TH gear).
-			if state.Buff['Sneak Attack'] then
-				equip(sets.precast.JA['Sneak Attack'])
-				if state.TreasureMode == 'SATA' or state.TreasureMode == 'Fulltime' or tag_with_th then
-					equip(sets.TreasureHunter)
-				end
-				eventArgs.handled = true
-			elseif state.Buff['Trick Attack'] then
-				equip(sets.precast.JA['Trick Attack'])
-				if state.TreasureMode == 'SATA' or state.TreasureMode == 'Fulltime' or tag_with_th then
-					equip(sets.TreasureHunter)
-				end
-				eventArgs.handled = true
-			elseif state.Buff['Feint'] then
-				equip(sets.precast.JA['Feint'])
-				if state.TreasureMode == 'SATA' or state.TreasureMode == 'Fulltime' or tag_with_th then
-					equip(sets.TreasureHunter)
-				end
-				eventArgs.handled = true
-			end
-		end
-		
-		if spell.target and spell.target.type == 'Enemy' then
-			tag_with_th = false
-			tp_on_engage = 0
-		elseif (spell.type == 'Waltz' or spell.type == 'Samba') and tag_with_th then
-			-- Update current TP if we spend TP before we actually hit the mob
-			tp_on_engage = player.tp
+			check_buff('Sneak Attack', eventArgs)
+			check_buff('Trick Attack', eventArgs)
+			check_buff('Feint', eventArgs)
 		end
 	end
 end
 
-
+-- Refactor buff checks from aftercast
+function check_buff(buff_name, eventArgs)
+	if state.Buff[buff_name] then
+		equip(sets.buff[buff_name] or {})
+		if state.TreasureMode == 'SATA' or state.TreasureMode == 'Fulltime' then
+			equip(sets.TreasureHunter)
+		end
+		eventArgs.handled = true
+	end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- Customization hooks for idle and melee sets construction.
 -------------------------------------------------------------------------------------------------------------------
 
-function get_custom_wsmode(spell, action, spellMap)
-	local wsmode = ''
+function get_custom_wsmode(spell, spellMap, defaut_wsmode)
+	local wsmode
+	
 	if state.Buff['Sneak Attack'] then
 		wsmode = 'SA'
 	end
 	if state.Buff['Trick Attack'] then
-		wsmode = wsmode .. 'TA'
+		wsmode = (wsmode or '') .. 'TA'
 	end
 	
-	if wsmode ~= '' then
-		return wsmode
+	if spell.english == 'Aeolian Edge' and state.TreasureMode ~= 'None' then
+		wsmode = 'TH'
 	end
+
+	return wsmode
 end
 
 function customize_idle_set(idleSet)
@@ -511,7 +506,7 @@ function customize_idle_set(idleSet)
 end
 
 function customize_melee_set(meleeSet)
-	if state.TreasureMode == 'Fulltime' or tag_with_th then
+	if state.TreasureMode == 'Fulltime' then
 		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
 	end
 	
@@ -522,25 +517,26 @@ end
 -- General hooks for other events.
 -------------------------------------------------------------------------------------------------------------------
 
--- Called when the player's status changes.
-function job_status_change(newStatus, oldStatus, eventArgs)
-	check_range_lock()
-	
-	-- If engaging, put on TH gear.
-	-- If disengaging, turn off TH tagging.
-	if newStatus == 'Engaged' and state.TreasureMode ~= 'None' then
-		equip(sets.TreasureHunter)
-		tag_with_th = true
-		tp_on_engage = player.tp
-		send_command('wait 3;gs c update th')
-	elseif oldStatus == 'Engaged' then
-		tag_with_th = false
-		tp_on_engage = 0
+-- Called if we change any user state fields.
+function job_state_change(stateField, newValue, oldValue)
+	if stateField == 'TreasureMode' then
+		if newValue == 'None' then
+			if state.show_th_message then add_to_chat(123,'TH Mode set to None. Unlocking gear.') end
+			unlock_TH()
+		elseif oldValue == 'None' then
+			TH_for_first_hit()
+		end
 	end
+end
 
-	-- If SA/TA/Feint are active, don't change gear sets
-	if satafeint_active() then
-		eventArgs.handled = true
+-- On engaging a mob, attempt to add TH gear.  For any other status change, unlock TH gear slots.
+function job_status_change(newStatus, oldStatus, eventArgs)
+	if newStatus == 'Engaged' then
+		if state.show_th_message then add_to_chat(123,'Engaging '..player.target.id..'.') end
+		TH_for_first_hit()
+	else
+		if state.show_th_message then add_to_chat(123,'Disengaging. Unlocking TH.') end
+		unlock_TH()
 	end
 end
 
@@ -550,101 +546,56 @@ end
 function job_buff_change(buff, gain)
 	if state.Buff[buff] ~= nil then
 		state.Buff[buff] = gain
+		handle_equipping_gear(player.status)
+	end
+end
 
-		if not satafeint_active() then
+-- On changing targets, attempt to add TH gear.
+function on_target_change(target_index)
+	-- Only care about changing targets while we're engaged, either manually or via current target death.
+	if player.status == 'Engaged' then
+		-- If current player.target.index isn't the same as the target_index parameter,
+		-- that indicates that the sub-target cursor is being used.  Ignore it.
+		if player.target.index == target_index then
+			if state.show_th_message then add_to_chat(123,'Changing target to '..player.target.id..'.') end
+			TH_for_first_hit()
 			handle_equipping_gear(player.status)
 		end
 	end
 end
 
--------------------------------------------------------------------------------------------------------------------
--- Hooks for TH mode handling.
--------------------------------------------------------------------------------------------------------------------
-
--- Request job-specific mode tables.
--- Return true on the third returned value to indicate an error: that we didn't recognize the requested field.
-function job_get_option_modes(field)
-	if field == 'Treasure' then
-		return options.TreasureModes, state.TreasureMode
-	end
-end
-
--- Set job-specific mode values.
--- Return true if we recognize and set the requested field.
-function job_set_option_mode(field, val)
-	if field == 'Treasure' then
-		state.TreasureMode = val
-		return true
-	end
+-- Clear out the entire tagged mobs table when zoning.
+function on_zone_change(new_zone, old_zone)
+	if state.show_th_message then add_to_chat(123,'Zoning. Clearing tagged mobs table.') end
+	tagged_mobs:clear()
 end
 
 
 -------------------------------------------------------------------------------------------------------------------
--- User code that supplements self-commands.
+-- Various update events.
 -------------------------------------------------------------------------------------------------------------------
 
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
-	check_range_lock()
-
-	if state.TreasureMode == 'None' then
-		tag_with_th = false
-		tp_on_engage = 0
-	elseif tag_with_th and player.tp ~= tp_on_engage then
-		tag_with_th = false
-		tp_on_engage = 0
-	elseif cmdParams[1] == 'th' and player.status == 'Engaged' then
-		send_command('wait 3;gs c update th')
+	if player.status ~= 'Engaged' or cmdParams[1] == 'tagged' then
+		unlock_TH()
 	end
 	
-	-- Update the current state of state.Buff, in case buff_change failed
-	-- to update the value.
-	state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
-	state.Buff['Trick Attack'] = buffactive['trick attack'] or false
-	state.Buff['Feint'] = buffactive['feint'] or false
+	if state.show_th_message and cmdParams[1] == 'user' then
+		print_set(tagged_mobs, 'Tagged mobs')
+	end
+end
 
+-- Called any time we attempt to handle automatic gear equips (ie: engaged or idle gear).
+function job_handle_equipping_gear(playerStatus, eventArgs)
+	-- Check that ranged slot is locked, if necessary
+	check_range_lock()
+	
 	-- Don't allow normal gear equips if SA/TA/Feint is active.
-	if satafeint_active() then
+	if state.Buff['Sneak Attack'] or state.Buff['Trick Attack'] or state.Buff['Feint'] then
 		eventArgs.handled = true
 	end
 end
-
-
--- Handle notifications of general user state change.
-function job_state_change(stateField, newValue)
-	if stateField == 'TreasureMode' then
-		local prevRangedMode = state.RangedMode
-		
-		if newValue == 'Tag' or newValue == 'SATA' then
-			state.RangedMode = 'TH'
-		elseif state.OffenseMode == 'Acc' then
-			state.RangedMode = 'Acc'
-		else
-			state.RangedMode = 'Normal'
-		end
-		
-		if state.RangedMode ~= prevRangedMode then
-			add_to_chat(121,'Ranged mode is now '..state.RangedMode)
-		end
-	elseif stateField == 'OffenseMode' then
-		if state.TreasureMode == 'None' or state.TreasureMode == 'Fulltime' then
-			local prevRangedMode = state.RangedMode
-
-			if newValue == 'Acc' then
-				state.RangedMode = 'Acc'
-			else
-				state.RangedMode = 'Normal'
-			end
-			
-			if state.RangedMode ~= prevRangedMode then
-				add_to_chat(121,'Ranged mode is now '..state.RangedMode)
-			end
-		end
-	elseif stateField == 'Reset' then
-		state.RangedMode = 'TH'
-	end
-end
-
 
 -- Function to display the current relevant user state when doing an update.
 -- Return true if display was handled, and you don't want the default info shown.
@@ -676,11 +627,6 @@ function check_range_lock()
 	else
 		enable('range', 'ammo')
 	end
-end
-
--- Function to indicate if any buffs have been activated that we don't want to equip gear over.
-function satafeint_active()
-	return state.Buff['Sneak Attack'] or state.Buff['Trick Attack'] or state.Buff['Feint']
 end
 
 -- Select default macro book on initial load or subjob change.
