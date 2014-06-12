@@ -330,6 +330,8 @@ function init_gear_sets()
         sets.Jishnus = {}
         sets.Sidewinder = {}
         sets.Wildfire = {}
+        sets.SlugShot = {}
+        sets.Refulgent = {}
 
         sets.precast.CustomWS = {}
         sets.precast.CustomWS = {
@@ -415,6 +417,20 @@ function init_gear_sets()
         sets.precast.WS['Detonator'] = set_combine(sets.precast.WS, sets.Detonator)
         sets.precast.WS['Detonator'].Mod = set_combine(sets.precast.WS.Mod, sets.Detonator)
         sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS.Acc, sets.Detonator)
+        
+        -- SLUG SHOT
+        sets.SlugShot = {
+           neck="Breeze Gorget",
+           waist="Light Belt",
+           feet="Arcadian Socks +1"
+        }
+        sets.precast.WS['Slug Shot'] = set_combine(sets.precast.WS, sets.SlugShot)
+        sets.precast.WS['Slug Shot'].Mod = set_combine(sets.precast.WS.Mod, sets.SlugShot)
+        sets.precast.WS['Slug Shot'].Acc = set_combine(sets.precast.WS.Acc, sets.SlugShot)
+        
+        sets.precast.WS['Heavy Shot'] = set_combine(sets.precast.WS, sets.SlugShot)
+        sets.precast.WS['Heavy Shot'].Mod = set_combine(sets.precast.WS.Mod, sets.SlugShot)
+        sets.precast.WS['Heavy Shot'].Acc = set_combine(sets.precast.WS.Acc, sets.SlugShot)
 
         -- NAMAS
         sets.Namas = {
