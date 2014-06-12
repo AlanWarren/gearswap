@@ -138,7 +138,6 @@ function init_gear_sets()
         neck="Shadow gorget",
     	ring1="Stormsoul Ring",
         back="Rancorous Mantle",
-        body="Mochizuki Chainmail",
         legs="Mochizuki Hakama +1",
         waist="Soil belt",
         feet="Mochizuki Kyahan +1"
@@ -155,6 +154,7 @@ function init_gear_sets()
         ring1="Mars's Ring",
         back="Yokaze Mantle"
     })
+
     -- BLADE: SHUN
     sets.Shun = {
         neck="Breeze Gorget",
@@ -165,6 +165,16 @@ function init_gear_sets()
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
     sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
     sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
+    
+    -- BLADE: Rin
+    sets.Rin = {
+        neck="Asperity Necklace",
+        waist="Light Belt",
+        ring1="Thundersoul Ring",
+    }
+    sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
+    sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
+    sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin)
     
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     	neck="Breeze gorget",
