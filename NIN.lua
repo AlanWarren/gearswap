@@ -105,7 +105,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
     	back="Atheling Mantle",
         waist="Windbuffet Belt",
-        legs="Hachiya Hakama +1",
+        legs="Manibozho Brais",
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS.Stave = set_combine(sets.precast.WS, {
@@ -125,8 +125,11 @@ function init_gear_sets()
     
     -- BLADE: JIN
     sets.Jin = {
+        head="Uk'uxkaj Cap",
         neck="Breeze Gorget",
-        waist="Thunder Belt"
+        ring1="Thundersoul Ring",
+        waist="Thunder Belt",
+        back="Rancorous Mantle"
     }
     sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
     sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS.Mid, sets.Jin)
@@ -138,10 +141,8 @@ function init_gear_sets()
         neck="Shadow gorget",
     	ring1="Stormsoul Ring",
         back="Rancorous Mantle",
-        body="Mochizuki Chainmail",
         legs="Mochizuki Hakama +1",
-        waist="Soil belt",
-        feet="Mochizuki Kyahan +1"
+        waist="Soil belt"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
@@ -155,6 +156,7 @@ function init_gear_sets()
         ring1="Mars's Ring",
         back="Yokaze Mantle"
     })
+
     -- BLADE: SHUN
     sets.Shun = {
         neck="Breeze Gorget",
@@ -165,6 +167,26 @@ function init_gear_sets()
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
     sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
     sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
+    
+    -- BLADE: Rin
+    sets.Rin = {
+        neck="Asperity Necklace",
+        waist="Light Belt",
+        ring1="Thundersoul Ring",
+    }
+    sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
+    sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
+    sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin)
+    
+    -- BLADE: KU 
+    sets.Ku = {
+        neck="Shadow Gorget",
+        waist="Soil Belt",
+        ring1="Thundersoul Ring",
+    }
+    sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
+    sets.precast.WS['Blade: Ku'].Mid = set_combine(sets.precast.WS.Mid, sets.Ku)
+    sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS.Acc, sets.Ku)
     
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     	neck="Breeze gorget",
