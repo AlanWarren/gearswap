@@ -92,7 +92,7 @@ function init_gear_sets()
         ring1="Prolix Ring",
         waist="Hurch'lan Sash",
     }
-    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {body="Mochizuki Chainmail +1"})
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Mochizuki Chainmail +1"})
     
     sets.precast.WS = {
     	head="Felistris Mask",
