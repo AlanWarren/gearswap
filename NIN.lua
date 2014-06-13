@@ -380,7 +380,7 @@ function init_gear_sets()
     
     sets.engaged.PDT = set_combine(sets.engaged, {
     	head="Lithelimb Cap",
-        body="Hachiya Chainmail +1",
+        body="Qaaxo Harness",
         neck="Twilight Torque",
         hands="Umuthi Gloves",
         ring1="Patricius Ring",
