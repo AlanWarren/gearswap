@@ -90,7 +90,6 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {
         ring1="Prolix Ring",
-        waist="Hurch'lan Sash",
     }
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Mochizuki Chainmail +1"})
     
