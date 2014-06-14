@@ -100,18 +100,18 @@ function user_setup()
         
         -- Special Circumstance Equipment
         Earrings = { 
-            "Night" = "Fenrir's Earring", 
-            "Day"   = "Flame Pearl", 
-            "STP"   = "Tripudio Earring" 
+            ["Night"] = "Fenrir's Earring", 
+            ["Day"]   = "Flame Pearl", 
+            ["STP"]   = "Tripudio Earring" 
         }
 
         Sam_Roll_Gear = {
-            'WaistDown' = "Patientia Sash", 
-            'WaistUp'   = "Elanid Belt",
-            'Ring1Down' = "K'ayres Ring",
-            'Ring1Up'   = "Pyrosoul Ring",
-            'LegsDown'  = "Aetosaur Trousers +1",
-            'LegsUp'    = "Nahtirah Trousers"
+            ['WaistDown'] = "Patientia Sash", 
+            ['WaistUp']   = "Elanid Belt",
+            ['Ring1Down'] = "K'ayres Ring",
+            ['Ring1Up']   = "Pyrosoul Ring",
+            ['LegsDown']  = "Aetosaur Trousers +1",
+            ['LegsUp']    = "Nahtirah Trousers"
         }
 
         -- dynamically assigned equip  based on time of day / adoulin
