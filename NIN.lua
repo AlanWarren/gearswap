@@ -231,7 +231,7 @@ function init_gear_sets()
     }
     -- Enfeebling Ninjutsu (skill)
     sets.midcast.EnfeebleNinjutsu = {
-    	head="Hachiya Hatsuburi",
+    	head="Hachiya Hatsuburi +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         neck="Stoicheion Medal",
