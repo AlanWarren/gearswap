@@ -331,21 +331,21 @@ end
 function select_roll_gear(equip)
     if equip == 'waist' then
         if buffactive['Samurai Roll'] then
-            return Sam_Roll_Gear['WaistUp']
+            return 'Elanid Belt'
         else
-            return Sam_Roll_Gear['WaistDown']
+            return 'Patentia Sash'
         end
     elseif equip == 'ring2' then
         if buffactive['Samurai Roll'] then
-            return Sam_Roll_Gear['Ring1Up']
+            return 'Pyrosoul Ring'
         else
-            return Sam_Roll_Gear['Ring1Down']
+            return "K'ayres Ring"
         end
     elseif equip == 'legs' then
         if buffactive['Samurai Roll'] then
-            return Sam_Roll_Gear['LegsUp']
+            return "Nahtirah Trousers"
         else
-            return Sam_Roll_Gear['LegsDown']
+            return "Aetosaur Trousers +1"
         end
     end
 end
