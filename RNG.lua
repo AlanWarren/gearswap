@@ -314,16 +314,16 @@ end
 function select_earring(equip)
     if equip == 'night' then
         if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
-            return Earrings["Night"]
+            return "Fenrir's Earring"
         else
-            return Earrings["Day"]
+            return "Flame Pearl"
         end
     elseif equip == 'adoulin' then
         --If we're outside Adoulin, WS won't return enough TP 
         if areas.Adoulin:contains(world.area) and buffactive.ionis then
-            return Earrings["Day"]
+            return "Flame Pearl"
         else
-            return Earrings["STP"]
+            return "Tripudio Earring"
         end
     end
 end
