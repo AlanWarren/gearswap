@@ -266,6 +266,11 @@ function job_buff_change(buff, gain)
         end
     end
 	determine_ranged()
+    gear.nightearring = select_earring('night')
+    gear.outsideearring = select_earring('adoulin')
+    gear.samrollwaist = select_roll_gear('waist')
+    gear.samrollring2 = select_roll_gear('ring2')
+    gear.samrolllegs = select_roll_gear('legs')
 end
  
 -- Called before the Include starts constructing melee/idle/resting sets.
