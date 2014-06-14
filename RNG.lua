@@ -106,7 +106,7 @@ function user_setup()
         }
 
         Sam_Roll_Gear = {
-            ['WaistDown'] = "Patientia Sash", 
+            ['WaistDown'] = "Patentia Sash", 
             ['WaistUp']   = "Elanid Belt",
             ['Ring1Down'] = "K'ayres Ring",
             ['Ring1Up']   = "Pyrosoul Ring",
