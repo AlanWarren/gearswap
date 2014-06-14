@@ -253,7 +253,7 @@ function init_gear_sets()
     
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
-    	head="Felistris Mask",
+    	head="Hachiya Hatsuburi +1",
         neck="Twilight Torque",
         ear1="Trux Earring",
         ear2="Dawn Earring",
