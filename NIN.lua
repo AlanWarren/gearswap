@@ -364,7 +364,7 @@ function init_gear_sets()
 
     sets.engaged.Subtle = {
         ammo=gear.ammo,
-        head="Hachiya Hatsuburi",
+        head="Hachiya Hatsuburi +1",
         neck="Iga Erimaki",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
