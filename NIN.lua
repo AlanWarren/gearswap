@@ -188,12 +188,16 @@ function init_gear_sets()
     sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS.Acc, sets.Ku)
     
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    	neck="Breeze gorget",
+    	head="Umbani Cap",
         ear1="Friomisi Earring",
-        ear2="Hecate's Earring",
-        ring2="Stormsoul Ring",
+        ear2="Crematio Earring",
+        neck="Stoicheion Medal",
+        ring1="Stormsoul Ring",
+        ring2="Acumen Ring",
     	back="Toro Cape",
-        waist="Thunder Belt"
+        legs="Shneddick Tights +1",
+        waist="Thunder Belt",
+        feet="Mochizuki Kyahan +1"
      })
     
     
