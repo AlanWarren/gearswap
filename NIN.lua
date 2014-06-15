@@ -268,10 +268,12 @@ function init_gear_sets()
     }
     
     sets.idle.Town = set_combine(sets.idle, {
-        neck="Rancor Collar",
-        body="Mochizuki Chainmail +1",
+        head="Hachiya Hatsuburi +1",
+        neck="Iga Erimaki",
+        body="Hachiya Chainmail +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
+        legs="Hachiya Hakama +1",
     	back="Yokaze Mantle"
     })
     
@@ -380,7 +382,7 @@ function init_gear_sets()
     
     sets.engaged.PDT = set_combine(sets.engaged, {
     	head="Lithelimb Cap",
-        body="Qaaxo Harness",
+        body="Hachiya Chainmail +1",
         neck="Twilight Torque",
         hands="Umuthi Gloves",
         ring1="Patricius Ring",
