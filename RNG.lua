@@ -137,6 +137,9 @@ function user_setup()
         send_command('bind !f9 gs c cycle WeaponskillMode')
         send_command('bind ^- gs c toggle AutoRA')
         send_command('bind ^[ input /lockstyle on')
+        
+        -- Testing 
+        --windower.register_event('incoming text', detect_cor_rolls)
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -567,6 +570,12 @@ function check_ammo(spell, action, spellMap, eventArgs)
 			add_to_chat(122,"Ammo '"..player.inventory[player.equipment.ammo].shortname.."' running low ("..player.inventory[player.equipment.ammo].count..")")
 		end
 	end
+end
+-- Orestes uses Samurai Roll. The total comes to 5!
+function detect_cor_rolls(old,new,color,newcolor)
+    if string.find(old,'uses Samurai Roll. The total comes to') then
+        add_to_chat(122,"SAM Roll")
+    end
 end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
