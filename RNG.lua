@@ -71,7 +71,10 @@ end
 
 -- setup vars that are user-independent.
 function job_setup()
+        get_combat_form()
+        get_custom_ranged_groups()
 
+        sam_sj = player.sub_job == 'SAM' or false
 end
  
 -- setup vars that are user-dependent. 
@@ -88,7 +91,7 @@ function user_setup()
         state.Buff.Barrage = buffactive.Barrage or false
         state.Buff.Camouflage = buffactive.Camouflage or false
         state.Buff.Overkill = buffactive.Overkill or false
-        
+
         -- settings
         state.AutoRA = false
         -- Do you want to use Fenrir's Earring at night?
@@ -105,21 +108,10 @@ function user_setup()
             ["STP"]   = "Tripudio Earring" 
         }
 
-        Sam_Roll_Gear = {
-            ['WaistDown'] = "Patentia Sash", 
-            ['WaistUp']   = "Elanid Belt",
-            ['Ring1Down'] = "K'ayres Ring",
-            ['Ring1Up']   = "Pyrosoul Ring",
-            ['LegsDown']  = "Aetosaur Trousers +1",
-            ['LegsUp']    = "Nahtirah Trousers"
-        }
-
+        rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Sabebus', 'Eminent Axe', 'Trailer\'s Kukri'}
         -- dynamically assigned equip  based on time of day / adoulin
         gear.nightearring = select_earring('night')
         gear.outsideearring = select_earring('adoulin')
-        gear.samrollwaist = select_roll_gear('waist')
-        gear.samrollring2 = select_roll_gear('ring2')
-        gear.samrolllegs = select_roll_gear('legs')
 
         -- Overriding Global Defaults for this job
         gear.default.weaponskill_neck = "Ocachi Gorget"
@@ -128,7 +120,6 @@ function user_setup()
       	DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"}
 	    U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"} 
         
-        determine_ranged()
         select_default_macro_book()
 
         send_command('bind f9 gs c cycle RangedMode')
@@ -177,6 +168,14 @@ function job_precast(spell, action, spellMap, eventArgs)
         if state.Buff[spell.english] ~= nil then
             state.Buff[spell.english] = true
         end
+
+        if sam_sj then
+            classes.CustomClass = 'SAM'
+        end
+
+        if spell.action_type == 'Ranged Attack' then
+            state.CombatWeapon = player.equipment.range
+        end
         -- add support for RangedMode toggles to EES
         if spell.english == 'Eagle Eye Shot' then
             classes.JAMode = state.RangedMode
@@ -216,9 +215,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
     gear.nightearring = select_earring('night')
     gear.outsideearring = select_earring('adoulin')
-    gear.samrollwaist = select_roll_gear('waist')
-    gear.samrollring2 = select_roll_gear('ring2')
-    gear.samrolllegs = select_roll_gear('legs')
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -260,6 +256,20 @@ function job_buff_change(buff, gain)
     if state.Buff[buff] ~= nil then
         state.Buff[buff] = gain
     end
+
+    if buff == "Decoy Shot" or buff == "Samurai Roll" then
+        classes.CustomRangedGroups:clear()
+
+        if (buff == "Decoy Shot" and gain) or buffactive['Decoy Shot'] then
+            classes.CustomRangedGroups:append('Decoy')
+        end
+
+        if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
+            classes.CustomRangedGroups:append('SamRoll')
+        end
+
+    end
+
     if buff == "Camouflage" then
         if gain then
             equip(sets.buff.Camouflage)
@@ -268,12 +278,13 @@ function job_buff_change(buff, gain)
             enable('body')
         end
     end
-	determine_ranged()
+
+    if buff == "Decoy Shot" or buff == "Camouflage" or buff == "Overkill" or buff == "Samurai Roll" then
+        handle_equipping_gear(player.status)
+    end
+
     gear.nightearring = select_earring('night')
     gear.outsideearring = select_earring('adoulin')
-    gear.samrollwaist = select_roll_gear('waist')
-    gear.samrollring2 = select_roll_gear('ring2')
-    gear.samrolllegs = select_roll_gear('legs')
 end
  
 -- Called before the Include starts constructing melee/idle/resting sets.
@@ -282,9 +293,6 @@ end
 function job_handle_equipping_gear(status, eventArgs)
     gear.nightearring = select_earring('night')
     gear.outsideearring = select_earring('adoulin')
-    gear.samrollwaist = select_roll_gear('waist')
-    gear.samrollring2 = select_roll_gear('ring2')
-    gear.samrolllegs = select_roll_gear('legs')
 end
  
 function customize_idle_set(idleSet)
@@ -310,7 +318,6 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     else
         enable('body')
     end
-	determine_ranged()
 end
  
 
@@ -331,27 +338,6 @@ function select_earring(equip)
     end
 end
 
-function select_roll_gear(equip)
-    if equip == 'waist' then
-        if buffactive['Samurai Roll'] then
-            return Sam_Roll_Gear['WaistUp']
-        else
-            return Sam_Roll_Gear['WaistDown']
-        end
-    elseif equip == 'ring2' then
-        if buffactive['Samurai Roll'] then
-            return Sam_Roll_Gear['Ring1Up']
-        else
-            return Sam_Roll_Gear['Ring1Down']
-        end
-    elseif equip == 'legs' then
-        if buffactive['Samurai Roll'] then
-            return Sam_Roll_Gear['LegsUp']
-        else
-            return Sam_Roll_Gear['LegsDown']
-        end
-    end
-end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------
@@ -363,11 +349,11 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
-    determine_ranged()
+    get_combat_form()
+    get_custom_ranged_groups()
     -- called here incase buff_change failed to update value
     state.Buff.Camouflage = buffactive.camouflage or false
     state.Buff.Overkill = buffactive.overkill or false
-    state.Buff['Decoy Shot'] = buffactive['Decoy Shot'] or false
 
     if camo_active() then
         disable('body')
@@ -401,16 +387,6 @@ function job_set_option_mode(field, val)
     end
 end
  
--- Handle auto-targetting based on local setup.
-function job_auto_change_target(spell, action, spellMap, eventArgs)
- 
-end
- 
--- Handle notifications of user state values being changed.
-function job_state_change(stateField, newValue, oldValue)
- 
-end
- 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
     local msg = ''
@@ -436,53 +412,29 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
-
-function determine_ranged()
-    -- cleanup everything each time function is called
-	classes.CustomRangedGroups:clear()
-	classes.CustomMeleeGroups:clear()
-
-    if player.equipment.range == gear.Bow then
-        -- if decoy is up 
-        if buffactive['Decoy Shot'] then
-            -- default decoy set assumes staff is used. 
-            if player.equipment.main == gear.Stave then
-                classes.CustomMeleeGroups:append('Decoy')
-		        classes.CustomRangedGroups:append('Decoy')
-            else -- append the 1 handed weapon class
-                classes.CustomMeleeGroups:append('Decoy1H')
-		        classes.CustomRangedGroups:append('Decoy1H')
-            end
+function get_combat_form()
+    if player.equipment.main == gear.Stave then
+        state.CombatForm = "Stave"
+    else
+        if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
+            state.CombatForm = "DualWeild"
         else
-            if player.equipment.main == gear.Stave then
-                classes.CustomMeleeGroups:append('Bow')
-		        classes.CustomRangedGroups:append('Bow')
-            else -- one handed weapon setup
-                classes.CustomMeleeGroups:append('Bow1H')
-		        classes.CustomRangedGroups:append('Bow1H')
-            end
+            state.CombatForm = nil
         end
+    end
+end
 
-    elseif player.equipment.range == gear.Gun then
-
-        if player.equipment.main == gear.Stave then
-
-	        if player.sub_job == 'SAM' then
-	            classes.CustomRangedGroups:append('SAM2H')
-            else
-	            classes.CustomRangedGroups:append('Gun2H')
-                classes.CustomMeleeGroups:append('Gun2H')
-            end
-        else 
-	        if player.sub_job == 'SAM' then
-	            classes.CustomRangedGroups:append('SAM')
-            else
-                -- The default sets.midcast.RA applies
-	            classes.CustomRangedGroups:clear()
-	            classes.CustomMeleeGroups:clear()
-            end
+function get_custom_ranged_groups()
+	classes.CustomRangedGroups:clear()
+    
+    if player.equipment.range == gear.Bow then
+        if buffactive['Decoy Shot'] then
+		    classes.CustomRangedGroups:append('Decoy')
         end
+    end
 
+    if buffactive['Samurai Roll'] then
+        classes.CustomRangedGroups:append('SamRoll')
     end
 end
 
