@@ -134,7 +134,20 @@ function init_gear_sets()
         feet="Iuitl Gaiters"
     }
 	-- TH actions
-	sets.precast.Step = sets.TreasureHunter
+	sets.precast.Step = {
+        head="Whirlpool Mask",
+        heck="Rancor Collar",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        hands="Plunderer's Armlets +1",
+        back="Canny Cape",
+        ring1="Patricius Ring",
+        ring2="Mars's Ring",
+        waist="Anguinus Belt",
+        legs="Manibozho Brais",
+        feet="Raider's Poulaines +2"
+
+    }
 	sets.precast.Flourish1 = sets.TreasureHunter
 	sets.precast.JA.Provoke = sets.TreasureHunter
 
@@ -640,6 +653,114 @@ function select_default_macro_book()
 		set_macro_page(4, 5)
 	else
 		set_macro_page(5, 2)
+	end
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Functions and events to support TH handling.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Set locked TH flag to true, and disable relevant gear slots.
+function lock_TH()
+	state.th_gear_is_locked = true
+	for slot,item in pairs(sets.TreasureHunter) do
+		disable(slot)
+	end
+end
+
+-- Set locked TH flag to false, and enable relevant gear slots.
+function unlock_TH()
+	state.th_gear_is_locked = false
+	for slot,item in pairs(sets.TreasureHunter) do
+		enable(slot)
+	end
+end
+
+-- For any active TH mode, if we haven't already tagged this target, equip TH gear and lock slots until we manage to hit it.
+function TH_for_first_hit()
+	if state.TreasureMode ~= 'None' and not tagged_mobs[player.target.id] then
+		if state.show_th_message then add_to_chat(123,'Prepping for first hit on '..player.target.id..'.') end
+		equip(sets.TreasureHunter)
+		lock_TH()
+	else
+		if state.show_th_message then add_to_chat(123,'Prepping for first hit on '..player.target.id..'.  Has already been tagged. Unlocking TH.') end
+		unlock_TH()
+	end
+end
+
+
+-- On any action event, mark mobs that we tag with TH.  Also, update the last time tagged mobs were acted on.
+function on_action(action)
+	--add_to_chat(123,'cat='..action.category..',param='..action.param)
+	-- If player takes action, adjust TH tagging information
+	if action.actor_id == player.id and state.TreasureMode ~= 'None' then
+		-- category == 1=melee, 2=ranged, 3=weaponskill, 4=spell, 6=job ability, 14=unblinkable JA
+		if state.TreasureMode == 'Fulltime' or
+		   (state.TreasureMode == 'SATA' and (state.Buff['Sneak Attack'] or state.Buff['Trick Attack']) and (action.category == 1 or action.category == 3)) or
+		   (state.TreasureMode == 'Tag' and action.category == 1 and state.th_gear_is_locked) or -- Tagging with a melee hit
+		   (action.category == 2 or action.category == 4) or -- Any ranged or magic action
+		   (action.category == 3 and action.param == 30) or -- Aeolian Edge
+		   (action.category == 6 and info.ja_ids:contains(action.param)) or -- Provoke, Animated Flourish
+		   (action.category == 14 and info.u_ja_ids:contains(action.param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
+		   then
+			for index,target in pairs(action.targets) do
+				if not tagged_mobs[target.id] and state.show_th_message then
+					add_to_chat(123,'Mob '..target.id..' hit. Adding to tagged mobs table.')
+				end
+				tagged_mobs[target.id] = os.time()
+			end
+
+			if state.th_gear_is_locked then
+				send_command('gs c update tagged')
+			end
+		end
+	elseif tagged_mobs[action.actor_id] then
+		-- If mob acts, keep an update of last action time for TH bookkeeping
+		tagged_mobs[action.actor_id] = os.time()
+	else
+		-- If anyone else acts, check if any of the targets are our tagged mobs
+		for index,target in pairs(action.targets) do
+			if tagged_mobs[target.id] then
+				tagged_mobs[target.id] = os.time()
+			end
+		end
+	end
+
+	cleanup_tagged_mobs()
+end
+
+
+-- If we're notified of a mob's death, remove it from the list of tagged mobs.
+function on_action_message(actor_id, target_id, actor_index, target_index, message_id, param_1, param_2, param_3)
+	-- Remove mobs that die from our tagged mobs list.
+	if tagged_mobs[target_id] then
+		-- 6 == actor defeats target
+		-- 20 == target falls to the ground
+		if message_id == 6 or message_id == 20 then
+			if state.show_th_message then add_to_chat(123,'Mob '..target_id..' died. Removing from tagged mobs table.') end
+			tagged_mobs[target_id] = nil
+		end
+	end
+end
+-- Remove mobs that we've marked as tagged with TH if we haven't seen any activity from or on them
+-- for over 3 minutes.  This is to handle deagros, player deaths, or other random stuff where the
+-- mob is lost, but doesn't die.
+function cleanup_tagged_mobs()
+	-- If it's been more than 3 minutes since an action on or by a tagged mob,
+	-- remove them from the tagged mobs list.
+	local current_time = os.time()
+	local remove_mobs = S{}
+	-- Search list and flag old entries.
+	for target_id,action_time in pairs(tagged_mobs) do
+		local time_since_last_action = current_time - action_time
+		if time_since_last_action > 180 then
+			remove_mobs:add(target_id)
+			if state.show_th_message then add_to_chat(123,'Over 3 minutes since last action on mob '..target_id..'. Removing from tagged mobs list.') end
+		end
+	end
+	-- Clean out mobs flagged for removal.
+	for mob_id,_ in pairs(remove_mobs) do
+		tagged_mobs[mob_id] = nil
 	end
 end
 

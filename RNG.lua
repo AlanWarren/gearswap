@@ -100,18 +100,18 @@ function user_setup()
         
         -- Special Circumstance Equipment
         Earrings = { 
-            "Night" = "Fenrir's Earring", 
-            "Day"   = "Flame Pearl", 
-            "STP"   = "Tripudio Earring" 
+            ["Night"] = "Fenrir's Earring", 
+            ["Day"]   = "Flame Pearl", 
+            ["STP"]   = "Tripudio Earring" 
         }
 
         Sam_Roll_Gear = {
-            'WaistDown' = "Patientia Sash", 
-            'WaistUp'   = "Elanid Belt",
-            'Ring1Down' = "K'ayres Ring",
-            'Ring1Up'   = "Pyrosoul Ring",
-            'LegsDown'  = "Aetosaur Trousers +1",
-            'LegsUp'    = "Nahtirah Trousers"
+            ['WaistDown'] = "Patentia Sash", 
+            ['WaistUp']   = "Elanid Belt",
+            ['Ring1Down'] = "K'ayres Ring",
+            ['Ring1Up']   = "Pyrosoul Ring",
+            ['LegsDown']  = "Aetosaur Trousers +1",
+            ['LegsUp']    = "Nahtirah Trousers"
         }
 
         -- dynamically assigned equip  based on time of day / adoulin
@@ -269,6 +269,11 @@ function job_buff_change(buff, gain)
         end
     end
 	determine_ranged()
+    gear.nightearring = select_earring('night')
+    gear.outsideearring = select_earring('adoulin')
+    gear.samrollwaist = select_roll_gear('waist')
+    gear.samrollring2 = select_roll_gear('ring2')
+    gear.samrolllegs = select_roll_gear('legs')
 end
  
 -- Called before the Include starts constructing melee/idle/resting sets.
@@ -312,16 +317,16 @@ end
 function select_earring(equip)
     if equip == 'night' then
         if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
-            return Earrings["Night"]
+            return "Fenrir's Earring"
         else
-            return Earrings["Day"]
+            return "Flame Pearl"
         end
     elseif equip == 'adoulin' then
         --If we're outside Adoulin, WS won't return enough TP 
         if areas.Adoulin:contains(world.area) and buffactive.ionis then
-            return Earrings["Day"]
+            return "Flame Pearl"
         else
-            return Earrings["STP"]
+            return "Tripudio Earring"
         end
     end
 end
@@ -329,21 +334,21 @@ end
 function select_roll_gear(equip)
     if equip == 'waist' then
         if buffactive['Samurai Roll'] then
-            return Sam_Roll_Gear['WaistUp']
+            return 'Elanid Belt'
         else
-            return Sam_Roll_Gear['WaistDown']
+            return 'Patentia Sash'
         end
     elseif equip == 'ring2' then
         if buffactive['Samurai Roll'] then
-            return Sam_Roll_Gear['Ring1Up']
+            return 'Pyrosoul Ring'
         else
-            return Sam_Roll_Gear['Ring1Down']
+            return "K'ayres Ring"
         end
     elseif equip == 'legs' then
         if buffactive['Samurai Roll'] then
-            return Sam_Roll_Gear['LegsUp']
+            return "Nahtirah Trousers"
         else
-            return Sam_Roll_Gear['LegsDown']
+            return "Aetosaur Trousers +1"
         end
     end
 end

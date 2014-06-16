@@ -90,9 +90,8 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {
         ring1="Prolix Ring",
-        waist="Hurch'lan Sash",
     }
-    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {body="Mochizuki Chainmail +1"})
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Mochizuki Chainmail +1"})
     
     sets.precast.WS = {
     	head="Felistris Mask",
@@ -189,12 +188,16 @@ function init_gear_sets()
     sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS.Acc, sets.Ku)
     
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    	neck="Breeze gorget",
+    	head="Umbani Cap",
         ear1="Friomisi Earring",
-        ear2="Hecate's Earring",
-        ring2="Stormsoul Ring",
+        ear2="Crematio Earring",
+        neck="Stoicheion Medal",
+        ring1="Stormsoul Ring",
+        ring2="Acumen Ring",
     	back="Toro Cape",
-        waist="Thunder Belt"
+        legs="Shneddick Tights +1",
+        waist="Thunder Belt",
+        feet="Mochizuki Kyahan +1"
      })
     
     
@@ -232,7 +235,7 @@ function init_gear_sets()
     }
     -- Enfeebling Ninjutsu (skill)
     sets.midcast.EnfeebleNinjutsu = {
-    	head="Hachiya Hatsuburi",
+    	head="Hachiya Hatsuburi +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         neck="Stoicheion Medal",
@@ -254,7 +257,7 @@ function init_gear_sets()
     
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
-    	head="Felistris Mask",
+    	head="Hachiya Hatsuburi +1",
         neck="Twilight Torque",
         ear1="Trux Earring",
         ear2="Dawn Earring",
@@ -269,10 +272,12 @@ function init_gear_sets()
     }
     
     sets.idle.Town = set_combine(sets.idle, {
-        neck="Rancor Collar",
-        body="Mochizuki Chainmail +1",
+        head="Hachiya Hatsuburi +1",
+        neck="Iga Erimaki",
+        body="Hachiya Chainmail +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
+        legs="Hachiya Hakama +1",
     	back="Yokaze Mantle"
     })
     
@@ -365,7 +370,7 @@ function init_gear_sets()
 
     sets.engaged.Subtle = {
         ammo=gear.ammo,
-        head="Hachiya Hatsuburi",
+        head="Hachiya Hatsuburi +1",
         neck="Iga Erimaki",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
