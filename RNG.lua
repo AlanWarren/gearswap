@@ -317,16 +317,16 @@ end
 function select_earring(equip)
     if equip == 'night' then
         if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
-            return "Fenrir's Earring"
+            return Earrings["Night"]
         else
-            return "Flame Pearl"
+            return Earrings["Day"]
         end
     elseif equip == 'adoulin' then
         --If we're outside Adoulin, WS won't return enough TP 
         if areas.Adoulin:contains(world.area) and buffactive.ionis then
-            return "Flame Pearl"
+            return Earrings["Day"]
         else
-            return "Tripudio Earring"
+            return Earrings["STP"]
         end
     end
 end
@@ -334,21 +334,21 @@ end
 function select_roll_gear(equip)
     if equip == 'waist' then
         if buffactive['Samurai Roll'] then
-            return 'Elanid Belt'
+            return Sam_Roll_Gear['WaistUp']
         else
-            return 'Patentia Sash'
+            return Sam_Roll_Gear['WaistDown']
         end
     elseif equip == 'ring2' then
         if buffactive['Samurai Roll'] then
-            return 'Pyrosoul Ring'
+            return Sam_Roll_Gear['Ring1Up']
         else
-            return "K'ayres Ring"
+            return Sam_Roll_Gear['Ring1Down']
         end
     elseif equip == 'legs' then
         if buffactive['Samurai Roll'] then
-            return "Nahtirah Trousers"
+            return Sam_Roll_Gear['LegsUp']
         else
-            return "Aetosaur Trousers +1"
+            return Sam_Roll_Gear['LegsDown']
         end
     end
 end
