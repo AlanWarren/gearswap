@@ -339,6 +339,7 @@ function init_gear_sets()
         head="Felistris Mask",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
+        ring1="Oneiros Ring",
         legs="Hachiya Hakama +1"
     })
     -- serious event set
@@ -464,6 +465,7 @@ function init_gear_sets()
         ear1="Trux Earring",
         ear2="Brutal Earring",
         body="Thaumas Coat",
+        ring1="Oneiros Ring",
         waist="Windbuffet Belt",
         legs="Hachiya Hakama +1"
     })
@@ -472,7 +474,7 @@ function init_gear_sets()
         body="Qaaxo Harness",
         neck="Asperity Necklace",
         hands="Umuthi Gloves",
-        ring1="Mars's Ring",
+        ring1="Oneiros Ring",
     	back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
     })
