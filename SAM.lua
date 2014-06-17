@@ -170,6 +170,7 @@ function init_gear_sets()
         waist="Windbuffet Belt"
     })
     sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS.Acc, {
+        body="Sakonji Domaru +1",
         neck="Breeze Gorget",
         ring2="Mars's Ring",
         waist="Thunder Belt"
