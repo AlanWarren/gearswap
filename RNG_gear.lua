@@ -108,7 +108,9 @@ function init_gear_sets()
             legs="Manibozho Brais",
             feet="Qaaxo Leggings"
         }
-        sets.engaged.DualWield = set_combine(sets.engaged, {
+
+        sets.engaged.DualWield = set_combine(sets.engaged, {})
+        sets.engaged.DualWield.Melee = set_combine(sets.engaged.Melee, {
             head="Whirlpool Mask",
             neck="Asperity Necklace",
             body="Qaaxo Harness",
@@ -122,7 +124,6 @@ function init_gear_sets()
             legs="Manibozho Brais",
             feet="Qaaxo Leggings"
         })
-        sets.engaged.DualWield.Melee = set_combine(sets.engaged.Melee, sets.engaged.DualWield)
 
         ------------------------------------------------------------------
         -- Preshot / Snapshot sets
@@ -150,17 +151,16 @@ function init_gear_sets()
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
-            waist="Patientia Sash", 
+            waist="Elanid Belt", 
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
         sets.midcast.RA.Mod = set_combine(sets.midcast.RA, {
-            hands="Seiryu's Kote", ring2="Longshot Ring",
-            back="Lutian Cape", waist="Elanid Belt",
-            legs="Aetosaur Trousers +1"
+            back="Lutian Cape", legs="Aetosaur Trousers +1"
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mod, {
-            neck="Iqabi Necklace", ring1="Hajduk Ring", 
+            neck="Iqabi Necklace", hands="Seiryu's Kote"
+            ring1="Hajduk Ring", ring2="Longshot Ring",
             legs="Arcadian Braccae +1"
         })
     
@@ -170,10 +170,11 @@ function init_gear_sets()
 
         -- Stave sets 
         sets.midcsat.RA.Stave = set_combine(sets.midcast.RA, {
+            body="Sylvan Caban +2",
             back="Lutian Cape",
-            waist="Elanid Belt"
         })
         sets.midcast.RA.Stave.Mod = set_combine(sets.midcast.RA.Stave, {
+            body="Kyujutsugi",
             ring2="Longshot Ring",
             legs="Aetosaur Trousers +1",
         })
@@ -267,14 +268,14 @@ function init_gear_sets()
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
             waist="Elanid Belt",
-            legs="Aetosaur Trousers +1",
+            legs="Arcadian Braccae +1",
             feet="Arcadian Socks +1"
         }
         sets.midcast.RA.Yoichinoyumi.Mod = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1="Volley Earring",
-            hands="Sylvan Glovelettes +2",
             back="Lutian Cape",
-            feet="Orion Socks +1"
+            feet="Orion Socks +1",
+            legs="Aetosaur Trousers +1"
         })
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mod, {
             hands="Seiryu's Kote",
@@ -286,9 +287,11 @@ function init_gear_sets()
         -- Decoy up 
         sets.midcast.RA.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1="Volley Earring",
+            legs="Nahtirah Trousers"
+        })
+        sets.midcast.RA.Yoichinoyumi.Mod.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Mod, {
             hands="Seiryu's Kote"
         })
-        sets.midcast.RA.Yoichinoyumi.Mod.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Mod, {})
         sets.midcast.RA.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Acc, {})
        
         -- Stave
