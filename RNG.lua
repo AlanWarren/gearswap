@@ -255,7 +255,7 @@ function job_buff_change(buff, gain)
         state.Buff[buff] = gain
     end
 
-    if buff == "Decoy Shot" or buff == "Samurai Roll" then
+    if ( buff == "Decoy Shot" and player.equipment.range == gear.Bow ) or buff == "Samurai Roll" then
         classes.CustomRangedGroups:clear()
 
         if (buff == "Decoy Shot" and gain) or buffactive['Decoy Shot'] then
