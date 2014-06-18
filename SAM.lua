@@ -315,7 +315,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Sakonji Domaru +1",
+        body="Xaddi Mail",
         hands="Wakido Kote +1",
         ring1="Rajas Ring", 
         ring2="K'ayres Ring", 
@@ -333,6 +333,7 @@ function init_gear_sets()
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Sakonji Kabuto +1",
+        body="Sakonji Domaru +1",
         ring2="Mars's Ring",
         feet="Wakido Sune-Ate +1",
         back="Takaha Mantle"
@@ -399,10 +400,9 @@ function init_gear_sets()
     })
     	
     -- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills and 1% gear haste. 
-    -- Delay 450 GK, 35 Save TP => 89 Store TP for a 4-hit (49 Store TP in gear), 2 Store TP for a 5-hit
-    -- GK with merits and capped skill = 682 base accuracy. Tsurumaru has +15 acc
+    -- Game flipped upside down. 31 STP needed to 4-hit?
     
-    -- This set aims for Tsurumaru 4-hit. 19% DA, 25% haste
+    -- This set aims for Tsurumaru 4-hit. 21% DA, 4% TA, 1% QA 27% haste
     -- Assumes use of Cibitshavore
     sets.engaged.Adoulin = {
         sub="Pole Grip",
@@ -411,11 +411,11 @@ function init_gear_sets()
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
-        body="Sakonji Domaru +1", -- 8
+        body="Xaddi Mail", -- 3
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
-        ring2="K'ayres Ring", -- 5
-        back="Atheling Mantle", -- 10
+        ring2="Oneiros Ring", 
+        back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 7
         feet="Otronif Boots +1" -- 7
