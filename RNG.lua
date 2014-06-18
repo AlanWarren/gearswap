@@ -108,7 +108,8 @@ function user_setup()
             ["STP"]   = "Tripudio Earring" 
         }
 
-        rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Sabebus', 'Eminent Axe', 'Trailer\'s Kukri'}
+        rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Sabebus', 
+            'Eminent Axe', 'Trailer\'s Kukri', 'Aphotic Kukri'}
         -- dynamically assigned equip  based on time of day / adoulin
 
         -- Overriding Global Defaults for this job
@@ -133,9 +134,6 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
-    if binds_on_unload then
-        binds_on_unload()
-    end
     send_command('unbind f9')
     send_command('unbind ^f9')
     send_command('unbind ^[')
@@ -160,13 +158,10 @@ end
  
 function job_precast(spell, action, spellMap, eventArgs)
         
-        cancel_conflicting_buffs(spell, action, spellMap, eventArgs)
-        refine_waltz(spell, action, spellMap, eventArgs)
-
         if state.Buff[spell.english] ~= nil then
             state.Buff[spell.english] = true
         end
-
+        --add_to_chat(8, state.CombatForm)
         if sam_sj then
             classes.CustomClass = 'SAM'
         end
@@ -180,7 +175,7 @@ function job_precast(spell, action, spellMap, eventArgs)
         end
         -- Safety checks for weaponskills 
         if spell.type:lower() == 'weaponskill' then
-            if player.tp < 100 then
+            if player.tp < 1000 then
                     eventArgs.cancel = true
                     return
             end
@@ -415,7 +410,7 @@ function get_combat_form()
     if player.equipment.main == gear.Stave then
         state.CombatForm = "Stave"
     else
-        if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
+        if S{'NIN', 'DNC'}:contains(player.sub_job) and player.equipment.sub ~= 'Bloodrain Strap' then
             state.CombatForm = "DualWield"
         else
             state.CombatForm = nil
