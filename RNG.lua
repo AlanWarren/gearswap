@@ -572,11 +572,11 @@ function check_ammo(spell, action, spellMap, eventArgs)
 	end
 end
 -- Orestes uses Samurai Roll. The total comes to 5!
-function detect_cor_rolls(old,new,color,newcolor)
-    if string.find(old,'uses Samurai Roll. The total comes to') then
-        add_to_chat(122,"SAM Roll")
-    end
-end
+--function detect_cor_rolls(old,new,color,newcolor)
+--    if string.find(old,'uses Samurai Roll. The total comes to') then
+--        add_to_chat(122,"SAM Roll")
+--    end
+--end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 	-- Default macro set/book
