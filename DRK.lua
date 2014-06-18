@@ -50,9 +50,6 @@
      
     -- Called when this job file is unloaded (eg: job change)
     function file_unload()
-            if binds_on_unload then
-                    binds_on_unload()
-            end
      
             send_command('unbind ^`')
             send_command('unbind !-')

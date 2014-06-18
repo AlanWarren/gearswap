@@ -38,15 +38,6 @@ function user_setup()
     select_default_macro_book()
 end
 
-
--- Called when this job file is unloaded (eg: job change)
-function file_unload()
-    if binds_on_unload then
-    	binds_on_unload()
-    end
-end
-
-
 -- Define sets and vars used by this job file.
 function init_gear_sets()
     --------------------------------------
@@ -587,7 +578,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-	refine_waltz(spell, action, spellMap, eventArgs)
     if spell.skill == "Ninjutsu" and enfeeblingNinjutsu:contains(spell.name:lower()) then
         classes.CustomClass = "EnfeebleNinjutsu"
     end

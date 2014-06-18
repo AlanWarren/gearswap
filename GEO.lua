@@ -35,13 +35,6 @@ function user_setup()
 	set_macro_page(1, 6)
 end
 
--- Called when this job file is unloaded (eg: job change)
-function file_unload()
-	if binds_on_unload then
-		binds_on_unload()
-	end
-end
-
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
