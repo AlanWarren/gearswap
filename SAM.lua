@@ -239,7 +239,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Sakonji Domaru +1",
+        body="Xaddi Mail",
         hands="Wakido Kote +1",
         ring1="Patricius Ring",
         ring2="K'ayres Ring",
