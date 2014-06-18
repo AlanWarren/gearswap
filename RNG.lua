@@ -110,8 +110,6 @@ function user_setup()
 
         rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Sabebus', 'Eminent Axe', 'Trailer\'s Kukri'}
         -- dynamically assigned equip  based on time of day / adoulin
-        gear.nightearring = select_earring('night')
-        gear.outsideearring = select_earring('adoulin')
 
         -- Overriding Global Defaults for this job
         gear.default.weaponskill_neck = "Ocachi Gorget"
@@ -151,7 +149,7 @@ end
 function job_pretarget(spell, action, spellMap, eventArgs)
     -- If autora enabled, use WS automatically at 100+ TP
     if spell.action_type == 'Ranged Attack' then
-        if player.tp >= 100 and state.AutoRA and not buffactive.amnesia then
+        if player.tp >= 1000 and state.AutoRA and not buffactive.amnesia then
             cancel_spell()
             use_weaponskill()
         end
@@ -213,8 +211,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     elseif state.Buff.Overkill then
         equip(sets.Overkill.Preshot)
     end
-    gear.nightearring = select_earring('night')
-    gear.outsideearring = select_earring('adoulin')
+    sets.earring = select_earring()
+    sets.wsearring = select_wsearring()
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -279,20 +277,17 @@ function job_buff_change(buff, gain)
         end
     end
 
-    if buff == "Decoy Shot" or buff == "Camouflage" or buff == "Overkill" or buff == "Samurai Roll" then
+    if buff == "Decoy Shot" or buff == "Camouflage" or buff == "Overkill" or buff == "Samurai Roll" or buff == "Courser's Roll" then
         handle_equipping_gear(player.status)
     end
-
-    gear.nightearring = select_earring('night')
-    gear.outsideearring = select_earring('adoulin')
 end
  
 -- Called before the Include starts constructing melee/idle/resting sets.
 -- Can customize state or custom melee class values at this point.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
-    gear.nightearring = select_earring('night')
-    gear.outsideearring = select_earring('adoulin')
+    sets.earring = select_earring()
+    sets.wsearring = select_wsearring()
 end
  
 function customize_idle_set(idleSet)
@@ -321,23 +316,27 @@ function job_status_change(newStatus, oldStatus, eventArgs)
 end
  
 
-function select_earring(equip)
-    if equip == 'night' then
-        if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
-            return Earrings["Night"]
-        else
-            return Earrings["Day"]
-        end
-    elseif equip == 'adoulin' then
-        --If we're outside Adoulin, WS won't return enough TP 
-        if areas.Adoulin:contains(world.area) and buffactive.ionis then
-            return Earrings["Day"]
-        else
-            return Earrings["STP"]
-        end
+function select_earring()
+    -- world.time is given in minutes into each day
+    -- 7:00 AM would be 420 minutes
+    -- 17:00 PM would be 1020 minutes
+    if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
+        return sets.NightEarring
+    else
+        return sets.DayEarring
     end
 end
 
+function select_wsearring()
+    -- world.time is given in minutes into each day
+    -- 7:00 AM would be 420 minutes
+    -- 17:00 PM would be 1020 minutes
+    if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
+        return sets.NightEarring
+    else
+        return sets.WSEarring
+    end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------
@@ -417,7 +416,7 @@ function get_combat_form()
         state.CombatForm = "Stave"
     else
         if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
-            state.CombatForm = "DualWeild"
+            state.CombatForm = "DualWield"
         else
             state.CombatForm = nil
         end
@@ -436,6 +435,7 @@ function get_custom_ranged_groups()
     if buffactive['Samurai Roll'] then
         classes.CustomRangedGroups:append('SamRoll')
     end
+    
 end
 
 function use_weaponskill()

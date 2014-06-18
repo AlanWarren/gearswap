@@ -1,4 +1,16 @@
 function init_gear_sets()
+        -- NOTE: Set format is as follows:
+        -- sets[phase][type][CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
+        -- ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.SamRoll = {}
+        -- you can also append CustomRangedGroups to each other
+        -- ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.Decoy.SamRoll = {}
+        
+        -- These are the available sets per category
+        -- CustomClass = SAM
+        -- CombatForm = Stave, DualWield
+        -- CombatWeapon = weapon name
+        -- RangedMode = Normal, Mod, Acc
+        -- CustomRangedGroup = Decoy, SamRoll
 
         -- Misc. Job Ability precasts
         sets.precast.JA['Bounty Shot'] = {hands="Sylvan Glovelettes +2"}
@@ -29,6 +41,13 @@ function init_gear_sets()
         sets.precast.FC = {
             ring1="Prolix Ring"
         }
+        
+        sets.NightEarring = {ear2="Fenrir's earring"}
+        sets.WSEarring = {ear2="Flame Pearl"}
+        sets.DayEarring = {ear2="Volley Earring"}
+
+        sets.wsearring = select_wsearring()
+        sets.earring = select_earring()
 
         sets.idle = {
             head="Umbani Cap",
@@ -77,20 +96,37 @@ function init_gear_sets()
 
         sets.engaged.Melee = {
             head="Whirlpool Mask",
-            neck="Rancor Collar",
+            neck="Asperity Necklace",
             ear1="Bladeborn Earring",
             ear2="Steelflash Earring",
-            body="Thaumas Coat",
+            body="Qaaxo Harness",
             hands="Iuitl Wristbands +1",
-            ring1="Rajas Ring",
+            ring1="Patricius Ring",
             ring2="Epona's Ring",
             back="Atheling Mantle",
             waist="Cetl Belt",
             legs="Manibozho Brais",
-            feet="Manibozho Boots"
+            feet="Qaaxo Leggings"
         }
+        sets.engaged.DualWield = set_combine(sets.engaged, {
+            head="Whirlpool Mask",
+            neck="Asperity Necklace",
+            body="Qaaxo Harness",
+            ear1="Dudgeon Earring",
+            ear2="Heartseeker Earring",
+            hands="Iuitl Wristbands +1",
+            ring1="Oneiros Ring",
+            ring2="Epona's Ring",
+            back="Atheling Mantle",
+            waist="Patentia Sash",
+            legs="Manibozho Brais",
+            feet="Qaaxo Leggings"
+        })
+        sets.engaged.DualWield.Melee = set_combine(sets.engaged.Melee, sets.engaged.DualWield)
 
-        -- Snapshot 
+        ------------------------------------------------------------------
+        -- Preshot / Snapshot sets
+        ------------------------------------------------------------------
         sets.precast.RA = {
             head="Sylvan Gapette +2",
             body="Sylvan Caban +2",
@@ -99,16 +135,12 @@ function init_gear_sets()
             waist="Impulse Belt",
             feet="Wurrukatte Boots"
         }
+        
+        ------------------------------------------------------------------
+        -- Default Base Gear Sets for Ranged Attacks. Geared for Gun
+        ------------------------------------------------------------------
 
-        -- Gun Default : (822 total delay)
-        -- STP: 42 ~ (2/4 recycle proc required)
-        -- Racc: 251.75
-        -- Ratk: 209
-        -- AGI: 141
-        -- STR: 100
         sets.midcast.RA = { 
-            -- main="Hurlbat",
-            -- sub="Legion Scutum", 
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
             ear1="Volley Earring", 
@@ -116,113 +148,74 @@ function init_gear_sets()
             body="Kyujutsugi",
             hands="Sigyn's Bazubands",
             ring1="Rajas Ring",
-            ring2=gear.samrollring2,
+            ring2="K'ayres Ring",
             back="Sylvan Chlamys",
-            waist=gear.samrollwaist, 
-            legs="Aetosaur Trousers +1",
-            feet="Orion Socks +1"
-        }
-
-        -- Gun Mod 
-        -- STP: 31 ~ 86.8 TP after 4 hits (3/4 recycle required)
-        -- Racc: 287.25
-        -- Ratk: 206.25
-        -- AGI: 151
-        -- STR: 91
-        sets.midcast.RA.Mod = set_combine(sets.midcast.RA, {
-            hands="Seiryu's Kote",
-            ring2="Longshot Ring",
-            back="Lutian Cape",
-            waist="Elanid Belt",
-            legs=gear.samrolllegs
-        })
-
-        -- Gun Acc 
-        -- STP: 21 ~ 80 TP after 4 hits (4/4 recycle required)
-        -- Racc: 316.25
-        -- Ratk: 177.75
-        -- AGI: 151
-        -- STR: 86
-        sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mod, {
-            neck="Iqabi Necklace",
-            ring1="Hajduk Ring"
-        })
-
-        -- Stave + Strap set for Gun (stats are approx since we swap stuff)
-        -- STP: 41 ~ (2/4 recycle in adoulin 3/4 out)
-        -- Racc: 225.75
-        -- Ratk: 255.75 day / 262 at night
-        -- AGI: 129
-        -- STR: 107 day / 104 night
-        sets.midcast.RA.Gun2H = set_combine(sets.midcast.RA, {
-            --main="Mekki Shakki",
-            --sub="Bloodrain Strap",
-            head="Arcadian Beret +1",
-            neck="Ocachi Gorget",
-            ear1=gear.nightearring,
-            ear2="Tripudio Earring", 
-            body="Kyujutsugi",
-            hands="Sigyn's Bazubands",
-            ring1="Rajas Ring",
-            ring2=gear.samrollring2,
-            back="Lutian Cape",
-            waist=gear.samrollwaist,
+            waist="Patientia Sash", 
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
+        }
+        sets.midcast.RA.Mod = set_combine(sets.midcast.RA, {
+            hands="Seiryu's Kote", ring2="Longshot Ring",
+            back="Lutian Cape", waist="Elanid Belt",
+            legs="Aetosaur Trousers +1"
         })
+        sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mod, {
+            neck="Iqabi Necklace", ring1="Hajduk Ring", 
+            legs="Arcadian Braccae +1"
+        })
+    
+        ------------------------------------------------------------------
+        -- Specialized Gear Sets
+        ------------------------------------------------------------------
 
-        -- STP: 38 ~ 91.6 TP after 4 hits (2/4 recycle required)
-        -- Racc: 269
-        -- Ratk: 229
-        -- AGI: 134
-        -- STR: 104
-        sets.midcast.RA.Mod.Gun2H = set_combine(sets.midcast.RA.Gun2H, {
-            legs=gear.samrolllegs,
+        -- Stave sets 
+        sets.midcsat.RA.Stave = set_combine(sets.midcast.RA, {
+            back="Lutian Cape",
+            waist="Elanid Belt"
+        })
+        sets.midcast.RA.Stave.Mod = set_combine(sets.midcast.RA.Stave, {
             ring2="Longshot Ring",
-            back="Lutian Cape"
+            legs="Aetosaur Trousers +1",
         })
-
-        -- STP: 32 ~ 87.6 TP after 4 hits (3/4 recycle required)
-        -- Racc: 295.25
-        -- Ratk: 176.5
-        -- AGI: 141
-        -- STR: 91
-        sets.midcast.RA.Acc.Gun2H = set_combine(sets.midcast.RA.Mod.Gun2H, {
+        sets.midcast.RA.Stave.Acc = set_combine(sets.midcast.RA.Stave.Mod, {
             hands="Seiryu's Kote",
             neck="Iqabi Necklace",
-            ring1="Hajduk Ring"
+            ring1="Paqichikaji Ring"
+        })
+        
+        -- Samurai Roll sets 
+        sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
+            --ear1=fenrir
+            body="Sylvan Caban +2",
+            ring2="Pyrosoul Ring",
+        })
+        sets.midcast.RA.Mod.SamRoll = set_combine(sets.midcast.RA.Mod, {
+            body="Sylvan Caban +2",
+            legs="Nahtirah Trousers"
+        })
+        sets.midcast.RA.Acc.SamRoll = set_combine(sets.midcast.RA.Acc, {
+            hands="Sigyn's Bazubands"
         })
 
-        -- XXX:SAM SJ - Experimental (gun only)
+        sets.midcast.RA.Stave.SamRoll = set_combine(sets.midcast.RA.Stave, {
+            body="Sylvan Caban +2",
+            ring2="Pyrosoul Ring",
+            waist="Elanid Belt"
+        })
+        sets.midcast.RA.Stave.Mod.SamRoll = set_combine(sets.midcast.RA.Stave.Mod, {
+            body="Sylvan Caban +2",
+            legs="Arcadian Braccae +1"
+        })
+        sets.midcast.RA.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Acc, {})
+
+        -- SAM Subjob
         sets.midcast.RA.SAM = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
             ear1="Volley Earring", 
             ear2="Tripudio Earring", 
             body="Kyujutsugi",
-            ring1="Rajas Ring", 
-            ring2="K'ayres Ring",
-            back="Sylvan Chlamys",
-            waist="Patentia Sash",
-            legs="Sylvan Bragues +2"
-        }
-        sets.midcast.RA.Mod.SAM = set_combine(sets.midcast.RA.Mod, sets.midcast.RA.SAM)
-        sets.midcast.RA.Acc.SAM = set_combine(sets.midcast.RA.Acc, sets.midcast.RA.SAM)
-
-        -- This is a 3-hit build with 3 out of 3 recycle procs and /sam sub. 
-        -- It's used automatically by having /sam and gear.Stave equipped.
-        -- STP: 57 for TP and 55 for WS 
-        -- Racc: 200.5
-        -- Ratk: 201.5 
-        -- AGI: 110
-        -- STR: 81 
-        sets.midcast.RA.SAM2H = {
-            head="Arcadian Beret +1",
-            neck="Ocachi Gorget",
-            ear1="Volley Earring", 
-            ear2="Tripudio Earring", 
-            body="Kyujutsugi",
-            hands="Sigyn's Bazubands",
+            hands="Sylvan Glovelettes +2",
             ring1="Rajas Ring", 
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
@@ -230,111 +223,129 @@ function init_gear_sets()
             legs="Sylvan Bragues +2",
             feet="Orion Socks +1"
         }
-        sets.midcast.RA.Mod.SAM2H = set_combine(sets.midcast.RA.SAM2H, {
-            waist="Elanid Belt",
+        sets.midcast.RA.SAM.Mod = set_combine(sets.midcast.RA.SAM, { 
+            hands="Seiryu's Kote",
             legs="Aetosaur Trousers +1"
         })
-        sets.midcast.RA.Acc.SAM2H = set_combine(sets.midcast.RA.Mod.SAM2H, {
-            ring1="Longshot Ring",
-            ring2="Paqichikaji Ring",
-            back="Lutian Cape"
+        sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mod, {
+            back="Lutian Cape", waist="Elanid Belt", 
+            neck="Iqabi Necklace", ring2="Longshot Ring"
         })
 
-        -- Bow Default (614 total delay) 4-hit with 3/4 recycle
-        -- This set is only used while Decoy Shot is OFF
-        -- Enmity: -40
-        -- STP: 46
-        -- Racc: 219.75
-        -- Ratk: 206.75 
-        -- AGI: 149
-        -- STR: 113 
-        sets.midcast.RA.Bow = {
+        -- Stave set for SAM
+        sets.midcast.RA.SAM.Stave = set_combine(sets.midcast.RA.SAM, {
+            hands="Sigyn's Bazubands"
+        })
+        sets.midcast.RA.SAM.Stave.Mod = set_combine(sets.micast.RA.SAM.Mod, {
+            hands="Sigyn's Bazubands",
+            legs="Aetosaur Trousers +1"
+        })
+        sets.midcast.RA.SAM.Stave.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
+        
+        -- Samurai Roll for /sam, assume we're using a staff
+        sets.midcast.RA.SAM.Stave.SamRoll = set_combine(sets.midcast.RA.SAM.Stave, {
+            hands="Sigyn's Bazubands"
+        })
+        sets.midcast.RA.SAM.Stave.Mod.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Mod, {
+            ear1="Clearview Earring",
+            hands="Sigyn's Bazubands",
+            legs="Aetosaur Trousers +1"
+        })
+        sets.midcast.RA.SAM.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Acc, {
+            hands="Sigyn's Bazubands",
+        })
+
+        -- Bow base set.
+        sets.midcast.RA.Yoichinoyumi = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
-            ear1="Novia Earring", 
+            ear1="Novia Earring",
             ear2="Tripudio Earring",
             body="Kyujutsugi",
-            hands="Iuitl Wristbands +1",
+            hands="Sylvan Glovelettes +2",
             ring1="Rajas Ring",
-            ring2=gear.samrollring2,
+            ring2="K'ayres Ring",
             back="Sylvan Chlamys",
-            waist="Elanid Belt", 
-            legs=gear.samrolllegs, 
+            waist="Elanid Belt",
+            legs="Aetosaur Trousers +1",
             feet="Arcadian Socks +1"
         }
-        -- Mod toggle for Bow.
-        -- All around good set for events, but not when you care a lot about -enmity
-        -- Enmity: -29
-        -- STP: 45 
-        -- Racc: 240.5 
-        -- Ratk: 240.25 
-        -- AGI: 126
-        -- STR: 111 
-        sets.midcast.RA.Mod.Bow = set_combine(sets.midcast.RA.Bow, {
+        sets.midcast.RA.Yoichinoyumi.Mod = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1="Volley Earring",
             hands="Sylvan Glovelettes +2",
             back="Lutian Cape",
-            legs="Arcadian Braccae +1",
             feet="Orion Socks +1"
         })
-
-        -- High accuracy set
-        sets.midcast.RA.Acc.Bow = set_combine(sets.midcast.RA.Bow, {
-            hands="Seiryu's Kote", 
-            ring1="Hajduk Ring",
-            legs="Arcadian Braccae +1",
-            back="Lutian Cape", 
-            feet="Orion Socks +1"
+        sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mod, {
+            hands="Seiryu's Kote",
+            ring1="Longshot Ring",
+            ring2="Paqichikaji Ring",
+            legs="Arcadian Braccae +1"
         })
 
-        -- 1 handed weapon set for Bow. (Hurlbat, etc.)
-        sets.midcast.RA.Bow1H = set_combine(sets.midcast.RA.Bow, {
-            hands="Sylvan Glovelettes +2"
-        })
-        -- Mod toggle for 1-handed wpn. with Bow.
-        sets.midcast.RA.Mod.Bow1H = set_combine(sets.midcast.RA.Bow1H, {
+        -- Decoy up 
+        sets.midcast.RA.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1="Volley Earring",
-            feet="Orion Socks +1"
+            hands="Seiryu's Kote"
         })
-        sets.midcast.RA.Acc.Bow1H = sets.midcast.RA.Acc.Bow
+        sets.midcast.RA.Yoichinoyumi.Mod.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Mod, {})
+        sets.midcast.RA.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Acc, {})
+       
+        -- Stave
+        sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Iuitl Wristbands +1" })
+        sets.midcast.RA.Stave.Yoichinoyumi.Mod = set_combine(sets.midcast.RA.Yoichinoyumi.Mod, { legs="Nahtirah Trousers" })
+        sets.midcast.RA.Stave.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Acc, {})
 
-        -- This set will activate when using Bow, and Decoy Shot is ON
-        -- STP: 45 
-        -- Racc: 225
-        -- Ratk: 253.25 
-        -- AGI: 128 
-        -- STR: 111 
-        sets.midcast.RA.Decoy = set_combine(sets.midcast.RA.Bow, {
-            ear1="Volley Earring",
+        -- Stave / Decoy up
+        sets.midcast.RA.Stave.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
             hands="Sylvan Glovelettes +2",
+            ear1="Volley Earring",
             legs="Nahtirah Trousers",
+            feet="Orion Socks +1"
+        })
+        sets.midcast.RA.Stave.Yoichinoyumi.Mod.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mod, {
+            legs="Aetosaur Trousers +1"
+        })
+        sets.midcast.RA.Stave.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Acc, {})
+
+        
+        -- Sam SJ / Bow - assuming you'll use a Stave here..
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.SAM, {
+            feet="Qaaxo Leggings"
+        })
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod = set_combine(sets.midcast.RA.SAM.Mod, {
+            feet="Orion Socks +1"
+        })
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
+
+        -- SAM SJ / Bow / Decoy doesn't matter here
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc
+
+        -- Sam SJ / Bow / Sam's Roll
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi, {
             waist="Elanid Belt",
             feet="Orion Socks +1"
         })
-        sets.midcast.RA.Mod.Decoy = set_combine(sets.midcast.RA.Decoy, {
-            legs=gear.samrolllegs
+
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod, {
+            waist="Elanid Belt",
         })
-        -- 1-handed weapon set used when decoy shot is ON
-        sets.midcast.RA.Decoy1H = set_combine(sets.midcast.RA.Decoy, {
-            back="Sylvan Chlamys",
-            legs=gear.samrolllegs
-        })
-        sets.midcast.RA.Mod.Decoy1H = sets.midcast.RA.Mod.Bow1H
-        -- High Accuracy set
-        sets.midcast.RA.Acc.Decoy = set_combine(sets.midcast.RA.Decoy, {
-            neck="Iqabi Necklace",
-            ring1="Hajduk Ring",
-            legs="Aetosaur Trousers +1",
-            feet="Orion Socks +1"
-        })
-        sets.midcast.RA.Acc.Decoy1H = sets.midcast.RA.Acc.Decoy
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc, {})
+
+        -- Don't care about decoy here
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.SamRoll.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.SamRoll
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.SamRoll.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.SamRoll
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.SamRoll.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.SamRoll
+
 
         -- Weaponskill sets  
         sets.precast.WS = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
-            ear1=gear.nightearring,
-            ear2=gear.outsideearring,
+            ear1="Flame Pearl",
+            ear2="Flame Pearl",
             body="Kyujutsugi",
             hands="Arcadian Bracers +1",
             ring1="Rajas Ring",
