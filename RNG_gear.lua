@@ -116,10 +116,10 @@ function init_gear_sets()
             body="Kyujutsugi",
             hands="Sigyn's Bazubands",
             ring1="Rajas Ring",
-            ring2=gear.samrollring2,
+            ring2="Pyrosoul Ring",
             back="Sylvan Chlamys",
-            waist=gear.samrollwaist, 
-            legs="Aetosaur Trousers +1",
+            waist="Elanid Belt",
+            legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
 
@@ -134,7 +134,6 @@ function init_gear_sets()
             ring2="Longshot Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
-            legs=gear.samrolllegs
         })
 
         -- Gun Acc 
@@ -145,7 +144,8 @@ function init_gear_sets()
         -- STR: 86
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mod, {
             neck="Iqabi Necklace",
-            ring1="Hajduk Ring"
+            ring1="Hajduk Ring",
+            legs="Arcadian Braccae +1"
         })
 
         -- Stave + Strap set for Gun (stats are approx since we swap stuff)
@@ -159,14 +159,14 @@ function init_gear_sets()
             --sub="Bloodrain Strap",
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
-            ear1=gear.nightearring,
+            ear1="Volley Earring",
             ear2="Tripudio Earring", 
-            body="Kyujutsugi",
+            body="Sylvan Caban +2",
             hands="Sigyn's Bazubands",
             ring1="Rajas Ring",
-            ring2=gear.samrollring2,
+            ring2="Pyrosoul Ring",
             back="Lutian Cape",
-            waist=gear.samrollwaist,
+            waist="Elanid Belt",
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         })
@@ -177,7 +177,8 @@ function init_gear_sets()
         -- AGI: 134
         -- STR: 104
         sets.midcast.RA.Mod.Gun2H = set_combine(sets.midcast.RA.Gun2H, {
-            legs=gear.samrolllegs,
+            body="Kyujutsugi",
+            legs="Aetosaur Trousers +1",
             ring2="Longshot Ring",
             back="Lutian Cape"
         })
@@ -240,14 +241,6 @@ function init_gear_sets()
             back="Lutian Cape"
         })
 
-        -- Bow Default (614 total delay) 4-hit with 3/4 recycle
-        -- This set is only used while Decoy Shot is OFF
-        -- Enmity: -40
-        -- STP: 46
-        -- Racc: 219.75
-        -- Ratk: 206.75 
-        -- AGI: 149
-        -- STR: 113 
         sets.midcast.RA.Bow = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
@@ -256,25 +249,17 @@ function init_gear_sets()
             body="Kyujutsugi",
             hands="Iuitl Wristbands +1",
             ring1="Rajas Ring",
-            ring2=gear.samrollring2,
+            ring2="K'ayres Ring",
             back="Sylvan Chlamys",
             waist="Elanid Belt", 
-            legs=gear.samrolllegs, 
+            legs="Arcadian Braccae +1",
             feet="Arcadian Socks +1"
         }
-        -- Mod toggle for Bow.
-        -- All around good set for events, but not when you care a lot about -enmity
-        -- Enmity: -29
-        -- STP: 45 
-        -- Racc: 240.5 
-        -- Ratk: 240.25 
-        -- AGI: 126
-        -- STR: 111 
         sets.midcast.RA.Mod.Bow = set_combine(sets.midcast.RA.Bow, {
             ear1="Volley Earring",
             hands="Sylvan Glovelettes +2",
+            legs="Nahtirah Trousers",
             back="Lutian Cape",
-            legs="Arcadian Braccae +1",
             feet="Orion Socks +1"
         })
 
@@ -307,7 +292,7 @@ function init_gear_sets()
         sets.midcast.RA.Decoy = set_combine(sets.midcast.RA.Bow, {
             ear1="Volley Earring",
             hands="Sylvan Glovelettes +2",
-            legs="Nahtirah Trousers",
+            legs="Aetosaur Trousers +1",
             waist="Elanid Belt",
             feet="Orion Socks +1"
         })
@@ -333,8 +318,8 @@ function init_gear_sets()
         sets.precast.WS = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
-            ear1=gear.nightearring,
-            ear2=gear.outsideearring,
+            ear1="Flame Pearl",
+            ear2="Flame Pearl",
             body="Kyujutsugi",
             hands="Arcadian Bracers +1",
             ring1="Rajas Ring",
