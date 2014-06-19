@@ -284,6 +284,10 @@ function customize_melee_set(meleeSet)
 end
  
 function job_status_change(newStatus, oldStatus, eventArgs)
+    if newStatus == "Engaged" then
+         state.CombatWeapon = player.equipment.range
+    end
+
     if camo_active() then
         disable('body')
     else
@@ -391,6 +395,7 @@ end
 function get_combat_form()
     if player.equipment.main == gear.Stave then
         state.CombatForm = "Stave"
+        add_to_chat(8, state.CombatForm)
     else
         if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
             state.CombatForm = "DualWield"

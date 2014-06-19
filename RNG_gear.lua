@@ -89,7 +89,7 @@ function init_gear_sets()
             feet="Orion Socks +1"
         }
 
-        sets.engaged.Bow = set_combine(sets.engaged, {
+        sets.engaged.Yoichinoyumi = set_combine(sets.engaged, {
             hands="Arcadian Bracers +1",
             feet="Arcadian Socks +1"
         })
@@ -301,8 +301,9 @@ function init_gear_sets()
 
         -- Stave / Decoy up
         sets.midcast.RA.Stave.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
-            hands="Sylvan Glovelettes +2",
-            ear1="Volley Earring",
+            hands="Iuitl Wristbands +1",
+            --ear1="Volley Earring",
+            ear1="Fenrir's Earring",
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         })
