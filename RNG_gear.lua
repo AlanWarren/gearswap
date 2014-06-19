@@ -301,9 +301,8 @@ function init_gear_sets()
 
         -- Stave / Decoy up
         sets.midcast.RA.Stave.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
-            hands="Iuitl Wristbands +1",
-            --ear1="Volley Earring",
-            ear1="Fenrir's Earring",
+            hands="Sylvan Glovelettes +2",
+            ear1="Volley Earring",
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         })

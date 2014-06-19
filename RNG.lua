@@ -395,7 +395,6 @@ end
 function get_combat_form()
     if player.equipment.main == gear.Stave then
         state.CombatForm = "Stave"
-        add_to_chat(8, state.CombatForm)
     else
         if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
             state.CombatForm = "DualWield"
