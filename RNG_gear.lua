@@ -159,7 +159,7 @@ function init_gear_sets()
             back="Lutian Cape", legs="Aetosaur Trousers +1"
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mod, {
-            neck="Iqabi Necklace", hands="Seiryu's Kote"
+            neck="Iqabi Necklace", hands="Seiryu's Kote",
             ring1="Hajduk Ring", ring2="Longshot Ring",
             legs="Arcadian Braccae +1"
         })
@@ -169,7 +169,7 @@ function init_gear_sets()
         ------------------------------------------------------------------
 
         -- Stave sets 
-        sets.midcsat.RA.Stave = set_combine(sets.midcast.RA, {
+        sets.midcast.RA.Stave = set_combine(sets.midcast.RA, {
             body="Sylvan Caban +2",
             back="Lutian Cape",
         })
@@ -237,7 +237,7 @@ function init_gear_sets()
         sets.midcast.RA.SAM.Stave = set_combine(sets.midcast.RA.SAM, {
             hands="Sigyn's Bazubands"
         })
-        sets.midcast.RA.SAM.Stave.Mod = set_combine(sets.micast.RA.SAM.Mod, {
+        sets.midcast.RA.SAM.Stave.Mod = set_combine(sets.midcast.RA.SAM.Mod, {
             hands="Sigyn's Bazubands",
             legs="Aetosaur Trousers +1"
         })
