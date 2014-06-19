@@ -27,6 +27,7 @@ function init_gear_sets()
         })
 
         sets.precast.FC = {
+            head="Ux'uxkaj Cap",
             ring1="Prolix Ring"
         }
 
