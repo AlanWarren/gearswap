@@ -66,6 +66,9 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
+	if binds_on_unload then
+		binds_on_unload()
+	end
 
 	send_command('unbind ^`')
 	send_command('unbind !-')
@@ -429,6 +432,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
+	refine_waltz(spell, action, spellMap, eventArgs)
 	if state.Buff[spell.english] ~= nil then
 		state.Buff[spell.english] = true
 	end
