@@ -223,6 +223,13 @@ function job_buff_change(buff, gain)
     if state.Buff[buff] ~= nil then
         state.Buff[buff] = gain
     end
+    if buff == 'Velocity Shot' and gain then
+        windower.send_command('wait 290;input /echo [VELOCITY SHOT: WEARING OFF IN 10 SEC.]')
+    elseif buff == 'Double Shot' and gain then
+        windower.send_command('wait 90;input /echo [DOUBLE SHOT WORE OFF.];wait 90;input /echo [DOUBLE SHOT READY.]')
+    elseif buff == 'Decoy Shot' and gain then
+        windower.send_command('wait 170;input /echo [DECOY SHOT: WEARING OFF IN 10 SEC.];wait 120;input /echo [DECOY SHOT READY.]')
+    end
 
     if ( buff == "Decoy Shot" and player.equipment.range == gear.Bow ) or buff == "Samurai Roll" then
         classes.CustomRangedGroups:clear()
