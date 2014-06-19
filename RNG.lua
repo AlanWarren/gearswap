@@ -319,6 +319,7 @@ end
 function job_update(cmdParams, eventArgs)
     get_combat_form()
     get_custom_ranged_groups()
+    sam_sj = player.sub_job == 'SAM' or false
     -- called here incase buff_change failed to update value
     state.Buff.Camouflage = buffactive.camouflage or false
     state.Buff.Overkill = buffactive.overkill or false
