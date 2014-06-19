@@ -14,34 +14,8 @@
  Auto RA: 
  gs c toggle autora
 
- === Some Notes On Sets ===
- 1) Annihilator + Hurlbat - This is used whenever ranged accuracy is a concern, or when I want war SJ's fencer bonus
- 2) Annihilator + Mekki Shakki - These sets have higher ranged attack, and generally do more damage at the cost of some racc.
- 3) Yoichi + Mekki Shakki + Decoy Down - This set is a bit light on racc/ratk, with focus on 4-hit and -enmity
- 4) Yoichi + Mekki Shakki + Decoy Up - This set is high ratk, with less focus on racc since Yoichi's aftermath provides a bit
- 5) Yoichi + Hurlbat - This set is pretty much a wash since bow needs so much STP to x-hit. Normally this would be a higher
-    racc set for Bow, but it doesn't really accomplish this well right now. Stick to staves for bow.. 
- 6) Annihilator + SAM Subjob - This is "messing around" set that will 3-hit with all 3 shots proc'ing recycle! 
-
- === Toggles ===
- 1) Normal aims to be a 4-hit with as few recycle procs as I can possibly gear for without sacrificing too much.
-    I will usually start out with this set, and occasionaly stick with it if my food allows decent racc.
- 2) Mod adds a bit more acc, while maintaining 4 hit (may require more recycle procs) 
-    I generally use this set on anything Difficult+, or delve2. Sometimes it allows me to eat meat. 
- 3) Acc is full blown racc with minimal concern for anything else. Some sets will 4-hit with with all 4 shots proc'ing recycle
-    This mode is only used when fighting difficult content, and all buffs drop. 
-
- === Modes ===
- 1) Non-specific default sets are for Gun. They assume a 1 handed weapon since Hurlbat is my default for Annihilator.
-    * Gun2H set is used whenever your main weapon is equal to gear.Stave. This set was designed for Mekki + Bloodrain
- 1) Bow sets will activate by equipping whichever bow you defined in gear.Bow
-    * Bow sets assume a stave + strap combination
-    * Decoy1H and Bow1H will be used whenever you're NOT using gear.Stave i.e. Hurlbat
- 2) Decoy set only applies while decoy is active AND you're using Bow
-    * Standard Bow set uses -enmity gear, while maintaining 4-hit (with 4/4 recycle proc)
-    * Decoy set removes -enmity gear for a normal 4-hit setup (3/4 or 2/4 recycle proc)
- 3) Fenrir's earring is equipped at night for WS. You can disable this by setting use_night_earring = false
- 4) During Overkill, I use a special set for precast/midcast containing rapidshot / doubleshot dmg gear. 
+ === Notes ===
+ Coming later
 
  === In Precast ===
  1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
@@ -71,10 +45,6 @@ end
 
 -- setup vars that are user-independent.
 function job_setup()
-        get_combat_form()
-        get_custom_ranged_groups()
-
-        sam_sj = player.sub_job == 'SAM' or false
 end
  
 -- setup vars that are user-dependent. 
@@ -108,8 +78,12 @@ function user_setup()
             ["STP"]   = "Tripudio Earring" 
         }
 
-        rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Sabebus', 'Eminent Axe', 'Trailer\'s Kukri'}
+        rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Sabebus', 'Eminent Axe', 'Trailer\'s Kukri', 'Aphotic Kukri'}
         -- dynamically assigned equip  based on time of day / adoulin
+
+        get_combat_form()
+        get_custom_ranged_groups()
+        sam_sj = player.sub_job == 'SAM' or false
 
         -- Overriding Global Defaults for this job
         gear.default.weaponskill_neck = "Ocachi Gorget"
