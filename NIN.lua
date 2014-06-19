@@ -587,7 +587,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-	refine_waltz(spell, action, spellMap, eventArgs)
     if spell.skill == "Ninjutsu" and enfeeblingNinjutsu:contains(spell.name:lower()) then
         classes.CustomClass = "EnfeebleNinjutsu"
     end
