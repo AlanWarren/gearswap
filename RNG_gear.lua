@@ -220,17 +220,17 @@ function init_gear_sets()
             ring1="Rajas Ring", 
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
-            waist="Patentia Sash",
-            legs="Sylvan Bragues +2",
+            waist="Elanid Belt",
+            legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         }
         sets.midcast.RA.SAM.Mod = set_combine(sets.midcast.RA.SAM, { 
             hands="Seiryu's Kote",
-            legs="Aetosaur Trousers +1"
         })
         sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mod, {
-            back="Lutian Cape", waist="Elanid Belt", 
-            neck="Iqabi Necklace", ring2="Longshot Ring"
+            back="Lutian Cape", 
+            neck="Iqabi Necklace", 
+            ring2="Longshot Ring"
         })
 
         -- Stave set for SAM
