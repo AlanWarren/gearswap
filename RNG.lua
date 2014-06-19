@@ -144,9 +144,6 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
-    if binds_on_unload then
-        binds_on_unload()
-    end
     send_command('unbind f9')
     send_command('unbind ^f9')
     send_command('unbind ^[')
@@ -160,7 +157,7 @@ end
 function job_pretarget(spell, action, spellMap, eventArgs)
     -- If autora enabled, use WS automatically at 100+ TP
     if spell.action_type == 'Ranged Attack' then
-        if player.tp >= 100 and state.AutoRA and not buffactive.amnesia then
+        if player.tp >= 1000 and state.AutoRA and not buffactive.amnesia then
             cancel_spell()
             use_weaponskill()
         end
@@ -170,10 +167,6 @@ end
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
  
 function job_precast(spell, action, spellMap, eventArgs)
-        
-        cancel_conflicting_buffs(spell, action, spellMap, eventArgs)
-        refine_waltz(spell, action, spellMap, eventArgs)
-
         if state.Buff[spell.english] ~= nil then
             state.Buff[spell.english] = true
         end
@@ -183,7 +176,7 @@ function job_precast(spell, action, spellMap, eventArgs)
         end
         -- Safety checks for weaponskills 
         if spell.type:lower() == 'weaponskill' then
-            if player.tp < 100 then
+            if player.tp < 1000 then
                     eventArgs.cancel = true
                     return
             end
