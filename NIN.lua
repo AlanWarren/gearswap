@@ -22,7 +22,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     -- Options: Override default values
-    options.OffenseModes = {'Normal', 'Mid', 'Acc', 'Subtle'}
+    options.OffenseModes = {'Normal', 'Mid', 'Acc', 'Proc'}
     options.DefenseModes = {'Normal', 'Evasion', 'PDT'}
     options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
     options.CastingModes = {'Normal'}
@@ -54,7 +54,6 @@ function init_gear_sets()
     --------------------------------------
     
     gear.ammo = select_ammo()
-    gear.Stave = "Mekki Shakki"
 
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
@@ -107,7 +106,7 @@ function init_gear_sets()
         legs="Manibozho Brais",
         feet="Mochizuki Kyahan +1"
     }
-    sets.precast.WS.Stave = set_combine(sets.precast.WS, {
+    sets.precast.WS.Proc = set_combine(sets.precast.WS, {
         head="Hakke Hachimaki"
     })
 
@@ -332,10 +331,10 @@ function init_gear_sets()
         feet="Qaaxo Leggings"
         --feet="Otronif Boots +1"
     }
-    sets.engaged.Stave = set_combine(sets.engaged, {
+    sets.engaged.Proc = set_combine(sets.engaged, {
         head="Hakke hachimaki"
     })
-    sets.engaged.GK = set_combine(sets.engaged, {
+    sets.engaged.2Handed = set_combine(sets.engaged, {
         head="Felistris Mask",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
@@ -368,22 +367,6 @@ function init_gear_sets()
         feet="Mochizuki Kyahan +1"
     }
 
-    sets.engaged.Subtle = {
-        ammo=gear.ammo,
-        head="Hachiya Hatsuburi +1",
-        neck="Iga Erimaki",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        body="Hachiya Chainmail +1",
-        hands="Mochizuki Tekko +1",
-        ring1="Beeline Ring",
-        ring2="Epona's Ring",
-        back="Yokaze Mantle",
-        waist="Nusku's Sash",
-        legs="Hachiya Hakama +1",
-        feet="Qaaxo Leggings"
-    }
-    
     sets.engaged.PDT = set_combine(sets.engaged, {
     	head="Lithelimb Cap",
         body="Hachiya Chainmail +1",
@@ -572,12 +555,6 @@ end
 -- Job-specific hooks that are called to process player actions at specific points in time.
 -------------------------------------------------------------------------------------------------------------------
 function job_pretarget(spell, action, spellMap, eventArgs)
-	if spell.type:lower() == 'weaponskill' then
-		-- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
-		if player.equipment.main== gear.Stave then
-            disable('head')
-        end
-    end
     if state.Buff[spell.english] ~= nil then
         state.Buff[spell.english] = true
     end
@@ -585,7 +562,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-	refine_waltz(spell, action, spellMap, eventArgs)
+    
     if spell.skill == "Ninjutsu" and enfeeblingNinjutsu:contains(spell.name:lower()) then
         classes.CustomClass = "EnfeebleNinjutsu"
     end
@@ -609,18 +586,16 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
     gear.ammo = select_ammo()
-	if spell.type:lower() == 'weaponskill' then
-		-- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
-		if player.equipment.main== gear.Stave then
-            equip(sets.precast.WS.Stave)
-        end
-    end
+	--if spell.type:lower() == 'weaponskill' then
+    --    if state.OffenseMode == 'Proc' then
+    --        equip(sets.precast.WS.Stave)
+    --    end
+    --end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
 	if spell.action_type == 'Magic' then
-		-- Default base equipment layer of fast recast.
 		equip(sets.midcast.FastRecast)
 	end
     if spell.english == "Monomi: Ichi" then
@@ -646,9 +621,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     -- We need to set the spell being used to true, but only if the spell is not Yonin.
         state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
 	end
-	if player.equipment.main== gear.Stave then
-        enable('head')
-    end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -688,6 +660,9 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
+    if buff == 'Aftermath: Lv.3' and gain and player.equipment.main == 'Kannagi' then
+        windower.send_command('wait 120;input /echo [AM3: WEARING OFF IN 60 SEC.];wait 30; input /echo [AM3: WEARING OFF IN 30 SEC.];wait 20;input /echo [AM3: WEARING OFF IN 10 SEC.]')
+    end
 	-- If we gain or lose any haste buffs, adjust which gear set we target.
 	if S{'haste','march', 'madrigal','embrava','haste samba'}:contains(buff:lower()) then
 		determine_haste_group()
@@ -743,11 +718,8 @@ function select_ammo()
 end
 
 function get_combat_weapon()
-    if player.equipment.main == gear.Stave then
-        add_to_chat(122, 'Stave')
-        return 'Stave'
-    elseif player.equipment.main == 'Taimakuniyuki' or player.equipment.main == 'Ark Scythe' then
-        return 'GK'
+    if player.equipment.main == 'Taimakuniyuki' or player.equipment.main == 'Ark Scythe' then
+        return '2Handed'
     end
 end
 
