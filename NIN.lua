@@ -171,8 +171,9 @@ function init_gear_sets()
     -- BLADE: Rin
     sets.Rin = {
         neck="Asperity Necklace",
-        waist="Light Belt",
-        ring1="Pyrosoul Ring",
+        waist="Windbuffet Belt",
+        ring1="Rajas Ring",
+        feet="Qaaxo Leggings"
     }
     sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
     sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
