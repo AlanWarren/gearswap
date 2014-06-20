@@ -208,11 +208,12 @@
 	        sets.engaged.Acc = set_combine(sets.engaged, {
 	        	neck="Bale Choker",
 	        	hands="Mikinaak Gauntlets",
+                ring2="Patricius Ring",
 	        	waist="Dynamic Belt",
                 feet="Whirlpool Greaves"
             })
 	        sets.engaged.Multi = set_combine(sets.engaged, {
-                head="Quauhpilli Helm",
+                head="Otomi Helm",
                 ear1="Brutal Earring",
                 ear2="Trux Earring",
                 waist="Windbuffet Belt",
@@ -224,7 +225,7 @@
             })
 
             sets.engaged.HighHaste = set_combine(sets.engaged.Multi, {
-                    head="Yaoyotl Helm"
+                    head="Otomi Helm"
             })
 
             sets.engaged.MaxHaste = sets.engaged.HighHaste
