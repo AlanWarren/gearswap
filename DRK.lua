@@ -125,7 +125,7 @@
             -- Weaponskill sets
             -- Default set for any weaponskill that isn't any more specifically defined
             sets.precast.WS = {ammo="Fracas Grenade",
-                    head="Yaoyotl Helm",neck="Bale Choker",ear1="Brutal Earring",ear2="Trux Earring",
+                    head="Otomi Helm",neck="Bale Choker",ear1="Brutal Earring",ear2="Bale Earring",
                     body="Mikinaak Breastplate",hands="Mikinaak gauntlets",ring1="Rajas Ring",ring2="Pyrosoul Ring",
                     back="Atheling Mantle",waist="Windbuffet Belt",legs="Cizin Breeches",feet="Whirlpool Greaves"}
             sets.precast.WS.Acc = set_combine(sets.precast.WS, {ear1="Bladeborn Earring",ear2="Steelflash Earring"})
