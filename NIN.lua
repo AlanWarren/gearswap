@@ -262,7 +262,7 @@ function init_gear_sets()
         ear1="Trux Earring",
         ear2="Dawn Earring",
     	body="Kheper Jacket",
-        hands="Mochizuki Tekko +1",
+        hands="Umuthi Gloves",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
     	back="Shadow Mantle",
