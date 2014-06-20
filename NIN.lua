@@ -432,6 +432,7 @@ function init_gear_sets()
     })
 
     sets.engaged.HasteEvasion = {
+        head="Felistris Mask",
         body="Mochizuki Chainmail +1",
         neck="Iga Erimaki",
         ring1="Beeline Ring",
