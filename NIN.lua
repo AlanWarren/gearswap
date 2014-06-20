@@ -334,7 +334,7 @@ function init_gear_sets()
     sets.engaged.Proc = set_combine(sets.engaged, {
         head="Hakke hachimaki"
     })
-    sets.engaged.2Handed = set_combine(sets.engaged, {
+    sets.engaged.TwoHanded = set_combine(sets.engaged, {
         head="Felistris Mask",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
@@ -719,7 +719,7 @@ end
 
 function get_combat_weapon()
     if player.equipment.main == 'Taimakuniyuki' or player.equipment.main == 'Ark Scythe' then
-        return '2Handed'
+        return 'TwoHanded'
     end
 end
 
