@@ -57,6 +57,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
+    sets.precast.JA['Futae'] = { hands="Iga Tekko +1" }
     sets.precast.JA['Provoke'] = { 
         ear1="Trux Earring", 
         feet="Mochizuki Kyahan +1"
