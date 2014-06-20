@@ -156,7 +156,7 @@ function init_gear_sets()
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
 
 	-- Ranged snapshot gear
-	sets.precast.RA = {hands="Iuitl Wristbands +1",legs="Nahtirah Trousers", feet="Wurrukatte Boots"}
+	sets.precast.RA = {head="Uk'uxkaj Cap",hands="Iuitl Wristbands +1",legs="Nahtirah Trousers", feet="Wurrukatte Boots"}
        
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
