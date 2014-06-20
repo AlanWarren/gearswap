@@ -275,7 +275,7 @@ function init_gear_sets()
         head="Hachiya Hatsuburi +1",
         neck="Iga Erimaki",
         body="Hachiya Chainmail +1",
-        ring1="Patricius Ring",
+        ring1="Oneiros Ring",
         ring2="Epona's Ring",
         legs="Hachiya Hakama +1",
     	back="Yokaze Mantle"
