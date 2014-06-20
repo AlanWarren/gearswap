@@ -303,7 +303,7 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
 		body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
-        ring1="Rajas Ring",
+        ring1="Oneiros Ring",
         ring2="Epona's Ring",
 		back="Shadow Mantle",
         waist="Patentia Sash",
@@ -378,7 +378,7 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
 		body="Thaumas Coat",
         hands="Iuitl Wristbands +1",
-        ring1="Rajas Ring",
+        ring1="Oneiros Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
         waist="Patentia Sash",
@@ -395,7 +395,7 @@ function init_gear_sets()
     })
 	sets.engaged.iLvl = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
-        ring1="Patricius Ring"
+        ring1="Oneiros Ring"
     })
 	sets.engaged.Evasion = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
