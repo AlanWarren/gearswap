@@ -301,7 +301,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-		body="Qaaxo Harness",
+		body="Kheper Jacket",
         hands="Iuitl Wristbands +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
