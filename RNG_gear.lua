@@ -314,7 +314,7 @@ function init_gear_sets()
         
         -- Sam SJ / Bow - assuming you'll use a Stave here..
         sets.midcast.RA.SAM.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.SAM, {
-            feet="Qaaxo Leggings"
+            feet="Arcadian Socks +1"
         })
         sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod = set_combine(sets.midcast.RA.SAM.Mod, {
             feet="Orion Socks +1"
