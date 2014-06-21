@@ -270,7 +270,7 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = {
         head="Lithelimb Cap",
-        neck="Twilight Torque",
+        neck="Agitator's Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Sakonji Domaru +1",
@@ -327,7 +327,7 @@ function init_gear_sets()
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
-        neck="Iqabi Necklace", 
+        neck="Agitator's Collar", 
         waist="Dynamic Belt"
     })
     
@@ -346,7 +346,7 @@ function init_gear_sets()
     
     sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
         head="Yaoyotl Helm",
-        neck="Iqabi Necklace",
+        neck="Agitator's Collar",
         waist="Dynamic Belt"
     })
     
@@ -359,7 +359,7 @@ function init_gear_sets()
     
     sets.engaged.PDT = set_combine(sets.engaged, { 
         head="Lithelimb Cap", 
-        neck="Twilight Torque",
+        neck="Agitator's Collar",
         ring1="Patricius Ring",
         back="Shadow Mantle",
         feet="Otronif boots +1"
@@ -422,7 +422,7 @@ function init_gear_sets()
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         head="Yaoyotl Helm",
-        neck="Iqabi Necklace",
+        neck="Agitator's Collar",
         waist="Dynamic Belt"
     })
     
@@ -469,7 +469,7 @@ function init_gear_sets()
     sets.engaged.Adoulin.Yoichi.Mid = set_combine(sets.engaged.Adoulin.Yoichi, {
         ammo=gear.RAarrow,
         head="Yaoyotl Helm",
-        neck="Iqabi Necklace",
+        neck="Agitator's Collar",
         waist="Dynamic Belt",
         feet="Otronif Boots +1"
     })
