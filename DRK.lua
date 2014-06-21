@@ -86,6 +86,7 @@
             -- Fast cast sets for spells
             sets.precast.FC = {
                 head="Cizin Helm",
+                ear1="Loquacious Earring",
                 ring2="Prolix Ring"
             }
                      
