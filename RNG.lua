@@ -435,22 +435,14 @@ function use_ra(spell)
         if spell.type:lower() == 'weaponskill' then
             delay = '2.6'
          else
-            if buffactive["Courser's Roll"] then
-                delay = '1.6'
-            else
-                delay = '1.8'
-            end
+            delay = '1.8'
         end
     else
     -- GUN 
         if spell.type:lower() == 'weaponskill' then
             delay = '3.0'
         else
-            if buffactive["Courser's Roll"] then
-                delay = '2.0'
-            else
-                delay = '2.2'
-            end
+            delay = '2.2'
         end
     end
     send_command('@wait '..delay..'; input /ra <t>')
