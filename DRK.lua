@@ -231,7 +231,7 @@
                 hands="Cizin Mufflers",
                 ring1="Rajas Ring",
                 ring2="Paguroidea Ring",
-                back="Shadow Mantle",
+                back="Repulse Mantle",
                 waist="Windbuffet Belt",
                 legs="Crimson Cuisses",
                 feet="Whirlpool Greaves"

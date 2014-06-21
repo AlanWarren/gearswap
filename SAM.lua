@@ -250,7 +250,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         head="Twilight Helm",
         body="Twilight Mail",
-        back="Shadow Mantle",
+        back="Repulse Mantle",
         feet="Danzo Sune-ate"
     })
     
@@ -272,7 +272,7 @@ function init_gear_sets()
         hands="Wakido Kote +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
-        back="Shadow Mantle",
+        back="Repulse Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
         feet="Otronif Boots +1"
@@ -356,7 +356,7 @@ function init_gear_sets()
         head="Lithelimb Cap", 
         neck="Agitator's Collar",
         ring1="Patricius Ring",
-        back="Shadow Mantle",
+        back="Repulse Mantle",
         feet="Otronif boots +1"
     })
     
@@ -434,7 +434,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ring1="Patricius Ring",
         ring2="Dark Ring",
-        back="Shadow Mantle"
+        back="Repulse Mantle"
     })
     
     sets.engaged.Adoulin.Acc.PDT = set_combine(sets.engaged.Adoulin.Acc, {

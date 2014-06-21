@@ -58,7 +58,7 @@ function init_gear_sets()
             hands="Iuitl Wristbands +1",
             ring1="Dark Ring",
             ring2="Paguroidea Ring",
-            back="Shadow Mantle",
+            back="Repulse Mantle",
             waist="Elanid Belt",
             legs="Arcadian Braccae +1",
             feet="Orion Socks +1"
@@ -83,7 +83,7 @@ function init_gear_sets()
             hands="Sigyn's Bazubands",
             ring1="Rajas Ring",
             ring2="Paguroidea Ring",
-            back="Shadow Mantle",
+            back="Repulse Mantle",
             waist="Elanid Belt",
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
