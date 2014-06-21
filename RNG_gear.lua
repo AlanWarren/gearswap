@@ -204,7 +204,7 @@ function init_gear_sets()
             waist="Elanid Belt"
         })
         sets.midcast.RA.Stave.Mod.SamRoll = set_combine(sets.midcast.RA.Stave.Mod, {
-            body="Sylvan Caban +2",
+            body="Kyujutsugi",
             legs="Arcadian Braccae +1"
         })
         sets.midcast.RA.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Acc, {})
