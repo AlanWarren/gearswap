@@ -51,9 +51,8 @@ function user_setup()
     gear.RAarrow = "Tulfaire Arrow"
     
     -- Additional local binds
-    send_command('bind ^` input /ja "Hasso" <me>')
-    send_command('bind !` input /ja "Seigan" <me>')
     send_command('bind ^[ input /lockstyle on')
+    send_command('bind ![ input /lockstyle off')
     
     select_default_macro_book()
 end
@@ -61,12 +60,8 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
-    if binds_on_unload then
-    	binds_on_unload()
-    end
-    
-    send_command('unbind ^`')
-    send_command('unbind !-')
+    send_command('unbind ^[')
+    send_command('unbind ![')
 end
 
 -- Define sets and vars used by this job file.

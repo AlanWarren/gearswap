@@ -101,6 +101,7 @@ function user_setup()
         send_command('bind !f9 gs c cycle WeaponskillMode')
         send_command('bind ^- gs c toggle AutoRA')
         send_command('bind ^[ input /lockstyle on')
+        send_command('bind ![ input /lockstyle off')
         
         -- Testing 
         --windower.register_event('incoming text', detect_cor_rolls)
@@ -111,6 +112,7 @@ function file_unload()
     send_command('unbind f9')
     send_command('unbind ^f9')
     send_command('unbind ^[')
+    send_command('unbind ![')
     send_command('unbind ^-')
 end
  

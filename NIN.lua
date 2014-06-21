@@ -35,15 +35,17 @@ function user_setup()
     
     state.Defense.PhysicalMode = 'PDT'
     
+    send_command('bind ^[ input /lockstyle on')
+    send_command('bind ![ input /lockstyle off')
+
     select_default_macro_book()
 end
 
 
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
-    if binds_on_unload then
-    	binds_on_unload()
-    end
+    send_command('unbind ^[')
+    send_command('unbind ![')
 end
 
 
