@@ -170,7 +170,7 @@
            
             -- Defense sets
             sets.defense.PDT = {
-                    head="Cizin Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+                    head="Cizin Helm",neck="Agitator's Collar",ear1="Bladeborn Earring",ear2="Steelflash Earring",
                     body="Cizin Mail",hands="Cizin Mufflers",ring1="Rajas Ring",ring2="Dark Ring",
                     back="Atheling Mantle",waist="Zoran's Belt",legs="Cizin Breeches",feet="Cizin Greaves"}
      
@@ -313,6 +313,7 @@
 
             sets.engaged['Anahera Scythe'].Multi.PDT = set_combine(sets.engaged['Anahera Scythe'].Multi, {
                 body="Cizin Mail",
+                neck="Agitator's Collar",
                 feet="Cizin Greaves"
             })
 
@@ -323,7 +324,7 @@
             })
 
             sets.engaged['Anahera Scythe'].PDT = set_combine(sets.engaged['Anahera Scythe'], {
-                neck="Twilight Torque",
+                neck="Agitator's Collar",
                 body="Cizin Mail",
                 ring2="Dark Ring",
                 feet="Cizin Greaves"
