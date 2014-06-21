@@ -87,7 +87,7 @@
             sets.precast.FC = {
                 head="Cizin Helm",
                 ear1="Loquacious Earring",
-                ring2="Prolix Ring"
+               ring2="Prolix Ring"
             }
                      
             -- Midcast Sets
