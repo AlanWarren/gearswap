@@ -1,0 +1,23 @@
+<spellcast>
+  <sets>
+    <group name="exported">
+      <set name="exported">
+        <main>Raimitsukane</main>
+        <sub>Isuka</sub>
+        <ammo>Yetshila</ammo>
+        <head>Hakke Hachimaki</head>
+        <body>Hachi. Chain. +1</body>
+        <hands>Mochizuki Tekko +1</hands>
+        <legs>Hachi. Hakama +1</legs>
+        <feet>Hachiya Kyahan</feet>
+        <neck>Iga Erimaki</neck>
+        <waist>Patentia Sash</waist>
+        <left_ear>Trux Earring</left_ear>
+        <right_ear>Dawn Earring</right_ear>
+        <left_ring>Patricius Ring</left_ring>
+        <right_ring>Epona's Ring</right_ring>
+        <back>Yokaze Mantle</back>
+      </set>
+    </group>
+  </sets>
+</spellcast>
