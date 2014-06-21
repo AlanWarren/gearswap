@@ -92,6 +92,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {
         head="Uk'uxkaj Cap",
+        ear1="Loquacious Earring",
         ring1="Prolix Ring",
     }
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Mochizuki Chainmail +1"})
@@ -211,6 +212,7 @@ function init_gear_sets()
     	head="Uk'uxkaj Cap",
     	body="Mochi. Chainmail +1",
         hands="Mochizuki Tekko +1",
+        ear1="Loquacious Earring",
     	waist="Hurch'lan Sash",
         ring1="Prolix Ring",
         ring1="Diamond Ring",
