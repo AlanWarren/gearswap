@@ -348,7 +348,7 @@ function init_gear_sets()
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
         ammo="Yetshila",
-        neck="Asperity Necklace",
+        neck="Agitator's Collar",
         body="Mochizuki Chainmail +1",
         hands="Umuthi Gloves",
         ring1="Mars's Ring",
@@ -359,7 +359,7 @@ function init_gear_sets()
     sets.engaged.Acc = {
         ammo=gear.ammo,
         head="Whirlpool Mask",
-        neck="Iqabi Necklace",
+        neck="Agitator's Collar",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Mochizuki Chainmail +1",
@@ -375,7 +375,7 @@ function init_gear_sets()
     sets.engaged.PDT = set_combine(sets.engaged, {
     	head="Lithelimb Cap",
         body="Hachiya Chainmail +1",
-        neck="Twilight Torque",
+        neck="Agitator's Collar",
         hands="Umuthi Gloves",
         ring1="Patricius Ring",
         ring2="Dark Ring",
