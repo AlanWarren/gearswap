@@ -294,13 +294,12 @@ function init_gear_sets()
     -- Defense sets
     
     sets.defense.PDT = {
-    	head="Whirlpool Mask",
-        neck="Twilight Torque",
-        hands="Otronif Gloves",
+    	head="Lithelimb Mask",
+        neck="Agitator's Collar",
+        hands="Umuthi Gloves",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
     	back="Repulse Mantle",
-        legs="Nahtirah Trousers",
         feet="Otronif Boots +1"
     }
     
