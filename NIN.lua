@@ -272,7 +272,7 @@ function init_gear_sets()
         hands="Umuthi Gloves",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
-    	back="Shadow Mantle",
+    	back="Repulse Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
         feet="Danzo sune-ate"
@@ -280,7 +280,7 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         head="Hachiya Hatsuburi +1",
-        neck="Iga Erimaki",
+        neck="Agitator's Collar",
         body="Hachiya Chainmail +1",
         hands="Mochizuki Tekko +1",
         ring1="Oneiros Ring",
@@ -299,7 +299,7 @@ function init_gear_sets()
         hands="Otronif Gloves",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
-    	back="Shadow Mantle",
+    	back="Repulse Mantle",
         legs="Nahtirah Trousers",
         feet="Otronif Boots +1"
     }
@@ -383,7 +383,7 @@ function init_gear_sets()
         hands="Umuthi Gloves",
         ring1="Patricius Ring",
         ring2="Dark Ring",
-    	back="Shadow Mantle",
+    	back="Repulse Mantle",
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     })
