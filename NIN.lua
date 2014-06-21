@@ -265,7 +265,7 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
     	head="Lithelimb Cap",
-        neck="Twilight Torque",
+        neck="Agitator's Collar",
         ear1="Trux Earring",
         ear2="Dawn Earring",
     	body="Kheper Jacket",
