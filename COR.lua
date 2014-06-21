@@ -91,7 +91,12 @@ function init_gear_sets()
 	sets.precast.JA['Fold'] = {body="Commodore Gants +2"}
 
 	
-	sets.precast.CorsairRoll = {head="Commodore's Tricorne +1",hands="Navarch's Gants +2"}
+	sets.precast.CorsairRoll = {
+        head="Lanun Tricorne",
+        hands="Navarch's Gants +2",
+        body="Lanun Frac",
+        back="Repulse Mantle"
+    }
 	
 	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
 	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
@@ -118,9 +123,13 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	sets.precast.FC = {ring1="Prolix Ring"}
+	sets.precast.FC = {
+        head="Uk'uxkaj Cap",
+        ear1="Loquacious Earring",
+        ring1="Prolix Ring"
+    }
 
-	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
 
 	sets.precast.RA = {
@@ -266,13 +275,12 @@ function init_gear_sets()
         ammo=gear.RAbullet,
 		head="Lithelimb Cap",
         neck="Twilight Torque",
-        ear1="Volley Earring",
-        ear2="Clearview Earring",
+        ear1="Dawn Earring",
 		body="Kheper Jacket",
         hands="Iuitl Wristbands +1",
-        ring1="Patricius Ring",
-        ring2="Dark Ring",
-		back="Shadow Mantle",
+        ring1="Dark Ring",
+        ring2="Paguroidea Ring",
+		back="Repulse Mantle",
         waist="Commodore Belt",
         legs="Crimson Cuisses",
         feet="Iuitl Gaiters"
@@ -298,7 +306,8 @@ function init_gear_sets()
 	sets.defense.PDT = set_combine(sets.idle, {
         head="Lithelimb Cap",
         neck="Twilight Torque",
-		legs="Nahtirah Trousers"
+		legs="Nahtirah Trousers",
+        ring1="Patricius Ring"
     })
 
 	sets.defense.MDT = sets.defense.PDT
@@ -319,14 +328,14 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Thaumas Coat",
+		body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
 		back="Atheling Mantle",
         waist="Cetl Belt",
         legs="Manibozho Brais",
-        feet="Manibozho Boots"
+        feet="Qaaxo Leggings"
     }
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
