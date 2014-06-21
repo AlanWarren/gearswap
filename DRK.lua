@@ -44,7 +44,8 @@
             -- Additional local binds
             send_command('bind ^` input /ja "Hasso" <me>')
             send_command('bind !` input /ja "Seigan" <me>')
-            send_command('bind ^[ input /lockstyle')
+            send_command('bind ^[ input /lockstyle on')
+            send_command('bind ![ input /lockstyle off')
      
             select_default_macro_book()
     end
