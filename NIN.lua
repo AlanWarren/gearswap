@@ -142,7 +142,7 @@ function init_gear_sets()
     -- BLADE: HI
     sets.Hi = {
         head="Uk'uxkaj Cap",
-        body="Qaaxo Harness",
+        body="Kheper Jacket",
         neck="Shadow gorget",
     	ring1="Stormsoul Ring",
         back="Rancorous Mantle",
