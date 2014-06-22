@@ -172,7 +172,7 @@
                 hands="Mikinaak gauntlets",
                 ring1="Rajas Ring",
                 ring2="Pyrosoul Ring",
-                back="Atheling Mantle",
+                back="Buquwik Cape",
                 waist="Windbuffet Belt",
                 legs="Cizin Breeches",
                 feet="Whirlpool Greaves"
