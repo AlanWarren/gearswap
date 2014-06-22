@@ -305,14 +305,13 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
-		back="Shadow Mantle",
+		back="Repulse Mantle",
         waist="Patentia Sash",
         legs="Nahtirah Trousers",
         feet="Trotter Boots"
     }
 
 	sets.idle.Town = set_combine(sets.idle, {
-        ring1="Patricius Ring",
 		back="Canny Cape"
     })
 	
