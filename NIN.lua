@@ -294,7 +294,7 @@ function init_gear_sets()
     -- Defense sets
     
     sets.defense.PDT = {
-    	head="Lithelimb Mask",
+    	head="Lithelimb Cap",
         neck="Agitator's Collar",
         hands="Umuthi Gloves",
         ring1="Patricius Ring",
