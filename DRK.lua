@@ -129,10 +129,21 @@
                 head="Otomi Helm",
                 ear1="Lifestorm's earring",
                 ear2="Psystorm earring",
-                body="Abyss cuirass",
-                feet="Bale sollerets +2",
-                waist="Zoran's Belt"
+                feet="Scamp's Sollerets",
+                waist="Zoran's Belt",
+                back="Abyss Cape"
             })
+            sets.midcast['Elemental Magic'] = {
+                head="Yaoyotl Helm",
+                neck="Stoicheion Medal",
+                ear1="Friomisi Earring",
+                ear2="Crematio Earring",
+                body="Abyss Cuirass",
+                ring1="Diamond Ring",
+                ring2="Acumen Ring",
+                back="Toro Cape",
+                feet="Ignominy Sollerets"
+            }
 		   
             sets.midcast['Dread Spikes'] = {
                 head="Yaoyotl Helm",
