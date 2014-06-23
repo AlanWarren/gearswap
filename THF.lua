@@ -60,6 +60,8 @@ function user_setup()
 	send_command('bind ^= gs c cycle treasuremode')
 	send_command('bind !- gs c cycle targetmode')
 
+    send_command('bind ^[ input /lockstyle on')
+    send_command('bind ![ input /lockstyle off')
 	select_default_macro_book()
 end
 
@@ -72,6 +74,8 @@ function file_unload()
 
 	send_command('unbind ^`')
 	send_command('unbind !-')
+	send_command('unbind ^[')
+	send_command('unbind ![')
 end
 
 -- Define sets and vars used by this job file.
