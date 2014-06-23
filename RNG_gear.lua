@@ -15,12 +15,12 @@ function init_gear_sets()
             legs="Arcadian Braccae +1", 
             feet="Arcadian Socks +1"
         }
-        sets.precast.JA['Eagle Eye Shot'].Mod = set_combine(sets.precast.JA['Eagle Eye Shot'], {
+        sets.precast.JA['Eagle Eye Shot'].Mid = set_combine(sets.precast.JA['Eagle Eye Shot'], {
             back="Lutian Cape",
             ring2="Longshot Ring",
             feet="Orion Socks +1"
         })
-        sets.precast.JA['Eagle Eye Shot'].Acc = set_combine(sets.precast.JA['Eagle Eye Shot'].Mod, {
+        sets.precast.JA['Eagle Eye Shot'].Acc = set_combine(sets.precast.JA['Eagle Eye Shot'].Mid, {
             neck="Iqabi Necklace",
             waist="Elanid Belt"
         })
@@ -142,10 +142,10 @@ function init_gear_sets()
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
-        sets.midcast.RA.Mod = set_combine(sets.midcast.RA, {
+        sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             back="Lutian Cape", legs="Aetosaur Trousers +1"
         })
-        sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mod, {
+        sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             neck="Iqabi Necklace", hands="Seiryu's Kote",
             ring1="Hajduk Ring", ring2="Longshot Ring",
             legs="Arcadian Braccae +1"
@@ -160,12 +160,12 @@ function init_gear_sets()
             body="Sylvan Caban +2",
             back="Lutian Cape",
         })
-        sets.midcast.RA.Stave.Mod = set_combine(sets.midcast.RA.Stave, {
+        sets.midcast.RA.Stave.Mid = set_combine(sets.midcast.RA.Stave, {
             body="Kyujutsugi",
             ring2="Longshot Ring",
             legs="Aetosaur Trousers +1",
         })
-        sets.midcast.RA.Stave.Acc = set_combine(sets.midcast.RA.Stave.Mod, {
+        sets.midcast.RA.Stave.Acc = set_combine(sets.midcast.RA.Stave.Mid, {
             hands="Seiryu's Kote",
             neck="Iqabi Necklace",
             ring1="Paqichikaji Ring"
@@ -177,7 +177,7 @@ function init_gear_sets()
             body="Sylvan Caban +2",
             ring2="Pyrosoul Ring",
         })
-        sets.midcast.RA.Mod.SamRoll = set_combine(sets.midcast.RA.Mod, {
+        sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.Mid, {
             body="Sylvan Caban +2",
             legs="Nahtirah Trousers"
         })
@@ -190,7 +190,7 @@ function init_gear_sets()
             ring2="Pyrosoul Ring",
             waist="Elanid Belt"
         })
-        sets.midcast.RA.Stave.Mod.SamRoll = set_combine(sets.midcast.RA.Stave.Mod, {
+        sets.midcast.RA.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.Stave.Mid, {
             body="Kyujutsugi",
             legs="Arcadian Braccae +1"
         })
@@ -211,10 +211,10 @@ function init_gear_sets()
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         }
-        sets.midcast.RA.SAM.Mod = set_combine(sets.midcast.RA.SAM, { 
+        sets.midcast.RA.SAM.Mid = set_combine(sets.midcast.RA.SAM, { 
             hands="Seiryu's Kote",
         })
-        sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mod, {
+        sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mid, {
             back="Lutian Cape", 
             neck="Iqabi Necklace", 
             ring2="Longshot Ring"
@@ -224,7 +224,7 @@ function init_gear_sets()
         sets.midcast.RA.SAM.Stave = set_combine(sets.midcast.RA.SAM, {
             hands="Sigyn's Bazubands"
         })
-        sets.midcast.RA.SAM.Stave.Mod = set_combine(sets.midcast.RA.SAM.Mod, {
+        sets.midcast.RA.SAM.Stave.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
             hands="Sigyn's Bazubands",
             legs="Aetosaur Trousers +1"
         })
@@ -234,7 +234,7 @@ function init_gear_sets()
         sets.midcast.RA.SAM.Stave.SamRoll = set_combine(sets.midcast.RA.SAM.Stave, {
             hands="Sigyn's Bazubands"
         })
-        sets.midcast.RA.SAM.Stave.Mod.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Mod, {
+        sets.midcast.RA.SAM.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Mid, {
             ear1="Clearview Earring",
             hands="Sigyn's Bazubands",
             legs="Aetosaur Trousers +1"
@@ -258,13 +258,13 @@ function init_gear_sets()
             legs="Arcadian Braccae +1",
             feet="Arcadian Socks +1"
         }
-        sets.midcast.RA.Yoichinoyumi.Mod = set_combine(sets.midcast.RA.Yoichinoyumi, {
+        sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1="Volley Earring",
             back="Lutian Cape",
             feet="Orion Socks +1",
             legs="Aetosaur Trousers +1"
         })
-        sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mod, {
+        sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
             hands="Seiryu's Kote",
             ring1="Longshot Ring",
             ring2="Paqichikaji Ring",
@@ -276,14 +276,14 @@ function init_gear_sets()
             ear1="Volley Earring",
             legs="Nahtirah Trousers"
         })
-        sets.midcast.RA.Yoichinoyumi.Mod.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Mod, {
+        sets.midcast.RA.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
             hands="Seiryu's Kote"
         })
         sets.midcast.RA.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Acc, {})
        
         -- Stave
         sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Iuitl Wristbands +1" })
-        sets.midcast.RA.Stave.Yoichinoyumi.Mod = set_combine(sets.midcast.RA.Yoichinoyumi.Mod, { legs="Nahtirah Trousers" })
+        sets.midcast.RA.Stave.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, { legs="Nahtirah Trousers" })
         sets.midcast.RA.Stave.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Acc, {})
 
         -- Stave / Decoy up
@@ -293,7 +293,7 @@ function init_gear_sets()
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         })
-        sets.midcast.RA.Stave.Yoichinoyumi.Mod.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mod, {
+        sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mid, {
             legs="Aetosaur Trousers +1"
         })
         sets.midcast.RA.Stave.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Acc, {})
@@ -303,14 +303,14 @@ function init_gear_sets()
         sets.midcast.RA.SAM.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.SAM, {
             feet="Arcadian Socks +1"
         })
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod = set_combine(sets.midcast.RA.SAM.Mod, {
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
             feet="Orion Socks +1"
         })
         sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
 
         -- SAM SJ / Bow / Decoy doesn't matter here
         sets.midcast.RA.SAM.Stave.Yoichinoyumi.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid
         sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc
 
         -- Sam SJ / Bow / Sam's Roll
@@ -319,14 +319,14 @@ function init_gear_sets()
             feet="Orion Socks +1"
         })
 
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod, {
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid, {
             waist="Elanid Belt",
         })
         sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc, {})
 
         -- Don't care about decoy here
         sets.midcast.RA.SAM.Stave.Yoichinoyumi.SamRoll.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.SamRoll
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.SamRoll.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.SamRoll
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll
         sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.SamRoll.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.SamRoll
 
 
@@ -345,11 +345,11 @@ function init_gear_sets()
             legs="Nahtirah Trousers",
             feet="Arcadian Socks +1"
         }
-        sets.precast.WS.Mod = set_combine(sets.precast.WS, {
+        sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         })
-        sets.precast.WS.Acc = set_combine(sets.precast.WS.Mod, {
+        sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
             hands="Sigyn's Bazubands",
             back="Lutian Cape"
         })
@@ -369,7 +369,7 @@ function init_gear_sets()
             feet="Arcadian Socks +1"
         }
         sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
-        sets.precast.WS['Wildfire'].Mod = set_combine(sets.precast.WS.Mod, sets.Wildfire)
+        sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS.Mid, sets.Wildfire)
         sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS.Acc, sets.Wildfire)
 
         -- CORONACH
@@ -379,7 +379,7 @@ function init_gear_sets()
            ear1="Dawn Earring"
         }
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
-        sets.precast.WS['Coronach'].Mod = set_combine(sets.precast.WS.Mod, sets.Coronach)
+        sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.Coronach)
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, sets.Coronach)
 
         sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
@@ -399,7 +399,7 @@ function init_gear_sets()
            feet="Orion Socks +1"
         }
         sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, sets.LastStand)
-        sets.precast.WS['Last Stand'].Mod = set_combine(sets.precast.WS.Mod, sets.LastStand)
+        sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS.Mid, sets.LastStand)
         sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS.Acc, sets.LastStand)
 
         sets.precast.WS['Last Stand'].SAM = set_combine(sets.precast.WS, {
@@ -419,7 +419,7 @@ function init_gear_sets()
            feet="Arcadian Socks +1"
         }
         sets.precast.WS['Detonator'] = set_combine(sets.precast.WS, sets.Detonator)
-        sets.precast.WS['Detonator'].Mod = set_combine(sets.precast.WS.Mod, sets.Detonator)
+        sets.precast.WS['Detonator'].Mid = set_combine(sets.precast.WS.Mid, sets.Detonator)
         sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS.Acc, sets.Detonator)
         
         -- SLUG SHOT
@@ -429,23 +429,23 @@ function init_gear_sets()
            feet="Arcadian Socks +1"
         }
         sets.precast.WS['Slug Shot'] = set_combine(sets.precast.WS, sets.SlugShot)
-        sets.precast.WS['Slug Shot'].Mod = set_combine(sets.precast.WS.Mod, sets.SlugShot)
+        sets.precast.WS['Slug Shot'].Mid = set_combine(sets.precast.WS.Mid, sets.SlugShot)
         sets.precast.WS['Slug Shot'].Acc = set_combine(sets.precast.WS.Acc, sets.SlugShot)
         
         sets.precast.WS['Heavy Shot'] = set_combine(sets.precast.WS, sets.SlugShot)
-        sets.precast.WS['Heavy Shot'].Mod = set_combine(sets.precast.WS.Mod, sets.SlugShot)
+        sets.precast.WS['Heavy Shot'].Mid = set_combine(sets.precast.WS.Mid, sets.SlugShot)
         sets.precast.WS['Heavy Shot'].Acc = set_combine(sets.precast.WS.Acc, sets.SlugShot)
 
         -- NAMAS
         sets.Namas = {
             neck="Aqua Gorget",
             waist="Light Belt",
-            hands="Arcadian Bracers +1", -- override since we don't want sigyns in Mod or Acc
+            hands="Arcadian Bracers +1", -- override since we don't want sigyns in Mid or Acc
             back="Sylvan Chlamys",
             feet="Arcadian Socks +1"
         }
         sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS, sets.Namas)
-        sets.precast.WS['Namas Arrow'].Mod = set_combine(sets.precast.WS.Mod, sets.Namas)
+        sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS.Mid, sets.Namas)
         sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS.Acc, sets.Namas)
         
         sets.precast.WS['Namas Arrow'].SAM = set_combine(sets.precast.WS, {
@@ -469,7 +469,7 @@ function init_gear_sets()
             back="Rancorous Mantle"
         }
         sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, sets.Jishnus)
-        sets.precast.WS['Jishnu\'s Radiance'].Mod = set_combine(sets.precast.WS.Mod, sets.Jishnus)
+        sets.precast.WS['Jishnu\'s Radiance'].Mid = set_combine(sets.precast.WS.Mid, sets.Jishnus)
         sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS.Acc, sets.Jishnus)
 
         -- SIDEWINDER
@@ -481,11 +481,11 @@ function init_gear_sets()
             feet="Arcadian Socks +1"
         }
         sets.precast.WS['Sidewinder'] = set_combine(sets.precast.WS, sets.Sidewinder)
-        sets.precast.WS['Sidewinder'].Mod = set_combine(sets.precast.WS.Mod, sets.Sidewinder)
+        sets.precast.WS['Sidewinder'].Mid = set_combine(sets.precast.WS.Mid, sets.Sidewinder)
         sets.precast.WS['Sidewinder'].Acc = set_combine(sets.precast.WS.Acc, sets.Sidewinder)
 
         sets.precast.WS['Refulgent Arrow'] = sets.precast.WS['Sidewinder']
-        sets.precast.WS['Refulgent Arrow'].Mod = sets.precast.WS['Sidewinder'].Mod
+        sets.precast.WS['Refulgent Arrow'].Mid = sets.precast.WS['Sidewinder'].Mid
         sets.precast.WS['Refulgent Arrow'].Acc = sets.precast.WS['Sidewinder'].Acc
        
         -- Resting sets
