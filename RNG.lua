@@ -1,41 +1,43 @@
 -- Current Owner: AlanWarren, aka ~ Orestes 
 -- Orinal file credit KBEEZIE
 -- current file resides @ https://github.com/AlanWarren/gearswap
-
 --[[ 
- === General Notes ===
- I've added options so anyone can use this script with any weapon they want. Look towards the top of this script for
- gear.Bow, gear.Gun, and gear.Stave. There's also a toggle for use_night_earring that you can set to false if you
- don't have or want to use Fenrir's Earring.
-
- Debug: //gs debugmode
-       //gs showswaps
-
- Auto RA: 
- gs c toggle autora
 
  === Notes ===
- Coming later
+ -- Set format is as follows:
+    sets[phase][type][CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
+    ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll = {}
+    you can also append CustomRangedGroups to each other
+    ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.Decoy.SamRoll = {}
+ 
+ -- These are the available sets per category
+ -- CustomClass = SAM
+ -- CombatForm = Stave, DualWield
+ -- CombatWeapon = weapon name, ex: Yoichinoyumi  (you can make new sets for any ranged weapon)
+ -- RangedMode = Normal, Mid, Acc
+ -- CustomRangedGroup = Decoy, SamRoll
 
- === In Precast ===
- 1) Checks to make sure you're in an engaged state and have 100+ TP before firing a weaponskill
- 2) Checks the distance to target to prevent WS from being fired when target is too far (prevents TP loss)
- 3) Does not allow gear-swapping on weaponskills when Defense mode is enabled
- 4) Checks to see of "Unlimited Shot" buff is on, if there's any special ammo defined in sets equipped
- 5) Checks for empty ammo (or special without buff) and fills in the default ammunition for that weapon
-    ^ keeps empty if that ammo cannot be found, or there is no match to the weapon equipped
- 6) Provides a low ammunition warning if current ammo in slot (counts all in inventory) is less than 15
-    ^ If you have 5 Tulfaire arrows in slot, but 20 also in inventory it see's it as 25 total
+ -- Gear.Stave should be set to your 2-handed weapon of choice if you wish to take advantage of sets.midcast.RA.Stave
+ -- SamRoll is applied automatically whenever you have the roll on you. 
+ -- SAM is used when you're RNG/SAM 
+ -- Decoy tries to add -enmity gear. I only use this with Yoichi, but if desired you can also use it with gun
+    by toggling use_decoy_with_gun = true
+    ** If you do this, you'll need to create either a weapon specific set, or append Decoy to a default set.
+    i.e. sets.midcast.RA.Lionsquall.Decoy = {}
 
- === In Midcast ===
- If Sneak is active, sends the cancel command before Spectral Jig finish casting
+ * Auto RA
+ - You can use the built in hotkey (CTRL -) or create a macro. (like below) Note "AutoRA" is case sensitive
+   /console gs c toggle AutoRA
+ - You have to shoot once after toggling autora for it to begin.
+ - AutoRA will use weaponskills @ 1000TP, depending on which weapon you're using. However, this will only
+   work if you set gear.Gun or gear.Bow to the weapon you're using. You also have to specify the desired
+   ws it should use, with the settings auto_gun_ws and auto_bow_ws. 
+ 
+ === Helpful Commands ===
+    //gs validate
+    //gs showswaps
+    //gs debugmode
 
- === In Post-Midcast ===
- If Barrage Buff is active, equips sets.BarrageMid
-
- === In Buff Change ===
- If Camouflage is active, disable body swaping
- This is done to preserve the +100 Camouflage Duration given by Orion Jerkin
 --]]
  
 function get_sets()
@@ -51,9 +53,9 @@ end
 function user_setup()
         -- Options: Override default values
         options.OffenseModes = {'Normal', 'Melee'}
-        options.RangedModes = {'Normal', 'Mod', 'Acc'}
+        options.RangedModes = {'Normal', 'Mid', 'Acc'}
         options.DefenseModes = {'Normal', 'PDT'}
-        options.WeaponskillModes = {'Normal', 'Mod', 'Acc'}
+        options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
         options.PhysicalDefenseModes = {'PDT'}
         options.MagicalDefenseModes = {'MDT'}
         state.Defense.PhysicalMode = 'PDT'
@@ -64,23 +66,22 @@ function user_setup()
 
         -- settings
         state.AutoRA = false
-        -- Do you want to use Fenrir's Earring at night?
-        use_night_earring = true
+        auto_gun_ws = "Coronach"
+        auto_bow_ws = "Namas Arrow"
 
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
         gear.Stave = "Mekki Shakki"
-        
-        -- Special Circumstance Equipment
-        Earrings = { 
-            ["Night"] = "Fenrir's Earring", 
-            ["Day"]   = "Flame Pearl", 
-            ["STP"]   = "Tripudio Earring" 
-        }
-
+       
+        -- DualWield 
         rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Sabebus', 
             'Eminent Axe', 'Trailer\'s Kukri', 'Aphotic Kukri'}
-        -- dynamically assigned equip  based on time of day / adoulin
+        
+        -- Do you want to use Fenrir's Earring at night?
+        use_night_earring = true
+        -- Do you want decoy to be considered when using gun? 
+        -- hint: this should be true if you don't have annihilator, but you'll have to create sets for it. 
+        use_decoy_with_gun = false
 
         get_combat_form()
         get_custom_ranged_groups()
@@ -233,12 +234,16 @@ function job_buff_change(buff, gain)
         windower.send_command('wait 170;input /echo [DECOY SHOT: WEARING OFF IN 10 SEC.];wait 120;input /echo [DECOY SHOT READY.]')
     end
 
-    if ( buff == "Decoy Shot" and player.equipment.range == gear.Bow ) or buff == "Samurai Roll" then
+    if buff == "Decoy Shot" and  ( player.equipment.range == gear.Bow or use_decoy_with_gun  )then
         classes.CustomRangedGroups:clear()
 
         if (buff == "Decoy Shot" and gain) or buffactive['Decoy Shot'] then
             classes.CustomRangedGroups:append('Decoy')
         end
+    end
+
+    if buff == "Samurai Roll" then
+        classes.CustomRangedGroups:clear()
 
         if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
             classes.CustomRangedGroups:append('SamRoll')
@@ -423,9 +428,9 @@ end
 
 function use_weaponskill()
     if player.equipment.range == gear.Bow then
-        send_command('input /ws "Namas Arrow" <t>')
+        send_command('input /ws "'..auto_bow_ws..'" <t>')
     elseif player.equipment.range == gear.Gun then
-        send_command('input /ws "Coronach" <t>')
+        send_command('input /ws "'..auto_gun_ws..'" <t>')
     end
 end
 

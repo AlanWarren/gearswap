@@ -1,17 +1,4 @@
 function init_gear_sets()
-        -- NOTE: Set format is as follows:
-        -- sets[phase][type][CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
-        -- ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.SamRoll = {}
-        -- you can also append CustomRangedGroups to each other
-        -- ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mod.Decoy.SamRoll = {}
-        
-        -- These are the available sets per category
-        -- CustomClass = SAM
-        -- CombatForm = Stave, DualWield
-        -- CombatWeapon = weapon name
-        -- RangedMode = Normal, Mod, Acc
-        -- CustomRangedGroup = Decoy, SamRoll
-
         -- Misc. Job Ability precasts
         sets.precast.JA['Bounty Shot'] = {hands="Sylvan Glovelettes +2"}
         sets.precast.JA['Double Shot'] = {head="Sylvan Gapette +2"}
@@ -400,10 +387,8 @@ function init_gear_sets()
             ear1="Volley Earring",
             ear2="Tripudio Earring",
             hands="Sylvan Glovelettes +2",
-            ring2="K'ayres Ring",
             legs="Aetosaur Trousers +1"
         })
-        sets.precast.WS['Coronach'].SAM2H = sets.precast.WS['Coronach'].SAM
 
         -- LAST STAND
         sets.LastStand = {
@@ -416,6 +401,16 @@ function init_gear_sets()
         sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, sets.LastStand)
         sets.precast.WS['Last Stand'].Mod = set_combine(sets.precast.WS.Mod, sets.LastStand)
         sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS.Acc, sets.LastStand)
+
+        sets.precast.WS['Last Stand'].SAM = set_combine(sets.precast.WS, {
+            neck="Aqua Gorget",
+            ear1="Volley Earring",
+            ear2="Tripudio Earring",
+            hands="Seiryu's Kote",
+            ring2="Stormsoul Ring",
+            waist="Light Belt",
+            legs="Aetosaur Trousers +1",
+        })
         
         -- DETONATOR
         sets.Detonator = {
@@ -452,6 +447,16 @@ function init_gear_sets()
         sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS, sets.Namas)
         sets.precast.WS['Namas Arrow'].Mod = set_combine(sets.precast.WS.Mod, sets.Namas)
         sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS.Acc, sets.Namas)
+        
+        sets.precast.WS['Namas Arrow'].SAM = set_combine(sets.precast.WS, {
+            neck="Aqua Gorget",
+            ear1="Volley Earring",
+            ear2="Tripudio Earring",
+            ring2="Pyrosoul Ring",
+            waist="Light Belt",
+            back="Sylvan Chlamys",
+            legs="Aetosaur Trousers +1"
+        })
 
         -- JISHNUS
         sets.Jishnus = {
@@ -492,17 +497,17 @@ function init_gear_sets()
         --sets.Kiting = {feet="Fajin Boots"}
        
         sets.buff.Barrage = {
-            head="Ux'uxkaj Cap",
+            head="Uk'uxkaj Cap",
             neck="Rancor Collar",
             ear1="Volley Earring",
             ear2="Clearview Earring",
             body="Orion Jerkin +1",
             hands="Orion Bracers +1",
-            ring1="Paqichikaji Ring",
+            ring1="Hajduk Ring",
             ring2="Longshot Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
-            legs="Sylvan Bragues +2",
+            legs="Arcadian Braccae +1",
             feet="Orion Socks +1"
         }
 
