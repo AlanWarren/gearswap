@@ -56,7 +56,6 @@ function user_setup()
 	gear.default.weaponskill_waist = "Caudata Belt"
 
 	-- Additional local binds
-	send_command('bind ^` input /ja "Flee" <me>')
 	send_command('bind ^= gs c cycle treasuremode')
 	send_command('bind !- gs c cycle targetmode')
 
@@ -68,11 +67,7 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
-	if binds_on_unload then
-		binds_on_unload()
-	end
 
-	send_command('unbind ^`')
 	send_command('unbind !-')
 	send_command('unbind ^[')
 	send_command('unbind ![')
