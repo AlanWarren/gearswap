@@ -303,7 +303,7 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
 		body="Kheper Jacket",
         hands="Iuitl Wristbands +1",
-        ring1="Oneiros Ring",
+        ring1="Paguroidea Ring",
         ring2="Epona's Ring",
 		back="Repulse Mantle",
         waist="Patentia Sash",
