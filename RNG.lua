@@ -414,7 +414,7 @@ end
 function get_custom_ranged_groups()
 	classes.CustomRangedGroups:clear()
     
-    if player.equipment.range == gear.Bow then
+    if player.equipment.range == gear.Bow or use_decoy_with_gun then
         if buffactive['Decoy Shot'] then
 		    classes.CustomRangedGroups:append('Decoy')
         end
