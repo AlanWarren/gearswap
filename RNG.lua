@@ -183,7 +183,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip(sets.Overkill.Preshot)
     end
     sets.earring = select_earring()
-    sets.wsearring = select_wsearring()
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -269,7 +268,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
     sets.earring = select_earring()
-    sets.wsearring = select_wsearring()
 end
  
 function customize_idle_set(idleSet)
@@ -313,16 +311,6 @@ function select_earring()
     end
 end
 
-function select_wsearring()
-    -- world.time is given in minutes into each day
-    -- 7:00 AM would be 420 minutes
-    -- 17:00 PM would be 1020 minutes
-    if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
-        return sets.NightEarring
-    else
-        return sets.WSEarring
-    end
-end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------
@@ -441,14 +429,22 @@ function use_ra(spell)
         if spell.type:lower() == 'weaponskill' then
             delay = '2.6'
          else
-            delay = '1.8'
+             if buffactive["Courser's Roll"] then
+                 delay = '1.6'
+             else
+                delay = '1.8'
+            end
         end
     else
     -- GUN 
         if spell.type:lower() == 'weaponskill' then
             delay = '3.0'
         else
-            delay = '2.2'
+            if buffactive["Courser's Roll"] then
+                delay = '2.0'
+            else
+                delay = '2.2'
+            end
         end
     end
     send_command('@wait '..delay..'; input /ra <t>')
