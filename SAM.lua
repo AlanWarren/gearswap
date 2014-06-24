@@ -451,14 +451,14 @@ function init_gear_sets()
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
-        body="Sakonji Domaru +1", -- 8
+        body="Xaddi Mail", -- 3
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
-        ring2="K'ayres Ring", -- 5
+        ring2="Oneiros Ring", -- 5
         back="Atheling Mantle", -- 10
-        waist="Cetl Belt", -- needed to cap haste
+        waist="Windbuffet Belt", 
         legs="Wakido Haidate +1", -- 7
-        feet="Sakonji Sune-Ate +1" -- 8
+        feet="Otronif Boots +1" -- 7
     }
     
     sets.engaged.Adoulin.Yoichi.Mid = set_combine(sets.engaged.Adoulin.Yoichi, {
