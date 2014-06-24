@@ -427,7 +427,7 @@ function use_ra(spell)
     -- BOW
     if player.equipment.range == gear.Bow then
         if spell.type:lower() == 'weaponskill' then
-            delay = '2.6'
+            delay = '3.0'
          else
              if buffactive["Courser's Roll"] then
                  delay = '1.6'
