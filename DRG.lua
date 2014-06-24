@@ -22,9 +22,9 @@ function job_setup()
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-	options.OffenseModes = {'Normal', 'Acc', 'STP'}
+	options.OffenseModes = {'Normal', 'Mid', 'Acc'}
 	options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
-	options.WeaponskillModes = {'Normal', 'Acc', 'Att', 'Mod'}
+	options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
 	options.CastingModes = {'Normal'}
 	options.IdleModes = {'Normal'}
 	options.RestingModes = {'Normal'}
@@ -61,19 +61,20 @@ function init_gear_sets()
 	-- Precast Sets
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Angon = {ammo="Angon",hands="Wyrm Finger Gauntlets +2"}
+
 	sets.precast.JA.Jump = {
         ammo="Hagneia Stone",
 		head="Otomi Helm",
         neck="Asperity Necklace",
-        ear1="Steelflash Earring",
-        ear2="Bladeborn Earring",
-		body="Xaddi Mail",
+        ear1="Brutal Earring",
+        ear2="Tripudio Earring",
+		body="Lncr. Plackart +2",
         hands="Cizin Mufflers",
         ring1="Rajas Ring",
-        ring2="K'ayres Ring",
+        ring2="Oneiros Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
-        legs="Cizin Breeches",
+        legs="Lncr. Cuissots +2",
         feet="Cizin Greaves"
     }
 
@@ -86,16 +87,16 @@ function init_gear_sets()
         legs="Lancer's Cuissots +2"
     })
 	sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA.Jump, {
-        feet="Lancer's Schynbalds +2"
+        --feet="Lancer's Schynbalds +2"
     })
 	sets.precast.JA['Super Jump'] = sets.precast.JA.Jump
 
 	sets.precast.JA['Spirit Link'] = {hands="Lnc. Vmbrc. +1"}
 	sets.precast.JA['Call Wyvern'] = {body="Wyrm Mail"}
-	sets.precast.JA['Deep Breathing'] = {hands="Wyrm Armet"}
+	sets.precast.JA['Deep Breathing'] = {--head="Wyrm Armet +1"
+    }
 	sets.precast.JA['Spirit Surge'] = { --body="Wyrm Mail +2"
     }
-
 	
 	-- Healing Breath sets
 	sets.HB = {
@@ -104,17 +105,15 @@ function init_gear_sets()
         neck="Lancer's Torque",
         ear1="Steelflash Earring",
         ear2="Bladeborn Earring",
-		body="Cizin Mail",
+		body="Xaddi Mail",
         hands="Cizin Mufflers",
-        ring1="Rajas Ring",
+        ring1="Dark Ring",
         ring2="K'ayres Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Cizin Breeches",
-        feet="Mikinaak Greaves"
+        feet="Wyrm Greaves +2"
     }
-	sets.HB.Pre = {}
-	sets.HB.Mid = sets.HB		
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
@@ -125,49 +124,56 @@ function init_gear_sets()
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
 
-	sets.midcast.Breath = 
-	set_combine(
-		sets.midcast.FastRecast, 
-		{ head="Wyrm Armet" })
-	
 	-- Fast cast sets for spells
-	
-	sets.precast.FC = {head="Cizin Helm", ring1="Prolix Ring"}
+	sets.precast.FC = {head="Cizin Helm", ear1="Loquacious Earring", ring1="Prolix Ring"}
     
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
-		head="Lithelimb Cap",
-		body="Mikinaak Breastplate",hands="Cizin Mufflers",
-		legs="Cizin Breeches",feet="Whirlpool Greaves",waist="Zoran's Belt"}	
+		head="Otomi Helm",
+        hands="Cizin Mufflers",
+		legs="Cizin Breeches",
+        feet="Whirlpool Greaves",
+        waist="Zoran's Belt"
+    }	
 		
+	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Wyrm Armet" })
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {}
 
-	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {})
-
 	sets.precast.WS = {
         ammo="Thew Bomblet",
-		head="Yaoyotl Helm",
+		head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Trux Earring",
 		body="Xaddi Mail",
-        hands="Cizin Mufflers",
-        ring1="Rajas Ring",
+        hands="Boor Braceletes",
+        ring1="Oneiros Ring",
         ring2="Pyrosoul Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Cizin Breeches",
         feet="Whirlpool Greaves"
     }
-	sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+        head="Yaoyotl Helm",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+        hands="Mikinaak Gauntlets",
+        legs="Mikinaak Cuisses"
+
+    })
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",waist="Soil Belt"})
+	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",waist="Windbuffet Belt"})
+	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
+        head="Yaoyotl Helm",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+        hands="Mikinaak Gauntlets",
+    })
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})
-	sets.precast.WS['Stardiver'].Mod = set_combine(sets.precast.WS['Stardiver'], {neck="Shadow Gorget",waist="Soil Belt"})
 
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {neck="Light Gorget"})
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS.Acc, {neck="Light Gorget"})
@@ -201,12 +207,12 @@ function init_gear_sets()
         ammo="Thew Bomblet",
 		head="Otomi Helm",
         neck="Asperity Necklace",
-        ear1="Brutal Earring",
+        ear1="Dawn Earring",
         ear2="Tripudio Earring",
 		body="Xaddi Mail",
         hands="Cizin Mufflers",
-        ring1="Rajas Ring",
-        ring2="Paguroidea Ring",
+        ring1="Patricius Ring",
+        ring2="Mars's Ring",
 		back="Atheling Mantle",
         waist="Cetl Belt",
         legs="Crimson Cuisses",
@@ -216,11 +222,9 @@ function init_gear_sets()
 	sets.idle.Field = set_combine(sets.idle.Town, {
         head="Twilight Helm",
         neck="Twilight Torque",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
 		body="Twilight Mail",
-        ring1="Dark Ring",
-        ring2="Patricius Ring"
+        ring2="Paguroidea Ring",
+        back="Repulse Mantle"
     })
 
 	sets.idle.Weak = set_combine(sets.idle.Field, {
@@ -274,40 +278,42 @@ function init_gear_sets()
 		body="Xaddi Mail",
         hands="Cizin Mufflers",
         ring1="Rajas Ring",
-        ring2="K'ayres Ring",
+        ring2="Oneiros Ring",
 		back="Atheling Mantle",
-        waist="Cetl Belt",
+        waist="Windbuffet Belt",
         legs="Cizin Breeches",
         feet="Mikinaak Greaves"
     }
 
-	sets.engaged.Acc = set_combine(sets.engaged, {
+	sets.engaged.Mid = set_combine(sets.engaged, {
+        head="Yaoyotl Helm",
+        body="Lancer's Plackart +2",
+        ring2="Mars's Ring",
+        waist="Dynamic Belt"
+    })
+
+	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        neck="Iqabi Necklace",
         hands="Mikinaak Gauntlets",
-        waist="Dynamic Belt",
-        feet="Whirlpool Greaves"
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring"
     })
 
-	sets.engaged.STP = set_combine(sets.engaged, {
-        ear1="Brutal Earring",
-        ear2="Tripudio Earring",
-        legs="Phorcys Dirs"
-    })
-
-	sets.engaged.STP.PDT = set_combine(sets.engaged.STP, {
-        legs="Cizin Breeches",
-        ring2="Dark Ring",
-        back="Repulse Mantle"
-    })
-    
     sets.engaged.PDT = set_combine(sets.engaged, {
-        ring2="Dark Ring",
+        head="Lithelimb Cap",
+        ring1="Rajas Ring",
+        ring2="Patricius Ring",
         back="Repulse Mantle"
     })
-
+	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
+        head="Lithelimb Cap",
+        ring2="Patricius Ring",
+        back="Repulse Mantle"
+    })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
-        hands="Cizin Mufflers",
-        legs="Cizin Breeches",
-        ring2="Dark Ring"
+        head="Lithelimb Cap",
+        ring2="Patricius Ring",
+        back="Repulse Mantle"
     })
 
 	sets.engaged.Reraise = set_combine(sets.engaged, {
@@ -316,7 +322,6 @@ function init_gear_sets()
     })
 
 	sets.engaged.Acc.Reraise = sets.engaged.Reraise
-		
 
 end
 
@@ -380,8 +385,8 @@ end
 -- Runs when a pet initiates an action.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_pet_midcast(spell, action, spellMap, eventArgs)
-if spell.english:startswith('Healing Breath') or spell.english == 'Restoring Breath' then
-		equip(sets.HB.Mid)
+if spell.english:startswith('Healing Breath') or spell.english == 'Restoring Breath' or spell.english == 'Steady Wing' or spell.english == 'Smiting Breath' then
+		equip(sets.HB)
 	end
 end
 

@@ -1,5 +1,4 @@
--- Current Owner: AlanWarren, aka ~ Orestes 
--- Orinal file credit KBEEZIE
+-- Owner: AlanWarren, aka ~ Orestes 
 -- current file resides @ https://github.com/AlanWarren/gearswap
 --[[ 
 
@@ -184,7 +183,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip(sets.Overkill.Preshot)
     end
     sets.earring = select_earring()
-    sets.wsearring = select_wsearring()
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -227,11 +225,11 @@ function job_buff_change(buff, gain)
         state.Buff[buff] = gain
     end
     if buff == 'Velocity Shot' and gain then
-        windower.send_command('wait 290;input /echo [VELOCITY SHOT: WEARING OFF IN 10 SEC.]')
+        windower.send_command('wait 290;input /echo **VELOCITY SHOT** Wearing off in 10 Sec.')
     elseif buff == 'Double Shot' and gain then
-        windower.send_command('wait 90;input /echo [DOUBLE SHOT WORE OFF.];wait 90;input /echo [DOUBLE SHOT READY.]')
+        windower.send_command('wait 90;input /echo **DOUBLE SHOT OFF**;wait 90;input /echo **DOUBLE SHOT READY**')
     elseif buff == 'Decoy Shot' and gain then
-        windower.send_command('wait 170;input /echo [DECOY SHOT: WEARING OFF IN 10 SEC.];wait 120;input /echo [DECOY SHOT READY.]')
+        windower.send_command('wait 170;input /echo **DECOY SHOT** Wearing off in 10 Sec.];wait 120;input /echo **DECOY SHOT READY**')
     end
 
     if buff == "Decoy Shot" and  ( player.equipment.range == gear.Bow or use_decoy_with_gun  )then
@@ -270,7 +268,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
     sets.earring = select_earring()
-    sets.wsearring = select_wsearring()
 end
  
 function customize_idle_set(idleSet)
@@ -314,16 +311,6 @@ function select_earring()
     end
 end
 
-function select_wsearring()
-    -- world.time is given in minutes into each day
-    -- 7:00 AM would be 420 minutes
-    -- 17:00 PM would be 1020 minutes
-    if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
-        return sets.NightEarring
-    else
-        return sets.WSEarring
-    end
-end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------
@@ -440,16 +427,24 @@ function use_ra(spell)
     -- BOW
     if player.equipment.range == gear.Bow then
         if spell.type:lower() == 'weaponskill' then
-            delay = '2.6'
+            delay = '3.0'
          else
-            delay = '1.8'
+             if buffactive["Courser's Roll"] then
+                 delay = '1.6' -- MAKE ADJUSTMENT HERE
+             else
+                delay = '1.8' -- MAKE ADJUSTMENT HERE
+            end
         end
     else
     -- GUN 
         if spell.type:lower() == 'weaponskill' then
-            delay = '3.0'
+            delay = '3.0' 
         else
-            delay = '2.2'
+            if buffactive["Courser's Roll"] then
+                delay = '2.0' -- MAKE ADJUSTMENT HERE
+            else
+                delay = '2.2' -- MAKE ADJUSTMENT HERE
+            end
         end
     end
     send_command('@wait '..delay..'; input /ra <t>')

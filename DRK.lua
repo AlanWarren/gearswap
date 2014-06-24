@@ -87,7 +87,7 @@
             sets.precast.FC = {
                 head="Cizin Helm",
                 ear1="Loquacious Earring",
-               ring2="Prolix Ring"
+                ring2="Prolix Ring"
             }
                      
             -- Midcast Sets
@@ -118,7 +118,7 @@
                 body="Demon's harness",
                 hands="Abyss gauntlets +2",
                 ring1="Diamond Ring",
-                ring2="Acumen Ring",
+                --ring2="Perception Ring",
                 back="Abyss Cape",
                 waist="Zoran's Belt",
                 legs="Bale Flanchard +2",
@@ -148,8 +148,10 @@
             sets.midcast['Dread Spikes'] = {
                 head="Yaoyotl Helm",
                 body="Bale Cuirass +2",
-                hands="Cizin Mufflers",
-                ring2="K'ayres Ring"
+                hands="Xaddi Gauntlets",
+                --legs="Xaddi Cuisses",
+                ring2="K'ayres Ring",
+                feet="Ignominy Sollerets"
             }
            
             sets.midcast.Stun = set_combine(sets.midcast.DarkMagic, {
@@ -159,7 +161,7 @@
             sets.midcast.Drain = sets.midcast.DarkMagic 
                    
             sets.midcast.Aspir = sets.midcast.Drain
-						                   
+				--Ighwa Cap		                   
             -- Weaponskill sets
             -- Default set for any weaponskill that isn't any more specifically defined
             sets.precast.WS = {
@@ -168,8 +170,8 @@
                 neck="Bale Choker",
                 ear1="Brutal Earring",
                 ear2="Bale Earring",
-                body="Mikinaak Breastplate",
-                hands="Mikinaak gauntlets",
+                body="Xaddi Mail",
+                hands="Boor Bracelete",
                 ring1="Rajas Ring",
                 ring2="Pyrosoul Ring",
                 back="Buquwik Cape",
@@ -177,26 +179,47 @@
                 legs="Cizin Breeches",
                 feet="Whirlpool Greaves"
             }
-            sets.precast.WS.Acc = set_combine(sets.precast.WS, {ear1="Bladeborn Earring",ear2="Steelflash Earring"})
+            sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+                head="Yaoyotl Helm",
+                ear1="Bladeborn Earring",
+                ear2="Steelflash Earring",
+                hands="Mikinaak Gauntlets",
+                ring1="Mars's Ring",
+            })
      
             -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
             sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
             sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
             sets.precast.WS['Catastrophe'].Mod = set_combine(sets.precast.WS['Catastrophe'], {waist="Shadow Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
      
-            sets.precast.WS['Entropy'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",waist="Soil Belt",ring2="Diamond Ring"})
+            sets.precast.WS['Entropy'] = set_combine(sets.precast.WS, {
+                neck="Shadow Gorget",
+                waist="Soil Belt",
+                ring2="Diamond Ring"
+            })
             sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-            sets.precast.WS['Entropy'].Mod = set_combine(sets.precast.WS['Entropy'], {waist="Soil Belt",legs="Cizin Breeches"})
+            sets.precast.WS['Entropy'].Mod = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt",legs="Cizin Breeches"})
      
-            sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {neck="Breeze Gorget",legs="Mikinaak Cuisses",waist="Soil Belt"})
-            sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Breeze Gorget",legs="Mikinaak Cuisses",waist="Soil Belt"})
-            sets.precast.WS['Resolution'].Mod = set_combine(sets.precast.WS['Resolution'], {neck="Shadow Gorget",legs="Mikinaak Cuisses",waist="Soil Belt"})
+            sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
+                neck="Breeze Gorget",
+                legs="Mikinaak Cuisses",
+                waist="Soil Belt"
+            })
+            sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {
+                neck="Breeze Gorget",
+                legs="Mikinaak Cuisses",
+                waist="Soil Belt"
+            })
+            sets.precast.WS['Resolution'].Mod = set_combine(sets.precast.WS['Resolution'], {
+                neck="Bale Choker",
+                legs="Mikinaak Cuisses",
+                waist="Windbuffet Belt"
+            })
 
             sets.precast.WS['Cross Reapter'] = set_combine(sets.precast.WS, {
                 neck="Aqua Gorget",
                 waist="Windbuffet Belt"
              })
-     
            
             -- Sets to return to when not performing an action.
            
@@ -215,18 +238,17 @@
                 legs="Crimson Cuisses",
                 feet="Whirlpool Greaves"
             }
-           
      
             -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
             sets.idle.Town = {
-                head="Yaoyotl Helm",
+                head="Otomi Helm",
                 neck="Asperity Necklace",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
-                body="Pak Corselet",
+                body="Xaddi Mail",
                 hands="Cizin Mufflers",
                 ring1="Rajas Ring",
-                ring2="Paguroidea Ring",
+                ring2="Mars's Ring",
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Crimson Cuisses",
@@ -265,19 +287,24 @@
            
             -- Defense sets
             sets.defense.PDT = {
-                    head="Cizin Helm",neck="Agitator's Collar",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-                    body="Cizin Mail",hands="Cizin Mufflers",ring1="Rajas Ring",ring2="Dark Ring",
-                    back="Atheling Mantle",waist="Zoran's Belt",legs="Cizin Breeches",feet="Cizin Greaves"}
+                head="Lithelimb Cap",
+                neck="Agitator's Collar",
+                ear1="Bladeborn Earring",
+                ear2="Steelflash Earring",
+                body="Xaddi Mail",
+                hands="Cizin Mufflers",
+                ring1="Dark Ring",
+                ring2="Patricius Ring",
+                legs="Cizin Breeches",
+                feet="Whirlpool Greaves"
+            }
      
-            sets.defense.Reraise = {
-                    head="Twilight Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-                    body="Twilight Mail",hands="Cizin Mufflers",ring1="Dark Ring",ring2="Paguroidea Ring",
-                    back="Atheling Mantle",waist="Zoran's Belt",legs="Cizin Breeches",feet="Cizin Greaves"}
+            sets.defense.Reraise = sets.idle.Weak
      
-            sets.defense.MDT = {
-                    head="Yaoyotl Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-                    body="Cizin Mail",hands="Cizin Mufflers",ring1="Rajas Ring",ring2="Dark Ring",
-                    back="Atheling Mantle",waist="Zoran's Belt",legs="Cizin Breeches",feet="Cizin Greaves"}
+            sets.defense.MDT = set_combine(sets.defense.PDT, {
+                neck="Twilight Torque",
+                ring2="K'ayres Ring"
+            })
      
             sets.Kiting = {legs="Crimson Cuisses"}
      
@@ -285,7 +312,8 @@
      
             -- Engaged sets
             sets.engaged = {
-                ammo="Yetshila",
+                sub="Bloodrain Strap",
+                ammo="Hagneia Stone",
 	        	head="Otomi Helm",
                 neck="Asperity Necklace",
                 ear1="Brutal Earring",
@@ -301,18 +329,16 @@
             }
 
 	        sets.engaged.Acc = set_combine(sets.engaged, {
-	        	neck="Bale Choker",
+                head="Yaoyotl Helm",
 	        	hands="Mikinaak Gauntlets",
+                ear1="Bladeborn Earring",
+                ear2="Steelflash Earring",
+                ring1="Mars's Ring",
                 ring2="Patricius Ring",
-	        	waist="Dynamic Belt",
-                feet="Whirlpool Greaves"
             })
 	        sets.engaged.Multi = set_combine(sets.engaged, {
-                head="Otomi Helm",
                 ear1="Brutal Earring",
                 ear2="Trux Earring",
-                waist="Windbuffet Belt",
-                legs="Cizin Breeches"
             })
 	        sets.engaged.Reraise = set_combine(sets.engaged, {
 	        	head="Twilight Helm",neck="Twilight Torque",
@@ -320,63 +346,22 @@
             })
 
             sets.engaged.HighHaste = set_combine(sets.engaged.Multi, {
-                    head="Otomi Helm"
+                head="Otomi Helm"
             })
 
             sets.engaged.MaxHaste = sets.engaged.HighHaste
             sets.engaged.EmbravaHaste = sets.engaged.HighHaste
+
+            sets.engaged.LastResort = set_combine(sets.engaged, {
+                --head="Ighwa Cap",
+                neck="Agitator's Collar",
+                ring2="Patricius Ring"
+            })
 	
 	 
-            -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-            -- sets if more refined versions aren't defined.
-            -- If you create a set with both offense and defense modes, the offense mode should be first.
-            -- EG: sets.engaged.Dagger.Accuracy.Evasion
-           
-            -- Normal melee group
-            --sets.engaged.Apocalypse = {ammo="Hagneia Stone",
-            --        head="Otomi Helm",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-            --        body="Pak Corselet",hands="Cizin Mufflers",ring1="Rajas Ring",ring2="K'ayres Ring",
-            --        back="Atheling Mantle",waist="Goading Belt",legs="Cizin Breeches",feet="Karieyh Sollerets +1"}
-            --sets.engaged.Apocalypse.Acc = {ammo="Hagneia Stone",
-            --        head="Yaoyotl Helm",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-            --        body="Pak Corselet",hands="Cizin Mufflers",ring1="Rajas Ring",ring2="K'ayres Ring",
-            --        back="Atheling Mantle",waist="Dynamic Belt",legs="Cizin Breeches",feet="Karieyh Sollerets +1"}
-            --sets.engaged.Apocalypse.AM = {ammo="Hagneia Stone",
-            --        head="Yaoyotl Helm",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-            --        body="Pak Corselet",hands="Cizin Mufflers",ring1="Rajas Ring",ring2="K'ayres Ring",
-            --        back="Atheling Mantle",waist="Windbuffet Belt",legs="Cizin Breeches",feet="Karieyh Sollerets +1"}
-            --sets.engaged.Apocalypse.Multi = {ammo="Hagneia Stone",
-            --        head="Otomi Helm",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-            --        body="Pak Corselet",hands="Cizin Mufflers",ring1="Rajas Ring",ring2="K'ayres Ring",
-            --        back="Atheling Mantle",waist="Windbuffet Belt",legs="Cizin Breeches",feet="Ejekamal Boots"}
-            --sets.engaged.Apocalypse.Multi.PDT = {ammo="Hagneia Stone",
-            --        head="Yaoyotl Helm",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-            --        body="Cizin Mail",hands="Cizin Mufflers",ring1="Dark Ring",ring2="Dark Ring",
-            --        back="Atheling Mantle",waist="Dynamic Belt",legs="Cizin Breeches",feet="Cizin Graves"}
-            --sets.engaged.Apocalypse.Multi.Reraise = {ammo="Hagneia Stone",
-            --        head="Twilight Helm",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-            --        body="Twilight Breastplate",hands="Cizin Mufflers",ring1="Rajas Ring",ring2="Mars's Ring",
-            --        back="Atheling Mantle",waist="Dynamic Belt",legs="Cizin Breeches",feet="Ejekamal Boots"}
-            --sets.engaged.Apocalypse.PDT = {ammo="Fire Bomblet",
-            --        head="Cizin Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-            --        body="Cizin Mail",hands="Cizin Mufflers",ring1="Dark Ring",ring2="Dark Ring",
-            --        back="Mollusca Mantle",waist="Nierenschutz",legs="Cizin Breeches",feet="Cizin Greaves"}
-            --sets.engaged.Apocalypse.Acc.PDT = {ammo="Fire Bomblet",
-            --        head="Yaoyotl Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-            --        body="Cizin Mail",hands="Cizin Mufflers",ring1="Dark Ring",ring2="Dark Ring",
-            --        back="Atheling Mantle",waist="Dynamic Belt",legs="Cizin Breeches",feet="Cizin Greaves"}
-            --sets.engaged.Apocalypse.Reraise = {ammo="Fire Bomblet",
-            --        head="Twilight Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-            --        body="Twilight Mail",hands="Cizin Muffler",ring1="Dark Ring",ring2="Dark Ring",
-            --        back="Atheling Mantle",waist="Dynamic Belt",legs="Cizin Breeches",feet="Cizin Greaves"}
-            --sets.engaged.Apocalypse.Acc.Reraise = {ammo="Fire Bomblet",
-            --        head="Twilight Helm",neck="Twilight Torque",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-            --        body="Twilight Mail",hands="Cizin Muffler",ring1="Dark Ring",ring2="DarkRing",
-            --        back="Atheling Mantle",waist="Dynamic Belt",legs="Cizin Breeches",feet="Cizin Greaves"}
-					
-
             -- Custom Melee Group
             sets.engaged['Anahera Scythe'] = {
+                sub="Pole Grip",
                 ammo="Yetshila",
                 head="Otomi Helm",
                 neck="Asperity Necklace",
@@ -385,7 +370,7 @@
                 body="Xaddi Mail",
                 hands="Cizin Mufflers",
                 ring1="Rajas Ring",
-                ring2="Mars's Ring",
+                ring2="K'ayres Ring",
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Cizin Breeches",
@@ -393,10 +378,11 @@
             }
 
             sets.engaged['Anahera Scythe'].Acc = set_combine(sets.engaged['Anahera Scythe'], {
-                neck="Bale Choker",
-                body="Mikinaak Breastplate",
+                neck="Agitator's Collar",
                 waist="Dynamic Belt",
-                feet="Whirlpool Greaves"
+                feet="Whirlpool Greaves",
+                ring1="Patricius Ring",
+                ring2="Mars's Ring"
             })
 
             sets.engaged['Anahera Scythe'].Multi = set_combine(sets.engaged['Anahera Scythe'], {
@@ -416,6 +402,7 @@
             })
 
             sets.engaged['Anahera Scythe'].PDT = set_combine(sets.engaged['Anahera Scythe'], {
+                head="Lithelimb Cap",
                 neck="Agitator's Collar",
                 ring2="Patricius Ring",
                 feet="Cizin Greaves"
@@ -437,32 +424,33 @@
 
             sets.engaged['Anahera Scythe'].EmbravaHaste = sets.engaged['Anahera Scythe'].MaxHaste	        
             sets.engaged['Anahera Scythe'].HighHaste = sets.engaged['Anahera Scythe'].MaxHaste	        
+
+            sets.engage['Anahera Scythe'].LastResort = set_combine(sets.engaged['Anahera Scythe'], {
+                --head="Ighwa Cap",
+                neck="Agitator's Collar",
+                ring2="Patricius Ring"
+            })
             
             sets.buff.Souleater = {head="Ignominy burgeonet +1"}
      
     end
      
-    -------------------------------------------------------------------------------------------------------------------
-    -- Job-specific hooks that are called to process player actions at specific points in time.
-    -------------------------------------------------------------------------------------------------------------------
-    function job_pretarget(spell, action, spellMap, eventArgs)
-        if state.Buff[spell.english] ~= nil then
-            state.Buff[spell.english] = true
-        end
-    end
-     
-  
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
     -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
     function job_precast(spell, action, spellMap, eventArgs)
+        if state.Buff[spell.english] ~= nil then
+            state.Buff[spell.english] = true
+        end
         if spell.action_type == 'Magic' then
             equip(sets.precast.FC)
         end
     end
      
     function job_post_precast(spell, action, spellMap, eventArgs)
-        if state.Buff.Souleater then
-            equip(sets.buff.Souleater)
+        if spell.type == 'WeaponSkill' then
+            if state.Buff.Souleater then
+                equip(sets.buff.Souleater)
+            end
         end
     end
      
@@ -497,9 +485,6 @@
     -------------------------------------------------------------------------------------------------------------------
     -- Modify the default idle set after it was constructed.
     function customize_idle_set(idleSet)
-	    if state.Buff.Souleater then
-	    	idleSet = set_combine(idleSet, sets.buff.Souleater)
-	    end
         return idleSet
     end
      
@@ -607,6 +592,8 @@ function determine_haste_group()
 		classes.CustomMeleeGroups:append('HighHaste')
 	elseif buffactive.march == 2 then
 		classes.CustomMeleeGroups:append('HighHaste')
+    elseif buffactive['last resort'] then
+		classes.CustomMeleeGroups:append('LastResort')
 	end
 end
 
