@@ -430,20 +430,20 @@ function use_ra(spell)
             delay = '3.0'
          else
              if buffactive["Courser's Roll"] then
-                 delay = '1.6'
+                 delay = '1.6' -- MAKE ADJUSTMENT HERE
              else
-                delay = '1.8'
+                delay = '1.8' -- MAKE ADJUSTMENT HERE
             end
         end
     else
     -- GUN 
         if spell.type:lower() == 'weaponskill' then
-            delay = '3.0'
+            delay = '3.0' 
         else
             if buffactive["Courser's Roll"] then
-                delay = '2.0'
+                delay = '2.0' -- MAKE ADJUSTMENT HERE
             else
-                delay = '2.2'
+                delay = '2.2' -- MAKE ADJUSTMENT HERE
             end
         end
     end
