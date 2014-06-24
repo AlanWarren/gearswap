@@ -70,7 +70,7 @@ function init_gear_sets()
 		body="Xaddi Mail",
         hands="Cizin Mufflers",
         ring1="Rajas Ring",
-        ring2="K'ayres Ring",
+        ring2="Oneiros Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Cizin Breeches",
@@ -95,7 +95,6 @@ function init_gear_sets()
 	sets.precast.JA['Deep Breathing'] = {hands="Wyrm Armet"}
 	sets.precast.JA['Spirit Surge'] = { --body="Wyrm Mail +2"
     }
-
 	
 	-- Healing Breath sets
 	sets.HB = {
@@ -104,7 +103,7 @@ function init_gear_sets()
         neck="Lancer's Torque",
         ear1="Steelflash Earring",
         ear2="Bladeborn Earring",
-		body="Cizin Mail",
+		body="Xaddi Mail",
         hands="Cizin Mufflers",
         ring1="Rajas Ring",
         ring2="K'ayres Ring",
@@ -155,7 +154,7 @@ function init_gear_sets()
         ear2="Trux Earring",
 		body="Xaddi Mail",
         hands="Cizin Mufflers",
-        ring1="Rajas Ring",
+        ring1="Oneiros Ring",
         ring2="Pyrosoul Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
@@ -274,20 +273,24 @@ function init_gear_sets()
 		body="Xaddi Mail",
         hands="Cizin Mufflers",
         ring1="Rajas Ring",
-        ring2="K'ayres Ring",
+        ring2="Oneiros Ring",
 		back="Atheling Mantle",
-        waist="Cetl Belt",
+        waist="Windbuffet Belt",
         legs="Cizin Breeches",
         feet="Mikinaak Greaves"
     }
 
 	sets.engaged.Acc = set_combine(sets.engaged, {
+        head="Yaoyotl Helm",
         hands="Mikinaak Gauntlets",
         waist="Dynamic Belt",
-        feet="Whirlpool Greaves"
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+        ring2="Mars's Ring"
     })
 
 	sets.engaged.STP = set_combine(sets.engaged, {
+        body="Lancer's Plackart +2",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
         legs="Phorcys Dirs"
@@ -295,19 +298,21 @@ function init_gear_sets()
 
 	sets.engaged.STP.PDT = set_combine(sets.engaged.STP, {
         legs="Cizin Breeches",
-        ring2="Dark Ring",
+        ring2="Patricius Ring",
         back="Repulse Mantle"
     })
     
     sets.engaged.PDT = set_combine(sets.engaged, {
-        ring2="Dark Ring",
+        head="Lithelimb Cap",
+        ring1="Rajas Ring",
+        ring2="Patricius Ring",
         back="Repulse Mantle"
     })
 
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
-        hands="Cizin Mufflers",
-        legs="Cizin Breeches",
-        ring2="Dark Ring"
+        head="Lithelimb Cap",
+        ring2="Patricius Ring",
+        back="Repulse Mantle"
     })
 
 	sets.engaged.Reraise = set_combine(sets.engaged, {
@@ -316,7 +321,6 @@ function init_gear_sets()
     })
 
 	sets.engaged.Acc.Reraise = sets.engaged.Reraise
-		
 
 end
 
