@@ -1,5 +1,4 @@
--- Current Owner: AlanWarren, aka ~ Orestes 
--- Orinal file credit KBEEZIE
+-- Owner: AlanWarren, aka ~ Orestes 
 -- current file resides @ https://github.com/AlanWarren/gearswap
 --[[ 
 
