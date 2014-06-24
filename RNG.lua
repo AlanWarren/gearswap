@@ -226,11 +226,11 @@ function job_buff_change(buff, gain)
         state.Buff[buff] = gain
     end
     if buff == 'Velocity Shot' and gain then
-        windower.send_command('wait 290;input /echo [VELOCITY SHOT: WEARING OFF IN 10 SEC.]')
+        windower.send_command('wait 290;input /echo **VELOCITY SHOT** Wearing off in 10 Sec.')
     elseif buff == 'Double Shot' and gain then
-        windower.send_command('wait 90;input /echo [DOUBLE SHOT WORE OFF.];wait 90;input /echo [DOUBLE SHOT READY.]')
+        windower.send_command('wait 90;input /echo **DOUBLE SHOT OFF**;wait 90;input /echo **DOUBLE SHOT READY**')
     elseif buff == 'Decoy Shot' and gain then
-        windower.send_command('wait 170;input /echo [DECOY SHOT: WEARING OFF IN 10 SEC.];wait 120;input /echo [DECOY SHOT READY.]')
+        windower.send_command('wait 170;input /echo **DECOY SHOT** Wearing off in 10 Sec.];wait 120;input /echo **DECOY SHOT READY**')
     end
 
     if buff == "Decoy Shot" and  ( player.equipment.range == gear.Bow or use_decoy_with_gun  )then
