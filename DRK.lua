@@ -425,7 +425,7 @@
             sets.engaged['Anahera Scythe'].EmbravaHaste = sets.engaged['Anahera Scythe'].MaxHaste	        
             sets.engaged['Anahera Scythe'].HighHaste = sets.engaged['Anahera Scythe'].MaxHaste	        
 
-            sets.engage['Anahera Scythe'].LastResort = set_combine(sets.engaged['Anahera Scythe'], {
+            sets.engaged['Anahera Scythe'].LastResort = set_combine(sets.engaged['Anahera Scythe'], {
                 --head="Ighwa Cap",
                 neck="Agitator's Collar",
                 ring2="Patricius Ring"
