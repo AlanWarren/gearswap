@@ -529,7 +529,7 @@ function init_gear_sets()
         sets.buff.Camouflage =  {body="Orion Jerkin +1"}
 
         sets.Overkill =  {
-            body="Arcadian Jerkin"
+            body="Arcadian Jerkin +1"
         }
 
         sets.Overkill.Preshot = set_combine(sets.precast.RA, {
