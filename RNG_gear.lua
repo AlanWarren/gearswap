@@ -30,6 +30,7 @@ function init_gear_sets()
             ear1="Loquacious Earring",
             ring1="Prolix Ring"
         }
+        sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
         
         sets.NightEarring = {ear2="Fenrir's earring"}
         sets.DayEarring = {ear2="Volley Earring"}
@@ -120,6 +121,11 @@ function init_gear_sets()
             legs="Nahtirah Trousers",
             waist="Impulse Belt",
             feet="Wurrukatte Boots"
+        }
+        -- Coming in July. This will be used when Coursers + Flurry is up
+        sets.precast.RA.Snapshot = set_combine(sets.precast.RA, {
+            head="Orion Beret +1",
+            feet="Arcadian Socks +1"
         }
         
         ------------------------------------------------------------------
@@ -529,9 +535,6 @@ function init_gear_sets()
         sets.Overkill =  {
             body="Arcadian Jerkin +1"
         }
+        sets.Overkill.Preshot = set_combine(sets.precast.RA, sets.Overkill)
 
-        sets.Overkill.Preshot = set_combine(sets.precast.RA, {
-            body="Arcadian Jerkin +1"
-        })
 end
-
