@@ -414,6 +414,12 @@ function get_custom_ranged_groups()
     if buffactive['Samurai Roll'] then
         classes.CustomRangedGroups:append('SamRoll')
     end
+
+    if buffactive['Flurry'] or buffactive['Flurry II'] then
+        if buffactive["Courser's Roll"] then
+            classes.CustomRangedGroups:append('MaxSnapshot')
+        end
+    end
     
 end
 
