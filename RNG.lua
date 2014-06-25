@@ -68,31 +68,28 @@ function user_setup()
         auto_gun_ws = "Coronach"
         auto_bow_ws = "Namas Arrow"
 
+        use_decoy_with_gun = false
+        use_night_earring = true
+
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
         gear.Stave = "Mekki Shakki"
+        
+        gear.Earring = { name="Volley Earring" }
+        gear.NightEarring = "Fenrir's earring"
+        gear.DayEarring = "Volley Earring"
        
-        -- DualWield 
         rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Sabebus', 
             'Eminent Axe', 'Trailer\'s Kukri', 'Aphotic Kukri'}
         
-        -- Do you want to use Fenrir's Earring at night?
-        use_night_earring = true
-        -- Do you want decoy to be considered when using gun? 
-        -- hint: this should be true if you don't have annihilator, but you'll have to create sets for it. 
-        use_decoy_with_gun = false
-
-        get_combat_form()
-        get_custom_ranged_groups()
         sam_sj = player.sub_job == 'SAM' or false
 
-        -- Overriding Global Defaults for this job
-        gear.default.weaponskill_neck = "Ocachi Gorget"
-        gear.default.weaponskill_waist = "Elanid Belt"
- 
       	DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"}
 	    U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"} 
-        
+
+        select_earring()
+        get_combat_form()
+        get_custom_ranged_groups()
         select_default_macro_book()
 
         send_command('bind f9 gs c cycle RangedMode')
@@ -182,7 +179,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     elseif state.Buff.Overkill then
         equip(sets.Overkill.Preshot)
     end
-    sets.earring = select_earring()
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -272,7 +268,7 @@ end
 -- Can customize state or custom melee class values at this point.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
-    sets.earring = select_earring()
+    --select_earring()
 end
  
 function customize_idle_set(idleSet)
@@ -295,6 +291,7 @@ end
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
          state.CombatWeapon = player.equipment.range
+         select_earring()
     end
 
     if camo_active() then
@@ -304,17 +301,6 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     end
 end
  
-
-function select_earring()
-    -- world.time is given in minutes into each day
-    -- 7:00 AM would be 420 minutes
-    -- 17:00 PM would be 1020 minutes
-    if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
-        return sets.NightEarring
-    else
-        return sets.DayEarring
-    end
-end
 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
@@ -380,7 +366,7 @@ function display_current_job_state(eventArgs)
     eventArgs.handled = true
  
 end
-
+-- Special WS mode for Sam subjob
 function get_custom_wsmode(spell, spellMap, ws_mode)
     if spell.skill == 'Archery' or spell.skill == 'Marksmanship' then
         if player.sub_job == 'SAM' then
@@ -403,6 +389,17 @@ function get_combat_form()
     end
 end
 
+function select_earring()
+    -- world.time is given in minutes into each day
+    -- 7:00 AM would be 420 minutes
+    -- 17:00 PM would be 1020 minutes
+    if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
+        gear.Earring.name = gear.NightEarring
+    else
+        gear.Earring.name = gear.DayEarring
+    end
+end
+
 function get_custom_ranged_groups()
 	classes.CustomRangedGroups:clear()
     
@@ -416,10 +413,8 @@ function get_custom_ranged_groups()
         classes.CustomRangedGroups:append('SamRoll')
     end
 
-    if buffactive['Flurry'] or buffactive['Flurry II'] then
-        if buffactive["Courser's Roll"] then
-            classes.CustomRangedGroups:append('Snapshot')
-        end
+    if ( buffactive['Flurry'] or buffactive['Flurry II'] ) and buffactive["Courser's Roll"] then
+        classes.CustomRangedGroups:append('Snapshot')
     end
     
 end

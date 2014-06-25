@@ -32,11 +32,6 @@ function init_gear_sets()
         }
         sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
         
-        sets.NightEarring = {ear2="Fenrir's earring"}
-        sets.DayEarring = {ear2="Volley Earring"}
-
-        sets.earring = select_earring()
-
         sets.idle = {
             head="Crimson Mask",
             neck="Twilight Torque",
@@ -160,12 +155,11 @@ function init_gear_sets()
 
         -- Stave sets 
         
-        -- Placeholder for custom earring
-        sets.StavePH = set_combine(sets.midcast.RA, {
+        sets.midcast.RA.Stave = set_combine(sets.midcast.RA, {
+            ear1=gear.Earring,
             body="Arcadian Jerkin +1",
             back="Lutian Cape"
         })
-        sets.midcast.RA.Stave = set_combine(sets.StavePH, sets.earring)
 
         sets.midcast.RA.Stave.Mid = set_combine(sets.midcast.RA.Stave, {
             body="Kyujutsugi",
@@ -179,13 +173,11 @@ function init_gear_sets()
         })
         
         -- Samurai Roll sets 
-        -- Placeholder for custom earring
-        sets.SamPH = set_combine(sets.midcast.RA, {
+        sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
+            ear1=gear.Earring,
             body="Arcadian Jerkin +1",
             ring2="Pyrosoul Ring",
         })
-
-        sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, sets.SamPH)
 
         sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
             ring2="Longshot Ring",
@@ -271,15 +263,14 @@ function init_gear_sets()
             legs="Arcadian Braccae +1",
             feet="Arcadian Socks +1"
         }
-        -- place holder
-        sets.YoichiPH = set_combine(sets.midcast.RA.Yoichinoyumi, {
-            ear1="Volley Earring",
+        sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
+            ear1=gear.Earring,
             back="Lutian Cape",
-            feet="Orion Socks +1",
-            legs="Aetosaur Trousers +1"
+            legs="Aetosaur Trousers +1",
+            feet="Orion Socks +1"
         })
-        sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.YoichiPH, sets.earring)
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
+            neck="Iqabi Necklace",
             hands="Seiryu's Kote",
             ring1="Longshot Ring",
             ring2="Paqichikaji Ring",
@@ -287,17 +278,24 @@ function init_gear_sets()
         })
 
         -- Decoy up 
-        -- place holder
-        sets.YoichiDecoyPH = set_combine(sets.midcast.RA.Yoichinoyumi, {
-            ear1="Volley Earring",
+        sets.midcast.RA.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi, {
+            ear1=gear.Earring,
             legs="Nahtirah Trousers"
         })
-        sets.midcast.RA.Yoichinoyumi.Decoy = set_combine(sets.YoichiDecoyPH, sets.earring)
 
-        sets.midcast.RA.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
-            hands="Seiryu's Kote"
+        sets.midcast.RA.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Decoy, {
+            hands="Seiryu's Kote",
+            legs="Aetosaur Trousers +1",
+            feet="Orion Socks +1"
         })
-        sets.midcast.RA.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Acc, {})
+        sets.midcast.RA.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Mid.Decoy, {
+            ear1=gear.Earring,
+            neck="Iqabi Necklace",
+            hands="Seiryu's Kote",
+            ring1="Longshot Ring",
+            ring2="Paqichikaji Ring",
+            legs="Arcadian Braccae +1"
+        })
        
         -- Stave
         sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Iuitl Wristbands +1" })
@@ -305,18 +303,25 @@ function init_gear_sets()
         sets.midcast.RA.Stave.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Acc, {})
 
         -- Stave / Decoy up
-        sets.YoichiStavePH = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
-            hands="Sylvan Glovelettes +2",
-            ear1="Volley Earring",
-            legs="Nahtirah Trousers",
-            feet="Orion Socks +1"
-        })
-        sets.midcast.RA.Stave.Yoichinoyumi.Decoy = set_combine(sets.YoichiStavePH, sets.earring)
-        sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mid, {
+        sets.midcast.RA.Stave.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
+            ear1=gear.Earring,
+            body="Arcadian Jerkin +1",
+            hands="Arcadian Bracers +1",
             legs="Aetosaur Trousers +1"
         })
-        sets.midcast.RA.Stave.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Acc, {})
-
+        sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Decoy, {
+            body="Kyujutsugi",
+            hands="Seiryu's Kote",
+            back="Lutian Cape",
+            legs="Nahtirah Trousers"
+        })
+        sets.midcast.RA.Stave.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy, {
+            neck="Iqabi Necklace",
+            ring1="Longshot Ring",
+            ring2="Hajduk Ring",
+            legs="Aetosaur Trousers +1",
+            feet="Orion Socks +1"
+        })
         
         -- Sam SJ / Bow - assuming you'll use a Stave here..
         sets.midcast.RA.SAM.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.SAM, {
