@@ -178,8 +178,7 @@ function init_gear_sets()
     sets.Rin = {
         neck="Asperity Necklace",
         waist="Windbuffet Belt",
-        ring1="Rajas Ring",
-        feet="Qaaxo Leggings"
+        ring1="Oneiros Ring",
     }
     sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
     sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
@@ -189,7 +188,8 @@ function init_gear_sets()
     sets.Ku = {
         neck="Shadow Gorget",
         waist="Soil Belt",
-        ring1="Thundersoul Ring",
+        ring1="Rajas Ring",
+        ring2="Pyrosoul Ring",
     }
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
     sets.precast.WS['Blade: Ku'].Mid = set_combine(sets.precast.WS.Mid, sets.Ku)
