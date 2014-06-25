@@ -245,7 +245,7 @@ function job_buff_change(buff, gain)
         if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
             classes.CustomRangedGroups:append('SamRoll')
         end
-
+        -- This is assuming there will be a ranged delay cap, and we'll be able to hit it with roll + spell
         if (string.find(buff:lower(), 'flurry') and gain) or (buffactive['Flurry'] or buffactive['Flurry II']) then
             if buffactive["Courser's Roll"] then
                 classes.CustomRangedGroups:append('MaxSnapshot')
