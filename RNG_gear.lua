@@ -121,7 +121,7 @@ function init_gear_sets()
         sets.precast.RA.Snapshot = set_combine(sets.precast.RA, {
             head="Orion Beret +1",
             feet="Arcadian Socks +1"
-        }
+        })
         
         ------------------------------------------------------------------
         -- Default Base Gear Sets for Ranged Attacks. Geared for Gun
