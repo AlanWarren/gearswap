@@ -232,21 +232,25 @@ function job_buff_change(buff, gain)
         windower.send_command('wait 170;input /echo **DECOY SHOT** Wearing off in 10 Sec.];wait 120;input /echo **DECOY SHOT READY**')
     end
 
-    if buff == "Decoy Shot" and  ( player.equipment.range == gear.Bow or use_decoy_with_gun  )then
+    if  buff == "Decoy Shot" or buff == "Samurai Roll" or buff == "Courser's Roll" or string.find(buff:lower(), 'flurry') then
         classes.CustomRangedGroups:clear()
 
         if (buff == "Decoy Shot" and gain) or buffactive['Decoy Shot'] then
-            classes.CustomRangedGroups:append('Decoy')
+            -- Only append Decoy if we're using bow, or changed the setting to force it
+            if player.equipment.range == gear.Bow or use_decoy_with_gun then
+                classes.CustomRangedGroups:append('Decoy')
+            end
         end
-    end
-
-    if buff == "Samurai Roll" then
-        classes.CustomRangedGroups:clear()
-
+        
         if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
             classes.CustomRangedGroups:append('SamRoll')
         end
 
+        if (string.find(buff:lower(), 'flurry') and gain) or (buffactive['Flurry'] or buffactive['Flurry II']) then
+            if buffactive["Courser's Roll"] then
+                classes.CustomRangedGroups:append('MaxSnapshot')
+            end
+        end
     end
 
     if buff == "Camouflage" then

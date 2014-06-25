@@ -37,8 +37,8 @@ function init_gear_sets()
         sets.earring = select_earring()
 
         sets.idle = {
-            head="Umbani Cap",
-            neck="Twilight torque",
+            head="Crimson Mask",
+            neck="Twilight Torque",
             ear1="Volley Earring",
             ear2="Dawn Earring",
             body="Kheper Jacket",
@@ -55,6 +55,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Fenrir's Earring",
             ear2="Dawn Earring",
+            body="Arcadian Jerkin +1",
             ring1="Rajas Ring",
             ring2="Pyrosoul Ring",
             back="Lutian Cape"
@@ -66,20 +67,21 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Volley Earring",
             ear2="Tripudio Earring",
-            body="Kyujutsugi",
-            hands="Sigyn's Bazubands",
+            body="Arcadian Jerkin +1",
+            hands="Iuitl Wristbands +1",
             ring1="Rajas Ring",
             ring2="Paguroidea Ring",
             back="Repulse Mantle",
-            waist="Elanid Belt",
+            waist="Impulse Belt",
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
-
-        sets.engaged.Yoichinoyumi = set_combine(sets.engaged, {
-            hands="Arcadian Bracers +1",
-            feet="Arcadian Socks +1"
+        sets.engaged.PDT = set_combine(sets.engaged, {
+            neck="Twilight Torque",
+            ring1="Dark Ring",
+            ring2="Patricius Ring"
         })
+        sets.engaged.Yoichinoyumi = set_combine(sets.engaged, {})
 
         sets.engaged.Melee = {
             head="Whirlpool Mask",
@@ -88,28 +90,24 @@ function init_gear_sets()
             ear2="Steelflash Earring",
             body="Qaaxo Harness",
             hands="Iuitl Wristbands +1",
-            ring1="Patricius Ring",
+            ring1="Oneiros Ring",
             ring2="Epona's Ring",
             back="Atheling Mantle",
             waist="Cetl Belt",
             legs="Manibozho Brais",
             feet="Qaaxo Leggings"
         }
+        sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
+            neck="Twilight Torque",
+            ring1="Dark Ring",
+            ring2="Patricius Ring"
+        })
 
         sets.engaged.DualWield = set_combine(sets.engaged, {})
         sets.engaged.DualWield.Melee = set_combine(sets.engaged.Melee, {
-            head="Whirlpool Mask",
-            neck="Asperity Necklace",
-            body="Qaaxo Harness",
             ear1="Dudgeon Earring",
             ear2="Heartseeker Earring",
-            hands="Iuitl Wristbands +1",
-            ring1="Oneiros Ring",
-            ring2="Epona's Ring",
-            back="Atheling Mantle",
-            waist="Patentia Sash",
-            legs="Manibozho Brais",
-            feet="Qaaxo Leggings"
+            waist="Patentia Sash"
         })
 
         ------------------------------------------------------------------
@@ -533,8 +531,7 @@ function init_gear_sets()
         }
 
         sets.Overkill.Preshot = set_combine(sets.precast.RA, {
-            head="Orion Beret +1",
-            feet="Arcadian Socks +1"
+            body="Arcadian Jerkin +1"
         })
 end
 
