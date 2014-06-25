@@ -158,7 +158,7 @@ function init_gear_sets()
         
         -- Placeholder for custom earring
         sets.StavePH = set_combine(sets.midcast.RA, {
-            body="Sylvan Caban +2",
+            body="Arcadian Jerkin +1",
             back="Lutian Cape"
         })
         sets.midcast.RA.Stave = set_combine(sets.StavePH, sets.earring)
@@ -177,7 +177,7 @@ function init_gear_sets()
         -- Samurai Roll sets 
         -- Placeholder for custom earring
         sets.SamPH = set_combine(sets.midcast.RA, {
-            body="Sylvan Caban +2",
+            body="Arcadian Jerkin +1",
             ring2="Pyrosoul Ring",
         })
 
@@ -195,7 +195,7 @@ function init_gear_sets()
         })
 
         sets.midcast.RA.Stave.SamRoll = set_combine(sets.midcast.RA.Stave, {
-            body="Sylvan Caban +2",
+            body="Arcadian Jerkin +1",
             ring2="Pyrosoul Ring",
             waist="Elanid Belt"
         })
