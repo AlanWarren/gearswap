@@ -189,7 +189,7 @@ function init_gear_sets()
     sets.Ku = {
         neck="Shadow Gorget",
         waist="Windbuffet Belt",
-        ring1="Thundersoul Ring",
+        ring1="Oneiros Ring",
     }
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
     sets.precast.WS['Blade: Ku'].Mid = set_combine(sets.precast.WS.Mid, sets.Ku)
