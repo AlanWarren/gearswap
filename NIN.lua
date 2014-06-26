@@ -61,6 +61,7 @@ function init_gear_sets()
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
     sets.precast.JA['Futae'] = { hands="Iga Tekko +1" }
     sets.precast.JA['Provoke'] = { 
+        neck="Atzintli Necklace",
         ear1="Trux Earring", 
         ear2="Friomisi Earring",
         feet="Mochizuki Kyahan +1"
