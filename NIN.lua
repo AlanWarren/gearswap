@@ -269,14 +269,12 @@ function init_gear_sets()
     	head="Hachiya Hatsuburi +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
-        neck="Stoicheion Medal",
     	body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
     	back="Yokaze Mantle",
         ring1="Diamond Ring",
-        ring2="Acumen Ring",
         waist="Hurch'lan Sash",
-        legs="Mochizuki Hakama +1",
+        legs="Kabnaax Trousers",
         feet="Mochizuki Kyahan +1"
     }
     --sets.midcast.Ninjutsu.Resistant = set_combine(sets.midcast.Ninjutsu, {ear1="Lifestorm Earring",ear2="Psystorm Earring"})
