@@ -89,6 +89,26 @@ function init_gear_sets()
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
+    -- Ranged
+    sets.precast.RA = {
+        head="Uk'uxkaj Cap",
+        hands="Manibozho Gloves",
+        legs="Nahtirah Trousers",
+        feet="Wurrukatte Boots"
+    }
+    sets.midcast.RA = {
+        head="Umbani Cap",
+        neck="Iqabi Necklace",
+        body="Mochizuki Chainmail +1",
+        hands="Hachiya Tekko",
+        ring1="Longshot Ring",
+        ring2="Paqichikaji Ring",
+        back="Yokaze Mantle",
+        --waist="Hurling Belt",
+        legs="Hachiya Hakama +1",
+        feet="Qaaxo Leggings"
+    }
+    sets.precast.JA.Sange = sets.midcast.RA
     
     -- Fast cast sets for spells
     sets.precast.FC = {
