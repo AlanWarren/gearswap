@@ -240,7 +240,7 @@ function init_gear_sets()
     	waist="Hurch'lan Sash",
         ring1="Prolix Ring",
         ring1="Diamond Ring",
-        legs="Mochizuki Hakama +1",
+        legs="Kaabnax Trousers",
         feet="Mochizuki Kyahan +1"
     }
     	
