@@ -322,13 +322,13 @@ function init_gear_sets()
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
-        neck="Agitator's Collar", 
+        neck="Agitator's Collar",
+        ring2="Patricius Ring",
         waist="Dynamic Belt"
     })
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Sakonji Kabuto +1",
-        body="Sakonji Domaru +1",
         ring2="Mars's Ring",
         feet="Wakido Sune-Ate +1",
         back="Takaha Mantle"
@@ -418,13 +418,13 @@ function init_gear_sets()
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         head="Yaoyotl Helm",
         neck="Agitator's Collar",
+        ring2="Patricius Ring",
         waist="Dynamic Belt"
     })
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
         sub="Bloodrain Strap",
-        ring1="Patricius Ring",
-        ring2="Mars's Ring",
+        ring1="Mars's Ring",
         feet="Wakido Sune-Ate +1",
         back="Takaha Mantle"
     })
@@ -445,7 +445,7 @@ function init_gear_sets()
     
     -- Tsurumaru 4-hit 19% DA, 28% haste 
     sets.engaged.Adoulin.Yoichi = {
-        sub="Bloodrain Strap",
+        --sub="Bloodrain Strap",
         ammo=gear.RAarrow,
         head="Otomi Helm",
         neck="Asperity Necklace", -- 3
