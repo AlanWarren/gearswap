@@ -95,7 +95,7 @@ function init_gear_sets()
         head="Lanun Tricorne",
         hands="Navarch's Gants +2",
         body="Lanun Frac",
-        back="Repulse Mantle"
+        back="Repulse Mantle",
     }
 	
 	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
@@ -273,7 +273,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
         ammo=gear.RAbullet,
-		head="Lithelimb Cap",
+		head="Ocelomeh Headpiece +1",
         neck="Twilight Torque",
         ear1="Dawn Earring",
 		body="Kheper Jacket",

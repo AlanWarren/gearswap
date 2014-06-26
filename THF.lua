@@ -300,7 +300,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
 	sets.idle = {
-		head="Felistris Mask",
+		head="Ocelomeh Headpiece +1",
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
@@ -315,7 +315,7 @@ function init_gear_sets()
     }
 
 	sets.idle.Town = set_combine(sets.idle, {
-		back="Canny Cape"
+		back="Felistris Mask"
     })
 	
 	sets.idle.Weak = sets.idle.Town
