@@ -322,6 +322,7 @@ function init_gear_sets()
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
+        body="Sakjonji Domaru +1",
         neck="Agitator's Collar",
         ring2="Patricius Ring",
         waist="Dynamic Belt"
