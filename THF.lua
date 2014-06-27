@@ -118,7 +118,7 @@ function init_gear_sets()
 	sets.precast.JA['Flee'] = {}
 	sets.precast.JA['Hide'] = {}
 	sets.precast.JA['Conspirator'] = {} -- {body="Raider's Vest +2"}
-	sets.precast.JA['Steal'] = {}
+	sets.precast.JA['Steal'] = { legs="Pillager's Culottes +1" }
 	sets.precast.JA['Despoil'] = {}
 	sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
 	sets.precast.JA['Feint'] = {hands="Plunderer's Armlets +1"} -- {legs="Assassin's Culottes +2"}
@@ -143,7 +143,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         waist="Anguinus Belt",
-        legs="Manibozho Brais",
+        legs="Pillager's Culottes +1",
         feet="Raider's Poulaines +2"
 
     }
@@ -151,8 +151,8 @@ function init_gear_sets()
 	sets.precast.JA.Provoke = sets.TreasureHunter
 
 	-- Fast cast sets for spells
-	sets.precast.FC = {ring1="Prolix Ring"}
-	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {})
+	sets.precast.FC = {head="Uk'uxkaj Cap",ear1="Loquacious Earring"ring1="Prolix Ring",legs="Kaabnax Trousers"}
+	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
 	-- Ranged snapshot gear
 	sets.precast.RA = {head="Uk'uxkaj Cap",hands="Iuitl Wristbands +1",legs="Nahtirah Trousers", feet="Wurrukatte Boots"}
@@ -172,7 +172,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
 		back="Atheling Mantle",
         waist="Elanid Belt",
-        legs="Nahtirah Trousers",
+        legs="Pillager's Culottes +1",
         feet="Qaaxo Leggings"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -201,8 +201,12 @@ function init_gear_sets()
             back="Canny Cape"
     })
 	sets.precast.WS['Exenterator'].Mod = set_combine(sets.precast.WS['Exenterator'], {waist="Thunder Belt"})
-	sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mod, {neck="Breeze Gorget"})
-	sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'].Mod, {neck="Breeze Gorget"})
+	sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mod, {
+        neck="Breeze Gorget", hands="Pillager's Armlets +1", legs="Pillager's Culottes +1", back="Rancorous Mantle"
+    })
+	sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'].Mod, {neck="Breeze Gorget",
+        hands="Pillager's Armlets +1"
+    })
 	sets.precast.WS['Exenterator'].SATA = set_combine(sets.precast.WS['Exenterator'].Mod, {neck="Breeze Gorget"})
 
 	sets.precast.WS['Dancing Edge'] = set_combine(sets.precast.WS, {neck="Breeze Gorget", waist="Thunder Belt"})
@@ -217,8 +221,10 @@ function init_gear_sets()
             neck="Rancor Collar",
 		    ear1="Brutal Earring",
             ear2="Trux Earring",
+            hands="Pillager's Armlets +1",
             ring1="Thundersoul Ring",
             waist="Light Belt",
+            legs="Pillager's Culottes +1",
             back="Atheling Mantle",
             feet="Plunderer's Poulaines"
     })
@@ -268,18 +274,19 @@ function init_gear_sets()
 	sets.midcast.Utsusemi = {
 		head="Felistris Mask",
         hands="Iuitl Wristbands +1",
-		waist="Hurch'lan Sash"
+		waist="Hurch'lan Sash",
+        legs="Kaabnax Trousers"
     }
 
 	-- Ranged gear -- acc + TH
 	sets.midcast.RA = {
-		head="Uk'uxkaj Cap",
-        neck="Huani Collar",
+		head="Umbani Cap",
+        neck="Iqabi Necklace",
         ear1="Clearview Earring",
         ear2="Volley Earring",
-		body="Thaumas Coat",
-        hands="Iuitl Wristbands +1",
-        ring1="Rajas Ring",
+		body="Qaaxo Harness",
+        hands="Sigyn's Bazubands",
+        ring1="Longshot Ring",
         ring2="Hajduk Ring",
 		back="Libeccio Mantle",
         waist="Aquiline Belt",
@@ -305,12 +312,12 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Kheper Jacket",
-        hands="Iuitl Wristbands +1",
+        hands="Pillager's Armlets +1",
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
 		back="Repulse Mantle",
         waist="Patentia Sash",
-        legs="Nahtirah Trousers",
+        legs="Pillager's Culottes +1",
         feet="Trotter Boots"
     }
 
@@ -384,7 +391,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
 		back="Canny Cape",
         waist="Patentia Sash",
-        legs="Manibozho Brais",
+        legs="Pillager's Culottes +1",
         feet="Plunderer's Poulaines"
     }
 	sets.engaged.Acc = set_combine(sets.engaged, {
@@ -397,12 +404,11 @@ function init_gear_sets()
     })
 	sets.engaged.iLvl = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
-        ring1="Oneiros Ring"
     })
 	sets.engaged.Evasion = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
         ring1="Patricius Ring",
-        hands="Plunderer's Armlets +1",
+        hands="Pillager's Armlets +1",
         feet="Qaaxo Leggings"
     })
     sets.engaged.Evasion.iLvl = sets.engaged.Evasion
@@ -421,7 +427,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
 		back="Shadow Mantle",
         waist="Patentia Sash",
-        legs="Iuitl Tights",
+        legs="Pillager's Culottes +1",
         feet="Qaaxo Leggings"
     }
 	sets.engaged.Acc.PDT = sets.engaged.PDT

@@ -34,11 +34,20 @@ function user_setup()
     enfeeblingNinjutsu = S{"yurin: ichi", "aisha: ichi", "dokumori: ichi", "kurayami: ni", "hojo: ni", "jubaku: ichi"}
     
     state.Defense.PhysicalMode = 'PDT'
+   
+    gear.MovementFeet = { name="Danzo Sune-ate" }
+    gear.DayFeet = "Danzo sune-ate"
+    gear.NightFeet = "Hachiya Kyahan"
+
+    gear.StaticAmmo = { name="Tengu-no-Hane" }
+    gear.NightAccAmmo = "Fire Bomblet"
+    gear.DayAccAmmo = "Tengu-no-Hane"
+    
+    select_movement_feet()
+    select_default_macro_book()
     
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
-
-    select_default_macro_book()
 end
 
 
@@ -54,8 +63,6 @@ function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
-    
-    gear.ammo = select_ammo()
 
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
@@ -117,119 +124,9 @@ function init_gear_sets()
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         legs="Kaabnax Trousers",
-        feet="Mochizuki Kyahan +1"
+        feet="Mochizuki Kyahan +1" -- special enhancement for casting ninjutsu III
     }
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Mochizuki Chainmail +1"})
-    
-    sets.precast.WS = {
-    	head="Felistris Mask",
-        neck="Asperity Necklace",
-        ear1="Brutal Earring",
-        ear2="Trux Earring",
-    	body="Mochizuki chainmail +1",
-        hands="Mochizuki Tekko +1",
-        ring1="Rajas Ring",
-        ring2="Epona's Ring",
-    	back="Atheling Mantle",
-        waist="Windbuffet Belt",
-        legs="Manibozho Brais",
-        feet="Mochizuki Kyahan +1"
-    }
-    sets.precast.WS.Proc = set_combine(sets.precast.WS, {
-        head="Hakke Hachimaki"
-    })
-
-    sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-        head="Whirlpool Mask",
-        hands="Umuthi Gloves",
-        back="Yokaze Mantle"
-    })
-    sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-        hands="Umuthi Gloves",
-        legs="Hachiya Hakama +1",
-        ring1="Mars's Ring"
-    })
-    
-    -- BLADE: JIN
-    sets.Jin = {
-        head="Uk'uxkaj Cap",
-        neck="Breeze Gorget",
-        ring1="Thundersoul Ring",
-        waist="Thunder Belt",
-        back="Rancorous Mantle"
-    }
-    sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
-    sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS.Mid, sets.Jin)
-    sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS.Acc, sets.Jin)
-    
-    -- BLADE: HI
-    sets.Hi = {
-        head="Uk'uxkaj Cap",
-        body="Mochizuki Chainmail +1",
-        neck="Shadow gorget",
-    	ring1="Stormsoul Ring",
-        back="Rancorous Mantle",
-        legs="Mochizuki Hakama +1",
-        waist="Soil belt"
-    }
-    sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
-    sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-        head="Whirlpool Mask",
-        back="Yokaze Mantle",
-        legs="Hachiya Hakama +1"
-    })
-    sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {
-        head="Whirlpool Mask", 
-        legs="Hachiya Hakama +1", 
-        ring1="Mars's Ring",
-        back="Yokaze Mantle"
-    })
-
-    -- BLADE: SHUN
-    sets.Shun = {
-        neck="Breeze Gorget",
-        waist="Thunder Belt",
-        ring1="Thundersoul Ring",
-        ear1="Dawn Earring"
-    }
-    sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
-    sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
-    sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
-    
-    -- BLADE: Rin
-    sets.Rin = {
-        neck="Asperity Necklace",
-        waist="Windbuffet Belt",
-        ring1="Oneiros Ring",
-    }
-    sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
-    sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
-    sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin)
-    
-    -- BLADE: KU 
-    sets.Ku = {
-        neck="Shadow Gorget",
-        waist="Soil Belt",
-        ring1="Rajas Ring",
-        ring2="Pyrosoul Ring",
-    }
-    sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
-    sets.precast.WS['Blade: Ku'].Mid = set_combine(sets.precast.WS.Mid, sets.Ku)
-    sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS.Acc, sets.Ku)
-    
-    sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    	head="Umbani Cap",
-        ear1="Friomisi Earring",
-        ear2="Crematio Earring",
-        neck="Stoicheion Medal",
-        ring1="Stormsoul Ring",
-        ring2="Acumen Ring",
-    	back="Toro Cape",
-        legs="Shneddick Tights +1",
-        waist="Thunder Belt",
-        feet="Mochizuki Kyahan +1"
-     })
-    
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -277,7 +174,6 @@ function init_gear_sets()
         legs="Kabnaax Trousers",
         feet="Mochizuki Kyahan +1"
     }
-    --sets.midcast.Ninjutsu.Resistant = set_combine(sets.midcast.Ninjutsu, {ear1="Lifestorm Earring",ear2="Psystorm Earring"})
     
     -- Sets to return to when not performing an action.
     
@@ -297,17 +193,17 @@ function init_gear_sets()
     	back="Repulse Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Danzo sune-ate"
+        feet=gear.MovementFeet
     }
     
     sets.idle.Town = set_combine(sets.idle, {
         head="Hachiya Hatsuburi +1",
         neck="Agitator's Collar",
-        body="Hachiya Chainmail +1",
+        body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
-        legs="Hachiya Hakama +1",
+        legs="Mochizuki Hakama +1",
     	back="Yokaze Mantle"
     })
     
@@ -332,17 +228,9 @@ function init_gear_sets()
         feet="Hachiya Kyahan"
     })
     
-    sets.DayMovement = {feet="Danzo sune-ate"}
-    sets.NightMovement = {feet="Hachiya Kyahan"}
-    
-    sets.Kiting = select_movement()
+    sets.Kiting = { feet=gear.MovementFeet }
     
     -- Engaged sets
-    
-    -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-    -- sets if more refined versions aren't available.
-    -- If you create a set with both offense and defense modes, the offense mode should be first.
-    -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
     sets.engaged = {
@@ -380,9 +268,9 @@ function init_gear_sets()
         back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
     })
-    -- wtf I can't hit anything set
+    
     sets.engaged.Acc = {
-        ammo=gear.ammo,
+        ammo=gear.StaticAmmo,
         head="Whirlpool Mask",
         neck="Agitator's Collar",
         ear1="Dudgeon Earring",
@@ -451,7 +339,7 @@ function init_gear_sets()
     }
 
     sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
-        ammo=gear.ammo,
+        ammo=gear.StaticAmmo,
         neck="Iqabi Necklace",
         body="Mochizuki Chainmail +1",
         ring2="Patricius Ring",
@@ -580,6 +468,118 @@ function init_gear_sets()
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
     sets.Counter = { legs="Iga Hakama +2" }
+    
+    -- Weaponskills 
+    
+    sets.precast.WS = {
+    	head="Felistris Mask",
+        neck="Asperity Necklace",
+        ear1="Brutal Earring",
+        ear2="Trux Earring",
+    	body="Mochizuki chainmail +1",
+        hands="Mochizuki Tekko +1",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+    	back="Atheling Mantle",
+        waist="Windbuffet Belt",
+        legs="Manibozho Brais",
+        feet="Mochizuki Kyahan +1"
+    }
+    sets.precast.WS.Proc = set_combine(sets.precast.WS, {
+        head="Hakke Hachimaki"
+    })
+
+    sets.precast.WS.Mid = set_combine(sets.precast.WS, {
+        head="Whirlpool Mask",
+        hands="Umuthi Gloves",
+        back="Yokaze Mantle"
+    })
+    sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
+        hands="Umuthi Gloves",
+        legs="Hachiya Hakama +1",
+        ring1="Mars's Ring"
+    })
+    
+    -- BLADE: JIN
+    sets.Jin = {
+        head="Uk'uxkaj Cap",
+        neck="Breeze Gorget",
+        ring1="Thundersoul Ring",
+        waist="Thunder Belt",
+        back="Rancorous Mantle"
+    }
+    sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
+    sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS.Mid, sets.Jin)
+    sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS.Acc, sets.Jin)
+    
+    -- BLADE: HI
+    sets.Hi = {
+        head="Uk'uxkaj Cap",
+        body="Mochizuki Chainmail +1",
+        neck="Shadow gorget",
+    	ring1="Stormsoul Ring",
+        back="Rancorous Mantle",
+        legs="Mochizuki Hakama +1",
+        waist="Soil belt"
+    }
+    sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
+    sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
+        head="Whirlpool Mask",
+        back="Yokaze Mantle",
+        legs="Hachiya Hakama +1"
+    })
+    sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {
+        head="Whirlpool Mask", 
+        legs="Hachiya Hakama +1", 
+        ring1="Mars's Ring",
+        back="Yokaze Mantle"
+    })
+
+    -- BLADE: SHUN
+    sets.Shun = {
+        neck="Breeze Gorget",
+        waist="Thunder Belt",
+        ring1="Thundersoul Ring",
+        ear1="Dawn Earring"
+    }
+    sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
+    sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
+    sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
+    
+    -- BLADE: Rin
+    sets.Rin = {
+        neck="Asperity Necklace",
+        waist="Windbuffet Belt",
+        ring1="Oneiros Ring",
+    }
+    sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
+    sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
+    sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin)
+    
+    -- BLADE: KU 
+    sets.Ku = {
+        neck="Shadow Gorget",
+        waist="Soil Belt",
+        ring1="Rajas Ring",
+        ring2="Pyrosoul Ring",
+    }
+    sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
+    sets.precast.WS['Blade: Ku'].Mid = set_combine(sets.precast.WS.Mid, sets.Ku)
+    sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS.Acc, sets.Ku)
+    
+    sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
+    	head="Umbani Cap",
+        ear1="Friomisi Earring",
+        ear2="Crematio Earring",
+        neck="Stoicheion Medal",
+        ring1="Stormsoul Ring",
+        ring2="Acumen Ring",
+    	back="Toro Cape",
+        legs="Shneddick Tights +1",
+        waist="Thunder Belt",
+        feet="Mochizuki Kyahan +1"
+     })
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -616,7 +616,6 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-    gear.ammo = select_ammo()
 	--if spell.type:lower() == 'weaponskill' then
     --    if state.OffenseMode == 'Proc' then
     --        equip(sets.precast.WS.Stave)
@@ -662,13 +661,11 @@ end
 -- Can customize state or custom melee class values at this point.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
-	sets.Kiting = select_movement()
-    gear.ammo = select_ammo()
+    select_static_ammo()
 end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-	idleSet = set_combine(idleSet, select_movement())
 	if state.Buff.Migawari then
 		idleSet = set_combine(idleSet, sets.buff.Migawari)
 	end
@@ -706,8 +703,11 @@ function job_buff_change(buff, gain)
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
+    select_static_ammo()
+    if newStatus == 'Idle' then
+        select_movement_feet()
+    end
     state.CombatWeapon = get_combat_weapon()
-    gear.ammo = select_ammo()
 end
 
 
@@ -717,35 +717,35 @@ end
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
-	determine_haste_group()
     state.CombatWeapon = get_combat_weapon()
+	determine_haste_group()
+    select_movement_feet()
+    select_static_ammo()
 end
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
-function select_movement()
+function select_movement_feet()
 	-- world.time is given in minutes into each day
 	-- 7:00 AM would be 420 minutes
 	-- 17:00 PM would be 1020 minutes
 	if world.time >= (17*60) or world.time <= (7*60) then
-		return sets.NightMovement
+		gear.MovementFeet.name = gear.NightFeet
 	else
-		return sets.DayMovement
+		gear.MovementFeet.name = gear.DayFeet
 	end
 end
 
-function select_ammo()
-	if world.time >= (17*60) or world.time <= (7*60) then
-        if state.OffenseMode == 'Acc' then
-            return "Fire Bomblet"
+function select_static_ammo()
+    if state.OffenseMode == 'Acc' then
+	    if world.time >= (17*60) or world.time <= (7*60) then
+            gear.StaticAmmo.name = gear.NightAccAmmo
         else
-		    return "Yetshila"
-        end
-    else
-        return "Tengu-no-Hane"
-	end
+            gear.StaticAmmo.name = gear.DayAccAmmo
+	    end
+    end
 end
 
 function get_combat_weapon()

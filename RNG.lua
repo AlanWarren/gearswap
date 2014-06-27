@@ -19,10 +19,13 @@
  -- Gear.Stave should be set to your 2-handed weapon of choice if you wish to take advantage of sets.midcast.RA.Stave
  -- SamRoll is applied automatically whenever you have the roll on you. 
  -- SAM is used when you're RNG/SAM 
- -- Decoy tries to add -enmity gear. I only use this with Yoichi, but if desired you can also use it with gun
+ -- Decoy mode helps with enmity control. I only use this with Yoichi, but if desired you can also use it with gun
     by toggling use_decoy_with_gun = true
-    ** If you do this, you'll need to create either a weapon specific set, or append Decoy to a default set.
+    ** If you do this, you'll need to create either a weapon specific set, or general set with Decoy appended.
     i.e. sets.midcast.RA.Lionsquall.Decoy = {}
+    i.e. sets.midcast.RA.Decoy = {}
+    ** The idea is to put -enmity gear in your regular set, and take it off in the Decoy set. So, you will be shooting
+    from sets.midcast.RA.Decoy when decoy is up, and sets.midcast.RA when Decoy is down. 
 
  * Auto RA
  - You can use the built in hotkey (CTRL -) or create a macro. (like below) Note "AutoRA" is case sensitive
