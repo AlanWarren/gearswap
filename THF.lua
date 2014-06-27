@@ -151,8 +151,15 @@ function init_gear_sets()
 	sets.precast.JA.Provoke = sets.TreasureHunter
 
 	-- Fast cast sets for spells
-	sets.precast.FC = {head="Uk'uxkaj Cap",ear1="Loquacious Earring"ring1="Prolix Ring",legs="Kaabnax Trousers"}
-	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
+	sets.precast.FC = {
+        head="Uk'uxkaj Cap",
+        ear1="Loquacious Earring",
+        ring1="Prolix Ring",
+        legs="Kaabnax Trousers"
+    }
+	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
+            neck="Magoraga Beads"
+    })
 
 	-- Ranged snapshot gear
 	sets.precast.RA = {head="Uk'uxkaj Cap",hands="Iuitl Wristbands +1",legs="Nahtirah Trousers", feet="Wurrukatte Boots"}
