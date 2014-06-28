@@ -332,7 +332,10 @@ function init_gear_sets()
     }
 
 	sets.idle.Town = set_combine(sets.idle, {
-		back="Felistris Mask"
+        head="Felistris Mask",
+        body="Qaaxo Harness",
+        ring1="Oneiros Ring",
+        ring2="Epona's Ring"
     })
 	
 	sets.idle.Weak = sets.idle.Town
