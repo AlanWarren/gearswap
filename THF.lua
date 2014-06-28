@@ -319,7 +319,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Kheper Jacket",
-        hands="Pillager's Armlets +1",
+        hands="Iuitl Wristbands +1",
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
 		back="Repulse Mantle",
