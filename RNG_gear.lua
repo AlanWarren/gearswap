@@ -197,8 +197,8 @@ function init_gear_sets()
             waist="Elanid Belt"
         })
         sets.midcast.RA.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.Stave.Mid, {
-            body="Kyujutsugi",
-            legs="Arcadian Braccae +1"
+            body="Arcadian Jerkin +1",
+            legs="Aetosaur Trousers +1",
         })
         sets.midcast.RA.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Acc, {})
 
