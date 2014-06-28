@@ -412,6 +412,10 @@ function init_gear_sets()
 	sets.engaged.iLvl = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
     })
+    sets.engaged.iLvl.PDT = set_combine(sets.engaged.iLvl, {
+        head="Lithelimb Cap",
+        ring1="Patricius Ring"
+    })
 	sets.engaged.Evasion = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
         ring1="Patricius Ring",
