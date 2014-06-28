@@ -317,7 +317,7 @@ function init_gear_sets()
 		head="Ocelomeh Headpiece +1",
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
+        ear2="Dawn Earring",
 		body="Kheper Jacket",
         hands="Iuitl Wristbands +1",
         ring1="Paguroidea Ring",
