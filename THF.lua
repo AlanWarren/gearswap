@@ -87,12 +87,12 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Qaaxo Harness",
-        hands="Raider's Armlets +2",
+        hands="Pillager's Armlets +2",
         ring1="Thundersoul Ring",
         ring2="Epona's Ring",
 		back="Atheling Mantle",
         waist="Cetl Belt",
-        legs="Manibozho Brais",
+        legs="Pillager's Culottes +1",
         feet="Qaaxo Leggings"
     }
 
@@ -102,12 +102,12 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Qaaxo Harness",
-        hands="Iuitl Wristbands +1",
+        hands="Pillager's Armlets +1",
         ring1="Stormsoul Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
         waist="Elanid Belt",
-        legs="Nahtirah Trousers",
+        legs="Pillager's Culottes +1",
         feet="Iuitl Gaiters"
     }
     -- Precast Sets
