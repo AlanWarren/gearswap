@@ -138,7 +138,7 @@ function init_gear_sets()
 	-- TH actions
 	sets.precast.Step = {
         head="Whirlpool Mask",
-        heck="Rancor Collar",
+        heck="Iqabi Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         hands="Plunderer's Armlets +1",
@@ -148,7 +148,6 @@ function init_gear_sets()
         waist="Anguinus Belt",
         legs="Pillager's Culottes +1",
         feet="Raider's Poulaines +2"
-
     }
 	sets.precast.Flourish1 = sets.TreasureHunter
 	sets.precast.JA.Provoke = sets.TreasureHunter
