@@ -313,7 +313,7 @@
             -- Engaged sets 37 stp
             sets.engaged = {
                 sub="Bloodrain Strap",
-                ammo="Hagneia Stone",
+                ammo="Yetshila",
 	        	head="Otomi Helm",
                 neck="Asperity Necklace",
                 ear1="Bladeborn Earring",
