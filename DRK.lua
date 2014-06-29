@@ -111,7 +111,7 @@
                 feet="Whirlpool Greaves"
             }
      
-            sets.midcast.DarkMagic = {
+            sets.midcast['Dark Magic'] = {
                 head="Ignominy burgeonet +1",
                 neck="Dark Torque",
                 ear1="Lifestorm Earring",
@@ -126,7 +126,7 @@
                 feet="Ignominy sollerets"
             }
            
-		    sets.midcast.EnfeeblingMagic = set_combine(sets.midcast.DarkMagic, {
+		    sets.midcast.EnfeeblingMagic = set_combine(sets.midcast['Dark Magic'], {
                 head="Otomi Helm",
                 ear1="Lifestorm's earring",
                 ear2="Psystorm earring",
@@ -155,11 +155,11 @@
                 feet="Ignominy Sollerets"
             }
            
-            sets.midcast.Stun = set_combine(sets.midcast.DarkMagic, {
+            sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
                     head="Otomi Helm"
             })
                    
-            sets.midcast.Drain = sets.midcast.DarkMagic 
+            sets.midcast.Drain = sets.midcast['Dark Magic'] 
                    
             sets.midcast.Aspir = sets.midcast.Drain
 				--Ighwa Cap		                   
@@ -370,7 +370,7 @@
                 body="Xaddi Mail",
                 hands="Cizin Mufflers",
                 ring1="Rajas Ring",
-                ring2="K'ayres Ring",
+                ring2="Mars's Ring",
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Cizin Breeches",
