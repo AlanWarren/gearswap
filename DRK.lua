@@ -101,8 +101,9 @@
             -- Specific spells
             sets.midcast.Utsusemi = {
                 head="Cizin Helm",
-                body="Pak Corselet",
+                body="Xaddi Mail",
                 hands="Cizin Mufflers",
+                ear1="Loquacious Earring",
                 ring1="Rajas Ring",
                 ring2="K'ayres Ring",
                 waist="Zoran's Belt",
@@ -148,7 +149,7 @@
             sets.midcast['Dread Spikes'] = {
                 head="Yaoyotl Helm",
                 body="Bale Cuirass +2",
-                hands="Xaddi Gauntlets",
+                --hands="Xaddi Gauntlets",
                 --legs="Xaddi Cuisses",
                 ring2="K'ayres Ring",
                 feet="Ignominy Sollerets"
@@ -171,7 +172,7 @@
                 ear1="Brutal Earring",
                 ear2="Bale Earring",
                 body="Xaddi Mail",
-                hands="Boor Bracelete",
+                hands="Boor Bracelets",
                 ring1="Rajas Ring",
                 ring2="Pyrosoul Ring",
                 back="Buquwik Cape",
@@ -190,7 +191,7 @@
             -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
             sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
             sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-            sets.precast.WS['Catastrophe'].Mod = set_combine(sets.precast.WS['Catastrophe'], {waist="Shadow Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
+            sets.precast.WS['Catastrophe'].Mod = set_combine(sets.precast.WS['Catastrophe'], {waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
      
             sets.precast.WS['Entropy'] = set_combine(sets.precast.WS, {
                 neck="Shadow Gorget",
@@ -276,8 +277,7 @@
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
                 body="Twilight Mail",
-                hands="Buremte Gloves",
-                ring1="Sheltered Ring",
+                ring1="Dark Ring",
                 ring2="Paguroidea Ring",
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
@@ -310,7 +310,7 @@
      
             sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
      
-            -- Engaged sets
+            -- Engaged sets 37 stp
             sets.engaged = {
                 sub="Bloodrain Strap",
                 ammo="Hagneia Stone",
