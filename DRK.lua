@@ -28,9 +28,9 @@
     -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
     function user_setup()
             -- Options: Override default values
-            options.OffenseModes = {'Normal', 'Multi', 'Acc'}
+            options.OffenseModes = {'Normal', 'Mid', 'Acc'}
             options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
-            options.WeaponskillModes = {'Normal', 'Mod', 'Acc'}
+            options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
             options.CastingModes = {'Normal'}
             options.IdleModes = {'Normal'}
             options.RestingModes = {'Normal'}
@@ -191,7 +191,7 @@
             -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
             sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
             sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-            sets.precast.WS['Catastrophe'].Mod = set_combine(sets.precast.WS['Catastrophe'], {waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
+            sets.precast.WS['Catastrophe'].Mid = set_combine(sets.precast.WS['Catastrophe'], {waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
      
             sets.precast.WS['Entropy'] = set_combine(sets.precast.WS, {
                 neck="Shadow Gorget",
@@ -199,7 +199,7 @@
                 ring2="Diamond Ring"
             })
             sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-            sets.precast.WS['Entropy'].Mod = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt",legs="Cizin Breeches"})
+            sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt",legs="Cizin Breeches"})
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
                 neck="Breeze Gorget",
@@ -211,7 +211,7 @@
                 legs="Mikinaak Cuisses",
                 waist="Soil Belt"
             })
-            sets.precast.WS['Resolution'].Mod = set_combine(sets.precast.WS['Resolution'], {
+            sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
                 neck="Bale Choker",
                 legs="Mikinaak Cuisses",
                 waist="Windbuffet Belt"
@@ -336,7 +336,7 @@
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
             })
-	        sets.engaged.Multi = set_combine(sets.engaged, {
+	        sets.engaged.Mid = set_combine(sets.engaged, {
                 ear1="Brutal Earring",
                 ear2="Trux Earring",
             })
@@ -345,7 +345,7 @@
 	        	body="Twilight Mail"
             })
 
-            sets.engaged.HighHaste = set_combine(sets.engaged.Multi, {
+            sets.engaged.HighHaste = set_combine(sets.engaged.Mid, {
                 head="Otomi Helm"
             })
 
@@ -385,17 +385,17 @@
                 ring2="Mars's Ring"
             })
 
-            sets.engaged['Anahera Scythe'].Multi = set_combine(sets.engaged['Anahera Scythe'], {
+            sets.engaged['Anahera Scythe'].Mid = set_combine(sets.engaged['Anahera Scythe'], {
                 ear1="Brutal Earring",
                 ear2="Trux Earring",
             })
 
-            sets.engaged['Anahera Scythe'].Multi.PDT = set_combine(sets.engaged['Anahera Scythe'].Multi, {
+            sets.engaged['Anahera Scythe'].Mid.PDT = set_combine(sets.engaged['Anahera Scythe'].Mid, {
                 neck="Agitator's Collar",
                 ring1="Patricius Ring"
             })
 
-            sets.engaged['Anahera Scythe'].Multi.Reraise = set_combine(sets.engaged['Anahera Scythe'].Multi, {
+            sets.engaged['Anahera Scythe'].Mid.Reraise = set_combine(sets.engaged['Anahera Scythe'].Mid, {
                 head="Twilight Helm",
                 neck="Bale Choker",
                 body="Twilight Mail"
@@ -418,7 +418,7 @@
                 body="Twilight Mail"
             })
 
-            sets.engaged['Anahera Scythe'].MaxHaste = set_combine(sets.engaged['Anahera Scythe'].Multi, {
+            sets.engaged['Anahera Scythe'].MaxHaste = set_combine(sets.engaged['Anahera Scythe'].Mid, {
                 head="Yaoyotl Helm"
             })
 
