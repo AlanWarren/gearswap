@@ -256,6 +256,7 @@ function init_gear_sets()
             ear1="Novia Earring",
             ear2="Tripudio Earring",
             body="Kyujutsugi",
+            --body="Arcadian Jerkin +1",
             hands="Sylvan Glovelettes +2",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
