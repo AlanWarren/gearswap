@@ -411,7 +411,7 @@ function init_gear_sets()
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="Oneiros Ring", 
-        back="Atheling Mantle",
+        back="Takaha Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 7
         feet="Otronif Boots +1" -- 7
@@ -420,7 +420,8 @@ function init_gear_sets()
         head="Yaoyotl Helm",
         neck="Agitator's Collar",
         ring2="Patricius Ring",
-        waist="Dynamic Belt"
+        waist="Dynamic Belt",
+        back="Takaha Mantle"
     })
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
