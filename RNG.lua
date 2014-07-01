@@ -11,7 +11,7 @@
  
  -- These are the available sets per category
  -- CustomClass = SAM
- -- CombatForm = Stave, DualWield
+ -- CombatForm = Stave, DW
  -- CombatWeapon = weapon name, ex: Yoichinoyumi  (you can make new sets for any ranged weapon)
  -- RangedMode = Normal, Mid, Acc
  -- CustomRangedGroup = Decoy, SamRoll
@@ -385,7 +385,7 @@ function get_combat_form()
         state.CombatForm = "Stave"
     else
         if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
-            state.CombatForm = "DualWield"
+            state.CombatForm = "DW"
         else
             state.CombatForm = nil
         end

@@ -101,9 +101,9 @@ function init_gear_sets()
             ring2="Patricius Ring"
         })
 
-        sets.engaged.DualWield = set_combine(sets.engaged, {})
+        sets.engaged.DW = set_combine(sets.engaged, {})
 
-        sets.engaged.DualWield.Melee = set_combine(sets.engaged.Melee, {
+        sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
             ear1="Dudgeon Earring",
             ear2="Heartseeker Earring",
             body="Skadi's Cuirie +1",

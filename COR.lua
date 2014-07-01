@@ -35,7 +35,7 @@ function user_setup()
 	-- Options: Override default values
 	options.OffenseModes = {'Ranged', 'Melee', 'Acc'}
 	options.RangedModes = {'Normal', 'Acc'}
-	options.WeaponskillModes = {'Normal', 'Acc', 'Att', 'Mod'}
+	options.WeaponskillModes = {'Normal', 'Acc'}
 	options.CastingModes = {'Normal', 'Resistant'}
 	options.IdleModes = {'Normal'}
 	options.RestingModes = {'Normal'}
@@ -51,6 +51,9 @@ function user_setup()
 	--gear.QDbullet = "Adlivun Bullet"
 	options.ammo_warning_limit = 15
 
+    cor_sub_weapons = S{"Vanir Knife", "Sabebus", "Aphotic Kukri", "Atoyac", "Surcouf's Jambiya"}
+
+    get_combat_form()
 	-- Additional local binds
 	-- Cor doesn't use hybrid defense mode; using that for ranged mode adjustments.
 	send_command('bind ^f9 gs c cycle RangedMode')
@@ -126,11 +129,11 @@ function init_gear_sets()
 	sets.precast.FC = {
         head="Uk'uxkaj Cap",
         ear1="Loquacious Earring",
-        ring1="Prolix Ring"
+        ring1="Prolix Ring",
+        legs="Kaabnax Trousers"
     }
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
-
 
 	sets.precast.RA = {
         ammo=gear.RAbullet,
@@ -144,10 +147,10 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head="Lithelimb Cap",
+		head="Umbani Cap",
         neck=gear.ElementalGorget,
-        ear1="Volley Earring",
-        ear2="Clearview Earring",
+        ear1="Flame Pearl",
+        ear2="Flame Pearl",
 		body="Lanun Frac",
         hands="Iuitl Wristbands +1",
         ring1="Rajas Ring",
@@ -174,7 +177,7 @@ function init_gear_sets()
     })
 	sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
         ammo=gear.WSbullet,
-        body="Navarch's Frac +2",
+        body="Lanun Frac",
         ear1="Volley Earring",
         ear2="Clearview Earring",
         back="Libeccio Mantle",
@@ -195,7 +198,8 @@ function init_gear_sets()
 		back="Gunslinger's Cape",
         waist="Aquiline Belt",
         legs="Shneddick Tights +1",
-        feet="Iuitl Gaiters"
+        feet="Navarch's Bottes +2"
+
     }
 
 	sets.precast.WS['Leaden Salute'] = sets.precast.WS['Wildfire']
@@ -225,28 +229,25 @@ function init_gear_sets()
         ring2="Stormsoul Ring",
 		back="Gunslinger's Cape",
         waist="Aquiline Belt",
-        legs="Shneddick Tights",
+        legs="Shneddick Tights +1",
         feet="Navarch's Bottes +2"
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
-        head="Umbani Cap",
-        hands="Sigyn's Bazubands",
+        head="Seiokona Beret",
 		body="Navarch's Frac +2",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
-        back="Gunslinger's Cape"
     })
 
     sets.midcast.CorsairShot['Light Shot'] = sets.midcast.CorsairShot.Acc
 	sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
-
 	-- Ranged gear
 	sets.midcast.RA = {
         ammo=gear.RAbullet,
 		head="Umbani Cap",
-        neck="Ocachi Gorget",
+        neck="Iqabi Necklace",
         ear1="Clearview Earring",
         ear2="Volley Earring",
 		body="Lanun Frac",
@@ -254,14 +255,12 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
 		back="Gunslinger's Cape",
-        waist="Commodore Belt",
+        waist="Elanid Belt",
         legs="Aetosaur Trousers +1",
         feet="Iuitl Gaiters"
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        neck="Iqabi Necklace",
-        hands="Navarch's Gants +2",
         ring1="Paqichikaji Ring"
     })
 	
@@ -275,7 +274,7 @@ function init_gear_sets()
         ammo=gear.RAbullet,
 		head="Ocelomeh Headpiece +1",
         neck="Twilight Torque",
-        ear1="Dawn Earring",
+        ear2="Dawn Earring",
 		body="Kheper Jacket",
         hands="Iuitl Wristbands +1",
         ring1="Dark Ring",
@@ -290,24 +289,29 @@ function init_gear_sets()
         range="Vanir Gun",
         ammo=gear.RAbullet,
 		head="Lithelimb Cap",
-        neck="Ocachi Gorget",
+        neck="Iqabi Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-		body="Kheper Jacket",
+		body="Lanun Frac",
         hands="Sigyn's Bazubands",
-        ring1="Dark Ring",
+        ring1="Patricius Ring",
         ring2="Paguroidea Ring",
 		back="Shadow Mantle",
         waist="Commodore Belt",
         legs="Crimson Cuisses",
-        feet="Iuitl Gaiters"}
+        feet="Iuitl Gaiters"
+    }
 	
 	-- Defense sets
 	sets.defense.PDT = set_combine(sets.idle, {
         head="Lithelimb Cap",
         neck="Twilight Torque",
+        hands="Iuitl Wristbands +1",
+        body="Lanun Frac",
+        ring1="Patricius Ring",
+        ring2="Dark Ring",
 		legs="Nahtirah Trousers",
-        ring1="Patricius Ring"
+        feet="Iuitl Gaiters"
     })
 
 	sets.defense.MDT = sets.defense.PDT
@@ -328,7 +332,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Qaaxo Harness",
+		body="Thaumas Coat",
         hands="Iuitl Wristbands +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
@@ -339,32 +343,36 @@ function init_gear_sets()
     }
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
+        body="Lanun Frac",
         ring2="Mars's Ring",
         waist="Hurch'lan Sash"
     })
 
 	sets.engaged.Melee.DW = set_combine(sets.engaged.Melee, {
+        --head="Thurandaut Chapeau +1",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
+        body="Skadi's Cuirie +1",
         waist="Nusku's Sash"
     })
 
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Melee.DW, {
-        ear1="Dudgeon Earring",ear2="Heartseeker Earring",waist="Hurch'lan Sash"
+        neck="Iqabi Necklace",
+        ring2="Mars's Ring"
     })
 
 	sets.engaged.Ranged = {
         ammo=gear.RAbullet,
-		head="Navarch's tricorne +1",
-        neck="Ocachi Gorget",
+		head="Umbani Cap",
+        neck="Iqabi Necklace",
         ear1="Clearview Earring",
         ear2="Volley Earring",
-		body="Navarch's Frac +2",
-        hands="Iuitl Wristbands +1",
+		body="Lanun Frac",
+        hands="Sigyn's Bazubands",
         ring1="Rajas Ring",
-        ring2="Hajduk Ring",
-		back="Navarch's Mantle",
-        waist="Commodore Belt",
+        ring2="Longshot Ring",
+		back="Gunslonger's Cape",
+        waist="Elanid Belt",
         legs="Nahtirah Trousers",
         feet="Iuitl Gaiters"
     }
@@ -418,9 +426,6 @@ end
 
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
-	if newStatus == 'Engaged' and player.equipment.main == 'Chatoyant Staff' then
-		state.OffenseMode = 'Ranged'
-	end
 end
 
 -- Called when a player gains or loses a buff.
@@ -438,9 +443,7 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
-	if newStatus == 'Engaged' and player.equipment.main == 'Chatoyant Staff' then
-		state.OffenseMode = 'Ranged'
-	end
+    get_combat_form()
 end
 
 -- Job-specific toggles.
@@ -489,6 +492,18 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+function get_combat_form()
+    if cor_sub_weapons:contains(player.equipment.main) then
+    --if player.equipment.main == gear.Stave then
+        if S{'NIN', 'DNC'}:contains(player.sub_job) and cor_sub_weapons:contains(player.equipment.sub) then
+            state.CombatForm = "DW"
+        else
+            state.CombatForm = nil
+        end
+    else
+        state.CombatForm = 'Stave'
+    end
+end
 
 function define_roll_values()
 	rolls = {
