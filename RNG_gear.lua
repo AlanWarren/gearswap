@@ -267,12 +267,12 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1=gear.Earring,
             back="Lutian Cape",
+            hands="Seiryu's Kote",
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         })
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
             neck="Iqabi Necklace",
-            hands="Seiryu's Kote",
             ring1="Longshot Ring",
             ring2="Paqichikaji Ring",
             legs="Arcadian Braccae +1"
@@ -488,7 +488,7 @@ function init_gear_sets()
             neck="Flame Gorget",
             ear2="Dawn Earring",
             waist="Light Belt",
-            hands="Arcadian Bracers +1", -- override 
+            hands="Seiryu's Kote", -- override 
             legs="Arcadian Braccae +1",
             ring2="Thundersoul Ring",
             back="Rancorous Mantle"
