@@ -31,8 +31,6 @@ function user_setup()
     options.PhysicalDefenseModes = {'PDT'}
     options.MagicalDefenseModes = {'MDT'}
     
-    enfeeblingNinjutsu = S{"yurin: ichi", "aisha: ichi", "dokumori: ichi", "kurayami: ni", "hojo: ni", "jubaku: ichi"}
-    
     state.Defense.PhysicalMode = 'PDT'
    
     gear.MovementFeet = { name="Danzo Sune-ate" }
@@ -145,9 +143,22 @@ function init_gear_sets()
     sets.midcast.SelfNinjutsu = sets.midcast.FastRecast
     
     sets.midcast.Utsusemi = set_combine(sets.midcast.SelfNinjutsu, {feet="Iga Kyahan +2"})
-    
-    -- Nuking Ninjutsu (skill & magic attack)
+
+    -- skill ++ 
     sets.midcast.Ninjutsu = {
+    	head="Hachiya Hatsuburi +1",
+        ear1="Lifestorm Earring",
+        ear2="Psystorm Earring",
+    	body="Mochizuki Chainmail +1",
+        hands="Mochizuki Tekko +1",
+    	back="Yokaze Mantle",
+        ring1="Diamond Ring",
+        waist="Hurch'lan Sash",
+        legs="Kabnaax Trousers",
+        feet="Mochizuki Kyahan +1"
+    }
+    -- Nuking Ninjutsu (skill & magic attack)
+    sets.midcast.ElementalNinjutsu = {
     	head="Umbani Cap",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -159,19 +170,6 @@ function init_gear_sets()
         ring2="Acumen Ring",
         waist="Hurch'lan Sash",
         legs="Shneddick Tights +1",
-        feet="Mochizuki Kyahan +1"
-    }
-    -- Enfeebling Ninjutsu (skill)
-    sets.midcast.EnfeebleNinjutsu = {
-    	head="Hachiya Hatsuburi +1",
-        ear1="Lifestorm Earring",
-        ear2="Psystorm Earring",
-    	body="Mochizuki Chainmail +1",
-        hands="Mochizuki Tekko +1",
-    	back="Yokaze Mantle",
-        ring1="Diamond Ring",
-        waist="Hurch'lan Sash",
-        legs="Kabnaax Trousers",
         feet="Mochizuki Kyahan +1"
     }
     
@@ -594,9 +592,6 @@ end
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
     
-    if spell.skill == "Ninjutsu" and enfeeblingNinjutsu:contains(spell.name:lower()) then
-        classes.CustomClass = "EnfeebleNinjutsu"
-    end
 	if spell.skill == "Ninjutsu" and spell.target.type:lower() == 'self' and spellMap ~= "Utsusemi" then
 		classes.CustomClass = "SelfNinjutsu"
 	end
