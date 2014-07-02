@@ -330,7 +330,7 @@ function init_gear_sets()
         ring2="Epona's Ring"
     })
 	
-	sets.idle.Weak = sets.idle.Town
+	sets.idle.Weak = sets.idle
 
 	-- Defense sets
 
