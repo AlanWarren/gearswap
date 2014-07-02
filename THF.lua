@@ -416,7 +416,7 @@ function init_gear_sets()
 		body="Qaaxo Harness",
         ring1="Beeline Ring",
         hands="Pillager's Armlets +1",
-        feet="Qaaxo Leggings"
+        --feet="Qaaxo Leggings"
     })
     sets.engaged.iLvl.Evasion = sets.engaged.Evasion
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
