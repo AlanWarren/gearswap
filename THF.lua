@@ -418,7 +418,7 @@ function init_gear_sets()
         hands="Pillager's Armlets +1",
         feet="Qaaxo Leggings"
     })
-    sets.engaged.Evasion.iLvl = sets.engaged.Evasion
+    sets.engaged.iLvl.Evasion = sets.engaged.Evasion
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
 		head="Whirlpool Mask",
         waist="Hurch'lan Sash"
