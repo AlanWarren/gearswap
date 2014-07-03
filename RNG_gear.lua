@@ -45,15 +45,13 @@ function init_gear_sets()
             ring2="Paguroidea Ring",
             back="Repulse Mantle",
             waist="Elanid Belt",
-            legs="Arcadian Braccae +1",
+            legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
 
         sets.idle.Town = set_combine(sets.idle, {
-            neck="Ocachi Gorget",
             ear1="Fenrir's Earring",
             ear2="Dawn Earring",
-            body="Arcadian Jerkin +1",
             ring1="Rajas Ring",
             ring2="Pyrosoul Ring",
             back="Lutian Cape"
