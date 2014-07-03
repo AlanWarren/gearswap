@@ -466,7 +466,6 @@ function init_gear_sets()
            neck="Aqua Gorget",
            ring2="Stormsoul Ring",
            waist="Light Belt",
-           legs="Arcadian Braccae +1",
            feet="Orion Socks +1"
         }
         sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, sets.LastStand)
