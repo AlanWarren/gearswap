@@ -48,7 +48,7 @@ function user_setup()
     
     state.Defense.PhysicalMode = 'PDT'
     
-    gear.RAarrow = "Tulfaire Arrow"
+    gear.RAarrow = "Eminent Arrow"
     
     -- Additional local binds
     send_command('bind ^[ input /lockstyle on')
