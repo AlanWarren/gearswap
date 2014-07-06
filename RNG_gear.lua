@@ -354,7 +354,6 @@ function init_gear_sets()
         -- Stave / Decoy up
         sets.midcast.RA.Stave.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
             ear1=gear.Earring,
-            body="Arcadian Jerkin +1",
             hands="Arcadian Bracers +1",
             legs="Aetosaur Trousers +1"
         })
