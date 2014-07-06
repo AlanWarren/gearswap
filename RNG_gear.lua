@@ -156,7 +156,6 @@ function init_gear_sets()
         ------------------------------------------------------------------
 
         -- Stave sets 
-        
         sets.midcast.RA.Stave = set_combine(sets.midcast.RA, {
             ear1=gear.Earring,
             body="Arcadian Jerkin +1",
@@ -192,7 +191,7 @@ function init_gear_sets()
             ring2="Longshot Ring",
             legs="Arcadian Braccae +1"
         })
-
+        -- Stave Sam Roll
         sets.midcast.RA.Stave.SamRoll = set_combine(sets.midcast.RA.Stave, {
             body="Arcadian Jerkin +1",
             ring2="Pyrosoul Ring",
@@ -201,9 +200,36 @@ function init_gear_sets()
         sets.midcast.RA.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.Stave.Mid, {
             body="Arcadian Jerkin +1",
             legs="Aetosaur Trousers +1",
-            hands="Sigyn's Bazubands",body="Kyujutsugi",
+            hands="Sigyn's Bazubands",
         })
         sets.midcast.RA.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Acc, {})
+        
+        -- Crit sets  (i have crit on atoyac for now... just messin around here)
+        sets.midcast.RA.Crit = set_combine(sets.midcast.RA, {
+            body="Arcadian Jerkin +1",
+            hands="Seiryu's Kote",
+            back="Sylvan Chlamys",
+            legs="Aetosaur Trousers +1"
+        })
+        sets.midcast.RA.Crit.Mid = set_combine(sets.midcast.RA.Crit, {
+            body="Kyujutsugi",
+            ring2="Longshot Ring",
+            back="Lutian Cape",
+            legs="Aetosaur Trousers +1"
+        })
+        sets.midcast.RA.Stave.Acc = set_combine(sets.midcast.RA.Crit.Mid, {
+            neck="Iqabi Necklace",
+            ring1="Paqichikaji Ring"
+        })
+        -- Crit + Sam roll 
+        sets.midcast.RA.Crit.SamRoll = set_combine(sets.midcast.RA.Crit, {
+            back="Rancorous Mantle",
+            ring2="Longshot Ring"
+        })
+        sets.midcast.RA.Crit.Mid.SamRoll = set_combine(sets.midcast.RA.Crit.Mid, {
+            body="Arcadian Jerkin +1",
+        })
+        sets.midcast.RA.Crit.Acc.SamRoll = set_combine(sets.midcast.RA.Crit.Acc, {})
 
         -- SAM Subjob
         sets.midcast.RA.SAM = {
