@@ -417,17 +417,18 @@ function init_gear_sets()
         feet="Otronif Boots +1" -- 7
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
+        body="Sakonji Domaru +1",
         head="Yaoyotl Helm",
-        neck="Agitator's Collar",
-        ring2="Patricius Ring",
-        waist="Dynamic Belt",
         back="Takaha Mantle"
     })
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
         sub="Bloodrain Strap",
         ring1="Mars's Ring",
+        ring2="Patricius Ring",
+        waist="Dynamic Belt",
         feet="Wakido Sune-Ate +1",
+        neck="Agitator's Collar",
         back="Takaha Mantle"
     })
     
@@ -453,11 +454,11 @@ function init_gear_sets()
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
-        body="Xaddi Mail", -- 3
+        body="Sakonji Domaru +1", -- 8
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
-        ring2="Oneiros Ring", -- 5
-        back="Atheling Mantle", -- 10
+        ring2="K'ayres Ring", -- 5
+        back="Takaha Mantle",
         waist="Windbuffet Belt", 
         legs="Wakido Haidate +1", -- 7
         feet="Otronif Boots +1" -- 7
@@ -468,7 +469,6 @@ function init_gear_sets()
         head="Yaoyotl Helm",
         neck="Agitator's Collar",
         waist="Dynamic Belt",
-        feet="Otronif Boots +1"
     })
     
     sets.engaged.Adoulin.Yoichi.Acc = set_combine(sets.engaged.Adoulin.Yoichi.Mid, {
