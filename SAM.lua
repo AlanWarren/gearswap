@@ -410,7 +410,7 @@ function init_gear_sets()
         body="Xaddi Mail", -- 3
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
-        ring2="K'ayres Ring", 
+        ring2="Oneiros Ring", 
         back="Takaha Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 7
