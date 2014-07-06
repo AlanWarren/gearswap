@@ -419,7 +419,8 @@ function init_gear_sets()
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         body="Sakonji Domaru +1",
         head="Yaoyotl Helm",
-        back="Takaha Mantle"
+        back="Takaha Mantle",
+        ring2="K'ayres Ring"
     })
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
