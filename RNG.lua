@@ -383,8 +383,6 @@ end
 function get_combat_form()
     if player.equipment.main == gear.Stave then
         state.CombatForm = "Stave"
-    elseif player.equipment.main == 'Atoyac' then
-        state.CombatForm = "Crit"
     else
         if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
             state.CombatForm = "DW"

@@ -179,7 +179,6 @@ function init_gear_sets()
             body="Arcadian Jerkin +1",
             ring2="Pyrosoul Ring",
         })
-
         sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
             ring2="Longshot Ring",
             back="Lutian Cape",hands="Sigyn's Bazubands",
@@ -204,33 +203,6 @@ function init_gear_sets()
         })
         sets.midcast.RA.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Acc, {})
         
-        -- Crit sets  (i have crit on atoyac for now... just messin around here)
-        sets.midcast.RA.Crit = set_combine(sets.midcast.RA, {
-            body="Arcadian Jerkin +1",
-            hands="Seiryu's Kote",
-            back="Sylvan Chlamys",
-            legs="Aetosaur Trousers +1"
-        })
-        sets.midcast.RA.Crit.Mid = set_combine(sets.midcast.RA.Crit, {
-            body="Kyujutsugi",
-            ring2="Longshot Ring",
-            back="Lutian Cape",
-            legs="Aetosaur Trousers +1"
-        })
-        sets.midcast.RA.Stave.Acc = set_combine(sets.midcast.RA.Crit.Mid, {
-            neck="Iqabi Necklace",
-            ring1="Paqichikaji Ring"
-        })
-        -- Crit + Sam roll 
-        sets.midcast.RA.Crit.SamRoll = set_combine(sets.midcast.RA.Crit, {
-            back="Rancorous Mantle",
-            ring2="Longshot Ring"
-        })
-        sets.midcast.RA.Crit.Mid.SamRoll = set_combine(sets.midcast.RA.Crit.Mid, {
-            body="Arcadian Jerkin +1",
-        })
-        sets.midcast.RA.Crit.Acc.SamRoll = set_combine(sets.midcast.RA.Crit.Acc, {})
-
         -- SAM Subjob
         sets.midcast.RA.SAM = {
             head="Arcadian Beret +1",
