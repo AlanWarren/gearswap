@@ -83,7 +83,7 @@ function user_setup()
         gear.DayEarring = "Volley Earring"
        
         rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Sabebus', 
-            'Eminent Axe', 'Trailer\'s Kukri', 'Aphotic Kukri'}
+            'Eminent Axe', 'Trailer\'s Kukri', 'Aphotic Kukri', 'Atoyac'}
         
         sam_sj = player.sub_job == 'SAM' or false
 
