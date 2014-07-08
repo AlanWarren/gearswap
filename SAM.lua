@@ -313,7 +313,7 @@ function init_gear_sets()
         body="Xaddi Mail",
         hands="Wakido Kote +1",
         ring1="Rajas Ring", 
-        ring2="Oneiros Ring", 
+        ring2="K'ayres Ring", 
         back="Atheling Mantle", 
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
@@ -335,6 +335,13 @@ function init_gear_sets()
         back="Takaha Mantle"
     })
     
+    sets.engaged['Anahera Blade'] = set_combine(sets.engaged, {
+        body="Sakonji Domaru +1",
+        ring2="Oneiros Ring"
+    })
+    sets.engaged['Anahera Blade'].Mid = set_combine(sets.engaged.Mid, {})
+    sets.engaged['Anahera Blade'].Acc = set_combine(sets.engaged.Acc, {})
+    
     sets.engaged.Yoichi = set_combine(sets.engaged, { 
         sub="Bloodrain Strap",
         ammo=gear.RAarrow
@@ -342,15 +349,15 @@ function init_gear_sets()
     
     sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
         head="Yaoyotl Helm",
-        neck="Agitator's Collar",
-        waist="Dynamic Belt"
+        body="Sakonji Domaru +1",
+        waist="Dynamic Belt",
+        back="Takaha Mantle"
     })
     
     sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, {
-        head="Sakonji Kabuto +1",
+        ring1="Oneiros Ring",
         ring2="Mars's Ring",
-        feet="Wakido Sune-Ate +1",
-        back="Takaha Mantle"
+        feet="Wakido Sune-Ate +1"
     })
     
     sets.engaged.PDT = set_combine(sets.engaged, { 
@@ -368,6 +375,7 @@ function init_gear_sets()
     
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, { 
          head="Lithelimb Cap",
+         neck="Agitator's Collar",
          ring1="Patricius Ring",
          ring2="Dark Ring"
     })
@@ -669,7 +677,13 @@ end
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_weapon()
     if player.equipment.range == 'Yoichinoyumi' then
-        return 'Yoichi'
+        if player.equipment.main == 'Amanomurakumo' then
+            return 'AmanoYoichi'
+        else
+            return 'Yoichi'
+        end
+    else
+        return player.equipment.main
     end
 end
 
