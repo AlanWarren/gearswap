@@ -735,7 +735,7 @@ end
 
 function select_static_ammo()
     if state.OffenseMode == 'Acc' then
-	    if world.time >= (17*60) or world.time <= (7*60) then
+	    if world.time >= (18*60) or world.time <= (6*60) then
             gear.StaticAmmo.name = gear.NightAccAmmo
         else
             gear.StaticAmmo.name = gear.DayAccAmmo
