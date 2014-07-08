@@ -160,8 +160,9 @@
             })
                    
             sets.midcast.Drain = sets.midcast['Dark Magic'] 
-                   
             sets.midcast.Aspir = sets.midcast.Drain
+
+            sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], { back="Chuparrosa Mantle" })
 				--Ighwa Cap		                   
             -- Weaponskill sets
             -- Default set for any weaponskill that isn't any more specifically defined
