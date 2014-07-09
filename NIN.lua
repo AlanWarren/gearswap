@@ -195,7 +195,7 @@ function init_gear_sets()
     }
     
     sets.idle.Town = set_combine(sets.idle, {
-        head="Hachiya Hatsuburi +1",
+        head="Felistris Mask",
         neck="Agitator's Collar",
         body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
@@ -683,8 +683,24 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-    if buff == 'Aftermath: Lv.3' and gain and player.equipment.main == 'Kannagi' then
-        windower.send_command('wait 120;input /echo [AM3: WEARING OFF IN 60 SEC.];wait 30; input /echo [AM3: WEARING OFF IN 30 SEC.];wait 20;input /echo [AM3: WEARING OFF IN 10 SEC.]')
+    if buff == 'Aftermath: Lv.3' then
+        if gain then
+            send_command('timers create "Aftermath: Lv.3" 90 down;wait 60;input /echo Aftermath: Lv. 3 [WEARING OFF IN 30 SEC.];wait 20;input /echo Aftermath: Lv.3 [WEARING OFF IN 10 SEC.]')
+        else
+            send_command('timers delete "Aftermath: Lv.3"')
+        end
+    elseif buff == 'Aftermath: Lv.2' then
+        if gain then
+            windower.send_command('timers create "Aftermath: Lv.2" 60 down;wait 30;input /echo [AM2: WEARING OFF IN 30 SEC.];wait 20; input /echo [AM2: WEARING OFF IN 10 SEC.]')
+        else
+            send_command('timers delete "Aftermath: Lv.2"')
+        end
+    elseif buff == 'Aftermath: Lv.1' then
+        if gain then
+            windower.send_command('timers create "Aftermath: Lv.1" 30 down;wait 20;input /echo [AM1: WEARING OFF IN 10 SEC.]')
+        else
+            send_command('timers delete "Aftermath: Lv.1"')
+        end
     end
 	-- If we gain or lose any haste buffs, adjust which gear set we target.
 	if S{'haste','march', 'madrigal','embrava','haste samba'}:contains(buff:lower()) then
