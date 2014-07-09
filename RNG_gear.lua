@@ -122,6 +122,7 @@ function init_gear_sets()
         -- Coming in July. This will be used when Coursers + Flurry is up
         sets.precast.RA.Snapshot = set_combine(sets.precast.RA, {
             head="Orion Beret +1",
+            body="Arcadian Jerkin +1",
             feet="Arcadian Socks +1"
         })
         
