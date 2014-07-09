@@ -742,7 +742,7 @@ function select_movement_feet()
 	-- world.time is given in minutes into each day
 	-- 7:00 AM would be 420 minutes
 	-- 17:00 PM would be 1020 minutes
-	if world.time >= (17*60) or world.time <= (7*60) then
+	if world.time >= (17*60) or world.time <= (8*60) then
 		gear.MovementFeet.name = gear.NightFeet
 	else
 		gear.MovementFeet.name = gear.DayFeet
