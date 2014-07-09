@@ -246,8 +246,8 @@ function job_buff_change(buff, gain)
         end
         -- Coming in July
         -- This is assuming there will be a ranged delay cap, and we'll be able to hit it with roll + spell
-        if (string.find(buff:lower(), 'flurry') and gain) or (buffactive['Flurry'] or buffactive['Flurry II']) then
-            if buffactive["Courser's Roll"] then
+        if string.find(buff:lower(), 'flurry') and gain then
+            if buffactive["Courser's Roll"] or buffactive["Flurry II"] then
                 classes.CustomRangedGroups:append('Snapshot')
             end
         end
@@ -436,23 +436,27 @@ function use_ra(spell)
     -- BOW
     if player.equipment.range == gear.Bow then
         if spell.type:lower() == 'weaponskill' then
-            delay = '3.0'
+            delay = '2.25'
          else
              if buffactive["Courser's Roll"] then
-                 delay = '1.6' -- MAKE ADJUSTMENT HERE
+                 delay = '0.7' -- MAKE ADJUSTMENT HERE
+             elseif buffactive["Flurry II"] or buffactive.Overkill then
+                 delay = '0.5'
              else
-                delay = '1.8' -- MAKE ADJUSTMENT HERE
+                delay = '1.05' -- MAKE ADJUSTMENT HERE
             end
         end
     else
     -- GUN 
         if spell.type:lower() == 'weaponskill' then
-            delay = '3.0' 
+            delay = '2.25' 
         else
             if buffactive["Courser's Roll"] then
-                delay = '2.0' -- MAKE ADJUSTMENT HERE
+                delay = '0.7' -- MAKE ADJUSTMENT HERE
+            elseif buffactive.Overkill or buffactive['Flurry II'] then
+                delay = '0.5'
             else
-                delay = '2.2' -- MAKE ADJUSTMENT HERE
+                delay = '1.05' -- MAKE ADJUSTMENT HERE
             end
         end
     end
