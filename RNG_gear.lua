@@ -10,7 +10,7 @@ function init_gear_sets()
         sets.precast.JA['Eagle Eye Shot'] = {
             head="Uk'uxkaj Cap", 
             neck="Rancor Collar",
-            back="Rancorous Mantle",
+            back="Buquwik Cape",
             hands="Seiryu's Kote",
             ring2="Pyrosoul Ring",
             legs="Arcadian Braccae +1", 
