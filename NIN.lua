@@ -234,7 +234,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo="Yetshila",
     	head="Iga Zukin +2",
-        neck="Asperity Necklace",
+        neck="Rancor Collar",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
     	body="Mochizuki Chainmail +1",
