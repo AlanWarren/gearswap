@@ -90,7 +90,7 @@ function init_gear_sets()
             ring2="Epona's Ring",
             back="Atheling Mantle",
             waist="Cetl Belt",
-            legs="Manibozho Brais",
+            legs="Quiahuiz Trousers",
             feet="Qaaxo Leggings"
         }
         sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
