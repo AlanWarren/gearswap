@@ -169,7 +169,7 @@
                 head="Otomi Helm",
                 neck="Bale Choker",
                 ear1="Brutal Earring",
-                ear2="Bale Earring",
+                ear2="Trux Earring",
                 body="Xaddi Mail",
                 hands="Boor Bracelets",
                 ring1="Rajas Ring",
@@ -202,10 +202,14 @@
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
                 neck="Breeze Gorget",
+                ear2="Bale Earring",
+                back="Niht Mantle",
                 legs="Mikinaak Cuisses",
                 waist="Soil Belt"
             })
             sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {
+                head="Yaoyotl Helm",
+                ear2="Bale Earring",
                 neck="Breeze Gorget",
                 legs="Mikinaak Cuisses",
                 waist="Soil Belt"
@@ -218,6 +222,7 @@
 
             sets.precast.WS['Cross Reapter'] = set_combine(sets.precast.WS, {
                 neck="Aqua Gorget",
+                back="Niht Mantle",
                 waist="Windbuffet Belt"
              })
            
