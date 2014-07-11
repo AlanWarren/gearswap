@@ -515,7 +515,7 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         body="Mochizuki Chainmail +1",
         neck="Shadow gorget",
-    	ring1="Stormsoul Ring",
+    	ring1="Garuda Ring",
         back="Rancorous Mantle",
         legs="Mochizuki Hakama +1",
         waist="Soil belt"
@@ -570,7 +570,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         neck="Stoicheion Medal",
-        ring1="Stormsoul Ring",
+        ring1="Garuda Ring",
         ring2="Acumen Ring",
     	back="Toro Cape",
         legs="Shneddick Tights +1",
