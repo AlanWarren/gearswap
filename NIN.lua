@@ -480,7 +480,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
     	back="Atheling Mantle",
         waist="Windbuffet Belt",
-        legs="Manibozho Brais",
+        legs="Quiahuiz Trousers",
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS.Proc = set_combine(sets.precast.WS, {
