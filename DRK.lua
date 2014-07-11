@@ -120,7 +120,7 @@
                 hands="Abyss gauntlets +2",
                 ring1="Diamond Ring",
                 --ring2="Perception Ring",
-                back="Abyss Cape",
+                back="Chuparrosa Mantle",
                 waist="Zoran's Belt",
                 legs="Bale Flanchard +2",
                 feet="Ignominy sollerets"
@@ -161,8 +161,6 @@
                    
             sets.midcast.Drain = sets.midcast['Dark Magic'] 
             sets.midcast.Aspir = sets.midcast.Drain
-
-            sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], { back="Chuparrosa Mantle" })
 				--Ighwa Cap		                   
             -- Weaponskill sets
             -- Default set for any weaponskill that isn't any more specifically defined
