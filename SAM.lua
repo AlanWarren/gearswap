@@ -310,7 +310,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Xaddi Mail",
+        body="Sakonji Domaru +1",
         hands="Wakido Kote +1",
         ring1="Rajas Ring", 
         ring2="K'ayres Ring", 
