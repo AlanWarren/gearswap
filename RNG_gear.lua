@@ -431,7 +431,7 @@ function init_gear_sets()
             ear2="Friomisi Earring",
             neck="Stoicheion Medal",
             ring1="Acumen Ring",
-            ring2="Stormsoul Ring",
+            ring2="Garuda Ring",
             waist="Aquiline Belt",
             legs="Shneddick Tights +1",
             back="Toro Cape",
@@ -462,6 +462,7 @@ function init_gear_sets()
         -- LAST STAND
         sets.LastStand = {
            neck="Aqua Gorget",
+           ring1="Garuda Ring",
            ring2="Stormsoul Ring",
            waist="Light Belt",
            feet="Orion Socks +1"
@@ -475,6 +476,7 @@ function init_gear_sets()
             ear1="Volley Earring",
             ear2="Tripudio Earring",
             hands="Seiryu's Kote",
+            ring1="Garuda Ring",
             ring2="Stormsoul Ring",
             waist="Light Belt",
             legs="Aetosaur Trousers +1",
