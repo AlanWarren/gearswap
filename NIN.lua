@@ -685,7 +685,7 @@ end
 function job_buff_change(buff, gain)
     if buff == 'Aftermath: Lv.3' then
         if gain then
-            send_command('timers create "Aftermath: Lv.3" 90 down abilities/aftermath1.png;wait 60;input /echo Aftermath: Lv. 3 [WEARING OFF IN 30 SEC.];wait 20;input /echo Aftermath: Lv.3 [WEARING OFF IN 10 SEC.]')
+            send_command('timers create "Aftermath: Lv.3" 90 down abilities/aftermath3.png;wait 60;input /echo Aftermath: Lv. 3 [WEARING OFF IN 30 SEC.];wait 20;input /echo Aftermath: Lv.3 [WEARING OFF IN 10 SEC.]')
         else
             send_command('timers delete "Aftermath: Lv.3"')
         end
@@ -697,7 +697,7 @@ function job_buff_change(buff, gain)
         end
     elseif buff == 'Aftermath: Lv.1' then
         if gain then
-            windower.send_command('timers create "Aftermath: Lv.1" 30 down abilities/aftermath3.png;wait 20;input /echo [AM1: WEARING OFF IN 10 SEC.]')
+            windower.send_command('timers create "Aftermath: Lv.1" 30 down abilities/aftermath1.png;wait 20;input /echo [AM1: WEARING OFF IN 10 SEC.]')
         else
             send_command('timers delete "Aftermath: Lv.1"')
         end
