@@ -401,16 +401,14 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		head="Whirlpool Mask",
         neck="Iqabi Necklace",
+		body="Qaaxo Harness",
         ring1="Patricius Ring",
-        hands="Plunderer's Armlets +1",
+        hands="Buremte Gloves",
         waist="Hurch'lan Sash",
         feet="Qaaxo Leggings"
     })
 	sets.engaged.iLvl = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
-    })
-    sets.engaged.iLvl.Acc = set_combine(sets.engaged.Acc, {
-        hands="Buremte Gloves"
     })
     sets.engaged.iLvl.PDT = set_combine(sets.engaged.iLvl, {
         head="Lithelimb Cap",
