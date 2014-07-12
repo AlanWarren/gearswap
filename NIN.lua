@@ -41,7 +41,7 @@ function user_setup()
     gear.NightAccAmmo = "Fire Bomblet"
     gear.DayAccAmmo = "Tengu-no-Hane"
     
-    select_movement_feet()
+    select_movement()
     select_default_macro_book()
     
     send_command('bind ^[ input /lockstyle on')
@@ -721,7 +721,7 @@ end
 function job_status_change(newStatus, oldStatus, eventArgs)
     select_static_ammo()
     if newStatus == 'Idle' then
-        select_movement_feet()
+        select_movement()
     end
     state.CombatWeapon = get_combat_weapon()
 end
@@ -735,7 +735,7 @@ end
 function job_update(cmdParams, eventArgs)
     state.CombatWeapon = get_combat_weapon()
 	determine_haste_group()
-    select_movement_feet()
+    select_movement()
     select_static_ammo()
 end
 
