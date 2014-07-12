@@ -69,7 +69,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Lncr. Plackart +2",
-        hands="Cizin Mufflers",
+        hands="Cizin Mufflers +1",
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
 		back="Atheling Mantle",
@@ -106,10 +106,10 @@ function init_gear_sets()
         ear1="Steelflash Earring",
         ear2="Bladeborn Earring",
 		body="Xaddi Mail",
-        hands="Cizin Mufflers",
+        hands="Cizin Mufflers +1 +1",
         ring1="Dark Ring",
         ring2="K'ayres Ring",
-		back="Atheling Mantle",
+		back="Updraft Mantle",
         waist="Windbuffet Belt",
         legs="Cizin Breeches",
         feet="Wyrm Greaves +2"
@@ -118,7 +118,7 @@ function init_gear_sets()
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		head="Yaoyotl Helm",
-		body="Mikinaak Breastplate",hands="Cizin Mufflers",ring1="Rajas Ring",
+		body="Mikinaak Breastplate",hands="Cizin Mufflers +1",ring1="Rajas Ring",
 		back="Atheling Mantle",legs="Cizin Breeches",feet="Whirlpool Greaves"}
 		
 	-- Don't need any special gear for Healing Waltz.
@@ -130,7 +130,7 @@ function init_gear_sets()
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
 		head="Otomi Helm",
-        hands="Cizin Mufflers",
+        hands="Cizin Mufflers +1",
 		legs="Cizin Breeches",
         feet="Whirlpool Greaves",
         waist="Zoran's Belt"
@@ -189,7 +189,7 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
 		body="Twilight Mail",
-        hands="Cizin Mufflers",
+        hands="Cizin Mufflers +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
 		back="Shadow Mantle",
@@ -210,7 +210,7 @@ function init_gear_sets()
         ear1="Dawn Earring",
         ear2="Tripudio Earring",
 		body="Xaddi Mail",
-        hands="Cizin Mufflers",
+        hands="Cizin Mufflers +1",
         ring1="Patricius Ring",
         ring2="Mars's Ring",
 		back="Atheling Mantle",
@@ -241,7 +241,7 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
 		body="Cizin Mail",
-        hands="Cizin Mufflers",
+        hands="Cizin Mufflers +1",
         ring1="Rajas Ring",
         ring2="Dark Ring",
 		back="Atheling Mantle",
@@ -276,7 +276,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Xaddi Mail",
-        hands="Cizin Mufflers",
+        hands="Cizin Mufflers +1",
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
 		back="Atheling Mantle",
@@ -289,7 +289,7 @@ function init_gear_sets()
         head="Yaoyotl Helm",
         body="Lancer's Plackart +2",
         ring2="Mars's Ring",
-        waist="Dynamic Belt"
+        back="Updraft Mantle"
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
