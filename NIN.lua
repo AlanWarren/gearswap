@@ -22,7 +22,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     -- Options: Override default values
-    options.OffenseModes = {'Normal', 'Mid', 'Acc', 'Proc'}
+    options.OffenseModes = {'Normal', 'Mid', 'Acc', 'Crit'}
     options.DefenseModes = {'Normal', 'Evasion', 'PDT'}
     options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
     options.CastingModes = {'Normal'}
@@ -247,12 +247,9 @@ function init_gear_sets()
     	back="Atheling Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Qaaxo Leggings"
-        --feet="Otronif Boots +1"
+        --feet="Qaaxo Leggings"
+        feet="Otronif Boots +1"
     }
-    sets.engaged.Proc = set_combine(sets.engaged, {
-        head="Hakke hachimaki"
-    })
     sets.engaged.TwoHanded = set_combine(sets.engaged, {
         head="Felistris Mask",
         ear1="Bladeborn Earring",
@@ -486,9 +483,6 @@ function init_gear_sets()
         legs="Quiahuiz Trousers",
         feet="Mochizuki Kyahan +1"
     }
-    sets.precast.WS.Proc = set_combine(sets.precast.WS, {
-        head="Hakke Hachimaki"
-    })
 
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         head="Whirlpool Mask",
@@ -516,7 +510,7 @@ function init_gear_sets()
     -- BLADE: HI
     sets.Hi = {
         head="Uk'uxkaj Cap",
-        body="Mochizuki Chainmail +1",
+        body="Iga Ningi +2",
         neck="Shadow gorget",
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
@@ -527,13 +521,14 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         head="Whirlpool Mask",
+        neck="Rancor Collar",
         back="Yokaze Mantle",
         legs="Hachiya Hakama +1"
     })
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {
         head="Whirlpool Mask", 
         legs="Hachiya Hakama +1", 
-        ring1="Mars's Ring",
+        ring2="Mars's Ring",
         back="Yokaze Mantle"
     })
 
@@ -615,11 +610,6 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-	--if spell.type:lower() == 'weaponskill' then
-    --    if state.OffenseMode == 'Proc' then
-    --        equip(sets.precast.WS.Stave)
-    --    end
-    --end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
