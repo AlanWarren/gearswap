@@ -521,7 +521,8 @@ function init_gear_sets()
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
         legs="Mochizuki Hakama +1",
-        waist="Soil belt"
+        waist="Soil belt",
+        feet="Otronif Boots +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
