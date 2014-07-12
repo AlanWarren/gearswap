@@ -191,7 +191,7 @@ function init_gear_sets()
     	back="Repulse Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet=gear.MovementFeet
+        feet="Danzo sune-ate"
     }
     
     sets.idle.Town = set_combine(sets.idle, {
@@ -226,7 +226,10 @@ function init_gear_sets()
         feet="Hachiya Kyahan"
     })
     
-    sets.Kiting = { feet=gear.MovementFeet }
+    sets.DayMovement = {feet="Danzo sune-ate"}
+    sets.NightMovement = {feet="Hachiya Kyahan"}
+    
+    sets.Kiting = select_movement()
     
     -- Engaged sets
     
@@ -656,11 +659,13 @@ end
 -- Can customize state or custom melee class values at this point.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
+	sets.Kiting = select_movement()
     select_static_ammo()
 end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
+	idleSet = set_combine(idleSet, select_movement())
 	if state.Buff.Migawari then
 		idleSet = set_combine(idleSet, sets.buff.Migawari)
 	end
@@ -738,14 +743,14 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
-function select_movement_feet()
+function select_movement()
 	-- world.time is given in minutes into each day
 	-- 7:00 AM would be 420 minutes
 	-- 17:00 PM would be 1020 minutes
 	if world.time >= (17*60) or world.time <= (7*60) then
-		gear.MovementFeet.name = gear.NightFeet
+		return sets.NightMovement
 	else
-		gear.MovementFeet.name = gear.DayFeet
+		return sets.DayMovement
 	end
 end
 
