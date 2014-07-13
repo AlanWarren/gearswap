@@ -211,7 +211,7 @@ function init_gear_sets()
         ear2="Brutal Earring",
         ring1="Stormsoul Ring",
         ring2="Garuda Ring",
-		legs="Nahtirah Trousers", 
+		legs="Quiahuiz Trousers", 
         waist="Elanid Belt",
         back="Canny Cape"
     })
