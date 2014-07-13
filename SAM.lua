@@ -419,7 +419,7 @@ function init_gear_sets()
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="Oneiros Ring", 
-        back="Takaha Mantle",
+        back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 7
         feet="Otronif Boots +1" -- 7
