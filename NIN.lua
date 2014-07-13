@@ -33,10 +33,6 @@ function user_setup()
 
     state.Defense.PhysicalMode = 'PDT'
    
-    gear.MovementFeet = { name="Danzo Sune-ate" }
-    gear.DayFeet = "Danzo sune-ate"
-    gear.NightFeet = "Hachiya Kyahan"
-
     gear.StaticAmmo = { name="Tengu-no-Hane" }
     gear.NightAccAmmo = "Fire Bomblet"
     gear.DayAccAmmo = "Tengu-no-Hane"
@@ -241,7 +237,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
     	body="Mochizuki Chainmail +1",
-        hands="Mochizuki Tekko +1",
+        hands="Otronif Gloves +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
     	back="Atheling Mantle",
@@ -330,7 +326,7 @@ function init_gear_sets()
     sets.engaged.HasteMid = {
         head="Whirlpool Mask",
         neck="Asperity Necklace",
-        hands="Umuthi Gloves",
+        hands="Mochizuki Tekko +1",
         ring1="Mars's Ring",
     	back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
@@ -341,6 +337,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         body="Mochizuki Chainmail +1",
         ring2="Patricius Ring",
+        hands="Umuthi Gloves",
         waist="Anguinus Belt",
         legs="Hachiya Hakama +1"
     })
@@ -349,6 +346,7 @@ function init_gear_sets()
         head="Felistris Mask",
         body="Mochizuki Chainmail +1",
         neck="Iga Erimaki",
+        hands="Otronif Gloves +1",
         ring1="Beeline Ring",
         ring2="Epona's Ring",
         back="Yokaze Mantle",
@@ -363,6 +361,7 @@ function init_gear_sets()
         neck="Rancor Collar",
         ear1="Trux Earring",
         ear2="Brutal Earring",
+        hands="Mochizuki Tekko +1",
         body="Thaumas Coat",
         waist="Windbuffet Belt",
         legs="Hachiya Hakama +1"
@@ -371,7 +370,6 @@ function init_gear_sets()
         head="Whirlpool Mask",
         body="Qaaxo Harness",
         neck="Asperity Necklace",
-        hands="Umuthi Gloves",
         ring1="Mars's Ring",
     	back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
@@ -388,7 +386,6 @@ function init_gear_sets()
         head="Whirlpool Mask",
         body="Qaaxo Harness",
         neck="Asperity Necklace",
-        hands="Umuthi Gloves",
         ring1="Mars's Ring",
     	back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
@@ -407,7 +404,6 @@ function init_gear_sets()
         head="Whirlpool Mask",
         body="Qaaxo Harness",
         neck="Asperity Necklace",
-        hands="Umuthi Gloves",
         ring1="Mars's Ring",
     	back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
@@ -428,7 +424,6 @@ function init_gear_sets()
         head="Whirlpool Mask",
         body="Qaaxo Harness",
         neck="Asperity Necklace",
-        hands="Umuthi Gloves",
         ring1="Mars's Ring",
     	back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
@@ -509,6 +504,7 @@ function init_gear_sets()
     
     -- BLADE: HI
     sets.Hi = {
+        ammo="Yetshila",
         head="Uk'uxkaj Cap",
         body="Mochizuki Chainmail +1",
         neck="Shadow gorget",
