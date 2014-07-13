@@ -408,7 +408,7 @@ function init_gear_sets()
     -- This set aims for Tsurumaru 4-hit. 21% DA, 4% TA, 1% QA 27% haste
     -- Assumes use of Cibitshavore
     sets.engaged.Adoulin = {
-        sub="Pole Grip",
+        --sub="Pole Grip",
         ammo=gear.RAarrow,
         head="Otomi Helm",
         neck="Asperity Necklace", -- 3
