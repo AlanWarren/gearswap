@@ -70,7 +70,7 @@ function init_gear_sets()
 	-- Start defining the sets
 	--------------------------------------
 	
-	sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2"}
+	sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
 	
 	sets.buff['Sneak Attack'] = {
