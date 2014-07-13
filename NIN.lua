@@ -87,7 +87,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         hands="Umuthi Gloves",
     	back="Yokaze Mantle",
-        waist="Hurch'lan Sash",
+        waist="Chaac Belt",
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
@@ -117,6 +117,7 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
+        waist="Chaac Belt",
         legs="Kaabnax Trousers",
         feet="Mochizuki Kyahan +1" -- special enhancement for casting ninjutsu III
     }
@@ -128,7 +129,7 @@ function init_gear_sets()
     	body="Mochi. Chainmail +1",
         hands="Mochizuki Tekko +1",
         ear1="Loquacious Earring",
-    	waist="Hurch'lan Sash",
+        waist="Chaac Belt",
         ring1="Prolix Ring",
         ring1="Diamond Ring",
         legs="Kaabnax Trousers",
