@@ -147,8 +147,7 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
         hands="Boor Bracelets",
-        neck="Aqua Gorget", 
-        waist="Light Belt"
+        neck="Aqua Gorget"
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
         head="Yaoyotl Helm",
@@ -419,7 +418,7 @@ function init_gear_sets()
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="Oneiros Ring", 
-        back="Atheling Mantle",
+        back="Takaha Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 7
         feet="Otronif Boots +1" -- 7
