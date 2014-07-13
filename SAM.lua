@@ -303,7 +303,7 @@ function init_gear_sets()
     -- I generally use Anahera outside of Adoulin areas, so this set aims for 47 STP + 5 from Anahera (52 total)
     -- Note, this set assumes use of Cibitshavore (hence the arrow as ammo)
     sets.engaged = {
-        sub="Pole Grip",
+        --sub="Pole Grip",
         ammo=gear.RAarrow,
         head="Otomi Helm",
         neck="Asperity Necklace",
