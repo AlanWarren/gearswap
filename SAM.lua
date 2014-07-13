@@ -428,13 +428,13 @@ function init_gear_sets()
         body="Sakonji Domaru +1",
         head="Yaoyotl Helm",
         back="Takaha Mantle",
-        ring2="K'ayres Ring"
+        ring2="Mars's Ring"
     })
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
         sub="Bloodrain Strap",
-        ring1="Mars's Ring",
-        ring2="Patricius Ring",
+        ring1="Patricius Ring",
+        ring2="Mars's Ring",
         waist="Dynamic Belt",
         feet="Wakido Sune-Ate +1",
         neck="Agitator's Collar",
@@ -463,7 +463,7 @@ function init_gear_sets()
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
-        body="Sakonji Domaru +1", -- 8
+        body="Xaddi Mail", -- 8
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
