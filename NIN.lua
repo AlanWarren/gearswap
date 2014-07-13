@@ -212,7 +212,7 @@ function init_gear_sets()
     sets.defense.PDT = {
     	head="Lithelimb Cap",
         neck="Agitator's Collar",
-        hands="Umuthi Gloves",
+        hands="Otronif Gloves +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
     	back="Repulse Mantle",
@@ -221,7 +221,7 @@ function init_gear_sets()
     
     sets.defense.MDT = set_combine(sets.defense.PDT, {
     	head="Felistris Mask",
-        hands="Mochizuki Tekko +1",
+        hands="Otronif Gloves +1",
     	back="Yokaze Mantle",
         feet="Hachiya Kyahan"
     })
@@ -287,7 +287,7 @@ function init_gear_sets()
     	head="Lithelimb Cap",
         body="Hachiya Chainmail +1",
         neck="Agitator's Collar",
-        hands="Umuthi Gloves",
+        hands="Otronif Gloves +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
     	back="Repulse Mantle",
@@ -299,7 +299,7 @@ function init_gear_sets()
     	head="Felistris Mask",
         neck="Iga Erimaki",
         body="Mochizuki Chainmail +1",
-        hands="Umuthi Gloves",
+        hands="Otronif Gloves +1",
         ring1="Beeline Ring",
         ring2="Epona's Ring",
         waist="Nusku's Sash",
@@ -510,8 +510,9 @@ function init_gear_sets()
     -- BLADE: HI
     sets.Hi = {
         head="Uk'uxkaj Cap",
-        body="Iga Ningi +2",
+        body="Mochizuki Chainmail +1",
         neck="Shadow gorget",
+        hands="Otronif Gloves +1",
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
         legs="Mochizuki Hakama +1",
