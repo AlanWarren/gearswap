@@ -262,7 +262,7 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mod, {neck="Shadow Gorget"})
 
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Uk'uxkaj Cap", neck="Breeze Gorget",
-		ear1="Brutal Earring",ear2="Trux Earring", hands="Pillager's Armlegs +1", ring1="Thundersoul Ring", ring2="Garuda's Ring",
+		ear1="Brutal Earring",ear2="Trux Earring", hands="Pillager's Armlegs +1", ring1="Thundersoul Ring", ring2="Garuda Ring",
         legs="Pillager's Culottes +1"})
 	sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head="Whirlpool Mask"})
 	sets.precast.WS['Shark Bite'].Mod = set_combine(sets.precast.WS['Shark Bite'], {waist="Thunder Belt"})
