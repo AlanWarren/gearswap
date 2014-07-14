@@ -91,6 +91,9 @@ function init_gear_sets()
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
+    sets.midcast.Step = {
+        wasit="Chaac Belt"
+    }
     -- Ranged
     sets.precast.RA = {
         head="Uk'uxkaj Cap",
