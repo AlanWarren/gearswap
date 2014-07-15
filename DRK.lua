@@ -107,7 +107,7 @@
                 ring1="Rajas Ring",
                 ring2="K'ayres Ring",
                 waist="Zoran's Belt",
-                legs="Cizin Breeches",
+                legs="Xaddi Cuisses",
                 feet="Whirlpool Greaves"
             }
      
@@ -150,7 +150,7 @@
                 head="Yaoyotl Helm",
                 body="Bale Cuirass +2",
                 --hands="Xaddi Gauntlets",
-                --legs="Xaddi Cuisses",
+                legs="Xaddi Cuisses",
                 ring2="K'ayres Ring",
                 feet="Ignominy Sollerets"
             }
@@ -176,7 +176,7 @@
                 ring2="Pyrosoul Ring",
                 back="Buquwik Cape",
                 waist="Windbuffet Belt",
-                legs="Cizin Breeches",
+                legs="Xaddi Cuisses",
                 feet="Whirlpool Greaves"
             }
             sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -328,7 +328,7 @@
                 ring2="K'ayres Ring",
 	        	back="Atheling Mantle",
                 waist="Windbuffet Belt",
-                legs="Cizin Breeches",
+                legs="Xaddi Cuisses",
                 feet="Mikinaak Greaves"
             }
 
@@ -377,7 +377,7 @@
                 ring2="Mars's Ring",
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
-                legs="Cizin Breeches",
+                legs="Xaddi Cuisses",
                 feet="Mikinaak Greaves"
             }
 
