@@ -435,6 +435,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         waist="Dynamic Belt",
+        body="Xaddi Mail", -- 3
         feet="Wakido Sune-Ate +1",
         legs="Xaddi Cuisses",
         neck="Agitator's Collar",
