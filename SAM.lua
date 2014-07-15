@@ -208,7 +208,6 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",waist="Soil Belt"})
     
-    
     -- Midcast Sets
     sets.midcast.FastRecast = {
     	head="Otomi Helm",
@@ -331,6 +330,7 @@ function init_gear_sets()
         head="Sakonji Kabuto +1",
         ring2="Mars's Ring",
         feet="Wakido Sune-Ate +1",
+        legs="Xaddi Cuisses",
         back="Takaha Mantle"
     })
     
@@ -436,6 +436,7 @@ function init_gear_sets()
         ring2="Mars's Ring",
         waist="Dynamic Belt",
         feet="Wakido Sune-Ate +1",
+        legs="Xaddi Cuisses",
         neck="Agitator's Collar",
         back="Takaha Mantle"
     })
@@ -483,6 +484,7 @@ function init_gear_sets()
         ammo=gear.RAarrow,
         ring1="Patricius Ring",
         ring2="Mars's Ring",
+        legs="Xaddi Cuisses",
         back="Takaha Mantle"
     })
     
