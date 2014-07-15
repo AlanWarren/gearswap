@@ -245,9 +245,6 @@ function job_buff_change(buff, gain)
             classes.CustomRangedGroups:append('SamRoll')
         end
        
-        if (buff == "Flurry II" and gain) or buffactive['Flurry II'] then
-            classes.CustomRangedGroups:append('Snapshot')
-        end
     end
 
     if buff == "Camouflage" then
@@ -413,10 +410,6 @@ function get_custom_ranged_groups()
         classes.CustomRangedGroups:append('SamRoll')
     end
 
-    if buffactive['Flurry II'] then
-        classes.CustomRangedGroups:append('Snapshot')
-    end
-    
 end
 
 function use_weaponskill()
