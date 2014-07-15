@@ -14,8 +14,14 @@ end
 function job_setup()
 	state.Buff.Migawari = buffactive.migawari or false
     state.CombatWeapon = get_combat_weapon()
+    include('Mote-TreasureHunter')
 
 	determine_haste_group()
+	-- For th_action_check():
+	-- JA IDs for actions that always have TH: Provoke, Animated Flourish
+	info.default_ja_ids = S{35, 204}
+	-- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
+	info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 end
 
 
@@ -80,6 +86,7 @@ function init_gear_sets()
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
     
+	sets.TreasureHunter = {waist="Chaac Belt"}
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
     	head="Whirlpool Mask",
@@ -611,6 +618,13 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
+	if spell.english == 'Aeolian Edge' and state.TreasureMode ~= 'None' then
+		equip(sets.TreasureHunter)
+	elseif spell.type == 'WeaponSkill' then
+		if state.TreasureMode == 'Fulltime' then
+			equip(sets.TreasureHunter)
+		end
+	end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -629,6 +643,9 @@ end
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
     state.CombatWeapon = get_combat_weapon()
+	if state.TreasureMode ~= 'None' and spell.action_type == 'Ranged Attack' then
+		equip(sets.TreasureHunter)
+	end
 end
 
 
@@ -666,6 +683,9 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+	if state.TreasureMode == 'Fulltime' then
+		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+	end
 	if state.Buff.Migawari then
 		meleeSet = set_combine(meleeSet, sets.buff.Migawari)
 	end
@@ -706,8 +726,10 @@ function job_buff_change(buff, gain)
     end
 	if state.Buff[buff] ~= nil then
 		state.Buff[buff] = gain
-        handle_equipping_gear(player.status)
-    end
+		if not midaction() then
+			handle_equipping_gear(player.status)
+		end
+	end
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
@@ -726,6 +748,7 @@ end
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
     state.CombatWeapon = get_combat_weapon()
+	th_update(cmdParams, eventArgs)
 	determine_haste_group()
     select_movement()
     select_static_ammo()
@@ -734,6 +757,29 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+
+-- State buff checks that will equip buff gear and mark the event as handled.
+function check_buff(buff_name, eventArgs)
+	if state.Buff[buff_name] then
+		equip(sets.buff[buff_name] or {})
+		if state.TreasureMode == 'Fulltime' then
+			equip(sets.TreasureHunter)
+		end
+		eventArgs.handled = true
+	end
+end
+-- Check for various actions that we've specified in user code as being used with TH gear.
+-- This will only ever be called if TreasureMode is not 'None'.
+-- Category and Param are as specified in the action event packet.
+function th_action_check(category, param)
+	if category == 2 or -- any ranged attack
+		--category == 4 or -- any magic action
+		(category == 3 and param == 30) or -- Aeolian Edge
+		(category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
+		(category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
+		then return true
+	end
+end
 
 function select_movement()
 	-- world.time is given in minutes into each day
