@@ -599,6 +599,9 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
+
+    --Aftermath for Kannagi
+    custom_aftermath_timers_precast(spell)
     
 	if spell.skill == "Ninjutsu" and spell.target.type:lower() == 'self' and spellMap ~= "Utsusemi" then
 		classes.CustomClass = "SelfNinjutsu"
@@ -652,6 +655,8 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
+    -- Aftermath timer creation
+    custom_aftermath_timers_aftercast(spell)
     -- If spell is not interrupted. This also applies when you try using a JA with it's timer down.
     -- If the recast timer isn't ready, aftercast is called with spell.interrupted == true
     -- We check if state.Buff.spell is defined, so we don't created variable instances for every action taken
@@ -701,25 +706,6 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-    if buff == 'Aftermath: Lv.3' then
-        if gain then
-            send_command('timers create "Aftermath: Lv.3" 90 down abilities/aftermath3.png;wait 60;input /echo Aftermath: Lv. 3 [WEARING OFF IN 30 SEC.];wait 20;input /echo Aftermath: Lv.3 [WEARING OFF IN 10 SEC.]')
-        else
-            send_command('timers delete "Aftermath: Lv.3"')
-        end
-    elseif buff == 'Aftermath: Lv.2' then
-        if gain then
-            windower.send_command('timers create "Aftermath: Lv.2" 60 down abilities/aftermath2.png;wait 30;input /echo [AM2: WEARING OFF IN 30 SEC.];wait 20; input /echo [AM2: WEARING OFF IN 10 SEC.]')
-        else
-            send_command('timers delete "Aftermath: Lv.2"')
-        end
-    elseif buff == 'Aftermath: Lv.1' then
-        if gain then
-            windower.send_command('timers create "Aftermath: Lv.1" 30 down abilities/aftermath1.png;wait 20;input /echo [AM1: WEARING OFF IN 10 SEC.]')
-        else
-            send_command('timers delete "Aftermath: Lv.1"')
-        end
-    end
 	-- If we gain or lose any haste buffs, adjust which gear set we target.
 	if S{'haste','march', 'madrigal','embrava','haste samba'}:contains(buff:lower()) then
 		determine_haste_group()
@@ -845,6 +831,51 @@ function utsusemi_active()
         return true
     else
         return false
+    end
+end
+
+-- Call from job_precast() to setup aftermath information for custom timers.
+function custom_aftermath_timers_precast(spell)
+    if spell.type == 'WeaponSkill' then
+        info.aftermath = {}
+        
+        local empy_ws = "Blade: Hi"
+        
+        info.aftermath.weaponskill = spell.english
+        info.aftermath.duration = 0
+        
+        info.aftermath.level = math.floor(player.tp / 1000)
+        if info.aftermath.level == 0 then
+            info.aftermath.level = 1
+        end
+        
+        if spell.english == empy_ws and player.equipment.main == 'Kannagi' then
+            -- nothing can overwrite lvl 3
+            if buffactive['Aftermath: Lv.3'] then
+                return
+            end
+            -- only lvl 3 can overwrite lvl 2
+            if info.aftermath.level ~= 3 and buffactive['Aftermath: Lv.2'] then
+                return
+            end
+            
+            -- duration is based on aftermath level
+            info.aftermath.duration = 30 * info.aftermath.level
+        end
+    end
+end
+-- Call from job_aftercast() to create the custom aftermath timer.
+function custom_aftermath_timers_aftercast(spell)
+    if not spell.interrupted and spell.type == 'WeaponSkill' and
+       info.aftermath and info.aftermath.weaponskill == spell.english and info.aftermath.duration > 0 then
+
+        local aftermath_name = 'Aftermath: Lv.'..tostring(info.aftermath.level)
+        send_command('timers d "Aftermath: Lv.1"')
+        send_command('timers d "Aftermath: Lv.2"')
+        send_command('timers d "Aftermath: Lv.3"')
+        send_command('timers c "'..aftermath_name..'" '..tostring(info.aftermath.duration)..' down abilities/aftermath'..tostring(info.aftermath.level)..'.png')
+
+        info.aftermath = {}
     end
 end
 
