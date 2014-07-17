@@ -78,7 +78,7 @@
             sets.precast.Waltz = {
                     head="Yaoyotl Helm",
                     body="Mikinaak Breastplate",
-                    legs="Cizin Breeches",feet="Whirlpool Greaves"}
+                    legs="Cizin Breeches +1",feet="Whirlpool Greaves"}
                    
             -- Don't need any special gear for Healing Waltz.
             sets.precast.Waltz['Healing Waltz'] = {}
@@ -176,7 +176,7 @@
                 ring2="Pyrosoul Ring",
                 back="Buquwik Cape",
                 waist="Windbuffet Belt",
-                legs="Xaddi Cuisses",
+                legs="Cizin Breeches +1",
                 feet="Ejekamal Boots"
             }
             sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -199,7 +199,7 @@
                 ring2="Diamond Ring"
             })
             sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-            sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt",legs="Cizin Breeches"})
+            sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt",legs="Cizin Breeches +1"})
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
                 neck="Breeze Gorget",
@@ -286,7 +286,7 @@
                 ring2="Paguroidea Ring",
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
-                legs="Cizin Breeches",
+                legs="Cizin Breeches +1",
                 feet="Whirlpool Greaves"
             }
            
@@ -300,7 +300,7 @@
                 hands="Cizin Mufflers +1",
                 ring1="Dark Ring",
                 ring2="Patricius Ring",
-                legs="Cizin Breeches",
+                legs="Cizin Breeches +1",
                 feet="Whirlpool Greaves"
             }
      
