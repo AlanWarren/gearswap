@@ -111,7 +111,7 @@ function init_gear_sets()
         ring2="K'ayres Ring",
 		back="Updraft Mantle",
         waist="Windbuffet Belt",
-        legs="Cizin Breeches",
+        legs="Xaddi Cuisses",
         feet="Wyrm Greaves +2"
     }
 
@@ -119,7 +119,7 @@ function init_gear_sets()
 	sets.precast.Waltz = {
 		head="Yaoyotl Helm",
 		body="Mikinaak Breastplate",hands="Cizin Mufflers +1",ring1="Rajas Ring",
-		back="Atheling Mantle",legs="Cizin Breeches",feet="Whirlpool Greaves"}
+		back="Atheling Mantle",legs="Xaddi Cuisses",feet="Whirlpool Greaves"}
 		
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
@@ -131,7 +131,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Otomi Helm",
         hands="Cizin Mufflers +1",
-		legs="Cizin Breeches",
+		legs="Xaddi Cuisses",
         feet="Whirlpool Greaves",
         waist="Zoran's Belt"
     }	
@@ -161,8 +161,7 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         hands="Mikinaak Gauntlets",
-        legs="Mikinaak Cuisses"
-
+        legs="Xaddi Cuisses"
     })
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
