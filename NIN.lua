@@ -121,6 +121,7 @@ function init_gear_sets()
         feet="Qaaxo Leggings"
     }
     sets.precast.JA.Sange = sets.midcast.RA
+	sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
     
     -- Fast cast sets for spells
     sets.precast.FC = {

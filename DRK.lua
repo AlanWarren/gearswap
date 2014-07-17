@@ -177,7 +177,7 @@
                 back="Buquwik Cape",
                 waist="Windbuffet Belt",
                 legs="Xaddi Cuisses",
-                feet="Whirlpool Greaves"
+                feet="Ejekamal Boots"
             }
             sets.precast.WS.Acc = set_combine(sets.precast.WS, {
                 head="Yaoyotl Helm",
@@ -185,6 +185,7 @@
                 ear2="Steelflash Earring",
                 hands="Mikinaak Gauntlets",
                 ring1="Mars's Ring",
+                feet="Whirlpool Greaves"
             })
      
             -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -329,7 +330,7 @@
 	        	back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Xaddi Cuisses",
-                feet="Mikinaak Greaves"
+                feet="Ejekamal Boots"
             }
 
 	        sets.engaged.Acc = set_combine(sets.engaged, {
@@ -378,7 +379,7 @@
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Xaddi Cuisses",
-                feet="Mikinaak Greaves"
+                feet="Ejekamal Boots"
             }
 
             sets.engaged['Anahera Scythe'].Acc = set_combine(sets.engaged['Anahera Scythe'], {

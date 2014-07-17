@@ -154,7 +154,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Cizin Breeches",
-        feet="Whirlpool Greaves"
+        feet="Ejekamal Boots"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         head="Yaoyotl Helm",
@@ -281,7 +281,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Cizin Breeches",
-        feet="Mikinaak Greaves"
+        feet="Ejekamal Boots"
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
