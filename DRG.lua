@@ -74,14 +74,15 @@ function init_gear_sets()
         ring2="Oneiros Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
-        legs="Lncr. Cuissots +2",
+        legs="Lancer's Cuissots +2",
         feet="Cizin Greaves"
     }
 
 	sets.precast.JA['Ancient Circle'] = {}
 
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
-        legs="Wyrm Brais +2"
+        --legs="Wyrm Brais +2"
+        legs="Lancer's Cuissots +2"
     }) 
 	sets.precast.JA['Soul Jump'] = set_combine(sets.precast.JA.Jump, {
         legs="Lancer's Cuissots +2"
@@ -106,7 +107,7 @@ function init_gear_sets()
         ear1="Steelflash Earring",
         ear2="Bladeborn Earring",
 		body="Xaddi Mail",
-        hands="Cizin Mufflers +1 +1",
+        hands="Cizin Mufflers +1",
         ring1="Dark Ring",
         ring2="K'ayres Ring",
 		back="Updraft Mantle",
@@ -148,7 +149,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
 		body="Xaddi Mail",
-        hands="Boor Braceletes",
+        hands="Mikinaak Gauntlets",
         ring1="Oneiros Ring",
         ring2="Pyrosoul Ring",
 		back="Atheling Mantle",
@@ -165,18 +166,34 @@ function init_gear_sets()
     })
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",waist="Windbuffet Belt"})
+	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
+        neck="Shadow Gorget",
+        back="Buquwik Cape",
+        waist="Soil Belt"
+    })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
         head="Yaoyotl Helm",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        hands="Mikinaak Gauntlets",
+        feet="Mikinaak Greaves"
     })
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})
 
+    sets.precast.WS["Camlann's Torment"] = set_combine(sets.precast.WS, {
+        neck="Breeze Gorget",
+        body="Phorcys Korazin",
+        back="Buquwik Cape",
+        waist="Light Belt",
+        feet="Whirlpool Greaves"
+    })
+	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
+        head="Yaoyotl Helm", ear1="Bladeborn Earring", ear2="Steelflash Earring", back="Updraft Mantle"
+    })
+	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
+
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {neck="Light Gorget"})
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS.Acc, {neck="Light Gorget"})
-	sets.precast.WS['Drakesbane'].Mod = set_combine(sets.precast.WS['Drakesbane'], {waist="Light Belt"})
+	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {waist="Light Belt"})
 
 	
 	-- Sets to return to when not performing an action.
@@ -281,12 +298,11 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Xaddi Cuisses",
-        feet="Ejekamal Boots"
+        feet="Mikinaak Greaves"
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
-        body="Lancer's Plackart +2",
         ring2="Mars's Ring",
         back="Updraft Mantle"
     })
@@ -295,7 +311,8 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         hands="Mikinaak Gauntlets",
         ear1="Bladeborn Earring",
-        ear2="Steelflash Earring"
+        ear2="Steelflash Earring",
+        ring1="Patricius Ring"
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
