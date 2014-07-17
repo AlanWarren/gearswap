@@ -78,7 +78,7 @@
             sets.precast.Waltz = {
                     head="Yaoyotl Helm",
                     body="Mikinaak Breastplate",
-                    legs="Cizin Breeches",feet="Whirlpool Greaves"}
+                    legs="Cizin Breeches +1",feet="Whirlpool Greaves"}
                    
             -- Don't need any special gear for Healing Waltz.
             sets.precast.Waltz['Healing Waltz'] = {}
@@ -176,8 +176,8 @@
                 ring2="Pyrosoul Ring",
                 back="Buquwik Cape",
                 waist="Windbuffet Belt",
-                legs="Xaddi Cuisses",
-                feet="Whirlpool Greaves"
+                legs="Cizin Breeches +1",
+                feet="Ejekamal Boots"
             }
             sets.precast.WS.Acc = set_combine(sets.precast.WS, {
                 head="Yaoyotl Helm",
@@ -185,6 +185,7 @@
                 ear2="Steelflash Earring",
                 hands="Mikinaak Gauntlets",
                 ring1="Mars's Ring",
+                feet="Whirlpool Greaves"
             })
      
             -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -198,7 +199,7 @@
                 ring2="Diamond Ring"
             })
             sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-            sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt",legs="Cizin Breeches"})
+            sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt",legs="Cizin Breeches +1"})
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
                 neck="Breeze Gorget",
@@ -285,7 +286,7 @@
                 ring2="Paguroidea Ring",
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
-                legs="Cizin Breeches",
+                legs="Cizin Breeches +1",
                 feet="Whirlpool Greaves"
             }
            
@@ -299,7 +300,7 @@
                 hands="Cizin Mufflers +1",
                 ring1="Dark Ring",
                 ring2="Patricius Ring",
-                legs="Cizin Breeches",
+                legs="Cizin Breeches +1",
                 feet="Whirlpool Greaves"
             }
      
@@ -329,7 +330,7 @@
 	        	back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Xaddi Cuisses",
-                feet="Mikinaak Greaves"
+                feet="Ejekamal Boots"
             }
 
 	        sets.engaged.Acc = set_combine(sets.engaged, {
@@ -378,7 +379,7 @@
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Xaddi Cuisses",
-                feet="Mikinaak Greaves"
+                feet="Ejekamal Boots"
             }
 
             sets.engaged['Anahera Scythe'].Acc = set_combine(sets.engaged['Anahera Scythe'], {

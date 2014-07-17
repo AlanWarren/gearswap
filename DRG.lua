@@ -153,8 +153,8 @@ function init_gear_sets()
         ring2="Pyrosoul Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
-        legs="Cizin Breeches",
-        feet="Whirlpool Greaves"
+        legs="Cizin Breeches +1",
+        feet="Ejekamal Boots"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         head="Yaoyotl Helm",
@@ -229,7 +229,7 @@ function init_gear_sets()
 	sets.idle.Weak = set_combine(sets.idle.Field, {
 		head="Twilight Helm",
 		body="Twilight Mail",
-		legs="Cizin Breeches"
+		legs="Cizin Breeches +1"
     })
 	
 	-- Defense sets
@@ -245,7 +245,7 @@ function init_gear_sets()
         ring2="Dark Ring",
 		back="Atheling Mantle",
         waist="Cetl Belt",
-        legs="Cizin Breeches",
+        legs="Cizin Breeches +1",
         feet="Cizin Greaves"
     }
 
@@ -280,8 +280,8 @@ function init_gear_sets()
         ring2="Oneiros Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
-        legs="Cizin Breeches",
-        feet="Mikinaak Greaves"
+        legs="Xaddi Cuisses",
+        feet="Ejekamal Boots"
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
