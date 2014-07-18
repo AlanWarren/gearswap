@@ -845,7 +845,7 @@ function custom_aftermath_timers_precast(spell)
         
         local empy_ws = "Blade: Hi"
         
-        info.aftermath.weaponskill = spell.english
+        info.aftermath.weaponskill = empy_ws
         info.aftermath.duration = 0
         
         info.aftermath.level = math.floor(player.tp / 1000)
