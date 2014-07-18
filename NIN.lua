@@ -682,7 +682,9 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-	idleSet = set_combine(idleSet, select_movement())
+    if state.PhysicalDefenseMode ~= 'PDT' then
+	    idleSet = set_combine(idleSet, select_movement())
+    end
 	if state.Buff.Migawari then
 		idleSet = set_combine(idleSet, sets.buff.Migawari)
 	end
