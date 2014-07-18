@@ -220,9 +220,10 @@ function init_gear_sets()
     sets.defense.PDT = {
     	head="Lithelimb Cap",
         neck="Agitator's Collar",
+        body="Hachiya Chainmail +1",
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
-        ring2="Epona's Ring",
+        ring2="Dark Ring",
     	back="Repulse Mantle",
         feet="Otronif Boots +1"
     }
