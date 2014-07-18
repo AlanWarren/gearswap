@@ -81,7 +81,7 @@ function init_gear_sets()
 		body="Qaaxo Harness",
         hands="Pillager's Armlets +2",
         ring1="Thundersoul Ring",
-        ring2="Epona's Ring",
+        ring2="Ramuh Ring",
 		back="Atheling Mantle",
         waist="Cetl Belt",
         legs="Pillager's Culottes +1",
@@ -243,7 +243,7 @@ function init_gear_sets()
 		ear1="Brutal Earring",
         ear2="Trux Earring",
         hands="Pillager's Armlets +1",
-        ring1="Thundersoul Ring",
+        ring1="Ramuh Ring",
         waist="Light Belt",
         legs="Pillager's Culottes +1",
         back="Atheling Mantle",
@@ -262,7 +262,7 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mod, {neck="Shadow Gorget"})
 
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Uk'uxkaj Cap", neck="Breeze Gorget",
-		ear1="Brutal Earring",ear2="Trux Earring", hands="Pillager's Armlegs +1", ring1="Thundersoul Ring", ring2="Garuda Ring",
+		ear1="Brutal Earring",ear2="Trux Earring", hands="Pillager's Armlegs +1", ring1="Ramuh Ring", ring2="Garuda Ring",
         legs="Pillager's Culottes +1"})
 	sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head="Whirlpool Mask"})
 	sets.precast.WS['Shark Bite'].Mod = set_combine(sets.precast.WS['Shark Bite'], {waist="Thunder Belt"})
