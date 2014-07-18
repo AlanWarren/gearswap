@@ -506,7 +506,7 @@ function init_gear_sets()
     sets.Jin = {
         head="Uk'uxkaj Cap",
         neck="Breeze Gorget",
-        ring1="Thundersoul Ring",
+        ring1="Ramuh Ring",
         waist="Thunder Belt",
         back="Rancorous Mantle"
     }
@@ -545,7 +545,8 @@ function init_gear_sets()
     sets.Shun = {
         neck="Breeze Gorget",
         waist="Thunder Belt",
-        ring1="Thundersoul Ring",
+        ring1="Ramuh Ring",
+        ring2="Thundersoul Ring",
         ear1="Dawn Earring"
     }
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
