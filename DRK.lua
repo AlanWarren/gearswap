@@ -248,7 +248,7 @@
             -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
             sets.idle.Town = {
                 head="Otomi Helm",
-                neck="Asperity Necklace",
+                neck="Agitator's Collar",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
                 body="Xaddi Mail",
@@ -258,7 +258,7 @@
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Crimson Cuisses",
-                feet="Whirlpool Greaves"
+                feet="Ejekamal Boots"
             }
            
             sets.idle.Field = {
