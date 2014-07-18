@@ -603,7 +603,7 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
 
     --Aftermath for Kannagi
-    custom_aftermath_timers_precast(spell)
+    aw_custom_aftermath_timers_precast(spell)
     
 	if spell.skill == "Ninjutsu" and spell.target.type:lower() == 'self' and spellMap ~= "Utsusemi" then
 		classes.CustomClass = "SelfNinjutsu"
@@ -658,7 +658,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
     -- Aftermath timer creation
-    custom_aftermath_timers_aftercast(spell)
+    aw_custom_aftermath_timers_aftercast(spell)
     -- If spell is not interrupted. This also applies when you try using a JA with it's timer down.
     -- If the recast timer isn't ready, aftercast is called with spell.interrupted == true
     -- We check if state.Buff.spell is defined, so we don't created variable instances for every action taken
@@ -839,7 +839,7 @@ function utsusemi_active()
 end
 
 -- Call from job_precast() to setup aftermath information for custom timers.
-function custom_aftermath_timers_precast(spell)
+function aw_custom_aftermath_timers_precast(spell)
     if spell.type == 'WeaponSkill' then
         info.aftermath = {}
         
@@ -869,7 +869,7 @@ function custom_aftermath_timers_precast(spell)
     end
 end
 -- Call from job_aftercast() to create the custom aftermath timer.
-function custom_aftermath_timers_aftercast(spell)
+function aw_custom_aftermath_timers_aftercast(spell)
     if not spell.interrupted and spell.type == 'WeaponSkill' and
        info.aftermath and info.aftermath.weaponskill == spell.english and info.aftermath.duration > 0 then
 
