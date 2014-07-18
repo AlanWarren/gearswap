@@ -529,7 +529,7 @@ function init_gear_sets()
             waist="Light Belt",
             hands="Seiryu's Kote", -- override 
             legs="Arcadian Braccae +1",
-            ring2="Thundersoul Ring",
+            ring2="Ramuh Ring",
             back="Rancorous Mantle"
         }
         sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, sets.Jishnus)
