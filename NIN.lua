@@ -517,7 +517,7 @@ function init_gear_sets()
     sets.Hi = {
         ammo="Yetshila",
         head="Uk'uxkaj Cap",
-        body="Qaaxo Harness",
+        --body="Qaaxo Harness",
         neck="Shadow gorget",
         hands="Hachiya Tekko +1",
     	ring1="Garuda Ring",
