@@ -318,8 +318,8 @@
                 ammo="Yetshila",
 	        	head="Otomi Helm",
                 neck="Asperity Necklace",
-                ear1="Bladeborn Earring",
-                ear2="Steelflash Earring",
+                ear1="Brutal Earring",
+                ear2="Tripudio Earring",
 	        	body="Xaddi Mail",
                 hands="Cizin Mufflers +1",
                 ring1="Rajas Ring",
@@ -339,8 +339,6 @@
                 ring2="Patricius Ring",
             })
 	        sets.engaged.Mid = set_combine(sets.engaged, {
-                ear1="Brutal Earring",
-                ear2="Trux Earring",
             })
 	        sets.engaged.Reraise = set_combine(sets.engaged, {
 	        	head="Twilight Helm",neck="Twilight Torque",
@@ -388,8 +386,6 @@
             })
 
             sets.engaged['Anahera Scythe'].Mid = set_combine(sets.engaged['Anahera Scythe'], {
-                ear1="Brutal Earring",
-                ear2="Trux Earring",
             })
 
             sets.engaged['Anahera Scythe'].Mid.PDT = set_combine(sets.engaged['Anahera Scythe'].Mid, {
