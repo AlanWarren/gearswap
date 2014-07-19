@@ -15,6 +15,7 @@ function job_setup()
 	state.Buff.Migawari = buffactive.migawari or false
     state.CombatWeapon = get_combat_weapon()
     include('Mote-TreasureHunter')
+    state.TreasureMode = 'Tag'
 
 	determine_haste_group()
 	-- For th_action_check():
@@ -39,11 +40,6 @@ function user_setup()
 
     state.Defense.PhysicalMode = 'PDT'
    
-    gear.StaticAmmo = { name="Tengu-no-Hane" }
-    gear.NightAccAmmo = "Fire Bomblet"
-    gear.DayAccAmmo = "Tengu-no-Hane"
-    
-    select_movement()
     select_default_macro_book()
     
     send_command('bind ^[ input /lockstyle on')
@@ -63,7 +59,6 @@ function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
-
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
     sets.precast.JA['Futae'] = { hands="Iga Tekko +1" }
@@ -237,9 +232,13 @@ function init_gear_sets()
     
     sets.DayMovement = {feet="Danzo sune-ate"}
     sets.NightMovement = {feet="Hachiya Kyahan"}
+
+    sets.NightAccAmmo = {ammo="Fire Bomblet"}
+    sets.DayAccAmmo = {ammo="Tengu-no-Hane"}
+    sets.RegularAmmo = {ammo="Yetshila"}
     
     sets.Kiting = select_movement()
-    
+    sets.Ammo = select_static_ammo() 
     -- Engaged sets
     
     -- Normal melee group
@@ -488,7 +487,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
     	back="Atheling Mantle",
         waist="Windbuffet Belt",
-        legs="Quiahuiz Trousers",
+        legs="Manibozho Brais",
         feet="Mochizuki Kyahan +1"
     }
 
@@ -498,8 +497,7 @@ function init_gear_sets()
         back="Yokaze Mantle"
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-        hands="Umuthi Gloves",
-        legs="Hachiya Hakama +1",
+        hands="Buremte Gloves",
         ring1="Mars's Ring"
     })
     
@@ -519,23 +517,21 @@ function init_gear_sets()
     sets.Hi = {
         ammo="Yetshila",
         head="Uk'uxkaj Cap",
-        body="Mochizuki Chainmail +1",
+        body="Qaaxo Harness",
         neck="Shadow gorget",
-        hands="Otronif Gloves +1",
+        hands="Hachiya Tekko",
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
-        legs="Mochizuki Hakama +1",
+        legs="Kaabnax Trousers",
         waist="Soil belt",
         feet="Otronif Boots +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-        head="Whirlpool Mask",
-        neck="Rancor Collar",
-        back="Yokaze Mantle",
-        legs="Hachiya Hakama +1"
+        body="Mochizuki Chainmail +1",
+        hands="Otronif Gloves +1"
     })
-    sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {
+    sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         head="Whirlpool Mask", 
         legs="Hachiya Hakama +1", 
         ring2="Mars's Ring",
@@ -545,7 +541,7 @@ function init_gear_sets()
     -- BLADE: SHUN
     sets.Shun = {
         neck="Breeze Gorget",
-        waist="Thunder Belt",
+        waist="Anguinus Belt",
         ring1="Ramuh Ring",
         ring2="Thundersoul Ring",
         ear1="Dawn Earring"
@@ -567,7 +563,7 @@ function init_gear_sets()
     -- BLADE: KU 
     sets.Ku = {
         neck="Shadow Gorget",
-        waist="Soil Belt",
+        waist="Anguinus Belt",
         ring1="Rajas Ring",
         ring2="Pyrosoul Ring",
     }
@@ -630,6 +626,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 		if state.TreasureMode == 'Fulltime' then
 			equip(sets.TreasureHunter)
 		end
+        if spell.english ~= 'Blade: Hi' then
+            equip(sets.Ammo)
+        end
 	end
 end
 
@@ -677,7 +676,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
 	sets.Kiting = select_movement()
-    select_static_ammo()
+    sets.Ammo = select_static_ammo()
 end
 
 -- Modify the default idle set after it was constructed.
@@ -693,6 +692,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+    meleeSet = set_combine(meleeSet, select_static_ammo())
 	if state.TreasureMode == 'Fulltime' then
 		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
 	end
@@ -724,9 +724,9 @@ function job_buff_change(buff, gain)
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
-    select_static_ammo()
+    sets.Ammo = select_static_ammo()
     if newStatus == 'Idle' then
-        select_movement()
+        sets.Kiting = select_movement()
     end
     state.CombatWeapon = get_combat_weapon()
 end
@@ -741,8 +741,8 @@ function job_update(cmdParams, eventArgs)
     state.CombatWeapon = get_combat_weapon()
 	th_update(cmdParams, eventArgs)
 	determine_haste_group()
-    select_movement()
-    select_static_ammo()
+    sets.Kiting = select_movement()
+    sets.Ammo = select_static_ammo()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -784,12 +784,14 @@ function select_movement()
 end
 
 function select_static_ammo()
-    if state.OffenseMode == 'Acc' then
+    if state.OffenseMode == 'Acc' or state.OffenseMode == 'Mid' then
 	    if world.time >= (18*60) or world.time <= (6*60) then
-            gear.StaticAmmo.name = gear.NightAccAmmo
+            return sets.NightAccAmmo
         else
-            gear.StaticAmmo.name = gear.DayAccAmmo
+            return sets.DayAccAmmo
 	    end
+    else
+        return sets.RegularAmmo
     end
 end
 
