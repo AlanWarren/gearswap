@@ -188,7 +188,6 @@ function init_gear_sets()
         -- Stave Sam Roll
         sets.midcast.RA.Stave.SamRoll = set_combine(sets.midcast.RA.Stave, {
             body="Arcadian Jerkin +1",
-            ring2="Pyrosoul Ring",
             waist="Elanid Belt"
         })
         sets.midcast.RA.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.Stave.Mid, {
