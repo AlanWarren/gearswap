@@ -176,7 +176,7 @@
                 ring2="Pyrosoul Ring",
                 back="Buquwik Cape",
                 waist="Windbuffet Belt",
-                legs="Cizin Breeches +1",
+                legs="Ignominy Flanchard +1",
                 feet="Ejekamal Boots"
             }
             sets.precast.WS.Acc = set_combine(sets.precast.WS, {
