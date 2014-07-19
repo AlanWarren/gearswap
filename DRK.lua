@@ -199,25 +199,22 @@
                 ring2="Diamond Ring"
             })
             sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-            sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt",legs="Cizin Breeches +1"})
+            sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt"})
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
                 neck="Breeze Gorget",
                 ear2="Bale Earring",
                 back="Niht Mantle",
-                legs="Mikinaak Cuisses",
                 waist="Soil Belt"
             })
             sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {
                 head="Yaoyotl Helm",
                 ear2="Bale Earring",
                 neck="Breeze Gorget",
-                legs="Mikinaak Cuisses",
                 waist="Soil Belt"
             })
             sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
                 neck="Bale Choker",
-                legs="Mikinaak Cuisses",
                 waist="Windbuffet Belt"
             })
 
