@@ -327,7 +327,7 @@
 	        	back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Xaddi Cuisses",
-                feet="Ejekamal Boots"
+                feet="Mikinaak Greaves"
             }
 
 	        sets.engaged.Acc = set_combine(sets.engaged, {
