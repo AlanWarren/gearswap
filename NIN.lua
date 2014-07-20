@@ -338,7 +338,6 @@ function init_gear_sets()
     sets.engaged.HasteMid = {
         head="Whirlpool Mask",
         neck="Asperity Necklace",
-        hands="Mochizuki Tekko +1",
         ring1="Mars's Ring",
     	back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
@@ -373,7 +372,6 @@ function init_gear_sets()
         neck="Rancor Collar",
         ear1="Trux Earring",
         ear2="Brutal Earring",
-        hands="Mochizuki Tekko +1",
         body="Thaumas Coat",
         waist="Windbuffet Belt",
         legs="Hachiya Hakama +1"
