@@ -170,11 +170,11 @@
                 neck="Bale Choker",
                 ear1="Brutal Earring",
                 ear2="Trux Earring",
-                body="Xaddi Mail",
-                hands="Boor Bracelets",
+                body="Fallen's Cuirass +1",
+                hands="Mikinaak Gauntlets",
                 ring1="Rajas Ring",
                 ring2="Pyrosoul Ring",
-                back="Buquwik Cape",
+                back="Niht Mantle",
                 waist="Windbuffet Belt",
                 legs="Ignominy Flanchard +1",
                 feet="Ejekamal Boots"
@@ -183,7 +183,6 @@
                 head="Yaoyotl Helm",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
-                hands="Mikinaak Gauntlets",
                 ring1="Mars's Ring",
                 feet="Whirlpool Greaves"
             })
