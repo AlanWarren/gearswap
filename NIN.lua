@@ -220,6 +220,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Dark Ring",
     	back="Repulse Mantle",
+        legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     }
     
@@ -299,7 +300,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Dark Ring",
     	back="Repulse Mantle",
-        legs="Mochizuki Hakama +1",
+        legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     })
     
