@@ -520,7 +520,7 @@ function init_gear_sets()
         hands="Hachiya Tekko +1",
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
-        legs="Kaabnax Trousers",
+        legs="Otronif Brais +1",
         waist="Soil belt",
         feet="Otronif Boots +1"
     }
