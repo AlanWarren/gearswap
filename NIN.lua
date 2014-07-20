@@ -249,7 +249,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
     	body="Mochizuki Chainmail +1",
-        hands="Mochizuki tekko +1",
+        hands="Otronif Gloves +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
     	back="Atheling Mantle",
