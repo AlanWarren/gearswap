@@ -170,7 +170,7 @@
                 head="Otomi Helm",
                 neck="Bale Choker",
                 ear1="Brutal Earring",
-                ear2="Trux Earring",
+                ear2="Bale Earring",
                 body="Fallen's Cuirass +1",
                 hands="Mikinaak Gauntlets",
                 ring1="Rajas Ring",
@@ -194,8 +194,12 @@
             sets.precast.WS['Catastrophe'].Mid = set_combine(sets.precast.WS['Catastrophe'], {waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
      
             sets.precast.WS['Entropy'] = set_combine(sets.precast.WS, {
+                head="Ignominy Burgeonet +1",
                 neck="Shadow Gorget",
+                ear1="Bladeborn Earring",
+                ear2="Steelflash Earring",
                 waist="Soil Belt",
+                back="Atheling Mantle",
                 ring2="Diamond Ring"
             })
             sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
