@@ -283,7 +283,7 @@
                 ring2="Paguroidea Ring",
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
-                legs="Cizin Breeches +1",
+                legs="Crimson Cuisses",
                 feet="Whirlpool Greaves"
             }
            
