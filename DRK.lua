@@ -72,6 +72,7 @@
             sets.precast.JA['Arcane Circle'] = {feet="Ignominy Sollerets"}
             sets.precast.JA['Nether Void'] = {legs="Bale Flanchard +2"}
             sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
+            sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
      
                    
             -- Waltz set (chr and vit)
