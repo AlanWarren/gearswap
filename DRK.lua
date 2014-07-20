@@ -139,7 +139,7 @@
                 neck="Stoicheion Medal",
                 ear1="Friomisi Earring",
                 ear2="Crematio Earring",
-                body="Abyss Cuirass",
+                body="Fallen's Cuirass +1",
                 ring1="Diamond Ring",
                 ring2="Acumen Ring",
                 back="Toro Cape",
