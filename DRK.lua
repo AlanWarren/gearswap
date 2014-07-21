@@ -333,35 +333,38 @@
                 legs="Xaddi Cuisses",
                 feet="Mikinaak Greaves"
             }
-
-	        sets.engaged.Acc = set_combine(sets.engaged, {
+	        sets.engaged.Mid = set_combine(sets.engaged, {
                 head="Yaoyotl Helm",
-	        	hands="Mikinaak Gauntlets",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
+                waist="Anguinus Belt",
+                feet="Ejekamal Boots"
+            })
+
+	        sets.engaged.Acc = set_combine(sets.engaged.Mid, {
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
             })
-	        sets.engaged.Mid = set_combine(sets.engaged, {
-            })
+
 	        sets.engaged.Reraise = set_combine(sets.engaged, {
 	        	head="Twilight Helm",neck="Twilight Torque",
 	        	body="Twilight Mail"
             })
 
             sets.engaged.HighHaste = set_combine(sets.engaged.Mid, {
-                head="Otomi Helm"
+                head="Otomi Helm",
+                waist="Windbuffet Belt",
             })
 
             sets.engaged.MaxHaste = sets.engaged.HighHaste
             sets.engaged.EmbravaHaste = sets.engaged.HighHaste
 
-            sets.engaged.LastResort = set_combine(sets.engaged, {
+            sets.engaged.LastResort = set_combine(sets.engaged.HighHaste, {
                 --head="Ighwa Cap",
                 neck="Agitator's Collar",
-                ring2="Patricius Ring"
+                ring2="Patricius Ring",
+                legs="Cizin Breeches +1"
             })
-	
 	 
             sets.buff.Souleater = {head="Ignominy burgeonet +1"}
      

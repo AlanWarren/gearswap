@@ -68,8 +68,8 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
-		body="Lncr. Plackart +2",
-        hands="Cizin Mufflers +1",
+		body="Lancer's Plackart +2",
+        hands="Lancer's Vambraces +2",
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
 		back="Atheling Mantle",
@@ -187,13 +187,21 @@ function init_gear_sets()
         feet="Whirlpool Greaves"
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
-        head="Yaoyotl Helm", ear1="Bladeborn Earring", ear2="Steelflash Earring", back="Updraft Mantle"
+        head="Yaoyotl Helm", 
+        ear1="Bladeborn Earring", 
+        ear2="Steelflash Earring", 
+        back="Updraft Mantle"
     })
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
 
-	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {neck="Light Gorget"})
-	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS.Acc, {neck="Light Gorget"})
-	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {waist="Light Belt"})
+	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
+        neck="Flame Gorget", 
+        hands="Cizin Mufflers +1",
+        waist="Light Belt",
+        legs="Lancer's Cuissots +2"
+    })
+	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {head="Yaoyotl Helm"})
+	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
 
 	
 	-- Sets to return to when not performing an action.
@@ -303,8 +311,9 @@ function init_gear_sets()
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
-        ring2="Mars's Ring",
-        back="Updraft Mantle"
+        back="Updraft Mantle",
+        ring2="K'ayres Ring",
+        feet="Ejekamal Boots"
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -319,17 +328,20 @@ function init_gear_sets()
         head="Lithelimb Cap",
         ring1="Rajas Ring",
         ring2="Patricius Ring",
-        back="Repulse Mantle"
+        back="Repulse Mantle",
+        legs="Cizin Breeches +1",
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
         head="Lithelimb Cap",
         ring2="Patricius Ring",
-        back="Repulse Mantle"
+        back="Repulse Mantle",
+        legs="Cizin Breeches +1",
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
         head="Lithelimb Cap",
         ring2="Patricius Ring",
-        back="Repulse Mantle"
+        back="Repulse Mantle",
+        legs="Cizin Breeches +1",
     })
 
 	sets.engaged.Reraise = set_combine(sets.engaged, {
