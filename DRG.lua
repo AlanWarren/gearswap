@@ -228,7 +228,7 @@ function init_gear_sets()
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle.Town = {
-        ammo="Thew Bomblet",
+        ammo="Hagneia Stone",
 		head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
