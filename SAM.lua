@@ -73,9 +73,9 @@ function init_gear_sets()
     -- Precast Sets
     -- Precast sets to enhance JAs
     sets.precast.JA.Meditate = {head="Wakido Kabuto",hands="Saotome Kote +2"}
-    sets.precast.JA.Seigan = {head="Unkai kabuto +2"}
+    sets.precast.JA.Seigan = {head="Unkai Kabuto +2"}
     sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto"}
-    sets.precast.JA['Third Eye'] = {head="Unkai kabuto +2", legs="Sakonji Haidate"}
+    sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate"}
     --sets.precast.JA['Blade Bash'] = {hands="Saotome Kote +2"}
     
     -- Waltz set (chr and vit)
@@ -94,13 +94,13 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Phorcys Korazin",
-        hands="Mikinaak Gauntlets",
+        hands="Boor Bracelets",
         ring1="Rajas Ring",
         ring2="Pyrosoul Ring",
         back="Buquwik Cape",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
-        feet="Sakonji Sune-ate +1"
+        feet="Ejekamal Boots"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         head="Yaoyotl Helm",
@@ -108,13 +108,12 @@ function init_gear_sets()
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         ring2="Mars's Ring",
-        legs="Mikinaak Cuisses",
-        feet="Wakido Sune-Ate +1"
+        hands="Mikinaak Gauntlets"
     })
     
     sets.precast.WS['Namas Arrow'] = {
         ammo=gear.RAarrow,
-        head="Lithelimb Cap",
+        head="Sakonji Kabuto +1",
         neck="Aqua Gorget",
         ear1="Flame Pearl",
         ear2="Flame Pearl",
@@ -128,62 +127,72 @@ function init_gear_sets()
         feet="Wakido Sune-ate +1"
     }
     sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS['Namas Arrow'], {
-        head="Sakonji Kabuto +1",
         body="Kyujutsugi",
     })
     sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'].Mid, {
+        ring1="Longshot Ring",
         ring2="Hajduk Ring"
     })
     
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
         neck="Breeze Gorget",
         body="Kyujutsugi",
-        ring2="Stormsoul Ring"
+        ring1="Stormsoul Ring",
+        ring2="Garuda Ring"
     })
     sets.precast.WS['Apex Arrow'].Mid = sets.precast.WS['Apex Arrow']
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
-        head="Sakonji Kabuto +1"
+        ring1="Hajduk Ring",
+        ring2="Longshot Ring"
     })
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
-        hands="Boor Bracelets",
         neck="Aqua Gorget",
-        feet="Ejekamal Boots"
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
         head="Yaoyotl Helm",
-        ring2="Mars's Ring"
+        ring2="Mars's Ring",
+        waist="Light Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
         body="Sakonji Domaru +1",
+        waist="Light Belt",
         feet="Wakido Sune-Ate +1"
     })
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
-        feet="Ejekamal Boots",
         neck="Breeze Gorget",
-        waist="Windbuffet Belt"
+        feet="Ejekamal Boots",
+        legs="Otronif Brais +1"
     })
     sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS.Acc, {
+        head="Yaoyotl Helm",
         neck="Breeze Gorget",
-        ring2="Mars's Ring",
-        waist="Thunder Belt",
-        feet="Wakido Sune-ate +1"
+        waist="Thunder Belt"
     })
     sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {
         body="Sakonji Domaru +1",
+        ring1="Mars's Ring",
         feet="Wakido Sune-Ate +1"
     })
     
     sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {
-        neck="Snow Gorget",
+        neck="Shadow Gorget",
         ear1="Bladeborn Earring",
-        ear2="Steelflash Earring"
+        ear2="Steelflash Earring",
+        hands="Mikinaak Gauntlets",
+        waist="Soil Belt",
+        feet="Sakonji Sune-Ate +1"
+    })
+    sets.precast.WS['Tachi: Rana'].Mid = set_combine(sets.precast.WS['Tachi: Rana'], {
+        body="Sakonji Domaru +1"
     })
     sets.precast.WS['Tachi: Rana'].Acc = set_combine(sets.precast.WS.Acc, {
-        neck="Snow Gorget",
+        neck="Shadow Gorget",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring"
+        waist="Soil Belt",
+        feet="Wakido Sune-Ate +1"
     })
     -- CHR Mod
     sets.precast.WS['Tachi: Ageha'] = {
@@ -215,9 +224,8 @@ function init_gear_sets()
     	head="Otomi Helm",
         body="Kyujutsugi",
     	legs="Wakido Haidate +1",
-        feet="Otronif Boots +1"
+        feet="Ejekamal Boots"
     }
-    
     -- Sets to return to when not performing an action.
     
     -- Resting sets
@@ -422,7 +430,7 @@ function init_gear_sets()
         ring2="Oneiros Ring", 
         back="Takaha Mantle",
         waist="Windbuffet Belt",
-        legs="Wakido Haidate +1", -- 7
+        legs="Otronif Brais +1", -- 6
         feet="Otronif Boots +1" -- 7
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
@@ -434,28 +442,35 @@ function init_gear_sets()
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
         sub="Bloodrain Strap",
+        body="Xaddi Mail", 
+        neck="Agitator's Collar",
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         waist="Dynamic Belt",
-        body="Xaddi Mail", -- 3
-        feet="Wakido Sune-Ate +1",
         legs="Xaddi Cuisses",
-        neck="Agitator's Collar",
-        back="Takaha Mantle"
+        back="Takaha Mantle",
+        feet="Wakido Sune-Ate +1"
     })
     
     sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {
         head="Lithelimb Cap",
-        neck="Twilight Torque",
+        neck="Agitator's Collar",
+        body="Otronif Harness +1",
+        hands="Otronif Gloves +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
-        back="Repulse Mantle"
+        back="Repulse Mantle",
+        legs="Otronif Brais +1",
+        feet="Otronif Boots +1"
     })
     
     sets.engaged.Adoulin.Acc.PDT = set_combine(sets.engaged.Adoulin.Acc, {
         head="Lithelimb Cap",
-        neck="Twilight Torque",
-        ring2="Dark Ring"
+        body="Otronif Harness +1",
+        neck="Agitator's Collar",
+        ring1="Patricius Ring",
+        legs="Otronif Brais +1",
+        feet="Otronif Boots +1"
     })
     
     -- Tsurumaru 4-hit 19% DA, 28% haste 
@@ -472,15 +487,15 @@ function init_gear_sets()
         ring2="K'ayres Ring", -- 5
         back="Takaha Mantle",
         waist="Windbuffet Belt", 
-        legs="Wakido Haidate +1", -- 7
+        legs="Otronif Brais +1", -- 6
         feet="Otronif Boots +1" -- 7
     }
     
     sets.engaged.Adoulin.Yoichi.Mid = set_combine(sets.engaged.Adoulin.Yoichi, {
         ammo=gear.RAarrow,
         head="Yaoyotl Helm",
-        neck="Agitator's Collar",
         waist="Dynamic Belt",
+        ring2="Mars's Ring"
     })
     
     sets.engaged.Adoulin.Yoichi.Acc = set_combine(sets.engaged.Adoulin.Yoichi.Mid, {
@@ -488,7 +503,8 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         legs="Xaddi Cuisses",
-        back="Takaha Mantle"
+        back="Takaha Mantle",
+        feet="Wakido Sune-Ate +1"
     })
     
     sets.engaged.Adoulin.Yoichi.PDT = set_combine(sets.engaged.Adoulin.PDT, {
@@ -498,7 +514,7 @@ function init_gear_sets()
     
     sets.engaged.Adoulin.Yoichi.Acc.PDT = set_combine(sets.engaged.Adoulin.Yoichi.Acc, { 
         head="Lithelimb Cap",
-        neck="Twilight Torque",
+        neck="Agitator's Collar",
         ring2="Dark Ring"
     })
     
@@ -521,7 +537,7 @@ function init_gear_sets()
     sets.buff.Sengikori = {}
     sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate +1"}
     
-    sets.thirdeye = {legs="Sakonji Haidate"}
+    sets.thirdeye = {head="Unkai Kabuto +2", legs="Sakonji Haidate"}
     sets.bow = {ammo=gear.RAarrow}
 end
 
@@ -560,14 +576,14 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 		if state.Buff.Sekkanoki then
 			equip(sets.buff.Sekkanoki)
 		end
-		if state.Buff.Sengikori then
-			equip(sets.buff.Sengikori)
-		end
+		--if state.Buff.Sengikori then
+		--	equip(sets.buff.Sengikori)
+		--end
 		if state.Buff['Meikyo Shisui'] then
 			equip(sets.buff['Meikyo Shisui'])
 		end
 	end
-    if spell.english == "Third Eye" then
+    if spell.english == "Seigan" then
         -- Third Eye gearset is only called if we're in PDT mode
         if state.DefenseMode == 'PDT' then
             equip(sets.thirdeye)
@@ -595,7 +611,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 		(state.Defense.Active and state.Defense.Type == 'Physical' and state.Defense.PhysicalMode == 'Reraise') then
 		equip(sets.Reraise)
 	end
-    if state.Buff['Third Eye'] then
+    if state.Buff['Seigan'] then
         if state.DefenseMode == 'PDT' then
             equip(sets.thirdeye)
         end
@@ -616,7 +632,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-    if state.Buff['Third Eye'] then
+    if state.Buff['Seigan'] then
         if state.DefenseMode == 'PDT' then
     	    meleeSet = set_combine(meleeSet, sets.thirdeye)
         end
@@ -636,7 +652,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == 'Engaged' and state.DefenseMode == 'PDT' then
-        if state.Buff['Third Eye'] then
+        if state.Buff['Seigan'] then
             equip(sets.thirdeye)
         end
     end
