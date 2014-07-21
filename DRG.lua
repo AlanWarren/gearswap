@@ -223,7 +223,7 @@ function init_gear_sets()
         ammo="Thew Bomblet",
 		head="Otomi Helm",
         neck="Asperity Necklace",
-        ear1="Dawn Earring",
+        ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Xaddi Mail",
         hands="Cizin Mufflers +1",
@@ -232,7 +232,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Cetl Belt",
         legs="Crimson Cuisses",
-        feet="Whirlpool Greaves"
+        feet="Ejekamal Boots"
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
