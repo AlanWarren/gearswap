@@ -29,7 +29,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     -- Options: Override default values
-    options.OffenseModes = {'Normal', 'Mid', 'Acc', 'Crit'}
+    options.OffenseModes = {'Normal', 'Mid', 'Acc'}
     options.DefenseModes = {'Normal', 'Evasion', 'PDT'}
     options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
     options.CastingModes = {'Normal'}
