@@ -61,7 +61,7 @@ function init_gear_sets()
     --------------------------------------
     -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
-    sets.precast.JA['Futae'] = { hands="Iga Tekko +1" }
+    sets.precast.JA['Futae'] = { hands="Iga Tekko +2" }
     sets.precast.JA['Provoke'] = { 
         neck="Atzintli Necklace",
         ear1="Trux Earring", 
@@ -167,7 +167,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         neck="Stoicheion Medal",
     	body="Mochizuki Chainmail +1",
-        hands="Iga Tekko +1",
+        hands="Iga Tekko +2",
     	back="Toro Cape",
         ring1="Diamond Ring",
         ring2="Acumen Ring",
