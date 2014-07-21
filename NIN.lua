@@ -387,8 +387,8 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.PDT)
-    sets.engaged.Mid.PDT.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, sets.engaged.PDT)
-    sets.engaged.Acc.PDT.Haste_43 = set_combine(sets.engaged.Acc.Haste_43, sets.engaged.PDT)
+    sets.engaged.PDT.Mid.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, sets.engaged.PDT)
+    sets.engaged.PDT.Acc.Haste_43 = set_combine(sets.engaged.Acc.Haste_43, sets.engaged.PDT)
     
     -- 40
     sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
@@ -405,8 +405,8 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.PDT)
-    sets.engaged.Mid.PDT.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.PDT)
-    sets.engaged.Acc.PDT.Haste_40 = set_combine(sets.engaged.Acc.Haste_40, sets.engaged.PDT)
+    sets.engaged.PDT.Mid.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.PDT)
+    sets.engaged.PDT.Acc.Haste_40 = set_combine(sets.engaged.Acc.Haste_40, sets.engaged.PDT)
     
     -- 35
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_43, {
@@ -425,8 +425,8 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.PDT)
-    sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.PDT)
-    sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.PDT)
+    sets.engaged.PDT.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.PDT)
+    sets.engaged.PDT.Acc.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.PDT)
     
     -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_43, {
@@ -447,8 +447,8 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.PDT)
-    sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.PDT)
-    sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.PDT)
+    sets.engaged.PDT.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.PDT)
+    sets.engaged.PDT.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.PDT)
     
     -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_43, {
@@ -462,8 +462,8 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.PDT)
-    sets.engaged.Mid.PDT.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, sets.engaged.PDT)
-    sets.engaged.Acc.PDT.Haste_25 = set_combine(sets.engaged.Acc.Haste_25, sets.engaged.PDT)
+    sets.engaged.PDT.Mid.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, sets.engaged.PDT)
+    sets.engaged.PDT.Acc.Haste_25 = set_combine(sets.engaged.Acc.Haste_25, sets.engaged.PDT)
     
     -- 20
     sets.engaged.Haste_20 = set_combine(sets.engaged.Haste_43, {
@@ -478,8 +478,8 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.PDT)
-    sets.engaged.Mid.PDT.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, sets.engaged.PDT)
-    sets.engaged.Acc.PDT.Haste_20 = set_combine(sets.engaged.Acc.Haste_20, sets.engaged.PDT)
+    sets.engaged.PDT.Mid.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, sets.engaged.PDT)
+    sets.engaged.PDT.Acc.Haste_20 = set_combine(sets.engaged.Acc.Haste_20, sets.engaged.PDT)
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
     sets.Counter = { legs="Iga Hakama +2" }
