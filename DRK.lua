@@ -211,20 +211,18 @@
                 back="Niht Mantle",
                 waist="Soil Belt"
             })
+            sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
+                waist="Windbuffet Belt"
+            })
             sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {
                 head="Yaoyotl Helm",
                 ear2="Bale Earring",
                 neck="Breeze Gorget",
                 waist="Soil Belt"
             })
-            sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
-                neck="Bale Choker",
-                waist="Windbuffet Belt"
-            })
 
             sets.precast.WS['Cross Reapter'] = set_combine(sets.precast.WS, {
                 neck="Aqua Gorget",
-                back="Niht Mantle",
                 waist="Windbuffet Belt"
              })
            
