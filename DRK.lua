@@ -559,7 +559,7 @@ function souleater_active()
 end
 
 function adjust_engaged_sets()
-    if S{ 'Anahera Scythe', 'Tajabit', 'Twilight Scythe', 'Scythe of trials' }:contains(player.equipment.main) then
+    if S{ 'Anahera Scythe', 'Tajabit', 'Twilight Scythe', 'Scythe of Trials' }:contains(player.equipment.main) then
         state.CombatWeapon = "Scythe"
     else
         state.CombatWeapon = nil
