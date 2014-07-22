@@ -496,7 +496,7 @@
     -- Called when the player's status changes.
     function job_status_change(newStatus, oldStatus, eventArgs)
         if newStatus == "Engaged" then
-            state.CombatWeapon = player.equipment.main
+            adjust_engaged_sets()
         end
         if souleater_active() then
             disable('head')
