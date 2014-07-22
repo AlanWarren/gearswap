@@ -263,6 +263,7 @@
             }
            
             sets.idle.Field = {
+                ammo="Yetshila",
                 head="Twilight Helm",
                 neck="Bale Choker",
                 ear1="Bladeborn Earring",
