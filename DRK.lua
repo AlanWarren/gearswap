@@ -409,7 +409,7 @@
 	        	body="Twilight Mail"
             })
 
-            sets.engaged.HighHaste = set_combine(sets.engaged.Mid, {
+            sets.engaged.HighHaste = set_combine(sets.engaged, {
                 head="Otomi Helm",
                 waist="Windbuffet Belt",
             })
