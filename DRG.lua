@@ -126,7 +126,11 @@ function init_gear_sets()
 	sets.precast.Waltz['Healing Waltz'] = {}
 
 	-- Fast cast sets for spells
-	sets.precast.FC = {head="Cizin Helm", ear1="Loquacious Earring", ring1="Prolix Ring"}
+	sets.precast.FC = {
+        head="Cizin Helm", 
+        ear1="Loquacious Earring", 
+        ring1="Prolix Ring"
+    }
     
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
