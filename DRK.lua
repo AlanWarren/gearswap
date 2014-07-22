@@ -46,7 +46,6 @@
             adjust_engaged_sets()
             get_combat_form()
 
-            drk_scythe_list = S{ 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }
             -- Additional local binds
             send_command('bind ^` input /ja "Hasso" <me>')
             send_command('bind !` input /ja "Seigan" <me>')
@@ -560,7 +559,7 @@ function souleater_active()
 end
 
 function adjust_engaged_sets()
-    if drk_scythe_list:contains(player.equipment.main) then
+    if S{ 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }:contains(player.equipment.main) then
         state.CombatWeapon = "Scythe"
     else
         state.CombatWeapon = nil
