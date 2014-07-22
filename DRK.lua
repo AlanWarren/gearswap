@@ -201,7 +201,7 @@
                 back="Atheling Mantle",
                 ring1="Diamond Ring",
                 waist="Soil Belt",
-                feet="Scamp's Sollerets"
+                feet="Ejekamal Boots"
             })
             sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
             sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt"})
