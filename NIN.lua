@@ -93,9 +93,6 @@ function init_gear_sets()
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
-    sets.midcast.Step = {
-        wasit="Chaac Belt"
-    }
     -- Ranged
     sets.precast.RA = {
         head="Uk'uxkaj Cap",
@@ -111,7 +108,7 @@ function init_gear_sets()
         ring1="Longshot Ring",
         ring2="Paqichikaji Ring",
         back="Yokaze Mantle",
-        --waist="Hurling Belt",
+        waist="Chaac Belt",
         legs="Hachiya Hakama +1",
         feet="Qaaxo Leggings"
     }
@@ -123,21 +120,19 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
-        waist="Chaac Belt",
         legs="Kaabnax Trousers",
         feet="Mochizuki Kyahan +1" -- special enhancement for casting ninjutsu III
     }
-    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads",body="Mochizuki Chainmail +1"})
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads", body="Mochizuki Chainmail +1" })
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
     	head="Uk'uxkaj Cap",
-    	body="Mochi. Chainmail +1",
+    	body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
         ear1="Loquacious Earring",
         waist="Chaac Belt",
         ring1="Prolix Ring",
-        ring1="Diamond Ring",
         legs="Kaabnax Trousers",
         feet="Mochizuki Kyahan +1"
     }
@@ -156,6 +151,7 @@ function init_gear_sets()
         hands="Mochizuki Tekko +1",
     	back="Yokaze Mantle",
         ring1="Diamond Ring",
+        ring2="Sangoma Ring",
         waist="Hurch'lan Sash",
         legs="Kabnaax Trousers",
         feet="Mochizuki Kyahan +1"
@@ -169,7 +165,7 @@ function init_gear_sets()
     	body="Mochizuki Chainmail +1",
         hands="Iga Tekko +2",
     	back="Toro Cape",
-        ring1="Diamond Ring",
+        ring1="Sangoma Ring",
         ring2="Acumen Ring",
         waist="Hurch'lan Sash",
         legs="Shneddick Tights +1",

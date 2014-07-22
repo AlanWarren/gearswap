@@ -202,7 +202,7 @@ function init_gear_sets()
         ear2="Lifestorm Earring",
         body="Unkai Domaru +2",
         hands="Wakido Kote +1",
-        ring1="Rajas Ring",
+        ring1="Sangoma Ring",
         ring2="Pyrosoul Ring",
         back="Buquwik Cape",
         waist="Soil Belt",

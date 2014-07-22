@@ -238,6 +238,7 @@ function init_gear_sets()
 		body="Navarch's Frac +2",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
+        ring1="Sangoma Ring"
     })
 
     sets.midcast.CorsairShot['Light Shot'] = sets.midcast.CorsairShot.Acc

@@ -1,11 +1,14 @@
-	
+--[[     
+ === Notes ===
+ -- Set format is as follows:
+    sets.engaged.[CombatForm][CombatWeapon][Offense or DefenseMode]
+    CombatForm = War
+    CombatWeapon = Scythe
 
-    -------------------------------------------------------------------------------------------------------------------
-    -- Initialization function that defines sets and variables to be used.
-    -------------------------------------------------------------------------------------------------------------------
-     
-    -- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
-     
+    The default sets are for Sam subjob with a Greatsword.
+    The above set format allows you to build sets for war and sam sub with either scythe or gs
+--]]
+--
     -- Initialization function for this job file.
     function get_sets()
             -- Load and initialize the include file.
@@ -20,7 +23,6 @@
         --buffactive['Aftermath: Lv.3']
         --or false
         state.Buff.Souleater = buffactive.souleater or false
-    	--state.CombatForm = get_combat_form()
 	    adjust_engaged_sets()
     end
      
@@ -39,8 +41,12 @@
      
             state.Defense.PhysicalMode = 'PDT'
 			
-			adjust_engaged_sets()
-	 
+            war_sj = player.sub_job == 'WAR' or false
+			
+            adjust_engaged_sets()
+            get_combat_form()
+
+            drk_scythe_list = S{ 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }
             -- Additional local binds
             send_command('bind ^` input /ja "Hasso" <me>')
             send_command('bind !` input /ja "Seigan" <me>')
@@ -78,18 +84,22 @@
             -- Waltz set (chr and vit)
             sets.precast.Waltz = {
                     head="Yaoyotl Helm",
-                    body="Mikinaak Breastplate",
-                    legs="Cizin Breeches +1",feet="Whirlpool Greaves"}
+                    body="Fallen's Cuirass +1",
+                    legs="Cizin Breeches +1",
+                    feet="Whirlpool Greaves"
+            }
                    
-            -- Don't need any special gear for Healing Waltz.
-            sets.precast.Waltz['Healing Waltz'] = {}
-           
             -- Fast cast sets for spells
             sets.precast.FC = {
                 head="Cizin Helm",
                 ear1="Loquacious Earring",
                 ring2="Prolix Ring"
             }
+
+            sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
+
+            sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, { neck="Stoicheion Medal" })
+            --sets.precast.FC['Dark Magic'] = set_combine(sets.precast.FC, { head="Fallen's Burgeonet +1" })
                      
             -- Midcast Sets
             sets.midcast.FastRecast = {
@@ -101,15 +111,8 @@
                    
             -- Specific spells
             sets.midcast.Utsusemi = {
-                head="Cizin Helm",
-                body="Xaddi Mail",
-                hands="Cizin Mufflers +1",
-                ear1="Loquacious Earring",
-                ring1="Rajas Ring",
-                ring2="K'ayres Ring",
-                waist="Zoran's Belt",
-                legs="Xaddi Cuisses",
-                feet="Whirlpool Greaves"
+                head="Otomi Helm",
+                feet="Ejekamal Boots"
             }
      
             sets.midcast['Dark Magic'] = {
@@ -119,7 +122,7 @@
                 ear2="Psystorm Earring",
                 body="Demon's harness",
                 hands="Abyss gauntlets +2",
-                ring1="Diamond Ring",
+                ring1="Sangoma Ring",
                 --ring2="Perception Ring",
                 back="Chuparrosa Mantle",
                 waist="Zoran's Belt",
@@ -129,40 +132,40 @@
            
 		    sets.midcast.EnfeeblingMagic = set_combine(sets.midcast['Dark Magic'], {
                 head="Otomi Helm",
-                ear1="Lifestorm's earring",
-                ear2="Psystorm earring",
                 feet="Scamp's Sollerets",
                 waist="Zoran's Belt",
                 back="Abyss Cape"
             })
+
             sets.midcast['Elemental Magic'] = {
-                head="Yaoyotl Helm",
+                head="Ignominy burgeonet +1",
                 neck="Stoicheion Medal",
                 ear1="Friomisi Earring",
                 ear2="Crematio Earring",
                 body="Fallen's Cuirass +1",
-                ring1="Diamond Ring",
+                ring1="Sangoma Ring",
                 ring2="Acumen Ring",
                 back="Toro Cape",
                 feet="Ignominy Sollerets"
             }
 		   
             sets.midcast['Dread Spikes'] = {
-                head="Yaoyotl Helm",
+                head="Ignominy burgeonet +1",
                 body="Bale Cuirass +2",
-                --hands="Xaddi Gauntlets",
+                hands="Boor Braceletes",
                 legs="Xaddi Cuisses",
                 ring2="K'ayres Ring",
                 feet="Ignominy Sollerets"
             }
            
             sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
-                    head="Otomi Helm"
+                head="Otomi Helm",
+                feet="Ejekamal Boots"
             })
                    
             sets.midcast.Drain = sets.midcast['Dark Magic'] 
             sets.midcast.Aspir = sets.midcast.Drain
-				--Ighwa Cap		                   
+			--Ighwa Cap		                   
             -- Weaponskill sets
             -- Default set for any weaponskill that isn't any more specifically defined
             sets.precast.WS = {
@@ -192,35 +195,34 @@
             sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
             sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
             sets.precast.WS['Catastrophe'].Mid = set_combine(sets.precast.WS['Catastrophe'], {waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-     
+            -- INT 
             sets.precast.WS['Entropy'] = set_combine(sets.precast.WS, {
                 head="Ignominy Burgeonet +1",
                 neck="Shadow Gorget",
-                ear1="Bladeborn Earring",
-                ear2="Steelflash Earring",
-                waist="Soil Belt",
                 back="Atheling Mantle",
-                ring2="Diamond Ring"
+                ring1="Diamond Ring",
+                waist="Soil Belt",
+                feet="Scamp's Sollerets"
             })
             sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
             sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt"})
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
                 neck="Breeze Gorget",
+                hands="Boor Bracelets",
                 ear2="Bale Earring",
                 back="Niht Mantle",
-                waist="Soil Belt"
+                waist="Windbuffet Belt",
             })
             sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
-                waist="Windbuffet Belt"
+                hands="Mikinaak Gauntlets",
+                waist="Soil Belt"
             })
             sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {
-                head="Yaoyotl Helm",
-                ear2="Bale Earring",
                 neck="Breeze Gorget",
                 waist="Soil Belt"
             })
-
+            -- 60% STR / 60% MND
             sets.precast.WS['Cross Reapter'] = set_combine(sets.precast.WS, {
                 neck="Aqua Gorget",
                 waist="Windbuffet Belt"
@@ -239,7 +241,6 @@
                 ring1="Rajas Ring",
                 ring2="Paguroidea Ring",
                 back="Atheling Mantle",
-                waist="Cetl Belt",
                 legs="Crimson Cuisses",
                 feet="Whirlpool Greaves"
             }
@@ -294,8 +295,6 @@
             sets.defense.PDT = {
                 head="Lithelimb Cap",
                 neck="Agitator's Collar",
-                ear1="Bladeborn Earring",
-                ear2="Steelflash Earring",
                 body="Xaddi Mail",
                 hands="Cizin Mufflers +1",
                 ring1="Dark Ring",
@@ -315,12 +314,12 @@
      
             sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
      
-            -- Engaged sets 37 stp
+            -- Engaged set -- 40 STP
             sets.engaged = {
                 sub="Bloodrain Strap",
-                ammo="Yetshila",
+                ammo="Hagneia Stone",
 	        	head="Otomi Helm",
-                neck="Asperity Necklace",
+                neck="Asperity Necklace", 
                 ear1="Brutal Earring",
                 ear2="Tripudio Earring",
 	        	body="Xaddi Mail",
@@ -336,14 +335,75 @@
                 head="Yaoyotl Helm",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
-                waist="Anguinus Belt",
                 feet="Ejekamal Boots"
             })
 
 	        sets.engaged.Acc = set_combine(sets.engaged.Mid, {
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
+                waist="Anguinus Belt",
             })
+            -- GS war sub 
+            sets.engaged.War = set_combine(sets.engaged, {
+                head="Yaoyotl Helm",
+                legs="Phorcys Dirs"
+            })
+            sets.engaged.War.Mid = set_combine(sets.engaged.War, {
+                ear1="Bladeborn Earring",
+                ear2="Steelflash Earring",
+                feet="Ejekamal Boots"
+            })
+            sets.engaged.War.Acc = set_combine(sets.engaged.War.Mid, {
+                ring1="Mars's Ring",
+                ring2="Patricius Ring",
+                waist="Anguinus Belt"
+            })
+
+            -- Scythe 
+            sets.engaged.Scythe = set_combine(sets.engaged, {
+                sub="Pole Grip",
+                ammo="Yetshila",
+                legs="Cizin Breeches +1",
+                feet="Ejekamal Boots"
+            })
+            sets.engaged.Scythe.Mid = set_combine(sets.engaged.Scythe, {
+                legs="Xaddi Cuisses"
+            })
+            sets.engaged.Scythe.Acc = set_combine(sets.engaged.Scythe.Mid, { 
+                ring1="Mars's Ring",
+                ring2="Patricius Ring",
+                waist="Anguinus Belt"
+            })
+            
+            -- Scythe war sub (aim for 40 stp)
+            sets.engaged.War.Scythe = {
+                sub="Bloodrain Strap",
+                ammo="Hagneia Stone",
+	        	head="Otomi Helm",
+                neck="Asperity Necklace", 
+                ear1="Brutal Earring",
+                ear2="Tripudio Earring",
+	        	body="Xaddi Mail",
+                hands="Cizin Mufflers +1",
+                ring1="Rajas Ring",
+                ring2="K'ayres Ring",
+	        	back="Atheling Mantle",
+                waist="Windbuffet Belt",
+                legs="Xaddi Cuisses",
+                feet="Mikinaak Greaves"
+            }
+            sets.engaged.War.Scythe.Mid = set_combine(sets.engaged.War.Scythe, {
+                head="Yaoyotl Helm",
+                ear1="Bladeborn Earring",
+                ear2="Steelflash Earring",
+                feet="Ejekamal Boots"
+            })
+            sets.engaged.War.Scythe.Acc = set_combine(sets.engaged.War.Scythe.Mid, {
+                ring1="Mars's Ring",
+                ring2="Patricius Ring",
+                waist="Anguinus Belt",
+            })
+
 
 	        sets.engaged.Reraise = set_combine(sets.engaged, {
 	        	head="Twilight Helm",neck="Twilight Torque",
@@ -436,6 +496,9 @@
      
     -- Called when the player's status changes.
     function job_status_change(newStatus, oldStatus, eventArgs)
+        if newStatus == "Engaged" then
+            state.CombatWeapon = player.equipment.main
+        end
         if souleater_active() then
             disable('head')
         else
@@ -468,9 +531,11 @@
     -- Called by the 'update' self-command, for common needs.
     -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
-    --state.CombatForm = get_combat_form()
+    
     state.Buff.Souleater = buffactive.souleater or false
+    war_sj = player.sub_job == 'WAR' or false
 	adjust_engaged_sets()
+    get_combat_form()
 
     if souleater_active() then
         disable('head')
@@ -483,8 +548,10 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_form()
-    if buffactive.souleater then
-        return 'Souleater'
+    if war_sj then
+        state.CombatForm = "War"
+    else
+        state.CombatForm = nil
     end
 end
 
@@ -493,7 +560,11 @@ function souleater_active()
 end
 
 function adjust_engaged_sets()
-	state.CombatWeapon = player.equipment.main
+    if drk_scythe_list:contains(player.equipment.main) then
+        state.CombatWeapon = "Scythe"
+    else
+        state.CombatWeapon = nil
+    end
 	--adjust_melee_groups()
 	determine_haste_group()
 end
