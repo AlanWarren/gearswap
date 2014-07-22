@@ -126,7 +126,11 @@ function init_gear_sets()
 	sets.precast.Waltz['Healing Waltz'] = {}
 
 	-- Fast cast sets for spells
-	sets.precast.FC = {head="Cizin Helm", ear1="Loquacious Earring", ring1="Prolix Ring"}
+	sets.precast.FC = {
+        head="Cizin Helm", 
+        ear1="Loquacious Earring", 
+        ring1="Prolix Ring"
+    }
     
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
@@ -228,19 +232,19 @@ function init_gear_sets()
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle.Town = {
-        ammo="Thew Bomblet",
+        ammo="Hagneia Stone",
 		head="Otomi Helm",
         neck="Asperity Necklace",
-        ear1="Dawn Earring",
+        ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Xaddi Mail",
         hands="Cizin Mufflers +1",
-        ring1="Patricius Ring",
-        ring2="Mars's Ring",
+        ring1="Oneiros Ring",
+        ring2="Patricius Ring",
 		back="Atheling Mantle",
         waist="Cetl Belt",
         legs="Crimson Cuisses",
-        feet="Whirlpool Greaves"
+        feet="Ejekamal Boots"
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {

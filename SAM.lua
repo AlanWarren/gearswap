@@ -190,7 +190,7 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Rana'].Acc = set_combine(sets.precast.WS.Acc, {
         neck="Shadow Gorget",
         ear1="Bladeborn Earring",
-        ear2="Steelflash Earring"
+        ear2="Steelflash Earring",
         waist="Soil Belt",
         feet="Wakido Sune-Ate +1"
     })
