@@ -12,6 +12,7 @@ function init_gear_sets()
             neck="Rancor Collar",
             back="Buquwik Cape",
             hands="Seiryu's Kote",
+            ring1="Ifrit Ring",
             ring2="Pyrosoul Ring",
             legs="Arcadian Braccae +1", 
             feet="Arcadian Socks +1"
@@ -53,7 +54,7 @@ function init_gear_sets()
             ear1="Fenrir's Earring",
             ear2="Dawn Earring",
             ring1="Rajas Ring",
-            ring2="Pyrosoul Ring",
+            ring2="Ifrit Ring",
             back="Lutian Cape"
         })
  
@@ -172,7 +173,7 @@ function init_gear_sets()
         sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
             ear1=gear.Earring,
             body="Arcadian Jerkin +1",
-            ring2="Pyrosoul Ring",
+            ring2="Longshot Ring",
         })
         sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
             ring2="Longshot Ring",
@@ -342,7 +343,7 @@ function init_gear_sets()
             ear1=gear.Earring,
             body="Arcadian Jerkin +1",
             hands="Arcadian Bracers +1",
-            ring2="Pyrosoul Ring",
+            ring2="Ifrit Ring",
             back="Buquwik Cape",
             legs="Nahtirah Trousers",
             feet="Arcadian Socks +1"
@@ -400,7 +401,7 @@ function init_gear_sets()
             ear2="Flame Pearl",
             body="Kyujutsugi",
             hands="Arcadian Bracers +1",
-            ring1="Rajas Ring",
+            ring1="Ifrit Ring",
             ring2="Pyrosoul Ring",
             back="Buquwik Cape",
             waist="Elanid Belt",
@@ -436,9 +437,11 @@ function init_gear_sets()
 
         -- CORONACH
         sets.Coronach = {
-           ear1="Dawn Earring",
+           ear2="Dawn Earring",
            neck="Breeze Gorget",
-           waist="Thunder Belt"
+           waist="Thunder Belt",
+           ring1="Rajas Ring",
+           ring2="Ifrit Ring"
         }
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.Coronach)
@@ -515,7 +518,6 @@ function init_gear_sets()
             neck="Aqua Gorget",
             ear1="Volley Earring",
             ear2="Tripudio Earring",
-            ring2="Pyrosoul Ring",
             waist="Light Belt",
             back="Sylvan Chlamys",
             legs="Aetosaur Trousers +1"
@@ -566,7 +568,7 @@ function init_gear_sets()
             ear2="Flame Pearl",
             body="Orion Jerkin +1",
             hands="Orion Bracers +1",
-            ring1="Pyrosoul Ring",
+            ring1="Ifrit Ring",
             ring2="Longshot Ring",
             back="Lutian Cape",
             waist="Elanid Belt",

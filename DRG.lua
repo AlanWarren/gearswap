@@ -155,7 +155,7 @@ function init_gear_sets()
 		body="Xaddi Mail",
         hands="Mikinaak Gauntlets",
         ring1="Oneiros Ring",
-        ring2="Pyrosoul Ring",
+        ring2="Ifrit Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Cizin Breeches +1",
@@ -202,6 +202,7 @@ function init_gear_sets()
         neck="Flame Gorget", 
         hands="Cizin Mufflers +1",
         waist="Light Belt",
+        ring2="Pyrosoul Ring",
         legs="Lancer's Cuissots +2"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {head="Yaoyotl Helm"})

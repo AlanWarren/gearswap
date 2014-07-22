@@ -175,7 +175,7 @@
                 ear2="Bale Earring",
                 body="Fallen's Cuirass +1",
                 hands="Mikinaak Gauntlets",
-                ring1="Rajas Ring",
+                ring1="Ifrit Ring",
                 ring2="Pyrosoul Ring",
                 back="Niht Mantle",
                 waist="Windbuffet Belt",
