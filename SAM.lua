@@ -242,7 +242,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Sakonji Domaru +1",
+        body="Kumarbi's Akar",
         hands="Wakido Kote +1",
         ring1="Oneiros Ring",
         ring2="Patricius Ring",
@@ -257,14 +257,14 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Paguroidea Ring",
         head="Twilight Helm",
-        body="Twilight Mail",
+        body="Kumarbi's Akar",
         back="Repulse Mantle",
         feet="Danzo Sune-ate"
     })
     
     sets.idle.Weak = set_combine(sets.idle.Field, {
         head="Twilight Helm",
-    	body="Twilight Mail"
+    	body="Kumarbi's Akar"
     })
     sets.idle.Yoichi = set_combine(sets.idle.Field, {
     	ammo=gear.RAarrow
