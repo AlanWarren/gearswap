@@ -122,7 +122,7 @@
                 body="Demon's harness",
                 hands="Abyss gauntlets +2",
                 ring1="Sangoma Ring",
-                --ring2="Perception Ring",
+                ring2="Mediator's Ring",
                 back="Chuparrosa Mantle",
                 waist="Zoran's Belt",
                 legs="Bale Flanchard +2",
