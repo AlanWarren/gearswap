@@ -274,6 +274,9 @@ function init_gear_sets()
             ring2="Paqichikaji Ring",
             legs="Arcadian Braccae +1"
         })
+        sets.midcast.RA.Falubeza = sets.midcast.RA.Yoichinoyumi
+        sets.midcast.RA.Falubeza.Mid = sets.midcast.RA.Yoichinoyumi.Mid
+        sets.midcast.RA.Falubeza.Acc = sets.midcast.RA.Yoichinoyumi.Acc
 
         -- Decoy up 
         sets.midcast.RA.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi, {
@@ -295,6 +298,9 @@ function init_gear_sets()
             ring2="Paqichikaji Ring",
             legs="Arcadian Braccae +1"
         })
+        sets.midcast.RA.Falubeza.Decoy = sets.midcast.RA.Yoichinoyumi.Decoy
+        sets.midcast.RA.Falubeza.Mid.Decoy = sets.midcast.RA.Yoichinoyumi.Mid.Decoy
+        sets.midcast.RA.Falubeza.Acc.Decoy = sets.midcast.RA.Yoichinoyumi.Acc.Decoy
        
         -- Stave
         sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Iuitl Wristbands +1" })
