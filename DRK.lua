@@ -253,7 +253,7 @@
                 body="Xaddi Mail",
                 hands="Cizin Mufflers +1",
                 ring1="Rajas Ring",
-                ring2="Mars's Ring",
+                ring2="Ifrit Ring",
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Crimson Cuisses",
