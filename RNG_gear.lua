@@ -49,7 +49,11 @@ function init_gear_sets()
             legs="Nahtirah Trousers",
             feet="Orion Socks +1"
         }
-
+        sets.idle.PDT = set_combine(sets.idle, {
+            head="Lithelimb Cap",
+            ring1="Patricius Ring",
+            ring2="Dark Ring"
+        })
         sets.idle.Town = set_combine(sets.idle, {
             ear1="Fenrir's Earring",
             ear2="Dawn Earring",

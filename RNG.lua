@@ -57,6 +57,7 @@ function user_setup()
         options.OffenseModes = {'Normal', 'Melee'}
         options.RangedModes = {'Normal', 'Mid', 'Acc'}
         options.DefenseModes = {'Normal', 'PDT'}
+        options.IdleModes = {'Normal', 'PDT'}
         options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
         options.PhysicalDefenseModes = {'PDT'}
         options.MagicalDefenseModes = {'MDT'}
@@ -269,6 +270,11 @@ function job_handle_equipping_gear(status, eventArgs)
 end
  
 function customize_idle_set(idleSet)
+    if state.DefenseMode == 'PDT' then
+        state.IdleMode = 'PDT'
+    elseif state.DefenseMode ~= 'PDT' then
+        state.IdleMode = 'Normal'
+    end
 	if state.Buff.Camouflage then
 		idleSet = set_combine(idleSet, sets.buff.Camouflage)
 	end
