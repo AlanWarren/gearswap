@@ -229,6 +229,10 @@
                 waist="Windbuffet Belt"
              })
            
+            sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS, {
+                neck="Aqua Gorget",
+                waist="Windbuffet Belt"
+             })
             -- Sets to return to when not performing an action.
            
             -- Resting sets
