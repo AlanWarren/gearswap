@@ -181,7 +181,7 @@
                 back="Niht Mantle",
                 waist="Windbuffet Belt",
                 legs="Ignominy Flanchard +1",
-                feet="Fallen Sollerets +1"
+                feet="Fallen's Sollerets +1"
             }
             sets.precast.WS.Acc = set_combine(sets.precast.WS, {
                 head="Yaoyotl Helm",
@@ -259,7 +259,7 @@
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Crimson Cuisses",
-                feet="Ejekamal Boots"
+                feet="Fallen's Sollerets +1"
             }
            
             sets.idle.Field = {
@@ -275,7 +275,7 @@
                 back="Repulse Mantle",
                 waist="Windbuffet Belt",
                 legs="Crimson Cuisses",
-                feet="Whirlpool Greaves"
+                feet="Fallen's Sollerets +1"
             }
      
             sets.idle.Weak = {
@@ -423,7 +423,7 @@
                 --head="Ighwa Cap",
                 neck="Agitator's Collar",
                 ring2="Patricius Ring",
-                feet="Fallen Sollerets +1"
+                feet="Fallen's Sollerets +1"
             })
 	 
             sets.buff.Souleater = {head="Ignominy burgeonet +1"}
