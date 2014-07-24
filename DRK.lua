@@ -307,6 +307,7 @@
                 legs="Cizin Breeches +1",
                 feet="Whirlpool Greaves"
             }
+            sets.engaged.PDT = set_combine(sets.engaged, sets.defense.PDT)
      
             sets.defense.Reraise = sets.idle.Weak
      
