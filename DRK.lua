@@ -422,7 +422,7 @@
                 --head="Ighwa Cap",
                 neck="Agitator's Collar",
                 ring2="Patricius Ring",
-                legs="Cizin Breeches +1"
+                --feet="Fallen Sollerets +1"
             })
 	 
             sets.buff.Souleater = {head="Ignominy burgeonet +1"}
@@ -587,17 +587,17 @@ function determine_haste_group()
 	
 	classes.CustomMeleeGroups:clear()
 	
-	if buffactive.embrava and (buffactive['last resort'] or buffactive.march == 2 or (buffactive.march and buffactive.haste)) then
-		classes.CustomMeleeGroups:append('MaxHaste')
-	elseif buffactive.march == 2 and (buffactive.haste or buffactive['last resort']) then
-		classes.CustomMeleeGroups:append('MaxHaste')
-	elseif buffactive.embrava and (buffactive.haste or buffactive.march) then
-		classes.CustomMeleeGroups:append('EmbravaHaste')
-	elseif buffactive.march == 1 and (buffactive['last resort'] or buffactive.haste or buffactive['haste samba']) then
-		classes.CustomMeleeGroups:append('HighHaste')
-	elseif buffactive.march == 2 then
-		classes.CustomMeleeGroups:append('HighHaste')
-    elseif buffactive['last resort'] then
+	--if buffactive.embrava and (buffactive['last resort'] or buffactive.march == 2 or (buffactive.march and buffactive.haste)) then
+	--	classes.CustomMeleeGroups:append('MaxHaste')
+	--elseif buffactive.march == 2 and (buffactive.haste or buffactive['last resort']) then
+	--	classes.CustomMeleeGroups:append('MaxHaste')
+	--elseif buffactive.embrava and (buffactive.haste or buffactive.march) then
+	--	classes.CustomMeleeGroups:append('EmbravaHaste')
+	--elseif buffactive.march == 1 and (buffactive['last resort'] or buffactive.haste or buffactive['haste samba']) then
+	--	classes.CustomMeleeGroups:append('HighHaste')
+	--elseif buffactive.march == 2 then
+	--	classes.CustomMeleeGroups:append('HighHaste')
+    if buffactive['last resort'] then
 		classes.CustomMeleeGroups:append('LastResort')
 	end
 end

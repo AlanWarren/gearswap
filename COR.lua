@@ -60,19 +60,13 @@ function user_setup()
 
 	send_command('bind ^` input /ja "Double-up" <me>')
 	send_command('bind !` input /ja "Bolter\'s Roll" <me>')
-
-
-	-- Default macro set/book
-	set_macro_page(6, 1)
+    
+    select_default_macro_book()
 end
 
 
 -- Called when this job file is unloaded (eg: job change)
-function file_unload()
-	if binds_on_unload then
-		binds_on_unload()
-	end
-
+function job_file_unload()
 	send_command('unbind ^`')
 	send_command('unbind !`')
 end
@@ -108,6 +102,7 @@ function init_gear_sets()
 	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Navarch's Gants +2"})
 	
 	sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
+    --sets.precast.FoldDoubleBust = {hands="Lanun Gants"}
 	
 	sets.precast.CorsairShot = {}
 	
@@ -396,8 +391,11 @@ function job_precast(spell, action, spellMap, eventArgs)
 		equip(sets.precast.LuzafRing)
 	elseif spell.type == 'CorsairShot' and state.CastingMode == 'Resistant' then
 		classes.CustomClass = 'Acc'
-	elseif spell.type == 'Waltz' then
-		refine_waltz(spell, action, spellMap, eventArgs)
+    elseif spell.english == 'Fold' and buffactive['Bust'] == 2 then
+        if sets.precast.FouldDoubleBust then
+            equip(sets.precast.FoldDoubleBust)
+            eventArgs.handled = true
+        end
 	end
 end
 
@@ -482,10 +480,9 @@ function display_current_job_state(eventArgs)
 		pcTarget = ', Target NPCs'
 	end
 	
-
-	add_to_chat(122,'Offense: '..state.OffenseMode..', Ranged: '..state.RangedMode..', WS: '..state.WeaponskillMode..
-		', Quick Draw: '..state.CastingMode..', '..defenseString..'Kiting: '..on_off_names[state.Kiting]..
-		', Roll Size: '..rollsize..pcTarget..npcTarget)
+    add_to_chat(122,'Off.: '..state.OffenseMode..', Rng.: '..state.RangedMode..', WS: '..state.WeaponskillMode..
+        ', QD: '..state.CastingMode..', '..defenseString..'Kite: '..on_off_names[state.Kiting]..
+    	', Roll Size: '..rollsize..pcTarget..npcTarget)
 
 	eventArgs.handled = true
 end
@@ -606,12 +603,21 @@ function do_bullet_checks(spell, spellMap, eventArgs)
 	-- Low ammo warning.
 	if spell.type ~= 'CorsairShot' and not state.warned
 	    and available_bullets.count > 1 and available_bullets.count <= options.ammo_warning_limit then
-		add_to_chat(104, '*****************************')
-		add_to_chat(104, '*****  LOW AMMO WARNING *****')
-		add_to_chat(104, '*****************************')
+        local msg = '**** LOW AMMO WARNING: '..bullet_name..' ****'
+        local border = ""
+        for i = 1, #msg do
+            border = border .. "*"
+        end
+
+        add_to_chat(104, border)
+        add_to_chat(104, msg)
+        add_to_chat(104, border)
 		state.warned = true
 	elseif available_bullets.count > options.ammo_warning_limit and state.warned then
 		state.warned = false
 	end
 end
 
+function select_default_macro_book()
+	set_macro_page(6, 1)
+end
