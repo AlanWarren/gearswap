@@ -354,6 +354,7 @@
                 hands="Cizin Mufflers +1",
                 ring2="Patricius Ring",
                 legs="Cizin Breeches +1",
+                feet="Fallen's Sollerets +1"
             })
 
             -- GS war sub 
