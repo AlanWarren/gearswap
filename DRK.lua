@@ -73,7 +73,7 @@
             --------------------------------------
             -- Precast Sets
             -- Precast sets to enhance JAs
-            sets.precast.JA['Diabolic Eye'] = {hands="Abyss Gauntlets +2"}
+            sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets"}
             sets.precast.JA['Arcane Circle'] = {feet="Ignominy Sollerets"}
             sets.precast.JA['Nether Void'] = {legs="Bale Flanchard +2"}
             sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
@@ -120,7 +120,7 @@
                 ear1="Lifestorm Earring",
                 ear2="Psystorm Earring",
                 body="Demon's harness",
-                hands="Blood Finger Gauntlets",
+                hands="Fallen's Finger Gauntlets",
                 ring1="Sangoma Ring",
                 ring2="Mediator's Ring",
                 back="Chuparrosa Mantle",
@@ -142,6 +142,7 @@
                 ear1="Friomisi Earring",
                 ear2="Crematio Earring",
                 body="Fallen's Cuirass +1",
+                hands="Fallen's Finger Gauntlets",
                 ring1="Sangoma Ring",
                 ring2="Acumen Ring",
                 back="Toro Cape",
