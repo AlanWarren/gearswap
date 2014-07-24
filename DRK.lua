@@ -307,8 +307,6 @@
                 legs="Cizin Breeches +1",
                 feet="Whirlpool Greaves"
             }
-            sets.engaged.PDT = set_combine(sets.engaged, sets.defense.PDT)
-     
             sets.defense.Reraise = sets.idle.Weak
      
             sets.defense.MDT = set_combine(sets.defense.PDT, {
@@ -349,6 +347,15 @@
                 ring2="Patricius Ring",
                 waist="Anguinus Belt",
             })
+
+            sets.engaged.PDT = set_combine(sets.engaged, {
+                head="Lithelimb Cap",
+                neck="Agitator's Collar",
+                hands="Cizin Mufflers +1",
+                ring2="Patricius Ring",
+                legs="Cizin Breeches +1",
+            })
+
             -- GS war sub 
             sets.engaged.War = set_combine(sets.engaged, {
                 head="Yaoyotl Helm",
