@@ -98,6 +98,7 @@
             sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
 
             sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, { neck="Stoicheion Medal" })
+            sets.precast.FC['Absorb-TP'] = set_combine(sets.precast.FC, { hands="Bale Gauntlets +2" })
             --sets.precast.FC['Dark Magic'] = set_combine(sets.precast.FC, { head="Fallen's Burgeonet +1" })
                      
             -- Midcast Sets
@@ -123,13 +124,13 @@
                 hands="Fallen's Finger Gauntlets",
                 ring1="Sangoma Ring",
                 ring2="Mediator's Ring",
-                back="Chuparrosa Mantle",
+                back="Abyss Cape",
                 waist="Zoran's Belt",
                 legs="Bale Flanchard +2",
                 feet="Ignominy sollerets"
             }
            
-		    sets.midcast.EnfeeblingMagic = set_combine(sets.midcast['Dark Magic'], {
+		    sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
                 head="Otomi Helm",
                 feet="Scamp's Sollerets",
                 waist="Zoran's Belt",
@@ -149,25 +150,25 @@
                 feet="Ignominy Sollerets"
             }
 		   
-            sets.midcast['Dread Spikes'] = {
-                head="Ignominy burgeonet +1",
+            sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
                 body="Bale Cuirass +2",
                 hands="Boor Braceletes",
-                legs="Xaddi Cuisses",
+                legs="Ignominy Flanchard +1",
                 ring2="K'ayres Ring",
-                feet="Ignominy Sollerets"
-            }
-           
-            sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
-                head="Otomi Helm",
-                feet="Ejekamal Boots"
             })
-                   
+            
             sets.midcast.Drain = sets.midcast['Dark Magic'] 
             sets.midcast.Aspir = sets.midcast.Drain
-			--Ighwa Cap		                   
+
+            sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
+                back="Chuparrosa Mantle",
+            })
+
+            sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
+                hands="Bale Gauntlets +2"
+            })
+
             -- Weaponskill sets
-            -- Default set for any weaponskill that isn't any more specifically defined
             sets.precast.WS = {
                 ammo="Fracas Grenade",
                 head="Otomi Helm",
@@ -239,27 +240,23 @@
             sets.resting = {
                 head="Twilight Helm",
                 neck="Bale Choker",
-                ear1="Bladeborn Earring",
-                ear2="Steelflash Earring",
                 body="Kumarbi's Akar",
                 hands="Cizin Mufflers +1",
-                ring1="Rajas Ring",
+                ring1="Dark Ring",
                 ring2="Paguroidea Ring",
-                back="Atheling Mantle",
-                legs="Crimson Cuisses",
-                feet="Whirlpool Greaves"
+                legs="Crimson Cuisses"
             }
      
-            -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+            -- Idle sets
             sets.idle.Town = {
                 head="Ignominy burgeonet +1",
                 neck="Agitator's Collar",
-                ear1="Bladeborn Earring",
-                ear2="Steelflash Earring",
+                ear1="Trux Earring",
+                ear2="Brutal Earring",
                 body="Fallen's Cuirass +1",
                 hands="Fallen's Finger Gauntlets",
-                ring1="Rajas Ring",
-                ring2="Ifrit Ring",
+                ring1="Ifrit Ring",
+                ring2="Patricius Ring",
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Crimson Cuisses",
@@ -267,17 +264,13 @@
             }
            
             sets.idle.Field = {
-                ammo="Yetshila",
                 head="Twilight Helm",
                 neck="Bale Choker",
-                ear1="Bladeborn Earring",
-                ear2="Steelflash Earring",
                 body="Kumarbi's Akar",
                 hands="Cizin Mufflers +1",
-                ring1="Rajas Ring",
+                ring1="Dark Ring",
                 ring2="Paguroidea Ring",
                 back="Repulse Mantle",
-                waist="Windbuffet Belt",
                 legs="Crimson Cuisses",
                 feet="Fallen's Sollerets +1"
             }
@@ -285,15 +278,18 @@
             sets.idle.Weak = {
                 head="Twilight Helm",
                 neck="Bale Choker",
-                ear1="Bladeborn Earring",
-                ear2="Steelflash Earring",
                 body="Twilight Mail",
                 ring1="Dark Ring",
                 ring2="Paguroidea Ring",
                 back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Crimson Cuisses",
-                feet="Whirlpool Greaves"
+                feet="Fallen's Sollerets +1"
+            }
+
+            sets.refresh = { 
+                neck="Bale Choker",
+                body="Twilight Mail"
             }
            
             -- Defense sets
@@ -493,6 +489,9 @@
     -------------------------------------------------------------------------------------------------------------------
     -- Modify the default idle set after it was constructed.
     function customize_idle_set(idleSet)
+        if player.mpp < 50 then
+            idleSet = set_combine(idleSet, sets.refresh)
+        end
         return idleSet
     end
      
@@ -525,7 +524,8 @@
     -- gain == true if the buff was gained, false if it was lost.
     function job_buff_change(buff, gain)
 
-	    if S{'haste','march','embrava','haste samba', 'last resort'}:contains(buff:lower()) then
+	    --if S{'haste','march','embrava','haste samba', 'last resort'}:contains(buff:lower()) then
+	    if S{'last resort'}:contains(buff:lower()) then
 	    	determine_haste_group()
 	    	handle_equipping_gear(player.status)
         end
@@ -534,6 +534,13 @@
 	    	state.Buff[buff] = gain
 	    	handle_equipping_gear(player.status)
 	    end
+
+        -- Some informative output
+        if buff == 'Nether Void' and gain then
+            add_to_chat(104, 'Next Absorb or Drain potency +75%!')
+        elseif buff == 'Dark Seal' and gain then
+            add_to_chat(104, 'Enhanced Dark Magic Accuracy!')
+        end
 
     end
      
