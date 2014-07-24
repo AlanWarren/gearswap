@@ -120,7 +120,7 @@
                 ear1="Lifestorm Earring",
                 ear2="Psystorm Earring",
                 body="Demon's harness",
-                hands="Abyss gauntlets +2",
+                hands="Blood Finger Gauntlets",
                 ring1="Sangoma Ring",
                 ring2="Mediator's Ring",
                 back="Chuparrosa Mantle",
