@@ -248,7 +248,7 @@
      
             -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
             sets.idle.Town = {
-                head="Otomi Helm",
+                head="Ignominy burgeonet +1",
                 neck="Agitator's Collar",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
