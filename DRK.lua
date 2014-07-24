@@ -181,14 +181,14 @@
                 back="Niht Mantle",
                 waist="Windbuffet Belt",
                 legs="Ignominy Flanchard +1",
-                feet="Ejekamal Boots"
+                feet="Fallen Sollerets +1"
             }
             sets.precast.WS.Acc = set_combine(sets.precast.WS, {
                 head="Yaoyotl Helm",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
                 ring1="Mars's Ring",
-                feet="Whirlpool Greaves"
+                feet="Ejekamal Boots"
             })
      
             -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -213,6 +213,7 @@
                 ear2="Bale Earring",
                 back="Niht Mantle",
                 waist="Windbuffet Belt",
+                feet="Ejekamal Boots"
             })
             sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
                 hands="Mikinaak Gauntlets",
@@ -422,7 +423,7 @@
                 --head="Ighwa Cap",
                 neck="Agitator's Collar",
                 ring2="Patricius Ring",
-                --feet="Fallen Sollerets +1"
+                feet="Fallen Sollerets +1"
             })
 	 
             sets.buff.Souleater = {head="Ignominy burgeonet +1"}
