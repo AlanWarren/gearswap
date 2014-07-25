@@ -263,7 +263,7 @@
                 feet="Fallen's Sollerets +1"
             }
            
-            sets.idle.Field = {
+            sets.idle.Field = set_combine(sets.idle.Town, {
                 head="Twilight Helm",
                 neck="Bale Choker",
                 body="Kumarbi's Akar",
@@ -273,7 +273,7 @@
                 back="Repulse Mantle",
                 legs="Crimson Cuisses",
                 feet="Fallen's Sollerets +1"
-            }
+            })
      
             sets.idle.Weak = {
                 head="Twilight Helm",
