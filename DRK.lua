@@ -120,7 +120,7 @@
                 neck="Dark Torque",
                 ear1="Lifestorm Earring",
                 ear2="Psystorm Earring",
-                body="Demon's harness",
+                body="Haruspex Coat",
                 hands="Fallen's Finger Gauntlets",
                 ring1="Sangoma Ring",
                 ring2="Mediator's Ring",
