@@ -230,7 +230,7 @@
                 waist="Windbuffet Belt"
              })
            
-            sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS, {
+            sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
                 neck="Aqua Gorget",
                 waist="Windbuffet Belt"
              })
