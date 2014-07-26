@@ -34,7 +34,7 @@
             options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
             options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
             options.CastingModes = {'Normal'}
-            options.IdleModes = {'Normal'}
+            options.IdleModes = {'Normal', 'Twilight'}
             options.RestingModes = {'Normal'}
             options.PhysicalDefenseModes = {'PDT', 'Reraise'}
             options.MagicalDefenseModes = {'MDT'}
@@ -291,6 +291,7 @@
                 legs="Crimson Cuisses",
                 feet="Fallen's Sollerets +1"
             }
+            sets.idle.Twilight = sets.idle.Weak
 
             sets.refresh = { 
                 neck="Bale Choker",
