@@ -513,7 +513,7 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         --body="Qaaxo Harness",
         neck="Shadow gorget",
-        hands="Hachiya Tekko +1",
+        hands="Otronif Gloves +1",
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
         legs="Otronif Brais +1",
