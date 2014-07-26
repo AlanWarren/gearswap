@@ -537,9 +537,9 @@
 
         -- Some informative output
         if buff == 'Nether Void' and gain then
-            add_to_chat(104, 'Next Absorb or Drain potency +75%!')
+            add_to_chat(84, 'Next Absorb or Drain potency +75%!')
         elseif buff == 'Dark Seal' and gain then
-            add_to_chat(104, 'Enhanced Dark Magic Accuracy!')
+            add_to_chat(84, 'Enhanced Dark Magic Accuracy!')
         end
 
     end
