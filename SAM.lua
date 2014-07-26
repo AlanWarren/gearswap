@@ -264,7 +264,7 @@ function init_gear_sets()
     
     sets.idle.Weak = set_combine(sets.idle.Field, {
         head="Twilight Helm",
-    	body="Kumarbi's Akar"
+    	body="Twilight Mail"
     })
     sets.idle.Yoichi = set_combine(sets.idle.Field, {
     	ammo=gear.RAarrow
