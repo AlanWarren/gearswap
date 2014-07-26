@@ -48,7 +48,7 @@ function user_setup()
     
     state.Defense.PhysicalMode = 'PDT'
     
-    gear.RAarrow = "Eminent Arrow"
+    gear.RAarrow = "Tulfaire Arrow"
     
     -- Additional local binds
     send_command('bind ^[ input /lockstyle on')
@@ -437,7 +437,8 @@ function init_gear_sets()
         body="Sakonji Domaru +1",
         head="Yaoyotl Helm",
         back="Takaha Mantle",
-        ring2="Mars's Ring"
+        legs="Xaddi Cuisses",
+        feet="Ejekamal Boots"
     })
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
@@ -447,7 +448,6 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         waist="Dynamic Belt",
-        legs="Xaddi Cuisses",
         back="Takaha Mantle",
         feet="Wakido Sune-Ate +1"
     })
