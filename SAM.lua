@@ -491,7 +491,8 @@ function init_gear_sets()
         feet="Otronif Boots +1" -- 7
     }
     
-    sets.engaged.Adoulin.Yoichi.Mid = set_combine(sets.engaged.Adoulin.Yoichi, {
+    sets.engaged.Adoulin.Yoichi.Mid = set_combine(sets.engaged.Adoulin.Yoichi, 
+    {
         ammo=gear.RAarrow,
         head="Yaoyotl Helm",
         waist="Dynamic Belt",
