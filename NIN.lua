@@ -184,7 +184,7 @@ function init_gear_sets()
         ear1="Trux Earring",
         ear2="Dawn Earring",
     	body="War Shinobi Gi",
-        hands="Mochizuki Tekko +1",
+        hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
     	back="Repulse Mantle",
