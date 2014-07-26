@@ -197,7 +197,7 @@ function init_gear_sets()
         head="Felistris Mask",
         neck="Agitator's Collar",
         body="Mochizuki Chainmail +1",
-        hands="Mochizuki Tekko +1",
+        hands="Otronif Gloves +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
         legs="Mochizuki Hakama +1",
