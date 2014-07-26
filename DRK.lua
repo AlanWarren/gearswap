@@ -34,7 +34,7 @@
             options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
             options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
             options.CastingModes = {'Normal'}
-            options.IdleModes = {'Normal', 'Twilight'}
+            options.IdleModes = {'Normal'}
             options.RestingModes = {'Normal'}
             options.PhysicalDefenseModes = {'PDT', 'Reraise'}
             options.MagicalDefenseModes = {'MDT'}
@@ -291,7 +291,6 @@
                 legs="Crimson Cuisses",
                 feet="Fallen's Sollerets +1"
             }
-            sets.idle.Twilight = sets.idle.Weak
 
             sets.refresh = { 
                 neck="Bale Choker",
@@ -602,7 +601,6 @@ end
 --		classes.CustomMeleeGroups:append('AM')
 --	end
 --end
-     
 function determine_haste_group()
 
     -- This section only applies to LR being up
