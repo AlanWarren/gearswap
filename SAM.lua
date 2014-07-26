@@ -495,14 +495,14 @@ function init_gear_sets()
         ammo=gear.RAarrow,
         head="Yaoyotl Helm",
         waist="Dynamic Belt",
-        ring2="Mars's Ring"
+        legs="Xaddi Cuisses",
+        boots="Ejekamal Boots"
     })
     
     sets.engaged.Adoulin.Yoichi.Acc = set_combine(sets.engaged.Adoulin.Yoichi.Mid, {
         ammo=gear.RAarrow,
         ring1="Patricius Ring",
         ring2="Mars's Ring",
-        legs="Xaddi Cuisses",
         back="Takaha Mantle",
         feet="Wakido Sune-Ate +1"
     })
