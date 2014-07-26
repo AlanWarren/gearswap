@@ -259,7 +259,8 @@ function init_gear_sets()
         head="Felistris Mask",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        legs="Hachiya Hakama +1"
+        body="Qaaxo Harness",
+        legs="Otronif Brais +1"
     })
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
