@@ -224,6 +224,10 @@
                 neck="Breeze Gorget",
                 waist="Soil Belt"
             })
+            sets.precast.WS['Torcleaver'] = set_combine(sets.precast.WS, {
+                neck="Aqua Gorget",
+                waist="Caudata Belt"
+            })
             -- 60% STR / 60% MND
             sets.precast.WS['Cross Reapter'] = set_combine(sets.precast.WS, {
                 neck="Aqua Gorget",
