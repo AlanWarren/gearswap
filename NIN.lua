@@ -133,6 +133,7 @@ function init_gear_sets()
         ear1="Loquacious Earring",
         waist="Chaac Belt",
         ring1="Prolix Ring",
+        ring2="Diamond Ring",
         legs="Kaabnax Trousers",
         feet="Mochizuki Kyahan +1"
     }
