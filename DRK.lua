@@ -232,7 +232,7 @@
             
             sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
                 neck="Aqua Gorget",
-                waist="Soil Belt"
+                waist="Caudata belt",
              })
            
             sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
