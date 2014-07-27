@@ -519,7 +519,7 @@ function init_gear_sets()
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
         legs="Otronif Brais +1",
-        --waist="Caudata belt",
+        waist="Caudata belt",
         feet="Otronif Boots +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
