@@ -249,7 +249,7 @@
             sets.resting = {
                 head="Twilight Helm",
                 neck="Bale Choker",
-                body="Kumarbi's Akar",
+                body="Ares' Cuirass",
                 hands="Cizin Mufflers +1",
                 ring1="Dark Ring",
                 ring2="Paguroidea Ring",
@@ -262,7 +262,7 @@
                 neck="Agitator's Collar",
                 ear1="Trux Earring",
                 ear2="Brutal Earring",
-                body="Fallen's Cuirass +1",
+                body="Ares' Cuirass",
                 hands="Fallen's Finger Gauntlets",
                 ring1="Ifrit Ring",
                 ring2="Patricius Ring",
@@ -275,7 +275,7 @@
             sets.idle.Field = set_combine(sets.idle.Town, {
                 head="Twilight Helm",
                 neck="Bale Choker",
-                body="Kumarbi's Akar",
+                body="Ares' Cuirass",
                 hands="Cizin Mufflers +1",
                 ring1="Dark Ring",
                 ring2="Paguroidea Ring",
@@ -298,7 +298,7 @@
 
             sets.refresh = { 
                 neck="Bale Choker",
-                body="Twilight Mail"
+                body="Ares' Cuirass"
             }
            
             -- Defense sets
