@@ -92,6 +92,7 @@
             sets.precast.FC = {
                 head="Cizin Helm",
                 ear1="Loquacious Earring",
+                hands="Buremte Gloves",
                 ring2="Prolix Ring"
             }
 

@@ -148,6 +148,7 @@ function init_gear_sets()
 	sets.precast.FC = {
         head="Uk'uxkaj Cap",
         ear1="Loquacious Earring",
+        hands="Buremte Gloves",
         ring1="Prolix Ring",
         legs="Kaabnax Trousers"
     }
