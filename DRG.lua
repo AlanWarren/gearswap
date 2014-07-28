@@ -238,7 +238,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
-		body="Kumarbi's Akar",
+		body="Ares' Cuirass +1",
         hands="Cizin Mufflers +1",
         ring1="Oneiros Ring",
         ring2="Patricius Ring",
@@ -251,14 +251,14 @@ function init_gear_sets()
 	sets.idle.Field = set_combine(sets.idle.Town, {
         head="Twilight Helm",
         neck="Twilight Torque",
-		body="Kumarbi's Akar",
+		body="Ares' Cuirass +1",
         ring2="Paguroidea Ring",
         back="Repulse Mantle"
     })
 
 	sets.idle.Weak = set_combine(sets.idle.Field, {
 		head="Twilight Helm",
-		body="Kumarbi's Akar",
+		body="Twilight Mail",
 		legs="Cizin Breeches +1"
     })
 	
