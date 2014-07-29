@@ -82,18 +82,18 @@
                    
             -- Waltz set (chr and vit)
             sets.precast.Waltz = {
-                    head="Yaoyotl Helm",
-                    body="Fallen's Cuirass +1",
-                    legs="Cizin Breeches +1",
-                    feet="Whirlpool Greaves"
+               head="Yaoyotl Helm",
+               body="Fallen's Cuirass +1",
+               legs="Cizin Breeches +1",
+               feet="Whirlpool Greaves"
             }
                    
             -- Fast cast sets for spells
             sets.precast.FC = {
-                head="Cizin Helm",
-                ear1="Loquacious Earring",
-                hands="Buremte Gloves",
-                ring2="Prolix Ring"
+               head="Cizin Helm",
+               ear1="Loquacious Earring",
+               hands="Buremte Gloves",
+               ring2="Prolix Ring"
             }
 
             sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
