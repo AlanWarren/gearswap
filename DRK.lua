@@ -107,12 +107,13 @@
                 head="Otomi Helm",
                 hands="Cizin Mufflers +1",
                 waist="Zoran's Belt",
-                feet="Whirlpool Greaves"
+                feet="Ejekamal Boots"
             }
                    
             -- Specific spells
             sets.midcast.Utsusemi = {
                 head="Otomi Helm",
+                waist="Zoran's Belt",
                 feet="Ejekamal Boots"
             }
      
@@ -145,6 +146,7 @@
                 ear2="Crematio Earring",
                 body="Fallen's Cuirass +1",
                 hands="Fallen's Finger Gauntlets",
+                --legs="Haruspex Slops",
                 ring1="Sangoma Ring",
                 ring2="Acumen Ring",
                 back="Toro Cape",
@@ -152,10 +154,13 @@
             }
 		   
             sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
+                --head="Fallen's Burgeonet +1",
                 body="Bale Cuirass +2",
                 hands="Boor Braceletes",
-                legs="Ignominy Flanchard +1",
                 ring2="K'ayres Ring",
+                back="Repulse Mantle",
+                legs="Ignominy Flanchard +1",
+                feet="Ejekamal Boots"
             })
             
             sets.midcast.Drain = sets.midcast['Dark Magic'] 
@@ -185,64 +190,78 @@
                 legs="Ignominy Flanchard +1",
                 feet="Fallen's Sollerets +1"
             }
-            sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+            sets.precast.WS.Mid = set_combine(sets.precast.WS, {
                 head="Yaoyotl Helm",
+                feet="Ejekamal Boots"
+            })
+            sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
-                ring1="Mars's Ring",
-                feet="Ejekamal Boots"
+                ring1="Mars's Ring"
             })
      
             -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-            sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-            sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-            sets.precast.WS['Catastrophe'].Mid = set_combine(sets.precast.WS['Catastrophe'], {waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
+            sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {neck="Shadow Gorget"})
+            sets.precast.WS['Catastrophe'].Mid = set_combine(sets.precast.WS['Catastrophe'], {waist="Soil Belt"})
+            sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget", waist="Soil Belt"})
             -- INT 
             sets.precast.WS['Entropy'] = set_combine(sets.precast.WS, {
-                head="Ignominy Burgeonet +1",
+                head="Ighwa Cap",
                 neck="Shadow Gorget",
                 back="Atheling Mantle",
                 ring1="Diamond Ring",
                 waist="Soil Belt",
                 feet="Ejekamal Boots"
             })
-            sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",waist="Soil Belt",ear1="Bladeborn Earring",ear2="Steelflash Earring"})
-            sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Windbuffet Belt"})
+            sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Caudata Belt"})
+            sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS['Entropy'].Mid, {
+                ear1="Bladeborn Earring",
+                ear2="Steelflash Earring",
+            })
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
                 neck="Breeze Gorget",
                 hands="Boor Bracelets",
-                ear2="Bale Earring",
                 back="Niht Mantle",
-                waist="Windbuffet Belt",
-                feet="Ejekamal Boots"
+                waist="Soil Belt",
             })
             sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
+                head="Yaoyotl Helm",
                 hands="Mikinaak Gauntlets",
-                waist="Soil Belt"
+                feet="Ejekamal Boots"
             })
             sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {
                 neck="Breeze Gorget",
                 waist="Soil Belt"
             })
             sets.precast.WS['Torcleaver'] = set_combine(sets.precast.WS, {
+                body="Phorcys Korazin",
                 neck="Aqua Gorget",
                 waist="Caudata Belt"
             })
             -- 60% STR / 60% MND
             sets.precast.WS['Cross Reapter'] = set_combine(sets.precast.WS, {
+                hands="Cizin Mufflers +1",
                 neck="Aqua Gorget",
-                waist="Windbuffet Belt"
+                waist="Caudata belt"
              })
-            
+            -- 50% STR / 50% INT 
             sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
+                head="Ighwa Cap",
+                body="Phorcys Korazin",
                 neck="Aqua Gorget",
                 waist="Caudata belt",
              })
            
             sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
+                head="Ignominy burgeonet +1"
                 neck="Aqua Gorget",
-                waist="Windbuffet Belt"
+                ear1="Friomisi Earring",
+                ear2="Crematio Earring",
+                hands="Fallen's Finger Gauntlets",
+                waist="Windbuffet Belt",
+                back="Toro Cape",
+                feet="Ignominy Sollerets"
              })
             -- Sets to return to when not performing an action.
            
@@ -304,14 +323,15 @@
            
             -- Defense sets
             sets.defense.PDT = {
-                head="Lithelimb Cap",
+                head="Ighwa Cap",
                 neck="Agitator's Collar",
                 body="Xaddi Mail",
                 hands="Cizin Mufflers +1",
+                back="Repulse Mantle",
                 ring1="Dark Ring",
                 ring2="Patricius Ring",
                 legs="Cizin Breeches +1",
-                feet="Whirlpool Greaves"
+                feet="Cizin Greaves +1"
             }
             sets.defense.Reraise = sets.idle.Weak
      
@@ -349,18 +369,20 @@
             })
 
 	        sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+                neck="Iqabi Necklace",
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
+                hands="Umuthi Gloves",
                 waist="Anguinus Belt",
             })
 
             sets.engaged.PDT = set_combine(sets.engaged, {
-                head="Lithelimb Cap",
+                head="Ighwa Cap",
                 neck="Agitator's Collar",
                 hands="Cizin Mufflers +1",
                 ring2="Patricius Ring",
                 legs="Cizin Breeches +1",
-                feet="Fallen's Sollerets +1"
+                feet="Cizin Greaves +1"
             })
 
             -- GS war sub 
@@ -371,9 +393,12 @@
             sets.engaged.War.Mid = set_combine(sets.engaged.War, {
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
-                feet="Ejekamal Boots"
+                feet="Ejekamal Boots",
+                legs="Xaddi Cuisses"
             })
             sets.engaged.War.Acc = set_combine(sets.engaged.War.Mid, {
+                neck="Iqabi Necklace",
+                hands="Umuthi Gloves",
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
                 waist="Anguinus Belt"
@@ -382,14 +407,19 @@
             -- Scythe 
             sets.engaged.Scythe = set_combine(sets.engaged, {
                 sub="Pole Grip",
-                ammo="Yetshila",
+                ammo="Hagneia Stone",
                 legs="Cizin Breeches +1",
                 feet="Ejekamal Boots"
             })
             sets.engaged.Scythe.Mid = set_combine(sets.engaged.Scythe, {
+                head="Yaoyotl Helm",
+                ear1="Bladeborn Earring",
+                ear2="Steelflash Earring",
                 legs="Xaddi Cuisses"
             })
             sets.engaged.Scythe.Acc = set_combine(sets.engaged.Scythe.Mid, { 
+                neck="Iqabi Necklace",
+                hands="Umuthi Gloves",
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
                 waist="Anguinus Belt"
@@ -419,6 +449,8 @@
                 feet="Ejekamal Boots"
             })
             sets.engaged.War.Scythe.Acc = set_combine(sets.engaged.War.Scythe.Mid, {
+                neck="Iqabi Necklace",
+                hands="Umuthi Gloves",
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
                 waist="Anguinus Belt",
@@ -439,7 +471,7 @@
             sets.engaged.EmbravaHaste = sets.engaged.HighHaste
 
             sets.engaged.LastResort = set_combine(sets.engaged.HighHaste, {
-                --head="Ighwa Cap",
+                head="Ighwa Cap",
                 neck="Agitator's Collar",
                 ring2="Patricius Ring",
                 feet="Fallen's Sollerets +1"
