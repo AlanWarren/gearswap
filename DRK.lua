@@ -254,7 +254,7 @@
              })
            
             sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
-                head="Ignominy burgeonet +1"
+                head="Ignominy burgeonet +1",
                 neck="Aqua Gorget",
                 ear1="Friomisi Earring",
                 ear2="Crematio Earring",
