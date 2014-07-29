@@ -264,7 +264,7 @@
                 ear1="Trux Earring",
                 ear2="Brutal Earring",
                 body="Ares' Cuirass +1",
-                hands="Fallen's Finger Gauntlets",
+                hands="Ares' Gauntlets",
                 ring1="Ifrit Ring",
                 ring2="Patricius Ring",
                 back="Atheling Mantle",
