@@ -471,7 +471,7 @@
             sets.engaged.MaxHaste = sets.engaged.HighHaste
             sets.engaged.EmbravaHaste = sets.engaged.HighHaste
 
-            sets.engaged.LastResort = set_combine(sets.engaged.HighHaste, {
+            sets.engaged.PDT.LastResort = set_combine(sets.engaged.HighHaste, {
                 head="Ighwa Cap",
                 neck="Agitator's Collar",
                 ring2="Patricius Ring",
