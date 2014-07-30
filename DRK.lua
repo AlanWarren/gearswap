@@ -147,6 +147,7 @@
                 body="Fallen's Cuirass +1",
                 hands="Fallen's Finger Gauntlets",
                 --legs="Haruspex Slops",
+                legs="Ignominy Flanchard +1",
                 ring1="Sangoma Ring",
                 ring2="Acumen Ring",
                 back="Toro Cape",
