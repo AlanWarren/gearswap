@@ -347,7 +347,7 @@
      
             -- Engaged set -- 40 STP
             sets.engaged = {
-                sub="Bloodrain Strap",
+                --sub="Bloodrain Strap",
                 ammo="Hagneia Stone",
 	        	head="Otomi Helm",
                 neck="Asperity Necklace", 
@@ -407,7 +407,7 @@
 
             -- Scythe 
             sets.engaged.Scythe = set_combine(sets.engaged, {
-                sub="Pole Grip",
+                --sub="Pole Grip",
                 ammo="Hagneia Stone",
                 legs="Cizin Breeches +1",
                 feet="Ejekamal Boots"
@@ -428,7 +428,7 @@
             
             -- Scythe war sub (aim for 40 stp)
             sets.engaged.War.Scythe = {
-                sub="Bloodrain Strap",
+                --sub="Bloodrain Strap",
                 ammo="Hagneia Stone",
 	        	head="Otomi Helm",
                 neck="Asperity Necklace", 
