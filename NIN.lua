@@ -132,7 +132,7 @@ function init_gear_sets()
     	body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
         ear1="Loquacious Earring",
-        waist="Chaac Belt",
+        waist="Hurch'lan Sash",
         ring1="Prolix Ring",
         ring2="Diamond Ring",
         legs="Kaabnax Trousers",
@@ -154,7 +154,7 @@ function init_gear_sets()
     	back="Yokaze Mantle",
         ring1="Diamond Ring",
         ring2="Sangoma Ring",
-        waist="Hurch'lan Sash",
+        waist="Chaac Belt",
         legs="Kabnaax Trousers",
         feet="Mochizuki Kyahan +1"
     }
