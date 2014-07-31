@@ -221,6 +221,8 @@
             })
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
+                ear1="Brutal Earring",
+                ear2="Bale Earring",
                 neck="Breeze Gorget",
                 --hands="Boor Bracelets",
                 back="Niht Mantle",
