@@ -284,7 +284,7 @@
                 ear1="Trux Earring",
                 ear2="Brutal Earring",
                 body="Ares' Cuirass +1",
-                hands="Ares' Gauntlets",
+                hands="Ares' Gauntlets +1",
                 ring1="Ifrit Ring",
                 ring2="Patricius Ring",
                 back="Atheling Mantle",
@@ -344,8 +344,18 @@
             sets.Kiting = {legs="Crimson Cuisses"}
      
             sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+
+            sets.Defensive = {
+                head="Ighwa Cap",
+                neck="Agitator's Collar",
+                hands="Cizin Mufflers +1",
+                ring2="Patricius Ring",
+                legs="Cizin Breeches +1",
+                feet="Cizin Greaves +1"
+            }
      
-            -- Engaged set -- 40 STP
+            -- Engaged set 
+            -- Crobaci +2 = needs 35 STP TP &  24 STP in WS
             sets.engaged = {
                 --sub="Bloodrain Strap",
                 ammo="Hagneia Stone",
@@ -360,13 +370,12 @@
 	        	back="Atheling Mantle",
                 waist="Windbuffet Belt",
                 legs="Xaddi Cuisses",
-                feet="Mikinaak Greaves"
+                feet="Ejekamal Boots"
             }
 	        sets.engaged.Mid = set_combine(sets.engaged, {
                 head="Yaoyotl Helm",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
-                feet="Ejekamal Boots"
             })
 
 	        sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -376,15 +385,21 @@
                 hands="Umuthi Gloves",
                 waist="Anguinus Belt",
             })
-
-            sets.engaged.PDT = set_combine(sets.engaged, {
-                head="Ighwa Cap",
-                neck="Agitator's Collar",
-                hands="Cizin Mufflers +1",
-                ring2="Patricius Ring",
-                legs="Cizin Breeches +1",
-                feet="Cizin Greaves +1"
+            sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
+            
+            -- lower delay greatswords
+            sets.engaged.LDGS = set_combine(sets.engaged, {
+                head="Yaoyotl Helm",
+                feet="Mikinaak Greaves"
             })
+            sets.engaged.LDGS.Mid = set_combine(sets.engaged.LDGS, {
+                ear1="Bladeborn Earring",
+                ear2="Steelflash Earring",
+            })
+            sets.engaged.LDGS.Acc = sets.engaged.Acc
+            sets.engaged.LDGS.PDT = set_combine(sets.engaged.LDGS, sets.Defensive)
+            sets.engaged.LDGS.Mid.PDT = set_combine(sets.engaged.LDGS.Mid, sets.Defensive)
+            sets.engaged.LDGS.Acc.PDT = set_combine(sets.engaged.LDGS.Acc, sets.Defensive)
 
             -- GS war sub 
             sets.engaged.War = set_combine(sets.engaged, {
@@ -404,6 +419,9 @@
                 ring2="Patricius Ring",
                 waist="Anguinus Belt"
             })
+            sets.engaged.War.PDT = set_combine(sets.engaged.War, sets.Defensive)
+            sets.engaged.War.Mid.PDT = set_combine(sets.engaged.War.Mid, sets.Defensive)
+            sets.engaged.War.Acc.PDT = set_combine(sets.engaged.War.Acc, sets.Defensive)
 
             -- Scythe 
             sets.engaged.Scythe = set_combine(sets.engaged, {
@@ -425,6 +443,10 @@
                 ring2="Patricius Ring",
                 waist="Anguinus Belt"
             })
+
+            sets.engaged.Scythe.PDT = set_combine(sets.engaged.Scythe, sets.Defensive)
+            sets.engaged.Scythe.Mid.PDT = set_combine(sets.engaged.Scythe.Mid, sets.Defensive)
+            sets.engaged.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc, sets.Defensive)
             
             -- Scythe war sub (aim for 40 stp)
             sets.engaged.War.Scythe = {
@@ -456,6 +478,9 @@
                 ring2="Patricius Ring",
                 waist="Anguinus Belt",
             })
+            sets.engaged.War.Scythe.PDT = set_combine(sets.engaged.War.Scythe, sets.Defensive)
+            sets.engaged.War.Scythe.Mid.PDT = set_combine(sets.engaged.War.Scythe.Mid, sets.Defensive)
+            sets.engaged.War.Scythe.Acc.PDT = set_combine(sets.engaged.War.Scythe.Acc, sets.Defensive)
 
 
 	        sets.engaged.Reraise = set_combine(sets.engaged, {
@@ -626,7 +651,9 @@ end
 function adjust_engaged_sets()
     if S{ 'Xbalanque', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }:contains(player.equipment.main) then
         state.CombatWeapon = "Scythe"
-    else
+    elseif S{ 'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }:contains(player.equipment.main) then
+        state.CombatWeapon = "LDGS"
+    else -- use regular set
         state.CombatWeapon = nil
     end
 	--adjust_melee_groups()
