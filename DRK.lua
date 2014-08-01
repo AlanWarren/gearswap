@@ -100,7 +100,7 @@
 
             sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, { neck="Stoicheion Medal" })
             sets.precast.FC['Absorb-TP'] = set_combine(sets.precast.FC, { hands="Bale Gauntlets +2" })
-            --sets.precast.FC['Dark Magic'] = set_combine(sets.precast.FC, { head="Fallen's Burgeonet +1" })
+            sets.precast.FC['Dark Magic'] = set_combine(sets.precast.FC, { head="Fallen's Burgeonet" })
                      
             -- Midcast Sets
             sets.midcast.FastRecast = {
