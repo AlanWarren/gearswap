@@ -382,6 +382,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
+    custom_aftermath_timers_precast(spell)
 	if spell.action_type == 'Magic' then
 	equip(sets.precast.FC)
 	end
@@ -432,7 +433,8 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-if state.DefenseMode == 'Reraise' or
+    custom_aftermath_timers_aftercast(spell)
+    if state.DefenseMode == 'Reraise' or
 		(state.Defense.Active and state.Defense.Type == 'Physical' and state.Defense.PhysicalMode == 'Reraise') then
 	end
 end
