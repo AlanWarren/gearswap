@@ -76,6 +76,7 @@
             sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets"}
             sets.precast.JA['Arcane Circle'] = {feet="Ignominy Sollerets"}
             sets.precast.JA['Nether Void'] = {legs="Bale Flanchard +2"}
+            sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet"}
             sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
             sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
      
@@ -607,9 +608,9 @@
 
         -- Some informative output
         if buff == 'Nether Void' and gain then
-            add_to_chat(180, 'Next Absorb or Drain potency +75%!')
+            add_to_chat(122, 'Next Absorb or Drain potency +75%!')
         elseif buff == 'Dark Seal' and gain then
-            add_to_chat(180, 'Enhanced Dark Magic Accuracy!')
+            add_to_chat(122, 'Enhanced Dark Magic Accuracy!')
         end
 
     end
