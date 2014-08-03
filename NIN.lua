@@ -274,9 +274,9 @@ function init_gear_sets()
         back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
     })
-    
+
     sets.engaged.Acc = {
-        ammo=gear.StaticAmmo,
+        ammo="Fire Bomblet",
         head="Whirlpool Mask",
         neck="Agitator's Collar",
         ear1="Dudgeon Earring",
@@ -343,7 +343,7 @@ function init_gear_sets()
     }
 
     sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
-        ammo=gear.StaticAmmo,
+        ammo="Fire Bomblet",
         neck="Iqabi Necklace",
         body="Mochizuki Chainmail +1",
         ring2="Patricius Ring",
@@ -689,7 +689,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-    meleeSet = set_combine(meleeSet, select_static_ammo())
+    meleeSet = set_combine(meleeSet, sets.Ammo)
 	if state.TreasureMode == 'Fulltime' then
 		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
 	end

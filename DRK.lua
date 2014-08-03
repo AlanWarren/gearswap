@@ -80,7 +80,11 @@
             sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
             sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
      
-                   
+            sets.NightAccAmmo = {ammo="Fire Bomblet"}
+            sets.DayAccAmmo = {ammo="Tengu-no-Hane"}
+            sets.RegularAmmo = {ammo="Hagneia Stone"}
+            sets.Ammo = select_static_ammo() 
+            
             -- Waltz set (chr and vit)
             sets.precast.Waltz = {
                head="Yaoyotl Helm",
@@ -570,6 +574,12 @@
     -------------------------------------------------------------------------------------------------------------------
     -- Customization hooks for idle and melee sets, after they've been automatically constructed.
     -------------------------------------------------------------------------------------------------------------------
+    -- Called before the Include starts constructing melee/idle/resting sets.
+    -- Can customize state or custom melee class values at this point.
+    -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+    function job_handle_equipping_gear(status, eventArgs)
+        sets.Ammo = select_static_ammo()
+    end
     -- Modify the default idle set after it was constructed.
     function customize_idle_set(idleSet)
         if player.mpp < 50 then
@@ -580,6 +590,7 @@
      
     -- Modify the default melee set after it was constructed.
     function customize_melee_set(meleeSet)
+        meleeSet = set_combine(meleeSet, sets.Ammo)
 	    if state.Buff.Souleater then
 	    	meleeSet = set_combine(meleeSet, sets.buff.Souleater)
 	    end
@@ -592,6 +603,7 @@
      
     -- Called when the player's status changes.
     function job_status_change(newStatus, oldStatus, eventArgs)
+        sets.Ammo = select_static_ammo()
         if newStatus == "Engaged" then
             adjust_engaged_sets()
         end
@@ -640,6 +652,7 @@ function job_update(cmdParams, eventArgs)
     war_sj = player.sub_job == 'WAR' or false
 	adjust_engaged_sets()
     get_combat_form()
+    sets.Ammo = select_static_ammo()
 
     if souleater_active() then
         disable('head')
@@ -673,6 +686,18 @@ function adjust_engaged_sets()
     end
 	--adjust_melee_groups()
 	determine_haste_group()
+end
+
+function select_static_ammo()
+    if state.OffenseMode == 'Acc' or state.OffenseMode == 'Mid' then
+	    if world.time >= (18*60) or world.time <= (6*60) then
+            return sets.NightAccAmmo
+        else
+            return sets.DayAccAmmo
+	    end
+    else
+        return sets.RegularAmmo
+    end
 end
 
 --function adjust_melee_groups()
