@@ -499,12 +499,24 @@
             sets.engaged.MaxHaste = sets.engaged.HighHaste
             sets.engaged.EmbravaHaste = sets.engaged.HighHaste
 
-            sets.engaged.PDT.LastResort = set_combine(sets.engaged.HighHaste, {
+            sets.LR = {
                 head="Ighwa Cap",
                 neck="Agitator's Collar",
                 ring2="Patricius Ring",
                 feet="Fallen's Sollerets +1"
-            })
+            }
+
+            sets.engaged.LastResort = set_combine(sets.engaged, sets.LR)
+            sets.engaged.Mid.LastResort = set_combine(sets.engaged.Mid, sets.LR)
+            sets.engaged.Acc.LastResort = set_combine(sets.engaged.Acc, sets.LR)
+
+            sets.engaged.Scythe.LastResort = set_combine(sets.engaged.Scythe, sets.LR)
+            sets.engaged.Scythe.Mid.LastResort = set_combine(sets.engaged.Mid.Scythe, sets.LR)
+            sets.engaged.Scythe.Acc.LastResort = set_combine(sets.engaged.Acc.Scythe, sets.LR)
+            
+            sets.engaged.War.Scythe.LastResort = set_combine(sets.engaged.War.Scythe, sets.LR)
+            sets.engaged.War.Scythe.Mid.LastResort = set_combine(sets.engaged.War.Scythe.Mid, sets.LR)
+            sets.engaged.War.Scythe.Acc.LastResort = set_combine(sets.engaged.War.Scythe.Acc, sets.LR)
 	 
             sets.buff.Souleater = {head="Ignominy burgeonet +1"}
      
@@ -596,7 +608,7 @@
     function job_buff_change(buff, gain)
 
 	    --if S{'haste','march','embrava','haste samba', 'last resort'}:contains(buff:lower()) then
-	    if S{'last resort'}:contains(buff:lower()) then
+	    if S{'last resort'}:contains(buff:lower()) and state.DefenseMode == 'PDT' then
 	    	determine_haste_group()
 	    	handle_equipping_gear(player.status)
         end
