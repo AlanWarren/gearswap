@@ -727,7 +727,7 @@ function determine_haste_group()
 	--	classes.CustomMeleeGroups:append('HighHaste')
 	--elseif buffactive.march == 2 then
 	--	classes.CustomMeleeGroups:append('HighHaste')
-    if buffactive['last resort'] then
+    if buffactive['last resort'] and state.DefenseMode == 'LR' then
 		classes.CustomMeleeGroups:append('LastResort')
 	end
 end
