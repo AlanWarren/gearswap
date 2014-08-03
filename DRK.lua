@@ -31,7 +31,7 @@
     function user_setup()
             -- Options: Override default values
             options.OffenseModes = {'Normal', 'Mid', 'Acc'}
-            options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
+            options.DefenseModes = {'Normal', 'LR', 'PDT', 'Reraise'}
             options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
             options.CastingModes = {'Normal'}
             options.IdleModes = {'Normal'}
@@ -608,7 +608,7 @@
     function job_buff_change(buff, gain)
 
 	    --if S{'haste','march','embrava','haste samba', 'last resort'}:contains(buff:lower()) then
-	    if S{'last resort'}:contains(buff:lower()) and state.DefenseMode == 'PDT' then
+	    if S{'last resort'}:contains(buff:lower()) and state.DefenseMode == 'LR' then
 	    	determine_haste_group()
 	    	handle_equipping_gear(player.status)
         end
