@@ -502,6 +502,7 @@
             sets.LR = {
                 head="Ighwa Cap",
                 neck="Agitator's Collar",
+                hands="Cizin Mufflers +1",
                 ring2="Patricius Ring",
                 feet="Fallen's Sollerets +1"
             }
@@ -518,8 +519,7 @@
             sets.engaged.War.Scythe.Mid.LastResort = set_combine(sets.engaged.War.Scythe.Mid, sets.LR)
             sets.engaged.War.Scythe.Acc.LastResort = set_combine(sets.engaged.War.Scythe.Acc, sets.LR)
 	 
-            sets.buff.Souleater = {head="Ignominy burgeonet +1"}
-     
+            sets.buff.Souleater = { head="Ignominy burgeonet +1" }
     end
      
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
