@@ -202,7 +202,7 @@ function init_gear_sets()
         hands="Mochizuki Tekko +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
-        legs="Mochizuki Hakama +1",
+        legs="Usukane Hizayoroi",
     	back="Yokaze Mantle"
     })
     
