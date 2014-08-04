@@ -829,6 +829,13 @@ function determine_haste_group()
 
 end
 
+--- Custom spell mapping.
+--function job_get_spell_map(spell, default_spell_map)
+--    if spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' then
+--        return 'HighTierNuke'
+--    end
+--end
+
 function utsusemi_active()
     if buffactive['Copy Image'] or buffactive['Copy Image (2)'] or buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
         return true
