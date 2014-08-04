@@ -711,8 +711,7 @@ function job_buff_change(buff, gain)
 	if S{'haste','march', 'madrigal','embrava','haste samba'}:contains(buff:lower()) then
 		determine_haste_group()
         handle_equipping_gear(player.status)
-    end
-	if state.Buff[buff] ~= nil then
+    elseif state.Buff[buff] ~= nil then
 		state.Buff[buff] = gain
 		if not midaction() then
 			handle_equipping_gear(player.status)

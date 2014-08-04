@@ -23,6 +23,7 @@
         --buffactive['Aftermath: Lv.3']
         --or false
         state.Buff.Souleater = buffactive.souleater or false
+        state.Buff['Last Resort'] = buffactive['Last Resort'] or false
 	    adjust_engaged_sets()
     end
      
@@ -31,7 +32,7 @@
     function user_setup()
             -- Options: Override default values
             options.OffenseModes = {'Normal', 'Mid', 'Acc'}
-            options.DefenseModes = {'Normal', 'LR', 'PDT', 'Reraise'}
+            options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
             options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
             options.CastingModes = {'Normal'}
             options.IdleModes = {'Normal'}
@@ -78,6 +79,7 @@
             sets.precast.JA['Nether Void'] = {legs="Bale Flanchard +2"}
             sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet"}
             sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
+            sets.precast.JA['Last Resort'] = {feet="Fallen's Sollerets +1"}
             sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
      
             sets.NightAccAmmo = {ammo="Fire Bomblet"}
@@ -163,6 +165,7 @@
                 --head="Fallen's Burgeonet +1",
                 body="Bale Cuirass +2",
                 hands="Boor Braceletes",
+                ring1="Beeline Ring",
                 ring2="K'ayres Ring",
                 back="Repulse Mantle",
                 legs="Ignominy Flanchard +1",
@@ -360,11 +363,26 @@
             sets.Kiting = {legs="Crimson Cuisses"}
      
             sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
-
+            
+            -- Defensive sets to combine with various weapon-specific sets below
+            -- These allow hybrid acc/pdt sets for difficult content
             sets.Defensive = {
+                neck="Agitator's Collar",
+                ring2="Patricius Ring",
+                legs="Cizin Breeches +1"
+            }
+            sets.Defensive_Mid = {
                 head="Ighwa Cap",
                 neck="Agitator's Collar",
                 hands="Cizin Mufflers +1",
+                ring2="Patricius Ring",
+                legs="Cizin Breeches +1"
+            }
+            sets.Defensive_Acc = {
+                head="Ighwa Cap",
+                neck="Agitator's Collar",
+                hands="Umuthi Gloves",
+                ring1="Beeline Ring",
                 ring2="Patricius Ring",
                 legs="Cizin Breeches +1",
                 feet="Cizin Greaves +1"
@@ -389,6 +407,7 @@
                 feet="Ejekamal Boots"
             }
 	        sets.engaged.Mid = set_combine(sets.engaged, {
+                ammo="Fire Bomblet",
                 head="Yaoyotl Helm",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
@@ -398,10 +417,12 @@
                 neck="Iqabi Necklace",
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
-                hands="Umuthi Gloves",
+                hands="Buremte Gloves",
                 waist="Anguinus Belt",
             })
             sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
+            sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
+            sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
             
             -- lower delay greatswords
             sets.engaged.LDGS = set_combine(sets.engaged, {
@@ -409,13 +430,14 @@
                 feet="Mikinaak Greaves"
             })
             sets.engaged.LDGS.Mid = set_combine(sets.engaged.LDGS, {
+                ammo="Fire Bomblet",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
             })
             sets.engaged.LDGS.Acc = sets.engaged.Acc
             sets.engaged.LDGS.PDT = set_combine(sets.engaged.LDGS, sets.Defensive)
-            sets.engaged.LDGS.Mid.PDT = set_combine(sets.engaged.LDGS.Mid, sets.Defensive)
-            sets.engaged.LDGS.Acc.PDT = set_combine(sets.engaged.LDGS.Acc, sets.Defensive)
+            sets.engaged.LDGS.Mid.PDT = set_combine(sets.engaged.LDGS.Mid, sets.Defensive_Mid)
+            sets.engaged.LDGS.Acc.PDT = sets.engaged.Acc.PDT
 
             -- GS war sub 
             sets.engaged.War = set_combine(sets.engaged, {
@@ -423,21 +445,22 @@
                 legs="Phorcys Dirs"
             })
             sets.engaged.War.Mid = set_combine(sets.engaged.War, {
+                ammo="Hagneia Stone",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
-                feet="Ejekamal Boots",
-                legs="Xaddi Cuisses"
+                legs="Xaddi Cuisses",
+                feet="Ejekamal Boots"
             })
             sets.engaged.War.Acc = set_combine(sets.engaged.War.Mid, {
                 neck="Iqabi Necklace",
-                hands="Umuthi Gloves",
+                hands="Buremte Gloves",
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
                 waist="Anguinus Belt"
             })
             sets.engaged.War.PDT = set_combine(sets.engaged.War, sets.Defensive)
-            sets.engaged.War.Mid.PDT = set_combine(sets.engaged.War.Mid, sets.Defensive)
-            sets.engaged.War.Acc.PDT = set_combine(sets.engaged.War.Acc, sets.Defensive)
+            sets.engaged.War.Mid.PDT = set_combine(sets.engaged.War.Mid, sets.Defensive_Mid)
+            sets.engaged.War.Acc.PDT = set_combine(sets.engaged.War.Acc, sets.Defensive_Acc)
 
             -- Scythe 
             sets.engaged.Scythe = set_combine(sets.engaged, {
@@ -454,15 +477,15 @@
             })
             sets.engaged.Scythe.Acc = set_combine(sets.engaged.Scythe.Mid, { 
                 neck="Iqabi Necklace",
-                hands="Umuthi Gloves",
+                hands="Buremte Gloves",
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
                 waist="Anguinus Belt"
             })
 
             sets.engaged.Scythe.PDT = set_combine(sets.engaged.Scythe, sets.Defensive)
-            sets.engaged.Scythe.Mid.PDT = set_combine(sets.engaged.Scythe.Mid, sets.Defensive)
-            sets.engaged.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc, sets.Defensive)
+            sets.engaged.Scythe.Mid.PDT = set_combine(sets.engaged.Scythe.Mid, sets.Defensive_Mid)
+            sets.engaged.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc, sets.Defensive_Acc)
             
             -- Scythe war sub (aim for 40 stp)
             sets.engaged.War.Scythe = {
@@ -489,14 +512,14 @@
             })
             sets.engaged.War.Scythe.Acc = set_combine(sets.engaged.War.Scythe.Mid, {
                 neck="Iqabi Necklace",
-                hands="Umuthi Gloves",
+                hands="Buremte Gloves",
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
                 waist="Anguinus Belt",
             })
             sets.engaged.War.Scythe.PDT = set_combine(sets.engaged.War.Scythe, sets.Defensive)
-            sets.engaged.War.Scythe.Mid.PDT = set_combine(sets.engaged.War.Scythe.Mid, sets.Defensive)
-            sets.engaged.War.Scythe.Acc.PDT = set_combine(sets.engaged.War.Scythe.Acc, sets.Defensive)
+            sets.engaged.War.Scythe.Mid.PDT = set_combine(sets.engaged.War.Scythe.Mid, sets.Defensive_Mid)
+            sets.engaged.War.Scythe.Acc.PDT = set_combine(sets.engaged.War.Scythe.Acc, sets.Defensive_Acc)
 
 
 	        sets.engaged.Reraise = set_combine(sets.engaged, {
@@ -512,26 +535,10 @@
             sets.engaged.MaxHaste = sets.engaged.HighHaste
             sets.engaged.EmbravaHaste = sets.engaged.HighHaste
 
-            sets.LR = {
-                head="Ighwa Cap",
-                neck="Agitator's Collar",
-                hands="Cizin Mufflers +1",
-                ring2="Patricius Ring",
+            sets.buff['Last Resort'] = {
                 feet="Fallen's Sollerets +1"
             }
 
-            sets.engaged.LastResort = set_combine(sets.engaged, sets.LR)
-            sets.engaged.Mid.LastResort = set_combine(sets.engaged.Mid, sets.LR)
-            sets.engaged.Acc.LastResort = set_combine(sets.engaged.Acc, sets.LR)
-
-            sets.engaged.Scythe.LastResort = set_combine(sets.engaged.Scythe, sets.LR)
-            sets.engaged.Scythe.Mid.LastResort = set_combine(sets.engaged.Mid.Scythe, sets.LR)
-            sets.engaged.Scythe.Acc.LastResort = set_combine(sets.engaged.Acc.Scythe, sets.LR)
-            
-            sets.engaged.War.Scythe.LastResort = set_combine(sets.engaged.War.Scythe, sets.LR)
-            sets.engaged.War.Scythe.Mid.LastResort = set_combine(sets.engaged.War.Scythe.Mid, sets.LR)
-            sets.engaged.War.Scythe.Acc.LastResort = set_combine(sets.engaged.War.Scythe.Acc, sets.LR)
-	 
             sets.buff.Souleater = { head="Ignominy burgeonet +1" }
     end
      
@@ -568,9 +575,6 @@
             (state.Defense.Active and state.Defense.Type == 'Physical' and state.Defense.PhysicalMode == 'Reraise') then
             equip(sets.Reraise)
         end
-        if state.Buff.Souleater then
-            equip(sets.buff.Souleater)
-        end
     end
      
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -602,7 +606,10 @@
         meleeSet = set_combine(meleeSet, sets.Ammo)
 	    if state.Buff.Souleater then
 	    	meleeSet = set_combine(meleeSet, sets.buff.Souleater)
-	    end
+        end
+	    if state.Buff['Last Resort'] then
+	    	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
+        end
         return meleeSet
     end
      
@@ -629,10 +636,10 @@
     function job_buff_change(buff, gain)
 
 	    --if S{'haste','march','embrava','haste samba', 'last resort'}:contains(buff:lower()) then
-	    if S{'last resort'}:contains(buff:lower()) and state.DefenseMode == 'LR' then
-	    	determine_haste_group()
-	    	handle_equipping_gear(player.status)
-        end
+	    --if S{'last resort'}:contains(buff:lower()) then
+	    --	determine_haste_group()
+	    --	handle_equipping_gear(player.status)
+        --end
 
 	    if state.Buff[buff] ~= nil then
 	    	state.Buff[buff] = gain
@@ -657,7 +664,6 @@
     -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
     
-    state.Buff.Souleater = buffactive.souleater or false
     war_sj = player.sub_job == 'WAR' or false
 	adjust_engaged_sets()
     get_combat_form()
@@ -694,7 +700,7 @@ function adjust_engaged_sets()
         state.CombatWeapon = nil
     end
 	--adjust_melee_groups()
-	determine_haste_group()
+	--determine_haste_group()
 end
 
 function select_static_ammo()
@@ -736,7 +742,7 @@ function determine_haste_group()
 	--	classes.CustomMeleeGroups:append('HighHaste')
 	--elseif buffactive.march == 2 then
 	--	classes.CustomMeleeGroups:append('HighHaste')
-    if buffactive['last resort'] and state.DefenseMode == 'LR' then
+    if buffactive['last resort'] then
 		classes.CustomMeleeGroups:append('LastResort')
 	end
 end
