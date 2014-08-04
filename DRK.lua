@@ -224,6 +224,15 @@
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
             })
+
+            sets.precast.WS['Requiscat'] = set_combine(sets.precast.WS, {
+                head="Ighwa Cap",
+                neck="Shadow Gorget",
+                hands="Umuthi Gloves",
+                back="Atheling Mantle",
+                waist="Soil Belt",
+                feet="Whirlpool Greaves"
+            })
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
                 ear1="Brutal Earring",
