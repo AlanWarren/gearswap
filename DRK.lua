@@ -300,8 +300,8 @@
             sets.idle.Town = {
                 head="Ignominy burgeonet +1",
                 neck="Agitator's Collar",
-                ear1="Trux Earring",
-                ear2="Brutal Earring",
+                ear1="Brutal Earring",
+                ear2="Trux Earring",
                 body="Ares' Cuirass +1",
                 hands="Ares' Gauntlets +1",
                 ring1="Ifrit Ring",
@@ -441,6 +441,8 @@
 
             -- GS war sub 
             sets.engaged.War = set_combine(sets.engaged, {
+                ear1="Brutal Earring",
+                ear2="Tripudio Earring",
                 head="Yaoyotl Helm",
                 legs="Phorcys Dirs"
             })
