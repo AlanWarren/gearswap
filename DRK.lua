@@ -222,6 +222,20 @@
                 waist="Soil Belt",
                 feet="Ejekamal Boots"
             })
+            sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {
+                head="Ignominy burgeonet +1",
+                neck="Stoicheion Medal",
+                ear1="Friomisi Earring",
+                ear2="Crematio Earring",
+                body="Fallen's Cuirass +1",
+                hands="Fallen's Finger Gauntlets",
+                --legs="Haruspex Slops",
+                legs="Ignominy Flanchard +1",
+                ring1="Diamond Ring",
+                ring2="Acumen Ring",
+                back="Toro Cape",
+                feet="Ignominy Sollerets"
+            })
             sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Caudata Belt"})
             sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS['Entropy'].Mid, {
                 ear1="Bladeborn Earring",
