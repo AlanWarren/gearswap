@@ -196,7 +196,7 @@ function init_gear_sets()
     }
     
     sets.idle.Town = set_combine(sets.idle, {
-        head="Felistris Mask",
+        head="Ptica Headgear",
         neck="Agitator's Collar",
         body="Usukane Haramaki",
         hands="Mochizuki Tekko +1",
@@ -243,7 +243,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
         ammo="Yetshila",
-    	head="Iga Zukin +2",
+    	head="Ptica Headgear",
         neck="Rancor Collar",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
@@ -277,7 +277,7 @@ function init_gear_sets()
 
     sets.engaged.Acc = {
         ammo="Fire Bomblet",
-        head="Whirlpool Mask",
+        head="Ptica Headgear",
         neck="Agitator's Collar",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
@@ -335,7 +335,7 @@ function init_gear_sets()
     -- regardless of haste recieved, so I made one set for each.
 
     sets.engaged.HasteMid = {
-        head="Whirlpool Mask",
+        head="Ptica Headgear",
         neck="Asperity Necklace",
         ring1="Mars's Ring",
     	back="Yokaze Mantle",
@@ -353,7 +353,7 @@ function init_gear_sets()
     })
 
     sets.engaged.HasteEvasion = {
-        head="Felistris Mask",
+        head="Ptica Headgear",
         body="Mochizuki Chainmail +1",
         neck="Iga Erimaki",
         hands="Otronif Gloves +1",
@@ -376,7 +376,7 @@ function init_gear_sets()
         legs="Hachiya Hakama +1"
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, {
-        head="Whirlpool Mask",
+        head="Ptica Headgear",
         body="Qaaxo Harness",
         neck="Asperity Necklace",
         ring1="Mars's Ring",
@@ -392,7 +392,7 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1"
     })
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, {
-        head="Whirlpool Mask",
+        head="Ptica Headgear",
         body="Qaaxo Harness",
         neck="Asperity Necklace",
         ring1="Mars's Ring",
@@ -410,7 +410,7 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1"
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Haste_35, {
-        head="Whirlpool Mask",
+        head="Ptica Headgear",
         body="Qaaxo Harness",
         neck="Asperity Necklace",
         ring1="Mars's Ring",
@@ -423,14 +423,14 @@ function init_gear_sets()
     
     -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_43, {
-        head="Iga Zukin +2",
+        head="Ptica Headgear",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
-        head="Whirlpool Mask",
+        head="Ptica Headgear",
         body="Qaaxo Harness",
         neck="Asperity Necklace",
         ring1="Mars's Ring",
@@ -456,7 +456,7 @@ function init_gear_sets()
     
     -- 20
     sets.engaged.Haste_20 = set_combine(sets.engaged.Haste_43, {
-        head="Iga Zukin +2",
+        head="Ptica Headgear",
     	body="Mochizuki Chainmail +1",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
@@ -489,7 +489,7 @@ function init_gear_sets()
     }
 
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-        head="Whirlpool Mask",
+        head="Ptica Headgear",
         hands="Umuthi Gloves",
         back="Yokaze Mantle"
     })
@@ -500,7 +500,7 @@ function init_gear_sets()
     
     -- BLADE: JIN
     sets.Jin = {
-        head="Uk'uxkaj Cap",
+        head="Ptica Headgear",
         neck="Breeze Gorget",
         ring1="Ramuh Ring",
         waist="Thunder Belt",
@@ -513,7 +513,7 @@ function init_gear_sets()
     -- BLADE: HI
     sets.Hi = {
         ammo="Yetshila",
-        head="Uk'uxkaj Cap",
+        head="Ptica Headgear",
         --body="Qaaxo Harness",
         neck="Shadow gorget",
         hands="Otronif Gloves +1",
@@ -529,7 +529,7 @@ function init_gear_sets()
         hands="Otronif Gloves +1"
     })
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
-        head="Whirlpool Mask", 
+        head="Ptica Headgear", 
         legs="Hachiya Hakama +1", 
         ring2="Mars's Ring",
         back="Yokaze Mantle"
