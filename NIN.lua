@@ -514,7 +514,7 @@ function init_gear_sets()
     -- BLADE: HI
     sets.Hi = {
         ammo="Yetshila",
-        head="Ptica Headgear",
+        head="Uk'uxkaj Cap",
         --body="Qaaxo Harness",
         neck="Moepapa Medal",
         hands="Hachiya Tekko +1",
