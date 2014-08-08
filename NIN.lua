@@ -248,21 +248,21 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
     	body="Mochizuki Chainmail +1",
-        hands="Otronif Gloves +1",
+        hands="Mochizuki Tekko +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
     	back="Atheling Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Qaaxo Leggings"
-        --feet="Otronif Boots +1"
+        feet="Otronif Boots +1"
     }
     sets.engaged.TwoHanded = set_combine(sets.engaged, {
         head="Felistris Mask",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Qaaxo Harness",
-        legs="Otronif Brais +1"
+        legs="Otronif Brais +1",
+        feet="Qaaxo Leggings"
     })
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
@@ -270,9 +270,8 @@ function init_gear_sets()
         neck="Agitator's Collar",
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
-        ring1="Mars's Ring",
         back="Yokaze Mantle",
-        feet="Mochizuki Kyahan +1"
+        feet="Qaaxo Leggings"
     })
 
     sets.engaged.Acc = {
@@ -518,12 +517,12 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         --body="Qaaxo Harness",
         neck="Shadow gorget",
-        hands="Otronif Gloves +1",
+        hands="Hachiya Tekko +1",
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
         legs="Otronif Brais +1",
-        waist="Caudata belt",
-        feet="Otronif Boots +1"
+        waist="Windbuffet Belt",
+        feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
