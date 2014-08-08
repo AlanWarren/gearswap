@@ -516,7 +516,7 @@ function init_gear_sets()
         ammo="Yetshila",
         head="Ptica Headgear",
         --body="Qaaxo Harness",
-        neck="Shadow gorget",
+        neck="Moepapa Medal",
         hands="Hachiya Tekko +1",
     	ring1="Garuda Ring",
         back="Rancorous Mantle",

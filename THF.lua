@@ -75,7 +75,7 @@ function init_gear_sets()
 	
 	sets.buff['Sneak Attack'] = {
 		head="Uk'uxkaj Cap",
-        neck="Asperity Necklace",
+        neck="Moepapa Medal",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Qaaxo Harness",
@@ -90,7 +90,7 @@ function init_gear_sets()
 
 	sets.buff['Trick Attack'] = {
 		head="Felistris Mask",
-        neck="Asperity Necklace",
+        neck="Moepapa Medal",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Qaaxo Harness",
@@ -207,7 +207,7 @@ function init_gear_sets()
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
         head="Lithelimb Cap", 
-        neck="Breeze Gorget",
+        neck="Moepapa Medal",
         ear1="Trux Earring",
         ear2="Brutal Earring",
         ring1="Stormsoul Ring",
@@ -240,7 +240,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
         head="Uk'uxkaj Cap",
-        neck="Rancor Collar",
+        neck="Moepapa Medal",
 		ear1="Brutal Earring",
         ear2="Trux Earring",
         hands="Pillager's Armlets +1",
