@@ -336,10 +336,12 @@ function init_gear_sets()
 
     sets.engaged.HasteMid = {
         head="Whirlpool Mask",
-        neck="Asperity Necklace",
-        ring1="Mars's Ring",
+        neck="Rancor Collar",
+        hands="Mochizuki Tekko +1",
+        ring1="Oneiros Ring",
     	back="Yokaze Mantle",
-        feet="Mochizuki Kyahan +1"
+        waist="Anguinus Belt",
+        feet="Qaaxo Leggings"
     }
 
     sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
@@ -348,8 +350,8 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1",
         ring2="Patricius Ring",
         hands="Umuthi Gloves",
-        waist="Anguinus Belt",
-        legs="Hachiya Hakama +1"
+        legs="Hachiya Hakama +1",
+        feet="Mochizuki Kyahan +1",
     })
 
     sets.engaged.HasteEvasion = {
@@ -378,10 +380,10 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, {
         head="Whirlpool Mask",
         body="Qaaxo Harness",
-        neck="Asperity Necklace",
-        ring1="Mars's Ring",
+        neck="Rancor Collar",
+        ring1="Oneiros Ring",
     	back="Yokaze Mantle",
-        feet="Mochizuki Kyahan +1"
+        feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.HasteEvasion)
@@ -394,10 +396,10 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, {
         head="Whirlpool Mask",
         body="Qaaxo Harness",
-        neck="Asperity Necklace",
-        ring1="Mars's Ring",
+        neck="Rancor Collar",
+        ring1="Oneiros Ring",
     	back="Yokaze Mantle",
-        feet="Mochizuki Kyahan +1"
+        feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HasteEvasion)
@@ -412,10 +414,10 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Haste_35, {
         head="Whirlpool Mask",
         body="Qaaxo Harness",
-        neck="Asperity Necklace",
-        ring1="Mars's Ring",
+        neck="Rancor Collar",
+        ring1="Oneiros Ring",
     	back="Yokaze Mantle",
-        feet="Mochizuki Kyahan +1"
+        feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HasteEvasion)
@@ -432,10 +434,10 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Whirlpool Mask",
         body="Qaaxo Harness",
-        neck="Asperity Necklace",
-        ring1="Mars's Ring",
+        neck="Rancor Collar",
+        ring1="Oneiros Ring",
     	back="Yokaze Mantle",
-        feet="Mochizuki Kyahan +1"
+        feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HasteEvasion)
