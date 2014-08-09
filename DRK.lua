@@ -381,6 +381,7 @@
             -- Defensive sets to combine with various weapon-specific sets below
             -- These allow hybrid acc/pdt sets for difficult content
             sets.Defensive = {
+                head="Ighwa Cap",
                 neck="Agitator's Collar",
                 ring2="Patricius Ring",
                 legs="Cizin Breeches +1"
@@ -388,6 +389,7 @@
             sets.Defensive_Mid = {
                 head="Ighwa Cap",
                 neck="Agitator's Collar",
+                body="Cizin Mail +1",
                 hands="Cizin Mufflers +1",
                 ring2="Patricius Ring",
                 legs="Cizin Breeches +1"
@@ -396,6 +398,7 @@
                 head="Ighwa Cap",
                 neck="Agitator's Collar",
                 hands="Umuthi Gloves",
+                body="Cizin Mail +1",
                 ring1="Beeline Ring",
                 ring2="Patricius Ring",
                 legs="Cizin Breeches +1",
