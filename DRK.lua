@@ -215,7 +215,7 @@
             sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget", waist="Soil Belt"})
             -- INT 
             sets.precast.WS['Entropy'] = set_combine(sets.precast.WS, {
-                head="Ighwa Cap",
+                head="Otomi Helm",
                 neck="Shadow Gorget",
                 back="Atheling Mantle",
                 ring1="Diamond Ring",
