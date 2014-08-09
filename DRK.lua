@@ -242,7 +242,7 @@
                 ear2="Steelflash Earring",
             })
 
-            sets.precast.WS['Requiscat'] = set_combine(sets.precast.WS, {
+            sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
                 head="Ighwa Cap",
                 neck="Shadow Gorget",
                 hands="Umuthi Gloves",
