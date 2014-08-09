@@ -184,7 +184,7 @@ function init_gear_sets()
     	head="Ocelomeh Headpiece +1",
         neck="Agitator's Collar",
         ear1="Trux Earring",
-        ear2="Dawn Earring",
+        ear2="Brutal Earring",
     	body="War Shinobi Gi",
         hands="Otronif Gloves +1",
         ring1="Dark Ring",
@@ -542,7 +542,6 @@ function init_gear_sets()
         waist="Anguinus Belt",
         ring1="Ramuh Ring",
         ring2="Thundersoul Ring",
-        ear1="Dawn Earring"
     }
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
     sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)

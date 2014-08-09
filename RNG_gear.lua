@@ -40,7 +40,7 @@ function init_gear_sets()
             head="Ocelomeh Headpiece +1",
             neck="Twilight Torque",
             ear1="Volley Earring",
-            ear2="Dawn Earring",
+            ear2="Clearview Earring",
             body="Kheper Jacket",
             hands="Iuitl Wristbands +1",
             ring1="Dark Ring",
@@ -57,7 +57,6 @@ function init_gear_sets()
         })
         sets.idle.Town = set_combine(sets.idle, {
             ear1="Fenrir's Earring",
-            ear2="Dawn Earring",
             ring1="Rajas Ring",
             ring2="Ifrit Ring",
             back="Lutian Cape"
@@ -448,7 +447,6 @@ function init_gear_sets()
 
         -- CORONACH
         sets.Coronach = {
-           ear2="Dawn Earring",
            neck="Breeze Gorget",
            waist="Thunder Belt",
            ring1="Rajas Ring",
@@ -537,7 +535,6 @@ function init_gear_sets()
         -- JISHNUS
         sets.Jishnus = {
             neck="Flame Gorget",
-            ear2="Dawn Earring",
             waist="Light Belt",
             hands="Seiryu's Kote", -- override 
             legs="Arcadian Braccae +1",
