@@ -322,7 +322,7 @@ function init_gear_sets()
 		back="Repulse Mantle",
         waist="Patentia Sash",
         legs="Pillager's Culottes +1",
-        feet="Trotter Boots"
+        feet="Skadi's Jambeaux +1"
     }
 
 	sets.idle.Town = set_combine(sets.idle, {

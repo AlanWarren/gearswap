@@ -278,8 +278,8 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
 		back="Repulse Mantle",
         waist="Commodore Belt",
-        legs="Crimson Cuisses",
-        feet="Iuitl Gaiters"
+        legs="Nahtirah Trousers",
+        feet="Skadi's Jambeaux +1"
     }
 
 	sets.idle.Town = {

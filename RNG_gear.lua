@@ -48,7 +48,7 @@ function init_gear_sets()
             back="Repulse Mantle",
             waist="Elanid Belt",
             legs="Nahtirah Trousers",
-            feet="Orion Socks +1"
+            feet="Skadi's Jambeaux +1"
         }
         sets.idle.PDT = set_combine(sets.idle, {
             head="Lithelimb Cap",
