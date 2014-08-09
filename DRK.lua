@@ -46,7 +46,6 @@
 			
             adjust_engaged_sets()
             get_combat_form()
-	    	determine_haste_group()
 
             -- Additional local binds
             send_command('bind ^` input /ja "Hasso" <me>')
@@ -552,7 +551,7 @@
             sets.engaged.MaxHaste = sets.engaged.HighHaste
             sets.engaged.EmbravaHaste = sets.engaged.HighHaste
 
-            sets.engaged.LastResort = {
+            sets.buff['Last Resort'] = {
                 feet="Fallen's Sollerets +1"
             }
 
@@ -624,6 +623,9 @@
 	    if state.Buff.Souleater then
 	    	meleeSet = set_combine(meleeSet, sets.buff.Souleater)
         end
+	    if state.Buff['Last Resort'] then
+	    	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
+        end
         return meleeSet
     end
      
@@ -636,7 +638,6 @@
         sets.Ammo = select_static_ammo()
         if newStatus == "Engaged" then
             adjust_engaged_sets()
-	    	determine_haste_group()
         end
         if souleater_active() then
             disable('head')
@@ -651,10 +652,10 @@
     function job_buff_change(buff, gain)
 
 	    --if S{'haste','march','embrava','haste samba', 'last resort'}:contains(buff:lower()) then
-	    if S{'last resort'}:contains(buff:lower()) then
-	    	determine_haste_group()
-	    	handle_equipping_gear(player.status)
-        end
+	    --if S{'last resort'}:contains(buff:lower()) then
+	    --	determine_haste_group()
+	    --	handle_equipping_gear(player.status)
+        --end
 
 	    if state.Buff[buff] ~= nil then
 	    	state.Buff[buff] = gain
@@ -715,7 +716,7 @@ function adjust_engaged_sets()
         state.CombatWeapon = nil
     end
 	--adjust_melee_groups()
-	determine_haste_group()
+	--determine_haste_group()
 end
 
 function select_static_ammo()
