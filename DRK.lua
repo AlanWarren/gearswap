@@ -142,7 +142,7 @@
 		    sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
                 head="Otomi Helm",
                 feet="Scamp's Sollerets",
-                waist="Zoran's Belt",
+                waist="Chaac Belt",
                 back="Abyss Cape"
             })
 
