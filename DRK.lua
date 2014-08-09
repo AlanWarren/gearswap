@@ -79,7 +79,7 @@
             sets.precast.JA['Nether Void'] = {legs="Bale Flanchard +2"}
             sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet"}
             sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
-            sets.precast.JA['Last Resort'] = {feet="Fallen's Sollerets +1"}
+            --sets.precast.JA['Last Resort'] = {feet="Fallen's Sollerets +1"}
             sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
      
             sets.NightAccAmmo = {ammo="Fire Bomblet"}
