@@ -329,6 +329,7 @@ function init_gear_sets()
         head="Felistris Mask",
         body="Skadi's Cuirie +1",
         hands="Pillager's Armlets +1",
+        back="Canny Cape",
         ring1="Oneiros Ring",
         ring2="Epona's Ring"
     })
