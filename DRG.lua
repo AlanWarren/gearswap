@@ -331,21 +331,28 @@ function init_gear_sets()
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
-        head="Lithelimb Cap",
+        head="Ighwa Cap",
         ring1="Rajas Ring",
         ring2="Patricius Ring",
+        body="Cizin Mail +1",
+        neck="Twilight Torque",
+        hands="Cizin Mufflers +1",
         back="Repulse Mantle",
         legs="Cizin Breeches +1",
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
-        head="Lithelimb Cap",
+        head="Ighwa Cap",
         ring2="Patricius Ring",
+        body="Cizin Mail +1",
+        hands="Cizin Mufflers +1",
         back="Repulse Mantle",
         legs="Cizin Breeches +1",
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
-        head="Lithelimb Cap",
+        head="Ighwa Cap",
         ring2="Patricius Ring",
+        body="Cizin Mail +1",
+        hands="Cizin Mufflers +1",
         back="Repulse Mantle",
         legs="Cizin Breeches +1",
     })
