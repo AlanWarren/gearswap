@@ -522,7 +522,7 @@ function init_gear_sets()
         back="Rancorous Mantle",
         legs="Otronif Brais +1",
         waist="Windbuffet Belt",
-        feet="Mochizuki Kyahan +1"
+        feet="Otronif Boots +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
