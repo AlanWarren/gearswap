@@ -570,6 +570,11 @@
         if spell.action_type == 'Magic' then
             equip(sets.precast.FC)
         end
+        if souleater_active() then
+            disable('head')
+        else
+            enable('head')
+        end
     end
      
     function job_post_precast(spell, action, spellMap, eventArgs)
