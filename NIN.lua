@@ -211,7 +211,7 @@ function init_gear_sets()
     
     sets.defense.PDT = {
     	head="Lithelimb Cap",
-        neck="Agitator's Collar",
+        neck="Twilight Torque",
         body="Otronif Harness +1",
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
