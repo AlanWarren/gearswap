@@ -470,7 +470,6 @@ function init_gear_sets()
     sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.PDT)
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
-    sets.Counter = { legs="Iga Hakama +2" }
     
     -- Weaponskills 
     
