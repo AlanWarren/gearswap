@@ -92,7 +92,7 @@ function init_gear_sets()
     })
 	sets.precast.JA['Super Jump'] = sets.precast.JA.Jump
 
-	sets.precast.JA['Spirit Link'] = {hands="Lnc. Vmbrc. +1"}
+	sets.precast.JA['Spirit Link'] = {hands="Lancer's Vambraces +2"}
 	sets.precast.JA['Call Wyvern'] = {body="Wyrm Mail"}
 	sets.precast.JA['Deep Breathing'] = {--head="Wyrm Armet +1"
     }
@@ -111,7 +111,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="K'ayres Ring",
 		back="Updraft Mantle",
-        waist="Windbuffet Belt",
+        waist="Glassblower's Belt",
         legs="Xaddi Cuisses",
         feet="Wyrm Greaves +2"
     }
@@ -142,7 +142,7 @@ function init_gear_sets()
         waist="Zoran's Belt"
     }	
 		
-	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Wyrm Armet" })
+	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Wyrm Armet", waist="Glassblower's Belt" })
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {}
