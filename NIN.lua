@@ -379,7 +379,7 @@ function init_gear_sets()
         body="Qaaxo Harness",
         hands="Otronif Gloves +1",
         ring1="Mars's Ring",
-    	back="Yokaze Mantle",
+    	waist="Anguinus Belt",
         feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, sets.engaged.HasteAcc)
@@ -394,7 +394,7 @@ function init_gear_sets()
         head="Ptica Headgear",
         body="Qaaxo Harness",
         ring1="Mars's Ring",
-    	back="Yokaze Mantle",
+    	waist="Anguinus Belt",
         feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HasteAcc)
