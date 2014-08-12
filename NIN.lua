@@ -254,8 +254,7 @@ function init_gear_sets()
     	back="Atheling Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Qaaxo Leggings"
-        --feet="Otronif Boots +1"
+        feet="Otronif Boots +1"
     }
     sets.engaged.TwoHanded = set_combine(sets.engaged, {
         head="Felistris Mask",
@@ -271,20 +270,19 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
         ring1="Mars's Ring",
-        back="Yokaze Mantle",
-        feet="Qaaxo Leggings"
+        feet="Mochizuki Kyahan +1"
     })
 
     sets.engaged.Acc = {
-        ammo="Fire Bomblet",
+        ammo="Yetshila",
         head="Ptica Headgear",
-        neck="Agitator's Collar",
+        neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Mochizuki Chainmail +1",
-        hands="Umuthi Gloves",
+        hands="Otronif Gloves +1",
         ring1="Mars's Ring",
-        ring2="Patricius Ring",
+        ring2="Epona's Ring",
         back="Yokaze Mantle",
         waist="Anguinus Belt",
         legs="Hachiya Hakama +1",
@@ -313,13 +311,18 @@ function init_gear_sets()
     	back="Yokaze Mantle",
         feet="Qaaxo Leggings"
     })
+
     sets.engaged.Mid.Evasion = set_combine(sets.engaged.Evasion, {
-    	head="Whirlpool Mask"
+    	head="Ptica Headgear"
     })
+
     sets.engaged.Acc.Evasion = set_combine(sets.engaged.Mid.Evasion, {
         ring2="Patricius Ring",
-        waist="Anguinus Belt"
+        waist="Anguinus Belt",
+        legs="Hachiya Hakama +1",
+        feet="Mochizuki Kyahan +1"
     })
+
     sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, sets.engaged.Acc)
     
     sets.engaged.Haste_43 = {}
@@ -344,8 +347,8 @@ function init_gear_sets()
     }
 
     sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
-        ammo="Fire Bomblet",
-        neck="Iqabi Necklace",
+        ammo="Yetshila",
+        neck="Asperity Necklace",
         body="Mochizuki Chainmail +1",
         ring2="Patricius Ring",
         hands="Umuthi Gloves",
