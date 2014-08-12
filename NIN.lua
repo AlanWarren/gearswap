@@ -267,9 +267,9 @@ function init_gear_sets()
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
         ammo="Yetshila",
-        neck="Agitator's Collar",
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
+        ring1="Mars's Ring",
         back="Yokaze Mantle",
         feet="Qaaxo Leggings"
     })
@@ -335,9 +335,9 @@ function init_gear_sets()
 
     sets.engaged.HasteMid = {
         head="Ptica Headgear",
+        body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
         ring1="Mars's Ring",
-    	back="Yokaze Mantle",
         waist="Anguinus Belt",
         feet="Mochizuki Kyahan +1"
     }
@@ -363,6 +363,14 @@ function init_gear_sets()
         waist="Nusku's Sash",
         feet="Qaaxo Leggings"
     }
+    sets.engaged.HastePDT = {
+        head="Lithelimb Cap",
+        neck="Agitator's Collar",
+        hands="Otronif Gloves +1",
+        ring1="Patricius Ring",
+        legs="Otronif Brais +1",
+        feet="Otronif Boots +1"
+    }
     
     -- 43
     sets.engaged.Haste_43 = set_combine(sets.engaged, {
@@ -384,7 +392,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.HasteEvasion)
-    sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.PDT)
+    sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.HastePDT)
     
     -- 40
     sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
@@ -399,7 +407,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HasteEvasion)
-    sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.PDT)
+    sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HastePDT)
     
     -- 35
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_43, {
@@ -409,14 +417,14 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
-        body="Qaaxo Harness",
+        body="Mochizuki Chainmail +1",
         ring1="Mars's Ring",
     	back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HasteEvasion)
-    sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.PDT)
+    sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HastePDT)
     
     -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged, {
@@ -429,29 +437,29 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Ptica Headgear",
-        body="Qaaxo Harness",
+        body="Mochizuki Chainmail +1",
     	back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HasteEvasion)
-    sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.PDT)
+    sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
     
     -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged, {
-    	body="Thaumas Coat",
-    })
-    sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, {
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         waist="Windbuffet Belt",
+    })
+    sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, {
+        waist="Anguinus Belt",
         back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HasteEvasion)
-    sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.PDT)
+    sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HastePDT)
     
     -- 20
     sets.engaged.Haste_20 = set_combine(sets.engaged, {
@@ -460,7 +468,7 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HasteMid)
     sets.engaged.Acc.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HasteEvasion)
-    sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.PDT)
+    sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HastePDT)
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
     sets.Counter = { legs="Iga Hakama +2" }
