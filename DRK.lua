@@ -485,6 +485,7 @@
             sets.engaged.Scythe = set_combine(sets.engaged, {
                 --sub="Pole Grip",
                 ammo="Hagneia Stone",
+                hands="Xaddi Gauntlets",
                 legs="Cizin Breeches +1",
                 feet="Ejekamal Boots"
             })
