@@ -196,12 +196,12 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         head="Ptica Headgear",
-        neck="Agitator's Collar",
+        neck="Hope Torque",
         body="Usukane Haramaki",
         hands="Mochizuki Tekko +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
-        legs="Usukane Hizayoroi",
+        legs="Mochizuki Hakama +1",
     	back="Yokaze Mantle"
     })
     
