@@ -426,6 +426,7 @@
 	        sets.engaged.Mid = set_combine(sets.engaged, {
                 ammo="Fire Bomblet",
                 head="Yaoyotl Helm",
+                hands="Xaddi Gauntlets",
                 ear1="Bladeborn Earring",
                 ear2="Steelflash Earring",
             })
@@ -434,7 +435,7 @@
                 neck="Iqabi Necklace",
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
-                hands="Buremte Gloves",
+                hands="Xaddi Gauntlets",
                 waist="Anguinus Belt",
             })
             sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
@@ -472,7 +473,7 @@
             })
             sets.engaged.War.Acc = set_combine(sets.engaged.War.Mid, {
                 neck="Iqabi Necklace",
-                hands="Buremte Gloves",
+                hands="Xaddi Gauntlets",
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
                 waist="Anguinus Belt"
@@ -497,7 +498,6 @@
             })
             sets.engaged.Scythe.Acc = set_combine(sets.engaged.Scythe.Mid, { 
                 neck="Iqabi Necklace",
-                hands="Buremte Gloves",
                 ring1="Mars's Ring",
                 ring2="Patricius Ring",
                 waist="Anguinus Belt"

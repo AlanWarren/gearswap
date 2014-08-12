@@ -75,7 +75,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Lancer's Cuissots +2",
-        feet="Cizin Greaves"
+        feet="Cizin Greaves +1"
     }
 
 	sets.precast.JA['Ancient Circle'] = {}
@@ -138,7 +138,7 @@ function init_gear_sets()
 		head="Otomi Helm",
         hands="Cizin Mufflers +1",
 		legs="Xaddi Cuisses",
-        feet="Whirlpool Greaves",
+        feet="Ejekamal Boots",
         waist="Zoran's Belt"
     }	
 		
@@ -260,24 +260,23 @@ function init_gear_sets()
 	sets.idle.Weak = set_combine(sets.idle.Field, {
 		head="Twilight Helm",
 		body="Twilight Mail",
-		legs="Cizin Breeches +1"
     })
 	
 	-- Defense sets
 	sets.defense.PDT = {
         ammo="Hagneia Stone",
-		head="Lithelimb Cap",
+		head="Ighwa Cap",
         neck="Twilight Torque",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Cizin Mail",
+		body="Cizin Mail +1",
         hands="Cizin Mufflers +1",
-        ring1="Rajas Ring",
+        ring1="Patricius Ring",
         ring2="Dark Ring",
-		back="Atheling Mantle",
+		back="Repulse Mantle",
         waist="Cetl Belt",
         legs="Cizin Breeches +1",
-        feet="Cizin Greaves"
+        feet="Cizin Greaves +1"
     }
 
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {
@@ -318,6 +317,7 @@ function init_gear_sets()
 	sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
         back="Updraft Mantle",
+        hands="Xaddi Gauntlets",
         ring2="K'ayres Ring",
         feet="Ejekamal Boots"
     })
@@ -332,13 +332,14 @@ function init_gear_sets()
 
     sets.engaged.PDT = set_combine(sets.engaged, {
         head="Ighwa Cap",
+        neck="Twilight Torque",
+        body="Cizin Mail +1",
         ring1="Rajas Ring",
         ring2="Patricius Ring",
-        body="Cizin Mail +1",
-        neck="Twilight Torque",
         hands="Cizin Mufflers +1",
         back="Repulse Mantle",
         legs="Cizin Breeches +1",
+        feet="Cizin Greaves +1"
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
         head="Ighwa Cap",
