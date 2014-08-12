@@ -239,14 +239,15 @@ function init_gear_sets()
     sets.Ammo = select_static_ammo() 
     -- Engaged sets
     
-    -- Normal melee group
+    -- Normal melee group without buffs
+    -- mochi hands, asperity, otronif boots, hach body
     sets.engaged = {
         ammo="Yetshila",
     	head="Ptica Headgear",
-        neck="Rancor Collar",
+        neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-    	body="Mochizuki Chainmail +1",
+    	body="Hachiya Chainmail +1",
         hands="Mochizuki Tekko +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
@@ -334,12 +335,11 @@ function init_gear_sets()
 
     sets.engaged.HasteMid = {
         head="Ptica Headgear",
-        neck="Rancor Collar",
-        hands="Mochizuki Tekko +1",
-        ring1="Oneiros Ring",
+        hands="Otronif Gloves +1",
+        ring1="Mars's Ring",
     	back="Yokaze Mantle",
         waist="Anguinus Belt",
-        feet="Qaaxo Leggings"
+        feet="Mochizuki Kyahan +1"
     }
 
     sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
@@ -368,7 +368,6 @@ function init_gear_sets()
     sets.engaged.Haste_43 = set_combine(sets.engaged, {
         ammo="Yetshila",
     	head="Felistris Mask",
-        neck="Rancor Collar",
         ear1="Trux Earring",
         ear2="Brutal Earring",
         body="Thaumas Coat",
@@ -378,10 +377,10 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, {
         head="Ptica Headgear",
         body="Qaaxo Harness",
-        neck="Rancor Collar",
-        ring1="Oneiros Ring",
+        hands="Otronif Gloves +1",
+        ring1="Mars's Ring",
     	back="Yokaze Mantle",
-        feet="Qaaxo Leggings"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.HasteEvasion)
@@ -394,10 +393,9 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, {
         head="Ptica Headgear",
         body="Qaaxo Harness",
-        neck="Rancor Collar",
-        ring1="Oneiros Ring",
+        ring1="Mars's Ring",
     	back="Yokaze Mantle",
-        feet="Qaaxo Leggings"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HasteEvasion)
@@ -412,18 +410,18 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
         body="Qaaxo Harness",
-        neck="Rancor Collar",
-        ring1="Oneiros Ring",
+        ring1="Mars's Ring",
     	back="Yokaze Mantle",
-        feet="Qaaxo Leggings"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.PDT)
     
     -- 30
-    sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_43, {
+    sets.engaged.Haste_30 = set_combine(sets.engaged, {
         head="Ptica Headgear",
+        body="Thaumas Coat",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         waist="Patentia Sash",
@@ -432,36 +430,32 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Ptica Headgear",
         body="Qaaxo Harness",
-        neck="Rancor Collar",
-        ring1="Oneiros Ring",
     	back="Yokaze Mantle",
-        feet="Qaaxo Leggings"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.PDT)
     
     -- 25
-    sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_43, {
-    	body="Mochizuki Chainmail +1",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        waist="Patentia Sash",
-        legs="Mochizuki Hakama +1"
+    sets.engaged.Haste_25 = set_combine(sets.engaged, {
+    	body="Thaumas Coat",
     })
-    sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HasteMid)
+    sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, {
+        ear1="Brutal Earring",
+        ear2="Suppanomimi",
+        body="Mochizuki Chainmail +1",
+        waist="Windbuffet Belt",
+        back="Yokaze Mantle",
+        feet="Mochizuki Kyahan +1"
+    })
     sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.PDT)
     
     -- 20
-    sets.engaged.Haste_20 = set_combine(sets.engaged.Haste_43, {
-        head="Ptica Headgear",
+    sets.engaged.Haste_20 = set_combine(sets.engaged, {
     	body="Mochizuki Chainmail +1",
-        ear1="Brutal Earring",
-        ear2="Suppanomimi",
-        waist="Patentia Sash",
-        legs="Mochizuki Hakama +1"
     })
     sets.engaged.Mid.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HasteMid)
     sets.engaged.Acc.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, sets.engaged.HasteAcc)
@@ -514,14 +508,14 @@ function init_gear_sets()
     sets.Hi = {
         ammo="Yetshila",
         head="Uk'uxkaj Cap",
-        --body="Qaaxo Harness",
-        neck="Moepapa Medal",
+        body="Qaaxo Harness",
+        neck="Hope Torque",
         hands="Hachiya Tekko +1",
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
-        legs="Otronif Brais +1",
+        legs="Mochizuki Hakama +1",
         waist="Windbuffet Belt",
-        feet="Otronif Boots +1"
+        feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
