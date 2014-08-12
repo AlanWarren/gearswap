@@ -211,7 +211,7 @@ function init_gear_sets()
     
     sets.defense.PDT = {
     	head="Lithelimb Cap",
-        neck="Agitator's Collar",
+        neck="Twilight Torque",
         body="Otronif Harness +1",
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
@@ -223,9 +223,9 @@ function init_gear_sets()
     
     sets.defense.MDT = set_combine(sets.defense.PDT, {
     	head="Felistris Mask",
+        neck="Twilight Torque",
         hands="Otronif Gloves +1",
-    	back="Yokaze Mantle",
-        feet="Hachiya Kyahan"
+        feet="Otronif Boots +1"
     })
     
     sets.DayMovement = {feet="Danzo sune-ate"}
