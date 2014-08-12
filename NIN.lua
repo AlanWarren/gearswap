@@ -196,12 +196,12 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         head="Ptica Headgear",
-        neck="Agitator's Collar",
+        neck="Hope Torque",
         body="Usukane Haramaki",
         hands="Mochizuki Tekko +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
-        legs="Usukane Hizayoroi",
+        legs="Mochizuki Hakama +1",
     	back="Yokaze Mantle"
     })
     
@@ -254,7 +254,8 @@ function init_gear_sets()
     	back="Atheling Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Otronif Boots +1"
+        feet="Qaaxo Leggings"
+        --feet="Otronif Boots +1"
     }
     sets.engaged.TwoHanded = set_combine(sets.engaged, {
         head="Felistris Mask",
@@ -471,7 +472,6 @@ function init_gear_sets()
     sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HastePDT)
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
-    sets.Counter = { legs="Iga Hakama +2" }
     
     -- Weaponskills 
     
