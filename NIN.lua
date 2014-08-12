@@ -660,10 +660,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     -- If spell is not interrupted. This also applies when you try using a JA with it's timer down.
     -- If the recast timer isn't ready, aftercast is called with spell.interrupted == true
     -- We check if state.Buff.spell is defined, so we don't created variable instances for every action taken
-    if state.Buff[spell.english] ~= nil then
-    -- We need to set the spell being used to true, but only if the spell is not Yonin.
-        state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
-	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
