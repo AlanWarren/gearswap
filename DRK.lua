@@ -302,7 +302,7 @@
             -- Resting sets
             sets.resting = {
                 head="Twilight Helm",
-                neck="Bale Choker",
+                neck="Republican Silver Medal",
                 body="Ares' Cuirass +1",
                 hands="Cizin Mufflers +1",
                 ring1="Dark Ring",
