@@ -176,7 +176,9 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
     
     -- Resting sets
-    sets.resting = {body="Kheper Jacket", ring2="Paguroidea Ring"}
+    sets.resting = set_combine(sets.idle, {
+            neck="Republican Silver Medal"
+    })
     
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
