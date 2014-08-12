@@ -483,20 +483,22 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-    	body="Mochizuki chainmail +1",
+    	body="Qaaxo Harness",
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
     	back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Manibozho Brais",
-        feet="Mochizuki Kyahan +1"
+        feet="Qaaxo Leggings"
     }
 
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         head="Ptica Headgear",
-        hands="Umuthi Gloves",
-        back="Yokaze Mantle"
+        hands="Otronif Gloves +1",
+        body="Mochizuki Chainmail +1",
+        back="Yokaze Mantle",
+        feet="Mochizuki Kyahan +1"
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         hands="Buremte Gloves",
@@ -505,11 +507,10 @@ function init_gear_sets()
     
     -- BLADE: JIN
     sets.Jin = {
-        head="Ptica Headgear",
         neck="Breeze Gorget",
-        ring1="Ramuh Ring",
         waist="Thunder Belt",
         back="Rancorous Mantle"
+        feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
     sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS.Mid, sets.Jin)
@@ -530,22 +531,18 @@ function init_gear_sets()
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
+        head="Ptica Headgear",
         body="Mochizuki Chainmail +1",
-        hands="Otronif Gloves +1"
+        neck="Shadow Gorget",
+        waist="Soil Belt",
     })
-    sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
-        head="Ptica Headgear", 
-        legs="Hachiya Hakama +1", 
-        ring2="Mars's Ring",
-        back="Yokaze Mantle"
-    })
+    sets.precast.WS['Blade: Hi'].Acc = sets.precast.WS['Blade: Hi'].Mid
 
     -- BLADE: SHUN
     sets.Shun = {
-        neck="Breeze Gorget",
-        waist="Anguinus Belt",
+        neck="Flame Gorget",
+        waist="Light Belt",
         ring1="Ramuh Ring",
-        ring2="Thundersoul Ring",
     }
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
     sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
@@ -564,9 +561,10 @@ function init_gear_sets()
     -- BLADE: KU 
     sets.Ku = {
         neck="Shadow Gorget",
-        waist="Anguinus Belt",
+        body="Mochizuki Chainmail +1",
+        waist="Soil Belt",
         ring1="Rajas Ring",
-        ring2="Ifrit Ring",
+        feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
     sets.precast.WS['Blade: Ku'].Mid = set_combine(sets.precast.WS.Mid, sets.Ku)
