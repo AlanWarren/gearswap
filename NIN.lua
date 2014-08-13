@@ -511,7 +511,7 @@ function init_gear_sets()
     sets.Jin = {
         neck="Breeze Gorget",
         waist="Thunder Belt",
-        back="Rancorous Mantle"
+        back="Rancorous Mantle",
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
