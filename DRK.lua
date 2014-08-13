@@ -383,6 +383,7 @@
             sets.Defensive = {
                 head="Ighwa Cap",
                 neck="Agitator's Collar",
+                hands="Cizin Mufflers +1",
                 ring2="Patricius Ring",
                 legs="Cizin Breeches +1"
             }
