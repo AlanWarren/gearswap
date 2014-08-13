@@ -717,7 +717,7 @@ function souleater_active()
 end
 
 function adjust_engaged_sets()
-    if S{ 'Xbalanque', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }:contains(player.equipment.main) then
+    if S{ 'Inanna', 'Xbalanque', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }:contains(player.equipment.main) then
         state.CombatWeapon = "Scythe"
     elseif S{ 'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }:contains(player.equipment.main) then
         state.CombatWeapon = "LDGS"
