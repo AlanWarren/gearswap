@@ -238,11 +238,11 @@ function init_gear_sets()
     sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
-        head="Otomi helm",
+        head="Ptica Headgear",
         neck="Agitator's Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Kumarbi's Akar",
+        body="Usukane Haramaki",
         hands="Wakido Kote +1",
         ring1="Oneiros Ring",
         ring2="Patricius Ring",
@@ -276,13 +276,13 @@ function init_gear_sets()
         neck="Agitator's Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Sakonji Domaru +1",
-        hands="Wakido Kote +1",
+        body="Otronif Harness +1",
+        hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
         back="Repulse Mantle",
         waist="Windbuffet Belt",
-        legs="Wakido Haidate +1",
+        legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     }
     
@@ -430,8 +430,8 @@ function init_gear_sets()
         ring2="Oneiros Ring", 
         back="Takaha Mantle",
         waist="Windbuffet Belt",
-        legs="Otronif Brais +1", -- 6
-        feet="Otronif Boots +1" -- 7
+        legs="Wakido Haidate +1", -- 6
+        feet="Ejekamal Boots" -- 7
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         body="Sakonji Domaru +1",
