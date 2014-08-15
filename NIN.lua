@@ -806,7 +806,7 @@ function determine_haste_group()
     -- Victory March +3/+4/+5     14%/15.6%/17.1%
     -- Advancing March +3/+4/+5   10.9%/12.5%/14%
     -- Embrava 25%
-    if (buffactive.embrava or buffactive.haste) and buffactive.march == 2 then
+    if ((buffactive.embrava or buffactive.haste) and buffactive.march == 2) or buffactive['Haste II'] then
         add_to_chat(8, '-------------Haste 43%-------------')
         classes.CustomMeleeGroups:append('Haste_43')
     elseif buffactive.embrava and buffactive.haste then
