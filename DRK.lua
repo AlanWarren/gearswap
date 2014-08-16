@@ -24,8 +24,8 @@
         --or false
         state.Buff.Souleater = buffactive.souleater or false
         state.Buff['Last Resort'] = buffactive['Last Resort'] or false
-	    scytheList = S{ 'Inanna', 'Xbalanque', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }
-        gsList = S{ 'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }        
+	    scytheList = S{ 'Xbalanque', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }
+        gsList = S{'Inanna', 'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }        
         adjust_engaged_sets()
     end
      
