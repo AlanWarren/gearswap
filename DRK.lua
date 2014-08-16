@@ -24,7 +24,9 @@
         --or false
         state.Buff.Souleater = buffactive.souleater or false
         state.Buff['Last Resort'] = buffactive['Last Resort'] or false
-	    adjust_engaged_sets()
+	    scytheList = S{ 'Inanna', 'Xbalanque', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }
+        gsList = S{ 'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }        
+        adjust_engaged_sets()
     end
      
      
@@ -562,7 +564,9 @@
 
             sets.buff.Souleater = { head="Ignominy burgeonet +1" }
     end
-     
+    
+    function job_pretarget(spell, action, spellMap, eventArgs)
+    end
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
     -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
     function job_precast(spell, action, spellMap, eventArgs)
@@ -718,9 +722,9 @@ function souleater_active()
 end
 
 function adjust_engaged_sets()
-    if S{ 'Inanna', 'Xbalanque', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }:contains(player.equipment.main) then
+    if scytheList:contains(player.equipment.main) then
         state.CombatWeapon = "Scythe"
-    elseif S{ 'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }:contains(player.equipment.main) then
+    elseif gsList:contains(player.equipment.main) then
         state.CombatWeapon = "LDGS"
     else -- use regular set
         state.CombatWeapon = nil
