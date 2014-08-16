@@ -806,7 +806,7 @@ function determine_haste_group()
     -- Victory March +3/+4/+5     14%/15.6%/17.1%
     -- Advancing March +3/+4/+5   10.9%/12.5%/14%
     -- Embrava 25%
-    if ((buffactive.embrava or buffactive.haste) and buffactive.march == 2) or buffactive['Haste II'] then
+    if ((buffactive.embrava or buffactive.haste or buffactive['Geo-Haste']) and buffactive.march == 2) or buffactive['Haste II'] then
         add_to_chat(8, '-------------Haste 43%-------------')
         classes.CustomMeleeGroups:append('Haste_43')
     elseif buffactive.embrava and buffactive.haste then
@@ -818,7 +818,7 @@ function determine_haste_group()
     elseif (buffactive.haste and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) then
         add_to_chat(8, '-------------Haste 30%-------------')
         classes.CustomMeleeGroups:append('Haste_30')
-    elseif buffactive.embrava or buffactive.march == 2 then
+    elseif buffactive.embrava or buffactive['Geo-Haste'] or buffactive.march == 2 then
         add_to_chat(8, '-------------Haste 25%-------------')
         classes.CustomMeleeGroups:append('Haste_25')
     elseif buffactive.haste or buffactive['haste samba'] then
