@@ -179,6 +179,7 @@
 
             sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
                 back="Chuparrosa Mantle",
+                feet="Black Sollerets"
             })
 
             sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
