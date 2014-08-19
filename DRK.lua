@@ -280,7 +280,7 @@
             sets.precast.WS['Cross Reapter'] = set_combine(sets.precast.WS, {
                 hands="Cizin Mufflers +1",
                 neck="Aqua Gorget",
-                waist="Caudata belt"
+                waist="Metalsinger belt"
              })
             -- 50% STR / 50% INT 
             sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
