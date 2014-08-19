@@ -361,7 +361,7 @@ function init_gear_sets()
 		back="Repulse Mantle",
         waist="Patentia Sash",
         legs="Pillager's Culottes +1",
-        feet="Qaaxo Leggings"
+        feet="Iuitl Gaiters +1"
     }
 
 	sets.defense.MDT = {
@@ -415,7 +415,8 @@ function init_gear_sets()
     })
     sets.engaged.iLvl.PDT = set_combine(sets.engaged.iLvl, {
         head="Lithelimb Cap",
-        ring1="Patricius Ring"
+        ring1="Patricius Ring",
+        feet="Iuitl Gaiters +1"
     })
 	sets.engaged.Evasion = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
