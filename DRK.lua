@@ -260,7 +260,7 @@
                 neck="Breeze Gorget",
                 --hands="Boor Bracelets",
                 back="Niht Mantle",
-                waist="Metalsinger Belt",
+                --waist="Metalsinger Belt",
             })
             sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
                 head="Yaoyotl Helm",
