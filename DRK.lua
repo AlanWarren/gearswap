@@ -260,7 +260,7 @@
                 neck="Breeze Gorget",
                 --hands="Boor Bracelets",
                 back="Niht Mantle",
-                waist="Soil Belt",
+                waist="Metalsinger Belt",
             })
             sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
                 head="Yaoyotl Helm",
@@ -287,7 +287,7 @@
                 head="Ighwa Cap",
                 body="Phorcys Korazin",
                 neck="Aqua Gorget",
-                waist="Caudata belt",
+                waist="Metalsinger belt",
              })
            
             sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {

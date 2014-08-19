@@ -122,7 +122,7 @@ function init_gear_sets()
         back="Buquwik Cape",
         ring1="Ifrit Ring",
         ring2="Pyrosoul Ring",
-        waist="Light Belt",
+        waist="Metalsinger Belt",
         legs="Wakido Haidate +1",
         feet="Wakido Sune-ate +1"
     }
@@ -148,6 +148,7 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
+        waist="Metalsinger Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
         head="Yaoyotl Helm",

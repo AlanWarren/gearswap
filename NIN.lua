@@ -528,7 +528,7 @@ function init_gear_sets()
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
         legs="Mochizuki Hakama +1",
-        waist="Windbuffet Belt",
+        waist="Metalsinger Belt",
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
@@ -553,7 +553,7 @@ function init_gear_sets()
     -- BLADE: Rin
     sets.Rin = {
         neck="Asperity Necklace",
-        waist="Windbuffet Belt",
+        waist="Metalsinger Belt",
         ring1="Oneiros Ring",
     }
     sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
