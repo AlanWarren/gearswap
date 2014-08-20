@@ -250,7 +250,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
     	body="Hachiya Chainmail +1",
-        hands="Mochizuki Tekko +1",
+        hands="Otronif Gloves +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
     	back="Atheling Mantle",
@@ -353,7 +353,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         body="Mochizuki Chainmail +1",
         ring2="Patricius Ring",
-        hands="Umuthi Gloves",
+        hands="Otronif Gloves +1",
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1",
     })
