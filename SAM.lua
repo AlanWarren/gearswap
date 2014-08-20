@@ -153,7 +153,7 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
         head="Yaoyotl Helm",
         ring2="Mars's Ring",
-        waist="Light Belt"
+        waist="Metalsinger Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
         body="Sakonji Domaru +1",
