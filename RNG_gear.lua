@@ -514,7 +514,7 @@ function init_gear_sets()
         -- NAMAS
         sets.Namas = {
             neck="Aqua Gorget",
-            waist="Light Belt",
+            waist="Metalsinger Belt",
             hands="Arcadian Bracers +1", -- override since we don't want sigyns in Mid or Acc
             back="Sylvan Chlamys",
             feet="Arcadian Socks +1"
