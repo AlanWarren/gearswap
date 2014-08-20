@@ -188,7 +188,7 @@ function init_gear_sets()
         neck="Breeze Gorget",
         body="Phorcys Korazin",
         back="Buquwik Cape",
-        waist="Light Belt",
+        waist="Metalsinger Belt",
         feet="Whirlpool Greaves"
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
