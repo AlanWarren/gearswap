@@ -13,7 +13,7 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
---	state.CombatForm = get_combat_form()
+	state.CombatForm = get_combat_form()
 	
 	state.Buff = {}
   end
@@ -514,7 +514,8 @@ function job_buff_change(buff, gain)
 end
 
 function job_update(cmdParams, eventArgs)
-	--state.CombatForm = get_combat_form()
+	classes.CustomMeleeGroups:clear()
+	state.CombatForm = get_combat_form()
 end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
@@ -525,20 +526,12 @@ function job_self_command(cmdParams, eventArgs)
 
 end
 
---function get_combat_form()
---	if areas.Adoulin:contains(world.area) and buffactive.ionis then
---		return 'Adoulin'
---	end
---end
-
--- Called by the 'update' self-command, for common needs.
--- Set eventArgs.handled to true if we don't want automatic equipping of gear.
-function job_update(cmdParams, eventArgs)
-	classes.CustomMeleeGroups:clear()
-	--if areas.Adoulin:contains(world.area) and buffactive.ionis then
-	--	classes.CustomMeleeGroups:append('Adoulin')
-	--end
+function get_combat_form()
+	if areas.Adoulin:contains(world.area) and buffactive.ionis then
+		return 'Adoulin'
+	end
 end
+
 
 -- Job-specific toggles.
 function job_toggle(field)
