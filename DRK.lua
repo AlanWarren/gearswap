@@ -84,11 +84,6 @@
             --sets.precast.JA['Last Resort'] = {feet="Fallen's Sollerets +1"}
             sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
      
-            sets.NightAccAmmo = {ammo="Fire Bomblet"}
-            sets.DayAccAmmo = {ammo="Tengu-no-Hane"}
-            sets.RegularAmmo = {ammo="Hagneia Stone"}
-            sets.Ammo = select_static_ammo() 
-            
             -- Waltz set (chr and vit)
             sets.precast.Waltz = {
                head="Yaoyotl Helm",
@@ -622,7 +617,6 @@
     -- Can customize state or custom melee class values at this point.
     -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
     function job_handle_equipping_gear(status, eventArgs)
-        sets.Ammo = select_static_ammo()
     end
     -- Modify the default idle set after it was constructed.
     function customize_idle_set(idleSet)
@@ -650,7 +644,6 @@
      
     -- Called when the player's status changes.
     function job_status_change(newStatus, oldStatus, eventArgs)
-        sets.Ammo = select_static_ammo()
         if newStatus == "Engaged" then
             adjust_engaged_sets()
         end
@@ -698,7 +691,6 @@ function job_update(cmdParams, eventArgs)
     war_sj = player.sub_job == 'WAR' or false
 	adjust_engaged_sets()
     get_combat_form()
-    sets.Ammo = select_static_ammo()
 
     if souleater_active() then
         disable('head')
