@@ -63,8 +63,8 @@ function init_gear_sets()
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
     sets.precast.JA['Futae'] = { hands="Iga Tekko +2" }
     sets.precast.JA['Provoke'] = { 
-        ear1="Trux Earring", 
-        ear2="Friomisi Earring",
+        ear1="Friomisi Earring",
+        ear2="Trux Earring", 
         feet="Mochizuki Kyahan +1"
     }
     
@@ -184,8 +184,8 @@ function init_gear_sets()
     sets.idle = {
     	head="Ocelomeh Headpiece +1",
         neck="Agitator's Collar",
-        ear1="Trux Earring",
-        ear2="Brutal Earring",
+        ear1="Brutal Earring",
+        ear2="Trux Earring",
     	body="War Shinobi Gi",
         hands="Otronif Gloves +1",
         ring1="Dark Ring",
@@ -242,7 +242,7 @@ function init_gear_sets()
     -- Engaged sets
     
     -- Normal melee group without buffs
-    -- mochi hands, asperity, otronif boots, hach body
+    -- STP actually matters 20 is goal for DPS
     sets.engaged = {
         ammo="Yetshila",
     	head="Ptica Headgear",
@@ -382,19 +382,20 @@ function init_gear_sets()
     sets.engaged.Haste_43 = set_combine(sets.engaged, {
         ammo="Yetshila",
     	head="Felistris Mask",
-        ear1="Trux Earring",
-        ear2="Brutal Earring",
+        ear1="Brutal Earring",
+        ear2="Trux Earring",
+        hands="Otronif Gloves +1",
         body="Thaumas Coat",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
         waist="Windbuffet Belt",
-        legs="Hachiya Hakama +1"
+        legs="Hachiya Hakama +1",
+        feet="Qaaxo Leggings"
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, {
         head="Ptica Headgear",
         body="Qaaxo Harness",
-        hands="Otronif Gloves +1",
-        ring1="Mars's Ring",
     	waist="Anguinus Belt",
-        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.HasteEvasion)
@@ -407,9 +408,8 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, {
         head="Ptica Headgear",
         body="Qaaxo Harness",
-        ring1="Mars's Ring",
     	waist="Anguinus Belt",
-        feet="Mochizuki Kyahan +1"
+        feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HasteEvasion)
@@ -435,17 +435,20 @@ function init_gear_sets()
     -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged, {
         head="Ptica Headgear",
-        body="Thaumas Coat",
         ear1="Brutal Earring",
-        ear2="Suppanomimi",
-        waist="Patentia Sash",
-        legs="Mochizuki Hakama +1"
+        ear2="Trux Earring",
+        body="Mochizuki Chainmail +1",
+        hands="Otronif Gloves +1",
+        ring1="Oneiros Ring",
+        ring2="Epona's Ring",
+        waist="Windbuffet Belt",
+        legs="Mochizuki Hakama +1",
+        feet="Otronif Boots +1"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Ptica Headgear",
         body="Mochizuki Chainmail +1",
-    	back="Yokaze Mantle",
-        feet="Mochizuki Kyahan +1"
+        feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HasteEvasion)
@@ -801,13 +804,14 @@ end
 function determine_haste_group()
 	
 	classes.CustomMeleeGroups:clear()
+    -- assuming +4 for marches (ghorn has +5)
     -- Haste (white magic) 15%
     -- Haste Samba (Sub) 5%
     -- Haste (Merited DNC) 10%
     -- Victory March +3/+4/+5     14%/15.6%/17.1%
     -- Advancing March +3/+4/+5   10.9%/12.5%/14%
     -- Embrava 25%
-    if ((buffactive.embrava or buffactive.haste or buffactive['Geo-Haste']) and buffactive.march == 2) or buffactive['Haste II'] then
+    if (((buffactive['Haste II'] or buffactive['Geo-Haste']) and (buffactive.march == 1 or buffactive.haste)) or ((buffactive.embrava or buffactive.haste or buffactive['Geo-Haste'] or buffactive['Haste II']) and buffactive.march == 2)) then
         add_to_chat(8, '-------------Haste 43%-------------')
         classes.CustomMeleeGroups:append('Haste_43')
     elseif buffactive.embrava and buffactive.haste then
@@ -816,10 +820,10 @@ function determine_haste_group()
     elseif buffactive.haste and buffactive['haste samba'] and buffactive.march == 1 then
         add_to_chat(8, '-------------Haste 35%-------------')
         classes.CustomMeleeGroups:append('Haste_35')
-    elseif (buffactive.haste and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) then
+    elseif (buffactive.haste and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) or buffactive['Haste II'] or buffactive['Geo-Haste'] then
         add_to_chat(8, '-------------Haste 30%-------------')
         classes.CustomMeleeGroups:append('Haste_30')
-    elseif buffactive.embrava or buffactive['Geo-Haste'] or buffactive.march == 2 then
+    elseif buffactive.embrava or buffactive.march == 2 then
         add_to_chat(8, '-------------Haste 25%-------------')
         classes.CustomMeleeGroups:append('Haste_25')
     elseif buffactive.haste or buffactive['haste samba'] then
