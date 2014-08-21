@@ -137,7 +137,7 @@ function init_gear_sets()
         back="Canny Cape",
         ring1="Patricius Ring",
         ring2="Mars's Ring",
-        waist="Anguinus Belt",
+        waist="Chaac Belt",
         legs="Pillager's Culottes +1",
         feet="Raider's Poulaines +2"
     }
