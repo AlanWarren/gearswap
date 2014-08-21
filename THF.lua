@@ -83,9 +83,9 @@ function init_gear_sets()
         ring1="Thundersoul Ring",
         ring2="Ramuh Ring",
 		back="Atheling Mantle",
-        waist="Cetl Belt",
+        waist="Chaac Belt",
         legs="Pillager's Culottes +1",
-        feet="Qaaxo Leggings"
+        feet="Raider's Poulaines +2"
     }
 
 	sets.buff['Trick Attack'] = {
@@ -98,9 +98,9 @@ function init_gear_sets()
         ring1="Stormsoul Ring",
         ring2="Garuda Ring",
 		back="Canny Cape",
-        waist="Elanid Belt",
+        waist="Chaac Belt",
         legs="Pillager's Culottes +1",
-        feet="Iuitl Gaiters +1"
+        feet="Raider's Poulaines +2"
     }
     -- Precast Sets
 	
