@@ -530,9 +530,9 @@ function init_gear_sets()
         hands="Hachiya Tekko +1",
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
-        legs="Mochizuki Hakama +1",
-        waist="Metalsinger Belt",
-        feet="Mochizuki Kyahan +1"
+        legs="Otronif Brais +1",
+        waist="Windbuffet Belt",
+        feet="Otronif Boots +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
