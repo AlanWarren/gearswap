@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------------------------------------------
 -- Initialization function that defines sets and variables to be used.
 -------------------------------------------------------------------------------------------------------------------
--- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
+-- gs c toggle hastemode -- Toggles whether or not you're getting Haste II
 
 -- Initialization function for this job file.
 function get_sets()
@@ -12,6 +12,7 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
+	state.HasteMode = false
 	state.Buff.Migawari = buffactive.migawari or false
     state.CombatWeapon = get_combat_weapon()
     include('Mote-TreasureHunter')
@@ -159,7 +160,7 @@ function init_gear_sets()
     }
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.ElementalNinjutsu = {
-    	head="Umbani Cap",
+    	head="Mochizuki Hatsuburi",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         neck="Stoicheion Medal",
@@ -186,7 +187,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-    	body="War Shinobi Gi",
+    	body="Kheper Jacket",
         hands="Mochizuki Tekko +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -271,8 +272,8 @@ function init_gear_sets()
         ammo="Yetshila",
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
-        ring1="Mars's Ring",
-        feet="Mochizuki Kyahan +1"
+        ring1="Rajas Ring",
+        feet="Qaaxo Leggings"
     })
 
     sets.engaged.Acc = {
@@ -802,6 +803,13 @@ function get_combat_weapon()
     end
 end
 
+function job_toggle_state(field)
+	if field:lower() == 'hastemode' then
+		state.HasteMode = not state.HasteMode
+		return "Haste II is ", state.HasteMode
+	end
+end
+
 function determine_haste_group()
 	
 	classes.CustomMeleeGroups:clear()
@@ -812,8 +820,11 @@ function determine_haste_group()
     -- Victory March +3/+4/+5     14%/15.6%/17.1%
     -- Advancing March +3/+4/+5   10.9%/12.5%/14%
     -- Embrava 25%
-    if  buffactive[580] and buffactive.march == 1 or buffactive.march == 2 then
-        add_to_chat(8, '-------------Haste Cap-------------')
+    -- buffactive[580] = geo haste
+    -- buffactive[33] = regular haste
+    -- state.HasteMode = toggle for when you know Haste II is being cast on you
+    if (buffactive[580] or state.HasteMode) and buffactive.march then
+        add_to_chat(8, '-------------Max-Haste 45%++--------------')
         classes.CustomMeleeGroups:append('Haste_43')
     elseif ( (buffactive.embrava or buffactive[33]) and buffactive.march == 2 ) then
         add_to_chat(8, '-------------Haste 43%-------------')
@@ -824,7 +835,7 @@ function determine_haste_group()
     elseif buffactive[33] and buffactive['haste samba'] and buffactive.march == 1 then
         add_to_chat(8, '-------------Haste 35%-------------')
         classes.CustomMeleeGroups:append('Haste_35')
-    elseif (buffactive[33] and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) or buffactive[580] or buffactive['Geo-Haste'] then
+    elseif (buffactive[33] and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) or buffactive[580] or state.HasteMode then
         add_to_chat(8, '-------------Haste 30%-------------')
         classes.CustomMeleeGroups:append('Haste_30')
     elseif buffactive.embrava or buffactive.march == 2 then
