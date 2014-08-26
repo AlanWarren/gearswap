@@ -713,7 +713,7 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
 	-- If we gain or lose any haste buffs, adjust which gear set we target.
-	if S{'haste','march', 'madrigal','embrava','haste samba'}:contains(buff:lower()) then
+	if S{'haste','march', 'madrigal','embrava','haste samba', 'haste II'}:contains(buff:lower()) then
 		determine_haste_group()
         handle_equipping_gear(player.status)
     elseif state.Buff[buff] ~= nil then
@@ -812,22 +812,22 @@ function determine_haste_group()
     -- Victory March +3/+4/+5     14%/15.6%/17.1%
     -- Advancing March +3/+4/+5   10.9%/12.5%/14%
     -- Embrava 25%
-    if (((buffactive[580] or buffactive['Geo-Haste']) and (buffactive.march == 1 or buffactive.haste)) or ((buffactive.embrava or buffactive.haste or buffactive['Geo-Haste'] or buffactive[580]) and buffactive.march == 2)) then
+    if (((buffactive[580] or buffactive['Geo-Haste']) and (buffactive.march == 1 or buffactive[33])) or ((buffactive.embrava or buffactive[33] or buffactive['Geo-Haste'] or buffactive[580]) and buffactive.march == 2)) then
         add_to_chat(8, '-------------Haste 43%-------------')
         classes.CustomMeleeGroups:append('Haste_43')
-    elseif buffactive.embrava and buffactive.haste then
+    elseif buffactive.embrava and buffactive[33] then
         add_to_chat(8, '-------------Haste 40%-------------')
         classes.CustomMeleeGroups:append('Haste_40')
-    elseif buffactive.haste and buffactive['haste samba'] and buffactive.march == 1 then
+    elseif buffactive[33] and buffactive['haste samba'] and buffactive.march == 1 then
         add_to_chat(8, '-------------Haste 35%-------------')
         classes.CustomMeleeGroups:append('Haste_35')
-    elseif (buffactive.haste and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) or buffactive[580] or buffactive['Geo-Haste'] then
+    elseif (buffactive[33] and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) or buffactive[580] or buffactive['Geo-Haste'] then
         add_to_chat(8, '-------------Haste 30%-------------')
         classes.CustomMeleeGroups:append('Haste_30')
     elseif buffactive.embrava or buffactive.march == 2 then
         add_to_chat(8, '-------------Haste 25%-------------')
         classes.CustomMeleeGroups:append('Haste_25')
-    elseif buffactive.haste or buffactive['haste samba'] then
+    elseif buffactive[33] or buffactive['haste samba'] then
         add_to_chat(8, '-------------Haste 20%-------------')
         classes.CustomMeleeGroups:append('Haste_20')
     end
