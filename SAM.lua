@@ -316,7 +316,8 @@ function init_gear_sets()
         --sub="Pole Grip",
         ammo=gear.RAarrow,
         head="Otomi Helm",
-        neck="Asperity Necklace",
+        --neck="Asperity Necklace",
+        neck="Sanctus Rosary",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Sakonji Domaru +1",
@@ -429,7 +430,7 @@ function init_gear_sets()
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="Oneiros Ring", 
-        back="Takaha Mantle",
+        back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 6
         feet="Ejekamal Boots" -- 7
