@@ -169,7 +169,9 @@
                 feet="Ejekamal Boots"
             })
             
-            sets.midcast.Drain = sets.midcast['Dark Magic'] 
+            sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
+                ring2="Excelsis Ring"
+            })
             sets.midcast.Aspir = sets.midcast.Drain
 
             sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
