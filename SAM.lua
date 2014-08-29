@@ -92,7 +92,7 @@ function init_gear_sets()
         head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
-        ear2="Trux Earring",
+        ear2="Moonshade Earring",
         body="Phorcys Korazin",
         hands="Boor Bracelets",
         ring1="Ifrit Ring",
@@ -199,8 +199,6 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Ageha'] = {
         head="Sakonji Kabuto +1",
         neck="Justice Torque",
-        ear1="Psystorm Earring",
-        ear2="Lifestorm Earring",
         body="Unkai Domaru +2",
         hands="Wakido Kote +1",
         ring1="Sangoma Ring",

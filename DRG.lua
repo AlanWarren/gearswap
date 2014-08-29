@@ -152,7 +152,7 @@ function init_gear_sets()
 		head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
-        ear2="Trux Earring",
+        ear2="Moonshade Earring",
 		body="Xaddi Mail",
         hands="Mikinaak Gauntlets",
         ring1="Oneiros Ring",
@@ -164,9 +164,6 @@ function init_gear_sets()
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         head="Yaoyotl Helm",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-        hands="Mikinaak Gauntlets",
         legs="Xaddi Cuisses"
     })
 	
@@ -178,8 +175,6 @@ function init_gear_sets()
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
         head="Yaoyotl Helm",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
         feet="Mikinaak Greaves"
     })
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})

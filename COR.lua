@@ -159,23 +159,23 @@ function init_gear_sets()
 
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Evisceration'] = sets.precast.WS
+	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, { ear2="Moonshade Earring"})
 
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {legs="Nahtirah Trousers"})
 
-	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {legs="Nahtirah Trousers"})
+	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {ear2="Moonshade Earring", legs="Nahtirah Trousers"})
 
 	sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
         ammo=gear.WSbullet,
         body="Iuitl Vest",
         ear1="Flame Pearl",
-        ear2="Flame Pearl"
+        ear2="Moonshade Earring"
     })
 	sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
         ammo=gear.WSbullet,
         body="Lanun Frac",
         ear1="Volley Earring",
-        ear2="Clearview Earring",
+        ear2="Moonshade Earring",
         back="Libeccio Mantle",
         ring1="Hajduk Ring",
         ring2="Paqichikaji Ring"
@@ -198,7 +198,7 @@ function init_gear_sets()
 
     }
 
-	sets.precast.WS['Leaden Salute'] = sets.precast.WS['Wildfire']
+	sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], { ear2="Moonshade Earring"})
 	
 	
 	-- Midcast Sets

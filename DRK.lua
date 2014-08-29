@@ -189,7 +189,7 @@
                 head="Otomi Helm",
                 neck="Bale Choker",
                 ear1="Brutal Earring",
-                ear2="Bale Earring",
+                ear2="Moonshade Earring",
                 body="Fallen's Cuirass +1",
                 hands="Mikinaak Gauntlets",
                 ring1="Ifrit Ring",
@@ -236,11 +236,8 @@
                 back="Toro Cape",
                 feet="Ignominy Sollerets"
             })
-            sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Caudata Belt"})
-            sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS['Entropy'].Mid, {
-                ear1="Bladeborn Earring",
-                ear2="Steelflash Earring",
-            })
+            sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Metalsinger Belt"})
+            sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS['Entropy'].Mid, { })
 
             sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
                 head="Ighwa Cap",
@@ -252,8 +249,6 @@
             })
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
-                ear1="Brutal Earring",
-                ear2="Bale Earring",
                 neck="Breeze Gorget",
                 --hands="Boor Bracelets",
                 back="Niht Mantle",
@@ -291,7 +286,6 @@
                 head="Ignominy burgeonet +1",
                 neck="Aqua Gorget",
                 ear1="Friomisi Earring",
-                ear2="Crematio Earring",
                 hands="Fallen's Finger Gauntlets",
                 waist="Windbuffet Belt",
                 back="Toro Cape",

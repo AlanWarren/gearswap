@@ -467,6 +467,7 @@ function init_gear_sets()
         -- LAST STAND
         sets.LastStand = {
            neck="Aqua Gorget",
+           ear2="Moonshade Earring",
            ring1="Garuda Ring",
            ring2="Stormsoul Ring",
            waist="Light Belt",
@@ -478,8 +479,8 @@ function init_gear_sets()
 
         sets.precast.WS['Last Stand'].SAM = set_combine(sets.precast.WS, {
             neck="Aqua Gorget",
-            ear1="Volley Earring",
-            ear2="Tripudio Earring",
+            ear1="Tripudio Earring",
+            ear2="Moonshade Earring",
             hands="Seiryu's Kote",
             ring1="Garuda Ring",
             ring2="Stormsoul Ring",
@@ -489,6 +490,7 @@ function init_gear_sets()
         
         -- DETONATOR
         sets.Detonator = {
+           ear2="Moonshade Earring",
            neck="Flame Gorget",
            waist="Light Belt",
            feet="Arcadian Socks +1"
@@ -500,6 +502,7 @@ function init_gear_sets()
         -- SLUG SHOT
         sets.SlugShot = {
            neck="Breeze Gorget",
+           ear2="Moonshade Earring",
            waist="Light Belt",
            feet="Arcadian Socks +1"
         }
@@ -535,6 +538,7 @@ function init_gear_sets()
         -- JISHNUS
         sets.Jishnus = {
             neck="Flame Gorget",
+            ear2="Moonshade Earring",
             waist="Light Belt",
             hands="Seiryu's Kote", -- override 
             legs="Arcadian Braccae +1",
@@ -548,6 +552,7 @@ function init_gear_sets()
         -- SIDEWINDER
         sets.Sidewinder = {
             neck="Aqua Gorget",
+            ear2="Moonshade Earring",
             waist="Light Belt",
             hands="Arcadian Bracers +1",
             back="Buquwik Cape",

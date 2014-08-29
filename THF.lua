@@ -185,8 +185,8 @@ function init_gear_sets()
 	sets.precast.WS = {
 		head="Felistris Mask",
         neck="Asperity Necklace",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
+        ear1="Brutal Earring",
+        ear2="Moonshade Earring",
 		body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
         ring1="Rajas Ring",
@@ -208,10 +208,9 @@ function init_gear_sets()
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
         head="Lithelimb Cap", 
         neck="Moepapa Medal",
-        ear1="Trux Earring",
-        ear2="Brutal Earring",
-        ring1="Stormsoul Ring",
-        ring2="Garuda Ring",
+        ear1="Brutal Earring",
+        ear2="Trux Earring",
+        ring1="Garuda Ring",
 		legs="Quiahuiz Trousers", 
         waist="Elanid Belt",
         back="Canny Cape"
@@ -219,7 +218,6 @@ function init_gear_sets()
 	sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {
         hands="Plunderer's Armlets +1",
         ring1="Mars's Ring",
-        ring2="Patricius Ring",
         back="Canny Cape"
     })
 	sets.precast.WS['Exenterator'].Mod = set_combine(sets.precast.WS['Exenterator'], {waist="Thunder Belt"})
@@ -241,8 +239,6 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
         head="Uk'uxkaj Cap",
         neck="Moepapa Medal",
-		ear1="Brutal Earring",
-        ear2="Trux Earring",
         hands="Pillager's Armlets +1",
         ring1="Ramuh Ring",
         waist="Light Belt",
@@ -273,8 +269,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Aeolian Edge'] = {
 		neck="Stoicheion Medal",
-        ear1="Friomisi Earring",
-        ear2="Crematio Earring",
+        ear1="Crematio Earring",
         head="Umbani Cap",
 		body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
