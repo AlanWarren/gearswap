@@ -548,7 +548,7 @@ function init_gear_sets()
         ammo="Yetshila",
         head="Uk'uxkaj Cap",
         body="Qaaxo Harness",
-        neck="Hope Torque",
+        neck="Shadow Gorget",
         hands="Hachiya Tekko +1",
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
