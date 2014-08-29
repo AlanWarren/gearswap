@@ -509,7 +509,7 @@ function init_gear_sets()
     	head="Felistris Mask",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
-        ear2="Trux Earring",
+        ear2="Moonshade Earring",
     	body="Qaaxo Harness",
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
@@ -599,8 +599,8 @@ function init_gear_sets()
     
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     	head="Umbani Cap",
-        ear1="Friomisi Earring",
-        ear2="Crematio Earring",
+        ear1="Crematio Earring",
+        ear2="Moonshade Earring",
         neck="Stoicheion Medal",
         ring1="Garuda Ring",
         ring2="Acumen Ring",
