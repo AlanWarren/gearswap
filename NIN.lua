@@ -30,7 +30,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     -- Options: Override default values
-    options.OffenseModes = {'Normal', 'Mid', 'Acc'}
+    options.OffenseModes = {'Normal', 'Mid', 'Acc', 'GIMP'}
     options.DefenseModes = {'Normal', 'Evasion', 'PDT'}
     options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
     options.CastingModes = {'Normal'}
@@ -260,6 +260,13 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
+    sets.engaged.GIMP = set_combine(sets.engaged, {
+        head="Ocelomeh headpiece +1",
+        body="Thaumas Coat",
+        hands="Iga Tekko +2",
+        legs="Usukane Hizayoroi",
+        feet="Iga Kyahan +2",
+    })
     sets.engaged.TwoHanded = set_combine(sets.engaged, {
         head="Felistris Mask",
         ear1="Bladeborn Earring",
