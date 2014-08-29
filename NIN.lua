@@ -178,10 +178,21 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
     
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = set_combine(sets.engaged, {
+    sets.idle = {
+        ammo="Yetshila",
+    	head="Ptica Headgear",
+        neck="Asperity Necklace",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+    	body="Hachiya Chainmail +1",
+        hands="Mochizuki Tekko +1",
         ring1="Paguroidea Ring",
+        ring2="Epona's Ring",
+    	back="Atheling Mantle",
+        waist="Patentia Sash",
+        legs="Mochizuki Hakama +1",
         feet="Danzo sune-ate"
-     })
+     }
 
     sets.idle.Regen = {
     	head="Ocelomeh Headpiece +1",
