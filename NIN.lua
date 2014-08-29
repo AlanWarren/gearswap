@@ -177,13 +177,12 @@ function init_gear_sets()
     
     -- Sets to return to when not performing an action.
     
-    -- Resting sets
-    sets.resting = set_combine(sets.idle, {
-            neck="Republican Silver Medal"
-    })
-    
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-    sets.idle = {
+    sets.idle = set_combine(sets.engaged, {
+        feet="Danzo sune-ate"
+     })
+
+    sets.idle.Regen = {
     	head="Ocelomeh Headpiece +1",
         neck="Agitator's Collar",
         ear1="Brutal Earring",
@@ -240,7 +239,6 @@ function init_gear_sets()
     sets.RegularAmmo = {ammo="Yetshila"}
     
     sets.Kiting = select_movement()
-    sets.Ammo = select_static_ammo() 
     -- Engaged sets
     
     -- Normal melee group without buffs
@@ -644,9 +642,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 		if state.TreasureMode == 'Fulltime' then
 			equip(sets.TreasureHunter)
 		end
-        if spell.english ~= 'Blade: Hi' then
-            equip(sets.Ammo)
-        end
 	end
 end
 
@@ -690,11 +685,13 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
 	sets.Kiting = select_movement()
-    sets.Ammo = select_static_ammo()
 end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
+    if player.hpp < 90 then
+        idleSet = set_combine(idleSet, sets.idle.Regen)
+    end
     if state.PhysicalDefenseMode ~= 'PDT' then
 	    idleSet = set_combine(idleSet, select_movement())
     end
@@ -706,7 +703,6 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-    meleeSet = set_combine(meleeSet, sets.Ammo)
 	if state.TreasureMode == 'Fulltime' then
 		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
 	end
@@ -737,7 +733,6 @@ function job_buff_change(buff, gain)
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
-    sets.Ammo = select_static_ammo()
     if newStatus == 'Idle' then
         sets.Kiting = select_movement()
     end
@@ -755,7 +750,6 @@ function job_update(cmdParams, eventArgs)
 	th_update(cmdParams, eventArgs)
 	determine_haste_group()
     sets.Kiting = select_movement()
-    sets.Ammo = select_static_ammo()
 end
 
 -------------------------------------------------------------------------------------------------------------------
