@@ -118,7 +118,7 @@ function init_gear_sets()
     
     -- Fast cast sets for spells
     sets.precast.FC = {
-        head="Uk'uxkaj Cap",
+        --head="Uk'uxkaj Cap",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         hands="Buremte Gloves",
