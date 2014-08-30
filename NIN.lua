@@ -185,7 +185,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
     	body="Mochizuki Chainmail +1",
-        hands="Otronif Gloves +1",
+        hands="Mochizuki Tekko +1",
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
     	back="Atheling Mantle",
