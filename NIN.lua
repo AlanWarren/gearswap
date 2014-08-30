@@ -184,13 +184,13 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-    	body="Hachiya Chainmail +1",
-        hands="Hachiya Tekko +1",
+    	body="Mochizuki Chainmail +1",
+        hands="Otronif Gloves +1",
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
     	back="Atheling Mantle",
         waist="Patentia Sash",
-        legs="Hachiya Hakama +1",
+        legs="Mochizuki Hakama +1",
         feet="Danzo sune-ate"
      }
 
