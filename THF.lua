@@ -355,7 +355,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
 		back="Repulse Mantle",
         waist="Patentia Sash",
-        legs="Pillager's Culottes +1",
+        legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
     }
 
@@ -411,6 +411,7 @@ function init_gear_sets()
     sets.engaged.iLvl.PDT = set_combine(sets.engaged.iLvl, {
         head="Lithelimb Cap",
         ring1="Patricius Ring",
+        legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
     })
 	sets.engaged.Evasion = set_combine(sets.engaged, {
@@ -435,8 +436,8 @@ function init_gear_sets()
         ring2="Epona's Ring",
 		back="Repulse Mantle",
         waist="Patentia Sash",
-        legs="Pillager's Culottes +1",
-        feet="Qaaxo Leggings"
+        legs="Iuitl Tights +1",
+        feet="Iuitl Gaiters +1"
     }
 	sets.engaged.Acc.PDT = sets.engaged.PDT
     
