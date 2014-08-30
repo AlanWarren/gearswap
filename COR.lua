@@ -113,7 +113,7 @@ function init_gear_sets()
 		body="Iuitl Vest",
         hands="Iuitl Wristbands +1",
 		legs="Nahtirah Trousers",
-        feet="Iuitl Gaiters"
+        feet="Iuitl Gaiters +1"
     }
 		
 	-- Don't need any special gear for Healing Waltz.
@@ -154,7 +154,7 @@ function init_gear_sets()
 		back="Buquwik Cape",
         waist=gear.ElementalBelt,
         legs="Nahtirah Trousers",
-        feet="Iuitl Gaiters"
+        feet="Iuitl Gaiters +1"
     }
 
 
@@ -206,8 +206,8 @@ function init_gear_sets()
 		head="Whirlpool Mask",
 		body="Iuitl Vest",
         hands="Iuitl Wristbands +1",
-		legs="Iuitl Tights",
-        feet="Iuitl Gaiters"
+		legs="Iuitl Tights +1",
+        feet="Iuitl Gaiters +1"
     }
 		
 	-- Specific spells
@@ -254,7 +254,7 @@ function init_gear_sets()
 		back="Gunslinger's Cape",
         waist="Elanid Belt",
         legs="Aetosaur Trousers +1",
-        feet="Iuitl Gaiters"
+        feet="Iuitl Gaiters +1"
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
@@ -296,7 +296,7 @@ function init_gear_sets()
 		back="Shadow Mantle",
         waist="Commodore Belt",
         legs="Crimson Cuisses",
-        feet="Iuitl Gaiters"
+        feet="Iuitl Gaiters +1"
     }
 	
 	-- Defense sets
@@ -307,8 +307,8 @@ function init_gear_sets()
         body="Lanun Frac",
         ring1="Patricius Ring",
         ring2="Dark Ring",
-		legs="Nahtirah Trousers",
-        feet="Iuitl Gaiters"
+		legs="Iuitl Tights +1",
+        feet="Iuitl Gaiters +1"
     })
 
 	sets.defense.MDT = sets.defense.PDT
@@ -371,7 +371,7 @@ function init_gear_sets()
 		back="Gunslonger's Cape",
         waist="Elanid Belt",
         legs="Nahtirah Trousers",
-        feet="Iuitl Gaiters"
+        feet="Iuitl Gaiters +1"
     }
 end
 
