@@ -311,7 +311,7 @@ function init_gear_sets()
     -- I generally use Anahera outside of Adoulin areas, so this set aims for 47 STP + 5 from Anahera (52 total)
     -- Note, this set assumes use of Cibitshavore (hence the arrow as ammo)
     sets.engaged = {
-        --sub="Pole Grip",
+        --sub="Bloodrain Grip",
         ammo=gear.RAarrow,
         head="Otomi Helm",
         neck="Asperity Necklace",
@@ -320,8 +320,8 @@ function init_gear_sets()
         body="Sakonji Domaru +1",
         hands="Wakido Kote +1",
         ring1="Rajas Ring", 
-        ring2="K'ayres Ring", 
-        back="Atheling Mantle", 
+        ring2="Oneiros Ring", 
+        back="Takaha Mantle", 
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1",
         feet="Otronif boots +1"
@@ -430,7 +430,7 @@ function init_gear_sets()
         back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Wakido Haidate +1", -- 6
-        feet="Ejekamal Boots" -- 7
+        feet="Otronif Boots +1" --7
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         body="Sakonji Domaru +1",
