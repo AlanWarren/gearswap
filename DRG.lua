@@ -14,9 +14,15 @@ end
 -- Setup vars that are user-independent.
 function job_setup()
 	state.CombatForm = get_combat_form()
+    include('Mote-TreasureHunter')
+    state.TreasureMode = 'Tag'
 	
 	state.Buff = {}
-  end
+	-- JA IDs for actions that always have TH: Provoke, Animated Flourish
+	info.default_ja_ids = S{35, 204}
+	-- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
+	info.default_u_ja_ids = S{201, 202, 203, 205, 207}
+end
 
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
@@ -38,6 +44,7 @@ function user_setup()
 	send_command('bind !` input /ja "Seigan" <me>')
 
 	select_default_macro_book(1, 16)
+	send_command('bind ^= gs c cycle treasuremode')
 end
 
 
@@ -48,6 +55,7 @@ function file_unload()
 	end
 
 	send_command('unbind ^`')
+	send_command('unbind ^=')
 	send_command('unbind !-')
 end
 
@@ -79,6 +87,7 @@ function init_gear_sets()
     }
 
 	sets.precast.JA['Ancient Circle'] = {}
+	sets.TreasureHunter = {waist="Chaac Belt"}
 
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
         --legs="Wyrm Brais +2"
@@ -484,6 +493,9 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+	if state.TreasureMode == 'Fulltime' then
+		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+	end
 	return meleeSet
 end
 
@@ -510,6 +522,7 @@ end
 
 function job_update(cmdParams, eventArgs)
 	classes.CustomMeleeGroups:clear()
+	th_update(cmdParams, eventArgs)
 	state.CombatForm = get_combat_form()
 end
 -------------------------------------------------------------------------------------------------------------------
@@ -546,6 +559,28 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+-- State buff checks that will equip buff gear and mark the event as handled.
+function check_buff(buff_name, eventArgs)
+	if state.Buff[buff_name] then
+		equip(sets.buff[buff_name] or {})
+		if state.TreasureMode == 'Fulltime' then
+			equip(sets.TreasureHunter)
+		end
+		eventArgs.handled = true
+	end
+end
+-- Check for various actions that we've specified in user code as being used with TH gear.
+-- This will only ever be called if TreasureMode is not 'None'.
+-- Category and Param are as specified in the action event packet.
+function th_action_check(category, param)
+	if category == 2 or -- any ranged attack
+		--category == 4 or -- any magic action
+		(category == 3 and param == 30) or -- Aeolian Edge
+		(category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
+		(category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
+		then return true
+	end
+end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
