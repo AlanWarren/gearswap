@@ -157,7 +157,7 @@ function init_gear_sets()
         hands="Mikinaak Gauntlets",
         ring1="Ifrit Ring",
         ring2="Oneiros Ring",
-		back="Atheling Mantle",
+		back="Buquwik Cape",
         waist="Windbuffet Belt",
         legs="Cizin Breeches +1",
         feet="Ejekamal Boots"

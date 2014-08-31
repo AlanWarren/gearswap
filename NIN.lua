@@ -153,7 +153,7 @@ function init_gear_sets()
     	body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1",
     	back="Yokaze Mantle",
-        ring1="Diamond Ring",
+        ring1="Perception Ring",
         ring2="Sangoma Ring",
         waist="Chaac Belt",
         legs="Kabnaax Trousers",
