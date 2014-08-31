@@ -43,6 +43,7 @@ function user_setup()
    
     select_default_macro_book()
     
+	send_command('bind ^= gs c cycle treasuremode')
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
     send_command('bind ^- gs c toggle HasteMode')
