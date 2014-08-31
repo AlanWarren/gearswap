@@ -153,7 +153,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
-		body="Xaddi Mail",
+		body="Gorney Haubert +1",
         hands="Mikinaak Gauntlets",
         ring1="Ifrit Ring",
         ring2="Oneiros Ring",
