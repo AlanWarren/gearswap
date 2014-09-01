@@ -30,7 +30,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     -- Options: Override default values
-    options.OffenseModes = {'Normal', 'Mid', 'Acc', 'GIMP'}
+    options.OffenseModes = {'Normal', 'Mid', 'Acc'}
     options.DefenseModes = {'Normal', 'Evasion', 'PDT'}
     options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
     options.CastingModes = {'Normal'}
@@ -271,13 +271,6 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
-    sets.engaged.GIMP = set_combine(sets.engaged, {
-        head="Ocelomeh headpiece +1",
-        body="Thaumas Coat",
-        hands="Iga Tekko +2",
-        legs="Usukane Hizayoroi",
-        feet="Iga Kyahan +2",
-    })
     sets.engaged.TwoHanded = set_combine(sets.engaged, {
         head="Felistris Mask",
         ear1="Bladeborn Earring",
@@ -363,16 +356,15 @@ function init_gear_sets()
         head="Ptica Headgear",
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
-        ring1="Mars's Ring",
+        ring1="Rajas Ring",
         waist="Anguinus Belt",
         feet="Mochizuki Kyahan +1"
     }
 
     sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
         ammo="Yetshila",
-        neck="Asperity Necklace",
         body="Mochizuki Chainmail +1",
-        ring2="Patricius Ring",
+        ring1="Mars's Ring",
         hands="Otronif Gloves +1",
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1",
@@ -734,7 +726,7 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
 	-- If we gain or lose any haste buffs, adjust which gear set we target.
-	if S{'haste','march', 'madrigal','embrava','haste samba', 'haste II'}:contains(buff:lower()) then
+	if S{'haste','march', 'madrigal','embrava','haste samba', 'geo-haste'}:contains(buff:lower()) then
 		determine_haste_group()
         handle_equipping_gear(player.status)
     elseif state.Buff[buff] ~= nil then
@@ -751,7 +743,6 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     end
     state.CombatWeapon = get_combat_weapon()
 end
-
 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
@@ -825,7 +816,7 @@ function job_toggle_state(field)
 	if field:lower() == 'hastemode' then
 		state.HasteMode = not state.HasteMode
 		return "Haste II is ", state.HasteMode
-	end
+    end
 end
 
 function determine_haste_group()
