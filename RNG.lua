@@ -27,6 +27,8 @@
     ** The idea is to put -enmity gear in your regular set, and take it off in the Decoy set. So, you will be shooting
     from sets.midcast.RA.Decoy when decoy is up, and sets.midcast.RA when Decoy is down. 
 
+-- If you don't own Fenrir's earring, or care to use it, then set use_night_earring to false.  
+
  * Auto RA
  - You can use the built in hotkey (CTRL -) or create a macro. (like below) Note "AutoRA" is case sensitive
    /console gs c toggle AutoRA
