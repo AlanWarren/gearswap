@@ -456,8 +456,8 @@
             sets.engaged.War = set_combine(sets.engaged, {
                 ear1="Brutal Earring",
                 ear2="Tripudio Earring",
-                head="Yaoyotl Helm",
-                legs="Phorcys Dirs"
+                head="Otomi Helm",
+                legs="Xaddi Cuisses"
             })
             sets.engaged.War.Mid = set_combine(sets.engaged.War, {
                 ammo="Hagneia Stone",
