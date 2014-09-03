@@ -241,7 +241,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Usukane Haramaki",
+        body="Usukane Haramaki +1",
         hands="Wakido Kote +1",
         ring1="Oneiros Ring",
         ring2="Patricius Ring",
