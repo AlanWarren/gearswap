@@ -266,12 +266,14 @@
             sets.precast.WS['Torcleaver'] = set_combine(sets.precast.WS, {
                 body="Phorcys Korazin",
                 neck="Aqua Gorget",
+                legs="Scuffler's Cosciales",
                 waist="Caudata Belt"
             })
             -- 60% STR / 60% MND
             sets.precast.WS['Cross Reapter'] = set_combine(sets.precast.WS, {
                 hands="Cizin Mufflers +1",
                 neck="Aqua Gorget",
+                legs="Scuffler's Cosciales",
                 waist="Metalsinger belt"
              })
             -- 50% STR / 50% INT 

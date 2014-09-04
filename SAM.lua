@@ -99,7 +99,7 @@ function init_gear_sets()
         ring2="Pyrosoul Ring",
         back="Buquwik Cape",
         waist="Windbuffet Belt",
-        legs="Wakido Haidate +1",
+        legs="Scuffler's Cosciales",
         feet="Ejekamal Boots"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
