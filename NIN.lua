@@ -98,7 +98,7 @@ function init_gear_sets()
     -- Ranged
     sets.precast.RA = {
         head="Uk'uxkaj Cap",
-        hands="Manibozho Gloves",
+        --hands="Manibozho Gloves",
         legs="Nahtirah Trousers",
         feet="Wurrukatte Boots"
     }
@@ -112,7 +112,7 @@ function init_gear_sets()
         back="Yokaze Mantle",
         waist="Chaac Belt",
         legs="Hachiya Hakama +1",
-        feet="Qaaxo Leggings"
+        feet="Mochizuki Kyahan +1"
     }
     sets.precast.JA.Sange = sets.midcast.RA
 	sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
