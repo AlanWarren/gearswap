@@ -281,6 +281,7 @@
                 head="Ighwa Cap",
                 body="Phorcys Korazin",
                 neck="Aqua Gorget",
+                legs="Scuffler's Cosciales",
                 waist="Metalsinger belt",
              })
            
