@@ -180,6 +180,7 @@ function init_gear_sets()
 	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         back="Buquwik Cape",
+        legs="Scuffler's Cosciales",
         waist="Soil Belt"
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
