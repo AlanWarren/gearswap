@@ -247,7 +247,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Oneiros Ring",
 		back="Atheling Mantle",
-        waist="Cetl Belt",
+        waist="Metalsinger Belt",
         legs="Crimson Cuisses",
         feet="Ejekamal Boots"
     }
