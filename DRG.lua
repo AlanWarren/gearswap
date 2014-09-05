@@ -82,7 +82,7 @@ function init_gear_sets()
         ring2="Oneiros Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
-        legs="Lancer's Cuissots +2",
+        legs="Ares' Flanchard +1",
         feet="Cizin Greaves +1"
     }
 
@@ -90,13 +90,12 @@ function init_gear_sets()
 	sets.TreasureHunter = {waist="Chaac Belt"}
 
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
-        --legs="Wyrm Brais +2"
-        legs="Lancer's Cuissots +2"
     }) 
 	sets.precast.JA['Soul Jump'] = set_combine(sets.precast.JA.Jump, {
         legs="Lancer's Cuissots +2"
     })
 	sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA.Jump, {
+        legs="Lancer's Cuissots +2"
         --feet="Lancer's Schynbalds +2"
     })
 	sets.precast.JA['Super Jump'] = sets.precast.JA.Jump
