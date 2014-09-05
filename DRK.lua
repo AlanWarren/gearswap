@@ -220,6 +220,7 @@
                 neck="Shadow Gorget",
                 back="Atheling Mantle",
                 ring1="Diamond Ring",
+                legs="Scuffler's Cosciales",
                 waist="Soil Belt",
                 feet="Ejekamal Boots"
             })
