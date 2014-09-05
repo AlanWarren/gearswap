@@ -164,7 +164,7 @@ function init_gear_sets()
 		body="Gorney Haubert +1",
         hands="Mikinaak Gauntlets",
         ring1="Ifrit Ring",
-        ring2="Oneiros Ring",
+        ring2="Pyrosoul Ring",
 		back="Buquwik Cape",
         waist="Windbuffet Belt",
         legs="Cizin Breeches +1",
