@@ -139,7 +139,6 @@
            
 		    sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
                 head="Otomi Helm",
-                feet="Scamp's Sollerets",
                 waist="Chaac Belt",
                 back="Abyss Cape"
             })
@@ -162,7 +161,6 @@
             sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
                 --head="Fallen's Burgeonet +1",
                 body="Bale Cuirass +2",
-                hands="Boor Braceletes",
                 ring1="Beeline Ring",
                 ring2="K'ayres Ring",
                 back="Repulse Mantle",
@@ -219,7 +217,6 @@
                 head="Otomi Helm",
                 neck="Shadow Gorget",
                 back="Atheling Mantle",
-                ring1="Diamond Ring",
                 legs="Scuffler's Cosciales",
                 waist="Soil Belt",
                 feet="Ejekamal Boots"
@@ -233,7 +230,6 @@
                 hands="Fallen's Finger Gauntlets",
                 --legs="Haruspex Slops",
                 legs="Ignominy Flanchard +1",
-                ring1="Diamond Ring",
                 ring2="Acumen Ring",
                 back="Toro Cape",
                 feet="Ignominy Sollerets"
@@ -252,7 +248,6 @@
      
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
                 neck="Breeze Gorget",
-                --hands="Boor Bracelets",
                 back="Niht Mantle",
                 waist="Thunder Belt",
             })
@@ -303,7 +298,6 @@
             -- Resting sets
             sets.resting = {
                 head="Twilight Helm",
-                neck="Republican Silver Medal",
                 body="Ares' Cuirass +1",
                 hands="Cizin Mufflers +1",
                 ring1="Dark Ring",
