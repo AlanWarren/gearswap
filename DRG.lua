@@ -167,7 +167,7 @@ function init_gear_sets()
         ring2="Pyrosoul Ring",
 		back="Buquwik Cape",
         waist="Windbuffet Belt",
-        legs="Cizin Breeches +1",
+        legs="Scuffler's Cosciales",
         feet="Ejekamal Boots"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -179,7 +179,6 @@ function init_gear_sets()
 	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         back="Buquwik Cape",
-        legs="Scuffler's Cosciales",
         waist="Soil Belt"
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
