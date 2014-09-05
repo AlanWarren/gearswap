@@ -121,7 +121,7 @@ function init_gear_sets()
 		back="Updraft Mantle",
         waist="Glassblower's Belt",
         legs="Vishap Brais",
-        feet="Wyrm Greaves +2"
+        feet="Wym. Greaves +2"
     }
 
 	-- Waltz set (chr and vit)
