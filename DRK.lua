@@ -257,11 +257,12 @@
             })
             sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
                 head="Yaoyotl Helm",
-                hands="Mikinaak Gauntlets",
+                hands="Ignominy Gauntlets +1",
                 feet="Ejekamal Boots"
             })
             sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {
                 neck="Breeze Gorget",
+                hands="Ignominy Gauntlets +1",
                 waist="Soil Belt"
             })
             sets.precast.WS['Torcleaver'] = set_combine(sets.precast.WS, {
