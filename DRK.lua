@@ -274,7 +274,7 @@
             })
             -- 60% STR / 60% MND
             sets.precast.WS['Cross Reapter'] = set_combine(sets.precast.WS, {
-                hands="Cizin Mufflers +1",
+                hands="Ignominy Gauntlets +1",
                 neck="Aqua Gorget",
                 legs="Scuffler's Cosciales",
                 waist="Metalsinger belt"
