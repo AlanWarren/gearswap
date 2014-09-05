@@ -83,6 +83,7 @@
             sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
             --sets.precast.JA['Last Resort'] = {feet="Fallen's Sollerets +1"}
             sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
+            sets.precast.JA['Weapon Bash'] = {hands="Ignominy Gauntlets +1"}
      
             -- Waltz set (chr and vit)
             sets.precast.Waltz = {
@@ -266,6 +267,7 @@
             sets.precast.WS['Torcleaver'] = set_combine(sets.precast.WS, {
                 body="Phorcys Korazin",
                 neck="Aqua Gorget",
+                hands="Ignominy Gauntlets +1",
                 legs="Scuffler's Cosciales",
                 waist="Caudata Belt"
             })
