@@ -157,7 +157,7 @@ function init_gear_sets()
         ring1="Perception Ring",
         ring2="Sangoma Ring",
         waist="Chaac Belt",
-        legs="Kabnaax Trousers",
+        legs="Kaabnax Trousers",
         feet="Mochizuki Kyahan +1"
     }
     -- Nuking Ninjutsu (skill & magic attack)
