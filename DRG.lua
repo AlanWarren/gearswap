@@ -120,7 +120,7 @@ function init_gear_sets()
         ring2="K'ayres Ring",
 		back="Updraft Mantle",
         waist="Glassblower's Belt",
-        legs="Xaddi Cuisses",
+        legs="Vishap Brais",
         feet="Wyrm Greaves +2"
     }
 
