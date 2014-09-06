@@ -699,7 +699,7 @@ function customize_idle_set(idleSet)
     if state.PhysicalDefenseMode ~= 'PDT' then
 	    idleSet = set_combine(idleSet, select_movement())
     end
-	if state.Buff.Migawari and state.DefenseMode == 'PDT' then
+	if state.Buff.Migawari and state.HybridMode == 'PDT' then
 		idleSet = set_combine(idleSet, sets.buff.Migawari)
 	end
 	return idleSet
@@ -710,7 +710,7 @@ function customize_melee_set(meleeSet)
 	if state.TreasureMode == 'Fulltime' then
 		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
 	end
-	if state.Buff.Migawari and state.DefenseMode == 'PDT' then
+	if state.Buff.Migawari and state.HybridMode == 'PDT' then
 		meleeSet = set_combine(meleeSet, sets.buff.Migawari)
 	end
 	return meleeSet
