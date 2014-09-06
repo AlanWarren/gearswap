@@ -283,7 +283,8 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
         ring1="Rajas Ring",
-        feet="Qaaxo Leggings"
+        feet="Qaaxo Leggings",
+        back="Yokaze Mantle"
     })
 
     sets.engaged.Acc = {
