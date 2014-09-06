@@ -17,14 +17,15 @@
 -- Initialization function for this job file.
 function get_sets()
 	-- Load and initialize the include file.
+    mote_include_version = 2
 	include('Mote-Include.lua')
 end
 
 -- Setup vars that are user-independent.
 function job_setup()
 	-- Whether to use Luzaf's Ring
-	state.LuzafRing = false
-	state.warned = false
+	state.LuzafRing = M(false, "Luzaf's Ring")
+	state.warned = M(false)
 
 	define_roll_values()
 end
@@ -33,16 +34,14 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-	options.OffenseModes = {'Ranged', 'Melee', 'Acc'}
-	options.RangedModes = {'Normal', 'Acc'}
-	options.WeaponskillModes = {'Normal', 'Acc'}
-	options.CastingModes = {'Normal', 'Resistant'}
-	options.IdleModes = {'Normal'}
-	options.RestingModes = {'Normal'}
-	options.PhysicalDefenseModes = {'PDT'}
-	options.MagicalDefenseModes = {'MDT'}
-
-	state.Defense.PhysicalMode = 'PDT'
+	state.OffenseMode:options('Ranged', 'Melee', 'Acc')
+	state.RangedMode:options('Normal', 'Acc')
+	state.WeaponskillMode:options('Normal', 'Acc')
+	state.CastingMode:options('Normal', 'Resistant')
+	state.IdleMode:options('Normal')
+	state.RestingMode:options('Normal')
+	state.PhysicalDefenseMode:options('PDT')
+	state.MagicalDefenseMode:options('MDT')
 
 	gear.RAbullet = "Adlivun Bullet"
 	gear.WSbullet = "Adlivun Bullet"
@@ -56,8 +55,6 @@ function user_setup()
     get_combat_form()
 	-- Additional local binds
 	-- Cor doesn't use hybrid defense mode; using that for ranged mode adjustments.
-	send_command('bind ^f9 gs c cycle RangedMode')
-
 	send_command('bind ^` input /ja "Double-up" <me>')
 	send_command('bind !` input /ja "Bolter\'s Roll" <me>')
     
@@ -391,7 +388,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 	-- gear sets
 	if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") and state.LuzafRing then
 		equip(sets.precast.LuzafRing)
-	elseif spell.type == 'CorsairShot' and state.CastingMode == 'Resistant' then
+	elseif spell.type == 'CorsairShot' and state.CastingMode.value == 'Resistant' then
 		classes.CustomClass = 'Acc'
     elseif spell.english == 'Fold' and buffactive['Bust'] == 2 then
         if sets.precast.FouldDoubleBust then
@@ -457,36 +454,29 @@ end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
-	local defenseString = ''
-	if state.Defense.Active then
-		local defMode = state.Defense.PhysicalMode
-		if state.Defense.Type == 'Magical' then
-			defMode = state.Defense.MagicalMode
-		end
+    local msg = ''
+    msg = msg .. 'Off.: '..state.OffenseMode.current
+    msg = msg .. ', Rng.: '..state.RangedMode.current
+    msg = msg .. ', WS.: '..state.WeaponskillMode.current
+    msg = msg .. ', QD.: '..state.CastingMode.current
 
-		defenseString = 'Defense: '..state.Defense.Type..' '..defMode..', '
-	end
-	
-	local rollsize = 'Small'
-	if state.LuzafRing then
-		rollsize = 'Large'
-	end
-	
-	local pcTarget = ''
-	if state.PCTargetMode ~= 'default' then
-		pcTarget = ', Target PC: '..state.PCTargetMode
-	end
+    if state.DefenseMode.value ~= 'None' then
+        local defMode = state[state.DefenseMode.value ..'DefenseMode'].current
+        msg = msg .. ', Defense: '..state.DefenseMode.value..' '..defMode
+    end
+    if state.Kiting.value then
+        msg = msg .. ', Kiting'
+    end
+    if state.PCTargetMode.value ~= 'default' then
+        msg = msg .. ', Target PC: '..state.PCTargetMode.value
+    end
+    if state.SelectNPCTargets.value then
+        msg = msg .. ', Target NPCs'
+    end
 
-	local npcTarget = ''
-	if state.SelectNPCTargets then
-		pcTarget = ', Target NPCs'
-	end
-	
-    add_to_chat(122,'Off.: '..state.OffenseMode..', Rng.: '..state.RangedMode..', WS: '..state.WeaponskillMode..
-        ', QD: '..state.CastingMode..', '..defenseString..'Kite: '..on_off_names[state.Kiting]..
-    	', Roll Size: '..rollsize..pcTarget..npcTarget)
-
-	eventArgs.handled = true
+    msg = msg .. ', Roll Size: ' .. (state.LuzafRing.value and 'Large') or 'Small'
+    add_to_chat(122, msg)
+    eventArgs.handled = true
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -496,12 +486,12 @@ function get_combat_form()
     if cor_sub_weapons:contains(player.equipment.main) then
     --if player.equipment.main == gear.Stave then
         if S{'NIN', 'DNC'}:contains(player.sub_job) and cor_sub_weapons:contains(player.equipment.sub) then
-            state.CombatForm = "DW"
+            state.CombatForm:set("DW")
         else
-            state.CombatForm = nil
+            state.CombatForm:reset()
         end
     else
-        state.CombatForm = 'Stave'
+        state.CombatForm:set('Stave')
     end
 end
 
