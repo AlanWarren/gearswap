@@ -14,7 +14,7 @@ end
 function job_setup()
 	state.HasteMode = false
 	state.Buff.Migawari = buffactive.migawari or false
-    state.CombatWeapon = get_combat_weapon()
+    get_combat_weapon()
     include('Mote-TreasureHunter')
     state.TreasureMode = 'Tag'
 
@@ -665,7 +665,7 @@ end
 -- Run after the general midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-    state.CombatWeapon = get_combat_weapon()
+    get_combat_weapon()
 	if state.TreasureMode ~= 'None' and spell.action_type == 'Ranged Attack' then
 		equip(sets.TreasureHunter)
 	end
@@ -741,7 +741,7 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == 'Idle' then
         sets.Kiting = select_movement()
     end
-    state.CombatWeapon = get_combat_weapon()
+    get_combat_weapon()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -750,7 +750,7 @@ end
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    state.CombatWeapon = get_combat_weapon()
+    get_combat_weapon()
 	th_update(cmdParams, eventArgs)
 	determine_haste_group()
     sets.Kiting = select_movement()
@@ -808,7 +808,9 @@ end
 
 function get_combat_weapon()
     if player.equipment.main == 'Taimakuniyuki' or player.equipment.main == 'Ark Scythe' then
-        return 'TwoHanded'
+        state.CombatWeapon:set('TwoHanded')
+    else
+        state.CombatWeapon:reset()
     end
 end
 
