@@ -701,9 +701,9 @@ end
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_form()
     if war_sj then
-        state.CombatForm = "War"
+        state.CombatForm:set("War")
     else
-        state.CombatForm = nil
+        state.CombatForm:reset()
     end
 end
 
@@ -713,11 +713,11 @@ end
 
 function adjust_engaged_sets()
     if scytheList:contains(player.equipment.main) then
-        state.CombatWeapon = "Scythe"
+        state.CombatWeapon:set("Scythe")
     elseif gsList:contains(player.equipment.main) then
-        state.CombatWeapon = "LDGS"
+        state.CombatWeapon:set("LDGS")
     else -- use regular set
-        state.CombatWeapon = nil
+        state.CombatWeapon:reset()
     end
 	--adjust_melee_groups()
 	--determine_haste_group()
