@@ -13,7 +13,7 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
-	state.HasteMode = false
+	state.HasteMode = M(false, "Haste Mode")
 	state.Buff.Migawari = buffactive.migawari or false
     get_combat_weapon()
     include('Mote-TreasureHunter')
@@ -640,10 +640,10 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-	if spell.english == 'Aeolian Edge' and state.TreasureMode ~= 'None' then
+	if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
 		equip(sets.TreasureHunter)
 	elseif spell.type == 'WeaponSkill' then
-		if state.TreasureMode == 'Fulltime' then
+		if state.TreasureMode.value == 'Fulltime' then
 			equip(sets.TreasureHunter)
 		end
 	end
@@ -665,7 +665,7 @@ end
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
     get_combat_weapon()
-	if state.TreasureMode ~= 'None' and spell.action_type == 'Ranged Attack' then
+	if state.TreasureMode.value ~= 'None' and spell.action_type == 'Ranged Attack' then
 		equip(sets.TreasureHunter)
 	end
 end
@@ -696,10 +696,10 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    if state.PhysicalDefenseMode ~= 'PDT' then
+    if state.PhysicalDefenseMode.value ~= 'PDT' then
 	    idleSet = set_combine(idleSet, select_movement())
     end
-	if state.Buff.Migawari and state.HybridMode == 'PDT' then
+	if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
 		idleSet = set_combine(idleSet, sets.buff.Migawari)
 	end
 	return idleSet
@@ -707,10 +707,10 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if state.TreasureMode == 'Fulltime' then
+	if state.TreasureMode.value == 'Fulltime' then
 		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
 	end
-	if state.Buff.Migawari and state.HybridMode == 'PDT' then
+	if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
 		meleeSet = set_combine(meleeSet, sets.buff.Migawari)
 	end
 	return meleeSet
@@ -763,7 +763,7 @@ end
 function check_buff(buff_name, eventArgs)
 	if state.Buff[buff_name] then
 		equip(sets.buff[buff_name] or {})
-		if state.TreasureMode == 'Fulltime' then
+		if state.TreasureMode.value == 'Fulltime' then
 			equip(sets.TreasureHunter)
 		end
 		eventArgs.handled = true
@@ -794,7 +794,7 @@ function select_movement()
 end
 
 function select_static_ammo()
-    if state.OffenseMode == 'Acc' or state.OffenseMode == 'Mid' then
+    if state.OffenseMode.value == 'Acc' or state.OffenseMode.value == 'Mid' then
 	    if world.time >= (18*60) or world.time <= (6*60) then
             return sets.NightAccAmmo
         else
@@ -815,8 +815,8 @@ end
 
 function job_toggle_state(field)
 	if field:lower() == 'hastemode' then
-		state.HasteMode = not state.HasteMode
-		return "Haste II is ", state.HasteMode
+		state.HasteMode.value = not state.HasteMode.value
+		return "Haste II is ", state.HasteMode.value
     end
 end
 
@@ -833,7 +833,7 @@ function determine_haste_group()
     -- buffactive[580] = geo haste
     -- buffactive[33] = regular haste
     -- state.HasteMode = toggle for when you know Haste II is being cast on you
-    if (state.HasteMode and buffactive.haste) and buffactive.march then
+    if (state.HasteMode.value and buffactive.haste) and buffactive.march then
         add_to_chat(8, '-------------Max-Haste 45%++--------------')
         classes.CustomMeleeGroups:append('Haste_43')
     elseif ( (buffactive.embrava or buffactive.haste) and buffactive.march == 2 ) then
@@ -845,7 +845,7 @@ function determine_haste_group()
     elseif buffactive.haste and buffactive['haste samba'] and buffactive.march == 1 then
         add_to_chat(8, '-------------Haste 35%-------------')
         classes.CustomMeleeGroups:append('Haste_35')
-    elseif (buffactive.haste and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) or (state.HasteMode and buffactive.haste) then
+    elseif (buffactive.haste and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) or (state.HasteMode.value and buffactive.haste) then
         add_to_chat(8, '-------------Haste 30%-------------')
         classes.CustomMeleeGroups:append('Haste_30')
     elseif buffactive.embrava or buffactive.march == 2 then
