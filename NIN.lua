@@ -33,7 +33,7 @@ function user_setup()
     -- Options: Override default values
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
     state.HybridMode.options('Normal', 'Evasion', 'PDT')
-    state.WeaponskillMode:options(('Normal', 'Mid', 'Acc')
+    state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     state.CastingMode:options('Normal')
     state.IdleMode:options('Normal')
     state.RestingMode:options('Normal')
