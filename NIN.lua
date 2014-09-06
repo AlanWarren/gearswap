@@ -17,7 +17,7 @@ function job_setup()
 	state.Buff.Migawari = buffactive.migawari or false
     get_combat_weapon()
     include('Mote-TreasureHunter')
-    state.TreasureMode = 'Tag'
+    --state.TreasureMode.value = 'Tag'
 
 	determine_haste_group()
 	-- For th_action_check():
@@ -33,10 +33,8 @@ function user_setup()
     -- Options: Override default values
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
     state.HybridMode.options('Normal', 'Evasion', 'PDT')
+    state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
-    state.CastingMode:options('Normal')
-    state.IdleMode:options('Normal')
-    state.RestingMode:options('Normal')
     state.PhysicalDefenseMode:options('PDT')
     state.MagicalDefenseMode:options('MDT')
 
@@ -609,11 +607,11 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks that are called to process player actions at specific points in time.
 -------------------------------------------------------------------------------------------------------------------
-function job_pretarget(spell, action, spellMap, eventArgs)
-    if state.Buff[spell.english] ~= nil then
-        state.Buff[spell.english] = true
-    end
-end
+--function job_pretarget(spell, action, spellMap, eventArgs)
+--    if state.Buff[spell.english] ~= nil then
+--        state.Buff[spell.english] = true
+--    end
+--end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
@@ -696,9 +694,6 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    if state.PhysicalDefenseMode.value ~= 'PDT' then
-	    idleSet = set_combine(idleSet, select_movement())
-    end
 	if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
 		idleSet = set_combine(idleSet, sets.buff.Migawari)
 	end
@@ -729,7 +724,7 @@ function job_buff_change(buff, gain)
 		determine_haste_group()
         handle_equipping_gear(player.status)
     elseif state.Buff[buff] ~= nil then
-		state.Buff[buff] = gain
+		--state.Buff[buff] = gain
 		if not midaction() then
 			handle_equipping_gear(player.status)
 		end
@@ -810,13 +805,6 @@ function get_combat_weapon()
         state.CombatWeapon:set('TwoHanded')
     else
         state.CombatWeapon:reset()
-    end
-end
-
-function job_toggle_state(field)
-	if field:lower() == 'hastemode' then
-		state.HasteMode.value = not state.HasteMode.value
-		return "Haste II is ", state.HasteMode.value
     end
 end
 
