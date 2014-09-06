@@ -755,14 +755,15 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 -- State buff checks that will equip buff gear and mark the event as handled.
+-- State buff checks that will equip buff gear and mark the event as handled.
 function check_buff(buff_name, eventArgs)
-	if state.Buff[buff_name] then
-		equip(sets.buff[buff_name] or {})
-		if state.TreasureMode.value == 'Fulltime' then
-			equip(sets.TreasureHunter)
-		end
-		eventArgs.handled = true
-	end
+    if state.Buff[buff_name] then
+            equip(sets.buff[buff_name] or {})
+        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
+            equip(sets.TreasureHunter)
+        end
+        eventArgs.handled = true
+    end
 end
 -- Check for various actions that we've specified in user code as being used with TH gear.
 -- This will only ever be called if TreasureMode is not 'None'.
