@@ -51,6 +51,8 @@ end
 function file_unload()
     send_command('unbind ^[')
     send_command('unbind ![')
+    send_command('unbind ^-')
+    send_command('unbind ^=')
 end
 
 
