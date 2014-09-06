@@ -131,7 +131,6 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
     	head="Uk'uxkaj Cap",
     	body="Mochizuki Chainmail +1",
-        hands="Mochizuki Tekko +1",
         ear1="Loquacious Earring",
         waist="Hurch'lan Sash",
         ring1="Prolix Ring",
@@ -171,7 +170,7 @@ function init_gear_sets()
         ring2="Acumen Ring",
         waist="Hurch'lan Sash",
         legs="Shneddick Tights +1",
-        feet="Mochizuki Kyahan +1"
+        feet="Hachiya Kyahan +1"
     }
     
     -- Sets to return to when not performing an action.
@@ -183,13 +182,13 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-    	body="Mochizuki Chainmail +1",
-        hands="Mochizuki Tekko +1",
+    	body="Hachiya Chainmail +1",
+        hands="Hachiya Tekko +1",
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
     	back="Atheling Mantle",
         waist="Patentia Sash",
-        legs="Mochizuki Hakama +1",
+        legs="Hachiya Hakama +1",
         feet="Danzo sune-ate"
      }
 
@@ -243,7 +242,7 @@ function init_gear_sets()
     })
     
     sets.DayMovement = {feet="Danzo sune-ate"}
-    sets.NightMovement = {feet="Hachiya Kyahan"}
+    sets.NightMovement = {feet="Hachiya Kyahan +1"}
 
     sets.NightAccAmmo = {ammo="Fire Bomblet"}
     sets.DayAccAmmo = {ammo="Tengu-no-Hane"}
