@@ -24,8 +24,8 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
-    state.CombatForm = get_combat_form()
-    state.CombatWeapon = get_combat_weapon()
+    get_combat_form()
+    get_combat_weapon()
     
     state.Buff.Sekkanoki = buffactive.sekkanoki or false
     state.Buff.Sengikori = buffactive.sengikori or false
@@ -683,8 +683,8 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
-	state.CombatForm = get_combat_form()
-    state.CombatWeapon = get_combat_weapon()
+	get_combat_form()
+    get_combat_weapon()
 end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
@@ -698,18 +698,18 @@ end
 function get_combat_weapon()
     if player.equipment.range == 'Yoichinoyumi' then
         if player.equipment.main == 'Amanomurakumo' then
-            return 'AmanoYoichi'
+            state.CombatWeapon:set('AmanoYoichi')
         else
-            return 'Yoichi'
+            state.CombatWeapon:set('Yoichi')
         end
     else
-        return player.equipment.main
+        state.CombatWeapon:set(player.equipment.main)
     end
 end
 
 function get_combat_form()
     if areas.Adoulin:contains(world.area) and buffactive.ionis then
-    	return 'Adoulin'
+    	state.CombatForm:set('Adoulin')
     end
 end
 
