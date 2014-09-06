@@ -13,7 +13,7 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
-	state.CombatForm = get_combat_form()
+	get_combat_form()
     include('Mote-TreasureHunter')
     state.TreasureMode = 'Tag'
 	
@@ -522,7 +522,7 @@ end
 function job_update(cmdParams, eventArgs)
 	classes.CustomMeleeGroups:clear()
 	th_update(cmdParams, eventArgs)
-	state.CombatForm = get_combat_form()
+	get_combat_form()
 end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
@@ -535,7 +535,7 @@ end
 
 function get_combat_form()
 	if areas.Adoulin:contains(world.area) and buffactive.ionis then
-		return 'Adoulin'
+		state.CombatForm:set('Adoulin')
 	end
 end
 
