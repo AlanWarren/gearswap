@@ -696,6 +696,9 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
+    if state.PhysicalDefenseMode ~= 'PDT' then
+	    idleSet = set_combine(idleSet, select_movement())
+    end
 	if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
 		idleSet = set_combine(idleSet, sets.buff.Migawari)
 	end
