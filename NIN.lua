@@ -6,6 +6,7 @@
 -- Initialization function for this job file.
 function get_sets()
 	-- Load and initialize the include file.
+    mote_include_version = 2
 	include('Mote-Include.lua')
 end
 
@@ -30,17 +31,15 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     -- Options: Override default values
-    options.OffenseModes = {'Normal', 'Mid', 'Acc'}
-    options.DefenseModes = {'Normal', 'Evasion', 'PDT'}
-    options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
-    options.CastingModes = {'Normal'}
-    options.IdleModes = {'Normal'}
-    options.RestingModes = {'Normal'}
-    options.PhysicalDefenseModes = {'PDT'}
-    options.MagicalDefenseModes = {'MDT'}
+    state.OffenseMode:options('Normal', 'Mid', 'Acc')
+    state.HybridMode.options('Normal', 'Evasion', 'PDT')
+    state.WeaponskillMode:options(('Normal', 'Mid', 'Acc')
+    state.CastingMode:options('Normal')
+    state.IdleMode:options('Normal')
+    state.RestingMode:options('Normal')
+    state.PhysicalDefenseMode:options('PDT')
+    state.MagicalDefenseMode:options('MDT')
 
-    state.Defense.PhysicalMode = 'PDT'
-   
     select_default_macro_book()
     
 	send_command('bind ^= gs c cycle treasuremode')
@@ -808,9 +807,9 @@ end
 
 function get_combat_weapon()
     if player.equipment.main == 'Taimakuniyuki' or player.equipment.main == 'Ark Scythe' then
-        state.CombatWeapon = 'TwoHanded'
+        state.CombatWeapon:set('TwoHanded')
     else
-        state.CombatWeapon = nil
+        state.CombatWeapon:reset()
     end
 end
 
