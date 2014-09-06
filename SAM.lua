@@ -18,6 +18,7 @@
 -- Initialization function for this job file.
 function get_sets()
 	-- Load and initialize the include file.
+    mote_include_version = 2
 	include('Mote-Include.lua')
 end
 
@@ -37,16 +38,13 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     -- Options: Override default values
-    options.OffenseModes = {'Normal', 'Mid', 'Acc'}
-    options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
-    options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
-    options.CastingModes = {'Normal'}
-    options.IdleModes = {'Normal'}
-    options.RestingModes = {'Normal'}
-    options.PhysicalDefenseModes = {'PDT', 'Reraise'}
-    options.MagicalDefenseModes = {'MDT'}
-    
-    state.Defense.PhysicalMode = 'PDT'
+    state.OffenseMode:options('Normal', 'Mid', 'Acc')
+    state.HybridMode:options('Normal', 'PDT', 'Reraise')
+    state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
+    state.IdleMode:options('Normal')
+    state.RestingMode:options('Normal')
+    state.PhysicalDefenseMode:options('PDT', 'Reraise')
+    state.MagicalDefenseMode:options('MDT')
     
     gear.RAarrow = "Tulfaire Arrow"
     
@@ -585,7 +583,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 	end
     if spell.english == "Seigan" then
         -- Third Eye gearset is only called if we're in PDT mode
-        if state.DefenseMode == 'PDT' then
+        if state.HybridMode.value == 'PDT' or state.PhysicalDefenseMode.value == 'PDT' then
             equip(sets.thirdeye)
         end
     end
@@ -607,12 +605,12 @@ end
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
 	-- Effectively lock these items in place.
-	if state.DefenseMode == 'Reraise' or
-		(state.Defense.Active and state.Defense.Type == 'Physical' and state.Defense.PhysicalMode == 'Reraise') then
+	if state.HybridMode.value == 'Reraise' or
+    (state.DefenseMode.value == 'Physical' and state.PhysicalDefenseMode.value == 'Reraise') then
 		equip(sets.Reraise)
 	end
     if state.Buff['Seigan'] then
-        if state.DefenseMode == 'PDT' then
+        if state.DefenseMode.value == 'PDT' then
             equip(sets.thirdeye)
         end
     end
@@ -633,7 +631,7 @@ end
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
     if state.Buff['Seigan'] then
-        if state.DefenseMode == 'PDT' then
+        if state.DefenseMode.value == 'PDT' then
     	    meleeSet = set_combine(meleeSet, sets.thirdeye)
         end
     end
@@ -651,7 +649,7 @@ end
 -- General hooks for other events.
 -------------------------------------------------------------------------------------------------------------------
 function job_status_change(newStatus, oldStatus, eventArgs)
-    if newStatus == 'Engaged' and state.DefenseMode == 'PDT' then
+    if newStatus == 'Engaged' and state.DefenseMode.value == 'PDT' then
         if state.Buff['Seigan'] then
             equip(sets.thirdeye)
         end
