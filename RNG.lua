@@ -45,6 +45,7 @@
 --]]
  
 function get_sets()
+        mote_include_version = 2
         -- Load and initialize the include file.
         include('Mote-Include.lua')
 end
@@ -56,21 +57,20 @@ end
 -- setup vars that are user-dependent. 
 function user_setup()
         -- Options: Override default values
-        options.OffenseModes = {'Normal', 'Melee'}
-        options.RangedModes = {'Normal', 'Mid', 'Acc'}
-        options.DefenseModes = {'Normal', 'PDT'}
-        options.IdleModes = {'Normal', 'PDT'}
-        options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
-        options.PhysicalDefenseModes = {'PDT'}
-        options.MagicalDefenseModes = {'MDT'}
-        state.Defense.PhysicalMode = 'PDT'
+        state.OffenseMode:options('Normal', 'Melee')
+        state.RangedMode:options('Normal', 'Mid', 'Acc')
+        state.HybridMode:options('Normal', 'PDT')
+        state.IdleMode:options('Normal', 'PDT')
+        state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
+        state.PhysicalDefenseMode:options('PDT')
+        state.MagicalDefenseMode:options('MDT')
  
         state.Buff.Barrage = buffactive.Barrage or false
         state.Buff.Camouflage = buffactive.Camouflage or false
         state.Buff.Overkill = buffactive.Overkill or false
 
         -- settings
-        state.AutoRA = false
+        state.AutoRA = M(false, "AutoRA")
         auto_gun_ws = "Coronach"
         auto_bow_ws = "Namas Arrow"
 
@@ -100,7 +100,7 @@ function user_setup()
 
         send_command('bind f9 gs c cycle RangedMode')
         send_command('bind !f9 gs c cycle OffenseMode')
-        send_command('bind ^f9 gs c cycle DefenseMode')
+        send_command('bind ^f9 gs c cycle HybridMode')
         send_command('bind ^] gs c cycle WeaponskillMode')
         send_command('bind ^- gs c toggle AutoRA')
         send_command('bind ^[ input /lockstyle on')
@@ -150,7 +150,7 @@ function job_precast(spell, action, spellMap, eventArgs)
         end
         -- add support for RangedMode toggles to EES
         if spell.english == 'Eagle Eye Shot' then
-            classes.JAMode = state.RangedMode
+            classes.JAMode = state.RangedMode.value
         end
         -- Safety checks for weaponskills 
         if spell.type:lower() == 'weaponskill' then
@@ -272,10 +272,10 @@ function job_handle_equipping_gear(status, eventArgs)
 end
  
 function customize_idle_set(idleSet)
-    if state.DefenseMode == 'PDT' then
-        state.IdleMode = 'PDT'
-    elseif state.DefenseMode ~= 'PDT' then
-        state.IdleMode = 'Normal'
+    if state.HybridMode.value == 'PDT' then
+        state.IdleMode.value = 'PDT'
+    elseif state.HybridMode.value ~= 'PDT' then
+        state.IdleMode.value = 'Normal'
     end
 	if state.Buff.Camouflage then
 		idleSet = set_combine(idleSet, sets.buff.Camouflage)
@@ -332,31 +332,6 @@ function job_update(cmdParams, eventArgs)
     end
 end
  
--- Job-specific toggles.
-function job_toggle_state(field)
-    if field:lower() == 'autora' then
-        state.AutoRA = not state.AutoRA
-        return state.AutoRA
-    end
-end
- 
--- Request job-specific mode lists.
--- Return the list, and the current value for the requested field.
-function job_get_option_modes(field)
-    if field:lower() == 'autora' then
-        return state.AutoRA
-    end
-end
- 
--- Set job-specific mode values.
--- Return true if we recognize and set the requested field.
-function job_set_option_mode(field, val)
-    if field:lower() == 'autora' then
-        state.AutoRA = val
-        return true
-    end
-end
- 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
     local msg = ''
@@ -366,7 +341,7 @@ function display_current_job_state(eventArgs)
         msg = '[Auto RA: OFF]'
     end
 
-    add_to_chat(122, 'Ranged: '..state.RangedMode..'/'..state.DefenseMode..', WS: '..state.WeaponskillMode..', '..msg)
+    add_to_chat(122, 'Ranged: '..state.RangedMode.value..'/'..state.HybridMode.value..', WS: '..state.WeaponskillMode.value..', '..msg)
     
     eventArgs.handled = true
  
