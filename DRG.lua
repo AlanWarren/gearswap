@@ -6,6 +6,7 @@
 
 -- Initialization function for this job file.
 function get_sets()
+    mote_include_version = 2
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
 end
@@ -15,7 +16,7 @@ end
 function job_setup()
 	get_combat_form()
     include('Mote-TreasureHunter')
-    state.TreasureMode = 'Tag'
+    state.TreasureMode.value = 'Tag'
 	
 	state.Buff = {}
 	-- JA IDs for actions that always have TH: Provoke, Animated Flourish
@@ -28,16 +29,14 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-	options.OffenseModes = {'Normal', 'Mid', 'Acc'}
-	options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
-	options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
-	options.CastingModes = {'Normal'}
-	options.IdleModes = {'Normal'}
-	options.RestingModes = {'Normal'}
-	options.PhysicalDefenseModes = {'PDT', 'Reraise'}
-	options.MagicalDefenseModes = {'MDT'}
-
-	state.Defense.PhysicalMode = 'PDT'
+	state.OffenseMode:options('Normal', 'Mid', 'Acc')
+	state.HybridMode:options('Normal', 'PDT', 'Reraise')
+	state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
+	state.CastingMode:options('Normal')
+	state.IdleMode:options('Normal')
+	state.RestingMode:options('Normal')
+	state.PhysicalDefenseMode:options('PDT', 'Reraise')
+	state.MagicalDefenseMode:options('MDT')
 
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
@@ -444,9 +443,9 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-    custom_aftermath_timers_aftercast(spell)
-    if state.DefenseMode == 'Reraise' or
-		(state.Defense.Active and state.Defense.Type == 'Physical' and state.Defense.PhysicalMode == 'Reraise') then
+	if state.HybridMode.value == 'Reraise' or
+    (state.HybridMode.value == 'Physical' and state.PhysicalDefenseMode.value == 'Reraise') then
+		equip(sets.Reraise)
 	end
 end
 
@@ -492,7 +491,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if state.TreasureMode == 'Fulltime' then
+	if state.TreasureMode.value == 'Fulltime' then
 		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
 	end
 	return meleeSet
@@ -560,13 +559,13 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- State buff checks that will equip buff gear and mark the event as handled.
 function check_buff(buff_name, eventArgs)
-	if state.Buff[buff_name] then
-		equip(sets.buff[buff_name] or {})
-		if state.TreasureMode == 'Fulltime' then
-			equip(sets.TreasureHunter)
-		end
-		eventArgs.handled = true
-	end
+    if state.Buff[buff_name] then
+            equip(sets.buff[buff_name] or {})
+        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
+            equip(sets.TreasureHunter)
+        end
+        eventArgs.handled = true
+    end
 end
 -- Check for various actions that we've specified in user code as being used with TH gear.
 -- This will only ever be called if TreasureMode is not 'None'.

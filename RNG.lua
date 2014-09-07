@@ -146,7 +146,7 @@ function job_precast(spell, action, spellMap, eventArgs)
         end
 
         if spell.action_type == 'Ranged Attack' then
-            state.CombatWeapon = player.equipment.range
+            state.CombatWeapon:set(player.equipment.range)
         end
         -- add support for RangedMode toggles to EES
         if spell.english == 'Eagle Eye Shot' then
@@ -295,7 +295,7 @@ end
  
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
-         state.CombatWeapon = player.equipment.range
+         state.CombatWeapon:set(player.equipment.range)
          select_earring()
     end
 
@@ -359,12 +359,12 @@ end
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_form()
     if player.equipment.main == gear.Stave then
-        state.CombatForm = "Stave"
+        state.CombatForm:set("Stave")
     else
         if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
-            state.CombatForm = "DW"
+            state.CombatForm:set("DW")
         else
-            state.CombatForm = nil
+            state.CombatForm:reset()
         end
     end
 end
