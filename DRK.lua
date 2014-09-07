@@ -249,7 +249,7 @@
             sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
                 neck="Breeze Gorget",
                 back="Niht Mantle",
-                waist="Thunder Belt",
+                waist="Soil Belt"
             })
             sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS['Resolution'], {
                 head="Yaoyotl Helm",
