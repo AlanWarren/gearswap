@@ -11,6 +11,7 @@
 --
     -- Initialization function for this job file.
     function get_sets()
+            mote_include_version = 2
             -- Load and initialize the include file.
             include('Mote-Include.lua')
     end
@@ -33,17 +34,15 @@
     -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
     function user_setup()
             -- Options: Override default values
-            options.OffenseModes = {'Normal', 'Mid', 'Acc'}
-            options.DefenseModes = {'Normal', 'PDT', 'Reraise'}
-            options.WeaponskillModes = {'Normal', 'Mid', 'Acc'}
-            options.CastingModes = {'Normal'}
-            options.IdleModes = {'Normal'}
-            options.RestingModes = {'Normal'}
-            options.PhysicalDefenseModes = {'PDT', 'Reraise'}
-            options.MagicalDefenseModes = {'MDT'}
+            state.OffenseMode:options('Normal', 'Mid', 'Acc')
+            state.HybridMode:options('Normal', 'PDT', 'Reraise')
+            state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
+            state.CastingMode:options('Normal')
+            state.IdleMode:options('Normal')
+            state.RestingMode:options('Normal')
+            state.PhysicalDefenseMode:options('PDT', 'Reraise')
+            state.MagicalDefenseMode:options('MDT')
      
-            state.Defense.PhysicalMode = 'PDT'
-			
             war_sj = player.sub_job == 'WAR' or false
 			
             adjust_engaged_sets()
@@ -594,8 +593,8 @@
     -- Run after the default midcast() is done.
     -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
     function job_post_midcast(spell, action, spellMap, eventArgs)
-        if state.DefenseMode == 'Reraise' or
-            (state.Defense.Active and state.Defense.Type == 'Physical' and state.Defense.PhysicalMode == 'Reraise') then
+	if state.HybridMode.value == 'Reraise' or
+        (state.HybridMode.value == 'Physical' and state.PhysicalDefenseMode.value == 'Reraise') then
             equip(sets.Reraise)
         end
     end
@@ -724,7 +723,7 @@ function adjust_engaged_sets()
 end
 
 function select_static_ammo()
-    if state.OffenseMode == 'Acc' or state.OffenseMode == 'Mid' then
+    if state.OffenseMode.value == 'Acc' or state.OffenseMode.value == 'Mid' then
 	    if world.time >= (18*60) or world.time <= (6*60) then
             return sets.NightAccAmmo
         else

@@ -606,7 +606,7 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
 	-- Effectively lock these items in place.
 	if state.HybridMode.value == 'Reraise' or
-    (state.DefenseMode.value == 'Physical' and state.PhysicalDefenseMode.value == 'Reraise') then
+    (state.HybridMode.value == 'Physical' and state.PhysicalDefenseMode.value == 'Reraise') then
 		equip(sets.Reraise)
 	end
     if state.Buff['Seigan'] then
