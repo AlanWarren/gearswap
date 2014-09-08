@@ -543,8 +543,8 @@ function init_gear_sets()
         waist="Thunder Belt",
         feet="Mochizuki Kyahan +1"
      })
-sets.precast.WS['Blade: Chi'] = sets.precast.WS['Aeolian Edge']
-sets.precast.WS['Blade: To'] = sets.precast.WS['Aeolian Edge']
+    sets.precast.WS['Blade: Chi'] = sets.precast.WS['Aeolian Edge']
+    sets.precast.WS['Blade: To'] = sets.precast.WS['Aeolian Edge']
 
 end
 
