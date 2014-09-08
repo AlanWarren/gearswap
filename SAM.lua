@@ -145,7 +145,6 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
-        body="Sakonji Domaru +1",
         neck="Aqua Gorget",
         waist="Metalsinger Belt"
     })
