@@ -162,7 +162,6 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
         neck="Breeze Gorget",
         feet="Ejekamal Boots",
-        legs="Otronif Brais +1",
         waist="Thunder Belt"
     })
     sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS.Acc, {
