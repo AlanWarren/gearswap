@@ -70,7 +70,7 @@ function user_setup()
         state.Buff.Overkill = buffactive.Overkill or false
 
         -- settings
-        --state.AutoRA = M(false, "AutoRA")
+        state.AutoRA = M(false, "AutoRA")
         auto_gun_ws = "Coronach"
         auto_bow_ws = "Namas Arrow"
 
@@ -102,7 +102,7 @@ function user_setup()
         send_command('bind !f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
         send_command('bind ^] gs c cycle WeaponskillMode')
-        --send_command('bind ^- gs c toggle AutoRA')
+        send_command('bind ^- gs c toggle AutoRA')
         send_command('bind ^[ input /lockstyle on')
         send_command('bind ![ input /lockstyle off')
         
@@ -126,10 +126,10 @@ end
 function job_pretarget(spell, action, spellMap, eventArgs)
     -- If autora enabled, use WS automatically at 100+ TP
     if spell.action_type == 'Ranged Attack' then
-        --if player.tp >= 1000 and state.AutoRA and not buffactive.amnesia then
-        --    cancel_spell()
-        --    use_weaponskill()
-        --end
+        if player.tp >= 1000 and state.AutoRA.value and not buffactive.amnesia then
+            cancel_spell()
+            use_weaponskill()
+        end
     end
 end 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -163,11 +163,11 @@ function job_precast(spell, action, spellMap, eventArgs)
                 add_to_chat(122,"Outside WS Range! /Canceling")
                 eventArgs.cancel = true
                 return
+            
+            elseif state.DefenseMode.value ~= 'None' then
+                -- Don't gearswap for weaponskills when Defense is on.
+                eventArgs.handled = true
             end
-            --elseif state.Defense.Active then
-            --    -- Don't gearswap for weaponskills when Defense is on.
-            --    eventArgs.handled = true
-            --end
         end
         -- Ammo checks
 	    if spell.action_type == 'Ranged Attack' or
@@ -206,8 +206,8 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
     -- autora
-    if (spell.action_type == 'Ranged Attack' or spell.type:lower() == 'weaponskill') then
-        --use_ra(spell)
+    if (spell.action_type == 'Ranged Attack' or spell.type:lower() == 'weaponskill') and state.AutoRA.value then
+        use_ra(spell)
     end
 
     if state.Buff[spell.name] ~= nil then
@@ -332,14 +332,39 @@ function job_update(cmdParams, eventArgs)
     end
 end
  
+---- Job-specific toggles.
+--function job_toggle_state(field)
+--    if field:lower() == 'autora' then
+--        state.AutoRA = not state.AutoRA
+--        return state.AutoRA
+--    end
+--end
+ 
+---- Request job-specific mode lists.
+---- Return the list, and the current value for the requested field.
+--function job_get_option_modes(field)
+--    if field:lower() == 'autora' then
+--        return state.AutoRA
+--    end
+--end
+-- 
+---- Set job-specific mode values.
+---- Return true if we recognize and set the requested field.
+--function job_set_option_mode(field, val)
+--    if field:lower() == 'autora' then
+--        state.AutoRA = val
+--        return true
+--    end
+--end
+ 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
     local msg = ''
-    --if state.AutoRA then
-    --    msg = '[Auto RA: ON]'
-    --else
-    --    msg = '[Auto RA: OFF]'
-    --end
+    if state.AutoRA then
+        msg = '[Auto RA: ON]'
+    else
+        msg = '[Auto RA: OFF]'
+    end
 
     add_to_chat(122, 'Ranged: '..state.RangedMode.value..'/'..state.HybridMode.value..', WS: '..state.WeaponskillMode.value..', '..msg)
     
