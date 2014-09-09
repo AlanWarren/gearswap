@@ -143,8 +143,8 @@ function init_gear_sets()
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
         neck="Flame Gorget", 
         hands="Cizin Mufflers +1",
-        waist="Light Belt",
-        ring2="Pyrosoul Ring",
+        waist="Metalsinger Belt",
+        back="Rancorous Mantle",
         legs="Lancer's Cuissots +2"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {head="Yaoyotl Helm"})
