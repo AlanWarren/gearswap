@@ -145,7 +145,8 @@ function init_gear_sets()
         hands="Cizin Mufflers +1",
         waist="Metalsinger Belt",
         back="Rancorous Mantle",
-        legs="Lancer's Cuissots +2"
+        legs="Lancer's Cuissots +2",
+        feet="Cizin Greaves +1"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {head="Yaoyotl Helm"})
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
