@@ -268,7 +268,7 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1=gear.Earring,
             back="Lutian Cape",
-            hands="Seiryu's Kote",
+            hands="Arcadian Bracers +1",
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         })
