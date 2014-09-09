@@ -187,7 +187,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Metalsinger Belt",
         legs="Crimson Cuisses",
-        feet="Ejekamal Boots"
+        feet="Cizin Greaves +1"
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
