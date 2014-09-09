@@ -299,6 +299,12 @@ function init_gear_sets()
         legs="Cizin Breeches +1",
     })
 
+    sets.engaged.War = set_combine(sets.engaged, {
+        head="Yaoyotl Helm",
+        feet="Mikinaak Greaves",
+        ring2="K'ayres Ring"
+    })
+
 	sets.engaged.Reraise = set_combine(sets.engaged, {
 		head="Twilight Helm",
 		body="Twilight Mail"
