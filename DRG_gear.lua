@@ -300,7 +300,7 @@ function init_gear_sets()
     })
 
     sets.engaged.War = set_combine(sets.engaged, {
-        head="Yaoyotl Helm",
+        --head="Yaoyotl Helm",
         feet="Mikinaak Greaves",
         ring2="K'ayres Ring"
     })
