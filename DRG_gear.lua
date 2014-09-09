@@ -15,16 +15,16 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Lancer's Plackart +2",
-        hands="Lancer's Vambraces +2",
+        hands="Xaddi Gauntlets",
         ring1="Rajas Ring",
-        ring2="Oneiros Ring",
+        ring2="K'ayres Ring",
 		back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Ares' Flanchard +1",
         feet="Cizin Greaves +1"
     }
 
-	sets.precast.JA['Ancient Circle'] = {}
+	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais" }
 	sets.TreasureHunter = {waist="Chaac Belt"}
 
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
@@ -38,9 +38,9 @@ function init_gear_sets()
     })
 	sets.precast.JA['Super Jump'] = sets.precast.JA.Jump
 
-	sets.precast.JA['Spirit Link'] = {hands="Lancer's Vambraces +2"}
+	sets.precast.JA['Spirit Link'] = {hands="Lancer's Vambraces +2"} -- head="Vishap Armet +1"
 	sets.precast.JA['Call Wyvern'] = {body="Wyrm Mail"}
-	sets.precast.JA['Deep Breathing'] = {--head="Wyrm Armet +1"
+	sets.precast.JA['Deep Breathing'] = {--head="Wyrm Armet +1" or Petroslaver Armet +1
     }
 	sets.precast.JA['Spirit Surge'] = { --body="Wyrm Mail +2"
     }
