@@ -19,9 +19,8 @@ function job_setup()
     include('Mote-TreasureHunter')
     --state.TreasureMode.value = 'Tag'
 
-    state.AmmoMode = M{['description']='Ammo Mode', 'Yetshila', 'Tengu-No-Hane', 'Fire Bomblet'}
-    Ammo = {name="Yetshila"}
-    send_command('bind f8 gs c cycle AmmoMode')
+    state.DayOrNightAmmo = M{['description']='Day or Night Ammo', 'Fire Bomblet', 'Tengu-No-Hane', }
+    gear.Ammo = "Fire Bomblet"
 
 	determine_haste_group()
 	-- For th_action_check():
@@ -47,6 +46,7 @@ function user_setup()
 	send_command('bind ^= gs c cycle treasuremode')
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
+    send_command('bind !- gs c cycle DayOrNightAmmo')
     send_command('bind ^- gs c toggle HasteMode')
 end
 
@@ -56,6 +56,7 @@ function file_unload()
     send_command('unbind ^[')
     send_command('unbind ![')
     send_command('unbind ^-')
+    send_command('unbind !-')
     send_command('unbind ^=')
 end
 
@@ -256,13 +257,11 @@ end
 function select_static_ammo()
     if state.OffenseMode.value == 'Acc' or state.OffenseMode.value == 'Mid' then
 	    if world.time >= (18*60) or world.time <= (6*60) then
-            return sets.NightAccAmmo
+            state.DayOrNightAmmo:cycle()
         else
-            return sets.DayAccAmmo
+            state.DayOrNightAmmo:cycleback()
 	    end
     else
-        return sets.RegularAmmo
-    end
 end
 
 function get_combat_weapon()
@@ -313,9 +312,9 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    if stateField == 'Ammo Mode' then
-        Ammo.name = newValue
-        add_to_chat(122, "Ammo: "..Ammo)
+    if stateField == 'Day or Night Ammo' then
+        gear.Ammo = newValue
+        add_to_chat(122, "Ammo: "..gear.Ammo)
     end
 end
 
