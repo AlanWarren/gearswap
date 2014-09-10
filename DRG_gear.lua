@@ -305,6 +305,7 @@ function init_gear_sets()
         feet="Mikinaak Greaves",
         ring2="K'ayres Ring"
     })
+    sets.engaged.War.Mid = sets.engaged.Mid
 
 	sets.engaged.Reraise = set_combine(sets.engaged, {
 		head="Twilight Helm",
