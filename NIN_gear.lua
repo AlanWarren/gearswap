@@ -196,7 +196,7 @@ function init_gear_sets()
     -- Normal melee group without buffs
     -- STP actually matters 20 is goal for DPS
     sets.engaged = {
-        --ammo="Yetshila",
+        ammo="Yetshila",
     	head="Ptica Headgear",
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
@@ -215,12 +215,13 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Qaaxo Harness",
+        waist="Windbuffet Belt",
         legs="Otronif Brais +1",
         feet="Qaaxo Leggings"
     })
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
-        --ammo="Yetshila",
+        ammo=state.DayOrNightAmmo.value,
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
         ring1="Rajas Ring",
@@ -229,7 +230,7 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = {
-        --ammo="Yetshila",
+        ammo=state.DayOrNightAmmo.value,
         head="Ptica Headgear",
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
@@ -302,7 +303,7 @@ function init_gear_sets()
     }
 
     sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
-        --ammo="Yetshila",
+        ammo=state.DayOrNightAmmo.value,
         body="Mochizuki Chainmail +1",
         ring1="Mars's Ring",
         hands="Otronif Gloves +1",
@@ -332,7 +333,6 @@ function init_gear_sets()
     
     -- 43
     sets.engaged.Haste_43 = set_combine(sets.engaged, {
-        --ammo="Yetshila",
     	head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
@@ -479,7 +479,7 @@ function init_gear_sets()
     
     -- BLADE: HI
     sets.Hi = {
-        --ammo="Yetshila",
+        ammo="Yetshila",
         head="Uk'uxkaj Cap",
         body="Qaaxo Harness",
         neck="Hope Torque",
