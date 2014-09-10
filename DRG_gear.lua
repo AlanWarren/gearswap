@@ -25,7 +25,7 @@ function init_gear_sets()
     }
 
 	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais" }
-	sets.TreasureHunter = {waist="Chaac Belt", back="Mecistopins Mantle"}
+	sets.TreasureHunter = {waist="Chaac Belt"}
 
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
     }) 
@@ -250,7 +250,8 @@ function init_gear_sets()
         hands="Cizin Mufflers +1",
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
-		back="Atheling Mantle",
+		--back="Atheling Mantle",
+        back="Mecistopins Mantle",
         waist="Windbuffet Belt",
         legs="Xaddi Cuisses",
         feet="Ejekamal Boots"
