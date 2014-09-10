@@ -19,6 +19,10 @@ function job_setup()
     include('Mote-TreasureHunter')
     --state.TreasureMode.value = 'Tag'
 
+    state.AmmoMode = M{['description']='Ammo Mode', 'Yetshila', 'Tengu-No-Hane', 'Fire Bomblet'}
+    Ammo = {name="Yetshila"}
+    send_command('bind f8 gs c cycle AmmoMode')
+
 	determine_haste_group()
 	-- For th_action_check():
 	-- JA IDs for actions that always have TH: Provoke, Animated Flourish
@@ -305,6 +309,14 @@ function determine_haste_group()
         classes.CustomMeleeGroups:append('Haste_20')
     end
 
+end
+
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+    if stateField == 'Ammo Mode' then
+        Ammo.name = newValue
+        add_to_chat(122, "Ammo: "..Ammo)
+    end
 end
 
 --- Custom spell mapping.
