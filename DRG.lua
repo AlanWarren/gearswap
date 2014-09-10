@@ -37,6 +37,8 @@ function user_setup()
 	state.RestingMode:options('Normal')
 	state.PhysicalDefenseMode:options('PDT', 'Reraise')
 	state.MagicalDefenseMode:options('MDT')
+    
+    war_sj = player.sub_job == 'WAR' or false
 
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
@@ -214,6 +216,7 @@ function job_buff_change(buff, gain)
 end
 
 function job_update(cmdParams, eventArgs)
+    war_sj = player.sub_job == 'WAR' or false
 	classes.CustomMeleeGroups:clear()
 	th_update(cmdParams, eventArgs)
 	get_combat_form()
@@ -228,9 +231,15 @@ function job_self_command(cmdParams, eventArgs)
 end
 
 function get_combat_form()
-	if areas.Adoulin:contains(world.area) and buffactive.ionis then
-		state.CombatForm:set('Adoulin')
-	end
+	--if areas.Adoulin:contains(world.area) and buffactive.ionis then
+	--	state.CombatForm:set('Adoulin')
+	--end
+
+    if war_sj then
+        state.CombatForm:set("War")
+    else
+        state.CombatForm:reset()
+    end
 end
 
 

@@ -143,9 +143,10 @@ function init_gear_sets()
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
         neck="Flame Gorget", 
         hands="Cizin Mufflers +1",
-        waist="Light Belt",
-        ring2="Pyrosoul Ring",
-        legs="Lancer's Cuissots +2"
+        waist="Metalsinger Belt",
+        back="Rancorous Mantle",
+        legs="Lancer's Cuissots +2",
+        feet="Cizin Greaves +1"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {head="Yaoyotl Helm"})
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
@@ -187,7 +188,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
         waist="Metalsinger Belt",
         legs="Crimson Cuisses",
-        feet="Ejekamal Boots"
+        feet="Cizin Greaves +1"
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
@@ -298,6 +299,13 @@ function init_gear_sets()
         back="Repulse Mantle",
         legs="Cizin Breeches +1",
     })
+
+    sets.engaged.War = set_combine(sets.engaged, {
+        --head="Yaoyotl Helm",
+        feet="Mikinaak Greaves",
+        ring2="K'ayres Ring"
+    })
+    sets.engaged.War.Mid = sets.engaged.Mid
 
 	sets.engaged.Reraise = set_combine(sets.engaged, {
 		head="Twilight Helm",
