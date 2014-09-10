@@ -24,7 +24,7 @@ function init_gear_sets()
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
     
-	sets.TreasureHunter = {waist="Chaac Belt"}
+	sets.TreasureHunter = {waist="Chaac Belt", back="Mecistopins Mantle"}
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
     	head="Whirlpool Mask",
