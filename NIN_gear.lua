@@ -389,9 +389,9 @@ function init_gear_sets()
     
     -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged, {
-        head="Ptica Headgear",
+        head="Felistris Mask",
         ear1="Brutal Earring",
-        ear2="Trux Earring",
+        ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
         ring1="Rajas Ring",
