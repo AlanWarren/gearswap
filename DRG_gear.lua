@@ -38,7 +38,7 @@ function init_gear_sets()
     })
 	sets.precast.JA['Super Jump'] = sets.precast.JA.Jump
 
-	sets.precast.JA['Spirit Link'] = {hands="Lancer's Vambraces +2"} -- head="Vishap Armet +1"
+	sets.precast.JA['Spirit Link'] = {hands="Lancer's Vambraces +2", head="Vishap Armet +1"}
 	sets.precast.JA['Call Wyvern'] = {body="Wyrm Mail"}
 	sets.precast.JA['Deep Breathing'] = {--head="Wyrm Armet +1" or Petroslaver Armet +1
     }
