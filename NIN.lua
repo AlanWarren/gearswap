@@ -304,7 +304,7 @@ function determine_haste_group()
     -- buffactive[580] = geo haste
     -- buffactive[33] = regular haste
     -- state.HasteMode = toggle for when you know Haste II is being cast on you
-    if (state.HasteMode.value and buffactive.haste) and buffactive.march then
+    if ((state.HasteMode.value and buffactive.haste) and buffactive.march) then
         add_to_chat(8, '-------------Max-Haste 45%++--------------')
         classes.CustomMeleeGroups:append('Haste_43')
     elseif ( (buffactive.embrava or buffactive.haste) and buffactive.march == 2 ) then
