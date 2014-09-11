@@ -20,14 +20,14 @@
  -- SamRoll is applied automatically whenever you have the roll on you. 
  -- SAM is used when you're RNG/SAM 
  -- Decoy mode helps with enmity control. I only use this with Yoichi, but if desired you can also use it with gun
-    by toggling use_decoy_with_gun = true
+    by toggling GunDecoy  (gs c toggle GunDecoy)
     ** If you do this, you'll need to create either a weapon specific set, or general set with Decoy appended.
     i.e. sets.midcast.RA.Lionsquall.Decoy = {}
     i.e. sets.midcast.RA.Decoy = {}
     ** The idea is to put -enmity gear in your regular set, and take it off in the Decoy set. So, you will be shooting
     from sets.midcast.RA.Decoy when decoy is up, and sets.midcast.RA when Decoy is down. 
 
--- If you don't own Fenrir's earring, or care to use it, then set use_night_earring to false.  
+-- If you don't own Fenrir's earring, or care to use it, then toggle NightEarring to false.   (gs c toggle NightEarring)
 
  * Auto RA
  - You can use the built in hotkey (CTRL -) or create a macro. (like below) Note "AutoRA" is case sensitive
@@ -76,8 +76,8 @@ function user_setup()
         auto_gun_ws = "Coronach"
         auto_bow_ws = "Namas Arrow"
 
-        use_decoy_with_gun = false
-        use_night_earring = true
+        state.GunDecoy = M(false, 'Use Decoy with Gun')
+        state.NightEarring = M(true, 'Use Fenrir Earring')
 
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
@@ -101,6 +101,8 @@ function user_setup()
         select_default_macro_book()
 
         send_command('bind != gs c toggle CapacityMode')
+        send_command('bind ^= gs c toggle GunDecoy')
+        send_command('bind @= gs c toggle NightEarring') -- @ is the Windows key
         send_command('bind f9 gs c cycle RangedMode')
         send_command('bind !f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
@@ -120,6 +122,8 @@ function file_unload()
     send_command('unbind ^[')
     send_command('unbind ![')
     send_command('unbind !=')
+    send_command('unbind ^=')
+    send_command('unbind @=')
     send_command('unbind ^-')
 end
  
@@ -253,7 +257,7 @@ function job_buff_change(buff, gain)
 
         if (buff == "Decoy Shot" and gain) or buffactive['Decoy Shot'] then
             -- Only append Decoy if we're using bow, or changed the setting to force it
-            if player.equipment.range == gear.Bow or use_decoy_with_gun then
+            if player.equipment.range == gear.Bow or GunDecoy.value then
                 classes.CustomRangedGroups:append('Decoy')
             end
         end
@@ -415,7 +419,7 @@ function select_earring()
     -- world.time is given in minutes into each day
     -- 7:00 AM would be 420 minutes
     -- 17:00 PM would be 1020 minutes
-    if world.time >= (18*60) or world.time <= (8*60) and use_night_earring then
+    if world.time >= (18*60) or world.time <= (8*60) and NightEarring.value then
         gear.Earring.name = gear.NightEarring
     else
         gear.Earring.name = gear.DayEarring
@@ -425,7 +429,7 @@ end
 function get_custom_ranged_groups()
 	classes.CustomRangedGroups:clear()
     
-    if player.equipment.range == gear.Bow or use_decoy_with_gun then
+    if player.equipment.range == gear.Bow or GunDecoy.value then
         if buffactive['Decoy Shot'] then
 		    classes.CustomRangedGroups:append('Decoy')
         end
