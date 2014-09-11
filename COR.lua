@@ -86,7 +86,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 	end
 
 	-- gear sets
-	if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") and state.LuzafRing then
+	if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") and state.LuzafRing.value then
 		equip(sets.precast.LuzafRing)
 	elseif spell.type == 'CorsairShot' and state.CastingMode.value == 'Resistant' then
 		classes.CustomClass = 'Acc'
@@ -147,8 +147,8 @@ end
 -- Job-specific toggles.
 function job_toggle_state(field)
 	if field:lower() == 'luzaf' then
-		state.LuzafRing = not state.LuzafRing
-		return "Use of Luzaf Ring", state.LuzafRing
+		state.LuzafRing.value = not state.LuzafRing.value
+		return "Use of Luzaf Ring", state.LuzafRing.value
 	end
 end
 
