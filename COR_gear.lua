@@ -81,7 +81,7 @@ function init_gear_sets()
 		back="Buquwik Cape",
         waist=gear.ElementalBelt,
         legs="Nahtirah Trousers",
-        feet="Iuitl Gaiters +1"
+        feet="Scopuli Nails +1"
     }
 
 
