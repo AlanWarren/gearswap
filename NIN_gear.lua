@@ -221,7 +221,7 @@ function init_gear_sets()
     })
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
-        ammo=state.DayOrNightAmmo.value,
+        ammo="Yetshila",
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
         ring1="Rajas Ring",
@@ -230,7 +230,7 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = {
-        ammo=state.DayOrNightAmmo.value,
+        ammo=gear.Ammo,
         head="Ptica Headgear",
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
@@ -303,7 +303,7 @@ function init_gear_sets()
     }
 
     sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
-        ammo=state.DayOrNightAmmo.value,
+        ammo=gear.Ammo,
         body="Mochizuki Chainmail +1",
         ring1="Mars's Ring",
         hands="Otronif Gloves +1",

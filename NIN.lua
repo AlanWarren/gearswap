@@ -317,7 +317,7 @@ end
 function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Day or Night Ammo' then
         gear.Ammo = newValue
-        add_to_chat(122, "Ammo: "..gear.Ammo)
+        --add_to_chat(122, "Ammo: "..gear.Ammo)
     end
 end
 
