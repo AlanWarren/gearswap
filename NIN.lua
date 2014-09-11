@@ -16,6 +16,7 @@ function job_setup()
 	state.HasteMode = M(false, "Haste Mode")
 	state.Buff.Migawari = buffactive.migawari or false
     get_combat_weapon()
+    select_static_ammo()
     include('Mote-TreasureHunter')
     --state.TreasureMode.value = 'Tag'
 
@@ -200,6 +201,7 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == 'Idle' then
         sets.Kiting = select_movement()
     end
+    select_static_ammo()
     get_combat_weapon()
 end
 
@@ -209,6 +211,7 @@ end
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
+    select_static_ammo()
     get_combat_weapon()
 	th_update(cmdParams, eventArgs)
 	determine_haste_group()
