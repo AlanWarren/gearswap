@@ -70,11 +70,15 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks that are called to process player actions at specific points in time.
 -------------------------------------------------------------------------------------------------------------------
---function job_pretarget(spell, action, spellMap, eventArgs)
---    if state.Buff[spell.english] ~= nil then
---        state.Buff[spell.english] = true
---    end
---end
+function job_pretarget(spell, action, spellMap, eventArgs)
+    --if state.Buff[spell.english] ~= nil then
+    --    state.Buff[spell.english] = true
+    --end
+    if (spell.type:endswith('Magic') or spell.type == "Ninjutsu") and buffactive.silence then
+        cancel_spell()
+        send_command('input /item "Echo Drops" <me>')
+    end
+end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
