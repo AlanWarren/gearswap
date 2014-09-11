@@ -261,7 +261,7 @@ function select_static_ammo()
         else
             state.DayOrNightAmmo:cycleback()
 	    end
-    else
+    end
 end
 
 function get_combat_weapon()
