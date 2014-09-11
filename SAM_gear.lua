@@ -17,6 +17,7 @@ function init_gear_sets()
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
     
+    sets.CapacityMantle = {back="Mecistopins Mantle"}
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined

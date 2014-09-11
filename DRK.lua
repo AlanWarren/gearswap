@@ -11,18 +11,16 @@
 --
 -- Initialization function for this job file.
 function get_sets()
-        mote_include_version = 2
-        -- Load and initialize the include file.
-        include('Mote-Include.lua')
+    mote_include_version = 2
+    -- Load and initialize the include file.
+    include('Mote-Include.lua')
 end
  
  
 -- Setup vars that are user-independent.
 function job_setup()
-    --state.Buff['Aftermath'] = buffactive['Aftermath: Lv.1'] or
-    --buffactive['Aftermath: Lv.2'] or
-    --buffactive['Aftermath: Lv.3']
-    --or false
+    state.CapacityMode = M(false, 'Capacity Point Mantle')
+
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     scytheList = S{ 'Xbalanque', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }
@@ -33,38 +31,38 @@ end
  
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-        -- Options: Override default values
-        state.OffenseMode:options('Normal', 'Mid', 'Acc')
-        state.HybridMode:options('Normal', 'PDT', 'Reraise')
-        state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
-        state.CastingMode:options('Normal')
-        state.IdleMode:options('Normal')
-        state.RestingMode:options('Normal')
-        state.PhysicalDefenseMode:options('PDT', 'Reraise')
-        state.MagicalDefenseMode:options('MDT')
- 
-        war_sj = player.sub_job == 'WAR' or false
-		
-        adjust_engaged_sets()
-        get_combat_form()
-
-        -- Additional local binds
-        send_command('bind ^` input /ja "Hasso" <me>')
-        send_command('bind !` input /ja "Seigan" <me>')
-        send_command('bind ^[ input /lockstyle on')
-        send_command('bind ![ input /lockstyle off')
- 
-        select_default_macro_book()
+    -- Options: Override default values
+    state.OffenseMode:options('Normal', 'Mid', 'Acc')
+    state.HybridMode:options('Normal', 'PDT', 'Reraise')
+    state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
+    state.CastingMode:options('Normal')
+    state.IdleMode:options('Normal')
+    state.RestingMode:options('Normal')
+    state.PhysicalDefenseMode:options('PDT', 'Reraise')
+    state.MagicalDefenseMode:options('MDT')
+    
+    war_sj = player.sub_job == 'WAR' or false
+    
+    adjust_engaged_sets()
+    get_combat_form()
+    
+    -- Additional local binds
+    send_command('bind != gs c toggle CapacityMode')
+    send_command('bind ^` input /ja "Hasso" <me>')
+    send_command('bind !` input /ja "Seigan" <me>')
+    send_command('bind ^[ input /lockstyle on')
+    send_command('bind ![ input /lockstyle off')
+    
+    select_default_macro_book()
 end
  
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
-        if binds_on_unload then
-                binds_on_unload()
-        end
- 
-        send_command('unbind ^`')
-        send_command('unbind !-')
+    send_command('unbind ^`')
+    send_command('unbind !=')
+    send_command('unbind ^[')
+    send_command('unbind ![')
+    send_command('unbind !-')
 end
  
        
@@ -96,6 +94,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.Buff.Souleater then
             equip(sets.buff.Souleater)
         end
+        if state.CapacityMode.value then
+            equip(sets.CapacityMantle)
+        end
     end
 end
  
@@ -109,7 +110,7 @@ end
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-if state.HybridMode.value == 'Reraise' or
+    if state.HybridMode.value == 'Reraise' or
     (state.HybridMode.value == 'Physical' and state.PhysicalDefenseMode.value == 'Reraise') then
         equip(sets.Reraise)
     end
@@ -146,6 +147,9 @@ function customize_melee_set(meleeSet)
     end
     if state.Buff['Last Resort'] then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
+    end
+    if state.CapacityMode.value then
+        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
     return meleeSet
 end

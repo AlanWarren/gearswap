@@ -7,6 +7,7 @@
 -- Initialization function for this job file.
 function get_sets()
 	-- Load and initialize the include file.
+    mote_include_version = 2
 	include('Mote-Include.lua')
 end
 
@@ -19,6 +20,7 @@ function job_setup()
     include('Mote-TreasureHunter')
 	determine_haste_group()
 	
+    state.CapacityMode = M(false, 'Capacity Point Mantle')
 	-- For th_action_check():
 	-- JA IDs for actions that always have TH: Provoke, Animated Flourish
 	info.default_ja_ids = S{35, 204}
@@ -30,17 +32,15 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-	options.OffenseModes = {'Normal', 'Acc', 'iLvl'}
-	options.DefenseModes = {'Normal', 'Evasion', 'PDT'}
-	options.RangedModes = {'Normal', 'Acc'}
-	options.WeaponskillModes = {'Normal', 'Acc', 'Att', 'Mod'}
-	options.IdleModes = {'Normal'}
-	options.RestingModes = {'Normal'}
-	options.PhysicalDefenseModes = {'Evasion', 'PDT'}
-	options.MagicalDefenseModes = {'MDT'}
-
-	state.RangedMode = 'Normal'
-	state.Defense.PhysicalMode = 'Evasion'
+	state.OffenseMode:options('Normal', 'Acc', 'iLvl')
+	state.HybridMode:options('Normal', 'Evasion', 'PDT')
+	state.RangedMode:options('Normal', 'Acc')
+	state.WeaponskillMode:options('Normal', 'Acc', 'Att', 'Mod')
+	state.IdleMode:options('Normal')
+	state.RestingMode:options('Normal')
+	state.PhysicalDefenseMode:options('Evasion', 'PDT')
+	state.MagicalDefenseMode:options('MDT')
+	state.RangedMode:options('Normal')
 	
 	gear.default.weaponskill_neck = "Asperity Necklace"
 	gear.default.weaponskill_waist = "Windbuffet Belt"
@@ -48,6 +48,7 @@ function user_setup()
 	-- Additional local binds
 	send_command('bind ^= gs c cycle treasuremode')
 	send_command('bind !- gs c cycle targetmode')
+    send_command('bind != gs c toggle CapacityMode')
 
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
@@ -60,6 +61,7 @@ end
 function file_unload()
 
 	send_command('unbind !-')
+	send_command('unbind !=')
 	send_command('unbind ^[')
 	send_command('unbind ![')
 end
@@ -82,18 +84,23 @@ end
 
 -- Run after the general precast() is done.
 function job_post_precast(spell, action, spellMap, eventArgs)
-	if spell.english == 'Aeolian Edge' and state.TreasureMode ~= 'None' then
+	if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
 		equip(sets.TreasureHunter)
 	elseif spell.english=='Sneak Attack' or spell.english=='Trick Attack' or spell.type == 'WeaponSkill' then
-		if state.TreasureMode == 'SATA' or state.TreasureMode == 'Fulltime' then
+		if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
 			equip(sets.TreasureHunter)
 		end
 	end
+    if spell.type == 'WeaponSkill' then
+        if state.CapacityMode.value then
+            equip(sets.CapacityMantle)
+        end
+    end
 end
 
 -- Run after the general midcast() set is constructed.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-	if state.TreasureMode ~= 'None' and spell.action_type == 'Ranged Attack' then
+	if state.TreasureMode.value ~= 'None' and spell.action_type == 'Ranged Attack' then
 		equip(sets.TreasureHunter)
 	end
 end
@@ -160,10 +167,12 @@ end
 
 
 function customize_melee_set(meleeSet)
-	if state.TreasureMode == 'Fulltime' then
+	if state.TreasureMode.value == 'Fulltime' then
 		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
 	end
-
+    if state.CapacityMode.value then
+        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+    end
 	return meleeSet
 end
 
@@ -203,20 +212,38 @@ end
 -- Function to display the current relevant user state when doing an update.
 -- Return true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
-	local defenseString = ''
-	if state.Defense.Active then
-		local defMode = state.Defense.PhysicalMode
-		if state.Defense.Type == 'Magical' then
-			defMode = state.Defense.MagicalMode
-		end
+    local msg = 'Melee'
+    if state.CombatForm.has_value then
+        msg = msg .. ' (' .. state.CombatForm.value .. ')'
+    end
 
-		defenseString = 'Defense: '..state.Defense.Type..' '..defMode..'  '
-	end
+    msg = msg .. ': '
+    msg = msg .. state.OffenseMode.value
 
-	add_to_chat(122,'Melee: '..state.OffenseMode..'/'..state.DefenseMode..'  WS: '..state.WeaponskillMode..'  '..
-		defenseString..'Kiting: '..on_off_names[state.Kiting]..'  TH: '..state.TreasureMode)
+    if state.HybridMode.value ~= 'Normal' then
+        msg = msg .. '/' .. state.HybridMode.value
+    end
+    msg = msg .. ', WS: ' .. state.WeaponskillMode.value
 
-	eventArgs.handled = true
+    if state.DefenseMode.value ~= 'None' then
+        msg = msg .. ', ' .. 'Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
+    end
+
+    if state.Kiting.value == true then
+        msg = msg .. ', Kiting'
+    end
+
+    if state.PCTargetMode.value ~= 'default' then
+        msg = msg .. ', Target PC: '..state.PCTargetMode.value
+    end
+
+    if state.SelectNPCTargets.value == true then
+        msg = msg .. ', Target NPCs'
+    end
+
+    msg = msg .. ', TH: ' .. state.TreasureMode.value
+    add_to_chat(122, msg)
+    eventArgs.handled = true
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -227,7 +254,7 @@ end
 function check_buff(buff_name, eventArgs)
 	if state.Buff[buff_name] then
 		equip(sets.buff[buff_name] or {})
-		if state.TreasureMode == 'SATA' or state.TreasureMode == 'Fulltime' then
+		if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
 			equip(sets.TreasureHunter)
 		end
 		eventArgs.handled = true

@@ -12,7 +12,8 @@ function init_gear_sets()
 	sets.precast.JA['Wild Card'] = {feet="Commodore Bottes +2"}
 	sets.precast.JA['Random Deal'] = {body="Lanun Frac"}
 	sets.precast.JA['Fold'] = {body="Commodore Gants +2"}
-
+    
+    sets.CapacityMantle = {back="Mecistopins Mantle"}
 	
 	sets.precast.CorsairRoll = {
         head="Lanun Tricorne",

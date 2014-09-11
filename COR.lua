@@ -26,6 +26,7 @@ function job_setup()
 	-- Whether to use Luzaf's Ring
 	state.LuzafRing = M(false, "Luzaf's Ring")
 	state.warned = M(false)
+    state.CapacityMode = M(false, 'Capacity Point Mantle')
 
 	define_roll_values()
 end
@@ -57,6 +58,7 @@ function user_setup()
 	-- Cor doesn't use hybrid defense mode; using that for ranged mode adjustments.
 	send_command('bind ^` input /ja "Double-up" <me>')
 	send_command('bind !` input /ja "Bolter\'s Roll" <me>')
+    send_command('bind != gs c toggle CapacityMode')
     
     select_default_macro_book()
 end
@@ -65,6 +67,7 @@ end
 -- Called when this job file is unloaded (eg: job change)
 function job_file_unload()
 	send_command('unbind ^`')
+	send_command('unbind !=')
 	send_command('unbind !`')
 end
 
@@ -91,13 +94,28 @@ function job_precast(spell, action, spellMap, eventArgs)
 	elseif spell.type == 'CorsairShot' and state.CastingMode.value == 'Resistant' then
 		classes.CustomClass = 'Acc'
     elseif spell.english == 'Fold' and buffactive['Bust'] == 2 then
-        if sets.precast.FouldDoubleBust then
+        if sets.precast.FoldDoubleBust then
             equip(sets.precast.FoldDoubleBust)
             eventArgs.handled = true
         end
 	end
 end
 
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+        if state.CapacityMode.value then
+            equip(sets.CapacityMantle)
+        end
+    end
+end
+
+function job_midcast(spell, action, spellMap, eventArgs)
+    if spell.type == 'CorsairShot' or spell.action_type == 'Ranged Attack' then
+        if state.CapacityMode.value then
+            equip(sets.CapacityMantle)
+        end
+    end
+end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
 	if spell.type == 'CorsairRoll' and not spell.interrupted then
@@ -116,6 +134,13 @@ function get_custom_wsmode(spell, action, default_wsmode)
 	--if buffactive['Transcendancy'] then
 	--	return 'Brew'
 	--end
+end
+
+function customize_melee_set(meleeSet)
+    if state.CapacityMode.value then
+        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+    end
+	return meleeSet
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -147,7 +172,7 @@ end
 -- Job-specific toggles.
 function job_toggle_state(field)
 	if field:lower() == 'luzaf' then
-		state.LuzafRing.value = not state.LuzafRing.value
+		state.LuzafRing:toggle()
 		return "Use of Luzaf Ring", state.LuzafRing.value
 	end
 end

@@ -24,22 +24,24 @@ function init_gear_sets()
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
     
-	sets.TreasureHunter = {waist="Chaac Belt", back="Mecistopins Mantle"}
+	sets.TreasureHunter = {waist="Chaac Belt"}
+    sets.CapacityMantle = {back="Mecistopins Mantle"}
+
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
     	head="Whirlpool Mask",
     	body="Mochizuki Chainmail +1",
         neck="Iqabi Necklace",
-        hands="Umuthi Gloves",
+        hands="Buremte Gloves",
     	back="Yokaze Mantle",
-        waist="Chaac Belt",
+        waist="Anguinus Belt",
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
     -- Ranged
     sets.precast.RA = {
         head="Uk'uxkaj Cap",
-        --hands="Manibozho Gloves",
+        hands="Buremte Gloves",
         legs="Nahtirah Trousers",
         feet="Wurrukatte Boots"
     }
@@ -49,11 +51,11 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1",
         hands="Hachiya Tekko +1",
         ring1="Longshot Ring",
-        ring2="Paqichikaji Ring",
+        ring2="Hajduk Ring",
         back="Yokaze Mantle",
         waist="Chaac Belt",
         legs="Hachiya Hakama +1",
-        feet="Mochizuki Kyahan +1"
+        feet="Scopuli Nails +1"
     }
     sets.precast.JA.Sange = sets.midcast.RA
 	sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)

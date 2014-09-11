@@ -7,6 +7,8 @@ function init_gear_sets()
         sets.precast.JA['Velocity Shot'] = {body="Sylvan Caban +2"}
         sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
 
+        sets.CapacityMantle = {back="Mecistopins Mantle"}
+
         sets.precast.JA['Eagle Eye Shot'] = {
             head="Uk'uxkaj Cap", 
             neck="Rancor Collar",

@@ -13,6 +13,8 @@ function init_gear_sets()
      --sets.precast.JA['Last Resort'] = {feet="Fallen's Sollerets +1"}
      sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
      sets.precast.JA['Weapon Bash'] = {hands="Ignominy Gauntlets +1"}
+
+     sets.CapacityMantle = {back="Mecistopins Mantle"}
  
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {

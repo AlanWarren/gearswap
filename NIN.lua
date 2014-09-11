@@ -3,9 +3,7 @@
 -------------------------------------------------------------------------------------------------------------------
 -- gs c toggle hastemode -- Toggles whether or not you're getting Haste II
 
--- Initialization function for this job file.
 function get_sets()
-	-- Load and initialize the include file.
     mote_include_version = 2
 	include('Mote-Include.lua')
 end
@@ -13,15 +11,21 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
-	state.HasteMode = M(false, "Haste Mode")
 	state.Buff.Migawari = buffactive.migawari or false
-    get_combat_weapon()
-    select_static_ammo()
+    
     include('Mote-TreasureHunter')
-    --state.TreasureMode.value = 'Tag'
+    state.TreasureMode:set('Tag')
+
+    -- used for aby proc's, etc. 
+    get_combat_weapon()
+
+	state.HasteMode = M(false, "Haste Mode")
 
     state.DayOrNightAmmo = M{['description']='Day or Night Ammo', 'Fire Bomblet', 'Tengu-No-Hane', }
     gear.Ammo = {name="Fire Bomblet"}
+    select_static_ammo()
+
+    state.CapacityMode = M(false, 'Capacity Point Mantle')
 
 	determine_haste_group()
 	-- For th_action_check():
@@ -47,18 +51,18 @@ function user_setup()
 	send_command('bind ^= gs c cycle treasuremode')
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
-    --send_command('bind != gs c cycle DayOrNightAmmo')
+    send_command('bind != gs c toggle CapacityMode')
     send_command('bind ^- gs c toggle HasteMode')
 end
 
 
--- Called when this job file is unloaded (eg: job change)
 function file_unload()
     send_command('unbind ^[')
     send_command('unbind ![')
     send_command('unbind ^-')
     send_command('unbind !-')
     send_command('unbind ^=')
+    send_command('unbind !=')
 end
 
 
@@ -111,6 +115,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 		if state.TreasureMode.value == 'Fulltime' then
 			equip(sets.TreasureHunter)
 		end
+        if state.CapacityMode.value then
+            equip(sets.CapacityMantle)
+        end
 	end
 end
 
@@ -161,7 +168,7 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    if state.PhysicalDefenseMode ~= 'PDT' then
+    if state.PhysicalDefenseMode.value ~= 'PDT' then
 	    idleSet = set_combine(idleSet, select_movement())
     end
 	if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
@@ -175,6 +182,9 @@ function customize_melee_set(meleeSet)
 	if state.TreasureMode.value == 'Fulltime' then
 		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
 	end
+    if state.CapacityMode.value then
+        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+    end
 	if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
 		meleeSet = set_combine(meleeSet, sets.buff.Migawari)
 	end
@@ -321,8 +331,8 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    if stateField == 'Day or Night Ammo' then
-        gear.Ammo.name = newValue
+    if stateField == 'Capacity Point Mantle' then
+        gear.Back = newValue
         --add_to_chat(122, "Ammo: "..gear.Ammo)
     end
 end

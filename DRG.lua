@@ -16,7 +16,9 @@ end
 function job_setup()
 	get_combat_form()
     include('Mote-TreasureHunter')
-    state.TreasureMode.value = 'Tag'
+    state.TreasureMode:set('Tag')
+    
+    state.CapacityMode = M(false, 'Capacity Point Mantle')
 	
 	state.Buff = {}
 	-- JA IDs for actions that always have TH: Provoke, Animated Flourish
@@ -40,24 +42,20 @@ function user_setup()
     
     war_sj = player.sub_job == 'WAR' or false
 
-	-- Additional local binds
-	send_command('bind ^` input /ja "Hasso" <me>')
-	send_command('bind !` input /ja "Seigan" <me>')
-
 	select_default_macro_book(1, 16)
+    send_command('bind != gs c toggle CapacityMode')
 	send_command('bind ^= gs c cycle treasuremode')
+    send_command('bind ^[ input /lockstyle on')
+    send_command('bind ![ input /lockstyle off')
 end
 
 
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
-	if binds_on_unload then
-		binds_on_unload()
-	end
-
-	send_command('unbind ^`')
+	send_command('unbind ^[')
+	send_command('unbind ![')
 	send_command('unbind ^=')
-	send_command('unbind !-')
+	send_command('unbind !=')
 end
 
 
@@ -89,9 +87,8 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-    custom_aftermath_timers_precast(spell)
 	if spell.action_type == 'Magic' then
-	equip(sets.precast.FC)
+	    equip(sets.precast.FC)
 	end
 end
 
@@ -101,16 +98,21 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 	if player.hpp < 51 then
 		classes.CustomClass = "Breath" -- This would cause it to look for sets.midcast.Breath 
 	end
+    if spell.type == 'WeaponSkill' then
+        if state.CapacityMode.value then
+            equip(sets.CapacityMantle)
+        end
+    end
 end
 
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-		if spell.action_type == 'Magic' then
-		equip(sets.midcast.FastRecast)
-		if player.hpp < 51 then
-			classes.CustomClass = "Breath" -- This would cause it to look for sets.midcast.Breath 
-		end
+	if spell.action_type == 'Magic' then
+	    equip(sets.midcast.FastRecast)
+	    if player.hpp < 51 then
+		    classes.CustomClass = "Breath" -- This would cause it to look for sets.midcast.Breath 
+	    end
 	end
 end
 
@@ -127,7 +129,7 @@ end
 -- Runs when a pet initiates an action.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_pet_midcast(spell, action, spellMap, eventArgs)
-if spell.english:startswith('Healing Breath') or spell.english == 'Restoring Breath' or spell.english == 'Steady Wing' or spell.english == 'Smiting Breath' then
+    if spell.english:startswith('Healing Breath') or spell.english == 'Restoring Breath' or spell.english == 'Steady Wing' or spell.english == 'Smiting Breath' then
 		equip(sets.HB)
 	end
 end
@@ -191,6 +193,9 @@ function customize_melee_set(meleeSet)
 	if state.TreasureMode.value == 'Fulltime' then
 		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
 	end
+    if state.CapacityMode.value then
+        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+    end
 	return meleeSet
 end
 

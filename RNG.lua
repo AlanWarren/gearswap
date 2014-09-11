@@ -70,6 +70,8 @@ function user_setup()
         state.Buff.Overkill = buffactive.Overkill or false
 
         -- settings
+        state.CapacityMode = M(false, 'Capacity Point Mantle')
+
         state.AutoRA = M(false, "AutoRA")
         auto_gun_ws = "Coronach"
         auto_bow_ws = "Namas Arrow"
@@ -98,6 +100,7 @@ function user_setup()
         get_custom_ranged_groups()
         select_default_macro_book()
 
+        send_command('bind != gs c toggle CapacityMode')
         send_command('bind f9 gs c cycle RangedMode')
         send_command('bind !f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
@@ -116,6 +119,7 @@ function file_unload()
     send_command('unbind ^f9')
     send_command('unbind ^[')
     send_command('unbind ![')
+    send_command('unbind !=')
     send_command('unbind ^-')
 end
  
@@ -185,6 +189,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     elseif state.Buff.Overkill then
         equip(sets.Overkill.Preshot)
     end
+    if spell.type == 'WeaponSkill' then
+        if state.CapacityMode.value then
+            equip(sets.CapacityMantle)
+        end
+    end
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -199,6 +208,11 @@ function job_midcast(spell, action, spellMap, eventArgs)
     end
     if state.Buff.Overkill then
         equip(sets.Overkill)
+    end
+    if spell.action_type == 'Ranged Attack' then
+        if state.CapacityMode.value then
+            equip(sets.CapacityMantle)
+        end
     end
 end
 
@@ -289,6 +303,9 @@ function customize_melee_set(meleeSet)
     end
     if state.Buff.Overkill then
     	meleeSet = set_combine(meleeSet, sets.Overkill)
+    end
+    if state.CapacityMode.value then
+        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
     return meleeSet
 end

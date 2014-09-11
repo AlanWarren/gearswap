@@ -28,6 +28,8 @@ function job_setup()
     get_combat_form()
     get_combat_weapon()
     
+    state.CapacityMode = M(false, 'Capacity Point Mantle')
+
     state.Buff.Sekkanoki = buffactive.sekkanoki or false
     state.Buff.Sengikori = buffactive.sengikori or false
     state.Buff['Third Eye'] = buffactive['Third Eye'] or false
@@ -51,6 +53,7 @@ function user_setup()
     -- Additional local binds
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
+    send_command('bind != gs c toggle CapacityMode')
     
     select_default_macro_book()
 end
@@ -59,6 +62,7 @@ end
 -- Called when this job file is unloaded (eg: job change)
 function file_unload()
     send_command('unbind ^[')
+    send_command('unbind !=')
     send_command('unbind ![')
 end
 
@@ -102,6 +106,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 		if state.Buff.Sekkanoki then
 			equip(sets.buff.Sekkanoki)
 		end
+        if state.CapacityMode.value then
+            equip(sets.CapacityMantle)
+        end
 		--if state.Buff.Sengikori then
 		--	equip(sets.buff.Sengikori)
 		--end
@@ -162,6 +169,9 @@ function customize_melee_set(meleeSet)
         if state.DefenseMode.value == 'PDT' then
     	    meleeSet = set_combine(meleeSet, sets.thirdeye)
         end
+    end
+    if state.CapacityMode.value then
+        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
     if player.equipment.range == 'Yoichinoyumi' then
         meleeSet = set_combine(meleeSet, sets.bow)

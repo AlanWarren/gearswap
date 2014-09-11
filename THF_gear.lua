@@ -5,6 +5,7 @@ function init_gear_sets()
 	
 	sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
+    sets.CapacityMantle = {back="Mecistopins Mantle"}
 	
 	sets.buff['Sneak Attack'] = {
 		head="Uk'uxkaj Cap",
@@ -106,7 +107,7 @@ function init_gear_sets()
         ring2="Hajduk Ring",
         waist="Elanid Belt",
         legs="Aetosaur Trousers +1",
-        feet="Iuitl Gaiters +1"
+        feet="Scopuli Nails +1"
     }
        
 	-- Weaponskill sets
