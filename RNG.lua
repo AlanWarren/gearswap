@@ -381,7 +381,7 @@ end
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
     local msg = ''
-    if state.AutoRA then
+    if state.AutoRA.value then
         msg = '[Auto RA: ON]'
     else
         msg = '[Auto RA: OFF]'
