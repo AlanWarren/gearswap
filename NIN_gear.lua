@@ -130,7 +130,7 @@ function init_gear_sets()
         hands="Hachiya Tekko +1",
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
-    	back="Atheling Mantle",
+    	back="Vellaunus' Mantle +1",
         waist="Patentia Sash",
         legs="Hachiya Hakama +1",
         feet="Danzo sune-ate"
