@@ -451,8 +451,9 @@ function init_gear_sets()
         sets.Coronach = {
            neck="Breeze Gorget",
            waist="Thunder Belt",
+           back="Sylvan Chlamys"
            ring1="Rajas Ring",
-           ring2="Ifrit Ring"
+           ring2="Garuda Ring"
         }
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.Coronach)
@@ -519,7 +520,7 @@ function init_gear_sets()
         -- NAMAS
         sets.Namas = {
             neck="Aqua Gorget",
-            waist="Metalsinger Belt",
+            waist="Light Belt",
             hands="Arcadian Bracers +1", -- override since we don't want sigyns in Mid or Acc
             back="Sylvan Chlamys",
             feet="Arcadian Socks +1"
