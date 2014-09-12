@@ -257,7 +257,7 @@ function job_buff_change(buff, gain)
 
         if (buff == "Decoy Shot" and gain) or buffactive['Decoy Shot'] then
             -- Only append Decoy if we're using bow, or changed the setting to force it
-            if player.equipment.range == gear.Bow or GunDecoy.value then
+            if player.equipment.range == gear.Bow or state.GunDecoy.value then
                 classes.CustomRangedGroups:append('Decoy')
             end
         end
@@ -419,7 +419,7 @@ function select_earring()
     -- world.time is given in minutes into each day
     -- 7:00 AM would be 420 minutes
     -- 17:00 PM would be 1020 minutes
-    if world.time >= (18*60) or world.time <= (8*60) and NightEarring.value then
+    if world.time >= (18*60) or world.time <= (8*60) and state.NightEarring.value then
         gear.Earring.name = gear.NightEarring
     else
         gear.Earring.name = gear.DayEarring
@@ -429,7 +429,7 @@ end
 function get_custom_ranged_groups()
 	classes.CustomRangedGroups:clear()
     
-    if player.equipment.range == gear.Bow or GunDecoy.value then
+    if player.equipment.range == gear.Bow or state.GunDecoy.value then
         if buffactive['Decoy Shot'] then
 		    classes.CustomRangedGroups:append('Decoy')
         end
