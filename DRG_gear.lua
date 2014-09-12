@@ -252,7 +252,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
 		--back="Atheling Mantle",
-        back="Mecistopins Mantle",
+        back="Atheling Mantle",
         waist="Windbuffet Belt",
         legs="Xaddi Cuisses",
         feet="Ejekamal Boots"

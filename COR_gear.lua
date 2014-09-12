@@ -81,7 +81,7 @@ function init_gear_sets()
 		back="Buquwik Cape",
         waist=gear.ElementalBelt,
         legs="Nahtirah Trousers",
-        feet="Iuitl Gaiters +1"
+        feet="Scopuli Nails +1"
     }
 
 
@@ -182,7 +182,7 @@ function init_gear_sets()
 		back="Gunslinger's Cape",
         waist="Elanid Belt",
         legs="Aetosaur Trousers +1",
-        feet="Iuitl Gaiters +1"
+        feet="Scopuli Nails +1"
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {

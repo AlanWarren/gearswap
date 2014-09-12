@@ -130,7 +130,7 @@ function init_gear_sets()
         hands="Hachiya Tekko +1",
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
-    	back="Atheling Mantle",
+    	back="Vellaunus' Mantle +1",
         waist="Patentia Sash",
         legs="Hachiya Hakama +1",
         feet="Danzo sune-ate"
@@ -159,7 +159,7 @@ function init_gear_sets()
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
         legs="Mochizuki Hakama +1",
-    	back="Yokaze Mantle"
+    	back="Vellaunus' Mantle +1"
     })
     
     sets.idle.Weak = sets.idle
@@ -207,7 +207,7 @@ function init_gear_sets()
         hands="Otronif Gloves +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
-    	back="Atheling Mantle",
+    	back="Vellaunus' Mantle +1",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
@@ -343,6 +343,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         waist="Windbuffet Belt",
+        back="Atheling Mantle",
         legs="Hachiya Hakama +1",
         feet="Otronif Boots +1"
     })
@@ -399,6 +400,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         waist="Windbuffet Belt",
+        back="Atheling Mantle",
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     })
@@ -417,6 +419,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
+        back="Atheling Mantle",
         waist="Windbuffet Belt",
     })
     sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, {
@@ -430,7 +433,10 @@ function init_gear_sets()
     
     -- 20
     sets.engaged.Haste_20 = set_combine(sets.engaged, {
+        ear1="Brutal Earring",
+        ear2="Suppanomimi",
     	body="Mochizuki Chainmail +1",
+        back="vellaunus' Mantle +1"
     })
     sets.engaged.Mid.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HasteMid)
     sets.engaged.Acc.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, sets.engaged.HasteAcc)
