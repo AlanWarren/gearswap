@@ -543,7 +543,6 @@ function init_gear_sets()
             neck="Flame Gorget",
             ear2="Moonshade Earring",
             waist="Light Belt",
-            hands="Seiryu's Kote", -- override 
             legs="Arcadian Braccae +1",
             ring2="Ramuh Ring",
             back="Rancorous Mantle"
