@@ -527,13 +527,15 @@ function init_gear_sets()
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
+
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-        head="Ptica Headgear",
-        body="Mochizuki Chainmail +1",
+    	body="Mes'yohi Haubergeon",
         neck="Shadow Gorget",
         waist="Soil Belt",
     })
-    sets.precast.WS['Blade: Hi'].Acc = sets.precast.WS['Blade: Hi'].Mid
+    sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
+        head="Ptica Headgear"
+    })
 
     -- BLADE: SHUN
     sets.Shun = {
