@@ -529,7 +529,7 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
 
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-    	body="Mes'yohi Haubergeon",
+    	body="Mochizuki Chainmail +1",
         neck="Shadow Gorget",
         waist="Soil Belt",
     })
