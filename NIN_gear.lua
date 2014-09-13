@@ -133,7 +133,7 @@ function init_gear_sets()
     	back="Vellaunus' Mantle +1",
         waist="Patentia Sash",
         legs="Hachiya Hakama +1",
-        feet="Danzo sune-ate"
+        feet=gear.Feet
      }
 
     sets.idle.Regen = {
@@ -148,7 +148,7 @@ function init_gear_sets()
     	back="Repulse Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Danzo sune-ate"
+        feet=gear.Feet
     }
     
     sets.idle.Town = set_combine(sets.idle, {
