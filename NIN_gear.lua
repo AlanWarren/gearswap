@@ -126,8 +126,8 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-    	body="Hachiya Chainmail +1",
-        hands="Hachiya Tekko +1",
+    	body="Mes'yohi Haubergeon",
+        hands="Mochizuki Tekko +1",
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
     	back="Vellaunus' Mantle +1",
@@ -165,7 +165,6 @@ function init_gear_sets()
     sets.idle.Weak = sets.idle
     
     -- Defense sets
-    
     sets.defense.PDT = {
     	head="Lithelimb Cap",
         neck="Twilight Torque",
@@ -506,6 +505,7 @@ function init_gear_sets()
     sets.Jin = {
         neck="Breeze Gorget",
         waist="Thunder Belt",
+    	body="Mes'yohi Haubergeon",
         back="Rancorous Mantle",
         feet="Mochizuki Kyahan +1"
     }
@@ -538,6 +538,7 @@ function init_gear_sets()
     -- BLADE: SHUN
     sets.Shun = {
         neck="Flame Gorget",
+    	body="Mes'yohi Haubergeon",
         waist="Light Belt",
         ring1="Ramuh Ring",
     }
@@ -548,6 +549,7 @@ function init_gear_sets()
     -- BLADE: Rin
     sets.Rin = {
         neck="Asperity Necklace",
+    	body="Mes'yohi Haubergeon",
         waist="Metalsinger Belt",
         ring1="Oneiros Ring",
     }
@@ -558,7 +560,7 @@ function init_gear_sets()
     -- BLADE: KU 
     sets.Ku = {
         neck="Shadow Gorget",
-        body="Mochizuki Chainmail +1",
+    	body="Mes'yohi Haubergeon",
         waist="Soil Belt",
         ring1="Rajas Ring",
         feet="Mochizuki Kyahan +1"
