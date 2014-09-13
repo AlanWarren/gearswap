@@ -19,7 +19,7 @@ function init_gear_sets()
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {
         head="Yaoyotl Helm",
-        body="Fallen's Cuirass +1",
+    	body="Mes'yohi Haubergeon",
         legs="Cizin Breeches +1",
         feet="Whirlpool Greaves"
      }
@@ -242,10 +242,10 @@ function init_gear_sets()
          neck="Agitator's Collar",
          ear1="Brutal Earring",
          ear2="Trux Earring",
-         body="Ares' Cuirass +1",
-         hands="Ares' Gauntlets +1",
+    	 body="Mes'yohi Haubergeon",
+         hands="Ignominy Gauntlets +1",
          ring1="Rajas Ring",
-         ring2="Mars's Ring",
+         ring2="K'ayres Ring",
          back="Atheling Mantle",
          waist="Windbuffet Belt",
          legs="Crimson Cuisses",
@@ -285,7 +285,7 @@ function init_gear_sets()
      sets.defense.PDT = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Xaddi Mail",
+         body="Cizin Mail +1",
          hands="Cizin Mufflers +1",
          back="Repulse Mantle",
          ring1="Dark Ring",
@@ -325,7 +325,7 @@ function init_gear_sets()
          head="Ighwa Cap",
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
-         body="Cizin Mail +1",
+    	 body="Mes'yohi Haubergeon",
          ring1="Beeline Ring",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
@@ -353,6 +353,7 @@ function init_gear_sets()
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Fire Bomblet",
          head="Yaoyotl Helm",
+    	 body="Mes'yohi Haubergeon",
          hands="Xaddi Gauntlets",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
@@ -401,6 +402,7 @@ function init_gear_sets()
      sets.engaged.War.Acc = set_combine(sets.engaged.War.Mid, {
          neck="Iqabi Necklace",
          hands="Xaddi Gauntlets",
+    	 body="Mes'yohi Haubergeon",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
          waist="Anguinus Belt"
@@ -413,7 +415,8 @@ function init_gear_sets()
      sets.engaged.Scythe = set_combine(sets.engaged, {
          --sub="Pole Grip",
          ammo="Hagneia Stone",
-         hands="Xaddi Gauntlets",
+    	 body="Mes'yohi Haubergeon",
+         hands="Cizin Mufflers +1",
          legs="Cizin Breeches +1",
          feet="Ejekamal Boots"
      })
@@ -460,6 +463,7 @@ function init_gear_sets()
      sets.engaged.War.Scythe.Acc = set_combine(sets.engaged.War.Scythe.Mid, {
          neck="Iqabi Necklace",
          hands="Buremte Gloves",
+    	 body="Mes'yohi Haubergeon",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
          waist="Anguinus Belt",
