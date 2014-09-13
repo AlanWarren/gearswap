@@ -26,7 +26,7 @@ function job_setup()
     select_static_ammo()
     
     state.DayOrNightFeet = M{['description']='Day or Night Feet', 'Danzo Sune-ate', 'Hachiya Sune-ate +1', }
-    gear.Ammo = {name="Danzo Sune-ate"}
+    gear.Feet = {name="Danzo Sune-ate"}
     select_movement()
 
     state.CapacityMode = M(false, 'Capacity Point Mantle')
