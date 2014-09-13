@@ -349,7 +349,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, {
         head="Ptica Headgear",
-        body="Qaaxo Harness",
+        body="Mes'yohi Haubergeon",
     	back="Rancorous Mantle",
         feet="Qaaxo Leggings"
     })
