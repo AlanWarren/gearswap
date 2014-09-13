@@ -24,10 +24,6 @@ function job_setup()
     state.DayOrNightAmmo = M{['description']='Day or Night Ammo', 'Fire Bomblet', 'Tengu-No-Hane', }
     gear.Ammo = {name="Fire Bomblet"}
     select_static_ammo()
-    
-    state.DayOrNightFeet = M{['description']='Day or Night Feet', 'Danzo Sune-ate', 'Hachiya Sune-ate +1', }
-    gear.Feet = {name="Danzo Sune-ate"}
-    select_movement()
 
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
@@ -172,9 +168,7 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    --if state.PhysicalDefenseMode.value ~= 'PDT' then
-	--    idleSet = set_combine(idleSet, select_movement())
-    --end
+	idleSet = set_combine(idleSet, select_movement())
 	if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
 		idleSet = set_combine(idleSet, sets.buff.Migawari)
 	end
@@ -271,11 +265,10 @@ function select_movement()
 	-- 7:00 AM would be 420 minutes
 	-- 17:00 PM would be 1020 minutes
 	if world.time >= (17*60) or world.time <= (7*60) then
-		state.DayOrNightFeet:cycle()
-        gear.Feet.name = state.DayOrNightFeet.value
+        return sets.NightMovement
 	else
-		state.DayOrNightFeet:cycleback()
-        gear.Feet.name = state.DayOrNightFeet.value
+		--state.DayOrNightFeet:set('Danzo Sune-ate')
+        return sets.DayMovement
 	end
 end
 
