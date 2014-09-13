@@ -24,6 +24,10 @@ function job_setup()
     state.DayOrNightAmmo = M{['description']='Day or Night Ammo', 'Fire Bomblet', 'Tengu-No-Hane', }
     gear.Ammo = {name="Fire Bomblet"}
     select_static_ammo()
+    
+    state.DayOrNightFeet = M{['description']='Day or Night Feet', 'Danzo Sune-ate', 'Hachiya Sune-ate +1', }
+    gear.Ammo = {name="Danzo Sune-ate"}
+    select_movement()
 
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
@@ -160,7 +164,7 @@ end
 -- Can customize state or custom melee class values at this point.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
-	sets.Kiting = select_movement()
+	--sets.Kiting = select_movement()
 end
 
 -- Modify the default idle set after it was constructed.
@@ -168,9 +172,9 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    if state.PhysicalDefenseMode.value ~= 'PDT' then
-	    idleSet = set_combine(idleSet, select_movement())
-    end
+    --if state.PhysicalDefenseMode.value ~= 'PDT' then
+	--    idleSet = set_combine(idleSet, select_movement())
+    --end
 	if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
 		idleSet = set_combine(idleSet, sets.buff.Migawari)
 	end
@@ -212,10 +216,11 @@ function job_buff_change(buff, gain)
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
-    if newStatus == 'Idle' then
-        sets.Kiting = select_movement()
-    end
+    --if newStatus == 'Idle' then
+    --    sets.Kiting = select_movement()
+    --end
     select_static_ammo()
+    select_movement()
     get_combat_weapon()
 end
 
@@ -229,7 +234,8 @@ function job_update(cmdParams, eventArgs)
     get_combat_weapon()
 	th_update(cmdParams, eventArgs)
 	determine_haste_group()
-    sets.Kiting = select_movement()
+    --sets.Kiting = select_movement()
+    select_movement()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -265,9 +271,11 @@ function select_movement()
 	-- 7:00 AM would be 420 minutes
 	-- 17:00 PM would be 1020 minutes
 	if world.time >= (17*60) or world.time <= (7*60) then
-		return sets.NightMovement
+		state.DayOrNightFeet:cycle()
+        gear.Feet.name = state.DayOrNightFeet.value
 	else
-		return sets.DayMovement
+		state.DayOrNightFeet:cycleback()
+        gear.Feet.name = state.DayOrNightFeet.value
 	end
 end
 

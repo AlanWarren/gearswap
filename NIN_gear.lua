@@ -191,7 +191,7 @@ function init_gear_sets()
     sets.DayAccAmmo = {ammo="Tengu-no-Hane"}
     sets.RegularAmmo = {ammo="Yetshila"}
     
-    sets.Kiting = select_movement()
+    --sets.Kiting = select_movement()
     -- Engaged sets
     
     -- Normal melee group without buffs
