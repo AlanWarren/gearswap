@@ -305,7 +305,7 @@ function init_gear_sets()
 
     sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
         ammo=gear.Ammo,
-        body="Mochizuki Chainmail +1",
+        body="Mes'yohi Haubergeon",
         ring1="Mars's Ring",
         hands="Otronif Gloves +1",
         legs="Hachiya Hakama +1",
