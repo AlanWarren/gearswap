@@ -102,6 +102,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
+        if is_sc_element_today(spell) then
+            --equip(sets.WSDayBonus)
+        end
     end
 end
 

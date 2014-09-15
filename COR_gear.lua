@@ -49,7 +49,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	
 	sets.precast.FC = {
-        head="Uk'uxkaj Cap",
+        --head="Uk'uxkaj Cap",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         hands="Buremte Gloves",
@@ -130,10 +130,9 @@ function init_gear_sets()
 	
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
-		head="Whirlpool Mask",
-		body="Iuitl Vest",
+		head="Uk'uxkaj Cap",
         hands="Iuitl Wristbands +1",
-		legs="Iuitl Tights +1",
+		legs="Kaabnax Trousers",
         feet="Iuitl Gaiters +1"
     }
 		
@@ -157,8 +156,7 @@ function init_gear_sets()
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
-        head="Seiokona Beret",
-		body="Navarch's Frac +2",
+    	body="Mekosuchinae Harness",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         ring1="Perception Ring",
@@ -186,6 +184,7 @@ function init_gear_sets()
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
+    	body="Mekosuchinae Harness",
         ring1="Paqichikaji Ring"
     })
 	
@@ -200,7 +199,7 @@ function init_gear_sets()
 		head="Ocelomeh Headpiece +1",
         neck="Twilight Torque",
         ear2="Dawn Earring",
-		body="Kheper Jacket",
+    	body="Mekosuchinae Harness",
         hands="Iuitl Wristbands +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -217,7 +216,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-		body="Lanun Frac",
+    	body="Mekosuchinae Harness",
         hands="Sigyn's Bazubands",
         ring1="Patricius Ring",
         ring2="Paguroidea Ring",
@@ -257,7 +256,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Thaumas Coat",
+		body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
@@ -268,7 +267,7 @@ function init_gear_sets()
     }
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
-        body="Lanun Frac",
+    	body="Mekosuchinae Harness",
         ring2="Mars's Ring",
         waist="Hurch'lan Sash"
     })

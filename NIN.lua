@@ -112,11 +112,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 	if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
 		equip(sets.TreasureHunter)
 	elseif spell.type == 'WeaponSkill' then
-		if state.TreasureMode.value == 'Fulltime' then
-			equip(sets.TreasureHunter)
-		end
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
+        end
+        if is_sc_element_today(spell) then
+            --equip(sets.WSDayBonus)
         end
 	end
 end
@@ -383,6 +383,7 @@ function aw_custom_aftermath_timers_precast(spell)
         end
     end
 end
+
 -- Call from job_aftercast() to create the custom aftermath timer.
 function aw_custom_aftermath_timers_aftercast(spell)
     if not spell.interrupted and spell.type == 'WeaponSkill' and

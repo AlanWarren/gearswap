@@ -109,9 +109,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-		--if state.Buff.Sengikori then
-		--	equip(sets.buff.Sengikori)
-		--end
+        if is_sc_element_today(spell) then
+            --equip(sets.WSDayBonus)
+        end
 		if state.Buff['Meikyo Shisui'] then
 			equip(sets.buff['Meikyo Shisui'])
 		end

@@ -8,6 +8,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Angon = {ammo="Angon",hands="Wyrm Finger Gauntlets +2"}
     sets.CapacityMantle = {back="Mecistopins Mantle"}
+    --sets.WSDayBonus     = { head="Gavialis Helm" }
 
 	sets.precast.JA.Jump = {
         ammo="Hagneia Stone",
