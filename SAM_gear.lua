@@ -184,8 +184,8 @@ function init_gear_sets()
         ring1="Oneiros Ring",
         ring2="Patricius Ring",
         back="Takaha Mantle",
-        waist="Windbuffet Belt",
-        legs="Wakido Haidate +1",
+        waist="Metalsinger Belt",
+        legs="Scuffler's Cosciales",
         feet="Danzo Sune-ate"
     }
     
