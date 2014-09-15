@@ -451,7 +451,7 @@ function init_gear_sets()
         sets.Coronach = {
            neck="Breeze Gorget",
            waist="Thunder Belt",
-           back="Sylvan Chlamys"
+           back="Sylvan Chlamys",
            ring1="Rajas Ring",
            ring2="Garuda Ring"
         }

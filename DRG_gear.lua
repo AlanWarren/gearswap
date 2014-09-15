@@ -110,6 +110,7 @@ function init_gear_sets()
         feet="Ejekamal Boots"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+		back="Updraft Mantle",
         head="Yaoyotl Helm",
         legs="Xaddi Cuisses"
     })
@@ -122,6 +123,7 @@ function init_gear_sets()
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
         head="Yaoyotl Helm",
+		back="Updraft Mantle",
         feet="Mikinaak Greaves"
     })
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})
@@ -149,7 +151,10 @@ function init_gear_sets()
         legs="Lancer's Cuissots +2",
         feet="Cizin Greaves +1"
     })
-	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {head="Yaoyotl Helm"})
+	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
+		    back="Updraft Mantle",
+            head="Yaoyotl Helm"
+    })
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
 
 	
