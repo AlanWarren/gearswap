@@ -100,7 +100,8 @@ function init_gear_sets()
      })
      
      sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-         ring2="Excelsis Ring"
+         ring2="Excelsis Ring",
+         back="Niht Mantle"
      })
      sets.midcast.Aspir = sets.midcast.Drain
 
@@ -246,7 +247,7 @@ function init_gear_sets()
          hands="Ignominy Gauntlets +1",
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
-         back="Atheling Mantle",
+         back="Niht Mantle",
          waist="Windbuffet Belt",
          legs="Crimson Cuisses",
          feet="Fallen's Sollerets +1"
