@@ -130,7 +130,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-    	body="Mes'yohi Haubergeon",
+    	body="Mekosuchinae Harness",
         hands="Mochizuki Tekko +1",
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
