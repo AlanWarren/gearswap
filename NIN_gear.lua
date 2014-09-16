@@ -168,10 +168,6 @@ function init_gear_sets()
     
     sets.idle.Weak = sets.idle
 
-    sets.idle.PDT = set_combine(sets.defense.PDT, {
-        feet="Danzo Sune-ate"
-     })
-    
     -- Defense sets
     sets.defense.PDT = {
     	head="Lithelimb Cap",

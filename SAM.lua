@@ -48,7 +48,7 @@ function user_setup()
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
     state.MagicalDefenseMode:options('MDT')
     
-    gear.RAarrow = "Tulfaire Arrow"
+    gear.RAarrow = "Eminent Arrow"
     
     -- Additional local binds
     send_command('bind ^[ input /lockstyle on')
@@ -116,6 +116,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 			equip(sets.buff['Meikyo Shisui'])
 		end
 	end
+    if player.inventory['Eminent Arrow'] then
+        gear.RAarrow = 'Eminent Arrow'
+    else
+        gear.RAarrow = 'Tulfaire Arrow'
+    end
     if spell.english == "Seigan" then
         -- Third Eye gearset is only called if we're in PDT mode
         if state.HybridMode.value == 'PDT' or state.PhysicalDefenseMode.value == 'PDT' then
