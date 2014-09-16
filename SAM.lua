@@ -30,6 +30,8 @@ function job_setup()
     
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
+    gear.RAarrow = {name="Eminent Arrow"}
+
     state.Buff.Sekkanoki = buffactive.sekkanoki or false
     state.Buff.Sengikori = buffactive.sengikori or false
     state.Buff['Third Eye'] = buffactive['Third Eye'] or false
@@ -47,8 +49,6 @@ function user_setup()
     state.RestingMode:options('Normal')
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
     state.MagicalDefenseMode:options('MDT')
-    
-    gear.RAarrow = "Eminent Arrow"
     
     -- Additional local binds
     send_command('bind ^[ input /lockstyle on')
@@ -192,9 +192,10 @@ function job_status_change(newStatus, oldStatus, eventArgs)
             equip(sets.thirdeye)
         end
         if player.inventory['Eminent Arrow'] then
-            gear.RAarrow = 'Eminent Arrow'
+            gear.RAarrow.name = 'Eminent Arrow'
+            add_to_chat(122, 'Using Eminent Arrows')
         elseif player.inventory['Tulfaire Arrow'] then
-            gear.RAarrow = 'Tulfaire Arrow'
+            gear.RAarrow.name = 'Tulfaire Arrow'
             add_to_chat(122, 'Using Tulfaire Arrows')
         elseif player.equipment.ammo == 'empty' then
             add_to_chat(122, 'No more Arrows!')
