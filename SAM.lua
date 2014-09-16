@@ -193,10 +193,8 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         end
         if player.inventory['Eminent Arrow'] then
             gear.RAarrow.name = 'Eminent Arrow'
-            add_to_chat(122, 'Using Eminent Arrows')
         elseif player.inventory['Tulfaire Arrow'] then
             gear.RAarrow.name = 'Tulfaire Arrow'
-            add_to_chat(122, 'Using Tulfaire Arrows')
         elseif player.equipment.ammo == 'empty' then
             add_to_chat(122, 'No more Arrows!')
         end
