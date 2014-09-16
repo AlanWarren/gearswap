@@ -118,8 +118,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 	end
     if player.inventory['Eminent Arrow'] then
         gear.RAarrow = 'Eminent Arrow'
-    else
+    elseif player.inventory['Tulfaire Arrow'] then
         gear.RAarrow = 'Tulfaire Arrow'
+    elseif player.equipment.ammo == 'empty' then
+        add_to_chat(122, 'No more Arrows!')
     end
     if spell.english == "Seigan" then
         -- Third Eye gearset is only called if we're in PDT mode
