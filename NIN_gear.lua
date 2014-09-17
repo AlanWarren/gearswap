@@ -538,12 +538,12 @@ function init_gear_sets()
         ammo="Yetshila",
         head="Uk'uxkaj Cap",
         body="Qaaxo Harness",
-        neck="Hope Torque",
+        neck="Shadow Gorget",
         hands="Hachiya Tekko +1",
     	ring1="Garuda Ring",
         back="Rancorous Mantle",
         legs="Otronif Brais +1",
-        waist="Windbuffet Belt",
+        waist="Soil Belt",
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
