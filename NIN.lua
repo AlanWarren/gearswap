@@ -399,6 +399,33 @@ function utsusemi_active()
         return false
     end
 end
+-- Set eventArgs.handled to true if we don't want the automatic display to be run.
+function display_current_job_state(eventArgs)
+    local msg = ''
+    msg = msg .. 'Offense: '..state.OffenseMode.current
+    msg = msg .. ', Rng: '..state.RangedMode.current
+    msg = msg .. ', Hybrid: '..state.HybridMode.current
+
+    if state.DefenseMode.value ~= 'None' then
+        local defMode = state[state.DefenseMode.value ..'DefenseMode'].current
+        msg = msg .. ', Defense: '..state.DefenseMode.value..' '..defMode
+    end
+    if state.HasteMode.value ~= 'Normal' then
+        msg = msg .. ', Haste: '..state.HasteMode.current
+    end
+    if state.Kiting.value then
+        msg = msg .. ', Kiting'
+    end
+    if state.PCTargetMode.value ~= 'default' then
+        msg = msg .. ', Target PC: '..state.PCTargetMode.value
+    end
+    if state.SelectNPCTargets.value then
+        msg = msg .. ', Target NPCs'
+    end
+
+    add_to_chat(123, msg)
+    eventArgs.handled = true
+end
 
 -- Call from job_precast() to setup aftermath information for custom timers.
 function aw_custom_aftermath_timers_precast(spell)
