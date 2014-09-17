@@ -52,14 +52,13 @@ function user_setup()
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
-    send_command('bind ^- gs c cycle HasteMode')
+    send_command('bind @f9 gs c cycle HasteMode')
 end
 
 
 function file_unload()
     send_command('unbind ^[')
     send_command('unbind ![')
-    send_command('unbind ^-')
     send_command('unbind !-')
     send_command('unbind ^=')
     send_command('unbind !=')
@@ -303,15 +302,28 @@ function determine_haste_group()
     -- Haste (white magic) 15%
     -- Haste Samba (Sub) 5%
     -- Haste (Merited DNC) 10%
-    -- Victory March +3/+4/+5     14%/15.6%/17.1%
-    -- Advancing March +3/+4/+5   10.9%/12.5%/14%
+    -- Victory March +3/+4/+5     14%/15.6%/17.1% +0 = 11?
+    -- Advancing March +3/+4/+5   10.9%/12.5%/14%  +0 = 8?
     -- Embrava 25%
     -- buffactive[580] = geo haste
     -- buffactive[33] = regular haste
     -- state.HasteMode = toggle for when you know Haste II is being cast on you
-    -- XXX: make HasteMode a toggle
+    -- Low = solo with trusts
+    -- Hi = Haste II is being cast 100% of the time
     if state.HasteMode.value == 'Low' then
-        -- nothing yet
+        if (buffactive[33] and buffactive['haste samba'] and buffactive.march == 1) or ( buffactive.march == 2 and buffactive[33] ) then
+            add_to_chat(8, '-------------Haste 35%-------------')
+            classes.CustomMeleeGroups:append('Haste_35')
+        elseif (buffactive[33] and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) then
+            add_to_chat(8, '-------------Haste 30%-------------')
+            classes.CustomMeleeGroups:append('Haste_30')
+        elseif buffactive.march == 2 then
+            add_to_chat(8, '-------------Haste 25%-------------')
+            classes.CustomMeleeGroups:append('Haste_25')
+        elseif buffactive[33] or buffactive['haste samba'] then
+            add_to_chat(8, '-------------Haste 20%-------------')
+            classes.CustomMeleeGroups:append('Haste_20')
+        end
     elseif state.HasteMode.value == 'Hi' then
         if (buffactive[33] or buffactive[580]) and buffactive.march  then
             add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
