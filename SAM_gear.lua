@@ -471,6 +471,19 @@ function init_gear_sets()
     sets.engaged.Adoulin.Yoichi.Acc.Reraise = set_combine(sets.engaged.Adoulin.Acc.Reraise, {
         ammo=gear.RAarrow
     })
+
+    sets.engaged.Adoulin.Windslicer = set_combine(sets.engaged.Adoulin, {
+   	    body="Mes'yohi Haubergeon"
+    })
+    sets.engaged.Adoulin.Windslicer.PDT = set_combine(sets.engaged.Adoulin.PDT, {
+        ring2="Beeline Ring"
+    })
+    sets.engaged.Adoulin.Windslicer.Acc = set_combine(sets.engaged.Adoulin.Windslicer, {
+        ring1="Mars's Ring"
+    })
+    sets.engaged.Adoulin.Windslicer.Acc.PDT = set_combine(sets.engaged.Adoulin.Windslicer.PDT, { 
+         body="Wakido Domaru +1"
+    })
     
     sets.buff.Sekkanoki = {hands="Unkai Kote +2"}
     sets.buff.Sengikori = {}

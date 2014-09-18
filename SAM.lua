@@ -245,6 +245,8 @@ function get_combat_weapon()
         else
             state.CombatWeapon:set('Yoichi')
         end
+    elseif player.equipment.main == 'Windslicer' then
+        state.CombatWeapon:set('Windslicer')
     else
         state.CombatWeapon:set(player.equipment.main)
     end

@@ -302,8 +302,8 @@ function determine_haste_group()
     -- Haste (white magic) 15%
     -- Haste Samba (Sub) 5%
     -- Haste (Merited DNC) 10%
-    -- Victory March +3/+4/+5     14%/15.6%/17.1% +0 = 11?
-    -- Advancing March +3/+4/+5   10.9%/12.5%/14%  +0 = 8?
+    -- Victory March +3/+4/+5    9.4/14%/15.6%/17.1% +0
+    -- Advancing March +3/+4/+5  6.3/10.9%/12.5%/14%  +0
     -- Embrava 25%
     -- buffactive[580] = geo haste
     -- buffactive[33] = regular haste
@@ -311,10 +311,10 @@ function determine_haste_group()
     -- Low = solo with trusts
     -- Hi = Haste II is being cast 100% of the time
     if state.HasteMode.value == 'Low' then
-        if (buffactive[33] and buffactive['haste samba'] and buffactive.march == 1) or ( buffactive.march == 2 and buffactive[33] ) then
+        if (buffactive[33] and buffactive['haste samba'] and buffactive.march == 1) then
             add_to_chat(8, '-------------Haste 35%-------------')
             classes.CustomMeleeGroups:append('Haste_35')
-        elseif (buffactive[33] and buffactive.march == 1) or (buffactive.march == 2 and buffactive['haste samba']) then
+        elseif ( buffactive[33] and buffactive.march == 2 ) or ( buffactive[33] and buffactive['haste samba'] ) then
             add_to_chat(8, '-------------Haste 30%-------------')
             classes.CustomMeleeGroups:append('Haste_30')
         elseif buffactive.march == 2 then
