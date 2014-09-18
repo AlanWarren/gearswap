@@ -4,7 +4,7 @@
 
  === Notes ===
  -- Set format is as follows:
-    sets[phase][type][CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
+    sets.midcast.RA.[CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
     ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll = {}
     you can also append CustomRangedGroups to each other
     ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.Decoy.SamRoll = {}
@@ -224,7 +224,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
     -- autora
-    if (spell.action_type == 'Ranged Attack' or spell.type:lower() == 'weaponskill') and state.AutoRA.value then
+    if state.AutoRA.value then
         use_ra(spell)
     end
 
