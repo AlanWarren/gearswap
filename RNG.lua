@@ -4,7 +4,7 @@
 
  === Notes ===
  -- Set format is as follows:
-    sets[phase][type][CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
+    sets.midcast.RA.[CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
     ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll = {}
     you can also append CustomRangedGroups to each other
     ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.Decoy.SamRoll = {}
