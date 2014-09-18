@@ -12,6 +12,12 @@
 --Tsurumaru (5 hit): 24
 --Kogarasumaru (5 hit): 40
 --Amanomurakumo/Masamune 437 (5 hit): 46
+--
+--Aftermath sets
+-- Koga AM1/AM2 = sets.engaged.AM
+-- Koga AM3 = sets.engaged.AM3
+-- Amano AM = sets.engaged.STPAM
+-- Using Namas Arrow while using Amano will cancel STPAM set
 
 -- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
 
@@ -29,6 +35,8 @@ function job_setup()
     get_combat_weapon()
     
     state.CapacityMode = M(false, 'Capacity Point Mantle')
+
+    state.YoichiAM = M(true, 'Cancel Yoichi AM Mode')
 
     gear.RAarrow = {name="Eminent Arrow"}
 
@@ -126,6 +134,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             -- If sneak is active when using, cancel before completion
             send_command('cancel 71')
     end
+    update_am_type(spell)
 end
 
 
@@ -208,8 +217,6 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-    --if S{'madrigal','march'}:contains(buff:lower()) then
-    	--handle_equipping_gear(player.status)
     if state.Buff[buff] ~= nil then
     	state.Buff[buff] = gain
         -- if seign or TE is up, don't swap
@@ -217,6 +224,29 @@ function job_buff_change(buff, gain)
             handle_equipping_gear(player.status)
         end
     end
+
+    if S{'aftermath'}:contains(buff:lower()) then
+        classes.CustomMeleeGroups:clear()
+       
+        if buffactive.Aftermath and gain then
+
+            if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
+                classes.CustomMeleeGroups:append('STPAM')
+            elseif player.equipment.main == 'Kogarasumaru' then
+                if buff == "Aftermath: Lv.3" and gain or buffactive['Aftermath: Lv.3'] then
+                    classes.CustomMeleeGroups:append('AM3')
+                else
+                    classes.CustomMeleeGroups:append('AM')
+                end
+            end
+
+        end
+    end
+    
+    if S{'aftermath'}:contains(buff:lower()) then
+        handle_equipping_gear(player.status)
+    end
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -262,14 +292,32 @@ function seigan_thirdeye_active()
     return state.Buff['Seigan'] or state.Buff['Third Eye']
 end
 
-function determine_bow()
+function update_melee_groups()
     classes.CustomMeleeGroups:clear()
-    if player.equipment.range == 'Yoichinoyumi' then
-        add_to_chat(121,'Yoichinoyumi Equipped!')
-    	classes.CustomMeleeGroups:append('Yoichi')
+
+    if buffactive.Aftermath then
+        if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
+            classes.CustomMeleeGroups:append('STPAM')
+        elseif player.equipment.main == 'Kogarasumaru' then
+            if buffactive['Aftermath: Lv.3'] then
+                classes.CustomMeleeGroups:append('AM3')
+            else
+                classes.CustomMeleeGroups:append('AM')
+            end
+        end
     end
 end
-
+-- call this in job_post_precast() 
+function update_am_type(spell)
+    if spell.type == 'WeaponSkill' and spell.skill == 'Archery' and spell.english == 'Namas Arrow' then
+        if player.equipment.main == 'Amanomurakumo' then
+            -- Yoichi AM overwrites Amano AM
+            state.YoichiAM:set(false)
+        end
+    else
+        state.YoichiAM:set(true)
+    end
+end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book

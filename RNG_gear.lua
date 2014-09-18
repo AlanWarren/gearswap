@@ -9,7 +9,7 @@ function init_gear_sets()
 
         sets.CapacityMantle = {back="Mecistopins Mantle"}
 
-        sets.precast.JA['Eagle Eye Shot'] = {
+        sets.precast.JA['Eagle Eye Shot'] = set_combine(sets.midcast.RA, {
             head="Uk'uxkaj Cap", 
             neck="Rancor Collar",
             back="Buquwik Cape",
@@ -18,7 +18,7 @@ function init_gear_sets()
             ring2="Pyrosoul Ring",
             legs="Arcadian Braccae +1", 
             feet="Arcadian Socks +1"
-        }
+        })
         sets.precast.JA['Eagle Eye Shot'].Mid = set_combine(sets.precast.JA['Eagle Eye Shot'], {
             back="Lutian Cape",
             ring2="Longshot Ring",
