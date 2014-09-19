@@ -154,6 +154,9 @@ function init_gear_sets()
          waist="Soil Belt",
          feet="Ejekamal Boots"
      })
+     sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Metalsinger Belt"})
+     sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS['Entropy'].Mid, { })
+
      sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {
          head="Ignominy burgeonet +1",
          neck="Stoicheion Medal",
@@ -167,8 +170,6 @@ function init_gear_sets()
          back="Toro Cape",
          feet="Ignominy Sollerets"
      })
-     sets.precast.WS['Entropy'].Mid = set_combine(sets.precast.WS['Entropy'], {waist="Metalsinger Belt"})
-     sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS['Entropy'].Mid, { })
 
      sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
          head="Ighwa Cap",
@@ -201,6 +202,10 @@ function init_gear_sets()
          legs="Scuffler's Cosciales",
          waist="Caudata Belt"
      })
+     sets.precast.WS['Torcleaver'].Mid = set_combine(sets.precast.WS.Mid, {
+         neck="Aqua Gorget",
+         body="Fallen's Cuirass +1",
+     })
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
          hands="Ignominy Gauntlets +1",
@@ -208,6 +213,16 @@ function init_gear_sets()
          legs="Scuffler's Cosciales",
          waist="Metalsinger belt"
       })
+     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS.Mid, {
+         hands="Ignominy Gauntlets +1",
+         neck="Aqua Gorget",
+         legs="Xaddi Cuisses",
+         waist="Metalsinger belt"
+     })
+     -- STR / MND 
+     sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
+
+     })
      -- 50% STR / 50% INT 
      sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
          head="Ighwa Cap",
@@ -216,7 +231,6 @@ function init_gear_sets()
          legs="Scuffler's Cosciales",
          waist="Metalsinger belt",
       })
-     
      sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
          head="Ignominy burgeonet +1",
          neck="Aqua Gorget",
