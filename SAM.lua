@@ -38,6 +38,8 @@ function job_setup()
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
     state.YoichiAM = M(false, 'Cancel Yoichi AM Mode')
+    -- list of weaponskills that make better use of otomi helm in low acc situations
+    wsList = S{'Tachi: Fudo', 'Tachi: Shoha'}
 
     gear.RAarrow = {name="Eminent Arrow"}
 
@@ -119,7 +121,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.CapacityMantle)
         end
         if is_sc_element_today(spell) then
-            equip(sets.WSDayBonus)
+            if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
+                -- do nothing
+            else
+                equip(sets.WSDayBonus)
+            end
         end
 		if state.Buff['Meikyo Shisui'] then
 			equip(sets.buff['Meikyo Shisui'])

@@ -20,6 +20,9 @@ function job_setup()
     
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 	
+    -- list of weaponskills that make better use of otomi helm in low acc situations
+    wsList = S{'Drakesbane'}
+
 	state.Buff = {}
 	-- JA IDs for actions that always have TH: Provoke, Animated Flourish
 	info.default_ja_ids = S{35, 204}
@@ -103,7 +106,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.CapacityMantle)
         end
         if is_sc_element_today(spell) then
-            equip(sets.WSDayBonus)
+            if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
+                --do nothing
+            else
+                equip(sets.WSDayBonus)
+            end
         end
     end
 end

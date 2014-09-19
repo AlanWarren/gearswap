@@ -24,7 +24,9 @@ function job_setup()
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     scytheList = S{ 'Xbalanque', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }
-    gsList = S{'Inanna', 'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }        
+    gsList = S{'Inanna', 'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }
+    -- list of weaponskills that make better use of otomi helm in low acc situations
+    wsList = S{'Spiral Hell', 'Cross Reaper'}
     adjust_engaged_sets()
 end
  
@@ -94,7 +96,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.Buff.Souleater then
             equip(sets.buff.Souleater)
         elseif is_sc_element_today(spell) then
-            equip(sets.WSDayBonus)
+            if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
+                -- use normal head piece
+            else
+                equip(sets.WSDayBonus)
+            end
         end
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
@@ -112,8 +118,8 @@ end
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-    if state.HybridMode.value == 'Reraise' or
-    (state.HybridMode.value == 'Physical' and state.PhysicalDefenseMode.value == 'Reraise') then
+    if state.HybridMode.current == 'Reraise' or
+    (state.HybridMode.current == 'Physical' and state.PhysicalDefenseMode.current == 'Reraise') then
         equip(sets.Reraise)
     end
 end
@@ -248,7 +254,7 @@ function adjust_engaged_sets()
 end
 
 function select_static_ammo()
-    if state.OffenseMode.value == 'Acc' or state.OffenseMode.value == 'Mid' then
+    if state.OffenseMode.current == 'Acc' or state.OffenseMode.current == 'Mid' then
 	    if world.time >= (18*60) or world.time <= (6*60) then
             return sets.NightAccAmmo
         else
