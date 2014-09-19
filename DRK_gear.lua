@@ -221,8 +221,10 @@ function init_gear_sets()
      })
      -- STR / MND 
      sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
-
+         head="Ighwa Cap",
+         neck="Shadow Gorget"
      })
+     sets.precast.WS.Quietus.Mid = sets.precast.WS.Quietus
      -- 50% STR / 50% INT 
      sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
          head="Ighwa Cap",
