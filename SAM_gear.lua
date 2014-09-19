@@ -194,6 +194,16 @@ function init_gear_sets()
         neck="Twilight Torque",
         ring1="Patricius Ring",
         ring2="Paguroidea Ring",
+        head="Ptica Headgear",
+   	    body="Mes'yohi Haubergeon",
+        back="Repulse Mantle",
+        feet="Danzo Sune-ate"
+    })
+
+    sets.idle.Regen = set_combine(sets.idle.Town, {
+        neck="Twilight Torque",
+        ring1="Patricius Ring",
+        ring2="Paguroidea Ring",
         head="Twilight Helm",
         body="Kumarbi's Akar",
         back="Repulse Mantle",
