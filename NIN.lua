@@ -302,8 +302,8 @@ function determine_haste_group()
     -- Haste (white magic) 15%
     -- Haste Samba (Sub) 5%
     -- Haste (Merited DNC) 10%
-    -- Victory March +3/+4/+5    9.4/14%/15.6%/17.1% +0
-    -- Advancing March +3/+4/+5  6.3/10.9%/12.5%/14%  +0
+    -- Victory March +0/+3/+4/+5    9.4/14%/15.6%/17.1% +0
+    -- Advancing March +0/+3/+4/+5  6.3/10.9%/12.5%/14%  +0
     -- Embrava 25%
     -- buffactive[580] = geo haste
     -- buffactive[33] = regular haste
@@ -325,22 +325,16 @@ function determine_haste_group()
             classes.CustomMeleeGroups:append('Haste_20')
         end
     elseif state.HasteMode.value == 'Hi' then
-        if (buffactive[33] or buffactive[580]) and buffactive.march  then
+        if ( ((buffactive[33] or buffactive[580]) and buffactive.march) or (buffactive.embrava and buffactive[33]) ) then
             add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
-            classes.CustomMeleeGroups:append('Haste_43')
-        elseif ( (buffactive.embrava or buffactive[33]) and buffactive.march == 2 ) then
-            add_to_chat(8, '-------------Haste 43%-------------')
-            classes.CustomMeleeGroups:append('Haste_43')
-        elseif buffactive.embrava and buffactive[33] then
-            add_to_chat(8, '-------------Haste 45%-------------')
-            classes.CustomMeleeGroups:append('Haste_43')
-        elseif buffactive[33] and buffactive['haste samba'] and buffactive.march == 1 then
-            add_to_chat(8, '-------------Haste 35%-------------')
             classes.CustomMeleeGroups:append('Haste_43')
         elseif buffactive[33] and buffactive['haste samba'] then
             add_to_chat(8, '-------------Haste 40%-------------')
             classes.CustomMeleeGroups:append('Haste_40')
-        elseif (buffactive.march == 2 and buffactive['haste samba']) or buffactive[580] or buffactive[33] then
+        elseif buffactive.march == 2 and buffactive['haste samba'] then
+            add_to_chat(8, '-------------Haste 35%-------------')
+            classes.CustomMeleeGroups:append('Haste_35')
+        elseif buffactive[580] or buffactive[33] then
             add_to_chat(8, '-------------Haste 30%-------------')
             classes.CustomMeleeGroups:append('Haste_30')
         elseif buffactive.embrava or buffactive.march == 2 then
@@ -351,8 +345,8 @@ function determine_haste_group()
             classes.CustomMeleeGroups:append('Haste_20')
         end
     else
-        if ( (buffactive[580] and buffactive[33]) and buffactive.march ) then
-            add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
+        if buffactive[580] and buffactive.march then
+            add_to_chat(8, '-------------GEO-Haste Mode Enabled--------------')
             classes.CustomMeleeGroups:append('Haste_43')
         elseif ( (buffactive.embrava or buffactive[33]) and buffactive.march == 2 ) then
             add_to_chat(8, '-------------Haste 43%-------------')
