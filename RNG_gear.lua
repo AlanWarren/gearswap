@@ -39,7 +39,7 @@ function init_gear_sets()
         sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
         
         sets.idle = {
-            head="Ocelomeh Headpiece +1",
+            head="Umbani Cap",
             neck="Twilight Torque",
             ear1="Volley Earring",
             ear2="Clearview Earring",
@@ -52,6 +52,11 @@ function init_gear_sets()
             legs="Arcadian Braccae +1",
             feet="Skadi's Jambeaux +1"
         }
+        sets.idle.Regen = set_combine(sets.idle, {
+            head="Ocelomeh Headpiece +1",
+            body="Kheper Jacket",
+            ring2="Paguroidea Ring"
+        })
         sets.idle.PDT = set_combine(sets.idle, {
             head="Lithelimb Cap",
             ring1="Patricius Ring",

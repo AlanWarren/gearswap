@@ -298,6 +298,9 @@ function customize_idle_set(idleSet)
 	if state.Buff.Camouflage then
 		idleSet = set_combine(idleSet, sets.buff.Camouflage)
 	end
+    if player.hpp < 90 then
+        idleSet = set_combine(idleSet, sets.idle.Regen)
+    end
     return idleSet
 end
  
