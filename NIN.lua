@@ -118,11 +118,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.CapacityMantle)
         end
         if is_sc_element_today(spell) then
-            if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
-                --do nothing
-            else
-                equip(sets.WSDayBonus)
-            end
+            equip(sets.WSDayBonus)
         end
 	end
 end
