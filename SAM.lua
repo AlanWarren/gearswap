@@ -33,6 +33,7 @@ end
 function job_setup()
     get_combat_form()
     get_combat_weapon()
+    update_melee_groups()
     
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
@@ -225,10 +226,10 @@ function job_buff_change(buff, gain)
         end
     end
 
-    if S{'aftermath'}:contains(buff:lower()) and gain then
+    if S{'aftermath'}:contains(buff:lower()) then
         classes.CustomMeleeGroups:clear()
        
-        if buffactive.Aftermath then
+        if buffactive.Aftermath and gain then
 
             if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
                 classes.CustomMeleeGroups:clear()
@@ -241,7 +242,6 @@ function job_buff_change(buff, gain)
             else
                 classes.CustomMeleeGroups:append('AM')
             end
-
         end
     end
     
@@ -259,6 +259,7 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
 	get_combat_form()
+    update_melee_groups()
     get_combat_weapon()
 end
 
