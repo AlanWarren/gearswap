@@ -196,7 +196,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
         ammo=gear.RAbullet,
-		head="Ocelomeh Headpiece +1",
+		head="Umbani Cap",
         neck="Twilight Torque",
         ear2="Dawn Earring",
     	body="Mekosuchinae Harness",
@@ -208,6 +208,10 @@ function init_gear_sets()
         legs="Nahtirah Trousers",
         feet="Skadi's Jambeaux +1"
     }
+    sets.idle.Regen = set_combine(sets.idle, {
+		head="Ocelomeh Headpiece +1",
+        body="Kheper jacket"
+    })
 
 	sets.idle.Town = {
         range="Vanir Gun",

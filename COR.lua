@@ -135,7 +135,12 @@ function get_custom_wsmode(spell, action, default_wsmode)
 	--	return 'Brew'
 	--end
 end
-
+function customize_idle_set(idleSet)
+    if player.hpp < 90 then
+        idleSet = set_combine(idleSet, sets.idle.Regen)
+    end
+    return idleSet
+end
 function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
