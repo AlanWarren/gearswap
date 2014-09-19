@@ -471,18 +471,29 @@ function init_gear_sets()
     sets.engaged.Adoulin.Yoichi.Acc.Reraise = set_combine(sets.engaged.Adoulin.Acc.Reraise, {
         ammo=gear.RAarrow
     })
-
-    sets.engaged.Adoulin.Windslicer = set_combine(sets.engaged.Adoulin, {
-   	    body="Mes'yohi Haubergeon"
+    
+    sets.engaged.Amanomurakumo = set_combine(sets.engaged, {
     })
-    sets.engaged.Adoulin.Windslicer.PDT = set_combine(sets.engaged.Adoulin.PDT, {
-        ring2="Beeline Ring"
+    sets.engaged.Amanomurakumo.AM = set_combine(sets.engaged, {
     })
-    sets.engaged.Adoulin.Windslicer.Acc = set_combine(sets.engaged.Adoulin.Windslicer, {
-        ring1="Mars's Ring"
+    
+    sets.engaged.Adoulin.Amanomurakumo = set_combine(sets.engaged.Adoulin, {
     })
-    sets.engaged.Adoulin.Windslicer.Acc.PDT = set_combine(sets.engaged.Adoulin.Windslicer.PDT, { 
-         body="Wakido Domaru +1"
+    sets.engaged.Adoulin.Amanomurakumo.AM = set_combine(sets.engaged.Adoulin, {
+    })
+    
+    sets.engaged.Kogarasumaru = set_combine(sets.engaged, {
+    })
+    sets.engaged.Kogarasumaru.AM = set_combine(sets.engaged, {
+    })
+    sets.engaged.Kogarasumaru.AM3 = set_combine(sets.engaged, {
+    })
+    
+    sets.engaged.Adoulin.Kogarasumaru = set_combine(sets.engaged.Adoulin, {
+    })
+    sets.engaged.Adoulin.Kogarasumaru.AM = set_combine(sets.engaged.Adoulin, {
+    })
+    sets.engaged.Adoulin.Kogarasumaru.AM3 = set_combine(sets.engaged.Adoulin, {
     })
     
     sets.buff.Sekkanoki = {hands="Unkai Kote +2"}
