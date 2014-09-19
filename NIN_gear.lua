@@ -26,7 +26,7 @@ function init_gear_sets()
     
 	sets.TreasureHunter = { waist="Chaac Belt" }
     sets.CapacityMantle = { back="Mecistopins Mantle" }
-    --sets.WSDayBonus     = { head="Gavialis Helm" }
+    sets.WSDayBonus     = { head="Gavialis Helm" }
 
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
