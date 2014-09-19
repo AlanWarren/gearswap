@@ -14,9 +14,9 @@
 --Amanomurakumo/Masamune 437 (5 hit): 46
 --
 --Aftermath sets
--- Koga AM1/AM2 = sets.engaged.AM
--- Koga AM3 = sets.engaged.AM3
--- Amano AM = sets.engaged.STPAM
+-- Koga AM1/AM2 = sets.engaged.Kogarasumaru.AM
+-- Koga AM3 = sets.engaged.Kogarasumaru.AM3
+-- Amano AM = sets.engaged.Amanomurakumo.AM
 -- Using Namas Arrow while using Amano will cancel STPAM set
 
 -- IMPORTANT: Make sure to also get the Mote-Include.lua file (and its supplementary files) to go with this.
@@ -36,7 +36,7 @@ function job_setup()
     
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
-    state.YoichiAM = M(true, 'Cancel Yoichi AM Mode')
+    state.YoichiAM = M(false, 'Cancel Yoichi AM Mode')
 
     gear.RAarrow = {name="Eminent Arrow"}
 
@@ -225,19 +225,21 @@ function job_buff_change(buff, gain)
         end
     end
 
-    if S{'aftermath'}:contains(buff:lower()) then
+    if S{'aftermath'}:contains(buff:lower()) and gain then
         classes.CustomMeleeGroups:clear()
        
-        if buffactive.Aftermath and gain then
+        if buffactive.Aftermath then
 
             if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
-                classes.CustomMeleeGroups:append('STPAM')
+                classes.CustomMeleeGroups:clear()
             elseif player.equipment.main == 'Kogarasumaru' then
                 if buff == "Aftermath: Lv.3" and gain or buffactive['Aftermath: Lv.3'] then
                     classes.CustomMeleeGroups:append('AM3')
                 else
                     classes.CustomMeleeGroups:append('AM')
                 end
+            else
+                classes.CustomMeleeGroups:append('AM')
             end
 
         end
@@ -297,13 +299,16 @@ function update_melee_groups()
 
     if buffactive.Aftermath then
         if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
-            classes.CustomMeleeGroups:append('STPAM')
+            -- prevents using Amano AM while overriding it with Yoichi AM
+            classes.CustomMeleeGroups:clear()
         elseif player.equipment.main == 'Kogarasumaru' then
             if buffactive['Aftermath: Lv.3'] then
                 classes.CustomMeleeGroups:append('AM3')
             else
                 classes.CustomMeleeGroups:append('AM')
             end
+        else
+            classes.CustomMeleeGroups:append('AM')
         end
     end
 end
@@ -312,10 +317,10 @@ function update_am_type(spell)
     if spell.type == 'WeaponSkill' and spell.skill == 'Archery' and spell.english == 'Namas Arrow' then
         if player.equipment.main == 'Amanomurakumo' then
             -- Yoichi AM overwrites Amano AM
-            state.YoichiAM:set(false)
+            state.YoichiAM:set(true)
         end
     else
-        state.YoichiAM:set(true)
+        state.YoichiAM:set(false)
     end
 end
 -- Select default macro book on initial load or subjob change.
