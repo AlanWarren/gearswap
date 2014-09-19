@@ -94,7 +94,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.Buff.Souleater then
             equip(sets.buff.Souleater)
         elseif is_sc_element_today(spell) then
-            --equip(sets.WSDayBonus)
+            equip(sets.WSDayBonus)
         end
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
