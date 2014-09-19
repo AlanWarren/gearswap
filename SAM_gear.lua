@@ -18,7 +18,7 @@ function init_gear_sets()
     sets.precast.Waltz['Healing Waltz'] = {}
     
     sets.CapacityMantle = {back="Mecistopins Mantle"}
-    --sets.WSDayBonus     = { head="Gavialis Helm" }
+    sets.WSDayBonus     = { head="Gavialis Helm" }
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
