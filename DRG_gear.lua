@@ -199,11 +199,16 @@ function init_gear_sets()
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
-        head="Twilight Helm",
+        head="Otomi Helm",
         neck="Twilight Torque",
 		body="Ares' Cuirass +1",
         ring2="Paguroidea Ring",
         back="Repulse Mantle"
+    })
+
+    sets.idle.Regen = set_combine(sets.idle.Field, {
+        head="Twilight Helm",
+        body="Kumarbi's Akar"
     })
 
 	sets.idle.Weak = set_combine(sets.idle.Field, {
