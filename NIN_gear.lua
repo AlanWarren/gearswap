@@ -309,6 +309,8 @@ function init_gear_sets()
 
     sets.engaged.HasteAcc = set_combine(sets.engaged.HasteMid, {
         ammo=gear.Ammo,
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
         body="Mes'yohi Haubergeon",
         ring1="Mars's Ring",
         hands="Otronif Gloves +1",
@@ -354,6 +356,8 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, {
         head="Ptica Headgear",
         body="Mes'yohi Haubergeon",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
     	back="Rancorous Mantle",
         feet="Qaaxo Leggings"
     })
@@ -375,8 +379,9 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, {
         head="Ptica Headgear",
-        body="Qaaxo Harness",
-    	waist="Anguinus Belt",
+        body="Mes'yohi Haubergeon",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
         feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HasteAcc)
@@ -402,9 +407,11 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
         body="Mochizuki Chainmail +1",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
         ring1="Mars's Ring",
     	back="Rancorous Mantle",
-        feet="Mochizuki Kyahan +1"
+        feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HasteAcc)
     sets.engaged.Evasion.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HasteEvasion)
@@ -417,17 +424,16 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
-        ring2="Epona's Ring",
         waist="Windbuffet Belt",
         back="Atheling Mantle",
-        legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Ptica Headgear",
-        neck="Rancor Collar",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
         hands="Mochizuki Tekko +1",
-        back="Yokaze Mantle",
+    	back="Rancorous Mantle",
         feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
@@ -454,7 +460,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         back="Atheling Mantle",
-        waist="Anguinus Belt"
+        feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, {
         ring1="Mars's Ring",
