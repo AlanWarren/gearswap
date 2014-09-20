@@ -11,6 +11,8 @@ function init_gear_sets()
 
         sets.precast.JA['Eagle Eye Shot'] = set_combine(sets.midcast.RA, {
             head="Uk'uxkaj Cap", 
+            ear1="Flame Pearl",
+            ear2="Flame Pearl",
             neck="Rancor Collar",
             back="Buquwik Cape",
             hands="Seiryu's Kote",
