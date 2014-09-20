@@ -221,7 +221,7 @@ function init_gear_sets()
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS.Mid, {
          hands="Ignominy Gauntlets +1",
          neck="Aqua Gorget",
-         body="Fallen's Cuirass +1"
+         body="Fallen's Cuirass +1",
          waist="Metalsinger belt",
          back="Niht Mantle"
      })
