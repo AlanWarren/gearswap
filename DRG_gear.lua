@@ -259,7 +259,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Xaddi Mail",
-        hands="Cizin Mufflers +1",
+        hands="Xaddi Gauntlets",
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
 		--back="Atheling Mantle",
@@ -272,8 +272,6 @@ function init_gear_sets()
 	sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
         back="Updraft Mantle",
-        hands="Xaddi Gauntlets",
-        ring2="K'ayres Ring",
         feet="Ejekamal Boots"
     })
 
