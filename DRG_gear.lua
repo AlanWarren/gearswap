@@ -208,7 +208,7 @@ function init_gear_sets()
 
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="Twilight Helm",
-        body="Kumarbi's Akar"
+		body="Ares' Cuirass +1",
     })
 
 	sets.idle.Weak = set_combine(sets.idle.Field, {
