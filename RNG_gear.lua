@@ -94,7 +94,7 @@ function init_gear_sets()
         sets.engaged.Yoichinoyumi = set_combine(sets.engaged, {})
 
         sets.engaged.Melee = {
-            head="Whirlpool Mask",
+            head="Iuitl Headgear +1",
             neck="Asperity Necklace",
             ear1="Bladeborn Earring",
             ear2="Steelflash Earring",
@@ -119,6 +119,7 @@ function init_gear_sets()
             ear1="Dudgeon Earring",
             ear2="Heartseeker Earring",
             body="Skadi's Cuirie +1",
+            back="Vellaunus' Mantle +1",
             waist="Patentia Sash"
         })
 
