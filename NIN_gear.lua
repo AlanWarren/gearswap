@@ -135,7 +135,7 @@ function init_gear_sets()
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
     	back="Vellaunus' Mantle +1",
-        waist="Patentia Sash",
+        waist="Windbuffet Belt +1",
         legs="Hachiya Hakama +1",
         feet="Danzo Sune-ate"
      }
@@ -150,7 +150,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
     	back="Repulse Mantle",
-        waist="Patentia Sash",
+        waist="Windbuffet Belt +1",
         legs="Mochizuki Hakama +1",
         feet="Danzo Sune-ate"
     }
