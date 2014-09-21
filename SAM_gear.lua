@@ -33,7 +33,7 @@ function init_gear_sets()
         ring1="Ifrit Ring",
         ring2="Pyrosoul Ring",
         back="Buquwik Cape",
-        waist="Windbuffet Belt",
+        waist="Windbuffet Belt +1",
         legs="Scuffler's Cosciales",
         feet="Ejekamal Boots"
     }
@@ -151,9 +151,9 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Flame Gorget",waist="Light Belt"})
     
-    sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {neck="Aqua Gorget",waist="Windbuffet Belt"})
+    sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {neck="Aqua Gorget",waist="Windbuffet Belt +1"})
     
-    sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {neck="Breeze Gorget",waist="Windbuffet Belt"})
+    sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {neck="Breeze Gorget",waist="Windbuffet Belt +1"})
     
     sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",waist="Soil Belt"})
     
@@ -229,7 +229,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Patricius Ring",
         back="Repulse Mantle",
-        waist="Windbuffet Belt",
+        waist="Windbuffet Belt +1",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     }
@@ -271,7 +271,7 @@ function init_gear_sets()
         ring1="Rajas Ring", 
         ring2="Oneiros Ring", 
         back="Takaha Mantle", 
-        waist="Windbuffet Belt",
+        waist="Windbuffet Belt +1",
         legs="Wakido Haidate +1",
         feet="Otronif boots +1"
     }
@@ -377,7 +377,7 @@ function init_gear_sets()
         ring1="Rajas Ring", -- 5
         ring2="Oneiros Ring", 
         back="Atheling Mantle",
-        waist="Windbuffet Belt",
+        waist="Windbuffet Belt +1",
         legs="Wakido Haidate +1", -- 6
         feet="Otronif Boots +1" --7
     }
@@ -433,7 +433,7 @@ function init_gear_sets()
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
         back="Takaha Mantle",
-        waist="Windbuffet Belt", 
+        waist="Windbuffet Belt +1", 
         legs="Otronif Brais +1", -- 6
         feet="Otronif Boots +1" -- 7
     }
