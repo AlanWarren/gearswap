@@ -220,7 +220,7 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Qaaxo Harness",
-        waist="Windbuffet Belt",
+        waist="Windbuffet Belt +1",
         legs="Otronif Brais +1",
         feet="Qaaxo Leggings"
     })
@@ -348,7 +348,7 @@ function init_gear_sets()
         body="Thaumas Coat",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
-        waist="Windbuffet Belt",
+        waist="Windbuffet Belt +1",
         back="Atheling Mantle",
         legs="Hachiya Hakama +1",
         feet="Otronif Boots +1"
@@ -424,7 +424,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
-        waist="Windbuffet Belt",
+        waist="Windbuffet Belt +1",
         back="Atheling Mantle",
         feet="Otronif Boots +1"
     })
@@ -453,7 +453,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         back="Atheling Mantle",
-        waist="Windbuffet Belt",
+        waist="Windbuffet Belt +1",
     })
     sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, {
         neck="Rancor Collar",
@@ -510,7 +510,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Epona's Ring",
     	back="Atheling Mantle",
-        waist="Windbuffet Belt",
+        waist="Windbuffet Belt +1",
         legs="Manibozho Brais",
         feet="Qaaxo Leggings"
     }
