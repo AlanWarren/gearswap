@@ -127,7 +127,7 @@ function init_gear_sets()
          ring1="Ifrit Ring",
          ring2="Pyrosoul Ring",
          back="Niht Mantle",
-         waist="Windbuffet Belt",
+         waist="Windbuffet Belt +1",
          legs="Ignominy Flanchard +1",
          feet="Fallen's Sollerets +1"
      }
@@ -247,7 +247,7 @@ function init_gear_sets()
          neck="Aqua Gorget",
          ear1="Friomisi Earring",
          hands="Fallen's Finger Gauntlets",
-         waist="Windbuffet Belt",
+         waist="Windbuffet Belt +1",
          back="Toro Cape",
          feet="Ignominy Sollerets"
       })
@@ -274,7 +274,7 @@ function init_gear_sets()
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
          back="Niht Mantle",
-         waist="Windbuffet Belt",
+         waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
          feet="Fallen's Sollerets +1"
      }
@@ -302,7 +302,7 @@ function init_gear_sets()
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
          back="Atheling Mantle",
-         waist="Windbuffet Belt",
+         waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
          feet="Fallen's Sollerets +1"
      }
@@ -377,7 +377,7 @@ function init_gear_sets()
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
      	 back="Atheling Mantle",
-         waist="Windbuffet Belt",
+         waist="Windbuffet Belt +1",
          legs="Xaddi Cuisses",
          feet="Ejekamal Boots"
      }
@@ -480,7 +480,7 @@ function init_gear_sets()
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
      	 back="Atheling Mantle",
-         waist="Windbuffet Belt",
+         waist="Windbuffet Belt +1",
          legs="Xaddi Cuisses",
          feet="Mikinaak Greaves"
      }
@@ -511,7 +511,7 @@ function init_gear_sets()
 
      sets.engaged.HighHaste = set_combine(sets.engaged, {
          head="Otomi Helm",
-         waist="Windbuffet Belt",
+         waist="Windbuffet Belt +1",
      })
 
      sets.engaged.MaxHaste = sets.engaged.HighHaste
