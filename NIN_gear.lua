@@ -286,6 +286,7 @@ function init_gear_sets()
 
     sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, sets.engaged.Acc)
     
+    sets.engaged.MaxHaste = {}
     sets.engaged.Haste_43 = {}
     sets.engaged.Haste_40 = {}
     sets.engaged.Haste_35 = {}
@@ -338,7 +339,7 @@ function init_gear_sets()
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     }
-    
+
     -- 43
     sets.engaged.Haste_43 = set_combine(sets.engaged, {
     	head="Felistris Mask",
@@ -365,6 +366,26 @@ function init_gear_sets()
     sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
         head="Lithelimb Cap",
+        neck="Agitator's Collar",
+        hands="Otronif Gloves +1",
+        body="Otronif Harness +1",
+        ring1="Patricius Ring",
+        legs="Otronif Brais +1",
+        feet="Otronif Boots +1"
+     })
+    
+    -- Capped
+    sets.engaged.MaxHaste = set_combine(sets.engaged.Haste_43, {
+        body="Qaaxo Harness",
+        legs="Otronif Brais +1",
+    })
+    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Mid.Haste_43, {
+    	back="Yokaze Mantle",
+    })
+    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.HasteAcc)
+    sets.engaged.Evasion.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HasteEvasion)
+    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        head="Ptica Headgear",
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
         body="Otronif Harness +1",
