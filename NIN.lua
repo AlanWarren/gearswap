@@ -5,13 +5,13 @@
 
 function get_sets()
     mote_include_version = 2
-	include('Mote-Include.lua')
+    include('Mote-Include.lua')
 end
 
 
 -- Setup vars that are user-independent.
 function job_setup()
-	state.Buff.Migawari = buffactive.migawari or false
+    state.Buff.Migawari = buffactive.migawari or false
     
     include('Mote-TreasureHunter')
     state.TreasureMode:set('Tag')
@@ -19,23 +19,19 @@ function job_setup()
     -- used for aby proc's, etc. 
     get_combat_weapon()
 
-	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
-
-    state.DayOrNightAmmo = M{['description']='Day or Night Ammo', 'Fire Bomblet', 'Tengu-No-Hane', }
-    gear.Ammo = {name="Fire Bomblet"}
-    select_static_ammo()
+    state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
 
     -- list of weaponskills that make better use of otomi helm in low acc situations
     wsList = S{'Blade: Hi'}
 
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
-	determine_haste_group()
-	-- For th_action_check():
-	-- JA IDs for actions that always have TH: Provoke, Animated Flourish
-	info.default_ja_ids = S{35, 204}
-	-- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
-	info.default_u_ja_ids = S{201, 202, 203, 205, 207}
+    determine_haste_group()
+    -- For th_action_check():
+    -- JA IDs for actions that always have TH: Provoke, Animated Flourish
+    info.default_ja_ids = S{35, 204}
+    -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
+    info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 end
 
 
@@ -51,7 +47,7 @@ function user_setup()
 
     select_default_macro_book()
     
-	send_command('bind ^= gs c cycle treasuremode')
+    send_command('bind ^= gs c cycle treasuremode')
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
@@ -92,9 +88,9 @@ function job_precast(spell, action, spellMap, eventArgs)
     --Aftermath for Kannagi
     aw_custom_aftermath_timers_precast(spell)
     
-	if spell.skill == "Ninjutsu" and spell.target.type:lower() == 'self' and spellMap ~= "Utsusemi" then
-		classes.CustomClass = "SelfNinjutsu"
-	end
+    if spell.skill == "Ninjutsu" and spell.target.type:lower() == 'self' and spellMap ~= "Utsusemi" then
+        classes.CustomClass = "SelfNinjutsu"
+    end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
             -- If sneak is active when using, cancel before completion
             send_command('cancel 71')
@@ -111,23 +107,23 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-	if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
-		equip(sets.TreasureHunter)
-	elseif spell.type == 'WeaponSkill' then
+    if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
+        equip(sets.TreasureHunter)
+    elseif spell.type == 'WeaponSkill' then
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
         if is_sc_element_today(spell) then
             equip(sets.WSDayBonus)
         end
-	end
+    end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-	if spell.action_type == 'Magic' then
-		equip(sets.midcast.FastRecast)
-	end
+    if spell.action_type == 'Magic' then
+        equip(sets.midcast.FastRecast)
+    end
     if spell.english == "Monomi: Ichi" then
         if buffactive['Sneak'] then
             send_command('@wait 1.7;cancel sneak')
@@ -139,9 +135,9 @@ end
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
     get_combat_weapon()
-	if state.TreasureMode.value ~= 'None' and spell.action_type == 'Ranged Attack' then
-		equip(sets.TreasureHunter)
-	end
+    if state.TreasureMode.value ~= 'None' and spell.action_type == 'Ranged Attack' then
+        equip(sets.TreasureHunter)
+    end
 end
 
 
@@ -162,7 +158,6 @@ end
 -- Can customize state or custom melee class values at this point.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_handle_equipping_gear(status, eventArgs)
-	--sets.Kiting = select_movement()
 end
 
 -- Modify the default idle set after it was constructed.
@@ -172,27 +167,28 @@ function customize_idle_set(idleSet)
     end
     if state.HybridMode.value == 'PDT' then
         if state.Buff.Migawari then
-		    idleSet = set_combine(idleSet, sets.buff.Migawari)
+            idleSet = set_combine(idleSet, sets.buff.Migawari)
         else 
             idleSet = set_combine(idleSet, sets.defense.PDT)
         end
     end
-	idleSet = set_combine(idleSet, select_movement())
-	return idleSet
+    idleSet = set_combine(idleSet, select_movement())
+    return idleSet
 end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if state.TreasureMode.value == 'Fulltime' then
-		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
-	end
+    if state.TreasureMode.value == 'Fulltime' then
+        meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+    end
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-	if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
-		meleeSet = set_combine(meleeSet, sets.buff.Migawari)
-	end
-	return meleeSet
+    if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
+        meleeSet = set_combine(meleeSet, sets.buff.Migawari)
+    end
+    meleeSet = set_combine(meleeSet, select_ammo())
+    return meleeSet
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -203,24 +199,19 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-	-- If we gain or lose any haste buffs, adjust which gear set we target.
-	if S{'haste','march', 'madrigal','embrava','haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
-		determine_haste_group()
+    -- If we gain or lose any haste buffs, adjust which gear set we target.
+    if S{'haste','march', 'madrigal','embrava','haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
+        determine_haste_group()
         handle_equipping_gear(player.status)
     elseif state.Buff[buff] ~= nil then
-		--state.Buff[buff] = gain
-		if not midaction() then
-			handle_equipping_gear(player.status)
-		end
-	end
+        --state.Buff[buff] = gain
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
-    --if newStatus == 'Idle' then
-    --    sets.Kiting = select_movement()
-    --end
-    select_static_ammo()
-    select_movement()
     get_combat_weapon()
 end
 
@@ -230,11 +221,10 @@ end
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    select_static_ammo()
+    select_ammo()
     get_combat_weapon()
-	th_update(cmdParams, eventArgs)
-	determine_haste_group()
-    --sets.Kiting = select_movement()
+    th_update(cmdParams, eventArgs)
+    determine_haste_group()
     select_movement()
 end
 
@@ -257,36 +247,35 @@ end
 -- This will only ever be called if TreasureMode is not 'None'.
 -- Category and Param are as specified in the action event packet.
 function th_action_check(category, param)
-	if category == 2 or -- any ranged attack
-		--category == 4 or -- any magic action
-		(category == 3 and param == 30) or -- Aeolian Edge
-		(category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
-		(category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
-		then return true
-	end
+    if category == 2 or -- any ranged attack
+        --category == 4 or -- any magic action
+        (category == 3 and param == 30) or -- Aeolian Edge
+        (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
+        (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
+        then return true
+    end
 end
 
 function select_movement()
-	-- world.time is given in minutes into each day
-	-- 7:00 AM would be 420 minutes
-	-- 17:00 PM would be 1020 minutes
-	if world.time >= (17*60) or world.time <= (7*60) then
+    -- world.time is given in minutes into each day
+    -- 7:00 AM would be 420 minutes
+    -- 17:00 PM would be 1020 minutes
+    if world.time >= (17*60) or world.time <= (7*60) then
         return sets.NightMovement
-	else
-		--state.DayOrNightFeet:set('Danzo Sune-ate')
+    else
         return sets.DayMovement
-	end
+    end
 end
 
-function select_static_ammo()
+function select_ammo()
     if state.OffenseMode.value == 'Acc' or state.OffenseMode.value == 'Mid' then
-	    if world.time >= (18*60) or world.time <= (6*60) then
-            state.DayOrNightAmmo:cycle()
-            gear.Ammo.name = state.DayOrNightAmmo.value
+        if world.time >= (18*60) or world.time <= (6*60) then
+            return sets.NightAccAmmo
         else
-            state.DayOrNightAmmo:cycleback()
-            gear.Ammo.name = state.DayOrNightAmmo.value
-	    end
+            return sets.DayAccAmmo
+        end
+    else
+        return sets.RegularAmmo
     end
 end
 
@@ -299,8 +288,8 @@ function get_combat_weapon()
 end
 
 function determine_haste_group()
-	
-	classes.CustomMeleeGroups:clear()
+    
+    classes.CustomMeleeGroups:clear()
     -- assuming +4 for marches (ghorn has +5)
     -- Haste (white magic) 15%
     -- Haste Samba (Sub) 5%
@@ -312,7 +301,8 @@ function determine_haste_group()
     -- buffactive[33] = regular haste
     -- state.HasteMode = toggle for when you know Haste II is being cast on you
     -- Low = solo with trusts
-    -- Hi = Haste II is being cast 100% of the time
+    -- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
+    -- but wtf can  you do..  
     if state.HasteMode.value == 'Low' then
         if (buffactive[33] and buffactive['haste samba'] and buffactive.march == 1) then
             add_to_chat(8, '-------------Haste 35%-------------')
@@ -330,7 +320,7 @@ function determine_haste_group()
     elseif state.HasteMode.value == 'Hi' then
         if ( ((buffactive[33] or buffactive[580]) and buffactive.march) or (buffactive.embrava and buffactive[33]) ) then
             add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
-            classes.CustomMeleeGroups:append('Haste_43')
+            classes.CustomMeleeGroups:append('MaxHaste')
         elseif buffactive[33] and buffactive['haste samba'] then
             add_to_chat(8, '-------------Haste 40%-------------')
             classes.CustomMeleeGroups:append('Haste_40')
@@ -350,7 +340,7 @@ function determine_haste_group()
     else
         if buffactive[580] and buffactive.march then
             add_to_chat(8, '-------------GEO-Haste Mode Enabled--------------')
-            classes.CustomMeleeGroups:append('Haste_43')
+            classes.CustomMeleeGroups:append('MaxHaste')
         elseif ( (buffactive.embrava or buffactive[33]) and buffactive.march == 2 ) then
             add_to_chat(8, '-------------Haste 43%-------------')
             classes.CustomMeleeGroups:append('Haste_43')
@@ -400,7 +390,6 @@ end
 function display_current_job_state(eventArgs)
     local msg = ''
     msg = msg .. 'Offense: '..state.OffenseMode.current
-    msg = msg .. ', Rng: '..state.RangedMode.current
     msg = msg .. ', Hybrid: '..state.HybridMode.current
 
     if state.DefenseMode.value ~= 'None' then
@@ -409,6 +398,9 @@ function display_current_job_state(eventArgs)
     end
     if state.HasteMode.value ~= 'Normal' then
         msg = msg .. ', Haste: '..state.HasteMode.current
+    end
+    if state.RangedMode.value ~= 'Normal' then
+        msg = msg .. ', Rng: '..state.RangedMode.current
     end
     if state.Kiting.value then
         msg = msg .. ', Kiting'
@@ -472,13 +464,13 @@ end
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-	-- Default macro set/book
-	if player.sub_job == 'DNC' then
-		set_macro_page(2, 2)
-	elseif player.sub_job == 'WAR' then
-		set_macro_page(2, 1)
-	else
-		set_macro_page(2, 2)
-	end
+    -- Default macro set/book
+    if player.sub_job == 'DNC' then
+        set_macro_page(2, 2)
+    elseif player.sub_job == 'WAR' then
+        set_macro_page(2, 1)
+    else
+        set_macro_page(2, 2)
+    end
 end
 

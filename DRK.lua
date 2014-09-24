@@ -25,7 +25,7 @@ function job_setup()
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     scytheList = S{ 'Xbalanque', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }
     gsList = S{'Inanna', 'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }
-    -- list of weaponskills that make better use of otomi helm in low acc situations
+    -- list of weaponskills that make better use of otomi helm in attack capped situations
     wsList = S{'Spiral Hell', 'Cross Reaper'}
     adjust_engaged_sets()
 end
