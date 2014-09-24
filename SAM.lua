@@ -229,10 +229,6 @@ end
 function job_buff_change(buff, gain)
     if state.Buff[buff] ~= nil then
     	state.Buff[buff] = gain
-        -- if seign or TE is up, don't swap
-        if not seigan_thirdeye_active() then
-            handle_equipping_gear(player.status)
-        end
     end
 
     if S{'aftermath'}:contains(buff:lower()) then
@@ -254,8 +250,12 @@ function job_buff_change(buff, gain)
         end
     end
     
-    if S{'aftermath'}:contains(buff:lower()) then
-        handle_equipping_gear(player.status)
+    if string.lower(buff) == "sleep" and gain and player.hp > 200 then
+        equip(sets.Berserker)
+    else
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
     end
 
 end

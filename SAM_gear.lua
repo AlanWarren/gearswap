@@ -18,6 +18,7 @@ function init_gear_sets()
     sets.precast.Waltz['Healing Waltz'] = {}
     
     sets.CapacityMantle = {back="Mecistopins Mantle"}
+    sets.Berserker = {neck="Berserker's Torque"}
     sets.WSDayBonus     = { head="Gavialis Helm" }
        
     -- Weaponskill sets
