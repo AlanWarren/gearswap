@@ -114,7 +114,7 @@ function init_gear_sets()
         neck="Stoicheion Medal",
         body="Mekosuchinae Harness",
         hands="Iga Tekko +2",
-        back="Toro Cape",
+        back="Aput Mantle",
         ring1="Sangoma Ring",
         ring2="Acumen Ring",
         waist="Caudata Belt",
