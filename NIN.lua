@@ -209,6 +209,10 @@ function job_buff_change(buff, gain)
             handle_equipping_gear(player.status)
         end
     end
+    -- buff = 121 for main + sub
+    if string.lower(buff) == 'encumbrance' and not gain then
+        equip(sets.Katanas)
+    end
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
