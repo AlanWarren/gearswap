@@ -73,10 +73,12 @@ function init_gear_sets()
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
          head="Otomi Helm",
          waist="Chaac Belt",
-         back="Abyss Cape"
+         ring1="Globidonta Ring",
+         back="Aput Mantle"
      })
 
      sets.midcast['Elemental Magic'] = {
+         ammo="Dosis Tathlum",
          head="Ignominy burgeonet +1",
          neck="Stoicheion Medal",
          ear1="Friomisi Earring",
@@ -87,7 +89,7 @@ function init_gear_sets()
          legs="Ignominy Flanchard +1",
          ring1="Sangoma Ring",
          ring2="Acumen Ring",
-         back="Toro Cape",
+         back="Aput Mantle",
          feet="Ignominy Sollerets"
      }
 	 
