@@ -15,6 +15,7 @@ function init_gear_sets()
      sets.precast.JA['Weapon Bash'] = {hands="Ignominy Gauntlets +1"}
 
      sets.CapacityMantle = {back="Mecistopins Mantle"}
+     sets.Berserker = {neck="Berserker's Torque"}
      sets.WSDayBonus     = { head="Gavialis Helm" }
  
      -- Waltz set (chr and vit)
