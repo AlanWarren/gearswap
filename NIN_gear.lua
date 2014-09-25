@@ -143,7 +143,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-        body="Kheper Jacket",
+        body="War Shinobi Gi",
         hands="Mochizuki Tekko +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
