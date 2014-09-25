@@ -74,7 +74,7 @@ function init_gear_sets()
 end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
-    if (spell.type:endswith('Magic') or spell.type == "Ninjutsu") and buffactive.silence then
+    if spell.type:endswith('Magic') and buffactive.silence then
         cancel_spell()
         send_command('input /item "Echo Drops" <me>')
     end
