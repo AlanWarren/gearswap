@@ -74,6 +74,10 @@ function init_gear_sets()
 end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
+    if (spell.type:endswith('Magic') or spell.type == "Ninjutsu") and buffactive.silence then
+        cancel_spell()
+        send_command('input /item "Echo Drops" <me>')
+    end
 end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
