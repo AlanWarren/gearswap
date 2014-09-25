@@ -228,7 +228,7 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
         ring1="Rajas Ring",
-        back="Yokaze Mantle"
+        back="Yokaze Mantle",
         feet="Qaaxo Leggings",
     })
 
