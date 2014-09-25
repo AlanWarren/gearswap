@@ -394,6 +394,8 @@ function init_gear_sets()
 
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          neck="Iqabi Necklace",
+         ear1="Zennaroi Earring",
+         ear2="Steelflash Earring",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
          waist="Anguinus Belt",
