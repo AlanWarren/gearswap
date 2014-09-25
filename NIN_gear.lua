@@ -337,6 +337,8 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, { 
         head="Ptica Headgear",
         neck="Rancor Collar",
+        ear1="Zennaroi Earring",
+        ear2="Trux Earring",
         ring1="Mars's Ring",
         hands="Buremte Gloves",
         feet="Mochizuki Kyahan +1",
