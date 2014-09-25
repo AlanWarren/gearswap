@@ -107,6 +107,7 @@ function init_gear_sets()
     }
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.ElementalNinjutsu = {
+        ammo="Dosis Tathlum",
         head="Mochizuki Hatsuburi +1",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
