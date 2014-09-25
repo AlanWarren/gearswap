@@ -194,7 +194,7 @@ function job_buff_change(buff, gain)
 
     if state.Buff[buff] ~= nil then
     	state.Buff[buff] = gain
-    	handle_equipping_gear(player.status)
+    	--handle_equipping_gear(player.status)
     end
 
     -- Some informative output
@@ -203,6 +203,15 @@ function job_buff_change(buff, gain)
     elseif buff == 'Dark Seal' and gain then
         add_to_chat(122, 'Enhanced Dark Magic Accuracy!')
     end
+    
+    if string.lower(buff) == "sleep" and gain and player.hp > 200 then
+        equip(sets.Berserker)
+    else
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end
+
 
 end
  

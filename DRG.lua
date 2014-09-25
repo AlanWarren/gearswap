@@ -230,7 +230,13 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-
+    if string.lower(buff) == "sleep" and gain and player.hp > 200 then
+        equip(sets.Berserker)
+    else
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end
 end
 
 function job_update(cmdParams, eventArgs)
