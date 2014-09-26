@@ -357,9 +357,11 @@ function init_gear_sets()
      
     -- Max Haste is down here because it inherits Haste_43 
     sets.engaged.MaxHaste = set_combine(sets.engaged.Haste_43, {
+        ring1="Oneiros Ring",
         legs="Otronif Brais +1"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Mid.Haste_43, {
+        ring1="Oneiros Ring",
         legs="Hachiya Hakama +1"
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Acc.Haste_43, {})
@@ -372,7 +374,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
-     })
+    })
     
     -- 40
     sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
