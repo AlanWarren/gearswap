@@ -272,7 +272,7 @@ function select_movement()
 end
 
 function select_ammo()
-    if state.OffenseMode.value == 'Acc' or state.OffenseMode.value == 'Mid' then
+    if state.OffenseMode.value == 'Acc' then
         if world.time >= (18*60) or world.time <= (6*60) then
             return sets.NightAccAmmo
         else

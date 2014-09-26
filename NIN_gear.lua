@@ -328,6 +328,7 @@ function init_gear_sets()
         legs="Hachiya Hakama +1"
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, {
+        ammo="Yetshila",
         body="Mes'yohi Haubergeon",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
@@ -361,6 +362,7 @@ function init_gear_sets()
         legs="Otronif Brais +1"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Mid.Haste_43, {
+        ammo="Yetshila",
         ring1="Oneiros Ring",
         legs="Hachiya Hakama +1"
     })
@@ -381,6 +383,7 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1"
     })
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, {
+        ammo="Yetshila",
         body="Mes'yohi Haubergeon",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
