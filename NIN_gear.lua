@@ -591,6 +591,7 @@ function init_gear_sets()
         ammo="Jukukik Feather",
         neck="Flame Gorget",
         waist="Light Belt",
+        back="Yokaze Mantle",
         ring1="Ramuh Ring",
     }
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
