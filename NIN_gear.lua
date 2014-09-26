@@ -329,6 +329,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, {
         ammo="Yetshila",
+        neck="Rancor Collar",
         body="Mes'yohi Haubergeon",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
@@ -338,7 +339,6 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, { 
         head="Ptica Headgear",
-        neck="Rancor Collar",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         ring1="Mars's Ring",
@@ -364,7 +364,7 @@ function init_gear_sets()
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Mid.Haste_43, {
         ammo="Yetshila",
         ring1="Oneiros Ring",
-        legs="Hachiya Hakama +1"
+        legs="Otronif Brais +1"
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Acc.Haste_43, {})
     sets.engaged.Evasion.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HasteEvasion)
