@@ -113,7 +113,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         neck="Stoicheion Medal",
         body="Mekosuchinae Harness",
-        hands="Iga Tekko +2",
+        hands="Mochizuki Tekko +1",
         back="Aput Mantle",
         ring1="Sangoma Ring",
         ring2="Acumen Ring",
