@@ -120,6 +120,7 @@ function init_gear_sets()
      sets.midcast['Absorb-STR'] = sets.midcast.Absorb
      sets.midcast['Absorb-DEX'] = sets.midcast.Absorb
      sets.midcast['Absorb-Attri'] = sets.midcast.Absorb
+     sets.midcast['Absorb-Acc'] = sets.midcast.Absorb
 
      -- Weaponskill sets
      sets.precast.WS = {
