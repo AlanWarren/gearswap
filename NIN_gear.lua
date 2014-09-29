@@ -28,6 +28,7 @@ function init_gear_sets()
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
     sets.Katanas = {main="Kannagi", sub="Taikogane"}
+    sets.Rajas = {ring1="Rajas Ring"}
 
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {

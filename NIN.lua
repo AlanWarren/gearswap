@@ -187,6 +187,10 @@ function customize_melee_set(meleeSet)
     if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
         meleeSet = set_combine(meleeSet, sets.buff.Migawari)
     end
+    if player.mp < 100 and state.OffenseMode.value ~= 'Acc' then
+        -- use Rajas instead of Oneiros for normal + mid
+        meleeSet = set_combine(meleeSet, sets.Rajas)
+    end
     meleeSet = set_combine(meleeSet, select_ammo())
     return meleeSet
 end
