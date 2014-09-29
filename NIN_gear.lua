@@ -228,7 +228,6 @@ function init_gear_sets()
         ammo="Yetshila",
         body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
-        ring1="Rajas Ring",
         back="Yokaze Mantle",
         feet="Qaaxo Leggings",
     })
@@ -284,7 +283,6 @@ function init_gear_sets()
 
     sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, sets.engaged.Acc)
     
-    sets.engaged.Haste_43 = {}
     sets.engaged.Haste_40 = {}
     sets.engaged.Haste_35 = {}
     sets.engaged.Haste_30 = {}
@@ -316,8 +314,8 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     }
 
-    -- 43
-    sets.engaged.Haste_43 = set_combine(sets.engaged, {
+    -- 43 Rajas beats Oneiros here
+    sets.engaged.Haste_40 = set_combine(sets.engaged, {
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
@@ -327,7 +325,7 @@ function init_gear_sets()
         waist="Windbuffet Belt +1",
         legs="Hachiya Hakama +1"
     })
-    sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, {
+    sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, {
         ammo="Yetshila",
         head="Ptica Headgear",
         neck="Rancor Collar",
@@ -338,65 +336,12 @@ function init_gear_sets()
         legs="Hachiya Hakama +1",
         feet="Qaaxo Leggings"
     })
-    sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Mid.Haste_43, { 
+    sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, { 
         head="Ptica Headgear",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         ring1="Mars's Ring",
         hands="Buremte Gloves",
-        feet="Mochizuki Kyahan +1",
-    })
-    sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, sets.engaged.HasteEvasion)
-    sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
-        head="Ptica Headgear",
-        neck="Agitator's Collar",
-        hands="Otronif Gloves +1",
-        body="Otronif Harness +1",
-        ring1="Patricius Ring",
-        legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
-    })
-     
-    -- Max Haste is down here because it inherits Haste_43 
-    sets.engaged.MaxHaste = set_combine(sets.engaged.Haste_43, {
-        ring1="Oneiros Ring",
-        legs="Otronif Brais +1"
-    })
-    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Mid.Haste_43, {
-        ammo="Yetshila",
-        ring1="Oneiros Ring",
-        legs="Otronif Brais +1"
-    })
-    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Acc.Haste_43, {})
-    sets.engaged.Evasion.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HasteEvasion)
-    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        head="Ptica Headgear",
-        neck="Agitator's Collar",
-        hands="Otronif Gloves +1",
-        body="Otronif Harness +1",
-        ring1="Patricius Ring",
-        legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
-    })
-    
-    -- 40
-    sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
-        legs="Mochizuki Hakama +1"
-    })
-    sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, {
-        ammo="Yetshila",
-        body="Mes'yohi Haubergeon",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-        back="Yokaze Mantle",
-        feet="Qaaxo Leggings"
-    })
-    sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, {
-        head="Ptica Headgear",
-        neck="Rancor Collar",
-        ring1="Mars's Ring",
-        hands="Buremte Gloves",
-        legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1",
     })
     sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HasteEvasion)
@@ -409,12 +354,32 @@ function init_gear_sets()
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     })
+     
+    -- Max Haste is down here because it inherits Haste_40 
+    sets.engaged.MaxHaste = set_combine(sets.engaged.Haste_40, {
+        legs="Otronif Brais +1"
+    })
+    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Mid.Haste_40, {
+        legs="Otronif Brais +1"
+    })
+    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Acc.Haste_40, {})
+    sets.engaged.Evasion.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HasteEvasion)
+    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        head="Ptica Headgear",
+        neck="Agitator's Collar",
+        hands="Otronif Gloves +1",
+        body="Otronif Harness +1",
+        ring1="Patricius Ring",
+        legs="Otronif Brais +1",
+        feet="Otronif Boots +1"
+    })
     
-    -- 35
-    sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_43, {
+    -- 35 Oneiros wins
+    sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_40, {
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Thaumas Coat",
+        ring1="Oneiros Ring",
         back="Rancorous Mantle",
         legs="Mochizuki Hakama +1"
     })
@@ -429,6 +394,8 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
         head="Ptica Headgear",
         neck="Rancor Collar",
+        ear1="Zennaroi Earring",
+        ear2="Suppanomimi",
         body="Mes'yohi Haubergeon",
         hands="Buremte Gloves",
         feet="Mochizuki Kyahan +1",
@@ -444,7 +411,7 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     })
     
-    -- 30
+    -- 30  Oneiros wins
     sets.engaged.Haste_30 = set_combine(sets.engaged, {
         head="Ptica Headgear",
         ear1="Brutal Earring",
