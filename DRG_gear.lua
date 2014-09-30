@@ -279,7 +279,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
         hands="Mikinaak Gauntlets",
-        ear1="Bladeborn Earring",
+        ear1="Zennaroi Earring",
         ear2="Steelflash Earring",
         ring1="Patricius Ring"
     })

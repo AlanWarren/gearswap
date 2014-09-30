@@ -288,6 +288,7 @@ function init_gear_sets()
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Sakonji Kabuto +1",
         ring2="Mars's Ring",
+        ear1="Zennaroi Earring",
         feet="Wakido Sune-Ate +1",
         legs="Xaddi Cuisses",
         back="Takaha Mantle"
