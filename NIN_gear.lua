@@ -361,7 +361,7 @@ function init_gear_sets()
         legs="Otronif Brais +1"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Mid.Haste_40, {
-        legs="Otronif Brais +1"
+        legs="Hachiya Hakama +1"
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Acc.Haste_40, {})
     sets.engaged.Evasion.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HasteEvasion)
