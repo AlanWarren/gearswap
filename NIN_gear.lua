@@ -549,7 +549,7 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         body="Mochizuki Chainmail +1",
         neck="Shadow Gorget",
-        waist="Soil Belt"
+        --waist="Soil Belt"
     })
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         head="Ptica Headgear"
