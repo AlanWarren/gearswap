@@ -598,6 +598,9 @@ function init_gear_sets()
             legs="Arcadian Braccae +1",
             feet="Orion Socks +1"
         }
+        -- placeholder until I can get to it
+        sets.buff.Barrage.Mid = sets.buff.Barrage
+        sets.buff.Barrage.Acc = sets.buff.Barrage
 
         sets.buff.Camouflage =  {body="Orion Jerkin +1"}
 

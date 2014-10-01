@@ -85,9 +85,6 @@ function job_precast(spell, action, spellMap, eventArgs)
     if state.Buff[spell.english] ~= nil then
         state.Buff[spell.english] = true
     end
-    if spell.action_type == 'Magic' then
-        equip(sets.precast.FC)
-    end
     if souleater_active() then
         disable('head')
     else
@@ -114,9 +111,6 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-    if spell.action_type == 'Magic' then
-        equip(sets.midcast.FastRecast)
-    end
 end
  
 -- Run after the default midcast() is done.
