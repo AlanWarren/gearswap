@@ -235,7 +235,7 @@ function init_gear_sets()
 
     sets.engaged.Acc = {
         head="Ptica Headgear",
-        neck="Rancor Collar",
+        neck="Iqabi Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Mochizuki Chainmail +1", 
@@ -243,7 +243,7 @@ function init_gear_sets()
         ring1="Mars's Ring",
         ring2="Epona's Ring",
         back="Yokaze Mantle",
-        waist="Windbuffet Belt +1",
+        waist="Anguinus Belt",
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
@@ -394,7 +394,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
         head="Ptica Headgear",
-        neck="Rancor Collar",
+        neck="Iqabi Necklace",
         ear1="Zennaroi Earring",
         ear2="Suppanomimi",
         body="Mes'yohi Haubergeon",
@@ -432,7 +432,7 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        neck="Rancor Collar",
+        neck="Iqabi Necklace",
         ring1="Mars's Ring",
         hands="Buremte Gloves",
         waist="Anguinus Belt",
