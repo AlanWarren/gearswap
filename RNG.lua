@@ -204,7 +204,13 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
     -- Barrage
     if spell.action_type == 'Ranged Attack' and state.Buff.Barrage then
-        equip(sets.buff.Barrage)
+        if state.RangedMode.current == 'Mid' then
+            equip(sets.buff.Barrage.Mid)
+        elseif state.RangedMode.current == 'Acc' then
+            equip(sets.buff.Barrage.Acc)
+        else
+            equip(sets.buff.Barrage.Acc)
+        end
         eventArgs.handled = true
     end
     if state.Buff.Camouflage then
