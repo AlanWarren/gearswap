@@ -128,7 +128,7 @@ function init_gear_sets()
          neck="Bale Choker",
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
-         body="Gorney Haubert +1",
+         body="Fallen's Cuirass +1",
          hands="Mikinaak Gauntlets",
          ring1="Ifrit Ring",
          ring2="Pyrosoul Ring",
