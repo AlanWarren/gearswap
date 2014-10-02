@@ -215,7 +215,7 @@ function job_buff_change(buff, gain)
     end
     -- buff = 121 for main + sub
     if string.lower(buff) == 'encumbrance' and not gain then
-        equip(sets.Katanas)
+        --equip(sets.Katanas)
     end
 end
 

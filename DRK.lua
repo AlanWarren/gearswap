@@ -169,8 +169,16 @@ end
  
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
+
     if newStatus == "Engaged" then
         adjust_engaged_sets()
+    end
+    if newStatus == "Engaged" or newStatus == "Idle" then
+        if player.equipment.ammo == 'Oxidant Bolt' then
+            disable('ammo')
+        else
+            enable('ammo')
+        end
     end
     if souleater_active() then
         disable('head')
@@ -193,6 +201,11 @@ function job_buff_change(buff, gain)
     if state.Buff[buff] ~= nil then
     	state.Buff[buff] = gain
     	--handle_equipping_gear(player.status)
+    end
+    if player.equipment.ammo == 'Oxidant Bolt' then
+        disable('ammo')
+    else
+        enable('ammo')
     end
 
     -- Some informative output
