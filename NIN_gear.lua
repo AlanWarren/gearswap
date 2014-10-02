@@ -342,6 +342,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         ring1="Mars's Ring",
+        waist="Anguinus Belt",
         hands="Buremte Gloves",
         feet="Mochizuki Kyahan +1",
     })
