@@ -5,7 +5,11 @@ function init_gear_sets()
     
     -- Precast Sets
     -- Precast sets to enhance JAs
-    sets.precast.JA.Meditate = {head="Wakido Kabuto",hands="Saotome Kote +2"}
+    sets.precast.JA.Meditate = {
+        head="Wakido Kabuto",
+        hands="Saotome Kote +2"
+        back={name="Takaha Mantle", augments={'STR+1','"Store TP"+1','"Zanshin"+1','Meditate eff. dur. +4'}},
+    }
     sets.precast.JA.Seigan = {head="Unkai Kabuto +2"}
     sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto"}
     sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate"}
@@ -185,7 +189,7 @@ function init_gear_sets()
         hands="Wakido Kote +1",
         ring1="Oneiros Ring",
         ring2="Patricius Ring",
-        back="Takaha Mantle",
+        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Metalsinger Belt",
         legs="Scuffler's Cosciales",
         feet="Danzo Sune-ate"
@@ -271,7 +275,7 @@ function init_gear_sets()
         hands="Wakido Kote +1",
         ring1="Rajas Ring", 
         ring2="Oneiros Ring", 
-        back="Takaha Mantle", 
+        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
         legs="Wakido Haidate +1",
         feet="Otronif boots +1"
@@ -291,7 +295,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         feet="Wakido Sune-Ate +1",
         legs="Xaddi Cuisses",
-        back="Takaha Mantle"
+        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
     })
     
     sets.engaged['Anahera Blade'] = set_combine(sets.engaged, {
@@ -310,7 +314,7 @@ function init_gear_sets()
         head="Yaoyotl Helm",
    	    body="Mes'yohi Haubergeon",
         waist="Dynamic Belt",
-        back="Takaha Mantle"
+        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
     })
     
     sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, {
@@ -385,7 +389,7 @@ function init_gear_sets()
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
    	    body="Mes'yohi Haubergeon",
-        back="Takaha Mantle",
+        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         legs="Xaddi Cuisses",
         feet="Ejekamal Boots"
     })
@@ -397,7 +401,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         waist="Dynamic Belt",
-        back="Takaha Mantle",
+        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         feet="Wakido Sune-Ate +1"
     })
     
@@ -434,7 +438,7 @@ function init_gear_sets()
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
-        back="Takaha Mantle",
+        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1", 
         legs="Otronif Brais +1", -- 6
         feet="Otronif Boots +1" -- 7
@@ -454,7 +458,7 @@ function init_gear_sets()
         ammo=gear.RAarrow,
         ring1="Patricius Ring",
         ring2="Mars's Ring",
-        back="Takaha Mantle",
+        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         feet="Wakido Sune-Ate +1"
     })
     
