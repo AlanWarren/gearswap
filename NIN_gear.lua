@@ -332,9 +332,9 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Mes'yohi Haubergeon",
+        hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
-        legs="Wukong's Hakama +1",
-        feet="Qaaxo Leggings"
+        legs="Wukong's Hakama +1"
     })
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, { 
         head="Ptica Headgear",
