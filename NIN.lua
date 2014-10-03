@@ -207,7 +207,9 @@ function job_buff_change(buff, gain)
     -- If we gain or lose any haste buffs, adjust which gear set we target.
     if S{'haste','march', 'madrigal','embrava','haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
         determine_haste_group()
-        handle_equipping_gear(player.status)
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
     elseif state.Buff[buff] ~= nil then
         --state.Buff[buff] = gain
         if not midaction() then
