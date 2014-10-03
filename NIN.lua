@@ -18,6 +18,7 @@ function job_setup()
 
     -- used for aby proc's, etc. 
     get_combat_weapon()
+    select_ammo()
 
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
 
