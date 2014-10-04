@@ -555,7 +555,7 @@ function init_gear_sets()
         hands="Sasuke Tekko +1",
         ring1="Garuda Ring",
         back="Rancorous Mantle",
-        legs="Wukong's Hakama +1",
+        legs="Mochizuki Hakama +1",
         waist="Windbuffet Belt +1",
         feet="Mochizuki Kyahan +1"
     }
@@ -563,6 +563,7 @@ function init_gear_sets()
 
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         body="Mochizuki Chainmail +1",
+        legs="Wukong's Hakama +1",
         waist="Soil Belt"
     })
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
