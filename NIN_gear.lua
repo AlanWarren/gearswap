@@ -329,6 +329,7 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, {
         ammo="Yetshila",
         head="Ptica Headgear",
+        neck="Iga Erimaki",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Mes'yohi Haubergeon",
