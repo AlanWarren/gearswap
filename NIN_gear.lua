@@ -83,7 +83,7 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
-        legs="Kaabnax Trousers",
+        legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
       
@@ -103,7 +103,7 @@ function init_gear_sets()
         ring2="Sangoma Ring",
         back="Yokaze Mantle",
         waist="Chaac Belt",
-        legs="Kaabnax Trousers",
+        legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
     -- Nuking Ninjutsu (skill & magic attack)
@@ -158,8 +158,8 @@ function init_gear_sets()
         head="Ptica Headgear",
         neck="Hope Torque",
         body="Mes'yohi Haubergeon",
-        hands="Mochizuki Tekko +1",
-        ring1="Oneiros Ring",
+        hands="Sasuke Tekko +1",
+        ring1="Ramuh Ring +1",
         ring2="Epona's Ring",
         legs="Hachiya Hakama +1",
         back="Vellaunus' Mantle +1"
