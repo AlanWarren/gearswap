@@ -552,7 +552,7 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             waist="Light Belt",
             legs="Arcadian Braccae +1",
-            ring2="Ramuh Ring",
+            ring2="Ramuh Ring +1",
             back="Rancorous Mantle"
         }
         sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, sets.Jishnus)

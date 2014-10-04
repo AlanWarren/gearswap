@@ -100,6 +100,7 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
         body="Sakonji Domaru +1",
         waist="Light Belt",
+        legs="Wukong's Hakama +1",
         feet="Wakido Sune-Ate +1"
     })
     

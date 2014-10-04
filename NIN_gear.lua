@@ -274,7 +274,7 @@ function init_gear_sets()
 
     sets.engaged.Mid.Evasion = set_combine(sets.engaged.Evasion, {
         head="Ptica Headgear"
-    }
+    })
 
     sets.engaged.Acc.Evasion = set_combine(sets.engaged.Mid.Evasion, {
         ring2="Patricius Ring",
