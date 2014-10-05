@@ -259,29 +259,6 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     })
     
-    sets.engaged.Evasion = set_combine(sets.engaged, {
-        head="Mochizuki Hatsuburi +1",
-        neck="Iga Erimaki",
-        body="Mochizuki Chainmail +1",
-        hands="Otronif Gloves +1",
-        ring1="Beeline Ring",
-        ring2="Epona's Ring",
-        back="Yokaze Mantle",
-        waist="Nusku's Sash",
-        legs="Hachiya Hakama +1",
-        feet="Qaaxo Leggings"
-    })
-
-    sets.engaged.Mid.Evasion = set_combine(sets.engaged.Evasion, {
-        head="Ptica Headgear"
-    })
-
-    sets.engaged.Acc.Evasion = set_combine(sets.engaged.Mid.Evasion, {
-        ring2="Patricius Ring",
-        waist="Olseni Belt",
-        feet="Mochizuki Kyahan +1"
-    })
-
     sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, sets.engaged.Acc)
     
     sets.engaged.Haste_40 = {}
@@ -294,17 +271,6 @@ function init_gear_sets()
     -- The goal is to "TRY" to replace slots that don't affect haste/dw
     -- with acc/eva/pdt gear
 
-    sets.engaged.HasteEvasion = {
-        head="Ptica Headgear",
-        body="Mochizuki Chainmail +1",
-        neck="Iga Erimaki",
-        hands="Otronif Gloves +1",
-        ring1="Beeline Ring",
-        ring2="Epona's Ring",
-        back="Yokaze Mantle",
-        waist="Nusku's Sash",
-        feet="Qaaxo Leggings"
-    }
     sets.engaged.HastePDT = {
         head="Lithelimb Cap",
         neck="Agitator's Collar",
@@ -348,7 +314,6 @@ function init_gear_sets()
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1",
     })
-    sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, {
         head="Ptica Headgear",
         neck="Agitator's Collar",
@@ -370,7 +335,6 @@ function init_gear_sets()
         head="Whirlpool Mask"
     })
 
-    sets.engaged.Evasion.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HasteEvasion)
     sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Ptica Headgear",
         neck="Agitator's Collar",
@@ -411,7 +375,6 @@ function init_gear_sets()
         waist="Olseni Belt",
         feet="Mochizuki Kyahan +1",
     })
-    sets.engaged.Evasion.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
         neck="Agitator's Collar",
@@ -450,7 +413,6 @@ function init_gear_sets()
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     })
-    sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
     
     -- 25
@@ -477,7 +439,6 @@ function init_gear_sets()
         waist="Olseni Belt",
         feet="Mochizuki Kyahan +1"
     })
-    sets.engaged.Evasion.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HastePDT)
     
     -- 20
@@ -503,7 +464,6 @@ function init_gear_sets()
         waist="Olseni Belt",
         feet="Mochizuki Kyahan +1"
     })
-    sets.engaged.Evasion.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HasteEvasion)
     sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HastePDT)
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
