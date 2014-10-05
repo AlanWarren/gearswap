@@ -468,7 +468,7 @@ function init_gear_sets()
          neck="Iqabi Necklace",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
-         waist="Anguinus Belt"
+         waist="Olseni Belt"
      })
 
      sets.engaged.Scythe.PDT = set_combine(sets.engaged.Scythe, sets.Defensive)
@@ -505,7 +505,7 @@ function init_gear_sets()
     	 body="Mes'yohi Haubergeon",
          ring1="Mars's Ring",
          ring2="Ramuh Ring +1",
-         waist="Anguinus Belt",
+         waist="Olseni Belt",
      })
      sets.engaged.War.Scythe.PDT = set_combine(sets.engaged.War.Scythe, sets.Defensive)
      sets.engaged.War.Scythe.Mid.PDT = set_combine(sets.engaged.War.Scythe.Mid, sets.Defensive_Mid)
