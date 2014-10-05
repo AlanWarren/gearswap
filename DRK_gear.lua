@@ -363,7 +363,7 @@ function init_gear_sets()
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
     	 body="Mes'yohi Haubergeon",
-         ring1="Beeline Ring",
+         ring1="Ramuh Ring +1",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
          feet="Cizin Greaves +1"
@@ -400,8 +400,8 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
          ear2="Steelflash Earring",
          ring1="Mars's Ring",
-         ring2="Patricius Ring",
-         waist="Anguinus Belt",
+         ring2="Ramuh Ring +1",
+         waist="Olseni Belt",
      })
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
@@ -442,8 +442,8 @@ function init_gear_sets()
          hands="Xaddi Gauntlets",
     	 body="Mes'yohi Haubergeon",
          ring1="Mars's Ring",
-         ring2="Patricius Ring",
-         waist="Anguinus Belt"
+         ring2="Ramuh Ring +1",
+         waist="Olseni Belt"
      })
      sets.engaged.War.PDT = set_combine(sets.engaged.War, sets.Defensive)
      sets.engaged.War.Mid.PDT = set_combine(sets.engaged.War.Mid, sets.Defensive_Mid)
@@ -504,7 +504,7 @@ function init_gear_sets()
          hands="Buremte Gloves",
     	 body="Mes'yohi Haubergeon",
          ring1="Mars's Ring",
-         ring2="Patricius Ring",
+         ring2="Ramuh Ring +1",
          waist="Anguinus Belt",
      })
      sets.engaged.War.Scythe.PDT = set_combine(sets.engaged.War.Scythe, sets.Defensive)
