@@ -129,13 +129,13 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-    	body="Otronif Harness +1",
+        body="Mes'yohi Haubergeon",
         hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
     	back="Repulse Mantle",
         waist="Windbuffet Belt +1",
-        legs="Otronif Brais +1",
+        legs="Hachiya Hakama +1",
         feet="Danzo Sune-ate"
      }
 
