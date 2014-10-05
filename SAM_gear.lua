@@ -389,6 +389,7 @@ function init_gear_sets()
         feet="Otronif Boots +1" --7
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
+        head="Yaoyotl Helm",
    	    body="Mes'yohi Haubergeon",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         legs="Xaddi Cuisses",
@@ -399,10 +400,11 @@ function init_gear_sets()
         sub="Bloodrain Strap",
    	    body="Mes'yohi Haubergeon",
         neck="Agitator's Collar",
-        ring1="Patricius Ring",
+        ring1="Ramuh Ring +1",
         ring2="Mars's Ring",
-        waist="Dynamic Belt",
+        waist="Olseni Belt",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
+        legs="Xaddi Cuisses",
         feet="Wakido Sune-Ate +1"
     })
     
