@@ -448,7 +448,7 @@ function init_gear_sets()
             ring2="Garuda Ring",
             waist="Yamabuki-no-Obi",
             legs="Shneddick Tights +1",
-            back="Toro Cape",
+            back="Argochampsa Mantle",
             feet="Arcadian Socks +1"
         }
         sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
