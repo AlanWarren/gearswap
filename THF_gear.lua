@@ -208,7 +208,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Acumen Ring",
         ring2="Garuda Ring",
-		back="Toro Cape",
+		back="Argochampsa Mantle",
         waist="Thunder Belt",
         legs="Shneddick Tights",
         feet="Iuitl Gaiters +1"

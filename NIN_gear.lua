@@ -571,7 +571,7 @@ function init_gear_sets()
         neck="Stoicheion Medal",
         ring1="Garuda Ring",
         ring2="Acumen Ring",
-        back="Toro Cape",
+        back="Argochampsa Mantle",
         legs="Shneddick Tights +1",
         waist="Thunder Belt",
         feet="Mochizuki Kyahan +1"
