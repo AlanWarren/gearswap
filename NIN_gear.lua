@@ -214,23 +214,15 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
-    sets.engaged.TwoHanded = set_combine(sets.engaged, {
-        head="Felistris Mask",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-        body="Qaaxo Harness",
-        waist="Windbuffet Belt +1",
-        back="Atheling Mantle",
-        legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
-    })
+    
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
         ammo="Yetshila",
+        neck="Iga Erimaki",
         body="Mochizuki Chainmail +1",
-        hands="Otronif Gloves +1",
+        hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
-        feet="Qaaxo Leggings",
+        feet="Mochizuki Kyahan +1",
     })
 
     sets.engaged.Acc = {
@@ -241,7 +233,7 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1", 
         hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
-        ring2="Beeline Ring",
+        ring2="Epona's Ring",
         back="Yokaze Mantle",
         waist="Olseni Belt",
         legs="Mochizuki Hakama +1",
@@ -255,6 +247,18 @@ function init_gear_sets()
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
         back="Repulse Mantle",
+        legs="Otronif Brais +1",
+        feet="Otronif Boots +1"
+    })
+
+    -- Proc set 
+    sets.engaged.TwoHanded = set_combine(sets.engaged, {
+        head="Felistris Mask",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+        body="Qaaxo Harness",
+        waist="Windbuffet Belt +1",
+        back="Atheling Mantle",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     })
@@ -283,25 +287,22 @@ function init_gear_sets()
 
     -- 43 Rajas beats Oneiros here
     sets.engaged.Haste_40 = set_combine(sets.engaged, {
+        ammo="Yetshila",
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Thaumas Coat",
-        ring1="Rajas Ring",
         back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
         legs="Hachiya Hakama +1"
     })
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, {
-        ammo="Yetshila",
         head="Whirlpool Mask",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Mes'yohi Haubergeon",
         hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
-        legs="Hachiya Hakama +1",
-        feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, { 
         neck="Iqabi Necklace",
@@ -327,9 +328,7 @@ function init_gear_sets()
         legs="Otronif Brais +1"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Mid.Haste_40, {
-        ring1="Oneiros Ring",
         legs="Wukong's Hakama +1",
-        feet="Otronif Boots +1"
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Acc.Haste_40, {
         legs="Wukong's Hakama +1"
@@ -347,29 +346,24 @@ function init_gear_sets()
     
     -- 35 Oneiros wins
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_40, {
-        ear1="Brutal Earring",
-        ear2="Trux Earring",
-        body="Thaumas Coat",
-        ring1="Oneiros Ring",
-        back="Rancorous Mantle",
+        head="Ptica Headgear",
         legs="Mochizuki Hakama +1"
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Haste_35, {
-        neck="Iga Erimaki",
-        ear2="Suppanomimi",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
         body="Mes'yohi Haubergeon",
-        hands="Sasuke Tekko +1",
-        ring1="Rajas Ring",
+        hands="Otronif Gloves +1",
         back="Yokaze Mantle",
-        legs="Hachiya Hakama +1",
+        legs="Mochizuki Hakama +1",
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
-        head="Ptica Headgear",
         neck="Iqabi Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
+        hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
-        ring2="Epona's Ring",
         waist="Olseni Belt",
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1",
@@ -393,12 +387,12 @@ function init_gear_sets()
         hands="Otronif Gloves +1",
         waist="Windbuffet Belt +1",
         back="Rancorous Mantle",
-        feet="Otronif Boots +1"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
-        back="Yokaze Mantle",
-        neck="Iga Erimaki",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
         hands="Sasuke Tekko +1",
+        back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
@@ -407,10 +401,8 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
-        ring2="Epona's Ring",
         waist="Olseni Belt",
-        legs="Wukong's Hakama +1",
-        feet="Mochizuki Kyahan +1"
+        legs="Wukong's Hakama +1"
     })
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
     
@@ -425,11 +417,8 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, {
         neck="Iga Erimaki",
         hands="Sasuke Tekko +1",
-        ring1="Rajas Ring",
         back="Yokaze Mantle",
-        waist="Patentia Sash",
-        legs="Hachiya Hakama +1",
-        feet="Otronif Boots +1"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, {
         neck="Iqabi Necklace",
@@ -437,6 +426,7 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
         ring1="Ramuh Ring +1",
         waist="Olseni Belt",
+        legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     })
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HastePDT)
@@ -452,14 +442,13 @@ function init_gear_sets()
         neck="Iga Erimaki",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        ring1="Ramuh Ring +1",
-        back="Yokaze Mantle",
+        hands="Sasuke Tekko +1",
+        back="Yokaze Mantle"
     })
     sets.engaged.Acc.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, {
         neck="Iqabi Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
         waist="Olseni Belt",
         feet="Mochizuki Kyahan +1"
