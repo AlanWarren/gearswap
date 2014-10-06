@@ -1,4 +1,6 @@
 -- Define sets and vars used by this job file.
+-- visualized at http://www.ffxiah.com/node/194
+
 function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
