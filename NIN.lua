@@ -16,10 +16,6 @@ function job_setup()
     include('Mote-TreasureHunter')
     state.TreasureMode:set('Tag')
 
-    -- used for aby proc's, etc. 
-    get_combat_weapon()
-    select_ammo()
-
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
 
     -- list of weaponskills that make better use of otomi helm in low acc situations
@@ -28,6 +24,12 @@ function job_setup()
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
     determine_haste_group()
+    get_combat_weapon()
+    get_combat_form()
+    
+    state.warned = M(false)
+    options.ammo_warning_limit = 25
+    SangeAmmo = {name=""}
     -- For th_action_check():
     -- JA IDs for actions that always have TH: Provoke, Animated Flourish
     info.default_ja_ids = S{35, 204}
@@ -120,7 +122,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if world.day_element == 'Dark' then
             equip(sets.WSBack)
         end
-            
     end
 end
 
@@ -139,7 +140,6 @@ end
 -- Run after the general midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-    get_combat_weapon()
     if state.TreasureMode.value ~= 'None' and spell.action_type == 'Ranged Attack' then
         equip(sets.TreasureHunter)
     end
@@ -150,9 +150,6 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
     -- Aftermath timer creation
     aw_custom_aftermath_timers_aftercast(spell)
-    -- If spell is not interrupted. This also applies when you try using a JA with it's timer down.
-    -- If the recast timer isn't ready, aftercast is called with spell.interrupted == true
-    -- We check if state.Buff.spell is defined, so we don't created variable instances for every action taken
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -196,7 +193,6 @@ function customize_melee_set(meleeSet)
         -- use Rajas instead of Oneiros for normal + mid
         meleeSet = set_combine(meleeSet, sets.Rajas)
     end
-    meleeSet = set_combine(meleeSet, select_ammo())
     return meleeSet
 end
 
@@ -208,6 +204,12 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
+    if buff == 'Sange' and gain or buffactive.Sange then
+        set_sange_ammo()
+        state.CombatForm:set('Sange')
+    else
+        state.CombatForm:reset()
+    end
     -- If we gain or lose any haste buffs, adjust which gear set we target.
     if S{'haste','march', 'madrigal','embrava','haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
         determine_haste_group()
@@ -219,10 +221,6 @@ function job_buff_change(buff, gain)
         if not midaction() then
             handle_equipping_gear(player.status)
         end
-    end
-    -- buff = 121 for main + sub
-    if string.lower(buff) == 'encumbrance' and not gain then
-        --equip(sets.Katanas)
     end
 end
 
@@ -236,11 +234,11 @@ end
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    select_ammo()
     get_combat_weapon()
-    th_update(cmdParams, eventArgs)
+    get_combat_form()
     determine_haste_group()
     select_movement()
+    th_update(cmdParams, eventArgs)
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -282,23 +280,20 @@ function select_movement()
     end
 end
 
-function select_ammo()
-    if state.OffenseMode.value == 'Acc' then
-        if world.time >= (18*60) or world.time <= (6*60) then
-            return sets.NightAccAmmo
-        else
-            return sets.DayAccAmmo
-        end
-    else
-        return sets.RegularAmmo
-    end
-end
-
 function get_combat_weapon()
     if player.equipment.main == 'Taimakuniyuki' or player.equipment.main == 'Ark Scythe' then
         state.CombatWeapon:set('TwoHanded')
     else
         state.CombatWeapon:reset()
+    end
+end
+
+function get_combat_form()
+    if buffactive.Sange then
+        set_sange_ammo()
+        state.CombatForm:set('Sange')
+    else
+        state.CombatForm:reset()
     end
 end
 
@@ -381,7 +376,6 @@ end
 function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Capacity Point Mantle' then
         gear.Back = newValue
-        --add_to_chat(122, "Ammo: "..gear.Ammo)
     end
 end
 
@@ -472,6 +466,44 @@ function aw_custom_aftermath_timers_aftercast(spell)
         send_command('timers c "'..aftermath_name..'" '..tostring(info.aftermath.duration)..' down abilities/aftermath'..tostring(info.aftermath.level)..'.png')
 
         info.aftermath = {}
+    end
+end
+
+function set_sange_ammo()
+    local sange_ammo1 = 'Hachiya Shuriken'
+    local sange_ammo2 = 'Suppa Shuriken'
+    local shuriken_min_count = 1
+
+    local available_shurikens1 = player.inventory[sange_ammo1] or player.wardrobe[sange_ammo1]
+    local available_shurikens2 = player.inventory[sange_ammo2] or player.wardrobe[sange_ammo2]
+
+    if not available_shurikens1 and not available_shurikens2 then
+        SangeAmmo.name = " "
+        add_to_chat(104, 'No Shurikens for Sange!')
+        eventArgs.cancel = true
+        return
+    elseif available_shurikens1 and not available_shurikens2 then
+        SangeAmmo.name = sange_ammo1
+    elseif available_shurikens2 and not available_shurikens1 then
+        SangeAmmo.name = sange_ammo2
+    end
+
+    if state.warned.value == false and ( available_shurikens1.count > 1 and available_shurikens1.count < options.ammo_warning_limit ) or
+        ( available_shurikens2.count > 1 and available_shurikens2.count < options.ammo_warning_limit) then
+        local msg = '***** LOW AMMO WARNING: '..SangeAmmo..' *****'
+        local border = ""
+        for i = 1, #msg do
+            border = border .. "*"
+        end
+
+        add_to_chat(104, border)
+        add_to_chat(104, msg)
+        add_to_chat(104, border)
+
+        state.warned:set()
+    elseif (available_shurikens1.count > options.ammo_warning_limit) or (available_shurikens2.count > options.ammo_warning_limit) 
+        and state.warned then
+        state.warned:reset()
     end
 end
 

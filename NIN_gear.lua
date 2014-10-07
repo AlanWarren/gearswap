@@ -104,8 +104,8 @@ function init_gear_sets()
         ear2="Psystorm Earring",
         body="Mekosuchinae Harness",
         hands="Mochizuki Tekko +1",
-        ring1="Perception Ring",
-        ring2="Sangoma Ring",
+        ring1="Sangoma Ring",
+        ring2="Perception Ring",
         back="Yokaze Mantle",
         waist="Chaac Belt",
         legs="Wukong's Hakama +1",
@@ -135,8 +135,8 @@ function init_gear_sets()
         ear2="Trux Earring",
         body="Mes'yohi Haubergeon",
         hands="Otronif Gloves +1",
-        ring1="Dark Ring",
-        ring2="Patricius Ring",
+        ring1="Patricius Ring",
+        ring2="Dark Ring",
     	back="Repulse Mantle",
         waist="Windbuffet Belt +1",
         legs="Hachiya Hakama +1",
@@ -194,15 +194,14 @@ function init_gear_sets()
     sets.DayMovement = {feet="Danzo sune-ate"}
     sets.NightMovement = {feet="Hachiya Kyahan +1"}
 
-    sets.NightAccAmmo = {ammo="Ginsen"}
-    sets.DayAccAmmo = {ammo="Tengu-no-Hane"}
-    sets.RegularAmmo = {}
-    
-    --sets.Kiting = select_movement()
-    -- Engaged sets
+    sets.Sange = {
+        ammo=SangeAmmo,
+        hands="Manibozho Gloves",
+        body="Mochizuki Chainmail +1",
+        feet="Scopuli Nails +1"
+    }
     
     -- Normal melee group without buffs
-    -- STP actually matters 20 is goal for DPS
     sets.engaged = {
         --ammo="Yetshila",
         head="Ptica Headgear",
@@ -229,31 +228,11 @@ function init_gear_sets()
         feet="Mochizuki Kyahan +1",
     })
 
-    sets.engaged.Acc = {
-        head="Ptica Headgear",
+    sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        body="Mochizuki Chainmail +1", 
-        hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
-        ring2="Epona's Ring",
-        back="Yokaze Mantle",
-        waist="Olseni Belt",
-        legs="Mochizuki Hakama +1",
-        feet="Mochizuki Kyahan +1"
+        waist="Olseni Belt"
     }
-
-    sets.engaged.PDT = set_combine(sets.engaged, {
-        head="Ptica Headgear",
-        body="Otronif Harness +1",
-        neck="Agitator's Collar",
-        hands="Otronif Gloves +1",
-        ring1="Patricius Ring",
-        back="Repulse Mantle",
-        legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
-    })
 
     sets.engaged.NormalPDT = {
         head="Ptica Headgear",
@@ -266,6 +245,17 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     }
 
+    sets.engaged.PDT = set_combine(sets.engaged, sets.engaged.NormalPDT)
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.engaged.NormalPDT)
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.engaged.NormalPDT)
+
+    sets.engaged.Sange = set_combine(sets.engaged, sets.Sange)
+    sets.engaged.Sange.Mid = set_combine(sets.engaged.Mid, sets.Sange)
+    sets.engaged.Sange.Acc = set_combine(sets.engaged.Acc, sets.Sange)
+    
+    sets.engaged.Sange.PDT = set_combine(sets.engaged.PDT, sets.Sange)
+    sets.engaged.Sange.Mid.PDT = set_combine(sets.engaged.Mid.PDT, sets.Sange)
+    sets.engaged.Sange.Acc.PDT = set_combine(sets.engaged.Acc.PDT, sets.Sange)
 
     -- Proc set 
     sets.engaged.TwoHanded = set_combine(sets.engaged, {
@@ -279,21 +269,13 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     })
     
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.engaged.NormalPDT)
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.engaged.NormalPDT)
-    
     sets.engaged.Haste_40 = {}
     sets.engaged.Haste_35 = {}
     sets.engaged.Haste_30 = {}
     sets.engaged.Haste_25 = {}
     sets.engaged.Haste_20 = {}
 
-    -- These sets are included in each haste level. 
-    -- The goal is to "TRY" to replace slots that don't affect haste/dw
-    -- with acc/eva/pdt gear
-
     sets.engaged.HastePDT = {
-        head="Lithelimb Cap",
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
         body="Otronif Harness +1",
@@ -302,183 +284,228 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     }
 
-    -- 43 Rajas beats Oneiros here
-    sets.engaged.Haste_40 = set_combine(sets.engaged, {
-        --ammo="Yetshila",
+    -- Delay Cap from spell + songs alone
+    sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Thaumas Coat",
         back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
-        legs="Hachiya Hakama +1"
+        legs="Otronif Brais +1"
     })
-    sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, {
+    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Whirlpool Mask",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Mes'yohi Haubergeon",
         hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
+        legs="Wukong's Hakama +1"
     })
-    sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, { 
+    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         neck="Iqabi Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
         waist="Olseni Belt",
-        feet="Mochizuki Kyahan +1",
-    })
-    sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, {
-        head="Ptica Headgear",
-        neck="Agitator's Collar",
-        hands="Otronif Gloves +1",
-        body="Otronif Harness +1",
-        ring1="Patricius Ring",
-        legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
-    })
-    sets.engaged.Mid.PDT.Haste_40 = set_combine(sets.engaged.PDT.Haste_40, sets.engaged.HastePDT)
-     
-    -- Max Haste is down here because it inherits Haste_40 
-    sets.engaged.MaxHaste = set_combine(sets.engaged.Haste_40, {
-        legs="Otronif Brais +1"
-    })
-    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Mid.Haste_40, {
         legs="Wukong's Hakama +1",
+        feet="Mochizuki Kyahan +1"
     })
-    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Acc.Haste_40, {
-        legs="Wukong's Hakama +1"
-    })
+    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HastePDT)
+    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.engaged.HastePDT)
 
-    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        head="Ptica Headgear",
-        neck="Agitator's Collar",
-        hands="Otronif Gloves +1",
-        body="Otronif Harness +1",
-        ring1="Patricius Ring",
-        legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
+    sets.engaged.Sange.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        ammo=SangeAmmo,
+        hands="Manibozho Gloves",
+        feet="Scopuli Nails +1"
     })
-    
-    -- 35 Oneiros wins
+    sets.engaged.Sange.Mid.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+        ammo=SangeAmmo,
+        hands="Hachiya Tekko +1",
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.Acc.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, {
+        ammo=SangeAmmo,
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.PDT.MaxHaste = set_combine(sets.engaged.PDT.MaxHaste, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.PDT.MaxHaste, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.PDT.MaxHaste, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+   
+    -- Haste 40 to 43%
+    sets.engaged.Haste_40 = set_combine(sets.engaged.MaxHaste, {
+        legs="Hachiya Hakama +1"
+    })
+    sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Mid.MaxHaste, {
+        legs="Hachiya Hakama +1"
+    })
+    sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.MaxHaste, { 
+        legs="Hachiya Hakama +1"
+    })
+    sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HastePDT)
+    sets.engaged.Mid.PDT.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_40 = set_combine(sets.engaged.Acc.Haste_40, sets.engaged.HastePDT)
+     
+    sets.engaged.Sange.Haste_40 = set_combine(sets.engaged.Haste_40, {
+        ammo=SangeAmmo,
+        hands="Manibozho Gloves",
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.Mid.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, {
+        ammo=SangeAmmo,
+        hands="Hachiya Tekko +1",
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.Acc.Haste_40 = set_combine(sets.engaged.Acc.Haste_40, {
+        ammo=SangeAmmo,
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.PDT.Haste_40 = set_combine(sets.engaged.PDT.Haste_40, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Mid.PDT.Haste_40 = set_combine(sets.engaged.Mid.PDT.Haste_40, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Acc.PDT.Haste_40 = set_combine(sets.engaged.Acc.PDT.Haste_40, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+
+    -- 35% Haste
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_40, {
         head="Ptica Headgear",
         legs="Mochizuki Hakama +1"
     })
-    sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Haste_35, {
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-        body="Mes'yohi Haubergeon",
-        hands="Sasuke Tekko +1",
-        back="Yokaze Mantle",
+    sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_40, {
+        head="Ptica Headgear",
         legs="Mochizuki Hakama +1",
         feet="Mochizuki Kyahan +1"
     })
-    sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
-        neck="Iqabi Necklace",
+    sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.Haste_40, {
+        head="Ptica Headgear",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        hands="Sasuke Tekko +1",
-        ring1="Ramuh Ring +1",
-        waist="Olseni Belt",
-        legs="Wukong's Hakama +1",
-        feet="Mochizuki Kyahan +1",
-    })
-    sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, {
-        head="Ptica Headgear",
-        neck="Agitator's Collar",
-        hands="Otronif Gloves +1",
-        body="Otronif Harness +1",
-        ring1="Patricius Ring",
-        legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
-    })
-    sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.PDT.Haste_35, sets.engaged.HastePDT)
-    
-    -- 30  Oneiros wins
-    sets.engaged.Haste_30 = set_combine(sets.engaged, {
-        head="Ptica Headgear",
-        ear1="Brutal Earring",
-        ear2="Trux Earring",
-        body="Mochizuki Chainmail +1",
-        hands="Otronif Gloves +1",
-        waist="Windbuffet Belt +1",
-        back="Rancorous Mantle",
-    })
-    sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-        hands="Sasuke Tekko +1",
-        back="Yokaze Mantle",
-        feet="Mochizuki Kyahan +1"
-    })
-    sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        neck="Iqabi Necklace",
-        hands="Sasuke Tekko +1",
-        ring1="Ramuh Ring +1",
-        waist="Olseni Belt",
         legs="Wukong's Hakama +1"
+    })
+    sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HastePDT)
+    sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.HastePDT)
+    
+    sets.engaged.Sange.Haste_35 = set_combine(sets.engaged.Haste_35, {
+        ammo=SangeAmmo,
+        hands="Manibozho Gloves",
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
+        ammo=SangeAmmo,
+        hands="Hachiya Tekko +1",
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.Acc.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {
+        ammo=SangeAmmo,
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.PDT.Haste_35 = set_combine(sets.engaged.PDT.Haste_35, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.PDT.Haste_35, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.PDT.Haste_35, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+
+    -- 30% Haste
+    sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
+        body="Mochizuki Chainmail +1"
+    })
+    sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
+        body="Mochizuki Chainmail +1"
+    })
+    sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
+        body="Mochizuki Chainmail +1"
     })
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.HastePDT)
     
-    -- 25
-    sets.engaged.Haste_25 = set_combine(sets.engaged, {
-        ear1="Brutal Earring",
-        ear2="Suppanomimi",
+    sets.engaged.Sange.Haste_30 = set_combine(sets.engaged.Haste_30, sets.Sange)
+
+    sets.engaged.Sange.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
+        ammo=SangeAmmo,
+        hands="Hachiya Tekko +1",
         body="Mochizuki Chainmail +1",
-        back="Rancorous Mantle",
-        waist="Windbuffet Belt +1",
+        feet="Scopuli Nails +1"
     })
-    sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, {
+    sets.engaged.Sange.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, {
+        ammo=SangeAmmo,
+        body="Mochizuki Chainmail +1",
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.PDT.Haste_30, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.PDT.Haste_30, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+
+    -- 25% Haste
+    sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
+        ear2="Suppanomimi"
+    })
+    sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Mid.Haste_30, {
         neck="Iga Erimaki",
-        hands="Sasuke Tekko +1",
-        back="Yokaze Mantle",
-        feet="Mochizuki Kyahan +1"
+        ear1="Brutal Earring",
+        ear2="Suppanomimi"
     })
-    sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, {
-        neck="Iqabi Necklace",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        ring1="Ramuh Ring +1",
-        waist="Olseni Belt",
-        legs="Hachiya Hakama +1",
-        feet="Mochizuki Kyahan +1"
+    sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Acc.Haste_30, {
+        legs="Hachiya Hakama +1"
     })
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HastePDT)
+    sets.engaged.Mid.PDT.Haste_25 = set_combine(sets.engaged.PDT.Haste_25, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_25 = set_combine(sets.engaged.Acc.Haste_25, sets.engaged.HastePDT)
     
-    -- 20
-    sets.engaged.Haste_20 = set_combine(sets.engaged, {
-        ear1="Brutal Earring",
-        ear2="Suppanomimi",
+    sets.engaged.Sange.Haste_25 = set_combine(sets.engaged.Haste_25, sets.Sange)
+
+    sets.engaged.Sange.Mid.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, {
+        ammo=SangeAmmo,
+        hands="Hachiya Tekko +1",
         body="Mochizuki Chainmail +1",
-        back="Vellaunus' Mantle +1"
+        feet="Scopuli Nails +1"
     })
-    sets.engaged.Mid.Haste_20 = set_combine(sets.engaged.Haste_20, {
-        neck="Iga Erimaki",
+    sets.engaged.Sange.Acc.Haste_25 = set_combine(sets.engaged.Acc.Haste_25, {
+        ammo=SangeAmmo,
+        body="Mochizuki Chainmail +1",
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.PDT.Haste_25 = set_combine(sets.engaged.PDT.Haste_25, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Mid.PDT.Haste_25 = set_combine(sets.engaged.Mid.PDT.Haste_25, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Acc.PDT.Haste_25 = set_combine(sets.engaged.Acc.PDT.Haste_25, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    
+    -- 5 - 20% Haste 
+    sets.engaged.Haste_20 = set_combine(sets.engaged.Haste_25, {
+        back="Vellaunus' Mantle +1",
+        waist="Patentia Sash"
+    })
+    sets.engaged.Mid.Haste_20 = set_combine(sets.engaged.Mid.Haste_25, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        hands="Sasuke Tekko +1",
-        back="Yokaze Mantle"
+        waist="Patentia Sash"
     })
-    sets.engaged.Acc.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, {
-        neck="Iqabi Necklace",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        ring1="Ramuh Ring +1",
-        waist="Olseni Belt",
-        feet="Mochizuki Kyahan +1"
+    sets.engaged.Acc.Haste_20 = set_combine(sets.engaged.Acc.Haste_25, {
+        legs="Mochizuki Hakama +1"
     })
     sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HastePDT)
+    sets.engaged.Mid.PDT.Haste_20 = set_combine(sets.engaged.PDT.Haste_20, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_20 = set_combine(sets.engaged.Acc.Haste_20, sets.engaged.HastePDT)
+    
+    sets.engaged.Sange.Haste_20 = set_combine(sets.engaged.Haste_20, sets.Sange)
+
+    sets.engaged.Sange.Mid.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, {
+        ammo=SangeAmmo,
+        hands="Hachiya Tekko +1",
+        body="Mochizuki Chainmail +1",
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.Acc.Haste_20 = set_combine(sets.engaged.Acc.Haste_20, {
+        ammo=SangeAmmo,
+        body="Mochizuki Chainmail +1",
+        feet="Scopuli Nails +1"
+    })
+    sets.engaged.Sange.PDT.Haste_20 = set_combine(sets.engaged.PDT.Haste_20, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Mid.PDT.Haste_20 = set_combine(sets.engaged.Mid.PDT.Haste_20, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
+    sets.engaged.Sange.Acc.PDT.Haste_20 = set_combine(sets.engaged.Acc.PDT.Haste_20, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
     
     -- Weaponskills 
-    
     sets.precast.WS = {
         head="Felistris Mask",
         neck="Asperity Necklace",
@@ -518,7 +545,7 @@ function init_gear_sets()
     
     -- BLADE: HI
     sets.Hi = {
-        ammo="Yetshila",
+        --ammo="Yetshila",
         head="Uk'uxkaj Cap",
         neck="Shadow Gorget",
         body="Qaaxo Harness",
@@ -543,7 +570,7 @@ function init_gear_sets()
 
     -- BLADE: SHUN
     sets.Shun = {
-        ammo="Jukukik Feather",
+        --ammo="Jukukik Feather",
         neck="Flame Gorget",
         waist="Light Belt",
         back="Yokaze Mantle",
@@ -565,7 +592,7 @@ function init_gear_sets()
     
     -- BLADE: KU 
     sets.Ku = {
-        ammo="Aqreqaq Bomblet",
+        --ammo="Aqreqaq Bomblet",
         neck="Shadow Gorget",
         waist="Soil Belt",
     }

@@ -387,7 +387,6 @@ function init_gear_sets()
          feet="Ejekamal Boots"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         ammo="Fire Bomblet",
     	 body="Mes'yohi Haubergeon",
          hands="Xaddi Gauntlets",
          ear1="Bladeborn Earring",
@@ -412,7 +411,6 @@ function init_gear_sets()
          feet="Mikinaak Greaves"
      })
      sets.engaged.LDGS.Mid = set_combine(sets.engaged.LDGS, {
-         ammo="Fire Bomblet",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
          body="Mes'yohi Haubergeon"
