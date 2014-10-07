@@ -29,6 +29,7 @@ function init_gear_sets()
     sets.TreasureHunter = { waist="Chaac Belt" }
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
+    sets.WSBack     = { head="Trepidity Mantle" }
     sets.Katanas = {main="Kannagi", sub="Taikogane"}
     sets.Rajas = {ring1="Rajas Ring"}
 

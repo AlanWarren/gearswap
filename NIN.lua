@@ -117,6 +117,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if is_sc_element_today(spell) then
             equip(sets.WSDayBonus)
         end
+        if world.day_element == 'Dark' then
+            equip(sets.WSBack)
+        end
+            
     end
 end
 
