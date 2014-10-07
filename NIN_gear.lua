@@ -203,7 +203,7 @@ function init_gear_sets()
     
     -- Normal melee group without buffs
     sets.engaged = {
-        --ammo="Yetshila",
+        ammo="Happo Shuriken",
         head="Ptica Headgear",
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
@@ -220,7 +220,7 @@ function init_gear_sets()
     
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
-        --ammo="Yetshila",
+        ammo="Happo Shuriken",
         neck="Iga Erimaki",
         body="Mochizuki Chainmail +1",
         hands="Sasuke Tekko +1",
@@ -229,6 +229,7 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        ammo="Happo Shuriken",
         neck="Iqabi Necklace",
         ring1="Ramuh Ring +1",
         waist="Olseni Belt"
@@ -294,6 +295,7 @@ function init_gear_sets()
         waist="Windbuffet Belt +1",
         legs="Otronif Brais +1"
     })
+
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Whirlpool Mask",
         ear1="Bladeborn Earring",
