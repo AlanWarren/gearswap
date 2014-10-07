@@ -196,7 +196,7 @@ function init_gear_sets()
 
     sets.NightAccAmmo = {ammo="Ginsen"}
     sets.DayAccAmmo = {ammo="Tengu-no-Hane"}
-    sets.RegularAmmo = {ammo="Yetshila"}
+    sets.RegularAmmo = {}
     
     --sets.Kiting = select_movement()
     -- Engaged sets
