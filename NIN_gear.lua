@@ -110,7 +110,6 @@ function init_gear_sets()
     }
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.ElementalNinjutsu = {
-        ammo="Dosis Tathlum",
         head="Mochizuki Hatsuburi +1",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -192,7 +191,7 @@ function init_gear_sets()
     sets.DayMovement = {feet="Danzo sune-ate"}
     sets.NightMovement = {feet="Hachiya Kyahan +1"}
 
-    sets.NightAccAmmo = {ammo="Fire Bomblet"}
+    sets.NightAccAmmo = {ammo="Ginsen"}
     sets.DayAccAmmo = {ammo="Tengu-no-Hane"}
     sets.RegularAmmo = {ammo="Yetshila"}
     
