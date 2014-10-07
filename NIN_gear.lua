@@ -1,5 +1,7 @@
 -- Define sets and vars used by this job file.
 -- visualized at http://www.ffxiah.com/node/194
+-- Happo
+-- Hachiya
 
 function init_gear_sets()
     --------------------------------------
