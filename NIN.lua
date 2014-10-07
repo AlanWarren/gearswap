@@ -29,7 +29,7 @@ function job_setup()
     
     state.warned = M(false)
     options.ammo_warning_limit = 25
-    SangeAmmo = {name=""}
+    SangeAmmo = {name="Hachiya Shuriken"}
     -- For th_action_check():
     -- JA IDs for actions that always have TH: Provoke, Animated Flourish
     info.default_ja_ids = S{35, 204}
@@ -79,6 +79,10 @@ function job_pretarget(spell, action, spellMap, eventArgs)
     --if state.Buff[spell.english] ~= nil then
     --    state.Buff[spell.english] = true
     --end
+    if spell.action_type == 'Ranged Attack' then
+        equip({ammo=SangeAmmo})
+    end
+
     if (spell.type:endswith('Magic') or spell.type == "Ninjutsu") and buffactive.silence then
         cancel_spell()
         send_command('input /item "Echo Drops" <me>')
@@ -103,6 +107,7 @@ function job_precast(spell, action, spellMap, eventArgs)
         if buffactive['Copy Image (3)'] or buffactive['Copy Image (4)'] then
             cancel_spell()
             add_to_chat(123, spell.english .. ' Canceled: [3+ Images]')
+            eventArgs.cancel = true
             return
         end
     end
@@ -204,9 +209,12 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-    if buff == 'Sange' and gain or buffactive.Sange then
+    if buff == 'Sange' and gain or buffactive['Sange'] then
         set_sange_ammo()
         state.CombatForm:set('Sange')
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
     else
         state.CombatForm:reset()
     end
@@ -473,6 +481,7 @@ function set_sange_ammo()
     local sange_ammo1 = 'Hachiya Shuriken'
     local sange_ammo2 = 'Suppa Shuriken'
     local shuriken_min_count = 1
+    local ammo
 
     local available_shurikens1 = player.inventory[sange_ammo1] or player.wardrobe[sange_ammo1]
     local available_shurikens2 = player.inventory[sange_ammo2] or player.wardrobe[sange_ammo2]
@@ -482,14 +491,15 @@ function set_sange_ammo()
         add_to_chat(104, 'No Shurikens for Sange!')
         eventArgs.cancel = true
         return
-    elseif available_shurikens1 and not available_shurikens2 then
+    elseif available_shurikens1 then
         SangeAmmo.name = sange_ammo1
-    elseif available_shurikens2 and not available_shurikens1 then
+        ammo = available_shurikens1
+    elseif available_shurikens2 then
         SangeAmmo.name = sange_ammo2
+        ammo = available_shurikens2
     end
 
-    if state.warned.value == false and ( available_shurikens1.count > 1 and available_shurikens1.count < options.ammo_warning_limit ) or
-        ( available_shurikens2.count > 1 and available_shurikens2.count < options.ammo_warning_limit) then
+    if state.warned.value == false and  ammo.count > 1 and ammo.count < options.ammo_warning_limit then
         local msg = '***** LOW AMMO WARNING: '..SangeAmmo..' *****'
         local border = ""
         for i = 1, #msg do
@@ -501,8 +511,7 @@ function set_sange_ammo()
         add_to_chat(104, border)
 
         state.warned:set()
-    elseif (available_shurikens1.count > options.ammo_warning_limit) or (available_shurikens2.count > options.ammo_warning_limit) 
-        and state.warned then
+    elseif (ammo.count > options.ammo_warning_limit) and state.warned then
         state.warned:reset()
     end
 end
