@@ -233,7 +233,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ring1="Ramuh Ring +1",
         waist="Olseni Belt"
-    }
+    })
 
     sets.engaged.NormalPDT = {
         head="Ptica Headgear",
