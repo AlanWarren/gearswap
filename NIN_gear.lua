@@ -253,6 +253,18 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     })
 
+    sets.engaged.NormalPDT = {
+        head="Ptica Headgear",
+        body="Otronif Harness +1",
+        neck="Agitator's Collar",
+        hands="Otronif Gloves +1",
+        ring1="Patricius Ring",
+        back="Repulse Mantle",
+        legs="Otronif Brais +1",
+        feet="Otronif Boots +1"
+    }
+
+
     -- Proc set 
     sets.engaged.TwoHanded = set_combine(sets.engaged, {
         head="Felistris Mask",
@@ -265,7 +277,8 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     })
     
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, sets.engaged.Acc)
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.engaged.NormalPDT)
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.engaged.NormalPDT)
     
     sets.engaged.Haste_40 = {}
     sets.engaged.Haste_35 = {}
@@ -324,6 +337,7 @@ function init_gear_sets()
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     })
+    sets.engaged.Mid.PDT.Haste_40 = set_combine(sets.engaged.PDT.Haste_40, sets.engaged.HastePDT)
      
     -- Max Haste is down here because it inherits Haste_40 
     sets.engaged.MaxHaste = set_combine(sets.engaged.Haste_40, {
@@ -379,6 +393,7 @@ function init_gear_sets()
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     })
+    sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.PDT.Haste_35, sets.engaged.HastePDT)
     
     -- 30  Oneiros wins
     sets.engaged.Haste_30 = set_combine(sets.engaged, {
@@ -407,6 +422,7 @@ function init_gear_sets()
         legs="Wukong's Hakama +1"
     })
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
+    sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, sets.engaged.HastePDT)
     
     -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged, {
