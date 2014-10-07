@@ -170,7 +170,7 @@ function init_gear_sets()
 
     -- Defense sets
     sets.defense.PDT = {
-        head="Lithelimb Cap",
+        head="Ptica Headgear",
         neck="Twilight Torque",
         body="Otronif Harness +1",
         hands="Otronif Gloves +1",
@@ -242,7 +242,7 @@ function init_gear_sets()
     }
 
     sets.engaged.PDT = set_combine(sets.engaged, {
-        head="Lithelimb Cap",
+        head="Ptica Headgear",
         body="Otronif Harness +1",
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
