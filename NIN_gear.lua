@@ -202,7 +202,7 @@ function init_gear_sets()
     -- Normal melee group without buffs
     -- STP actually matters 20 is goal for DPS
     sets.engaged = {
-        ammo="Yetshila",
+        --ammo="Yetshila",
         head="Ptica Headgear",
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
@@ -219,7 +219,7 @@ function init_gear_sets()
     
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
-        ammo="Yetshila",
+        --ammo="Yetshila",
         neck="Iga Erimaki",
         body="Mochizuki Chainmail +1",
         hands="Sasuke Tekko +1",
@@ -302,7 +302,7 @@ function init_gear_sets()
 
     -- 43 Rajas beats Oneiros here
     sets.engaged.Haste_40 = set_combine(sets.engaged, {
-        ammo="Yetshila",
+        --ammo="Yetshila",
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
