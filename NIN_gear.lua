@@ -48,12 +48,14 @@ function init_gear_sets()
     }
     -- Ranged
     sets.precast.RA = {
+        ammo=SangeAmmo,
         head="Uk'uxkaj Cap",
         hands="Buremte Gloves",
         legs="Nahtirah Trousers",
         feet="Wurrukatte Boots"
     }
     sets.midcast.RA = {
+        ammo=SangeAmmo,
         head="Umbani Cap",
         neck="Iqabi Necklace",
         body="Mochizuki Chainmail +1",
@@ -66,6 +68,7 @@ function init_gear_sets()
         feet="Scopuli Nails +1"
     }
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
+        ammo=SangeAmmo,
         body="Mekosuchinae Harness"
     })
     sets.precast.JA.Sange = sets.midcast.RA
