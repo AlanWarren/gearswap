@@ -355,7 +355,7 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Mes'yohi Haubergeon",
-        hands="Otronif Gloves +1",
+        hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
         legs="Mochizuki Hakama +1",
         feet="Mochizuki Kyahan +1"
