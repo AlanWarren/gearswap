@@ -78,7 +78,6 @@ function init_gear_sets()
      })
 
      sets.midcast['Elemental Magic'] = {
-         ammo="Dosis Tathlum",
          head="Ignominy burgeonet +1",
          neck="Stoicheion Medal",
          ear1="Friomisi Earring",
@@ -373,7 +372,7 @@ function init_gear_sets()
      -- Crobaci +2 = needs 35 STP TP &  24 STP in WS
      sets.engaged = {
          --sub="Bloodrain Strap",
-         ammo="Hagneia Stone",
+         ammo="Ginsen",
      	 head="Otomi Helm",
          neck="Asperity Necklace", 
          ear1="Brutal Earring",
@@ -431,7 +430,7 @@ function init_gear_sets()
          legs="Xaddi Cuisses"
      })
      sets.engaged.War.Mid = set_combine(sets.engaged.War, {
-         ammo="Hagneia Stone",
+         ammo="Ginsen",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
          legs="Xaddi Cuisses",
@@ -452,7 +451,7 @@ function init_gear_sets()
      -- Scythe 
      sets.engaged.Scythe = set_combine(sets.engaged, {
          --sub="Pole Grip",
-         ammo="Hagneia Stone",
+         ammo="Ginsen",
     	 body="Xaddi Mail",
          hands="Cizin Mufflers +1",
          legs="Xaddi Cuisses",
@@ -478,7 +477,7 @@ function init_gear_sets()
      -- Scythe war sub (aim for 40 stp)
      sets.engaged.War.Scythe = {
          --sub="Bloodrain Strap",
-         ammo="Hagneia Stone",
+         ammo="Ginsen",
      	 head="Otomi Helm",
          neck="Asperity Necklace", 
          ear1="Brutal Earring",

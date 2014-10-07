@@ -12,7 +12,7 @@ function init_gear_sets()
     sets.WSDayBonus     = { head="Gavialis Helm" }
 
 	sets.precast.JA.Jump = {
-        ammo="Hagneia Stone",
+        ammo="Ginsen",
 		head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
@@ -50,7 +50,7 @@ function init_gear_sets()
 	
 	-- Healing Breath sets
 	sets.HB = {
-        ammo="Hagneia Stone",
+        ammo="Ginsen",
 		head="Wyrm Armet",
         neck="Lancer's Torque",
         ear1="Steelflash Earring",
@@ -184,7 +184,7 @@ function init_gear_sets()
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle.Town = {
-        ammo="Hagneia Stone",
+        ammo="Ginsen",
 		head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
@@ -219,7 +219,7 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = {
-        ammo="Hagneia Stone",
+        ammo="Ginsen",
 		head="Ighwa Cap",
         neck="Twilight Torque",
         ear1="Bladeborn Earring",
@@ -254,7 +254,7 @@ function init_gear_sets()
 	
 	-- Normal melee group
 	sets.engaged = {
-        ammo="Hagneia Stone",
+        ammo="Ginsen",
 		head="Otomi Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
