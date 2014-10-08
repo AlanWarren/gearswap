@@ -215,6 +215,7 @@ function job_buff_change(buff, gain)
         if not midaction() then
             handle_equipping_gear(player.status)
         end
+    --elseif buff == 'Sange' and not gain then
     else
         state.CombatForm:reset()
     end
