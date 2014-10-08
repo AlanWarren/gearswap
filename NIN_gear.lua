@@ -258,12 +258,6 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     })
     
-    sets.engaged.Haste_40 = {}
-    sets.engaged.Haste_35 = {}
-    sets.engaged.Haste_30 = {}
-    sets.engaged.Haste_25 = {}
-    sets.engaged.Haste_20 = {}
-
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
