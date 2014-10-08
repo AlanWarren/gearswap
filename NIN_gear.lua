@@ -15,6 +15,7 @@ function init_gear_sets()
         ear2="Trux Earring", 
         feet="Mochizuki Kyahan +1"
     }
+    sets.precast.JA.Sange = { body="Mochizuki Chainmail +1" }
     
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -31,9 +32,12 @@ function init_gear_sets()
     sets.TreasureHunter = { waist="Chaac Belt" }
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
-    sets.WSBack     = { head="Trepidity Mantle" }
-    sets.Katanas = {main="Kannagi", sub="Taikogane"}
-    sets.Rajas = {ring1="Rajas Ring"}
+    sets.WSBack         = { head="Trepidity Mantle" }
+    sets.Rajas          = { ring1="Rajas Ring" }
+
+    sets.EmptyAmmo      = { ammo="" }
+    sets.HachiAmmo      = { ammo="Hachiya Shuriken" }
+    sets.SuppaAmmo      = { ammo="Suppa Shuriken" }
 
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
@@ -48,14 +52,12 @@ function init_gear_sets()
     }
     -- Ranged
     sets.precast.RA = {
-        ammo=SangeAmmo,
         head="Uk'uxkaj Cap",
         hands="Buremte Gloves",
         legs="Nahtirah Trousers",
         feet="Wurrukatte Boots"
     }
     sets.midcast.RA = {
-        ammo=SangeAmmo,
         head="Umbani Cap",
         neck="Iqabi Necklace",
         body="Mochizuki Chainmail +1",
@@ -68,10 +70,8 @@ function init_gear_sets()
         feet="Scopuli Nails +1"
     }
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        ammo=SangeAmmo,
         body="Mekosuchinae Harness"
     })
-    sets.precast.JA.Sange = sets.midcast.RA
     sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
     
     -- Fast cast sets for spells
@@ -197,13 +197,6 @@ function init_gear_sets()
     sets.DayMovement = {feet="Danzo sune-ate"}
     sets.NightMovement = {feet="Hachiya Kyahan +1"}
 
-    sets.Sange = {
-        ammo=SangeAmmo,
-        hands="Manibozho Gloves",
-        body="Mochizuki Chainmail +1",
-        feet="Scopuli Nails +1"
-    }
-    
     -- Normal melee group without buffs
     sets.engaged = {
         ammo="Happo Shuriken",
@@ -252,14 +245,6 @@ function init_gear_sets()
     sets.engaged.PDT = set_combine(sets.engaged, sets.engaged.NormalPDT)
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.engaged.NormalPDT)
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.engaged.NormalPDT)
-
-    sets.engaged.Sange = set_combine(sets.engaged, sets.Sange)
-    sets.engaged.Sange.Mid = set_combine(sets.engaged.Mid, sets.Sange)
-    sets.engaged.Sange.Acc = set_combine(sets.engaged.Acc, sets.Sange)
-    
-    sets.engaged.Sange.PDT = set_combine(sets.engaged.PDT, sets.Sange)
-    sets.engaged.Sange.Mid.PDT = set_combine(sets.engaged.Mid.PDT, sets.Sange)
-    sets.engaged.Sange.Acc.PDT = set_combine(sets.engaged.Acc.PDT, sets.Sange)
 
     -- Proc set 
     sets.engaged.TwoHanded = set_combine(sets.engaged, {
@@ -322,24 +307,6 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.engaged.HastePDT)
 
-    sets.engaged.Sange.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        ammo=SangeAmmo,
-        hands="Manibozho Gloves",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.Mid.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
-        ammo=SangeAmmo,
-        hands="Hachiya Tekko +1",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.Acc.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, {
-        ammo=SangeAmmo,
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.PDT.MaxHaste = set_combine(sets.engaged.PDT.MaxHaste, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.PDT.MaxHaste, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.PDT.MaxHaste, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-   
     -- Haste 40 to 43%
     sets.engaged.Haste_40 = set_combine(sets.engaged.MaxHaste, {
         legs="Hachiya Hakama +1"
@@ -354,24 +321,6 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_40 = set_combine(sets.engaged.Acc.Haste_40, sets.engaged.HastePDT)
      
-    sets.engaged.Sange.Haste_40 = set_combine(sets.engaged.Haste_40, {
-        ammo=SangeAmmo,
-        hands="Manibozho Gloves",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.Mid.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, {
-        ammo=SangeAmmo,
-        hands="Hachiya Tekko +1",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.Acc.Haste_40 = set_combine(sets.engaged.Acc.Haste_40, {
-        ammo=SangeAmmo,
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.PDT.Haste_40 = set_combine(sets.engaged.PDT.Haste_40, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Mid.PDT.Haste_40 = set_combine(sets.engaged.Mid.PDT.Haste_40, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Acc.PDT.Haste_40 = set_combine(sets.engaged.Acc.PDT.Haste_40, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-
     -- 35% Haste
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_40, {
         head="Ptica Headgear",
@@ -392,24 +341,6 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.HastePDT)
     
-    sets.engaged.Sange.Haste_35 = set_combine(sets.engaged.Haste_35, {
-        ammo=SangeAmmo,
-        hands="Manibozho Gloves",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
-        ammo=SangeAmmo,
-        hands="Hachiya Tekko +1",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.Acc.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {
-        ammo=SangeAmmo,
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.PDT.Haste_35 = set_combine(sets.engaged.PDT.Haste_35, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.PDT.Haste_35, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.PDT.Haste_35, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         body="Mochizuki Chainmail +1"
@@ -424,23 +355,6 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.HastePDT)
     
-    sets.engaged.Sange.Haste_30 = set_combine(sets.engaged.Haste_30, sets.Sange)
-
-    sets.engaged.Sange.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
-        ammo=SangeAmmo,
-        hands="Hachiya Tekko +1",
-        body="Mochizuki Chainmail +1",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, {
-        ammo=SangeAmmo,
-        body="Mochizuki Chainmail +1",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.PDT.Haste_30, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.PDT.Haste_30, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-
     -- 25% Haste
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
         ear2="Suppanomimi"
@@ -456,23 +370,6 @@ function init_gear_sets()
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_25 = set_combine(sets.engaged.PDT.Haste_25, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_25 = set_combine(sets.engaged.Acc.Haste_25, sets.engaged.HastePDT)
-    
-    sets.engaged.Sange.Haste_25 = set_combine(sets.engaged.Haste_25, sets.Sange)
-
-    sets.engaged.Sange.Mid.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, {
-        ammo=SangeAmmo,
-        hands="Hachiya Tekko +1",
-        body="Mochizuki Chainmail +1",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.Acc.Haste_25 = set_combine(sets.engaged.Acc.Haste_25, {
-        ammo=SangeAmmo,
-        body="Mochizuki Chainmail +1",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.PDT.Haste_25 = set_combine(sets.engaged.PDT.Haste_25, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Mid.PDT.Haste_25 = set_combine(sets.engaged.Mid.PDT.Haste_25, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Acc.PDT.Haste_25 = set_combine(sets.engaged.Acc.PDT.Haste_25, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
     
     -- 5 - 20% Haste 
     sets.engaged.Haste_20 = set_combine(sets.engaged.Haste_25, {
@@ -490,23 +387,6 @@ function init_gear_sets()
     sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_20 = set_combine(sets.engaged.PDT.Haste_20, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_20 = set_combine(sets.engaged.Acc.Haste_20, sets.engaged.HastePDT)
-    
-    sets.engaged.Sange.Haste_20 = set_combine(sets.engaged.Haste_20, sets.Sange)
-
-    sets.engaged.Sange.Mid.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, {
-        ammo=SangeAmmo,
-        hands="Hachiya Tekko +1",
-        body="Mochizuki Chainmail +1",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.Acc.Haste_20 = set_combine(sets.engaged.Acc.Haste_20, {
-        ammo=SangeAmmo,
-        body="Mochizuki Chainmail +1",
-        feet="Scopuli Nails +1"
-    })
-    sets.engaged.Sange.PDT.Haste_20 = set_combine(sets.engaged.PDT.Haste_20, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Mid.PDT.Haste_20 = set_combine(sets.engaged.Mid.PDT.Haste_20, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
-    sets.engaged.Sange.Acc.PDT.Haste_20 = set_combine(sets.engaged.Acc.PDT.Haste_20, {ammo=SangeAmmo,feet="Scopuli Nails +1"})
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
     
