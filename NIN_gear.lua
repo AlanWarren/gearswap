@@ -324,7 +324,7 @@ function init_gear_sets()
 
     sets.engaged.Sange.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         ammo=SangeAmmo,
-        hands="Manibozho Gloves",
+        --hands="Manibozho Gloves",
         feet="Scopuli Nails +1"
     })
     sets.engaged.Sange.Mid.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
@@ -356,7 +356,7 @@ function init_gear_sets()
      
     sets.engaged.Sange.Haste_40 = set_combine(sets.engaged.Haste_40, {
         ammo=SangeAmmo,
-        hands="Manibozho Gloves",
+        --hands="Manibozho Gloves",
         feet="Scopuli Nails +1"
     })
     sets.engaged.Sange.Mid.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, {
@@ -394,7 +394,7 @@ function init_gear_sets()
     
     sets.engaged.Sange.Haste_35 = set_combine(sets.engaged.Haste_35, {
         ammo=SangeAmmo,
-        hands="Manibozho Gloves",
+        --hands="Manibozho Gloves",
         feet="Scopuli Nails +1"
     })
     sets.engaged.Sange.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
