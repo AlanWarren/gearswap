@@ -224,6 +224,7 @@ function job_buff_change(buff, gain)
         determine_haste_group()
         handle_equipping_gear(player.status)
     elseif state.Buff[buff] ~= nil then
+        state.Buff[buff] = gain
         handle_equipping_gear(player.status)
     end
 end
