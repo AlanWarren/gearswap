@@ -32,18 +32,15 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-	state.OffenseMode:options('Normal', 'Acc', 'iLvl')
+	state.OffenseMode:options('Normal', 'Mid', 'Acc')
 	state.HybridMode:options('Normal', 'Evasion', 'PDT')
 	state.RangedMode:options('Normal', 'Acc')
-	state.WeaponskillMode:options('Normal', 'Acc', 'Att', 'Mod')
+	state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
 	state.IdleMode:options('Normal')
 	state.RestingMode:options('Normal')
 	state.PhysicalDefenseMode:options('Evasion', 'PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.RangedMode:options('Normal')
-	
-	gear.default.weaponskill_neck = "Asperity Necklace"
-	gear.default.weaponskill_waist = "Windbuffet Belt"
 
 	-- Additional local binds
 	send_command('bind ^= gs c cycle treasuremode')
