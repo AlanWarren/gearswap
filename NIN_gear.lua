@@ -418,7 +418,7 @@ function init_gear_sets()
     
     -- BLADE: HI
     sets.Hi = {
-        --ammo="Yetshila",
+        ammo="Yetshila",
         head="Uk'uxkaj Cap",
         neck="Shadow Gorget",
         body="Qaaxo Harness",
