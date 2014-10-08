@@ -12,6 +12,7 @@ end
 -- Setup vars that are user-independent.
 function job_setup()
     state.Buff.Migawari = buffactive.migawari or false
+    state.Buff.Sange = buffactive.sange or false
     
     include('Mote-TreasureHunter')
     state.TreasureMode:set('Tag')
@@ -24,12 +25,9 @@ function job_setup()
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
     determine_haste_group()
-    get_combat_weapon()
-    get_combat_form()
     
-    state.warned = M(false)
-    options.ammo_warning_limit = 25
-    SangeAmmo = {name="Hachiya Shuriken"}
+    --state.warned = M(false)
+    --options.ammo_warning_limit = 25
     -- For th_action_check():
     -- JA IDs for actions that always have TH: Provoke, Animated Flourish
     info.default_ja_ids = S{35, 204}
@@ -76,13 +74,9 @@ end
 -- Job-specific hooks that are called to process player actions at specific points in time.
 -------------------------------------------------------------------------------------------------------------------
 function job_pretarget(spell, action, spellMap, eventArgs)
-    --if state.Buff[spell.english] ~= nil then
-    --    state.Buff[spell.english] = true
-    --end
-    if spell.action_type == 'Ranged Attack' then
-        equip({ammo=SangeAmmo})
+    if state.Buff[spell.english] ~= nil then
+        state.Buff[spell.english] = true
     end
-
     if (spell.type:endswith('Magic') or spell.type == "Ninjutsu") and buffactive.silence then
         cancel_spell()
         send_command('input /item "Echo Drops" <me>')
@@ -91,7 +85,17 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-
+    -- Ranged Attacks 
+    if spell.action_type == 'Ranged Attack' then
+        equip( set_combine(sets.precast.RA, set_sange_ammo()) )
+    end
+    -- Sange
+    if spell.name == 'Sange' then
+        if cancel_sange() then
+            eventArgs.cancel = true
+            add_to_chat(104, 'No Shurikens! - Sange Canceled')
+        end
+    end
     --Aftermath for Kannagi
     aw_custom_aftermath_timers_precast(spell)
     
@@ -179,6 +183,9 @@ function customize_idle_set(idleSet)
             idleSet = set_combine(idleSet, sets.defense.PDT)
         end
     end
+    if state.Buff.Sange then
+        idleSet = set_combine(idleSet, set_sange_ammo())
+    end
     idleSet = set_combine(idleSet, select_movement())
     return idleSet
 end
@@ -193,6 +200,9 @@ function customize_melee_set(meleeSet)
     end
     if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
         meleeSet = set_combine(meleeSet, sets.buff.Migawari)
+    end
+    if state.Buff.Sange then
+        meleeSet = set_combine(meleeSet, set_sange_ammo())
     end
     if player.mp < 100 and state.OffenseMode.value ~= 'Acc' then
         -- use Rajas instead of Oneiros for normal + mid
@@ -209,32 +219,16 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-    if buff == 'Sange' and gain or buffactive['Sange'] then
-        set_sange_ammo()
-        state.CombatForm:set('Sange')
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
-    --elseif buff == 'Sange' and not gain then
-    else
-        state.CombatForm:reset()
-    end
     -- If we gain or lose any haste buffs, adjust which gear set we target.
     if S{'haste','march', 'madrigal','embrava','haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
         determine_haste_group()
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
+        handle_equipping_gear(player.status)
     elseif state.Buff[buff] ~= nil then
-        --state.Buff[buff] = gain
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
+        handle_equipping_gear(player.status)
     end
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
-    get_combat_weapon()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -243,10 +237,9 @@ end
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    get_combat_weapon()
-    get_combat_form()
     determine_haste_group()
     select_movement()
+    set_sange_ammo()
     th_update(cmdParams, eventArgs)
 end
 
@@ -286,23 +279,6 @@ function select_movement()
         return sets.NightMovement
     else
         return sets.DayMovement
-    end
-end
-
-function get_combat_weapon()
-    if player.equipment.main == 'Taimakuniyuki' or player.equipment.main == 'Ark Scythe' then
-        state.CombatWeapon:set('TwoHanded')
-    else
-        state.CombatWeapon:reset()
-    end
-end
-
-function get_combat_form()
-    if buffactive.Sange then
-        set_sange_ammo()
-        state.CombatForm:set('Sange')
-    else
-        state.CombatForm:reset()
     end
 end
 
@@ -395,13 +371,6 @@ end
 --    end
 --end
 
-function utsusemi_active()
-    if buffactive['Copy Image'] or buffactive['Copy Image (2)'] or buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
-        return true
-    else
-        return false
-    end
-end
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
     local msg = ''
@@ -478,42 +447,35 @@ function aw_custom_aftermath_timers_aftercast(spell)
     end
 end
 
+-- function to cancel sange if no shurikens
+function cancel_sange()
+    local sange_ammo1 = 'Hachiya Shuriken'
+    local sange_ammo2 = 'Suppa Shuriken'
+    local ammo1 = player.inventory[sange_ammo1]
+    local ammo2 = player.inventory[sange_ammo2]
+
+    if not ammo1 and not ammo2 then
+        return true
+    else
+        return false
+    end
+end
+
+
+-- function to provide an ammo warning
 function set_sange_ammo()
     local sange_ammo1 = 'Hachiya Shuriken'
     local sange_ammo2 = 'Suppa Shuriken'
-    local shuriken_min_count = 1
-    local ammo
 
-    local available_shurikens1 = player.inventory[sange_ammo1] or player.wardrobe[sange_ammo1]
-    local available_shurikens2 = player.inventory[sange_ammo2] or player.wardrobe[sange_ammo2]
+    local available_shurikens1 = player.inventory[sange_ammo1]
+    local available_shurikens2 = player.inventory[sange_ammo2]
 
     if not available_shurikens1 and not available_shurikens2 then
-        SangeAmmo.name = " "
-        add_to_chat(104, 'No Shurikens for Sange!')
-        eventArgs.cancel = true
-        return
+        return sets.EmptyAmmo
     elseif available_shurikens1 then
-        SangeAmmo.name = sange_ammo1
-        ammo = available_shurikens1
+        return sets.HachiAmmo
     elseif available_shurikens2 then
-        SangeAmmo.name = sange_ammo2
-        ammo = available_shurikens2
-    end
-
-    if state.warned.value == false and  ammo.count > 1 and ammo.count < options.ammo_warning_limit then
-        local msg = '***** LOW AMMO WARNING: '..SangeAmmo..' *****'
-        local border = ""
-        for i = 1, #msg do
-            border = border .. "*"
-        end
-
-        add_to_chat(104, border)
-        add_to_chat(104, msg)
-        add_to_chat(104, border)
-
-        state.warned:set()
-    elseif (ammo.count > options.ammo_warning_limit) and state.warned then
-        state.warned:reset()
+        return sets.SuppaAmmo
     end
 end
 
