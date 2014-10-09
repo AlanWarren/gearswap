@@ -15,7 +15,7 @@ function init_gear_sets()
         ear2="Trux Earring", 
         feet="Mochizuki Kyahan +1"
     }
-    sets.precast.JA.Sange = { body="Mochizuki Chainmail +1" }
+    sets.precast.JA.Sange = { body="Mochizuki Chainmail +1", ammo="Suppa Shuriken" }
     
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
