@@ -262,9 +262,9 @@ function init_gear_sets()
         body="Skadi's Cuirie +1",
         hands="Pillager's Armlets +1",
         back="Canny Cape",
-        waist="Windbuffet Belt +1",
         ring1="Ramuh Ring +1",
-        ring2="Epona's Ring"
+        ring2="Epona's Ring",
+        waist="Windbuffet Belt +1",
     })
 	
 	sets.idle.Weak = sets.idle
