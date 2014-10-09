@@ -176,9 +176,9 @@ function customize_idle_set(idleSet)
             idleSet = set_combine(idleSet, sets.defense.PDT)
         end
     end
-    --if state.Buff.Sange then
-    --    idleSet = set_combine(idleSet, {ammo="Suppa Shuriken"})
-    --end
+    if state.Buff.Sange then
+        idleSet = set_combine(idleSet, sets.SuppaAmmo)
+    end
     idleSet = set_combine(idleSet, select_movement())
     return idleSet
 end
@@ -194,9 +194,9 @@ function customize_melee_set(meleeSet)
     if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
         meleeSet = set_combine(meleeSet, sets.buff.Migawari)
     end
-    --if state.Buff.Sange then
-    --    meleeSet = set_combine(meleeSet, {ammo="Suppa Shuriken"})
-    --end
+    if state.Buff.Sange then
+        meleeSet = set_combine(meleeSet, sets.SuppaAmmo)
+    end
     if player.mp < 100 and state.OffenseMode.value ~= 'Acc' then
         -- use Rajas instead of Oneiros for normal + mid
         meleeSet = set_combine(meleeSet, sets.Rajas)
