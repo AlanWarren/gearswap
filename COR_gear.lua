@@ -272,15 +272,15 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged.Melee = {
         ammo=gear.RAbullet,
-		head="Whirlpool Mask",
+        head="Whirlpool Mask",
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Qaaxo Harness",
+        body="Qaaxo Harness",
         hands="Iuitl Wristbands +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
-		back="Atheling Mantle",
+        back="Atheling Mantle",
         waist="Cetl Belt",
         legs="Manibozho Brais",
         feet="Qaaxo Leggings"
