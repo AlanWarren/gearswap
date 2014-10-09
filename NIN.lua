@@ -19,8 +19,9 @@ function job_setup()
 
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
 
-    -- list of weaponskills that make better use of otomi helm in low acc situations
-    wsList = S{'Blade: Hi'}
+    select_ammo()
+
+    wsList = S{'Blade: Rin'}
 
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
@@ -85,10 +86,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-    -- Ranged Attacks 
-    if spell.action_type == 'Ranged Attack' then
-        equip( set_combine(sets.precast.RA, {ammo="Suppa Shuriken"}) )
-    end
     --Aftermath for Kannagi
     aw_custom_aftermath_timers_precast(spell)
     
@@ -112,15 +109,25 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
+    -- Ranged Attacks 
+    if spell.action_type == 'Ranged Attack' then
+        equip( set_combine(sets.precast.RA, sets.SuppaAmmo) )
+    end
     if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
         equip(sets.TreasureHunter)
     elseif spell.type == 'WeaponSkill' then
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
+
         if is_sc_element_today(spell) then
-            equip(sets.WSDayBonus)
+            if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
+                -- use normal head piece
+            else
+                equip(sets.WSDayBonus)
+            end
         end
+
         if world.day_element == 'Dark' then
             equip(sets.WSBack)
         end
@@ -176,9 +183,7 @@ function customize_idle_set(idleSet)
             idleSet = set_combine(idleSet, sets.defense.PDT)
         end
     end
-    --if state.Buff.Sange then
-    --    idleSet = set_combine(idleSet, {ammo="Suppa Shuriken"})
-    --end
+
     idleSet = set_combine(idleSet, select_movement())
     return idleSet
 end
@@ -194,13 +199,11 @@ function customize_melee_set(meleeSet)
     if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
         meleeSet = set_combine(meleeSet, sets.buff.Migawari)
     end
-    --if state.Buff.Sange then
-    --    meleeSet = set_combine(meleeSet, {ammo="Suppa Shuriken"})
-    --end
     if player.mp < 100 and state.OffenseMode.value ~= 'Acc' then
         -- use Rajas instead of Oneiros for normal + mid
         meleeSet = set_combine(meleeSet, sets.Rajas)
     end
+    meleeSet = set_combine(meleeSet, select_ammo())
     return meleeSet
 end
 
@@ -233,9 +236,9 @@ end
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
+    select_ammo()
     determine_haste_group()
     select_movement()
-    --set_sange_ammo()
     th_update(cmdParams, eventArgs)
 end
 
@@ -443,35 +446,11 @@ function aw_custom_aftermath_timers_aftercast(spell)
     end
 end
 
--- function to cancel sange if no shurikens
-function cancel_sange()
-    local sange_ammo1 = 'Hachiya Shuriken'
-    local sange_ammo2 = 'Suppa Shuriken'
-    local ammo1 = player.inventory[sange_ammo1]
-    local ammo2 = player.inventory[sange_ammo2]
-
-    if not ammo1 and not ammo2 then
-        return true
-    else
-        return false
-    end
-end
-
-
--- function to provide an ammo warning
-function set_sange_ammo()
-    local sange_ammo1 = 'Hachiya Shuriken'
-    local sange_ammo2 = 'Suppa Shuriken'
-
-    local available_shurikens1 = player.inventory[sange_ammo1]
-    local available_shurikens2 = player.inventory[sange_ammo2]
-
-    if not available_shurikens1 and not available_shurikens2 then
-        return sets.EmptyAmmo
-    elseif available_shurikens1 then
-        return sets.HachiAmmo
-    elseif available_shurikens2 then
+function select_ammo()
+    if state.Buff.Sange then
         return sets.SuppaAmmo
+    else
+        return sets.RegularAmmo
     end
 end
 

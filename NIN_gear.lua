@@ -35,7 +35,7 @@ function init_gear_sets()
     sets.WSBack         = { head="Trepidity Mantle" }
     sets.Rajas          = { ring1="Rajas Ring" }
 
-    sets.EmptyAmmo      = { ammo="" }
+    sets.RegularAmmo      = { ammo="Happo Shuriken" }
     sets.HachiAmmo      = { ammo="Hachiya Shuriken" }
     sets.SuppaAmmo      = { ammo="Suppa Shuriken" }
 
