@@ -223,14 +223,16 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1",
         hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
-        feet="Mochizuki Kyahan +1",
+        feet="Qaaxo Leggings",
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         ammo="Happo Shuriken",
         neck="Iqabi Necklace",
         ring1="Ramuh Ring +1",
-        waist="Olseni Belt"
+        ring2="Mars's Ring",
+        waist="Olseni Belt",
+        legs="Mochizuki Kyahan +1"
     })
 
     sets.engaged.NormalPDT = {
@@ -263,7 +265,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Thaumas Coat",
-        back="Rancorous Mantle",
+        back="Atheling Mantle",
         waist="Windbuffet Belt +1",
         legs="Otronif Brais +1"
     })
@@ -275,7 +277,8 @@ function init_gear_sets()
         body="Mes'yohi Haubergeon",
         hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
-        legs="Wukong's Hakama +1"
+        legs="Wukong's Hakama +1",
+        feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         neck="Iqabi Necklace",
@@ -312,8 +315,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_40, {
         head="Ptica Headgear",
-        legs="Mochizuki Hakama +1",
-        feet="Mochizuki Kyahan +1"
+        legs="Mochizuki Hakama +1"
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.Haste_40, {
         head="Ptica Headgear",
@@ -333,6 +335,7 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
+        ring2="Mars's Ring",
         body="Mochizuki Chainmail +1"
     })
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
