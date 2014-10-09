@@ -163,6 +163,7 @@ function init_gear_sets()
     }
     
     sets.idle.Town = set_combine(sets.idle, {
+        ammo="Happo Shuriken",
         head="Ptica Headgear",
         neck="Hope Torque",
         body="Mes'yohi Haubergeon",
