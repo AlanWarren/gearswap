@@ -52,6 +52,7 @@ function init_gear_sets()
         --head="Uk'uxkaj Cap",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
+        body="Dread Jupon",
         hands="Buremte Gloves",
         legs="Kaabnax Trousers"
     }
