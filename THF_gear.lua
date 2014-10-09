@@ -12,7 +12,7 @@ function init_gear_sets()
         neck="Moepapa Medal",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-		body="Qaaxo Harness",
+		body="Dread Jupon",
         hands="Pillager's Armlets +1",
         ring1="Ramuh Ring",
         ring2="Ramuh Ring +1",
@@ -27,7 +27,7 @@ function init_gear_sets()
         neck="Moepapa Medal",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-		body="Mekosuchinae Harness",
+		body="Dread Jupon",
         hands="Pillager's Armlets +1",
         ring1="Stormsoul Ring",
         ring2="Garuda Ring",
@@ -84,6 +84,7 @@ function init_gear_sets()
         --head="Uk'uxkaj Cap",
         ear1="Loquacious Earring",
         hands="Buremte Gloves",
+        body="Dread Jupon",
         ring1="Prolix Ring",
         legs="Kaabnax Trousers"
     }
@@ -131,6 +132,7 @@ function init_gear_sets()
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         head="Whirlpool Mask",
         hands="Plunderer's Armlets +1",
+		body="Dread Jupon",
         ring1="Mars's Ring",
         ring2="Ramuh Ring +1",
         back="Canny Cape",
@@ -340,7 +342,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		head="Whirlpool Mask",
         neck="Iqabi Necklace",
-		body="Mekosuchinae Harness",
+		body="Dread Jupon",
         ring1="Ramuh Ring +1",
         hands="Buremte Gloves",
         waist="Olseni Belt",
