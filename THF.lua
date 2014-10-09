@@ -314,7 +314,7 @@ function select_default_macro_book()
 	elseif player.sub_job == 'WAR' then
 		set_macro_page(5, 1)
 	elseif player.sub_job == 'NIN' then
-		set_macro_page(4, 5)
+		set_macro_page(5, 1)
 	else
 		set_macro_page(5, 2)
 	end
