@@ -35,7 +35,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	-- Options: Override default values
-	state.OffenseMode:options('Ranged', 'Melee', 'Acc')
+	state.OffenseMode:options('Normal', 'Melee', 'Acc')
 	state.RangedMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Normal', 'Acc')
 	state.CastingMode:options('Normal', 'Resistant')
@@ -51,7 +51,7 @@ function user_setup()
 	--gear.QDbullet = "Adlivun Bullet"
 	options.ammo_warning_limit = 15
 
-    cor_sub_weapons = S{"Vanir Knife", "Sabebus", "Aphotic Kukri", "Atoyac", "Surcouf's Jambiya"}
+    cor_sub_weapons = S{"Arendsi Fleuret", "Vanir Knife", "Sabebus", "Aphotic Kukri", "Atoyac", "Surcouf's Jambiya"}
 
     get_combat_form()
 	-- Additional local binds

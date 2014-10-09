@@ -19,7 +19,8 @@ function init_gear_sets()
         head="Lanun Tricorne",
         hands="Navarch's Gants +2",
         body="Lanun Frac",
-        back="Repulse Mantle",
+        ring1="Barataria Ring",
+		back="Gunslinger's Cape"
     }
 	
 	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
@@ -78,7 +79,7 @@ function init_gear_sets()
 		body="Lanun Frac",
         hands="Iuitl Wristbands +1",
         ring1="Rajas Ring",
-        ring2="Stormsoul Ring",
+        ring2="Ifrit Ring",
 		back="Buquwik Cape",
         waist=gear.ElementalBelt,
         legs="Nahtirah Trousers",
@@ -95,18 +96,17 @@ function init_gear_sets()
 
 	sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
         ammo=gear.WSbullet,
-        body="Iuitl Vest",
+    	body="Mekosuchinae Harness",
         ear1="Flame Pearl",
-        ear2="Moonshade Earring"
+        ear2="Moonshade Earring",
     })
 	sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
         ammo=gear.WSbullet,
-        body="Lanun Frac",
         ear1="Volley Earring",
         ear2="Moonshade Earring",
         back="Libeccio Mantle",
         ring1="Hajduk Ring",
-        ring2="Paqichikaji Ring"
+        ring2="Longshot Ring"
     })
 
 	sets.precast.WS['Wildfire'] = {
@@ -118,16 +118,14 @@ function init_gear_sets()
 		body="Lanun Frac",
         hands="Iuitl Wristbands +1",
         ring1="Acumen Ring",
-        ring2="Stormsoul Ring",
+        ring2="Garuda Ring",
 		back="Gunslinger's Cape",
         waist="Aquiline Belt",
         legs="Shneddick Tights +1",
         feet="Navarch's Bottes +2"
-
     }
 
 	sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], { ear2="Moonshade Earring"})
-	
 	
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
@@ -254,6 +252,23 @@ function init_gear_sets()
 	-- If you create a set with both offense and defense modes, the offense mode should be first.
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 	
+    sets.engaged = {
+        ammo=gear.RAbullet,
+		head="Umbani Cap",
+        neck="Iqabi Necklace",
+        ear1="Clearview Earring",
+        ear2="Volley Earring",
+		body="Lanun Frac",
+        hands="Sigyn's Bazubands",
+        ring1="Rajas Ring",
+        ring2="Longshot Ring",
+		back="Gunslinger's Cape",
+        waist="Elanid Belt",
+        legs="Nahtirah Trousers",
+        feet="Iuitl Gaiters +1"
+    }
+    sets.engaged.DW = sets.engaged
+	
 	-- Normal melee group
 	sets.engaged.Melee = {
         ammo=gear.RAbullet,
@@ -270,12 +285,6 @@ function init_gear_sets()
         legs="Manibozho Brais",
         feet="Qaaxo Leggings"
     }
-	
-	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
-    	body="Mekosuchinae Harness",
-        ring2="Mars's Ring",
-        waist="Hurch'lan Sash"
-    })
 
 	sets.engaged.Melee.DW = set_combine(sets.engaged.Melee, {
         --head="Thurandaut Chapeau +1",
@@ -285,26 +294,17 @@ function init_gear_sets()
         waist="Nusku's Sash",
         back="Vellaunus' Mantle +1"
     })
-
+	
+	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
+    	body="Mekosuchinae Harness",
+        ring2="Mars's Ring",
+        waist="Hurch'lan Sash"
+    })
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Melee.DW, {
         neck="Iqabi Necklace",
         ring2="Mars's Ring"
     })
 
-	sets.engaged.Ranged = {
-        ammo=gear.RAbullet,
-		head="Umbani Cap",
-        neck="Iqabi Necklace",
-        ear1="Clearview Earring",
-        ear2="Volley Earring",
-		body="Lanun Frac",
-        hands="Sigyn's Bazubands",
-        ring1="Rajas Ring",
-        ring2="Longshot Ring",
-		back="Gunslonger's Cape",
-        waist="Elanid Belt",
-        legs="Nahtirah Trousers",
-        feet="Iuitl Gaiters +1"
-    }
+
 end
 
