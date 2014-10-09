@@ -15,7 +15,7 @@ function init_gear_sets()
         ear2="Trux Earring", 
         feet="Mochizuki Kyahan +1"
     }
-    sets.precast.JA.Sange = { body="Mochizuki Chainmail +1" }
+    sets.precast.JA.Sange = { body="Mochizuki Chainmail +1", ammo="Suppa Shuriken" }
     
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -46,7 +46,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         hands="Buremte Gloves",
         back="Yokaze Mantle",
-        waist="Anguinus Belt",
+        waist="Olseni Belt",
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     }

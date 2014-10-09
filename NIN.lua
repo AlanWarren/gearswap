@@ -183,7 +183,6 @@ function customize_idle_set(idleSet)
             idleSet = set_combine(idleSet, sets.defense.PDT)
         end
     end
-
     idleSet = set_combine(idleSet, select_movement())
     return idleSet
 end
