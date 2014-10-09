@@ -87,14 +87,7 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
     -- Ranged Attacks 
     if spell.action_type == 'Ranged Attack' then
-        equip( set_combine(sets.precast.RA, set_sange_ammo()) )
-    end
-    -- Sange
-    if spell.name == 'Sange' then
-        if cancel_sange() then
-            eventArgs.cancel = true
-            add_to_chat(104, 'No Shurikens! - Sange Canceled')
-        end
+        equip( set_combine(sets.precast.RA, {ammo="Suppa Shuriken"} )
     end
     --Aftermath for Kannagi
     aw_custom_aftermath_timers_precast(spell)
@@ -184,7 +177,7 @@ function customize_idle_set(idleSet)
         end
     end
     if state.Buff.Sange then
-        idleSet = set_combine(idleSet, set_sange_ammo())
+        idleSet = set_combine(idleSet, {ammo="Suppa Shuriken"})
     end
     idleSet = set_combine(idleSet, select_movement())
     return idleSet
@@ -202,7 +195,7 @@ function customize_melee_set(meleeSet)
         meleeSet = set_combine(meleeSet, sets.buff.Migawari)
     end
     if state.Buff.Sange then
-        meleeSet = set_combine(meleeSet, set_sange_ammo())
+        meleeSet = set_combine(meleeSet, {ammo="Suppa Shuriken"})
     end
     if player.mp < 100 and state.OffenseMode.value ~= 'Acc' then
         -- use Rajas instead of Oneiros for normal + mid
