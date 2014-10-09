@@ -46,7 +46,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         hands="Buremte Gloves",
         back="Yokaze Mantle",
-        waist="Anguinus Belt",
+        waist="Olseni Belt",
         legs="Hachiya Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
