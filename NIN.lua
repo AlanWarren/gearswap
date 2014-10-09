@@ -235,7 +235,7 @@ end
 function job_update(cmdParams, eventArgs)
     determine_haste_group()
     select_movement()
-    set_sange_ammo()
+    --set_sange_ammo()
     th_update(cmdParams, eventArgs)
 end
 
