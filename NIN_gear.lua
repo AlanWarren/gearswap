@@ -425,7 +425,7 @@ function init_gear_sets()
         hands="Sasuke Tekko +1",
         ring1="Garuda Ring",
         back="Rancorous Mantle",
-        legs="Mochizuki Hakama +1",
+        legs="Otronif Brais +1",
         waist="Windbuffet Belt +1",
         feet="Mochizuki Kyahan +1"
     }
