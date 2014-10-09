@@ -111,15 +111,15 @@ function init_gear_sets()
 
 	sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
-		head="Umbani Cap",
+        head="Umbani Cap",
         neck="Stoicheion Medal",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
-		body="Lanun Frac",
+        body="Lanun Frac",
         hands="Iuitl Wristbands +1",
         ring1="Acumen Ring",
         ring2="Garuda Ring",
-		back="Gunslinger's Cape",
+        back="Gunslinger's Cape",
         waist="Aquiline Belt",
         legs="Shneddick Tights +1",
         feet="Navarch's Bottes +2"
@@ -140,22 +140,22 @@ function init_gear_sets()
 
 	sets.midcast.CorsairShot = {
         ammo=gear.QDbullet,
-		head="Umbani Cap",
+        head="Umbani Cap",
         neck="Stoicheion Medal",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-		body="Lanun Frac",
+        body="Lanun Frac",
         hands="Iuitl Wristbands +1",
         ring1="Acumen Ring",
         ring2="Stormsoul Ring",
-		back="Gunslinger's Cape",
+        back="Gunslinger's Cape",
         waist="Aquiline Belt",
         legs="Shneddick Tights +1",
         feet="Navarch's Bottes +2"
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
-    	body="Mekosuchinae Harness",
+        body="Mekosuchinae Harness",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         ring1="Perception Ring",
@@ -168,15 +168,15 @@ function init_gear_sets()
 	-- Ranged gear
 	sets.midcast.RA = {
         ammo=gear.RAbullet,
-		head="Umbani Cap",
+        head="Umbani Cap",
         neck="Iqabi Necklace",
         ear1="Clearview Earring",
         ear2="Volley Earring",
-		body="Lanun Frac",
+        body="Lanun Frac",
         hands="Sigyn's Bazubands",
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
-		back="Gunslinger's Cape",
+        back="Gunslinger's Cape",
         waist="Elanid Belt",
         legs="Aetosaur Trousers +1",
         feet="Scopuli Nails +1"
@@ -195,35 +195,35 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
         ammo=gear.RAbullet,
-		head="Umbani Cap",
+        head="Umbani Cap",
         neck="Twilight Torque",
         ear2="Dawn Earring",
-    	body="Mekosuchinae Harness",
+        body="Mekosuchinae Harness",
         hands="Iuitl Wristbands +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
-		back="Repulse Mantle",
+        back="Repulse Mantle",
         waist="Commodore Belt",
         legs="Nahtirah Trousers",
         feet="Skadi's Jambeaux +1"
     }
     sets.idle.Regen = set_combine(sets.idle, {
-		head="Ocelomeh Headpiece +1",
+        head="Ocelomeh Headpiece +1",
         body="Kheper jacket"
     })
 
 	sets.idle.Town = {
         range="Vanir Gun",
         ammo=gear.RAbullet,
-		head="Lithelimb Cap",
+        head="Lithelimb Cap",
         neck="Iqabi Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-    	body="Mekosuchinae Harness",
+        body="Mekosuchinae Harness",
         hands="Sigyn's Bazubands",
         ring1="Patricius Ring",
         ring2="Paguroidea Ring",
-		back="Shadow Mantle",
+        back="Shadow Mantle",
         waist="Commodore Belt",
         legs="Crimson Cuisses",
         feet="Iuitl Gaiters +1"
@@ -237,7 +237,7 @@ function init_gear_sets()
         body="Lanun Frac",
         ring1="Patricius Ring",
         ring2="Dark Ring",
-		legs="Iuitl Tights +1",
+        legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
     })
 
@@ -254,15 +254,15 @@ function init_gear_sets()
 	
     sets.engaged = {
         ammo=gear.RAbullet,
-		head="Umbani Cap",
+        head="Umbani Cap",
         neck="Iqabi Necklace",
         ear1="Clearview Earring",
         ear2="Volley Earring",
-		body="Lanun Frac",
+        body="Lanun Frac",
         hands="Sigyn's Bazubands",
         ring1="Rajas Ring",
         ring2="Longshot Ring",
-		back="Gunslinger's Cape",
+        back="Gunslinger's Cape",
         waist="Elanid Belt",
         legs="Nahtirah Trousers",
         feet="Iuitl Gaiters +1"
