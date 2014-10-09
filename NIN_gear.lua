@@ -80,6 +80,7 @@ function init_gear_sets()
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         hands="Buremte Gloves",
+        body="Dread Jupon",
         legs="Kaabnax Trousers",
         feet="Mochizuki Kyahan +1" -- special enhancement for casting ninjutsu III
     }
@@ -415,7 +416,7 @@ function init_gear_sets()
         ammo="Yetshila",
         head="Uk'uxkaj Cap",
         neck="Shadow Gorget",
-        body="Qaaxo Harness",
+        body="Dread Jupon",
         hands="Sasuke Tekko +1",
         ring1="Garuda Ring",
         back="Rancorous Mantle",
