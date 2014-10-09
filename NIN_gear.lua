@@ -246,12 +246,6 @@ function init_gear_sets()
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.engaged.NormalPDT)
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.engaged.NormalPDT)
 
-    sets.engaged.Haste_40 = {}
-    sets.engaged.Haste_35 = {}
-    sets.engaged.Haste_30 = {}
-    sets.engaged.Haste_25 = {}
-    sets.engaged.Haste_20 = {}
-
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
