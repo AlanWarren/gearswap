@@ -89,9 +89,6 @@ function job_precast(spell, action, spellMap, eventArgs)
     if spell.action_type == 'Ranged Attack' then
         equip( set_combine(sets.precast.RA, {ammo="Suppa Shuriken"}) )
     end
-    if spell.name == 'Sange' then
-        equip(sets.SuppaAmmo)
-    end
     --Aftermath for Kannagi
     aw_custom_aftermath_timers_precast(spell)
     
