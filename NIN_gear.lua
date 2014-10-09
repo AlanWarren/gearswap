@@ -302,6 +302,7 @@ function init_gear_sets()
         legs="Hachiya Hakama +1"
     })
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.MaxHaste, { 
+        ring2="Mars's Ring",
         legs="Hachiya Hakama +1"
     })
     sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HastePDT)
@@ -321,7 +322,8 @@ function init_gear_sets()
         head="Ptica Headgear",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        legs="Wukong's Hakama +1"
+        ring2="Mars's Ring",
+        legs="Hachiya Hakama +1"
     })
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HastePDT)
@@ -335,8 +337,11 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
+        ear1="Suppanomimi",
+        ear2="Zennaroi Earring",
         ring2="Mars's Ring",
-        body="Mochizuki Chainmail +1"
+        body="Mochizuki Chainmail +1",
+        legs="Hachiya Hakama +1"
     })
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, sets.engaged.HastePDT)
