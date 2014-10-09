@@ -89,7 +89,7 @@ function init_gear_sets()
     -- Midcast Sets
     sets.midcast.FastRecast = {
         head="Uk'uxkaj Cap",
-        body="Mochizuki Chainmail +1",
+        body="Dread Jupon",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         legs="Wukong's Hakama +1",
