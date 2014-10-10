@@ -113,6 +113,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.action_type == 'Ranged Attack' then
         equip( set_combine(sets.precast.RA, sets.SuppaAmmo) )
     end
+    if spell.name == 'Sange' and player.equipment.ammo == 'Happo Shuriken' then
+        eventArgs.cancel = true
+    end
     if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
         equip(sets.TreasureHunter)
     elseif spell.type == 'WeaponSkill' then
