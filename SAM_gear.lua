@@ -401,7 +401,7 @@ function init_gear_sets()
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
    	    body="Mes'yohi Haubergeon",
         neck="Agitator's Collar",
-        ring2="Mars's Ring",
+        ring2="Ramuh Ring +1",
         waist="Olseni Belt",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         legs="Xaddi Cuisses",
