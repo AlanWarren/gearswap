@@ -93,8 +93,8 @@ function init_gear_sets()
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
         head="Yaoyotl Helm",
-        ring2="Mars's Ring",
    	    body="Mes'yohi Haubergeon",
+        legs="Wukong's Hakama +1",
         waist="Metalsinger Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
@@ -391,14 +391,14 @@ function init_gear_sets()
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         head="Yaoyotl Helm",
    	    body="Mes'yohi Haubergeon",
-        ring1="Ramuh Ring +1",
+        ring1="Rajas Ring",
+        ring2="Ramuh Ring +1",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         legs="Xaddi Cuisses",
         feet="Ejekamal Boots"
     })
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
-        sub="Bloodrain Strap",
    	    body="Mes'yohi Haubergeon",
         neck="Agitator's Collar",
         ring2="Mars's Ring",
