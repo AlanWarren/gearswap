@@ -7,7 +7,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA.Meditate = {
         head="Wakido Kabuto",
-        hands="Saotome Kote +2"
+        hands="Saotome Kote +2",
         back={name="Takaha Mantle", augments={'STR+1','"Store TP"+1','"Zanshin"+1','Meditate eff. dur. +4'}},
     }
     sets.precast.JA.Seigan = {head="Unkai Kabuto +2"}
@@ -191,7 +191,7 @@ function init_gear_sets()
         ring1="Oneiros Ring",
         ring2="Patricius Ring",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
-        waist="Metalsinger Belt",
+        waist="Windbuffet Belt +1",
         legs="Scuffler's Cosciales",
         feet="Danzo Sune-ate"
     }
