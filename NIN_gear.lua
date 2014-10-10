@@ -286,6 +286,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
+        ring2="Mars's Ring",
         waist="Olseni Belt",
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
@@ -302,7 +303,6 @@ function init_gear_sets()
         legs="Hachiya Hakama +1"
     })
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.MaxHaste, { 
-        ring2="Mars's Ring",
         legs="Hachiya Hakama +1"
     })
     sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HastePDT)
@@ -322,7 +322,6 @@ function init_gear_sets()
         head="Ptica Headgear",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        ring2="Mars's Ring",
         legs="Hachiya Hakama +1"
     })
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HastePDT)
@@ -339,7 +338,6 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
         ear1="Suppanomimi",
         ear2="Zennaroi Earring",
-        ring2="Mars's Ring",
         body="Mochizuki Chainmail +1",
         legs="Hachiya Hakama +1"
     })
@@ -436,7 +434,6 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
 
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-        body="Mochizuki Chainmail +1",
         legs="Wukong's Hakama +1",
         waist="Soil Belt"
     })
