@@ -286,14 +286,14 @@ function init_gear_sets()
         head="Yaoyotl Helm",
    	    body="Mes'yohi Haubergeon",
         neck="Agitator's Collar",
-        ring2="Patricius Ring",
+        ring2="Ramuh Ring +1",
         feet="Sakonji Sune-Ate +1"
     })
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Sakonji Kabuto +1",
-        ring2="Mars's Ring",
         ear1="Zennaroi Earring",
+        ring1="Mars's Ring",
         feet="Wakido Sune-Ate +1",
         legs="Xaddi Cuisses",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
@@ -391,6 +391,7 @@ function init_gear_sets()
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         head="Yaoyotl Helm",
    	    body="Mes'yohi Haubergeon",
+        ring1="Ramuh Ring +1",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         legs="Xaddi Cuisses",
         feet="Ejekamal Boots"
@@ -400,7 +401,6 @@ function init_gear_sets()
         sub="Bloodrain Strap",
    	    body="Mes'yohi Haubergeon",
         neck="Agitator's Collar",
-        ring1="Ramuh Ring +1",
         ring2="Mars's Ring",
         waist="Olseni Belt",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
