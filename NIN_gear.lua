@@ -178,7 +178,7 @@ function init_gear_sets()
 
     -- Defense sets
     sets.defense.PDT = {
-        head="Ptica Headgear",
+        head="Otronif Mask +1",
         neck="Twilight Torque",
         body="Otronif Harness +1",
         hands="Otronif Gloves +1",
@@ -190,7 +190,7 @@ function init_gear_sets()
     }
     
     sets.defense.MDT = set_combine(sets.defense.PDT, {
-        head="Felistris Mask",
+        head="Ptica Headgear +1",
         neck="Twilight Torque",
         hands="Otronif Gloves +1",
         feet="Otronif Boots +1"
@@ -236,7 +236,7 @@ function init_gear_sets()
     })
 
     sets.engaged.NormalPDT = {
-        head="Ptica Headgear",
+        head="Otronif Mask +1",
         body="Otronif Harness +1",
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
@@ -245,10 +245,18 @@ function init_gear_sets()
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     }
+    sets.engaged.AccPDT = {
+        head="Lithelimb Cap",
+        body="Otronif Harness +1",
+        neck="Agitator's Collar",
+        hands="Umuthi Gloves",
+        ring1="Patricius Ring",
+        feet="Otronif Boots +1"
+    }
 
     sets.engaged.PDT = set_combine(sets.engaged, sets.engaged.NormalPDT)
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.engaged.NormalPDT)
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.engaged.NormalPDT)
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.engaged.AccPDT)
 
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
@@ -290,9 +298,9 @@ function init_gear_sets()
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
     })
-    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HastePDT)
-    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.HastePDT)
-    sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.engaged.HastePDT)
+    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.NormalPDT)
+    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.NormalPDT)
+    sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.engaged.AccPDT)
 
     -- Haste 40 to 43%
     sets.engaged.Haste_40 = set_combine(sets.engaged.MaxHaste, {
@@ -307,7 +315,7 @@ function init_gear_sets()
     })
     sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HastePDT)
-    sets.engaged.Acc.PDT.Haste_40 = set_combine(sets.engaged.Acc.Haste_40, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_40 = set_combine(sets.engaged.Acc.Haste_40, sets.engaged.AccPDT)
      
     -- 35% Haste
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_40, {
@@ -327,7 +335,7 @@ function init_gear_sets()
     })
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HastePDT)
-    sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.AccPDT)
     
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
@@ -345,7 +353,7 @@ function init_gear_sets()
     })
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, sets.engaged.HastePDT)
-    sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.AccPDT)
     
     -- 25% Haste
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
@@ -361,7 +369,7 @@ function init_gear_sets()
     })
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_25 = set_combine(sets.engaged.PDT.Haste_25, sets.engaged.HastePDT)
-    sets.engaged.Acc.PDT.Haste_25 = set_combine(sets.engaged.Acc.Haste_25, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_25 = set_combine(sets.engaged.Acc.Haste_25, sets.engaged.AccPDT)
     
     -- 5 - 20% Haste 
     sets.engaged.Haste_20 = set_combine(sets.engaged.Haste_25, {
@@ -378,7 +386,7 @@ function init_gear_sets()
     })
     sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_20 = set_combine(sets.engaged.PDT.Haste_20, sets.engaged.HastePDT)
-    sets.engaged.Acc.PDT.Haste_20 = set_combine(sets.engaged.Acc.Haste_20, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_20 = set_combine(sets.engaged.Acc.Haste_20, sets.engaged.AccPDT)
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
     
