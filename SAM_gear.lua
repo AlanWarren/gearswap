@@ -226,7 +226,7 @@ function init_gear_sets()
     
     -- Defense sets
     sets.defense.PDT = {
-        head="Lithelimb Cap",
+        head="Otronif Mask +1",
         neck="Agitator's Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
@@ -325,7 +325,8 @@ function init_gear_sets()
     })
     
     sets.engaged.PDT = set_combine(sets.engaged, { 
-        head="Lithelimb Cap", 
+        head="Otronif Mask +1", 
+        body="Otronif Harness +1",
         neck="Agitator's Collar",
         ring1="Patricius Ring",
         back="Repulse Mantle",
