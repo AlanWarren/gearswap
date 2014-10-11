@@ -188,7 +188,7 @@ function init_gear_sets()
         ear2="Steelflash Earring",
    	    body="Mes'yohi Haubergeon",
         hands="Wakido Kote +1",
-        ring1="Oneiros Ring",
+        ring1="Ramuh Ring +1",
         ring2="Patricius Ring",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
