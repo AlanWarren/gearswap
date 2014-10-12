@@ -224,16 +224,11 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Felistris Mask",
         hands="Iuitl Wristbands +1",
-		waist="Hurch'lan Sash"
+		legs="Kaabnax Trousers"
     }
 		
 	-- Specific spells
-	sets.midcast.Utsusemi = {
-		head="Felistris Mask",
-        hands="Iuitl Wristbands +1",
-		waist="Hurch'lan Sash",
-        legs="Kaabnax Trousers"
-    }
+	sets.midcast.Utsusemi = sets.midcast.FastRecast
 
 	-- Ranged gear -- acc + TH
 	sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
@@ -306,7 +301,6 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Epona's Ring",
 		back="Atheling Mantle",
-        waist="Hurch'lan Sash",
         legs="Nahtirah Trousers",
         feet="Qaaxo Leggings"
     }

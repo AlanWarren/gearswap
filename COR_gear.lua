@@ -291,14 +291,14 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Skadi's Cuirie +1",
-        waist="Nusku's Sash",
+        --waist="Nusku's Sash",
         back="Vellaunus' Mantle +1"
     })
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
     	body="Mekosuchinae Harness",
-        ring2="Mars's Ring",
-        waist="Hurch'lan Sash"
+        ring2="Ramuh Ring +1",
+        waist="Olseni Belt"
     })
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Melee.DW, {
         neck="Iqabi Necklace",
