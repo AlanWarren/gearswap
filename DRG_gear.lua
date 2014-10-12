@@ -88,7 +88,6 @@ function init_gear_sets()
         hands="Cizin Mufflers +1",
 		legs="Xaddi Cuisses",
         feet="Ejekamal Boots",
-        waist="Zoran's Belt"
     }	
 		
 	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Wyrm Armet", waist="Glassblower's Belt" })
@@ -173,7 +172,6 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
 		back="Shadow Mantle",
-        waist="Zoran's Belt",
         legs="Crimson Cuisses",
         feet="Whirlpool Greaves"
     }
