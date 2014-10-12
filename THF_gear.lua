@@ -146,6 +146,7 @@ function init_gear_sets()
         neck="Moepapa Medal",
         ear1="Brutal Earring",
         ear2="Trux Earring",
+        body="Dread Jupon",
         ring1="Garuda Ring",
 		legs="Quiahuiz Trousers", 
         waist="Elanid Belt",
