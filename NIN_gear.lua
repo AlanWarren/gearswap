@@ -467,8 +467,10 @@ function init_gear_sets()
     
     -- BLADE: Rin
     sets.Rin = {
-        neck="Iga Erimaki",
+        ammo="Yetshila",
+        neck="Rancor Collar",
         waist="Windbuffet Belt +1",
+        ring1="Ramuh Ring +1",
         back="Yokaze Mantle",
     }
     sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
