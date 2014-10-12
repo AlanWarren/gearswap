@@ -105,10 +105,11 @@ function init_gear_sets()
         ear1="Volley Earring",
         ear2="Clearview Earring",
         body="Mekosuchinae Harness",
-        hands="Sigyn's Bazubands",
+        hands="Manibozho Gloves",
         ring1="Longshot Ring",
         ring2="Hajduk Ring",
         waist="Elanid Belt",
+        back="Libeccio Mantle",
         legs="Aetosaur Trousers +1",
         feet="Scopuli Nails +1"
     }
