@@ -331,10 +331,6 @@ function init_gear_sets()
         legs="Pillager's Culottes +1",
         feet="Plunderer's Poulaines"
     }
-	sets.engaged.Mid = set_combine(sets.engaged, {
-        ring1="Ramuh Ring +1",
-		body="Qaaxo Harness",
-    })
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		head="Whirlpool Mask",
         neck="Iqabi Necklace",
@@ -362,22 +358,21 @@ function init_gear_sets()
         ring1="Ramuh Ring +1",
         waist="Olseni Belt"
     })
-	sets.engaged.PDT = {
-		head="Lithelimb Cap",
+	sets.engaged.PDT = set_combine(sets.engaged, {
+		head="Iuitl Headgear +1",
         neck="Twilight Torque",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
 		body="Qaaxo Harness",
-        hands="Iuitl Wristbands +1",
         ring1="Patricius Ring",
-        ring2="Epona's Ring",
-		back="Repulse Mantle",
-        waist="Patentia Sash",
         legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
     }
+	sets.engaged.Mid = set_combine(sets.engaged.PDT, {
+        ring1="Ramuh Ring +1",
+		body="Dread Jupon",
+    })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
         head="Whirlpool Mask",
+        body="Mekosuchinae Harness",
         ring2="Ramuh Ring +1",
         waist="Olseni Belt"
     })
