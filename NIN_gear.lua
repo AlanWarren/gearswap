@@ -219,7 +219,6 @@ function init_gear_sets()
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
         ammo="Happo Shuriken",
-        neck="Iga Erimaki",
         body="Mochizuki Chainmail +1",
         hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
