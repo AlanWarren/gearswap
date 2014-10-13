@@ -359,7 +359,6 @@ function init_gear_sets()
         ear2="Suppanomimi"
     })
     sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Mid.Haste_30, {
-        neck="Iga Erimaki",
         ear1="Brutal Earring",
         ear2="Suppanomimi"
     })
