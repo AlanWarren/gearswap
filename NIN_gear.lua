@@ -35,9 +35,13 @@ function init_gear_sets()
     sets.WSBack         = { head="Trepidity Mantle" }
     sets.Rajas          = { ring1="Rajas Ring" }
 
-    sets.RegularAmmo      = { ammo="Happo Shuriken" }
+    sets.RegularAmmo    = { ammo="Happo Shuriken" }
     sets.HachiAmmo      = { ammo="Hachiya Shuriken" }
     sets.SuppaAmmo      = { ammo="Suppa Shuriken" }
+    
+    sets.NightAccAmmo   = { ammo="Ginsen" }
+    sets.DayAccAmmo     = { ammo="Tengu-no-Hane" }
+    sets.RegularAmmo    = { ammo="Yetshila" }
 
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
@@ -458,6 +462,7 @@ function init_gear_sets()
     })
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         head="Ptica Headgear",
+        ear1="Trux Earring",
         back="Yokaze Mantle",
         waist="Caudata Belt"
     })

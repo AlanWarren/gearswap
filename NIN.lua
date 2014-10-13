@@ -116,13 +116,15 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.name == 'Sange' and player.equipment.ammo == 'Happo Shuriken' then
         eventArgs.cancel = true
     end
-    if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
-        equip(sets.TreasureHunter)
-    elseif spell.type == 'WeaponSkill' then
+    if spell.type == 'WeaponSkill' then
+        if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
+            equip(sets.TreasureHunter)
+        end
+        -- Mecistopins Mantle rule
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-
+        -- Gavialis Helm rule
         if is_sc_element_today(spell) then
             if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
                 -- use normal head piece
@@ -130,7 +132,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
                 equip(sets.WSDayBonus)
             end
         end
-
+        -- Swap in special ammo for WS in high Acc mode
+        if state.OffenseMode.value == 'Acc' then
+            equip(select_ws_ammo())
+        end
+        -- Use Trepidity mantle on Darksday
         if world.day_element == 'Dark' then
             equip(sets.WSBack)
         end
@@ -240,7 +246,7 @@ end
 function job_update(cmdParams, eventArgs)
     select_ammo()
     determine_haste_group()
-    select_movement()
+    --select_movement()
     th_update(cmdParams, eventArgs)
 end
 
@@ -453,6 +459,14 @@ function select_ammo()
         return sets.SuppaAmmo
     else
         return sets.RegularAmmo
+    end
+end
+
+function select_ws_ammo()
+    if world.time >= (18*60) or world.time <= (6*60) then
+        return sets.NightAccAmmo
+    else
+        return sets.DayAccAmmo
     end
 end
 
