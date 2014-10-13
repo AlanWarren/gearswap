@@ -415,6 +415,19 @@ function init_gear_sets()
         legs="Wukong's Hakama +1",
         ring1="Ramuh Ring +1"
     })
+
+    sets.Kamu = {
+        --ammo="Ginsen",
+        neck="Breeze Gorget",
+        body="Dread Jupon",
+        ring1="Ifrit Ring",
+        back="Yokaze Mantle",
+        waist="Windbuffet Belt +1",
+        legs="Wukong's Hakama +1"
+    }
+    sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
+    sets.precast.WS['Blade: Kamu'].Mid = set_combine(sets.precast.WS.Mid, sets.Kamu)
+    sets.precast.WS['Blade: Kamu'].Acc = set_combine(sets.precast.WS.Acc, sets.Kamu)
     
     -- BLADE: JIN
     sets.Jin = {
