@@ -188,7 +188,7 @@ function init_gear_sets()
         ear2="Steelflash Earring",
    	    body="Mes'yohi Haubergeon",
         hands="Wakido Kote +1",
-        ring1="Oneiros Ring",
+        ring1="Ramuh Ring +1",
         ring2="Patricius Ring",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
@@ -226,7 +226,7 @@ function init_gear_sets()
     
     -- Defense sets
     sets.defense.PDT = {
-        head="Lithelimb Cap",
+        head="Otronif Mask +1",
         neck="Agitator's Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
@@ -325,7 +325,8 @@ function init_gear_sets()
     })
     
     sets.engaged.PDT = set_combine(sets.engaged, { 
-        head="Lithelimb Cap", 
+        head="Otronif Mask +1", 
+        body="Otronif Harness +1",
         neck="Agitator's Collar",
         ring1="Patricius Ring",
         back="Repulse Mantle",

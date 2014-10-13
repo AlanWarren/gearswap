@@ -105,10 +105,11 @@ function init_gear_sets()
         ear1="Volley Earring",
         ear2="Clearview Earring",
         body="Mekosuchinae Harness",
-        hands="Sigyn's Bazubands",
+        hands="Manibozho Gloves",
         ring1="Longshot Ring",
         ring2="Hajduk Ring",
         waist="Elanid Belt",
+        back="Libeccio Mantle",
         legs="Aetosaur Trousers +1",
         feet="Scopuli Nails +1"
     }
@@ -145,6 +146,7 @@ function init_gear_sets()
         neck="Moepapa Medal",
         ear1="Brutal Earring",
         ear2="Trux Earring",
+        body="Dread Jupon",
         ring1="Garuda Ring",
 		legs="Quiahuiz Trousers", 
         waist="Elanid Belt",
@@ -224,16 +226,11 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Felistris Mask",
         hands="Iuitl Wristbands +1",
-		waist="Hurch'lan Sash"
+		legs="Kaabnax Trousers"
     }
 		
 	-- Specific spells
-	sets.midcast.Utsusemi = {
-		head="Felistris Mask",
-        hands="Iuitl Wristbands +1",
-		waist="Hurch'lan Sash",
-        legs="Kaabnax Trousers"
-    }
+	sets.midcast.Utsusemi = sets.midcast.FastRecast
 
 	-- Ranged gear -- acc + TH
 	sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
@@ -306,7 +303,6 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Epona's Ring",
 		back="Atheling Mantle",
-        waist="Hurch'lan Sash",
         legs="Nahtirah Trousers",
         feet="Qaaxo Leggings"
     }
@@ -335,10 +331,6 @@ function init_gear_sets()
         legs="Pillager's Culottes +1",
         feet="Plunderer's Poulaines"
     }
-	sets.engaged.Mid = set_combine(sets.engaged, {
-        ring1="Ramuh Ring +1",
-		body="Qaaxo Harness",
-    })
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		head="Whirlpool Mask",
         neck="Iqabi Necklace",
@@ -366,22 +358,21 @@ function init_gear_sets()
         ring1="Ramuh Ring +1",
         waist="Olseni Belt"
     })
-	sets.engaged.PDT = {
-		head="Lithelimb Cap",
+	sets.engaged.PDT = set_combine(sets.engaged, {
+		head="Iuitl Headgear +1",
         neck="Twilight Torque",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
 		body="Qaaxo Harness",
-        hands="Iuitl Wristbands +1",
         ring1="Patricius Ring",
-        ring2="Epona's Ring",
-		back="Repulse Mantle",
-        waist="Patentia Sash",
         legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
     }
+	sets.engaged.Mid = set_combine(sets.engaged.PDT, {
+        ring1="Ramuh Ring +1",
+		body="Dread Jupon",
+    })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
         head="Whirlpool Mask",
+        body="Mekosuchinae Harness",
         ring2="Ramuh Ring +1",
         waist="Olseni Belt"
     })

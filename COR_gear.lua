@@ -20,7 +20,7 @@ function init_gear_sets()
         hands="Navarch's Gants +2",
         body="Lanun Frac",
         ring1="Barataria Ring",
-		back="Gunslinger's Cape"
+        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+2','Enmity-3','"Phantom Roll" ability delay -2'}},
     }
 	
 	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
@@ -119,7 +119,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Acumen Ring",
         ring2="Garuda Ring",
-        back="Gunslinger's Cape",
+        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
         waist="Aquiline Belt",
         legs="Shneddick Tights +1",
         feet="Navarch's Bottes +2"
@@ -148,7 +148,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Acumen Ring",
         ring2="Stormsoul Ring",
-        back="Gunslinger's Cape",
+        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
         waist="Aquiline Belt",
         legs="Shneddick Tights +1",
         feet="Navarch's Bottes +2"
@@ -176,7 +176,7 @@ function init_gear_sets()
         hands="Sigyn's Bazubands",
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
-        back="Gunslinger's Cape",
+        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
         waist="Elanid Belt",
         legs="Aetosaur Trousers +1",
         feet="Scopuli Nails +1"
@@ -262,7 +262,7 @@ function init_gear_sets()
         hands="Sigyn's Bazubands",
         ring1="Rajas Ring",
         ring2="Longshot Ring",
-        back="Gunslinger's Cape",
+        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
         waist="Elanid Belt",
         legs="Nahtirah Trousers",
         feet="Iuitl Gaiters +1"
@@ -291,14 +291,14 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Skadi's Cuirie +1",
-        waist="Nusku's Sash",
+        --waist="Nusku's Sash",
         back="Vellaunus' Mantle +1"
     })
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
     	body="Mekosuchinae Harness",
-        ring2="Mars's Ring",
-        waist="Hurch'lan Sash"
+        ring2="Ramuh Ring +1",
+        waist="Olseni Belt"
     })
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Melee.DW, {
         neck="Iqabi Necklace",

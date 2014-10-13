@@ -44,14 +44,12 @@ function init_gear_sets()
      sets.midcast.FastRecast = {
          head="Otomi Helm",
          hands="Cizin Mufflers +1",
-         waist="Zoran's Belt",
          feet="Ejekamal Boots"
      }
             
      -- Specific spells
      sets.midcast.Utsusemi = {
          head="Otomi Helm",
-         waist="Zoran's Belt",
          feet="Ejekamal Boots"
      }
  
@@ -65,7 +63,6 @@ function init_gear_sets()
          ring1="Perception Ring",
          ring2="Sangoma Ring",
          back="Niht Mantle",
-         waist="Zoran's Belt",
          legs="Bale Flanchard +2",
          feet="Ignominy sollerets"
      }
