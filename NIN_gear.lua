@@ -41,7 +41,6 @@ function init_gear_sets()
     
     sets.NightAccAmmo   = { ammo="Ginsen" }
     sets.DayAccAmmo     = { ammo="Tengu-no-Hane" }
-    sets.RegularAmmo    = { ammo="Yetshila" }
 
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
