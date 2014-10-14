@@ -383,7 +383,7 @@ function init_gear_sets()
      	 head="Otomi Helm",
          neck="Asperity Necklace", 
          ear1="Brutal Earring",
-         ear2="Tripudio Earring",
+         ear2="Trux Earring",
      	 body="Xaddi Mail",
          hands="Cizin Mufflers +1",
          ring1="Rajas Ring",
@@ -455,9 +455,17 @@ function init_gear_sets()
      sets.engaged.Scythe = set_combine(sets.engaged, {
          --sub="Pole Grip",
          ammo="Ginsen",
+         head="Otomi Helm",
+         neck="Asperity Necklace",
+         ear1="Brutal Earring",
+         ear2="Trux Earring",
     	 body="Xaddi Mail",
-         hands="Cizin Mufflers +1",
-         legs="Xaddi Cuisses",
+         hands="Xaddi Gauntlets",
+         ring1="Rajas Ring",
+         ring2="K'ayres Ring",
+         back="Atheling Mantle",
+         waist="Windbuffet Belt +1"
+         legs="Cizin Breeches +1",
          feet="Ejekamal Boots"
      })
      sets.engaged.Scythe.Mid = set_combine(sets.engaged.Scythe, {
@@ -465,7 +473,6 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
          ear2="Steelflash Earring",
     	 body="Mes'yohi Haubergeon",
-         hands="Xaddi Gauntlets",
          ring2="Ramuh Ring +1"
      })
      sets.engaged.Scythe.Acc = set_combine(sets.engaged.Scythe.Mid, { 
