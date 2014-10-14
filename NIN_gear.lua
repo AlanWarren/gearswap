@@ -274,17 +274,16 @@ function init_gear_sets()
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-        body="Thaumas Coat",
+        body="Mes'yohi Haubergeon",
         back="Atheling Mantle",
         waist="Windbuffet Belt +1",
-        legs="Otronif Brais +1"
+        legs="Quiahuiz Trousers"
     })
 
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Whirlpool Mask",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Mes'yohi Haubergeon",
         hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
         legs="Wukong's Hakama +1",
