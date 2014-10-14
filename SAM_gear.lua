@@ -392,8 +392,6 @@ function init_gear_sets()
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         head="Yaoyotl Helm",
    	    body="Mes'yohi Haubergeon",
-        ring1="Rajas Ring",
-        ring2="Ramuh Ring +1",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         legs="Xaddi Cuisses",
         feet="Ejekamal Boots"
@@ -403,14 +401,15 @@ function init_gear_sets()
    	    body="Mes'yohi Haubergeon",
         neck="Agitator's Collar",
         ring2="Ramuh Ring +1",
+        hands="Sasuke Tekko +1",
         waist="Olseni Belt",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
-        legs="Xaddi Cuisses",
+        legs="Wukong's Hakama +1",
         feet="Wakido Sune-Ate +1"
     })
     
     sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {
-        head="Lithelimb Cap",
+        head="Otronif Mask +1",
         neck="Agitator's Collar",
         body="Otronif Harness +1",
         hands="Otronif Gloves +1",
@@ -423,7 +422,6 @@ function init_gear_sets()
     
     sets.engaged.Adoulin.Acc.PDT = set_combine(sets.engaged.Adoulin.Acc, {
         head="Lithelimb Cap",
-        body="Otronif Harness +1",
         neck="Agitator's Collar",
         ring1="Patricius Ring",
         legs="Otronif Brais +1",

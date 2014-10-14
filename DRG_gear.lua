@@ -119,13 +119,15 @@ function init_gear_sets()
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
+        hands="Lancer's Vambraces +2",
+        ring2="Rajas Ring",
         back="Buquwik Cape",
         waist="Soil Belt"
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
         head="Yaoyotl Helm",
+        hands="Mikinaak Gauntlets",
 		back="Updraft Mantle",
-        feet="Mikinaak Greaves"
     })
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})
 
@@ -146,11 +148,9 @@ function init_gear_sets()
 
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
         neck="Flame Gorget", 
-        hands="Cizin Mufflers +1",
-        waist="Metalsinger Belt",
+        hands="Mikinaak Gauntlets",
         back="Rancorous Mantle",
-        legs="Lancer's Cuissots +2",
-        feet="Cizin Greaves +1"
+        waist="Windbuffet Belt +1"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
 		    back="Updraft Mantle",
@@ -255,39 +255,36 @@ function init_gear_sets()
         ammo="Ginsen",
 		head="Otomi Helm",
         neck="Asperity Necklace",
-        ear1="Brutal Earring",
-        ear2="Tripudio Earring",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
 		body="Xaddi Mail",
         hands="Xaddi Gauntlets",
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
-		--back="Atheling Mantle",
         back="Atheling Mantle",
-        waist="Windbuffet Belt",
+        waist="Windbuffet Belt +1",
         legs="Xaddi Cuisses",
         feet="Ejekamal Boots"
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
-        back="Updraft Mantle",
-        feet="Ejekamal Boots"
+        ear1="Zennaroi Earring",
+        ring2="Ramuh Ring +1"
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
-        hands="Mikinaak Gauntlets",
-        ear1="Zennaroi Earring",
-        ear2="Steelflash Earring",
+        hands="Buremte Gloves",
         waist="Olseni Belt",
-        ring1="Patricius Ring"
+        ring1="Mars's Ring",
+        back="Updraft Mantle"
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
         head="Ighwa Cap",
         neck="Twilight Torque",
         body="Cizin Mail +1",
-        ring1="Rajas Ring",
         ring2="Patricius Ring",
         hands="Cizin Mufflers +1",
         back="Repulse Mantle",
