@@ -20,10 +20,10 @@ function init_gear_sets()
 		body="Lancer's Plackart +2",
         hands="Xaddi Gauntlets",
         ring1="Rajas Ring",
-        ring2="K'ayres Ring",
+        ring2="Oneiros Ring",
 		back="Atheling Mantle",
-        waist="Windbuffet Belt",
-        legs="Ares' Flanchard +1",
+        waist="Windbuffet Belt +1",
+        legs="Scuffler's Cosciales",
         feet="Cizin Greaves +1"
     }
 
@@ -106,7 +106,7 @@ function init_gear_sets()
         ring1="Ifrit Ring",
         ring2="Pyrosoul Ring",
 		back="Buquwik Cape",
-        waist="Windbuffet Belt",
+        waist="Windbuffet Belt +1",
         legs="Scuffler's Cosciales",
         feet="Ejekamal Boots"
     }
