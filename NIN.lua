@@ -21,7 +21,7 @@ function job_setup()
 
     select_ammo()
 
-    wsList = S{'Blade: Rin'}
+    wsList = S{'Blade: Rin', 'Blade: Hi'}
 
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
