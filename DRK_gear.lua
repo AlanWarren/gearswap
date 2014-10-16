@@ -464,7 +464,7 @@ function init_gear_sets()
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
          back="Atheling Mantle",
-         waist="Windbuffet Belt +1"
+         waist="Windbuffet Belt +1",
          legs="Cizin Breeches +1",
          feet="Ejekamal Boots"
      })
