@@ -275,7 +275,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Mes'yohi Haubergeon",
-        back="Atheling Mantle",
+        back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
         legs="Quiahuiz Trousers"
     })
