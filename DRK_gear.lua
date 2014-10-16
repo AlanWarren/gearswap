@@ -277,6 +277,7 @@ function init_gear_sets()
  
      -- Idle sets
      sets.idle.Town = {
+         ammo="Ginsen",
          head="Ignominy burgeonet +1",
          neck="Agitator's Collar",
          ear1="Brutal Earring",
