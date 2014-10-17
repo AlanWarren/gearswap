@@ -2,6 +2,7 @@
 -- visualized at http://www.ffxiah.com/node/194
 -- Happo
 -- Hachiya
+-- sets.engaged[state.CombatForm][state.CombatWeapon][state.OffenseMode][state.HybridMode][classes.CustomMeleeGroups (any number)
 
 -- Ninjutsu tips
 -- To stick Slow (Hojo) lower earth resist with Raiton: Ni
@@ -144,46 +145,33 @@ function init_gear_sets()
     }
     
     sets.idle = {
-        --ammo="Yetshila",
         head="Ptica Headgear",
         neck="Twilight Torque",
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Mes'yohi Haubergeon",
         hands="Otronif Gloves +1",
-        ring1="Patricius Ring",
-        ring2="Dark Ring",
+        ring1="Dark Ring",
+        ring2="Patricius Ring",
     	back="Repulse Mantle",
         waist="Windbuffet Belt +1",
         legs="Hachiya Hakama +1",
         feet="Danzo Sune-ate"
      }
 
-    sets.idle.Regen = {
+    sets.idle.Regen = set_combine(sets.idle, {
         head="Ocelomeh Headpiece +1",
-        neck="Twilight Torque",
-        ear1="Brutal Earring",
-        ear2="Trux Earring",
         body="Kheper Jacket",
-        hands="Otronif Gloves +1",
-        ring1="Dark Ring",
-        ring2="Paguroidea Ring",
-        back="Repulse Mantle",
-        waist="Windbuffet Belt +1",
-        legs="Hachiya Hakama +1",
-        feet="Danzo Sune-ate"
-    }
+        ring2="Paguroidea Ring"
+    })
     
     sets.idle.Town = set_combine(sets.idle, {
         ammo="Happo Shuriken",
-        head="Ptica Headgear",
         neck="Hope Torque",
-        body="Mes'yohi Haubergeon",
         hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
         ring2="Epona's Ring",
-        legs="Hachiya Hakama +1",
-        back="Vellaunus' Mantle +1"
+        back="Yokaze Mantle"
     })
     
     sets.idle.Weak = sets.idle
@@ -227,7 +215,7 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
-    
+
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
         ammo="Happo Shuriken",
@@ -246,7 +234,7 @@ function init_gear_sets()
         waist="Olseni Belt",
         legs="Mochizuki Kyahan +1"
     })
-
+    
     sets.engaged.NormalPDT = {
         head="Otronif Mask +1",
         body="Otronif Harness +1",
@@ -284,10 +272,12 @@ function init_gear_sets()
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
+        hands="Mochizuki Tekko +1",
+        ring1="Rajas Ring",
         body="Mes'yohi Haubergeon",
-        back="Rancorous Mantle",
+        back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
-        legs="Quiahuiz Trousers"
+        legs="Otronif Brais +1"
     })
 
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
@@ -295,22 +285,20 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         hands="Sasuke Tekko +1",
-        back="Yokaze Mantle",
+        ring1="Ramuh Ring +1",
         legs="Wukong's Hakama +1",
-        feet="Qaaxo Leggings"
+        feet="Mochizuki Kyahan +1"
     })
+
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Gavialis Helm",
         neck="Iqabi Necklace",
         ear1="Zennaroi Earring",
         ear2="Heartseeker Earring",
-        hands="Sasuke Tekko +1",
-        ring1="Ramuh Ring +1",
         ring2="Mars's Ring",
         waist="Olseni Belt",
-        legs="Wukong's Hakama +1",
-        feet="Mochizuki Kyahan +1"
     })
+
     sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.NormalPDT)
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.NormalPDT)
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.engaged.AccPDT)
@@ -340,7 +328,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.Haste_40, {
         head="Ptica Headgear",
-        ear1="Dudgeon Earring",
+        ear1="Zennaroi Earring",
         ear2="Heartseeker Earring",
         legs="Hachiya Hakama +1"
     })
