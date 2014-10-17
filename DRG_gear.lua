@@ -84,13 +84,19 @@ function init_gear_sets()
     
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
-		head="Otomi Helm",
+		head="Vishap Armet +1",
+        neck="Lancer's Torque",
         hands="Cizin Mufflers +1",
-		legs="Xaddi Cuisses",
+        body="Xaddi Mail",
+        ring1="Beeline Ring",
+        ring2="K'ayres Ring",
+        back="Updraft Mantle",
+        waist="Glassblower's Belt",
+		legs="Cizin Breeches +1",
         feet="Ejekamal Boots",
     }	
 		
-	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Wyrm Armet", waist="Glassblower's Belt" })
+	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Vishap Armet +1" })
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {}

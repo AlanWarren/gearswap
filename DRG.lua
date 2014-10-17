@@ -90,9 +90,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-	if spell.action_type == 'Magic' then
-	    equip(sets.precast.FC)
-	end
 end
 
 -- Run after the default precast() is done.
