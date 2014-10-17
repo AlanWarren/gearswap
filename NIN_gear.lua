@@ -2,6 +2,12 @@
 -- visualized at http://www.ffxiah.com/node/194
 -- Happo
 -- Hachiya
+-- sets.engaged[state.CombatForm][state.CombatWeapon][state.OffenseMode][state.HybridMode][classes.CustomMeleeGroups (any number)
+
+-- Ninjutsu tips
+-- To stick Slow (Hojo) lower earth resist with Raiton: Ni
+-- To stick poison (Dokumori) or Attack down (Aisha) lower resist with Katon: Ni
+-- To stick paralyze (Jubaku) lower resistence with Huton: Ni
 
 function init_gear_sets()
     --------------------------------------
@@ -44,19 +50,21 @@ function init_gear_sets()
 
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
-        head="Ptica Headgear",
-        body="Mochizuki Chainmail +1",
+        head="Gavialis Helm",
+        body="Mes'yohi Haubergeon",
         neck="Iqabi Necklace",
-        hands="Buremte Gloves",
+        ear1="Zennaroi Earring",
+        hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
+        ring1="Ramuh Ring +1",
         waist="Olseni Belt",
-        legs="Hachiya Hakama +1",
+        legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
     -- Ranged
     sets.precast.RA = {
         head="Uk'uxkaj Cap",
-        hands="Buremte Gloves",
+        hands="Manibozho Gloves",
         legs="Nahtirah Trousers",
         feet="Wurrukatte Boots"
     }
@@ -109,6 +117,8 @@ function init_gear_sets()
         head="Hachiya Hatsuburi +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
+        neck="Stoicheion Medal",
+        --neck="Ardor Pendant +1",
         body="Mekosuchinae Harness",
         hands="Mochizuki Tekko +1",
         ring1="Sangoma Ring",
@@ -135,45 +145,32 @@ function init_gear_sets()
     }
     
     sets.idle = {
-        --ammo="Yetshila",
         head="Ptica Headgear",
         neck="Twilight Torque",
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Mes'yohi Haubergeon",
         hands="Otronif Gloves +1",
-        ring1="Patricius Ring",
-        ring2="Dark Ring",
+        ring1="Dark Ring",
+        ring2="Patricius Ring",
     	back="Repulse Mantle",
         waist="Windbuffet Belt +1",
         legs="Hachiya Hakama +1",
         feet="Danzo Sune-ate"
      }
 
-    sets.idle.Regen = {
+    sets.idle.Regen = set_combine(sets.idle, {
         head="Ocelomeh Headpiece +1",
-        neck="Twilight Torque",
-        ear1="Brutal Earring",
-        ear2="Trux Earring",
         body="Kheper Jacket",
-        hands="Otronif Gloves +1",
-        ring1="Dark Ring",
-        ring2="Paguroidea Ring",
-        back="Repulse Mantle",
-        waist="Windbuffet Belt +1",
-        legs="Hachiya Hakama +1",
-        feet="Danzo Sune-ate"
-    }
+        ring2="Paguroidea Ring"
+    })
     
     sets.idle.Town = set_combine(sets.idle, {
         ammo="Happo Shuriken",
-        head="Ptica Headgear",
         neck="Hope Torque",
-        body="Mes'yohi Haubergeon",
         hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
         ring2="Epona's Ring",
-        legs="Hachiya Hakama +1",
         back="Yokaze Mantle"
     })
     
@@ -218,7 +215,7 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
-    
+
     -- serious event set
     sets.engaged.Mid = set_combine(sets.engaged, {
         ammo="Happo Shuriken",
@@ -229,6 +226,7 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        head="Gavialis Helm",
         ammo="Happo Shuriken",
         neck="Iqabi Necklace",
         ring1="Ramuh Ring +1",
@@ -236,7 +234,7 @@ function init_gear_sets()
         waist="Olseni Belt",
         legs="Mochizuki Kyahan +1"
     })
-
+    
     sets.engaged.NormalPDT = {
         head="Otronif Mask +1",
         body="Otronif Harness +1",
@@ -274,10 +272,12 @@ function init_gear_sets()
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
+        hands="Mochizuki Tekko +1",
+        ring1="Rajas Ring",
         body="Mes'yohi Haubergeon",
-        back="Atheling Mantle",
+        back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
-        legs="Quiahuiz Trousers"
+        legs="Otronif Brais +1"
     })
 
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
@@ -285,21 +285,20 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         hands="Sasuke Tekko +1",
-        back="Yokaze Mantle",
-        legs="Wukong's Hakama +1",
-        feet="Qaaxo Leggings"
-    })
-    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
-        neck="Iqabi Necklace",
-        ear1="Zennaroi Earring",
-        ear2="Trux Earring",
-        hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
-        ring2="Mars's Ring",
-        waist="Olseni Belt",
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
     })
+
+    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+        head="Gavialis Helm",
+        neck="Iqabi Necklace",
+        ear1="Zennaroi Earring",
+        ear2="Heartseeker Earring",
+        ring2="Mars's Ring",
+        waist="Olseni Belt",
+    })
+
     sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.NormalPDT)
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.NormalPDT)
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.engaged.AccPDT)
@@ -329,7 +328,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.Haste_40, {
         head="Ptica Headgear",
-        ear1="Dudgeon Earring",
+        ear1="Zennaroi Earring",
         ear2="Heartseeker Earring",
         legs="Hachiya Hakama +1"
     })
@@ -455,14 +454,15 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
 
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
+        neck="Rancor Collar",
+        back="Yokaze Mantle",
         legs="Wukong's Hakama +1",
-        waist="Soil Belt"
     })
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         head="Ptica Headgear",
         ear1="Trux Earring",
         back="Yokaze Mantle",
-        waist="Caudata Belt"
+        waist="Soil Belt"
     })
 
     -- BLADE: SHUN
