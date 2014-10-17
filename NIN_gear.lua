@@ -397,7 +397,7 @@ function init_gear_sets()
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
-        back="Atheling Mantle",
+        back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
         legs="Manibozho Brais",
         feet="Mochizuki Kyahan +1"
@@ -467,7 +467,6 @@ function init_gear_sets()
 
     -- BLADE: SHUN
     sets.Shun = {
-        --ammo="Jukukik Feather",
         neck="Flame Gorget",
         waist="Light Belt",
         back="Yokaze Mantle",
@@ -479,19 +478,17 @@ function init_gear_sets()
     
     -- BLADE: Rin
     sets.Rin = {
-        ammo="Yetshila",
         neck="Rancor Collar",
+        ring1="Ifrit Ring",
         waist="Windbuffet Belt +1",
-        ring1="Ramuh Ring +1",
         back="Yokaze Mantle",
     }
     sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
     sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
-    sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin)
+    sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin, {waist="Light Belt"})
     
     -- BLADE: KU 
     sets.Ku = {
-        --ammo="Aqreqaq Bomblet",
         neck="Shadow Gorget",
         waist="Soil Belt",
     }

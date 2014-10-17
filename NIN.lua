@@ -22,7 +22,7 @@ function job_setup()
 
     select_ammo()
 
-    wsList = S{'Blade: Rin'}
+    --wsList = S{}
 
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
@@ -129,11 +129,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         end
         -- Gavialis Helm rule
         if is_sc_element_today(spell) then
-            if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
-                -- use normal head piece
-            else
+            --if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
+            --    -- use normal head piece
+            --else
                 equip(sets.WSDayBonus)
-            end
+            --end
         end
         -- Swap in special ammo for WS in high Acc mode
         if state.OffenseMode.value == 'Acc' then

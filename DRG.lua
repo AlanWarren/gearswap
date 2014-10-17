@@ -37,9 +37,6 @@ function user_setup()
 	state.OffenseMode:options('Normal', 'Mid', 'Acc')
 	state.HybridMode:options('Normal', 'PDT', 'Reraise')
 	state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
-	state.CastingMode:options('Normal')
-	state.IdleMode:options('Normal')
-	state.RestingMode:options('Normal')
 	state.PhysicalDefenseMode:options('PDT', 'Reraise')
 	state.MagicalDefenseMode:options('MDT')
     
@@ -84,7 +81,6 @@ function job_pretarget(spell, action, spellMap, eventArgs)
             send_command("High Jump")
         end
     end
-
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -96,7 +92,7 @@ end
 -- eventArgs is the same one used in job_precast, in case information needs to be persisted.
 function job_post_precast(spell, action, spellMap, eventArgs)
 	if player.hpp < 51 then
-		classes.CustomClass = "Breath" -- This would cause it to look for sets.midcast.Breath 
+		classes.CustomClass = "Breath" 
 	end
     if spell.type == 'WeaponSkill' then
         if state.CapacityMode.value then
@@ -118,7 +114,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
 	if spell.action_type == 'Magic' then
 	    equip(sets.midcast.FastRecast)
 	    if player.hpp < 51 then
-		    classes.CustomClass = "Breath" -- This would cause it to look for sets.midcast.Breath 
+		    classes.CustomClass = "Breath" 
 	    end
 	end
 end
@@ -126,13 +122,10 @@ end
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-	
---	if state.DefenseMode == 'Reraise' or
---		(state.Defense.Active and state.Defense.Type == 'Physical' and state.Defense.PhysicalMode == 'Reraise') then
---		equip(sets.Reraise)
---	end
 end
 
+function job_pet_precast(spell, action, spellMap, eventArgs)
+end
 -- Runs when a pet initiates an action.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_pet_midcast(spell, action, spellMap, eventArgs)
