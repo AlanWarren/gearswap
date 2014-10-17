@@ -174,7 +174,7 @@ function init_gear_sets()
         ring1="Ramuh Ring +1",
         ring2="Epona's Ring",
         legs="Hachiya Hakama +1",
-        back="Vellaunus' Mantle +1"
+        back="Yokaze Mantle"
     })
     
     sets.idle.Weak = sets.idle
@@ -441,7 +441,7 @@ function init_gear_sets()
     
     -- BLADE: HI
     sets.Hi = {
-        ammo="Yetshila",
+        --ammo="Yetshila",
         head="Uk'uxkaj Cap",
         neck="Shadow Gorget",
         body="Dread Jupon",
