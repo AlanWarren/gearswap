@@ -3,6 +3,11 @@
 -- Happo
 -- Hachiya
 
+-- Ninjutsu tips
+-- To stick Slow (Hojo) lower earth resist with Raiton: Ni
+-- To stick poison (Dokumori) or Attack down (Aisha) lower resist with Katon: Ni
+-- To stick paralyze (Jubaku) lower resistence with Huton: Ni
+
 function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
@@ -44,19 +49,21 @@ function init_gear_sets()
 
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
-        head="Ptica Headgear",
-        body="Mochizuki Chainmail +1",
+        head="Gavialis Helm",
+        body="Mes'yohi Haubergeon",
         neck="Iqabi Necklace",
-        hands="Buremte Gloves",
+        ear1="Zennaroi Earring",
+        hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
+        ring1="Ramuh Ring +1",
         waist="Olseni Belt",
-        legs="Hachiya Hakama +1",
+        legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
     -- Ranged
     sets.precast.RA = {
         head="Uk'uxkaj Cap",
-        hands="Buremte Gloves",
+        hands="Manibozho Gloves",
         legs="Nahtirah Trousers",
         feet="Wurrukatte Boots"
     }
@@ -229,6 +236,7 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        head="Gavialis Helm",
         ammo="Happo Shuriken",
         neck="Iqabi Necklace",
         ring1="Ramuh Ring +1",
@@ -290,9 +298,10 @@ function init_gear_sets()
         feet="Qaaxo Leggings"
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+        head="Gavialis Helm",
         neck="Iqabi Necklace",
         ear1="Zennaroi Earring",
-        ear2="Trux Earring",
+        ear2="Heartseeker Earring",
         hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
         ring2="Mars's Ring",
