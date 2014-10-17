@@ -455,14 +455,15 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
 
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
+        neck="Rancor Collar",
+        back="Yokaze Mantle",
         legs="Wukong's Hakama +1",
-        waist="Soil Belt"
     })
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         head="Ptica Headgear",
         ear1="Trux Earring",
         back="Yokaze Mantle",
-        waist="Caudata Belt"
+        waist="Soil Belt"
     })
 
     -- BLADE: SHUN
