@@ -226,7 +226,7 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        head="Gavialis Helm",
+        head="Ptica Headgear",
         ammo="Happo Shuriken",
         neck="Iqabi Necklace",
         ring1="Ramuh Ring +1",
