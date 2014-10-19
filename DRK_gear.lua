@@ -474,6 +474,7 @@ function init_gear_sets()
          head="Yaoyotl Helm",
          ear1="Zennaroi Earring",
          ear2="Steelflash Earring",
+         back="Niht Mantle",
     	 body="Mes'yohi Haubergeon",
          ring2="Ramuh Ring +1"
      })
