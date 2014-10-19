@@ -399,6 +399,7 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
          ear2="Steelflash Earring",
     	 body="Mes'yohi Haubergeon",
+         back="Niht Mantle",
          hands="Xaddi Gauntlets",
          ring2="Ramuh Ring +1"
      })
