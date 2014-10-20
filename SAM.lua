@@ -91,7 +91,7 @@ end
 function job_pretarget(spell, action, spellMap, eventArgs)
 	if spell.type:lower() == 'weaponskill' then
 		-- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
-		if player.equipment.main=='Eminent Lance' or player.equipment.main=='Quint Spear' then
+		if player.equipment.main=='Nativus Halberd' or player.equipment.main=='Quint Spear' then
 			if spell.english:startswith("Tachi:") then
 				send_command('@input /ws "Stardiver" '..spell.target.raw)
 				eventArgs.cancel = true
