@@ -20,13 +20,17 @@ end
 -- Setup vars that are user-independent.
 function job_setup()
     state.CapacityMode = M(false, 'Capacity Point Mantle')
+    -- SE can be used full time, or after WS then cancel
+    state.SouleaterMode = M(true, 'Soul Eater Mode')
 
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
-    scytheList = S{ 'Xbalanque', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe' }
-    gsList = S{'Inanna', 'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }
+    -- any scythe that should use sets.engaged.Scythe 
+    scytheList = S{ 'Xbalanque', 'Inanna', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe', 'Liberator' }
+    -- low delay great swords only. Leave the others out
+    gsList = S{'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }
     -- list of weaponskills that make better use of otomi helm in attack capped situations
-    wsList = S{'Spiral Hell', 'Cross Reaper'}
+    wsList = S{'Spiral Hell'}
     adjust_engaged_sets()
 end
  
@@ -50,6 +54,7 @@ function user_setup()
     
     -- Additional local binds
     send_command('bind != gs c toggle CapacityMode')
+    send_command('bind @f9 gs c toggle SouleaterMode')
     send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Seigan" <me>')
     send_command('bind ^[ input /lockstyle on')
@@ -64,7 +69,7 @@ function file_unload()
     send_command('unbind !=')
     send_command('unbind ^[')
     send_command('unbind ![')
-    send_command('unbind !-')
+    send_command('unbind @f9')
 end
  
        
@@ -85,18 +90,11 @@ function job_precast(spell, action, spellMap, eventArgs)
     if state.Buff[spell.english] ~= nil then
         state.Buff[spell.english] = true
     end
-    if souleater_active() then
-        disable('head')
-    else
-        enable('head')
-    end
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' then
-        if state.Buff.Souleater then
-            equip(sets.buff.Souleater)
-        elseif is_sc_element_today(spell) then
+        if is_sc_element_today(spell) then
             if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
                 -- use normal head piece
             else
@@ -124,6 +122,11 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+        if state.Buff.Souleater and state.SouleaterMode.value then
+            send_command('cancel souleater')
+        end
+    end
     if state.Buff[spell.english] ~= nil then
         state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
     end
@@ -151,9 +154,6 @@ end
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.Ammo)
-    if state.Buff.Souleater then
-    	meleeSet = set_combine(meleeSet, sets.buff.Souleater)
-    end
     if state.Buff['Last Resort'] then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
@@ -179,11 +179,6 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         else
             enable('ammo')
         end
-    end
-    if souleater_active() then
-        disable('head')
-    else
-        enable('head')
     end
 end
  
@@ -239,11 +234,6 @@ function job_update(cmdParams, eventArgs)
 	adjust_engaged_sets()
     get_combat_form()
 
-    if souleater_active() then
-        disable('head')
-    else
-        enable('head')
-    end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -255,10 +245,6 @@ function get_combat_form()
     else
         state.CombatForm:reset()
     end
-end
-
-function souleater_active()
-    return state.Buff.Souleater
 end
 
 function adjust_engaged_sets()

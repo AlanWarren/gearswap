@@ -18,7 +18,6 @@ function job_setup()
     state.TreasureMode:set('Tag')
 
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
-    state.MobDefenseMode = M{['description']='Mob Defense Mode', 'Normal', 'Hi' }
 
     select_ammo()
 
@@ -49,13 +48,11 @@ function user_setup()
     state.MagicalDefenseMode:options('MDT')
 
     select_default_macro_book()
-    update_combat_form()
     
     send_command('bind ^= gs c cycle treasuremode')
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
-    send_command('bind @= gs c toggle MobDefenseMode')
     send_command('bind @f9 gs c cycle HasteMode')
 end
 
@@ -63,7 +60,7 @@ end
 function file_unload()
     send_command('unbind ^[')
     send_command('unbind ![')
-    send_command('unbind !-')
+    send_command('unbind @f9')
     send_command('unbind ^=')
     send_command('unbind !=')
 end
@@ -249,7 +246,6 @@ end
 function job_update(cmdParams, eventArgs)
     select_ammo()
     determine_haste_group()
-    update_combat_form()
     --select_movement()
     th_update(cmdParams, eventArgs)
 end
@@ -401,9 +397,6 @@ function display_current_job_state(eventArgs)
     if state.HasteMode.value ~= 'Normal' then
         msg = msg .. ', Haste: '..state.HasteMode.current
     end
-    if state.MobDefenseMode.value ~= 'Normal' then
-        msg = msg .. ', Mob Defense: '..state.MobDefenseMode.current
-    end
     if state.RangedMode.value ~= 'Normal' then
         msg = msg .. ', Rng: '..state.RangedMode.current
     end
@@ -480,14 +473,6 @@ function select_ws_ammo()
         return sets.NightAccAmmo
     else
         return sets.DayAccAmmo
-    end
-end
-
-function update_combat_form()
-    if state.MobDefenseMode.current == 'Hi' then
-        state.CombatForm:set('HiDef')
-    else
-        state.CombatForm:reset()
     end
 end
 
