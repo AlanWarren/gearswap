@@ -383,10 +383,10 @@ function init_gear_sets()
         body="Xaddi Mail", -- 3
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
-        ring2="K'ayres Ring", 
-        back="Atheling Mantle",
+        ring2="Oneiros Ring", 
+        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
-        legs="Wakido Haidate +1", -- 6
+        legs="Xaddi Cuisses",
         feet="Otronif Boots +1" --7
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
@@ -399,7 +399,7 @@ function init_gear_sets()
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
    	    body="Mes'yohi Haubergeon",
-        neck="Agitator's Collar",
+        neck="Iqabi Necklace",
         ring2="Ramuh Ring +1",
         hands="Sasuke Tekko +1",
         waist="Olseni Belt",
