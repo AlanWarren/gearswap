@@ -272,12 +272,13 @@ function init_gear_sets()
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
+        body="Mes'yohi Haubergeon",
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
-        body="Mes'yohi Haubergeon",
-        back="Yokaze Mantle",
+        back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
-        legs="Otronif Brais +1"
+        legs="Otronif Brais +1",
+        feet="Mochizuki Kyahan +1"
     })
 
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
@@ -286,6 +287,7 @@ function init_gear_sets()
         ear2="Steelflash Earring",
         hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
+        back="Yokaze Mantle",
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
     })
