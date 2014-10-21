@@ -176,7 +176,7 @@ function init_gear_sets()
          legs="Scuffler's Cosciales",
          waist="Caudata Belt"
      })
-     sets.precast.WS.Torcleaver..Mid = set_combine(sets.precast.WS.Mid, {
+     sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
          ammo="Ginsen",
          neck="Aqua Gorget",
     	 body="Mes'yohi Haubergeon"
