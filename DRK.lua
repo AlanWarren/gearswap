@@ -27,7 +27,7 @@ function job_setup()
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     -- any scythe that should use sets.engaged.Scythe 
-    scytheList = S{ 'Xbalanque', 'Inanna', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe', 'Liberator' }
+    scytheList = S{ 'Xbalanque', 'Inanna', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe', 'Liberator', 'Death sickle' }
     -- low delay great swords only. Leave the others out
     gsList = S{'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }
     -- list of weaponskills that make better use of otomi helm in attack capped situations
