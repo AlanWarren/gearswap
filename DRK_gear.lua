@@ -528,6 +528,26 @@ function init_gear_sets()
          waist="Olseni Belt"
      })
 
+     sets.engaged.Scythe.AM3 = set_combine(sets.engaged.Scythe, {
+         head="Yaoyotl Helm",
+         ear2="Tripudio Earring",
+         hands="Cizin Mufflers +1",
+         back="Niht Mantle",
+         legs="Ares' Flanchard +1",
+     })
+     sets.engaged.Scythe.Mid.AM3 = set_combine(sets.engaged.Scythe.AM3, {
+         neck="Iqabi Necklace",
+         ear1="Zennaroi Earring",
+         body="Mes'yohi Haubergeon",
+         hands="Xaddi Gauntlets",
+         legs="Xaddi Cuisses"
+     })
+     sets.engaged.Scythe.Acc.AM3 = set_combine(sets.engaged.Scythe.Mid.AM3, {
+         ear2="Steelflash Earring",
+         ring2="Ramuh Ring +1",
+         waist="Olseni Belt"
+     })
+
      sets.engaged.Scythe.PDT = set_combine(sets.engaged.Scythe, sets.Defensive)
      sets.engaged.Scythe.Mid.PDT = set_combine(sets.engaged.Scythe.Mid, sets.Defensive_Mid)
      sets.engaged.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc, sets.Defensive_Acc)
