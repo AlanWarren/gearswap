@@ -122,16 +122,18 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-    if spell.type == 'WeaponSkill' then
-        if state.Buff.Souleater and state.SouleaterMode.value then
-            send_command('cancel souleater')
-        end
-    end
     if state.Buff[spell.english] ~= nil then
         state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
     end
 end
- 
+
+function job_post_aftercast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+        if state.Buff.Souleater and state.SouleaterMode.value then
+            send_command('@wait 1.0;cancel souleater')
+        end
+    end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- Customization hooks for idle and melee sets, after they've been automatically constructed.
 -------------------------------------------------------------------------------------------------------------------
