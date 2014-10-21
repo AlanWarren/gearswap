@@ -540,7 +540,7 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
          body="Mes'yohi Haubergeon",
          hands="Xaddi Gauntlets",
-         legs="Xaddi Cuisses"
+         legs="Ares' Flanchard +1"
      })
      sets.engaged.Scythe.Acc.AM3 = set_combine(sets.engaged.Scythe.Mid.AM3, {
          ear2="Steelflash Earring",
