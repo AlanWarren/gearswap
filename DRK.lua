@@ -1,9 +1,10 @@
 --[[     
  === Notes ===
  -- Set format is as follows:
-    sets.engaged.[CombatForm][CombatWeapon][Offense or DefenseMode]
+    sets.engaged.[CombatForm][CombatWeapon][Offense or DefenseMode][CustomGroup]
     CombatForm = War
     CombatWeapon = Scythe
+    CustomGroups = AM3 SamRoll
 
     The default sets are for Sam subjob with a Greatsword.
     The above set format allows you to build sets for war and sam sub with either scythe or gs
@@ -31,7 +32,10 @@ function job_setup()
     gsList = S{'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }
     -- list of weaponskills that make better use of otomi helm in attack capped situations
     wsList = S{'Spiral Hell'}
-    adjust_engaged_sets()
+    
+    get_combat_weapon()
+    get_combat_form()
+    update_melee_groups()
 end
  
  
@@ -48,9 +52,6 @@ function user_setup()
     state.MagicalDefenseMode:options('MDT')
     
     war_sj = player.sub_job == 'WAR' or false
-    
-    adjust_engaged_sets()
-    get_combat_form()
     
     -- Additional local binds
     send_command('bind != gs c toggle CapacityMode')
@@ -173,7 +174,7 @@ end
 function job_status_change(newStatus, oldStatus, eventArgs)
 
     if newStatus == "Engaged" then
-        adjust_engaged_sets()
+        get_combat_weapon()
     end
     if newStatus == "Engaged" or newStatus == "Idle" then
         if player.equipment.ammo == 'Oxidant Bolt' then
@@ -188,30 +189,30 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-
-    --if S{'haste','march','embrava','haste samba', 'last resort'}:contains(buff:lower()) then
-    --if S{'last resort'}:contains(buff:lower()) then
-    --	determine_haste_group()
-    --	handle_equipping_gear(player.status)
-    --end
-
+    
     if state.Buff[buff] ~= nil then
     	state.Buff[buff] = gain
-    	--handle_equipping_gear(player.status)
     end
+
+    if buff == 'Aftermath: Lv.3' or buff == 'Samurai Roll' then
+        classes.CustomMeleeGroups:clear()
+	
+        if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
+            classes.CustomMeleeGroups:append('AM3')
+        end
+        if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
+            classes.CustomMeleeGroups:append('SamRoll')
+        end
+
+        handle_equipping_gear(player.status)
+    end
+
     if player.equipment.ammo == 'Oxidant Bolt' then
         disable('ammo')
     else
         enable('ammo')
     end
 
-    -- Some informative output
-    if buff == 'Nether Void' and gain then
-        add_to_chat(122, 'Next Absorb or Drain potency +75%!')
-    elseif buff == 'Dark Seal' and gain then
-        add_to_chat(122, 'Enhanced Dark Magic Accuracy!')
-    end
-    
     if string.lower(buff) == "sleep" and gain and player.hp > 200 then
         equip(sets.Berserker)
     else
@@ -219,7 +220,6 @@ function job_buff_change(buff, gain)
             handle_equipping_gear(player.status)
         end
     end
-
 
 end
  
@@ -233,8 +233,9 @@ end
 function job_update(cmdParams, eventArgs)
     
     war_sj = player.sub_job == 'WAR' or false
-	adjust_engaged_sets()
+	get_combat_weapon()
     get_combat_form()
+    update_melee_groups()
 
 end
 
@@ -249,7 +250,7 @@ function get_combat_form()
     end
 end
 
-function adjust_engaged_sets()
+function get_combat_weapon()
     if scytheList:contains(player.equipment.main) then
         state.CombatWeapon:set("Scythe")
     elseif gsList:contains(player.equipment.main) then
@@ -257,8 +258,6 @@ function adjust_engaged_sets()
     else -- use regular set
         state.CombatWeapon:reset()
     end
-	--adjust_melee_groups()
-	--determine_haste_group()
 end
 
 function select_static_ammo()
@@ -279,30 +278,16 @@ end
 --		classes.CustomMeleeGroups:append('AM')
 --	end
 --end
-function determine_haste_group()
+function update_melee_groups()
 
-    -- This section only applies to LR being up
-    --
-    -- 1) uncapped delay reduction: 26% gear haste + LR's 25% JA haste
-    -- 2) HighHaste - Marches: 16% gear haste with march+3, 14% with march+4, 12% with march+5
-    -- 3) EmbravaHaste - embrava: 21% gear haste if sch is naked alt, 17% if it's capped potency
-    -- 4) MaxHaste - capped magic haste: 12% gear haste
-	
 	classes.CustomMeleeGroups:clear()
 	
-	--if buffactive.embrava and (buffactive['last resort'] or buffactive.march == 2 or (buffactive.march and buffactive.haste)) then
-	--	classes.CustomMeleeGroups:append('MaxHaste')
-	--elseif buffactive.march == 2 and (buffactive.haste or buffactive['last resort']) then
-	--	classes.CustomMeleeGroups:append('MaxHaste')
-	--elseif buffactive.embrava and (buffactive.haste or buffactive.march) then
-	--	classes.CustomMeleeGroups:append('EmbravaHaste')
-	--elseif buffactive.march == 1 and (buffactive['last resort'] or buffactive.haste or buffactive['haste samba']) then
-	--	classes.CustomMeleeGroups:append('HighHaste')
-	--elseif buffactive.march == 2 then
-	--	classes.CustomMeleeGroups:append('HighHaste')
-    if buffactive['last resort'] then
-		classes.CustomMeleeGroups:append('LastResort')
+    if buffactive['Aftermath: Lv.3'] then
+		classes.CustomMeleeGroups:append('AM3')
 	end
+    if buffactive['Samurai Roll'] then
+        classes.CustomRangedGroups:append('SamRoll')
+    end
 end
 
 function select_default_macro_book()
