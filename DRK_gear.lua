@@ -516,13 +516,13 @@ function init_gear_sets()
      })
      sets.engaged.Scythe.Mid = set_combine(sets.engaged.Scythe, {
          head="Yaoyotl Helm",
+         ear2="Zennaroi Earring",
     	 body="Mes'yohi Haubergeon",
          ring2="Ramuh Ring +1",
          legs="Xaddi Cuisses"
      })
      sets.engaged.Scythe.Acc = set_combine(sets.engaged.Scythe.Mid, { 
          ear1="Steelflash Earring",
-         ear2="Zennaroi Earring",
          neck="Iqabi Necklace",
          ring1="Mars's Ring",
          waist="Olseni Belt"
