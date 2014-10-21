@@ -81,10 +81,10 @@ function init_gear_sets()
          ear2="Crematio Earring",
          body="Fallen's Cuirass +1",
          hands="Fallen's Finger Gauntlets",
-         --legs="Haruspex Slops",
-         legs="Ignominy Flanchard +1",
          ring1="Sangoma Ring",
          ring2="Acumen Ring",
+         --legs="Haruspex Slops",
+         legs="Ignominy Flanchard +1",
          back="Aput Mantle",
          feet="Ignominy Sollerets"
      }
