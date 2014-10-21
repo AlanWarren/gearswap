@@ -51,6 +51,7 @@ function user_setup()
     
     adjust_engaged_sets()
     get_combat_form()
+    determine_custom_group()
     
     -- Additional local binds
     send_command('bind != gs c toggle CapacityMode')
@@ -187,11 +188,10 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
 
-    --if S{'haste','march','embrava','haste samba', 'last resort'}:contains(buff:lower()) then
-    --if S{'last resort'}:contains(buff:lower()) then
-    --	determine_haste_group()
-    --	handle_equipping_gear(player.status)
-    --end
+    if buff == 'Aftermath: Lv.3' and gain then
+    	determine_custom_group()
+   	    handle_equipping_gear(player.status)
+    end
 
     if state.Buff[buff] ~= nil then
     	state.Buff[buff] = gain
@@ -203,13 +203,6 @@ function job_buff_change(buff, gain)
         enable('ammo')
     end
 
-    -- Some informative output
-    if buff == 'Nether Void' and gain then
-        add_to_chat(122, 'Next Absorb or Drain potency +75%!')
-    elseif buff == 'Dark Seal' and gain then
-        add_to_chat(122, 'Enhanced Dark Magic Accuracy!')
-    end
-    
     if string.lower(buff) == "sleep" and gain and player.hp > 200 then
         equip(sets.Berserker)
     else
@@ -233,6 +226,7 @@ function job_update(cmdParams, eventArgs)
     war_sj = player.sub_job == 'WAR' or false
 	adjust_engaged_sets()
     get_combat_form()
+    determine_custom_group()
 
 end
 
@@ -255,8 +249,6 @@ function adjust_engaged_sets()
     else -- use regular set
         state.CombatWeapon:reset()
     end
-	--adjust_melee_groups()
-	--determine_haste_group()
 end
 
 function select_static_ammo()
@@ -277,15 +269,8 @@ end
 --		classes.CustomMeleeGroups:append('AM')
 --	end
 --end
-function determine_haste_group()
+function determine_custom_group()
 
-    -- This section only applies to LR being up
-    --
-    -- 1) uncapped delay reduction: 26% gear haste + LR's 25% JA haste
-    -- 2) HighHaste - Marches: 16% gear haste with march+3, 14% with march+4, 12% with march+5
-    -- 3) EmbravaHaste - embrava: 21% gear haste if sch is naked alt, 17% if it's capped potency
-    -- 4) MaxHaste - capped magic haste: 12% gear haste
-	
 	classes.CustomMeleeGroups:clear()
 	
 	--if buffactive.embrava and (buffactive['last resort'] or buffactive.march == 2 or (buffactive.march and buffactive.haste)) then
@@ -298,8 +283,9 @@ function determine_haste_group()
 	--	classes.CustomMeleeGroups:append('HighHaste')
 	--elseif buffactive.march == 2 then
 	--	classes.CustomMeleeGroups:append('HighHaste')
-    if buffactive['last resort'] then
-		classes.CustomMeleeGroups:append('LastResort')
+
+    if buffactive['Aftermath: Lv.3'] then
+		classes.CustomMeleeGroups:append('AM3')
 	end
 end
 
