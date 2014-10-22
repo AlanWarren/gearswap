@@ -21,7 +21,7 @@ function init_gear_sets()
         ear2="Trux Earring", 
         feet="Mochizuki Kyahan +1"
     }
-    sets.precast.JA.Sange = { body="Mochizuki Chainmail +1", ammo="Suppa Shuriken" }
+    sets.precast.JA.Sange = { body="Mochizuki Chainmail +1", ammo="Hachiya Shuriken" }
     
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -43,7 +43,7 @@ function init_gear_sets()
 
     sets.RegularAmmo    = { ammo="Happo Shuriken" }
     sets.HachiAmmo      = { ammo="Hachiya Shuriken" }
-    sets.SuppaAmmo      = { ammo="Suppa Shuriken" }
+    sets.SuppaAmmo      = { ammo="Hachiya Shuriken" }
     
     sets.NightAccAmmo   = { ammo="Ginsen" }
     sets.DayAccAmmo     = { ammo="Tengu-no-Hane" }
