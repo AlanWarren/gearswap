@@ -81,10 +81,10 @@ function init_gear_sets()
          ear2="Crematio Earring",
          body="Fallen's Cuirass +1",
          hands="Fallen's Finger Gauntlets",
-         --legs="Haruspex Slops",
-         legs="Ignominy Flanchard +1",
          ring1="Sangoma Ring",
          ring2="Acumen Ring",
+         --legs="Haruspex Slops",
+         legs="Ignominy Flanchard +1",
          back="Aput Mantle",
          feet="Ignominy Sollerets"
      }
@@ -92,7 +92,6 @@ function init_gear_sets()
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
          head="Gavialis Helm",
          body="Bale Cuirass +2",
-         hands="Boor Bracelets",
          ring1="Beeline Ring",
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
@@ -516,13 +515,13 @@ function init_gear_sets()
      })
      sets.engaged.Scythe.Mid = set_combine(sets.engaged.Scythe, {
          head="Yaoyotl Helm",
+         ear2="Zennaroi Earring",
     	 body="Mes'yohi Haubergeon",
          ring2="Ramuh Ring +1",
          legs="Xaddi Cuisses"
      })
      sets.engaged.Scythe.Acc = set_combine(sets.engaged.Scythe.Mid, { 
          ear1="Steelflash Earring",
-         ear2="Zennaroi Earring",
          neck="Iqabi Necklace",
          ring1="Mars's Ring",
          waist="Olseni Belt"
@@ -534,13 +533,15 @@ function init_gear_sets()
          hands="Cizin Mufflers +1",
          back="Niht Mantle",
          legs="Ares' Flanchard +1",
+         feet="Mikinaak Greaves"
      })
      sets.engaged.Scythe.Mid.AM3 = set_combine(sets.engaged.Scythe.AM3, {
          neck="Iqabi Necklace",
          ear1="Zennaroi Earring",
          body="Mes'yohi Haubergeon",
          hands="Xaddi Gauntlets",
-         legs="Xaddi Cuisses"
+         legs="Ares' Flanchard +1",
+         feet="Ejekamal Boots"
      })
      sets.engaged.Scythe.Acc.AM3 = set_combine(sets.engaged.Scythe.Mid.AM3, {
          ear2="Steelflash Earring",
