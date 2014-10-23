@@ -147,6 +147,7 @@ function init_gear_sets()
     }
     
     sets.idle = {
+        ammo="Happo Shuriken",
         head="Ptica Headgear",
         neck="Twilight Torque",
         ear1="Brutal Earring",
@@ -168,7 +169,6 @@ function init_gear_sets()
     })
     
     sets.idle.Town = set_combine(sets.idle, {
-        ammo="Happo Shuriken",
         neck="Hope Torque",
         hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
