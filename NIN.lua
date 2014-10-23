@@ -27,8 +27,8 @@ function job_setup()
 
     determine_haste_group()
     
-    --state.warned = M(false)
-    --options.ammo_warning_limit = 25
+    state.warned = M(false)
+    options.ammo_warning_limit = 25
     -- For th_action_check():
     -- JA IDs for actions that always have TH: Provoke, Animated Flourish
     info.default_ja_ids = S{35, 204}
@@ -43,17 +43,21 @@ function user_setup()
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
     state.HybridMode:options('Normal', 'PDT')
     state.RangedMode:options('Normal', 'Acc')
-    state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
+    state.WeaponskillMode:options('Normal', 'Mid', 'Acc', 'Mod')
     state.PhysicalDefenseMode:options('PDT')
     state.MagicalDefenseMode:options('MDT')
 
     select_default_macro_book()
+
+    gear.RegularAmmo = 'Happo Shuriken'
+    gear.SangeAmmo = 'Hachiya Shuriken'
     
     send_command('bind ^= gs c cycle treasuremode')
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c cycle HasteMode')
+    send_command('bind @= gs c cycle WeaponskillMode')
 end
 
 
@@ -62,6 +66,7 @@ function file_unload()
     send_command('unbind ![')
     send_command('unbind @f9')
     send_command('unbind ^=')
+    send_command('unbind @=')
     send_command('unbind !=')
 end
 
@@ -89,12 +94,21 @@ function job_precast(spell, action, spellMap, eventArgs)
     --Aftermath for Kannagi
     aw_custom_aftermath_timers_precast(spell)
     
+    -- protection for lag, and ammo count
+    if spell.name == 'Sange' then
+        if player.equipment.ammo == 'Happo Shuriken' then
+            eventArgs.cancel = true
+        else
+            do_ammo_checks(spell, spellMap, eventArgs)
+        end
+    end
+
     if spell.skill == "Ninjutsu" and spell.target.type:lower() == 'self' and spellMap ~= "Utsusemi" then
         classes.CustomClass = "SelfNinjutsu"
     end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
-            -- If sneak is active when using, cancel before completion
-            send_command('cancel 71')
+        -- If sneak is active when using, cancel before completion
+        send_command('cancel 71')
     end
     -- cancel utsusemi if shadows are up already
     if string.find(spell.english, 'Utsusemi') then
@@ -111,11 +125,9 @@ end
 function job_post_precast(spell, action, spellMap, eventArgs)
     -- Ranged Attacks 
     if spell.action_type == 'Ranged Attack' then
-        equip( set_combine(sets.precast.RA, sets.SuppaAmmo) )
+        equip( sets.SangeAmmo )
     end
-    if spell.name == 'Sange' and player.equipment.ammo == 'Happo Shuriken' then
-        eventArgs.cancel = true
-    end
+
     if spell.type == 'WeaponSkill' then
         if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
             equip(sets.TreasureHunter)
@@ -158,9 +170,9 @@ end
 -- Run after the general midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-    if state.TreasureMode.value ~= 'None' and spell.action_type == 'Ranged Attack' then
-        equip(sets.TreasureHunter)
-    end
+    --if state.TreasureMode.value ~= 'None' and spell.action_type == 'Ranged Attack' then
+    --    equip(sets.TreasureHunter)
+    --end
 end
 
 
@@ -368,12 +380,6 @@ end
 function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Capacity Point Mantle' then
         gear.Back = newValue
-    elseif stateField == 'Mob Defense Mode' then
-        if newValue == 'Hi' then
-            state.CombatForm:set('HiDef')
-        else
-            state.CombatForm:reset()
-        end
     end
 end
 
@@ -462,7 +468,7 @@ end
 
 function select_ammo()
     if state.Buff.Sange then
-        return sets.SuppaAmmo
+        return sets.SangeAmmo
     else
         return sets.RegularAmmo
     end
@@ -474,6 +480,40 @@ function select_ws_ammo()
     else
         return sets.DayAccAmmo
     end
+end
+
+-- Determine whether we have sufficient ammo for the action being attempted.
+function do_ammo_checks(spell, spellMap, eventArgs)
+	local ammo_name = gear.SangeAmmo
+	local ammo_min_count = 25
+	
+	local available_ammo = player.inventory[ammo_name]
+	
+	-- If no ammo is available, give appropriate warning and end.
+	if not available_ammo then
+		if spell.english == 'Sange' then
+			add_to_chat(104, 'No ammo ('..tostring(ammo_name)..') available for that action.')
+			eventArgs.cancel = true
+			return
+		end
+	end
+	
+	-- Low ammo warning.
+	if spell.english == 'Sange' and not state.warned
+	    and available_ammo.count > 1 and available_ammo.count <= options.ammo_warning_limit then
+        local msg = '**** LOW AMMO WARNING: '..ammo_name..' ****'
+        local border = ""
+        for i = 1, #msg do
+            border = border .. "*"
+        end
+
+        add_to_chat(104, border)
+        add_to_chat(104, msg)
+        add_to_chat(104, border)
+		state.warned = true
+	elseif available_ammo.count > options.ammo_warning_limit and state.warned then
+		state.warned = false
+	end
 end
 
 -- Select default macro book on initial load or subjob change.
