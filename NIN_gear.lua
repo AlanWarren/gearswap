@@ -267,7 +267,8 @@ function init_gear_sets()
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head="Felistris Mask",
         ear1="Brutal Earring",
-        ear2="Tripudio Earring",
+        ear2="Trux Earring",
+        neck="Rancor Collar",
         body="Mes'yohi Haubergeon",
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
