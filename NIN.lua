@@ -18,6 +18,8 @@ function job_setup()
     state.TreasureMode:set('Tag')
 
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
+    -- By default we assume targets are high def, but this toggle allows you to change that
+    state.MobDefenseMode = M{['description']='Mob Defense Mode', 'Normal', 'Low' }
 
     select_ammo()
 
@@ -57,17 +59,19 @@ function user_setup()
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c cycle HasteMode')
-    send_command('bind @= gs c cycle WeaponskillMode')
+    send_command('bind @= gs c toggle MobDefenseMode')
+    send_command('bind @[ gs c cycle WeaponskillMode')
 end
 
 
 function file_unload()
     send_command('unbind ^[')
     send_command('unbind ![')
-    send_command('unbind @f9')
     send_command('unbind ^=')
-    send_command('unbind @=')
     send_command('unbind !=')
+    send_command('unbind @f9')
+    send_command('unbind @[')
+    send_command('unbind @=')
 end
 
 
@@ -94,15 +98,6 @@ function job_precast(spell, action, spellMap, eventArgs)
     --Aftermath for Kannagi
     aw_custom_aftermath_timers_precast(spell)
     
-    -- protection for lag, and ammo count
-    if spell.name == 'Sange' then
-        if player.equipment.ammo == 'Happo Shuriken' then
-            eventArgs.cancel = true
-        else
-            do_ammo_checks(spell, spellMap, eventArgs)
-        end
-    end
-
     if spell.skill == "Ninjutsu" and spell.target.type:lower() == 'self' and spellMap ~= "Utsusemi" then
         classes.CustomClass = "SelfNinjutsu"
     end
@@ -127,7 +122,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.action_type == 'Ranged Attack' then
         equip( sets.SangeAmmo )
     end
-
+    -- protection for lag
+    if spell.name == 'Sange' and player.equipment.ammo == 'Happo Shuriken' then
+        eventArgs.cancel = true
+    end
     if spell.type == 'WeaponSkill' then
         if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
             equip(sets.TreasureHunter)
@@ -380,6 +378,12 @@ end
 function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Capacity Point Mantle' then
         gear.Back = newValue
+    elseif stateField == 'Mob Defense Mode' then
+        if newValue == 'Low' then
+            state.CombatForm:set('LowDef')
+        else
+            state.CombatForm:reset()
+        end
     end
 end
 
@@ -487,7 +491,7 @@ function do_ammo_checks(spell, spellMap, eventArgs)
 	local ammo_name = gear.SangeAmmo
 	local ammo_min_count = 25
 	
-	local available_ammo = player.inventory[ammo_name]
+	local available_ammo = player.inventory[ammo_name] or player.wardrobe[ammo_name]
 	
 	-- If no ammo is available, give appropriate warning and end.
 	if not available_ammo then
@@ -501,7 +505,7 @@ function do_ammo_checks(spell, spellMap, eventArgs)
 	-- Low ammo warning.
 	if spell.english == 'Sange' and not state.warned
 	    and available_ammo.count > 1 and available_ammo.count <= options.ammo_warning_limit then
-        local msg = '**** LOW AMMO WARNING: '..ammo_name..' ****'
+        local msg = '**** LOW AMMO WARNING: '..bullet_name..' ****'
         local border = ""
         for i = 1, #msg do
             border = border .. "*"
@@ -511,7 +515,7 @@ function do_ammo_checks(spell, spellMap, eventArgs)
         add_to_chat(104, msg)
         add_to_chat(104, border)
 		state.warned = true
-	elseif available_ammo.count > options.ammo_warning_limit and state.warned then
+	elseif available_bullets.count > options.ammo_warning_limit and state.warned then
 		state.warned = false
 	end
 end
