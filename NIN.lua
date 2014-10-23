@@ -19,7 +19,7 @@ function job_setup()
 
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
     -- By default we assume targets are high def, but this toggle allows you to change that
-    state.MobDefenseMode = M{['description']='Mob Defense Mode', 'Normal', 'Low' }
+    state.MobDefenseMode = M(false, 'Mob Defense Mode')
 
     select_ammo()
 
@@ -379,7 +379,7 @@ function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Capacity Point Mantle' then
         gear.Back = newValue
     elseif stateField == 'Mob Defense Mode' then
-        if newValue == 'Low' then
+        if newValue == true then
             state.CombatForm:set('LowDef')
         else
             state.CombatForm:reset()
@@ -406,6 +406,9 @@ function display_current_job_state(eventArgs)
     end
     if state.HasteMode.value ~= 'Normal' then
         msg = msg .. ', Haste: '..state.HasteMode.current
+    end
+    if state.MobDefenseMode.value ~= false then
+        msg = msg .. ', Mob Defense: '..state.MobDefenseMode.current
     end
     if state.RangedMode.value ~= 'Normal' then
         msg = msg .. ', Rng: '..state.RangedMode.current

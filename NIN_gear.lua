@@ -233,6 +233,8 @@ function init_gear_sets()
         waist="Olseni Belt",
         legs="Mochizuki Kyahan +1"
     })
+
+    sets.engaged.LowDef = sets.engaged
     
     sets.engaged.NormalPDT = {
         head="Otronif Mask +1",
