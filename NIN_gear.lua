@@ -100,6 +100,7 @@ function init_gear_sets()
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
+        ammo="Impatiens",
         head="Uk'uxkaj Cap",
         body="Dread Jupon",
         ear1="Loquacious Earring",

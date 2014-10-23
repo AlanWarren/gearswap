@@ -32,7 +32,8 @@ function init_gear_sets()
         })
 
         sets.precast.FC = {
-            head="Uk'uxkaj Cap",
+            ammo="Impatiens",
+            --head="Uk'uxkaj Cap",
             ear1="Loquacious Earring",
             legs="Kaabnax Trousers",
             hands="Buremte Gloves",
