@@ -273,12 +273,13 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Mes'yohi Haubergeon",
-        hands="Mochizuki Tekko +1",
+        --hands="Mochizuki Tekko +1",
+        hands="Otronif Gloves +1",
         ring1="Rajas Ring",
         back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
         legs="Otronif Brais +1",
-        feet="Mochizuki Kyahan +1"
+        feet="Otronif Boots +1"
     })
 
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
