@@ -28,6 +28,7 @@ function job_setup()
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
     determine_haste_group()
+    update_combat_form()
     
     state.warned = M(false)
     options.ammo_warning_limit = 25
@@ -256,6 +257,7 @@ end
 function job_update(cmdParams, eventArgs)
     select_ammo()
     determine_haste_group()
+    update_combat_form()
     --select_movement()
     th_update(cmdParams, eventArgs)
 end
@@ -379,7 +381,7 @@ function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Capacity Point Mantle' then
         gear.Back = newValue
     elseif stateField == 'Mob Defense Mode' then
-        if newValue == true then
+        if newValue then
             state.CombatForm:set('LowDef')
         else
             state.CombatForm:reset()
@@ -489,6 +491,13 @@ function select_ws_ammo()
     end
 end
 
+function update_combat_form()
+    if state.MobDefenseMode.value then
+        state.CombatForm:set('LowDef')
+    else
+        state.CombatForm:reset()
+    end
+end
 -- Determine whether we have sufficient ammo for the action being attempted.
 function do_ammo_checks(spell, spellMap, eventArgs)
 	local ammo_name = gear.SangeAmmo
