@@ -191,7 +191,7 @@ function init_gear_sets()
     }
     
     sets.defense.MDT = set_combine(sets.defense.PDT, {
-        head="Ptica Headgear +1",
+        head="Ptica Headgear",
         neck="Twilight Torque",
         hands="Otronif Gloves +1",
         feet="Otronif Boots +1"
@@ -526,7 +526,7 @@ function init_gear_sets()
         head="Ptica Headgear",
         neck="Rancor Collar",
         body="Iga Ningi +2",
-        hands="Otronif Gloves +2",
+        hands="Otronif Gloves +1",
         ring1="Ramuh Ring +1",
         back="Yokaze Mantle",
         feet="Wurrukatte Boots"
