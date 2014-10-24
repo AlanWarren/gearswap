@@ -78,7 +78,7 @@ function init_gear_sets()
 
      sets.midcast['Elemental Magic'] = {
          head="Ignominy burgeonet +1",
-         neck="Stoicheion Medal",
+         neck="Eddy Necklace",
          ear1="Friomisi Earring",
          ear2="Crematio Earring",
          body="Fallen's Cuirass +1",
