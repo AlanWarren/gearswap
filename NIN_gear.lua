@@ -273,7 +273,7 @@ function init_gear_sets()
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-        neck="Rancor Collar",
+        neck="Asperity Necklace",
         body="Mes'yohi Haubergeon",
         hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
@@ -284,6 +284,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Whirlpool Mask",
+        neck="Rancor Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         hands="Sasuke Tekko +1",
