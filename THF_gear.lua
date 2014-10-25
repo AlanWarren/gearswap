@@ -365,7 +365,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
-    }
+    })
 	sets.engaged.Mid = set_combine(sets.engaged.PDT, {
         ring1="Ramuh Ring +1",
 		body="Dread Jupon",
