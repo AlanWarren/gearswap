@@ -331,11 +331,13 @@ function init_gear_sets()
         legs="Pillager's Culottes +1",
         feet="Plunderer's Poulaines"
     }
-	sets.engaged.Acc = set_combine(sets.engaged, {
-		head="Whirlpool Mask",
+    sets.engaged.Mid = set_combine(sets.engaged, {
+        head="Whirlpool Mask",
+        ring1="Ramuh Ring +1",
+    })
+	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
 		body="Dread Jupon",
-        ring1="Ramuh Ring +1",
         hands="Buremte Gloves",
         waist="Olseni Belt",
         feet="Qaaxo Leggings"
@@ -366,7 +368,7 @@ function init_gear_sets()
         legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
     })
-	sets.engaged.Mid = set_combine(sets.engaged.PDT, {
+	sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
         ring1="Ramuh Ring +1",
 		body="Dread Jupon",
     })
