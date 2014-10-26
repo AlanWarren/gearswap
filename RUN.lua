@@ -9,6 +9,7 @@
 function get_sets()
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
+    state.Runes = M{['description']='Runes', "Tellus","Unda","Flabra","Ignis","Gelus","Sulpor","Lux","Tenebrae"}
 end
 
 
@@ -308,7 +309,10 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- General hooks for other events.
 -------------------------------------------------------------------------------------------------------------------
-function job_status_change(newStatus, oldStatus, eventArgs)
+function job_self_command(cmdParams, eventArgs)
+    if cmdParams[1]:lower() == 'rune' then
+        send_command('@input /ja '..state.Runes.value..' <me>')
+    end
 end
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
