@@ -19,7 +19,7 @@ function job_setup()
 
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
     -- By default we assume targets are high def, but this toggle allows you to change that
-    state.MobDefenseMode = M(false, 'Mob Defense Mode')
+    state.MobDefenseMode = M{['description']='Mob Defense Mode', 'Normal', 'LowDef' }
 
     select_ammo()
 
@@ -60,7 +60,7 @@ function user_setup()
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c cycle HasteMode')
-    send_command('bind @= gs c toggle MobDefenseMode')
+    send_command('bind @= gs c cycle MobDefenseMode')
     send_command('bind @[ gs c cycle WeaponskillMode')
 end
 
@@ -247,6 +247,11 @@ function job_buff_change(buff, gain)
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
+    if newStatus == 'Engaged' and state.MobDefenseMode.value == 'LowDef' then
+        state.CombatForm:set('LowDef')
+    else
+        state.CombatForm:reset()
+    end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -381,7 +386,7 @@ function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Capacity Point Mantle' then
         gear.Back = newValue
     elseif stateField == 'Mob Defense Mode' then
-        if newValue then
+        if newValue == 'LowDef' then
             state.CombatForm:set('LowDef')
         else
             state.CombatForm:reset()
@@ -409,7 +414,7 @@ function display_current_job_state(eventArgs)
     if state.HasteMode.value ~= 'Normal' then
         msg = msg .. ', Haste: '..state.HasteMode.current
     end
-    if state.MobDefenseMode.value ~= false then
+    if state.MobDefenseMode.value ~= 'Normal' then
         msg = msg .. ', Mob Defense: '..state.MobDefenseMode.current
     end
     if state.RangedMode.value ~= 'Normal' then
@@ -492,12 +497,13 @@ function select_ws_ammo()
 end
 
 function update_combat_form()
-    if state.MobDefenseMode.value then
+    if state.MobDefenseMode.value == 'LowDef' then
         state.CombatForm:set('LowDef')
     else
         state.CombatForm:reset()
     end
 end
+
 -- Determine whether we have sufficient ammo for the action being attempted.
 function do_ammo_checks(spell, spellMap, eventArgs)
 	local ammo_name = gear.SangeAmmo
