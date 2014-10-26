@@ -333,6 +333,7 @@ function init_gear_sets()
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Whirlpool Mask",
+        hands="Plunderer's Armlets +1",
         ring1="Ramuh Ring +1",
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
