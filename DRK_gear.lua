@@ -28,6 +28,7 @@ function init_gear_sets()
             
      -- Fast cast sets for spells
      sets.precast.FC = {
+        ammo="Impatiens",
         head="Cizin Helm",
         ear1="Loquacious Earring",
         hands="Buremte Gloves",
@@ -42,6 +43,7 @@ function init_gear_sets()
               
      -- Midcast Sets
      sets.midcast.FastRecast = {
+         ammo="Impatiens",
          head="Otomi Helm",
          hands="Cizin Mufflers +1",
          feet="Ejekamal Boots"
@@ -76,7 +78,7 @@ function init_gear_sets()
 
      sets.midcast['Elemental Magic'] = {
          head="Ignominy burgeonet +1",
-         neck="Stoicheion Medal",
+         neck="Eddy Necklace",
          ear1="Friomisi Earring",
          ear2="Crematio Earring",
          body="Fallen's Cuirass +1",

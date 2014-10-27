@@ -19,7 +19,7 @@ function job_setup()
 
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
     -- By default we assume targets are high def, but this toggle allows you to change that
-    state.MobDefenseMode = M{['description']='Mob Defense Mode', 'Normal', 'Low' }
+    state.MobDefenseMode = M{['description']='Mob Defense Mode', 'Normal', 'LowDef' }
 
     select_ammo()
 
@@ -28,6 +28,7 @@ function job_setup()
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
     determine_haste_group()
+    update_combat_form()
     
     state.warned = M(false)
     options.ammo_warning_limit = 25
@@ -51,7 +52,7 @@ function user_setup()
 
     select_default_macro_book()
 
-    gear.RegularAmmo = 'Happo Shuriken'
+    gear.RegularAmmo = 'Hachiya Shuriken'
     gear.SangeAmmo = 'Hachiya Shuriken'
     
     send_command('bind ^= gs c cycle treasuremode')
@@ -59,7 +60,7 @@ function user_setup()
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c cycle HasteMode')
-    send_command('bind @= gs c toggle MobDefenseMode')
+    send_command('bind @= gs c cycle MobDefenseMode')
     send_command('bind @[ gs c cycle WeaponskillMode')
 end
 
@@ -246,6 +247,11 @@ function job_buff_change(buff, gain)
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
+    if newStatus == 'Engaged' and state.MobDefenseMode.value == 'LowDef' then
+        state.CombatForm:set('LowDef')
+    else
+        state.CombatForm:reset()
+    end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -256,6 +262,7 @@ end
 function job_update(cmdParams, eventArgs)
     select_ammo()
     determine_haste_group()
+    update_combat_form()
     --select_movement()
     th_update(cmdParams, eventArgs)
 end
@@ -379,7 +386,7 @@ function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Capacity Point Mantle' then
         gear.Back = newValue
     elseif stateField == 'Mob Defense Mode' then
-        if newValue == 'Low' then
+        if newValue == 'LowDef' then
             state.CombatForm:set('LowDef')
         else
             state.CombatForm:reset()
@@ -406,6 +413,9 @@ function display_current_job_state(eventArgs)
     end
     if state.HasteMode.value ~= 'Normal' then
         msg = msg .. ', Haste: '..state.HasteMode.current
+    end
+    if state.MobDefenseMode.value ~= 'Normal' then
+        msg = msg .. ', Mob Defense: '..state.MobDefenseMode.current
     end
     if state.RangedMode.value ~= 'Normal' then
         msg = msg .. ', Rng: '..state.RangedMode.current
@@ -483,6 +493,14 @@ function select_ws_ammo()
         return sets.NightAccAmmo
     else
         return sets.DayAccAmmo
+    end
+end
+
+function update_combat_form()
+    if state.MobDefenseMode.value == 'LowDef' then
+        state.CombatForm:set('LowDef')
+    else
+        state.CombatForm:reset()
     end
 end
 

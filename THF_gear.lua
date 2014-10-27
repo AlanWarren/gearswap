@@ -81,7 +81,7 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	sets.precast.FC = {
-        --head="Uk'uxkaj Cap",
+        ammo="Impatiens",
         ear1="Loquacious Earring",
         hands="Buremte Gloves",
         body="Dread Jupon",
@@ -323,7 +323,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Skadi's Cuirie +1",
-        hands="Iuitl Wristbands +1",
+        hands="Plunderer's Armlets +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
@@ -331,11 +331,14 @@ function init_gear_sets()
         legs="Pillager's Culottes +1",
         feet="Plunderer's Poulaines"
     }
-	sets.engaged.Acc = set_combine(sets.engaged, {
-		head="Whirlpool Mask",
+    sets.engaged.Mid = set_combine(sets.engaged, {
+        head="Whirlpool Mask",
+        hands="Plunderer's Armlets +1",
+        ring1="Ramuh Ring +1",
+    })
+	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
 		body="Dread Jupon",
-        ring1="Ramuh Ring +1",
         hands="Buremte Gloves",
         waist="Olseni Belt",
         feet="Qaaxo Leggings"
@@ -365,8 +368,8 @@ function init_gear_sets()
         ring1="Patricius Ring",
         legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
-    }
-	sets.engaged.Mid = set_combine(sets.engaged.PDT, {
+    })
+	sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
         ring1="Ramuh Ring +1",
 		body="Dread Jupon",
     })

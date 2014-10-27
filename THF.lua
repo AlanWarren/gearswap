@@ -204,8 +204,6 @@ function job_update(cmdParams, eventArgs)
 	th_update(cmdParams, eventArgs)
 	determine_haste_group()
 end
-
-
 -- Function to display the current relevant user state when doing an update.
 -- Return true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)

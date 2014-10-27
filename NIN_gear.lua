@@ -87,6 +87,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {
         --head="Uk'uxkaj Cap",
+        ammo="Impatiens",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         hands="Buremte Gloves",
@@ -98,6 +99,7 @@ function init_gear_sets()
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
+        ammo="Impatiens",
         head="Uk'uxkaj Cap",
         body="Dread Jupon",
         ear1="Loquacious Earring",
@@ -144,6 +146,7 @@ function init_gear_sets()
     }
     
     sets.idle = {
+        ammo=gear.RegularAmmo,
         head="Ptica Headgear",
         neck="Twilight Torque",
         ear1="Brutal Earring",
@@ -164,7 +167,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring"
     })
     
-    sets.idle.Town = set_combine(sets.idle, sets.RegularAmmo, {
+    sets.idle.Town = set_combine(sets.idle, {
         neck="Hope Torque",
         hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
@@ -188,7 +191,7 @@ function init_gear_sets()
     }
     
     sets.defense.MDT = set_combine(sets.defense.PDT, {
-        head="Ptica Headgear +1",
+        head="Ptica Headgear",
         neck="Twilight Torque",
         hands="Otronif Gloves +1",
         feet="Otronif Boots +1"
@@ -205,7 +208,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Hachiya Chainmail +1",
-        hands="Otronif Gloves +1",
+        hands="Mochizuki Tekko +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
         back="Vellaunus' Mantle +1",
@@ -230,6 +233,12 @@ function init_gear_sets()
         waist="Olseni Belt",
         legs="Mochizuki Kyahan +1"
     })
+
+    sets.engaged.LowDef = set_combine(sets.engaged, {
+        hands="Otronif Gloves +1"
+    })
+    sets.engaged.LowDef.Mid = sets.engaged.Mid
+    sets.engaged.LowDef.Acc = sets.engaged.Acc
     
     sets.engaged.NormalPDT = {
         head="Otronif Mask +1",
@@ -270,15 +279,16 @@ function init_gear_sets()
         ear2="Trux Earring",
         neck="Rancor Collar",
         body="Mes'yohi Haubergeon",
-        hands="Mochizuki Tekko +1",
+        hands="Hachiya Tekko +1",
         ring1="Rajas Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
         legs="Otronif Brais +1",
-        feet="Qaaxo Leggings"
+        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Whirlpool Mask",
+        neck="Rancor Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         hands="Sasuke Tekko +1",
@@ -365,7 +375,8 @@ function init_gear_sets()
     
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
-        body="Mochizuki Chainmail +1"
+        body="Mochizuki Chainmail +1",
+        hands="Mochizuki Tekko +1"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
         body="Mochizuki Chainmail +1"
@@ -379,7 +390,7 @@ function init_gear_sets()
     
     -- attack capped sets 
     sets.engaged.LowDef.Haste_30 = set_combine(sets.engaged.LowDef.Haste_35, {
-        body="Mochizuki Chainmail +1"
+        body="Mochizuki Chainmail +1",
     })
     sets.engaged.LowDef.Mid.Haste_30 = sets.engaged.Mid.Haste_30
     sets.engaged.LowDef.Acc.Haste_30 = sets.engaged.Acc.Haste_30
@@ -520,7 +531,7 @@ function init_gear_sets()
         head="Ptica Headgear",
         neck="Rancor Collar",
         body="Iga Ningi +2",
-        hands="Otronif Gloves +2",
+        hands="Otronif Gloves +1",
         ring1="Ramuh Ring +1",
         back="Yokaze Mantle",
         feet="Wurrukatte Boots"
