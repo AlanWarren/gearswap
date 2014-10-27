@@ -146,7 +146,7 @@ function init_gear_sets()
     }
     
     sets.idle = {
-        ammo="Happo Shuriken",
+        ammo=gear.RegularAmmo,
         head="Ptica Headgear",
         neck="Twilight Torque",
         ear1="Brutal Earring",
@@ -208,7 +208,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Hachiya Chainmail +1",
-        hands="Otronif Gloves +1",
+        hands="Mochizuki Tekko +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
         back="Vellaunus' Mantle +1",
@@ -234,7 +234,11 @@ function init_gear_sets()
         legs="Mochizuki Kyahan +1"
     })
 
-    sets.engaged.LowDef = sets.engaged
+    sets.engaged.LowDef = set_combine(sets.engaged, {
+        hands="Otronif Gloves +1"
+    })
+    sets.engaged.LowDef.Mid = sets.engaged.Mid
+    sets.engaged.LowDef.Acc = sets.engaged.Acc
     
     sets.engaged.NormalPDT = {
         head="Otronif Mask +1",
@@ -385,7 +389,8 @@ function init_gear_sets()
     
     -- attack capped sets 
     sets.engaged.LowDef.Haste_30 = set_combine(sets.engaged.LowDef.Haste_35, {
-        body="Mochizuki Chainmail +1"
+        body="Mochizuki Chainmail +1",
+        hands="Mochizuki Tekko +1"
     })
     sets.engaged.LowDef.Mid.Haste_30 = sets.engaged.Mid.Haste_30
     sets.engaged.LowDef.Acc.Haste_30 = sets.engaged.Acc.Haste_30
