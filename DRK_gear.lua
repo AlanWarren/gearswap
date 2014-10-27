@@ -63,6 +63,7 @@ function init_gear_sets()
          ear2="Psystorm Earring",
          body="Haruspex Coat",
          hands="Fallen's Finger Gauntlets",
+         waist="Caudata Belt"
          ring1="Perception Ring",
          ring2="Sangoma Ring",
          back="Niht Mantle",
@@ -72,7 +73,6 @@ function init_gear_sets()
      
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
          head="Otomi Helm",
-         waist="Chaac Belt",
          ring1="Globidonta Ring",
          back="Aput Mantle"
      })

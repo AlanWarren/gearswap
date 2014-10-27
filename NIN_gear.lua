@@ -277,7 +277,7 @@ function init_gear_sets()
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-        neck="Rancor Collar",
+        neck="Asperity Necklace",
         body="Mes'yohi Haubergeon",
         hands="Hachiya Tekko +1",
         ring1="Rajas Ring",
@@ -307,11 +307,10 @@ function init_gear_sets()
    
     -- Low monster defense (attack capped)
     sets.engaged.LowDef.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        neck="Asperity Necklace",
+        neck="Rancor Collar",
         body="Thaumas Coat",
         hands="Otronif Gloves +1",
         ring1="Oneiros Ring",
-        back="Rancorous Mantle",
         feet="Otronif Boots +1"
     })
     sets.engaged.LowDef.Mid.MaxHaste = sets.engaged.Mid.MaxHaste
@@ -325,7 +324,7 @@ function init_gear_sets()
 
     -- Haste 40 to 43%
     sets.engaged.Haste_40 = set_combine(sets.engaged.MaxHaste, {
-        legs="Hachiya Hakama +1"
+        legs="Hachiya Hakama +1",
     })
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Mid.MaxHaste, {
         legs="Hachiya Hakama +1"
@@ -348,7 +347,10 @@ function init_gear_sets()
     -- 35% Haste
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_40, {
         head="Ptica Headgear",
-        legs="Mochizuki Hakama +1"
+        neck="Asperity Necklace",
+        legs="Mochizuki Hakama +1",
+        back="Atheling Mantle",
+        feet="Otronif Boots +1"
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_40, {
         head="Ptica Headgear",
@@ -364,7 +366,10 @@ function init_gear_sets()
     -- attack capped sets 
     sets.engaged.LowDef.Haste_35 = set_combine(sets.engaged.LowDef.Haste_40, {
         head="Ptica Headgear",
-        legs="Mochizuki Hakama +1"
+        neck="Asperity Necklace",
+        back="Rancorous Mantle",
+        legs="Mochizuki Hakama +1",
+        feet="Otronif Boots +1"
     })
     sets.engaged.LowDef.Mid.Haste_35 = sets.engaged.Mid.Haste_35
     sets.engaged.LowDef.Acc.Haste_35 = sets.engaged.Acc.Haste_35
@@ -376,7 +381,6 @@ function init_gear_sets()
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         body="Mochizuki Chainmail +1",
-        hands="Mochizuki Tekko +1"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
         body="Mochizuki Chainmail +1"
