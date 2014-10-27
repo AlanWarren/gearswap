@@ -279,7 +279,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         neck="Asperity Necklace",
         body="Mes'yohi Haubergeon",
-        hands="Hachiya Tekko +1",
+        hands="Mochizuki Tekko +1",
         ring1="Rajas Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
