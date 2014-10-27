@@ -126,6 +126,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     -- protection for lag
     if spell.name == 'Sange' and player.equipment.ammo == 'Happo Shuriken' then
         eventArgs.cancel = true
+    else
+        do_ammo_checks(spell)
     end
     if spell.type == 'WeaponSkill' then
         if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
@@ -505,7 +507,7 @@ function update_combat_form()
 end
 
 -- Determine whether we have sufficient ammo for the action being attempted.
-function do_ammo_checks(spell, spellMap, eventArgs)
+function do_ammo_checks(spell)
 	local ammo_name = gear.SangeAmmo
 	local ammo_min_count = 25
 	
@@ -532,9 +534,9 @@ function do_ammo_checks(spell, spellMap, eventArgs)
         add_to_chat(104, border)
         add_to_chat(104, msg)
         add_to_chat(104, border)
-		state.warned = true
+		state.warned:set()
 	elseif available_bullets.count > options.ammo_warning_limit and state.warned then
-		state.warned = false
+		state.warned:reset()
 	end
 end
 
