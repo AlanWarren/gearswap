@@ -124,10 +124,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip( sets.SangeAmmo )
     end
     -- protection for lag
-    if spell.name == 'Sange' and player.equipment.ammo == 'Happo Shuriken' then
-        eventArgs.cancel = true
-    else
-        do_ammo_checks(spell)
+    if spell.name == 'Sange'  then
+        if player.equipment.ammo == 'Happo Shuriken' then
+            eventArgs.cancel = true
+        end
     end
     if spell.type == 'WeaponSkill' then
         if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
@@ -246,6 +246,11 @@ function job_buff_change(buff, gain)
         state.Buff[buff] = gain
         handle_equipping_gear(player.status)
     end
+    --if buff == 'Sange' then
+    --   add_to_chat(122, 'checking ammo')
+    --   do_ammo_checks()
+    --end
+
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
@@ -507,24 +512,20 @@ function update_combat_form()
 end
 
 -- Determine whether we have sufficient ammo for the action being attempted.
-function do_ammo_checks(spell)
+function do_ammo_checks()
 	local ammo_name = gear.SangeAmmo
-	local ammo_min_count = 25
 	
-	local available_ammo = player.inventory[ammo_name] or player.wardrobe[ammo_name]
+	local available_ammo = player.inventory[ammo_name]
 	
 	-- If no ammo is available, give appropriate warning and end.
 	if not available_ammo then
-		if spell.english == 'Sange' then
-			add_to_chat(104, 'No ammo ('..tostring(ammo_name)..') available for that action.')
-			eventArgs.cancel = true
-			return
-		end
+		add_to_chat(104, 'No ammo ('..tostring(ammo_name)..') available for that action.')
+		eventArgs.cancel = true
+		return
 	end
 	
 	-- Low ammo warning.
-	if spell.english == 'Sange' and not state.warned
-	    and available_ammo.count > 1 and available_ammo.count <= options.ammo_warning_limit then
+	if state.warned.value == false and available_ammo.count > 1 and available_ammo.count <= options.ammo_warning_limit then
         local msg = '**** LOW AMMO WARNING: '..bullet_name..' ****'
         local border = ""
         for i = 1, #msg do
@@ -535,7 +536,7 @@ function do_ammo_checks(spell)
         add_to_chat(104, msg)
         add_to_chat(104, border)
 		state.warned:set()
-	elseif available_bullets.count > options.ammo_warning_limit and state.warned then
+	elseif available_ammo.count > options.ammo_warning_limit and state.warned then
 		state.warned:reset()
 	end
 end
