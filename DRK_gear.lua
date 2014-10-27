@@ -56,12 +56,14 @@ function init_gear_sets()
      }
  
      sets.midcast['Dark Magic'] = {
+         ammo="Impatiens",
          head="Ignominy burgeonet +1",
          neck="Dark Torque",
          ear1="Lifestorm Earring",
          ear2="Psystorm Earring",
          body="Haruspex Coat",
          hands="Fallen's Finger Gauntlets",
+         waist="Caudata Belt"
          ring1="Perception Ring",
          ring2="Sangoma Ring",
          back="Niht Mantle",
@@ -71,12 +73,12 @@ function init_gear_sets()
      
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
          head="Otomi Helm",
-         waist="Chaac Belt",
          ring1="Globidonta Ring",
          back="Aput Mantle"
      })
 
      sets.midcast['Elemental Magic'] = {
+         ammo="Impatiens",
          head="Ignominy burgeonet +1",
          neck="Eddy Necklace",
          ear1="Friomisi Earring",
@@ -92,6 +94,7 @@ function init_gear_sets()
      }
 	 
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
+         ammo="Impatiens",
          head="Gavialis Helm",
          body="Bale Cuirass +2",
          ring1="Beeline Ring",
