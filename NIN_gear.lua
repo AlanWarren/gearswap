@@ -375,7 +375,7 @@ function init_gear_sets()
     
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
-        body="Mochizuki Chainmail +1"
+        body="Mochizuki Chainmail +1",
         hands="Mochizuki Tekko +1"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
