@@ -376,6 +376,7 @@ function init_gear_sets()
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         body="Mochizuki Chainmail +1"
+        hands="Mochizuki Tekko +1"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
         body="Mochizuki Chainmail +1"
@@ -390,7 +391,6 @@ function init_gear_sets()
     -- attack capped sets 
     sets.engaged.LowDef.Haste_30 = set_combine(sets.engaged.LowDef.Haste_35, {
         body="Mochizuki Chainmail +1",
-        hands="Mochizuki Tekko +1"
     })
     sets.engaged.LowDef.Mid.Haste_30 = sets.engaged.Mid.Haste_30
     sets.engaged.LowDef.Acc.Haste_30 = sets.engaged.Acc.Haste_30
