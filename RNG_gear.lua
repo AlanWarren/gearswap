@@ -66,6 +66,7 @@ function init_gear_sets()
             ring2="Dark Ring"
         })
         sets.idle.Town = set_combine(sets.idle, {
+            body="Kyujutsugi",
             ear1="Fenrir's Earring",
             ring1="Rajas Ring",
             ring2="Ifrit Ring",
