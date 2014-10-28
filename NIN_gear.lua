@@ -274,8 +274,8 @@ function init_gear_sets()
     -- Delay Cap from spell + songs alone
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head="Felistris Mask",
-        ear1="Brutal Earring",
-        ear2="Trux Earring",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
         neck="Asperity Necklace",
         body="Mes'yohi Haubergeon",
         hands="Onimusha-no-kote",
@@ -288,31 +288,30 @@ function init_gear_sets()
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Whirlpool Mask",
         neck="Rancor Collar",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
         hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
+        ring1="Ramuh Ring +1",
         legs="Wukong's Hakama +1",
-        feet="Mochizuki Kyahan +1"
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Gavialis Helm",
         neck="Iqabi Necklace",
         ear1="Zennaroi Earring",
-        ear2="Heartseeker Earring",
+        ear2="Steelflash Earring",
         ring2="Mars's Ring",
         waist="Olseni Belt",
     })
    
-    -- Low monster defense (attack capped)
+    -- Low monster defense (attack near cap)
     sets.engaged.LowDef.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        neck="Rancor Collar",
         body="Thaumas Coat",
         hands="Otronif Gloves +1",
         ring1="Oneiros Ring",
         feet="Otronif Boots +1"
     })
-    sets.engaged.LowDef.Mid.MaxHaste = sets.engaged.Mid.MaxHaste
+    sets.engaged.LowDef.Mid.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+        feet="Qaaxo Leggings"
+    })
     sets.engaged.LowDef.Acc.MaxHaste = sets.engaged.Acc.MaxHaste
     
     -- Defensive sets
@@ -348,7 +347,7 @@ function init_gear_sets()
         head="Ptica Headgear",
         neck="Asperity Necklace",
         legs="Mochizuki Hakama +1",
-        back="Atheling Mantle",
+        back="Yokaze Mantle",
         feet="Otronif Boots +1"
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_40, {
@@ -358,7 +357,7 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.Haste_40, {
         head="Ptica Headgear",
         ear1="Zennaroi Earring",
-        ear2="Heartseeker Earring",
+        ear2="Steelflash Earring",
         legs="Hachiya Hakama +1"
     })
     
@@ -495,10 +494,9 @@ function init_gear_sets()
     -- BLADE: JIN
     sets.Jin = {
         ammo="Yetshila",
-        neck="Breeze Gorget",
+        neck="Rancor Collar",
         waist="Thunder Belt",
-        back="Rancorous Mantle",
-        feet="Mochizuki Kyahan +1"
+        back="Yokaze Mantle",
     }
     sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
     sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS.Mid, sets.Jin)
@@ -554,7 +552,7 @@ function init_gear_sets()
     -- BLADE: Rin
     sets.Rin = {
         neck="Rancor Collar",
-        ring1="Ifrit Ring",
+        ring1="Rajas Ring",
         waist="Windbuffet Belt +1",
         back="Yokaze Mantle",
     }
@@ -564,8 +562,10 @@ function init_gear_sets()
     
     -- BLADE: KU 
     sets.Ku = {
+        head="Whirlpool Mask",
+        ear2="Trux Earring",
         neck="Shadow Gorget",
-        waist="Soil Belt",
+        waist="Metalsinger Belt",
     }
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
     sets.precast.WS['Blade: Ku'].Mid = set_combine(sets.precast.WS.Mid, sets.Ku)

@@ -206,10 +206,7 @@ end
 -- General hooks for other events.
 -------------------------------------------------------------------------------------------------------------------
 function job_status_change(newStatus, oldStatus, eventArgs)
-    if newStatus == 'Engaged' and state.DefenseMode.value == 'PDT' then
-        if state.Buff['Seigan'] then
-            equip(sets.thirdeye)
-        end
+    if newStatus == 'Engaged' then
         if player.inventory['Eminent Arrow'] then
             gear.RAarrow.name = 'Eminent Arrow'
         elseif player.inventory['Tulfaire Arrow'] then
