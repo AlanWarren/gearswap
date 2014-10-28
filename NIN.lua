@@ -224,6 +224,15 @@ function customize_melee_set(meleeSet)
         -- use Rajas instead of Oneiros for normal + mid
         meleeSet = set_combine(meleeSet, sets.Rajas)
     end
+    -- When acc is not an issue, we can afford to give daken some help.
+    -- Otherwise, it's best to keep melee acc gear on
+    if ( classes.CustomMeleeGroups:contains('MaxHaste') or classes.CustomMeleeGroups:contains('Haste_40')) and state.Buff.Sange then
+        if state.OffenseMode.value == 'Normal' then
+            meleeSet = set_combine(meleeSet, sets.Sange_Normal)
+        else
+            meleeSet = set_combine(meleeSet, sets.Sange_Mid)
+        end
+    end
     meleeSet = set_combine(meleeSet, select_ammo())
     return meleeSet
 end

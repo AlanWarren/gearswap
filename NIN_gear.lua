@@ -43,6 +43,9 @@ function init_gear_sets()
 
     sets.RegularAmmo    = { ammo=gear.RegularAmmo }
     sets.SangeAmmo      = { ammo=gear.SangeAmmo }
+
+    sets.Sange_Mid      = { legs="Hachiya Hakama +1" }
+    sets.Sange_Normal   = set_combine(sets.Sange_Mid, { hands="Hachiya Tekko +1" })
     
     sets.NightAccAmmo   = { ammo="Ginsen" }
     sets.DayAccAmmo     = { ammo="Tengu-no-Hane" }
@@ -278,7 +281,7 @@ function init_gear_sets()
         ear2="Steelflash Earring",
         neck="Asperity Necklace",
         body="Mes'yohi Haubergeon",
-        hands="Onimusha-no-kote",
+        hands="Hachiya Tekko +1",
         ring1="Rajas Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
@@ -322,6 +325,7 @@ function init_gear_sets()
 
     -- Haste 40 to 43%
     sets.engaged.Haste_40 = set_combine(sets.engaged.MaxHaste, {
+        hands="Onimusha-no-kote",
         legs="Hachiya Hakama +1",
     })
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Mid.MaxHaste, {
