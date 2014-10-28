@@ -28,6 +28,7 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         body="Dread Jupon",
         hands="Umuthi Gloves",
+        waist="Chaac Belt",
         legs="Nahtirah Trousers",
         feet="Mochizuki Kyahan +1"
     }
