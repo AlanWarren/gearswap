@@ -43,9 +43,6 @@ function init_gear_sets()
 
     sets.RegularAmmo    = { ammo=gear.RegularAmmo }
     sets.SangeAmmo      = { ammo=gear.SangeAmmo }
-
-    sets.Sange_Mid      = { legs="Hachiya Hakama +1" }
-    sets.Sange_Normal   = set_combine(sets.Sange_Mid, { hands="Hachiya Tekko +1" })
     
     sets.NightAccAmmo   = { ammo="Ginsen" }
     sets.DayAccAmmo     = { ammo="Tengu-no-Hane" }
