@@ -382,10 +382,10 @@ function init_gear_sets()
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
         neck="Asperity Necklace",
+        body="Mochizuki Chainmail +1",
         legs="Mochizuki Hakama +1",
         back="Yokaze Mantle",
-        feet="Otronif Boots +1"
-        body="Mochizuki Chainmail +1",
+        feet="Otronif Boots +1",
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
         body="Mochizuki Chainmail +1"
