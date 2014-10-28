@@ -152,7 +152,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Mes'yohi Haubergeon",
-        hands="Otronif Gloves +1",
+        hands="Mochizuki Tekko +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
     	back="Repulse Mantle",
