@@ -278,7 +278,7 @@ function init_gear_sets()
         ear2="Steelflash Earring",
         neck="Asperity Necklace",
         body="Mes'yohi Haubergeon",
-        hands="Hachiya Tekko +1",
+        hands="Onimusha-no-kote",
         ring1="Rajas Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
