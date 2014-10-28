@@ -380,6 +380,11 @@ function init_gear_sets()
     
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
+        head="Ptica Headgear",
+        neck="Asperity Necklace",
+        legs="Mochizuki Hakama +1",
+        back="Yokaze Mantle",
+        feet="Otronif Boots +1"
         body="Mochizuki Chainmail +1",
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
@@ -406,7 +411,9 @@ function init_gear_sets()
     -- 25% Haste
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
         ear1="Brutal Earring",
-        ear2="Suppanomimi"
+        ear2="Suppanomimi",
+        body="Mochizuki Chainmail +1",
+        waist="Windbuffet Belt +1"
     })
     sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Mid.Haste_30, {
         ear1="Brutal Earring",
