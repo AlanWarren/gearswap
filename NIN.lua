@@ -226,6 +226,7 @@ function customize_melee_set(meleeSet)
     end
     -- When acc is not an issue, we can afford to give daken some help.
     -- Otherwise, it's best to keep melee acc gear on
+    -- Lower haste levels need Mochi pants much more than daken needs 15 racc
     if ( classes.CustomMeleeGroups:contains('MaxHaste') or classes.CustomMeleeGroups:contains('Haste_40')) and state.Buff.Sange then
         if state.OffenseMode.value == 'Normal' then
             meleeSet = set_combine(meleeSet, sets.Sange_Normal)
