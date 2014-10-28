@@ -169,7 +169,6 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         neck="Hope Torque",
-        hands="Sasuke Tekko +1",
         ring1="Ramuh Ring +1",
         ring2="Epona's Ring",
         back="Yokaze Mantle"
