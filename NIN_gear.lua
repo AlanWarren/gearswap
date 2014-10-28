@@ -25,11 +25,11 @@ function init_gear_sets()
     
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
-      head="Felistris Mask",
-      body="Mochizuki Chainmail +1",
-      hands="Mochizuki Tekko +1",
-      legs="Nahtirah Trousers",
-      feet="Otronif Boots +1"
+        head="Uk'uxkaj Cap",
+        body="Dread Jupon",
+        hands="Umuthi Gloves",
+        legs="Nahtirah Trousers",
+        feet="Mochizuki Kyahan +1"
     }
       
     -- Don't need any special gear for Healing Waltz.
