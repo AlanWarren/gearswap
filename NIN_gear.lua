@@ -405,6 +405,7 @@ function init_gear_sets()
     
     -- 25% Haste
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
+        ear1="Brutal Earring",
         ear2="Suppanomimi"
     })
     sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Mid.Haste_30, {
