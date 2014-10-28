@@ -152,7 +152,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Mes'yohi Haubergeon",
-        hands="Mochizuki Tekko +1",
+        hands="Onimusha-no-kote",
         ring1="Dark Ring",
         ring2="Patricius Ring",
     	back="Repulse Mantle",
@@ -208,7 +208,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Hachiya Chainmail +1",
-        hands="Mochizuki Tekko +1",
+        hands="Onimusha-no-kote",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
         back="Vellaunus' Mantle +1",
@@ -279,7 +279,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         neck="Asperity Necklace",
         body="Mes'yohi Haubergeon",
-        hands="Mochizuki Tekko +1",
+        hands="Onimusha-no-kote",
         ring1="Rajas Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
@@ -472,10 +472,10 @@ function init_gear_sets()
 
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         head="Whirlpool Mask",
+        hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-        hands="Sasuke Tekko +1",
         legs="Wukong's Hakama +1",
         ring1="Ramuh Ring +1"
     })
