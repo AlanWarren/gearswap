@@ -134,6 +134,7 @@ function init_gear_sets()
             hands="Iuitl Wristbands +1",
             legs="Nahtirah Trousers",
             waist="Impulse Belt",
+            back="Lutian Cape",
             feet="Wurrukatte Boots"
         }
         
