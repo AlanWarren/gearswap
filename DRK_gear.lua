@@ -97,10 +97,12 @@ function init_gear_sets()
          ammo="Impatiens",
          head="Gavialis Helm",
          body="Bale Cuirass +2",
+         hands="Boor Bracelets",
          ring1="Beeline Ring",
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
          legs="Ignominy Flanchard +1",
+         feet="Ejekamal Boots"
      })
      
      sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
