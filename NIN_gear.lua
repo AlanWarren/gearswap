@@ -126,7 +126,7 @@ function init_gear_sets()
         ring1="Sangoma Ring",
         ring2="Perception Ring",
         back="Yokaze Mantle",
-        waist="Chaac Belt",
+        waist="Koga Sarashi",
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
     }
