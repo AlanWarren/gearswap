@@ -66,7 +66,7 @@ function init_gear_sets()
          waist="Caudata Belt",
          ring1="Perception Ring",
          ring2="Sangoma Ring",
-         back="Niht Mantle",
+         back={name="Niht Mantle", augments={'Attack +7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}},
          legs="Bale Flanchard +2",
          feet="Ignominy sollerets"
      }
@@ -136,7 +136,7 @@ function init_gear_sets()
          hands="Mikinaak Gauntlets",
          ring1="Pyrosoul Ring",
          ring2="Ifrit Ring",
-         back="Niht Mantle",
+         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          waist="Windbuffet Belt +1",
          legs="Ignominy Flanchard +1",
          feet="Fallen's Sollerets +1"
@@ -158,7 +158,7 @@ function init_gear_sets()
      -- 86-100% STR
      sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
          neck="Breeze Gorget",
-         back="Niht Mantle",
+         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          waist="Soil Belt"
      })
      sets.precast.WS.Resolution.Mid = set_combine(sets.precast.WS.Resolution, {
@@ -224,7 +224,7 @@ function init_gear_sets()
      sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
          head="Otomi Helm",
          neck="Shadow Gorget",
-         back="Niht Mantle",
+         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          legs="Scuffler's Cosciales",
          waist="Soil Belt",
          feet="Ejekamal Boots"
@@ -335,7 +335,7 @@ function init_gear_sets()
          hands="Ignominy Gauntlets +1",
          ring1="Ramuh Ring +1",
          ring2="K'ayres Ring",
-         back="Niht Mantle",
+         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
          feet="Fallen's Sollerets +1"
@@ -448,7 +448,7 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
          ear2="Steelflash Earring",
     	 body="Mes'yohi Haubergeon",
-         back="Niht Mantle",
+         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          hands="Xaddi Gauntlets",
          ring2="Ramuh Ring +1"
      })
@@ -536,7 +536,7 @@ function init_gear_sets()
          head="Yaoyotl Helm",
          ear2="Tripudio Earring",
          hands="Cizin Mufflers +1",
-         back="Niht Mantle",
+         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          legs="Ares' Flanchard +1",
          feet="Mikinaak Greaves"
      })
