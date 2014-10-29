@@ -63,7 +63,7 @@ function init_gear_sets()
          ear2="Psystorm Earring",
          body="Haruspex Coat",
          hands="Fallen's Finger Gauntlets",
-         waist="Caudata Belt"
+         waist="Caudata Belt",
          ring1="Perception Ring",
          ring2="Sangoma Ring",
          back="Niht Mantle",
