@@ -270,20 +270,21 @@ function init_gear_sets()
         head="Felistris Mask",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        neck="Rancor Collar",
+        neck="Asperity Necklace",
         body="Mes'yohi Haubergeon",
         hands="Onimusha-no-kote",
         ring1="Rajas Ring",
-        back="Yokaze Mantle",
+        back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Whirlpool Mask",
+        neck="Rancor Collar",
         hands="Sasuke Tekko +1",
-        back="Yokaze Mantle",
         ring1="Ramuh Ring +1",
+        back="Yokaze Mantle",
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
     })
@@ -291,7 +292,7 @@ function init_gear_sets()
         head="Gavialis Helm",
         neck="Iqabi Necklace",
         ear1="Zennaroi Earring",
-        ear2="Steelflash Earring",
+        ear2="Trux Earring",
         ring2="Mars's Ring",
         waist="Olseni Belt"
     })
@@ -303,7 +304,8 @@ function init_gear_sets()
 
     -- Haste 40 to 43%
     sets.engaged.Haste_40 = set_combine(sets.engaged.MaxHaste, {
-        hands="Onimusha-no-kote",
+        ear1="Brutal Earring",
+        ear2="Trux Earring",
         legs="Hachiya Hakama +1",
     })
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Mid.MaxHaste, {
@@ -322,7 +324,7 @@ function init_gear_sets()
         head="Ptica Headgear",
         neck="Asperity Necklace",
         legs="Mochizuki Hakama +1",
-        back="Yokaze Mantle",
+        back="Rancorous Mantle",
         feet="Otronif Boots +1"
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_40, {
@@ -344,9 +346,15 @@ function init_gear_sets()
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
         neck="Asperity Necklace",
+        ear1="Brutal Earring",
+        ear2="Trux Earring",
         body="Mochizuki Chainmail +1",
+        hands="Onimusha-no-kote",
+        ring1="Oneiros Ring",
+        ring2="Epona's Ring",
+        back="Rancorous Mantle",
+        waist="Windbuffet Belt +1",
         legs="Mochizuki Hakama +1",
-        back="Yokaze Mantle",
         feet="Otronif Boots +1",
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
