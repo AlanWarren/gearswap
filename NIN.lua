@@ -25,7 +25,7 @@ function job_setup()
     --wsList = S{}
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
-    determine_haste_group()
+    --determine_haste_group()
     update_combat_form()
     
     state.warned = M(false)
@@ -232,16 +232,20 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-    -- If we gain or lose any haste buffs, adjust which gear set we target.
-    if S{'haste','march', 'embrava','haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
-        determine_haste_group()
-        handle_equipping_gear(player.status)
-    end
-    
     if state.Buff[buff] ~= nil then
         state.Buff[buff] = gain
-        handle_equipping_gear(player.status)
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
     end
+    -- If we gain or lose any haste buffs, adjust which gear set we target.
+    if S{'haste', 'march', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
+        determine_haste_group()
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end
+    
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
