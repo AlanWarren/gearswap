@@ -18,15 +18,12 @@ function job_setup()
     state.TreasureMode:set('Tag')
 
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
-    -- By default we assume targets are high def, but this toggle allows you to change that
-    state.MobDefenseMode = M{['description']='Mob Defense Mode', 'Normal', 'LowDef' }
 
     select_ammo()
     --wsList = S{}
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
-    --determine_haste_group()
-    update_combat_form()
+    determine_haste_group()
     
     state.warned = M(false)
     options.ammo_warning_limit = 25
@@ -44,7 +41,7 @@ function user_setup()
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
     state.HybridMode:options('Normal', 'PDT')
     state.RangedMode:options('Normal', 'Acc')
-    state.WeaponskillMode:options('Normal', 'Mid', 'Acc', 'Mod')
+    state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     state.PhysicalDefenseMode:options('PDT')
     state.MagicalDefenseMode:options('MDT')
 
@@ -58,8 +55,6 @@ function user_setup()
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c cycle HasteMode')
-    send_command('bind @= gs c cycle MobDefenseMode')
-    send_command('bind @[ gs c cycle WeaponskillMode')
 end
 
 
@@ -70,7 +65,6 @@ function file_unload()
     send_command('unbind !=')
     send_command('unbind @f9')
     send_command('unbind @[')
-    send_command('unbind @=')
 end
 
 
@@ -244,11 +238,6 @@ function job_buff_change(buff, gain)
 end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
-    if newStatus == 'Engaged' and state.MobDefenseMode.value == 'LowDef' then
-        state.CombatForm:set('LowDef')
-    else
-        state.CombatForm:reset()
-    end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -259,7 +248,6 @@ end
 function job_update(cmdParams, eventArgs)
     select_ammo()
     determine_haste_group()
-    update_combat_form()
     --select_movement()
     th_update(cmdParams, eventArgs)
 end
@@ -382,12 +370,6 @@ end
 function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Capacity Point Mantle' then
         gear.Back = newValue
-    elseif stateField == 'Mob Defense Mode' then
-        if newValue == 'LowDef' then
-            state.CombatForm:set('LowDef')
-        else
-            state.CombatForm:reset()
-        end
     end
 end
 
@@ -494,11 +476,6 @@ function select_ws_ammo()
 end
 
 function update_combat_form()
-    if state.MobDefenseMode.value == 'LowDef' then
-        state.CombatForm:set('LowDef')
-    else
-        state.CombatForm:reset()
-    end
 end
 
 -- Select default macro book on initial load or subjob change.
