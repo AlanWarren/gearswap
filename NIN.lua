@@ -43,7 +43,7 @@ function user_setup()
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
     state.HybridMode:options('Normal', 'PDT')
     state.RangedMode:options('Normal', 'Acc')
-    state.WeaponskillMode:options('Normal', 'Mid', 'Acc', 'Mod')
+    state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     state.PhysicalDefenseMode:options('PDT')
     state.MagicalDefenseMode:options('MDT')
 
@@ -57,8 +57,6 @@ function user_setup()
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c cycle HasteMode')
-    send_command('bind @= gs c cycle MobDefenseMode')
-    send_command('bind @[ gs c cycle WeaponskillMode')
 end
 
 
@@ -69,7 +67,6 @@ function file_unload()
     send_command('unbind !=')
     send_command('unbind @f9')
     send_command('unbind @[')
-    send_command('unbind @=')
 end
 
 

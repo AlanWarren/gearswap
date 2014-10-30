@@ -456,7 +456,7 @@ function init_gear_sets()
     sets.Hi = {
         ammo="Yetshila",
         head="Uk'uxkaj Cap",
-        neck="Shadow Gorget",
+        neck="Hope Torque",
         body="Dread Jupon",
         hands="Sasuke Tekko +1",
         ring1="Garuda Ring",
@@ -469,23 +469,14 @@ function init_gear_sets()
 
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         neck="Shadow Gorget",
-        back="Yokaze Mantle",
-        legs="Wukong's Hakama +1",
+        back="Yokaze Mantle"
     })
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         head="Ptica Headgear",
         ear1="Trux Earring",
         back="Yokaze Mantle",
+        legs="Wukong's Hakama +1",
         waist="Soil Belt"
-    })
-    sets.precast.WS['Blade: Hi'].Mod = set_combine(sets.precast.WS['Blade: Hi'], {
-        head="Ptica Headgear",
-        neck="Rancor Collar",
-        body="Iga Ningi +2",
-        hands="Otronif Gloves +1",
-        ring1="Ramuh Ring +1",
-        back="Yokaze Mantle",
-        feet="Wurrukatte Boots"
     })
 
     -- BLADE: SHUN
