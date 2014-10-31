@@ -447,17 +447,19 @@ function init_gear_sets()
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          head="Yaoyotl Helm",
-         ear1="Zennaroi Earring",
-         ear2="Steelflash Earring",
+         ear1="Brutal Earring",
+         ear2="Tripudio Earring",
     	 body="Mes'yohi Haubergeon",
-         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          hands="Xaddi Gauntlets",
-         ring2="Ramuh Ring +1"
+         feet="Mikinaak Greaves"
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          neck="Iqabi Necklace",
+         ear1="Steelflash Earring",
+         ear2="Zennaroi Earring",
          ring1="Mars's Ring",
          waist="Olseni Belt",
+         feet="Ejekamal Boots"
      })
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
