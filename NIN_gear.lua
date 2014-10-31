@@ -32,6 +32,8 @@ function init_gear_sets()
         legs="Nahtirah Trousers",
         feet="Mochizuki Kyahan +1"
     }
+    gear.RegularAmmo = 'Hachiya Shuriken'
+    gear.SangeAmmo = 'Hachiya Shuriken'
       
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}

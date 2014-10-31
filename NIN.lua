@@ -49,9 +49,6 @@ function user_setup()
 
     select_default_macro_book()
 
-    gear.RegularAmmo = 'Hachiya Shuriken'
-    gear.SangeAmmo = 'Hachiya Shuriken'
-    
     send_command('bind ^= gs c cycle treasuremode')
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
@@ -257,7 +254,7 @@ end
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    select_ammo()
+    --select_ammo()
     determine_haste_group()
     update_combat_form()
     --select_movement()
