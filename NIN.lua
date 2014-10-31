@@ -49,7 +49,7 @@ function user_setup()
 
     select_default_macro_book()
 
-    gear.RegularAmmo = 'Happo Shuriken'
+    gear.RegularAmmo = 'Hachiya Shuriken'
     gear.SangeAmmo = 'Hachiya Shuriken'
     
     send_command('bind ^= gs c cycle treasuremode')
