@@ -152,7 +152,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Mochizuki Chainmail +1",
-        hands="Onimusha-no-kote",
+        hands="Mochizuki Tekko +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
     	back="Repulse Mantle",
@@ -270,6 +270,11 @@ function init_gear_sets()
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.engaged.NormalPDT)
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.engaged.AccPDT)
 
+    sets.engaged.LowDef.PDT = sets.engaged.PDT
+    sets.engaged.LowDef.Low.PDT = sets.engaged.Low.PDT
+    sets.engaged.LowDef.Mid.PDT = sets.engaged.Mid.PDT
+    sets.engaged.LowDef.Acc.PDT = sets.engaged.Acc.PDT
+
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
@@ -338,6 +343,11 @@ function init_gear_sets()
     sets.engaged.Low.PDT.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, sets.engaged.NormalPDT)
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.NormalPDT)
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.engaged.AccPDT)
+    
+    sets.engaged.LowDef.PDT.MaxHaste = sets.engaged.PDT.MaxHaste
+    sets.engaged.LowDef.Low.PDT.MaxHaste = sets.engaged.Low.PDT.MaxHaste
+    sets.engaged.LowDef.Mid.PDT.MaxHaste = sets.engaged.Mid.PDT.MaxHaste
+    sets.engaged.LowDef.Acc.PDT.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
 
     -- Haste 40 to 43%
     sets.engaged.Haste_40 = set_combine(sets.engaged.MaxHaste, {
@@ -370,6 +380,11 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_40 = set_combine(sets.engaged.Acc.Haste_40, sets.engaged.AccPDT)
      
+    sets.engaged.LowDef.PDT.Haste_40 = sets.engaged.PDT.Haste_40
+    sets.engaged.LowDef.Low.PDT.Haste_40 = sets.engaged.Low.PDT.Haste_40
+    sets.engaged.LowDef.Mid.PDT.Haste_40 = sets.engaged.Mid.PDT.Haste_40
+    sets.engaged.LowDef.Acc.PDT.Haste_40 = sets.engaged.Acc.PDT.Haste_40
+
     -- 35% Haste
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_40, {
         head="Ptica Headgear",
@@ -409,6 +424,11 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.AccPDT)
     
+    sets.engaged.LowDef.PDT.Haste_35 = sets.engaged.PDT.Haste_35
+    sets.engaged.LowDef.Low.PDT.Haste_35 = sets.engaged.Low.PDT.Haste_35
+    sets.engaged.LowDef.Mid.PDT.Haste_35 = sets.engaged.Mid.PDT.Haste_35
+    sets.engaged.LowDef.Acc.PDT.Haste_35 = sets.engaged.Acc.PDT.Haste_35
+
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
@@ -451,6 +471,11 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.AccPDT)
     
+    sets.engaged.LowDef.PDT.Haste_30 = sets.engaged.PDT.Haste_30
+    sets.engaged.LowDef.Low.PDT.Haste_30 = sets.engaged.Low.PDT.Haste_30
+    sets.engaged.LowDef.Mid.PDT.Haste_30 = sets.engaged.Mid.PDT.Haste_30
+    sets.engaged.LowDef.Acc.PDT.Haste_30 = sets.engaged.Acc.PDT.Haste_30
+
     -- 25% Haste
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
         ear1="Brutal Earring",
@@ -483,6 +508,11 @@ function init_gear_sets()
     sets.engaged.Low.PDT.Haste_25 = set_combine(sets.engaged.Low.Haste_25, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_25 = set_combine(sets.engaged.Acc.Haste_25, sets.engaged.AccPDT)
+    
+    sets.engaged.LowDef.PDT.Haste_25 = sets.engaged.PDT.Haste_25
+    sets.engaged.LowDef.Low.PDT.Haste_25 = sets.engaged.Low.PDT.Haste_25
+    sets.engaged.LowDef.Mid.PDT.Haste_25 = sets.engaged.Mid.PDT.Haste_25
+    sets.engaged.LowDef.Acc.PDT.Haste_25 = sets.engaged.Acc.PDT.Haste_25
     
     -- 5 - 20% Haste 
     sets.engaged.Haste_20 = set_combine(sets.engaged.Haste_25, {
@@ -520,6 +550,11 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_20 = set_combine(sets.engaged.Acc.Haste_20, sets.engaged.AccPDT)
     
+    sets.engaged.LowDef.PDT.Haste_20 = sets.engaged.PDT.Haste_20
+    sets.engaged.LowDef.Low.PDT.Haste_20 = sets.engaged.Low.PDT.Haste_20
+    sets.engaged.LowDef.Mid.PDT.Haste_20 = sets.engaged.Mid.PDT.Haste_20
+    sets.engaged.LowDef.Acc.PDT.Haste_20 = sets.engaged.Acc.PDT.Haste_20
+    
     sets.buff.Migawari = {body="Iga Ningi +2"}
     
     -- Weaponskills 
@@ -543,6 +578,8 @@ function init_gear_sets()
         hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
     })
+    sets.precast.WS.Low = sets.precast.WS.Mid
+    
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         legs="Wukong's Hakama +1",
         ring1="Ramuh Ring +1"
@@ -558,6 +595,7 @@ function init_gear_sets()
         legs="Wukong's Hakama +1"
     }
     sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
+    sets.precast.WS['Blade: Kamu'].Low = set_combine(sets.precast.WS.Low, sets.Kamu)
     sets.precast.WS['Blade: Kamu'].Mid = set_combine(sets.precast.WS.Mid, sets.Kamu)
     sets.precast.WS['Blade: Kamu'].Acc = set_combine(sets.precast.WS.Acc, sets.Kamu, {waist="Caudata Belt"})
     
@@ -569,6 +607,7 @@ function init_gear_sets()
         back="Yokaze Mantle",
     }
     sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
+    sets.precast.WS['Blade: Jin'].Low = set_combine(sets.precast.WS.Low, sets.Jin)
     sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS.Mid, sets.Jin)
     sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS.Acc, sets.Jin)
     
@@ -586,11 +625,11 @@ function init_gear_sets()
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
+
     sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
         neck="Shadow Gorget",
         back="Yokaze Mantle"
     })
-
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         neck="Shadow Gorget",
         back="Yokaze Mantle"
@@ -612,6 +651,7 @@ function init_gear_sets()
         ring1="Ramuh Ring +1",
     }
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
+    sets.precast.WS['Blade: Shun'].Low = set_combine(sets.precast.WS.Low, sets.Shun)
     sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
     sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
     
@@ -623,6 +663,7 @@ function init_gear_sets()
         back="Yokaze Mantle",
     }
     sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
+    sets.precast.WS['Blade: Rin'].Low = set_combine(sets.precast.WS.Low, sets.Rin)
     sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
     sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin, {waist="Light Belt"})
     
@@ -634,6 +675,7 @@ function init_gear_sets()
         waist="Metalsinger Belt",
     }
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
+    sets.precast.WS['Blade: Ku'].Low = set_combine(sets.precast.WS.Low, sets.Ku)
     sets.precast.WS['Blade: Ku'].Mid = set_combine(sets.precast.WS.Mid, sets.Ku)
     sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS.Acc, sets.Ku)
     
