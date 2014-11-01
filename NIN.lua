@@ -23,6 +23,8 @@ function job_setup()
     select_ammo()
     --wsList = S{}
     state.CapacityMode = M(false, 'Capacity Point Mantle')
+    gear.RegularAmmo = 'Happo Shuriken'
+    gear.SangeAmmo = 'Hachiya Shuriken'
 
     --determine_haste_group()
     update_combat_form()
@@ -254,7 +256,7 @@ end
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    --select_ammo()
+    select_ammo()
     determine_haste_group()
     update_combat_form()
     --select_movement()
