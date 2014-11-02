@@ -72,6 +72,7 @@ function init_gear_sets()
      }
      
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
+         neck="Eddy Necklace",
          head="Otomi Helm",
          ring1="Globidonta Ring",
          back="Aput Mantle"
