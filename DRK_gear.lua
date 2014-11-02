@@ -507,8 +507,8 @@ function init_gear_sets()
      sets.engaged.War.Acc.PDT = set_combine(sets.engaged.War.Acc, sets.Defensive_Acc)
 
      -- Scythe 
-     sets.engaged.Scythe = set_combine(sets.engaged, {
-         ammo="Ginsen",
+     sets.engaged.Scythe = {
+         ammo="Yetshila",
          head="Otomi Helm",
          neck="Asperity Necklace",
          ear1="Brutal Earring",
@@ -521,7 +521,7 @@ function init_gear_sets()
          waist="Windbuffet Belt +1",
          legs="Cizin Breeches +1",
          feet="Ejekamal Boots"
-     })
+     }
      sets.engaged.Scythe.Mid = set_combine(sets.engaged.Scythe, {
          head="Yaoyotl Helm",
          ear2="Zennaroi Earring",
