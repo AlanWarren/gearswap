@@ -157,9 +157,9 @@ end
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.Ammo)
-    if state.Buff['Last Resort'] then
-    	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
-    end
+    --if state.Buff['Last Resort'] then
+    --	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
+    --end
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
