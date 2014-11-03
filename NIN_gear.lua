@@ -627,19 +627,18 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, sets.Hi)
 
     sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
-        neck="Shadow Gorget",
+        neck="Rancor Collar",
         back="Yokaze Mantle"
     })
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
+        head="Ptica Headgear",
         neck="Shadow Gorget",
         back="Yokaze Mantle"
+        legs="Wukong's Hakama +1",
     })
 
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
-        head="Ptica Headgear",
         ear1="Trux Earring",
-        back="Yokaze Mantle",
-        legs="Wukong's Hakama +1",
         waist="Soil Belt"
     })
 
