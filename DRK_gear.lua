@@ -444,7 +444,7 @@ function init_gear_sets()
      	 back="Atheling Mantle",
          waist="Windbuffet Belt +1",
          legs="Xaddi Cuisses",
-         feet="Ejekamal Boots"
+         feet="Mikinaak Greaves"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          head="Yaoyotl Helm",
