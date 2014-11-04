@@ -293,7 +293,7 @@ function init_gear_sets()
         body="Mes'yohi Haubergeon",
         hands="Onimusha-no-kote",
         ring1="Rajas Ring",
-        back="Rancorous Mantle",
+        back="Vellaunus' Mantle +1",
         waist="Windbuffet Belt +1",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
