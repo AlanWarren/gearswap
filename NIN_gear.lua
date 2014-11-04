@@ -633,7 +633,7 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         head="Ptica Headgear",
         neck="Shadow Gorget",
-        back="Yokaze Mantle"
+        back="Yokaze Mantle",
         legs="Wukong's Hakama +1",
     })
 
