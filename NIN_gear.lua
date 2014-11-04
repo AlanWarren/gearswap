@@ -616,7 +616,7 @@ function init_gear_sets()
     sets.Hi = {
         ammo="Yetshila",
         head="Uk'uxkaj Cap",
-        neck="Hope Torque",
+        neck="Shadow Gorget",
         body="Dread Jupon",
         hands="Sasuke Tekko +1",
         ring1="Garuda Ring",
