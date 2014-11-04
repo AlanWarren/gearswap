@@ -289,7 +289,7 @@ function init_gear_sets()
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-        neck="Asperity Necklace",
+        neck="Rancor Collar",
         body="Mes'yohi Haubergeon",
         hands="Onimusha-no-kote",
         ring1="Rajas Ring",
