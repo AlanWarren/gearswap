@@ -157,7 +157,7 @@ function init_gear_sets()
         ring2="Patricius Ring",
     	back="Repulse Mantle",
         waist="Windbuffet Belt +1",
-        legs="Mochizuki Hakama +1",
+        legs="Hachiya Hakama +1",
         feet="Danzo Sune-ate"
      }
 
