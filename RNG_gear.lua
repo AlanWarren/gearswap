@@ -153,7 +153,7 @@ function init_gear_sets()
             back="Sylvan Chlamys",
             waist="Elanid Belt", 
             legs="Nahtirah Trousers",
-            feet="Orion Socks +1"
+            feet="Arcadian Socks +1"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             back="Lutian Cape", legs="Aetosaur Trousers +1"
