@@ -45,7 +45,7 @@ function init_gear_sets()
             head="Umbani Cap",
             neck="Twilight Torque",
             ear1="Volley Earring",
-            ear2="Clearview Earring",
+            ear2="Tripudio Earring",
             body="Mekosuchinae Harness",
             hands="Iuitl Wristbands +1",
             ring1="Dark Ring",
