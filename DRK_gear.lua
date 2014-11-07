@@ -345,6 +345,7 @@ function init_gear_sets()
      }
      
      sets.idle.Field = set_combine(sets.idle.Town, {
+         ammo="Ginsen",
          head="Otomi Helm",
          neck="Bale Choker",
          body="Ares' Cuirass +1",
@@ -356,6 +357,7 @@ function init_gear_sets()
          feet="Fallen's Sollerets +1"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
+         ammo="Ginsen",
          head="Twilight Helm",
          body="Kumarbi's Akar"
      })
