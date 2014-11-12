@@ -113,6 +113,7 @@ function init_gear_sets()
 
      sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
          back="Chuparrosa Mantle",
+         hands="Pavor Gauntlets",
          feet="Black Sollerets"
      })
 
