@@ -151,7 +151,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-        body="Mochizuki Chainmail +1",
+        body="Hachiya Chainmail +1",
         hands="Sasuke Tekko +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
