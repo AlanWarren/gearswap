@@ -151,7 +151,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-        body="Mochizuki Chainmail +1",
+        body="Hachiya Chainmail +1",
         hands="Sasuke Tekko +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
@@ -171,6 +171,7 @@ function init_gear_sets()
         neck="Hope Torque",
         ring1="Ramuh Ring +1",
         ring2="Epona's Ring",
+        body="Mes'yohi Haubergeon",
         hands="Onimusha-no-kote",
         back="Yokaze Mantle"
     })
