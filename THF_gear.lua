@@ -323,7 +323,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Skadi's Cuirie +1",
-        hands="Iuitl Wristbands +1",
+        hands="Plunderer's Armlets +1",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
