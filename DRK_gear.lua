@@ -198,15 +198,23 @@ function init_gear_sets()
          ring1="Rajas Ring",
          waist="Windbuffet Belt +1",
          legs="Scuffler's Cosciales",
-         legs="Ejekamal Boots",
+         feet="Ejekamal Boots",
+     })
+     sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
+         ammo="Ginsen",
+         legs="Ignominy Flanchard +1"
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
+         ammo="Ginsen",
          head="Yaoyotl Helm",
-         hands="Ignominy Gauntlets +1",
-         waist="Caudata Belt",
-         feet="Whirlpool Greaves"
+         waist="Light Belt",
+         legs="Xaddi Cuisses"
      })
-     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, sets.precast.WS.Acc, {waist="Light Belt"})
+     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
+         ear1="Zennaroi Earring",
+         ring1="Mars's Ring",
+         hands="Buremte Gloves"
+     })
 
      -- CROSS REAPER
      -- 60% STR / 60% MND
@@ -512,7 +520,7 @@ function init_gear_sets()
 
      -- Scythe 
      sets.engaged.Scythe = {
-         ammo="Yetshila",
+         ammo="Ginsen",
          head="Otomi Helm",
          neck="Asperity Necklace",
          ear1="Brutal Earring",
@@ -523,20 +531,20 @@ function init_gear_sets()
          ring2="K'ayres Ring",
          back="Atheling Mantle",
          waist="Windbuffet Belt +1",
-         legs="Cizin Breeches +1",
+         legs="Ares' Flanchard +1",
          feet="Ejekamal Boots"
      }
      sets.engaged.Scythe.Mid = set_combine(sets.engaged.Scythe, {
          head="Yaoyotl Helm",
          ear2="Zennaroi Earring",
     	 body="Mes'yohi Haubergeon",
-         ring2="Ramuh Ring +1",
          legs="Xaddi Cuisses"
      })
      sets.engaged.Scythe.Acc = set_combine(sets.engaged.Scythe.Mid, { 
          ear1="Steelflash Earring",
          neck="Iqabi Necklace",
          ring1="Mars's Ring",
+         ring2="Ramuh Ring +1",
          waist="Olseni Belt"
      })
 
