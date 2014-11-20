@@ -384,7 +384,7 @@ function init_gear_sets()
     sets.engaged.Haste_43 = set_combine(sets.engaged, {
         ear1="Trux Earring",
         ear2="Brutal Earring",
-        body="Thaumas Coat",
+        --body="Thaumas Coat",
         back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
     })
