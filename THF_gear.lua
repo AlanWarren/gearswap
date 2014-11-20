@@ -394,7 +394,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
         head="Whirlpool Mask",
-        body="Qaaxo Harness",
+        --body="Qaaxo Harness",
         neck="Rancor Collar",
         hands="Plunderer's Armlets +1",
         ring1="Mars's Ring",
