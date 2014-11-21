@@ -519,5 +519,6 @@ function init_gear_sets()
     sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate +1"}
     
     sets.thirdeye = {head="Unkai Kabuto +2", legs="Sakonji Haidate"}
+    sets.seigan = {hands="Otronif Gloves +1"}
     sets.bow = {ammo=gear.RAarrow}
 end

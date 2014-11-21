@@ -51,6 +51,8 @@ function user_setup()
 	--gear.QDbullet = "Adlivun Bullet"
 	options.ammo_warning_limit = 15
 
+    state.AutoRA = M(false, "AutoRA")
+
     cor_sub_weapons = S{"Arendsi Fleuret", "Vanir Knife", "Sabebus", "Aphotic Kukri", "Atoyac", "Surcouf's Jambiya"}
 
     get_combat_form()
@@ -60,6 +62,7 @@ function user_setup()
 	send_command('bind !` input /ja "Bolter\'s Roll" <me>')
     send_command('bind != gs c toggle CapacityMode')
     
+    send_command('bind ^- gs c toggle AutoRA')
     select_default_macro_book()
 end
 
@@ -69,6 +72,7 @@ function job_file_unload()
 	send_command('unbind ^`')
 	send_command('unbind !=')
 	send_command('unbind !`')
+	send_command('unbind ^-')
 end
 
 -- Define sets and vars used by this job file.
@@ -121,6 +125,9 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 	if spell.type == 'CorsairRoll' and not spell.interrupted then
 		display_roll_info(spell)
 	end
+    if state.AutoRA.value then
+        use_ra(spell)
+    end
 end
 
 
@@ -190,6 +197,11 @@ function display_current_job_state(eventArgs)
     msg = msg .. ', WS.: '..state.WeaponskillMode.current
     msg = msg .. ', QD.: '..state.CastingMode.current
 
+    if state.AutoRA.value then
+        msg = msg .. '[Auto RA: ON]'
+    else
+        msg = msg .. '[Auto RA: OFF]'
+    end
     if state.DefenseMode.value ~= 'None' then
         local defMode = state[state.DefenseMode.value ..'DefenseMode'].current
         msg = msg .. ', Defense: '..state.DefenseMode.value..' '..defMode

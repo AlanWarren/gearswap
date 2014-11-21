@@ -135,6 +135,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         -- Third Eye gearset is only called if we're in PDT mode
         if state.HybridMode.value == 'PDT' or state.PhysicalDefenseMode.value == 'PDT' then
             equip(sets.thirdeye)
+        else
+            equip(sets.seigan)
         end
     end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
@@ -163,6 +165,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.Buff['Seigan'] then
         if state.DefenseMode.value == 'PDT' then
             equip(sets.thirdeye)
+        else
+            equip(sets.seigan)
         end
     end
 end
@@ -187,6 +191,8 @@ function customize_melee_set(meleeSet)
     if state.Buff['Seigan'] then
         if state.DefenseMode.value == 'PDT' then
     	    meleeSet = set_combine(meleeSet, sets.thirdeye)
+        else
+            meleeSet = set_combine(meleeSet, sets.seigan)
         end
     end
     if state.CapacityMode.value then
