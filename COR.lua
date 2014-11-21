@@ -51,9 +51,10 @@ function user_setup()
 	--gear.QDbullet = "Adlivun Bullet"
 	options.ammo_warning_limit = 15
 
-    state.AutoRA = M(false, "AutoRA")
+    state.AutoRA = M{['description']='Auto RA', 'Normal', 'Shoot', 'WS' }
 
     cor_sub_weapons = S{"Arendsi Fleuret", "Vanir Knife", "Sabebus", "Aphotic Kukri", "Atoyac", "Surcouf's Jambiya"}
+    auto_gun_ws = "Wildfire"
 
     get_combat_form()
 	-- Additional local binds
@@ -62,7 +63,7 @@ function user_setup()
 	send_command('bind !` input /ja "Bolter\'s Roll" <me>')
     send_command('bind != gs c toggle CapacityMode')
     
-    send_command('bind ^- gs c toggle AutoRA')
+    send_command('bind ^- gs c cycle AutoRA')
     select_default_macro_book()
 end
 
@@ -83,6 +84,15 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks that are called to process player actions at specific points in time.
 -------------------------------------------------------------------------------------------------------------------
+function job_pretarget(spell, action, spellMap, eventArgs)
+    -- If autora enabled, use WS automatically at 100+ TP
+    if spell.action_type == 'Ranged Attack' then
+        if player.tp >= 1000 and state.AutoRA.value == 'WS' and not buffactive.amnesia then
+            cancel_spell()
+            use_weaponskill()
+        end
+    end
+end 
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
@@ -125,7 +135,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 	if spell.type == 'CorsairRoll' and not spell.interrupted then
 		display_roll_info(spell)
 	end
-    if state.AutoRA.value then
+    if state.AutoRA.value ~= 'Normal' then
         use_ra(spell)
     end
 end
@@ -197,8 +207,8 @@ function display_current_job_state(eventArgs)
     msg = msg .. ', WS.: '..state.WeaponskillMode.current
     msg = msg .. ', QD.: '..state.CastingMode.current
 
-    if state.AutoRA.value then
-        msg = msg .. '[Auto RA: ON]'
+    if state.AutoRA.value ~= 'Normal' then
+        msg = '[Auto RA: ON]['..state.AutoRA.value..']'
     else
         msg = msg .. '[Auto RA: OFF]'
     end
@@ -350,6 +360,43 @@ function do_bullet_checks(spell, spellMap, eventArgs)
 	elseif available_bullets.count > options.ammo_warning_limit and state.warned then
 		state.warned = false
 	end
+end
+
+function use_weaponskill()
+    send_command('input /ws "'..auto_gun_ws..'" <t>')
+end
+
+function use_ra(spell)
+    
+    local delay = '2.2'
+    -- BOW
+    if player.equipment.range == gear.Bow then
+        if spell.type:lower() == 'weaponskill' then
+            delay = '2.25'
+         else
+             if buffactive["Courser's Roll"] then
+                 delay = '0.7' -- MAKE ADJUSTMENT HERE
+             elseif buffactive["Flurry II"] or buffactive.Overkill then
+                 delay = '0.5'
+             else
+                delay = '1.05' -- MAKE ADJUSTMENT HERE
+            end
+        end
+    else
+    -- GUN 
+        if spell.type:lower() == 'weaponskill' then
+            delay = '2.25' 
+        else
+            if buffactive["Courser's Roll"] then
+                delay = '0.7' -- MAKE ADJUSTMENT HERE
+            elseif buffactive.Overkill or buffactive['Flurry II'] then
+                delay = '0.5'
+            else
+                delay = '1.05' -- MAKE ADJUSTMENT HERE
+            end
+        end
+    end
+    send_command('@wait '..delay..'; input /ra <t>')
 end
 
 function select_default_macro_book()
