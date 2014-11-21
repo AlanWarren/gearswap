@@ -366,34 +366,27 @@ function use_weaponskill()
     send_command('input /ws "'..auto_gun_ws..'" <t>')
 end
 
+function job_state_change(stateField, newValue, oldValue)
+    if stateField == 'Auto RA' then
+        if newValue ~= 'Normal' then
+            send_command('@wait 2.5; input /ra <t>')
+        end
+    end
+end
+
 function use_ra(spell)
     
     local delay = '2.2'
-    -- BOW
-    if player.equipment.range == gear.Bow then
-        if spell.type:lower() == 'weaponskill' then
-            delay = '2.25'
-         else
-             if buffactive["Courser's Roll"] then
-                 delay = '0.7' -- MAKE ADJUSTMENT HERE
-             elseif buffactive["Flurry II"] or buffactive.Overkill then
-                 delay = '0.5'
-             else
-                delay = '1.05' -- MAKE ADJUSTMENT HERE
-            end
-        end
-    else
     -- GUN 
-        if spell.type:lower() == 'weaponskill' then
-            delay = '2.25' 
+    if spell.type:lower() == 'weaponskill' then
+        delay = '2.25' 
+    else
+        if buffactive["Courser's Roll"] then
+            delay = '0.7' -- MAKE ADJUSTMENT HERE
+        elseif buffactive['Flurry II'] then
+            delay = '0.5'
         else
-            if buffactive["Courser's Roll"] then
-                delay = '0.7' -- MAKE ADJUSTMENT HERE
-            elseif buffactive.Overkill or buffactive['Flurry II'] then
-                delay = '0.5'
-            else
-                delay = '1.05' -- MAKE ADJUSTMENT HERE
-            end
+            delay = '1.05' -- MAKE ADJUSTMENT HERE
         end
     end
     send_command('@wait '..delay..'; input /ra <t>')

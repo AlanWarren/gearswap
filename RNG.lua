@@ -458,6 +458,14 @@ function use_weaponskill()
     end
 end
 
+function job_state_change(stateField, newValue, oldValue)
+    if stateField == 'Auto RA' then
+        if newValue ~= 'Normal' then
+            send_command('@wait 2.5; input /ra <t>')
+        end
+    end
+end
+
 function use_ra(spell)
     
     local delay = '2.2'
