@@ -198,6 +198,29 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'].Mid, {neck="Shadow Gorget"})
 	sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'].Mid, {neck="Shadow Gorget"})
 	sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mid, {neck="Shadow Gorget"})
+	
+    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
+        head="Uk'uxkaj Cap",
+        neck="Moepapa Medal",
+        hands="Pillager's Armlets +1",
+        ring1="Ramuh Ring +1",
+        waist="Windbuffet Buffet +1",
+        legs="Pillager's Culottes +1",
+        back="Atheling Mantle",
+        feet="Plunderer's Poulaines"
+    })
+	sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {back="Canny Cape"})
+	sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
+        head="Whirlpool Mask",
+        hands="Plunderer's Armlets +1",
+        ring1="Rajas Ring",
+        ring2="Ramuh Ring +1",
+        back="Canny Cape",
+        waist="Olseni Belt"
+    })
+	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
+	sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
+	sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
 
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Uk'uxkaj Cap", neck="Breeze Gorget",
 		ear1="Brutal Earring",ear2="Trux Earring", hands="Pillager's Armlets +1", ring1="Ramuh Ring +1", ring2="Rajas Ring",
