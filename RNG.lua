@@ -72,7 +72,7 @@ function user_setup()
         -- settings
         state.CapacityMode = M(false, 'Capacity Point Mantle')
 
-        state.AutoRA = M(false, "AutoRA")
+        state.AutoRA = M{['description']='Auto RA', 'Normal', 'Shoot', 'WS' }
         auto_gun_ws = "Coronach"
         auto_bow_ws = "Namas Arrow"
 
@@ -107,7 +107,7 @@ function user_setup()
         send_command('bind !f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
         send_command('bind ^] gs c cycle WeaponskillMode')
-        send_command('bind ^- gs c toggle AutoRA')
+        send_command('bind ^- gs c cycle AutoRA')
         send_command('bind ^[ input /lockstyle on')
         send_command('bind ![ input /lockstyle off')
         
@@ -134,7 +134,7 @@ end
 function job_pretarget(spell, action, spellMap, eventArgs)
     -- If autora enabled, use WS automatically at 100+ TP
     if spell.action_type == 'Ranged Attack' then
-        if player.tp >= 1000 and state.AutoRA.value and not buffactive.amnesia then
+        if player.tp >= 1000 and state.AutoRA.value == 'WS' and not buffactive.amnesia then
             cancel_spell()
             use_weaponskill()
         end
@@ -230,7 +230,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
     -- autora
-    if state.AutoRA.value then
+    if state.AutoRA.value ~= 'Normal' then
         use_ra(spell)
     end
 
@@ -390,8 +390,8 @@ end
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
     local msg = ''
-    if state.AutoRA.value then
-        msg = '[Auto RA: ON]'
+    if state.AutoRA.value ~= 'Normal' then
+        msg = '[Auto RA: ON]['..state.AutoRA.value..']'
     else
         msg = '[Auto RA: OFF]'
     end
@@ -455,6 +455,14 @@ function use_weaponskill()
         send_command('input /ws "'..auto_bow_ws..'" <t>')
     elseif player.equipment.range == gear.Gun then
         send_command('input /ws "'..auto_gun_ws..'" <t>')
+    end
+end
+
+function job_state_change(stateField, newValue, oldValue)
+    if stateField == 'Auto RA' then
+        if newValue ~= 'Normal' then
+            send_command('@wait 2.5; input /ra <t>')
+        end
     end
 end
 
