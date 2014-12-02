@@ -213,7 +213,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         back="Vellaunus' Mantle +1",
-        waist="Patentia Sash",
+        waist="Shetal Stone",
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
