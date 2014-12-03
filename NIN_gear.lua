@@ -213,7 +213,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         back="Vellaunus' Mantle +1",
-        waist="Patentia Sash",
+        waist="Shetal Stone",
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
@@ -295,7 +295,7 @@ function init_gear_sets()
         body="Mes'yohi Haubergeon",
         hands="Onimusha-no-kote",
         ring1="Rajas Ring",
-        back="Rancorous Mantle",
+        back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
@@ -410,7 +410,7 @@ function init_gear_sets()
     sets.engaged.LowDef.Haste_35 = set_combine(sets.engaged.LowDef.Haste_40, {
         head="Ptica Headgear",
         neck="Asperity Necklace",
-        back="Rancorous Mantle",
+        back="Bleating Mantle",
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     })
@@ -441,7 +441,7 @@ function init_gear_sets()
         hands="Onimusha-no-kote",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
-        back="Rancorous Mantle",
+        back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1",

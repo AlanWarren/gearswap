@@ -81,7 +81,7 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	sets.precast.FC = {
-        ammo="Impatiens",
+        --ammo="Impatiens",
         ear1="Loquacious Earring",
         hands="Buremte Gloves",
         body="Dread Jupon",
@@ -198,6 +198,29 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'].Mid, {neck="Shadow Gorget"})
 	sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'].Mid, {neck="Shadow Gorget"})
 	sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mid, {neck="Shadow Gorget"})
+	
+    sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
+        head="Uk'uxkaj Cap",
+        neck="Moepapa Medal",
+        hands="Pillager's Armlets +1",
+        ring1="Ramuh Ring +1",
+        waist="Windbuffet Buffet +1",
+        legs="Pillager's Culottes +1",
+        back="Atheling Mantle",
+        feet="Plunderer's Poulaines"
+    })
+	sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {back="Canny Cape"})
+	sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
+        head="Whirlpool Mask",
+        hands="Plunderer's Armlets +1",
+        ring1="Rajas Ring",
+        ring2="Ramuh Ring +1",
+        back="Canny Cape",
+        waist="Olseni Belt"
+    })
+	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
+	sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
+	sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
 
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Uk'uxkaj Cap", neck="Breeze Gorget",
 		ear1="Brutal Earring",ear2="Trux Earring", hands="Pillager's Armlets +1", ring1="Ramuh Ring +1", ring2="Rajas Ring",
@@ -327,7 +350,7 @@ function init_gear_sets()
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
-        waist="Patentia Sash",
+        waist="Shetal Stone",
         legs="Pillager's Culottes +1",
         feet="Plunderer's Poulaines"
     }
@@ -338,7 +361,7 @@ function init_gear_sets()
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
-		body="Dread Jupon",
+		body="Mekosuchinae Harness",
         hands="Buremte Gloves",
         waist="Olseni Belt",
         feet="Qaaxo Leggings"
@@ -384,7 +407,7 @@ function init_gear_sets()
     sets.engaged.Haste_43 = set_combine(sets.engaged, {
         ear1="Trux Earring",
         ear2="Brutal Earring",
-        body="Thaumas Coat",
+        --body="Thaumas Coat",
         back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
     })
@@ -394,7 +417,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
         head="Whirlpool Mask",
-        body="Qaaxo Harness",
+		body="Mekosuchinae Harness",
         neck="Rancor Collar",
         hands="Plunderer's Armlets +1",
         ring1="Mars's Ring",
