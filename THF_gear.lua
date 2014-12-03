@@ -350,7 +350,7 @@ function init_gear_sets()
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
-        waist="Patentia Sash",
+        waist="Shetal Stone",
         legs="Pillager's Culottes +1",
         feet="Plunderer's Poulaines"
     }
