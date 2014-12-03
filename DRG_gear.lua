@@ -21,7 +21,7 @@ function init_gear_sets()
         hands="Xaddi Gauntlets",
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
-		back="Atheling Mantle",
+		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Scuffler's Cosciales",
         feet="Cizin Greaves +1"
@@ -69,7 +69,7 @@ function init_gear_sets()
 	sets.precast.Waltz = {
 		head="Yaoyotl Helm",
 		body="Mikinaak Breastplate",hands="Cizin Mufflers +1",ring1="Rajas Ring",
-		back="Atheling Mantle",legs="Xaddi Cuisses",feet="Whirlpool Greaves"}
+		back="Bleating Mantle",legs="Xaddi Cuisses",feet="Whirlpool Greaves"}
 		
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
@@ -178,7 +178,7 @@ function init_gear_sets()
         hands="Cizin Mufflers +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
-		back="Shadow Mantle",
+		back="Repulse Mantle",
         legs="Crimson Cuisses",
         feet="Whirlpool Greaves"
     }
@@ -198,7 +198,7 @@ function init_gear_sets()
         hands="Ares' Gauntlets +1",
         ring1="Patricius Ring",
         ring2="Oneiros Ring",
-		back="Atheling Mantle",
+		back="Bleating Mantle",
         waist="Metalsinger Belt",
         legs="Crimson Cuisses",
         feet="Cizin Greaves +1"
@@ -268,7 +268,7 @@ function init_gear_sets()
         hands="Xaddi Gauntlets",
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
-        back="Atheling Mantle",
+        back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Xaddi Cuisses",
         feet="Ejekamal Boots"

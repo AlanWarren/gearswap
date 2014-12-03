@@ -452,7 +452,7 @@ function init_gear_sets()
          hands="Cizin Mufflers +1",
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
-     	 back="Atheling Mantle",
+     	 back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Xaddi Cuisses",
          feet="Mikinaak Greaves"
@@ -529,7 +529,7 @@ function init_gear_sets()
          hands="Xaddi Gauntlets",
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
-         back="Atheling Mantle",
+         back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Ares' Flanchard +1",
          feet="Ejekamal Boots"
@@ -552,7 +552,8 @@ function init_gear_sets()
          head="Yaoyotl Helm",
          ear2="Tripudio Earring",
          hands="Cizin Mufflers +1",
-         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
+         --back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
+         back="Bleating Mantle",
          legs="Ares' Flanchard +1",
          feet="Mikinaak Greaves"
      })
