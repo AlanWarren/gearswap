@@ -16,7 +16,7 @@ function init_gear_sets()
         hands="Pillager's Armlets +1",
         ring1="Ramuh Ring",
         ring2="Ramuh Ring +1",
-		back="Atheling Mantle",
+		back="Bleating Mantle",
         waist="Chaac Belt",
         legs="Pillager's Culottes +1",
         feet="Raider's Poulaines +2"
@@ -125,7 +125,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
-		back="Atheling Mantle",
+		back="Bleating Mantle",
         waist="Elanid Belt",
         legs="Pillager's Culottes +1",
         feet="Qaaxo Leggings"
@@ -183,7 +183,7 @@ function init_gear_sets()
         ring1="Ramuh Ring +1",
         waist="Light Belt",
         legs="Pillager's Culottes +1",
-        back="Atheling Mantle",
+        back="Bleating Mantle",
         feet="Plunderer's Poulaines"
     })
 	sets.precast.WS['Evisceration'].Mid = set_combine(sets.precast.WS['Evisceration'], {back="Canny Cape"})
@@ -206,7 +206,7 @@ function init_gear_sets()
         ring1="Ramuh Ring +1",
         waist="Windbuffet Buffet +1",
         legs="Pillager's Culottes +1",
-        back="Atheling Mantle",
+        back="Bleating Mantle",
         feet="Plunderer's Poulaines"
     })
 	sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {back="Canny Cape"})
@@ -325,7 +325,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Dark Ring",
         ring2="Epona's Ring",
-		back="Atheling Mantle",
+		back="Bleating Mantle",
         legs="Nahtirah Trousers",
         feet="Qaaxo Leggings"
     }
@@ -408,7 +408,7 @@ function init_gear_sets()
         ear1="Trux Earring",
         ear2="Brutal Earring",
         --body="Thaumas Coat",
-        back="Rancorous Mantle",
+        back="Bleating Mantle",
         waist="Windbuffet Belt +1",
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
