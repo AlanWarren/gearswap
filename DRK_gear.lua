@@ -531,7 +531,7 @@ function init_gear_sets()
          ring2="K'ayres Ring",
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
-         legs="Ares' Flanchard +1",
+         legs="Cizin Breeches +1",
          feet="Ejekamal Boots"
      }
      sets.engaged.Scythe.Mid = set_combine(sets.engaged.Scythe, {
