@@ -339,7 +339,7 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Ignominy burgeonet +1",
+         head="Baghere Salade",
          neck="Agitator's Collar",
          ear1="Brutal Earring",
          ear2="Trux Earring",
@@ -355,7 +355,7 @@ function init_gear_sets()
      
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
-         head="Otomi Helm",
+         head="Baghere Salade",
          neck="Bale Choker",
          body="Ares' Cuirass +1",
          hands="Cizin Mufflers +1",
@@ -367,7 +367,7 @@ function init_gear_sets()
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
          ammo="Ginsen",
-         head="Twilight Helm",
+         head="Baghere Salade",
          body="Kumarbi's Akar"
      })
  
