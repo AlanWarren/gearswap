@@ -237,19 +237,14 @@ function job_buff_change(buff, gain)
     if S{'aftermath'}:contains(buff:lower()) then
         classes.CustomMeleeGroups:clear()
        
-        if buffactive.Aftermath and gain then
-
-            if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
-                classes.CustomMeleeGroups:clear()
-            elseif player.equipment.main == 'Kogarasumaru' then
-                if buff == "Aftermath: Lv.3" and gain or buffactive['Aftermath: Lv.3'] then
-                    classes.CustomMeleeGroups:append('AM3')
-                else
-                    classes.CustomMeleeGroups:append('AM')
-                end
-            else
-                classes.CustomMeleeGroups:append('AM')
+        if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
+            classes.CustomMeleeGroups:clear()
+        elseif player.equipment.main == 'Kogarasumaru'  then
+            if buff == "Aftermath: Lv.3" and gain or buffactive['Aftermath: Lv.3'] then
+                classes.CustomMeleeGroups:append('AM3')
             end
+        elseif buff == "Aftermath" and gain or buffactive.Aftermath then
+            classes.CustomMeleeGroups:append('AM')
         end
     end
     
@@ -290,8 +285,6 @@ function get_combat_weapon()
         else
             state.CombatWeapon:set('Yoichi')
         end
-    elseif player.equipment.main == 'Windslicer' then
-        state.CombatWeapon:set('Windslicer')
     else
         state.CombatWeapon:set(player.equipment.main)
     end
@@ -310,17 +303,15 @@ end
 function update_melee_groups()
     classes.CustomMeleeGroups:clear()
 
-    if buffactive.Aftermath then
-        if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
-            -- prevents using Amano AM while overriding it with Yoichi AM
-            classes.CustomMeleeGroups:clear()
-        elseif player.equipment.main == 'Kogarasumaru' then
-            if buffactive['Aftermath: Lv.3'] then
-                classes.CustomMeleeGroups:append('AM3')
-            else
-                classes.CustomMeleeGroups:append('AM')
-            end
-        else
+    if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
+        -- prevents using Amano AM while overriding it with Yoichi AM
+        classes.CustomMeleeGroups:clear()
+    elseif player.equipment.main == 'Kogarasumaru' then
+        if buffactive['Aftermath: Lv.3'] then
+            classes.CustomMeleeGroups:append('AM3')
+        end
+    else
+        if buffactive['Aftermath'] then
             classes.CustomMeleeGroups:append('AM')
         end
     end
