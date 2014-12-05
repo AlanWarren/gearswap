@@ -38,7 +38,7 @@ function init_gear_sets()
     sets.TreasureHunter = { waist="Chaac Belt" }
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
-    sets.WSBack         = { head="Trepidity Mantle" }
+    sets.WSBack         = { back="Trepidity Mantle" }
     sets.Rajas          = { ring1="Rajas Ring" }
 
     sets.RegularAmmo    = { ammo=gear.RegularAmmo }
@@ -617,8 +617,8 @@ function init_gear_sets()
 
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
         ammo="Yetshila",
-        head="Uk'uxkaj Cap",
         neck="Shadow Gorget",
+        head="Uk'uxkaj Cap",
         body="Dread Jupon",
         hands="Sasuke Tekko +1",
         ring1="Garuda Ring",
