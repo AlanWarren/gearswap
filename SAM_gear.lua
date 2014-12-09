@@ -258,11 +258,6 @@ function init_gear_sets()
     -- If you create a set with both offense and defense modes, the offense mode should be first.
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
-    -- Normal melee group 
-    -- 4-hit
-    -- Tsurumaru needs 49 stp w/ ionis 
-    -- Anahera needs 52 stp anywhere 
-    
     -- I generally use Anahera outside of Adoulin areas, so this set aims for 47 STP + 5 from Anahera (52 total)
     -- Note, this set assumes use of Cibitshavore (hence the arrow as ammo)
     sets.engaged = {
