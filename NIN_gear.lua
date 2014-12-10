@@ -604,7 +604,7 @@ function init_gear_sets()
     -- BLADE: JIN
     sets.Jin = {
         ammo="Yetshila",
-        neck="Rancor Collar",
+        neck="Breeze Gorget",
         waist="Thunder Belt",
         back="Yokaze Mantle",
     }
@@ -673,7 +673,7 @@ function init_gear_sets()
         head="Whirlpool Mask",
         ear2="Trux Earring",
         neck="Shadow Gorget",
-        waist="Metalsinger Belt",
+        waist="Soil Belt",
     }
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
     sets.precast.WS['Blade: Ku'].Low = set_combine(sets.precast.WS.Low, sets.Ku)
