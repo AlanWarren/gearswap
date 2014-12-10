@@ -679,11 +679,18 @@ function init_gear_sets()
     sets.precast.WS['Blade: Ku'].Low = set_combine(sets.precast.WS.Low, sets.Ku)
     sets.precast.WS['Blade: Ku'].Mid = set_combine(sets.precast.WS.Mid, sets.Ku)
     sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS.Acc, sets.Ku)
+    
+    sets.Ten = {
+        head="Whirlpool Mask",
+        ear2="Trux Earring",
+        neck="Shadow Gorget",
+        waist="Windbuffet Belt +1",
+    }
 
-    sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, sets.Ku)
-    sets.precast.WS['Blade: Ten'].Low = set_combine(sets.precast.WS.Low, sets.Ku)
-    sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS.Mid, sets.Ku)
-    sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS.Acc, sets.Ku)
+    sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, sets.Ten)
+    sets.precast.WS['Blade: Ten'].Low = set_combine(sets.precast.WS.Low, sets.Ten)
+    sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS.Mid, sets.Ten)
+    sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS.Acc, sets.Ten)
     
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
         head="Umbani Cap",
