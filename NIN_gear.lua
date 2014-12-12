@@ -172,7 +172,6 @@ function init_gear_sets()
         ring1="Ramuh Ring +1",
         ring2="Epona's Ring",
         body="Mes'yohi Haubergeon",
-        hands="Mochizuki Tekko +1",
         back="Yokaze Mantle"
     })
     
