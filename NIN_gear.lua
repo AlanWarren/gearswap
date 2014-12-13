@@ -152,7 +152,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Hachiya Chainmail +1",
-        hands="Sasuke Tekko +1",
+        hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
     	back="Repulse Mantle",
