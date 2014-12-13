@@ -149,7 +149,7 @@ function init_gear_sets()
         ammo=gear.RegularAmmo,
         head="Ptica Headgear",
         neck="Twilight Torque",
-        ear1="Brutal Earring",
+        ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Hachiya Chainmail +1",
         hands="Sasuke Tekko +1",
