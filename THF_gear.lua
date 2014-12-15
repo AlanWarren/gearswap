@@ -200,7 +200,7 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mid, {neck="Shadow Gorget"})
 	
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-        head="Uk'uxkaj Cap",
+        head="Whirlpool Mask",
         neck="Moepapa Medal",
         hands="Pillager's Armlets +1",
         body="Dread Jupon",
