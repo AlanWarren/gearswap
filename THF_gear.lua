@@ -203,6 +203,7 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         neck="Moepapa Medal",
         hands="Pillager's Armlets +1",
+        body="Dread Jupon",
         ring1="Ramuh Ring +1",
         waist="Windbuffet Buffet +1",
         legs="Pillager's Culottes +1",
