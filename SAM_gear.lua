@@ -200,7 +200,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ring1="Patricius Ring",
         ring2="Paguroidea Ring",
-        head="Ptica Headgear",
+        head="Yaoyotl Helm",
    	    body="Mes'yohi Haubergeon",
         back="Repulse Mantle",
         feet="Danzo Sune-ate"
