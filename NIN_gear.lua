@@ -645,6 +645,7 @@ function init_gear_sets()
 
     -- BLADE: SHUN
     sets.Shun = {
+        head="Gavialis Helm",
         neck="Flame Gorget",
         waist="Light Belt",
         back="Yokaze Mantle",
@@ -669,7 +670,7 @@ function init_gear_sets()
     
     -- BLADE: KU 
     sets.Ku = {
-        head="Whirlpool Mask",
+        head="Gavialis Helm",
         ear2="Trux Earring",
         neck="Shadow Gorget",
         waist="Soil Belt",
