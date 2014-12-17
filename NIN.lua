@@ -2,7 +2,6 @@
 -- Initialization function that defines sets and variables to be used.
 -------------------------------------------------------------------------------------------------------------------
 -- gs c toggle hastemode -- Toggles whether or not you're getting Haste II
-
 function get_sets()
     mote_include_version = 2
     include('Mote-Include.lua')
@@ -57,6 +56,15 @@ function user_setup()
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c cycle HasteMode')
     send_command('bind @= gs c cycle MobDefenseMode')
+    
+    -- auto ws
+    --windower.register_event('tp change', autoHi)
+    --windower.register_event('tp change', function(new, old)
+    --    if player.tp >= 1000 then
+    --        --
+    --    end
+    --end)
+
 end
 
 
