@@ -206,7 +206,7 @@ function init_gear_sets()
         body="Dread Jupon",
         ring1="Ramuh Ring +1",
         waist="Windbuffet Buffet +1",
-        legs="Pillager's Culottes +1",
+        legs="Manibozho Brais",
         back="Bleating Mantle",
         feet="Plunderer's Poulaines"
     })
