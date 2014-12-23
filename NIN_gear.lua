@@ -171,6 +171,7 @@ function init_gear_sets()
         neck="Hope Torque",
         ring1="Ramuh Ring +1",
         ring2="Epona's Ring",
+        hands="Sasuke Tekko +1",
         body="Mes'yohi Haubergeon",
         back="Yokaze Mantle"
     })
