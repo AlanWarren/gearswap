@@ -211,7 +211,8 @@ function init_gear_sets()
         hands="Onimusha-no-kote",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
-        back="Vellaunus' Mantle +1",
+        --back="Vellaunus' Mantle +1",
+        back="Bleating Mantle",
         waist="Shetal Stone",
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
@@ -517,13 +518,15 @@ function init_gear_sets()
     
     -- 5 - 20% Haste 
     sets.engaged.Haste_20 = set_combine(sets.engaged.Haste_25, {
-        back="Vellaunus' Mantle +1",
+        --back="Vellaunus' Mantle +1",
+        back="Bleating Mantle",
         waist="Patentia Sash"
     })
     sets.engaged.Low.Haste_20 = set_combine(sets.engaged.Low.Haste_25, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        back="Vellaunus' Mantle +1",
+        back="Bleating Mantle",
+        --back="Vellaunus' Mantle +1",
         waist="Patentia Sash"
     })
     sets.engaged.Mid.Haste_20 = set_combine(sets.engaged.Mid.Haste_25, {
@@ -536,11 +539,13 @@ function init_gear_sets()
     })
     
     sets.engaged.LowDef.Haste_20 = set_combine(sets.engaged.LowDef.Haste_25, {
-        back="Vellaunus' Mantle +1",
+        back="Bleating Mantle",
+        --back="Vellaunus' Mantle +1",
         waist="Patentia Sash"
     })
     sets.engaged.LowDef.Low.Haste_20 = set_combine(sets.engaged.LowDef.Low.Haste_25, {
-        back="Vellaunus' Mantle +1",
+        back="Bleating Mantle",
+        --back="Vellaunus' Mantle +1",
         waist="Patentia Sash"
     })
     sets.engaged.LowDef.Mid.Haste_20 = sets.engaged.Mid.Haste_20
