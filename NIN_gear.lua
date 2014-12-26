@@ -151,7 +151,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
-        body="Hachiya Chainmail +1",
+        body="Mochizuki Chainmail +1",
         hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
