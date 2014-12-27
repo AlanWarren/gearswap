@@ -339,12 +339,12 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Baghere Salade",
+         head="Ignominy Burgeonet +1",
          neck="Agitator's Collar",
          ear1="Brutal Earring",
          ear2="Trux Earring",
-    	 body="Ares' Cuirass +1",
-         hands="Ares' Gauntlets +1",
+    	 body="Mes'yohi Haubergeon",
+         hands="Ignominy Gauntlets +1",
          ring1="Ramuh Ring +1",
          ring2="K'ayres Ring",
          back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
