@@ -252,7 +252,7 @@ end
 
 function get_combat_weapon()
     if scytheList:contains(player.equipment.main) then
-        add_to_chat(122, "Scythe Mode")
+        --add_to_chat(122, "Scythe Mode")
         state.CombatWeapon:set("Scythe")
     elseif gsList:contains(player.equipment.main) then
         state.CombatWeapon:set("LDGS")
