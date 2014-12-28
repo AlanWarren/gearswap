@@ -197,6 +197,7 @@ function init_gear_sets()
          neck="Shadow Gorget",
          ring1="Rajas Ring",
          waist="Windbuffet Belt +1",
+         back="Bleating Mantle",
          legs="Scuffler's Cosciales",
          feet="Ejekamal Boots",
      })
@@ -208,6 +209,11 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Yaoyotl Helm",
          waist="Light Belt",
+         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
+         legs="Xaddi Cuisses"
+     })
+     sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {
+         ammo="Ginsen",
          legs="Xaddi Cuisses"
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
@@ -215,6 +221,7 @@ function init_gear_sets()
          ring1="Mars's Ring",
          hands="Buremte Gloves"
      })
+     sets.precast.WS.Insurgency.Acc.AM3 = sets.precast.WS.Insurgency.Acc
 
      -- CROSS REAPER
      -- 60% STR / 60% MND
@@ -526,7 +533,7 @@ function init_gear_sets()
          ear1="Brutal Earring",
          ear2="Trux Earring",
     	 body="Xaddi Mail",
-         hands="Xaddi Gauntlets",
+         hands="Cizin Mufflers +1",
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
          back="Bleating Mantle",
@@ -536,12 +543,14 @@ function init_gear_sets()
      }
      sets.engaged.Scythe.Mid = set_combine(sets.engaged.Scythe, {
          head="Yaoyotl Helm",
-         ear2="Zennaroi Earring",
+         ear1="Bladeborn Earring",
+         ear2="Steelflash Earring",
+         hands="Xaddi Gauntlets",
     	 body="Mes'yohi Haubergeon",
-         legs="Xaddi Cuisses"
      })
      sets.engaged.Scythe.Acc = set_combine(sets.engaged.Scythe.Mid, { 
          ear1="Steelflash Earring",
+         ear2="Zennaroi Earring",
          neck="Iqabi Necklace",
          ring1="Mars's Ring",
          ring2="Ramuh Ring +1",
