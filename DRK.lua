@@ -295,7 +295,7 @@ function select_default_macro_book()
 	    if player.sub_job == 'DNC' then
 	    	set_macro_page(6, 2)
 	    elseif player.sub_job == 'SAM' then
-	    	set_macro_page(6, 4)
+	    	set_macro_page(7, 4)
 	    else
 	    	set_macro_page(6, 2)
 	    end
