@@ -138,7 +138,7 @@ function init_gear_sets()
          ear2="Moonshade Earring",
          body="Fallen's Cuirass +1",
          hands="Mikinaak Gauntlets",
-         ring1="Pyrosoul Ring",
+         ring1="Rajas Ring",
          ring2="Ifrit Ring",
          back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          waist="Windbuffet Belt +1",
@@ -319,7 +319,7 @@ function init_gear_sets()
          head="Ighwa Cap",
          neck="Shadow Gorget",
          hands="Umuthi Gloves",
-         back="Atheling Mantle",
+         back="Bleating Mantle",
          waist="Soil Belt",
          feet="Whirlpool Greaves"
      })
@@ -377,7 +377,7 @@ function init_gear_sets()
          body="Twilight Mail",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
-         back="Atheling Mantle",
+         back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
          feet="Fallen's Sollerets +1"
