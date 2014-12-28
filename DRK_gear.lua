@@ -67,7 +67,7 @@ function init_gear_sets()
          ring1="Perception Ring",
          ring2="Sangoma Ring",
          back={name="Niht Mantle", augments={'Attack +7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}},
-         legs="Bale Flanchard +2",
+         legs="Fallen's Flanchard",
          feet="Ignominy sollerets"
      }
      
