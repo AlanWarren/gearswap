@@ -17,6 +17,7 @@ function init_gear_sets()
      sets.CapacityMantle = { back="Mecistopins Mantle" }
      sets.Berserker      = { neck="Berserker's Torque" }
      sets.WSDayBonus     = { head="Gavialis Helm" }
+     sets.WSBack         = { back="Trepidity Mantle" }
  
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {
@@ -446,60 +447,41 @@ function init_gear_sets()
          feet="Cizin Greaves +1"
      }
  
-     -- Engaged set 
-     -- Crobaci +2 = needs 35 STP TP &  24 STP in WS
+     -- Engaged set, assumes Liberator
      sets.engaged = {
-         --sub="Bloodrain Strap",
          ammo="Ginsen",
-     	 head="Otomi Helm",
-         neck="Asperity Necklace", 
+         head="Otomi Helm",
+         neck="Asperity Necklace",
          ear1="Brutal Earring",
          ear2="Trux Earring",
-     	 body="Xaddi Mail",
+    	 body="Xaddi Mail",
          hands="Cizin Mufflers +1",
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
-     	 back="Bleating Mantle",
+         back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Xaddi Cuisses",
-         feet="Mikinaak Greaves"
+         feet="Ejekamal Boots"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          head="Yaoyotl Helm",
-         ear1="Brutal Earring",
-         ear2="Tripudio Earring",
-    	 body="Mes'yohi Haubergeon",
+         ear1="Bladeborn Earring",
+         ear2="Steelflash Earring",
          hands="Xaddi Gauntlets",
-         feet="Mikinaak Greaves"
+    	 body="Mes'yohi Haubergeon",
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-         neck="Iqabi Necklace",
          ear1="Steelflash Earring",
          ear2="Zennaroi Earring",
+         neck="Iqabi Necklace",
          ring1="Mars's Ring",
-         waist="Olseni Belt",
-         feet="Ejekamal Boots"
+         ring2="Ramuh Ring +1",
+         waist="Olseni Belt"
      })
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
      
-     -- lower delay greatswords
-     sets.engaged.LDGS = set_combine(sets.engaged, {
-         head="Yaoyotl Helm",
-         feet="Mikinaak Greaves"
-     })
-     sets.engaged.LDGS.Mid = set_combine(sets.engaged.LDGS, {
-         ear1="Bladeborn Earring",
-         ear2="Steelflash Earring",
-         body="Mes'yohi Haubergeon"
-     })
-     sets.engaged.LDGS.Acc = sets.engaged.Acc
-     sets.engaged.LDGS.PDT = set_combine(sets.engaged.LDGS, sets.Defensive)
-     sets.engaged.LDGS.Mid.PDT = set_combine(sets.engaged.LDGS.Mid, sets.Defensive_Mid)
-     sets.engaged.LDGS.Acc.PDT = sets.engaged.Acc.PDT
-
-     -- GS war sub 
      sets.engaged.War = set_combine(sets.engaged, {
          ear1="Brutal Earring",
          ear2="Tripudio Earring",
@@ -525,39 +507,7 @@ function init_gear_sets()
      sets.engaged.War.Mid.PDT = set_combine(sets.engaged.War.Mid, sets.Defensive_Mid)
      sets.engaged.War.Acc.PDT = set_combine(sets.engaged.War.Acc, sets.Defensive_Acc)
 
-     -- Scythe 
-     sets.engaged.Scythe = {
-         ammo="Ginsen",
-         head="Otomi Helm",
-         neck="Asperity Necklace",
-         ear1="Brutal Earring",
-         ear2="Trux Earring",
-    	 body="Xaddi Mail",
-         hands="Cizin Mufflers +1",
-         ring1="Rajas Ring",
-         ring2="K'ayres Ring",
-         back="Bleating Mantle",
-         waist="Windbuffet Belt +1",
-         legs="Xaddi Cuisses",
-         feet="Ejekamal Boots"
-     }
-     sets.engaged.Scythe.Mid = set_combine(sets.engaged.Scythe, {
-         head="Yaoyotl Helm",
-         ear1="Bladeborn Earring",
-         ear2="Steelflash Earring",
-         hands="Xaddi Gauntlets",
-    	 body="Mes'yohi Haubergeon",
-     })
-     sets.engaged.Scythe.Acc = set_combine(sets.engaged.Scythe.Mid, { 
-         ear1="Steelflash Earring",
-         ear2="Zennaroi Earring",
-         neck="Iqabi Necklace",
-         ring1="Mars's Ring",
-         ring2="Ramuh Ring +1",
-         waist="Olseni Belt"
-     })
-
-     sets.engaged.Scythe.AM3 = set_combine(sets.engaged.Scythe, {
+     sets.engaged.AM3 = set_combine(sets.engaged.Scythe, {
          head="Yaoyotl Helm",
          ear2="Tripudio Earring",
          hands="Cizin Mufflers +1",
@@ -566,7 +516,7 @@ function init_gear_sets()
          legs="Ares' Flanchard +1",
          feet="Mikinaak Greaves"
      })
-     sets.engaged.Scythe.Mid.AM3 = set_combine(sets.engaged.Scythe.AM3, {
+     sets.engaged.Mid.AM3 = set_combine(sets.engaged.Scythe.AM3, {
          neck="Iqabi Necklace",
          ear1="Zennaroi Earring",
          body="Mes'yohi Haubergeon",
@@ -574,48 +524,16 @@ function init_gear_sets()
          legs="Ares' Flanchard +1",
          feet="Ejekamal Boots"
      })
-     sets.engaged.Scythe.Acc.AM3 = set_combine(sets.engaged.Scythe.Mid.AM3, {
+     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Scythe.Mid.AM3, {
          ear2="Steelflash Earring",
          ring2="Ramuh Ring +1",
          waist="Olseni Belt"
      })
 
-     sets.engaged.Scythe.PDT = set_combine(sets.engaged.Scythe, sets.Defensive)
-     sets.engaged.Scythe.Mid.PDT = set_combine(sets.engaged.Scythe.Mid, sets.Defensive_Mid)
-     sets.engaged.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc, sets.Defensive_Acc)
-     
-     -- Scythe war sub (aim for 40 stp)
-     sets.engaged.War.Scythe = set_combine(sets.engaged.Scythe, {
-         legs="Xaddi Cuisses",
-     })
-     sets.engaged.War.Scythe.Mid = set_combine(sets.engaged.War.Scythe, {
-         head="Yaoyotl Helm",
-         ear1="Bladeborn Earring",
-         ear2="Steelflash Earring",
-    	 body="Mes'yohi Haubergeon"
-     })
-     sets.engaged.War.Scythe.Acc = set_combine(sets.engaged.War.Scythe.Mid, {
-         neck="Iqabi Necklace",
-         ear1="Steelflash Earring",
-         ear2="Zennaroi Earring",
-    	 body="Mes'yohi Haubergeon",
-         ring1="Mars's Ring",
-         ring2="Ramuh Ring +1",
-         waist="Olseni Belt",
-     })
-     sets.engaged.War.Scythe.PDT = set_combine(sets.engaged.War.Scythe, sets.Defensive)
-     sets.engaged.War.Scythe.Mid.PDT = set_combine(sets.engaged.War.Scythe.Mid, sets.Defensive_Mid)
-     sets.engaged.War.Scythe.Acc.PDT = set_combine(sets.engaged.War.Scythe.Acc, sets.Defensive_Acc)
-
-
      sets.engaged.Reraise = set_combine(sets.engaged, {
      	head="Twilight Helm",neck="Twilight Torque",
      	body="Twilight Mail"
      })
-
-     sets.buff['Last Resort'] = {
-         feet="Fallen's Sollerets +1"
-     }
 
      sets.buff.Souleater = { head="Ignominy burgeonet +1" }
 end

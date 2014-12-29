@@ -21,19 +21,16 @@ end
 -- Setup vars that are user-independent.
 function job_setup()
     state.CapacityMode = M(false, 'Capacity Point Mantle')
-    -- SE can be used full time, or after WS then cancel
-    state.SouleaterMode = M(true, 'Soul Eater Mode')
 
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     -- any scythe that should use sets.engaged.Scythe 
-    scytheList = S{ 'Xbalanque', 'Inanna', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe', 'Liberator', 'Death sickle' }
+    --scytheList = S{ 'Xbalanque', 'Inanna', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe', 'Liberator', 'Death sickle' }
     -- low delay great swords only. Leave the others out
-    gsList = S{'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }
+    --gsList = S{'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }
     -- list of weaponskills that make better use of otomi helm in attack capped situations
-    wsList = S{'Spiral Hell'}
+    --wsList = S{'Spiral Hell'}
     
-    get_combat_weapon()
     get_combat_form()
     update_melee_groups()
 end
@@ -55,7 +52,6 @@ function user_setup()
     
     -- Additional local binds
     send_command('bind != gs c toggle CapacityMode')
-    send_command('bind @f9 gs c toggle SouleaterMode')
     send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Seigan" <me>')
     send_command('bind ^[ input /lockstyle on')
@@ -80,19 +76,18 @@ function init_gear_sets()
 end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
-    --if spell.type:endswith('Magic') and buffactive.silence then
-    --    cancel_spell()
-    --    send_command('input /item "Echo Drops" <me>')
-    --end
+    if state.Buff[spell.english] ~= nil then
+        state.Buff[spell.english] = true
+    end
+    if spell.type:endswith('Magic') and buffactive.silence then
+        cancel_spell()
+        send_command('input /item "Echo Drops" <me>')
+    end
 end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
     --custom_aftermath_timers_precast(spell)
-
-    if state.Buff[spell.english] ~= nil then
-        state.Buff[spell.english] = true
-    end
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -103,11 +98,17 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
+        if world.day_element == 'Dark' then
+            equip(sets.WSBack)
+        end
     end
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Magic' then
+        equip(sets.midcast.FastRecast)
+    end
 end
  
 -- Run after the default midcast() is done.
@@ -122,17 +123,9 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
     --custom_aftermath_timers_aftercast(spell)
-    if state.Buff[spell.english] ~= nil then
-        state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
-    end
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
-    if spell.type == 'WeaponSkill' then
-        if state.Buff.Souleater and state.SouleaterMode.value then
-            send_command('@wait 1.0;cancel souleater')
-        end
-    end
 end
 -------------------------------------------------------------------------------------------------------------------
 -- Customization hooks for idle and melee sets, after they've been automatically constructed.
@@ -149,6 +142,9 @@ function customize_idle_set(idleSet)
     end
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
+    end
+    if state.HybridMode.value == 'PDT' then
+        idleSet = set_combine(idleSet, sets.defense.PDT)
     end
     return idleSet
 end
@@ -172,16 +168,16 @@ end
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
 
-    if newStatus == "Engaged" then
-        get_combat_weapon()
-    end
-    if newStatus == "Engaged" or newStatus == "Idle" then
-        if player.equipment.ammo == 'Oxidant Bolt' then
-            disable('ammo')
-        else
-            enable('ammo')
-        end
-    end
+    --if newStatus == "Engaged" then
+    --    get_combat_weapon()
+    --end
+    --if newStatus == "Engaged" or newStatus == "Idle" then
+    --    if player.equipment.ammo == 'Oxidant Bolt' then
+    --        disable('ammo')
+    --    else
+    --        enable('ammo')
+    --    end
+    --end
 end
  
 -- Called when a player gains or loses a buff.
@@ -190,34 +186,21 @@ end
 function job_buff_change(buff, gain)
     
     if state.Buff[buff] ~= nil then
-    	state.Buff[buff] = gain
+        handle_equipping_gear(player.status)
     end
 
-    if buff == 'Aftermath: Lv.3' or buff == 'Samurai Roll' then
+    if buff == 'Aftermath: Lv.3' then
         classes.CustomMeleeGroups:clear()
 	
         if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
             classes.CustomMeleeGroups:append('AM3')
         end
-        if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
-            classes.CustomMeleeGroups:append('SamRoll')
-        end
 
         handle_equipping_gear(player.status)
     end
 
-    if player.equipment.ammo == 'Oxidant Bolt' then
-        disable('ammo')
-    else
-        enable('ammo')
-    end
-
     if string.lower(buff) == "sleep" and gain and player.hp > 200 then
         equip(sets.Berserker)
-    else
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
     end
 
 end
@@ -232,7 +215,6 @@ end
 function job_update(cmdParams, eventArgs)
     
     war_sj = player.sub_job == 'WAR' or false
-	get_combat_weapon()
     get_combat_form()
     update_melee_groups()
 
@@ -246,17 +228,6 @@ function get_combat_form()
         state.CombatForm:set("War")
     else
         state.CombatForm:reset()
-    end
-end
-
-function get_combat_weapon()
-    if scytheList:contains(player.equipment.main) then
-        --add_to_chat(122, "Scythe Mode")
-        state.CombatWeapon:set("Scythe")
-    elseif gsList:contains(player.equipment.main) then
-        state.CombatWeapon:set("LDGS")
-    else -- use regular set
-        state.CombatWeapon:reset()
     end
 end
 
@@ -285,9 +256,6 @@ function update_melee_groups()
     if buffactive['Aftermath: Lv.3'] then
 		classes.CustomMeleeGroups:append('AM3')
 	end
-    if buffactive['Samurai Roll'] then
-        classes.CustomRangedGroups:append('SamRoll')
-    end
 end
 
 function select_default_macro_book()
