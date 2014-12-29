@@ -76,18 +76,18 @@ function init_gear_sets()
 end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
-    if state.Buff[spell.english] ~= nil then
-        state.Buff[spell.english] = true
-    end
-    if spell.type:endswith('Magic') and buffactive.silence then
-        cancel_spell()
-        send_command('input /item "Echo Drops" <me>')
-    end
+    --if spell.type:endswith('Magic') and buffactive.silence then
+    --    cancel_spell()
+    --    send_command('input /item "Echo Drops" <me>')
+    --end
 end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
     --custom_aftermath_timers_precast(spell)
+    if spell.action_type == 'Magic' then
+        equip(sets.precast.FC)
+    end
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -106,9 +106,6 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-    if spell.action_type == 'Magic' then
-        equip(sets.midcast.FastRecast)
-    end
 end
  
 -- Run after the default midcast() is done.
@@ -125,8 +122,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     --custom_aftermath_timers_aftercast(spell)
 end
 
-function job_post_aftercast(spell, action, spellMap, eventArgs)
-end
 -------------------------------------------------------------------------------------------------------------------
 -- Customization hooks for idle and melee sets, after they've been automatically constructed.
 -------------------------------------------------------------------------------------------------------------------
