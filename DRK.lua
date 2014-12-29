@@ -84,7 +84,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-    --custom_aftermath_timers_precast(spell)
+    aw_custom_aftermath_timers_precast(spell)
     if spell.action_type == 'Magic' then
         equip(sets.precast.FC)
     end
@@ -119,7 +119,7 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-    --custom_aftermath_timers_aftercast(spell)
+    aw_custom_aftermath_timers_aftercast(spell)
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -235,6 +235,50 @@ function select_static_ammo()
 	    end
     else
         return sets.RegularAmmo
+    end
+end
+function aw_custom_aftermath_timers_precast(spell)
+    if spell.type == 'WeaponSkill' then
+        info.aftermath = {}
+        
+        local empy_ws = "Insurgency"
+        
+        info.aftermath.weaponskill = mythic_ws
+        info.aftermath.duration = 0
+        
+        info.aftermath.level = math.floor(player.tp / 1000)
+        if info.aftermath.level == 0 then
+            info.aftermath.level = 1
+        end
+        
+        if spell.english == mythic_ws and player.equipment.main == 'Liberator' then
+            -- nothing can overwrite lvl 3
+            if buffactive['Aftermath: Lv.3'] then
+                return
+            end
+            -- only lvl 3 can overwrite lvl 2
+            if info.aftermath.level ~= 3 and buffactive['Aftermath: Lv.2'] then
+                return
+            end
+            
+            -- duration is based on aftermath level
+            info.aftermath.duration = 30 * info.aftermath.level
+        end
+    end
+end
+
+-- Call from job_aftercast() to create the custom aftermath timer.
+function aw_custom_aftermath_timers_aftercast(spell)
+    if not spell.interrupted and spell.type == 'WeaponSkill' and
+       info.aftermath and info.aftermath.weaponskill == spell.english and info.aftermath.duration > 0 then
+
+        local aftermath_name = 'Aftermath: Lv.'..tostring(info.aftermath.level)
+        send_command('timers d "Aftermath: Lv.1"')
+        send_command('timers d "Aftermath: Lv.2"')
+        send_command('timers d "Aftermath: Lv.3"')
+        send_command('timers c "'..aftermath_name..'" '..tostring(info.aftermath.duration)..' down abilities/aftermath'..tostring(info.aftermath.level)..'.png')
+
+        info.aftermath = {}
     end
 end
 
