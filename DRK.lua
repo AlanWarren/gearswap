@@ -85,9 +85,9 @@ end
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
     aw_custom_aftermath_timers_precast(spell)
-    if spell.action_type == 'Magic' then
-        equip(sets.precast.FC)
-    end
+    --if spell.action_type == 'Magic' then
+    --    equip(sets.precast.FC)
+    --end
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)

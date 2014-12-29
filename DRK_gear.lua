@@ -30,7 +30,7 @@ function init_gear_sets()
      -- Fast cast sets for spells
      sets.precast.FC = {
         ammo="Impatiens",
-        head="Cizin Helm +1",
+        head="Fallen's Burgeonet",
         ear1="Loquacious Earring",
         hands="Buremte Gloves",
         ring2="Prolix Ring"
@@ -38,9 +38,14 @@ function init_gear_sets()
 
      sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
 
-     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, { neck="Stoicheion Medal" })
-     sets.precast.FC['Absorb-TP'] = set_combine(sets.precast.FC, { hands="Bale Gauntlets +2" })
-     sets.precast.FC['Dark Magic'] = set_combine(sets.precast.FC, { head="Fallen's Burgeonet" })
+     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, { 
+         head="Cizin Helm +1",
+         neck="Stoicheion Medal" 
+     })
+     sets.precast.FC['Enfeebling Magic'] = set_combine(sets.precast.FC, {
+         head="Cizin Helm +1",
+         neck="Stoicheion Medal" 
+     })
      
      -- Midcast Sets
      sets.midcast.FastRecast = {
@@ -121,13 +126,13 @@ function init_gear_sets()
      sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
          hands="Bale Gauntlets +2"
      })
-     sets.midcast['Absorb-STR'] = sets.midcast.Absorb
-     sets.midcast['Absorb-DEX'] = sets.midcast.Absorb
-     sets.midcast['Absorb-AGI'] = sets.midcast.Absorb
-     sets.midcast['Absorb-MND'] = sets.midcast.Absorb
-     sets.midcast['Absorb-VIT'] = sets.midcast.Absorb
-     sets.midcast['Absorb-Attri'] = sets.midcast.Absorb
-     sets.midcast['Absorb-Acc'] = sets.midcast.Absorb
+     --sets.midcast['Absorb-STR'] = sets.midcast.Absorb
+     --sets.midcast['Absorb-DEX'] = sets.midcast.Absorb
+     --sets.midcast['Absorb-AGI'] = sets.midcast.Absorb
+     --sets.midcast['Absorb-MND'] = sets.midcast.Absorb
+     --sets.midcast['Absorb-VIT'] = sets.midcast.Absorb
+     --sets.midcast['Absorb-Attri'] = sets.midcast.Absorb
+     --sets.midcast['Absorb-Acc'] = sets.midcast.Absorb
 
      -- WEAPONSKILL SETS
      -- General sets
