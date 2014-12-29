@@ -507,7 +507,7 @@ function init_gear_sets()
      sets.engaged.War.Mid.PDT = set_combine(sets.engaged.War.Mid, sets.Defensive_Mid)
      sets.engaged.War.Acc.PDT = set_combine(sets.engaged.War.Acc, sets.Defensive_Acc)
 
-     sets.engaged.AM3 = set_combine(sets.engaged.Scythe, {
+     sets.engaged.AM3 = set_combine(sets.engaged, {
          head="Yaoyotl Helm",
          ear2="Tripudio Earring",
          hands="Cizin Mufflers +1",
@@ -516,7 +516,7 @@ function init_gear_sets()
          legs="Ares' Flanchard +1",
          feet="Mikinaak Greaves"
      })
-     sets.engaged.Mid.AM3 = set_combine(sets.engaged.Scythe.AM3, {
+     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
          neck="Iqabi Necklace",
          ear1="Zennaroi Earring",
          body="Mes'yohi Haubergeon",
@@ -524,7 +524,7 @@ function init_gear_sets()
          legs="Ares' Flanchard +1",
          feet="Ejekamal Boots"
      })
-     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Scythe.Mid.AM3, {
+     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          ear2="Steelflash Earring",
          ring2="Ramuh Ring +1",
          waist="Olseni Belt"
