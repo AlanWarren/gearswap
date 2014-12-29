@@ -41,22 +41,6 @@ function init_gear_sets()
      sets.precast.FC['Absorb-TP'] = set_combine(sets.precast.FC, { hands="Bale Gauntlets +2" })
      sets.precast.FC['Dark Magic'] = set_combine(sets.precast.FC, { head="Fallen's Burgeonet" })
      
-     sets.precast.FC['Dread Spikes'] = sets.precast.FC['Dark Magic']
-     sets.precast.FC.Endark  = {
-        ammo="Impatiens",
-        head="Fallen's Burgeonet",
-        ear1="Loquacious Earring",
-        hands="Buremte Gloves",
-        ring2="Prolix Ring"
-     }
-     sets.precast.FC['Absorb-STR']   = sets.precast.FC['Dark Magic']
-     sets.precast.FC['Absorb-DEX']   = sets.precast.FC['Dark Magic']
-     sets.precast.FC['Absorb-AGI']   = sets.precast.FC['Dark Magic']
-     sets.precast.FC['Absorb-MND']   = sets.precast.FC['Dark Magic']
-     sets.precast.FC['Absorb-VIT']   = sets.precast.FC['Dark Magic']
-     sets.precast.FC['Absorb-Attri'] = sets.precast.FC['Dark Magic']
-     sets.precast.FC['Absorb-Acc']   = sets.precast.FC['Dark Magic']
-              
      -- Midcast Sets
      sets.midcast.FastRecast = {
          ammo="Impatiens",
