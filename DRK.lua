@@ -261,8 +261,13 @@ function aw_custom_aftermath_timers_precast(spell)
                 return
             end
             
-            -- duration is based on aftermath level
-            info.aftermath.duration = 30 * info.aftermath.level
+            if info.aftermath.level == 1 then
+                info.aftermath.duration = 90
+            elseif info.aftermath.level == 2 then
+                info.aftermath.duration = 120
+            else
+                info.aftermath.duration = 180
+            end
         end
     end
 end
