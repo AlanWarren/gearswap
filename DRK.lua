@@ -241,7 +241,7 @@ function aw_custom_aftermath_timers_precast(spell)
     if spell.type == 'WeaponSkill' then
         info.aftermath = {}
         
-        local empy_ws = "Insurgency"
+        local mythic_ws = "Insurgency"
         
         info.aftermath.weaponskill = mythic_ws
         info.aftermath.duration = 0
