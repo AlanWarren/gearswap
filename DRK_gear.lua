@@ -61,31 +61,21 @@ function init_gear_sets()
          feet="Ejekamal Boots"
      }
  
-     sets.midcast.Absorb = {
+     sets.midcast['Dark Magic'] = {
          ammo="Impatiens",
          head="Ignominy burgeonet +1",
          neck="Dark Torque",
          ear1="Lifestorm Earring",
          ear2="Psystorm Earring",
          body="Haruspex Coat",
-         hands="Pavor Gauntlets",
+         hands="Fallen's Finger Gauntlets",
          waist="Caudata Belt",
          ring1="Perception Ring",
          ring2="Sangoma Ring",
-         back="Chuparrosa Mantle",
-         legs="Fallen's Flanchard",
-         feet="Black Sollerets"
-     }
-
-     sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
-         hands="Bale Gauntlets +2"
-     })
-
-     sets.midcast['Dark Magic'] = set_combine(sets.midcast.Absorb, {
-         hands="Fallen's Finger Gauntlets",
          back={name="Niht Mantle", augments={'Attack +7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}},
+         legs="Fallen's Flanchard",
          feet="Ignominy sollerets"
-     })
+     }
      
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
          neck="Eddy Necklace",
@@ -127,13 +117,22 @@ function init_gear_sets()
      })
      sets.midcast.Aspir = sets.midcast.Drain
 
-     --sets.midcast['Absorb-STR'] = sets.midcast.Absorb
-     --sets.midcast['Absorb-DEX'] = sets.midcast.Absorb
-     --sets.midcast['Absorb-AGI'] = sets.midcast.Absorb
-     --sets.midcast['Absorb-MND'] = sets.midcast.Absorb
-     --sets.midcast['Absorb-VIT'] = sets.midcast.Absorb
-     --sets.midcast['Absorb-Attri'] = sets.midcast.Absorb
-     --sets.midcast['Absorb-Acc'] = sets.midcast.Absorb
+     sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
+         back="Chuparrosa Mantle",
+         hands="Pavor Gauntlets",
+         feet="Black Sollerets"
+     })
+
+     sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
+         hands="Bale Gauntlets +2"
+     })
+     sets.midcast['Absorb-STR'] = sets.midcast.Absorb
+     sets.midcast['Absorb-DEX'] = sets.midcast.Absorb
+     sets.midcast['Absorb-AGI'] = sets.midcast.Absorb
+     sets.midcast['Absorb-MND'] = sets.midcast.Absorb
+     sets.midcast['Absorb-VIT'] = sets.midcast.Absorb
+     sets.midcast['Absorb-Attri'] = sets.midcast.Absorb
+     sets.midcast['Absorb-Acc'] = sets.midcast.Absorb
 
      -- WEAPONSKILL SETS
      -- General sets
