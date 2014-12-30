@@ -615,32 +615,26 @@ function init_gear_sets()
      sets.buff.Souleater = { head="Ignominy burgeonet +1" }
 end
 
-function job_pretarget(spell, action, spellMap, eventArgs)
-    --if spell.type:endswith('Magic') and buffactive.silence then
-    --    cancel_spell()
-    --    send_command('input /item "Echo Drops" <me>')
-    --end
-end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
     aw_custom_aftermath_timers_precast(spell)
-    if spell.action_type == 'Magic' then
-        equip(sets.precast.FC)
-    end
+    --if spell.action_type == 'Magic' then
+    --    equip(sets.precast.FC)
+    --end
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
-    if spell.type == 'WeaponSkill' then
+	if spell.type:lower() == 'weaponskill' then
         if is_sc_element_today(spell) then
             equip(sets.WSDayBonus)
         end
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-        if world.day_element == 'Dark' then
-            equip(sets.WSBack)
-        end
+        --if world.day_element == 'Dark' then
+        --    equip(sets.WSBack)
+        --end
     end
 end
  
@@ -686,7 +680,6 @@ end
  
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-    meleeSet = set_combine(meleeSet, sets.Ammo)
     --if state.Buff['Last Resort'] then
     --	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     --end
@@ -734,9 +727,9 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
     end
 
-    if string.lower(buff) == "sleep" and gain and player.hp > 200 then
-        equip(sets.Berserker)
-    end
+    --if string.lower(buff) == "sleep" and gain and player.hp > 200 then
+    --    equip(sets.Berserker)
+    --end
 
 end
  
@@ -766,17 +759,6 @@ function get_combat_form()
     end
 end
 
-function select_static_ammo()
-    if state.OffenseMode.current == 'Acc' or state.OffenseMode.current == 'Mid' then
-	    if world.time >= (18*60) or world.time <= (6*60) then
-            return sets.NightAccAmmo
-        else
-            return sets.DayAccAmmo
-	    end
-    else
-        return sets.RegularAmmo
-    end
-end
 function aw_custom_aftermath_timers_precast(spell)
     if spell.type == 'WeaponSkill' then
         info.aftermath = {}
