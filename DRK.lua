@@ -206,6 +206,25 @@ function init_gear_sets()
      sets.midcast['Absorb-Attri'] = sets.midcast.Absorb
      sets.midcast['Absorb-Acc'] = sets.midcast.Absorb
 
+     -- Ranged for xbow
+     sets.precast.RA = {
+         head="Otomi Helm",
+         hands="Buremte Gloves",
+         feet="Ejekamal Boots"
+     }
+     sets.midcast.RA = {
+         head="Lithelimb Cap",
+         neck="Iqabi Necklace",
+         ear2="Tripudio Earring",
+         hands="Buremte Gloves",
+         ring1="Beeline Ring",
+         ring2="Garuda Ring",
+         back="Argochampsa Mantle",
+         waist="Chaac Belt",
+         legs="Aetosaur Trousers +1",
+         feet="Whirlpool Greaves"
+     }
+
      -- WEAPONSKILL SETS
      -- General sets
      sets.precast.WS = {
@@ -729,6 +748,12 @@ function job_buff_change(buff, gain)
 
     if string.lower(buff) == "sleep" and gain and player.hp > 200 then
         equip(sets.Berserker)
+    end
+    
+    if player.equipment.ammo == 'Oxidant Bolt' then
+        disable('ammo')
+    else
+        enable('ammo')
     end
 
 end
