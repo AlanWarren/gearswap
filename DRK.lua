@@ -632,9 +632,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-        --if world.day_element == 'Dark' then
-        --    equip(sets.WSBack)
-        --end
+        if world.day_element == 'Dark' then
+            equip(sets.WSBack)
+        end
     end
 end
  
@@ -699,13 +699,13 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     --if newStatus == "Engaged" then
     --    get_combat_weapon()
     --end
-    --if newStatus == "Engaged" or newStatus == "Idle" then
-    --    if player.equipment.ammo == 'Oxidant Bolt' then
-    --        disable('ammo')
-    --    else
-    --        enable('ammo')
-    --    end
-    --end
+    if newStatus == "Engaged" or newStatus == "Idle" then
+        if player.equipment.ammo == 'Oxidant Bolt' then
+            disable('ammo')
+        else
+            enable('ammo')
+        end
+    end
 end
  
 -- Called when a player gains or loses a buff.
@@ -727,9 +727,9 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
     end
 
-    --if string.lower(buff) == "sleep" and gain and player.hp > 200 then
-    --    equip(sets.Berserker)
-    --end
+    if string.lower(buff) == "sleep" and gain and player.hp > 200 then
+        equip(sets.Berserker)
+    end
 
 end
  
@@ -748,6 +748,11 @@ function job_update(cmdParams, eventArgs)
 
 end
 
+function get_custom_wsmode(spell, spellMap, default_wsmode)
+    if buffactive['Aftermath: Lv.3'] then
+        return 'AM3'
+    end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
