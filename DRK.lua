@@ -219,7 +219,6 @@ function init_gear_sets()
          hands="Buremte Gloves",
          ring1="Beeline Ring",
          ring2="Garuda Ring",
-         back="Argochampsa Mantle",
          waist="Chaac Belt",
          legs="Aetosaur Trousers +1",
          feet="Whirlpool Greaves"
@@ -718,13 +717,6 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     --if newStatus == "Engaged" then
     --    get_combat_weapon()
     --end
-    if newStatus == "Engaged" or newStatus == "Idle" then
-        if player.equipment.ammo == 'Oxidant Bolt' then
-            disable('ammo')
-        else
-            enable('ammo')
-        end
-    end
 end
  
 -- Called when a player gains or loses a buff.
@@ -749,13 +741,6 @@ function job_buff_change(buff, gain)
     if string.lower(buff) == "sleep" and gain and player.hp > 200 then
         equip(sets.Berserker)
     end
-    
-    if player.equipment.ammo == 'Oxidant Bolt' then
-        disable('ammo')
-    else
-        enable('ammo')
-    end
-
 end
  
  
