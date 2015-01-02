@@ -487,6 +487,12 @@ function init_gear_sets()
          feet="Fallen's Sollerets +1"
      }
 
+     sets.cool = set_combine(sets.idle.Town, {
+         legs="Scuffler's Cosciales",
+         feet="Ejekamal Boots"
+     })
+
+
      sets.refresh = { 
          neck="Bale Choker",
          body="Ares' Cuirass +1"
