@@ -24,6 +24,7 @@ function job_setup()
 
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
+    state.LookCool = M{['description']='Look Cool', 'Normal', 'On' }
     -- any scythe that should use sets.engaged.Scythe 
     --scytheList = S{ 'Xbalanque', 'Inanna', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe', 'Liberator', 'Death sickle' }
     -- low delay great swords only. Leave the others out
@@ -54,8 +55,7 @@ function user_setup()
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Seigan" <me>')
-    send_command('bind ^[ input /lockstyle on')
-    send_command('bind ![ input /lockstyle off')
+    send_command('bind ^[ gs c cycle LookCool')
     
     select_default_macro_book()
 end
@@ -457,6 +457,12 @@ function init_gear_sets()
          feet="Fallen's Sollerets +1"
      }
      
+    sets.cool = set_combine(sets.idle.Town, {
+         head="Ignominy Burgeonet +1",
+         legs="Ignominy Flanchard +1",
+         feet="Ignominy Sollerets"
+     })
+
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
          head="Baghere Salade",
@@ -486,11 +492,6 @@ function init_gear_sets()
          legs="Crimson Cuisses",
          feet="Fallen's Sollerets +1"
      }
-
-     sets.cool = set_combine(sets.idle.Town, {
-         legs="Scuffler's Cosciales",
-         feet="Ejekamal Boots"
-     })
 
 
      sets.refresh = { 
@@ -828,6 +829,17 @@ function aw_custom_aftermath_timers_aftercast(spell)
         send_command('timers c "'..aftermath_name..'" '..tostring(info.aftermath.duration)..' down abilities/aftermath'..tostring(info.aftermath.level)..'.png')
 
         info.aftermath = {}
+    end
+end
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+    if stateField == 'Look Cool' then
+        if newValue == 'On' then
+            send_command('gs equip sets.cool;wait 1.2;input /lockstyle on;wait 1.2;gs c update user')
+            --send_command('wait 1.2;gs c update user')
+        else
+            send_command('@input /lockstyle off')
+        end
     end
 end
 
