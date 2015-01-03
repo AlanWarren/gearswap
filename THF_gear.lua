@@ -207,7 +207,7 @@ function init_gear_sets()
         ring1="Ramuh Ring +1",
         waist="Windbuffet Buffet +1",
         legs="Manibozho Brais",
-        back="Bleating Mantle",
+        back="Kayapa Cape",
         feet="Plunderer's Poulaines"
     })
 	sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {back="Canny Cape"})
