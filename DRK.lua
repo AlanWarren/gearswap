@@ -844,8 +844,8 @@ function job_state_change(stateField, newValue, oldValue)
 end
 
 windower.register_event('Zone change', function(new,old)
-    if state.LookCool.value ~= 'Normal' then
-        send_command('wait 2; gs equip sets.cool;wait 1.2;input /lockstyle on;wait 1.2;gs c update user')
+    if state.LookCool.value == 'On' then
+        send_command('wait 3; gs equip sets.cool;wait 1.2;input /lockstyle on;wait 1.2;gs c update user')
     end
 end)
 

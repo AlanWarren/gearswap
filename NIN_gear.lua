@@ -593,7 +593,7 @@ function init_gear_sets()
     })
 
     sets.Kamu = {
-        ammo="Ginsen",
+        --ammo="Ginsen",
         neck="Breeze Gorget",
         body="Dread Jupon",
         ring1="Ifrit Ring",
@@ -608,7 +608,7 @@ function init_gear_sets()
     
     -- BLADE: JIN
     sets.Jin = {
-        ammo="Yetshila",
+        --ammo="Yetshila",
         neck="Breeze Gorget",
         waist="Thunder Belt",
         back="Yokaze Mantle",
@@ -621,7 +621,7 @@ function init_gear_sets()
     -- BLADE: HI
 
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-        ammo="Yetshila",
+        --ammo="Yetshila",
         neck="Shadow Gorget",
         head="Uk'uxkaj Cap",
         body="Dread Jupon",
