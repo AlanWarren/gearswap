@@ -293,6 +293,7 @@ function init_gear_sets()
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
          ring1="Rajas Ring",
+         body="Ignominy Cuirass +1",
          waist="Windbuffet Belt +1",
          back="Bleating Mantle",
          legs="Scuffler's Cosciales",
@@ -305,6 +306,7 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
+         body="Fallen's Cuirass +1",
          waist="Light Belt",
          back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          legs="Xaddi Cuisses"
