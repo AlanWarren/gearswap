@@ -1,6 +1,6 @@
 --[[     
  === Notes ===
-    Souleater: By default, souleater will cancel after any weaponskill is used.
+    Souleater: By default, souleater will cancel after any weaponskill is used.  
                However, if Blood Weapon is used, Souleater will remain active for it's duration.
                It will be canceled after your next weaponskill, following Blood Weapon wearing off. 
                This behavior can be toggled off/on with @f9 (window key + f9) 
@@ -755,6 +755,14 @@ function job_buff_change(buff, gain)
     
     if state.Buff[buff] ~= nil then
         handle_equipping_gear(player.status)
+    end
+
+    if buff == "Max HP Boost" then
+        if gain then
+            state.SouleaterMode:set(false)
+        else
+            state.SouleaterMode:set(true)
+        end
     end
 
     if buff == 'Blood Weapon' then
