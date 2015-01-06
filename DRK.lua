@@ -152,6 +152,7 @@ function init_gear_sets()
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
          neck="Eddy Necklace",
          head="Otomi Helm",
+         body="Ignominy Cuirass +1",
          ring1="Globidonta Ring",
          back="Aput Mantle"
      })
@@ -259,6 +260,7 @@ function init_gear_sets()
      -- 86-100% STR
      sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
          neck="Breeze Gorget",
+         body="Ignominy Cuirass +1",
          back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          waist="Soil Belt"
      })
@@ -294,18 +296,21 @@ function init_gear_sets()
          neck="Shadow Gorget",
          ear1="Bale Earring",
          ring1="Rajas Ring",
+         body="Ignominy Cuirass +1",
          waist="Windbuffet Belt +1",
-         back="Bleating Mantle",
+         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          legs="Scuffler's Cosciales",
          feet="Ejekamal Boots",
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
+         back="Bleating Mantle",
          legs="Ignominy Flanchard +1"
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
+         body="Fallen's Cuirass +1",
          waist="Light Belt",
          back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          legs="Xaddi Cuisses"
@@ -313,6 +318,7 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {
          ammo="Ginsen",
          legs="Xaddi Cuisses"
+         back="Bleating Mantle",
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          ear1="Zennaroi Earring",
@@ -326,12 +332,14 @@ function init_gear_sets()
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
          hands="Ignominy Gauntlets +1",
          neck="Aqua Gorget",
+         body="Ignominy Cuirass +1",
          waist="Windbuffet belt +1",
          legs="Scuffler's Cosciales",
          feet="Ejekamal Boots"
      })
      sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS.Mid, {
          neck="Aqua Gorget",
+         body="Fallen's Cuirass +1",
          waist="Metalsinger Belt",
      })
      sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, sets.precast.WS.Acc)
