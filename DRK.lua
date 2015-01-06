@@ -512,7 +512,7 @@ function init_gear_sets()
      sets.defense.PDT = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Cizin Mail +1",
+         body="Emet Harness",
          hands="Cizin Mufflers +1",
          back="Repulse Mantle",
          ring1="Dark Ring",
@@ -536,6 +536,7 @@ function init_gear_sets()
      sets.Defensive = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
+         body="Emet Harness",
          hands="Cizin Mufflers +1",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1"
@@ -543,10 +544,10 @@ function init_gear_sets()
      sets.Defensive_Mid = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Cizin Mail +1",
+         body="Emet Harness",
+         hands="Umuthi Gloves",
          hands="Cizin Mufflers +1",
          ring2="Patricius Ring",
-         legs="Cizin Breeches +1"
      }
      sets.Defensive_Acc = {
          head="Ighwa Cap",
