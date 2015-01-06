@@ -292,6 +292,7 @@ function init_gear_sets()
      -- 20% STR / 20% INT
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
+         ear1="Bale Earring",
          ring1="Rajas Ring",
          waist="Windbuffet Belt +1",
          back="Bleating Mantle",
