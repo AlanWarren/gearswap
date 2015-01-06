@@ -670,9 +670,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-        if world.day_element == 'Dark' then
-            equip(sets.WSBack)
-        end
+        --if world.day_element == 'Dark' then
+        --    equip(sets.WSBack)
+        --end
     end
 end
  
