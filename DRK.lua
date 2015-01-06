@@ -476,7 +476,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Baghere Salade",
          neck="Bale Choker",
-         body="Ares' Cuirass +1",
+         body="Emet Harness",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
@@ -501,7 +501,6 @@ function init_gear_sets()
          legs="Crimson Cuisses",
          feet="Fallen's Sollerets +1"
      }
-
 
      sets.refresh = { 
          neck="Bale Choker",
