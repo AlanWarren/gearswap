@@ -1,13 +1,17 @@
 --[[     
  === Notes ===
- -- Set format is as follows:
+    Souleater: By default, souleater will cancel after any weaponskill is used.  
+               However, if Blood Weapon is used, Souleater will remain active for it's duration.
+               It will be canceled after your next weaponskill, following Blood Weapon wearing off. 
+               This behavior can be toggled off/on with @f9 (window key + f9) 
+    Last Resort: There is an LR Hybrid Mode toggle present. This is useful when Last Resort may be risky.
+    
+    I simplified this lua since I got Liberator. There are no longer sets for greatswords. - Sorry
+    
+    Set format is as follows: 
     sets.engaged.[CombatForm][CombatWeapon][Offense or DefenseMode][CustomGroup]
     CombatForm = War
-    CombatWeapon = Scythe
-    CustomGroups = AM3 SamRoll
-
-    The default sets are for Sam subjob with a Greatsword.
-    The above set format allows you to build sets for war and sam sub with either scythe or gs
+    CustomGroups = AM3
 --]]
 --
 -- Initialization function for this job file.
@@ -25,11 +29,8 @@ function job_setup()
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     state.LookCool = M{['description']='Look Cool', 'Normal', 'On' }
-    -- any scythe that should use sets.engaged.Scythe 
-    --scytheList = S{ 'Xbalanque', 'Inanna', 'Anahera Scythe', 'Tajabit', 'Twilight Scythe', 'Liberator', 'Death sickle' }
-    -- low delay great swords only. Leave the others out
-    --gsList = S{'Tunglmyrkvi', 'Ukudyoni', 'Kaquljaan' }
-    -- list of weaponskills that make better use of otomi helm in attack capped situations
+    state.SouleaterMode = M(true, 'Soul Eater Mode')
+    
     --wsList = S{'Spiral Hell'}
     
     get_combat_form()
@@ -41,7 +42,7 @@ end
 function user_setup()
     -- Options: Override default values
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
-    state.HybridMode:options('Normal', 'PDT', 'Reraise')
+    state.HybridMode:options('Normal', 'LR', 'PDT', 'Reraise')
     state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     state.CastingMode:options('Normal')
     state.IdleMode:options('Normal')
@@ -53,6 +54,7 @@ function user_setup()
     
     -- Additional local binds
     send_command('bind != gs c toggle CapacityMode')
+    send_command('bind @f9 gs c toggle SouleaterMode')
     send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Seigan" <me>')
     send_command('bind ^[ gs c cycle LookCool')
@@ -294,6 +296,7 @@ function init_gear_sets()
      -- 20% STR / 20% INT
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
+         ear1="Bale Earring",
          ring1="Rajas Ring",
          body="Ignominy Cuirass +1",
          waist="Windbuffet Belt +1",
@@ -475,7 +478,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Baghere Salade",
          neck="Bale Choker",
-         body="Ares' Cuirass +1",
+         body="Emet Harness",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
@@ -501,7 +504,6 @@ function init_gear_sets()
          feet="Fallen's Sollerets +1"
      }
 
-
      sets.refresh = { 
          neck="Bale Choker",
          body="Ares' Cuirass +1"
@@ -511,7 +513,7 @@ function init_gear_sets()
      sets.defense.PDT = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Cizin Mail +1",
+         body="Emet Harness",
          hands="Cizin Mufflers +1",
          back="Repulse Mantle",
          ring1="Dark Ring",
@@ -535,6 +537,7 @@ function init_gear_sets()
      sets.Defensive = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
+         body="Emet Harness",
          hands="Cizin Mufflers +1",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1"
@@ -542,10 +545,10 @@ function init_gear_sets()
      sets.Defensive_Mid = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Cizin Mail +1",
+         body="Emet Harness",
+         hands="Umuthi Gloves",
          hands="Cizin Mufflers +1",
          ring2="Patricius Ring",
-         legs="Cizin Breeches +1"
      }
      sets.Defensive_Acc = {
          head="Ighwa Cap",
@@ -647,6 +650,7 @@ function init_gear_sets()
      })
 
      sets.buff.Souleater = { head="Ignominy burgeonet +1" }
+     sets.buff['Last Resort'] = { feet="Fallen's Sollerets +1" }
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -666,9 +670,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-        if world.day_element == 'Dark' then
-            equip(sets.WSBack)
-        end
+        --if world.day_element == 'Dark' then
+        --    equip(sets.WSBack)
+        --end
     end
 end
  
@@ -688,8 +692,18 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
     aw_custom_aftermath_timers_aftercast(spell)
+    if state.Buff[spell.english] ~= nil then
+        state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
+    end
 end
 
+function job_post_aftercast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+        if state.Buff.Souleater and state.SouleaterMode.value then
+            send_command('@wait 1.0;cancel souleater')
+        end
+    end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- Customization hooks for idle and melee sets, after they've been automatically constructed.
 -------------------------------------------------------------------------------------------------------------------
@@ -714,9 +728,9 @@ end
  
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-    --if state.Buff['Last Resort'] then
-    --	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
-    --end
+    if state.Buff['Last Resort'] and ( state.HybridMode.value == 'LR' or state.HybridMode.value == 'PDT' ) then
+    	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
+    end
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
@@ -729,7 +743,6 @@ end
  
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
-
     --if newStatus == "Engaged" then
     --    get_combat_weapon()
     --end
@@ -742,6 +755,22 @@ function job_buff_change(buff, gain)
     
     if state.Buff[buff] ~= nil then
         handle_equipping_gear(player.status)
+    end
+
+    if buff == "Max HP Boost" then
+        if gain then
+            state.SouleaterMode:set(false)
+        else
+            state.SouleaterMode:set(true)
+        end
+    end
+
+    if buff == 'Blood Weapon' then
+        if gain or buffactive['Blood Weapon'] then
+            state.SouleaterMode:set(false)
+        else
+            state.SouleaterMode:set(true)
+        end
     end
 
     if buff == 'Aftermath: Lv.3' then

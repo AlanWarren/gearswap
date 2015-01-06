@@ -182,7 +182,7 @@ function init_gear_sets()
     sets.defense.PDT = {
         head="Otronif Mask +1",
         neck="Twilight Torque",
-        body="Otronif Harness +1",
+        body="Emet Harness",
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
@@ -251,7 +251,7 @@ function init_gear_sets()
 
     sets.engaged.NormalPDT = {
         head="Otronif Mask +1",
-        body="Otronif Harness +1",
+        body="Emet Harness",
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
@@ -261,7 +261,7 @@ function init_gear_sets()
     }
     sets.engaged.AccPDT = {
         head="Lithelimb Cap",
-        body="Otronif Harness +1",
+        body="Emet Harness",
         neck="Agitator's Collar",
         hands="Umuthi Gloves",
         ring1="Patricius Ring",
@@ -281,7 +281,7 @@ function init_gear_sets()
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
-        body="Otronif Harness +1",
+        body="Emet Harness",
         ring1="Patricius Ring",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
