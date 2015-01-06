@@ -592,6 +592,24 @@ function init_gear_sets()
          ring2="Ramuh Ring +1",
          waist="Olseni Belt"
      })
+     sets.engaged.LR = set_combine(sets.engaged, {
+         neck="Agitator's Collar",
+         body="Emet Harness",
+         ring2="Patricius Ring",
+         legs="Cizin Breeches +1"
+     })
+     sets.engaged.Mid.LR = set_combine(sets.engaged.Mid, {
+         neck="Agitator's Collar",
+         hands="Umuthi Gloves",
+         body="Emet Harness",
+         ring2="Patricius Ring"
+     })
+     sets.engaged.Acc.LR = set_combine(sets.engaged.Acc, {
+         neck="Agitator's Collar",
+         hands="Umuthi Gloves",
+         body="Emet Harness",
+         ring1="Patricius Ring"
+     })
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
@@ -599,11 +617,11 @@ function init_gear_sets()
      sets.engaged.War = set_combine(sets.engaged, {
          ear1="Brutal Earring",
          ear2="Tripudio Earring",
-         head="Otomi Helm",
-         legs="Xaddi Cuisses"
+         head="Yaoyotl Helm",
+         legs="Xaddi Cuisses",
+         feet="Mikinaak Greaves"
      })
      sets.engaged.War.Mid = set_combine(sets.engaged.War, {
-         ammo="Ginsen",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
          legs="Xaddi Cuisses",
@@ -625,7 +643,6 @@ function init_gear_sets()
          head="Yaoyotl Helm",
          ear2="Tripudio Earring",
          hands="Cizin Mufflers +1",
-         --back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          back="Bleating Mantle",
          legs="Ares' Flanchard +1",
          feet="Mikinaak Greaves"
@@ -635,11 +652,12 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
          body="Mes'yohi Haubergeon",
          hands="Xaddi Gauntlets",
-         legs="Ares' Flanchard +1",
+         legs="Xaddi Cuisses",
          feet="Ejekamal Boots"
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          ear2="Steelflash Earring",
+         ring1="Mars's Ring",
          ring2="Ramuh Ring +1",
          waist="Olseni Belt"
      })
