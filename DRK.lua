@@ -316,7 +316,7 @@ function init_gear_sets()
      })
      sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {
          ammo="Ginsen",
-         legs="Xaddi Cuisses"
+         legs="Xaddi Cuisses",
          back="Bleating Mantle",
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
