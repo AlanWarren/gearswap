@@ -738,7 +738,7 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    if state.HybridMode.value == 'PDT' then
+    if state.HybridMode.current == 'PDT' then
         idleSet = set_combine(idleSet, sets.defense.PDT)
     end
     return idleSet
@@ -746,7 +746,7 @@ end
  
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-    if state.Buff['Last Resort'] and ( state.HybridMode.value == 'LR' or state.HybridMode.value == 'PDT' ) then
+    if state.Buff['Last Resort'] and state.HybridMode.current == 'LR' then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
     if state.CapacityMode.value then
