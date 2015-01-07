@@ -19,6 +19,7 @@ function init_gear_sets()
     sets.precast.JA['Provoke'] = { 
         ear1="Friomisi Earring",
         ear2="Trux Earring", 
+        body="Emet Harness +1",
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.JA.Sange = { ammo=gear.SangeAmmo, body="Mochizuki Chainmail +1" }
