@@ -82,6 +82,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	sets.precast.FC = {
         --ammo="Impatiens",
+        head="Ejekamal Mask",
         ear1="Loquacious Earring",
         hands="Buremte Gloves",
         body="Dread Jupon",
@@ -309,7 +310,7 @@ function init_gear_sets()
 	sets.defense.PDT = {
 		head="Lithelimb Cap",
         neck="Twilight Torque",
-		body="Qaaxo Harness",
+		body="Emet Harness +1",
         hands="Iuitl Wristbands +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
@@ -388,18 +389,18 @@ function init_gear_sets()
 	sets.engaged.PDT = set_combine(sets.engaged, {
 		head="Iuitl Headgear +1",
         neck="Twilight Torque",
-		body="Qaaxo Harness",
+		body="Emet Harness +1",
         ring1="Patricius Ring",
         legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
         ring1="Ramuh Ring +1",
-		body="Dread Jupon",
+		body="Emet Harness +1",
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
         head="Whirlpool Mask",
-        body="Mekosuchinae Harness",
+		body="Emet Harness +1",
         ring2="Ramuh Ring +1",
         waist="Olseni Belt"
     })

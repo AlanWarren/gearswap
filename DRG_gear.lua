@@ -229,7 +229,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Emet Harness",
+		body="Emet Harness +1",
         hands="Cizin Mufflers +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
@@ -291,7 +291,7 @@ function init_gear_sets()
     sets.engaged.PDT = set_combine(sets.engaged, {
         head="Ighwa Cap",
         neck="Twilight Torque",
-        body="Emet Harness",
+        body="Emet Harness +1",
         ring2="Patricius Ring",
         hands="Cizin Mufflers +1",
         back="Repulse Mantle",
@@ -301,7 +301,7 @@ function init_gear_sets()
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
         head="Ighwa Cap",
         ring2="Patricius Ring",
-        body="Emet Harness",
+        body="Emet Harness +1",
         hands="Cizin Mufflers +1",
         back="Repulse Mantle",
         legs="Cizin Breeches +1",
@@ -309,7 +309,7 @@ function init_gear_sets()
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
         head="Ighwa Cap",
         ring2="Patricius Ring",
-        body="Emet Harness",
+        body="Emet Harness +1",
         hands="Cizin Mufflers +1",
         back="Repulse Mantle",
         legs="Cizin Breeches +1",

@@ -470,7 +470,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Baghere Salade",
          neck="Bale Choker",
-         body="Emet Harness",
+         body="Emet Harness +1",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
@@ -505,7 +505,7 @@ function init_gear_sets()
      sets.defense.PDT = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Emet Harness",
+         body="Emet Harness +1",
          hands="Cizin Mufflers +1",
          back="Repulse Mantle",
          ring1="Dark Ring",
@@ -529,7 +529,7 @@ function init_gear_sets()
      sets.Defensive = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Emet Harness",
+         body="Emet Harness +1",
          hands="Cizin Mufflers +1",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1"
@@ -537,7 +537,7 @@ function init_gear_sets()
      sets.Defensive_Mid = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Emet Harness",
+         body="Emet Harness +1",
          hands="Umuthi Gloves",
          hands="Cizin Mufflers +1",
          ring2="Patricius Ring",
@@ -586,20 +586,20 @@ function init_gear_sets()
      })
      sets.engaged.LR = set_combine(sets.engaged, {
          neck="Agitator's Collar",
-         body="Emet Harness",
+         body="Emet Harness +1",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1"
      })
      sets.engaged.Mid.LR = set_combine(sets.engaged.Mid, {
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
-         body="Emet Harness",
+         body="Emet Harness +1",
          ring2="Patricius Ring"
      })
      sets.engaged.Acc.LR = set_combine(sets.engaged.Acc, {
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
-         body="Emet Harness",
+         body="Emet Harness +1",
          ring1="Patricius Ring"
      })
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
@@ -730,7 +730,7 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    if state.HybridMode.value == 'PDT' then
+    if state.HybridMode.current == 'PDT' then
         idleSet = set_combine(idleSet, sets.defense.PDT)
     end
     return idleSet
@@ -738,7 +738,7 @@ end
  
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-    if state.Buff['Last Resort'] and ( state.HybridMode.value == 'LR' or state.HybridMode.value == 'PDT' ) then
+    if state.Buff['Last Resort'] and state.HybridMode.current == 'LR' then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
     if state.CapacityMode.value then

@@ -19,6 +19,7 @@ function init_gear_sets()
     sets.precast.JA['Provoke'] = { 
         ear1="Friomisi Earring",
         ear2="Trux Earring", 
+        body="Emet Harness +1",
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.JA.Sange = { ammo=gear.SangeAmmo, body="Mochizuki Chainmail +1" }
@@ -182,7 +183,7 @@ function init_gear_sets()
     sets.defense.PDT = {
         head="Otronif Mask +1",
         neck="Twilight Torque",
-        body="Emet Harness",
+        body="Emet Harness +1",
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
@@ -251,7 +252,7 @@ function init_gear_sets()
 
     sets.engaged.NormalPDT = {
         head="Otronif Mask +1",
-        body="Emet Harness",
+        body="Emet Harness +1",
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
@@ -261,7 +262,7 @@ function init_gear_sets()
     }
     sets.engaged.AccPDT = {
         head="Lithelimb Cap",
-        body="Emet Harness",
+        body="Emet Harness +1",
         neck="Agitator's Collar",
         hands="Umuthi Gloves",
         ring1="Patricius Ring",
@@ -281,7 +282,7 @@ function init_gear_sets()
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
-        body="Emet Harness",
+        body="Emet Harness +1",
         ring1="Patricius Ring",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
