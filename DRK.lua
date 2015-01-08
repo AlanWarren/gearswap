@@ -319,10 +319,13 @@ function init_gear_sets()
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          ring1="Mars's Ring",
+         body="Mes'yohi Haubergeon",
          hands="Buremte Gloves",
          waist="Olseni Belt"
      })
-     sets.precast.WS.Insurgency.Acc.AM3 = sets.precast.WS.Insurgency.Acc
+     sets.precast.WS.Insurgency.Acc.AM3 = set_combine(sets.precast.WS.Insurgency.Acc, {
+         body="Fallen's Cuirass +1"
+     })
 
      -- CROSS REAPER
      -- 60% STR / 60% MND
