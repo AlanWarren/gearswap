@@ -307,20 +307,15 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Yaoyotl Helm",
          body="Fallen's Cuirass +1",
-         ear1="Zennaroi Earring",
+         hands="Ignominy Gauntlets +1",
          waist="Light Belt",
-         legs="Xaddi Cuisses"
      })
-     sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {
-         ammo="Ginsen",
-         legs="Xaddi Cuisses"
-         ear1="Zennaroi Earring",
-         back="Bleating Mantle",
-     })
+     sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {})
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          ring1="Mars's Ring",
          body="Mes'yohi Haubergeon",
          hands="Buremte Gloves",
+         legs="Xaddi Cuisses"
          waist="Olseni Belt"
      })
      sets.precast.WS.Insurgency.Acc.AM3 = set_combine(sets.precast.WS.Insurgency.Acc, {
