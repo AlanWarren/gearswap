@@ -236,7 +236,7 @@ function init_gear_sets()
          neck="Bale Choker",
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
-         body="Fallen's Cuirass +1",
+         body="Ignominy Cuirass +1",
          hands="Mikinaak Gauntlets",
          ring1="Rajas Ring",
          ring2="Ifrit Ring",
@@ -248,13 +248,13 @@ function init_gear_sets()
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
+         body="Fallen's Cuirass +1",
          hands="Ignominy Gauntlets +1",
-         ring1="Rajas Ring",
          feet="Whirlpool Greaves"
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          ear1="Zennaroi Earring",
-         ring1="Mars's Ring",
+         hands="Buremte Gloves",
          waist="Olseni Belt"
      })
  
@@ -262,7 +262,6 @@ function init_gear_sets()
      -- 86-100% STR
      sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
          neck="Breeze Gorget",
-         body="Ignominy Cuirass +1",
          back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          waist="Soil Belt"
      })
@@ -271,7 +270,6 @@ function init_gear_sets()
          head="Yaoyotl Helm",
     	 body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
-         ring1="Rajas Ring",
          feet="Whirlpool Greaves"
      })
      sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
@@ -297,10 +295,6 @@ function init_gear_sets()
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
          ear1="Bale Earring",
-         ring1="Rajas Ring",
-         body="Ignominy Cuirass +1",
-         waist="Windbuffet Belt +1",
-         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          legs="Scuffler's Cosciales",
          feet="Ejekamal Boots",
      })
@@ -313,28 +307,29 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Yaoyotl Helm",
          body="Fallen's Cuirass +1",
+         ear1="Zennaroi Earring",
          waist="Light Belt",
-         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          legs="Xaddi Cuisses"
      })
      sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {
          ammo="Ginsen",
          legs="Xaddi Cuisses"
+         ear1="Zennaroi Earring",
          back="Bleating Mantle",
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
-         ear1="Zennaroi Earring",
          ring1="Mars's Ring",
-         hands="Buremte Gloves"
+         hands="Buremte Gloves",
+         waist="Olseni Belt"
      })
      sets.precast.WS.Insurgency.Acc.AM3 = sets.precast.WS.Insurgency.Acc
 
      -- CROSS REAPER
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-         hands="Ignominy Gauntlets +1",
          neck="Aqua Gorget",
-         body="Ignominy Cuirass +1",
+         hands="Ignominy Gauntlets +1",
+         body="Phorcys Korazin",
          waist="Windbuffet belt +1",
          legs="Scuffler's Cosciales",
          feet="Ejekamal Boots"
@@ -349,16 +344,16 @@ function init_gear_sets()
      -- ENTROPY
      -- 86-100% INT 
      sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
-         head="Otomi Helm",
+         ammo="Ginsen",
+         head="Ignominy burgeonet +1",
          neck="Shadow Gorget",
-         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
-         legs="Scuffler's Cosciales",
+         body="Fallen's Cuirass +1",
+         back="Bleating Mantle",
          waist="Soil Belt",
-         feet="Ejekamal Boots"
+         feet="Mikinaak Greaves"
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
-         head="Yaoyotl Helm",
-         legs="Ignominy Flanchard +1",
+         head="Ighwa Cap",
          feet="Whirlpool Greaves"
      })
      sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, sets.precast.WS.Acc)
@@ -367,15 +362,15 @@ function init_gear_sets()
      -- 60% STR / MND 
      sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
-         ear2="Trux Earring",
+         ear2="Bale Earring",
+         body="Fallen's Cuirass +1",
          hands="Ignominy Gauntlets +1",
-         ring1="Rajas Ring",
          waist="Windbuffet Belt +1",
          feet="Ejekamal Boots"
      })
      sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
+         head="Yaoyotl Helm",
          waist="Caudata Belt",
-         feet="Whirlpool Greaves"
      })
      sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, sets.precast.WS.Acc)
 
@@ -396,19 +391,15 @@ function init_gear_sets()
      sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
          head="Ignominy burgeonet +1",
          neck="Aqua Gorget",
+         body="Fallen's Cuirass +1",
          ear1="Friomisi Earring",
          hands="Fallen's Finger Gauntlets",
-         waist="Caudata Belt",
          back="Argochampsa Mantle",
+         waist="Caudata Belt",
          feet="Ignominy Sollerets"
       })
      sets.precast.WS['Shadow of Death'].Mid = set_combine(sets.precast.WS['Shadow of Death'], sets.precast.WS.Mid)
      sets.precast.WS['Shadow of Death'].Acc = set_combine(sets.precast.WS['Shadow of Death'], sets.precast.WS.Acc)
-
-     -- CATASTROPHY
-     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {neck="Shadow Gorget"})
-     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {waist="Soil Belt"})
-     sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget", waist="Soil Belt"})
 
      -- Sword WS's
      -- SANGUINE BLADE
@@ -434,6 +425,7 @@ function init_gear_sets()
          head="Ighwa Cap",
          neck="Shadow Gorget",
          hands="Umuthi Gloves",
+         body="Fallen's Cuirass +1",
          back="Bleating Mantle",
          waist="Soil Belt",
          feet="Whirlpool Greaves"
