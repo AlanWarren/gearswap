@@ -111,7 +111,7 @@ function init_gear_sets()
 		body="Gorney Haubert +1",
         hands="Mikinaak Gauntlets",
         ring1="Ifrit Ring",
-        ring2="Pyrosoul Ring",
+        ring2="Ifrit Ring +1",
 		back="Buquwik Cape",
         waist="Windbuffet Belt +1",
         legs="Scuffler's Cosciales",
@@ -127,7 +127,6 @@ function init_gear_sets()
 	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         hands="Lancer's Vambraces +2",
-        ring2="Rajas Ring",
         back="Buquwik Cape",
         waist="Soil Belt"
     })
@@ -196,7 +195,7 @@ function init_gear_sets()
         ear2="Tripudio Earring",
 		body="Ares' Cuirass +1",
         hands="Ares' Gauntlets +1",
-        ring1="Patricius Ring",
+        ring1="Ifrit Ring +1",
         ring2="Oneiros Ring",
 		back="Bleating Mantle",
         waist="Metalsinger Belt",
@@ -208,8 +207,10 @@ function init_gear_sets()
         head="Otomi Helm",
         neck="Twilight Torque",
 		body="Ares' Cuirass +1",
+        ring1="Dark Ring",
         ring2="Paguroidea Ring",
-        back="Repulse Mantle"
+        waist="Flume Belt",
+        back="Engulfer's Cape +1"
     })
 
     sets.idle.Regen = set_combine(sets.idle.Field, {

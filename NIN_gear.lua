@@ -599,7 +599,7 @@ function init_gear_sets()
         --ammo="Ginsen",
         neck="Breeze Gorget",
         body="Dread Jupon",
-        ring1="Ifrit Ring",
+        ring1="Ifrit Ring +1",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
         legs="Wukong's Hakama +1"

@@ -17,7 +17,7 @@ function init_gear_sets()
             back="Buquwik Cape",
             hands="Seiryu's Kote",
             ring1="Ifrit Ring",
-            ring2="Pyrosoul Ring",
+            ring2="Ifrit Ring +1",
             legs="Arcadian Braccae +1", 
             feet="Arcadian Socks +1"
         })
@@ -68,7 +68,7 @@ function init_gear_sets()
             body="Kyujutsugi",
             ear1="Fenrir's Earring",
             ring1="Rajas Ring",
-            ring2="Ifrit Ring",
+            ring2="Ifrit Ring +1",
             back="Lutian Cape"
         })
  
@@ -365,7 +365,7 @@ function init_gear_sets()
             ear1=gear.Earring,
             body="Arcadian Jerkin +1",
             hands="Arcadian Bracers +1",
-            ring2="Ifrit Ring",
+            ring2="Ifrit Ring +1",
             back="Buquwik Cape",
             legs="Nahtirah Trousers",
             feet="Arcadian Socks +1"
@@ -424,7 +424,7 @@ function init_gear_sets()
             body="Kyujutsugi",
             hands="Arcadian Bracers +1",
             ring1="Ifrit Ring",
-            ring2="Pyrosoul Ring",
+            ring2="Ifrit Ring +1",
             back="Buquwik Cape",
             waist="Elanid Belt",
             legs="Nahtirah Trousers",
@@ -593,7 +593,7 @@ function init_gear_sets()
             ear2="Flame Pearl",
             body="Orion Jerkin +1",
             hands="Orion Bracers +1",
-            ring1="Ifrit Ring",
+            ring1="Ifrit Ring +1",
             ring2="Longshot Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
