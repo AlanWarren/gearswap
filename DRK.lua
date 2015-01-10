@@ -307,7 +307,7 @@ function init_gear_sets()
          head="Yaoyotl Helm",
          body="Fallen's Cuirass +1",
          hands="Ignominy Gauntlets +1",
-         waist="Light Belt",
+         waist="Metalsinger Belt",
      })
      sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {})
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {

@@ -93,7 +93,7 @@ function init_gear_sets()
         ring1="Prolix Ring",
         hands="Buremte Gloves",
         body="Dread Jupon",
-        legs="Kaabnax Trousers",
+        --legs="Kaabnax Trousers",
         feet="Mochizuki Kyahan +1" -- special enhancement for casting ninjutsu III
     }
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads", body="Mochizuki Chainmail +1" })
@@ -631,7 +631,7 @@ function init_gear_sets()
         hands="Sasuke Tekko +1",
         ring1="Garuda Ring",
         back="Rancorous Mantle",
-        legs="Otronif Brais +1",
+        legs="Kaabnax Trousers",
         waist="Windbuffet Belt +1",
         feet="Mochizuki Kyahan +1"
     })
@@ -644,7 +644,7 @@ function init_gear_sets()
         head="Ptica Headgear",
         neck="Shadow Gorget",
         back="Yokaze Mantle",
-        legs="Wukong's Hakama +1",
+        legs="Kaabnax Trousers",
     })
 
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
