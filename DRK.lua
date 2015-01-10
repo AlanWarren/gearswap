@@ -467,7 +467,7 @@ function init_gear_sets()
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
          head="Baghere Salade",
-         neck="Bale Choker",
+         neck="Coatl Gorget +1",
          body="Emet Harness +1",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
@@ -477,25 +477,23 @@ function init_gear_sets()
          feet="Fallen's Sollerets +1"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
-         ammo="Ginsen",
-         head="Baghere Salade",
          body="Kumarbi's Akar"
      })
  
      sets.idle.Weak = {
          head="Twilight Helm",
-         neck="Bale Choker",
+         neck="Coatl Gorget +1",
          body="Twilight Mail",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
-         back="Bleating Mantle",
+         back="Repulse Mantle",
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
-         feet="Fallen's Sollerets +1"
+         feet="Cizin Greaves +1"
      }
 
      sets.refresh = { 
-         neck="Bale Choker",
+         neck="Coatl Gorget +1",
          body="Ares' Cuirass +1"
      }
      
