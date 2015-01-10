@@ -504,6 +504,7 @@ function init_gear_sets()
          neck="Agitator's Collar",
          body="Emet Harness +1",
          hands="Cizin Mufflers +1",
+         ear1="Zennaroi Earring",
          ring1="Dark Ring",
          ring2="Patricius Ring",
          back="Repulse Mantle",
@@ -515,6 +516,7 @@ function init_gear_sets()
  
      sets.defense.MDT = set_combine(sets.defense.PDT, {
          neck="Twilight Torque",
+         ear1="Zennaroi Earring",
          ring2="K'ayres Ring",
          back="Engulfer Cape +1"
      })
