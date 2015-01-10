@@ -450,7 +450,7 @@ function init_gear_sets()
          ear2="Trux Earring",
          body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
-         ring1="Ramuh Ring +1",
+         ring1="Patricius Ring",
          ring2="K'ayres Ring",
          back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          waist="Windbuffet Belt +1",
@@ -547,7 +547,7 @@ function init_gear_sets()
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
          body="Emet Harness +1",
-         ring1="Ramuh Ring +1",
+         ring1="Mars's Ring",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
          feet="Cizin Greaves +1"
@@ -581,7 +581,7 @@ function init_gear_sets()
          ear2="Zennaroi Earring",
          neck="Iqabi Necklace",
          ring1="Mars's Ring",
-         ring2="Ramuh Ring +1",
+         ring2="Patricius Ring",
          waist="Olseni Belt"
      })
      sets.engaged.LR = set_combine(sets.engaged, {
@@ -621,7 +621,7 @@ function init_gear_sets()
          hands="Xaddi Gauntlets",
     	 body="Mes'yohi Haubergeon",
          ring1="Mars's Ring",
-         ring2="Ramuh Ring +1",
+         ring2="Patricius Ring",
          waist="Olseni Belt"
      })
      sets.engaged.War.PDT = set_combine(sets.engaged.War, sets.Defensive)
@@ -647,7 +647,7 @@ function init_gear_sets()
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          ear2="Steelflash Earring",
          ring1="Mars's Ring",
-         ring2="Ramuh Ring +1",
+         ring2="Patricius Ring",
          waist="Olseni Belt"
      })
 
