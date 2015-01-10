@@ -275,8 +275,8 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
-		back="Repulse Mantle",
-        waist="Patentia Sash",
+		back="Engulfer Cape +1",
+        waist="Flume Belt",
         legs="Pillager's Culottes +1",
         feet="Skadi's Jambeaux +1"
     }
@@ -315,7 +315,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Epona's Ring",
 		back="Repulse Mantle",
-        waist="Patentia Sash",
+        waist="Flume Belt",
         legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
     }
@@ -327,7 +327,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Dark Ring",
         ring2="Epona's Ring",
-		back="Bleating Mantle",
+		back="Engulfer Cape +1",
         legs="Nahtirah Trousers",
         feet="Qaaxo Leggings"
     }
@@ -368,12 +368,6 @@ function init_gear_sets()
         waist="Olseni Belt",
         feet="Qaaxo Leggings"
     })
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
-        head="Lithelimb Cap",
-        ring1="Patricius Ring",
-        legs="Iuitl Tights +1",
-        feet="Iuitl Gaiters +1"
-    })
 	sets.engaged.Evasion = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
         ring1="Beeline Ring",
@@ -391,6 +385,8 @@ function init_gear_sets()
         neck="Twilight Torque",
 		body="Emet Harness +1",
         ring1="Patricius Ring",
+        back="Repulse Mantle",
+        waist="Flume Belt",
         legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
     })

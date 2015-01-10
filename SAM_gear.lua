@@ -201,8 +201,9 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Paguroidea Ring",
         head="Yaoyotl Helm",
-   	    body="Mes'yohi Haubergeon",
-        back="Repulse Mantle",
+   	    body="Wakido Domaru +1",
+        back="Engulfer Cape +1",
+        waist="Flume Belt",
         feet="Danzo Sune-ate"
     })
 
@@ -235,7 +236,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Patricius Ring",
         back="Repulse Mantle",
-        waist="Windbuffet Belt +1",
+        waist="Flume Belt",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     }
@@ -245,7 +246,10 @@ function init_gear_sets()
     	body="Twilight Mail"
     })
     
-    sets.defense.MDT = sets.defense.PDT
+    sets.defense.MDT = set_combine(sets.defense.PDT, {
+         neck="Twilight Torque",
+         back="Engulfer Cape +1"
+    })
     
     sets.Kiting = {feet="Danzo Sune-ate"}
     
@@ -325,6 +329,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         ring1="Patricius Ring",
         back="Repulse Mantle",
+        waist="Flume Belt",
         feet="Otronif boots +1"
     })
     

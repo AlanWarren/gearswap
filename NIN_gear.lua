@@ -156,8 +156,8 @@ function init_gear_sets()
         hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
-    	back="Repulse Mantle",
-        waist="Windbuffet Belt +1",
+    	back="Engulfer Cape +1",
+        waist="Flume Belt",
         legs="Hachiya Hakama +1",
         feet="Danzo Sune-ate"
      }
@@ -188,6 +188,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Dark Ring",
         back="Repulse Mantle",
+        waist="Flume Belt",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     }
@@ -196,6 +197,7 @@ function init_gear_sets()
         head="Ptica Headgear",
         neck="Twilight Torque",
         hands="Otronif Gloves +1",
+        back="Engulfer Cape +1",
         feet="Otronif Boots +1"
     })
     
@@ -256,7 +258,6 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
-        back="Repulse Mantle",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     }
@@ -283,6 +284,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Otronif Gloves +1",
         body="Emet Harness +1",
+        waist="Flume Belt",
         ring1="Patricius Ring",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"

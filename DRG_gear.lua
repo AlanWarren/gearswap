@@ -234,7 +234,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Dark Ring",
 		back="Repulse Mantle",
-        waist="Cetl Belt",
+        waist="Flume Belt",
         legs="Cizin Breeches +1",
         feet="Cizin Greaves +1"
     }
@@ -244,7 +244,9 @@ function init_gear_sets()
 		body="Twilight Mail"
     })
 
-	sets.defense.MDT = sets.defense.PDT
+	sets.defense.MDT = set_combine(sets.defense.PDT, {
+         back="Engulfer Cape +1"
+    })
 
 	sets.Kiting = {legs="Crimson Cuisses"}
 
