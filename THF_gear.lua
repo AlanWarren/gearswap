@@ -15,7 +15,7 @@ function init_gear_sets()
 		body="Dread Jupon",
         hands="Pillager's Armlets +1",
         ring1="Ramuh Ring",
-        ring2="Ramuh Ring +1",
+        ring2="Rajas Ring",
 		back="Bleating Mantle",
         waist="Chaac Belt",
         legs="Pillager's Culottes +1",
@@ -70,7 +70,7 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
         hands="Plunderer's Armlets +1",
         back="Canny Cape",
-        ring1="Ramuh Ring +1",
+        ring1="Patricius Ring",
         ring2="Mars's Ring",
         waist="Chaac Belt",
         legs="Pillager's Culottes +1",
@@ -136,7 +136,7 @@ function init_gear_sets()
         hands="Plunderer's Armlets +1",
 		body="Dread Jupon",
         ring1="Mars's Ring",
-        ring2="Ramuh Ring +1",
+        ring2="Patricius Ring",
         back="Canny Cape",
         waist="Olseni Belt"
     })
@@ -181,7 +181,7 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         neck="Moepapa Medal",
         hands="Pillager's Armlets +1",
-        ring1="Ramuh Ring +1",
+        ring1="Ramuh Ring",
         waist="Light Belt",
         legs="Pillager's Culottes +1",
         back="Bleating Mantle",
@@ -192,7 +192,7 @@ function init_gear_sets()
         head="Whirlpool Mask",
         hands="Plunderer's Armlets +1",
         ring1="Rajas Ring",
-        ring2="Ramuh Ring +1",
+        ring2="Ramuh Ring",
         back="Canny Cape",
         waist="Olseni Belt"
     })
@@ -205,7 +205,7 @@ function init_gear_sets()
         neck="Moepapa Medal",
         hands="Pillager's Armlets +1",
         body="Dread Jupon",
-        ring1="Ramuh Ring +1",
+        ring1="Ramuh Ring",
         waist="Windbuffet Buffet +1",
         legs="Manibozho Brais",
         back="Kayapa Cape",
@@ -216,7 +216,7 @@ function init_gear_sets()
         head="Whirlpool Mask",
         hands="Plunderer's Armlets +1",
         ring1="Rajas Ring",
-        ring2="Ramuh Ring +1",
+        ring2="Ramuh Ring",
         back="Canny Cape",
         waist="Olseni Belt"
     })
@@ -225,11 +225,11 @@ function init_gear_sets()
 	sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
 
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Uk'uxkaj Cap", neck="Breeze Gorget",
-		ear1="Brutal Earring",ear2="Trux Earring", hands="Pillager's Armlets +1", ring1="Ramuh Ring +1", ring2="Rajas Ring",
+		ear1="Brutal Earring",ear2="Trux Earring", hands="Pillager's Armlets +1", ring1="Ramuh Ring", ring2="Rajas Ring",
         legs="Pillager's Culottes +1"})
 	sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head="Whirlpool Mask"})
 	sets.precast.WS['Shark Bite'].Mid = set_combine(sets.precast.WS['Shark Bite'], {waist="Thunder Belt"})
-	sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget", ring1="Ramuh Ring +1"})
+	sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget", ring1="Ramuh Ring"})
 	sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
 	sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
 
@@ -286,7 +286,7 @@ function init_gear_sets()
         body="Skadi's Cuirie +1",
         hands="Pillager's Armlets +1",
         back="Canny Cape",
-        ring1="Ramuh Ring +1",
+        ring1="Patricius Ring",
         ring2="Epona's Ring",
         waist="Windbuffet Belt +1",
     })
@@ -359,7 +359,7 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Whirlpool Mask",
         hands="Plunderer's Armlets +1",
-        ring1="Ramuh Ring +1",
+        ring1="Patricius Ring",
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
@@ -377,7 +377,7 @@ function init_gear_sets()
     sets.engaged.Mid.Evasion = sets.engaged.Evasion
 	sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
 		head="Whirlpool Mask",
-        ring1="Ramuh Ring +1",
+        ring1="Patricius Ring",
         waist="Olseni Belt"
     })
 	sets.engaged.PDT = set_combine(sets.engaged, {
@@ -391,13 +391,13 @@ function init_gear_sets()
         feet="Iuitl Gaiters +1"
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
-        ring1="Ramuh Ring +1",
+        ring1="Patricius Ring",
 		body="Emet Harness +1",
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
         head="Whirlpool Mask",
 		body="Emet Harness +1",
-        ring2="Ramuh Ring +1",
+        ring2="Mars's Ring",
         waist="Olseni Belt"
     })
     
@@ -411,7 +411,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
         body="Qaaxo Harness",
-        ring1="Ramuh Ring +1"
+        ring1="Patricius Ring"
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
         head="Whirlpool Mask",
@@ -419,7 +419,7 @@ function init_gear_sets()
         neck="Rancor Collar",
         hands="Plunderer's Armlets +1",
         ring1="Mars's Ring",
-        ring2="Ramuh Ring +1",
+        ring2="Patricius Ring",
         waist="Olseni Belt",
         back="Canny Cape"
     })

@@ -56,7 +56,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
-        ring1="Ramuh Ring +1",
+        ring1="Mars's Ring",
         waist="Olseni Belt",
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
@@ -170,7 +170,7 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         neck="Hope Torque",
-        ring1="Ramuh Ring +1",
+        ring1="Patricius Ring",
         ring2="Epona's Ring",
         hands="Sasuke Tekko +1",
         body="Emet Harness +1",
@@ -232,7 +232,7 @@ function init_gear_sets()
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
         hands="Sasuke Tekko +1",
-        ring1="Ramuh Ring +1",
+        ring1="Patricius Ring",
         legs="Mochizuki Kyahan +1"
     })
 
@@ -314,7 +314,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         hands="Sasuke Tekko +1",
-        ring1="Ramuh Ring +1",
+        ring1="Patricius Ring",
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
     })
@@ -592,7 +592,7 @@ function init_gear_sets()
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         legs="Wukong's Hakama +1",
-        ring1="Ramuh Ring +1"
+        ring1="Mars's Ring"
     })
 
     sets.Kamu = {
@@ -658,7 +658,7 @@ function init_gear_sets()
         neck="Flame Gorget",
         waist="Light Belt",
         back="Yokaze Mantle",
-        ring1="Ramuh Ring +1",
+        ring1="Ramuh Ring",
     }
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
     sets.precast.WS['Blade: Shun'].Low = set_combine(sets.precast.WS.Low, sets.Shun)
