@@ -472,9 +472,10 @@ function init_gear_sets()
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
-         back="Repulse Mantle",
+         back="Engulfer Cape +1",
+         waist="Flume Belt",
          legs="Crimson Cuisses",
-         feet="Fallen's Sollerets +1"
+         feet="Cizin Greaves +1"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
          body="Kumarbi's Akar"
@@ -503,9 +504,10 @@ function init_gear_sets()
          neck="Agitator's Collar",
          body="Emet Harness +1",
          hands="Cizin Mufflers +1",
-         back="Repulse Mantle",
          ring1="Dark Ring",
          ring2="Patricius Ring",
+         back="Repulse Mantle",
+         waist="Flume Belt",
          legs="Cizin Breeches +1",
          feet="Cizin Greaves +1"
      }
@@ -513,7 +515,8 @@ function init_gear_sets()
  
      sets.defense.MDT = set_combine(sets.defense.PDT, {
          neck="Twilight Torque",
-         ring2="K'ayres Ring"
+         ring2="K'ayres Ring",
+         back="Engulfer Cape +1"
      })
  
      sets.Kiting = {legs="Crimson Cuisses"}
@@ -535,14 +538,13 @@ function init_gear_sets()
          neck="Agitator's Collar",
          body="Emet Harness +1",
          hands="Umuthi Gloves",
-         hands="Cizin Mufflers +1",
          ring2="Patricius Ring",
      }
      sets.Defensive_Acc = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
-    	 body="Mes'yohi Haubergeon",
+         body="Emet Harness +1",
          ring1="Ramuh Ring +1",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
@@ -582,20 +584,17 @@ function init_gear_sets()
      })
      sets.engaged.LR = set_combine(sets.engaged, {
          neck="Agitator's Collar",
-         body="Emet Harness +1",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1"
      })
      sets.engaged.Mid.LR = set_combine(sets.engaged.Mid, {
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
-         body="Emet Harness +1",
          ring2="Patricius Ring"
      })
      sets.engaged.Acc.LR = set_combine(sets.engaged.Acc, {
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
-         body="Emet Harness +1",
          ring1="Patricius Ring"
      })
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
