@@ -167,13 +167,13 @@ function init_gear_sets()
          ear2="Crematio Earring",
          body="Fallen's Cuirass +1",
          hands="Fallen's Finger Gauntlets",
-         ring1="Sangoma Ring",
+         ring1="Shiva Ring",
          ring2="Acumen Ring",
          waist="Caudata Belt",
          --legs="Haruspex Slops",
          legs="Ignominy Flanchard +1",
          back="Aput Mantle",
-         feet="Ignominy Sollerets"
+         feet="Bale Sollerets +2"
      }
 	 
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
