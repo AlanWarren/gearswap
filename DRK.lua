@@ -217,7 +217,6 @@ function init_gear_sets()
          feet="Ejekamal Boots"
      }
      sets.midcast.RA = {
-         head="Lithelimb Cap",
          neck="Iqabi Necklace",
          ear2="Tripudio Earring",
          hands="Buremte Gloves",
@@ -315,7 +314,7 @@ function init_gear_sets()
          ring1="Mars's Ring",
          body="Mes'yohi Haubergeon",
          hands="Buremte Gloves",
-         legs="Xaddi Cuisses"
+         legs="Xaddi Cuisses",
          waist="Olseni Belt"
      })
      sets.precast.WS.Insurgency.Acc.AM3 = set_combine(sets.precast.WS.Insurgency.Acc, {
@@ -346,6 +345,7 @@ function init_gear_sets()
          head="Ignominy burgeonet +1",
          neck="Shadow Gorget",
          body="Fallen's Cuirass +1",
+         ring1="Shiva Ring",
          back="Bleating Mantle",
          waist="Soil Belt",
          feet="Mikinaak Greaves"
