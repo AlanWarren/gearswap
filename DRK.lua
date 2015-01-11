@@ -447,8 +447,8 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Baghere Salade",
-         neck="Coatl Gorget +1",
+         head="Fallen's burgeonet +1",
+         neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Trux Earring",
          body="Mes'yohi Haubergeon",
