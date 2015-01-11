@@ -447,24 +447,26 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Fallen's burgeonet +1",
+         head="Baghere Salade",
          neck="Ganesha's Mala",
-         ear1="Brutal Earring",
+         ear1="Zennaroi Earring",
          ear2="Trux Earring",
          body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
          ring1="Rajas Ring",
          ring2="Ifrit Ring +1",
-         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
+         back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
-         feet="Fallen's Sollerets +1"
+         feet="Cizin Greaves +1"
      }
      
     sets.cool = set_combine(sets.idle.Town, {
          head="Fallen's burgeonet +1",
-         legs="Ignominy Flanchard +1",
-         feet="Fallen's Sollerets +1"
+         body="Ares' Cuirass +1",
+         hands="Ares' Gauntlets +1",
+         legs="Scuffler's Cosciales",
+         feet="Cizin Greaves +1"
      })
 
      sets.idle.Field = set_combine(sets.idle.Town, {
