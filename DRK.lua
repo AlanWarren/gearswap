@@ -247,13 +247,14 @@ function init_gear_sets()
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
-         body="Fallen's Cuirass +1",
+         body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
          feet="Whirlpool Greaves"
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          ear1="Zennaroi Earring",
          hands="Buremte Gloves",
+         body="Fallen's Cuirass +1",
          waist="Olseni Belt"
      })
  
@@ -277,6 +278,7 @@ function init_gear_sets()
      -- VIT 80%
      sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
          head="Fallen's burgeonet +1",
+         neck="Ganesha's Mala",
          body="Phorcys Korazin",
          neck="Aqua Gorget",
          hands="Ignominy Gauntlets +1",
@@ -305,17 +307,18 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
-         body="Fallen's Cuirass +1",
+         body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
          waist="Metalsinger Belt",
      })
-     sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {})
+     sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {body="Fallen's Cuirass +1"})
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          ring1="Mars's Ring",
          body="Mes'yohi Haubergeon",
          hands="Buremte Gloves",
          legs="Xaddi Cuisses",
-         waist="Olseni Belt"
+         waist="Olseni Belt",
+         feet="Xaddi Boots"
      })
      sets.precast.WS.Insurgency.Acc.AM3 = set_combine(sets.precast.WS.Insurgency.Acc, {
          body="Fallen's Cuirass +1"
@@ -557,7 +560,7 @@ function init_gear_sets()
      sets.engaged = {
          ammo="Ginsen",
          head="Otomi Helm",
-         neck="Asperity Necklace",
+         neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Trux Earring",
     	 body="Xaddi Mail",
@@ -586,7 +589,7 @@ function init_gear_sets()
          waist="Olseni Belt"
      })
      sets.engaged.LR = set_combine(sets.engaged, {
-         neck="Agitator's Collar",
+         head="Agitator's Collar",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1"
      })
