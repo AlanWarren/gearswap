@@ -82,7 +82,7 @@ function init_gear_sets()
      sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets"}
      sets.precast.JA['Arcane Circle'] = {feet="Ignominy Sollerets"}
      sets.precast.JA['Nether Void'] = {legs="Bale Flanchard +2"}
-     sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet"}
+     sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet +1"}
      sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
      --sets.precast.JA['Last Resort'] = {feet="Fallen's Sollerets +1"}
      sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
@@ -104,7 +104,7 @@ function init_gear_sets()
      -- Fast cast sets for spells
      sets.precast.FC = {
         ammo="Impatiens",
-        head="Fallen's Burgeonet",
+        head="Fallen's Burgeonet +1",
         ear1="Loquacious Earring",
         hands="Buremte Gloves",
         ring2="Prolix Ring"
@@ -276,6 +276,7 @@ function init_gear_sets()
      -- TORCLEAVER 
      -- VIT 80%
      sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
+         head="Fallen's burgeonet +1",
          body="Phorcys Korazin",
          neck="Aqua Gorget",
          hands="Ignominy Gauntlets +1",
@@ -458,9 +459,9 @@ function init_gear_sets()
      }
      
     sets.cool = set_combine(sets.idle.Town, {
-         head="Ignominy Burgeonet +1",
+         head="Fallen's burgeonet +1",
          legs="Ignominy Flanchard +1",
-         feet="Ignominy Sollerets"
+         feet="Fallen's Sollerets +1"
      })
 
      sets.idle.Field = set_combine(sets.idle.Town, {
