@@ -264,7 +264,7 @@ function init_gear_sets()
 	sets.engaged = {
         ammo="Ginsen",
 		head="Otomi Helm",
-        neck="Asperity Necklace",
+        neck="Ganesha's Mala",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
 		body="Xaddi Mail",
