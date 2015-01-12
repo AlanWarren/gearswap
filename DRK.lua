@@ -386,10 +386,20 @@ function init_gear_sets()
          legs="Scuffler's Cosciales",
          feet="Ejekamal Boots"
      })
+     sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {
+         ear1="Bale Earring",
+         ear2="Brutal Earring",
+         legs="Ignominy Flanchard +1"
+     })
      sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
          head="Yaoyotl Helm",
          hands="Ignominy Gauntlets +1",
          waist="Caudata Belt",
+     })
+     sets.precast.WS.Quietus.Mid.AM3 = set_combine(sets.precast.WS.Quietus.Mid, {
+         ear1="Bale Earring",
+         ear2="Brutal Earring",
+         legs="Ignominy Flanchard +1"
      })
      sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, sets.precast.WS.Acc)
 
