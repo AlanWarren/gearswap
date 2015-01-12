@@ -79,7 +79,7 @@ function init_gear_sets()
      --------------------------------------
      -- Precast Sets
      -- Precast sets to enhance JAs
-     sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets"}
+     sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets +1"}
      sets.precast.JA['Arcane Circle'] = {feet="Ignominy Sollerets"}
      sets.precast.JA['Nether Void'] = {legs="Bale Flanchard +2"}
      sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet +1"}
@@ -142,7 +142,7 @@ function init_gear_sets()
          ear1="Lifestorm Earring",
          ear2="Psystorm Earring",
          body="Haruspex Coat",
-         hands="Fallen's Finger Gauntlets",
+         hands="Fallen's Finger Gauntlets +1",
          waist="Casso Sash",
          ring1="Perception Ring",
          ring2="Sangoma Ring",
@@ -166,7 +166,7 @@ function init_gear_sets()
          ear1="Friomisi Earring",
          ear2="Crematio Earring",
          body="Fallen's Cuirass +1",
-         hands="Fallen's Finger Gauntlets",
+         hands="Fallen's Finger Gauntlets +1",
          ring1="Shiva Ring",
          ring2="Acumen Ring",
          waist="Caudata Belt",
@@ -394,7 +394,7 @@ function init_gear_sets()
          neck="Aqua Gorget",
          body="Fallen's Cuirass +1",
          ear1="Friomisi Earring",
-         hands="Fallen's Finger Gauntlets",
+         hands="Fallen's Finger Gauntlets +1",
          back="Argochampsa Mantle",
          waist="Caudata Belt",
          feet="Ignominy Sollerets"
@@ -411,7 +411,7 @@ function init_gear_sets()
          ear1="Friomisi Earring",
          ear2="Crematio Earring",
          body="Fallen's Cuirass +1",
-         hands="Fallen's Finger Gauntlets",
+         hands="Fallen's Finger Gauntlets +1",
          legs="Ignominy Flanchard +1",
          ring2="Acumen Ring",
          back="Argochampsa Mantle",
