@@ -92,6 +92,8 @@ function init_gear_sets()
      sets.Berserker      = { neck="Berserker's Torque" }
      sets.WSDayBonus     = { head="Gavialis Helm" }
      sets.WSBack         = { back="Trepidity Mantle" }
+     sets.NightAmmo      = { ammo="Ginsen" }
+     sets.DayAmmo        = { ammo="Tengu-No-Hane" }
  
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {
@@ -249,7 +251,7 @@ function init_gear_sets()
          head="Yaoyotl Helm",
          body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
-         feet="Whirlpool Greaves"
+         feet="Ejekamal Boots"
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          ear1="Zennaroi Earring",
@@ -306,38 +308,49 @@ function init_gear_sets()
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
-         head="Yaoyotl Helm",
+         head="Gavialis Helm",
          body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
-         waist="Metalsinger Belt",
-     })
-     sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {body="Fallen's Cuirass +1"})
-     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
-         ring1="Mars's Ring",
-         body="Mes'yohi Haubergeon",
-         hands="Buremte Gloves",
-         legs="Xaddi Cuisses",
-         waist="Olseni Belt",
+         waist="Light Belt",
          feet="Xaddi Boots"
      })
-     sets.precast.WS.Insurgency.Acc.AM3 = set_combine(sets.precast.WS.Insurgency.Acc, {
-         body="Fallen's Cuirass +1"
+     sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {
+         body="Fallen's Cuirass +1",
+         legs="Ignominy Flanchard +1"
      })
-
+     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
+         head="Gavialis Helm",
+         ear1="Zennaroi Earring",
+         body="Fallen's Cuirass +1",
+         hands="Ignominy Gauntlets +1",
+         ring1="Mars's Ring",
+         waist="Anguinius Belt",
+         legs="Xaddi Cuisses",
+         feet="Xaddi Boots"
+     })
+     sets.precast.WS.Insurgency.Acc.AM3 = set_combine(sets.precast.WS.Insurgency.Acc, {})
+     
      -- CROSS REAPER
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-         neck="Aqua Gorget",
-         hands="Ignominy Gauntlets +1",
-         body="Phorcys Korazin",
-         waist="Windbuffet belt +1",
+         neck="Ganesha's Mala",
+         hands="Fallen's Finger Gauntlets +1",
          legs="Scuffler's Cosciales",
          feet="Ejekamal Boots"
      })
+     sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {})
+
      sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS.Mid, {
+         ammo="Ginsen",
          neck="Aqua Gorget",
          body="Fallen's Cuirass +1",
-         waist="Metalsinger Belt",
+         ring1="Rajas Ring",
+         waist="Windbuffet Belt +1",
+     })
+     sets.precast.WS['Cross Reaper'].Mid.AM3 = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
+         head="Gavialis Helm",
+         ear1="Bale Earring",
+         waist="Caudata Belt"
      })
      sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, sets.precast.WS.Acc)
      
@@ -345,16 +358,19 @@ function init_gear_sets()
      -- 86-100% INT 
      sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
          ammo="Ginsen",
-         head="Ignominy burgeonet +1",
+         head="Otomi Helm",
          neck="Shadow Gorget",
          body="Fallen's Cuirass +1",
+         hands="Fallen's Finger Gauntlets +1",
          ring1="Shiva Ring",
          back="Bleating Mantle",
          waist="Soil Belt",
-         feet="Mikinaak Greaves"
+         legs="Scuffler's Cosciales",
+         feet="Ejekamal Boots"
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
          head="Ighwa Cap",
+         hands="Ignominy Gauntlets +1",
          feet="Whirlpool Greaves"
      })
      sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, sets.precast.WS.Acc)
@@ -363,14 +379,16 @@ function init_gear_sets()
      -- 60% STR / MND 
      sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
-         ear2="Bale Earring",
-         body="Fallen's Cuirass +1",
-         hands="Ignominy Gauntlets +1",
+         ear2="Trux Earring",
+         body="Ignominy Cuirass +1",
+         hands="Fallen's Finger Gauntlets +1",
          waist="Windbuffet Belt +1",
+         legs="Scuffler's Cosciales",
          feet="Ejekamal Boots"
      })
      sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
          head="Yaoyotl Helm",
+         hands="Ignominy Gauntlets +1",
          waist="Caudata Belt",
      })
      sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, sets.precast.WS.Acc)
@@ -583,9 +601,12 @@ function init_gear_sets()
          feet="Xaddi Boots",
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+         head="Gavialis Helm",
+         neck="Iqabi Necklace",
          ear1="Steelflash Earring",
          ear2="Zennaroi Earring",
-         neck="Iqabi Necklace",
+         hands="Buremte Gloves",
+         back="Kayapa Cape",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
          waist="Olseni Belt"
@@ -624,11 +645,13 @@ function init_gear_sets()
      })
      sets.engaged.War.Acc = set_combine(sets.engaged.War.Mid, {
          neck="Iqabi Necklace",
-         hands="Xaddi Gauntlets",
+         hands="Buremte Gloves",
     	 body="Mes'yohi Haubergeon",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
-         waist="Olseni Belt"
+         back="Kayapa Cape",
+         waist="Olseni Belt",
+         feet="Xaddi Boots"
      })
      sets.engaged.War.PDT = set_combine(sets.engaged.War, sets.Defensive)
      sets.engaged.War.Mid.PDT = set_combine(sets.engaged.War.Mid, sets.Defensive_Mid)
@@ -654,6 +677,8 @@ function init_gear_sets()
          neck="Iqabi Necklace",
          ear1="Zennaroi Earring",
          ear2="Steelflash Earring",
+         hands="Buremte Gloves",
+         back="Kayapa Cape",
          ring1="Rajas Ring",
          ring2="Mars's Ring",
          waist="Olseni Belt"
@@ -748,6 +773,9 @@ function customize_melee_set(meleeSet)
     end
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+    end
+    if state.OffenseMode.current == 'Acc' then
+        meleeSet = set_combine(meleeSet, select_ammo())
     end
     return meleeSet
 end
@@ -901,6 +929,13 @@ windower.register_event('Zone change', function(new,old)
     end
 end)
 
+function select_ammo()
+    if world.time >= (18*60) or world.time <= (6*60) then
+        return sets.NightAmmo
+    else
+        return sets.DayAmmo
+    end
+end
 --function adjust_melee_groups()
 --	classes.CustomMeleeGroups:clear()
 --	if state.Buff.Aftermath then
