@@ -368,10 +368,16 @@ function init_gear_sets()
          legs="Scuffler's Cosciales",
          feet="Ejekamal Boots"
      })
+     sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
+         legs="Ignominy Flanchard +1"
+     })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
          head="Ighwa Cap",
          hands="Ignominy Gauntlets +1",
          feet="Whirlpool Greaves"
+     })
+     sets.precast.WS.Entropy.Mid.AM3 = set_combine(sets.precast.WS.Entropy.Mid, { 
+        legs="Xaddi Cuisses"
      })
      sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, sets.precast.WS.Acc)
 
