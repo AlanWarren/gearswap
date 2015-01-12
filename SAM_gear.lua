@@ -88,11 +88,12 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
-        neck="Aqua Gorget",
+        neck="Ganesha's Mala",
         waist="Metalsinger Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
         head="Yaoyotl Helm",
+        neck="Aqua Gorget",
    	    body="Mes'yohi Haubergeon",
         legs="Wukong's Hakama +1",
         waist="Metalsinger Belt"
