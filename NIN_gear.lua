@@ -644,7 +644,6 @@ function init_gear_sets()
         head="Ptica Headgear",
         neck="Shadow Gorget",
         back="Yokaze Mantle",
-        legs="Kaabnax Trousers",
     })
 
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
