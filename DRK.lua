@@ -298,7 +298,7 @@ function init_gear_sets()
      -- 20% STR / 20% INT
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
-         ear1="Bale Earring",
+         ear1="Brutal Earring",
          legs="Scuffler's Cosciales",
          feet="Ejekamal Boots",
      })
@@ -614,7 +614,6 @@ function init_gear_sets()
          ear2="Steelflash Earring",
          hands="Xaddi Gauntlets",
     	 body="Mes'yohi Haubergeon",
-         feet="Xaddi Boots",
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          head="Gavialis Helm",
@@ -625,7 +624,8 @@ function init_gear_sets()
          back="Kayapa Cape",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
-         waist="Olseni Belt"
+         waist="Olseni Belt",
+         feet="Xaddi Boots"
      })
      sets.engaged.LR = set_combine(sets.engaged, {
          head="Agitator's Collar",
