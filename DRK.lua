@@ -496,11 +496,11 @@ function init_gear_sets()
      }
      
     sets.cool = set_combine(sets.idle.Town, {
-         head="Fallen's burgeonet +1",
-         body="Ares' Cuirass +1",
-         hands="Ares' Gauntlets +1",
+         head="Otomi Helm",
+         body="Mes'yohi Haubergeon",
+         hands="Ignominy Gauntlets +1",
          legs="Scuffler's Cosciales",
-         feet="Cizin Greaves +1"
+         feet="Xaddi Boots"
      })
 
      sets.idle.Field = set_combine(sets.idle.Town, {
