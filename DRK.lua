@@ -674,24 +674,20 @@ function init_gear_sets()
      sets.engaged.War.Acc.PDT = set_combine(sets.engaged.War.Acc, sets.Defensive_Acc)
 
      sets.engaged.AM3 = set_combine(sets.engaged, {
-         ammo="Yetshila",
          head="Yaoyotl Helm",
+         body="Mes'yohi Haubergeon",
          ear2="Tripudio Earring",
          hands="Cizin Mufflers +1",
-         back="Bleating Mantle",
          legs="Xaddi Cuisses",
          feet="Ejekamal Boots"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-         ammo="Ginsen",
-         body="Mes'yohi Haubergeon",
+         ear1="Zennaroi Earring",
          hands="Xaddi Gauntlets",
-         legs="Xaddi Cuisses",
          feet="Xaddi Boots"
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          neck="Iqabi Necklace",
-         ear1="Zennaroi Earring",
          ear2="Steelflash Earring",
          hands="Buremte Gloves",
          back="Kayapa Cape",
