@@ -120,7 +120,6 @@ function init_gear_sets()
      })
      sets.precast.FC['Enfeebling Magic'] = set_combine(sets.precast.FC, {
          head="Cizin Helm +1",
-         neck="Stoicheion Medal" 
      })
      
      -- Midcast Sets
