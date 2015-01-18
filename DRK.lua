@@ -313,7 +313,7 @@ function init_gear_sets()
          waist="Light Belt",
          feet="Xaddi Boots"
      })
-     sets.precast.WS.Insurgency.Mid.AM3 = set_combine(sets.precast.WS.Insurgency.Mid, {
+     sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Fallen's Cuirass +1",
          legs="Ignominy Flanchard +1"
      })
@@ -327,7 +327,7 @@ function init_gear_sets()
          legs="Xaddi Cuisses",
          feet="Xaddi Boots"
      })
-     sets.precast.WS.Insurgency.Acc.AM3 = set_combine(sets.precast.WS.Insurgency.Acc, {})
+     sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
      
      -- CROSS REAPER
      -- 60% STR / 60% MND
@@ -858,8 +858,18 @@ function job_update(cmdParams, eventArgs)
 end
 
 function get_custom_wsmode(spell, spellMap, default_wsmode)
-    if buffactive['Aftermath: Lv.3'] then
-        return 'AM3'
+    if state.OffenseMode.current == 'Mid' then
+        if buffactive['Aftermath: Lv.3'] then
+            return 'AM3Mid'
+        end
+    elseif state.OffenseMode.current == 'Acc' then
+        if buffactive['Aftermath: Lv.3'] then
+            return 'AM3Acc'
+        end
+    else
+        if buffactive['Aftermath: Lv.3'] then
+            return 'AM3'
+        end
     end
 end
 -------------------------------------------------------------------------------------------------------------------
