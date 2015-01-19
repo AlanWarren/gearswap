@@ -842,12 +842,10 @@ function job_buff_change(buff, gain)
     end
 
     -- Warp ring rule, for any buff being lost
-    if not gain then
-        if player.equipment.ring2 == 'Warp Ring' then
-            disable('ring2')
-        else
-            enable('ring2')
-        end
+    if player.equipment.ring2 == 'Warp Ring' then
+        disable('ring2')
+    else
+        enable('ring2')
     end
 
 end
