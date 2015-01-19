@@ -810,7 +810,7 @@ function job_buff_change(buff, gain)
     if state.Buff[buff] ~= nil then
         handle_equipping_gear(player.status)
     end
-
+    
     if buff == "Max HP Boost" then
         if gain then
             state.SouleaterMode:set(false)
@@ -840,6 +840,16 @@ function job_buff_change(buff, gain)
     if string.lower(buff) == "sleep" and gain and player.hp > 200 then
         equip(sets.Berserker)
     end
+
+    -- Warp ring rule, for any buff being lost
+    if not gain then
+        if player.equipment.ring2 == 'Warp Ring' then
+            disable('ring2')
+        else
+            enable('ring2')
+        end
+    end
+
 end
  
  
