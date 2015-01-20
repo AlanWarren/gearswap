@@ -109,11 +109,9 @@ function job_precast(spell, action, spellMap, eventArgs)
         -- If sneak is active when using, cancel before completion
         send_command('cancel 71')
     end
-    -- cancel utsusemi if shadows are up already
     if string.find(spell.english, 'Utsusemi') then
         if buffactive['Copy Image (3)'] or buffactive['Copy Image (4)'] then
             cancel_spell()
-            add_to_chat(123, spell.english .. ' Canceled: [3+ Images]')
             eventArgs.cancel = true
             return
         end
