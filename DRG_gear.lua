@@ -280,7 +280,6 @@ function init_gear_sets()
 	sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
         ear1="Zennaroi Earring",
-        ring2="Ramuh Ring +1"
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {

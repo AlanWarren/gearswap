@@ -346,7 +346,7 @@ function init_gear_sets()
          ring1="Rajas Ring",
          waist="Windbuffet Belt +1",
      })
-     sets.precast.WS['Cross Reaper'].Mid.AM3 = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
+     sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
          head="Gavialis Helm",
          ear1="Bale Earring",
          waist="Caudata Belt"
@@ -375,7 +375,7 @@ function init_gear_sets()
          hands="Ignominy Gauntlets +1",
          feet="Whirlpool Greaves"
      })
-     sets.precast.WS.Entropy.Mid.AM3 = set_combine(sets.precast.WS.Entropy.Mid, { 
+     sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, { 
         legs="Xaddi Cuisses"
      })
      sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, sets.precast.WS.Acc)
@@ -401,7 +401,7 @@ function init_gear_sets()
          hands="Ignominy Gauntlets +1",
          waist="Caudata Belt",
      })
-     sets.precast.WS.Quietus.Mid.AM3 = set_combine(sets.precast.WS.Quietus.Mid, {
+     sets.precast.WS.Quietus.AM3Mid = set_combine(sets.precast.WS.Quietus.Mid, {
          ear1="Bale Earring",
          ear2="Brutal Earring",
          legs="Ignominy Flanchard +1"
@@ -627,13 +627,10 @@ function init_gear_sets()
          feet="Xaddi Boots"
      })
      sets.engaged.LR = set_combine(sets.engaged, {
-         head="Agitator's Collar",
-         ring2="Patricius Ring",
          legs="Cizin Breeches +1"
      })
      sets.engaged.Mid.LR = set_combine(sets.engaged.Mid, {
          neck="Agitator's Collar",
-         hands="Umuthi Gloves",
          ring2="Patricius Ring"
      })
      sets.engaged.Acc.LR = set_combine(sets.engaged.Acc, {
@@ -683,7 +680,6 @@ function init_gear_sets()
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
          ear1="Zennaroi Earring",
          hands="Xaddi Gauntlets",
-         feet="Xaddi Boots"
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          neck="Iqabi Necklace",
@@ -692,7 +688,8 @@ function init_gear_sets()
          back="Kayapa Cape",
          ring1="Rajas Ring",
          ring2="Mars's Ring",
-         waist="Olseni Belt"
+         waist="Olseni Belt",
+         feet="Xaddi Boots"
      })
 
      sets.engaged.Reraise = set_combine(sets.engaged, {
