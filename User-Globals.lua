@@ -1,3 +1,21 @@
+
+sets.reive = {neck="Ygnas's Resolve"}
+
+
+function user_customize_melee_set(meleeSet)
+    if buffactive['Reive Mark'] then
+        meleeSet = set_combine(meleeSet, sets.reive)
+    end
+    return meleeSet
+end
+
+function user_customize_idle_set(idleSet)
+    if buffactive['Reive Mark'] then
+        idleSet = set_combine(idleSet, sets.reive)
+    end
+    return idleSet
+end
+
 function is_sc_element_today(spell)
     if spell.type ~= 'WeaponSkill' then
         return
