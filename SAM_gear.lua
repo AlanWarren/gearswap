@@ -1,3 +1,13 @@
+--[[
+-- SC's
+Rana > Shoha > Fudo > Kasha > Shoha > Fudo - light
+Rana > Shoha > Fudo > Kasha > Rana > Fudo - dark
+
+Kasha > Shoha > Fudo
+Fudo > Kasha > Shoha > fudo
+Shoha > Fudo > Kasha > Shoha > Fudo
+
+--]]
 function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
