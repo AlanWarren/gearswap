@@ -347,17 +347,19 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-		body="Skadi's Cuirie +1",
+		--body="Skadi's Cuirie +1",
+		body="Thaumas Coat",
         hands="Iuitl Wristbands +1",
-        ring1="Oneiros Ring",
+        ring1="Rajas Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
-        waist="Shetal Stone",
-        legs="Pillager's Culottes +1",
+        waist="Patentia Sash",
+        legs="Iuitl Tights +1",
         feet="Plunderer's Poulaines"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Whirlpool Mask",
+        body="Qaaxo Harness",
         hands="Plunderer's Armlets +1",
         ring1="Patricius Ring",
     })
