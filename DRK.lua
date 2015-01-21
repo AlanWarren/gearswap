@@ -629,6 +629,7 @@ function init_gear_sets()
      sets.engaged.LR = set_combine(sets.engaged, {
          legs="Cizin Breeches +1"
      })
+     sets.engaged.LR.AM3 = set_combine(sets.engaged.LR, {head="Yaoyotl Helm", body="Mes'yohi Haubergeon", ear2="Tripudio Earring"})
      sets.engaged.Mid.LR = set_combine(sets.engaged.Mid, {
          neck="Agitator's Collar",
          ring2="Patricius Ring"
