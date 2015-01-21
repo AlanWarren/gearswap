@@ -794,9 +794,12 @@ end
  
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
-    --if newStatus == "Engaged" then
-    --    get_combat_weapon()
-    --end
+    if newStatus == "Engaged" then
+        if buffactive['Last Resort'] and state.HybridMode.current == 'LR' then
+            equip(sets.buff['Last Resort'])
+        end
+        --get_combat_weapon()
+    end
 end
  
 -- Called when a player gains or loses a buff.
