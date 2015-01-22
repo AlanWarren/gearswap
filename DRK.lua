@@ -307,14 +307,16 @@ function init_gear_sets()
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
-         head="Gavialis Helm",
+         head="Yaoyotl Helm",
          body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
-         waist="Light Belt",
-         feet="Xaddi Boots"
+         waist="Light Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Fallen's Cuirass +1",
+         ear1="Bale Earring",
+         ring1="Rajas Ring",
+         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          legs="Ignominy Flanchard +1"
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
