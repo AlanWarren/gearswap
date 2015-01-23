@@ -595,7 +595,7 @@ function init_gear_sets()
     })
 
     sets.Kamu = {
-        --ammo="Ginsen",
+        ammo="Ginsen",
         neck="Breeze Gorget",
         body="Dread Jupon",
         ring1="Ifrit Ring +1",
@@ -610,7 +610,7 @@ function init_gear_sets()
     
     -- BLADE: JIN
     sets.Jin = {
-        --ammo="Yetshila",
+        ammo="Yetshila",
         neck="Breeze Gorget",
         waist="Thunder Belt",
         back="Yokaze Mantle",
@@ -623,7 +623,7 @@ function init_gear_sets()
     -- BLADE: HI
 
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-        --ammo="Yetshila",
+        ammo="Yetshila",
         neck="Shadow Gorget",
         head="Uk'uxkaj Cap",
         body="Dread Jupon",
@@ -654,6 +654,7 @@ function init_gear_sets()
     sets.Shun = {
         head="Gavialis Helm",
         neck="Flame Gorget",
+        ear2="Trux Earring",
         waist="Light Belt",
         back="Yokaze Mantle",
         ring1="Ramuh Ring",
@@ -689,7 +690,6 @@ function init_gear_sets()
     
     sets.Ten = {
         head="Whirlpool Mask",
-        ear2="Trux Earring",
         neck="Shadow Gorget",
         waist="Windbuffet Belt +1",
     }
@@ -702,7 +702,6 @@ function init_gear_sets()
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
         head="Umbani Cap",
         ear1="Crematio Earring",
-        ear2="Moonshade Earring",
         neck="Stoicheion Medal",
         ring1="Garuda Ring",
         ring2="Acumen Ring",
