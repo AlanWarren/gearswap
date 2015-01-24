@@ -93,7 +93,7 @@ function init_gear_sets()
         ring1="Prolix Ring",
         hands="Buremte Gloves",
         body="Dread Jupon",
-        --legs="Kaabnax Trousers",
+        legs="Quiahuiz Trousers",
         feet="Mochizuki Kyahan +1" -- special enhancement for casting ninjutsu III
     }
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads", body="Mochizuki Chainmail +1" })

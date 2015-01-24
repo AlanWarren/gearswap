@@ -55,7 +55,7 @@ function init_gear_sets()
         ring1="Prolix Ring",
         body="Dread Jupon",
         hands="Buremte Gloves",
-        legs="Kaabnax Trousers"
+        legs="Quiahuiz Trousers",
     }
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})

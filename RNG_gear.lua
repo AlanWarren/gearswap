@@ -34,7 +34,7 @@ function init_gear_sets()
         sets.precast.FC = {
             head="Ejekamal Mask",
             ear1="Loquacious Earring",
-            legs="Kaabnax Trousers",
+            legs="Quiahuiz Trousers",
             hands="Buremte Gloves",
             ring1="Prolix Ring"
         }
