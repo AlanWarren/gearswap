@@ -208,7 +208,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo=gear.RegularAmmo,
         head="Ptica Headgear",
-        neck="Asperity Necklace",
+        neck="Rancor Collar",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Hachiya Chainmail +1",
@@ -224,7 +224,6 @@ function init_gear_sets()
 
     sets.engaged.Low = set_combine(sets.engaged, {
         body="Mochizuki Chainmail +1",
-        neck="Rancor Collar",
         hands="Otronif Gloves +1",
         back="Yokaze Mantle",
         feet="Qaaxo Leggings"
@@ -295,7 +294,7 @@ function init_gear_sets()
         head="Felistris Mask",
         ear1="Brutal Earring",
         ear2="Trux Earring",
-        neck="Asperity Necklace",
+        neck="Rancor Collar",
         body="Mes'yohi Haubergeon",
         hands="Onimusha-no-kote",
         ring1="Rajas Ring",
@@ -306,9 +305,9 @@ function init_gear_sets()
     })
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Whirlpool Mask",
+        neck="Rancor Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        neck="Rancor Collar",
         back="Yokaze Mantle",
         feet="Qaaxo Leggings"
     })
@@ -413,7 +412,7 @@ function init_gear_sets()
     
     sets.engaged.LowDef.Haste_35 = set_combine(sets.engaged.LowDef.Haste_40, {
         head="Ptica Headgear",
-        neck="Asperity Necklace",
+        neck="Rancor Collar",
         back="Bleating Mantle",
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
@@ -438,7 +437,7 @@ function init_gear_sets()
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
-        neck="Asperity Necklace",
+        neck="Rancor Collar",
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Mochizuki Chainmail +1",
@@ -596,7 +595,7 @@ function init_gear_sets()
     })
 
     sets.Kamu = {
-        --ammo="Ginsen",
+        ammo="Ginsen",
         neck="Breeze Gorget",
         body="Dread Jupon",
         ring1="Ifrit Ring +1",
@@ -611,7 +610,7 @@ function init_gear_sets()
     
     -- BLADE: JIN
     sets.Jin = {
-        --ammo="Yetshila",
+        ammo="Yetshila",
         neck="Breeze Gorget",
         waist="Thunder Belt",
         back="Yokaze Mantle",
@@ -624,7 +623,7 @@ function init_gear_sets()
     -- BLADE: HI
 
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-        --ammo="Yetshila",
+        ammo="Yetshila",
         neck="Shadow Gorget",
         head="Uk'uxkaj Cap",
         body="Dread Jupon",
@@ -655,6 +654,7 @@ function init_gear_sets()
     sets.Shun = {
         head="Gavialis Helm",
         neck="Flame Gorget",
+        ear2="Trux Earring",
         waist="Light Belt",
         back="Yokaze Mantle",
         ring1="Ramuh Ring",
@@ -690,7 +690,6 @@ function init_gear_sets()
     
     sets.Ten = {
         head="Whirlpool Mask",
-        ear2="Trux Earring",
         neck="Shadow Gorget",
         waist="Windbuffet Belt +1",
     }
@@ -703,7 +702,6 @@ function init_gear_sets()
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
         head="Umbani Cap",
         ear1="Crematio Earring",
-        ear2="Moonshade Earring",
         neck="Stoicheion Medal",
         ring1="Garuda Ring",
         ring2="Acumen Ring",
