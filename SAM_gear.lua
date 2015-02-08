@@ -203,7 +203,7 @@ function init_gear_sets()
         ring2="Patricius Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Scuffler's Cosciales",
+        legs="Wakido Haidate +1",
         feet="Danzo Sune-ate"
     }
     
@@ -212,7 +212,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Paguroidea Ring",
         head="Yaoyotl Helm",
-   	    body="Wakido Domaru +1",
+   	    body="Mes'yohi Haubergeon",
         back="Engulfer Cape +1",
         waist="Flume Belt",
         feet="Danzo Sune-ate"
