@@ -32,7 +32,7 @@ end
 -- Setup vars that are user-independent.
 function job_setup()
     get_combat_form()
-    get_combat_weapon()
+    --get_combat_weapon()
     update_melee_groups()
     
     state.CapacityMode = M(false, 'Capacity Point Mantle')
@@ -91,7 +91,7 @@ end
 function job_pretarget(spell, action, spellMap, eventArgs)
 	if spell.type:lower() == 'weaponskill' then
 		-- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
-		if player.equipment.main=='Nativus Halberd' or player.equipment.main=='Quint Spear' then
+		if player.equipment.main =='Nativus Halberd' or player.equipment.main =='Quint Spear' then
 			if spell.english:startswith("Tachi:") then
 				send_command('@input /ws "Stardiver" '..spell.target.raw)
 				eventArgs.cancel = true
@@ -267,7 +267,7 @@ end
 function job_update(cmdParams, eventArgs)
 	get_combat_form()
     update_melee_groups()
-    get_combat_weapon()
+    --get_combat_weapon()
 end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
@@ -278,17 +278,17 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
-function get_combat_weapon()
-    if player.equipment.range == 'Yoichinoyumi' then
-        if player.equipment.main == 'Amanomurakumo' then
-            state.CombatWeapon:set('AmanoYoichi')
-        else
-            state.CombatWeapon:set('Yoichi')
-        end
-    else
-        state.CombatWeapon:set(player.equipment.main)
-    end
-end
+--function get_combat_weapon()
+--    if player.equipment.range == 'Yoichinoyumi' then
+--        if player.equipment.main == 'Amanomurakumo' then
+--            state.CombatWeapon:set('AmanoYoichi')
+--        else
+--            state.CombatWeapon:set('Yoichi')
+--        end
+--    else
+--        state.CombatWeapon:set(player.equipment.main)
+--    end
+--end
 
 function get_combat_form()
     if areas.Adoulin:contains(world.area) and buffactive.ionis then
