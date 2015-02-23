@@ -240,7 +240,7 @@ function init_gear_sets()
          hands="Mikinaak Gauntlets",
          ring1="Ifrit Ring",
          ring2="Ifrit Ring +1",
-         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
+         back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
          legs="Ignominy Flanchard +1",
          feet="Fallen's Sollerets +1"
@@ -263,7 +263,6 @@ function init_gear_sets()
      -- 86-100% STR
      sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
          neck="Breeze Gorget",
-         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
          waist="Soil Belt"
      })
      sets.precast.WS.Resolution.Mid = set_combine(sets.precast.WS.Resolution, {
@@ -316,7 +315,7 @@ function init_gear_sets()
          body="Fallen's Cuirass +1",
          ear1="Bale Earring",
          ring1="Rajas Ring",
-         back={name="Niht Mantle", augments={'Attack +10','Dark magic skill +4','"Drain" and "Aspir" potency +23', 'Weapon skill damage +1%'}},
+         back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          legs="Ignominy Flanchard +1"
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
