@@ -222,7 +222,6 @@ function init_gear_sets()
     })
 
 	sets.idle.Town = {
-        range="Vanir Gun",
         ammo=gear.RAbullet,
         head="Lanun Tricorne +1",
         neck="Iqabi Necklace",
