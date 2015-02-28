@@ -10,7 +10,7 @@ function init_gear_sets()
 	sets.precast.JA['Triple Shot'] = {body="Navarch's Frac +2"}
 	sets.precast.JA['Snake Eye'] = {legs="Commodore Culottes +1"}
 	sets.precast.JA['Wild Card'] = {feet="Commodore Bottes +2"}
-	sets.precast.JA['Random Deal'] = {body="Lanun Frac"}
+	sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
 	sets.precast.JA['Fold'] = {body="Commodore Gants +2"}
     
     sets.CapacityMantle = {back="Mecistopins Mantle"}
@@ -18,7 +18,7 @@ function init_gear_sets()
 	sets.precast.CorsairRoll = {
         head="Lanun Tricorne",
         hands="Navarch's Gants +2",
-        body="Lanun Frac",
+        body="Lanun Frac +1",
         ring1="Barataria Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+2','Enmity-3','"Phantom Roll" ability delay -2'}},
     }
@@ -76,7 +76,7 @@ function init_gear_sets()
         neck=gear.ElementalGorget,
         ear1="Flame Pearl",
         ear2="Flame Pearl",
-		body="Lanun Frac",
+		body="Lanun Frac +1",
         hands="Iuitl Wristbands +1",
         ring1="Rajas Ring",
         ring2="Ifrit Ring",
@@ -115,7 +115,7 @@ function init_gear_sets()
         neck="Stoicheion Medal",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
-        body="Lanun Frac",
+        body="Lanun Frac +1",
         hands="Iuitl Wristbands +1",
         ring1="Acumen Ring",
         ring2="Garuda Ring",
@@ -144,7 +144,7 @@ function init_gear_sets()
         neck="Stoicheion Medal",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-        body="Lanun Frac",
+        body="Lanun Frac +1",
         hands="Iuitl Wristbands +1",
         ring1="Acumen Ring",
         ring2="Stormsoul Ring",
@@ -172,7 +172,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Clearview Earring",
         ear2="Volley Earring",
-        body="Lanun Frac",
+        body="Lanun Frac +1",
         hands="Sigyn's Bazubands",
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
@@ -195,15 +195,16 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
         ammo=gear.RAbullet,
-        head="Umbani Cap",
+        head="Lanun Tricorne",
         neck="Twilight Torque",
-        ear2="Dawn Earring",
-        body="Mekosuchinae Harness",
+        ear1="Zennaroi Earring",
+        ear2="Crematio Earring",
+        body="Lanun Frac +1",
         hands="Iuitl Wristbands +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
-        waist="Commodore Belt",
+        waist="Flume Belt",
         legs="Nahtirah Trousers",
         feet="Skadi's Jambeaux +1"
     }
@@ -215,18 +216,18 @@ function init_gear_sets()
 	sets.idle.Town = {
         range="Vanir Gun",
         ammo=gear.RAbullet,
-        head="Lithelimb Cap",
+        head="Lanun Tricorne",
         neck="Iqabi Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Mekosuchinae Harness",
-        hands="Sigyn's Bazubands",
+        hands="Iuitl Wristbands +1",
         ring1="Patricius Ring",
         ring2="Paguroidea Ring",
-        back="Shadow Mantle",
-        waist="Commodore Belt",
-        legs="Crimson Cuisses",
-        feet="Iuitl Gaiters +1"
+        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
+        waist="Flume Belt",
+        legs="Nahtirah trousers",
+        feet="Skadi's Jambeaux +1"
     }
 	
 	-- Defense sets
@@ -234,9 +235,10 @@ function init_gear_sets()
         head="Lithelimb Cap",
         neck="Twilight Torque",
         hands="Iuitl Wristbands +1",
-        body="Lanun Frac",
+        body="Lanun Frac +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
+        waist="Flume Belt",
         legs="Iuitl Tights +1",
         feet="Iuitl Gaiters +1"
     })
@@ -258,7 +260,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Clearview Earring",
         ear2="Volley Earring",
-        body="Lanun Frac",
+        body="Lanun Frac +1",
         hands="Sigyn's Bazubands",
         ring1="Rajas Ring",
         ring2="Longshot Ring",
@@ -267,8 +269,6 @@ function init_gear_sets()
         legs="Nahtirah Trousers",
         feet="Iuitl Gaiters +1"
     }
-    sets.engaged.DW = sets.engaged
-	
 	-- Normal melee group
 	sets.engaged.Melee = {
         ammo=gear.RAbullet,
@@ -283,16 +283,17 @@ function init_gear_sets()
         back="Atheling Mantle",
         waist="Cetl Belt",
         legs="Manibozho Brais",
-        feet="Qaaxo Leggings"
+        feet="Iuitl Gaiters +1"
     }
 
-	sets.engaged.Melee.DW = set_combine(sets.engaged.Melee, {
-        --head="Thurandaut Chapeau +1",
+	sets.engaged.DW = set_combine(sets.engaged.Melee, {
+        head="Iuitl Headgear +1",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Skadi's Cuirie +1",
-        --waist="Nusku's Sash",
-        back="Vellaunus' Mantle +1"
+        ring1="Rajas Ring",
+        waist="Shetal Stone",
+        back="Bleating Mantle"
     })
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
