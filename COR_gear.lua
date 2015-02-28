@@ -68,7 +68,7 @@ function init_gear_sets()
         legs="Nahtirah Trousers",
         feet="Wurrukatte Boots"
     }
-       
+
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
@@ -130,8 +130,16 @@ function init_gear_sets()
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
 		head="Uk'uxkaj Cap",
+        neck="Stoicheion Medal",
         hands="Iuitl Wristbands +1",
-		legs="Kaabnax Trousers",
+        ear1="Psystorm Earring",
+        ear2="Lifestorm Earring",
+        body="Mekosuchinae Harness",
+        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
+        ring1="Globidonta Ring",
+        ring2="Sangoma Ring",
+		legs="Iuitl Tights +1",
+        waist="Aquiline Belt",
         feet="Iuitl Gaiters +1"
     }
 		
