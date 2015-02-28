@@ -298,7 +298,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Skadi's Cuirie +1",
-        ring1="Rajas Ring",
+        ring1="Oneiros Ring",
         waist="Shetal Stone",
         back="Bleating Mantle"
     })
