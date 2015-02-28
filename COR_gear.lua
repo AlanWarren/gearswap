@@ -16,7 +16,7 @@ function init_gear_sets()
     sets.CapacityMantle = {back="Mecistopins Mantle"}
 	
 	sets.precast.CorsairRoll = {
-        head="Lanun Tricorne",
+        head="Lanun Tricorne +1",
         hands="Navarch's Gants +2",
         body="Lanun Frac +1",
         ring1="Barataria Ring",
@@ -72,7 +72,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head="Umbani Cap",
+        head="Lanun Tricorne +1",
         neck=gear.ElementalGorget,
         ear1="Flame Pearl",
         ear2="Flame Pearl",
@@ -195,7 +195,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
         ammo=gear.RAbullet,
-        head="Lanun Tricorne",
+        head="Lanun Tricorne +1",
         neck="Twilight Torque",
         ear1="Zennaroi Earring",
         ear2="Crematio Earring",
@@ -216,7 +216,7 @@ function init_gear_sets()
 	sets.idle.Town = {
         range="Vanir Gun",
         ammo=gear.RAbullet,
-        head="Lanun Tricorne",
+        head="Lanun Tricorne +1",
         neck="Iqabi Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
