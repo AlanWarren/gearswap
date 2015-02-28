@@ -79,7 +79,7 @@ function init_gear_sets()
 		body="Lanun Frac +1",
         hands="Iuitl Wristbands +1",
         ring1="Rajas Ring",
-        ring2="Ifrit Ring",
+        ring2="Ifrit Ring +1",
 		back="Buquwik Cape",
         waist=gear.ElementalBelt,
         legs="Nahtirah Trousers",
@@ -96,7 +96,6 @@ function init_gear_sets()
 
 	sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
         ammo=gear.WSbullet,
-    	body="Mekosuchinae Harness",
         ear1="Flame Pearl",
         ear2="Moonshade Earring",
     })
