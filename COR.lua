@@ -45,7 +45,7 @@ function user_setup()
 	state.MagicalDefenseMode:options('MDT')
 
 	gear.RAbullet = "Adlivun Bullet"
-	gear.WSbullet = "Adlivun Bullet"
+	gear.WSbullet = "Titanium Bullet"
 	gear.MAbullet = "Adlivun Bullet"
 	gear.QDbullet = "Animikii Bullet"
 	--gear.QDbullet = "Adlivun Bullet"
