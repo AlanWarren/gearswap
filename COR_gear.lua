@@ -50,7 +50,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	
 	sets.precast.FC = {
-        ammo="Impatiens",
+        --ammo="Impatiens",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         body="Dread Jupon",
