@@ -110,7 +110,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
-        head="Umbani Cap",
+        head="Lanun Tricorne +1",
         neck="Stoicheion Medal",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
@@ -296,7 +296,7 @@ function init_gear_sets()
         head="Iuitl Headgear +1",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        body="Skadi's Cuirie +1",
+        body="Thaumas Coat",
         ring1="Oneiros Ring",
         waist="Shetal Stone",
         back="Bleating Mantle"
