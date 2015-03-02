@@ -108,14 +108,14 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
-		body="Gorney Haubert +1",
+		body="Acro Surcoat",
         hands="Mikinaak Gauntlets",
         ring1="Ifrit Ring",
         ring2="Ifrit Ring +1",
 		back="Buquwik Cape",
         waist="Windbuffet Belt +1",
         legs="Scuffler's Cosciales",
-        feet="Ejekamal Boots"
+        feet="Acro Leggings"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
 		back="Updraft Mantle",
@@ -267,14 +267,14 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Xaddi Mail",
+		body="Acro Surcoat",
         hands="Xaddi Gauntlets",
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Xaddi Cuisses",
-        feet="Ejekamal Boots"
+        feet="Acro Leggings"
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
