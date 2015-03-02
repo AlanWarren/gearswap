@@ -393,6 +393,7 @@ function init_gear_sets()
     -- 35% Haste
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_40, {
         head="Ptica Headgear",
+        neck="Rancor Collar",
         legs="Mochizuki Hakama +1",
     })
     sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.Haste_40, {
