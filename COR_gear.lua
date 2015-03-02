@@ -115,7 +115,7 @@ function init_gear_sets()
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
         body="Lanun Frac +1",
-        hands="Iuitl Wristbands +1",
+        hands="Taeon Gloves",
         ring1="Acumen Ring",
         ring2="Garuda Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
@@ -152,7 +152,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Lanun Frac +1",
-        hands="Iuitl Wristbands +1",
+        hands="Taeon Gloves",
         ring1="Acumen Ring",
         ring2="Stormsoul Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
@@ -206,7 +206,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Zennaroi Earring",
         ear2="Crematio Earring",
-        body="Emet Harness +1",
+        body="Lanun Frac +1",
         hands="Iuitl Wristbands +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -286,17 +286,17 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
-        back="Atheling Mantle",
-        waist="Cetl Belt",
+        back="Bleating Mantle",
+        waist="Windbuffet Belt +1",
         legs="Manibozho Brais",
-        feet="Iuitl Gaiters +1"
+        feet="Qaaxo Leggings"
     }
 
 	sets.engaged.DW = set_combine(sets.engaged.Melee, {
         head="Iuitl Headgear +1",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        body="Thaumas Coat",
+        body="Qaaxo Harness",
         ring1="Oneiros Ring",
         waist="Shetal Stone",
         back="Bleating Mantle"
