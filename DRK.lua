@@ -490,7 +490,7 @@ function init_gear_sets()
          hands="Ignominy Gauntlets +1",
          ring1="Rajas Ring",
          ring2="Ifrit Ring +1",
-         back="Bleating Mantle",
+         back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
          feet="Cizin Greaves +1"
