@@ -212,7 +212,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Hachiya Chainmail +1",
-        hands="Onimusha-no-kote",
+        hands="Taeon Gloves",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         --back="Vellaunus' Mantle +1",
@@ -224,13 +224,11 @@ function init_gear_sets()
 
     sets.engaged.Low = set_combine(sets.engaged, {
         body="Mochizuki Chainmail +1",
-        hands="Otronif Gloves +1",
         back="Yokaze Mantle",
         feet="Qaaxo Leggings"
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
-        hands="Sasuke Tekko +1",
         ring1="Patricius Ring",
         legs="Mochizuki Kyahan +1"
     })
