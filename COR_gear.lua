@@ -296,6 +296,7 @@ function init_gear_sets()
         head="Iuitl Headgear +1",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
+        hands="Taeon Gloves",
         body="Qaaxo Harness",
         ring1="Oneiros Ring",
         waist="Shetal Stone",
