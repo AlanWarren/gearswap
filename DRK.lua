@@ -493,7 +493,7 @@ function init_gear_sets()
          back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
-         feet="Cizin Greaves +1"
+         feet="Acro Leggings"
      }
      
     sets.cool = set_combine(sets.idle.Town, {
