@@ -498,7 +498,6 @@ function init_gear_sets()
      
     sets.cool = set_combine(sets.idle.Town, {
          head="Otomi Helm",
-         body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
          legs="Scuffler's Cosciales",
          feet="Xaddi Boots"
