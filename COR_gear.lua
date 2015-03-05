@@ -227,7 +227,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Lanun Frac +1",
-        hands="Iuitl Wristbands +1",
+        hands="Taeon Gloves",
         ring1="Ifrit Ring +1",
         ring2="Paguroidea Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
