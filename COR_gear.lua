@@ -21,6 +21,7 @@ function init_gear_sets()
         body="Lanun Frac +1",
         ring1="Barataria Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+2','Enmity-3','"Phantom Roll" ability delay -2'}},
+        feet="Lanun Bottes"
     }
 	
 	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
@@ -83,7 +84,7 @@ function init_gear_sets()
 		back="Buquwik Cape",
         waist=gear.ElementalBelt,
         legs="Nahtirah Trousers",
-        feet="Scopuli Nails +1"
+        feet="Lanun Bottes"
     }
 
 
@@ -121,7 +122,7 @@ function init_gear_sets()
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
         waist="Aquiline Belt",
         legs="Shneddick Tights +1",
-        feet="Navarch's Bottes +2"
+        feet="Lanun Bottes"
     }
 
 	sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], { ear2="Moonshade Earring"})
@@ -158,7 +159,7 @@ function init_gear_sets()
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
         waist="Aquiline Belt",
         legs="Shneddick Tights +1",
-        feet="Navarch's Bottes +2"
+        feet="Lanun Bottes"
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
@@ -166,7 +167,8 @@ function init_gear_sets()
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         ring1="Perception Ring",
-        ring2="Sangoma Ring"
+        ring2="Sangoma Ring",
+        feet="Navarch's Bottes +2"
     })
 
     sets.midcast.CorsairShot['Light Shot'] = sets.midcast.CorsairShot.Acc
