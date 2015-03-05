@@ -300,7 +300,8 @@ function init_gear_sets()
         body="Qaaxo Harness",
         ring1="Oneiros Ring",
         waist="Shetal Stone",
-        back="Bleating Mantle"
+        back="Bleating Mantle",
+        feet="Iuitl Gaiters +1"
     })
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
