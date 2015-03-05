@@ -68,7 +68,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        hands="Plunderer's Armlets +1",
+        hands="Taeon Gloves",
         back="Canny Cape",
         ring1="Patricius Ring",
         ring2="Mars's Ring",
@@ -203,7 +203,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
         head="Whirlpool Mask",
         neck="Moepapa Medal",
-        hands="Pillager's Armlets +1",
+        hands="Taeon Gloves",
         body="Dread Jupon",
         ring1="Ramuh Ring",
         waist="Windbuffet Buffet +1",
@@ -214,7 +214,6 @@ function init_gear_sets()
 	sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {back="Canny Cape"})
 	sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
         head="Whirlpool Mask",
-        hands="Plunderer's Armlets +1",
         ring1="Rajas Ring",
         ring2="Ramuh Ring",
         back="Canny Cape",
@@ -238,7 +237,7 @@ function init_gear_sets()
         ear1="Crematio Earring",
         head="Umbani Cap",
 		body="Mekosuchinae Harness",
-        hands="Iuitl Wristbands +1",
+        hands="Taeon Gloves",
         ring1="Acumen Ring",
         ring2="Garuda Ring",
 		back="Argochampsa Mantle",
@@ -272,7 +271,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Kheper Jacket",
-        hands="Iuitl Wristbands +1",
+        hands="Taeon Gloves",
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
 		back="Engulfer Cape +1",
@@ -284,7 +283,7 @@ function init_gear_sets()
 	sets.idle.Town = set_combine(sets.idle, {
         head="Felistris Mask",
         body="Skadi's Cuirie +1",
-        hands="Pillager's Armlets +1",
+        hands="Taeon Gloves",
         back="Canny Cape",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
@@ -360,7 +359,6 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Whirlpool Mask",
         body="Qaaxo Harness",
-        hands="Plunderer's Armlets +1",
         ring1="Patricius Ring",
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -373,7 +371,6 @@ function init_gear_sets()
 	sets.engaged.Evasion = set_combine(sets.engaged, {
 		body="Qaaxo Harness",
         ring1="Beeline Ring",
-        hands="Plunderer's Armlets +1",
         feet="Qaaxo Leggings"
     })
     sets.engaged.Mid.Evasion = sets.engaged.Evasion
@@ -419,7 +416,7 @@ function init_gear_sets()
         head="Whirlpool Mask",
 		body="Mekosuchinae Harness",
         neck="Rancor Collar",
-        hands="Plunderer's Armlets +1",
+        hands="Taeon Gloves",
         ring1="Mars's Ring",
         ring2="Patricius Ring",
         waist="Olseni Belt",
