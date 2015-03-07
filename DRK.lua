@@ -242,7 +242,7 @@ function init_gear_sets()
          ring2="Ifrit Ring +1",
          back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
-         legs="Ignominy Flanchard +1",
+         legs="Yorium Cuisses",
          feet="Fallen's Sollerets +1"
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -283,7 +283,7 @@ function init_gear_sets()
          body="Phorcys Korazin",
          neck="Aqua Gorget",
          hands="Ignominy Gauntlets +1",
-         legs="Scuffler's Cosciales",
+         legs="Yorium Cuisses",
          waist="Caudata Belt"
      })
      sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
@@ -298,12 +298,11 @@ function init_gear_sets()
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
          ear1="Brutal Earring",
-         legs="Scuffler's Cosciales",
+         legs="Yorium Cuisses",
          feet="Acro Leggings",
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
          back="Bleating Mantle",
-         legs="Ignominy Flanchard +1"
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
@@ -317,7 +316,6 @@ function init_gear_sets()
          ear1="Bale Earring",
          ring1="Rajas Ring",
          back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
-         legs="Ignominy Flanchard +1"
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          head="Gavialis Helm",
@@ -499,8 +497,8 @@ function init_gear_sets()
     sets.cool = set_combine(sets.idle.Town, {
          head="Otomi Helm",
          hands="Ignominy Gauntlets +1",
-         legs="Scuffler's Cosciales",
-         feet="Xaddi Boots"
+         legs="Yorium Cuisses",
+         feet="Acro Leggings"
      })
 
      sets.idle.Field = set_combine(sets.idle.Town, {
@@ -541,7 +539,7 @@ function init_gear_sets()
      sets.defense.PDT = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Emet Harness +1",
+         body="Yorium Cuirass",
          hands="Cizin Mufflers +1",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
@@ -569,7 +567,7 @@ function init_gear_sets()
      sets.Defensive = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Emet Harness +1",
+         body="Yorium Cuirass",
          hands="Cizin Mufflers +1",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1"
@@ -577,7 +575,7 @@ function init_gear_sets()
      sets.Defensive_Mid = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Emet Harness +1",
+         body="Yorium Cuirass",
          hands="Umuthi Gloves",
          ring2="Patricius Ring",
      }
@@ -585,7 +583,7 @@ function init_gear_sets()
          head="Ighwa Cap",
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
-         body="Emet Harness +1",
+         body="Yorium Cuirass",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
