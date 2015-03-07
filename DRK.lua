@@ -100,7 +100,6 @@ function init_gear_sets()
         head="Yaoyotl Helm",
     	body="Mes'yohi Haubergeon",
         legs="Cizin Breeches +1",
-        feet="Whirlpool Greaves"
      }
             
      -- Fast cast sets for spells
@@ -177,11 +176,14 @@ function init_gear_sets()
          feet="Bale Sollerets +2"
      }
 	 
+     sets.midcast['Endark'] = set_combine(sets.midcast['Dark Magic'], {
+        legs="Bale Flanchard +2"
+    })
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
          ammo="Impatiens",
          head="Gavialis Helm",
          body="Bale Cuirass +2",
-         hands="Boor Bracelets",
+         hands="Ignominy Gauntlets +1",
          ring1="Beeline Ring",
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
@@ -225,7 +227,7 @@ function init_gear_sets()
          ring2="Garuda Ring",
          waist="Chaac Belt",
          legs="Aetosaur Trousers +1",
-         feet="Whirlpool Greaves"
+         feet="Acro Leggings"
      }
 
      -- WEAPONSKILL SETS
@@ -271,7 +273,6 @@ function init_gear_sets()
          head="Yaoyotl Helm",
     	 body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
-         feet="Whirlpool Greaves"
      })
      sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
 
@@ -334,7 +335,7 @@ function init_gear_sets()
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
          neck="Ganesha's Mala",
          hands="Fallen's Finger Gauntlets +1",
-         legs="Scuffler's Cosciales",
+         legs="Yorium Cuisses",
          feet="Acro Leggings"
      })
      sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {})
@@ -373,7 +374,7 @@ function init_gear_sets()
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
          head="Ighwa Cap",
          hands="Ignominy Gauntlets +1",
-         feet="Whirlpool Greaves"
+         feet="Acro Leggings"
      })
      sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, { 
         legs="Xaddi Cuisses"
@@ -462,7 +463,7 @@ function init_gear_sets()
          body="Fallen's Cuirass +1",
          back="Bleating Mantle",
          waist="Soil Belt",
-         feet="Whirlpool Greaves"
+         feet="Fallen's Sollerets +1"
      })
      sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
      sets.precast.WS.Requiescat.Acc = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Acc)
