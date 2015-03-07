@@ -597,7 +597,7 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Ginsen",
-         head="Otomi Helm",
+         head="Acro Helm",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Trux Earring",
@@ -608,7 +608,7 @@ function init_gear_sets()
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
-         feet="Acro Leggings"
+         feet="Ejekamal Boots"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          head="Yaoyotl Helm",
@@ -620,7 +620,6 @@ function init_gear_sets()
          neck="Iqabi Necklace",
          ear1="Steelflash Earring",
          ear2="Zennaroi Earring",
-         hands="Buremte Gloves",
          back="Kayapa Cape",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
@@ -629,7 +628,6 @@ function init_gear_sets()
      sets.engaged.LR = set_combine(sets.engaged, {
      })
      sets.engaged.LR.AM3 = set_combine(sets.engaged.LR, {
-         head="Yaoyotl Helm", 
          ear2="Tripudio Earring"
      })
      sets.engaged.Mid.LR = set_combine(sets.engaged.Mid, {
@@ -673,14 +671,12 @@ function init_gear_sets()
      sets.engaged.War.Acc.PDT = set_combine(sets.engaged.War.Acc, sets.Defensive_Acc)
 
      sets.engaged.AM3 = set_combine(sets.engaged, {
-         head="Yaoyotl Helm",
-         body="Acro Surcoat",
+         head="Acro Helm",
          ear2="Tripudio Earring",
          hands="Cizin Mufflers +1",
-         legs="Yorium Cuisses",
-         feet="Ejekamal Boots"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
+         head="Yaoyotl Helm",
          ear1="Zennaroi Earring",
          hands="Xaddi Gauntlets",
          feet="Acro Leggings"
@@ -690,7 +686,6 @@ function init_gear_sets()
          neck="Iqabi Necklace",
          ear1="Zennaroi Earring",
          ear2="Steelflash Earring",
-         hands="Buremte Gloves",
          ring1="Rajas Ring",
          ring2="Mars's Ring",
          waist="Olseni Belt",
