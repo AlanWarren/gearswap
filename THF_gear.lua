@@ -282,7 +282,7 @@ function init_gear_sets()
 
 	sets.idle.Town = set_combine(sets.idle, {
         head="Felistris Mask",
-        body="Skadi's Cuirie +1",
+        body="Taeon Tabard",
         hands="Taeon Gloves",
         back="Canny Cape",
         ring1="Patricius Ring",
