@@ -302,7 +302,7 @@ function init_gear_sets()
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
          ear1="Brutal Earring",
-         legs="Yorium Cuisses",
+         legs="Ignominy Flanchard +1",
          feet="Acro Leggings",
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
@@ -312,12 +312,14 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Yaoyotl Helm",
          body="Mes'yohi Haubergeon",
+         legs="Yorium Cuisses",
          hands="Ignominy Gauntlets +1",
          waist="Light Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Fallen's Cuirass +1",
          ear1="Bale Earring",
+         legs="Yorium Cuisses",
          ring1="Rajas Ring",
          back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
      })
@@ -328,7 +330,7 @@ function init_gear_sets()
          hands="Ignominy Gauntlets +1",
          ring1="Mars's Ring",
          waist="Anguinius Belt",
-         legs="Xaddi Cuisses",
+         legs="Yorium Cuisses",
          feet="Acro Leggings"
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
