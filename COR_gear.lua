@@ -290,7 +290,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Manibozho Brais",
+        legs="Iuitl Tights +1",
         feet="Qaaxo Leggings"
     }
 
@@ -303,7 +303,6 @@ function init_gear_sets()
         ring1="Oneiros Ring",
         waist="Shetal Stone",
         back="Bleating Mantle",
-        feet="Iuitl Gaiters +1"
     })
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
