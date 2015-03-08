@@ -52,6 +52,7 @@ function init_gear_sets()
 	
 	sets.precast.FC = {
         --ammo="Impatiens",
+        head="Ejekamal Mask",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         body="Dread Jupon",
