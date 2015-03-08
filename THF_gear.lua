@@ -348,7 +348,7 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
 		--body="Skadi's Cuirie +1",
 		body="Taeon Tabard",
-        hands={name="Taeon Gloves", augments={'STR+3','VIT+3', 'Attack+22','"Dual Wield"+5'}},
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Rajas Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
@@ -364,7 +364,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
 		body="Mekosuchinae Harness",
-        hands={name="Taeon Gloves", augments={'STR+3','VIT+3', 'Attack+22','"Dual Wield"+5'}},
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         waist="Olseni Belt",
         feet="Qaaxo Leggings"
     })
