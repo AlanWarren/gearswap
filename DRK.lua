@@ -146,7 +146,7 @@ function init_gear_sets()
          waist="Casso Sash",
          ring1="Perception Ring",
          ring2="Sangoma Ring",
-         back={name="Niht Mantle", augments={'Attack +7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}},
+         back={name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}},
          legs="Fallen's Flanchard",
          feet="Ignominy sollerets"
      }
@@ -245,7 +245,7 @@ function init_gear_sets()
          hands="Mikinaak Gauntlets",
          ring1="Ifrit Ring",
          ring2="Ifrit Ring +1",
-         back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
+         back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
          feet="Fallen's Sollerets +1"
@@ -321,7 +321,7 @@ function init_gear_sets()
          ear1="Bale Earring",
          legs="Yorium Cuisses",
          ring1="Rajas Ring",
-         back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
+         back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          head="Gavialis Helm",
@@ -494,7 +494,7 @@ function init_gear_sets()
          hands="Ignominy Gauntlets +1",
          ring1="Rajas Ring",
          ring2="Ifrit Ring +1",
-         back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
+         back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
          feet="Acro Leggings"
