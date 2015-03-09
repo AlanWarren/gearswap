@@ -299,7 +299,7 @@ function init_gear_sets()
          neck="Shadow Gorget",
          ear1="Brutal Earring",
          legs="Scuffler's Cosciales",
-         feet="Ejekamal Boots",
+         feet="Acro Leggings",
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
          back="Bleating Mantle",
@@ -322,12 +322,12 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          head="Gavialis Helm",
          ear1="Zennaroi Earring",
-         body="Fallen's Cuirass +1",
+         body="Acro Surcoat",
          hands="Ignominy Gauntlets +1",
          ring1="Mars's Ring",
          waist="Anguinius Belt",
          legs="Xaddi Cuisses",
-         feet="Xaddi Boots"
+         feet="Acro Leggings"
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
      
@@ -337,7 +337,7 @@ function init_gear_sets()
          neck="Ganesha's Mala",
          hands="Fallen's Finger Gauntlets +1",
          legs="Scuffler's Cosciales",
-         feet="Ejekamal Boots"
+         feet="Acro Leggings"
      })
      sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {})
 
@@ -367,7 +367,7 @@ function init_gear_sets()
          back="Bleating Mantle",
          waist="Soil Belt",
          legs="Scuffler's Cosciales",
-         feet="Ejekamal Boots"
+         feet="Acro Leggings"
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
          legs="Ignominy Flanchard +1"
@@ -493,12 +493,11 @@ function init_gear_sets()
          back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
-         feet="Cizin Greaves +1"
+         feet="Acro Leggings"
      }
      
     sets.cool = set_combine(sets.idle.Town, {
          head="Otomi Helm",
-         body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
          legs="Scuffler's Cosciales",
          feet="Xaddi Boots"

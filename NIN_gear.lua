@@ -137,7 +137,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         neck="Stoicheion Medal",
         body="Mekosuchinae Harness",
-        hands="Iga Tekko +2",
+        hands="Taeon Gloves",
         back="Aput Mantle",
         ring1="Shiva Ring",
         ring2="Acumen Ring",
@@ -153,7 +153,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
-        hands="Otronif Gloves +1",
+        hands="Taeon Gloves",
         ring1="Dark Ring",
         ring2="Patricius Ring",
     	back="Engulfer Cape +1",
@@ -172,8 +172,8 @@ function init_gear_sets()
         neck="Hope Torque",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
-        hands="Sasuke Tekko +1",
-        body="Emet Harness +1",
+        hands="Taeon Gloves",
+        body="Mes'yohi Haubergeon",
         back="Yokaze Mantle"
     })
     
@@ -212,7 +212,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Hachiya Chainmail +1",
-        hands="Onimusha-no-kote",
+        hands="Taeon Gloves",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         --back="Vellaunus' Mantle +1",
@@ -224,13 +224,11 @@ function init_gear_sets()
 
     sets.engaged.Low = set_combine(sets.engaged, {
         body="Mochizuki Chainmail +1",
-        hands="Otronif Gloves +1",
         back="Yokaze Mantle",
         feet="Qaaxo Leggings"
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
-        hands="Sasuke Tekko +1",
         ring1="Patricius Ring",
         legs="Mochizuki Kyahan +1"
     })
@@ -242,7 +240,7 @@ function init_gear_sets()
     })
 
     sets.engaged.LowDef = set_combine(sets.engaged, {
-        hands="Otronif Gloves +1",
+        hands="Taeon Gloves",
         ring1="Oneiros Ring"
     })
     sets.engaged.LowDef.Low = set_combine(sets.engaged.Low, {
@@ -296,7 +294,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         neck="Rancor Collar",
         body="Mes'yohi Haubergeon",
-        hands="Onimusha-no-kote",
+        hands="Taeon Gloves",
         ring1="Rajas Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
@@ -312,7 +310,7 @@ function init_gear_sets()
         feet="Qaaxo Leggings"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
-        hands="Sasuke Tekko +1",
+        hands="Taeon Gloves",
         ring1="Patricius Ring",
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
@@ -320,6 +318,7 @@ function init_gear_sets()
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Gavialis Helm",
         neck="Iqabi Necklace",
+        hands="Sasuke Tekko +1",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         ring2="Mars's Ring",
@@ -329,12 +328,12 @@ function init_gear_sets()
     -- Low monster defense (attack near cap)
     sets.engaged.LowDef.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         body="Thaumas Coat",
-        hands="Otronif Gloves +1",
+        hands="Taeon Gloves",
         ring1="Oneiros Ring"
     })
     sets.engaged.LowDef.Low.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         body="Thaumas Coat",
-        hands="Otronif Gloves +1",
+        hands="Taeon Gloves",
         ring1="Oneiros Ring",
         feet="Otronif Boots +1"
     })
@@ -442,7 +441,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Mochizuki Chainmail +1",
-        hands="Onimusha-no-kote",
+        hands="Taeon Gloves",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",

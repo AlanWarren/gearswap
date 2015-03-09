@@ -364,6 +364,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
 		body="Mekosuchinae Harness",
+        hands="Taeon Gloves",
         waist="Olseni Belt",
         feet="Qaaxo Leggings"
     })
@@ -441,6 +442,7 @@ function init_gear_sets()
      -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_40, {
         waist="Patentia Sash",
+        hands="Taeon Gloves",
         back="Canny Cape"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
@@ -456,6 +458,7 @@ function init_gear_sets()
 
      -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
+        hands="Taeon Gloves",
         ear1="Heartseeker Earring",
         ear2="Dudgeon Earring"
     })
