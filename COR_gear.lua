@@ -302,6 +302,7 @@ function init_gear_sets()
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         body="Taeon Tabard",
         ring1="Oneiros Ring",
+        legs="Taeon Tights",
         waist="Shetal Stone",
         back="Bleating Mantle",
     })
