@@ -208,20 +208,21 @@ function init_gear_sets()
         ammo=gear.RegularAmmo,
         head="Ptica Headgear",
         neck="Rancor Collar",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        body="Hachiya Chainmail +1",
+        ear1="Brutal Earring",
+        ear2="Suppanomimi",
+        body="Mochizuki Chainmail +1",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Rajas Ring",
         ring2="Epona's Ring",
-        --back="Vellaunus' Mantle +1",
         back="Bleating Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
-        feet="Otronif Boots +1"
+        feet="Taeon Boots"
     }
 
     sets.engaged.Low = set_combine(sets.engaged, {
+        ear1="Heartseeker Earring",
+        ear2="Dudgeon Earring",
         body="Mochizuki Chainmail +1",
         back="Yokaze Mantle",
         feet="Qaaxo Leggings"
@@ -288,28 +289,27 @@ function init_gear_sets()
 
     -- Delay Cap from spell + songs alone
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
-        head="Felistris Mask",
+        head="Taeon Chapeau",
         ear1="Brutal Earring",
         ear2="Trux Earring",
         neck="Rancor Collar",
         body="Mes'yohi Haubergeon",
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands="Otronif Gloves +1",
         ring1="Rajas Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Otronif Brais +1",
+        legs="Taeon Tights",
         feet="Otronif Boots +1"
     })
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        head="Whirlpool Mask",
         neck="Rancor Collar",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         back="Yokaze Mantle",
         feet="Qaaxo Leggings"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ring1="Patricius Ring",
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
@@ -356,24 +356,31 @@ function init_gear_sets()
     sets.engaged.Haste_40 = set_combine(sets.engaged.MaxHaste, {
         ear1="Brutal Earring",
         ear2="Trux Earring",
-        legs="Hachiya Hakama +1",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     })
     sets.engaged.Low.Haste_40 = set_combine(sets.engaged.Low.MaxHaste, {
-        legs="Hachiya Hakama +1"
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     })
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Mid.MaxHaste, {
-        legs="Hachiya Hakama +1"
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     })
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.MaxHaste, { 
-        legs="Hachiya Hakama +1"
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     })
 
     -- attack capped sets 
     sets.engaged.LowDef.Haste_40 = set_combine(sets.engaged.LowDef.MaxHaste, {
-        legs="Hachiya Hakama +1"
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     })
     sets.engaged.LowDef.Low.Haste_40 = set_combine(sets.engaged.LowDef.Low.MaxHaste, {
-        legs="Hachiya Hakama +1"
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     })
     sets.engaged.LowDef.Mid.Haste_40 = sets.engaged.Mid.Haste_40
     sets.engaged.LowDef.Acc.Haste_40 = sets.engaged.Acc.Haste_40
@@ -392,33 +399,33 @@ function init_gear_sets()
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_40, {
         head="Ptica Headgear",
         neck="Rancor Collar",
-        legs="Mochizuki Hakama +1",
+        body="Taeon Tabard",
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     })
     sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.Haste_40, {
         head="Ptica Headgear",
-        legs="Mochizuki Hakama +1"
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_40, {
         head="Ptica Headgear",
-        legs="Mochizuki Hakama +1"
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.Haste_40, {
         head="Ptica Headgear",
         ear1="Zennaroi Earring",
         ear2="Steelflash Earring",
-        legs="Hachiya Hakama +1"
     })
     
     sets.engaged.LowDef.Haste_35 = set_combine(sets.engaged.LowDef.Haste_40, {
         head="Ptica Headgear",
         neck="Rancor Collar",
         back="Bleating Mantle",
-        legs="Mochizuki Hakama +1",
-        feet="Otronif Boots +1"
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     })
     sets.engaged.LowDef.Low.Haste_35 = set_combine(sets.engaged.LowDef.Low.Haste_40, {
         head="Ptica Headgear",
-        legs="Mochizuki Hakama +1"
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     })
     sets.engaged.LowDef.Mid.Haste_35 = sets.engaged.Mid.Haste_35
     sets.engaged.LowDef.Acc.Haste_35 = sets.engaged.Acc.Haste_35
@@ -438,15 +445,15 @@ function init_gear_sets()
         head="Ptica Headgear",
         neck="Rancor Collar",
         ear1="Brutal Earring",
-        ear2="Trux Earring",
+        ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
-        ring1="Rajas Ring",
+        ring1="Oneiros Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Mochizuki Hakama +1",
-        feet="Otronif Boots +1",
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     })
     sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_35, {
         body="Mochizuki Chainmail +1"
@@ -521,6 +528,7 @@ function init_gear_sets()
     -- 5 - 20% Haste 
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_25, {
         --back="Vellaunus' Mantle +1",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         back="Bleating Mantle",
         waist="Patentia Sash"
     })
@@ -528,24 +536,28 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         back="Bleating Mantle",
-        --back="Vellaunus' Mantle +1",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         waist="Patentia Sash"
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Mid.Haste_25, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         waist="Patentia Sash"
     })
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_25, {
-        legs="Mochizuki Hakama +1"
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
+        legs="Taeon Tights"
     })
     
     sets.engaged.LowDef.Haste_15 = set_combine(sets.engaged.LowDef.Haste_25, {
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         back="Bleating Mantle",
         --back="Vellaunus' Mantle +1",
         waist="Patentia Sash"
     })
     sets.engaged.LowDef.Low.Haste_15 = set_combine(sets.engaged.LowDef.Low.Haste_25, {
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         back="Bleating Mantle",
         --back="Vellaunus' Mantle +1",
         waist="Patentia Sash"
