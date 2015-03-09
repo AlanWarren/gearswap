@@ -137,7 +137,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         neck="Stoicheion Medal",
         body="Mekosuchinae Harness",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         back="Aput Mantle",
         ring1="Shiva Ring",
         ring2="Acumen Ring",
@@ -153,7 +153,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Dark Ring",
         ring2="Patricius Ring",
     	back="Engulfer Cape +1",
@@ -172,7 +172,6 @@ function init_gear_sets()
         neck="Hope Torque",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
-        hands="Taeon Gloves",
         body="Mes'yohi Haubergeon",
         back="Yokaze Mantle"
     })
@@ -212,12 +211,12 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Hachiya Chainmail +1",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         --back="Vellaunus' Mantle +1",
         back="Bleating Mantle",
-        waist="Shetal Stone",
+        waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
         feet="Otronif Boots +1"
     }
@@ -240,7 +239,7 @@ function init_gear_sets()
     })
 
     sets.engaged.LowDef = set_combine(sets.engaged, {
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Oneiros Ring"
     })
     sets.engaged.LowDef.Low = set_combine(sets.engaged.Low, {
@@ -294,7 +293,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         neck="Rancor Collar",
         body="Mes'yohi Haubergeon",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ring1="Rajas Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
@@ -310,7 +309,7 @@ function init_gear_sets()
         feet="Qaaxo Leggings"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ring1="Patricius Ring",
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
@@ -328,12 +327,12 @@ function init_gear_sets()
     -- Low monster defense (attack near cap)
     sets.engaged.LowDef.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         body="Thaumas Coat",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ring1="Oneiros Ring"
     })
     sets.engaged.LowDef.Low.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         body="Thaumas Coat",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ring1="Oneiros Ring",
         feet="Otronif Boots +1"
     })
@@ -441,7 +440,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         body="Mochizuki Chainmail +1",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",

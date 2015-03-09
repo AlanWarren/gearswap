@@ -1,5 +1,5 @@
 
-sets.reive = {neck="Ygnas's Resolve"}
+sets.reive = {neck="Ygnas's Resolve +1"}
 
 
 function user_customize_melee_set(meleeSet)

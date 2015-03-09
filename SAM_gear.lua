@@ -277,7 +277,7 @@ function init_gear_sets()
     sets.engaged = {
         --sub="Bloodrain Grip",
         ammo=gear.RAarrow,
-        head="Otomi Helm",
+        head="Acro Helm",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Trux Earring",
@@ -288,7 +288,7 @@ function init_gear_sets()
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
         legs="Wakido Haidate +1",
-        feet="Acro Leggings"
+        feet="Otronif Boots +1"
     }
     
     sets.engaged.Mid = set_combine(sets.engaged, {
@@ -386,7 +386,7 @@ function init_gear_sets()
     sets.engaged.Adoulin = {
         --sub="Pole Grip",
         ammo=gear.RAarrow,
-        head="Otomi Helm",
+        head="Acro Helm",
         neck="Ganesha's Mala", -- 3
         ear1="Brutal Earring", -- 1 
         ear2="Trux Earring", -- 1
@@ -397,7 +397,7 @@ function init_gear_sets()
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Xaddi Cuisses",
-        feet="Acro Leggings" --7
+        feet="Ejekamal Boots" --7
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         ear1="Bladeborn Earring",
@@ -408,6 +408,7 @@ function init_gear_sets()
     })
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
+        head="Yaoyotl Helm",
    	    body="Mes'yohi Haubergeon",
         neck="Iqabi Necklace",
         ring2="Mars's Ring",

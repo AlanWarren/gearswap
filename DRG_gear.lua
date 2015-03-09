@@ -18,7 +18,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Lancer's Plackart +2",
-        hands="Xaddi Gauntlets",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
 		back="Bleating Mantle",
@@ -263,18 +263,18 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
         ammo="Ginsen",
-		head="Otomi Helm",
+		head="Acro Helm",
         neck="Ganesha's Mala",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
 		body="Acro Surcoat",
-        hands="Xaddi Gauntlets",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Xaddi Cuisses",
-        feet="Acro Leggings"
+        feet="Ejekamal Boots"
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
@@ -284,7 +284,6 @@ function init_gear_sets()
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
-        hands="Buremte Gloves",
         waist="Olseni Belt",
         ring1="Mars's Ring",
         back="Updraft Mantle"

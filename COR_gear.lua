@@ -52,6 +52,7 @@ function init_gear_sets()
 	
 	sets.precast.FC = {
         --ammo="Impatiens",
+        head="Ejekamal Mask",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         body="Dread Jupon",
@@ -116,7 +117,7 @@ function init_gear_sets()
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
         body="Lanun Frac +1",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Acumen Ring",
         ring2="Garuda Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
@@ -153,7 +154,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Lanun Frac +1",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Acumen Ring",
         ring2="Stormsoul Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
@@ -228,8 +229,8 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-        body="Lanun Frac +1",
-        hands="Taeon Gloves",
+        body="Taeon Tabard",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Ifrit Ring +1",
         ring2="Paguroidea Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
@@ -290,7 +291,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Manibozho Brais",
+        legs="Iuitl Tights +1",
         feet="Qaaxo Leggings"
     }
 
@@ -298,12 +299,12 @@ function init_gear_sets()
         head="Iuitl Headgear +1",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        hands="Taeon Gloves",
-        body="Qaaxo Harness",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
+        body="Taeon Tabard",
         ring1="Oneiros Ring",
+        legs="Taeon Tights",
         waist="Shetal Stone",
         back="Bleating Mantle",
-        feet="Iuitl Gaiters +1"
     })
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {

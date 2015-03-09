@@ -68,7 +68,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         back="Canny Cape",
         ring1="Patricius Ring",
         ring2="Mars's Ring",
@@ -203,7 +203,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
         head="Whirlpool Mask",
         neck="Moepapa Medal",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         body="Dread Jupon",
         ring1="Ramuh Ring",
         waist="Windbuffet Buffet +1",
@@ -237,7 +237,7 @@ function init_gear_sets()
         ear1="Crematio Earring",
         head="Umbani Cap",
 		body="Mekosuchinae Harness",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ring1="Acumen Ring",
         ring2="Garuda Ring",
 		back="Argochampsa Mantle",
@@ -271,7 +271,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Kheper Jacket",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
 		back="Engulfer Cape +1",
@@ -282,8 +282,8 @@ function init_gear_sets()
 
 	sets.idle.Town = set_combine(sets.idle, {
         head="Felistris Mask",
-        body="Skadi's Cuirie +1",
-        hands="Taeon Gloves",
+        body="Taeon Tabard",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         back="Canny Cape",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
@@ -347,8 +347,8 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		--body="Skadi's Cuirie +1",
-		body="Thaumas Coat",
-        hands="Taeon Gloves",
+		body="Taeon Tabard",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Rajas Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
@@ -358,13 +358,13 @@ function init_gear_sets()
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Whirlpool Mask",
-        body="Qaaxo Harness",
+		body="Taeon Tabard",
         ring1="Patricius Ring",
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
 		body="Mekosuchinae Harness",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         waist="Olseni Belt",
         feet="Qaaxo Leggings"
     })
@@ -416,7 +416,7 @@ function init_gear_sets()
         head="Whirlpool Mask",
 		body="Mekosuchinae Harness",
         neck="Rancor Collar",
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ring1="Mars's Ring",
         ring2="Patricius Ring",
         waist="Olseni Belt",
@@ -428,9 +428,10 @@ function init_gear_sets()
     
      -- 40
     sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
+		body="Taeon Tabard",
         ear1="Suppanomimi",
     })
-    sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, { body="Qaaxo Harness" })
+    sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, { body="Taeon Tabard" })
 
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.Haste_43, {
         ear1="Suppanomimi"
@@ -442,23 +443,24 @@ function init_gear_sets()
      -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_40, {
         waist="Patentia Sash",
-        hands="Taeon Gloves",
+		body="Taeon Tabard",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         back="Canny Cape"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
-        body="Qaaxo Harness",
+		body="Taeon Tabard",
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
         waist="Patentia Sash",
         back="Canny Cape"
     })
-    sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, { body="Qaaxo Harness", ring1="Beeline Ring", feet="Qaaxo Leggings"})
+    sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, { body="Taeon Tabard", ring1="Beeline Ring", feet="Qaaxo Leggings"})
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { head="Lithelimb Cap", neck="Twilight Torque", 
         body="Qaaxo Harness", ring1="Patricius Ring", ring2="Dark Ring", back="Repulse Mantle", legs="Iuitl Tights +1", feet="Iuitl Gaiters +1" })
 
      -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
-        hands="Taeon Gloves",
+        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
         ear1="Heartseeker Earring",
         ear2="Dudgeon Earring"
     })
@@ -466,8 +468,8 @@ function init_gear_sets()
         ear1="Heartseeker Earring",
         ear2="Dudgeon Earring"
     })
-    sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, { body="Qaaxo Harness" })
-    sets.engaged.Evasion.Haste_25 = set_combine(sets.engaged.Haste_25, { body="Qaaxo Harness", ring1="Beeline Ring", feet="Qaaxo Leggings"})
+    sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, { body="Taeon Tabard" })
+    sets.engaged.Evasion.Haste_25 = set_combine(sets.engaged.Haste_25, { body="Taeon Tabard", ring1="Beeline Ring", feet="Qaaxo Leggings"})
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, { head="Lithelimb Cap", neck="Twilight Torque", 
         body="Qaaxo Harness", ring1="Patricius Ring", ring2="Dark Ring", back="Repulse Mantle", legs="Iuitl Tights +1", feet="Iuitl Gaiters +1" })
 end

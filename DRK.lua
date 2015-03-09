@@ -100,7 +100,6 @@ function init_gear_sets()
         head="Yaoyotl Helm",
     	body="Mes'yohi Haubergeon",
         legs="Cizin Breeches +1",
-        feet="Whirlpool Greaves"
      }
             
      -- Fast cast sets for spells
@@ -147,7 +146,7 @@ function init_gear_sets()
          waist="Casso Sash",
          ring1="Perception Ring",
          ring2="Sangoma Ring",
-         back={name="Niht Mantle", augments={'Attack +7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}},
+         back={name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}},
          legs="Fallen's Flanchard",
          feet="Ignominy sollerets"
      }
@@ -177,11 +176,14 @@ function init_gear_sets()
          feet="Bale Sollerets +2"
      }
 	 
+     sets.midcast['Endark'] = set_combine(sets.midcast['Dark Magic'], {
+        legs="Bale Flanchard +2"
+    })
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
          ammo="Impatiens",
          head="Gavialis Helm",
          body="Bale Cuirass +2",
-         hands="Boor Bracelets",
+         hands="Ignominy Gauntlets +1",
          ring1="Beeline Ring",
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
@@ -190,8 +192,11 @@ function init_gear_sets()
      })
      
      sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
+         body="Yorium Cuirass",
          ring2="Excelsis Ring",
+         feet="Yorium Sabatons"
      })
+
      sets.midcast.Aspir = sets.midcast.Drain
 
      sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
@@ -225,7 +230,7 @@ function init_gear_sets()
          ring2="Garuda Ring",
          waist="Chaac Belt",
          legs="Aetosaur Trousers +1",
-         feet="Whirlpool Greaves"
+         feet="Acro Leggings"
      }
 
      -- WEAPONSKILL SETS
@@ -240,9 +245,9 @@ function init_gear_sets()
          hands="Mikinaak Gauntlets",
          ring1="Ifrit Ring",
          ring2="Ifrit Ring +1",
-         back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
+         back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
-         legs="Ignominy Flanchard +1",
+         legs="Yorium Cuisses",
          feet="Fallen's Sollerets +1"
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -271,7 +276,6 @@ function init_gear_sets()
          head="Yaoyotl Helm",
     	 body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
-         feet="Whirlpool Greaves"
      })
      sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
 
@@ -283,7 +287,7 @@ function init_gear_sets()
          body="Phorcys Korazin",
          neck="Aqua Gorget",
          hands="Ignominy Gauntlets +1",
-         legs="Scuffler's Cosciales",
+         legs="Yorium Cuisses",
          waist="Caudata Belt"
      })
      sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
@@ -298,26 +302,26 @@ function init_gear_sets()
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
          ear1="Brutal Earring",
-         legs="Scuffler's Cosciales",
+         legs="Ignominy Flanchard +1",
          feet="Acro Leggings",
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
          back="Bleating Mantle",
-         legs="Ignominy Flanchard +1"
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
          body="Mes'yohi Haubergeon",
+         legs="Yorium Cuisses",
          hands="Ignominy Gauntlets +1",
          waist="Light Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Fallen's Cuirass +1",
          ear1="Bale Earring",
+         legs="Yorium Cuisses",
          ring1="Rajas Ring",
-         back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
-         legs="Ignominy Flanchard +1"
+         back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          head="Gavialis Helm",
@@ -326,7 +330,7 @@ function init_gear_sets()
          hands="Ignominy Gauntlets +1",
          ring1="Mars's Ring",
          waist="Anguinius Belt",
-         legs="Xaddi Cuisses",
+         legs="Yorium Cuisses",
          feet="Acro Leggings"
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
@@ -336,7 +340,7 @@ function init_gear_sets()
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
          neck="Ganesha's Mala",
          hands="Fallen's Finger Gauntlets +1",
-         legs="Scuffler's Cosciales",
+         legs="Yorium Cuisses",
          feet="Acro Leggings"
      })
      sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {})
@@ -375,7 +379,7 @@ function init_gear_sets()
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
          head="Ighwa Cap",
          hands="Ignominy Gauntlets +1",
-         feet="Whirlpool Greaves"
+         feet="Acro Leggings"
      })
      sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, { 
         legs="Xaddi Cuisses"
@@ -464,7 +468,7 @@ function init_gear_sets()
          body="Fallen's Cuirass +1",
          back="Bleating Mantle",
          waist="Soil Belt",
-         feet="Whirlpool Greaves"
+         feet="Fallen's Sollerets +1"
      })
      sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
      sets.precast.WS.Requiescat.Acc = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Acc)
@@ -490,7 +494,7 @@ function init_gear_sets()
          hands="Ignominy Gauntlets +1",
          ring1="Rajas Ring",
          ring2="Ifrit Ring +1",
-         back={name="Niht Mantle", augments={'Attack +15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
+         back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
          feet="Acro Leggings"
@@ -499,8 +503,8 @@ function init_gear_sets()
     sets.cool = set_combine(sets.idle.Town, {
          head="Otomi Helm",
          hands="Ignominy Gauntlets +1",
-         legs="Scuffler's Cosciales",
-         feet="Xaddi Boots"
+         legs="Yorium Cuisses",
+         feet="Acro Leggings"
      })
 
      sets.idle.Field = set_combine(sets.idle.Town, {
@@ -541,7 +545,7 @@ function init_gear_sets()
      sets.defense.PDT = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Emet Harness +1",
+         body="Yorium Cuirass",
          hands="Cizin Mufflers +1",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
@@ -569,7 +573,7 @@ function init_gear_sets()
      sets.Defensive = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Emet Harness +1",
+         body="Yorium Cuirass",
          hands="Cizin Mufflers +1",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1"
@@ -577,7 +581,7 @@ function init_gear_sets()
      sets.Defensive_Mid = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Emet Harness +1",
+         body="Yorium Cuirass",
          hands="Umuthi Gloves",
          ring2="Patricius Ring",
      }
@@ -585,7 +589,7 @@ function init_gear_sets()
          head="Ighwa Cap",
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
-         body="Emet Harness +1",
+         body="Yorium Cuirass",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
@@ -595,7 +599,7 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Ginsen",
-         head="Otomi Helm",
+         head="Acro Helm",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Trux Earring",
@@ -606,7 +610,7 @@ function init_gear_sets()
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
-         feet="Acro Leggings"
+         feet="Ejekamal Boots"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          head="Yaoyotl Helm",
@@ -618,7 +622,6 @@ function init_gear_sets()
          neck="Iqabi Necklace",
          ear1="Steelflash Earring",
          ear2="Zennaroi Earring",
-         hands="Buremte Gloves",
          back="Kayapa Cape",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
@@ -627,7 +630,6 @@ function init_gear_sets()
      sets.engaged.LR = set_combine(sets.engaged, {
      })
      sets.engaged.LR.AM3 = set_combine(sets.engaged.LR, {
-         head="Yaoyotl Helm", 
          ear2="Tripudio Earring"
      })
      sets.engaged.Mid.LR = set_combine(sets.engaged.Mid, {
@@ -671,14 +673,12 @@ function init_gear_sets()
      sets.engaged.War.Acc.PDT = set_combine(sets.engaged.War.Acc, sets.Defensive_Acc)
 
      sets.engaged.AM3 = set_combine(sets.engaged, {
-         head="Yaoyotl Helm",
-         body="Acro Surcoat",
+         head="Acro Helm",
          ear2="Tripudio Earring",
          hands="Cizin Mufflers +1",
-         legs="Yorium Cuisses",
-         feet="Ejekamal Boots"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
+         head="Yaoyotl Helm",
          ear1="Zennaroi Earring",
          hands="Xaddi Gauntlets",
          feet="Acro Leggings"
@@ -688,7 +688,6 @@ function init_gear_sets()
          neck="Iqabi Necklace",
          ear1="Zennaroi Earring",
          ear2="Steelflash Earring",
-         hands="Buremte Gloves",
          ring1="Rajas Ring",
          ring2="Mars's Ring",
          waist="Olseni Belt",
