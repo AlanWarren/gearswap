@@ -521,49 +521,49 @@ function init_gear_sets()
     sets.engaged.LowDef.Acc.PDT.Haste_25 = sets.engaged.Acc.PDT.Haste_25
     
     -- 5 - 20% Haste 
-    sets.engaged.Haste_20 = set_combine(sets.engaged.Haste_25, {
+    sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_25, {
         --back="Vellaunus' Mantle +1",
         back="Bleating Mantle",
         waist="Patentia Sash"
     })
-    sets.engaged.Low.Haste_20 = set_combine(sets.engaged.Low.Haste_25, {
+    sets.engaged.Low.Haste_15 = set_combine(sets.engaged.Low.Haste_25, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         back="Bleating Mantle",
         --back="Vellaunus' Mantle +1",
         waist="Patentia Sash"
     })
-    sets.engaged.Mid.Haste_20 = set_combine(sets.engaged.Mid.Haste_25, {
+    sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Mid.Haste_25, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         waist="Patentia Sash"
     })
-    sets.engaged.Acc.Haste_20 = set_combine(sets.engaged.Acc.Haste_25, {
+    sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_25, {
         legs="Mochizuki Hakama +1"
     })
     
-    sets.engaged.LowDef.Haste_20 = set_combine(sets.engaged.LowDef.Haste_25, {
+    sets.engaged.LowDef.Haste_15 = set_combine(sets.engaged.LowDef.Haste_25, {
         back="Bleating Mantle",
         --back="Vellaunus' Mantle +1",
         waist="Patentia Sash"
     })
-    sets.engaged.LowDef.Low.Haste_20 = set_combine(sets.engaged.LowDef.Low.Haste_25, {
+    sets.engaged.LowDef.Low.Haste_15 = set_combine(sets.engaged.LowDef.Low.Haste_25, {
         back="Bleating Mantle",
         --back="Vellaunus' Mantle +1",
         waist="Patentia Sash"
     })
-    sets.engaged.LowDef.Mid.Haste_20 = sets.engaged.Mid.Haste_20
-    sets.engaged.LowDef.Acc.Haste_20 = sets.engaged.Acc.Haste_20
+    sets.engaged.LowDef.Mid.Haste_15 = sets.engaged.Mid.Haste_15
+    sets.engaged.LowDef.Acc.Haste_15 = sets.engaged.Acc.Haste_15
 
-    sets.engaged.PDT.Haste_20 = set_combine(sets.engaged.Haste_20, sets.engaged.HastePDT)
-    sets.engaged.Low.PDT.Haste_20 = set_combine(sets.engaged.Low.Haste_20, sets.engaged.HastePDT)
-    sets.engaged.Mid.PDT.Haste_20 = set_combine(sets.engaged.Mid.Haste_20, sets.engaged.HastePDT)
-    sets.engaged.Acc.PDT.Haste_20 = set_combine(sets.engaged.Acc.Haste_20, sets.engaged.AccPDT)
+    sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Low.PDT.Haste_15 = set_combine(sets.engaged.Low.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, sets.engaged.AccPDT)
     
-    sets.engaged.LowDef.PDT.Haste_20 = sets.engaged.PDT.Haste_20
-    sets.engaged.LowDef.Low.PDT.Haste_20 = sets.engaged.Low.PDT.Haste_20
-    sets.engaged.LowDef.Mid.PDT.Haste_20 = sets.engaged.Mid.PDT.Haste_20
-    sets.engaged.LowDef.Acc.PDT.Haste_20 = sets.engaged.Acc.PDT.Haste_20
+    sets.engaged.LowDef.PDT.Haste_15 = sets.engaged.PDT.Haste_15
+    sets.engaged.LowDef.Low.PDT.Haste_15 = sets.engaged.Low.PDT.Haste_15
+    sets.engaged.LowDef.Mid.PDT.Haste_15 = sets.engaged.Mid.PDT.Haste_15
+    sets.engaged.LowDef.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
     
