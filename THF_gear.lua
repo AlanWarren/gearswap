@@ -118,12 +118,12 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head="Felistris Mask",
+		head="Taeon Chapeau",
         neck="Moepapa Medal",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
 		body="Qaaxo Harness",
-        hands="Iuitl Wristbands +1",
+        hands="Taeon Gloves",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
 		back="Bleating Mantle",
@@ -276,7 +276,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
 		back="Engulfer Cape +1",
         waist="Flume Belt",
-        legs="Pillager's Culottes +1",
+        legs="Taeon Tights",
         feet="Skadi's Jambeaux +1"
     }
 
@@ -342,7 +342,7 @@ function init_gear_sets()
 	
 	-- Normal melee group
 	sets.engaged = {
-		head="Felistris Mask",
+		head="Taeon Chapeau",
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
@@ -353,8 +353,8 @@ function init_gear_sets()
         ring2="Epona's Ring",
 		back="Canny Cape",
         waist="Patentia Sash",
-        legs="Iuitl Tights +1",
-        feet="Plunderer's Poulaines"
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Whirlpool Mask",
@@ -407,6 +407,7 @@ function init_gear_sets()
         --body="Thaumas Coat",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
+        feet="Plunderer's Poulaines"
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
         body="Qaaxo Harness",
@@ -445,14 +446,17 @@ function init_gear_sets()
         waist="Patentia Sash",
 		body="Taeon Tabard",
         hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
-        back="Canny Cape"
+        back="Canny Cape",
+        feet="Taeon Boots"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
 		body="Taeon Tabard",
+        feet="Taeon Boots"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
         waist="Patentia Sash",
         back="Canny Cape"
+        feet="Taeon Boots"
     })
     sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, { body="Taeon Tabard", ring1="Beeline Ring", feet="Qaaxo Leggings"})
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { head="Lithelimb Cap", neck="Twilight Torque", 
