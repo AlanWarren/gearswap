@@ -158,7 +158,7 @@ function init_gear_sets()
         ring2="Patricius Ring",
     	back="Engulfer Cape +1",
         waist="Flume Belt",
-        legs="Taeon Tights",
+        legs="Mochizuki Hakama +1",
         feet="Danzo Sune-ate"
      }
 
