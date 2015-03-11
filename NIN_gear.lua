@@ -589,7 +589,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
-        legs="Manibozho Brais",
+        legs="Taeon Tights",
         feet="Mochizuki Kyahan +1"
     }
 

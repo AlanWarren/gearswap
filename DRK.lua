@@ -302,11 +302,12 @@ function init_gear_sets()
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
          ear1="Brutal Earring",
-         legs="Ignominy Flanchard +1",
-         feet="Acro Leggings",
+         hands="Fallen's Finger Gauntlets +1",
+         waist="Windbuffet Belt +1",
+         legs="Yorium Cuisses",
+         feet="Acro Leggings"
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
-         back="Bleating Mantle",
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
@@ -604,7 +605,7 @@ function init_gear_sets()
          ear1="Brutal Earring",
          ear2="Trux Earring",
     	 body="Acro Surcoat",
-         hands="Xaddi Gauntlets",
+         hands="Acro Gauntlets",
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
          back="Bleating Mantle",
@@ -616,6 +617,7 @@ function init_gear_sets()
          head="Yaoyotl Helm",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
+         hands="Xaddi Gauntlets"
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          head="Gavialis Helm",
@@ -630,6 +632,7 @@ function init_gear_sets()
      sets.engaged.LR = set_combine(sets.engaged, {
      })
      sets.engaged.LR.AM3 = set_combine(sets.engaged.LR, {
+         --hands="Cizin Mufflers +1",
          ear2="Tripudio Earring"
      })
      sets.engaged.Mid.LR = set_combine(sets.engaged.Mid, {
@@ -646,22 +649,22 @@ function init_gear_sets()
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
      
      sets.engaged.War = set_combine(sets.engaged, {
+         head="Acro Helm",
          ear1="Brutal Earring",
          ear2="Tripudio Earring",
-         head="Yaoyotl Helm",
-         legs="Xaddi Cuisses",
-         feet="Mikinaak Greaves"
+         legs="Yorium Cuisses",
+         --feet="Mikinaak Greaves"
      })
      sets.engaged.War.Mid = set_combine(sets.engaged.War, {
+         head="Yaoyotl Helm",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
-         legs="Xaddi Cuisses",
+         hands="Xaddi Gauntlets",
          feet="Ejekamal Boots"
      })
      sets.engaged.War.Acc = set_combine(sets.engaged.War.Mid, {
          neck="Iqabi Necklace",
          hands="Buremte Gloves",
-    	 body="Mes'yohi Haubergeon",
          ring1="Mars's Ring",
          ring2="Patricius Ring",
          back="Kayapa Cape",
@@ -675,7 +678,6 @@ function init_gear_sets()
      sets.engaged.AM3 = set_combine(sets.engaged, {
          head="Acro Helm",
          ear2="Tripudio Earring",
-         hands="Cizin Mufflers +1",
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
          head="Yaoyotl Helm",
@@ -691,7 +693,6 @@ function init_gear_sets()
          ring1="Rajas Ring",
          ring2="Mars's Ring",
          waist="Olseni Belt",
-         feet="Acro Leggings"
      })
 
      sets.engaged.Reraise = set_combine(sets.engaged, {
