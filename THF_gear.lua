@@ -68,7 +68,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         back="Canny Cape",
         ring1="Patricius Ring",
         ring2="Mars's Ring",
@@ -203,7 +203,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
         head="Whirlpool Mask",
         neck="Moepapa Medal",
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         body="Dread Jupon",
         ring1="Ramuh Ring",
         waist="Windbuffet Buffet +1",
@@ -237,7 +237,7 @@ function init_gear_sets()
         ear1="Crematio Earring",
         head="Umbani Cap",
 		body="Mekosuchinae Harness",
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         ring1="Acumen Ring",
         ring2="Garuda Ring",
 		back="Argochampsa Mantle",
@@ -271,7 +271,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		body="Kheper Jacket",
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         ring1="Paguroidea Ring",
         ring2="Epona's Ring",
 		back="Engulfer Cape +1",
@@ -283,7 +283,7 @@ function init_gear_sets()
 	sets.idle.Town = set_combine(sets.idle, {
         head="Felistris Mask",
         body="Taeon Tabard",
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         back="Canny Cape",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
@@ -417,7 +417,7 @@ function init_gear_sets()
         head="Whirlpool Mask",
 		body="Mekosuchinae Harness",
         neck="Rancor Collar",
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         ring1="Mars's Ring",
         ring2="Patricius Ring",
         waist="Olseni Belt",
@@ -445,7 +445,7 @@ function init_gear_sets()
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_40, {
         waist="Patentia Sash",
 		body="Taeon Tabard",
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         back="Canny Cape",
         feet="Taeon Boots"
     })
@@ -464,7 +464,7 @@ function init_gear_sets()
 
      -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         ear1="Heartseeker Earring",
         ear2="Dudgeon Earring"
     })
