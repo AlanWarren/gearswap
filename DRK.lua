@@ -489,7 +489,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Yaoyotl Helm",
          neck="Ganesha's Mala",
-         ear1="Zennaroi Earring",
+         ear1="Lugra Earring",
          ear2="Trux Earring",
          body="Acro Surcoat",
          hands="Acro Gauntlets",
