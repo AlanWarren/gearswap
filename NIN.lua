@@ -20,7 +20,7 @@ function job_setup()
     state.MobDefenseMode = M{['description']='Mob Defense Mode', 'Normal', 'LowDef'}
 
     select_ammo()
-    --wsList = S{}
+    LugraWSList = S{'Blade: Shun', 'Blade: Ku', 'Blade: Jin'}
     state.CapacityMode = M(false, 'Capacity Point Mantle')
     gear.RegularAmmo = 'Happo Shuriken'
     gear.SangeAmmo = 'Hachiya Shuriken'
@@ -153,6 +153,15 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if world.day_element == 'Dark' then
             equip(sets.WSBack)
         end
+        -- Lugra Earring for some WS
+        if LugraWSList:contains(spell.english) then
+            if world.time >= (17*60) or world.time <= (7*60) then
+                equip(sets.BrutalLugra)
+            else
+                equip(sets.BrutalTrux)
+            end
+        end
+
     end
 end
 
@@ -493,7 +502,6 @@ function select_ws_ammo()
         return sets.DayAccAmmo
     end
 end
-
 function update_combat_form()
     if state.MobDefenseMode.value == 'LowDef' then
         state.CombatForm:set('LowDef')

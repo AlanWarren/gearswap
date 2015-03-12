@@ -40,6 +40,8 @@ function init_gear_sets()
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
     sets.WSBack         = { back="Trepidity Mantle" }
+    sets.BrutalLugra    = { ear1="Brutal Earring", ear2="Lugra Earring" }
+    sets.BrutalTrux     = { ear1="Brutal Earring", ear2="Trux Earring" }
     sets.Rajas          = { ring1="Rajas Ring" }
 
     sets.RegularAmmo    = { ammo=gear.RegularAmmo }
