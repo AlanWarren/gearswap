@@ -492,7 +492,7 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
          ear2="Trux Earring",
          body="Acro Surcoat",
-         hands="Ignominy Gauntlets +1",
+         hands="Acro Gauntlets",
          ring1="Rajas Ring",
          ring2="Ifrit Ring +1",
          back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
