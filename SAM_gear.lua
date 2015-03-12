@@ -31,9 +31,13 @@ function init_gear_sets()
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
     
-    sets.CapacityMantle = {back="Mecistopins Mantle"}
-    sets.Berserker = {neck="Berserker's Torque"}
-    sets.WSDayBonus     = { head="Gavialis Helm" }
+    sets.CapacityMantle  = { back="Mecistopins Mantle" }
+    sets.Berserker       = { neck="Berserker's Torque" }
+    sets.WSDayBonus      = { head="Gavialis Helm" }
+    sets.LugraMoonshade  = { ear1="Lugra Earring", ear2="Moonshade Earring" }
+    sets.BrutalMoonshade = { ear1="Brutal Earring", ear2="Moonshade Earring" }
+    sets.LugraFlame      = { ear1="Lugra Earring", ear2="Flame Pearl" }
+    sets.FlameFlame      = { ear1="Flame Pearl", ear2="Flame Pearl" }
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
@@ -50,7 +54,7 @@ function init_gear_sets()
         back="Buquwik Cape",
         waist="Windbuffet Belt +1",
         legs="Scuffler's Cosciales",
-        feet="Ejekamal Boots"
+        feet="Acro Leggings"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         head="Yaoyotl Helm",
@@ -69,7 +73,7 @@ function init_gear_sets()
         ear1="Flame Pearl",
         ear2="Flame Pearl",
         body="Acro Surcoat",
-        hands="Unkai Kote +2",
+        hands="Acro Gauntlets",
         back="Buquwik Cape",
         ring1="Ifrit Ring",
         ring2="Ifrit Ring +1",
@@ -98,20 +102,17 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
-        neck="Ganesha's Mala",
+        neck="Aqua Gorget",
+        hands="Acro Gauntlets",
         waist="Metalsinger Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
         head="Yaoyotl Helm",
-        neck="Aqua Gorget",
         legs="Wukong's Hakama +1",
-        waist="Metalsinger Belt"
+        waist="Light Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
         body="Sakonji Domaru +1",
-        waist="Light Belt",
-        legs="Wukong's Hakama +1",
-        feet="Acro Leggings"
     })
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
@@ -277,7 +278,7 @@ function init_gear_sets()
     sets.engaged = {
         --sub="Bloodrain Grip",
         ammo=gear.RAarrow,
-        head="Acro Helm",
+        head="Otomi Helm",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Trux Earring",
@@ -287,25 +288,19 @@ function init_gear_sets()
         ring2="Oneiros Ring", 
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
-        legs="Wakido Haidate +1",
+        legs="Xaddi Cuisses",
         feet="Otronif Boots +1"
     }
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
-   	    body="Acro Surcoat",
-        neck="Agitator's Collar",
-        ring2="Mars's Ring",
-        feet="Sakonji Sune-Ate +1"
+        feet="Acro Leggings"
     })
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Sakonji Kabuto +1",
         ear1="Zennaroi Earring",
         ring1="Mars's Ring",
-        feet="Wakido Sune-Ate +1",
-        legs="Xaddi Cuisses",
-        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
     })
     
     sets.engaged['Anahera Blade'] = set_combine(sets.engaged, {
@@ -386,7 +381,7 @@ function init_gear_sets()
     sets.engaged.Adoulin = {
         --sub="Pole Grip",
         ammo=gear.RAarrow,
-        head="Acro Helm",
+        head="Otomi Helm",
         neck="Ganesha's Mala", -- 3
         ear1="Brutal Earring", -- 1 
         ear2="Trux Earring", -- 1
@@ -394,17 +389,15 @@ function init_gear_sets()
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="Oneiros Ring", 
-        back="Bleating Mantle",
+        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
         legs="Xaddi Cuisses",
-        feet="Ejekamal Boots" --7
+        feet="Acro Leggings" --7
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         head="Yaoyotl Helm",
-        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
-        legs="Xaddi Cuisses",
     })
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
@@ -416,7 +409,7 @@ function init_gear_sets()
         waist="Olseni Belt",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         legs="Wukong's Hakama +1",
-        feet="Wakido Sune-Ate +1"
+        feet="Acro Leggings"
     })
     
     sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {

@@ -32,6 +32,7 @@ function job_setup()
     state.SouleaterMode = M(true, 'Soul Eater Mode')
     
     --wsList = S{'Spiral Hell'}
+    noTPBonusWS = S{'Quietus' }
     
     get_combat_form()
     update_melee_groups()
@@ -88,12 +89,18 @@ function init_gear_sets()
      sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
      sets.precast.JA['Weapon Bash'] = {hands="Ignominy Gauntlets +1"}
 
-     sets.CapacityMantle = { back="Mecistopins Mantle" }
-     sets.Berserker      = { neck="Berserker's Torque" }
-     sets.WSDayBonus     = { head="Gavialis Helm" }
-     sets.WSBack         = { back="Trepidity Mantle" }
-     sets.NightAmmo      = { ammo="Ginsen" }
-     sets.DayAmmo        = { ammo="Tengu-No-Hane" }
+     sets.CapacityMantle  = { back="Mecistopins Mantle" }
+     sets.Berserker       = { neck="Berserker's Torque" }
+     sets.WSDayBonus      = { head="Gavialis Helm" }
+     sets.WSBack          = { back="Trepidity Mantle" }
+     sets.NightAmmo       = { ammo="Ginsen" }
+     sets.DayAmmo         = { ammo="Tengu-No-Hane" }
+     -- TP ears for night and day, AM3 up and down. 
+     sets.LugraTripudio   = { ear1="Lugra Earring", ear2="Tripudio Earring" }
+     sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring" }
+     sets.BrutalTripudio  = { ear1="Brutal Earring", ear2="Tripudio Earring" }
+     sets.BrutalTrux      = { ear1="Brutal Earring", ear2="Trux Earring" }
+     sets.Lugra           = { ear1="Lugra Earring" }
  
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {
@@ -301,10 +308,9 @@ function init_gear_sets()
      -- 20% STR / 20% INT
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
-         ear1="Brutal Earring",
-         hands="Fallen's Finger Gauntlets +1",
+         hands="Mikinaak Gauntlets",
          waist="Windbuffet Belt +1",
-         legs="Yorium Cuisses",
+         legs="Ignominy Flanchard +1",
          feet="Acro Leggings"
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
@@ -312,53 +318,47 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
-         body="Mes'yohi Haubergeon",
+         neck="Shadow Gorget",
+         hands="Acro Gauntlets",
          legs="Yorium Cuisses",
-         hands="Ignominy Gauntlets +1",
          waist="Light Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
-         body="Fallen's Cuirass +1",
          ear1="Bale Earring",
-         legs="Yorium Cuisses",
          ring1="Rajas Ring",
-         back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          head="Gavialis Helm",
          ear1="Zennaroi Earring",
-         body="Acro Surcoat",
-         hands="Ignominy Gauntlets +1",
          ring1="Mars's Ring",
          waist="Anguinius Belt",
-         legs="Yorium Cuisses",
-         feet="Acro Leggings"
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
      
      -- CROSS REAPER
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-         neck="Ganesha's Mala",
+         neck="Aqua Gorget",
+         ear1="Bale Earring",
          hands="Fallen's Finger Gauntlets +1",
-         legs="Yorium Cuisses",
+         legs="Ignominy Flanchard +1",
          feet="Acro Leggings"
      })
      sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {})
 
-     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS.Mid, {
+     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
          ammo="Ginsen",
-         neck="Aqua Gorget",
-         body="Fallen's Cuirass +1",
-         ring1="Rajas Ring",
+         hands="Acro Gauntlets",
          waist="Windbuffet Belt +1",
+         --waist="Snow Belt",
+         legs="Yorium Cuisses"
      })
      sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
-         head="Gavialis Helm",
+         head="Yaoyotl Helm",
          ear1="Bale Earring",
          waist="Caudata Belt"
      })
-     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, sets.precast.WS.Acc)
+     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {})
      
      -- ENTROPY
      -- 86-100% INT 
@@ -366,8 +366,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Otomi Helm",
          neck="Shadow Gorget",
-         body="Fallen's Cuirass +1",
-         hands="Fallen's Finger Gauntlets +1",
+         hands="Acro Gauntlets",
          ring1="Shiva Ring",
          back="Bleating Mantle",
          waist="Soil Belt",
@@ -375,43 +374,37 @@ function init_gear_sets()
          feet="Acro Leggings"
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
-         legs="Ignominy Flanchard +1"
+         head="Ignominy Burgeonet +1",
+         hands="Fallen's Finger Gauntlets +1",
+         legs="Yorium Cuisses"
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
          head="Ighwa Cap",
-         hands="Ignominy Gauntlets +1",
-         feet="Acro Leggings"
+         legs="Yorium Cuisses"
      })
-     sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, { 
-        legs="Xaddi Cuisses"
-     })
-     sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, sets.precast.WS.Acc)
+     sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
+     sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {})
 
      -- Quietus
      -- 60% STR / MND 
      sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
          ear2="Trux Earring",
-         body="Ignominy Cuirass +1",
-         hands="Fallen's Finger Gauntlets +1",
+         hands="Acro Gauntlets",
          waist="Windbuffet Belt +1",
-         legs="Scuffler's Cosciales",
-         feet="Ejekamal Boots"
+         legs="Yorium Cuisses",
+         feet="Acro Boots"
      })
      sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {
-         ear1="Bale Earring",
-         ear2="Brutal Earring",
-         legs="Ignominy Flanchard +1"
+         ear2="Bale Earring",
      })
      sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
          head="Yaoyotl Helm",
-         hands="Ignominy Gauntlets +1",
          waist="Caudata Belt",
      })
      sets.precast.WS.Quietus.AM3Mid = set_combine(sets.precast.WS.Quietus.Mid, {
          ear1="Bale Earring",
          ear2="Brutal Earring",
-         legs="Ignominy Flanchard +1"
      })
      sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, sets.precast.WS.Acc)
 
@@ -419,9 +412,9 @@ function init_gear_sets()
      -- 50% STR / 50% INT 
      sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
          head="Ighwa Cap",
-         body="Phorcys Korazin",
          neck="Aqua Gorget",
-         legs="Scuffler's Cosciales",
+         hands="Acro Gauntlets",
+         legs="Yorium Cuisses",
          waist="Metalsinger belt",
      })
      sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid)
@@ -449,12 +442,11 @@ function init_gear_sets()
          head="Ignominy burgeonet +1",
          neck="Stoicheion Medal",
          ear1="Friomisi Earring",
-         ear2="Crematio Earring",
          body="Fallen's Cuirass +1",
-         hands="Fallen's Finger Gauntlets +1",
-         legs="Ignominy Flanchard +1",
+         hands="Acro Gauntlets",
+         legs="Yorium Cuisses",
          ring2="Acumen Ring",
-         back="Argochampsa Mantle",
+         back="Toro Cape",
          feet="Ignominy Sollerets"
      })
      sets.precast.WS['Sanguine Blade'].Mid = set_combine(sets.precast.WS['Sanguine Blade'], sets.precast.WS.Mid)
@@ -600,7 +592,7 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Ginsen",
-         head="Acro Helm",
+         head="Otomi Helm",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Trux Earring",
@@ -611,16 +603,15 @@ function init_gear_sets()
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
-         feet="Ejekamal Boots"
+         feet="Acro Leggings"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         head="Yaoyotl Helm",
+         head="Acro Helm",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
-         hands="Xaddi Gauntlets"
+         feet="Ejekamal Boots"
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-         head="Gavialis Helm",
          neck="Iqabi Necklace",
          ear1="Steelflash Earring",
          ear2="Zennaroi Earring",
@@ -721,6 +712,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
+        if world.time >= (17*60) or world.time <= (7*60) then
+            equip(sets.Lugra)
+        end
         --if world.day_element == 'Dark' then
         --    equip(sets.WSBack)
         --end
@@ -788,6 +782,7 @@ function customize_melee_set(meleeSet)
     if state.OffenseMode.current == 'Acc' then
         meleeSet = set_combine(meleeSet, select_ammo())
     end
+    meleeSet = set_combine(meleeSet, select_earring())
     return meleeSet
 end
  
@@ -970,6 +965,26 @@ function select_ammo()
         return sets.DayAmmo
     end
 end
+
+function select_earring()
+    -- world.time is given in minutes into each day
+    -- 7:00 AM would be 420 minutes
+    -- 17:00 PM would be 1020 minutes
+    if world.time >= (17*60) or world.time <= (7*60) then
+        if classes.CustomMeleeGroups:contains('AM3') then
+            return sets.LugraTripudio
+        else
+            return sets.BrutalLugra
+        end
+    else
+        if classes.CustomMeleeGroups:contains('AM3') then
+             return sets.BrutalTripudio
+        else
+             return sets.BrutalTrux
+        end
+    end
+end
+
 --function adjust_melee_groups()
 --	classes.CustomMeleeGroups:clear()
 --	if state.Buff.Aftermath then
