@@ -84,12 +84,9 @@ function init_gear_sets()
     
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
-		head="Vishap Armet +1",
-        neck="Lancer's Torque",
-        body="Xaddi Mail",
-        ring2="K'ayres Ring",
-        waist="Glassblower's Belt",
-		legs="Cizin Breeches +1",
+		head="Otomi Helm",
+        hands="Umuthi Gloves",
+		legs="Ares' Flanchard +1",
         feet="Ejekamal Boots",
     }	
 		
