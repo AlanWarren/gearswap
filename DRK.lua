@@ -115,7 +115,8 @@ function init_gear_sets()
         head="Fallen's Burgeonet +1",
         ear1="Loquacious Earring",
         hands="Buremte Gloves",
-        ring2="Prolix Ring"
+        ring2="Prolix Ring",
+        feet="Yorium Sabatons"
      }
 
      sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
