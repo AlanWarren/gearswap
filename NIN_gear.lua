@@ -742,7 +742,7 @@ function init_gear_sets()
     sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS['Blade: Ten'].Low, {
         waist="Caudata Belt"
     })
-    sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid {
+    sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid, {
         legs="Wukong's Hakama +1",
         feet="Mochizuki Kyahan +1"
     })
