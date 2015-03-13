@@ -18,7 +18,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Lancer's Plackart +2",
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
 		back="Bleating Mantle",
