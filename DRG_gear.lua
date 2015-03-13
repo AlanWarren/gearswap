@@ -13,18 +13,18 @@ function init_gear_sets()
 
 	sets.precast.JA.Jump = {
         ammo="Ginsen",
-		head="Otomi Helm",
+		head="Acro Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Lancer's Plackart +2",
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Scuffler's Cosciales",
-        feet="Cizin Greaves +1"
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     }
 
 	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais" }
@@ -68,8 +68,7 @@ function init_gear_sets()
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		head="Yaoyotl Helm",
-		body="Mikinaak Breastplate",hands="Cizin Mufflers +1",ring1="Rajas Ring",
-		back="Bleating Mantle",legs="Xaddi Cuisses",feet="Whirlpool Greaves"}
+		back="Bleating Mantle"}
 		
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
@@ -87,9 +86,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Vishap Armet +1",
         neck="Lancer's Torque",
-        hands="Cizin Mufflers +1",
         body="Xaddi Mail",
-        ring1="Beeline Ring",
         ring2="K'ayres Ring",
         back="Updraft Mantle",
         waist="Glassblower's Belt",
@@ -105,16 +102,16 @@ function init_gear_sets()
 	sets.precast.WS = {
         ammo="Thew Bomblet",
 		head="Otomi Helm",
-        neck="Asperity Necklace",
+        neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
 		body="Acro Surcoat",
-        hands="Mikinaak Gauntlets",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         ring1="Ifrit Ring",
         ring2="Ifrit Ring +1",
-		back="Buquwik Cape",
+		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Scuffler's Cosciales",
+        legs="Taeon Tights",
         feet="Acro Leggings"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -126,13 +123,10 @@ function init_gear_sets()
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
-        hands="Lancer's Vambraces +2",
-        back="Buquwik Cape",
         waist="Soil Belt"
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
         head="Yaoyotl Helm",
-        hands="Mikinaak Gauntlets",
 		back="Updraft Mantle",
     })
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})
@@ -141,8 +135,8 @@ function init_gear_sets()
         neck="Breeze Gorget",
         body="Phorcys Korazin",
         back="Buquwik Cape",
-        waist="Metalsinger Belt",
-        feet="Whirlpool Greaves"
+        waist="Windbuffet Belt +1",
+        back="Updraft Mantle"
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
         head="Yaoyotl Helm", 
@@ -153,14 +147,14 @@ function init_gear_sets()
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
 
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
-        neck="Flame Gorget", 
         hands="Mikinaak Gauntlets",
         back="Rancorous Mantle",
         waist="Windbuffet Belt +1"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
-		    back="Updraft Mantle",
-            head="Yaoyotl Helm"
+		back="Updraft Mantle",
+        head="Yaoyotl Helm",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
     })
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
 
@@ -190,17 +184,17 @@ function init_gear_sets()
 	sets.idle.Town = {
         ammo="Ginsen",
 		head="Otomi Helm",
-        neck="Asperity Necklace",
+        neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
-		body="Ares' Cuirass +1",
-        hands="Ares' Gauntlets +1",
+		body="Acro Surcoat",
+        hands="Acro Gauntlets",
         ring1="Ifrit Ring +1",
         ring2="Oneiros Ring",
 		back="Bleating Mantle",
-        waist="Metalsinger Belt",
+        waist="Windbuffet Belt +1",
         legs="Crimson Cuisses",
-        feet="Cizin Greaves +1"
+        feet="Acro Leggings"
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
@@ -265,16 +259,16 @@ function init_gear_sets()
         ammo="Ginsen",
 		head="Acro Helm",
         neck="Ganesha's Mala",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
+        ear1="Brutal Earring",
+        ear2="Tripudio Earring",
 		body="Acro Surcoat",
-        hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Xaddi Cuisses",
-        feet="Ejekamal Boots"
+        legs="Taeon Tights",
+        feet="Taeon Boots"
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
@@ -286,7 +280,8 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         waist="Olseni Belt",
         ring1="Mars's Ring",
-        back="Updraft Mantle"
+        back="Updraft Mantle",
+        legs="Xaddi Cuisses"
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
@@ -317,11 +312,15 @@ function init_gear_sets()
     })
 
     sets.engaged.War = set_combine(sets.engaged, {
-        --head="Yaoyotl Helm",
-        feet="Mikinaak Greaves",
+        hands="Acro Gauntlets",
+        neck="Asperity Necklace",
         ring2="K'ayres Ring"
     })
-    sets.engaged.War.Mid = sets.engaged.Mid
+    sets.engaged.War.Mid = set_combine(sets.engaged.Mid, {
+        hands="Acro Gauntlets",
+        neck="Asperity Necklace",
+        ring2="K'ayres Ring"
+    })
 
 	sets.engaged.Reraise = set_combine(sets.engaged, {
 		head="Twilight Helm",
