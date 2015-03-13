@@ -642,7 +642,7 @@ function init_gear_sets()
         head="Gavialis Helm",
         body="Mes'yohi Haubergeon"
     })
-    sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid {
+    sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid, {
         ring1="Rajas Ring",
         legs="Wukong's Hakama +1"
     })
