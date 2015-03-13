@@ -95,17 +95,17 @@ function init_gear_sets()
         sets.engaged.Yoichinoyumi = set_combine(sets.engaged, {})
 
         sets.engaged.Melee = {
-            head="Iuitl Headgear +1",
+            head="Taeon Chapeau",
             neck="Asperity Necklace",
             ear1="Bladeborn Earring",
             ear2="Steelflash Earring",
             body="Qaaxo Harness",
-            hands="Iuitl Wristbands +1",
+            hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
             ring1="Oneiros Ring",
             ring2="Epona's Ring",
-            back="Atheling Mantle",
-            waist="Cetl Belt",
-            legs="Quiahuiz Trousers",
+            back="Bleating Mantle",
+            waist="Windbuffet Belt +1",
+            legs="Taeon Tights",
             feet="Qaaxo Leggings"
         }
         sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
@@ -117,24 +117,28 @@ function init_gear_sets()
         sets.engaged.DW = set_combine(sets.engaged, {})
 
         sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
+            head="Taeon Chapeau",
             ear1="Dudgeon Earring",
             ear2="Heartseeker Earring",
-            body="Skadi's Cuirie +1",
-            back="Vellaunus' Mantle +1",
-            waist="Patentia Sash"
+            body="Taeon Tabard",
+            hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
+            back="Bleating Mantle",
+            waist="Patentia Sash",
+            legs="Taeon Tights",
+            feet="Taeon Boots"
         })
 
         ------------------------------------------------------------------
         -- Preshot / Snapshot sets
         ------------------------------------------------------------------
         sets.precast.RA = {
-            head="Sylvan Gapette +2",
-            body="Sylvan Caban +2",
-            hands="Iuitl Wristbands +1",
-            legs="Nahtirah Trousers",
-            waist="Impulse Belt",
-            back="Lutian Cape",
-            feet="Wurrukatte Boots"
+            head="Sylvan Gapette +2", -- 5
+            body="Sylvan Caban +2", -- 10
+            hands="Iuitl Wristbands +1", -- 5
+            legs="Nahtirah Trousers", -- 9
+            waist="Impulse Belt", -- 2
+            back="Lutian Cape", -- 2
+            feet="Wurrukatte Boots" -- 3
         }
         
         ------------------------------------------------------------------
