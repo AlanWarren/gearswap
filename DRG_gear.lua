@@ -59,7 +59,7 @@ function init_gear_sets()
         hands="Cizin Mufflers +1",
         ring1="Dark Ring",
         ring2="K'ayres Ring",
-		back="Updraft Mantle",
+        back={name="Updraft Mantle", augments={'STR+3','Weapon skill damage +2%','Pet: Breath +9'}},
         waist="Glassblower's Belt",
         legs="Vishap Brais",
         feet="Wym. Greaves +2"
@@ -88,7 +88,6 @@ function init_gear_sets()
         neck="Lancer's Torque",
         body="Xaddi Mail",
         ring2="K'ayres Ring",
-        back="Updraft Mantle",
         waist="Glassblower's Belt",
 		legs="Cizin Breeches +1",
         feet="Ejekamal Boots",
@@ -115,7 +114,7 @@ function init_gear_sets()
         feet="Acro Leggings"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-		back="Updraft Mantle",
+        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
         head="Yaoyotl Helm",
         legs="Xaddi Cuisses"
     })
@@ -127,7 +126,7 @@ function init_gear_sets()
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
         head="Yaoyotl Helm",
-		back="Updraft Mantle",
+        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
     })
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})
 
@@ -136,13 +135,13 @@ function init_gear_sets()
         body="Phorcys Korazin",
         back="Buquwik Cape",
         waist="Windbuffet Belt +1",
-        back="Updraft Mantle"
+        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
         head="Yaoyotl Helm", 
         ear1="Bladeborn Earring", 
         ear2="Steelflash Earring", 
-        back="Updraft Mantle"
+        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
     })
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
 
@@ -152,7 +151,7 @@ function init_gear_sets()
         waist="Windbuffet Belt +1"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
-		back="Updraft Mantle",
+        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
         head="Yaoyotl Helm",
         hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
     })
@@ -280,7 +279,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         waist="Olseni Belt",
         ring1="Mars's Ring",
-        back="Updraft Mantle",
+        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
         legs="Xaddi Cuisses"
     })
 
