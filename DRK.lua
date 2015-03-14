@@ -96,11 +96,11 @@ function init_gear_sets()
      sets.NightAmmo       = { ammo="Ginsen" }
      sets.DayAmmo         = { ammo="Tengu-No-Hane" }
      -- TP ears for night and day, AM3 up and down. 
-     sets.LugraTripudio   = { ear1="Lugra Earring", ear2="Tripudio Earring" }
-     sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring" }
+     sets.LugraTripudio   = { ear1="Lugra Earring +1", ear2="Tripudio Earring" }
+     sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
      sets.BrutalTripudio  = { ear1="Brutal Earring", ear2="Tripudio Earring" }
      sets.BrutalTrux      = { ear1="Brutal Earring", ear2="Trux Earring" }
-     sets.Lugra           = { ear1="Lugra Earring" }
+     sets.Lugra           = { ear1="Lugra Earring +1" }
  
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {
@@ -482,7 +482,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Yaoyotl Helm",
          neck="Ganesha's Mala",
-         ear1="Lugra Earring",
+         ear1="Lugra Earring +1",
          ear2="Trux Earring",
          body="Acro Surcoat",
          hands="Acro Gauntlets",

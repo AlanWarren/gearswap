@@ -34,9 +34,9 @@ function init_gear_sets()
     sets.CapacityMantle  = { back="Mecistopins Mantle" }
     sets.Berserker       = { neck="Berserker's Torque" }
     sets.WSDayBonus      = { head="Gavialis Helm" }
-    sets.LugraMoonshade  = { ear1="Lugra Earring", ear2="Moonshade Earring" }
+    sets.LugraMoonshade  = { ear1="Lugra Earring +1", ear2="Moonshade Earring" }
     sets.BrutalMoonshade = { ear1="Brutal Earring", ear2="Moonshade Earring" }
-    sets.LugraFlame      = { ear1="Lugra Earring", ear2="Flame Pearl" }
+    sets.LugraFlame      = { ear1="Lugra Earring +1", ear2="Flame Pearl" }
     sets.FlameFlame      = { ear1="Flame Pearl", ear2="Flame Pearl" }
        
     -- Weaponskill sets

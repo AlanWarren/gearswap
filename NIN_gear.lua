@@ -44,7 +44,7 @@ function init_gear_sets()
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
     sets.WSBack         = { back="Trepidity Mantle" }
-    sets.BrutalLugra    = { ear1="Brutal Earring", ear2="Lugra Earring" }
+    sets.BrutalLugra    = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
     sets.BrutalTrux     = { ear1="Brutal Earring", ear2="Trux Earring" }
     sets.Rajas          = { ring1="Rajas Ring" }
 
@@ -176,6 +176,7 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         neck="Rancor Collar",
+        ear2="Lugra Earring +1",
         ring1="Ifrit Ring +1",
         ring2="Epona's Ring",
         body="Mes'yohi Haubergeon",
