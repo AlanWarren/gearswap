@@ -70,12 +70,12 @@ function init_gear_sets()
     -- Ranged
     sets.precast.RA = {
         head="Uk'uxkaj Cap",
-        hands="Manibozho Gloves",
+        hands="Buremte Gloves",
         legs="Nahtirah Trousers",
         feet="Wurrukatte Boots"
     }
     sets.midcast.RA = {
-        head="Umbani Cap",
+        head="Taeon Chapeau",
         neck="Iqabi Necklace",
         body="Mochizuki Chainmail +1",
         hands="Hachiya Tekko +1",
@@ -84,7 +84,7 @@ function init_gear_sets()
         back="Yokaze Mantle",
         --waist="Hurling Belt",
         legs="Hachiya Hakama +1",
-        feet="Scopuli Nails +1"
+        feet="Taeon Boots"
     }
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
         body="Mekosuchinae Harness"
