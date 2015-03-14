@@ -175,12 +175,13 @@ function init_gear_sets()
     })
     
     sets.idle.Town = set_combine(sets.idle, {
-        neck="Hope Torque",
-        ring1="Patricius Ring",
+        neck="Rancor Collar",
+        ring1="Ifrit's Ring +1",
         ring2="Epona's Ring",
         body="Mes'yohi Haubergeon",
         legs="Taeon Tights",
-        back="Yokaze Mantle"
+        back="Yokaze Mantle",
+        waist="Windbuffet Belt +1"
     })
     
     sets.idle.Weak = sets.idle
