@@ -176,7 +176,7 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         neck="Rancor Collar",
-        ear2="Lugra Earring +1",
+        ear1="Lugra Earring +1",
         ring1="Ifrit Ring +1",
         ring2="Epona's Ring",
         body="Mes'yohi Haubergeon",
