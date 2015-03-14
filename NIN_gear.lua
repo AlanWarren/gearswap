@@ -179,6 +179,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Epona's Ring",
         body="Mes'yohi Haubergeon",
+        legs="Taeon Tights",
         back="Yokaze Mantle"
     })
     
