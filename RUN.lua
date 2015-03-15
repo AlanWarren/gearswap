@@ -15,9 +15,6 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
-    state.CombatForm = get_combat_form()
-    state.CombatWeapon = get_combat_weapon()
-    
     state.Buff.Battuta = buffactive.battuta or false
     state.Buff.Vallation = buffactive.vallation or false
     state.Buff.Valiance = buffactive.valiance or false
@@ -63,6 +60,7 @@ function init_gear_sets()
     
     -- Precast sets to enhance JAs
     sets.precast.JA.Swordplay = { hands="Futhark Mitons +1" }
+    sets.precast.Effusion = {}
 
     -- Effusions
     sets.precast.Effusion.Lunge = { 
