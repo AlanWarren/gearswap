@@ -132,7 +132,7 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
     
     sets.idle.Town = {
-        head="Destrier Beret",
+        head="Empress Hairpin",
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
