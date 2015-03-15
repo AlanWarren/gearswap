@@ -9,7 +9,7 @@
 function get_sets()
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
-    state.Runes = M{['description']='Runes', "Tellus","Unda","Flabra","Ignis","Gelus","Sulpor","Lux","Tenebrae"}
+    state.Runes = {"Tellus","Unda","Flabra","Ignis","Gelus","Sulpor","Lux","Tenebrae"}
 end
 
 
