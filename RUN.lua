@@ -150,7 +150,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ring1="Patricius Ring",
         ring2="Paguroidea Ring",
-        head="Destrier Beret",
+        head="Empress Hairpin",
         back="Shadow Mantle",
         feet="Hermes' Sandals"
     })
