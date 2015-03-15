@@ -82,6 +82,7 @@ function init_gear_sets()
     sets.precast.Effusion.Rayke = { feet="Futhark Boots +1" }
 
     -- Wards
+    sets.precast.Ward = {}
     sets.precast.Ward.Battuta = { head="Futhark Bandeau +1" }
     sets.precast.Ward.Pflug = { feet="Runeist Bottes +1" }
     sets.precast.Ward.Vallation = { body="Runeist Coat +1", legs="Futhark Trousers +1" }
