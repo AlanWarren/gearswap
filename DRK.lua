@@ -185,6 +185,7 @@ function init_gear_sets()
      }
 	 
      sets.midcast['Endark'] = set_combine(sets.midcast['Dark Magic'], {
+        body="Demon's Harness",
         legs="Bale Flanchard +2"
     })
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
