@@ -133,7 +133,7 @@ function init_gear_sets()
     -- Sets to return to when not performing an action.
     
     sets.idle.Town = {
-        head="Felistris Mask",
+        head="Destrier Beret",
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
@@ -151,8 +151,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ring1="Patricius Ring",
         ring2="Paguroidea Ring",
-        head="Twilight Helm",
-        body="Twilight Mail",
+        head="Destrier Beret",
         back="Shadow Mantle",
         feet="Hermes' Sandals"
     })
@@ -186,7 +185,7 @@ function init_gear_sets()
     sets.engaged = {
         sub="Pole Grip",
         ammo="Ginsen",
-        head="Felistris Mask",
+        head="Empress hairpin",
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
