@@ -641,8 +641,6 @@ function init_gear_sets()
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
      
      sets.engaged.War = set_combine(sets.engaged, {
-         head="Acro Helm",
-         ear1="Brutal Earring",
          ear2="Tripudio Earring",
          legs="Yorium Cuisses",
          --feet="Mikinaak Greaves"
