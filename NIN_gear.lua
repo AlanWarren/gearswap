@@ -153,6 +153,7 @@ function init_gear_sets()
     -- Effusions
     sets.precast.Effusion = {}
     sets.precast.Effusion.Lunge = sets.midcast.ElementalNinjutsu
+    sets.precast.Effusion.Swipe = sets.midcast.ElementalNinjutsu
     
     sets.idle = {
         ammo=gear.RegularAmmo,
