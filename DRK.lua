@@ -497,7 +497,7 @@ function init_gear_sets()
      
     sets.cool = set_combine(sets.idle.Town, {
          head="Otomi Helm",
-         legs="Yorium Cuisses",
+         legs="Acro Breeches",
          feet="Acro Leggings"
      })
 
