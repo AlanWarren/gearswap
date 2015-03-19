@@ -505,7 +505,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Baghere Salade",
          neck="Coatl Gorget +1",
-         body="Ares' Cuirass +1",
+         body="Yorium Cuirass",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
