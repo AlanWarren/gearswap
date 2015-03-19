@@ -470,7 +470,7 @@ function init_gear_sets()
      
      -- Resting sets
      sets.resting = {
-         head="Twilight Helm",
+         head="Baghere Salade",
          body="Ares' Cuirass +1",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
