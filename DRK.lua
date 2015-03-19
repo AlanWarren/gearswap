@@ -515,7 +515,7 @@ function init_gear_sets()
          feet="Cizin Greaves +1"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
-         body="Kumarbi's Akar"
+         body="Ares' Cuirass +1",
      })
  
      sets.idle.Weak = {
