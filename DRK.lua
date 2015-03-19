@@ -603,7 +603,7 @@ function init_gear_sets()
          ring2="K'ayres Ring",
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
-         legs="Yorium Cuisses",
+         legs="Acro Breeches",
          feet="Acro Leggings"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
@@ -642,7 +642,7 @@ function init_gear_sets()
      
      sets.engaged.War = set_combine(sets.engaged, {
          ear2="Tripudio Earring",
-         legs="Yorium Cuisses",
+         legs="Acro Breeches",
          --feet="Mikinaak Greaves"
      })
      sets.engaged.War.Mid = set_combine(sets.engaged.War, {
