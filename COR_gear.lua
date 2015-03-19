@@ -296,7 +296,7 @@ function init_gear_sets()
     }
 
 	sets.engaged.DW = set_combine(sets.engaged.Melee, {
-        head="Taeon Chapeaeu",
+        head="Taeon Chapeau",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
