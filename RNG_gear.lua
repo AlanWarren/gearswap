@@ -106,7 +106,7 @@ function init_gear_sets()
             back="Bleating Mantle",
             waist="Windbuffet Belt +1",
             legs="Taeon Tights",
-            feet="Qaaxo Leggings"
+            feet="Taeon Boots"
         }
         sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
             neck="Twilight Torque",
