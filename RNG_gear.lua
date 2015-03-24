@@ -41,7 +41,7 @@ function init_gear_sets()
         sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
         
         sets.idle = {
-            head="Umbani Cap",
+            head="Arcadian Beret +1",
             neck="Twilight Torque",
             ear1="Volley Earring",
             ear2="Tripudio Earring",
