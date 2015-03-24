@@ -101,7 +101,7 @@ function init_gear_sets()
             ear2="Steelflash Earring",
             body="Qaaxo Harness",
             hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
-            ring1="Oneiros Ring",
+            ring1="Rajas Ring",
             ring2="Epona's Ring",
             back="Bleating Mantle",
             waist="Windbuffet Belt +1",
