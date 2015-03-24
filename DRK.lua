@@ -670,6 +670,7 @@ function init_gear_sets()
      sets.engaged.AM3 = set_combine(sets.engaged, {
          head="Acro Helm",
          ear2="Tripudio Earring",
+         feet="Ejekamal Boots"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
          head="Yaoyotl Helm",
