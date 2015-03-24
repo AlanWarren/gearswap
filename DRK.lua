@@ -470,7 +470,7 @@ function init_gear_sets()
      
      -- Resting sets
      sets.resting = {
-         head="Twilight Helm",
+         head="Baghere Salade",
          body="Ares' Cuirass +1",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
@@ -497,7 +497,7 @@ function init_gear_sets()
      
     sets.cool = set_combine(sets.idle.Town, {
          head="Otomi Helm",
-         legs="Yorium Cuisses",
+         legs="Acro Breeches",
          feet="Acro Leggings"
      })
 
@@ -505,7 +505,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Baghere Salade",
          neck="Coatl Gorget +1",
-         body="Ares' Cuirass +1",
+         body="Yorium Cuirass",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
@@ -515,7 +515,7 @@ function init_gear_sets()
          feet="Cizin Greaves +1"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
-         body="Kumarbi's Akar"
+         body="Ares' Cuirass +1",
      })
  
      sets.idle.Weak = {
@@ -603,7 +603,7 @@ function init_gear_sets()
          ring2="K'ayres Ring",
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
-         legs="Yorium Cuisses",
+         legs="Acro Breeches",
          feet="Acro Leggings"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
@@ -641,17 +641,15 @@ function init_gear_sets()
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
      
      sets.engaged.War = set_combine(sets.engaged, {
-         head="Acro Helm",
-         ear1="Brutal Earring",
          ear2="Tripudio Earring",
-         legs="Yorium Cuisses",
+         legs="Acro Breeches",
          --feet="Mikinaak Greaves"
      })
      sets.engaged.War.Mid = set_combine(sets.engaged.War, {
          head="Yaoyotl Helm",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
-         hands="Xaddi Gauntlets",
+         hands="Acro Gauntlets",
          feet="Ejekamal Boots"
      })
      sets.engaged.War.Acc = set_combine(sets.engaged.War.Mid, {
@@ -673,9 +671,8 @@ function init_gear_sets()
          feet="Ejekamal Boots"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
+         ammo="Hasty Pinion +1",
          head="Yaoyotl Helm",
-         ear1="Zennaroi Earring",
-         hands="Xaddi Gauntlets",
          feet="Acro Leggings"
 
      })

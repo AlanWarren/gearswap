@@ -149,6 +149,11 @@ function init_gear_sets()
         legs="Shneddick Tights +1",
         feet="Hachiya Kyahan +1"
     }
+
+    -- Effusions
+    sets.precast.Effusion = {}
+    sets.precast.Effusion.Lunge = sets.midcast.ElementalNinjutsu
+    sets.precast.Effusion.Swipe = sets.midcast.ElementalNinjutsu
     
     sets.idle = {
         ammo=gear.RegularAmmo,

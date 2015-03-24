@@ -55,7 +55,7 @@ function init_gear_sets()
         neck="Lancer's Torque",
         ear1="Steelflash Earring",
         ear2="Bladeborn Earring",
-		body="Xaddi Mail",
+		body="Acro Surcoat",
         hands="Cizin Mufflers +1",
         ring1="Dark Ring",
         ring2="K'ayres Ring",
@@ -113,7 +113,7 @@ function init_gear_sets()
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
         head="Yaoyotl Helm",
-        legs="Xaddi Cuisses"
+        legs="Acro Breeches"
     })
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -277,7 +277,7 @@ function init_gear_sets()
         waist="Olseni Belt",
         ring1="Mars's Ring",
         back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
-        legs="Xaddi Cuisses"
+        legs="Acro Breeches"
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {

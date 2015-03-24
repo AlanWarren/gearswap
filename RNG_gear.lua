@@ -41,7 +41,7 @@ function init_gear_sets()
         sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
         
         sets.idle = {
-            head="Umbani Cap",
+            head="Arcadian Beret +1",
             neck="Twilight Torque",
             ear1="Volley Earring",
             ear2="Tripudio Earring",
@@ -101,12 +101,12 @@ function init_gear_sets()
             ear2="Steelflash Earring",
             body="Qaaxo Harness",
             hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
-            ring1="Oneiros Ring",
+            ring1="Rajas Ring",
             ring2="Epona's Ring",
             back="Bleating Mantle",
             waist="Windbuffet Belt +1",
             legs="Taeon Tights",
-            feet="Qaaxo Leggings"
+            feet="Taeon Boots"
         }
         sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
             neck="Twilight Torque",
@@ -431,8 +431,8 @@ function init_gear_sets()
             ring2="Ifrit Ring +1",
             back="Buquwik Cape",
             waist="Elanid Belt",
-            legs="Nahtirah Trousers",
-            feet="Arcadian Socks +1"
+            legs="Taeon Tights",
+            feet="Taeon Boots"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             legs="Aetosaur Trousers +1",

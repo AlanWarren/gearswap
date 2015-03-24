@@ -215,7 +215,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
         waist="Flume Belt",
-        legs="Nahtirah Trousers",
+        legs="Taeon Tights",
         feet="Skadi's Jambeaux +1"
     }
     sets.idle.Regen = set_combine(sets.idle, {
@@ -296,7 +296,7 @@ function init_gear_sets()
     }
 
 	sets.engaged.DW = set_combine(sets.engaged.Melee, {
-        head="Iuitl Headgear +1",
+        head="Taeon Chapeau",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},

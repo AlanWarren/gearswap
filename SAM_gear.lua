@@ -288,7 +288,7 @@ function init_gear_sets()
         ring2="Oneiros Ring", 
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
-        legs="Xaddi Cuisses",
+        legs="Acro Breeches",
         feet="Otronif Boots +1"
     }
     
@@ -391,7 +391,7 @@ function init_gear_sets()
         ring2="Oneiros Ring", 
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
-        legs="Xaddi Cuisses",
+        legs="Acro Breeches",
         feet="Acro Leggings" --7
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
@@ -440,7 +440,7 @@ function init_gear_sets()
         neck="Asperity Necklace", -- 3
         ear1="Bladeborn Earring", -- 1 
         ear2="Steelflash Earring", -- 1
-        body="Xaddi Mail", -- 8
+        body="Acro Surcoat", -- 8
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
@@ -456,7 +456,7 @@ function init_gear_sets()
    	    body="Mes'yohi Haubergeon",
         head="Yaoyotl Helm",
         waist="Dynamic Belt",
-        legs="Xaddi Cuisses",
+        legs="Acro Breeches",
         boots="Ejekamal Boots"
     })
     

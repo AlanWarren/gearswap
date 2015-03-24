@@ -18,6 +18,10 @@ function job_setup()
 
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
     state.MobDefenseMode = M{['description']='Mob Defense Mode', 'Normal', 'LowDef'}
+    state.Runes = M{['description']='Runes', "Ignis", "Gelus", "Flabra", "Tellus", "Sulpor", "Unda", "Lux", "Tenebrae"}
+    state.UseRune = M(false, 'Use Rune')
+
+    run_sj = player.sub_job == 'RUN' or false
 
     select_ammo()
     LugraWSList = S{'Blade: Shun', 'Blade: Ku', 'Blade: Jin'}
@@ -55,6 +59,8 @@ function user_setup()
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c cycle HasteMode')
+    send_command('bind @[ gs c cycle Runes')
+    send_command('bind ^] gs c toggle UseRune')
     send_command('bind @= gs c cycle MobDefenseMode')
     
     -- auto ws
@@ -276,6 +282,7 @@ function job_update(cmdParams, eventArgs)
     select_ammo()
     determine_haste_group()
     update_combat_form()
+    run_sj = player.sub_job == 'RUN' or false
     --select_movement()
     th_update(cmdParams, eventArgs)
 end
@@ -392,6 +399,28 @@ end
 function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Capacity Point Mantle' then
         gear.Back = newValue
+    elseif stateField == 'Runes' then
+        local msg = ''
+        if newValue == 'Ignis' then
+            msg = msg .. 'Increasing resistence against ICE and deals FIRE damage.'
+        elseif newValue == 'Gelus' then
+            msg = msg .. 'Increasing resistence against WIND and deals ICE damage.'
+        elseif newValue == 'Flabra' then
+            msg = msg .. 'Increasing resistence against EARTH and deals WIND damage.'
+        elseif newValue == 'Tellus' then
+            msg = msg .. 'Increasing resistence against LIGHTNING and deals EARTH damage.'
+        elseif newValue == 'Sulpor' then
+            msg = msg .. 'Increasing resistence against WATER and deals LIGHTNING damage.'
+        elseif newValue == 'Unda' then
+            msg = msg .. 'Increasing resistence against FIRE and deals WATER damage.'
+        elseif newValue == 'Lux' then
+            msg = msg .. 'Increasing resistence against DARK and deals LIGHT damage.'
+        elseif newValue == 'Tenebrae' then
+            msg = msg .. 'Increasing resistence against LIGHT and deals DARK damage.'
+        end
+        add_to_chat(123, msg)
+    elseif stateField == 'Use Rune' then
+        send_command('@input /ja '..state.Runes.value..' <me>')
     elseif stateField == 'Mob Defense Mode' then
         if newValue == 'LowDef' then
             state.CombatForm:set('LowDef')
