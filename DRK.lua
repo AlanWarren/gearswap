@@ -649,7 +649,7 @@ function init_gear_sets()
          head="Yaoyotl Helm",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
-         hands="Xaddi Gauntlets",
+         hands="Acro Gauntlets",
          feet="Ejekamal Boots"
      })
      sets.engaged.War.Acc = set_combine(sets.engaged.War.Mid, {
