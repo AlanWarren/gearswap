@@ -109,7 +109,6 @@ function init_gear_sets()
         ear1="Volley Earring",
         ear2="Clearview Earring",
         body="Mekosuchinae Harness",
-        hands="Manibozho Gloves",
         ring1="Longshot Ring",
         ring2="Hajduk Ring",
         waist="Elanid Belt",
@@ -210,7 +209,7 @@ function init_gear_sets()
         body="Dread Jupon",
         ring1="Ramuh Ring",
         waist="Windbuffet Buffet +1",
-        legs="Manibozho Brais",
+        legs="Taeon Tights",
         back="Kayapa Cape",
         feet="Plunderer's Poulaines"
     })

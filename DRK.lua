@@ -333,7 +333,7 @@ function init_gear_sets()
          head="Gavialis Helm",
          ear1="Zennaroi Earring",
          ring1="Mars's Ring",
-         waist="Anguinius Belt",
+         waist="Light Belt"
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
      
