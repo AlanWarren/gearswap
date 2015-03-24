@@ -431,7 +431,7 @@ function init_gear_sets()
             ring2="Ifrit Ring +1",
             back="Buquwik Cape",
             waist="Elanid Belt",
-            legs="Nahtirah Trousers",
+            legs="Taeon Tights",
             feet="Taeon Boots"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
