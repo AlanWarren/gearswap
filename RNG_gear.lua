@@ -432,7 +432,7 @@ function init_gear_sets()
             back="Buquwik Cape",
             waist="Elanid Belt",
             legs="Nahtirah Trousers",
-            feet="Arcadian Socks +1"
+            feet="Taeon Boots"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             legs="Aetosaur Trousers +1",
