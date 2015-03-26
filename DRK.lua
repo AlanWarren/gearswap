@@ -481,7 +481,7 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Heathen's burgonet",
+         head="Otomi Helm",
          neck="Ganesha's Mala",
          ear1="Lugra Earring +1",
          ear2="Trux Earring",
