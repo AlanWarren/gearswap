@@ -82,7 +82,7 @@ function init_gear_sets()
      -- Precast sets to enhance JAs
      sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets +1"}
      sets.precast.JA['Arcane Circle'] = {feet="Ignominy Sollerets"}
-     sets.precast.JA['Nether Void'] = {legs="Bale Flanchard +2"}
+     sets.precast.JA['Nether Void'] = {legs="Heathen's Flanchard"}
      sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet +1"}
      sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
      --sets.precast.JA['Last Resort'] = {feet="Fallen's Sollerets +1"}
@@ -186,7 +186,7 @@ function init_gear_sets()
 	 
      sets.midcast['Endark'] = set_combine(sets.midcast['Dark Magic'], {
         body="Demon's Harness",
-        legs="Bale Flanchard +2"
+        legs="Heathen's Flanchard"
     })
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
          ammo="Impatiens",
