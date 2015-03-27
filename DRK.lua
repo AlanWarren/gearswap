@@ -333,7 +333,7 @@ function init_gear_sets()
          head="Gavialis Helm",
          ear1="Zennaroi Earring",
          ring1="Mars's Ring",
-         waist="Anguinius Belt",
+         waist="Light Belt"
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
      
@@ -481,7 +481,7 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Yaoyotl Helm",
+         head="Heathen's burgonet",
          neck="Ganesha's Mala",
          ear1="Lugra Earring +1",
          ear2="Trux Earring",

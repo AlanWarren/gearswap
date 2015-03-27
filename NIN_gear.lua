@@ -692,7 +692,7 @@ function init_gear_sets()
         ring1="Ramuh Ring",
         back="Yokaze Mantle",
         waist="Light Belt",
-        legs="Manibozho Brais",
+        legs="Taeon Tights",
         feet="Taeon Boots"
     }
 
