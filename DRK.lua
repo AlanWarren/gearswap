@@ -594,7 +594,7 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Ginsen",
-         head="Otomi Helm",
+         head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Trux Earring",
@@ -605,13 +605,13 @@ function init_gear_sets()
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Acro Breeches",
-         feet="Acro Leggings"
+         feet="Ejekamal Boots"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         head="Acro Helm",
+         ammo="Hasy Pinion +1",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
-         feet="Ejekamal Boots"
+         feet="Acro Leggings"
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          neck="Iqabi Necklace",
