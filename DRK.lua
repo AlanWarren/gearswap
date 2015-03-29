@@ -116,6 +116,7 @@ function init_gear_sets()
         ear1="Loquacious Earring",
         hands="Yorium Gauntlets",
         ring2="Prolix Ring",
+        legs="Limbo Trousers",
         feet="Yorium Sabatons"
      }
 
