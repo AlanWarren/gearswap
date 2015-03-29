@@ -114,7 +114,7 @@ function init_gear_sets()
         ammo="Impatiens",
         head="Fallen's Burgeonet +1",
         ear1="Loquacious Earring",
-        hands="Buremte Gloves",
+        hands="Yorium Gauntlets",
         ring2="Prolix Ring",
         feet="Yorium Sabatons"
      }
