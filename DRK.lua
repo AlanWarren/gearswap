@@ -216,7 +216,7 @@ function init_gear_sets()
      })
 
      sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
-         hands="Bale Gauntlets +2"
+         hands="Heathen's Gauntlets"
      })
      sets.midcast['Absorb-STR'] = sets.midcast.Absorb
      sets.midcast['Absorb-DEX'] = sets.midcast.Absorb
