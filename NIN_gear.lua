@@ -28,6 +28,7 @@ function init_gear_sets()
     }
     sets.precast.JA.Sange = { ammo=gear.SangeAmmo, body="Mochizuki Chainmail +1" }
     
+    sets.reive = {neck="Ygnas's Resolve +1"}
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
         head="Uk'uxkaj Cap",

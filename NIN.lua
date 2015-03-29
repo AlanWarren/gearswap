@@ -159,6 +159,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if world.day_element == 'Dark' then
             equip(sets.WSBack)
         end
+        -- reive mark
+        if buffactive['Reive Mark'] then
+            equip(sets.reive)
+        end
         -- Lugra Earring for some WS
         if LugraWSList:contains(spell.english) then
             if world.time >= (17*60) or world.time <= (7*60) then
