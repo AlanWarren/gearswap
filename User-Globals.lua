@@ -33,3 +33,11 @@ function is_sc_element_today(spell)
     end
 
 end
+
+function user_job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.type == 'WeaponSkill' then
+        if buffactive['Reive Mark'] then
+            equip(sets.reive)
+        end
+    end
+end
