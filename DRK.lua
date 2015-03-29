@@ -180,7 +180,7 @@ function init_gear_sets()
          ring2="Acumen Ring",
          waist="Caudata Belt",
          --legs="Haruspex Slops",
-         legs="Ignominy Flanchard +1",
+         legs="Limbo Trousers",
          back="Aput Mantle",
          feet="Bale Sollerets +2"
      }
