@@ -79,6 +79,7 @@ function init_gear_sets()
         head="Cizin Helm +1", 
         ear1="Loquacious Earring", 
         hands="Buremte Gloves",
+        legs="Limbo Trousers",
         ring1="Prolix Ring"
     }
     
