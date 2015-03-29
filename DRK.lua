@@ -482,18 +482,18 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Otomi Helm",
+         head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
          ear1="Lugra Earring +1",
          ear2="Trux Earring",
-         body="Acro Surcoat",
-         hands="Acro Gauntlets",
+         body="Ares' Cuirass +1",
+         hands="Fallen's finger Gauntlets +1",
          ring1="Rajas Ring",
          ring2="Ifrit Ring +1",
          back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
-         feet="Acro Leggings"
+         feet="Fallen's sollerets +1"
      }
      
     sets.cool = set_combine(sets.idle.Town, {
