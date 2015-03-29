@@ -192,7 +192,7 @@ function init_gear_sets()
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
          ammo="Impatiens",
          head="Gavialis Helm",
-         body="Bale Cuirass +2",
+         body="Heathen's Cuirass",
          hands="Ignominy Gauntlets +1",
          ring1="Beeline Ring",
          ring2="K'ayres Ring",
