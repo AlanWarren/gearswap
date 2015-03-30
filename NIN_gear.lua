@@ -183,7 +183,7 @@ function init_gear_sets()
         ring1="Ifrit Ring +1",
         ring2="Epona's Ring",
         body="Mes'yohi Haubergeon",
-        legs="Taeon Tights",
+        legs="Mochizuki Hakama +1",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1"
     })

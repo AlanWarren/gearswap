@@ -82,7 +82,7 @@ function init_gear_sets()
      -- Precast sets to enhance JAs
      sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets +1"}
      sets.precast.JA['Arcane Circle'] = {feet="Ignominy Sollerets"}
-     sets.precast.JA['Nether Void'] = {legs="Bale Flanchard +2"}
+     sets.precast.JA['Nether Void'] = {legs="Heathen's Flanchard"}
      sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet +1"}
      sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
      --sets.precast.JA['Last Resort'] = {feet="Fallen's Sollerets +1"}
@@ -111,11 +111,12 @@ function init_gear_sets()
             
      -- Fast cast sets for spells
      sets.precast.FC = {
-        ammo="Impatiens",
+        --ammo="Impatiens",
         head="Fallen's Burgeonet +1",
         ear1="Loquacious Earring",
-        hands="Buremte Gloves",
+        hands="Yorium Gauntlets",
         ring2="Prolix Ring",
+        legs="Limbo Trousers",
         feet="Yorium Sabatons"
      }
 
@@ -179,19 +180,19 @@ function init_gear_sets()
          ring2="Acumen Ring",
          waist="Caudata Belt",
          --legs="Haruspex Slops",
-         legs="Ignominy Flanchard +1",
+         legs="Limbo Trousers",
          back="Aput Mantle",
          feet="Bale Sollerets +2"
      }
 	 
      sets.midcast['Endark'] = set_combine(sets.midcast['Dark Magic'], {
         body="Demon's Harness",
-        legs="Bale Flanchard +2"
+        legs="Heathen's Flanchard"
     })
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
          ammo="Impatiens",
          head="Gavialis Helm",
-         body="Bale Cuirass +2",
+         body="Heathen's Cuirass",
          hands="Ignominy Gauntlets +1",
          ring1="Beeline Ring",
          ring2="K'ayres Ring",
@@ -215,7 +216,7 @@ function init_gear_sets()
      })
 
      sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
-         hands="Bale Gauntlets +2"
+         hands="Heathen's Gauntlets"
      })
      sets.midcast['Absorb-STR'] = sets.midcast.Absorb
      sets.midcast['Absorb-DEX'] = sets.midcast.Absorb
@@ -481,18 +482,18 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Heathen's burgonet",
+         head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
          ear1="Lugra Earring +1",
          ear2="Trux Earring",
-         body="Acro Surcoat",
-         hands="Acro Gauntlets",
+         body="Ares' Cuirass +1",
+         hands="Fallen's finger Gauntlets +1",
          ring1="Rajas Ring",
          ring2="Ifrit Ring +1",
          back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
-         feet="Acro Leggings"
+         feet="Fallen's sollerets +1"
      }
      
     sets.cool = set_combine(sets.idle.Town, {
@@ -593,7 +594,7 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Ginsen",
-         head="Otomi Helm",
+         head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Trux Earring",
@@ -604,13 +605,13 @@ function init_gear_sets()
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Acro Breeches",
-         feet="Acro Leggings"
+         feet="Ejekamal Boots"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         head="Acro Helm",
+         ammo="Hasy Pinion +1",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
-         feet="Ejekamal Boots"
+         feet="Acro Leggings"
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          neck="Iqabi Necklace",
