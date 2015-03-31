@@ -102,6 +102,7 @@ function init_gear_sets()
      sets.BrutalTrux      = { ear1="Brutal Earring", ear2="Trux Earring" }
      sets.Lugra           = { ear1="Lugra Earring +1" }
  
+     sets.reive = {neck="Ygnas's Resolve +1"}
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {
         head="Yaoyotl Helm",
@@ -714,6 +715,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         end
         if world.time >= (17*60) or world.time <= (7*60) then
             equip(sets.Lugra)
+        end
+        -- reive mark
+        if buffactive['Reive Mark'] then
+            equip(sets.reive)
         end
         --if world.day_element == 'Dark' then
         --    equip(sets.WSBack)
