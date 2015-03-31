@@ -113,6 +113,7 @@ function init_gear_sets()
      sets.precast.FC = {
         --ammo="Impatiens",
         head="Fallen's Burgeonet +1",
+        body="Yorium Cuirass",
         ear1="Loquacious Earring",
         hands="Yorium Gauntlets",
         ring2="Prolix Ring",
