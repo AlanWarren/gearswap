@@ -889,11 +889,11 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_form()
-    if war_sj then
-        state.CombatForm:set("War")
-    else
-        state.CombatForm:reset()
-    end
+    --if war_sj then
+        --state.CombatForm:set("War")
+    --else
+        --state.CombatForm:reset()
+    --end
 end
 
 function aw_custom_aftermath_timers_precast(spell)
