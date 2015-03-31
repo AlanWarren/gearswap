@@ -310,6 +310,7 @@ function init_gear_sets()
      -- INSURGENCY
      -- 20% STR / 20% INT
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
+         head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
          hands="Mikinaak Gauntlets",
          waist="Windbuffet Belt +1",
@@ -320,7 +321,6 @@ function init_gear_sets()
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
-         head="Yaoyotl Helm",
          neck="Shadow Gorget",
          hands="Acro Gauntlets",
          legs="Yorium Cuisses",
@@ -341,6 +341,7 @@ function init_gear_sets()
      -- CROSS REAPER
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
+         head="Heathen's Burgonet +1",
          neck="Aqua Gorget",
          ear1="Bale Earring",
          hands="Fallen's Finger Gauntlets +1",
@@ -357,7 +358,6 @@ function init_gear_sets()
          legs="Yorium Cuisses"
      })
      sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
-         head="Yaoyotl Helm",
          ear1="Bale Earring",
          waist="Caudata Belt"
      })
@@ -367,7 +367,7 @@ function init_gear_sets()
      -- 86-100% INT 
      sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
          ammo="Ginsen",
-         head="Otomi Helm",
+         head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
          hands="Acro Gauntlets",
          ring1="Shiva Ring",
@@ -377,12 +377,10 @@ function init_gear_sets()
          feet="Acro Leggings"
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
-         head="Ignominy Burgeonet +1",
          hands="Fallen's Finger Gauntlets +1",
          legs="Yorium Cuisses"
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
-         head="Ighwa Cap",
          legs="Yorium Cuisses"
      })
      sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
@@ -391,6 +389,7 @@ function init_gear_sets()
      -- Quietus
      -- 60% STR / MND 
      sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
+         head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
          ear2="Trux Earring",
          hands="Acro Gauntlets",
@@ -414,7 +413,7 @@ function init_gear_sets()
      -- SPIRAL HELL
      -- 50% STR / 50% INT 
      sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
-         head="Ighwa Cap",
+         head="Heathen's Burgonet +1",
          neck="Aqua Gorget",
          hands="Acro Gauntlets",
          legs="Yorium Cuisses",
