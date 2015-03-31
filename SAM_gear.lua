@@ -289,7 +289,7 @@ function init_gear_sets()
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
         legs="Acro Breeches",
-        feet="Otronif Boots +1"
+        feet="Acro Leggings"
     }
     
     sets.engaged.Mid = set_combine(sets.engaged, {
