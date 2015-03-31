@@ -202,7 +202,7 @@ function init_gear_sets()
      })
      
      sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-         body="Yorium Cuirass",
+         body="Lugra Cloak",
          ring2="Excelsis Ring",
          feet="Yorium Sabatons"
      })
@@ -481,11 +481,11 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Heathen's Burgonet +1",
+         --head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
          ear1="Lugra Earring +1",
          ear2="Trux Earring",
-         body="Ares' Cuirass +1",
+         body="Lugra Cloak",
          hands="Fallen's finger Gauntlets +1",
          ring1="Rajas Ring",
          ring2="Ifrit Ring +1",
@@ -503,9 +503,9 @@ function init_gear_sets()
 
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
-         head="Baghere Salade",
+         --head="Baghere Salade",
          neck="Coatl Gorget +1",
-         body="Yorium Cuirass",
+         body="Lugra Cloak",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
