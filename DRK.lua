@@ -533,7 +533,7 @@ function init_gear_sets()
 
      sets.refresh = { 
          neck="Coatl Gorget +1",
-         body="Ares' Cuirass +1"
+         --body="Ares' Cuirass +1"
      }
      
      -- Defense sets
