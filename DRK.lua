@@ -472,8 +472,8 @@ function init_gear_sets()
      
      -- Resting sets
      sets.resting = {
-         head="Baghere Salade",
-         body="Ares' Cuirass +1",
+         --head="Baghere Salade",
+         body="Lugra Cloak",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
@@ -517,7 +517,7 @@ function init_gear_sets()
          feet="Cizin Greaves +1"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
-         body="Ares' Cuirass +1",
+         body="Lugra Cloak",
      })
  
      sets.idle.Weak = {
