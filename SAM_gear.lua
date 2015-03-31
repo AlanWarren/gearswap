@@ -212,7 +212,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Paguroidea Ring",
         head="Yaoyotl Helm",
-   	    body="Mes'yohi Haubergeon",
+   	    body="Acro Surcoat",
         back="Engulfer Cape +1",
         waist="Flume Belt",
         feet="Danzo Sune-ate"
