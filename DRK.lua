@@ -1012,6 +1012,6 @@ function select_default_macro_book()
 	    elseif player.sub_job == 'SAM' then
 	    	set_macro_page(7, 4)
 	    else
-	    	set_macro_page(6, 2)
+	    	set_macro_page(8, 4)
 	    end
 end
