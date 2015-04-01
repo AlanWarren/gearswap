@@ -152,13 +152,13 @@ function init_gear_sets()
          neck="Dark Torque",
          ear1="Lifestorm Earring",
          ear2="Psystorm Earring",
-         body="Haruspex Coat",
+         body="Demon's Harness",
          hands="Fallen's Finger Gauntlets +1",
          waist="Casso Sash",
          ring1="Perception Ring",
          ring2="Sangoma Ring",
          back={name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}},
-         legs="Fallen's Flanchard",
+         legs="Heathen's Flanchard",
          feet="Ignominy sollerets"
      }
      
@@ -172,25 +172,21 @@ function init_gear_sets()
 
      sets.midcast['Elemental Magic'] = {
          ammo="Impatiens",
-         head="Ignominy burgeonet +1",
-         neck="Eddy Necklace",
-         ear1="Friomisi Earring",
-         ear2="Crematio Earring",
-         body="Fallen's Cuirass +1",
-         hands="Fallen's Finger Gauntlets +1",
-         ring1="Shiva Ring",
-         ring2="Acumen Ring",
-         waist="Caudata Belt",
+         head="Ignominy burgeonet +1", -- int 20
+         neck="Eddy Necklace", -- 11 matk
+         ear1="Friomisi Earring", -- 10 matk
+         ear2="Crematio Earring", -- 6 matk 6 mdmg
+         body="Fallen's Cuirass +1", -- 15 matk
+         hands="Fallen's Finger Gauntlets +1", -- 14 matk
+         ring1="Shiva Ring", -- int 8
+         ring2="Acumen Ring", -- matk 4
+         waist="Caudata Belt", -- int 6
          --legs="Haruspex Slops",
-         legs="Limbo Trousers",
-         back="Aput Mantle",
-         feet="Bale Sollerets +2"
+         legs="Limbo Trousers", -- matk 17
+         back="Aput Mantle", -- mdmg 10
+         feet="Bale Sollerets +2" -- matk 8
      }
 	 
-     sets.midcast['Endark'] = set_combine(sets.midcast['Dark Magic'], {
-        body="Demon's Harness",
-        legs="Heathen's Flanchard"
-    })
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
          ammo="Impatiens",
          head="Gavialis Helm",
@@ -223,8 +219,10 @@ function init_gear_sets()
      sets.midcast['Absorb-STR'] = sets.midcast.Absorb
      sets.midcast['Absorb-DEX'] = sets.midcast.Absorb
      sets.midcast['Absorb-AGI'] = sets.midcast.Absorb
+     sets.midcast['Absorb-INT'] = sets.midcast.Absorb
      sets.midcast['Absorb-MND'] = sets.midcast.Absorb
      sets.midcast['Absorb-VIT'] = sets.midcast.Absorb
+     sets.midcast['Absorb-CHR'] = sets.midcast.Absorb
      sets.midcast['Absorb-Attri'] = sets.midcast.Absorb
      sets.midcast['Absorb-Acc'] = sets.midcast.Absorb
 
