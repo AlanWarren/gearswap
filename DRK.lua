@@ -4,14 +4,20 @@
                However, if Blood Weapon is used, Souleater will remain active for it's duration.
                It will be canceled after your next weaponskill, following Blood Weapon wearing off. 
                This behavior can be toggled off/on with @f9 (window key + f9) 
+               Another option is to Nethervoid + Drain II and pop SE. It will stay up in this
+               scenario as well.
     Last Resort: There is an LR Hybrid Mode toggle present. This is useful when Last Resort may be risky.
     
-    I simplified this lua since I got Liberator. There are no longer sets for greatswords. - Sorry
+    I simplified this lua since I got Liberator. There is support for GS by using sets.engaged.GreatSword
+    but you will have to edit the list in job_setup so that your GS is present.
     
     Set format is as follows: 
     sets.engaged.[CombatForm][CombatWeapon][Offense or DefenseMode][CustomGroup]
     CombatForm = War
     CustomGroups = AM3
+
+    TODO: Get STR/DEX Augment on Acro Head, Legs.
+    Make a new pair of boots + gloves with acc/atk 20 stp+5 str/dex+7
 --]]
 --
 -- Initialization function for this job file.
@@ -32,9 +38,10 @@ function job_setup()
     state.SouleaterMode = M(true, 'Soul Eater Mode')
     
     --wsList = S{'Spiral Hell'}
-    noTPBonusWS = S{'Quietus' }
+    gsList = S{'Tunglmyrkvi', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
     
     get_combat_form()
+    get_combat_weapon()
     update_melee_groups()
 end
  
@@ -43,7 +50,7 @@ end
 function user_setup()
     -- Options: Override default values
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
-    state.HybridMode:options('Normal', 'LR', 'PDT', 'Reraise')
+    state.HybridMode:options('Normal', 'LR', 'PDT')
     state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     state.CastingMode:options('Normal')
     state.IdleMode:options('Normal')
@@ -213,7 +220,7 @@ function init_gear_sets()
      })
 
      sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
-         hands="Heathen's Gauntlets"
+         hands="Heathen's Gauntlets +1"
      })
      sets.midcast['Absorb-STR'] = sets.midcast.Absorb
      sets.midcast['Absorb-DEX'] = sets.midcast.Absorb
@@ -317,23 +324,22 @@ function init_gear_sets()
          feet="Acro Leggings"
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
+         ring1="Rajas Ring"
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
          neck="Shadow Gorget",
+         body="Fallen's Cuirass +1",
          hands="Acro Gauntlets",
          legs="Yorium Cuisses",
+         ring1="Rajas Ring",
          waist="Light Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
          ear1="Bale Earring",
-         ring1="Rajas Ring",
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
-         head="Gavialis Helm",
          ear1="Zennaroi Earring",
-         ring1="Mars's Ring",
-         waist="Light Belt"
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
      
@@ -353,7 +359,7 @@ function init_gear_sets()
          ammo="Ginsen",
          hands="Acro Gauntlets",
          waist="Windbuffet Belt +1",
-         --waist="Snow Belt",
+         body="Fallen's Cuirass +1",
          legs="Yorium Cuisses"
      })
      sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
@@ -583,7 +589,6 @@ function init_gear_sets()
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
          body="Yorium Cuirass",
-         ring1="Mars's Ring",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
          feet="Cizin Greaves +1"
@@ -609,17 +614,33 @@ function init_gear_sets()
          ammo="Hasy Pinion +1",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
+         ring2="Patricius Ring",
          feet="Acro Leggings"
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          neck="Iqabi Necklace",
-         ear1="Steelflash Earring",
-         ear2="Zennaroi Earring",
          back="Kayapa Cape",
          ring1="Mars's Ring",
-         ring2="Patricius Ring",
          waist="Olseni Belt"
      })
+     -- Liberator AM3
+     sets.engaged.AM3 = set_combine(sets.engaged, {
+         head="Acro Helm",
+         ear2="Tripudio Earring",
+         feet="Ejekamal Boots"
+     })
+     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
+         ammo="Hasty Pinion +1",
+         ear1="Zennaroi Earring",
+         ring2="Patricius Ring",
+         feet="Acro Leggings"
+     })
+     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
+         neck="Iqabi Necklace",
+         ear2="Steelflash Earring",
+         waist="Olseni Belt",
+     })
+
      sets.engaged.LR = set_combine(sets.engaged, {
      })
      sets.engaged.LR.AM3 = set_combine(sets.engaged.LR, {
@@ -664,26 +685,6 @@ function init_gear_sets()
      sets.engaged.War.Mid.PDT = set_combine(sets.engaged.War.Mid, sets.Defensive_Mid)
      sets.engaged.War.Acc.PDT = set_combine(sets.engaged.War.Acc, sets.Defensive_Acc)
 
-     sets.engaged.AM3 = set_combine(sets.engaged, {
-         head="Acro Helm",
-         ear2="Tripudio Earring",
-         feet="Ejekamal Boots"
-     })
-     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-         ammo="Hasty Pinion +1",
-         head="Yaoyotl Helm",
-         feet="Acro Leggings"
-
-     })
-     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
-         neck="Iqabi Necklace",
-         ear1="Zennaroi Earring",
-         ear2="Steelflash Earring",
-         ring1="Rajas Ring",
-         ring2="Mars's Ring",
-         waist="Olseni Belt",
-     })
-
      sets.engaged.Reraise = set_combine(sets.engaged, {
      	head="Twilight Helm",neck="Twilight Torque",
      	body="Twilight Mail"
@@ -704,18 +705,25 @@ end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
 	if spell.type:lower() == 'weaponskill' then
+        -- handle Gavialis Helm
         if is_sc_element_today(spell) then
             equip(sets.WSDayBonus)
         end
+        -- CP mantle must be worn when a mob dies, so make sure it's equipped for WS.
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
+        -- Use Lugra+1 from dusk to dawn.
         if world.time >= (17*60) or world.time <= (7*60) then
             equip(sets.Lugra)
         end
-        -- reive mark
+        -- Use SOA neck piece for WS
         if buffactive['Reive Mark'] then
             equip(sets.reive)
+        end
+        -- Use Tengu-No-Hane for WS during the day, when acc is needed.
+        if state.OffenseMode.current == 'Acc' then
+            equip(select_ammo())
         end
         --if world.day_element == 'Dark' then
         --    equip(sets.WSBack)
@@ -730,8 +738,7 @@ end
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-    if state.HybridMode.current == 'Reraise' or
-    (state.HybridMode.current == 'Physical' and state.PhysicalDefenseMode.current == 'Reraise') then
+    if (state.HybridMode.current == 'PDT' and state.PhysicalDefenseMode.current == 'Reraise') then
         equip(sets.Reraise)
     end
 end
@@ -798,7 +805,7 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         if buffactive['Last Resort'] and state.HybridMode.current == 'LR' then
             equip(sets.buff['Last Resort'])
         end
-        --get_combat_weapon()
+        get_combat_weapon()
     end
 end
  
@@ -863,6 +870,7 @@ function job_update(cmdParams, eventArgs)
     
     war_sj = player.sub_job == 'WAR' or false
     get_combat_form()
+    get_combat_weapon()
     update_melee_groups()
 
 end
@@ -891,6 +899,14 @@ function get_combat_form()
     --else
         --state.CombatForm:reset()
     --end
+end
+
+function get_combat_weapon()
+    if gsList:contains(player.equipment.main) then
+        state.CombatWeapon:set("GreatSword")
+    else -- use regular set
+        state.CombatWeapon:reset()
+    end
 end
 
 function aw_custom_aftermath_timers_precast(spell)
