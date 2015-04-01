@@ -202,7 +202,6 @@ function init_gear_sets()
      sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
          body="Lugra Cloak",
          ring2="Excelsis Ring",
-         feet="Yorium Sabatons"
      })
 
      sets.midcast.Aspir = sets.midcast.Drain
