@@ -647,10 +647,11 @@ function init_gear_sets()
          ear2="Tripudio Earring"
      })
      sets.engaged.Mid.LR = set_combine(sets.engaged.Mid, {
+         ammo="Ginsen",
          neck="Agitator's Collar",
-         ring2="Patricius Ring"
      })
      sets.engaged.Acc.LR = set_combine(sets.engaged.Acc, {
+         ammo="Ginsen",
          neck="Agitator's Collar",
          hands="Umuthi Gloves",
          ring1="Patricius Ring"
