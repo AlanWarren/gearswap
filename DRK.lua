@@ -660,8 +660,15 @@ function init_gear_sets()
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
      
      sets.engaged.GreatSword = set_combine(sets.engaged, {
-         head="Otomi Helm"
+         head="Otomi Helm",
+         ear1="Brutal Earring",
+         ear2="Tripudio Earring"
      })
+     sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {
+         --back="Grounded Mantle +1"
+         --ring2="K'ayres RIng"
+     })
+     sets.engaged.GreatSword.Acc = sets.engaged.Acc
 
      sets.engaged.Reraise = set_combine(sets.engaged, {
      	head="Twilight Helm",neck="Twilight Torque",
