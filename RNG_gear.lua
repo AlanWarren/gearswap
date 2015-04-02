@@ -135,9 +135,9 @@ function init_gear_sets()
             head="Sylvan Gapette +2", -- 5
             body="Amini Caban", -- 10
             hands="Iuitl Wristbands +1", -- 5
+            back="Lutian Cape", -- 3
             legs="Nahtirah Trousers", -- 9
             waist="Impulse Belt", -- 2
-            back="Lutian Cape", -- 2
             feet="Wurrukatte Boots" -- 3
         }
         
@@ -155,7 +155,7 @@ function init_gear_sets()
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
             waist="Elanid Belt", 
-            legs="Nahtirah Trousers",
+            legs="Amini Brague",
             feet="Arcadian Socks +1"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
@@ -230,7 +230,7 @@ function init_gear_sets()
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
             waist="Elanid Belt",
-            legs="Aetosaur Trousers +1",
+            legs="Amini Brague",
             feet="Orion Socks +1"
         }
         sets.midcast.RA.SAM.Mid = set_combine(sets.midcast.RA.SAM, { 
