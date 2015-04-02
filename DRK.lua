@@ -13,7 +13,6 @@
     
     Set format is as follows: 
     sets.engaged.[CombatForm][CombatWeapon][Offense or DefenseMode][CustomGroup]
-    CombatForm = War
     CustomGroups = AM3
 
     TODO: Get STR/DEX Augment on Acro Head, Legs.
@@ -660,37 +659,19 @@ function init_gear_sets()
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
      
-     sets.engaged.War = set_combine(sets.engaged, {
-         ear2="Tripudio Earring",
-         legs="Acro Breeches",
-         --feet="Mikinaak Greaves"
+     sets.engaged.GreatSword = set_combine(sets.engaged, {
+         head="Otomi Helm"
      })
-     sets.engaged.War.Mid = set_combine(sets.engaged.War, {
-         head="Yaoyotl Helm",
-         ear1="Bladeborn Earring",
-         ear2="Steelflash Earring",
-         hands="Acro Gauntlets",
-         feet="Ejekamal Boots"
-     })
-     sets.engaged.War.Acc = set_combine(sets.engaged.War.Mid, {
-         neck="Iqabi Necklace",
-         hands="Buremte Gloves",
-         ring1="Mars's Ring",
-         ring2="Patricius Ring",
-         back="Kayapa Cape",
-         waist="Olseni Belt",
-         feet="Acro Leggings"
-     })
-     sets.engaged.War.PDT = set_combine(sets.engaged.War, sets.Defensive)
-     sets.engaged.War.Mid.PDT = set_combine(sets.engaged.War.Mid, sets.Defensive_Mid)
-     sets.engaged.War.Acc.PDT = set_combine(sets.engaged.War.Acc, sets.Defensive_Acc)
 
      sets.engaged.Reraise = set_combine(sets.engaged, {
      	head="Twilight Helm",neck="Twilight Torque",
      	body="Twilight Mail"
      })
-
-     sets.buff.Souleater = { head="Ignominy burgeonet +1" }
+    
+     -- HP Focused Set with Melee Acc/Atk in mind. 
+     sets.buff.Souleater = { 
+         head="Ignominy Burgeonet +1"
+     }
      sets.buff['Last Resort'] = { feet="Fallen's Sollerets +1" }
 end
 
@@ -704,6 +685,10 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
+    -- Make sure abilities using head gear don't swap 
+    if state.Buff.Souleater then
+        equip(sets.buff.Souleater)
+    end
 	if spell.type:lower() == 'weaponskill' then
         -- handle Gavialis Helm
         if is_sc_element_today(spell) then
@@ -777,6 +762,9 @@ function customize_idle_set(idleSet)
     if state.HybridMode.current == 'PDT' then
         idleSet = set_combine(idleSet, sets.defense.PDT)
     end
+    if state.Buff.Souleater then
+        idleSet = set_combine(idleSet, sets.buff.Souleater)
+    end
     return idleSet
 end
  
@@ -790,6 +778,9 @@ function customize_melee_set(meleeSet)
     end
     if state.OffenseMode.current == 'Acc' then
         meleeSet = set_combine(meleeSet, select_ammo())
+    end
+    if state.Buff.Souleater then
+        meleeSet = set_combine(meleeSet, sets.buff.Souleater)
     end
     meleeSet = set_combine(meleeSet, select_earring())
     return meleeSet
