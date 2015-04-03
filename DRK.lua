@@ -33,7 +33,7 @@ function job_setup()
 
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
-    state.LookCool = M{['description']='Look Cool', 'Normal', 'On' }
+    --state.LookCool = M{['description']='Look Cool', 'Normal', 'On' }
     state.SouleaterMode = M(true, 'Soul Eater Mode')
     
     --wsList = S{'Spiral Hell'}
@@ -49,7 +49,7 @@ end
 function user_setup()
     -- Options: Override default values
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
-    state.HybridMode:options('Normal', 'LR', 'PDT')
+    state.HybridMode:options('Normal', 'PDT')
     state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     state.CastingMode:options('Normal')
     state.IdleMode:options('Normal')
@@ -64,7 +64,6 @@ function user_setup()
     send_command('bind @f9 gs c toggle SouleaterMode')
     send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Seigan" <me>')
-    send_command('bind ^[ gs c cycle LookCool')
     
     select_default_macro_book()
 end
@@ -258,7 +257,7 @@ function init_gear_sets()
          ear2="Moonshade Earring",
          body="Acro Surcoat",
          hands="Mikinaak Gauntlets",
-         ring1="Ifrit Ring",
+         ring1="Rajas Ring",
          ring2="Ifrit Ring +1",
          back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
@@ -313,31 +312,27 @@ function init_gear_sets()
      sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, sets.precast.WS.Acc)
 
      -- INSURGENCY
-     -- 20% STR / 20% INT
+     -- 20% STR / 20% INT 
+     -- Designed to 4-hit
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
-         head="Heathen's Burgonet +1",
+         ammo="Ginsen",
+         head="Acro Helm",
          neck="Shadow Gorget",
-         hands="Mikinaak Gauntlets",
+         hands="Acro Gauntlets",
          waist="Windbuffet Belt +1",
-         legs="Ignominy Flanchard +1",
+         legs="Yorium Cuisses",
          feet="Acro Leggings"
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
-         ring1="Rajas Ring"
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
-         ammo="Ginsen",
-         neck="Shadow Gorget",
-         body="Fallen's Cuirass +1",
-         hands="Acro Gauntlets",
-         legs="Yorium Cuisses",
-         ring1="Rajas Ring",
          waist="Light Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
          ear1="Bale Earring",
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
+         body="Fallen's Cuirass +1",
          ear1="Zennaroi Earring",
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
@@ -565,6 +560,11 @@ function init_gear_sets()
      sets.Kiting = {legs="Crimson Cuisses"}
  
      sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+
+     sets.HighHaste = {
+         ammo="Ginsen",
+         feet="Acro Leggings"
+     }
      
      -- Defensive sets to combine with various weapon-specific sets below
      -- These allow hybrid acc/pdt sets for difficult content
@@ -574,13 +574,17 @@ function init_gear_sets()
          body="Yorium Cuirass",
          hands="Cizin Mufflers +1",
          ring2="Patricius Ring",
-         legs="Cizin Breeches +1"
+         back="Repulse Mantle",
+         waist="Flume Belt",
+         legs="Cizin Breeches +1",
+         feet="Cizin Greaves +1"
      }
      sets.Defensive_Mid = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
          hands="Umuthi Gloves",
+         back="Repulse Mantle",
          ring2="Patricius Ring",
      }
      sets.Defensive_Acc = {
@@ -596,10 +600,10 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Ginsen",
-         head="Heathen's Burgonet +1",
+         head="Acro Helm",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
-         ear2="Trux Earring",
+         ear2="Tripudio Earring",
     	 body="Acro Surcoat",
          hands="Acro Gauntlets",
          ring1="Rajas Ring",
@@ -610,6 +614,7 @@ function init_gear_sets()
          feet="Ejekamal Boots"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
+         head="Heathen's Burgonet +1",
          ammo="Hasy Pinion +1",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
@@ -640,26 +645,10 @@ function init_gear_sets()
          waist="Olseni Belt",
      })
 
-     sets.engaged.LR = set_combine(sets.engaged, {
-     })
-     sets.engaged.LR.AM3 = set_combine(sets.engaged.LR, {
-         --hands="Cizin Mufflers +1",
-         ear2="Tripudio Earring"
-     })
-     sets.engaged.Mid.LR = set_combine(sets.engaged.Mid, {
-         ammo="Ginsen",
-         neck="Agitator's Collar",
-     })
-     sets.engaged.Acc.LR = set_combine(sets.engaged.Acc, {
-         ammo="Ginsen",
-         neck="Agitator's Collar",
-         hands="Umuthi Gloves",
-         ring1="Patricius Ring"
-     })
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
-     
+
      sets.engaged.GreatSword = set_combine(sets.engaged, {
          head="Otomi Helm",
          ear1="Brutal Earring",
@@ -676,11 +665,13 @@ function init_gear_sets()
      	body="Twilight Mail"
      })
     
-     -- HP Focused Set with Melee Acc/Atk in mind. 
      sets.buff.Souleater = { 
          head="Ignominy Burgeonet +1"
      }
-     sets.buff['Last Resort'] = { feet="Fallen's Sollerets +1" }
+
+     sets.buff['Last Resort'] = { 
+         feet="Fallen's Sollerets +1" 
+     }
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -694,9 +685,6 @@ end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
     -- Make sure abilities using head gear don't swap 
-    if state.Buff.Souleater then
-        equip(sets.buff.Souleater)
-    end
 	if spell.type:lower() == 'weaponskill' then
         -- handle Gavialis Helm
         if is_sc_element_today(spell) then
@@ -770,9 +758,6 @@ function customize_idle_set(idleSet)
     if state.HybridMode.current == 'PDT' then
         idleSet = set_combine(idleSet, sets.defense.PDT)
     end
-    if state.Buff.Souleater then
-        idleSet = set_combine(idleSet, sets.buff.Souleater)
-    end
     return idleSet
 end
  
@@ -781,14 +766,14 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    if state.Buff['Last Resort'] and state.HybridMode.current == 'LR' then
+    if state.Buff['Last Resort'] and state.HybridMode.current == 'PDT' then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
     if state.OffenseMode.current == 'Acc' then
         meleeSet = set_combine(meleeSet, select_ammo())
     end
-    if state.Buff.Souleater then
-        meleeSet = set_combine(meleeSet, sets.buff.Souleater)
+    if state.CombatForm.has_value then
+        meleeSet = set_combine(meleeSet, sets.HighHaste)
     end
     meleeSet = set_combine(meleeSet, select_earring())
     return meleeSet
@@ -801,7 +786,7 @@ end
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
-        if buffactive['Last Resort'] and state.HybridMode.current == 'LR' then
+        if buffactive['Last Resort'] and state.HybridMode.current == 'PDT' then
             equip(sets.buff['Last Resort'])
         end
         get_combat_weapon()
@@ -817,14 +802,22 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
     end
     
+    if S{'haste', 'march', 'embrava', 'geo-haste', 'indi-haste'}:contains(buff:lower()) and gain then
+        if buffactive['Last Resort'] then
+            state.CombatForm:set("Haste")
+        else
+            state.CombatForm:reset()
+        end
+    end
+    -- Drain II HP Boost. Set SE to stay on.
     if buff == "Max HP Boost" then
-        if gain then
+        if gain or buffactive['Max HP Boost'] then
             state.SouleaterMode:set(false)
         else
             state.SouleaterMode:set(true)
         end
     end
-
+    -- Make sure SE stays on for BW
     if buff == 'Blood Weapon' then
         if gain or buffactive['Blood Weapon'] then
             state.SouleaterMode:set(false)
@@ -832,7 +825,7 @@ function job_buff_change(buff, gain)
             state.SouleaterMode:set(true)
         end
     end
-
+    -- AM3 custom group
     if buff == 'Aftermath: Lv.3' then
         classes.CustomMeleeGroups:clear()
 	
@@ -842,7 +835,7 @@ function job_buff_change(buff, gain)
 
         handle_equipping_gear(player.status)
     end
-
+    -- Automatically wake me when I'm slept
     if string.lower(buff) == "sleep" and gain and player.hp > 200 then
         equip(sets.Berserker)
     end
@@ -856,6 +849,14 @@ function job_buff_change(buff, gain)
         enable('ring2')
     end
 
+    if buff == "Souleater" then
+        if gain then
+            equip(sets.buff.Souleater)
+            disable('head')
+        else
+            enable('head')
+        end
+    end
 end
  
  
@@ -898,6 +899,14 @@ function get_combat_form()
     --else
         --state.CombatForm:reset()
     --end
+    if (buffactive['Last Resort']) then
+        if (buffactive.embrava or buffactive.haste) and buffactive.march  then
+            add_to_chat(8, '-------------Delay Capped-------------')
+            state.CombatForm:set("Haste")
+        else
+            state.CombatForm:reset()
+        end
+    end
 end
 
 function get_combat_weapon()
@@ -957,23 +966,24 @@ function aw_custom_aftermath_timers_aftercast(spell)
         info.aftermath = {}
     end
 end
+
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    if stateField == 'Look Cool' then
-        if newValue == 'On' then
-            send_command('gs equip sets.cool;wait 1.2;input /lockstyle on;wait 1.2;gs c update user')
-            --send_command('wait 1.2;gs c update user')
-        else
-            send_command('@input /lockstyle off')
-        end
-    end
+    --if stateField == 'Look Cool' then
+    --    if newValue == 'On' then
+    --        send_command('gs equip sets.cool;wait 1.2;input /lockstyle on;wait 1.2;gs c update user')
+    --        --send_command('wait 1.2;gs c update user')
+    --    else
+    --        send_command('@input /lockstyle off')
+    --    end
+    --end
 end
 
-windower.register_event('Zone change', function(new,old)
-    if state.LookCool.value == 'On' then
-        send_command('wait 3; gs equip sets.cool;wait 1.2;input /lockstyle on;wait 1.2;gs c update user')
-    end
-end)
+--windower.register_event('Zone change', function(new,old)
+--    if state.LookCool.value == 'On' then
+--        send_command('wait 3; gs equip sets.cool;wait 1.2;input /lockstyle on;wait 1.2;gs c update user')
+--    end
+--end)
 
 function select_ammo()
     if world.time >= (18*60) or world.time <= (6*60) then
@@ -1018,12 +1028,12 @@ function update_melee_groups()
 end
 
 function select_default_macro_book()
-        -- Default macro set/book
-	    if player.sub_job == 'DNC' then
-	    	set_macro_page(6, 2)
-	    elseif player.sub_job == 'SAM' then
-	    	set_macro_page(7, 4)
-	    else
-	    	set_macro_page(8, 4)
-	    end
+    -- Default macro set/book
+	if player.sub_job == 'DNC' then
+		set_macro_page(6, 2)
+	elseif player.sub_job == 'SAM' then
+		set_macro_page(7, 4)
+	else
+		set_macro_page(8, 4)
+	end
 end

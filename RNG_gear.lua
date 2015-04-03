@@ -175,13 +175,13 @@ function init_gear_sets()
         sets.midcast.RA.Stave = set_combine(sets.midcast.RA, {
             ear1=gear.Earring,
             body="Arcadian Jerkin +1",
-            back="Lutian Cape"
+            back="Lutian Cape",
+            legs="Amini Brague"
         })
 
         sets.midcast.RA.Stave.Mid = set_combine(sets.midcast.RA.Stave, {
             body="Kyujutsugi",
             ring2="Longshot Ring",
-            hands="Seiryu's Kote"
         })
         sets.midcast.RA.Stave.Acc = set_combine(sets.midcast.RA.Stave.Mid, {
             neck="Iqabi Necklace",
@@ -306,7 +306,6 @@ function init_gear_sets()
         })
 
         sets.midcast.RA.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Decoy, {
-            hands="Seiryu's Kote",
             legs="Aetosaur Trousers +1",
             feet="Orion Socks +1"
         })
@@ -427,7 +426,7 @@ function init_gear_sets()
             ear2="Flame Pearl",
             body="Kyujutsugi",
             hands="Arcadian Bracers +1",
-            ring1="Ifrit Ring",
+            ring1="Rajas Ring",
             ring2="Ifrit Ring +1",
             back="Buquwik Cape",
             waist="Elanid Belt",
@@ -558,7 +557,7 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             waist="Light Belt",
             legs="Arcadian Braccae +1",
-            ring2="Ramuh Ring +1",
+            ring2="Ramuh Ring",
             back="Rancorous Mantle"
         }
         sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, sets.Jishnus)
