@@ -285,7 +285,7 @@ function init_gear_sets()
             ear1=gear.Earring,
             back="Lutian Cape",
             hands="Arcadian Bracers +1",
-            legs="Aetosaur Trousers +1",
+            legs="Amini Brague",
             feet="Orion Socks +1"
         })
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
@@ -302,7 +302,7 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1=gear.Earring,
             hands="Sylvan Glovelettes +2",
-            legs="Nahtirah Trousers"
+            legs="Amini Brague"
         })
 
         sets.midcast.RA.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Decoy, {
@@ -348,13 +348,13 @@ function init_gear_sets()
         sets.midcast.RA.Stave.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
             ear1=gear.Earring,
             hands="Arcadian Bracers +1",
-            legs="Aetosaur Trousers +1"
+            legs="Amini Brague",
         })
         sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Decoy, {
             body="Kyujutsugi",
             hands="Seiryu's Kote",
             back="Lutian Cape",
-            legs="Nahtirah Trousers"
+            legs="Amini Brague",
         })
         sets.midcast.RA.Stave.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy, {
             neck="Iqabi Necklace",
@@ -467,7 +467,7 @@ function init_gear_sets()
            waist="Thunder Belt",
            back="Sylvan Chlamys",
            ring1="Rajas Ring",
-           ring2="Garuda Ring"
+           ring2="Ifrit Ring +1"
         }
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.Coronach)
