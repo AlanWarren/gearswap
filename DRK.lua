@@ -205,7 +205,7 @@ function init_gear_sets()
      })
      
      sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-         body="Lugra Cloak",
+         body="Lugra Cloak +1",
          ring2="Excelsis Ring",
      })
 
@@ -464,7 +464,7 @@ function init_gear_sets()
      -- Resting sets
      sets.resting = {
          --head="Baghere Salade",
-         body="Lugra Cloak",
+         body="Lugra Cloak +1",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
@@ -478,7 +478,7 @@ function init_gear_sets()
          neck="Ganesha's Mala",
          ear1="Lugra Earring +1",
          ear2="Trux Earring",
-         body="Lugra Cloak",
+         body="Lugra Cloak +1",
          hands="Fallen's finger Gauntlets +1",
          ring1="Rajas Ring",
          ring2="Ifrit Ring +1",
@@ -497,7 +497,7 @@ function init_gear_sets()
          ammo="Ginsen",
          --head="Baghere Salade",
          neck="Coatl Gorget +1",
-         body="Lugra Cloak",
+         body="Lugra Cloak +1",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
@@ -507,7 +507,7 @@ function init_gear_sets()
          feet="Cizin Greaves +1"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
-         body="Lugra Cloak",
+         body="Lugra Cloak +1",
      })
  
      sets.idle.Weak = {
