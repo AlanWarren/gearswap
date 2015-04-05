@@ -15,7 +15,7 @@
     sets.engaged.[CombatForm][CombatWeapon][Offense or DefenseMode][CustomGroup]
     CustomGroups = AM3
 
-    TODO: Get STR/DEX Augment on Acro Head, Legs.
+    TODO: Get STR/DEX Augment on Acro Legs.
     Make a new pair of boots + gloves with acc/atk 20 stp+5 str/dex+7
 --]]
 --
