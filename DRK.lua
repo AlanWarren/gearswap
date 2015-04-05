@@ -479,7 +479,7 @@ function init_gear_sets()
          ear1="Lugra Earring +1",
          ear2="Trux Earring",
          body="Lugra Cloak +1",
-         hands="Fallen's finger Gauntlets +1",
+         hands="Heathen's Gauntlets +1",
          ring1="Rajas Ring",
          ring2="Ifrit Ring +1",
          back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
