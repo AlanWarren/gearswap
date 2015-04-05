@@ -477,7 +477,7 @@ function init_gear_sets()
          --head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
          ear1="Lugra Earring +1",
-         ear2="Trux Earring",
+         ear2="Tripudio Earring",
          body="Lugra Cloak +1",
          hands="Heathen's Gauntlets +1",
          ring1="Rajas Ring",
