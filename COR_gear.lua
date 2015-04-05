@@ -213,7 +213,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
         waist="Flume Belt",
-        legs="Taeon Tights",
+        legs="Iuitl Tights +1",
         feet="Skadi's Jambeaux +1"
     }
     sets.idle.Regen = set_combine(sets.idle, {
