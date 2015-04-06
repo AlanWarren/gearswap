@@ -128,7 +128,7 @@ function init_gear_sets()
 	-- Elemental Magic sets are default for handling low-tier nukes.
     sets.midcast.LowTierNuke = {main="Lehbrailg +2",sub="Wizzan Grip",ammo="Witchstone",
         head="Hagondes Hat",neck="Stoicheion Medal",ear1="Hecate's Earring",ear2="Friomisi Earring",
-        body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Icesoul Ring",ring2="Strendu Ring",
+        body="Errant Houppelande",hands="Yaoyotl Gloves",ring1="Icesoul Ring",ring2="Strendu Ring",
         back="Toro Cape",waist=gear.ElementalObi,legs="Hagondes Pants",feet="Hagondes Sabots"}
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
@@ -139,13 +139,13 @@ function init_gear_sets()
     -- Idle set when doing procs. Fast cast gear, minimal nuke gear. Won't change out of this for nukes.
     sets.midcast.LowTierNuke.Proc = {main="Earth Staff", sub="Wizzan Grip",ammo="Impatiens",
         head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-        body="Manasa Chasuble",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
+        body="Errant Houppelande",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
         back="Swith Cape",waist="Witful Belt",legs="Nares Trews",feet="Chelona Boots +1"}
     
     -- Custom classes for high-tier nukes.
     sets.midcast.HighTierNuke = {main="Lehbrailg +2",sub="Wizzan Grip",ammo="Witchstone",
         head="Hagondes Hat",neck="Stoicheion Medal",ear1="Hecate's Earring",ear2="Friomisi Earring",
-        body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Icesoul Ring",ring2="Strendu Ring",
+        body="Errant Houppelande",hands="Yaoyotl Gloves",ring1="Icesoul Ring",ring2="Strendu Ring",
         back="Toro Cape",waist=gear.ElementalObi,legs="Hagondes Pants",feet="Hagondes Sabots"}
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
@@ -163,15 +163,13 @@ function init_gear_sets()
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
-	sets.idle.Town = {main="Bolelabunga",sub="Genbu's Shield",range="Matre Bell",
-		head="Nefer Khat +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-		body="Heka's Kalasiris",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-		back="Umbra Cape",waist="Goading Belt",legs="Nares Trews",feet="Herald's Gaiters"}
+	sets.idle.Town = {
+		body="Vermillion Cloak"
+    }
 	
-	sets.idle.Field = {main="Bolelabunga",sub="Genbu's Shield",range="Matre Bell",
-		head="Nefer Khat +1",neck="Wiglen Gorget",ear1="Bloodgem Earring",ear2="Loquacious Earring",
-		body="Heka's Kalasiris",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-		back="Umbra Cape",waist="Goading Belt",legs="Nares Trews",feet="Herald's Gaiters"}
+	sets.idle.Field = {
+		body="Vermillion Cloak"
+    }
 
 	sets.idle.Field.PDT = {main="Bolelabunga",sub="Genbu's Shield",range="Matre Bell",
 		head="Nahtirah Hat",neck="Twilight Torque",ear1="Bloodgem Earring",ear2="Loquacious Earring",
@@ -213,7 +211,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {range="Matre Bell",
 		head="Zelus Tiara",neck="Peacock Charm",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-		body="Vanir Cotehardie",hands="Bokwus Gloves",ring1="Ether Ring",ring2="Paguroidea Ring",
+		body="Errant Houppelande",hands="Bokwus Gloves",ring1="Ether Ring",ring2="Paguroidea Ring",
 		back="Umbra Cape",waist="Goading Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
 end
 
