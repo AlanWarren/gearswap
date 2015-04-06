@@ -219,31 +219,33 @@ function init_gear_sets()
     -- Normal melee group without buffs
     sets.engaged = {
         ammo=gear.RegularAmmo,
-        head="Ptica Headgear",
+        head="Hattori Zukin +1",
         neck="Rancor Collar",
-        ear1="Brutal Earring",
-        ear2="Suppanomimi",
-        body="Mochizuki Chainmail +1",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        body="Hachiya Chainmail +1",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
-        waist="Patentia Sash",
+        waist="Windbuffet Belt +1",
         legs="Mochizuki Hakama +1",
         feet="Taeon Boots"
     }
 
     sets.engaged.Low = set_combine(sets.engaged, {
-        ear1="Heartseeker Earring",
-        ear2="Dudgeon Earring",
+        head="Ptica Headgear",
+        ear1="Trux Earring",
+        ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         back="Yokaze Mantle",
-        feet="Qaaxo Leggings"
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
-        ring1="Patricius Ring",
-        legs="Mochizuki Kyahan +1"
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
+        ring1="Patricius Ring"
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -589,6 +591,7 @@ function init_gear_sets()
     sets.engaged.LowDef.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
+    sets.buff.Innin = {head="Hattori Zukin +1"}
     
     -- Weaponskills 
     sets.precast.WS = {
@@ -686,7 +689,7 @@ function init_gear_sets()
     
     -- BLADE: SHUN
     sets.Shun = {
-        head="Gavialis Helm",
+        head="Hattori Zukin +1",
         neck="Flame Gorget",
         ear2="Trux Earring",
         body="Dread Jupon",

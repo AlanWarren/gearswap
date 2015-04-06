@@ -12,6 +12,7 @@ end
 function job_setup()
     state.Buff.Migawari = buffactive.migawari or false
     state.Buff.Sange = buffactive.sange or false
+    state.Buff.Innin = buffactive.innin or false
     
     include('Mote-TreasureHunter')
     state.TreasureMode:set('Tag')
@@ -243,6 +244,13 @@ function customize_melee_set(meleeSet)
     if player.mp < 100 and state.OffenseMode.value ~= 'Acc' then
         -- use Rajas instead of Oneiros for normal + mid
         meleeSet = set_combine(meleeSet, sets.Rajas)
+    end
+    if state.Buff.Innin then
+        if classes.CustomMeleeGroups:contains('MaxHaste') or classes.CustomMeleeGroups:contains('Haste_40') then
+            -- nothing
+        else
+            meleeSet = set_combine(meleeSet, sets.buff.Innin)
+        end
     end
     meleeSet = set_combine(meleeSet, select_ammo())
     return meleeSet
