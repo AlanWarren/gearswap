@@ -293,9 +293,9 @@ function init_gear_sets()
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.AccPDT)
 
     sets.engaged.Innin.PDT = set_combine(sets.engaged.Innin, sets.NormalPDT, {head="Hattori Zukin +1"})
-    sets.engaged.Low.PDT = set_combine(sets.engaged.Innin.Low, sets.NormalPDT, {head="Hattori Zukin +1"})
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.Innin.Mid, sets.NormalPDT, {head="Hattori Zukin +1"})
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Innin.Acc, sets.AccPDT)
+    sets.engaged.Innin.Low.PDT = set_combine(sets.engaged.Innin.Low, sets.NormalPDT, {head="Hattori Zukin +1"})
+    sets.engaged.Innin.Mid.PDT = set_combine(sets.engaged.Innin.Mid, sets.NormalPDT, {head="Hattori Zukin +1"})
+    sets.engaged.Innin.Acc.PDT = set_combine(sets.engaged.Innin.Acc, sets.AccPDT)
 
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
@@ -313,7 +313,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         neck="Rancor Collar",
-        body="Mes'yohi Haubergeon",
+        body="Thaumas Coat",
         hands="Otronif Gloves +1",
         ring1="Rajas Ring",
         back="Bleating Mantle",
@@ -321,28 +321,38 @@ function init_gear_sets()
         legs="Taeon Tights",
         feet="Otronif Boots +1"
     })
+    -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        neck="Rancor Collar",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        back="Yokaze Mantle",
-        feet="Qaaxo Leggings"
+        neck="Asperity Necklace",
+        body="Mes'yohi Haubergeon",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
-        ring1="Patricius Ring",
-        legs="Taeon Tights",
-        feet="Mochizuki Kyahan +1"
+        back="Yokaze Mantle",
+        feet="Taeon Boots",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Gavialis Helm",
         neck="Iqabi Necklace",
-        hands="Sasuke Tekko +1",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         ring2="Mars's Ring",
         waist="Olseni Belt"
     })
+
+    sets.engaged.Innin.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        head="Hattori Zukin +1"
+    })
+    sets.engaged.Innin.Low.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
+        head="Hattori Zukin +1"
+    })
+    sets.engaged.Innin.Mid.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+        head="Hattori Zukin +1",
+        feet="Mochizuki Kyahan +1"
+    })
+    sets.engaged.Innin.Acc.MaxHaste = sets.engaged.Acc.MaxHaste
    
     -- Defensive sets
     sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.NormalPDT)
@@ -350,16 +360,21 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.NormalPDT)
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.AccPDT)
     
+    sets.engaged.Innin.PDT.MaxHaste = set_combine(sets.engaged.Innin.MaxHaste, sets.NormalPDT)
+    sets.engaged.Innin.Low.PDT.MaxHaste = set_combine(sets.engaged.Innin.Low.MaxHaste, sets.NormalPDT)
+    sets.engaged.Innin.Mid.PDT.MaxHaste = set_combine(sets.engaged.Innin.Mid.MaxHaste, sets.NormalPDT)
+    sets.engaged.Innin.Acc.PDT.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
+    
     -- Haste 40 to 43%
     sets.engaged.Haste_40 = set_combine(sets.engaged.MaxHaste, {
         ear1="Brutal Earring",
         ear2="Trux Earring",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
         legs="Taeon Tights",
         feet="Taeon Boots"
     })
     sets.engaged.Low.Haste_40 = set_combine(sets.engaged.Low.MaxHaste, {
         legs="Taeon Tights",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
         feet="Taeon Boots"
     })
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Mid.MaxHaste, {
@@ -370,11 +385,30 @@ function init_gear_sets()
         legs="Taeon Tights",
         feet="Taeon Boots"
     })
+    -- Innin
+    sets.engaged.Innin.Haste_40 = set_combine(sets.engaged.Haste_40, {
+        head="Hattori Zukin +1",
+        feet="Otronif Boots +1"
+    })
+    sets.engaged.Innin.Low.Haste_40 = set_combine(sets.engaged.Low.Haste_40, {
+        head="Hattori Zukin +1",
+        feet="Otronif Boots +1"
+    })
+    sets.engaged.Innin.Mid.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, {
+        head="Hattori Zukin +1",
+        feet="Mochizuki Kyahan +1"
+    })
+    sets.engaged.Innin.Acc.Haste_40 = sets.engaged.Acc.Haste_40
 
     sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HastePDT)
     sets.engaged.Low.PDT.Haste_40 = set_combine(sets.engaged.Low.Haste_40, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_40 = set_combine(sets.engaged.Acc.Haste_40, sets.engaged.AccPDT)
+    
+    sets.engaged.Innin.PDT.Haste_40 = set_combine(sets.engaged.Innin.Haste_40, sets.engaged.HastePDT)
+    sets.engaged.Innin.Low.PDT.Haste_40 = set_combine(sets.engaged.Innin.Low.Haste_40, sets.engaged.HastePDT)
+    sets.engaged.Innin.Mid.PDT.Haste_40 = set_combine(sets.engaged.Innin.Mid.Haste_40, sets.engaged.HastePDT)
+    sets.engaged.Innin.Acc.PDT.Haste_40 = sets.engaged.Acc.PDT.Haste_40
      
     -- 35% Haste
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_40, {
@@ -395,20 +429,37 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Steelflash Earring",
     })
+
+    sets.engaged.Innin.Haste_35 = set_combine(sets.engaged.Haste_35, {
+        head="Hattori Zukin +1",
+        body="Thaumas Coat"
+    })
+    sets.engaged.Innin.Low.Haste_35 = set_combine(sets.engaged.Low.Haste_35, {
+        head="Hattori Zukin +1",
+    })
+    sets.engaged.Innin.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
+        head="Hattori Zukin +1",
+    })
+    sets.engaged.Innin.Acc.Haste_35 = sets.engaged.Acc.Haste_35
     
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Low.PDT.Haste_35 = set_combine(sets.engaged.Low.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.AccPDT)
     
+    sets.engaged.Innin.PDT.Haste_35 = set_combine(sets.engaged.Innin.Haste_35, sets.engaged.HastePDT)
+    sets.engaged.Innin.Low.PDT.Haste_35 = set_combine(sets.engaged.Innin.Low.Haste_35, sets.engaged.HastePDT)
+    sets.engaged.Innin.Mid.PDT.Haste_35 = set_combine(sets.engaged.Innin.Mid.Haste_35, sets.engaged.HastePDT)
+    sets.engaged.Innin.Acc.PDT.Haste_35 = sets.engaged.Acc.PDT.Haste_35
+    
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
         neck="Rancor Collar",
-        ear1="Brutal Earring",
-        ear2="Suppanomimi",
-        body="Mochizuki Chainmail +1",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        body="Thaumas Coat",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
@@ -417,22 +468,46 @@ function init_gear_sets()
         feet="Taeon Boots"
     })
     sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_35, {
-        body="Mochizuki Chainmail +1"
+        ear1="Brutal Earring",
+        ear2="Suppanomimi",
+        body="Mochizuki Chainmail +1",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
-        body="Mochizuki Chainmail +1"
+        ear1="Trux Earring",
+        body="Mochizuki Chainmail +1",
+        back="Yokaze Mantle"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
-        ear1="Suppanomimi",
-        ear2="Zennaroi Earring",
+        ear2="Suppanomimi",
+        ear1="Zennaroi Earring",
         body="Mochizuki Chainmail +1",
+        ring1="Patricius Ring",
         legs="Hachiya Hakama +1"
     })
+
+    sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
+        head="Hattori Zukin +1",
+        ear1="Brutal Earring",
+        ear2="Suppanomimi"
+    })
+    sets.engaged.Innin.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
+        head="Hattori Zukin +1"
+    })
+    sets.engaged.Innin.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
+        head="Hattori Zukin +1"
+    })
+    sets.engaged.Innin.Acc.Haste_30 = sets.engaged.Acc.Haste_30
     
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Low.PDT.Haste_30 = set_combine(sets.engaged.Low.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.AccPDT)
+    
+    sets.engaged.Innin.PDT.Haste_30 = set_combine(sets.engaged.Innin.Haste_30, sets.engaged.HastePDT)
+    sets.engaged.Innin.Low.PDT.Haste_30 = set_combine(sets.engaged.Innin.Low.Haste_30, sets.engaged.HastePDT)
+    sets.engaged.Innin.Mid.PDT.Haste_30 = set_combine(sets.engaged.Innin.Mid.Haste_30, sets.engaged.HastePDT)
+    sets.engaged.Innin.Acc.PDT.Haste_30 = sets.engaged.Acc.PDT.Haste_30
     
     -- 25% Haste
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
@@ -453,11 +528,30 @@ function init_gear_sets()
         legs="Hachiya Hakama +1"
     })
     
+    sets.engaged.Innin.Haste_25 = set_combine(sets.engaged.Haste_25, {
+        head="Hattori Zukin +1",
+        ear2="Trux Earring"
+    })
+    sets.engaged.Innin.Low.Haste_25 = set_combine(sets.engaged.Low.Haste_25, {
+        head="Hattori Zukin +1",
+        ear2="Trux Earring"
+    })
+    sets.engaged.Innin.Mid.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, {
+        head="Hattori Zukin +1",
+        ear2="Trux Earring"
+    })
+    sets.engaged.Innin.Acc.Haste_25 = sets.engaged.Acc.Haste_25
+    
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HastePDT)
     sets.engaged.Low.PDT.Haste_25 = set_combine(sets.engaged.Low.Haste_25, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_25 = set_combine(sets.engaged.Acc.Haste_25, sets.engaged.AccPDT)
     
+    sets.engaged.Innin.PDT.Haste_25 = set_combine(sets.engaged.Innin.Haste_25, sets.engaged.HastePDT)
+    sets.engaged.Innin.Low.PDT.Haste_25 = set_combine(sets.engaged.Innin.Low.Haste_25, sets.engaged.HastePDT)
+    sets.engaged.Innin.Mid.PDT.Haste_25 = set_combine(sets.engaged.Innin.Mid.Haste_25, sets.engaged.HastePDT)
+    sets.engaged.Innin.Acc.PDT.Haste_25 = sets.engaged.Acc.PDT.Haste_25
+
     -- 5 - 20% Haste 
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_25, {
         --back="Vellaunus' Mantle +1",
@@ -483,13 +577,28 @@ function init_gear_sets()
         legs="Taeon Tights"
     })
     
+    sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, {
+        head="Hattori Zukin +1",
+    })
+    sets.engaged.Innin.Low.Haste_15 = set_combine(sets.engaged.Low.Haste_15, {
+        head="Hattori Zukin +1",
+    })
+    sets.engaged.Innin.Mid.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, {
+        head="Hattori Zukin +1",
+    })
+    sets.engaged.Innin.Acc.Haste_15 = sets.engaged.Acc.Haste_15
+    
     sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, sets.engaged.HastePDT)
     sets.engaged.Low.PDT.Haste_15 = set_combine(sets.engaged.Low.Haste_15, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, sets.engaged.AccPDT)
     
+    sets.engaged.Innin.PDT.Haste_15 = set_combine(sets.engaged.Innin.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Innin.Low.PDT.Haste_15 = set_combine(sets.engaged.Innin.Low.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Innin.Mid.PDT.Haste_15 = set_combine(sets.engaged.Innin.Mid.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Innin.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
+    
     sets.buff.Migawari = {body="Iga Ningi +2"}
-    sets.buff.Innin = {head="Hattori Zukin +1"}
     
     -- Weaponskills 
     sets.precast.WS = {
