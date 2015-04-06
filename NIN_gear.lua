@@ -158,7 +158,7 @@ function init_gear_sets()
     
     sets.idle = {
         ammo=gear.RegularAmmo,
-        head="Ptica Headgear",
+        head="Hattori Zukin +1",
         neck="Twilight Torque",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
