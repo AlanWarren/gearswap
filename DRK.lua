@@ -15,7 +15,7 @@
     sets.engaged.[CombatForm][CombatWeapon][Offense or DefenseMode][CustomGroup]
     CustomGroups = AM3
 
-    TODO: Get STR/DEX Augment on Acro Head, Legs.
+    TODO: Get STR/DEX Augment on Acro Legs.
     Make a new pair of boots + gloves with acc/atk 20 stp+5 str/dex+7
 --]]
 --
@@ -205,7 +205,7 @@ function init_gear_sets()
      })
      
      sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-         body="Lugra Cloak",
+         body="Lugra Cloak +1",
          ring2="Excelsis Ring",
      })
 
@@ -244,7 +244,6 @@ function init_gear_sets()
          ring2="Garuda Ring",
          waist="Chaac Belt",
          legs="Aetosaur Trousers +1",
-         feet="Acro Leggings"
      }
 
      -- WEAPONSKILL SETS
@@ -262,21 +261,19 @@ function init_gear_sets()
          back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
-         feet="Fallen's Sollerets +1"
+         feet={name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3', 'Weapon skill damage +2%'}},
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
          body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
-         feet="Ejekamal Boots"
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          ear1="Zennaroi Earring",
          hands="Buremte Gloves",
          body="Fallen's Cuirass +1",
          waist="Olseni Belt",
-         feet="Acro Leggings"
      })
  
      -- RESOLUTION
@@ -321,7 +318,6 @@ function init_gear_sets()
          hands="Acro Gauntlets",
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
-         feet="Acro Leggings"
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
      })
@@ -345,7 +341,6 @@ function init_gear_sets()
          ear1="Bale Earring",
          hands="Fallen's Finger Gauntlets +1",
          legs="Ignominy Flanchard +1",
-         feet="Acro Leggings"
      })
      sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {})
 
@@ -373,7 +368,6 @@ function init_gear_sets()
          back="Bleating Mantle",
          waist="Soil Belt",
          legs="Scuffler's Cosciales",
-         feet="Acro Leggings"
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
          hands="Fallen's Finger Gauntlets +1",
@@ -470,7 +464,7 @@ function init_gear_sets()
      -- Resting sets
      sets.resting = {
          --head="Baghere Salade",
-         body="Lugra Cloak",
+         body="Lugra Cloak +1",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
@@ -483,10 +477,10 @@ function init_gear_sets()
          --head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
          ear1="Lugra Earring +1",
-         ear2="Trux Earring",
-         body="Lugra Cloak",
-         hands="Fallen's finger Gauntlets +1",
-         ring1="Rajas Ring",
+         ear2="Tripudio Earring",
+         body="Lugra Cloak +1",
+         hands="Heathen's Gauntlets +1",
+         ring1="Excelsis Ring",
          ring2="Ifrit Ring +1",
          back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
@@ -497,14 +491,13 @@ function init_gear_sets()
     sets.cool = set_combine(sets.idle.Town, {
          head="Otomi Helm",
          legs="Acro Breeches",
-         feet="Acro Leggings"
      })
 
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
          --head="Baghere Salade",
          neck="Coatl Gorget +1",
-         body="Lugra Cloak",
+         body="Lugra Cloak +1",
          hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
@@ -514,7 +507,7 @@ function init_gear_sets()
          feet="Cizin Greaves +1"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
-         body="Lugra Cloak",
+         body="Lugra Cloak +1",
      })
  
      sets.idle.Weak = {
@@ -563,7 +556,8 @@ function init_gear_sets()
 
      sets.HighHaste = {
          ammo="Ginsen",
-         feet="Acro Leggings"
+         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+23','"Store TP"+6'}},
+         --feet={name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3', 'Weapon skill damage +2%'}},
      }
      
      -- Defensive sets to combine with various weapon-specific sets below
@@ -619,7 +613,7 @@ function init_gear_sets()
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
          ring2="Patricius Ring",
-         feet="Acro Leggings"
+         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+23','"Store TP"+6'}},
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          neck="Iqabi Necklace",
@@ -637,7 +631,7 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          ear1="Zennaroi Earring",
          ring2="Patricius Ring",
-         feet="Acro Leggings"
+         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+23','"Store TP"+6'}},
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          neck="Iqabi Necklace",
