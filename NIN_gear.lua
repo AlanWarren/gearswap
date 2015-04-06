@@ -225,7 +225,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
-        ring1="Rajas Ring",
+        ring1="Oneiros Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Patentia Sash",
@@ -236,14 +236,11 @@ function init_gear_sets()
     sets.engaged.Low = set_combine(sets.engaged, {
         ear1="Heartseeker Earring",
         ear2="Dudgeon Earring",
-        body="Mochizuki Chainmail +1",
         back="Yokaze Mantle",
-        feet="Qaaxo Leggings"
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
         ring1="Patricius Ring",
-        legs="Mochizuki Kyahan +1"
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -251,18 +248,23 @@ function init_gear_sets()
         ring2="Mars's Ring",
         waist="Olseni Belt",
     })
-
-    sets.engaged.LowDef = set_combine(sets.engaged, {
-        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
-        ring1="Oneiros Ring"
+    
+    sets.engaged.Innin = set_combine(sets.engaged, {
+        head="Hattori Zukin +1",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        waist="Windbuffet Belt +1",
     })
-    sets.engaged.LowDef.Low = set_combine(sets.engaged.Low, {
-        ring1="Oneiros Ring"
+    sets.engaged.Innin.Low = set_combine(sets.engaged.Innin, {
+        back="Yokaze Mantle"
     })
-    sets.engaged.LowDef.Mid = sets.engaged.Mid
-    sets.engaged.LowDef.Acc = sets.engaged.Acc
-
-    sets.engaged.NormalPDT = {
+    sets.engaged.Innin.Mid = set_combine(sets.engaged.Innin.Low, {
+        ring1="Patricius Ring"
+    })
+    sets.engaged.Innin.Acc = set_combine(sets.engaged.Acc, {
+    })
+    -- Defenseive sets
+    sets.NormalPDT = {
         head="Otronif Mask +1",
         body="Emet Harness +1",
         neck="Agitator's Collar",
@@ -271,7 +273,7 @@ function init_gear_sets()
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
     }
-    sets.engaged.AccPDT = {
+    sets.AccPDT = {
         head="Lithelimb Cap",
         body="Emet Harness +1",
         neck="Agitator's Collar",
@@ -280,15 +282,15 @@ function init_gear_sets()
         feet="Otronif Boots +1"
     }
 
-    sets.engaged.PDT = set_combine(sets.engaged, sets.engaged.NormalPDT)
-    sets.engaged.Low.PDT = set_combine(sets.engaged.Low, sets.engaged.NormalPDT)
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.engaged.NormalPDT)
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.engaged.AccPDT)
+    sets.engaged.PDT = set_combine(sets.engaged, sets.NormalPDT)
+    sets.engaged.Low.PDT = set_combine(sets.engaged.Low, sets.NormalPDT)
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.NormalPDT)
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.AccPDT)
 
-    sets.engaged.LowDef.PDT = sets.engaged.PDT
-    sets.engaged.LowDef.Low.PDT = sets.engaged.Low.PDT
-    sets.engaged.LowDef.Mid.PDT = sets.engaged.Mid.PDT
-    sets.engaged.LowDef.Acc.PDT = sets.engaged.Acc.PDT
+    sets.engaged.Innin.PDT = set_combine(sets.engaged.Innin, sets.NormalPDT, {head="Hattori Zukin +1"})
+    sets.engaged.Low.PDT = set_combine(sets.engaged.Innin.Low, sets.NormalPDT, {head="Hattori Zukin +1"})
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Innin.Mid, sets.NormalPDT, {head="Hattori Zukin +1"})
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Innin.Acc, sets.AccPDT)
 
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
@@ -337,34 +339,12 @@ function init_gear_sets()
         waist="Olseni Belt"
     })
    
-    -- Low monster defense (attack near cap)
-    sets.engaged.LowDef.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        body="Thaumas Coat",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
-        ring1="Oneiros Ring"
-    })
-    sets.engaged.LowDef.Low.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
-        body="Thaumas Coat",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
-        ring1="Oneiros Ring",
-        feet="Otronif Boots +1"
-    })
-    sets.engaged.LowDef.Mid.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
-        feet="Qaaxo Leggings"
-    })
-    sets.engaged.LowDef.Acc.MaxHaste = sets.engaged.Acc.MaxHaste
-
     -- Defensive sets
-    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.NormalPDT)
-    sets.engaged.Low.PDT.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, sets.engaged.NormalPDT)
-    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.NormalPDT)
-    sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.engaged.AccPDT)
+    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.NormalPDT)
+    sets.engaged.Low.PDT.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, sets.NormalPDT)
+    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.NormalPDT)
+    sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.AccPDT)
     
-    sets.engaged.LowDef.PDT.MaxHaste = sets.engaged.PDT.MaxHaste
-    sets.engaged.LowDef.Low.PDT.MaxHaste = sets.engaged.Low.PDT.MaxHaste
-    sets.engaged.LowDef.Mid.PDT.MaxHaste = sets.engaged.Mid.PDT.MaxHaste
-    sets.engaged.LowDef.Acc.PDT.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
-
     -- Haste 40 to 43%
     sets.engaged.Haste_40 = set_combine(sets.engaged.MaxHaste, {
         ear1="Brutal Earring",
@@ -386,28 +366,11 @@ function init_gear_sets()
         feet="Taeon Boots"
     })
 
-    -- attack capped sets 
-    sets.engaged.LowDef.Haste_40 = set_combine(sets.engaged.LowDef.MaxHaste, {
-        legs="Taeon Tights",
-        feet="Taeon Boots"
-    })
-    sets.engaged.LowDef.Low.Haste_40 = set_combine(sets.engaged.LowDef.Low.MaxHaste, {
-        legs="Taeon Tights",
-        feet="Taeon Boots"
-    })
-    sets.engaged.LowDef.Mid.Haste_40 = sets.engaged.Mid.Haste_40
-    sets.engaged.LowDef.Acc.Haste_40 = sets.engaged.Acc.Haste_40
-
     sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, sets.engaged.HastePDT)
     sets.engaged.Low.PDT.Haste_40 = set_combine(sets.engaged.Low.Haste_40, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_40 = set_combine(sets.engaged.Mid.Haste_40, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_40 = set_combine(sets.engaged.Acc.Haste_40, sets.engaged.AccPDT)
      
-    sets.engaged.LowDef.PDT.Haste_40 = sets.engaged.PDT.Haste_40
-    sets.engaged.LowDef.Low.PDT.Haste_40 = sets.engaged.Low.PDT.Haste_40
-    sets.engaged.LowDef.Mid.PDT.Haste_40 = sets.engaged.Mid.PDT.Haste_40
-    sets.engaged.LowDef.Acc.PDT.Haste_40 = sets.engaged.Acc.PDT.Haste_40
-
     -- 35% Haste
     sets.engaged.Haste_35 = set_combine(sets.engaged.Haste_40, {
         head="Ptica Headgear",
@@ -428,31 +391,11 @@ function init_gear_sets()
         ear2="Steelflash Earring",
     })
     
-    sets.engaged.LowDef.Haste_35 = set_combine(sets.engaged.LowDef.Haste_40, {
-        head="Ptica Headgear",
-        neck="Rancor Collar",
-        back="Bleating Mantle",
-        legs="Taeon Tights",
-        feet="Taeon Boots"
-    })
-    sets.engaged.LowDef.Low.Haste_35 = set_combine(sets.engaged.LowDef.Low.Haste_40, {
-        head="Ptica Headgear",
-        legs="Taeon Tights",
-        feet="Taeon Boots"
-    })
-    sets.engaged.LowDef.Mid.Haste_35 = sets.engaged.Mid.Haste_35
-    sets.engaged.LowDef.Acc.Haste_35 = sets.engaged.Acc.Haste_35
-
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Low.PDT.Haste_35 = set_combine(sets.engaged.Low.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.AccPDT)
     
-    sets.engaged.LowDef.PDT.Haste_35 = sets.engaged.PDT.Haste_35
-    sets.engaged.LowDef.Low.PDT.Haste_35 = sets.engaged.Low.PDT.Haste_35
-    sets.engaged.LowDef.Mid.PDT.Haste_35 = sets.engaged.Mid.PDT.Haste_35
-    sets.engaged.LowDef.Acc.PDT.Haste_35 = sets.engaged.Acc.PDT.Haste_35
-
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
@@ -481,25 +424,11 @@ function init_gear_sets()
         legs="Hachiya Hakama +1"
     })
     
-    sets.engaged.LowDef.Haste_30 = set_combine(sets.engaged.LowDef.Haste_35, {
-        body="Mochizuki Chainmail +1",
-    })
-    sets.engaged.LowDef.Low.Haste_30 = set_combine(sets.engaged.LowDef.Low.Haste_35, {
-        body="Mochizuki Chainmail +1",
-    })
-    sets.engaged.LowDef.Mid.Haste_30 = sets.engaged.Mid.Haste_30
-    sets.engaged.LowDef.Acc.Haste_30 = sets.engaged.Acc.Haste_30
-
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Low.PDT.Haste_30 = set_combine(sets.engaged.Low.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.AccPDT)
     
-    sets.engaged.LowDef.PDT.Haste_30 = sets.engaged.PDT.Haste_30
-    sets.engaged.LowDef.Low.PDT.Haste_30 = sets.engaged.Low.PDT.Haste_30
-    sets.engaged.LowDef.Mid.PDT.Haste_30 = sets.engaged.Mid.PDT.Haste_30
-    sets.engaged.LowDef.Acc.PDT.Haste_30 = sets.engaged.Acc.PDT.Haste_30
-
     -- 25% Haste
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
         ear1="Brutal Earring",
@@ -519,24 +448,10 @@ function init_gear_sets()
         legs="Hachiya Hakama +1"
     })
     
-    sets.engaged.LowDef.Haste_25 = set_combine(sets.engaged.LowDef.Haste_30, {
-        ear2="Suppanomimi"
-    })
-    sets.engaged.LowDef.Low.Haste_25 = set_combine(sets.engaged.LowDef.Low.Haste_30, {
-        ear2="Suppanomimi"
-    })
-    sets.engaged.LowDef.Mid.Haste_25 = sets.engaged.Mid.Haste_25
-    sets.engaged.LowDef.Acc.Haste_25 = sets.engaged.Acc.Haste_25
-
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, sets.engaged.HastePDT)
     sets.engaged.Low.PDT.Haste_25 = set_combine(sets.engaged.Low.Haste_25, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_25 = set_combine(sets.engaged.Mid.Haste_25, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_25 = set_combine(sets.engaged.Acc.Haste_25, sets.engaged.AccPDT)
-    
-    sets.engaged.LowDef.PDT.Haste_25 = sets.engaged.PDT.Haste_25
-    sets.engaged.LowDef.Low.PDT.Haste_25 = sets.engaged.Low.PDT.Haste_25
-    sets.engaged.LowDef.Mid.PDT.Haste_25 = sets.engaged.Mid.PDT.Haste_25
-    sets.engaged.LowDef.Acc.PDT.Haste_25 = sets.engaged.Acc.PDT.Haste_25
     
     -- 5 - 20% Haste 
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_25, {
@@ -563,30 +478,10 @@ function init_gear_sets()
         legs="Taeon Tights"
     })
     
-    sets.engaged.LowDef.Haste_15 = set_combine(sets.engaged.LowDef.Haste_25, {
-        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
-        back="Bleating Mantle",
-        --back="Vellaunus' Mantle +1",
-        waist="Patentia Sash"
-    })
-    sets.engaged.LowDef.Low.Haste_15 = set_combine(sets.engaged.LowDef.Low.Haste_25, {
-        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
-        back="Bleating Mantle",
-        --back="Vellaunus' Mantle +1",
-        waist="Patentia Sash"
-    })
-    sets.engaged.LowDef.Mid.Haste_15 = sets.engaged.Mid.Haste_15
-    sets.engaged.LowDef.Acc.Haste_15 = sets.engaged.Acc.Haste_15
-
     sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, sets.engaged.HastePDT)
     sets.engaged.Low.PDT.Haste_15 = set_combine(sets.engaged.Low.Haste_15, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, sets.engaged.AccPDT)
-    
-    sets.engaged.LowDef.PDT.Haste_15 = sets.engaged.PDT.Haste_15
-    sets.engaged.LowDef.Low.PDT.Haste_15 = sets.engaged.Low.PDT.Haste_15
-    sets.engaged.LowDef.Mid.PDT.Haste_15 = sets.engaged.Mid.PDT.Haste_15
-    sets.engaged.LowDef.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
     
     sets.buff.Migawari = {body="Iga Ningi +2"}
     

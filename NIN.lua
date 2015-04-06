@@ -12,12 +12,12 @@ end
 function job_setup()
     state.Buff.Migawari = buffactive.migawari or false
     state.Buff.Sange = buffactive.sange or false
+    state.Buff.Innin = buffactive.innin or false
     
     include('Mote-TreasureHunter')
     state.TreasureMode:set('Tag')
 
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
-    state.MobDefenseMode = M{['description']='Mob Defense Mode', 'Normal', 'LowDef'}
     state.Runes = M{['description']='Runes', "Ignis", "Gelus", "Flabra", "Tellus", "Sulpor", "Unda", "Lux", "Tenebrae"}
     state.UseRune = M(false, 'Use Rune')
 
@@ -61,7 +61,6 @@ function user_setup()
     send_command('bind @f9 gs c cycle HasteMode')
     send_command('bind @[ gs c cycle Runes')
     send_command('bind ^] gs c toggle UseRune')
-    send_command('bind @= gs c cycle MobDefenseMode')
     
     -- auto ws
     --windower.register_event('tp change', autoHi)
@@ -81,7 +80,6 @@ function file_unload()
     send_command('unbind !=')
     send_command('unbind @f9')
     send_command('unbind @[')
-    send_command('unbind @=')
 end
 
 
@@ -259,6 +257,15 @@ function job_buff_change(buff, gain)
     if state.Buff[buff] ~= nil then
         handle_equipping_gear(player.status)
     end
+    
+    if buff == 'Innin' then
+        if gain then
+            state.CombatForm:set('Innin')
+        else
+            state.CombatForm:reset()
+        end
+    end
+
     -- If we gain or lose any haste buffs, adjust which gear set we target.
     if S{'haste', 'march', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
         determine_haste_group()
@@ -425,12 +432,6 @@ function job_state_change(stateField, newValue, oldValue)
         add_to_chat(123, msg)
     elseif stateField == 'Use Rune' then
         send_command('@input /ja '..state.Runes.value..' <me>')
-    elseif stateField == 'Mob Defense Mode' then
-        if newValue == 'LowDef' then
-            state.CombatForm:set('LowDef')
-        else
-            state.CombatForm:reset()
-        end
     end
 end
 
@@ -536,8 +537,8 @@ function select_ws_ammo()
     end
 end
 function update_combat_form()
-    if state.MobDefenseMode.value == 'LowDef' then
-        state.CombatForm:set('LowDef')
+    if state.buff.Innin then
+        state.CombatForm:set('Innin')
     else
         state.CombatForm:reset()
     end
