@@ -210,7 +210,7 @@ function init_gear_sets()
 	
 	-- Normal melee group
 	sets.engaged = {range="Matre Bell",
-		head="Zelus Tiara",neck="Peacock Charm",ear1="Bladeborn Earring",ear2="Steelflash Earring",
+		head="Errant Hat",neck="Peacock Charm",ear1="Bladeborn Earring",ear2="Steelflash Earring",
 		body="Errant Houppelande",hands="Bokwus Gloves",ring1="Ether Ring",ring2="Paguroidea Ring",
 		back="Umbra Cape",waist="Goading Belt",legs="Hagondes Pants",feet="Hagondes Sabots"}
 end
