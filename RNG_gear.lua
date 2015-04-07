@@ -1,6 +1,6 @@
 function init_gear_sets()
         -- Misc. Job Ability precasts
-        sets.precast.JA['Bounty Shot'] = {hands="Sylvan Glovelettes +2"}
+        sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes"}
         sets.precast.JA['Double Shot'] = {head="Sylvan Gapette +2"}
         sets.precast.JA['Camouflage'] = {body="Orion Jerkin +1"}
         sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
@@ -150,7 +150,7 @@ function init_gear_sets()
             ear1="Volley Earring", 
             ear2="Tripudio Earring", 
             body="Kyujutsugi",
-            hands="Sigyn's Bazubands",
+            hands="Amini Glovelettes",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
@@ -163,7 +163,7 @@ function init_gear_sets()
             legs="Amini Brague +1", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
-            neck="Iqabi Necklace", hands="Seiryu's Kote",
+            neck="Iqabi Necklace", hands="Sigyn's Bazubands",
             ring1="Hajduk Ring", ring2="Longshot Ring",
             legs="Arcadian Braccae +1"
         })
@@ -198,7 +198,7 @@ function init_gear_sets()
         })
         sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
             ring2="Longshot Ring",
-            back="Lutian Cape",hands="Sigyn's Bazubands",
+            back="Lutian Cape",hands="Amini Glovelettes",
             legs="Amini Brague +1", 
         })
         sets.midcast.RA.Acc.SamRoll = set_combine(sets.midcast.RA.Mid.SamRoll, {
@@ -215,7 +215,7 @@ function init_gear_sets()
         sets.midcast.RA.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.Stave.Mid, {
             body="Arcadian Jerkin +1",
             legs="Amini Brague +1", 
-            hands="Sigyn's Bazubands",
+            hands="Amini Glovelettes",
         })
         sets.midcast.RA.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Acc, {})
         
@@ -226,7 +226,7 @@ function init_gear_sets()
             ear1="Volley Earring", 
             ear2="Tripudio Earring", 
             body="Kyujutsugi",
-            hands="Sylvan Glovelettes +2",
+            hands="Amini Glovelettes",
             ring1="Rajas Ring", 
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
@@ -235,7 +235,7 @@ function init_gear_sets()
             feet="Orion Socks +1"
         }
         sets.midcast.RA.SAM.Mid = set_combine(sets.midcast.RA.SAM, { 
-            hands="Seiryu's Kote",
+            hands="Amini Glovelettes",
         })
         sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mid, {
             back="Lutian Cape", 
@@ -245,7 +245,7 @@ function init_gear_sets()
 
         -- Stave set for SAM
         sets.midcast.RA.SAM.Stave = set_combine(sets.midcast.RA.SAM, {
-            hands="Sigyn's Bazubands"
+            hands="Amini Glovelettes"
         })
         sets.midcast.RA.SAM.Stave.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
             hands="Sigyn's Bazubands",
@@ -255,7 +255,7 @@ function init_gear_sets()
         
         -- Samurai Roll for /sam, assume we're using a staff
         sets.midcast.RA.SAM.Stave.SamRoll = set_combine(sets.midcast.RA.SAM.Stave, {
-            hands="Sigyn's Bazubands"
+            hands="Amini Glovelettes"
         })
         sets.midcast.RA.SAM.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Mid, {
             ear1="Clearview Earring",
@@ -274,7 +274,7 @@ function init_gear_sets()
             ear2="Tripudio Earring",
             body="Kyujutsugi",
             --body="Arcadian Jerkin +1",
-            hands="Seiryu's Kote",
+            hands="Amini Glovelettes",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
             back="Sylvan Chlamys",
@@ -285,7 +285,7 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1=gear.Earring,
             back="Lutian Cape",
-            hands="Arcadian Bracers +1",
+            hands="Amini Glovelettes",
             legs="Amini Brague +1", 
             feet="Orion Socks +1"
         })
@@ -302,7 +302,7 @@ function init_gear_sets()
         -- Decoy up 
         sets.midcast.RA.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1=gear.Earring,
-            hands="Sylvan Glovelettes +2",
+            hands="Amini Glovelettes",
             legs="Amini Brague +1", 
         })
 
@@ -313,7 +313,7 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Mid.Decoy, {
             ear1=gear.Earring,
             neck="Iqabi Necklace",
-            hands="Seiryu's Kote",
+            hands="Amini Glovelettes",
             ring1="Longshot Ring",
             ring2="Paqichikaji Ring",
             legs="Arcadian Braccae +1"
@@ -323,7 +323,7 @@ function init_gear_sets()
         sets.midcast.RA.Falubeza.Acc.Decoy = sets.midcast.RA.Yoichinoyumi.Acc.Decoy
        
         -- Stave
-        sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Iuitl Wristbands +1" })
+        sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Amini Glovelettes" })
         sets.midcast.RA.Stave.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, { 
             legs="Amini Brague +1", 
         })
@@ -332,7 +332,7 @@ function init_gear_sets()
         -- Stave with Sam roll
         sets.midcast.RA.Stave.Yoichinoyumi.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
             body="Arcadian Jerkin +1",
-            hands="Arcadian Bracers +1",
+            hands="Amini Glovelettes",
             ring2="Paqichikaji Ring",
             back="Lutian Cape"
         })
@@ -341,7 +341,7 @@ function init_gear_sets()
         })
         sets.midcast.RA.Stave.Yoichinoyumi.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mid.SamRoll, {
             neck="Iqabi Necklace",
-            hands="Seiryu's Kote",
+            hands="Amini Glovelettes",
             ring1="Longshot Ring",
             feet="Orion Socks +1"
         })
@@ -349,12 +349,12 @@ function init_gear_sets()
         -- Stave / Decoy up
         sets.midcast.RA.Stave.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
             ear1=gear.Earring,
-            hands="Arcadian Bracers +1",
+            hands="Amini Glovelettes",
             legs="Amini Brague +1", 
         })
         sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Decoy, {
             body="Kyujutsugi",
-            hands="Seiryu's Kote",
+            hands="Amini Glovelettes",
             back="Lutian Cape",
             legs="Amini Brague +1", 
         })
@@ -370,7 +370,7 @@ function init_gear_sets()
         sets.midcast.RA.Stave.Yoichinoyumi.Decoy.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.SamRoll, {
             ear1=gear.Earring,
             body="Arcadian Jerkin +1",
-            hands="Arcadian Bracers +1",
+            hands="Amini Glovelettes",
             ring2="Ifrit Ring +1",
             back="Buquwik Cape",
             legs="Amini Brague +1", 
@@ -378,14 +378,14 @@ function init_gear_sets()
         })
         sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Decoy.SamRoll, {
             body="Kyujutsugi",
-            hands="Iuitl Wristbands +1",
+            hands="Amini Glovelettes",
             back="Lutian Cape",
             ring2="Longshot Ring"
         })
         sets.midcast.RA.Stave.Yoichinoyumi.Acc.Decoy.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy.SamRoll, {
             neck="Iqabi Necklace",
             ring1="Paqichikaji Ring",
-            hands="Seiryu's Kote",
+            hands="Amini Glovelettes",
             legs="Arcadian Braccae +1",
             feet="Orion Socks +1"
         })
@@ -478,7 +478,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Volley Earring",
             ear2="Tripudio Earring",
-            hands="Sylvan Glovelettes +2",
+            hands="Amini Glovelettes",
             legs="Amini Brague +1", 
         })
 
@@ -499,7 +499,7 @@ function init_gear_sets()
             neck="Aqua Gorget",
             ear1="Tripudio Earring",
             ear2="Moonshade Earring",
-            hands="Seiryu's Kote",
+            hands="Amini Glovelettes",
             ring1="Garuda Ring",
             ring2="Stormsoul Ring",
             waist="Light Belt",
@@ -536,7 +536,7 @@ function init_gear_sets()
         sets.Namas = {
             neck="Aqua Gorget",
             waist="Light Belt",
-            hands="Arcadian Bracers +1", -- override since we don't want sigyns in Mid or Acc
+            hands="Amini Glovelettes", -- override since we don't want sigyns in Mid or Acc
             back="Sylvan Chlamys",
             feet="Arcadian Socks +1"
         }
