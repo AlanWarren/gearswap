@@ -285,6 +285,7 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1=gear.Earring,
             back="Lutian Cape",
+            body="Amini Caban",
             hands="Amini Glovelettes",
             legs="Amini Brague +1", 
             feet="Orion Socks +1"
