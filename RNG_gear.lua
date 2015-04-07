@@ -160,6 +160,7 @@ function init_gear_sets()
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             back="Lutian Cape", 
+            body="Amini Caban",
             legs="Amini Brague +1", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
