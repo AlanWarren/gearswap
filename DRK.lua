@@ -388,7 +388,7 @@ function init_gear_sets()
          hands="Acro Gauntlets",
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
-         feet="Acro Boots"
+         feet={name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3', 'Weapon skill damage +2%'}},
      })
      sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {
          ear2="Bale Earring",
@@ -556,8 +556,7 @@ function init_gear_sets()
 
      sets.HighHaste = {
          ammo="Ginsen",
-         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+23','"Store TP"+6'}},
-         --feet={name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3', 'Weapon skill damage +2%'}},
+         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
      }
      
      -- Defensive sets to combine with various weapon-specific sets below
@@ -613,7 +612,7 @@ function init_gear_sets()
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
          ring2="Patricius Ring",
-         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+23','"Store TP"+6'}},
+         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          neck="Iqabi Necklace",
@@ -631,7 +630,7 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          ear1="Zennaroi Earring",
          ring2="Patricius Ring",
-         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+23','"Store TP"+6'}},
+         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          neck="Iqabi Necklace",
