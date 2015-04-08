@@ -35,6 +35,11 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
 
+    lowTierNukes = S{'Stone', 'Water', 'Aero', 'Fire', 'Blizzard', 'Thunder',
+        'Stone II', 'Water II', 'Aero II', 'Fire II', 'Blizzard II', 'Thunder II',
+        'Stone III', 'Water III', 'Aero III', 'Fire III', 'Blizzard III', 'Thunder III',
+        'Stonega', 'Waterga', 'Aeroga', 'Firaga', 'Blizzaga', 'Thundaga',
+        'Stonega II', 'Waterga II', 'Aeroga II', 'Firaga II', 'Blizzaga II', 'Thundaga II'}
     --------------------------------------
     -- Precast sets
     --------------------------------------
@@ -143,7 +148,83 @@ function init_gear_sets()
 
     sets.midcast.Shellra = {ring1="Sheltered Ring"}
 
+    sets.midcast.HighTierNuke = {
+        main="Lehbrailg +2",
+        sub="Wizzan Grip",
+        ammo="Witchstone",
+        head="Hagondes Hat",
+        neck="Stoicheion Medal",
+        ear1="Hecate's Earring",
+        ear2="Friomisi Earring",
+        body="Hagondes Coat",
+        hands="Yaoyotl Gloves",
+        ring1="Icesoul Ring",
+        ring2="Strendu Ring",
+        back="Toro Cape",
+        waist=gear.ElementalObi,
+        legs="Hagondes Pants",
+        feet="Hagondes Sabots"
+    }
+    
+    sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
+        ear1="Psystorm Earring",
+        ear2="Lifestorm Earring",
+        feet="Bokwus Boots"
+    })
+    sets.midcast.LowTierNuke = {
+        main="Lehbrailg +2",
+        sub="Wizzan Grip",
+        ammo="Witchstone",
+        head="Hagondes Hat",
+        neck="Stoicheion Medal",
+        ear1="Crematio Earring",
+        ear2="Friomisi Earring",
+        body="Hagondes Coat",
+        hands="Yaoyotl Gloves",
+        ring1="Icesoul Ring",
+        ring2="Strendu Ring",
+        back="Toro Cape",
+        waist=gear.ElementalObi,
+        legs="Hagondes Pants",
+        feet="Umbani Boots"
+    }
+    
+    sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
+        ear1="Psystorm Earring", 
+        ear2="Lifestorm Earring",
+        feet="Bokwus Boots"
+    })
+    sets.midcast.Aspir = set_combine(sets.midcast['Dark Magic'], { lring="Excelsis Ring" })
+    sets.midcast.Drain = sets.midcast.Aspir
+    sets.midcast.Stun = sets.midcast.Macc
+    
+    sets.midcast.Macc = { 
+        main="Antinian Staff", 
+        sub="Mephitis Grip", 
+        ammo="Aureole",
+        head="Nahtirah Hat", 
+        neck="Eddy Necklace", 
+        lear="Lifestorm Earring", 
+        rear="Psystorm Earring",
+        body="Bokwus Robe", 
+        hands="Hagondes Cuffs", 
+        lring="Balrahn's Ring", 
+        rring="Sangoma Ring",
+        back="Lifestream Cape", 
+        waist="Demonry Sash", 
+        legs="Bokwus Slops", 
+        feet="Bokwus Boots"
+    }
+    
+    sets.midcast['Enfeebling Magic'] = sets.midcast.Macc
+    sets.midcast.ElementalEnfeeble = sets.midcast.Macc
 
+	sets.midcast['Enhancing Magic'] = { 
+        sub="Fulcio Grip", 
+        neck="Colossus's Torque", 
+        body="Anhur Robe",
+        hands="Ayao's Gloves"
+    }
     --------------------------------------
     -- Idle/resting/defense/etc sets
     --------------------------------------
@@ -417,7 +498,14 @@ function job_get_spell_map(spell, default_spell_map)
             if spell.english:startswith('Indi') then
                 return 'Indi'
             end
+        elseif spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' then
+            if lowTierNukes:contains(spell.english) then
+                return 'LowTierNuke'
+            else
+                return 'HighTierNuke'
+            end
         end
+
     end
 end
 
