@@ -537,7 +537,7 @@ function select_ws_ammo()
     end
 end
 function update_combat_form()
-    if state.buff.Innin then
+    if state.Buff.Innin then
         state.CombatForm:set('Innin')
     else
         state.CombatForm:reset()
