@@ -158,7 +158,7 @@ function init_gear_sets()
     
     sets.idle = {
         ammo=gear.RegularAmmo,
-        head="Hattori Zukin +1",
+        head="Ptica Headgear",
         neck="Twilight Torque",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
@@ -179,6 +179,7 @@ function init_gear_sets()
     })
     
     sets.idle.Town = set_combine(sets.idle, {
+        head="Hattori Zukin +1",
         neck="Rancor Collar",
         ear1="Lugra Earring +1",
         ring1="Ifrit Ring +1",
