@@ -129,12 +129,14 @@ function init_gear_sets()
 
     sets.midcast.Geomancy = {
         range="Nepote Bell", 
-        head="Hike Khat"
+        head="Hike Khat",
+        feet="Umbani Boots"
     }
     sets.midcast.Geomancy.Indi = {
         range="Nepote Bell",
         head="Hike Khat", 
-        legs="Bagua Pants"
+        legs="Bagua Pants",
+        feet="Umbani Boots"
     }
 
     sets.midcast.Cure = {
@@ -168,9 +170,9 @@ function init_gear_sets()
         ring1="Icesoul Ring",
         ring2="Strendu Ring",
         back="Toro Cape",
-        waist=gear.ElementalObi,
+        waist="Yamabuki-no-obi", 
         legs="Hagondes Pants",
-        feet="Hagondes Sabots"
+        feet="Umbani Boots"
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
@@ -190,8 +192,8 @@ function init_gear_sets()
         hands="Yaoyotl Gloves",
         ring1="Icesoul Ring",
         ring2="Strendu Ring",
-        back="Toro Cape",
-        waist=gear.ElementalObi,
+        back="Aput Mantle",
+        waist="Yamabuki-no-obi", 
         legs="Hagondes Pants",
         feet="Umbani Boots"
     }
@@ -201,7 +203,10 @@ function init_gear_sets()
         ear2="Lifestorm Earring",
         feet="Bokwus Boots"
     })
-    sets.midcast.Aspir = set_combine(sets.midcast['Dark Magic'], { lring="Excelsis Ring" })
+    sets.midcast.Aspir = set_combine(sets.midcast['Dark Magic'], { 
+        neck="Dark Torque", 
+        lring="Excelsis Ring" 
+    })
     sets.midcast.Drain = sets.midcast.Aspir
     sets.midcast.Stun = sets.midcast.Macc
     
@@ -218,13 +223,17 @@ function init_gear_sets()
         lring="Balrahn's Ring", 
         rring="Sangoma Ring",
         back="Lifestream Cape", 
-        waist="Demonry Sash", 
+        waist="Yamabuki-no-obi", 
         legs="Bokwus Slops", 
         feet="Bokwus Boots"
     }
     
-    sets.midcast['Enfeebling Magic'] = sets.midcast.Macc
-    sets.midcast.ElementalEnfeeble = sets.midcast.Macc
+    sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
+        lring="Globidonta Ring"
+    })
+    sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.Macc, {
+        lring="Globidonta Ring"
+    })
 
 	sets.midcast['Enhancing Magic'] = { 
         sub="Fulcio Grip", 
