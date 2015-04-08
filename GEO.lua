@@ -162,13 +162,13 @@ function init_gear_sets()
         sub="Wizzan Grip",
         ammo="Witchstone",
         head="Hagondes Hat",
-        neck="Stoicheion Medal",
+        neck="Eddy Necklace",
         ear1="Hecate's Earring",
         ear2="Friomisi Earring",
         body="Hagondes Coat",
         hands="Yaoyotl Gloves",
-        ring1="Icesoul Ring",
-        ring2="Strendu Ring",
+        ring1="Shiva Ring",
+        ring2="Shiva Ring",
         back="Toro Cape",
         waist="Yamabuki-no-obi", 
         legs="Hagondes Pants",
@@ -178,6 +178,7 @@ function init_gear_sets()
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
+        back="Aput Mantle",
         feet="Bokwus Boots"
     })
     sets.midcast.LowTierNuke = {
@@ -185,13 +186,13 @@ function init_gear_sets()
         sub="Wizzan Grip",
         ammo="Witchstone",
         head="Hagondes Hat",
-        neck="Stoicheion Medal",
+        neck="Eddy Necklace",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
         body="Hagondes Coat",
         hands="Yaoyotl Gloves",
-        ring1="Icesoul Ring",
-        ring2="Strendu Ring",
+        ring1="Shiva Ring",
+        ring2="Shiva Ring",
         back="Aput Mantle",
         waist="Yamabuki-no-obi", 
         legs="Hagondes Pants",
@@ -274,7 +275,7 @@ function init_gear_sets()
         ring1="Sheltered Ring",
         ring2="Paguroidea Ring",
         back="Umbra Cape",
-        waist="Goading Belt",
+        waist="Cetl Belt",
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
@@ -292,7 +293,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
         back="Umbra Cape",
-        waist="Goading Belt",
+        waist="Cetl Belt",
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
@@ -311,7 +312,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
         back="Umbra Cape",
-        waist="Goading Belt",
+        waist="Cetl Belt",
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
@@ -329,7 +330,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
         back="Umbra Cape",
-        waist="Goading Belt",
+        waist="Cetl Belt",
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
@@ -353,7 +354,7 @@ function init_gear_sets()
         ring1="Sheltered Ring",
         ring2="Paguroidea Ring",
         back="Umbra Cape",
-        waist="Goading Belt",
+        waist="Cetl Belt",
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
@@ -371,7 +372,7 @@ function init_gear_sets()
         ring1="Sheltered Ring",
         ring2="Paguroidea Ring",
         back="Umbra Cape",
-        waist="Goading Belt",
+        waist="Cetl Belt",
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
@@ -389,7 +390,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Dark Ring",
         back="Umbra Cape",
-        waist="Goading Belt",
+        waist="Cetl Belt",
         legs="Hagondes Pants",
         feet="Hagondes Sabots"
     }
@@ -405,7 +406,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Shadow Ring",
         back="Umbra Cape",
-        waist="Goading Belt",
+        waist="Cetl Belt",
         legs="Bokwus Slops",
         feet="Hagondes Sabots"
     }
@@ -428,7 +429,7 @@ function init_gear_sets()
     sets.engaged = {
         range="Nepote Bell",
         head="Zelus Tiara",
-        neck="Peacock Charm",
+        neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Vanir Cotehardie",
@@ -436,7 +437,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Paguroidea Ring",
         back="Umbra Cape",
-        waist="Goading Belt",
+        waist="Cetl Belt",
         legs="Hagondes Pants",
         feet="Hagondes Sabots"
     }
