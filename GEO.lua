@@ -129,12 +129,12 @@ function init_gear_sets()
 
     sets.midcast.Geomancy = {
         range="Nepote Bell", 
-        head="Hike Khat",
+        head="Hike Khat", -- head="Azimuth Hood",
         feet="Umbani Boots"
     }
     sets.midcast.Geomancy.Indi = {
         range="Nepote Bell",
-        head="Hike Khat", 
+        head="Hike Khat", -- head="Azimuth Hood",
         legs="Bagua Pants",
         feet="Umbani Boots"
     }
@@ -165,13 +165,13 @@ function init_gear_sets()
         neck="Eddy Necklace",
         ear1="Hecate's Earring",
         ear2="Friomisi Earring",
-        body="Hagondes Coat",
+        body="Hagondes Coat", -- "Azimuth Coat"
         hands="Yaoyotl Gloves",
         ring1="Shiva Ring",
         ring2="Shiva Ring",
         back="Toro Cape",
         waist="Yamabuki-no-obi", 
-        legs="Hagondes Pants",
+        legs="Hagondes Pants", -- "Azimuth Tights"
         feet="Umbani Boots"
     }
     
@@ -189,13 +189,13 @@ function init_gear_sets()
         neck="Eddy Necklace",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
-        body="Hagondes Coat",
+        body="Hagondes Coat", -- "Azimuth Coat"
         hands="Yaoyotl Gloves",
         ring1="Shiva Ring",
         ring2="Shiva Ring",
         back="Aput Mantle",
         waist="Yamabuki-no-obi", 
-        legs="Hagondes Pants",
+        legs="Hagondes Pants", -- "Azimuth Tights"
         feet="Umbani Boots"
     }
     
@@ -206,7 +206,8 @@ function init_gear_sets()
     })
     sets.midcast.Aspir = set_combine(sets.midcast['Dark Magic'], { 
         neck="Dark Torque", 
-        lring="Excelsis Ring" 
+        lring="Excelsis Ring",
+        --legs="Azimuth Tights",
     })
     sets.midcast.Drain = sets.midcast.Aspir
     sets.midcast.Stun = sets.midcast.Macc
@@ -220,12 +221,12 @@ function init_gear_sets()
         lear="Lifestorm Earring", 
         rear="Psystorm Earring",
         body="Bokwus Robe", 
-        hands="Hagondes Cuffs", 
+        hands="Hagondes Cuffs",  -- "Azimuth Gloves"
         lring="Balrahn's Ring", 
         rring="Sangoma Ring",
         back="Lifestream Cape", 
         waist="Yamabuki-no-obi", 
-        legs="Bokwus Slops", 
+        legs="Bokwus Slops",  -- "Azimuth Tights"
         feet="Bokwus Boots"
     }
     
@@ -288,7 +289,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
-        body="Hagondes Coat",
+        body="Hagondes Coat", -- "Azimuth Coat"
         hands="Yaoyotl Gloves",
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
@@ -303,7 +304,7 @@ function init_gear_sets()
         main="Bolelabunga",
         sub="Genbu's Shield",
         range="Nepote Bell",
-        head="Nahtirah Hat",
+        head="Nahtirah Hat", -- "Azimuth Hood",
         neck="Twilight Torque",
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
@@ -336,10 +337,10 @@ function init_gear_sets()
     }
 
     -- .Indi sets are for when an Indi-spell is active.
-    sets.idle.Indi = set_combine(sets.idle, {legs="Bagua Pants"})
-    sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {legs="Bagua Pants"})
-    sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {legs="Bagua Pants"})
-    sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {legs="Bagua Pants"})
+    sets.idle.Indi = set_combine(sets.idle, {legs="Bagua Pants", feet="Azimuth Gaiters"})
+    sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {legs="Bagua Pants", feet="Azimuth Gaiters"})
+    sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {legs="Bagua Pants", feet="Azimuth Gaiters"})
+    sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {legs="Bagua Pants", feet="Azimuth Gaiters"})
 
     sets.idle.Town = {
         main="Bolelabunga",
