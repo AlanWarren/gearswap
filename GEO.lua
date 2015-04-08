@@ -127,8 +127,15 @@ function init_gear_sets()
         feet="Hagondes Sabots"
     }
 
-    sets.midcast.Geomancy = {range="Nepote Bell"}
-    sets.midcast.Geomancy.Indi = {range="Nepote Bell",legs="Bagua Pants"}
+    sets.midcast.Geomancy = {
+        range="Nepote Bell", 
+        head="Hike Khat"
+    }
+    sets.midcast.Geomancy.Indi = {
+        range="Nepote Bell",
+        head="Hike Khat", 
+        legs="Bagua Pants"
+    }
 
     sets.midcast.Cure = {
         main="Tamaxchi",
