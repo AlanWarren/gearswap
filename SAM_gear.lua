@@ -49,7 +49,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Acro Surcoat",
         hands="Mikinaak Gauntlets",
-        ring1="Ifrit Ring",
+        ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
         back="Buquwik Cape",
         waist="Windbuffet Belt +1",
@@ -75,7 +75,7 @@ function init_gear_sets()
         body="Acro Surcoat",
         hands="Acro Gauntlets",
         back="Buquwik Cape",
-        ring1="Ifrit Ring",
+        ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
         waist="Metalsinger Belt",
         legs="Wakido Haidate +1",
@@ -85,19 +85,16 @@ function init_gear_sets()
         body="Kyujutsugi",
     })
     sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'].Mid, {
-        ring1="Longshot Ring",
         ring2="Hajduk Ring"
     })
     
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
         neck="Breeze Gorget",
         body="Kyujutsugi",
-        ring1="Stormsoul Ring",
         ring2="Garuda Ring"
     })
     sets.precast.WS['Apex Arrow'].Mid = sets.precast.WS['Apex Arrow']
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
-        ring1="Hajduk Ring",
         ring2="Longshot Ring"
     })
     
@@ -128,7 +125,6 @@ function init_gear_sets()
     })
     sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {
         body="Sakonji Domaru +1",
-        ring1="Mars's Ring",
         feet="Wakido Sune-Ate +1"
     })
     
@@ -157,7 +153,6 @@ function init_gear_sets()
         neck="Justice Torque",
         body="Unkai Domaru +2",
         hands="Wakido Kote +1",
-        ring1="Sangoma Ring",
         ring2="Ifrit Ring +1",
         back="Buquwik Cape",
         waist="Soil Belt",
@@ -199,8 +194,8 @@ function init_gear_sets()
         ear2="Steelflash Earring",
    	    body="Mes'yohi Haubergeon",
         hands="Wakido Kote +1",
-        ring1="Ifrit Ring +1",
-        ring2="Patricius Ring",
+        ring1="Karieyh Ring",
+        ring2="Ifrit Ring +1",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Wakido Haidate +1",
@@ -209,7 +204,6 @@ function init_gear_sets()
     
     sets.idle.Field = set_combine(sets.idle.Town, {
         neck="Twilight Torque",
-        ring1="Patricius Ring",
         ring2="Paguroidea Ring",
         head="Yaoyotl Helm",
    	    body="Acro Surcoat",
@@ -220,7 +214,6 @@ function init_gear_sets()
 
     sets.idle.Regen = set_combine(sets.idle.Town, {
         neck="Twilight Torque",
-        ring1="Patricius Ring",
         ring2="Paguroidea Ring",
         head="Twilight Helm",
         body="Kumarbi's Akar",
@@ -294,7 +287,7 @@ function init_gear_sets()
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
-        feet="Acro Leggings"
+        feet="Ejekamal Boots"
     })
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
