@@ -314,7 +314,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         neck="Rancor Collar",
-        body="Thaumas Coat",
+        body="Mes'yohi Haubergeon",
         hands="Otronif Gloves +1",
         ring1="Rajas Ring",
         back="Bleating Mantle",
@@ -433,7 +433,7 @@ function init_gear_sets()
 
     sets.engaged.Innin.Haste_35 = set_combine(sets.engaged.Haste_35, {
         head="Hattori Zukin +1",
-        body="Thaumas Coat"
+        body="Mes'yohi Haubergeon",
     })
     sets.engaged.Innin.Low.Haste_35 = set_combine(sets.engaged.Low.Haste_35, {
         head="Hattori Zukin +1",
@@ -459,7 +459,7 @@ function init_gear_sets()
         neck="Rancor Collar",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        body="Thaumas Coat",
+        body="Mes'yohi Haubergeon",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
