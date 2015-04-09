@@ -201,6 +201,9 @@ function init_gear_sets()
         legs="Wakido Haidate +1",
         feet="Danzo Sune-ate"
     }
+    sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
+        body="Councilor's Garb"
+    })
     
     sets.idle.Field = set_combine(sets.idle.Town, {
         neck="Twilight Torque",
