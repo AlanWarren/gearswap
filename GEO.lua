@@ -359,6 +359,9 @@ function init_gear_sets()
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
+    sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
+        body="Councilor's Garb"
+    })
 
     sets.idle.Weak = {
         main="Bolelabunga",
