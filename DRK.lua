@@ -785,6 +785,8 @@ function job_status_change(newStatus, oldStatus, eventArgs)
             equip(sets.buff['Last Resort'])
         end
         get_combat_weapon()
+    elseif newStatus == 'Idle' then
+        determine_idle_group()
     end
 end
  
@@ -1004,6 +1006,18 @@ function select_earring()
         else
              return sets.BrutalTrux
         end
+    end
+end
+
+-- Handle zone specific rules
+windower.register_event('Zone change', function(new,old)
+    determine_idle_group()
+end)
+
+function determine_idle_group()
+    classes.CustomIdleGroups:clear()
+    if areas.Adoulin:contains(world.area) then
+    	classes.CustomIdleGroups:append('Adoulin')
     end
 end
 

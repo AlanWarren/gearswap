@@ -236,11 +236,9 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         elseif player.equipment.ammo == 'empty' then
             add_to_chat(122, 'No more Arrows!')
         end
+    elseif newStatus == 'Idle' then
+        determine_idle_group()
     end
-    -- prevents equipping gear
-    --if seigan_thirdeye_active() then
-        --eventArgs.handled = true
-    --end
 end
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
@@ -305,6 +303,17 @@ end
 --        state.CombatWeapon:set(player.equipment.main)
 --    end
 --end
+-- Handle zone specific rules
+windower.register_event('Zone change', function(new,old)
+    determine_idle_group()
+end)
+
+function determine_idle_group()
+    classes.CustomIdleGroups:clear()
+    if areas.Adoulin:contains(world.area) then
+    	classes.CustomIdleGroups:append('Adoulin')
+    end
+end
 
 function get_combat_form()
     if areas.Adoulin:contains(world.area) and buffactive.ionis then

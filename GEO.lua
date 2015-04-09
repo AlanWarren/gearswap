@@ -479,6 +479,13 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
+function job_status_change(newStatus, oldStatus, eventArgs)
+    if newStatus == 'Engaged' then
+        -- nothing yet
+    elseif newStatus == 'Idle' then
+        determine_idle_group()
+    end
+end
 
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
@@ -542,6 +549,18 @@ function job_update(cmdParams, eventArgs)
     classes.CustomIdleGroups:clear()
     if player.indi then
         classes.CustomIdleGroups:append('Indi')
+    end
+end
+
+-- Handle zone specific rules
+windower.register_event('Zone change', function(new,old)
+    determine_idle_group()
+end)
+
+function determine_idle_group()
+    classes.CustomIdleGroups:clear()
+    if areas.Adoulin:contains(world.area) then
+    	classes.CustomIdleGroups:append('Adoulin')
     end
 end
 

@@ -279,6 +279,8 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         else
             state.CombatForm:reset()
         end
+    elseif newStatus == 'Idle' then
+        determine_idle_group()
     end
 end
 
@@ -430,6 +432,18 @@ function job_state_change(stateField, newValue, oldValue)
         add_to_chat(123, msg)
     elseif stateField == 'Use Rune' then
         send_command('@input /ja '..state.Runes.value..' <me>')
+    end
+end
+
+-- Handle zone specific rules
+windower.register_event('Zone change', function(new,old)
+    determine_idle_group()
+end)
+
+function determine_idle_group()
+    classes.CustomIdleGroups:clear()
+    if areas.Adoulin:contains(world.area) then
+    	classes.CustomIdleGroups:append('Adoulin')
     end
 end
 
