@@ -256,7 +256,7 @@ function init_gear_sets()
          ear2="Moonshade Earring",
          body="Acro Surcoat",
          hands="Mikinaak Gauntlets",
-         ring1="Rajas Ring",
+         ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
          back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
@@ -487,6 +487,9 @@ function init_gear_sets()
          legs="Crimson Cuisses",
          feet="Fallen's sollerets +1"
      }
+    sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
+        body="Councilor's Garb"
+    })
      
     sets.cool = set_combine(sets.idle.Town, {
          head="Otomi Helm",

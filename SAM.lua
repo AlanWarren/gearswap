@@ -309,6 +309,8 @@ end
 function get_combat_form()
     if areas.Adoulin:contains(world.area) and buffactive.ionis then
     	state.CombatForm:set('Adoulin')
+    else
+        state.CombatForm:reset()
     end
 end
 

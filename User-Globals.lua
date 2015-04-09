@@ -34,3 +34,20 @@ function is_sc_element_today(spell)
 
 end
 
+function user_status_change(newStatus, oldStatus, eventArgs)
+    if newStatus == 'Idle' then
+        determine_idle_group()
+    end
+end
+
+windower.register_event('Zone change', function(new,old)
+    determine_idle_group()
+end)
+
+function determine_idle_group()
+    classes.CustomIdleGroups:clear()
+    if areas.Adoulin:contains(world.area) then
+    	classes.CustomIdleGroups:append('Adoulin')
+    end
+end
+

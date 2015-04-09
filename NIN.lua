@@ -258,12 +258,10 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
     end
     
-    if buff == 'Innin' then
-        if gain then
-            state.CombatForm:set('Innin')
-        else
-            state.CombatForm:reset()
-        end
+    if buff == 'Innin' and gain  or buffactive['Innin'] then
+        state.CombatForm:set('Innin')
+    else
+        state.CombatForm:reset()
     end
 
     -- If we gain or lose any haste buffs, adjust which gear set we target.

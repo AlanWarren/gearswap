@@ -180,7 +180,7 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         head="Hattori Zukin +1",
-        neck="Rancor Collar",
+        neck="Hope Torque",
         ear1="Lugra Earring +1",
         ring1="Ifrit Ring +1",
         ring2="Epona's Ring",
@@ -188,6 +188,9 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1"
+    })
+    sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
+        body="Councilor's Garb"
     })
     
     sets.idle.Weak = sets.idle
@@ -221,7 +224,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo=gear.RegularAmmo,
         head="Hattori Zukin +1",
-        neck="Rancor Collar",
+        neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Hachiya Chainmail +1",
@@ -456,7 +459,7 @@ function init_gear_sets()
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
-        neck="Rancor Collar",
+        neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Mes'yohi Haubergeon",
@@ -609,7 +612,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Mes'yohi Haubergeon",
         hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
-        ring1="Rajas Ring",
+        ring1="Karieyh Ring",
         ring2="Epona's Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
@@ -625,14 +628,14 @@ function init_gear_sets()
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         legs="Taeon Tights",
-        ring1="Mars's Ring"
     })
 
     sets.Kamu = {
         ammo="Ginsen",
         neck="Breeze Gorget",
         body="Dread Jupon",
-        ring1="Ifrit Ring +1",
+        ring1="Karieyh Ring",
+        ring2="Ifrit Ring +1",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
     }
@@ -661,7 +664,7 @@ function init_gear_sets()
         body="Mes'yohi Haubergeon"
     })
     sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid, {
-        ring1="Rajas Ring",
+        ring1="Karieyh Ring",
         legs="Taeon Tights",
     })
     
@@ -672,7 +675,7 @@ function init_gear_sets()
         neck="Shadow Gorget",
         body="Dread Jupon",
         hands="Sasuke Tekko +1",
-        ring1="Garuda Ring",
+        ring1="Karieyh Ring",
         back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
         feet="Taeon Boots"
