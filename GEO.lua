@@ -165,8 +165,8 @@ function init_gear_sets()
         neck="Eddy Necklace",
         ear1="Hecate's Earring",
         ear2="Friomisi Earring",
-        body="Errant Houppelande", -- "Azimuth Coat"
-        hands="Yaoyotl Gloves",
+        body="Augur's Jaseran", -- "Azimuth Coat"
+        hands="Eradico Mitts",
         ring1="Snow Ring",
         ring2="Shiva Ring",
         back="Toro Cape",
@@ -189,8 +189,8 @@ function init_gear_sets()
         neck="Eddy Necklace",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
-        body="Errant Houppelande", -- "Azimuth Coat"
-        hands="Yaoyotl Gloves",
+        body="Augur's Jaseran", -- "Azimuth Coat"
+        hands="Eradico Mitts",
         ring1="Snow Ring",
         ring2="Shiva Ring",
         back="Aput Mantle",
@@ -272,7 +272,7 @@ function init_gear_sets()
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
         body="Vermillion Cloak",
-        hands="Serpentes Cuffs",
+        hands="Eradico Mitts",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
         back="Umbra Cape",
