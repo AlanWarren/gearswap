@@ -122,7 +122,7 @@ function init_gear_sets()
         hands="Bokwus Gloves",
         ring1="Prolix Ring",
         back="Swith Cape +1",
-        waist="Goading Belt",
+        waist="Swift Belt",
         legs="Hagondes Pants",
         feet="Hagondes Sabots"
     }
@@ -161,7 +161,7 @@ function init_gear_sets()
         main="Lehbrailg +2",
         sub="Wizzan Grip",
         ammo="Witchstone",
-        head="Errant Hat",
+        head="Nefer Khat",
         neck="Eddy Necklace",
         ear1="Hecate's Earring",
         ear2="Friomisi Earring",
@@ -359,7 +359,7 @@ function init_gear_sets()
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
-    sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
+    sets.idle.Adoulin = set_combine(sets.idle.Town, {
         body="Councilor's Garb"
     })
 
