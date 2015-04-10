@@ -350,7 +350,7 @@ function init_gear_sets()
         neck="Wiglen Gorget",
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
-        body="Heka's Kalasiris",
+        body="Councilor's Garb",
         hands="Serpentes Cuffs",
         ring1="Sheltered Ring",
         ring2="Paguroidea Ring",
@@ -359,9 +359,6 @@ function init_gear_sets()
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
-    sets.idle.Adoulin = set_combine(sets.idle.Town, {
-        body="Councilor's Garb"
-    })
 
     sets.idle.Weak = {
         main="Bolelabunga",
@@ -482,8 +479,8 @@ end
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == 'Engaged' then
         -- nothing yet
-    elseif newStatus == 'Idle' then
-        determine_idle_group()
+   -- elseif newStatus == 'Idle' then
+   --     determine_idle_group()
     end
 end
 
