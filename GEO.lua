@@ -162,7 +162,7 @@ function init_gear_sets()
         sub="Wizzan Grip",
         ammo="Witchstone",
         head="Nefer Khat",
-        neck="Eddy Necklace",
+        neck="Elemental Torque",
         ear1="Hecate's Earring",
         ear2="Friomisi Earring",
         body="Augur's Jaseran", -- "Azimuth Coat"
@@ -185,8 +185,8 @@ function init_gear_sets()
         main="Lehbrailg +2",
         sub="Wizzan Grip",
         ammo="Witchstone",
-        head="Errant Hat",
-        neck="Eddy Necklace",
+        head="Nefer Khat",
+        neck="Elemental Torque",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
         body="Augur's Jaseran", -- "Azimuth Coat"
