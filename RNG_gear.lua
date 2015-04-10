@@ -431,7 +431,7 @@ function init_gear_sets()
             ear2="Flame Pearl",
             body="Kyujutsugi",
             hands="Arcadian Bracers +1",
-            ring1="Rajas Ring",
+            ring1="Karieyh Ring",
             ring2="Ifrit Ring +1",
             back="Buquwik Cape",
             waist="Elanid Belt",
@@ -453,6 +453,7 @@ function init_gear_sets()
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
             neck="Stoicheion Medal",
+            hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
             ring1="Acumen Ring",
             ring2="Garuda Ring",
             waist="Yamabuki-no-Obi",
@@ -469,7 +470,6 @@ function init_gear_sets()
            neck="Breeze Gorget",
            waist="Thunder Belt",
            back="Sylvan Chlamys",
-           ring1="Rajas Ring",
            ring2="Ifrit Ring +1"
         }
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
@@ -488,8 +488,7 @@ function init_gear_sets()
         sets.LastStand = {
            neck="Aqua Gorget",
            ear2="Moonshade Earring",
-           ring1="Garuda Ring",
-           ring2="Stormsoul Ring",
+           ring2="Garuda Ring",
            waist="Light Belt",
            feet="Orion Socks +1"
         }
@@ -502,8 +501,7 @@ function init_gear_sets()
             ear1="Tripudio Earring",
             ear2="Moonshade Earring",
             hands="Amini Glovelettes",
-            ring1="Garuda Ring",
-            ring2="Stormsoul Ring",
+            ring2="Garuda Ring",
             waist="Light Belt",
             legs="Amini Brague +1", 
         })
@@ -561,6 +559,7 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             waist="Light Belt",
             legs="Amini Brague +1", 
+            ring1="Rajas Ring",
             ring2="Ramuh Ring",
             back="Rancorous Mantle"
         }
