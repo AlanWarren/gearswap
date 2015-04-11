@@ -128,12 +128,12 @@ function init_gear_sets()
     }
 
     sets.midcast.Geomancy = {
-        range="Nepote Bell", 
+        range="Dunna", 
         head="Hike Khat", -- head="Azimuth Hood",
         feet="Umbani Boots"
     }
     sets.midcast.Geomancy.Indi = {
-        range="Nepote Bell",
+        range="Dunna",
         head="Hike Khat", -- head="Azimuth Hood",
         legs="Bagua Pants",
         feet="Umbani Boots"
@@ -269,7 +269,7 @@ function init_gear_sets()
     sets.idle = {
         main="Bolelabunga",
         sub="Genbu's Shield",
-        range="Nepote Bell",
+        range="Dunna",
         head="Hike Khat",
         neck="Twilight Torque",
         ear1="Friomisi Earring",
@@ -287,7 +287,7 @@ function init_gear_sets()
     sets.idle.PDT = {
         main="Bolelabunga",
         sub="Genbu's Shield",
-        range="Nepote Bell",
+        range="Dunna",
         --head="Nahtirah Hat",
         neck="Twilight Torque",
         ear1="Bloodgem Earring",
@@ -306,7 +306,7 @@ function init_gear_sets()
     sets.idle.Pet = {
         main="Bolelabunga",
         sub="Genbu's Shield",
-        range="Nepote Bell",
+        range="Dunna",
         head="Nahtirah Hat", -- "Azimuth Hood",
         neck="Twilight Torque",
         ear1="Bloodgem Earring",
@@ -324,7 +324,7 @@ function init_gear_sets()
     sets.idle.PDT.Pet = {
         main="Bolelabunga",
         sub="Genbu's Shield",
-        range="Nepote Bell",
+        range="Dunna",
         head="Nahtirah Hat",
         neck="Twilight Torque",
         ear1="Bloodgem Earring",
@@ -348,7 +348,7 @@ function init_gear_sets()
     sets.idle.Town = {
         main="Bolelabunga",
         sub="Genbu's Shield",
-        range="Nepote Bell",
+        range="Dunna",
         head="Nefer Khat +1",
         neck="Wiglen Gorget",
         ear1="Bloodgem Earring",
@@ -366,7 +366,7 @@ function init_gear_sets()
     sets.idle.Weak = {
         main="Bolelabunga",
         sub="Genbu's Shield",
-        range="Nepote Bell",
+        range="Dunna",
         head="Nefer Khat +1",
         neck="Wiglen Gorget",
         ear1="Bloodgem Earring",
@@ -384,7 +384,7 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {
-        range="Nepote Bell",
+        range="Dunna",
         head="Hagondes Hat",
         neck="Wiglen Gorget",
         ear1="Bloodgem Earring",
@@ -400,7 +400,7 @@ function init_gear_sets()
     }
 
     sets.defense.MDT = {
-        range="Nepote Bell",
+        range="Dunna",
         head="Nahtirah Hat",
         neck="Wiglen Gorget",
         ear1="Bloodgem Earring",
@@ -431,17 +431,17 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
-        range="Nepote Bell",
-        head="Zelus Tiara",
+        range="Dunna",
+        head="Hike khat",
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Vanir Cotehardie",
+        --body="Vanir Cotehardie",
         hands="Bokwus Gloves",
         ring1="Rajas Ring",
-        ring2="Mars's Ring",
-        back="Umbra Cape",
-        waist="Cetl Belt",
+        ring2="Patricius Ring",
+        back="Kayapa Cape",
+        waist="Windbuffet Belt +1",
         legs="Hagondes Pants",
         feet="Hagondes Sabots"
     }
