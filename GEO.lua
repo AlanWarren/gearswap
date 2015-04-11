@@ -54,18 +54,18 @@ function init_gear_sets()
         ammo="Impatiens",
         head="Nahtirah Hat",
         ear2="Loquacious Earring",
-        body="Vanir Cotehardie",
+        --body="Vanir Cotehardie",
         ring1="Prolix Ring",
-        back="Swith Cape +1",
-        waist="Witful Belt",
-        legs="Orvail Pants +1",
-        feet="Chelona Boots +1"
+        --back="Swith Cape +1",
+        --waist="Witful Belt",
+        legs="Artsieq Hose",
+        feet="Chelona Boots"
     }
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-        main="Tamaxchi",
-        sub="Genbu's Shield",
-        back="Pahtli Cape"
+        --main="Tamaxchi",
+        --sub="Genbu's Shield",
+        --back="Pahtli Cape"
     })
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {neck="Stoicheion Medal"})
@@ -161,17 +161,17 @@ function init_gear_sets()
         main="Lehbrailg +2",
         sub="Wizzan Grip",
         ammo="Witchstone",
-        head="Nefer Khat",
-        neck="Elemental Torque",
+        head="Hike Khat",
+        neck="Eddy Necklace",
         ear1="Hecate's Earring",
         ear2="Friomisi Earring",
-        body="Augur's Jaseran", -- "Azimuth Coat"
+        body="Artsieq Jubbah", -- "Azimuth Coat"
         hands="Eradico Mitts",
-        ring1="Snow Ring",
-        ring2="Irrwisch Ring",
+        ring1="Shiva Ring",
+        ring2="Shiva Ring",
         back="Toro Cape",
         waist="Yamabuki-no-obi", 
-        legs="Hagondes Pants", -- "Azimuth Tights"
+        legs="Artsieq Hose", -- "Azimuth Tights"
         feet="Umbani Boots"
     }
     
@@ -185,17 +185,17 @@ function init_gear_sets()
         main="Lehbrailg +2",
         sub="Wizzan Grip",
         ammo="Witchstone",
-        head="Nefer Khat",
-        neck="Elemental Torque",
+        head="Hike Khat",
+        neck="Eddy Necklace",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
-        body="Augur's Jaseran", -- "Azimuth Coat"
+        body="Artsieq Jubbah", -- "Azimuth Coat"
         hands="Eradico Mitts",
-        ring1="Snow Ring",
-        ring2="Irrwisch Ring",
+        ring1="Shiva Ring",
+        ring2="Acumen Ring",
         back="Aput Mantle",
         waist="Yamabuki-no-obi", 
-        legs="Hagondes Pants", -- "Azimuth Tights"
+        legs="Artsieq Hose", -- "Azimuth Tights"
         feet="Umbani Boots"
     }
     
@@ -252,7 +252,7 @@ function init_gear_sets()
 
     -- Resting sets
     sets.resting = {
-        head="Nefer Khat +1",
+        head="Hike Khat",
         neck="Wiglen Gorget",
         body="Heka's Kalasiris",
         hands="Serpentes Cuffs",
@@ -260,7 +260,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         waist="Austerity Belt",
         legs="Nares Trews",
-        feet="Chelona Boots +1"
+        feet="Chelona Boots"
     }
 
 
@@ -270,18 +270,18 @@ function init_gear_sets()
         main="Bolelabunga",
         sub="Genbu's Shield",
         range="Nepote Bell",
-        --head="Nefer Khat +1",
-        neck="Wiglen Gorget",
-        ear1="Bloodgem Earring",
-        ear2="Loquacious Earring",
-        body="Vermillion Cloak",
+        head="Hike Khat",
+        neck="Twilight Torque",
+        ear1="Friomisi Earring",
+        ear2="Crematio Earring",
+        --body="Vermillion Cloak",
         hands="Eradico Mitts",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
-        back="Umbra Cape",
-        waist="Cetl Belt",
-        legs="Nares Trews",
-        feet="Herald's Gaiters"
+        back="Repulse Mantle",
+        waist="Swift Belt",
+        legs="Artsieq Hose",
+        feet="Umbani Boots"
     }
 
     sets.idle.PDT = {
