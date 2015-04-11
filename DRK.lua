@@ -833,9 +833,9 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
     end
     -- Automatically wake me when I'm slept
-    if string.lower(buff) == "sleep" and gain and player.hp > 200 then
-        equip(sets.Berserker)
-    end
+    --if string.lower(buff) == "sleep" and gain and player.hp > 200 then
+    --    equip(sets.Berserker)
+    --end
 
     -- Warp ring rule, for any buff being lost
     if S{'Warp', 'Vocation'}:contains(player.equipment.ring2) then
