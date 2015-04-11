@@ -47,8 +47,8 @@ function init_gear_sets()
             ear2="Tripudio Earring",
             body="Mekosuchinae Harness",
             hands="Iuitl Wristbands +1",
-            ring1="Dark Ring",
-            ring2="Paguroidea Ring",
+            ring1="Karieyh Ring",
+            ring2="Dark Ring",
             back="Repulse Mantle",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
@@ -67,7 +67,7 @@ function init_gear_sets()
         sets.idle.Town = set_combine(sets.idle, {
             body="Kyujutsugi",
             ear1="Fenrir's Earring",
-            ring1="Rajas Ring",
+            ring1="Karieyh Ring",
             ring2="Ifrit Ring +1",
             back="Lutian Cape"
         })
