@@ -274,7 +274,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-        --body="Vermillion Cloak",
+        body="Artsieq Jubbah",
         hands="Eradico Mitts",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
