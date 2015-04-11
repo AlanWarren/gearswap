@@ -168,7 +168,7 @@ function init_gear_sets()
         body="Augur's Jaseran", -- "Azimuth Coat"
         hands="Eradico Mitts",
         ring1="Snow Ring",
-        ring2="Lrrwisch Ring",
+        ring2="Irrwisch Ring",
         back="Toro Cape",
         waist="Yamabuki-no-obi", 
         legs="Hagondes Pants", -- "Azimuth Tights"
@@ -192,7 +192,7 @@ function init_gear_sets()
         body="Augur's Jaseran", -- "Azimuth Coat"
         hands="Eradico Mitts",
         ring1="Snow Ring",
-        ring2="Lrrwisch Ring",
+        ring2="Irrwisch Ring",
         back="Aput Mantle",
         waist="Yamabuki-no-obi", 
         legs="Hagondes Pants", -- "Azimuth Tights"
