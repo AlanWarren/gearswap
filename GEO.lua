@@ -207,6 +207,7 @@ function init_gear_sets()
     sets.midcast.Aspir = set_combine(sets.midcast['Dark Magic'], { 
         neck="Dark Torque", 
         lring="Excelsis Ring",
+        waist="Casso Sash",
         --legs="Azimuth Tights",
     })
     sets.midcast.Drain = sets.midcast.Aspir
