@@ -168,7 +168,7 @@ function init_gear_sets()
         body="Augur's Jaseran", -- "Azimuth Coat"
         hands="Eradico Mitts",
         ring1="Snow Ring",
-        ring2="Shiva Ring",
+        ring2="Lrrwisch Ring",
         back="Toro Cape",
         waist="Yamabuki-no-obi", 
         legs="Hagondes Pants", -- "Azimuth Tights"
@@ -192,7 +192,7 @@ function init_gear_sets()
         body="Augur's Jaseran", -- "Azimuth Coat"
         hands="Eradico Mitts",
         ring1="Snow Ring",
-        ring2="Shiva Ring",
+        ring2="Lrrwisch Ring",
         back="Aput Mantle",
         waist="Yamabuki-no-obi", 
         legs="Hagondes Pants", -- "Azimuth Tights"
@@ -232,9 +232,11 @@ function init_gear_sets()
     }
     
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
+        waist="Casso Sash",
         lring="Globidonta Ring"
     })
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.Macc, {
+        waist="Casso Sash",
         lring="Globidonta Ring"
     })
 
