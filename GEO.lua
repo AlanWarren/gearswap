@@ -58,7 +58,7 @@ function init_gear_sets()
         ring1="Prolix Ring",
         back="Lifestream Cape",
         --waist="Witful Belt",
-        legs="Geomancy Pants",
+        legs="Geomancy Pants +1",
         feet="Chelona Boots"
     }
 
@@ -123,7 +123,7 @@ function init_gear_sets()
         ring1="Prolix Ring",
         back="Lifestream Cape",
         waist="Swift Belt",
-        legs="Geomancy Pants",
+        legs="Geomancy Pants +1",
         feet="Geomancy Sandals"
     }
 
@@ -286,7 +286,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
         waist="Swift Belt",
-        legs="Geomancy Pants",
+        legs="Geomancy Pants +1",
         feet="Geomancy Sandals"
     }
 
