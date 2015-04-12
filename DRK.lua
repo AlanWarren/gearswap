@@ -153,17 +153,17 @@ function init_gear_sets()
  
      sets.midcast['Dark Magic'] = {
          ammo="Impatiens",
-         head="Ignominy burgeonet +1",
-         neck="Dark Torque",
+         head="Ignominy burgeonet +1", -- 17
+         neck="Dark Torque", --7
          ear1="Lifestorm Earring",
          ear2="Psystorm Earring",
-         body="Demon's Harness",
-         hands="Fallen's Finger Gauntlets +1",
-         waist="Casso Sash",
+         body="Demon's Harness", --5
+         hands="Fallen's Finger Gauntlets +1", -- 14
+         waist="Casso Sash", -- 5
          ring1="Perception Ring",
          ring2="Sangoma Ring",
-         back={name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}},
-         legs="Heathen's Flanchard",
+         back={name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}, -- 10
+         legs="Heathen's Flanchard", --18
          feet="Ignominy sollerets"
      }
      
