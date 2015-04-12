@@ -351,17 +351,17 @@ function init_gear_sets()
         sub="Genbu's Shield",
         range="Dunna",
         head="Nefer Khat +1",
-        neck="Wiglen Gorget",
-        ear1="Bloodgem Earring",
-        ear2="Loquacious Earring",
+        neck="Eddy Necklace",
+        ear1="Crematio Earring",
+        ear2="Friomisi Earring",
         body="Councilor's Garb",
         hands="Geomancy Mitaines",
-        ring1="Sheltered Ring",
+        ring1="Dark Ring",
         ring2="Paguroidea Ring",
-        back="Umbra Cape",
-        waist="Cetl Belt",
-        legs="Nares Trews",
-        feet="Herald's Gaiters"
+        back="Repulse Mantle",
+        waist="Swift Belt",
+        legs="Artsieq Hose",
+        feet="Umbani boots"
     }
 
     sets.idle.Weak = {
