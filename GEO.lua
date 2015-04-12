@@ -286,7 +286,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
         waist="Swift Belt",
-        legs="Artsieq Hose",
+        legs="Geomancy Pants",
         feet="Geomancy Sandals"
     }
 
