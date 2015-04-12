@@ -58,7 +58,7 @@ function init_gear_sets()
         ring1="Prolix Ring",
         back="Lifestream Cape",
         --waist="Witful Belt",
-        legs="Artsieq Hose",
+        legs="Geomancy Pants",
         feet="Chelona Boots"
     }
 
@@ -123,8 +123,8 @@ function init_gear_sets()
         ring1="Prolix Ring",
         back="Lifestream Cape",
         waist="Swift Belt",
-        legs="Hagondes Pants",
-        feet="Hagondes Sabots"
+        legs="Geomancy Pants",
+        feet="Geomancy Sandals"
     }
 
     sets.midcast.Geomancy = {
@@ -302,7 +302,7 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
-        back="Umbra Cape",
+        back="Lifestream Cape",
         waist="Swift Belt",
         legs="Nares Trews",
         feet="Geomancy Sandals"
@@ -348,22 +348,26 @@ function init_gear_sets()
     -- .Indi sets are for when an Indi-spell is active.
     sets.idle.Indi = set_combine(sets.idle, {
         legs="Bagua Pants", 
-        feet="Geomancy Sandals"
+        feet="Geomancy Sandals",
+        back="Lifestream Cape"
         --feet="Azimuth Gaiters"
     })
     sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {
         legs="Bagua Pants", 
         --feet="Azimuth Gaiters"
+        back="Lifestream Cape",
         feet="Geomancy Sandals"
     })
     sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {
         legs="Bagua Pants", 
         --feet="Azimuth Gaiters"
+        back="Lifestream Cape",
         feet="Geomancy Sandals"
     })
     sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {
         legs="Bagua Pants", 
         --feet="Azimuth Gaiters"
+        back="Lifestream Cape",
         feet="Geomancy Sandals"
     })
 
@@ -379,7 +383,7 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
-        back="Repulse Mantle",
+        back="Lifestream Cape",
         waist="Swift Belt",
         legs="Artsieq Hose",
         feet="Geomancy Sandals"
