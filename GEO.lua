@@ -302,7 +302,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
         back="Umbra Cape",
-        waist="Cetl Belt",
+        waist="Swift Belt",
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
@@ -320,8 +320,8 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
-        back="Umbra Cape",
-        waist="Cetl Belt",
+        back="Lifestream Cape",
+        waist="Swift Belt",
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
@@ -338,8 +338,8 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1",
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
-        back="Umbra Cape",
-        waist="Cetl Belt",
+        back="Lifestream Cape",
+        waist="Swift Belt",
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
@@ -381,7 +381,7 @@ function init_gear_sets()
         ring1="Sheltered Ring",
         ring2="Paguroidea Ring",
         back="Umbra Cape",
-        waist="Cetl Belt",
+        waist="Swift Belt",
         legs="Nares Trews",
         feet="Herald's Gaiters"
     }
@@ -399,7 +399,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Dark Ring",
         back="Umbra Cape",
-        waist="Cetl Belt",
+        waist="Swift Belt",
         legs="Hagondes Pants",
         feet="Hagondes Sabots"
     }
@@ -415,7 +415,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Shadow Ring",
         back="Umbra Cape",
-        waist="Cetl Belt",
+        waist="Swift Belt",
         legs="Bokwus Slops",
         feet="Hagondes Sabots"
     }
