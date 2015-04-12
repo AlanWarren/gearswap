@@ -51,7 +51,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        ammo="Impatiens",
+        --ammo="Impatiens",
         head="Nahtirah Hat",
         ear2="Loquacious Earring",
         --body="Vanir Cotehardie",
@@ -90,7 +90,7 @@ function init_gear_sets()
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Flash Nova'] = {
-        ammo="Dosis Tathlum",
+        --ammo="Dosis Tathlum",
         head="Hagondes Hat",
         neck="Eddy Necklace",
         ear1="Friomisi Earring",
@@ -163,7 +163,7 @@ function init_gear_sets()
     sets.midcast.HighTierNuke = {
         main="Lehbrailg +2",
         sub="Wizzan Grip",
-        ammo="Witchstone",
+        --ammo="Witchstone",
         head="Hike Khat",
         neck="Eddy Necklace",
         ear1="Hecate's Earring",
@@ -187,7 +187,7 @@ function init_gear_sets()
     sets.midcast.LowTierNuke = {
         main="Lehbrailg +2",
         sub="Wizzan Grip",
-        ammo="Witchstone",
+        --ammo="Witchstone",
         head="Hike Khat",
         neck="Eddy Necklace",
         ear1="Crematio Earring",
@@ -220,7 +220,7 @@ function init_gear_sets()
     sets.midcast.Macc = { 
         main="Antinian Staff", 
         sub="Mephitis Grip", 
-        ammo="Aureole",
+        --ammo="Aureole",
         head="Nahtirah Hat", 
         neck="Eddy Necklace", 
         lear="Lifestorm Earring", 
