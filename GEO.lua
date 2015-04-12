@@ -46,7 +46,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     sets.precast.JA.Bolster = {body="Bagua Tunic"}
-    sets.precast.JA['Life cycle'] = {body="Geomancy Tunic"}
+    sets.precast.JA['Life cycle'] = {body="Geomancy Tunic +1"}
 
     -- Fast cast sets for spells
 
@@ -118,7 +118,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Zelus Tiara",
         ear2="Loquacious Earring",
-        body="Hagondes Coat",
+        body="Geomancy tunic +1",
         hands="Geomancy Mitaines +1",
         ring1="Prolix Ring",
         back="Lifestream Cape",
@@ -210,6 +210,7 @@ function init_gear_sets()
     sets.midcast.Aspir = set_combine(sets.midcast['Dark Magic'], { 
         neck="Dark Torque", 
         lring="Excelsis Ring",
+        body="Geomancy tunic +1",
         waist="Casso Sash",
         --legs="Azimuth Tights",
     })
@@ -224,7 +225,7 @@ function init_gear_sets()
         neck="Eddy Necklace", 
         lear="Lifestorm Earring", 
         rear="Psystorm Earring",
-        body="Bokwus Robe", 
+        body="Artsieq Jubbah", -- "Azimuth Coat"
         hands="Geomancy Mitaines +1",
         lring="Balrahn's Ring", 
         rring="Sangoma Ring",
@@ -259,8 +260,8 @@ function init_gear_sets()
     sets.resting = {
         head="Hike Khat",
         neck="Wiglen Gorget",
-        body="Heka's Kalasiris",
-        hands="Serpentes Cuffs",
+        body="Geomancy Tunic +1", -- "Azimuth Coat"
+        hands="Geomancy Mitaines +1",
         ring1="Sheltered Ring",
         ring2="Paguroidea Ring",
         waist="Austerity Belt",
@@ -279,7 +280,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-        body="Artsieq Jubbah",
+        body="Geomancy tunic +1",
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -297,7 +298,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
-        body="Vermillion Cloak",
+        body="Geomancy tunic +1",
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -316,7 +317,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
-        body="Vermillion Cloak",
+        body="Geomancy tunic +1",
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -334,7 +335,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
-        body="Hagondes Coat",
+        body="Geomancy tunic +1",
         hands="Geomancy Mitaines +1",
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
@@ -345,10 +346,22 @@ function init_gear_sets()
     }
 
     -- .Indi sets are for when an Indi-spell is active.
-    sets.idle.Indi = set_combine(sets.idle, {legs="Bagua Pants", feet="Azimuth Gaiters"})
-    sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {legs="Bagua Pants", feet="Azimuth Gaiters"})
-    sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {legs="Bagua Pants", feet="Azimuth Gaiters"})
-    sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {legs="Bagua Pants", feet="Azimuth Gaiters"})
+    sets.idle.Indi = set_combine(sets.idle, {
+        legs="Bagua Pants", 
+        feet="Azimuth Gaiters"
+    })
+    sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {
+        legs="Bagua Pants", 
+        feet="Azimuth Gaiters"
+    })
+    sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {
+        legs="Bagua Pants", 
+        feet="Azimuth Gaiters"
+    })
+    sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {
+        legs="Bagua Pants", 
+        feet="Azimuth Gaiters"
+    })
 
     sets.idle.Town = {
         main="Bolelabunga",
@@ -376,7 +389,7 @@ function init_gear_sets()
         neck="Wiglen Gorget",
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
-        body="Heka's Kalasiris",
+        body="Geomancy tunic +1",
         hands="Geomancy Mitaines +1",
         ring1="Sheltered Ring",
         ring2="Paguroidea Ring",
@@ -394,7 +407,7 @@ function init_gear_sets()
         neck="Wiglen Gorget",
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
-        body="Hagondes Coat",
+        body="Geomancy tunic +1",
         hands="Geomancy Mitaines +1",
         ring1="Defending Ring",
         ring2="Dark Ring",
@@ -410,7 +423,7 @@ function init_gear_sets()
         neck="Wiglen Gorget",
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
-        body="Vanir Cotehardie",
+        body="Geomancy tunic +1",
         hands="Geomancy Mitaines +1",
         ring1="Defending Ring",
         ring2="Shadow Ring",
