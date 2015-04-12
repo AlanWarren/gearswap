@@ -304,7 +304,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         back="Lifestream Cape",
         waist="Swift Belt",
-        legs="Nares Trews",
+        legs="Geomancy Pants +1",
         feet="Geomancy Sandals"
     }
 
@@ -323,7 +323,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         back="Lifestream Cape",
         waist="Swift Belt",
-        legs="Nares Trews",
+        legs="Geomancy Pants +1",
         feet="Geomancy Sandals"
     }
 
@@ -341,7 +341,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         back="Lifestream Cape",
         waist="Swift Belt",
-        legs="Nares Trews",
+        legs="Geomancy Pants +1",
         feet="Geomancy Sandals"
     }
 
