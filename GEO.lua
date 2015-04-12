@@ -56,7 +56,7 @@ function init_gear_sets()
         ear2="Loquacious Earring",
         --body="Vanir Cotehardie",
         ring1="Prolix Ring",
-        --back="Swith Cape +1",
+        back="Lifestream Cape",
         --waist="Witful Belt",
         legs="Artsieq Hose",
         feet="Chelona Boots"
@@ -121,7 +121,7 @@ function init_gear_sets()
         body="Hagondes Coat",
         hands="Geomancy Mitaines +1",
         ring1="Prolix Ring",
-        back="Swith Cape +1",
+        back="Lifestream Cape",
         waist="Swift Belt",
         legs="Hagondes Pants",
         feet="Hagondes Sabots"
@@ -131,13 +131,15 @@ function init_gear_sets()
         range="Dunna", 
         head="Hike Khat", -- head="Azimuth Hood",
         hands="Geomancy Mitaines +1",
-        feet="Umbani Boots"
+        feet="Umbani Boots",
+        back="Lifestream Cape"
     }
     sets.midcast.Geomancy.Indi = {
         range="Dunna",
         head="Hike Khat", -- head="Azimuth Hood",
         hands="Geomancy Mitaines +1",
         legs="Bagua Pants",
+        back="Lifestream Cape",
         feet="Umbani Boots"
     }
 
@@ -234,10 +236,12 @@ function init_gear_sets()
     
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
         waist="Casso Sash",
+        back="Lifestream Cape",
         lring="Globidonta Ring"
     })
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.Macc, {
         waist="Casso Sash",
+        back="Lifestream Cape",
         lring="Globidonta Ring"
     })
 
