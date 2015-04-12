@@ -287,7 +287,7 @@ function init_gear_sets()
         back="Repulse Mantle",
         waist="Swift Belt",
         legs="Artsieq Hose",
-        feet="Umbani Boots"
+        feet="Geomancy Sandals"
     }
 
     sets.idle.PDT = {
@@ -305,7 +305,7 @@ function init_gear_sets()
         back="Umbra Cape",
         waist="Swift Belt",
         legs="Nares Trews",
-        feet="Herald's Gaiters"
+        feet="Geomancy Sandals"
     }
 
     -- .Pet sets are for when Luopan is present.
@@ -324,7 +324,7 @@ function init_gear_sets()
         back="Lifestream Cape",
         waist="Swift Belt",
         legs="Nares Trews",
-        feet="Herald's Gaiters"
+        feet="Geomancy Sandals"
     }
 
     sets.idle.PDT.Pet = {
@@ -342,7 +342,7 @@ function init_gear_sets()
         back="Lifestream Cape",
         waist="Swift Belt",
         legs="Nares Trews",
-        feet="Herald's Gaiters"
+        feet="Geomancy Sandals"
     }
 
     -- .Indi sets are for when an Indi-spell is active.
@@ -378,7 +378,7 @@ function init_gear_sets()
         back="Repulse Mantle",
         waist="Swift Belt",
         legs="Artsieq Hose",
-        feet="Umbani boots"
+        feet="Geomancy Sandals"
     }
 
     sets.idle.Weak = {
@@ -396,7 +396,7 @@ function init_gear_sets()
         back="Umbra Cape",
         waist="Swift Belt",
         legs="Nares Trews",
-        feet="Herald's Gaiters"
+        feet="Geomancy Sandals"
     }
 
     -- Defense sets
