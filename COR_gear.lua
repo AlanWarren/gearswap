@@ -79,7 +79,7 @@ function init_gear_sets()
         ear2="Flame Pearl",
 		body="Lanun Frac +1",
         hands="Iuitl Wristbands +1",
-        ring1="Rajas Ring",
+        ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
 		back="Buquwik Cape",
         waist=gear.ElementalBelt,
@@ -105,7 +105,7 @@ function init_gear_sets()
         ear1="Volley Earring",
         ear2="Moonshade Earring",
         back="Libeccio Mantle",
-        ring1="Hajduk Ring",
+        ring1="Karieyh Ring",
         ring2="Longshot Ring"
     })
 
@@ -117,7 +117,7 @@ function init_gear_sets()
         ear2="Friomisi Earring",
         body="Lanun Frac +1",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
-        ring1="Acumen Ring",
+        ring1="Karieyh Ring",
         ring2="Garuda Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
         waist="Aquiline Belt",
@@ -154,7 +154,7 @@ function init_gear_sets()
         body="Lanun Frac +1",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Acumen Ring",
-        ring2="Stormsoul Ring",
+        ring2="Garuda Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
         waist="Aquiline Belt",
         legs="Shneddick Tights +1",
@@ -209,7 +209,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         body="Lanun Frac +1",
         hands="Iuitl Wristbands +1",
-        ring1="Dark Ring",
+        ring1="Karieyh Ring",
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
         waist="Flume Belt",
@@ -227,10 +227,10 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-        body="Taeon Tabard",
+        body="Councilor's Garb",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Ifrit Ring +1",
-        ring2="Paguroidea Ring",
+        ring2="Karieyh Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
         waist="Flume Belt",
         legs="Nahtirah trousers",
@@ -308,7 +308,7 @@ function init_gear_sets()
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
     	body="Mekosuchinae Harness",
-        ring2="Ramuh Ring +1",
+        ring2="Mars's Ring",
         waist="Olseni Belt"
     })
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Melee.DW, {
