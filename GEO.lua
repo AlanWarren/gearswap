@@ -68,7 +68,10 @@ function init_gear_sets()
         --back="Pahtli Cape"
     })
 
-    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {neck="Stoicheion Medal"})
+    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {
+        neck="Stoicheion Medal",
+        hands="Bagua Mitaines",
+    })
 
     
     -- Weaponskill sets
@@ -131,6 +134,7 @@ function init_gear_sets()
         range="Dunna", 
         head="Hike Khat", -- head="Azimuth Hood",
         hands="Geomancy Mitaines +1",
+        body="Bagua Tunic",
         feet="Umbani Boots",
         back="Lifestream Cape"
     }
@@ -138,6 +142,7 @@ function init_gear_sets()
         range="Dunna",
         head="Hike Khat", -- head="Azimuth Hood",
         hands="Geomancy Mitaines +1",
+        body="Bagua Tunic",
         legs="Bagua Pants",
         back="Lifestream Cape",
         feet="Umbani Boots"
@@ -164,7 +169,7 @@ function init_gear_sets()
         main="Lehbrailg +2",
         sub="Wizzan Grip",
         --ammo="Witchstone",
-        head="Geomancy Galero",
+        head="Geomancy Galero +1",
         neck="Eddy Necklace",
         ear1="Hecate's Earring",
         ear2="Friomisi Earring",
@@ -188,7 +193,7 @@ function init_gear_sets()
         main="Lehbrailg +2",
         sub="Wizzan Grip",
         --ammo="Witchstone",
-        head="Geomancy Galero",
+        head="Geomancy Galero +1",
         neck="Eddy Necklace",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
@@ -208,6 +213,7 @@ function init_gear_sets()
         feet="Bokwus Boots"
     })
     sets.midcast.Aspir = set_combine(sets.midcast['Dark Magic'], { 
+        head="Bagua Galero",
         neck="Dark Torque", 
         lring="Excelsis Ring",
         body="Geomancy tunic +1",
@@ -258,15 +264,14 @@ function init_gear_sets()
 
     -- Resting sets
     sets.resting = {
-        head="Hike Khat",
-        neck="Wiglen Gorget",
+        neck="Twilight Torque",
         body="Geomancy Tunic +1", -- "Azimuth Coat"
         hands="Geomancy Mitaines +1",
-        ring1="Sheltered Ring",
+        ring1="Dark Ring",
         ring2="Paguroidea Ring",
-        waist="Austerity Belt",
-        legs="Nares Trews",
-        feet="Chelona Boots"
+        --waist="Austerity Belt",
+        --legs="Nares Trews",
+        --feet="Chelona Boots"
     }
 
 
@@ -274,14 +279,14 @@ function init_gear_sets()
 
     sets.idle = {
         main="Bolelabunga",
-        sub="Genbu's Shield",
+        sub="Sors Shield",
         range="Dunna",
-        head="Geomancy Galero",
+        head="Geomancy Galero +1",
         neck="Twilight Torque",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Geomancy tunic +1",
-        hands="Geomancy Mitaines +1",
+        hands="Bagua Mitaines",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
@@ -289,61 +294,18 @@ function init_gear_sets()
         legs="Geomancy Pants +1",
         feet="Geomancy Sandals"
     }
-
-    sets.idle.PDT = {
-        main="Bolelabunga",
-        sub="Genbu's Shield",
-        range="Dunna",
-        head="Geomancy Galero",
-        neck="Twilight Torque",
-        ear1="Bloodgem Earring",
-        ear2="Loquacious Earring",
-        body="Geomancy tunic +1",
+    sets.idle.PDT = set_combine(sets.idle, {
         hands="Geomancy Mitaines +1",
-        ring1="Dark Ring",
-        ring2="Paguroidea Ring",
         back="Lifestream Cape",
-        waist="Swift Belt",
-        legs="Geomancy Pants +1",
-        feet="Geomancy Sandals"
-    }
+    })
 
     -- .Pet sets are for when Luopan is present.
-    sets.idle.Pet = {
-        main="Bolelabunga",
-        sub="Genbu's Shield",
-        range="Dunna",
-        head="Nahtirah Hat", -- "Azimuth Hood",
-        neck="Twilight Torque",
-        ear1="Bloodgem Earring",
-        ear2="Loquacious Earring",
-        body="Geomancy tunic +1",
+    sets.idle.Pet = set_combine(sets.idle, {
         hands="Geomancy Mitaines +1",
-        ring1="Dark Ring",
-        ring2="Paguroidea Ring",
         back="Lifestream Cape",
-        waist="Swift Belt",
-        legs="Geomancy Pants +1",
-        feet="Geomancy Sandals"
-    }
+    })
 
-    sets.idle.PDT.Pet = {
-        main="Bolelabunga",
-        sub="Genbu's Shield",
-        range="Dunna",
-        head="Nahtirah Hat",
-        neck="Twilight Torque",
-        ear1="Bloodgem Earring",
-        ear2="Loquacious Earring",
-        body="Geomancy tunic +1",
-        hands="Geomancy Mitaines +1",
-        ring1="Defending Ring",
-        ring2="Paguroidea Ring",
-        back="Lifestream Cape",
-        waist="Swift Belt",
-        legs="Geomancy Pants +1",
-        feet="Geomancy Sandals"
-    }
+    sets.idle.PDT.Pet = sets.idle.Pet
 
     -- .Indi sets are for when an Indi-spell is active.
     sets.idle.Indi = set_combine(sets.idle, {
@@ -371,41 +333,12 @@ function init_gear_sets()
         feet="Geomancy Sandals"
     })
 
-    sets.idle.Town = {
-        main="Bolelabunga",
-        sub="Genbu's Shield",
-        range="Dunna",
-        head="Geomancy Galero",
+    sets.idle.Town = set_combine(sets.idle, {
         neck="Eddy Necklace",
-        ear1="Crematio Earring",
-        ear2="Friomisi Earring",
-        body="Councilor's Garb",
-        hands="Geomancy Mitaines +1",
-        ring1="Dark Ring",
-        ring2="Paguroidea Ring",
-        back="Lifestream Cape",
-        waist="Swift Belt",
-        legs="Geomancy Pants +1",
-        feet="Geomancy Sandals"
-    }
+        waist="Yamabuki-no-obi", 
+    })
 
-    sets.idle.Weak = {
-        main="Bolelabunga",
-        sub="Genbu's Shield",
-        range="Dunna",
-        head="Geomancy Galero",
-        neck="Wiglen Gorget",
-        ear1="Bloodgem Earring",
-        ear2="Loquacious Earring",
-        body="Geomancy tunic +1",
-        hands="Geomancy Mitaines +1",
-        ring1="Sheltered Ring",
-        ring2="Paguroidea Ring",
-        back="Umbra Cape",
-        waist="Swift Belt",
-        legs="Nares Trews",
-        feet="Geomancy Sandals"
-    }
+    sets.idle.Weak = sets.idle
 
     -- Defense sets
 
