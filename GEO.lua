@@ -47,7 +47,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA.Bolster = {body="Bagua Tunic"}
     sets.precast.JA['Life cycle'] = {body="Geomancy Tunic +1"}
-    sets.precast.JA['Curative Recantation'] = {hands="Bagua Mitaines"}
+    sets.precast.JA['Full Circle'] = {hands="Bagua Mitaines"}
 
     -- Fast cast sets for spells
 
@@ -92,7 +92,6 @@ function init_gear_sets()
         feet="Hagondes Sabots"
     }
 
-    -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Flash Nova'] = {
         --ammo="Dosis Tathlum",
         head="Hagondes Hat",
@@ -120,7 +119,6 @@ function init_gear_sets()
 
     -- Base fast recast for spells
     sets.midcast.FastRecast = {
-        head="Zelus Tiara",
         ear2="Loquacious Earring",
         body="Geomancy tunic +1",
         hands="Geomancy Mitaines +1",
@@ -139,6 +137,7 @@ function init_gear_sets()
         feet="Umbani Boots",
         back="Lifestream Cape"
     }
+
     sets.midcast.Geomancy.Indi = {
         range="Dunna",
         head="Hike Khat", -- head="Azimuth Hood",
@@ -150,14 +149,14 @@ function init_gear_sets()
     }
 
     sets.midcast.Cure = {
-        main="Tamaxchi",
-        sub="Genbu's Shield",
-        body="Heka's Kalasiris",
-        ring1="Haoma Ring",
-        ring2="Sirona's Ring",
-        back="Swith Cape +1",
-        legs="Nares Trews",
-        feet="Hagondes Sabots"
+        --main="Tamaxchi",
+        --sub="Genbu's Shield",
+        --body="Heka's Kalasiris",
+        --ring1="Haoma Ring",
+        --ring2="Sirona's Ring",
+        --back="Swith Cape +1",
+        --legs="Nares Trews",
+        --feet="Hagondes Sabots"
     }
     
     sets.midcast.Curaga = sets.midcast.Cure
@@ -167,8 +166,8 @@ function init_gear_sets()
     sets.midcast.Shellra = {ring1="Sheltered Ring"}
 
     sets.midcast.HighTierNuke = {
-        main="Lehbrailg +2",
-        sub="Wizzan Grip",
+        --main="Lehbrailg +2",
+        --sub="Wizzan Grip",
         --ammo="Witchstone",
         head="Geomancy Galero +1",
         neck="Eddy Necklace",
@@ -185,36 +184,47 @@ function init_gear_sets()
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
+        head="Bagua Galero",
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
         back="Aput Mantle",
-        feet="Bokwus Boots"
+        ring1="Perception Ring",
+        ring2="Sangoma Ring",
+        --feet="Bokwus Boots"
     })
-    sets.midcast.LowTierNuke = {
-        main="Lehbrailg +2",
-        sub="Wizzan Grip",
-        --ammo="Witchstone",
-        head="Geomancy Galero +1",
-        neck="Eddy Necklace",
-        ear1="Crematio Earring",
-        ear2="Friomisi Earring",
-        body="Artsieq Jubbah", -- "Azimuth Coat"
-        hands="Geomancy Mitaines +1",
-        ring1="Shiva Ring",
+
+    sets.precast.JA['Concentric Pulse'] = sets.midcast.HightTierNuke
+
+    sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
         ring2="Acumen Ring",
         back="Aput Mantle",
-        waist="Yamabuki-no-obi", 
-        legs="Artsieq Hose", -- "Azimuth Tights"
-        feet="Umbani Boots"
-    }
+    })
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
         ear1="Psystorm Earring", 
         ear2="Lifestorm Earring",
+        ring2="Sangoma Ring",
         feet="Bokwus Boots"
     })
-    sets.midcast.Aspir = set_combine(sets.midcast['Dark Magic'], { 
+    sets.midcast.Macc = { 
+        --main="Antinian Staff", 
+        --sub="Mephitis Grip", 
+        --ammo="Aureole",
         head="Bagua Galero",
+        neck="Eddy Necklace", 
+        lear="Lifestorm Earring", 
+        rear="Psystorm Earring",
+        body="Artsieq Jubbah", -- "Azimuth Coat"
+        hands="Geomancy Mitaines +1",
+        ring1="Perception Ring", 
+        ring2="Sangoma Ring",
+        back="Lifestream Cape", 
+        waist="Yamabuki-no-obi", 
+        legs="Bokwus Slops",  -- "Azimuth Tights"
+        feet="Bokwus Boots"
+    }
+    
+    sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
         neck="Dark Torque", 
         lring="Excelsis Ring",
         body="Geomancy tunic +1",
@@ -223,24 +233,6 @@ function init_gear_sets()
     })
     sets.midcast.Drain = sets.midcast.Aspir
     sets.midcast.Stun = sets.midcast.Macc
-    
-    sets.midcast.Macc = { 
-        main="Antinian Staff", 
-        sub="Mephitis Grip", 
-        --ammo="Aureole",
-        head="Nahtirah Hat", 
-        neck="Eddy Necklace", 
-        lear="Lifestorm Earring", 
-        rear="Psystorm Earring",
-        body="Artsieq Jubbah", -- "Azimuth Coat"
-        hands="Geomancy Mitaines +1",
-        lring="Balrahn's Ring", 
-        rring="Sangoma Ring",
-        back="Lifestream Cape", 
-        waist="Yamabuki-no-obi", 
-        legs="Bokwus Slops",  -- "Azimuth Tights"
-        feet="Bokwus Boots"
-    }
     
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
         waist="Casso Sash",
@@ -254,10 +246,10 @@ function init_gear_sets()
     })
 
 	sets.midcast['Enhancing Magic'] = { 
-        sub="Fulcio Grip", 
-        neck="Colossus's Torque", 
-        body="Anhur Robe",
-        hands="Ayao's Gloves"
+        --sub="Fulcio Grip", 
+        --neck="Colossus's Torque", 
+        --body="Anhur Robe",
+        --hands="Ayao's Gloves"
     }
     --------------------------------------
     -- Idle/resting/defense/etc sets
@@ -272,12 +264,10 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         --waist="Austerity Belt",
         --legs="Nares Trews",
-        --feet="Chelona Boots"
     }
 
 
     -- Idle sets
-
     sets.idle = {
         main="Bolelabunga",
         sub="Sors Shield",
