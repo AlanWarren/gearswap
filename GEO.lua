@@ -287,6 +287,7 @@ function init_gear_sets()
     }
     sets.idle.PDT = set_combine(sets.idle, {
         hands="Geomancy Mitaines +1",
+        ring2="Patricius Ring",
         back="Lifestream Cape",
     })
 
@@ -297,7 +298,9 @@ function init_gear_sets()
         feet="Bagua Sandals"
     })
 
-    sets.idle.PDT.Pet = sets.idle.Pet
+    sets.idle.PDT.Pet = set_combine(sets.idle.Pet, {
+        ring2="Patricius Ring",
+    })
 
     -- .Indi sets are for when an Indi-spell is active.
     sets.idle.Indi = set_combine(sets.idle, {
