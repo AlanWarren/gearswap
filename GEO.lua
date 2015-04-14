@@ -173,7 +173,7 @@ function init_gear_sets()
         neck="Eddy Necklace",
         ear1="Hecate's Earring",
         ear2="Friomisi Earring",
-        body="Artsieq Jubbah", -- "Azimuth Coat"
+        body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
         ring1="Shiva Ring",
         ring2="Shiva Ring",
@@ -214,7 +214,7 @@ function init_gear_sets()
         neck="Eddy Necklace", 
         lear="Lifestorm Earring", 
         rear="Psystorm Earring",
-        body="Artsieq Jubbah", -- "Azimuth Coat"
+        body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
@@ -258,7 +258,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {
         neck="Twilight Torque",
-        body="Geomancy Tunic +1", -- "Azimuth Coat"
+        body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -276,7 +276,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-        body="Geomancy tunic +1",
+        body="Azimuth Coat +1",
         hands="Bagua Mitaines",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -339,7 +339,7 @@ function init_gear_sets()
         neck="Wiglen Gorget",
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
-        body="Geomancy tunic +1",
+        body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
         ring1="Defending Ring",
         ring2="Dark Ring",
@@ -355,7 +355,7 @@ function init_gear_sets()
         neck="Wiglen Gorget",
         ear1="Bloodgem Earring",
         ear2="Loquacious Earring",
-        body="Geomancy tunic +1",
+        body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
         ring1="Defending Ring",
         ring2="Shadow Ring",
