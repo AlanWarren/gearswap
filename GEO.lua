@@ -220,8 +220,6 @@ function init_gear_sets()
         ring2="Sangoma Ring",
         back="Lifestream Cape", 
         waist="Yamabuki-no-obi", 
-        legs="Bokwus Slops",  -- "Azimuth Tights"
-        feet="Bokwus Boots"
     }
     
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
@@ -237,12 +235,14 @@ function init_gear_sets()
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
         waist="Casso Sash",
         back="Lifestream Cape",
-        lring="Globidonta Ring"
+        lring="Globidonta Ring",
+        feet="Bagua Sandals"
     })
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.Macc, {
         waist="Casso Sash",
         back="Lifestream Cape",
         lring="Globidonta Ring"
+        feet="Bagua Sandals"
     })
 
 	sets.midcast['Enhancing Magic'] = { 
