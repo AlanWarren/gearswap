@@ -304,6 +304,7 @@ function init_gear_sets()
     sets.idle.Pet = set_combine(sets.idle, {
         hands="Geomancy Mitaines +1",
         back="Lifestream Cape",
+        feet="Bagua Sandals"
     })
 
     sets.idle.PDT.Pet = sets.idle.Pet
@@ -319,7 +320,6 @@ function init_gear_sets()
         legs="Bagua Pants", 
         --feet="Azimuth Gaiters"
         back="Lifestream Cape",
-        feet="Geomancy Sandals"
     })
     sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {
         legs="Bagua Pants", 
