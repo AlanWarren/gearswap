@@ -48,6 +48,7 @@ function init_gear_sets()
     sets.precast.JA.Bolster = {body="Bagua Tunic"}
     sets.precast.JA['Life cycle'] = {body="Geomancy Tunic +1"}
     sets.precast.JA['Full Circle'] = {hands="Bagua Mitaines"}
+    sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals"}
 
     -- Fast cast sets for spells
 
