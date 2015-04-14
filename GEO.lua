@@ -60,7 +60,7 @@ function init_gear_sets()
         --body="Vanir Cotehardie",
         ring1="Prolix Ring",
         back="Lifestream Cape",
-        --waist="Witful Belt",
+        waist="Witful Belt",
         legs="Geomancy Pants +1",
         feet="Chelona Boots"
     }
@@ -126,7 +126,7 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1", -- 3%
         ring1="Prolix Ring",
         back="Lifestream Cape",
-        waist="Swift Belt", -- 4%
+        waist="Witful Belt", -- 4%
         legs="Geomancy Pants +1", -- 5%
     }
 
@@ -136,7 +136,6 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1", -- 15
         body="Bagua Tunic", -- 10
         back="Lifestream Cape", -- 9
-        waist="Swift Belt",
         legs="Geomancy Pants +1",
         feet="Umbani Boots"
     }
@@ -276,7 +275,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
-        waist="Swift Belt",
+        waist="Witful Belt",
         legs="Geomancy Pants +1",
         feet="Geomancy Sandals"
     }
@@ -352,9 +351,9 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Shadow Ring",
         back="Umbra Cape",
-        waist="Swift Belt",
-        legs="Bokwus Slops",
-        feet="Hagondes Sabots"
+        waist="Yamabuki-no-Obi",
+        --legs="Bokwus Slops",
+        --feet="Hagondes Sabots"
     }
 
     sets.Kiting = {feet="Herald's Gaiters"}
