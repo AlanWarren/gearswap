@@ -46,7 +46,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     sets.precast.JA.Bolster = {body="Bagua Tunic"}
-    sets.precast.JA['Life cycle'] = {body="Geomancy Tunic +1"}
+    sets.precast.JA['Life Cycle'] = {head="Azimuth Hood", body="Geomancy Tunic +1"}
     sets.precast.JA['Full Circle'] = {hands="Bagua Mitaines"}
     sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals"}
 
@@ -121,35 +121,30 @@ function init_gear_sets()
     -- Base fast recast for spells
     sets.midcast.FastRecast = {
         ear2="Loquacious Earring",
-        body="Geomancy tunic +1",
-        hands="Geomancy Mitaines +1",
+        body="Azimuth Coat +1", -- 3%
+        hands="Geomancy Mitaines +1", -- 3%
         ring1="Prolix Ring",
         back="Lifestream Cape",
-        waist="Swift Belt",
-        legs="Geomancy Pants +1",
-        feet="Geomancy Sandals"
+        waist="Swift Belt", -- 4%
+        legs="Geomancy Pants +1", -- 5%
     }
 
     sets.midcast.Geomancy = {
         range="Dunna", 
-        head="Hike Khat", -- head="Azimuth Hood",
-        hands="Geomancy Mitaines +1",
-        body="Bagua Tunic",
-        feet="Umbani Boots",
-        back="Lifestream Cape"
-    }
-
-    sets.midcast.Geomancy.Indi = {
-        range="Dunna",
-        head="Hike Khat", -- head="Azimuth Hood",
-        hands="Geomancy Mitaines +1",
-        body="Bagua Tunic",
-        legs="Bagua Pants",
-        back="Lifestream Cape",
+        head="Azimuth Hood", -- 10
+        hands="Geomancy Mitaines +1", -- 15
+        body="Bagua Tunic", -- 10
+        back="Lifestream Cape", -- 9
+        waist="Swift Belt",
+        legs="Geomancy Pants +1",
         feet="Umbani Boots"
     }
 
-    sets.midcast.Cure = {
+    sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
+        legs="Bagua Pants",
+    })
+
+    sets.midcast.Cure = sets.midcast.FastRecast
         --main="Tamaxchi",
         --sub="Genbu's Shield",
         --body="Heka's Kalasiris",
@@ -158,7 +153,6 @@ function init_gear_sets()
         --back="Swith Cape +1",
         --legs="Nares Trews",
         --feet="Hagondes Sabots"
-    }
     
     sets.midcast.Curaga = sets.midcast.Cure
 
@@ -185,7 +179,6 @@ function init_gear_sets()
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
-        head="Bagua Galero",
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
         back="Aput Mantle",
@@ -205,8 +198,8 @@ function init_gear_sets()
         ear1="Psystorm Earring", 
         ear2="Lifestorm Earring",
         ring2="Sangoma Ring",
-        feet="Bokwus Boots"
     })
+
     sets.midcast.Macc = { 
         --main="Antinian Staff", 
         --sub="Mephitis Grip", 
@@ -219,11 +212,12 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1",
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
-        back="Lifestream Cape", 
         waist="Yamabuki-no-obi", 
+        back="Aput Mantle", 
     }
     
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
+        head="Bagua Galero",
         neck="Dark Torque", 
         lring="Excelsis Ring",
         body="Geomancy tunic +1",
@@ -246,12 +240,11 @@ function init_gear_sets()
         feet="Bagua Sandals"
     })
 
-	sets.midcast['Enhancing Magic'] = { 
+	sets.midcast['Enhancing Magic'] = sets.midcast.Macc
         --sub="Fulcio Grip", 
         --neck="Colossus's Torque", 
         --body="Anhur Robe",
         --hands="Ayao's Gloves"
-    }
     --------------------------------------
     -- Idle/resting/defense/etc sets
     --------------------------------------
@@ -273,7 +266,7 @@ function init_gear_sets()
         main="Bolelabunga",
         sub="Sors Shield",
         range="Dunna",
-        head="Geomancy Galero +1",
+        head="Azimuth Hood",
         neck="Twilight Torque",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -289,11 +282,12 @@ function init_gear_sets()
     sets.idle.PDT = set_combine(sets.idle, {
         hands="Geomancy Mitaines +1",
         ring2="Patricius Ring",
-        back="Lifestream Cape",
+        back="Repulse Mantle",
     })
 
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = set_combine(sets.idle, {
+        head="Azimuth Hood",
         hands="Geomancy Mitaines +1",
         back="Lifestream Cape",
         feet="Bagua Sandals"
@@ -312,23 +306,17 @@ function init_gear_sets()
     })
     sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {
         legs="Bagua Pants", 
-        --feet="Azimuth Gaiters"
-        back="Lifestream Cape",
     })
     sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {
         legs="Bagua Pants", 
-        --feet="Azimuth Gaiters"
-        back="Lifestream Cape",
         feet="Geomancy Sandals"
     })
     sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {
         legs="Bagua Pants", 
-        --feet="Azimuth Gaiters"
-        back="Lifestream Cape",
-        feet="Geomancy Sandals"
     })
 
     sets.idle.Town = set_combine(sets.idle, {
+        head="Azimuth Hood",
         neck="Eddy Necklace",
         waist="Yamabuki-no-obi", 
     })
@@ -339,16 +327,14 @@ function init_gear_sets()
 
     sets.defense.PDT = {
         range="Dunna",
-        head="Hagondes Hat",
-        neck="Wiglen Gorget",
-        ear1="Bloodgem Earring",
-        ear2="Loquacious Earring",
+        head="Hike Khat",
+        neck="Twilight Torque",
+        ear1="Zennaroi Earring",
         body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
-        ring1="Defending Ring",
+        ring1="Patricius Ring",
         ring2="Dark Ring",
         back="Umbra Cape",
-        waist="Swift Belt",
         legs="Hagondes Pants",
         feet="Hagondes Sabots"
     }
@@ -357,7 +343,7 @@ function init_gear_sets()
         range="Dunna",
         head="Nahtirah Hat",
         neck="Wiglen Gorget",
-        ear1="Bloodgem Earring",
+        ear1="Zennaroi Earring",
         ear2="Loquacious Earring",
         body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
@@ -386,7 +372,6 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
         range="Dunna",
-        head="Hike khat",
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
