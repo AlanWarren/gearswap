@@ -38,7 +38,8 @@ function init_gear_sets()
     lowTierNukes = S{'Stone', 'Water', 'Aero', 'Fire', 'Blizzard', 'Thunder',
         'Stone II', 'Water II', 'Aero II', 'Fire II', 'Blizzard II', 'Thunder II',
         'Stone III', 'Water III', 'Aero III', 'Fire III', 'Blizzard III', 'Thunder III',
-        'Stonega', 'Waterga', 'Aeroga', 'Firaga', 'Blizzaga', 'Thundaga',
+        'Stonega', 'Waterga', 'Aeroga', 'Firaga', 'Blizzaga', 'Thundaga', 
+        'Stonera', 'Watera', 'Aerora', 'Fira', 'Blizzara', 'Thundara',
         'Stonega II', 'Waterga II', 'Aeroga II', 'Firaga II', 'Blizzaga II', 'Thundaga II'}
     --------------------------------------
     -- Precast sets
@@ -280,6 +281,7 @@ function init_gear_sets()
         feet="Geomancy Sandals"
     }
     sets.idle.PDT = set_combine(sets.idle, {
+        head="Hike Khat",
         hands="Geomancy Mitaines +1",
         ring2="Patricius Ring",
         back="Repulse Mantle",
