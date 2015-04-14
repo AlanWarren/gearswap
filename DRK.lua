@@ -184,7 +184,7 @@ function init_gear_sets()
          body="Fallen's Cuirass +1", -- 15 matk
          hands="Fallen's Finger Gauntlets +1", -- 14 matk
          ring1="Shiva Ring", -- int 8
-         ring2="Acumen Ring", -- matk 4
+         ring2="Shiva Ring", -- matk 4
          waist="Caudata Belt", -- int 6
          --legs="Haruspex Slops",
          legs="Limbo Trousers", -- matk 17
