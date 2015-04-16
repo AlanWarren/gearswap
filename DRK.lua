@@ -479,7 +479,7 @@ function init_gear_sets()
          ear1="Lugra Earring +1",
          ear2="Tripudio Earring",
          body="Lugra Cloak +1",
-         hands="Heathen's Gauntlets +1",
+         hands="Crusher Gauntlets",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
          back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
@@ -501,7 +501,7 @@ function init_gear_sets()
          --head="Baghere Salade",
          neck="Coatl Gorget +1",
          body="Lugra Cloak +1",
-         hands="Cizin Mufflers +1",
+         hands="Crusher Gauntlets",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
          back="Engulfer Cape +1",
@@ -519,7 +519,7 @@ function init_gear_sets()
          body="Twilight Mail",
          ring2="Paguroidea Ring",
          back="Repulse Mantle",
-         waist="Windbuffet Belt +1",
+         waist="Flume Belt",
          legs="Crimson Cuisses",
          feet="Cizin Greaves +1"
      }
@@ -534,7 +534,7 @@ function init_gear_sets()
          head="Ighwa Cap",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
-         hands="Cizin Mufflers +1",
+         hands="Crusher Gauntlets",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
          ring2="Patricius Ring",
@@ -567,7 +567,7 @@ function init_gear_sets()
          head="Ighwa Cap",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
-         hands="Cizin Mufflers +1",
+         hands="Crusher Gauntlets",
          ring2="Patricius Ring",
          back="Repulse Mantle",
          waist="Flume Belt",
@@ -578,14 +578,14 @@ function init_gear_sets()
          head="Ighwa Cap",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
-         hands="Umuthi Gloves",
+         hands="Crusher Gauntlets",
          back="Repulse Mantle",
          ring2="Patricius Ring",
      }
      sets.Defensive_Acc = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         hands="Umuthi Gloves",
+         hands="Crusher Gauntlets",
          body="Yorium Cuirass",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
@@ -619,6 +619,7 @@ function init_gear_sets()
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          neck="Iqabi Necklace",
          back="Kayapa Cape",
+         hands="Crusher Gauntlets",
          ring1="Mars's Ring",
          waist="Olseni Belt"
      })
@@ -629,13 +630,14 @@ function init_gear_sets()
          feet="Ejekamal Boots"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
+         head="Heathen's Burgonet +1",
          ammo="Hasty Pinion +1",
          ear1="Zennaroi Earring",
-         ring2="Patricius Ring",
          feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          neck="Iqabi Necklace",
+         hands="Crusher Gauntlets",
          ear2="Steelflash Earring",
          waist="Olseni Belt",
      })
@@ -653,7 +655,9 @@ function init_gear_sets()
          --back="Grounded Mantle +1"
          --ring2="K'ayres RIng"
      })
-     sets.engaged.GreatSword.Acc = sets.engaged.Acc
+     sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {
+         hands="Heathen's Gauntlets +1"
+     })
 
      sets.engaged.Reraise = set_combine(sets.engaged, {
      	head="Twilight Helm",neck="Twilight Torque",

@@ -109,7 +109,7 @@ function init_gear_sets()
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Taeon Tights",
-        feet="Acro Leggings"
+        feet={name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3', 'Weapon skill damage +2%'}},
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
@@ -186,19 +186,19 @@ function init_gear_sets()
         ear2="Tripudio Earring",
 		body="Acro Surcoat",
         hands="Crusher Gauntlets",
-        ring1="Ifrit Ring +1",
-        ring2="Oneiros Ring",
+        ring1="Karieyh Ring",
+        ring2="Ifrit Ring +1",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Crimson Cuisses",
-        feet="Acro Leggings"
+        feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
         head="Otomi Helm",
         neck="Twilight Torque",
 		body="Ares' Cuirass +1",
-        ring1="Dark Ring",
+        ring1="Karieyh Ring",
         ring2="Paguroidea Ring",
         waist="Flume Belt",
         back="Engulfer's Cape +1"
@@ -222,7 +222,7 @@ function init_gear_sets()
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
 		body="Emet Harness +1",
-        hands="Cizin Mufflers +1",
+        hands="Crusher Gauntlets",
         ring1="Patricius Ring",
         ring2="Dark Ring",
 		back="Repulse Mantle",
@@ -254,7 +254,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
         ammo="Ginsen",
-		head="Acro Helm",
+		head="Taeon Chapeau",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
@@ -265,7 +265,7 @@ function init_gear_sets()
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Taeon Tights",
-        feet="Taeon Boots"
+        feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
@@ -287,7 +287,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         body="Emet Harness +1",
         ring2="Patricius Ring",
-        hands="Cizin Mufflers +1",
+        hands="Crusher Gauntlets",
         back="Repulse Mantle",
         legs="Cizin Breeches +1",
         feet="Cizin Greaves +1"
@@ -296,7 +296,7 @@ function init_gear_sets()
         head="Ighwa Cap",
         ring2="Patricius Ring",
         body="Emet Harness +1",
-        hands="Cizin Mufflers +1",
+        hands="Crusher Gauntlets",
         back="Repulse Mantle",
         legs="Cizin Breeches +1",
     })
@@ -304,7 +304,7 @@ function init_gear_sets()
         head="Ighwa Cap",
         ring2="Patricius Ring",
         body="Emet Harness +1",
-        hands="Cizin Mufflers +1",
+        hands="Crusher Gauntlets",
         back="Repulse Mantle",
         legs="Cizin Breeches +1",
     })
