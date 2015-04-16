@@ -376,6 +376,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
+        body="Azimuth Coat +1",
         --body="Vanir Cotehardie",
         hands="Geomancy Mitaines +1",
         ring1="Rajas Ring",
