@@ -236,7 +236,7 @@ function init_gear_sets()
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.Macc, {
         waist="Casso Sash",
         back="Lifestream Cape",
-        lring="Globidonta Ring"
+        lring="Globidonta Ring",
         feet="Bagua Sandals"
     })
 
