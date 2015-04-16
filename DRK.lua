@@ -502,7 +502,7 @@ function init_gear_sets()
          neck="Coatl Gorget +1",
          body="Lugra Cloak +1",
          hands="Crusher Gauntlets",
-         ring1="Dark Ring",
+         ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
          back="Engulfer Cape +1",
          waist="Flume Belt",
