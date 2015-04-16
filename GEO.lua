@@ -181,7 +181,6 @@ function init_gear_sets()
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
-        back="Aput Mantle",
         ring1="Perception Ring",
         ring2="Sangoma Ring",
         --feet="Bokwus Boots"
@@ -191,7 +190,6 @@ function init_gear_sets()
 
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
         ring2="Acumen Ring",
-        back="Aput Mantle",
     })
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
@@ -213,7 +211,6 @@ function init_gear_sets()
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
         waist="Yamabuki-no-obi", 
-        back="Aput Mantle", 
     }
     
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
