@@ -629,9 +629,9 @@ function init_gear_sets()
          feet="Ejekamal Boots"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
+         head="Heathen's Burgonet +1",
          ammo="Hasty Pinion +1",
          ear1="Zennaroi Earring",
-         ring2="Patricius Ring",
          feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
