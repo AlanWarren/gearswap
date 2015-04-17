@@ -313,7 +313,7 @@ function init_gear_sets()
      -- Designed to 4-hit
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          ammo="Ginsen",
-         head="Acro Helm",
+         head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
          hands="Acro Gauntlets",
          waist="Windbuffet Belt +1",
