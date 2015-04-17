@@ -60,7 +60,7 @@ function init_gear_sets()
         --body="Vanir Cotehardie",
         ring1="Prolix Ring",
         back="Lifestream Cape",
-        --waist="Witful Belt",
+        waist="Witful Belt",
         legs="Geomancy Pants +1",
         feet="Chelona Boots"
     }
@@ -126,7 +126,7 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1", -- 3%
         ring1="Prolix Ring",
         back="Lifestream Cape",
-        waist="Swift Belt", -- 4%
+        waist="Witful Belt", -- 4%
         legs="Geomancy Pants +1", -- 5%
     }
 
@@ -136,7 +136,6 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1", -- 15
         body="Bagua Tunic", -- 10
         back="Lifestream Cape", -- 9
-        waist="Swift Belt",
         legs="Geomancy Pants +1",
         feet="Umbani Boots"
     }
@@ -182,7 +181,6 @@ function init_gear_sets()
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
-        back="Aput Mantle",
         ring1="Perception Ring",
         ring2="Sangoma Ring",
         --feet="Bokwus Boots"
@@ -192,7 +190,6 @@ function init_gear_sets()
 
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
         ring2="Acumen Ring",
-        back="Aput Mantle",
     })
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
@@ -214,7 +211,6 @@ function init_gear_sets()
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
         waist="Yamabuki-no-obi", 
-        back="Aput Mantle", 
     }
     
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
@@ -237,7 +233,7 @@ function init_gear_sets()
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.Macc, {
         waist="Casso Sash",
         back="Lifestream Cape",
-        lring="Globidonta Ring"
+        lring="Globidonta Ring",
         feet="Bagua Sandals"
     })
 
@@ -276,7 +272,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
-        waist="Swift Belt",
+        waist="Witful Belt",
         legs="Geomancy Pants +1",
         feet="Geomancy Sandals"
     }
@@ -352,9 +348,9 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Shadow Ring",
         back="Umbra Cape",
-        waist="Swift Belt",
-        legs="Bokwus Slops",
-        feet="Hagondes Sabots"
+        waist="Yamabuki-no-Obi",
+        --legs="Bokwus Slops",
+        --feet="Hagondes Sabots"
     }
 
     sets.Kiting = {feet="Herald's Gaiters"}
@@ -377,6 +373,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
+        body="Azimuth Coat +1",
         --body="Vanir Cotehardie",
         hands="Geomancy Mitaines +1",
         ring1="Rajas Ring",
