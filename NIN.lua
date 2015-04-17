@@ -274,8 +274,8 @@ end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == 'Engaged' then
-        if state.MobDefenseMode.value == 'LowDef' then
-            state.CombatForm:set('LowDef')
+        if buffactive['Innin'] then
+            state.CombatForm:set('Innin')
         else
             state.CombatForm:reset()
         end
@@ -466,9 +466,6 @@ function display_current_job_state(eventArgs)
     end
     if state.HasteMode.value ~= 'Normal' then
         msg = msg .. ', Haste: '..state.HasteMode.current
-    end
-    if state.MobDefenseMode.value ~= 'Normal' then
-        msg = msg .. ', Mob Defense: '..state.MobDefenseMode.current
     end
     if state.RangedMode.value ~= 'Normal' then
         msg = msg .. ', Rng: '..state.RangedMode.current
