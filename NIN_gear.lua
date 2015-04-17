@@ -315,15 +315,15 @@ function init_gear_sets()
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head="Taeon Chapeau",
         ear1="Brutal Earring",
-        ear2="Trux Earring",
-        neck="Rancor Collar",
+        ear2="Tripudio Earring",
+        neck="Asperity Necklace",
         body="Mes'yohi Haubergeon",
-        hands="Otronif Gloves +1",
-        ring1="Rajas Ring",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
+        ring1="Oneiros Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Taeon Tights",
-        feet="Otronif Boots +1"
+        feet="Taeon Boots"
     })
     -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
