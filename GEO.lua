@@ -86,9 +86,9 @@ function init_gear_sets()
         ear2="Steelflash Earring",
         body="Vanir Cotehardie",
         hands="Yaoyotl Gloves",
-        ring1="Rajas Ring",
-        ring2="K'ayres Ring",
-        back="Refraction Cape",
+        ring1="Karieyh Ring",
+        ring2="Ifrit Ring +1",
+        back="Buquwik Cape",
         waist=gear.ElementalBelt,
         legs="Hagondes Pants",
         feet="Hagondes Sabots"
@@ -216,7 +216,7 @@ function init_gear_sets()
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
         head="Bagua Galero",
         neck="Dark Torque", 
-        lring="Excelsis Ring",
+        ring1="Excelsis Ring",
         body="Geomancy tunic +1",
         waist="Casso Sash",
         --legs="Azimuth Tights",
