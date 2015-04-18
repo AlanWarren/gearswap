@@ -47,7 +47,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     sets.precast.JA.Bolster = {body="Bagua Tunic"}
-    sets.precast.JA['Life Cycle'] = {head="Azimuth Hood", body="Geomancy Tunic +1"}
+    sets.precast.JA['Life Cycle'] = {head="Azimuth Hood +1", body="Geomancy Tunic +1"}
     sets.precast.JA['Full Circle'] = {hands="Bagua Mitaines"}
     sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals"}
 
@@ -132,7 +132,7 @@ function init_gear_sets()
 
     sets.midcast.Geomancy = {
         range="Dunna", 
-        head="Azimuth Hood", -- 10
+        head="Azimuth Hood +1", -- 10
         hands="Geomancy Mitaines +1", -- 15
         body="Bagua Tunic", -- 10
         back="Lifestream Cape", -- 9
@@ -263,7 +263,7 @@ function init_gear_sets()
         main="Bolelabunga",
         sub="Sors Shield",
         range="Dunna",
-        head="Azimuth Hood",
+        head="Azimuth Hood +1",
         neck="Twilight Torque",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -285,7 +285,7 @@ function init_gear_sets()
 
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = set_combine(sets.idle, {
-        head="Azimuth Hood",
+        head="Azimuth Hood +1",
         hands="Geomancy Mitaines +1",
         back="Lifestream Cape",
         feet="Bagua Sandals"
@@ -314,7 +314,7 @@ function init_gear_sets()
     })
 
     sets.idle.Town = set_combine(sets.idle, {
-        head="Azimuth Hood",
+        head="Azimuth Hood +1",
         neck="Eddy Necklace",
         waist="Fucho-no-obi",
     })
