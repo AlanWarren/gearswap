@@ -237,7 +237,7 @@ function init_gear_sets()
         feet="Bagua Sandals"
     })
 
-	sets.midcast['Enhancing Magic'] = sets.midcast.Macc
+	sets.midcast['Enhancing Magic'] = sets.midcast.FastRecast
         --sub="Fulcio Grip", 
         --neck="Colossus's Torque", 
         --body="Anhur Robe",
