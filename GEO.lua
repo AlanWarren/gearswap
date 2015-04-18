@@ -218,7 +218,7 @@ function init_gear_sets()
         neck="Dark Torque", 
         ring1="Excelsis Ring",
         body="Geomancy tunic +1",
-        waist="Casso Sash",
+        waist="Fucho-no-obi",
         --legs="Azimuth Tights",
     })
     sets.midcast.Drain = sets.midcast.Aspir
@@ -272,7 +272,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
-        waist="Witful Belt",
+        waist="Fucho-no-obi",
         legs="Geomancy Pants +1",
         feet="Geomancy Sandals"
     }
@@ -316,7 +316,7 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
         head="Azimuth Hood",
         neck="Eddy Necklace",
-        waist="Yamabuki-no-obi", 
+        waist="Fucho-no-obi",
     })
 
     sets.idle.Weak = sets.idle
