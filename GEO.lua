@@ -210,7 +210,7 @@ function init_gear_sets()
         lear="Lifestorm Earring", 
         rear="Psystorm Earring",
         body="Azimuth Coat +1",
-        hands="Geomancy Mitaines +1",
+        hands="Azimuth Gloves",
         legs="Azimuth Tights",
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
