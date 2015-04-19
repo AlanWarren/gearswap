@@ -66,7 +66,6 @@ function init_gear_sets()
         })
         sets.idle.Town = set_combine(sets.idle, {
             body="Kyujutsugi",
-            ear1="Fenrir's Earring",
             ring1="Karieyh Ring",
             ring2="Ifrit Ring +1",
             back="Lutian Cape"
@@ -175,7 +174,6 @@ function init_gear_sets()
 
         -- Stave sets 
         sets.midcast.RA.Stave = set_combine(sets.midcast.RA, {
-            ear1=gear.Earring,
             body="Arcadian Jerkin +1",
             back="Lutian Cape",
             legs="Amini Brague +1", 
@@ -193,7 +191,6 @@ function init_gear_sets()
         
         -- Samurai Roll sets 
         sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
-            ear1=gear.Earring,
             body="Arcadian Jerkin +1",
             ring2="Longshot Ring",
         })
@@ -271,7 +268,7 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
-            ear1="Novia Earring",
+            ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Kyujutsugi",
             --body="Arcadian Jerkin +1",
@@ -284,7 +281,6 @@ function init_gear_sets()
             feet="Arcadian Socks +1"
         }
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
-            ear1=gear.Earring,
             back="Lutian Cape",
             body="Amini Caban",
             hands="Amini Glovelettes",
@@ -301,29 +297,6 @@ function init_gear_sets()
         sets.midcast.RA.Falubeza.Mid = sets.midcast.RA.Yoichinoyumi.Mid
         sets.midcast.RA.Falubeza.Acc = sets.midcast.RA.Yoichinoyumi.Acc
 
-        -- Decoy up 
-        sets.midcast.RA.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi, {
-            ear1=gear.Earring,
-            hands="Amini Glovelettes",
-            legs="Amini Brague +1", 
-        })
-
-        sets.midcast.RA.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Decoy, {
-            legs="Amini Brague +1", 
-            feet="Orion Socks +1"
-        })
-        sets.midcast.RA.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Yoichinoyumi.Mid.Decoy, {
-            ear1=gear.Earring,
-            neck="Iqabi Necklace",
-            hands="Amini Glovelettes",
-            ring1="Longshot Ring",
-            ring2="Paqichikaji Ring",
-            legs="Arcadian Braccae +1"
-        })
-        sets.midcast.RA.Falubeza.Decoy = sets.midcast.RA.Yoichinoyumi.Decoy
-        sets.midcast.RA.Falubeza.Mid.Decoy = sets.midcast.RA.Yoichinoyumi.Mid.Decoy
-        sets.midcast.RA.Falubeza.Acc.Decoy = sets.midcast.RA.Yoichinoyumi.Acc.Decoy
-       
         -- Stave
         sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Amini Glovelettes" })
         sets.midcast.RA.Stave.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, { 
@@ -347,50 +320,6 @@ function init_gear_sets()
             ring1="Longshot Ring",
             feet="Orion Socks +1"
         })
-
-        -- Stave / Decoy up
-        sets.midcast.RA.Stave.Yoichinoyumi.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
-            ear1=gear.Earring,
-            hands="Amini Glovelettes",
-            legs="Amini Brague +1", 
-        })
-        sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Decoy, {
-            body="Kyujutsugi",
-            hands="Amini Glovelettes",
-            back="Lutian Cape",
-            legs="Amini Brague +1", 
-        })
-        sets.midcast.RA.Stave.Yoichinoyumi.Acc.Decoy = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy, {
-            neck="Iqabi Necklace",
-            ring1="Longshot Ring",
-            ring2="Hajduk Ring",
-            legs="Aetosaur Trousers +1",
-            feet="Orion Socks +1"
-        })
-        
-        -- Stave + Sam roll + Decoy
-        sets.midcast.RA.Stave.Yoichinoyumi.Decoy.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.SamRoll, {
-            ear1=gear.Earring,
-            body="Arcadian Jerkin +1",
-            hands="Amini Glovelettes",
-            ring2="Ifrit Ring +1",
-            back="Buquwik Cape",
-            legs="Amini Brague +1", 
-            feet="Arcadian Socks +1"
-        })
-        sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Decoy.SamRoll, {
-            body="Kyujutsugi",
-            hands="Amini Glovelettes",
-            back="Lutian Cape",
-            ring2="Longshot Ring"
-        })
-        sets.midcast.RA.Stave.Yoichinoyumi.Acc.Decoy.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mid.Decoy.SamRoll, {
-            neck="Iqabi Necklace",
-            ring1="Paqichikaji Ring",
-            hands="Amini Glovelettes",
-            legs="Arcadian Braccae +1",
-            feet="Orion Socks +1"
-        })
         
         -- Sam SJ / Bow - assuming you'll use a Stave here..
         sets.midcast.RA.SAM.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.SAM, {
@@ -400,11 +329,6 @@ function init_gear_sets()
             feet="Orion Socks +1"
         })
         sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
-
-        -- SAM SJ / Bow / Decoy doesn't matter here
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc
 
         -- Sam SJ / Bow / Sam's Roll
         sets.midcast.RA.SAM.Stave.Yoichinoyumi.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi, {
@@ -416,11 +340,6 @@ function init_gear_sets()
             waist="Elanid Belt",
         })
         sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc, {})
-
-        -- Don't care about decoy here
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.SamRoll.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.SamRoll
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.SamRoll.Decoy = sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.SamRoll
 
 
         -- Weaponskill sets  

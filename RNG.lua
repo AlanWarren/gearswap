@@ -7,27 +7,17 @@
     sets.midcast.RA.[CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
     ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll = {}
     you can also append CustomRangedGroups to each other
-    ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.Decoy.SamRoll = {}
  
  -- These are the available sets per category
  -- CustomClass = SAM
  -- CombatForm = Stave, DW
  -- CombatWeapon = weapon name, ex: Yoichinoyumi  (you can make new sets for any ranged weapon)
  -- RangedMode = Normal, Mid, Acc
- -- CustomRangedGroup = Decoy, SamRoll
+ -- CustomRangedGroup = SamRoll
 
  -- Gear.Stave should be set to your 2-handed weapon of choice if you wish to take advantage of sets.midcast.RA.Stave
  -- SamRoll is applied automatically whenever you have the roll on you. 
  -- SAM is used when you're RNG/SAM 
- -- Decoy mode helps with enmity control. I only use this with Yoichi, but if desired you can also use it with gun
-    by toggling GunDecoy  (gs c toggle GunDecoy)
-    ** If you do this, you'll need to create either a weapon specific set, or general set with Decoy appended.
-    i.e. sets.midcast.RA.Lionsquall.Decoy = {}
-    i.e. sets.midcast.RA.Decoy = {}
-    ** The idea is to put -enmity gear in your regular set, and take it off in the Decoy set. So, you will be shooting
-    from sets.midcast.RA.Decoy when decoy is up, and sets.midcast.RA when Decoy is down. 
-
--- If you don't own Fenrir's earring, or care to use it, then toggle NightEarring to false.   (gs c toggle NightEarring)
 
  * Auto RA
  - You can use the built in hotkey (CTRL -) or create a macro. (like below) Note "AutoRA" is case sensitive
@@ -76,16 +66,10 @@ function user_setup()
         auto_gun_ws = "Coronach"
         auto_bow_ws = "Namas Arrow"
 
-        state.GunDecoy = M(false, 'Use Decoy with Gun')
-        state.NightEarring = M(true, 'Use Fenrir Earring')
 
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
         gear.Stave = "Mekki Shakki"
-        
-        gear.Earring = { name="Volley Earring" }
-        gear.NightEarring = "Fenrir's earring"
-        gear.DayEarring = "Volley Earring"
        
         rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Sabebus', 
             'Eminent Axe', 'Trailer\'s Kukri', 'Aphotic Kukri', 'Atoyac'}
@@ -95,14 +79,11 @@ function user_setup()
       	DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"}
 	    U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"} 
 
-        select_earring()
         get_combat_form()
         get_custom_ranged_groups()
         select_default_macro_book()
 
         send_command('bind != gs c toggle CapacityMode')
-        send_command('bind ^= gs c toggle GunDecoy')
-        send_command('bind @= gs c toggle NightEarring') -- @ is the Windows key
         send_command('bind f9 gs c cycle RangedMode')
         send_command('bind !f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
@@ -258,16 +239,9 @@ function job_buff_change(buff, gain)
         windower.send_command('wait 170;input /echo **DECOY SHOT** Wearing off in 10 Sec.];wait 120;input /echo **DECOY SHOT READY**')
     end
 
-    if  buff == "Decoy Shot" or buff == "Samurai Roll" or buff == "Courser's Roll" or string.find(buff:lower(), 'flurry') then
+    if  buff == "Samurai Roll" or buff == "Courser's Roll" or string.find(buff:lower(), 'flurry') then
         classes.CustomRangedGroups:clear()
 
-        if (buff == "Decoy Shot" and gain) or buffactive['Decoy Shot'] then
-            -- Only append Decoy if we're using bow, or changed the setting to force it
-            if player.equipment.range == gear.Bow or state.GunDecoy.value then
-                classes.CustomRangedGroups:append('Decoy')
-            end
-        end
-        
         if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
             classes.CustomRangedGroups:append('SamRoll')
         end
@@ -283,7 +257,7 @@ function job_buff_change(buff, gain)
         end
     end
 
-    if buff == "Decoy Shot" or buff == "Camouflage" or buff == "Overkill" or buff == "Samurai Roll" or buff == "Courser's Roll" then
+    if buff == "Camouflage" or buff == "Overkill" or buff == "Samurai Roll" or buff == "Courser's Roll" then
         handle_equipping_gear(player.status)
     end
 end
@@ -326,7 +300,6 @@ end
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
          state.CombatWeapon:set(player.equipment.range)
-         select_earring()
     end
 
     if camo_active() then
@@ -424,26 +397,9 @@ function get_combat_form()
     end
 end
 
-function select_earring()
-    -- world.time is given in minutes into each day
-    -- 7:00 AM would be 420 minutes
-    -- 17:00 PM would be 1020 minutes
-    if world.time >= (18*60) or world.time <= (8*60) and state.NightEarring.value then
-        gear.Earring.name = gear.NightEarring
-    else
-        gear.Earring.name = gear.DayEarring
-    end
-end
-
 function get_custom_ranged_groups()
 	classes.CustomRangedGroups:clear()
     
-    if player.equipment.range == gear.Bow or state.GunDecoy.value then
-        if buffactive['Decoy Shot'] then
-		    classes.CustomRangedGroups:append('Decoy')
-        end
-    end
-
     if buffactive['Samurai Roll'] then
         classes.CustomRangedGroups:append('SamRoll')
     end
