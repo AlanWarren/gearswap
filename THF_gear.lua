@@ -32,7 +32,6 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
 		body="Dread Jupon",
         hands="Pillager's Armlets +1",
-        ring1="Stormsoul Ring",
         ring2="Garuda Ring",
 		back="Canny Cape",
         waist="Chaac Belt",
