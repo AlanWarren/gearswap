@@ -142,6 +142,7 @@ function init_gear_sets()
 
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
         legs="Bagua Pants",
+        feet="Azimuth Gaiters"
     })
 
     sets.midcast.Cure = sets.midcast.FastRecast
@@ -284,6 +285,7 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1",
         ring2="Patricius Ring",
         back="Repulse Mantle",
+        feet="Azimuth Gaiters"
     })
 
     -- .Pet sets are for when Luopan is present.
@@ -302,15 +304,15 @@ function init_gear_sets()
     sets.idle.Indi = set_combine(sets.idle, {
         legs="Bagua Pants", 
         feet="Geomancy Sandals",
-        back="Lifestream Cape"
-        --feet="Azimuth Gaiters"
+        back="Lifestream Cape",
+        feet="Azimuth Gaiters"
     })
     sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {
         legs="Bagua Pants", 
     })
     sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {
         legs="Bagua Pants", 
-        feet="Geomancy Sandals"
+        feet="Azimuth Gaiters"
     })
     sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {
         legs="Bagua Pants", 
@@ -320,6 +322,7 @@ function init_gear_sets()
         head="Azimuth Hood +1",
         neck="Eddy Necklace",
         waist="Fucho-no-obi",
+        legs="Azimuth Tights"
     })
 
     sets.idle.Weak = sets.idle
@@ -337,7 +340,7 @@ function init_gear_sets()
         ring2="Dark Ring",
         back="Umbra Cape",
         legs="Hagondes Pants",
-        feet="Hagondes Sabots"
+        feet="Azimuth Gaiters"
     }
 
     sets.defense.MDT = {
