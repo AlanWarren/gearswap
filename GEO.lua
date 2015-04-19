@@ -222,7 +222,7 @@ function init_gear_sets()
         ring1="Excelsis Ring",
         body="Geomancy tunic +1",
         waist="Fucho-no-obi",
-        --legs="Azimuth Tights",
+        legs="Azimuth Tights",
     })
     sets.midcast.Drain = sets.midcast.Aspir
     sets.midcast.Stun = sets.midcast.Macc
