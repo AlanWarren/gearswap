@@ -43,7 +43,7 @@ function init_gear_sets()
         sets.idle = {
             head="Arcadian Beret +1",
             neck="Twilight Torque",
-            ear1="Volley Earring",
+            ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Mekosuchinae Harness",
             hands="Iuitl Wristbands +1",
@@ -76,7 +76,7 @@ function init_gear_sets()
         sets.engaged =  {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
-            ear1="Volley Earring",
+            ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Arcadian Jerkin +1",
             hands="Iuitl Wristbands +1",
@@ -147,7 +147,7 @@ function init_gear_sets()
         sets.midcast.RA = { 
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
-            ear1="Volley Earring", 
+            ear1="Enervating Earring",
             ear2="Tripudio Earring", 
             body="Kyujutsugi",
             hands="Amini Glovelettes",
@@ -224,7 +224,7 @@ function init_gear_sets()
         sets.midcast.RA.SAM = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
-            ear1="Volley Earring", 
+            ear1="Enervating Earring",
             ear2="Tripudio Earring", 
             body="Kyujutsugi",
             hands="Amini Glovelettes",
@@ -259,7 +259,7 @@ function init_gear_sets()
             hands="Amini Glovelettes"
         })
         sets.midcast.RA.SAM.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Mid, {
-            ear1="Clearview Earring",
+            ear1="Enervating Earring",
             hands="Sigyn's Bazubands",
             legs="Amini Brague +1", 
         })
@@ -478,7 +478,7 @@ function init_gear_sets()
 
         sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
             neck="Ocachi Gorget",
-            ear1="Volley Earring",
+            ear1="Enervating Earring",
             ear2="Tripudio Earring",
             hands="Amini Glovelettes",
             legs="Amini Brague +1", 
@@ -546,7 +546,7 @@ function init_gear_sets()
         
         sets.precast.WS['Namas Arrow'].SAM = set_combine(sets.precast.WS, {
             neck="Aqua Gorget",
-            ear1="Volley Earring",
+            ear1="Enervating Earring",
             ear2="Tripudio Earring",
             waist="Light Belt",
             back="Sylvan Chlamys",
