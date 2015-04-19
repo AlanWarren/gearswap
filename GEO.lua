@@ -174,7 +174,7 @@ function init_gear_sets()
         ring2="Shiva Ring",
         back="Toro Cape",
         waist="Yamabuki-no-obi", 
-        legs="Artsieq Hose", -- "Azimuth Tights"
+        legs="Azimuth Tights",
         feet="Umbani Boots"
     }
     
@@ -183,7 +183,7 @@ function init_gear_sets()
         ear2="Lifestorm Earring",
         ring1="Perception Ring",
         ring2="Sangoma Ring",
-        legs="Helios Spats",
+        legs="Azimuth Tights",
         --feet="Bokwus Boots"
     })
 
@@ -196,7 +196,7 @@ function init_gear_sets()
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
         ear1="Psystorm Earring", 
         ear2="Lifestorm Earring",
-        legs="Helios Spats",
+        legs="Azimuth Tights",
         ring2="Sangoma Ring",
     })
 
@@ -210,7 +210,7 @@ function init_gear_sets()
         rear="Psystorm Earring",
         body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
-        legs="Helios Spats",
+        legs="Azimuth Tights",
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
         waist="Yamabuki-no-obi", 
