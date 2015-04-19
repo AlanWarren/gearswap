@@ -170,7 +170,7 @@ function init_gear_sets()
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
         body="Azimuth Coat +1",
-        hands="Geomancy Mitaines +1",
+        hands="Azimuth Gloves",
         ring1="Shiva Ring",
         ring2="Shiva Ring",
         back="Toro Cape",
