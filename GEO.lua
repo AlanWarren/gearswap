@@ -166,7 +166,7 @@ function init_gear_sets()
         --ammo="Witchstone",
         head="Geomancy Galero +1",
         neck="Eddy Necklace",
-        ear1="Hecate's Earring",
+        ear1="Crematio Earring",
         ear2="Friomisi Earring",
         body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
