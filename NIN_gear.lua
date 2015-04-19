@@ -602,7 +602,7 @@ function init_gear_sets()
     sets.engaged.Innin.Mid.PDT.Haste_15 = set_combine(sets.engaged.Innin.Mid.Haste_15, sets.engaged.HastePDT)
     sets.engaged.Innin.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
     
-    sets.buff.Migawari = {body="Iga Ningi +2"}
+    sets.buff.Migawari = {body="Hattori Ningi"}
     
     -- Weaponskills 
     sets.precast.WS = {
