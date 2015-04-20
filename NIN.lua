@@ -374,7 +374,7 @@ function determine_haste_group()
         end
     else
         if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava) ) or 
-           ( buffactive.embrava and buffactive.march == 2 ) or (buffacitve[33] and buffactive.march == 2) or 
+           ( buffactive.embrava and buffactive.march == 2 ) or (buffactive[33] and buffactive.march == 2) or 
            ( buffactive.embrava and ( buffactive.march == 1 or buffactive[33] ) ) then
             add_to_chat(8, '-------------Max Haste Mode Enabled--------------')
             classes.CustomMeleeGroups:append('MaxHaste')
