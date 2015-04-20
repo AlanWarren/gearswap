@@ -164,12 +164,12 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
+        hands="Otronif Gloves +1",
         ring1="Karieyh Ring",
         ring2="Dark Ring",
     	back="Engulfer Cape +1",
         waist="Flume Belt",
-        legs="Mochizuki Hakama +1",
+        legs="Otronif Brais +1",
         feet="Danzo Sune-ate"
      }
 
