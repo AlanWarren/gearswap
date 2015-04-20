@@ -162,7 +162,8 @@ function init_gear_sets()
     sets.midcast.Shellra = {ring1="Sheltered Ring"}
 
     sets.midcast.HighTierNuke = {
-        --main="Lehbrailg +2",
+        main="Lehbrailg +2",
+        sub="Mephitis Grip",
         --sub="Wizzan Grip",
         --ammo="Witchstone",
         head="Geomancy Galero +1",
@@ -203,8 +204,8 @@ function init_gear_sets()
     })
 
     sets.midcast.Macc = { 
-        --main="Antinian Staff", 
-        --sub="Mephitis Grip", 
+        main="Lehbrailg +2", 
+        sub="Mephitis Grip", 
         --ammo="Aureole",
         head="Bagua Galero",
         neck="Eddy Necklace", 
