@@ -453,7 +453,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
         waist="Patentia Sash",
-        back="Canny Cape"
+        back="Canny Cape",
         feet="Taeon Boots"
     })
     sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, { body="Taeon Tabard", ring1="Beeline Ring", feet="Qaaxo Leggings"})
