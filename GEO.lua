@@ -72,6 +72,8 @@ function init_gear_sets()
     })
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {
+        main="Lehbrailg +2",
+        sub="Mephitis Grip",
         neck="Stoicheion Medal",
         hands="Bagua Mitaines",
     })
