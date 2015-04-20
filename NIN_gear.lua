@@ -443,12 +443,18 @@ function init_gear_sets()
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Hattori Zukin +1",
+        body="Hattori Ningi +1",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
     })
     sets.engaged.Innin.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
         head="Hattori Zukin +1"
+        body="Hattori Ningi +1",
+        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
     })
     sets.engaged.Innin.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         head="Hattori Zukin +1"
+        body="Hattori Ningi +1",
+        waist="Patentia Sash"
     })
     sets.engaged.Innin.Acc.Haste_30 = sets.engaged.Acc.Haste_30
     
