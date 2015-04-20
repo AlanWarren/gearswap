@@ -22,6 +22,8 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
+    state.Buff.Poison = buffactive['Poison'] or false
+
     state.OffenseMode:options('None', 'Normal')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT')
@@ -72,8 +74,6 @@ function init_gear_sets()
     })
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {
-        main="Lehbrailg +2",
-        sub="Mephitis Grip",
         neck="Stoicheion Medal",
         hands="Bagua Mitaines",
     })
@@ -189,6 +189,9 @@ function init_gear_sets()
         ring2="Sangoma Ring",
         legs="Azimuth Tights",
         --feet="Bokwus Boots"
+    })
+    sets.midcast['Elemental Magic'].Mindmelter = set_combine(sets.midcast.HighTierNuke, {
+        main="Mindmelter"
     })
 
     sets.precast.JA['Concentric Pulse'] = sets.midcast.HightTierNuke
@@ -403,6 +406,11 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+function job_precast(spell, action, spellMap, eventArgs)
+    if state.Buff.Poison then
+        classes.CustomClass = 'Mindmelter'
+    end
+end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
     if not spell.interrupted then
@@ -427,13 +435,13 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
-function job_status_change(newStatus, oldStatus, eventArgs)
-    if newStatus == 'Engaged' then
-        -- nothing yet
-   -- elseif newStatus == 'Idle' then
-   --     determine_idle_group()
-    end
-end
+--function job_status_change(newStatus, oldStatus, eventArgs)
+--    if newStatus == 'Engaged' then
+--        -- nothing yet
+--        elseif newStatus == 'Idle' then
+--            determine_idle_group()
+--    end
+--end
 
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
@@ -497,18 +505,6 @@ function job_update(cmdParams, eventArgs)
     classes.CustomIdleGroups:clear()
     if player.indi then
         classes.CustomIdleGroups:append('Indi')
-    end
-end
-
--- Handle zone specific rules
-windower.register_event('Zone change', function(new,old)
-    determine_idle_group()
-end)
-
-function determine_idle_group()
-    classes.CustomIdleGroups:clear()
-    if areas.Adoulin:contains(world.area) then
-    	classes.CustomIdleGroups:append('Adoulin')
     end
 end
 
