@@ -114,6 +114,7 @@ function init_gear_sets()
         legs="Aetosaur Trousers +1",
         feet="Scopuli Nails +1"
     }
+    --sets.midcast['Enfeebling Magic'] = sets.midcast.RA
        
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
@@ -124,7 +125,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
 		body="Qaaxo Harness",
         hands="Taeon Gloves",
-        ring1="Rajas Ring",
+        ring1="Karieyh Ring",
         ring2="Epona's Ring",
 		back="Bleating Mantle",
         waist="Elanid Belt",
@@ -135,7 +136,6 @@ function init_gear_sets()
         head="Whirlpool Mask",
         hands="Plunderer's Armlets +1",
 		body="Dread Jupon",
-        ring1="Mars's Ring",
         ring2="Patricius Ring",
         back="Canny Cape",
         waist="Olseni Belt"
@@ -156,7 +156,6 @@ function init_gear_sets()
 	sets.precast.WS['Exenterator'].Mid = set_combine(sets.precast.WS['Exenterator'], {waist="Thunder Belt"})
 	sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'].Mid, {
         hands="Plunderer's Armlets +1",
-        ring1="Mars's Ring",
         back="Canny Cape"
     })
 	sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mid, {
@@ -206,6 +205,7 @@ function init_gear_sets()
         hands=TaeonHands.TA,
         body="Dread Jupon",
         ring1="Ramuh Ring",
+        ring2="Karieyh Ring",
         waist="Windbuffet Buffet +1",
         legs="Taeon Tights",
         back="Kayapa Cape",
@@ -270,10 +270,10 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-		body="Kheper Jacket",
+        body="Mekosuchinae Harness",
         hands=TaeonHands.TA,
         ring1="Paguroidea Ring",
-        ring2="Epona's Ring",
+        ring2="Karieyh Ring",
 		back="Engulfer Cape +1",
         waist="Flume Belt",
         legs="Taeon Tights",
