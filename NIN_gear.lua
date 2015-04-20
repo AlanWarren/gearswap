@@ -224,37 +224,35 @@ function init_gear_sets()
     -- Normal melee group without buffs
     sets.engaged = {
         ammo=gear.RegularAmmo,
-        head="Hattori Zukin +1",
-        neck="Asperity Necklace",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        body="Hachiya Chainmail +1",
+        head="Ptica Headgear",
+        neck="Rancor Collar",
+        ear1="Brutal Earring",
+        ear2="Suppanomimi",
+        body="Mochizuki Chainmail +1",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
-        waist="Windbuffet Belt +1",
+        waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
         feet="Taeon Boots"
     }
-
+    -- assumptions made about target, Rancor no longer "OK" 
     sets.engaged.Low = set_combine(sets.engaged, {
-        head="Ptica Headgear",
+        neck="Asperity Necklace",
         ear1="Trux Earring",
-        ear2="Suppanomimi",
-        body="Mochizuki Chainmail +1",
-        back="Yokaze Mantle",
+        back="Yokaze Mantle"
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
         ring1="Patricius Ring"
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Iqabi Necklace",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
         ring2="Mars's Ring",
         waist="Olseni Belt",
     })
@@ -271,8 +269,8 @@ function init_gear_sets()
     sets.engaged.Innin.Mid = set_combine(sets.engaged.Innin.Low, {
         ring1="Patricius Ring"
     })
-    sets.engaged.Innin.Acc = set_combine(sets.engaged.Acc, {
-    })
+    sets.engaged.Innin.Acc = sets.engaged.Acc
+
     -- Defenseive sets
     sets.NormalPDT = {
         head="Otronif Mask +1",
@@ -317,7 +315,7 @@ function init_gear_sets()
         head="Taeon Chapeau",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
-        neck="Asperity Necklace",
+        neck="Rancor Collar",
         body="Hattori Ningi +1",
         hands="Otronif Gloves +1",
         ring1="Oneiros Ring",
@@ -328,12 +326,14 @@ function init_gear_sets()
     })
     -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         ring1="Rajas Ring",
         hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
+        ring1="Patricius Ring",
         back="Yokaze Mantle",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
@@ -465,16 +465,15 @@ function init_gear_sets()
 
     -- 5 - 20% Haste 
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
-        --back="Vellaunus' Mantle +1",
         head="Ptica Headgear",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         back="Bleating Mantle",
-        waist="Shetal Stone"
+        waist="Patentia Sash",
     })
     sets.engaged.Low.Haste_15 = set_combine(sets.engaged.Low.Haste_30, {
         back="Yokaze Mantle",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
-        waist="Shetal Stone"
+        waist="Patentia Sash"
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Mid.Haste_30, {
         ear1="Dudgeon Earring",
@@ -484,7 +483,8 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_30, {
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
-        legs="Taeon Tights"
+        legs="Taeon Tights",
+        waist="Patentia Sash"
     })
     
     sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, {
