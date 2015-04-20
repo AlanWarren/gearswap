@@ -184,6 +184,7 @@ function init_gear_sets()
         neck="Hope Torque",
         ear1="Lugra Earring +1",
         ring1="Karieyh Ring",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
         ring2="Ifrit Ring +1",
         body="Hattori Ningi +1",
         legs="Mochizuki Hakama +1",
