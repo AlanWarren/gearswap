@@ -17,7 +17,7 @@ function job_setup()
     include('Mote-TreasureHunter')
     state.TreasureMode:set('Tag')
 
-    state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Low' }
+    state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi' }
     state.Runes = M{['description']='Runes', "Ignis", "Gelus", "Flabra", "Tellus", "Sulpor", "Unda", "Lux", "Tenebrae"}
     state.UseRune = M(false, 'Use Rune')
 
@@ -167,6 +167,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
                 equip(sets.BrutalLugra)
             else
                 equip(sets.BrutalTrux)
+            end
+        elseif spell.english == 'Blade: Hi' or spell.english == 'Blade: Ten' then
+            if world.time >= (17*60) or world.time <= (7*60) then
+                equip(sets.BrutalLugra)
+            else
+                equip(sets.BrutalMoon)
             end
         end
 
@@ -350,30 +356,12 @@ function determine_haste_group()
     -- buffactive[580] = geo haste
     -- buffactive[33] = regular haste
     -- state.HasteMode = toggle for when you know Haste II is being cast on you
-    -- Low = solo with trusts
     -- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
-    -- but wtf can  you do..  
-    if state.HasteMode.value == 'Low' then
-        if (buffactive[33] and buffactive['haste samba'] and buffactive.march == 1) then
-            add_to_chat(8, '-------------Haste 35%-------------')
-            classes.CustomMeleeGroups:append('Haste_35')
-        elseif ( buffactive[33] and buffactive.march == 2 ) or ( buffactive[33] and buffactive['haste samba'] ) then
-            add_to_chat(8, '-------------Haste 30%-------------')
-            classes.CustomMeleeGroups:append('Haste_30')
-        elseif buffactive.march == 2 then
-            add_to_chat(8, '-------------Haste 25%-------------')
-            classes.CustomMeleeGroups:append('Haste_25')
-        elseif buffactive[33] or buffactive['haste samba'] then
-            add_to_chat(8, '-------------Haste 15%-------------')
-            classes.CustomMeleeGroups:append('Haste_15')
-        end
-    elseif state.HasteMode.value == 'Hi' then
-        if ( ((buffactive[33] or buffactive[580]) and buffactive.march) or (buffactive.embrava and buffactive[33]) ) then
+    -- but wtf can  you do..   I macro it, and use it often. 
+    if state.HasteMode.value == 'Hi' then
+        if ( ((buffactive[33] or buffactive[580]) and buffactive.march) or (buffactive.embrava and buffactive[33]) or (buffactive.embrava and buffactive.march == 1) ) then
             add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
             classes.CustomMeleeGroups:append('MaxHaste')
-        elseif buffactive.embrava and buffactive.march == 1 then
-            add_to_chat(8, '-------------Haste 40%-------------')
-            classes.CustomMeleeGroups:append('Haste_40')
         elseif ( (buffactive[33] or buffactive.march == 2) and buffactive['haste samba'] ) or buffactive.embrava then
             add_to_chat(8, '-------------Haste 35%-------------')
             classes.CustomMeleeGroups:append('Haste_35')
@@ -386,12 +374,10 @@ function determine_haste_group()
         end
     else
         if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava) ) or 
-           ( buffactive.embrava and buffactive.march == 2 )  then
+           ( buffactive.embrava and buffactive.march == 2 ) or (buffacitve[33] and buffactive.march == 2) or 
+           ( buffactive.embrava and ( buffactive.march == 1 or buffactive[33] ) ) then
             add_to_chat(8, '-------------Max Haste Mode Enabled--------------')
             classes.CustomMeleeGroups:append('MaxHaste')
-        elseif ( buffactive[33] and buffactive.march == 2 ) or ( buffactive.embrava and ( buffactive.march == 1 or buffactive[33] ) ) then
-            add_to_chat(8, '-------------Haste 40%-------------')
-            classes.CustomMeleeGroups:append('Haste_40')
         elseif (buffactive[33] and buffactive['haste samba'] and buffactive.march == 1) or buffactive.embrava or (buffactive.march == 2 and buffactive['haste samba']) then
             add_to_chat(8, '-------------Haste 35%-------------')
             classes.CustomMeleeGroups:append('Haste_35')
