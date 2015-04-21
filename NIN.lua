@@ -266,6 +266,7 @@ function job_buff_change(buff, gain)
     
     if buff == 'Innin' and gain  or buffactive['Innin'] then
         state.CombatForm:set('Innin')
+        handle_equipping_gear(player.status)
     else
         state.CombatForm:reset()
     end
