@@ -173,7 +173,7 @@ function init_gear_sets()
         ear1="Hecate's Earring",
         ear2="Friomisi Earring",
         body="Azimuth Coat +1",
-        hands="Azimuth Gloves",
+        hands="Helios Gloves",
         ring1="Shiva Ring",
         ring2="Shiva Ring",
         back="Toro Cape",
@@ -185,6 +185,7 @@ function init_gear_sets()
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
+        hands="Azimuth Gloves",
         ring1="Perception Ring",
         ring2="Sangoma Ring",
         legs="Azimuth Tights",
