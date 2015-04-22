@@ -193,9 +193,9 @@ function init_gear_sets()
         legs="Azimuth Tights",
         --feet="Bokwus Boots"
     })
-    sets.midcast['Elemental Magic'].Mindmelter = set_combine(sets.midcast.HighTierNuke, {
-        main="Mindmelter"
-    })
+    --sets.midcast['Elemental Magic'].Mindmelter = set_combine(sets.midcast.HighTierNuke, {
+    --    main="Mindmelter"
+    --})
 
     sets.precast.JA['Concentric Pulse'] = sets.midcast.HightTierNuke
 
@@ -410,9 +410,9 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 function job_precast(spell, action, spellMap, eventArgs)
-    if state.Buff.Poison then
-        classes.CustomClass = 'Mindmelter'
-    end
+    --if state.Buff.Poison then
+    --    classes.CustomClass = 'Mindmelter'
+    --end
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
