@@ -191,6 +191,7 @@ function init_gear_sets()
         ring1="Perception Ring",
         ring2="Sangoma Ring",
         legs="Azimuth Tights",
+        feet="Helios Boost"
         --feet="Bokwus Boots"
     })
     --sets.midcast['Elemental Magic'].Mindmelter = set_combine(sets.midcast.HighTierNuke, {
@@ -209,6 +210,7 @@ function init_gear_sets()
         ear2="Lifestorm Earring",
         legs="Azimuth Tights",
         ring2="Sangoma Ring",
+        feet="Helios Boost"
     })
 
     sets.midcast.Macc = { 
@@ -225,6 +227,7 @@ function init_gear_sets()
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
         waist="Yamabuki-no-obi", 
+        feet="Helios Boost"
     }
     
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
