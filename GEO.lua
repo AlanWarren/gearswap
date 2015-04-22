@@ -332,7 +332,6 @@ function init_gear_sets()
         head="Azimuth Hood +1",
         neck="Eddy Necklace",
         waist="Fucho-no-obi",
-        legs="Azimuth Tights"
     })
 
     sets.idle.Weak = sets.idle
