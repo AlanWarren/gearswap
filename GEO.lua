@@ -147,7 +147,9 @@ function init_gear_sets()
         feet="Azimuth Gaiters"
     })
 
-    sets.midcast.Cure = sets.midcast.FastRecast
+    sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
+        hands="Telchine Gloves"
+    })
         --main="Tamaxchi",
         --sub="Genbu's Shield",
         --body="Heka's Kalasiris",
