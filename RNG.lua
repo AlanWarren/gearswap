@@ -259,7 +259,9 @@ function job_buff_change(buff, gain)
     end
 
     if buff == "Camouflage" or buff == "Overkill" or buff == "Samurai Roll" or buff == "Courser's Roll" then
-        handle_equipping_gear(player.status)
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
     end
 end
  

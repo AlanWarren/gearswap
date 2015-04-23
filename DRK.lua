@@ -818,10 +818,14 @@ function job_buff_change(buff, gain)
     if S{'haste', 'march', 'embrava', 'geo-haste', 'indi-haste'}:contains(buff:lower()) and gain then
         if buffactive['Last Resort'] then
             state.CombatForm:set("Haste")
-            handle_equipping_gear(player.status)
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
         else
             state.CombatForm:reset()
-            handle_equipping_gear(player.status)
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
         end
     end
     -- Drain II HP Boost. Set SE to stay on.
@@ -848,7 +852,9 @@ function job_buff_change(buff, gain)
             classes.CustomMeleeGroups:append('AM3')
         end
 
-        handle_equipping_gear(player.status)
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
     end
     -- Automatically wake me when I'm slept
     --if string.lower(buff) == "sleep" and gain and player.hp > 200 then
@@ -870,7 +876,9 @@ function job_buff_change(buff, gain)
             disable('head')
         else
             enable('head')
-            handle_equipping_gear(player.status)
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
         end
     end
 end
