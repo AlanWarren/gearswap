@@ -318,7 +318,7 @@ function init_gear_sets()
         legs="Bagua Pants", 
         feet="Geomancy Sandals",
         back="Lifestream Cape",
-        feet="Azimuth Gaiters"
+        --feet="Azimuth Gaiters"
     })
     sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {
         legs="Bagua Pants", 
