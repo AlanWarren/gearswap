@@ -269,6 +269,7 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
     else
         state.CombatForm:reset()
+        handle_equipping_gear(player.status)
     end
 
     -- If we gain or lose any haste buffs, adjust which gear set we target.

@@ -870,8 +870,8 @@ function job_buff_change(buff, gain)
             disable('head')
         else
             enable('head')
+            handle_equipping_gear(player.status)
         end
-        handle_equipping_gear(player.status)
     end
 end
  
