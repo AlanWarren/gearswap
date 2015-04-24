@@ -230,6 +230,7 @@ function job_buff_change(buff, gain)
 
     if state.Buff[buff] ~= nil then
         state.Buff[buff] = gain
+        handle_equipping_gear(player.status)
     end
     if buff == 'Velocity Shot' and gain then
         windower.send_command('wait 290;input /echo **VELOCITY SHOT** Wearing off in 10 Sec.')
@@ -258,7 +259,9 @@ function job_buff_change(buff, gain)
     end
 
     if buff == "Camouflage" or buff == "Overkill" or buff == "Samurai Roll" or buff == "Courser's Roll" then
-        handle_equipping_gear(player.status)
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
     end
 end
  

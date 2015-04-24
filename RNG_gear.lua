@@ -1,4 +1,8 @@
 function init_gear_sets()
+        -- Augmented gear
+        TaeonHands = {}
+        TaeonHands.TA = {name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}}
+        TaeonHands.DW = {name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}}
         -- Misc. Job Ability precasts
         sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes"}
         sets.precast.JA['Double Shot'] = {head="Sylvan Gapette +2"}
@@ -74,16 +78,15 @@ function init_gear_sets()
         -- Engaged sets
         sets.engaged =  {
             head="Arcadian Beret +1",
-            neck="Ocachi Gorget",
+            neck="Twilight Torque",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Arcadian Jerkin +1",
+            body="Arcadian Jerkin +1", 
             hands="Iuitl Wristbands +1",
-            ring1="Rajas Ring",
-            ring2="Paguroidea Ring",
-            back="Repulse Mantle",
+            ring1="Karieyh Ring",
+            ring2="Dark Ring",
             waist="Impulse Belt",
-            legs="Amini Brague +1", 
+            legs="Nahtirah Trousers", 
             feet="Orion Socks +1"
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
@@ -99,7 +102,7 @@ function init_gear_sets()
             ear1="Bladeborn Earring",
             ear2="Steelflash Earring",
             body="Qaaxo Harness",
-            hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+            hands=TaeonHands.TA,
             ring1="Rajas Ring",
             ring2="Epona's Ring",
             back="Bleating Mantle",
@@ -120,7 +123,7 @@ function init_gear_sets()
             ear1="Dudgeon Earring",
             ear2="Heartseeker Earring",
             body="Taeon Tabard",
-            hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
+            hands=TaeonHands.DW,
             back="Bleating Mantle",
             waist="Patentia Sash",
             legs="Taeon Tights",
@@ -148,7 +151,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Enervating Earring",
             ear2="Tripudio Earring", 
-            body="Kyujutsugi",
+            body="Arcadian Jerkin +1",
             hands="Amini Glovelettes",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
@@ -159,8 +162,8 @@ function init_gear_sets()
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             back="Lutian Cape", 
-            body="Amini Caban",
-            legs="Amini Brague +1", 
+            ring1="Longshot Ring",
+            body="Kyujutsugi",
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             neck="Iqabi Necklace", hands="Sigyn's Bazubands",
@@ -355,13 +358,13 @@ function init_gear_sets()
             back="Buquwik Cape",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
-            feet="Taeon Boots"
+            feet="Arcadian Socks +1"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
+            ear1="Enervating Earring",
             feet="Orion Socks +1"
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-            hands="Sigyn's Bazubands",
             back="Lutian Cape"
         })
 
@@ -372,13 +375,13 @@ function init_gear_sets()
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
             neck="Stoicheion Medal",
-            hands={name="Taeon Gloves", augments={'STR+8','Accuracy+18','"Triple Atk."+2'}},
+            hands=TaeonHands.TA,
             ring1="Acumen Ring",
             ring2="Garuda Ring",
+            back="Argochampsa Mantle",
             waist="Yamabuki-no-Obi",
             legs="Limbo Trousers",
-            back="Argochampsa Mantle",
-            feet="Arcadian Socks +1"
+            feet="Taeon Boots"
         }
         sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
         sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS.Mid, sets.Wildfire)
@@ -388,8 +391,6 @@ function init_gear_sets()
         sets.Coronach = {
            neck="Breeze Gorget",
            waist="Thunder Belt",
-           back="Sylvan Chlamys",
-           ring2="Ifrit Ring +1"
         }
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.Coronach)

@@ -33,7 +33,7 @@ function job_setup()
 
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
-    --state.LookCool = M{['description']='Look Cool', 'Normal', 'On' }
+    -- Set the default to false if you'd rather SE always stay acitve
     state.SouleaterMode = M(true, 'Soul Eater Mode')
     
     --wsList = S{'Spiral Hell'}
@@ -106,6 +106,8 @@ function init_gear_sets()
      sets.BrutalTripudio  = { ear1="Brutal Earring", ear2="Tripudio Earring" }
      sets.BrutalTrux      = { ear1="Brutal Earring", ear2="Trux Earring" }
      sets.Lugra           = { ear1="Lugra Earring +1" }
+     -- Moonshade Substitute @ 3000 TP
+     sets.Trux            = { ear2="Trux Earring" }
  
      sets.reive = {neck="Ygnas's Resolve +1"}
      -- Waltz set (chr and vit)
@@ -693,18 +695,28 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-        -- Use Lugra+1 from dusk to dawn.
+        -- Use Lugra+1 from dusk to dawn
         if world.time >= (17*60) or world.time <= (7*60) then
-            equip(sets.Lugra)
+            -- don't want moonshade @ 3000 TP
+            if player.tp > 2999 then
+                equip(sets.BrutalLugra)
+            else -- use Lugra + moonshade
+                equip(sets.Lugra)
+            end
+        else -- it's day time, use trux instead of moonshade
+            if player.tp > 2999 then
+                equip(sets.Trux)
+            end
         end
-        -- Use SOA neck piece for WS
+        -- Use SOA neck piece for WS in rieves
         if buffactive['Reive Mark'] then
             equip(sets.reive)
         end
-        -- Use Tengu-No-Hane for WS during the day, when acc is needed.
+        -- Use Tengu-No-Hane for WS during the day, when acc mode is toggled
         if state.OffenseMode.current == 'Acc' then
             equip(select_ammo())
         end
+        -- Trepidity Mantle rule: if your Niht Mantle augs suck, uncomment below
         --if world.day_element == 'Dark' then
         --    equip(sets.WSBack)
         --end
@@ -806,8 +818,14 @@ function job_buff_change(buff, gain)
     if S{'haste', 'march', 'embrava', 'geo-haste', 'indi-haste'}:contains(buff:lower()) and gain then
         if buffactive['Last Resort'] then
             state.CombatForm:set("Haste")
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
         else
             state.CombatForm:reset()
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
         end
     end
     -- Drain II HP Boost. Set SE to stay on.
@@ -834,7 +852,9 @@ function job_buff_change(buff, gain)
             classes.CustomMeleeGroups:append('AM3')
         end
 
-        handle_equipping_gear(player.status)
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
     end
     -- Automatically wake me when I'm slept
     --if string.lower(buff) == "sleep" and gain and player.hp > 200 then
@@ -856,6 +876,9 @@ function job_buff_change(buff, gain)
             disable('head')
         else
             enable('head')
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
         end
     end
 end

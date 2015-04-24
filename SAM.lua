@@ -246,6 +246,7 @@ end
 function job_buff_change(buff, gain)
     if state.Buff[buff] ~= nil then
     	state.Buff[buff] = gain
+        handle_equipping_gear(player.status)
     end
 
     if S{'aftermath'}:contains(buff:lower()) then
@@ -262,12 +263,8 @@ function job_buff_change(buff, gain)
         end
     end
     
-    if string.lower(buff) == "sleep" and gain and player.hp > 200 then
-        equip(sets.Berserker)
-    else
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
+    if not midaction() then
+        handle_equipping_gear(player.status)
     end
 
 end
