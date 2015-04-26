@@ -226,7 +226,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo=gear.RegularAmmo,
         head="Ptica Headgear",
-        neck="Rancor Collar",
+        neck="Defiant Collar",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
@@ -240,7 +240,6 @@ function init_gear_sets()
     }
     -- assumptions made about target, Rancor no longer "OK" 
     sets.engaged.Low = set_combine(sets.engaged, {
-        neck="Asperity Necklace",
         ear1="Trux Earring",
         back="Yokaze Mantle"
     })
@@ -252,7 +251,6 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        neck="Iqabi Necklace",
         hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
         ring2="Mars's Ring",
         waist="Olseni Belt",
@@ -316,7 +314,7 @@ function init_gear_sets()
         head="Taeon Chapeau",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
-        neck="Rancor Collar",
+        neck="Defiant Collar",
         body="Hattori Ningi +1",
         hands="Otronif Gloves +1",
         ring1="Oneiros Ring",
@@ -327,7 +325,7 @@ function init_gear_sets()
     })
     -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        neck="Asperity Necklace",
+        neck="Defiant Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         ring1="Rajas Ring",
@@ -339,7 +337,6 @@ function init_gear_sets()
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Gavialis Helm",
-        neck="Iqabi Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         ring2="Mars's Ring",
@@ -371,7 +368,7 @@ function init_gear_sets()
     })
     sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
         head="Ptica Headgear",
-        neck="Rancor Collar",
+        neck="Defiant Collar",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
     })
@@ -410,7 +407,7 @@ function init_gear_sets()
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
-        neck="Asperity Necklace",
+        neck="Defiant Collar",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
@@ -520,7 +517,7 @@ function init_gear_sets()
     -- Weaponskills 
     sets.precast.WS = {
         head="Taeon Chapeau",
-        neck="Asperity Necklace",
+        neck="Defiant Collar",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         body="Hattori Ningi +1",
