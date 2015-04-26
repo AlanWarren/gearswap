@@ -98,7 +98,7 @@ function init_gear_sets()
 
         sets.engaged.Melee = {
             head="Taeon Chapeau",
-            neck="Asperity Necklace",
+            neck="Defiant Collar",
             ear1="Bladeborn Earring",
             ear2="Steelflash Earring",
             body="Qaaxo Harness",
