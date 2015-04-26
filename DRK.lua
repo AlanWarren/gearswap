@@ -619,10 +619,9 @@ function init_gear_sets()
          feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-         neck="Iqabi Necklace",
+         neck="Defiant Collar",
          back="Kayapa Cape",
          hands="Crusher Gauntlets",
-         ring1="Mars's Ring",
          waist="Olseni Belt"
      })
      -- Liberator AM3
@@ -638,7 +637,7 @@ function init_gear_sets()
          feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
-         neck="Iqabi Necklace",
+         neck="Defiant Collar",
          hands="Crusher Gauntlets",
          ear2="Steelflash Earring",
          waist="Olseni Belt",
