@@ -267,7 +267,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = {
 		head="Ocelomeh Headpiece +1",
-        neck="Asperity Necklace",
+        neck="Defiant Collar",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         body="Mekosuchinae Harness",
@@ -295,7 +295,7 @@ function init_gear_sets()
 	-- Defense sets
 	sets.defense.Evasion = {
 		head="Felistris Mask",
-        neck="Asperity Necklace",
+        neck="Defiant Collar",
 		body="Qaaxo Harness",
         hands="Pillager's Armlets +1",
         ring1="Beeline Ring",
@@ -342,7 +342,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
 		head="Taeon Chapeau",
-        neck="Asperity Necklace",
+        neck="Defiant Collar",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		--body="Skadi's Cuirie +1",
@@ -361,7 +361,6 @@ function init_gear_sets()
         ring1="Patricius Ring",
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        neck="Iqabi Necklace",
 		body="Mekosuchinae Harness",
         hands=TaeonHands.DW,
         waist="Olseni Belt",
@@ -414,7 +413,7 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
         head="Whirlpool Mask",
 		body="Mekosuchinae Harness",
-        neck="Rancor Collar",
+        neck="Defiant Collar",
         hands=TaeonHands.TA,
         ring1="Mars's Ring",
         ring2="Patricius Ring",
