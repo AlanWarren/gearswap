@@ -181,15 +181,13 @@ function init_gear_sets()
         back="Toro Cape",
         waist="Yamabuki-no-obi", 
         legs="Azimuth Tights",
-        feet="Umbani Boots"
+        feet="Helios Boost"
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
         hands="Azimuth Gloves",
-        ring1="Perception Ring",
-        ring2="Sangoma Ring",
         legs="Azimuth Tights",
         feet="Helios Boost"
         --feet="Bokwus Boots"
@@ -202,7 +200,7 @@ function init_gear_sets()
 
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
         ear1="Crematio Earring",
-        ring2="Acumen Ring",
+        feet="Umbani Boots"
     })
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
@@ -222,7 +220,7 @@ function init_gear_sets()
         lear="Lifestorm Earring", 
         rear="Psystorm Earring",
         body="Azimuth Coat +1",
-        hands="Azimuth Gloves",
+        hands="Helios Gloves",
         legs="Azimuth Tights",
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
@@ -244,13 +242,15 @@ function init_gear_sets()
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
         waist="Casso Sash",
         back="Lifestream Cape",
-        lring="Globidonta Ring",
+        hands="Azimuth Gloves",
+        ring2="Globidonta Ring",
         feet="Bagua Sandals"
     })
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.Macc, {
         waist="Casso Sash",
         back="Lifestream Cape",
-        lring="Globidonta Ring",
+        ring1="Shiva Ring",
+        ring2="Globidonta Ring",
         feet="Bagua Sandals"
     })
 
