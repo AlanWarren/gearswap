@@ -226,7 +226,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo=gear.RegularAmmo,
         head="Ptica Headgear",
-        neck="Defiant Collar",
+        neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
@@ -240,6 +240,7 @@ function init_gear_sets()
     }
     -- assumptions made about target, Rancor no longer "OK" 
     sets.engaged.Low = set_combine(sets.engaged, {
+        neck="Defiant Collar",
         ear1="Trux Earring",
         back="Yokaze Mantle"
     })
@@ -314,7 +315,7 @@ function init_gear_sets()
         head="Taeon Chapeau",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
-        neck="Defiant Collar",
+        neck="Asperity Necklace",
         body="Hattori Ningi +1",
         hands="Otronif Gloves +1",
         ring1="Oneiros Ring",
@@ -407,7 +408,7 @@ function init_gear_sets()
     -- 30% Haste
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
-        neck="Defiant Collar",
+        neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
@@ -422,6 +423,7 @@ function init_gear_sets()
     sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_35, {
         ear1="Brutal Earring",
         ear2="Suppanomimi",
+        neck="Defiant Collar",
         body="Mochizuki Chainmail +1",
         hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
         back="Yokaze Mantle"
