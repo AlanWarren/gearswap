@@ -156,7 +156,7 @@ end
 
 function customize_idle_set(idleSet)
 	if player.hpp < 80 then
-		idleSet = set_combine(idleSet, sets.ExtraRegen)
+		idleSet = set_combine(idleSet, sets.idle.Regen)
 	end
 
 	return idleSet

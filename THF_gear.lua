@@ -266,28 +266,32 @@ function init_gear_sets()
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = {
-		head="Ocelomeh Headpiece +1",
-        neck="Defiant Collar",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        body="Mekosuchinae Harness",
-        hands=TaeonHands.TA,
-        ring1="Paguroidea Ring",
-        ring2="Karieyh Ring",
+		head="Lithelimb Cap",
+        neck="Twilight Torque",
+        ear1="Zennaroi Earring",
+        ear2="Trux Earring",
+        body="Emet Harness +1",
+        hands="Iuitl Wristbands +1",
+        ring1="Karieyh Ring",
+        ring2="Dark Ring",
 		back="Engulfer Cape +1",
         waist="Flume Belt",
-        legs="Taeon Tights",
+        legs="Pillager's culottes +1",
         feet="Skadi's Jambeaux +1"
     }
 
 	sets.idle.Town = set_combine(sets.idle, {
-        head="Felistris Mask",
-        body="Taeon Tabard",
-        hands=TaeonHands.TA,
         back="Canny Cape",
-        ring1="Patricius Ring",
+        neck="Defiant Collar",
+        ring1="Karieyh Ring",
         ring2="Epona's Ring",
         waist="Windbuffet Belt +1",
+    })
+
+    sets.idle.Regen = set_combine(sets.idle, {
+        head="Ocelomeh Headpiece +1",
+        body="Kheper Jacket",
+        ring2="Paguroidea Ring",
     })
 	
 	sets.idle.Weak = sets.idle
@@ -407,7 +411,7 @@ function init_gear_sets()
         feet="Plunderer's Poulaines"
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
-        body="Qaaxo Harness",
+        --body="Qaaxo Harness",
         ring1="Patricius Ring"
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
