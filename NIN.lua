@@ -204,6 +204,11 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
     -- Aftermath timer creation
     aw_custom_aftermath_timers_aftercast(spell)
+    --if spell.type == 'WeaponSkill' then
+    --    eventArgs.handled = true
+    --    send_command('@wait 1;gs c update') 
+    --end
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
