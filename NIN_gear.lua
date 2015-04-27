@@ -60,7 +60,7 @@ function init_gear_sets()
     sets.precast.Step = {
         head="Gavialis Helm",
         body="Hattori Ningi +1",
-        neck="Iqabi Necklace",
+        neck="Defiant Collar",
         ear1="Zennaroi Earring",
         hands="Sasuke Tekko +1",
         back="Yokaze Mantle",
@@ -181,7 +181,7 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         head="Hattori Zukin +1",
-        neck="Hope Torque",
+        neck="Defiant Collar",
         ear1="Lugra Earring +1",
         ring1="Karieyh Ring",
         hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
