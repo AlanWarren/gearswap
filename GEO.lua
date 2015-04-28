@@ -320,6 +320,11 @@ function init_gear_sets()
         ring2="Patricius Ring",
     })
 
+    sets.idle.DW = set_combine(sets.idle, {
+        main="Nehushtan",
+        sub="Bolelabunga"
+    })
+
     -- .Indi sets are for when an Indi-spell is active.
     sets.idle.Indi = set_combine(sets.idle, {
         legs="Bagua Pants", 
@@ -403,12 +408,23 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1",
         ring1="Rajas Ring",
         ring2="Patricius Ring",
-        back="Kayapa Cape",
+        back="Lifestream Cape",
         waist="Windbuffet Belt +1",
         legs="Hagondes Pants",
         feet="Hagondes Sabots"
     }
-
+    sets.engaged.DW = set_combine(sets.engaged, {
+        neck="Asperity Necklace",
+        ear1="Brutal Earring",
+        ear2="Trux Earring",
+        hands="Telchine Gloves",
+        ring1="Rajas Ring",
+        ring2="K'ayres Ring",
+        back="Kayapa Cape",
+        waist="Windbuffet Belt +1",
+        legs="Geomancy Pants +1",
+        feet="Umbani Boots"
+    })
     --------------------------------------
     -- Custom buff sets
     --------------------------------------
