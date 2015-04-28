@@ -294,7 +294,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
         waist="Fucho-no-obi",
-        legs="Geomancy Pants +1",
+        legs="Azimuth Tights +1",
         feet="Geomancy Sandals"
     }
     sets.idle.PDT = set_combine(sets.idle, {
