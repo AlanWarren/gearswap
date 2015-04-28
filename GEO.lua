@@ -135,6 +135,7 @@ function init_gear_sets()
     sets.midcast.Geomancy = {
         range="Dunna", 
         head="Azimuth Hood +1", -- 10
+        ear1="Gwati Earring",
         hands="Geomancy Mitaines +1", -- 15
         body="Bagua Tunic", -- 10
         back="Lifestream Cape", -- 9
@@ -185,10 +186,11 @@ function init_gear_sets()
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
-        ear1="Psystorm Earring",
-        ear2="Lifestorm Earring",
+        ear1="Gwati Earring", 
+        ear2="Friomisi Earring",
         hands="Azimuth Gloves",
         legs="Azimuth Tights",
+        back="Refration Cape",
         feet="Helios Boost"
         --feet="Bokwus Boots"
     })
@@ -204,10 +206,11 @@ function init_gear_sets()
     })
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
-        ear1="Psystorm Earring", 
-        ear2="Lifestorm Earring",
+        ear1="Gwati Earring", 
+        ear2="Friomisi Earring",
         legs="Azimuth Tights",
         ring2="Sangoma Ring",
+        back="Refration Cape",
         feet="Helios Boost"
     })
 
@@ -217,13 +220,14 @@ function init_gear_sets()
         --ammo="Aureole",
         head="Bagua Galero",
         neck="Eddy Necklace", 
-        lear="Lifestorm Earring", 
-        rear="Psystorm Earring",
+        ear1="Lifestorm Earring", 
+        ear2="Psystorm Earring",
         body="Azimuth Coat +1",
         hands="Helios Gloves",
-        legs="Azimuth Tights",
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
+        back="Refration Cape",
+        legs="Azimuth Tights",
         waist="Yamabuki-no-obi", 
         feet="Helios Boost"
     }
