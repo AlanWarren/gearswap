@@ -30,6 +30,9 @@ function user_setup()
 
     gear.default.weaponskill_waist = "Windbuffet Belt +1"
 
+    geo_sub_weapons = S{"Nehushtan", "Bolelabunga"}
+    get_combat_form()
+
     select_default_macro_book()
 end
 
@@ -509,12 +512,21 @@ function customize_idle_set(idleSet)
     return idleSet
 end
 
+function get_combat_form()
+    if S{'NIN', 'DNC'}:contains(player.sub_job) and geo_sub_weapons:contains(player.equipment.sub) then
+        state.CombatForm:set("DW")
+    else
+        state.CombatForm:reset()
+    end
+end
+
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
     classes.CustomIdleGroups:clear()
     if player.indi then
         classes.CustomIdleGroups:append('Indi')
     end
+    get_combat_form()
 end
 
 -- Function to display the current relevant user state when doing an update.
