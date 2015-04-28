@@ -233,7 +233,7 @@ function init_gear_sets()
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
-        back="Bleating Mantle",
+        back="Iga Dochugappa",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
         feet="Taeon Boots"
@@ -242,13 +242,14 @@ function init_gear_sets()
     sets.engaged.Low = set_combine(sets.engaged, {
         neck="Defiant Collar",
         ear1="Trux Earring",
-        back="Yokaze Mantle"
+        back="Bleating Mantle"
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         ring1="Patricius Ring"
+        back="Yokaze Mantle"
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -264,10 +265,11 @@ function init_gear_sets()
         waist="Windbuffet Belt +1",
     })
     sets.engaged.Innin.Low = set_combine(sets.engaged.Innin, {
-        back="Yokaze Mantle"
+        back="Bleating Mantle"
     })
     sets.engaged.Innin.Mid = set_combine(sets.engaged.Innin.Low, {
-        ring1="Patricius Ring"
+        ring1="Patricius Ring",
+        back="Yokaze Mantle"
     })
     sets.engaged.Innin.Acc = sets.engaged.Acc
 
@@ -319,7 +321,7 @@ function init_gear_sets()
         body="Hattori Ningi +1",
         hands="Otronif Gloves +1",
         ring1="Oneiros Ring",
-        back="Bleating Mantle",
+        back="Iga Dochugappa",
         waist="Windbuffet Belt +1",
         legs="Taeon Tights",
         feet="Taeon Boots"
@@ -331,6 +333,7 @@ function init_gear_sets()
         ear2="Steelflash Earring",
         ring1="Rajas Ring",
         hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
+        back="Bleating Mantle",
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         ring1="Patricius Ring",
@@ -415,7 +418,7 @@ function init_gear_sets()
         hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
-        back="Bleating Mantle",
+        back="Iga Dochugappa",
         waist="Windbuffet Belt +1",
         legs="Taeon Tights",
         feet="Taeon Boots"
@@ -426,7 +429,7 @@ function init_gear_sets()
         neck="Defiant Collar",
         body="Mochizuki Chainmail +1",
         hands={name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}},
-        back="Yokaze Mantle"
+        back="Bleating Mantle"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
         ear1="Trux Earring",
