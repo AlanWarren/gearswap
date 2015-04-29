@@ -110,6 +110,8 @@ function init_gear_sets()
             legs="Taeon Tights",
             feet="Taeon Boots"
         }
+        sets.engaged.Yoichinoyumi.Melee = sets.engaged.Melee
+
         sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
             neck="Twilight Torque",
             ring1="Dark Ring",
