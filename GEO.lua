@@ -24,14 +24,13 @@ end
 function user_setup()
     state.Buff.Poison = buffactive['Poison'] or false
 
-    state.OffenseMode:options('None', 'Normal')
+    state.OffenseMode:options('None', 'Normal', 'Melee')
     state.CastingMode:options('Normal', 'Resistant')
-    state.IdleMode:options('Normal', 'PDT')
+    state.IdleMode:options('Normal', 'PDT', 'Melee')
 
     gear.default.weaponskill_waist = "Windbuffet Belt +1"
 
     geo_sub_weapons = S{"Nehushtan", "Bolelabunga"}
-    get_combat_form()
 
     select_default_macro_book()
 end
@@ -320,7 +319,7 @@ function init_gear_sets()
         ring2="Patricius Ring",
     })
 
-    sets.idle.DW = set_combine(sets.idle, {
+    sets.idle.Melee = set_combine(sets.idle, {
         main="Nehushtan",
         sub="Bolelabunga"
     })
@@ -400,31 +399,19 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
         range="Dunna",
-        neck="Iqabi Necklace",
+        neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Azimuth Coat +1",
         --body="Vanir Cotehardie",
         hands="Geomancy Mitaines +1",
         ring1="Rajas Ring",
-        ring2="Patricius Ring",
-        back="Lifestream Cape",
-        waist="Windbuffet Belt +1",
-        legs="Hagondes Pants",
-        feet="Hagondes Sabots"
-    }
-    sets.engaged.DW = set_combine(sets.engaged, {
-        neck="Asperity Necklace",
-        ear1="Brutal Earring",
-        ear2="Trux Earring",
-        hands="Telchine Gloves",
-        ring1="Rajas Ring",
         ring2="K'ayres Ring",
         back="Kayapa Cape",
         waist="Windbuffet Belt +1",
         legs="Geomancy Pants +1",
         feet="Umbani Boots"
-    })
+    }
     --------------------------------------
     -- Custom buff sets
     --------------------------------------
@@ -528,13 +515,6 @@ function customize_idle_set(idleSet)
     return idleSet
 end
 
-function get_combat_form()
-    if S{'NIN', 'DNC'}:contains(player.sub_job) and geo_sub_weapons:contains(player.equipment.sub) then
-        state.CombatForm:set("DW")
-    else
-        state.CombatForm:reset()
-    end
-end
 
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
@@ -542,7 +522,6 @@ function job_update(cmdParams, eventArgs)
     if player.indi then
         classes.CustomIdleGroups:append('Indi')
     end
-    get_combat_form()
 end
 
 -- Function to display the current relevant user state when doing an update.
