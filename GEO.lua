@@ -14,6 +14,7 @@ end
 function job_setup()
     indi_timer = ''
     indi_duration = 180
+    state.CapacityMode = M(false, 'Capacity Point Mantle')
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -33,8 +34,12 @@ function user_setup()
     geo_sub_weapons = S{"Nehushtan", "Bolelabunga"}
 
     select_default_macro_book()
+    send_command('bind != gs c toggle CapacityMode')
 end
 
+function file_unload()
+    send_command('unbind !=')
+end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
@@ -54,6 +59,8 @@ function init_gear_sets()
     sets.precast.JA['Life Cycle'] = {head="Azimuth Hood +1", body="Geomancy Tunic +1"}
     sets.precast.JA['Full Circle'] = {hands="Bagua Mitaines"}
     sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals"}
+
+    sets.CapacityMantle  = { back="Mecistopins Mantle" }
 
     -- Fast cast sets for spells
 
@@ -427,6 +434,16 @@ function job_precast(spell, action, spellMap, eventArgs)
     --end
 end
 
+function job_post_precast(spell, action, spellMap, eventArgs)
+    -- Make sure abilities using head gear don't swap 
+	if spell.type:lower() == 'weaponskill' then
+        -- CP mantle must be worn when a mob dies, so make sure it's equipped for WS.
+        if state.CapacityMode.value then
+            equip(sets.CapacityMantle)
+        end
+    end
+end
+
 function job_aftercast(spell, action, spellMap, eventArgs)
     if not spell.interrupted then
         if spell.english:startswith('Indi') then
@@ -512,10 +529,19 @@ function customize_idle_set(idleSet)
     if player.mpp < 51 then
         idleSet = set_combine(idleSet, sets.latent_refresh)
     end
+    if state.CapacityMode.value then
+        idleSet = set_combine(idleSet, sets.CapacityMantle)
+    end
     return idleSet
 end
 
-
+-- Modify the default melee set after it was constructed.
+function customize_melee_set(meleeSet)
+    if state.CapacityMode.value then
+        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+    end
+    return meleeSet
+end
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
     classes.CustomIdleGroups:clear()
