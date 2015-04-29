@@ -154,7 +154,6 @@ function init_gear_sets()
      }
  
      sets.midcast['Dark Magic'] = {
-         ammo="Impatiens",
          head="Ignominy burgeonet +1", -- 17
          neck="Dark Torque", --7
          ear1="Lifestorm Earring",
