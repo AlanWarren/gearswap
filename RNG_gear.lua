@@ -295,7 +295,7 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
             neck="Iqabi Necklace",
             ring1="Longshot Ring",
-            ring2="Paqichikaji Ring",
+            ring2="Hajduk Ring",
             legs="Arcadian Braccae +1"
         })
         sets.midcast.RA.Falubeza = sets.midcast.RA.Yoichinoyumi
