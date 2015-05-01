@@ -180,7 +180,7 @@ function init_gear_sets()
         sub="Mephitis Grip",
         --sub="Wizzan Grip",
         --ammo="Witchstone",
-        head="Geomancy Galero +1",
+        head="Hagondes Hat",
         neck="Eddy Necklace",
         ear1="Hecate's Earring",
         ear2="Friomisi Earring",
@@ -210,6 +210,7 @@ function init_gear_sets()
     sets.precast.JA['Concentric Pulse'] = sets.midcast.HightTierNuke
 
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
+        head="Hagondes Hat",
         ear1="Crematio Earring",
         feet="Umbani Boots"
     })
