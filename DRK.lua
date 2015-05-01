@@ -154,7 +154,6 @@ function init_gear_sets()
      }
  
      sets.midcast['Dark Magic'] = {
-         ammo="Impatiens",
          head="Ignominy burgeonet +1", -- 17
          neck="Dark Torque", --7
          ear1="Lifestorm Earring",
@@ -287,8 +286,6 @@ function init_gear_sets()
      sets.precast.WS.Resolution.Mid = set_combine(sets.precast.WS.Resolution, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
-    	 body="Mes'yohi Haubergeon",
-         hands="Ignominy Gauntlets +1",
      })
      sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
 
@@ -296,26 +293,22 @@ function init_gear_sets()
      -- VIT 80%
      sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
          head="Fallen's burgeonet +1",
-         neck="Ganesha's Mala",
-         body="Phorcys Korazin",
          neck="Aqua Gorget",
-         hands="Ignominy Gauntlets +1",
+         hands="Crusher Gauntlets",
          legs="Yorium Cuisses",
          waist="Caudata Belt"
      })
      sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
          ammo="Ginsen",
          neck="Aqua Gorget",
-    	 body="Mes'yohi Haubergeon"
      })
      sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, sets.precast.WS.Acc)
 
      -- INSURGENCY
      -- 20% STR / 20% INT 
-     -- Designed to 4-hit
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          ammo="Ginsen",
-         head="Heathen's Burgonet +1",
+         head="Acro Helm",
          neck="Shadow Gorget",
          hands="Acro Gauntlets",
          waist="Windbuffet Belt +1",
@@ -324,11 +317,10 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
+         head="Heathen's Burgonet +1",
          waist="Light Belt"
      })
-     sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
-         ear1="Bale Earring",
-     })
+     sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {})
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Fallen's Cuirass +1",
          ear1="Zennaroi Earring",
@@ -338,26 +330,28 @@ function init_gear_sets()
      -- CROSS REAPER
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-         head="Heathen's Burgonet +1",
+         head="Otomi Helm",
          neck="Aqua Gorget",
-         ear1="Bale Earring",
          hands="Fallen's Finger Gauntlets +1",
          legs="Ignominy Flanchard +1",
+         waist="Windbuffet Belt +1"
      })
      sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {})
 
      sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
-         ammo="Ginsen",
+         head="Heathen's Burgonet +1",
          hands="Acro Gauntlets",
-         waist="Windbuffet Belt +1",
-         body="Fallen's Cuirass +1",
+         waist="Metalsinger Belt",
          legs="Yorium Cuisses"
      })
      sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
-         ear1="Bale Earring",
-         waist="Caudata Belt"
+         waist="Windbuffet Belt +1",
      })
-     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {})
+     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
+         ammo="Ginsen",
+         neck="Defiant Collar",
+         body="Fallen's Cuirass +1"
+     })
      
      -- ENTROPY
      -- 86-100% INT 
@@ -367,12 +361,12 @@ function init_gear_sets()
          neck="Shadow Gorget",
          hands="Acro Gauntlets",
          ring1="Shiva Ring",
-         back="Bleating Mantle",
+         ring2="Shiva Ring",
+         back="Toro Cape",
          waist="Soil Belt",
-         legs="Scuffler's Cosciales",
+         legs="Yorium Cuisses"
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
-         hands="Fallen's Finger Gauntlets +1",
          legs="Yorium Cuisses"
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
