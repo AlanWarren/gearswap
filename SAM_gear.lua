@@ -208,6 +208,8 @@ function init_gear_sets()
     sets.idle.Field = set_combine(sets.idle.Town, {
         neck="Twilight Torque",
         ring2="Patricius Ring",
+        ear1="Zennaroi Earring",
+        ear2="Lugra Earring +1",
    	    body="Sakonji Domaru +1",
         hands="Crusher Gauntlets",
         back="Engulfer Cape +1",
