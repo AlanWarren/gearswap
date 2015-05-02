@@ -188,7 +188,7 @@ function init_gear_sets()
     sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
-        head="Yaoyotl Helm",
+        head="Ptica Headgear",
         neck="Ganesha's Mala",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
