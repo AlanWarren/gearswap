@@ -233,7 +233,7 @@ function init_gear_sets()
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
-        back="Iga Dochugappa",
+        back="Bleating Mantle",
         waist="Patentia Sash",
         legs="Mochizuki Hakama +1",
         feet="Taeon Boots"
