@@ -180,7 +180,7 @@ function init_gear_sets()
     })
     
     sets.idle.Town = set_combine(sets.idle, {
-        head="Hattori Zukin +1",
+        head="Ptica Headgear",
         neck="Defiant Collar",
         ear1="Lugra Earring +1",
         ring1="Karieyh Ring",
