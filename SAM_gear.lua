@@ -192,7 +192,7 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-   	    body="Mes'yohi Haubergeon",
+   	    body="Acro Surcoat",
         hands="Wakido Kote +1",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
@@ -398,13 +398,12 @@ function init_gear_sets()
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
         head="Yaoyotl Helm",
-   	    body="Mes'yohi Haubergeon",
-        neck="Iqabi Necklace",
+        neck="Defiant Collar",
         ring2="Mars's Ring",
         hands="Sasuke Tekko +1",
         waist="Olseni Belt",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
-        legs="Wukong's Hakama +1",
+        legs="Acro Breeches",
         feet="Acro Leggings"
     })
     
