@@ -207,9 +207,9 @@ function init_gear_sets()
     
     sets.idle.Field = set_combine(sets.idle.Town, {
         neck="Twilight Torque",
-        ring2="Paguroidea Ring",
-        head="Yaoyotl Helm",
-   	    body="Acro Surcoat",
+        ring2="Patricius Ring",
+   	    body="Sakonji Domaru +1",
+        hands="Crusher Gauntlets",
         back="Engulfer Cape +1",
         waist="Flume Belt",
         feet="Danzo Sune-ate"
