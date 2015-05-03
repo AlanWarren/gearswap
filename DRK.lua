@@ -481,7 +481,7 @@ function init_gear_sets()
          back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
-         feet="Fallen's sollerets +1"
+         feet="Cizin Greaves +1"
      }
     sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
         body="Councilor's Garb"
