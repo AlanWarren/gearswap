@@ -182,8 +182,8 @@ function init_gear_sets()
         --ammo="Witchstone",
         head="Hagondes Hat",
         neck="Eddy Necklace",
-        ear1="Hecate's Earring",
-        ear2="Friomisi Earring",
+        ear1="Friomisi Earring",
+        ear2="Hecate's Earring",
         body="Azimuth Coat +1",
         hands="Helios Gloves",
         ring1="Shiva Ring",
@@ -195,8 +195,8 @@ function init_gear_sets()
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
-        ear1="Gwati Earring", 
-        ear2="Friomisi Earring",
+        ear1="Friomisi Earring",
+        ear2="Gwati Earring", 
         hands="Azimuth Gloves",
         back="Refration Cape",
         legs="Azimuth Tights +1",
@@ -211,13 +211,13 @@ function init_gear_sets()
 
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
         head="Hagondes Hat",
-        ear1="Crematio Earring",
+        ear2="Crematio Earring",
         feet="Umbani Boots"
     })
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
-        ear1="Gwati Earring", 
-        ear2="Friomisi Earring",
+        ear1="Friomisi Earring",
+        ear2="Gwati Earring", 
         legs="Azimuth Tights +1",
         ring2="Sangoma Ring",
         back="Refration Cape",
