@@ -308,7 +308,7 @@ function init_gear_sets()
         feet="Geomancy Sandals"
     }
     sets.idle.PDT = set_combine(sets.idle, {
-        head="Hike Khat",
+        head="Hagondes Hat",
         hands="Geomancy Mitaines +1",
         ring2="Patricius Ring",
         back="Repulse Mantle",
@@ -337,7 +337,7 @@ function init_gear_sets()
         legs="Bagua Pants", 
         feet="Geomancy Sandals",
         back="Lifestream Cape",
-        --feet="Azimuth Gaiters"
+        feet="Azimuth Gaiters"
     })
     sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {
         legs="Bagua Pants", 
@@ -362,7 +362,7 @@ function init_gear_sets()
 
     sets.defense.PDT = {
         range="Dunna",
-        head="Hike Khat",
+        head="Hagondes Hat",
         neck="Twilight Torque",
         ear1="Zennaroi Earring",
         body="Azimuth Coat +1",
