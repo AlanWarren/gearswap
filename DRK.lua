@@ -591,10 +591,10 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Ginsen",
-         head="Acro Helm",
+         head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
-         ear2="Tripudio Earring",
+         ear2="Trux Earring",
     	 body="Acro Surcoat",
          hands="Acro Gauntlets",
          ring1="Rajas Ring",
@@ -605,35 +605,33 @@ function init_gear_sets()
          feet="Ejekamal Boots"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         head="Heathen's Burgonet +1",
          ammo="Hasy Pinion +1",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
-         ring2="Patricius Ring",
          feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+         head="Acro Helm",
          neck="Defiant Collar",
-         back="Kayapa Cape",
-         hands="Crusher Gauntlets",
+         ring2="Mars's Ring",
          waist="Olseni Belt"
      })
      -- Liberator AM3
      sets.engaged.AM3 = set_combine(sets.engaged, {
          head="Acro Helm",
+         ear1="Enervating Earring",
          ear2="Tripudio Earring",
          feet="Ejekamal Boots"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
          head="Heathen's Burgonet +1",
          ammo="Hasty Pinion +1",
-         ear1="Zennaroi Earring",
          feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          neck="Defiant Collar",
-         hands="Crusher Gauntlets",
-         ear2="Steelflash Earring",
+         ear1="Zennaroi Earring",
+         ear2="Tripudio Earring",
          waist="Olseni Belt",
      })
 
