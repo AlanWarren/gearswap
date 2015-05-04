@@ -276,7 +276,7 @@ function init_gear_sets()
         ring2="Dark Ring",
 		back="Engulfer Cape +1",
         waist="Flume Belt",
-        legs="Pillager's culottes +1",
+        legs="Taeon Tights",
         feet="Skadi's Jambeaux +1"
     }
 
