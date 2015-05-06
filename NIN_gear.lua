@@ -260,6 +260,7 @@ function init_gear_sets()
     
     sets.engaged.Innin = set_combine(sets.engaged, {
         head="Hattori Zukin +1",
+        body="Hachiya Chainmail +1",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         waist="Windbuffet Belt +1",
