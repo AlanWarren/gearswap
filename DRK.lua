@@ -14,6 +14,7 @@
     Set format is as follows: 
     sets.engaged.[CombatForm][CombatWeapon][Offense or DefenseMode][CustomGroup]
     CustomGroups = AM3
+    hands={name="Acro gauntlets", augments={'STR+1 VIT+1','Accuracy+18 Attack+18', 'Haste+2'}},
 
     TODO: Get STR/DEX Augment on Acro Legs.
     Make a new pair of boots + gloves with acc/atk 20 stp+5 str/dex+7
