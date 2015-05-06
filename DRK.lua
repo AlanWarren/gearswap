@@ -14,9 +14,7 @@
     Set format is as follows: 
     sets.engaged.[CombatForm][CombatWeapon][Offense or DefenseMode][CustomGroup]
     CustomGroups = AM3
-    hands={name="Acro gauntlets", augments={'STR+1 VIT+1','Accuracy+18 Attack+18', 'Haste+2'}},
-    hands={name="Acro gauntlets", augments={'Accuracy+19 Attack+19', '"Store TP"+5''Weapon skill damage +3%'}},
-
+    
     TODO: Get STR/DEX Augment on Acro Legs.
     Make a new pair of boots + gloves with acc/atk 20 stp+5 str/dex+7
 --]]
@@ -85,6 +83,21 @@ function init_gear_sets()
      --------------------------------------
      -- Start defining the sets
      --------------------------------------
+     -- Augmented gear
+     Acro = {}
+     Acro.Hands = {}
+     Acro.Feet = {}
+    
+     Acro.Hands.Haste = {name="Acro gauntlets", augments={'STR+1 VIT+1','Accuracy+18 Attack+18','Haste+2'}} 
+     Acro.Hands.STP = {name="Acro gauntlets", augments={'Accuracy+19 Attack+19','"Store TP"+5','Weapon skill damage +3%'}}
+
+     Acro.Feet.STP = {name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}} 
+     Acro.Feet.WSD = {name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3','Weapon skill damage +2%'}} 
+
+     Niht = {}
+     Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
+     Niht.WSD = {name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10','Weapon skill damage +3%'}}
+
      -- Precast Sets
      -- Precast sets to enhance JAs
      sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets +1"}
@@ -165,7 +178,7 @@ function init_gear_sets()
          waist="Casso Sash", -- 5
          ring1="Perception Ring",
          ring2="Sangoma Ring",
-         back={name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}, -- 10
+         back=Niht.Darkmagic,
          legs="Heathen's Flanchard", --18
          feet="Ignominy sollerets"
      }
@@ -261,10 +274,10 @@ function init_gear_sets()
          hands="Mikinaak Gauntlets",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
-         back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
+         back=Niht.WSD,
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
-         feet={name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3', 'Weapon skill damage +2%'}},
+         feet=Acro.Feet.WSD
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
@@ -312,7 +325,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Acro Helm",
          neck="Shadow Gorget",
-         hands="Acro Gauntlets",
+         hands=Acro.Hands.STP,
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
      })
@@ -342,7 +355,7 @@ function init_gear_sets()
 
      sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
          head="Heathen's Burgonet +1",
-         hands="Acro Gauntlets",
+         hands=Acro.Hands.STP,
          waist="Metalsinger Belt",
          legs="Yorium Cuisses"
      })
@@ -361,7 +374,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
-         hands="Acro Gauntlets",
+         hands=Acro.Hands.STP,
          ring1="Shiva Ring",
          ring2="Shiva Ring",
          back="Toro Cape",
@@ -383,10 +396,9 @@ function init_gear_sets()
          head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
          ear2="Trux Earring",
-         hands="Acro Gauntlets",
+         hands=Acro.Hands.STP,
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
-         feet={name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3', 'Weapon skill damage +2%'}},
      })
      sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {
          ear2="Bale Earring",
@@ -406,7 +418,6 @@ function init_gear_sets()
      sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
          head="Heathen's Burgonet +1",
          neck="Aqua Gorget",
-         hands="Acro Gauntlets",
          legs="Yorium Cuisses",
          waist="Metalsinger belt",
      })
@@ -436,7 +447,7 @@ function init_gear_sets()
          neck="Stoicheion Medal",
          ear1="Friomisi Earring",
          body="Fallen's Cuirass +1",
-         hands="Acro Gauntlets",
+         hands=Acro.Hands.STP,
          legs="Yorium Cuisses",
          ring2="Acumen Ring",
          back="Toro Cape",
@@ -451,10 +462,8 @@ function init_gear_sets()
          head="Ighwa Cap",
          neck="Shadow Gorget",
          hands="Umuthi Gloves",
-         body="Fallen's Cuirass +1",
          back="Bleating Mantle",
          waist="Soil Belt",
-         feet="Fallen's Sollerets +1"
      })
      sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
      sets.precast.WS.Requiescat.Acc = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Acc)
@@ -480,7 +489,7 @@ function init_gear_sets()
          hands="Crusher Gauntlets",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
-         back={name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10', 'Weapon skill damage +3%'}},
+         back=Niht.WSD,
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
          feet="Cizin Greaves +1"
@@ -556,7 +565,8 @@ function init_gear_sets()
 
      sets.HighHaste = {
          ammo="Ginsen",
-         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
+         hands=Acro.Hands.STP,
+         feet=Acro.Feet.STP
      }
      
      -- Defensive sets to combine with various weapon-specific sets below
@@ -598,7 +608,7 @@ function init_gear_sets()
          ear1="Brutal Earring",
          ear2="Trux Earring",
     	 body="Acro Surcoat",
-         hands="Acro Gauntlets",
+         hands=Acro.Hands.STP,
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
          back="Bleating Mantle",
@@ -610,7 +620,7 @@ function init_gear_sets()
          ammo="Hasy Pinion +1",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
-         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
+         feet=Acro.Feet.STP
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          head="Acro Helm",
@@ -623,12 +633,13 @@ function init_gear_sets()
          head="Acro Helm",
          ear1="Enervating Earring",
          ear2="Tripudio Earring",
-         feet="Ejekamal Boots"
+         hands=Acro.Hands.Haste,
+         feet=Acro.Feet.STP
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
          head="Heathen's Burgonet +1",
-         ammo="Hasty Pinion +1",
-         feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
+         hands=Acro.Hands.Haste,
+         feet=Acro.Feet.STP
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          neck="Defiant Collar",
