@@ -293,7 +293,7 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {
         main="Bolelabunga",
-        sub="Sors Shield",
+        sub="Genbu's Shield",
         range="Dunna",
         head="Azimuth Hood +1",
         neck="Twilight Torque",
