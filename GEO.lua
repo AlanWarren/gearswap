@@ -68,6 +68,7 @@ function init_gear_sets()
         --ammo="Impatiens",
         head="Nahtirah Hat",
         ear2="Loquacious Earring",
+        hands="Magavan Mitts",
         --body="Vanir Cotehardie",
         ring1="Prolix Ring",
         back="Lifestream Cape",
