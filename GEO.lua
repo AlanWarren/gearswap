@@ -159,7 +159,8 @@ function init_gear_sets()
     })
 
     sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
-        hands="Telchine Gloves"
+        hands="Telchine Gloves",
+        legs="Telchine Braconi"
     })
         --main="Tamaxchi",
         --sub="Genbu's Shield",
