@@ -38,7 +38,8 @@ function job_setup()
     
     --wsList = S{'Spiral Hell'}
     gsList = S{'Tunglmyrkvi', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
-    
+    drk_sub_weapons = S{"Sangarius", "Usonmunku", "Perun"}
+
     get_combat_form()
     get_combat_weapon()
     update_melee_groups()
@@ -633,6 +634,7 @@ function init_gear_sets()
          head="Acro Helm",
          ear1="Enervating Earring",
          ear2="Tripudio Earring",
+         ring2="Mars's Ring",
          hands=Acro.Hands.Haste,
          feet=Acro.Feet.STP
      })
@@ -651,6 +653,18 @@ function init_gear_sets()
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
+
+     sets.engaged.DW = set_combine(sets.engaged, {
+        head="Otomi Helm",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        waist="Patentia Sash"
+     })
+     sets.engaged.OneHand = set_combine(sets.engaged, {
+         head="Yaoyotl Helm",
+         ring2="Mars's Ring",
+         feet=Acro.Feet.STP
+     })
 
      sets.engaged.GreatSword = set_combine(sets.engaged, {
          head="Otomi Helm",
@@ -927,6 +941,14 @@ function get_combat_form()
     --else
         --state.CombatForm:reset()
     --end
+    if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
+        state.CombatForm:set("DW")
+    elseif S{'SAM', 'WAR'}:contains(player.sub_job) and player.equipment.sub == 'Rinda Shield' then
+        state.CombatForm:set("OneHand")
+    else
+        state.CombatForm:reset()
+    end
+
     if (buffactive['Last Resort']) then
         if (buffactive.embrava or buffactive.haste) and buffactive.march  then
             add_to_chat(8, '-------------Delay Capped-------------')
