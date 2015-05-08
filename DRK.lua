@@ -634,7 +634,6 @@ function init_gear_sets()
          head="Acro Helm",
          ear1="Enervating Earring",
          ear2="Tripudio Earring",
-         ring2="Mars's Ring",
          hands=Acro.Hands.Haste,
          feet=Acro.Feet.STP
      })
