@@ -36,7 +36,7 @@ function job_setup()
     -- Set the default to false if you'd rather SE always stay acitve
     state.SouleaterMode = M(true, 'Soul Eater Mode')
     
-    --wsList = S{'Spiral Hell'}
+    wsList = S{'Spiral Hell', 'Insurgency'}
     gsList = S{'Tunglmyrkvi', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
     drk_sub_weapons = S{"Sangarius", "Usonmunku", "Perun"}
 
@@ -706,7 +706,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 	if spell.type:lower() == 'weaponskill' then
         -- handle Gavialis Helm
         if is_sc_element_today(spell) then
-            equip(sets.WSDayBonus)
+            if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
+                -- do nothing
+            else
+                equip(sets.WSDayBonus)
+            end
         end
         -- CP mantle must be worn when a mob dies, so make sure it's equipped for WS.
         if state.CapacityMode.value then
