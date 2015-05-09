@@ -119,7 +119,7 @@ function init_gear_sets()
      -- TP ears for night and day, AM3 up and down. 
      sets.LugraTripudio   = { ear1="Lugra Earring +1", ear2="Tripudio Earring" }
      sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
-     sets.BrutalTripudio  = { ear1="Brutal Earring", ear2="Tripudio Earring" }
+     sets.EnervateTripudio  = { ear1="Enervating Earring", ear2="Tripudio Earring" }
      sets.BrutalTrux      = { ear1="Brutal Earring", ear2="Trux Earring" }
      sets.Lugra           = { ear1="Lugra Earring +1" }
      -- Moonshade Substitute @ 3000 TP
@@ -1056,13 +1056,14 @@ function select_earring()
     -- 17:00 PM would be 1020 minutes
     if world.time >= (17*60) or world.time <= (7*60) then
         if classes.CustomMeleeGroups:contains('AM3') then
-            return sets.LugraTripudio
+            --return sets.LugraTripudio
+             return sets.EnervateTripudio
         else
             return sets.BrutalLugra
         end
     else
         if classes.CustomMeleeGroups:contains('AM3') then
-             return sets.BrutalTripudio
+             return sets.EnervateTripudio
         else
              return sets.BrutalTrux
         end
