@@ -247,6 +247,8 @@ function init_gear_sets()
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
         head="Bagua Galero",
         neck="Dark Torque", 
+        ear1="Gwati Earring",
+        ear2="Hirundinea Earring",
         ring1="Excelsis Ring",
         body="Geomancy tunic +1",
         waist="Fucho-no-obi",
