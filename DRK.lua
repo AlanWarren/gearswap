@@ -212,7 +212,7 @@ function init_gear_sets()
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
          ammo="Impatiens",
          head="Gavialis Helm",
-         body="Heathen's Cuirass",
+         body="Heathen's Cuirass +1",
          hands="Ignominy Gauntlets +1",
          ring1="Beeline Ring",
          ring2="K'ayres Ring",
@@ -634,11 +634,13 @@ function init_gear_sets()
          head="Acro Helm",
          ear1="Enervating Earring",
          ear2="Tripudio Earring",
+         body="Heathen's Cuirass +1",
          hands=Acro.Hands.Haste,
          feet=Acro.Feet.STP
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
          head="Heathen's Burgonet +1",
+         body="Acro Surcoat",
          hands=Acro.Hands.Haste,
          feet=Acro.Feet.STP
      })
