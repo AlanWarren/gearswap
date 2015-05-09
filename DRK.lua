@@ -223,7 +223,7 @@ function init_gear_sets()
      
      sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
          ear1="Gwati Earring",
-         ear2="Hirundinea Earring",
+         ear2="Hirudinea Earring",
          body="Lugra Cloak +1",
          ring2="Excelsis Ring",
      })
