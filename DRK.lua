@@ -577,7 +577,7 @@ function init_gear_sets()
      sets.Defensive = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         body="Yorium Cuirass",
+         body="Emet Harness +1",
          hands="Crusher Gauntlets",
          ring2="Patricius Ring",
          back="Repulse Mantle",
