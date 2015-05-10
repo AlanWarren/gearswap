@@ -117,13 +117,8 @@ function init_gear_sets()
      sets.NightAmmo       = { ammo="Ginsen" }
      sets.DayAmmo         = { ammo="Tengu-No-Hane" }
      -- TP ears for night and day, AM3 up and down. 
-     sets.LugraTripudio   = { ear1="Lugra Earring +1", ear2="Tripudio Earring" }
      sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
-     sets.EnervateTripudio  = { ear1="Enervating Earring", ear2="Tripudio Earring" }
-     sets.BrutalTrux      = { ear1="Brutal Earring", ear2="Trux Earring" }
      sets.Lugra           = { ear1="Lugra Earring +1" }
-     -- Moonshade Substitute @ 3000 TP
-     sets.Trux            = { ear2="Trux Earring" }
  
      sets.reive = {neck="Ygnas's Resolve +1"}
      -- Waltz set (chr and vit)
@@ -290,7 +285,7 @@ function init_gear_sets()
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          ear1="Zennaroi Earring",
-         hands="Buremte Gloves",
+         hands="Crusher Gauntlets",
          body="Fallen's Cuirass +1",
          waist="Olseni Belt",
      })
@@ -398,14 +393,12 @@ function init_gear_sets()
      sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
          head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
-         ear2="Trux Earring",
+         ear2="Lugra Earring +1",
          hands=Acro.Hands.STP,
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
      })
-     sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {
-         ear2="Bale Earring",
-     })
+     sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {})
      sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
          head="Yaoyotl Helm",
          waist="Caudata Belt",
@@ -423,7 +416,7 @@ function init_gear_sets()
          neck="Aqua Gorget",
          legs="Yorium Cuisses",
          waist="Metalsinger belt",
-     })
+     )
      sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid)
      sets.precast.WS['Spiral Hell'].Acc = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Acc)
 
@@ -436,6 +429,7 @@ function init_gear_sets()
          ear1="Friomisi Earring",
          hands="Fallen's Finger Gauntlets +1",
          back="Argochampsa Mantle",
+         legs="Limbo Trousers",
          waist="Caudata Belt",
          feet="Ignominy Sollerets"
       })
@@ -451,7 +445,7 @@ function init_gear_sets()
          ear1="Friomisi Earring",
          body="Fallen's Cuirass +1",
          hands=Acro.Hands.STP,
-         legs="Yorium Cuisses",
+         legs="Limbo Trousers",
          ring2="Acumen Ring",
          back="Toro Cape",
          feet="Ignominy Sollerets"
@@ -610,7 +604,7 @@ function init_gear_sets()
          head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
-         ear2="Trux Earring",
+         ear2="Lugra Earring +1",
     	 body="Acro Surcoat",
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
@@ -721,18 +715,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-        -- Use Lugra+1 from dusk to dawn
-        if world.time >= (17*60) or world.time <= (7*60) then
-            -- don't want moonshade @ 3000 TP
-            if player.tp > 2999 then
-                equip(sets.BrutalLugra)
-            else -- use Lugra + moonshade
-                equip(sets.Lugra)
-            end
-        else -- it's day time, use trux instead of moonshade
-            if player.tp > 2999 then
-                equip(sets.Trux)
-            end
+        
+        if player.tp > 2999 then
+            equip(sets.BrutalLugra)
+        else -- use Lugra + moonshade
+            equip(sets.Lugra)
         end
         -- Use SOA neck piece for WS in rieves
         if buffactive['Reive Mark'] then
@@ -812,7 +799,6 @@ function customize_melee_set(meleeSet)
     if state.CombatForm.has_value then
         meleeSet = set_combine(meleeSet, sets.HighHaste)
     end
-    meleeSet = set_combine(meleeSet, select_earring())
     return meleeSet
 end
  
@@ -1051,25 +1037,6 @@ function select_ammo()
     end
 end
 
-function select_earring()
-    -- world.time is given in minutes into each day
-    -- 7:00 AM would be 420 minutes
-    -- 17:00 PM would be 1020 minutes
-    if world.time >= (17*60) or world.time <= (7*60) then
-        if classes.CustomMeleeGroups:contains('AM3') then
-            --return sets.LugraTripudio
-             return sets.EnervateTripudio
-        else
-            return sets.BrutalLugra
-        end
-    else
-        if classes.CustomMeleeGroups:contains('AM3') then
-             return sets.EnervateTripudio
-        else
-             return sets.BrutalTrux
-        end
-    end
-end
 
 -- Handle zone specific rules
 windower.register_event('Zone change', function(new,old)
