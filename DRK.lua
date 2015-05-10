@@ -348,7 +348,7 @@ function init_gear_sets()
      -- CROSS REAPER
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-         head="Otomi Helm",
+         head="Heathen's Burgonet +1",
          neck="Aqua Gorget",
          hands="Fallen's Finger Gauntlets +1",
          legs="Ignominy Flanchard +1",
