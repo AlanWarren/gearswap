@@ -416,7 +416,7 @@ function init_gear_sets()
          neck="Aqua Gorget",
          legs="Yorium Cuisses",
          waist="Metalsinger belt",
-     )
+     })
      sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid)
      sets.precast.WS['Spiral Hell'].Acc = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Acc)
 
