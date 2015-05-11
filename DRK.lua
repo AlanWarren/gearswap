@@ -320,14 +320,15 @@ function init_gear_sets()
      -- INSURGENCY
      -- 20% STR / 20% INT 
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
-         ammo="Ginsen",
-         head="Acro Helm",
+         head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
          hands=Acro.Hands.STP,
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
+         ammo="Ginsen",
+         head="Acro Helm",
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          head="Heathen's Burgonet +1",
