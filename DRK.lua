@@ -323,7 +323,6 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
-         body="Phorcys Korazin",
          hands="Mikinaak Gauntlets",
          waist="Caudata Belt",
          legs="Ignominy Flanchard +1",
