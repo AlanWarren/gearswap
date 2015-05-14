@@ -330,15 +330,16 @@ function init_gear_sets()
          legs="Ignominy Flanchard +1",
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
-         ammo="Ginsen",
          head="Acro Helm",
+         neck="Shadow Gorget",
+         body="Acro Surcoat",
          hands=Acro.Hands.STP,
          waist="Windbuffet Belt +1",
-         neck="Shadow Gorget",
          legs="Yorium Cuisses",
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
-         head="Heathen's Burgonet +1",
+         neck="Shadow Gorget",
+         body="Acro Surcoat",
          waist="Light Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {})
