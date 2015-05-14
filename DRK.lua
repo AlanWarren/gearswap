@@ -319,16 +319,23 @@ function init_gear_sets()
 
      -- INSURGENCY
      -- 20% STR / 20% INT 
+     -- Base set only used at 3000TP to put AM3 up
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
+         ammo="Ginsen",
          head="Heathen's Burgonet +1",
-         neck="Shadow Gorget",
-         hands=Acro.Hands.STP,
-         waist="Windbuffet Belt +1",
-         legs="Yorium Cuisses",
+         neck="Ganesha's Mala",
+         ear1="Lugra Earring +1",
+         hands="Mikinaak Gauntlets",
+         waist="Caudata Belt",
+         legs="Ignominy Flanchard +1",
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
          ammo="Ginsen",
          head="Acro Helm",
+         hands=Acro.Hands.STP,
+         waist="Windbuffet Belt +1",
+         neck="Shadow Gorget",
+         legs="Yorium Cuisses",
      })
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          head="Heathen's Burgonet +1",
