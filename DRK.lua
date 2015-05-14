@@ -119,6 +119,7 @@ function init_gear_sets()
      -- TP ears for night and day, AM3 up and down. 
      sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
      sets.Lugra           = { ear1="Lugra Earring +1" }
+     sets.Brutal          = { ear1="Brutal Earring" }
  
      sets.reive = {neck="Ygnas's Resolve +1"}
      -- Waltz set (chr and vit)
@@ -710,6 +711,10 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
+    if state.Buff.Souleater then
+        equip(sets.buff.Souleater)
+    end
+
     -- Make sure abilities using head gear don't swap 
 	if spell.type:lower() == 'weaponskill' then
         -- handle Gavialis Helm
@@ -728,7 +733,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if player.tp > 2999 then
             equip(sets.BrutalLugra)
         else -- use Lugra + moonshade
-            equip(sets.Lugra)
+            if world.time >= (17*60) or world.time <= (7*60) then
+                equip(sets.Lugra)
+            else
+                equip(sets.Brutal)
+            end
         end
         -- Use SOA neck piece for WS in rieves
         if buffactive['Reive Mark'] then
@@ -747,6 +756,9 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
+    if state.Buff.Souleater then
+        equip(sets.buff.Souleater)
+    end
 end
  
 -- Run after the default midcast() is done.
@@ -754,6 +766,9 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
     if (state.HybridMode.current == 'PDT' and state.PhysicalDefenseMode.current == 'Reraise') then
         equip(sets.Reraise)
+    end
+    if state.Buff['Last Resort'] and state.HybridMode.current == 'PDT' then
+        equip(sets.buff['Last Resort'])
     end
 end
  
@@ -769,6 +784,7 @@ function job_post_aftercast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' then
         if state.Buff.Souleater and state.SouleaterMode.value then
             send_command('@wait 1.0;cancel souleater')
+            enable("head")
         end
     end
 end
@@ -788,6 +804,9 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
+	if state.Buff.Souleater then
+		idleSet = set_combine(idleSet, sets.buff.Souleater)
+	end
     if state.HybridMode.current == 'PDT' then
         idleSet = set_combine(idleSet, sets.defense.PDT)
     end
@@ -802,6 +821,9 @@ function customize_melee_set(meleeSet)
     if state.Buff['Last Resort'] and state.HybridMode.current == 'PDT' then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
+	if state.Buff.Souleater then
+		meleeSet = set_combine(meleeSet, sets.buff.Souleater)
+	end
     if state.OffenseMode.current == 'Acc' then
         meleeSet = set_combine(meleeSet, select_ammo())
     end
@@ -883,7 +905,7 @@ function job_buff_change(buff, gain)
     --end
 
     -- Warp ring rule, for any buff being lost
-    if S{'Warp', 'Vocation'}:contains(player.equipment.ring2) then
+    if S{'Warp', 'Vocation', 'Capacity'}:contains(player.equipment.ring2) then
         if not buffactive['Dedication'] then
             disable('ring2')
         end
