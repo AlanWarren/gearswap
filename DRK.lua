@@ -112,7 +112,7 @@ function init_gear_sets()
      sets.precast.JA['Weapon Bash'] = {hands="Ignominy Gauntlets +1"}
 
      sets.CapacityMantle  = { back="Mecistopins Mantle" }
-     sets.Berserker       = { neck="Berserker's Torque" }
+     --sets.Berserker       = { neck="Berserker's Torque" }
      sets.WSDayBonus      = { head="Gavialis Helm" }
      sets.WSBack          = { back="Trepidity Mantle" }
      -- TP ears for night and day, AM3 up and down. 
@@ -623,7 +623,7 @@ function init_gear_sets()
          feet="Ejekamal Boots"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         ammo="Hasy Pinion +1",
+         ammo="Hasty Pinion +1",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
          feet=Acro.Feet.STP
