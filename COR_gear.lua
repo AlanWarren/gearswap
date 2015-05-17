@@ -233,7 +233,7 @@ function init_gear_sets()
         ring2="Karieyh Ring",
         back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
         waist="Flume Belt",
-        legs="Nahtirah trousers",
+        legs="Taeon Tights",
         feet="Skadi's Jambeaux +1"
     }
 	
