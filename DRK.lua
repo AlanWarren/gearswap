@@ -414,7 +414,7 @@ function init_gear_sets()
          waist="Caudata Belt",
      })
      sets.precast.WS.Quietus.AM3Mid = set_combine(sets.precast.WS.Quietus.Mid, {
-         ear1="Bale Earring",
+         ear1="Lugra Earring +1",
          ear2="Brutal Earring",
      })
      sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, sets.precast.WS.Acc)
