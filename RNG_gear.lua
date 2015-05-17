@@ -19,7 +19,7 @@ function init_gear_sets()
             ear2="Flame Pearl",
             neck="Rancor Collar",
             back="Buquwik Cape",
-            hands="Seiryu's Kote",
+            hands="Amini Glovelettes",
             ring1="Ifrit Ring",
             ring2="Ifrit Ring +1",
             legs="Amini Brague +1", 
@@ -64,7 +64,7 @@ function init_gear_sets()
             ring2="Paguroidea Ring"
         })
         sets.idle.PDT = set_combine(sets.idle, {
-            head="Lithelimb Cap",
+            head="Iuitl Headgear +1",
             ring1="Patricius Ring",
             ring2="Dark Ring"
         })
