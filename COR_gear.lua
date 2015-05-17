@@ -243,7 +243,7 @@ function init_gear_sets()
         head="Lithelimb Cap",
         neck="Twilight Torque",
         hands="Iuitl Wristbands +1",
-        body="Lanun Frac +1",
+        body="Emet Harness +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
         waist="Flume Belt",
