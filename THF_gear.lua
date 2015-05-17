@@ -105,12 +105,11 @@ function init_gear_sets()
         head="Umbani Cap",
         neck="Iqabi Necklace",
         ear1="Volley Earring",
-        ear2="Clearview Earring",
+        ear2="Enervating Earring",
         body="Mekosuchinae Harness",
         ring1="Longshot Ring",
         ring2="Hajduk Ring",
         waist="Elanid Belt",
-        back="Libeccio Mantle",
         legs="Aetosaur Trousers +1",
         feet="Scopuli Nails +1"
     }
@@ -206,7 +205,7 @@ function init_gear_sets()
         body="Dread Jupon",
         ring1="Ramuh Ring",
         ring2="Karieyh Ring",
-        waist="Windbuffet Buffet +1",
+        waist="Windbuffet Belt +1",
         legs="Taeon Tights",
         back="Kayapa Cape",
         feet="Plunderer's Poulaines"
@@ -242,7 +241,7 @@ function init_gear_sets()
         ring2="Garuda Ring",
 		back="Argochampsa Mantle",
         waist="Thunder Belt",
-        legs="Shneddick Tights",
+        legs="Limbo Trousers",
         feet="Taeon Boots"
     }
 	
@@ -250,7 +249,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Felistris Mask",
         hands="Iuitl Wristbands +1",
-		legs="Kaabnax Trousers"
+		legs="Quiahuiz Trousers"
     }
 		
 	-- Specific spells
@@ -305,7 +304,6 @@ function init_gear_sets()
         ring1="Beeline Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
-        waist="Nusku's Sash",
         legs="Pillager's Culottes +1",
         feet="Qaaxo Leggings"
     }
@@ -334,7 +332,7 @@ function init_gear_sets()
         feet="Qaaxo Leggings"
     }
 
-	sets.Kiting = {feet="Trotter Boots"}
+	sets.Kiting = {feet="Skadi's Jambeaux +1"}
 
 	-- Engaged sets
 
@@ -352,7 +350,7 @@ function init_gear_sets()
 		--body="Skadi's Cuirie +1",
 		body="Taeon Tabard",
         hands=TaeonHands.DW,
-        ring1="Rajas Ring",
+        ring1="Oneiros Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
         waist="Patentia Sash",
@@ -362,7 +360,7 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Whirlpool Mask",
 		body="Taeon Tabard",
-        ring1="Patricius Ring",
+        ring1="Rajas Ring",
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
 		body="Mekosuchinae Harness",
