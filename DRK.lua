@@ -24,7 +24,7 @@ function get_sets()
     mote_include_version = 2
     -- Load and initialize the include file.
     include('Mote-Include.lua')
-    include('organizer-lib')
+    --include('organizer-lib')
 end
  
  
@@ -438,7 +438,7 @@ function init_gear_sets()
          body="Fallen's Cuirass +1",
          ear1="Friomisi Earring",
          hands="Fallen's Finger Gauntlets +1",
-         back="Argochampsa Mantle",
+         back="Toro Cape",
          legs="Limbo Trousers",
          waist="Caudata Belt",
          feet="Ignominy Sollerets"
