@@ -129,7 +129,7 @@ function init_gear_sets()
 		back="Bleating Mantle",
         waist="Elanid Belt",
         legs="Pillager's Culottes +1",
-        feet="Qaaxo Leggings"
+        feet="Taeon Boots"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         head="Whirlpool Mask",
