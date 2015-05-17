@@ -14,7 +14,7 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
     TaeonHands = {}
-    TaeonHands.TA = {name="Taeon Gloves", augments={'STR+9','Accuracy+22','"Triple Atk."+2'}}
+    TaeonHands.TA = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
     TaeonHands.DW = {name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}}
 
     -- Precast sets to enhance JAs
