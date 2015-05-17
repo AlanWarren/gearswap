@@ -599,7 +599,7 @@ function init_gear_sets()
          ring2="Patricius Ring",
      }
      sets.Defensive_Acc = {
-         head="Ighwa Cap",
+         head="Baghere Salade",
          neck="Agitator's Collar",
          hands="Crusher Gauntlets",
          body="Yorium Cuirass",
