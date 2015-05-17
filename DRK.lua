@@ -115,8 +115,6 @@ function init_gear_sets()
      sets.Berserker       = { neck="Berserker's Torque" }
      sets.WSDayBonus      = { head="Gavialis Helm" }
      sets.WSBack          = { back="Trepidity Mantle" }
-     sets.NightAmmo       = { ammo="Ginsen" }
-     sets.DayAmmo         = { ammo="Tengu-No-Hane" }
      -- TP ears for night and day, AM3 up and down. 
      sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
      sets.Lugra           = { ear1="Lugra Earring +1" }
@@ -267,7 +265,7 @@ function init_gear_sets()
      sets.precast.WS = {
          ammo="Fracas Grenade",
          head="Otomi Helm",
-         neck="Bale Choker",
+         neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
          body="Acro Surcoat",
@@ -468,7 +466,7 @@ function init_gear_sets()
      sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
          head="Ighwa Cap",
          neck="Shadow Gorget",
-         hands="Umuthi Gloves",
+         hands="Fallen's Finger Gauntlets +1",
          back="Bleating Mantle",
          waist="Soil Belt",
      })
@@ -744,9 +742,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.reive)
         end
         -- Use Tengu-No-Hane for WS during the day, when acc mode is toggled
-        if state.OffenseMode.current == 'Acc' then
-            equip(select_ammo())
-        end
         -- Trepidity Mantle rule: if your Niht Mantle augs suck, uncomment below
         --if world.day_element == 'Dark' then
         --    equip(sets.WSBack)
@@ -824,9 +819,6 @@ function customize_melee_set(meleeSet)
 	if state.Buff.Souleater then
 		meleeSet = set_combine(meleeSet, sets.buff.Souleater)
 	end
-    if state.OffenseMode.current == 'Acc' then
-        meleeSet = set_combine(meleeSet, select_ammo())
-    end
     if state.CombatForm.has_value then
         meleeSet = set_combine(meleeSet, sets.HighHaste)
     end
@@ -1060,13 +1052,13 @@ end
 --    end
 --end)
 
-function select_ammo()
-    if world.time >= (18*60) or world.time <= (6*60) then
-        return sets.NightAmmo
-    else
-        return sets.DayAmmo
-    end
-end
+--function select_ammo()
+--    if world.time >= (18*60) or world.time <= (6*60) then
+--        return sets.NightAmmo
+--    else
+--        return sets.DayAmmo
+--    end
+--end
 
 
 -- Handle zone specific rules
