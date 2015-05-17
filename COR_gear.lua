@@ -8,11 +8,10 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	
 	sets.precast.JA['Triple Shot'] = {body="Navarch's Frac +2"}
-	sets.precast.JA['Snake Eye'] = {legs="Commodore Culottes +1"}
-	sets.precast.JA['Wild Card'] = {feet="Commodore Bottes +2"}
+	--sets.precast.JA['Snake Eye'] = {legs="Commodore Culottes +1"}
+	sets.precast.JA['Wild Card'] = {feet="Lanun Bottes"}
 	sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
-	sets.precast.JA['Fold'] = {body="Commodore Gants +2"}
-    
+	--sets.precast.JA['Fold'] = {hands="Commodore Gants +2"}} 
     sets.CapacityMantle = {back="Mecistopins Mantle"}
 	
 	sets.precast.CorsairRoll = {
@@ -20,13 +19,13 @@ function init_gear_sets()
         hands="Navarch's Gants +2",
         body="Lanun Frac +1",
         ring1="Barataria Ring",
-        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+2','Enmity-3','"Phantom Roll" ability delay -2'}},
+        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+2','Enmity-1','"Phantom Roll" ability delay -3'}},
         feet="Lanun Bottes"
     }
 	
-	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
+	--sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
 	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
-	sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Navarch's Tricorne +1"})
+	--sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Navarch's Tricorne +1"})
 	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Navarch's Frac +2"})
 	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Navarch's Gants +2"})
 	
@@ -104,9 +103,9 @@ function init_gear_sets()
         ammo=gear.WSbullet,
         ear1="Enervating Earring",
         ear2="Moonshade Earring",
-        back="Libeccio Mantle",
+        back="Buquwik Cape",
         ring1="Karieyh Ring",
-        ring2="Longshot Ring"
+        ring2="Garuda Ring"
     })
 
 	sets.precast.WS['Wildfire'] = {
@@ -253,7 +252,7 @@ function init_gear_sets()
 
 	sets.defense.MDT = sets.defense.PDT
 
-	sets.Kiting = {legs="Crimson Cuisses"}
+	sets.Kiting = {feet="Skadi's Jambeaux +1"}
 
 	-- Engaged sets
 
@@ -291,7 +290,7 @@ function init_gear_sets()
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Taeon Tights",
-        feet="Qaaxo Leggings"
+        feet="Taeon Boots"
     }
 
 	sets.engaged.DW = set_combine(sets.engaged.Melee, {
