@@ -405,7 +405,7 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         neck="Asperity Necklace",
         body="Hattori Ningi +1",
-        hands="Otronif Gloves +1",
+        hands=TaeonHands.TA,
         ring1="Oneiros Ring",
         back="Iga Dochugappa",
         waist="Windbuffet Belt +1",
