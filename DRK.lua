@@ -165,6 +165,7 @@ function init_gear_sets()
      }
  
      sets.midcast['Dark Magic'] = {
+         ammo="Plumose Sachet",
          head="Ignominy burgeonet +1", -- 17
          neck="Dark Torque", --7
          ear1="Lifestorm Earring",
@@ -188,7 +189,7 @@ function init_gear_sets()
      })
 
      sets.midcast['Elemental Magic'] = {
-         ammo="Impatiens",
+         ammo="Plumose Sachet",
          head="Ignominy burgeonet +1", -- int 20
          neck="Eddy Necklace", -- 11 matk
          ear1="Friomisi Earring", -- 10 matk
