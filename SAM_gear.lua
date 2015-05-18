@@ -32,7 +32,7 @@ function init_gear_sets()
     sets.precast.Waltz['Healing Waltz'] = {}
     
     sets.CapacityMantle  = { back="Mecistopins Mantle" }
-    sets.Berserker       = { neck="Berserker's Torque" }
+    --sets.Berserker       = { neck="Berserker's Torque" }
     sets.WSDayBonus      = { head="Gavialis Helm" }
     sets.LugraMoonshade  = { ear1="Lugra Earring +1", ear2="Moonshade Earring" }
     sets.BrutalMoonshade = { ear1="Brutal Earring", ear2="Moonshade Earring" }
@@ -105,7 +105,6 @@ function init_gear_sets()
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
         head="Yaoyotl Helm",
-        legs="Wukong's Hakama +1",
         waist="Light Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
@@ -150,14 +149,13 @@ function init_gear_sets()
     -- CHR Mod
     sets.precast.WS['Tachi: Ageha'] = {
         head="Sakonji Kabuto +1",
-        neck="Justice Torque",
-        body="Unkai Domaru +2",
+        neck="Defiant Torque",
+        --body="Unkai Domaru +2",
         hands="Wakido Kote +1",
         ring2="Ifrit Ring +1",
         back="Buquwik Cape",
         waist="Soil Belt",
         legs="Wakido Haidate +1",
-        feet="Scamp's Sollerets"
     }
     sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS['Tachi: Ageha']
     
@@ -316,7 +314,6 @@ function init_gear_sets()
     sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
         head="Yaoyotl Helm",
    	    body="Mes'yohi Haubergeon",
-        waist="Dynamic Belt",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
     })
     
