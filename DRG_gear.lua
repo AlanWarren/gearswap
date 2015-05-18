@@ -105,7 +105,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
 		body="Acro Surcoat",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}},
         ring1="Ifrit Ring",
         ring2="Ifrit Ring +1",
 		back="Bleating Mantle",
