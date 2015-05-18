@@ -133,7 +133,6 @@ function init_gear_sets()
         ring1="Sangoma Ring",
         ring2="Perception Ring",
         back="Yokaze Mantle",
-        waist="Koga Sarashi",
         feet="Mochizuki Kyahan +1"
     }
     -- Nuking Ninjutsu (skill & magic attack)
