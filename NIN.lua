@@ -107,7 +107,11 @@ function job_precast(spell, action, spellMap, eventArgs)
     aw_custom_aftermath_timers_precast(spell)
     
     if spell.skill == "Ninjutsu" and spell.target.type:lower() == 'self' and spellMap ~= "Utsusemi" then
-        classes.CustomClass = "SelfNinjutsu"
+        if spell.english == "Migawari" then
+            classes.CustomClass = "Migawari"
+        else
+            classes.CustomClass = "SelfNinjutsu"
+        end
     end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
         -- If sneak is active when using, cancel before completion

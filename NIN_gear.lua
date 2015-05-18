@@ -116,11 +116,6 @@ function init_gear_sets()
         feet="Mochizuki Kyahan +1"
     }
       
-    -- any ninjutsu cast on self
-    sets.midcast.SelfNinjutsu = sets.midcast.FastRecast
-    
-    sets.midcast.Utsusemi = set_combine(sets.midcast.SelfNinjutsu, {feet="Iga Kyahan +2"})
-
     -- skill ++ 
     sets.midcast.Ninjutsu = {
         head="Hachiya Hatsuburi +1",
@@ -129,12 +124,17 @@ function init_gear_sets()
         neck="Stoicheion Medal",
         --neck="Ardor Pendant +1",
         body="Mekosuchinae Harness",
-        hands="Mochizuki Tekko +1",
+        hands=TaeonHands.TA,
         ring1="Sangoma Ring",
         ring2="Perception Ring",
         back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
     }
+    -- any ninjutsu cast on self
+    sets.midcast.SelfNinjutsu = sets.midcast.Ninjutsu
+    sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {feet="Iga Kyahan +2"})
+    sets.midcast.Migawari = set_combine(sets.midcast.Ninjutsu, {body="Hattori Ningi +1"})
+
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.ElementalNinjutsu = {
         head="Mochizuki Hatsuburi +1",
