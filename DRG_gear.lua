@@ -8,7 +8,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Angon = {ammo="Angon",hands="Pteroslaver Finger Gauntlets"}
     sets.CapacityMantle = {back="Mecistopins Mantle"}
-    sets.Berserker = {neck="Berserker's Torque"}
+    --sets.Berserker = {neck="Berserker's Torque"}
     sets.WSDayBonus     = { head="Gavialis Helm" }
 
 	sets.precast.JA.Jump = {
@@ -41,7 +41,10 @@ function init_gear_sets()
     })
 	sets.precast.JA['Super Jump'] = sets.precast.JA.Jump
 
-	sets.precast.JA['Spirit Link'] = {hands="Lancer's Vambraces +2", head="Vishap Armet +1"}
+	sets.precast.JA['Spirit Link'] = {
+       -- hands="Lancer's Vambraces +2", 
+        head="Vishap Armet +1"
+    }
 	sets.precast.JA['Call Wyvern'] = {body="Wyrm Mail"}
 	sets.precast.JA['Deep Breathing'] = {--head="Wyrm Armet +1" or Petroslaver Armet +1
     }
@@ -59,7 +62,7 @@ function init_gear_sets()
         hands="Crusher Gauntlets",
         ring1="Dark Ring",
         ring2="K'ayres Ring",
-        back={name="Updraft Mantle", augments={'STR+3','Weapon skill damage +2%','Pet: Breath +9'}},
+        back="Updraft Mantle",
         waist="Glassblower's Belt",
         legs="Vishap Brais",
         feet="Wym. Greaves +2"
@@ -87,7 +90,6 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Otomi Helm",
         hands="Umuthi Gloves",
-		legs="Ares' Flanchard +1",
         feet="Ejekamal Boots",
     }	
 		
@@ -112,7 +114,7 @@ function init_gear_sets()
         feet={name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3', 'Weapon skill damage +2%'}},
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
+        back="Updraft Mantle",
         head="Yaoyotl Helm",
         legs="Acro Breeches"
     })
@@ -124,7 +126,7 @@ function init_gear_sets()
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
         head="Yaoyotl Helm",
-        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
+        back="Updraft Mantle",
     })
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})
 
@@ -133,13 +135,13 @@ function init_gear_sets()
         body="Phorcys Korazin",
         back="Buquwik Cape",
         waist="Windbuffet Belt +1",
-        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
+        back="Updraft Mantle",
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
         head="Yaoyotl Helm", 
         ear1="Bladeborn Earring", 
         ear2="Steelflash Earring", 
-        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
+        back="Updraft Mantle",
     })
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
 
@@ -149,9 +151,9 @@ function init_gear_sets()
         waist="Windbuffet Belt +1"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
-        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
+        back="Updraft Mantle",
         head="Yaoyotl Helm",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}},
     })
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
 
@@ -197,16 +199,16 @@ function init_gear_sets()
 	sets.idle.Field = set_combine(sets.idle.Town, {
         head="Otomi Helm",
         neck="Twilight Torque",
-		body="Ares' Cuirass +1",
+		body="Kumarbi's Akar",
         ring1="Karieyh Ring",
         ring2="Paguroidea Ring",
         waist="Flume Belt",
-        back="Engulfer's Cape +1"
+        back="Engulfer Cape +1"
     })
 
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="Twilight Helm",
-		body="Ares' Cuirass +1",
+		body="Kumarbi's Akar",
     })
 
 	sets.idle.Weak = set_combine(sets.idle.Field, {
@@ -259,7 +261,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Acro Surcoat",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+18','"Triple Atk."+2'}},
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}},
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
         back="Bleating Mantle",
@@ -274,7 +276,7 @@ function init_gear_sets()
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        neck="Iqabi Necklace",
+        neck="Defiant Collar",
         waist="Olseni Belt",
         ring1="Mars's Ring",
         hands="Crusher Gauntlets",
