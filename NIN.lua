@@ -838,7 +838,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip( sets.SangeAmmo )
     end
     -- protection for lag
-    if spell.name == 'Sange' and player.equipment.ammo == 'Happo Shuriken' then
+    if spell.name == 'Sange' and player.equipment.ammo == gear.RegularAmmo then
         state.Buff.Sange = false
         eventArgs.cancel = true
     end
