@@ -229,7 +229,7 @@ function init_gear_sets()
     sets.midcast.Macc = { 
         main="Lehbrailg +2", 
         sub="Mephitis Grip", 
-        --ammo="Aureole",
+        ammo="Plumose Sachet",
         head="Bagua Galero",
         neck="Eddy Necklace", 
         ear1="Lifestorm Earring", 
