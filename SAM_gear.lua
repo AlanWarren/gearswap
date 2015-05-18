@@ -361,7 +361,6 @@ function init_gear_sets()
         hands="Miki. Gauntlets",
         ring1="Patricius Ring",
         feet="Wakido Sune-Ate +1", 
-        waist="Dynamic Belt"
     })
     
     sets.engaged.Acc.Reraise.Yoichi = set_combine(sets.engaged.Acc.Reraise, {
@@ -450,7 +449,6 @@ function init_gear_sets()
         ammo=gear.RAarrow,
    	    body="Mes'yohi Haubergeon",
         head="Yaoyotl Helm",
-        waist="Dynamic Belt",
         legs="Acro Breeches",
         boots="Ejekamal Boots"
     })
