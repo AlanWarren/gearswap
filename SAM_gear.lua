@@ -149,7 +149,7 @@ function init_gear_sets()
     -- CHR Mod
     sets.precast.WS['Tachi: Ageha'] = {
         head="Sakonji Kabuto +1",
-        neck="Defiant Torque",
+        neck="Defiant Collar",
         --body="Unkai Domaru +2",
         hands="Wakido Kote +1",
         ring2="Ifrit Ring +1",
@@ -295,6 +295,7 @@ function init_gear_sets()
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Sakonji Kabuto +1",
+        neck="Defiant Collar",
         ear1="Zennaroi Earring",
         ring1="Mars's Ring",
     })
