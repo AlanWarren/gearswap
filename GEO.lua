@@ -66,7 +66,7 @@ function init_gear_sets()
 
     sets.precast.FC = {
         --ammo="Impatiens",
-        head="Nahtirah Hat",
+        --head="Nahtirah Hat",
         ear2="Loquacious Earring",
         hands="Magavan Mitts",
         --body="Vanir Cotehardie",
@@ -92,17 +92,17 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Nahtirah Hat",
+        --head="Nahtirah Hat",
         neck=gear.ElementalGorget,
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Vanir Cotehardie",
-        hands="Yaoyotl Gloves",
+        --body="Vanir Cotehardie",
+        --hands="Yaoyotl Gloves",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
         back="Buquwik Cape",
         waist=gear.ElementalBelt,
-        legs="Hagondes Pants",
+        --legs="Hagondes Pants",
         feet="Hagondes Sabots"
     }
 
@@ -112,13 +112,13 @@ function init_gear_sets()
         neck="Eddy Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-        body="Hagondes Coat",
-        hands="Yaoyotl Gloves",
+        --body="Hagondes Coat",
+        --hands="Yaoyotl Gloves",
         ring1="Acumen Ring",
-        ring2="Strendu Ring",
+        --ring2="Strendu Ring",
         back="Toro Cape",
-        waist="Snow Belt",
-        legs="Hagondes Pants",
+        --waist="Snow Belt",
+        --legs="Hagondes Pants",
         feet="Hagondes Sabots"
     }
 
@@ -173,9 +173,9 @@ function init_gear_sets()
     
     sets.midcast.Curaga = sets.midcast.Cure
 
-    sets.midcast.Protectra = {ring1="Sheltered Ring"}
+    --sets.midcast.Protectra = {ring1="Sheltered Ring"}
 
-    sets.midcast.Shellra = {ring1="Sheltered Ring"}
+    --sets.midcast.Shellra = {ring1="Sheltered Ring"}
 
     sets.midcast.HighTierNuke = {
         main="Lehbrailg +2",
@@ -193,16 +193,16 @@ function init_gear_sets()
         back="Toro Cape",
         waist="Yamabuki-no-obi", 
         legs="Azimuth Tights +1",
-        feet="Helios Boost"
+        feet="Helios Boots"
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
         ear1="Friomisi Earring",
         ear2="Gwati Earring", 
         hands="Azimuth Gloves",
-        back="Refration Cape",
+        back="Refraction Cape",
         legs="Azimuth Tights +1",
-        feet="Helios Boost"
+        feet="Helios Boots"
         --feet="Bokwus Boots"
     })
     --sets.midcast['Elemental Magic'].Mindmelter = set_combine(sets.midcast.HighTierNuke, {
@@ -222,8 +222,8 @@ function init_gear_sets()
         ear2="Gwati Earring", 
         legs="Azimuth Tights +1",
         ring2="Sangoma Ring",
-        back="Refration Cape",
-        feet="Helios Boost"
+        back="Refraction Cape",
+        feet="Helios Boots"
     })
 
     sets.midcast.Macc = { 
@@ -238,17 +238,17 @@ function init_gear_sets()
         hands="Helios Gloves",
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
-        back="Refration Cape",
+        back="Refraction Cape",
         legs="Azimuth Tights +1",
         waist="Yamabuki-no-obi", 
-        feet="Helios Boost"
+        feet="Helios Boots"
     }
     
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
         head="Bagua Galero",
         neck="Dark Torque", 
         ear1="Gwati Earring",
-        ear2="Hirundinea Earring",
+        ear2="Hirudinea Earring",
         ring1="Excelsis Ring",
         body="Geomancy tunic +1",
         waist="Fucho-no-obi",
@@ -373,28 +373,28 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
-        back="Umbra Cape",
-        legs="Hagondes Pants",
+        --back="Umbra Cape",
+        --legs="Hagondes Pants",
         feet="Azimuth Gaiters"
     }
 
     sets.defense.MDT = {
         range="Dunna",
-        head="Nahtirah Hat",
-        neck="Wiglen Gorget",
+        --head="Nahtirah Hat",
+        --neck="Wiglen Gorget",
         ear1="Zennaroi Earring",
         ear2="Loquacious Earring",
         body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
-        ring1="Defending Ring",
-        ring2="Shadow Ring",
-        back="Umbra Cape",
+        --ring1="Defending Ring",
+        --ring2="Shadow Ring",
+        --back="Umbra Cape",
         waist="Yamabuki-no-Obi",
         --legs="Bokwus Slops",
         --feet="Hagondes Sabots"
     }
 
-    sets.Kiting = {feet="Herald's Gaiters"}
+    sets.Kiting = {}
 
     sets.latent_refresh = {waist="Fucho-no-obi"}
 
