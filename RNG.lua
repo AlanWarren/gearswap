@@ -38,6 +38,7 @@ function get_sets()
         mote_include_version = 2
         -- Load and initialize the include file.
         include('Mote-Include.lua')
+        include('organizer-lib')
 end
 
 -- setup vars that are user-independent.
@@ -109,7 +110,546 @@ function file_unload()
 end
  
 function init_gear_sets()
-    -- gear placed in RNG_gear.lua
+        -- Augmented gear
+        TaeonHands = {}
+        TaeonHands.TA = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
+        TaeonHands.DW = {name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}}
+        -- Misc. Job Ability precasts
+        sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes"}
+        sets.precast.JA['Double Shot'] = {head="Sylvan Gapette +2"}
+        sets.precast.JA['Camouflage'] = {body="Orion Jerkin +1"}
+        sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
+        sets.precast.JA['Velocity Shot'] = {body="Amini Caban"}
+        sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
+
+        sets.CapacityMantle = {back="Mecistopins Mantle"}
+
+        sets.precast.JA['Eagle Eye Shot'] = set_combine(sets.midcast.RA, {
+            head="Uk'uxkaj Cap", 
+            ear1="Flame Pearl",
+            ear2="Flame Pearl",
+            neck="Rancor Collar",
+            back="Buquwik Cape",
+            hands="Amini Glovelettes",
+            ring1="Ifrit Ring",
+            ring2="Ifrit Ring +1",
+            legs="Amini Brague +1", 
+            feet="Arcadian Socks +1"
+        })
+        sets.precast.JA['Eagle Eye Shot'].Mid = set_combine(sets.precast.JA['Eagle Eye Shot'], {
+            back="Lutian Cape",
+            ring2="Longshot Ring",
+            feet="Orion Socks +1"
+        })
+        sets.precast.JA['Eagle Eye Shot'].Acc = set_combine(sets.precast.JA['Eagle Eye Shot'].Mid, {
+            neck="Iqabi Necklace",
+            waist="Elanid Belt"
+        })
+
+        sets.precast.FC = {
+            head="Ejekamal Mask",
+            ear1="Loquacious Earring",
+            legs="Quiahuiz Trousers",
+            hands="Buremte Gloves",
+            ring1="Prolix Ring"
+        }
+        sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
+        
+        sets.idle = {
+            head="Arcadian Beret +1",
+            neck="Twilight Torque",
+            ear1="Enervating Earring",
+            ear2="Tripudio Earring",
+            body="Mekosuchinae Harness",
+            hands="Iuitl Wristbands +1",
+            ring1="Karieyh Ring",
+            ring2="Dark Ring",
+            back="Repulse Mantle",
+            waist="Elanid Belt",
+            legs="Amini Brague +1", 
+            feet="Skadi's Jambeaux +1"
+        }
+        sets.idle.Regen = set_combine(sets.idle, {
+            head="Ocelomeh Headpiece +1",
+            body="Kheper Jacket",
+            ring2="Paguroidea Ring"
+        })
+        sets.idle.PDT = set_combine(sets.idle, {
+            head="Iuitl Headgear +1",
+            ring1="Patricius Ring",
+            ring2="Dark Ring"
+        })
+        sets.idle.Town = set_combine(sets.idle, {
+            body="Kyujutsugi",
+            ring1="Karieyh Ring",
+            ring2="Ifrit Ring +1",
+            back="Lutian Cape"
+        })
+ 
+        -- Engaged sets
+        sets.engaged =  {
+            head="Arcadian Beret +1",
+            neck="Twilight Torque",
+            ear1="Enervating Earring",
+            ear2="Tripudio Earring",
+            body="Arcadian Jerkin +1", 
+            hands="Iuitl Wristbands +1",
+            ring1="Karieyh Ring",
+            ring2="Dark Ring",
+            waist="Impulse Belt",
+            legs="Nahtirah Trousers", 
+            feet="Orion Socks +1"
+        }
+        sets.engaged.PDT = set_combine(sets.engaged, {
+            neck="Twilight Torque",
+            ring1="Dark Ring",
+            ring2="Patricius Ring"
+        })
+        sets.engaged.Yoichinoyumi = set_combine(sets.engaged, {})
+
+        sets.engaged.Melee = {
+            head="Taeon Chapeau",
+            neck="Defiant Collar",
+            ear1="Bladeborn Earring",
+            ear2="Steelflash Earring",
+            body="Qaaxo Harness",
+            hands=TaeonHands.TA,
+            ring1="Rajas Ring",
+            ring2="Epona's Ring",
+            back="Bleating Mantle",
+            waist="Windbuffet Belt +1",
+            legs="Taeon Tights",
+            feet="Taeon Boots"
+        }
+        sets.engaged.Yoichinoyumi.Melee = sets.engaged.Melee
+
+        sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
+            neck="Twilight Torque",
+            ring1="Dark Ring",
+            ring2="Patricius Ring"
+        })
+
+        sets.engaged.DW = set_combine(sets.engaged, {})
+
+        sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
+            head="Taeon Chapeau",
+            ear1="Dudgeon Earring",
+            ear2="Heartseeker Earring",
+            body="Taeon Tabard",
+            hands=TaeonHands.DW,
+            back="Bleating Mantle",
+            waist="Patentia Sash",
+            legs="Taeon Tights",
+            feet="Taeon Boots"
+        })
+
+        ------------------------------------------------------------------
+        -- Preshot / Snapshot sets
+        ------------------------------------------------------------------
+        sets.precast.RA = {
+            head="Sylvan Gapette +2", -- 5
+            body="Amini Caban", -- 10
+            hands="Iuitl Wristbands +1", -- 5
+            back="Lutian Cape", -- 3
+            legs="Nahtirah Trousers", -- 9
+            waist="Impulse Belt", -- 2
+            feet="Wurrukatte Boots" -- 3
+        }
+        
+        ------------------------------------------------------------------
+        -- Default Base Gear Sets for Ranged Attacks. Geared for Gun
+        ------------------------------------------------------------------
+        sets.midcast.RA = { 
+            head="Arcadian Beret +1",
+            neck="Ocachi Gorget",
+            ear1="Enervating Earring",
+            ear2="Tripudio Earring", 
+            body="Arcadian Jerkin +1",
+            hands="Amini Glovelettes",
+            ring1="Rajas Ring",
+            ring2="K'ayres Ring",
+            back="Sylvan Chlamys",
+            waist="Elanid Belt", 
+            legs="Amini Brague +1", 
+            feet="Arcadian Socks +1"
+        }
+        sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
+            back="Lutian Cape", 
+            ring1="Longshot Ring",
+            body="Kyujutsugi",
+        })
+        sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
+            neck="Iqabi Necklace", hands="Sigyn's Bazubands",
+            ring1="Hajduk Ring", ring2="Longshot Ring",
+            legs="Arcadian Braccae +1"
+        })
+    
+        ------------------------------------------------------------------
+        -- Specialized Gear Sets
+        ------------------------------------------------------------------
+
+        -- Stave sets 
+        sets.midcast.RA.Stave = set_combine(sets.midcast.RA, {
+            body="Arcadian Jerkin +1",
+            back="Lutian Cape",
+            legs="Amini Brague +1", 
+        })
+
+        sets.midcast.RA.Stave.Mid = set_combine(sets.midcast.RA.Stave, {
+            body="Kyujutsugi",
+            ring2="Longshot Ring",
+        })
+        sets.midcast.RA.Stave.Acc = set_combine(sets.midcast.RA.Stave.Mid, {
+            neck="Iqabi Necklace",
+            legs="Aetosaur Trousers +1",
+            ring1="Paqichikaji Ring"
+        })
+        
+        -- Samurai Roll sets 
+        sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
+            body="Arcadian Jerkin +1",
+            ring2="Longshot Ring",
+        })
+        sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
+            ring2="Longshot Ring",
+            back="Lutian Cape",hands="Amini Glovelettes",
+            legs="Amini Brague +1", 
+        })
+        sets.midcast.RA.Acc.SamRoll = set_combine(sets.midcast.RA.Mid.SamRoll, {
+            neck="Iqabi Necklace", 
+            ring1="Hajduk Ring", 
+            ring2="Longshot Ring",
+            legs="Arcadian Braccae +1"
+        })
+        -- Stave Sam Roll
+        sets.midcast.RA.Stave.SamRoll = set_combine(sets.midcast.RA.Stave, {
+            body="Arcadian Jerkin +1",
+            waist="Elanid Belt"
+        })
+        sets.midcast.RA.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.Stave.Mid, {
+            body="Arcadian Jerkin +1",
+            legs="Amini Brague +1", 
+            hands="Amini Glovelettes",
+        })
+        sets.midcast.RA.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Acc, {})
+        
+        -- SAM Subjob
+        sets.midcast.RA.SAM = {
+            head="Arcadian Beret +1",
+            neck="Ocachi Gorget",
+            ear1="Enervating Earring",
+            ear2="Tripudio Earring", 
+            body="Kyujutsugi",
+            hands="Amini Glovelettes",
+            ring1="Rajas Ring", 
+            ring2="K'ayres Ring",
+            back="Sylvan Chlamys",
+            waist="Elanid Belt",
+            legs="Amini Brague +1", 
+            feet="Orion Socks +1"
+        }
+        sets.midcast.RA.SAM.Mid = set_combine(sets.midcast.RA.SAM, { 
+            hands="Amini Glovelettes",
+        })
+        sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mid, {
+            back="Lutian Cape", 
+            neck="Iqabi Necklace", 
+            ring2="Longshot Ring"
+        })
+
+        -- Stave set for SAM
+        sets.midcast.RA.SAM.Stave = set_combine(sets.midcast.RA.SAM, {
+            hands="Amini Glovelettes"
+        })
+        sets.midcast.RA.SAM.Stave.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
+            hands="Sigyn's Bazubands",
+            legs="Amini Brague +1", 
+        })
+        sets.midcast.RA.SAM.Stave.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
+        
+        -- Samurai Roll for /sam, assume we're using a staff
+        sets.midcast.RA.SAM.Stave.SamRoll = set_combine(sets.midcast.RA.SAM.Stave, {
+            hands="Amini Glovelettes"
+        })
+        sets.midcast.RA.SAM.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Mid, {
+            ear1="Enervating Earring",
+            hands="Sigyn's Bazubands",
+            legs="Amini Brague +1", 
+        })
+        sets.midcast.RA.SAM.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Acc, {
+            hands="Sigyn's Bazubands",
+        })
+
+        -- Bow base set.
+        sets.midcast.RA.Yoichinoyumi = {
+            head="Arcadian Beret +1",
+            neck="Ocachi Gorget",
+            ear1="Enervating Earring",
+            ear2="Tripudio Earring",
+            body="Kyujutsugi",
+            --body="Arcadian Jerkin +1",
+            hands="Amini Glovelettes",
+            ring1="Rajas Ring",
+            ring2="K'ayres Ring",
+            back="Sylvan Chlamys",
+            waist="Elanid Belt",
+            legs="Amini Brague +1", 
+            feet="Arcadian Socks +1"
+        }
+        sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
+            back="Lutian Cape",
+            body="Amini Caban",
+            hands="Amini Glovelettes",
+            legs="Amini Brague +1", 
+            feet="Orion Socks +1"
+        })
+        sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
+            neck="Iqabi Necklace",
+            ring1="Longshot Ring",
+            ring2="Hajduk Ring",
+            legs="Arcadian Braccae +1"
+        })
+        sets.midcast.RA.Falubeza = sets.midcast.RA.Yoichinoyumi
+        sets.midcast.RA.Falubeza.Mid = sets.midcast.RA.Yoichinoyumi.Mid
+        sets.midcast.RA.Falubeza.Acc = sets.midcast.RA.Yoichinoyumi.Acc
+
+        -- Stave
+        sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Amini Glovelettes" })
+        sets.midcast.RA.Stave.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, { 
+            legs="Amini Brague +1", 
+        })
+        sets.midcast.RA.Stave.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Acc, {})
+       
+        -- Stave with Sam roll
+        sets.midcast.RA.Stave.Yoichinoyumi.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
+            body="Arcadian Jerkin +1",
+            hands="Amini Glovelettes",
+            ring2="Paqichikaji Ring",
+            back="Lutian Cape"
+        })
+        sets.midcast.RA.Stave.Yoichinoyumi.Mid.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.SamRoll, {
+            body="Kyujutsugi",
+        })
+        sets.midcast.RA.Stave.Yoichinoyumi.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mid.SamRoll, {
+            neck="Iqabi Necklace",
+            hands="Amini Glovelettes",
+            ring1="Longshot Ring",
+            feet="Orion Socks +1"
+        })
+        
+        -- Sam SJ / Bow - assuming you'll use a Stave here..
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.SAM, {
+            feet="Arcadian Socks +1"
+        })
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
+            feet="Orion Socks +1"
+        })
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
+
+        -- Sam SJ / Bow / Sam's Roll
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi, {
+            waist="Elanid Belt",
+            feet="Orion Socks +1"
+        })
+
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid, {
+            waist="Elanid Belt",
+        })
+        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc, {})
+
+
+        -- Weaponskill sets  
+        sets.precast.WS = {
+            head="Arcadian Beret +1",
+            neck="Ocachi Gorget",
+            ear1="Flame Pearl",
+            ear2="Flame Pearl",
+            body="Kyujutsugi",
+            hands="Arcadian Bracers +1",
+            ring1="Karieyh Ring",
+            ring2="Ifrit Ring +1",
+            back="Buquwik Cape",
+            waist="Elanid Belt",
+            legs="Amini Brague +1", 
+            feet="Arcadian Socks +1"
+        }
+        sets.precast.WS.Mid = set_combine(sets.precast.WS, {
+            ear1="Enervating Earring",
+            feet="Orion Socks +1"
+        })
+        sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
+            back="Lutian Cape"
+        })
+
+        -- WILDFIRE
+        sets.Wildfire = {
+            head="Umbani Cap",
+            body="Orion Jerkin +1",
+            ear1="Crematio Earring",
+            ear2="Friomisi Earring",
+            neck="Stoicheion Medal",
+            hands=TaeonHands.TA,
+            ring1="Acumen Ring",
+            ring2="Garuda Ring",
+            back="Argochampsa Mantle",
+            waist="Yamabuki-no-Obi",
+            legs="Limbo Trousers",
+            feet="Taeon Boots"
+        }
+        sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
+        sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS.Mid, sets.Wildfire)
+        sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS.Acc, sets.Wildfire)
+
+        -- CORONACH
+        sets.Coronach = {
+           neck="Breeze Gorget",
+           waist="Thunder Belt",
+        }
+        sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
+        sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.Coronach)
+        sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, sets.Coronach)
+
+        sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
+            neck="Ocachi Gorget",
+            ear1="Enervating Earring",
+            ear2="Tripudio Earring",
+            hands="Amini Glovelettes",
+            legs="Amini Brague +1", 
+        })
+
+        -- LAST STAND
+        sets.LastStand = {
+           neck="Aqua Gorget",
+           ear2="Moonshade Earring",
+           ring2="Garuda Ring",
+           waist="Light Belt",
+           feet="Orion Socks +1"
+        }
+        sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, sets.LastStand)
+        sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS.Mid, sets.LastStand)
+        sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS.Acc, sets.LastStand)
+
+        sets.precast.WS['Last Stand'].SAM = set_combine(sets.precast.WS, {
+            neck="Aqua Gorget",
+            ear1="Tripudio Earring",
+            ear2="Moonshade Earring",
+            hands="Amini Glovelettes",
+            ring2="Garuda Ring",
+            waist="Light Belt",
+            legs="Amini Brague +1", 
+        })
+        
+        -- DETONATOR
+        sets.Detonator = {
+           ear2="Moonshade Earring",
+           neck="Flame Gorget",
+           waist="Light Belt",
+           feet="Arcadian Socks +1"
+        }
+        sets.precast.WS['Detonator'] = set_combine(sets.precast.WS, sets.Detonator)
+        sets.precast.WS['Detonator'].Mid = set_combine(sets.precast.WS.Mid, sets.Detonator)
+        sets.precast.WS['Detonator'].Acc = set_combine(sets.precast.WS.Acc, sets.Detonator)
+        
+        -- SLUG SHOT
+        sets.SlugShot = {
+           neck="Breeze Gorget",
+           ear2="Moonshade Earring",
+           waist="Light Belt",
+           feet="Arcadian Socks +1"
+        }
+        sets.precast.WS['Slug Shot'] = set_combine(sets.precast.WS, sets.SlugShot)
+        sets.precast.WS['Slug Shot'].Mid = set_combine(sets.precast.WS.Mid, sets.SlugShot)
+        sets.precast.WS['Slug Shot'].Acc = set_combine(sets.precast.WS.Acc, sets.SlugShot)
+        
+        sets.precast.WS['Heavy Shot'] = set_combine(sets.precast.WS, sets.SlugShot)
+        sets.precast.WS['Heavy Shot'].Mid = set_combine(sets.precast.WS.Mid, sets.SlugShot)
+        sets.precast.WS['Heavy Shot'].Acc = set_combine(sets.precast.WS.Acc, sets.SlugShot)
+
+        -- NAMAS
+        sets.Namas = {
+            neck="Aqua Gorget",
+            waist="Light Belt",
+            hands="Amini Glovelettes", -- override since we don't want sigyns in Mid or Acc
+            back="Sylvan Chlamys",
+            feet="Arcadian Socks +1"
+        }
+        sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS, sets.Namas)
+        sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS.Mid, sets.Namas)
+        sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS.Acc, sets.Namas)
+        
+        sets.precast.WS['Namas Arrow'].SAM = set_combine(sets.precast.WS, {
+            neck="Aqua Gorget",
+            ear1="Enervating Earring",
+            ear2="Tripudio Earring",
+            waist="Light Belt",
+            back="Sylvan Chlamys",
+            legs="Amini Brague +1", 
+        })
+
+        -- JISHNUS
+        sets.Jishnus = {
+            neck="Flame Gorget",
+            ear2="Moonshade Earring",
+            waist="Light Belt",
+            legs="Amini Brague +1", 
+            ring1="Rajas Ring",
+            ring2="Ramuh Ring",
+            back="Rancorous Mantle"
+        }
+        sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, sets.Jishnus)
+        sets.precast.WS['Jishnu\'s Radiance'].Mid = set_combine(sets.precast.WS.Mid, sets.Jishnus)
+        sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS.Acc, sets.Jishnus)
+
+        -- SIDEWINDER
+        sets.Sidewinder = {
+            neck="Aqua Gorget",
+            ear2="Moonshade Earring",
+            waist="Light Belt",
+            hands="Arcadian Bracers +1",
+            back="Buquwik Cape",
+            feet="Arcadian Socks +1"
+        }
+        sets.precast.WS['Sidewinder'] = set_combine(sets.precast.WS, sets.Sidewinder)
+        sets.precast.WS['Sidewinder'].Mid = set_combine(sets.precast.WS.Mid, sets.Sidewinder)
+        sets.precast.WS['Sidewinder'].Acc = set_combine(sets.precast.WS.Acc, sets.Sidewinder)
+
+        sets.precast.WS['Refulgent Arrow'] = sets.precast.WS['Sidewinder']
+        sets.precast.WS['Refulgent Arrow'].Mid = sets.precast.WS['Sidewinder'].Mid
+        sets.precast.WS['Refulgent Arrow'].Acc = sets.precast.WS['Sidewinder'].Acc
+       
+        -- Resting sets
+        sets.resting = {}
+       
+        -- Defense sets
+        sets.defense.PDT = set_combine(sets.idle, {})
+        sets.defense.MDT = set_combine(sets.idle, {})
+        --sets.Kiting = {feet="Fajin Boots"}
+       
+        sets.buff.Barrage = {
+            head="Uk'uxkaj Cap",
+            neck="Rancor Collar",
+            ear1="Flame Pearl",
+            ear2="Flame Pearl",
+            body="Orion Jerkin +1",
+            hands="Orion Bracers +1",
+            ring1="Ifrit Ring +1",
+            ring2="Longshot Ring",
+            back="Lutian Cape",
+            waist="Elanid Belt",
+            legs="Amini Brague +1", 
+            feet="Orion Socks +1"
+        }
+        -- placeholder until I can get to it
+        sets.buff.Barrage.Mid = sets.buff.Barrage
+        sets.buff.Barrage.Acc = sets.buff.Barrage
+
+        sets.buff.Camouflage =  {body="Orion Jerkin +1"}
+
+        sets.Overkill =  {
+            body="Arcadian Jerkin +1"
+        }
+        sets.Overkill.Preshot = set_combine(sets.precast.RA, sets.Overkill)
+
 end
 
 function job_pretarget(spell, action, spellMap, eventArgs)

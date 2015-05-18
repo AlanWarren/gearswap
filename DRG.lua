@@ -9,6 +9,7 @@ function get_sets()
     mote_include_version = 2
 	-- Load and initialize the include file.
 	include('Mote-Include.lua')
+	include('organizer-lib')
 end
 
 
@@ -61,8 +62,337 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
--- gear located in DRG_gear.lua 
+	--------------------------------------
+	-- Start defining the sets
+	--------------------------------------
+	
+	-- Precast Sets
+	-- Precast sets to enhance JAs
+	sets.precast.JA.Angon = {ammo="Angon",hands="Pteroslaver Finger Gauntlets"}
+    sets.CapacityMantle = {back="Mecistopins Mantle"}
+    --sets.Berserker = {neck="Berserker's Torque"}
+    sets.WSDayBonus     = { head="Gavialis Helm" }
+
+	sets.precast.JA.Jump = {
+        ammo="Ginsen",
+		head="Acro Helm",
+        neck="Asperity Necklace",
+        ear1="Brutal Earring",
+        ear2="Tripudio Earring",
+		body="Lancer's Plackart +2",
+        hands="Crusher Gauntlets",
+        ring1="Rajas Ring",
+        ring2="Oneiros Ring",
+		back="Bleating Mantle",
+        waist="Windbuffet Belt +1",
+        legs="Taeon Tights",
+        feet="Taeon Boots"
+    }
+
+	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais" }
+	sets.TreasureHunter = {waist="Chaac Belt"}
+
+	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
+    }) 
+	sets.precast.JA['Soul Jump'] = set_combine(sets.precast.JA.Jump, {
+        legs="Lancer's Cuissots +2"
+    })
+	sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA.Jump, {
+        legs="Lancer's Cuissots +2"
+        --feet="Lancer's Schynbalds +2"
+    })
+	sets.precast.JA['Super Jump'] = sets.precast.JA.Jump
+
+	sets.precast.JA['Spirit Link'] = {
+       -- hands="Lancer's Vambraces +2", 
+        head="Vishap Armet +1"
+    }
+	sets.precast.JA['Call Wyvern'] = {body="Wyrm Mail"}
+	sets.precast.JA['Deep Breathing'] = {--head="Wyrm Armet +1" or Petroslaver Armet +1
+    }
+	sets.precast.JA['Spirit Surge'] = { --body="Wyrm Mail +2"
+    }
+	
+	-- Healing Breath sets
+	sets.HB = {
+        ammo="Ginsen",
+		head="Wyrm Armet",
+        neck="Lancer's Torque",
+        ear1="Steelflash Earring",
+        ear2="Bladeborn Earring",
+		body="Acro Surcoat",
+        hands="Crusher Gauntlets",
+        ring1="Dark Ring",
+        ring2="K'ayres Ring",
+        back="Updraft Mantle",
+        waist="Glassblower's Belt",
+        legs="Vishap Brais",
+        feet="Wym. Greaves +2"
+    }
+
+	-- Waltz set (chr and vit)
+	sets.precast.Waltz = {
+		head="Yaoyotl Helm",
+		back="Bleating Mantle"}
+		
+	-- Don't need any special gear for Healing Waltz.
+	sets.precast.Waltz['Healing Waltz'] = {}
+
+	-- Fast cast sets for spells
+	sets.precast.FC = {
+        ammo="Impatiens",
+        head="Cizin Helm +1", 
+        ear1="Loquacious Earring", 
+        hands="Buremte Gloves",
+        legs="Limbo Trousers",
+        ring1="Prolix Ring"
+    }
+    
+	-- Midcast Sets
+	sets.midcast.FastRecast = {
+		head="Otomi Helm",
+        hands="Umuthi Gloves",
+        feet="Ejekamal Boots",
+    }	
+		
+	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Vishap Armet +1" })
+	-- Weaponskill sets
+	-- Default set for any weaponskill that isn't any more specifically defined
+	sets.precast.WS = {}
+
+	sets.precast.WS = {
+        ammo="Thew Bomblet",
+		head="Otomi Helm",
+        neck="Ganesha's Mala",
+        ear1="Brutal Earring",
+        ear2="Moonshade Earring",
+		body="Acro Surcoat",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}},
+        ring1="Ifrit Ring",
+        ring2="Ifrit Ring +1",
+		back="Bleating Mantle",
+        waist="Windbuffet Belt +1",
+        legs="Taeon Tights",
+        feet={name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3', 'Weapon skill damage +2%'}},
+    }
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+        back="Updraft Mantle",
+        head="Yaoyotl Helm",
+        legs="Acro Breeches"
+    })
+	
+	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
+        neck="Shadow Gorget",
+        waist="Soil Belt"
+    })
+	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
+        head="Yaoyotl Helm",
+        back="Updraft Mantle",
+    })
+	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})
+
+    sets.precast.WS["Camlann's Torment"] = set_combine(sets.precast.WS, {
+        neck="Breeze Gorget",
+        body="Phorcys Korazin",
+        back="Buquwik Cape",
+        waist="Windbuffet Belt +1",
+        back="Updraft Mantle",
+    })
+	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
+        head="Yaoyotl Helm", 
+        ear1="Bladeborn Earring", 
+        ear2="Steelflash Earring", 
+        back="Updraft Mantle",
+    })
+	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
+
+	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
+        hands="Mikinaak Gauntlets",
+        back="Rancorous Mantle",
+        waist="Windbuffet Belt +1"
+    })
+	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
+        back="Updraft Mantle",
+        head="Yaoyotl Helm",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}},
+    })
+	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
+
+	
+	-- Sets to return to when not performing an action.
+	
+	-- Resting sets
+	sets.resting = {
+        head="Twilight Helm",
+        neck="Twilight Torque",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+		body="Twilight Mail",
+        hands="Cizin Mufflers +1",
+        ring1="Dark Ring",
+        ring2="Paguroidea Ring",
+		back="Repulse Mantle",
+        legs="Crimson Cuisses",
+        feet="Whirlpool Greaves"
+    }
+	
+
+	-- Idle sets
+	sets.idle = {}
+
+	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+	sets.idle.Town = {
+        ammo="Ginsen",
+		head="Otomi Helm",
+        neck="Ganesha's Mala",
+        ear1="Brutal Earring",
+        ear2="Tripudio Earring",
+		body="Acro Surcoat",
+        hands="Crusher Gauntlets",
+        ring1="Karieyh Ring",
+        ring2="Ifrit Ring +1",
+		back="Bleating Mantle",
+        waist="Windbuffet Belt +1",
+        legs="Crimson Cuisses",
+        feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
+    }
+	
+	sets.idle.Field = set_combine(sets.idle.Town, {
+        head="Otomi Helm",
+        neck="Twilight Torque",
+		body="Kumarbi's Akar",
+        ring1="Karieyh Ring",
+        ring2="Paguroidea Ring",
+        waist="Flume Belt",
+        back="Engulfer Cape +1"
+    })
+
+    sets.idle.Regen = set_combine(sets.idle.Field, {
+        head="Twilight Helm",
+		body="Kumarbi's Akar",
+    })
+
+	sets.idle.Weak = set_combine(sets.idle.Field, {
+		head="Twilight Helm",
+		body="Twilight Mail",
+    })
+	
+	-- Defense sets
+	sets.defense.PDT = {
+        ammo="Ginsen",
+		head="Ighwa Cap",
+        neck="Twilight Torque",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+		body="Emet Harness +1",
+        hands="Crusher Gauntlets",
+        ring1="Patricius Ring",
+        ring2="Dark Ring",
+		back="Repulse Mantle",
+        waist="Flume Belt",
+        legs="Cizin Breeches +1",
+        feet="Cizin Greaves +1"
+    }
+
+	sets.defense.Reraise = set_combine(sets.defense.PDT, {
+		head="Twilight Helm",
+		body="Twilight Mail"
+    })
+
+	sets.defense.MDT = set_combine(sets.defense.PDT, {
+         back="Engulfer Cape +1"
+    })
+
+	sets.Kiting = {legs="Crimson Cuisses"}
+
+	sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+
+	-- Engaged sets
+
+	-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
+	-- sets if more refined versions aren't defined.
+	-- If you create a set with both offense and defense modes, the offense mode should be first.
+	-- EG: sets.engaged.Dagger.Accuracy.Evasion
+	
+	-- Normal melee group
+	sets.engaged = {
+        ammo="Ginsen",
+		head="Taeon Chapeau",
+        neck="Ganesha's Mala",
+        ear1="Brutal Earring",
+        ear2="Tripudio Earring",
+		body="Acro Surcoat",
+        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}},
+        ring1="Rajas Ring",
+        ring2="Oneiros Ring",
+        back="Bleating Mantle",
+        waist="Windbuffet Belt +1",
+        legs="Taeon Tights",
+        feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
+    }
+
+	sets.engaged.Mid = set_combine(sets.engaged, {
+        head="Yaoyotl Helm",
+        ear1="Zennaroi Earring",
+    })
+
+	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        neck="Defiant Collar",
+        waist="Olseni Belt",
+        ring1="Mars's Ring",
+        hands="Crusher Gauntlets",
+        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
+        legs="Acro Breeches"
+    })
+
+    sets.engaged.PDT = set_combine(sets.engaged, {
+        head="Ighwa Cap",
+        neck="Twilight Torque",
+        body="Emet Harness +1",
+        ring2="Patricius Ring",
+        hands="Crusher Gauntlets",
+        back="Repulse Mantle",
+        legs="Cizin Breeches +1",
+        feet="Cizin Greaves +1"
+    })
+	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
+        head="Ighwa Cap",
+        ring2="Patricius Ring",
+        body="Emet Harness +1",
+        hands="Crusher Gauntlets",
+        back="Repulse Mantle",
+        legs="Cizin Breeches +1",
+    })
+	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
+        head="Ighwa Cap",
+        ring2="Patricius Ring",
+        body="Emet Harness +1",
+        hands="Crusher Gauntlets",
+        back="Repulse Mantle",
+        legs="Cizin Breeches +1",
+    })
+
+    sets.engaged.War = set_combine(sets.engaged, {
+        hands="Acro Gauntlets",
+        neck="Asperity Necklace",
+        ring2="K'ayres Ring"
+    })
+    sets.engaged.War.Mid = set_combine(sets.engaged.Mid, {
+        hands="Acro Gauntlets",
+        neck="Asperity Necklace",
+        ring2="K'ayres Ring"
+    })
+
+	sets.engaged.Reraise = set_combine(sets.engaged, {
+		head="Twilight Helm",
+		body="Twilight Mail"
+    })
+
+	sets.engaged.Acc.Reraise = sets.engaged.Reraise
+
 end
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks that are called to process player actions at specific points in time.

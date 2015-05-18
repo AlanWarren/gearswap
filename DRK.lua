@@ -24,7 +24,7 @@ function get_sets()
     mote_include_version = 2
     -- Load and initialize the include file.
     include('Mote-Include.lua')
-    --include('organizer-lib')
+    include('organizer-lib')
 end
  
  
@@ -37,7 +37,7 @@ function job_setup()
     -- Set the default to false if you'd rather SE always stay acitve
     state.SouleaterMode = M(true, 'Soul Eater Mode')
     
-    wsList = S{'Spiral Hell', 'Insurgency'}
+    wsList = S{'Spiral Hell', 'Torcleaver'}
     gsList = S{'Tunglmyrkvi', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
     drk_sub_weapons = S{"Sangarius", "Usonmunku", "Perun"}
 
@@ -176,7 +176,7 @@ function init_gear_sets()
          ring1="Perception Ring",
          ring2="Sangoma Ring",
          back=Niht.Darkmagic,
-         legs="Heathen's Flanchard", --18
+         legs="Heathen's Flanchard +1", --18
          feet="Ignominy sollerets"
      }
      
@@ -213,7 +213,7 @@ function init_gear_sets()
          ring1="Beeline Ring",
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
-         legs="Ignominy Flanchard +1",
+         legs="Heathen's Flanchard +1",
          feet="Ejekamal Boots"
      })
      
@@ -322,27 +322,24 @@ function init_gear_sets()
      -- 20% STR / 20% INT 
      -- Base set only used at 3000TP to put AM3 up
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
-         ammo="Ginsen",
          head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
-         hands="Mikinaak Gauntlets",
-         waist="Caudata Belt",
-         legs="Ignominy Flanchard +1",
-     })
-     sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
-         head="Acro Helm",
-         neck="Shadow Gorget",
-         body="Acro Surcoat",
          hands=Acro.Hands.STP,
          waist="Windbuffet Belt +1",
-         legs="Yorium Cuisses",
      })
-     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
+     sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
+         ear1="Lugra Earring +1",
          neck="Shadow Gorget",
-         body="Acro Surcoat",
-         waist="Light Belt"
      })
-     sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {})
+     -- Mid assumes higher defense target
+     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
+         neck="Bale Choker",
+         hands="Mikinaak Gauntlets",
+         legs="Heathen's Flanchard +1",
+         waist="Caudata Belt"
+     })
+     sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
+     })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Fallen's Cuirass +1",
          ear1="Zennaroi Earring",
@@ -355,19 +352,21 @@ function init_gear_sets()
          head="Heathen's Burgonet +1",
          neck="Aqua Gorget",
          hands="Fallen's Finger Gauntlets +1",
-         legs="Ignominy Flanchard +1",
          waist="Windbuffet Belt +1"
      })
-     sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {})
+     sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {
+         hands=Acro.Hands.STP,
+     })
 
      sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
          head="Heathen's Burgonet +1",
+         neck="Ganesha's Mala",
          hands=Acro.Hands.STP,
          waist="Metalsinger Belt",
-         legs="Yorium Cuisses"
+         legs="Heathen's Flanchard +1",
      })
      sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
-         waist="Windbuffet Belt +1",
+         neck="Aqua Gorget",
      })
      sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
          ammo="Ginsen",
@@ -571,6 +570,7 @@ function init_gear_sets()
 
      sets.HighHaste = {
          ammo="Ginsen",
+         head="Acro Helm",
          hands=Acro.Hands.STP,
          feet=Acro.Feet.STP
      }
