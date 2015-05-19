@@ -43,7 +43,6 @@ function job_setup()
     -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
     info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 
-    --time_event = windower.raw_register_event('time change', time_change)
 end
 
 
@@ -75,6 +74,8 @@ function user_setup()
     --    end
     --end)
 
+    state.time = M(false)
+    time_event = windower.raw_register_event('time change', time_change)
 end
 
 
@@ -280,9 +281,9 @@ function init_gear_sets()
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1"
     })
-    sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
-        body="Councilor's Garb"
-    })
+    --sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
+    --    body="Councilor's Garb"
+    --})
     
     sets.idle.Weak = sets.idle
 
@@ -1009,8 +1010,6 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         else
             state.CombatForm:reset()
         end
-    elseif newStatus == 'Idle' then
-        determine_idle_group()
     end
 end
 
@@ -1145,18 +1144,6 @@ function job_state_change(stateField, newValue, oldValue)
     end
 end
 
--- Handle zone specific rules
-windower.register_event('Zone change', function(new,old)
-    determine_idle_group()
-end)
-
-function determine_idle_group()
-    classes.CustomIdleGroups:clear()
-    if areas.Adoulin:contains(world.area) then
-    	classes.CustomIdleGroups:append('Adoulin')
-    end
-end
-
 --- Custom spell mapping.
 --function job_get_spell_map(spell, default_spell_map)
 --    if spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' then
@@ -1240,11 +1227,23 @@ function aw_custom_aftermath_timers_aftercast(spell)
     end
 end
 
---function time_change(new_time, old_time)
---    if new_time == (18*60) or new_time == (6*60) then
---        send_command('wait 1.2;gs c update user')
---    end
---end
+function time_change(new, old)
+    if time_event then
+        if new > 17.00 or new < 7.00 then
+            if state.time then
+                state.time:reset()
+                windower.add_to_chat(204, "******************* Dusk *******************")
+                send_command('gs c update user')
+            end
+        else
+            if state.time.value == false then
+                state.time:set()
+                windower.add_to_chat(204, "******************* Dawn *******************")
+                send_command('gs c update user')
+            end
+        end
+    end
+end
 
 function select_ammo()
     if state.Buff.Sange then
