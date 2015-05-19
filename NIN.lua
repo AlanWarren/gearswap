@@ -29,6 +29,8 @@ function job_setup()
     state.CapacityMode = M(false, 'Capacity Point Mantle')
     gear.RegularAmmo = 'Happo Shuriken'
     gear.SangeAmmo = 'Hachiya Shuriken'
+    
+    wsList = S{'Blade: Hi'}
 
     --determine_haste_group()
     update_combat_form()
@@ -407,7 +409,7 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         neck="Asperity Necklace",
         body="Hattori Ningi +1",
-        hands="Otronif Gloves +1",
+        hands=TaeonHands.TA,
         ring1="Oneiros Ring",
         back="Iga Dochugappa",
         waist="Windbuffet Belt +1",
@@ -854,11 +856,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         end
         -- Gavialis Helm rule
         if is_sc_element_today(spell) then
-            --if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
-            --    -- use normal head piece
-            --else
-                equip(sets.WSDayBonus)
-            --end
+            if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
+                -- do nothing
+            else
+              equip(sets.WSDayBonus)
+            end
         end
         -- Swap in special ammo for WS in high Acc mode
         if state.OffenseMode.value == 'Acc' then
