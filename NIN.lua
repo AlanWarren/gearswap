@@ -43,7 +43,7 @@ function job_setup()
     -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
     info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 
-    time_event = windower.raw_register_event('time change', time_change)
+    --time_event = windower.raw_register_event('time change', time_change)
 end
 
 
@@ -1240,11 +1240,11 @@ function aw_custom_aftermath_timers_aftercast(spell)
     end
 end
 
-function time_change(new_time, old_time)
-    if new_time == (18*60) or new_time == (6*60) then
-        send_command('wait 1.2;gs c update user')
-    end
-end
+--function time_change(new_time, old_time)
+--    if new_time == (18*60) or new_time == (6*60) then
+--        send_command('wait 1.2;gs c update user')
+--    end
+--end
 
 function select_ammo()
     if state.Buff.Sange then
