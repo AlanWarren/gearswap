@@ -273,7 +273,7 @@ function init_gear_sets()
         ring1="Karieyh Ring",
         hands="Sasuke Tekko +1",
         ring2="Ifrit Ring +1",
-        body="Hattori Ningi +1",
+        body="Mes'yohi Haubergeon",
         legs="Hachiya Hakama +1",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1"
