@@ -645,7 +645,6 @@ function init_gear_sets()
          feet=Acro.Feet.STP
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-         head="Heathen's Burgonet +1",
          body="Acro Surcoat",
          hands=Acro.Hands.Haste,
          feet=Acro.Feet.STP
