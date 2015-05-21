@@ -75,7 +75,7 @@ function user_setup()
     --end)
 
     state.time = M(false)
-    time_event = windower.raw_register_event('time change', time_change)
+    windower.raw_register_event('time change', time_change)
 end
 
 
@@ -1230,19 +1230,17 @@ function aw_custom_aftermath_timers_aftercast(spell)
 end
 
 function time_change(new, old)
-    if time_event then
-        if new > 17.00 or new < 7.00 then
-            if state.time then
-                state.time:reset()
-                windower.add_to_chat(204, "******************* Dusk *******************")
-                send_command('gs c update user')
-            end
-        else
-            if state.time.value == false then
-                state.time:set()
-                windower.add_to_chat(204, "******************* Dawn *******************")
-                send_command('gs c update user')
-            end
+    if new > 17.00 or new < 7.00 then
+        if state.time then
+            state.time:reset()
+            windower.add_to_chat(204, "******************* Dusk *******************")
+            send_command('gs c update user')
+        end
+    else
+        if state.time.value == false then
+            state.time:set()
+            windower.add_to_chat(204, "******************* Dawn *******************")
+            send_command('gs c update user')
         end
     end
 end
