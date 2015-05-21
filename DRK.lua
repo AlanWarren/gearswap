@@ -692,7 +692,8 @@ function init_gear_sets()
      })
     
      sets.buff.Souleater = { 
-         head="Ignominy Burgeonet +1"
+         head="Ignominy Burgeonet +1",
+         body="Acro Surcoat"
      }
 
      sets.buff['Last Resort'] = { 
@@ -780,7 +781,7 @@ function job_post_aftercast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' then
         if state.Buff.Souleater and state.SouleaterMode.value then
             send_command('@wait 1.0;cancel souleater')
-            enable("head")
+            --enable("head")
         end
     end
 end
@@ -909,9 +910,9 @@ function job_buff_change(buff, gain)
     if buff == "Souleater" then
         if gain then
             equip(sets.buff.Souleater)
-            disable('head')
+            --disable('head')
         else
-            enable('head')
+            --enable('head')
             if not midaction() then
                 handle_equipping_gear(player.status)
             end
