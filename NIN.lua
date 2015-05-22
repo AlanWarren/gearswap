@@ -314,7 +314,7 @@ function init_gear_sets()
 
     -- Normal melee group without buffs
     sets.engaged = {
-        main="Kannagi",
+        --main="Kannagi",
         sub="Achiuchikapu",
         ammo=gear.RegularAmmo,
         head="Ptica Headgear",
