@@ -312,10 +312,15 @@ function init_gear_sets()
     sets.DayMovement = {feet="Danzo sune-ate"}
     sets.NightMovement = {feet="Hachiya Kyahan +1"}
 
+    sets.Weapons = {
+        main="Kannagi",
+        sub="Achiuchikapu",
+        head="Izuna",
+        hands="Chidori"
+    }
+
     -- Normal melee group without buffs
     sets.engaged = {
-        --main="Kannagi",
-        sub="Achiuchikapu",
         ammo=gear.RegularAmmo,
         head="Ptica Headgear",
         neck="Asperity Necklace",
