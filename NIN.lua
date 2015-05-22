@@ -683,7 +683,6 @@ function init_gear_sets()
         body="Hattori Ningi +1",
         hands="Sasuke Tekko +1",
         ring1="Karieyh Ring",
-        back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
         feet="Taeon Boots"
     })
@@ -781,7 +780,6 @@ function init_gear_sets()
         body="Mekosuchinae Harness",
         ring1="Garuda Ring",
         ring2="Acumen Ring",
-        back="Argochampsa Mantle",
         legs="Shneddick Tights +1",
         waist="Thunder Belt",
         feet="Hachiya Kyahan +1"
@@ -791,7 +789,6 @@ function init_gear_sets()
         ring2="Acumen Ring",
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
-        back="Toro Cape",
         feet="Hachiya Kyahan +1"
     })
     sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
