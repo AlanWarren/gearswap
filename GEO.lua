@@ -8,6 +8,7 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+    include('organizer-lib')
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
