@@ -775,6 +775,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if (state.HybridMode.current == 'PDT' and state.PhysicalDefenseMode.current == 'Reraise') then
         equip(sets.Reraise)
     end
+    -- an unlikely scenario, but just incase
     if state.Buff['Last Resort'] and state.HybridMode.current == 'PDT' then
         equip(sets.buff['Last Resort'])
     end
@@ -826,7 +827,7 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    if state.Buff['Last Resort'] and state.HybridMode.current == 'PDT' then
+    if state.Buff['Last Resort'] and state.HybridMode.current == 'PDT' or state.OffenseMode.current == 'Mid' then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
 	if state.Buff.Souleater then
@@ -924,6 +925,16 @@ function job_buff_change(buff, gain)
             --disable('head')
         else
             --enable('head')
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
+        end
+    end
+
+    if buff == "Last Resort" then
+        if gain then
+            equip(sets.buff["Last Resort"])
+        else
             if not midaction() then
                 handle_equipping_gear(player.status)
             end
