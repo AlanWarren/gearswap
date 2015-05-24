@@ -931,7 +931,7 @@ function job_buff_change(buff, gain)
         end
     end
 
-    if buff == "Last Resort" then
+    if buff == "Last Resort" and state.OffenseMode.current == 'Mid' then
         if gain then
             equip(sets.buff["Last Resort"])
         else
