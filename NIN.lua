@@ -312,11 +312,11 @@ function init_gear_sets()
     sets.DayMovement = {feet="Danzo sune-ate"}
     sets.NightMovement = {feet="Hachiya Kyahan +1"}
 
-    sets.Weapons = {
+    sets.Organizer = {
         main="Kannagi",
         sub="Achiuchikapu",
         head="Izuna",
-        hands="Chidori"
+        hands="Taeon Gloves"
     }
 
     -- Normal melee group without buffs

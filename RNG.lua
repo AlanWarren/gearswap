@@ -114,6 +114,14 @@ function init_gear_sets()
         TaeonHands = {}
         TaeonHands.TA = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
         TaeonHands.DW = {name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}}
+
+        sets.Organizer = {
+            main="Annihilator",
+            sub="Odium",
+            ammo="Perun",
+            range="Yoichinoyumi",
+            hands="Taeon Gloves"
+        }
         -- Misc. Job Ability precasts
         sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes"}
         sets.precast.JA['Double Shot'] = {head="Sylvan Gapette +2"}
