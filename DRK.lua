@@ -510,9 +510,6 @@ function init_gear_sets()
          legs="Crimson Cuisses",
          feet="Cizin Greaves +1"
      }
-    sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
-        body="Councilor's Garb"
-    })
      
     sets.cool = set_combine(sets.idle.Town, {
          head="Otomi Helm",
@@ -1086,16 +1083,16 @@ end
 
 
 -- Handle zone specific rules
-windower.register_event('Zone change', function(new,old)
-    determine_idle_group()
-end)
-
-function determine_idle_group()
-    classes.CustomIdleGroups:clear()
-    if areas.Adoulin:contains(world.area) then
-    	classes.CustomIdleGroups:append('Adoulin')
-    end
-end
+--windower.register_event('Zone change', function(new,old)
+--    determine_idle_group()
+--end)
+--
+--function determine_idle_group()
+--    classes.CustomIdleGroups:clear()
+--    if areas.Adoulin:contains(world.area) then
+--    	classes.CustomIdleGroups:append('Adoulin')
+--    end
+--end
 
 --function adjust_melee_groups()
 --	classes.CustomMeleeGroups:clear()
