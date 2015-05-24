@@ -75,6 +75,13 @@ function init_gear_sets()
 	sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
     sets.CapacityMantle = {back="Mecistopins Mantle"}
+
+    sets.Organizer = {
+        main="Odium",
+        sub="Jugo Kukri",
+        ammo="Izhiikoh",
+        range="Raider's Boomerang"
+    }
 	
 	sets.buff['Sneak Attack'] = {
 		head="Uk'uxkaj Cap",

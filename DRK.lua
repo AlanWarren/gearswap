@@ -100,6 +100,17 @@ function init_gear_sets()
      Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
      Niht.WSD = {name="Niht Mantle", augments={'Attack+9','Dark magic skill +4', '"Drain" and "Aspir" potency +11','Weapon skill damage +4%'}}
 
+     sets.Organizer = {
+         main="Liberator",
+         sub="Sangarius",
+         neck="Bloodrain Strap",
+         head="Acro Helm",
+         hands="Acro Gauntlets",
+         body="Acro Surcoat",
+         legs="Acro Breeches",
+         feet="Acro Leggings"
+     }
+
      -- Precast Sets
      -- Precast sets to enhance JAs
      sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets +1"}

@@ -65,6 +65,18 @@ function init_gear_sets()
 	--------------------------------------
 	-- Start defining the sets
 	--------------------------------------
+    Taeon = {}
+    Taeon.Hands = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
+
+    Acro = {}
+    Acro.Hands = {}
+    Acro.Feet = {}
+    
+    Acro.Hands.Haste = {name="Acro gauntlets", augments={'STR+1 VIT+1','Accuracy+18 Attack+18','Haste+2'}} 
+    Acro.Hands.STP = {name="Acro gauntlets", augments={'Accuracy+19 Attack+19','"Store TP"+5','Weapon skill damage +3%'}}
+
+    Acro.Feet.STP = {name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}} 
+    Acro.Feet.WSD = {name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3','Weapon skill damage +2%'}} 
 	
 	-- Precast Sets
 	-- Precast sets to enhance JAs
@@ -72,6 +84,16 @@ function init_gear_sets()
     sets.CapacityMantle = {back="Mecistopins Mantle"}
     --sets.Berserker = {neck="Berserker's Torque"}
     sets.WSDayBonus     = { head="Gavialis Helm" }
+
+    sets.Organizer = {
+        main="Olyndicus",
+        sub="Bloodrain Strap",
+        range="Upukirex",
+        back="Updraft Mantle",
+        legs="Taeon Gloves",
+        hands="Acro Gauntlets",
+        feet="Acro Leggings"
+    }
 
 	sets.precast.JA.Jump = {
         ammo="Ginsen",
@@ -167,13 +189,13 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
 		body="Acro Surcoat",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}},
+        hands=Taeon.Hands,
         ring1="Ifrit Ring",
         ring2="Ifrit Ring +1",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Taeon Tights",
-        feet={name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3', 'Weapon skill damage +2%'}},
+        feet=Acro.Feet.WSD
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         back="Updraft Mantle",
@@ -196,6 +218,7 @@ function init_gear_sets()
         neck="Breeze Gorget",
         body="Phorcys Korazin",
         back="Buquwik Cape",
+        hands=Acro.Hands.STP,
         waist="Windbuffet Belt +1",
         back="Updraft Mantle",
     })
@@ -210,12 +233,13 @@ function init_gear_sets()
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
         hands="Mikinaak Gauntlets",
         back="Rancorous Mantle",
+        hands=Acro.Hands.STP,
         waist="Windbuffet Belt +1"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
         back="Updraft Mantle",
         head="Yaoyotl Helm",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}},
+        hands=Acro.Hands.STP,
     })
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
 
@@ -255,7 +279,7 @@ function init_gear_sets()
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Crimson Cuisses",
-        feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
+        feet=Acro.Feet.WSD
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
@@ -323,13 +347,13 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Acro Surcoat",
-        hands={name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}},
+        hands=Taeon.Hands,
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Taeon Tights",
-        feet={name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}},
+        feet=Acro.Feet.STP
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
@@ -374,13 +398,13 @@ function init_gear_sets()
     })
 
     sets.engaged.War = set_combine(sets.engaged, {
-        hands="Acro Gauntlets",
+        hands=Acro.Hands.STP,
         neck="Asperity Necklace",
         ring2="K'ayres Ring"
     })
     sets.engaged.War.Mid = set_combine(sets.engaged.Mid, {
-        hands="Acro Gauntlets",
-        neck="Asperity Necklace",
+        hands=Acro.Hands.STP,
+        neck="Defiant Collar",
         ring2="K'ayres Ring"
     })
 

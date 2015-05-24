@@ -63,6 +63,10 @@ function init_gear_sets()
 
     sets.CapacityMantle  = { back="Mecistopins Mantle" }
 
+    sets.Organizer = {
+        main="Nehushtan", 
+    }
+
     -- Fast cast sets for spells
 
     sets.precast.FC = {
