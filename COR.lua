@@ -119,7 +119,6 @@ function init_gear_sets()
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		head="Whirlpool Mask",
-		body="Iuitl Vest",
         hands="Iuitl Wristbands +1",
 		legs="Nahtirah Trousers",
     }
@@ -127,7 +126,8 @@ function init_gear_sets()
     sets.Organizer = {
         main="Arendsi Fleuret",
         sub="Odium",
-        range="Doomsday"
+        range="Doomsday",
+        ammo="Legion Scutum"
     }
 		
 	-- Don't need any special gear for Healing Waltz.
