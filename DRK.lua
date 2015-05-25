@@ -846,12 +846,12 @@ end
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
-        if buffactive['Last Resort'] and state.HybridMode.current == 'PDT' then
+        if buffactive['Last Resort'] and (state.HybridMode.current == 'PDT' or state.OffenseMode.current == 'Mid') then
             equip(sets.buff['Last Resort'])
         end
         get_combat_weapon()
-    elseif newStatus == 'Idle' then
-        determine_idle_group()
+    --elseif newStatus == 'Idle' then
+    --    determine_idle_group()
     end
 end
  
