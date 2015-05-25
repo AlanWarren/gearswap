@@ -776,7 +776,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         equip(sets.Reraise)
     end
     -- an unlikely scenario, but just incase
-    if state.Buff['Last Resort'] and state.HybridMode.current == 'PDT' then
+    if state.Buff['Last Resort'] then
         equip(sets.buff['Last Resort'])
     end
 end
@@ -827,7 +827,7 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    if state.Buff['Last Resort'] and (state.HybridMode.current == 'PDT' or state.OffenseMode.current == 'Mid') then
+    if state.Buff['Last Resort'] then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
 	if state.Buff.Souleater then
@@ -846,7 +846,7 @@ end
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
-        if buffactive['Last Resort'] and (state.HybridMode.current == 'PDT' or state.OffenseMode.current == 'Mid') then
+        if buffactive['Last Resort'] then
             equip(sets.buff['Last Resort'])
         end
         get_combat_weapon()
@@ -931,7 +931,7 @@ function job_buff_change(buff, gain)
         end
     end
 
-    if buff == "Last Resort" and state.OffenseMode.current == 'Mid' then
+    if buff == "Last Resort" then
         if gain then
             equip(sets.buff["Last Resort"])
         else
