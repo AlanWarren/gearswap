@@ -298,7 +298,7 @@ function init_gear_sets()
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          ear1="Zennaroi Earring",
          hands="Crusher Gauntlets",
-         body="Ravenous Breastplate",
+         body="Fallen's Cuirass +1"
          waist="Olseni Belt",
      })
  
