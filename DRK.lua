@@ -827,7 +827,7 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    if (state.Buff['Last Resort'] or buffactive['Last Resort']) and state.HybridMode.current == 'PDT' or state.OffenseMode.current == 'Mid' then
+    if state.Buff['Last Resort'] and (state.HybridMode.current == 'PDT' or state.OffenseMode.current == 'Mid') then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
 	if state.Buff.Souleater then
