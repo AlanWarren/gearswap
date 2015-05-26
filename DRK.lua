@@ -237,10 +237,10 @@ function init_gear_sets()
      })
      sets.midcast['Absorb-STR'] = sets.midcast.Absorb
      sets.midcast['Absorb-DEX'] = sets.midcast.Absorb
+     sets.midcast['Absorb-VIT'] = sets.midcast.Absorb
      sets.midcast['Absorb-AGI'] = sets.midcast.Absorb
      sets.midcast['Absorb-INT'] = sets.midcast.Absorb
      sets.midcast['Absorb-MND'] = sets.midcast.Absorb
-     sets.midcast['Absorb-VIT'] = sets.midcast.Absorb
      sets.midcast['Absorb-CHR'] = sets.midcast.Absorb
      sets.midcast['Absorb-Attri'] = sets.midcast.Absorb
      sets.midcast['Absorb-Acc'] = sets.midcast.Absorb
