@@ -183,11 +183,13 @@ function init_gear_sets()
          ear2="Psystorm Earring",
          body="Demon's Harness", --5
          hands="Fallen's Finger Gauntlets +1", -- 14
+         --hands="Eschite Gauntlets",
          waist="Casso Sash", -- 5
          ring1="Perception Ring",
          ring2="Sangoma Ring",
          back=Niht.Darkmagic,
-         legs="Heathen's Flanchard +1", --18
+         legs="Heathen's Flanchard +1", --20
+         --legs="Eschite Cuisses", 
          feet="Ignominy sollerets"
      }
      
@@ -202,6 +204,7 @@ function init_gear_sets()
      sets.midcast['Elemental Magic'] = {
          ammo="Plumose Sachet",
          head="Ignominy burgeonet +1", -- int 20
+         --head="Eschite Helm",
          neck="Eddy Necklace", -- 11 matk
          ear1="Friomisi Earring", -- 10 matk
          ear2="Crematio Earring", -- 6 matk 6 mdmg
@@ -238,9 +241,9 @@ function init_gear_sets()
      sets.midcast.Aspir = sets.midcast.Drain
 
      sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
+         body="Haruspex Coat",
          back="Chuparrosa Mantle",
          hands="Pavor Gauntlets",
-         --feet="Black Sollerets"
      })
 
      sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
@@ -255,7 +258,7 @@ function init_gear_sets()
      sets.midcast['Absorb-CHR'] = sets.midcast.Absorb
      sets.midcast['Absorb-Attri'] = sets.midcast.Absorb
      sets.midcast['Absorb-Acc'] = sets.midcast.Absorb
-
+     
      -- Ranged for xbow
      sets.precast.RA = {
          head="Otomi Helm",
