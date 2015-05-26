@@ -60,6 +60,7 @@ function user_setup()
     state.MagicalDefenseMode:options('MDT')
     
     war_sj = player.sub_job == 'WAR' or false
+    state.drain = M(false)
     
     -- Additional local binds
     send_command('bind != gs c toggle CapacityMode')
@@ -602,7 +603,6 @@ function init_gear_sets()
      sets.Defensive = {
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         --body="Emet Harness +1",
          body="Yorium Cuirass",
          hands="Crusher Gauntlets",
          ring2="Patricius Ring",
@@ -612,7 +612,7 @@ function init_gear_sets()
          feet="Cizin Greaves +1"
      }
      sets.Defensive_Mid = {
-         head="Ighwa Cap",
+         head="Baghere Salade",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
          hands="Crusher Gauntlets",
@@ -722,6 +722,27 @@ function init_gear_sets()
      }
 end
 
+function job_pretarget(spell, action, spellMap, eventArgs)
+    if spell.type:endswith('Magic') and buffactive.silence then
+        eventArgs.cancel = true
+        send_command('input /item "Echo Drops" <me>')
+    elseif spell.target.distance > 8 and player.status == 'Engaged' then
+        eventArgs.cancel = true
+        add_to_chat(122,"Outside WS Range! /Canceling")
+    end
+    -- Drain toggle
+    if spell.english == "Drain" then
+        if state.drain then
+            state.drain:reset()
+            eventArgs.cancel = true
+            send_command('input /ma "Drain" <t>')
+        else
+            state.drain:set()
+            eventArgs.cancel = true
+            send_command('input /ma "Drain II" <t>')
+        end
+    end
+end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
@@ -785,7 +806,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if (state.HybridMode.current == 'PDT' and state.PhysicalDefenseMode.current == 'Reraise') then
         equip(sets.Reraise)
     end
-    -- an unlikely scenario, but just incase
     if state.Buff['Last Resort'] then
         equip(sets.buff['Last Resort'])
     end
