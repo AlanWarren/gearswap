@@ -8,6 +8,7 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+    include('organizer-lib')
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -61,6 +62,10 @@ function init_gear_sets()
     sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals"}
 
     sets.CapacityMantle  = { back="Mecistopins Mantle" }
+
+    sets.Organizer = {
+        main="Nehushtan", 
+    }
 
     -- Fast cast sets for spells
 
@@ -341,7 +346,7 @@ function init_gear_sets()
         legs="Bagua Pants", 
         feet="Geomancy Sandals",
         back="Lifestream Cape",
-        feet="Azimuth Gaiters"
+        --feet="Azimuth Gaiters"
     })
     sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {
         legs="Bagua Pants", 

@@ -93,6 +93,15 @@ function init_gear_sets()
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
+    Acro = {}
+    Acro.Hands = {}
+    Acro.Feet = {}
+    
+    Acro.Hands.Haste = {name="Acro gauntlets", augments={'STR+1 VIT+1','Accuracy+18 Attack+18','Haste+2'}} 
+    Acro.Hands.STP = {name="Acro gauntlets", augments={'Accuracy+19 Attack+19','"Store TP"+5','Weapon skill damage +3%'}}
+
+    Acro.Feet.STP = {name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}} 
+    Acro.Feet.WSD = {name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3','Weapon skill damage +2%'}} 
     
     -- Precast Sets
     -- Precast sets to enhance JAs
@@ -108,6 +117,16 @@ function init_gear_sets()
     
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {}
+
+    sets.Organizer = {
+        main="Tsurumaru",
+        sub="Bloodrain Strap",
+        range="Yoichinoyumi",
+        ammo="Cibitshavore",
+        hands="Acro Gauntlets",
+        feet="Acro Leggings",
+        back="Takaha Mantle"
+    }
     	
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -135,12 +154,11 @@ function init_gear_sets()
         back="Buquwik Cape",
         waist="Windbuffet Belt +1",
         legs="Scuffler's Cosciales",
-        feet="Acro Leggings"
+        feet=Acro.Feet.WSD
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         head="Yaoyotl Helm",
         body="Sakonji Domaru +1",
-        feet="Acro Leggings"
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         ring2="Mars's Ring",
@@ -154,7 +172,7 @@ function init_gear_sets()
         ear1="Flame Pearl",
         ear2="Flame Pearl",
         body="Acro Surcoat",
-        hands="Acro Gauntlets",
+        hands=Acro.Hands.STP,
         back="Buquwik Cape",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
@@ -181,7 +199,7 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
-        hands="Acro Gauntlets",
+        hands=Acro.Hands.STP,
         waist="Metalsinger Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
@@ -366,12 +384,13 @@ function init_gear_sets()
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
         legs="Acro Breeches",
-        feet="Acro Leggings"
+        feet=Acro.Feet.STP
     }
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
-        feet="Ejekamal Boots"
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring"
     })
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
@@ -468,7 +487,7 @@ function init_gear_sets()
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         waist="Windbuffet Belt +1",
         legs="Acro Breeches",
-        feet="Acro Leggings" --7
+        feet=Acro.Feet.STP
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         ear1="Bladeborn Earring",
@@ -484,7 +503,7 @@ function init_gear_sets()
         waist="Olseni Belt",
         back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
         legs="Acro Breeches",
-        feet="Acro Leggings"
+        feet=Acro.Feet.STP
     })
     
     sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {

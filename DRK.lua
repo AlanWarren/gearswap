@@ -98,13 +98,24 @@ function init_gear_sets()
 
      Niht = {}
      Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
-     Niht.WSD = {name="Niht Mantle", augments={'Attack+15','"Drain" and "Aspir" potency +10','Weapon skill damage +3%'}}
+     Niht.WSD = {name="Niht Mantle", augments={'Attack+9','Dark magic skill +4', '"Drain" and "Aspir" potency +11','Weapon skill damage +4%'}}
+
+     sets.Organizer = {
+         main="Liberator",
+         sub="Sangarius",
+         neck="Bloodrain Strap",
+         head="Acro Helm",
+         hands="Acro Gauntlets",
+         body="Acro Surcoat",
+         legs="Acro Breeches",
+         feet="Acro Leggings"
+     }
 
      -- Precast Sets
      -- Precast sets to enhance JAs
      sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets +1"}
      sets.precast.JA['Arcane Circle'] = {feet="Ignominy Sollerets"}
-     sets.precast.JA['Nether Void'] = {legs="Heathen's Flanchard"}
+     sets.precast.JA['Nether Void'] = {legs="Heathen's Flanchard +1"}
      sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet +1"}
      sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
      --sets.precast.JA['Last Resort'] = {feet="Fallen's Sollerets +1"}
@@ -281,6 +292,7 @@ function init_gear_sets()
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
+         body="Ravenous Breastplate",
          hands="Ignominy Gauntlets +1",
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
@@ -334,13 +346,15 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          neck="Bale Choker",
          hands="Mikinaak Gauntlets",
+         body="Ravenous Breastplate",
          legs="Heathen's Flanchard +1",
          waist="Caudata Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
+         body="Acro Surcoat",
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
-         body="Fallen's Cuirass +1",
+         body="Ravenous Breastplate",
          ear1="Zennaroi Earring",
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
@@ -349,6 +363,7 @@ function init_gear_sets()
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
          head="Heathen's Burgonet +1",
+         body="Ravenous Breastplate",
          neck="Aqua Gorget",
          hands="Fallen's Finger Gauntlets +1",
          waist="Windbuffet Belt +1"
@@ -506,9 +521,6 @@ function init_gear_sets()
          legs="Crimson Cuisses",
          feet="Cizin Greaves +1"
      }
-    sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
-        body="Councilor's Garb"
-    })
      
     sets.cool = set_combine(sets.idle.Town, {
          head="Otomi Helm",
@@ -621,7 +633,7 @@ function init_gear_sets()
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Lugra Earring +1",
-    	 body="Acro Surcoat",
+    	 body="Ravenous Breastplate",
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
@@ -698,7 +710,8 @@ function init_gear_sets()
      })
     
      sets.buff.Souleater = { 
-         head="Ignominy Burgeonet +1"
+         head="Ignominy Burgeonet +1",
+         body="Acro Surcoat"
      }
 
      sets.buff['Last Resort'] = { 
@@ -769,7 +782,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if (state.HybridMode.current == 'PDT' and state.PhysicalDefenseMode.current == 'Reraise') then
         equip(sets.Reraise)
     end
-    if state.Buff['Last Resort'] and state.HybridMode.current == 'PDT' then
+    -- an unlikely scenario, but just incase
+    if state.Buff['Last Resort'] then
         equip(sets.buff['Last Resort'])
     end
 end
@@ -786,7 +800,7 @@ function job_post_aftercast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' then
         if state.Buff.Souleater and state.SouleaterMode.value then
             send_command('@wait 1.0;cancel souleater')
-            enable("head")
+            --enable("head")
         end
     end
 end
@@ -820,7 +834,7 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    if state.Buff['Last Resort'] and state.HybridMode.current == 'PDT' then
+    if state.Buff['Last Resort'] then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
 	if state.Buff.Souleater then
@@ -839,12 +853,12 @@ end
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
-        if buffactive['Last Resort'] and state.HybridMode.current == 'PDT' then
+        if buffactive['Last Resort'] then
             equip(sets.buff['Last Resort'])
         end
         get_combat_weapon()
-    elseif newStatus == 'Idle' then
-        determine_idle_group()
+    --elseif newStatus == 'Idle' then
+    --    determine_idle_group()
     end
 end
  
@@ -915,9 +929,19 @@ function job_buff_change(buff, gain)
     if buff == "Souleater" then
         if gain then
             equip(sets.buff.Souleater)
-            disable('head')
+            --disable('head')
         else
-            enable('head')
+            --enable('head')
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
+        end
+    end
+
+    if buff == "Last Resort" then
+        if gain then
+            equip(sets.buff["Last Resort"])
+        else
             if not midaction() then
                 handle_equipping_gear(player.status)
             end
@@ -1069,16 +1093,16 @@ end
 
 
 -- Handle zone specific rules
-windower.register_event('Zone change', function(new,old)
-    determine_idle_group()
-end)
-
-function determine_idle_group()
-    classes.CustomIdleGroups:clear()
-    if areas.Adoulin:contains(world.area) then
-    	classes.CustomIdleGroups:append('Adoulin')
-    end
-end
+--windower.register_event('Zone change', function(new,old)
+--    determine_idle_group()
+--end)
+--
+--function determine_idle_group()
+--    classes.CustomIdleGroups:clear()
+--    if areas.Adoulin:contains(world.area) then
+--    	classes.CustomIdleGroups:append('Adoulin')
+--    end
+--end
 
 --function adjust_melee_groups()
 --	classes.CustomMeleeGroups:clear()

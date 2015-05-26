@@ -75,6 +75,13 @@ function init_gear_sets()
 	sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
     sets.CapacityMantle = {back="Mecistopins Mantle"}
+
+    sets.Organizer = {
+        main="Odium",
+        sub="Jugo Kukri",
+        ammo="Izhiikoh",
+        range="Raider's Boomerang"
+    }
 	
 	sets.buff['Sneak Attack'] = {
 		head="Uk'uxkaj Cap",
@@ -331,7 +338,7 @@ function init_gear_sets()
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = {
-		head="Lithelimb Cap",
+		head="Iuitl Headgear +1",
         neck="Twilight Torque",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
@@ -375,7 +382,7 @@ function init_gear_sets()
     }
 
 	sets.defense.PDT = {
-		head="Lithelimb Cap",
+		head="Iuitl Headgear +1",
         neck="Twilight Torque",
 		body="Emet Harness +1",
         hands="Iuitl Wristbands +1",
@@ -489,8 +496,16 @@ function init_gear_sets()
         back="Canny Cape"
     })
     sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, { body="Qaaxo Harness", ring1="Beeline Ring", feet="Taeon Boots"})
-    sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, { head="Lithelimb Cap", neck="Twilight Torque", 
-        body="Qaaxo Harness", ring1="Patricius Ring", ring2="Dark Ring", back="Repulse Mantle", legs="Iuitl Tights +1", feet="Taeon Boots" })
+    sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
+		    head="Iuitl Headgear +1",
+            neck="Twilight Torque", 
+            body="Qaaxo Harness", 
+            ring1="Patricius Ring", 
+            ring2="Dark Ring", 
+            back="Repulse Mantle", 
+            legs="Iuitl Tights +1", 
+            feet="Taeon Boots" 
+    })
     
      -- 40
     sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {

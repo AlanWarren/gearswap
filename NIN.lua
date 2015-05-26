@@ -75,7 +75,7 @@ function user_setup()
     --end)
 
     state.time = M(false)
-    time_event = windower.raw_register_event('time change', time_change)
+    windower.raw_register_event('time change', time_change)
 end
 
 
@@ -276,7 +276,7 @@ function init_gear_sets()
         ring1="Karieyh Ring",
         hands="Sasuke Tekko +1",
         ring2="Ifrit Ring +1",
-        body="Hattori Ningi +1",
+        body="Mes'yohi Haubergeon",
         legs="Hachiya Hakama +1",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1"
@@ -311,6 +311,13 @@ function init_gear_sets()
     
     sets.DayMovement = {feet="Danzo sune-ate"}
     sets.NightMovement = {feet="Hachiya Kyahan +1"}
+
+    sets.Organizer = {
+        main="Kannagi",
+        sub="Achiuchikapu",
+        head="Izuna",
+        hands="Taeon Gloves"
+    }
 
     -- Normal melee group without buffs
     sets.engaged = {
@@ -681,7 +688,6 @@ function init_gear_sets()
         body="Hattori Ningi +1",
         hands="Sasuke Tekko +1",
         ring1="Karieyh Ring",
-        back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
         feet="Taeon Boots"
     })
@@ -779,7 +785,6 @@ function init_gear_sets()
         body="Mekosuchinae Harness",
         ring1="Garuda Ring",
         ring2="Acumen Ring",
-        back="Argochampsa Mantle",
         legs="Shneddick Tights +1",
         waist="Thunder Belt",
         feet="Hachiya Kyahan +1"
@@ -789,7 +794,6 @@ function init_gear_sets()
         ring2="Acumen Ring",
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
-        back="Toro Cape",
         feet="Hachiya Kyahan +1"
     })
     sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
@@ -1228,19 +1232,17 @@ function aw_custom_aftermath_timers_aftercast(spell)
 end
 
 function time_change(new, old)
-    if time_event then
-        if new > 17.00 or new < 7.00 then
-            if state.time then
-                state.time:reset()
-                windower.add_to_chat(204, "******************* Dusk *******************")
-                send_command('gs c update user')
-            end
-        else
-            if state.time.value == false then
-                state.time:set()
-                windower.add_to_chat(204, "******************* Dawn *******************")
-                send_command('gs c update user')
-            end
+    if new > 17.00 or new < 7.00 then
+        if state.time then
+            state.time:reset()
+            windower.add_to_chat(204, "******************* Dusk *******************")
+            send_command('gs c update user')
+        end
+    else
+        if state.time.value == false then
+            state.time:set()
+            windower.add_to_chat(204, "******************* Dawn *******************")
+            send_command('gs c update user')
         end
     end
 end
