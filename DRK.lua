@@ -136,7 +136,6 @@ function init_gear_sets()
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {
         head="Yaoyotl Helm",
-    	body="Mes'yohi Haubergeon",
         legs="Cizin Breeches +1",
      }
             
