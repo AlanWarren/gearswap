@@ -739,17 +739,17 @@ function job_precast(spell, action, spellMap, eventArgs)
     --    equip(sets.precast.FC)
     --end
     -- Drain toggle
-    if spell.english == "Drain" then
-        if state.drain then
-            state.drain:reset()
-            cancel_spell()
-            send_command('input /ma "Drain" <t>')
-        else
-            state.drain:set()
-            cancel_spell()
-            send_command('input /ma "Drain II" <t>')
-        end
-    end
+    --if spell.english == "Drain" then
+    --    if state.drain then
+    --        state.drain:reset()
+    --        cancel_spell()
+    --        send_command('input /ma "Drain" <t>')
+    --    else
+    --        state.drain:set()
+    --        cancel_spell()
+    --        send_command('input /ma "Drain II" <t>')
+    --    end
+    --end
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
