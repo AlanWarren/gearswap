@@ -295,7 +295,7 @@ function init_gear_sets()
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
-         body="Ravenous Breastplate",
+         --body="Ravenous Breastplate",
          hands="Ignominy Gauntlets +1",
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
@@ -349,7 +349,7 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          neck="Bale Choker",
          hands="Mikinaak Gauntlets",
-         body="Ravenous Breastplate",
+         --body="Ravenous Breastplate",
          legs="Heathen's Flanchard +1",
          waist="Caudata Belt"
      })
@@ -357,7 +357,7 @@ function init_gear_sets()
          body="Acro Surcoat",
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
-         body="Ravenous Breastplate",
+         --body="Ravenous Breastplate",
          ear1="Zennaroi Earring",
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
@@ -366,7 +366,7 @@ function init_gear_sets()
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
          head="Heathen's Burgonet +1",
-         body="Ravenous Breastplate",
+         --body="Ravenous Breastplate",
          neck="Aqua Gorget",
          hands="Fallen's Finger Gauntlets +1",
          waist="Windbuffet Belt +1"
@@ -635,7 +635,7 @@ function init_gear_sets()
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Lugra Earring +1",
-    	 body="Ravenous Breastplate",
+    	 body="Acro Surcoat",
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
