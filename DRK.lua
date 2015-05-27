@@ -190,7 +190,7 @@ function init_gear_sets()
          back=Niht.Darkmagic,
          legs="Heathen's Flanchard +1", --20
          --legs="Eschite Cuisses", 
-         feet="Ignominy sollerets"
+         feet="Heathen's Sollerets +1"
      }
      
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
@@ -216,7 +216,7 @@ function init_gear_sets()
          --legs="Haruspex Slops",
          legs="Limbo Trousers", -- matk 17
          back="Aput Mantle", -- mdmg 10
-         feet="Bale Sollerets +2" -- matk 8
+         feet="Heathen's Sollerets +1" -- matk 8
      }
 	 
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
