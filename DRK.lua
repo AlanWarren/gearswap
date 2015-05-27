@@ -730,15 +730,7 @@ function job_pretarget(spell, action, spellMap, eventArgs)
     --    eventArgs.cancel = true
     --    add_to_chat(122,"Outside WS Range! /Canceling")
     end
-end
--- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
--- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
-function job_precast(spell, action, spellMap, eventArgs)
-    aw_custom_aftermath_timers_precast(spell)
-    --if spell.action_type == 'Magic' then
-    --    equip(sets.precast.FC)
-    --end
-    -- Drain toggle
+    --Drain toggle
     --if spell.english == "Drain" then
     --    if state.drain then
     --        state.drain:reset()
@@ -749,6 +741,14 @@ function job_precast(spell, action, spellMap, eventArgs)
     --        cancel_spell()
     --        send_command('input /ma "Drain II" <t>')
     --    end
+    --end
+end
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+-- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
+function job_precast(spell, action, spellMap, eventArgs)
+    aw_custom_aftermath_timers_precast(spell)
+    --if spell.action_type == 'Magic' then
+    --    equip(sets.precast.FC)
     --end
 end
  
