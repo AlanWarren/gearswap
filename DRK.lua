@@ -513,15 +513,15 @@ function init_gear_sets()
      sets.idle.Town = {
          ammo="Ginsen",
          --head="Heathen's Burgonet +1",
-         neck="Ganesha's Mala",
+         neck="Coatl Gorget +1",
          ear1="Lugra Earring +1",
          ear2="Tripudio Earring",
          body="Lugra Cloak +1",
          hands="Crusher Gauntlets",
          ring1="Karieyh Ring",
-         ring2="Ifrit Ring +1",
-         back=Niht.WSD,
-         waist="Windbuffet Belt +1",
+         ring2="Dark Ring",
+         back="Engulfer Cape +1",
+         waist="Flume Belt",
          legs="Crimson Cuisses",
          feet="Cizin Greaves +1"
      }
@@ -582,6 +582,7 @@ function init_gear_sets()
  
      sets.defense.MDT = set_combine(sets.defense.PDT, {
          neck="Twilight Torque",
+         body="Lugra Cloak +1",
          ear1="Zennaroi Earring",
          ring2="K'ayres Ring",
          back="Engulfer Cape +1"
