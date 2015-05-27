@@ -522,7 +522,7 @@ function init_gear_sets()
          back=Niht.WSD,
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
-         feet="Cizin Greaves +1"
+         feet="Heathen's Sollerets +1"
      }
      
     sets.cool = set_combine(sets.idle.Town, {
