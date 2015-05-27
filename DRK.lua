@@ -489,7 +489,7 @@ function init_gear_sets()
      -- REQUISCAT
      -- 73% MND - breath damage
      sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
-         head="Ighwa Cap",
+         head="Otomi Helm",
          neck="Shadow Gorget",
          hands="Fallen's Finger Gauntlets +1",
          back="Bleating Mantle",
@@ -565,7 +565,7 @@ function init_gear_sets()
      
      -- Defense sets
      sets.defense.PDT = {
-         head="Ighwa Cap",
+         head="Yorium Barbuta",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
          hands="Crusher Gauntlets",
@@ -600,7 +600,7 @@ function init_gear_sets()
      -- Defensive sets to combine with various weapon-specific sets below
      -- These allow hybrid acc/pdt sets for difficult content
      sets.Defensive = {
-         head="Ighwa Cap",
+         head="Yorium Barbuta",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
          hands="Crusher Gauntlets",
@@ -611,7 +611,7 @@ function init_gear_sets()
          feet="Cizin Greaves +1"
      }
      sets.Defensive_Mid = {
-         head="Baghere Salade",
+         head="Yorium Barbuta",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
          hands="Crusher Gauntlets",
