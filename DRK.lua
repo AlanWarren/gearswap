@@ -725,9 +725,9 @@ function job_pretarget(spell, action, spellMap, eventArgs)
     if spell.type:endswith('Magic') and buffactive.silence then
         eventArgs.cancel = true
         send_command('input /item "Echo Drops" <me>')
-    elseif spell.target.distance > 8 and player.status == 'Engaged' then
-        eventArgs.cancel = true
-        add_to_chat(122,"Outside WS Range! /Canceling")
+    --elseif spell.target.distance > 8 and player.status == 'Engaged' then
+    --    eventArgs.cancel = true
+    --    add_to_chat(122,"Outside WS Range! /Canceling")
     end
 end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
