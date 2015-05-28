@@ -866,7 +866,7 @@ function customize_melee_set(meleeSet)
 	if state.Buff.Souleater then
 		meleeSet = set_combine(meleeSet, sets.buff.Souleater)
 	end
-    if state.CombatForm.has_value then
+    if state.CombatForm.current ~= 'DW' then
         meleeSet = set_combine(meleeSet, sets.HighHaste)
     end
     return meleeSet
@@ -904,7 +904,9 @@ function job_buff_change(buff, gain)
                 handle_equipping_gear(player.status)
             end
         else
-            state.CombatForm:reset()
+            if state.CombatForm.current ~= 'DW' then
+                state.CombatForm:reset()
+            end
             if not midaction() then
                 handle_equipping_gear(player.status)
             end
@@ -1032,6 +1034,8 @@ function get_combat_form()
         else
             state.CombatForm:reset()
         end
+    else
+        state.CombatForm:reset()
     end
 end
 
