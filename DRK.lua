@@ -685,12 +685,12 @@ function init_gear_sets()
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
 
-     --sets.engaged.DW = set_combine(sets.engaged, {
-     --   head="Otomi Helm",
-     --   ear1="Dudgeon Earring",
-     --   ear2="Heartseeker Earring",
-     --   waist="Patentia Sash"
-     --})
+     sets.engaged.DW = set_combine(sets.engaged, {
+        head="Otomi Helm",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        waist="Patentia Sash"
+     })
      --sets.engaged.OneHand = set_combine(sets.engaged, {
      --    head="Yaoyotl Helm",
      --    ring2="Mars's Ring",
@@ -1023,7 +1023,9 @@ function get_combat_form()
     --    state.CombatForm:reset()
     --end
 
-    if (buffactive['Last Resort']) then
+    if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
+        state.CombatForm:set("DW")
+    elseif (buffactive['Last Resort']) then
         if (buffactive.embrava or buffactive.haste) and buffactive.march  then
             add_to_chat(8, '-------------Delay Capped-------------')
             state.CombatForm:set("Haste")
