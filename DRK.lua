@@ -866,7 +866,7 @@ function customize_melee_set(meleeSet)
 	if state.Buff.Souleater then
 		meleeSet = set_combine(meleeSet, sets.buff.Souleater)
 	end
-    if state.CombatForm.current ~= 'DW' then
+    if state.CombatForm.current == 'Haste' then
         meleeSet = set_combine(meleeSet, sets.HighHaste)
     end
     return meleeSet
