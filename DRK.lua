@@ -397,13 +397,13 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
-         ear1="Psystorm Earring",
-         hands=Acro.Hands.STP,
+         hands="Fallen's Finger Gauntlets +1",
          ring1="Shiva Ring",
          ring2="Shiva Ring",
          back="Toro Cape",
          waist="Soil Belt",
-         legs="Yorium Cuisses"
+         legs="Ignominy Flanchard +1",
+         feet="Heathen's Sollerets +1"
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
          legs="Yorium Cuisses"
@@ -440,6 +440,7 @@ function init_gear_sets()
      sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
          head="Heathen's Burgonet +1",
          neck="Aqua Gorget",
+         body="Phorcys Korazin",
          legs="Yorium Cuisses",
          waist="Metalsinger belt",
      })
@@ -457,7 +458,7 @@ function init_gear_sets()
          back="Toro Cape",
          legs="Limbo Trousers",
          waist="Caudata Belt",
-         feet="Ignominy Sollerets"
+         feet="Heathen's Sollerets +1"
       })
 
      sets.precast.WS['Shadow of Death'].Mid = set_combine(sets.precast.WS['Shadow of Death'], sets.precast.WS.Mid, {head="Heathen's Burgonet +1"})
@@ -466,8 +467,8 @@ function init_gear_sets()
      -- DARK HARVEST 
      -- 40% STR 40% INT - Darkness Elemental
      sets.precast.WS['Dark Harvest'] = sets.precast.WS['Shadow of Death']
-     sets.precast.WS['Dark Harvest'].Mid = set_combine(sets.precast.WS['Shadow of Death'], {head="Ignominy burgeonet +1", feet="Ignominy Sollerets"})
-     sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {head="Ignominy burgeonet +1", feet="Ignominy Sollerets", ring1="Sangoma Ring"})
+     sets.precast.WS['Dark Harvest'].Mid = set_combine(sets.precast.WS['Shadow of Death'], {head="Ignominy burgeonet +1", feet="Heathen's Sollerets +1"})
+     sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {head="Ignominy burgeonet +1", feet="Heathen's Sollerets +1", ring1="Sangoma Ring"})
 
      -- Sword WS's
      -- SANGUINE BLADE
@@ -481,7 +482,7 @@ function init_gear_sets()
          legs="Limbo Trousers",
          ring2="Acumen Ring",
          back="Toro Cape",
-         feet="Ignominy Sollerets"
+         feet="Heathen's Sollerets +1"
      })
      sets.precast.WS['Sanguine Blade'].Mid = set_combine(sets.precast.WS['Sanguine Blade'], sets.precast.WS.Mid)
      sets.precast.WS['Sanguine Blade'].Acc = set_combine(sets.precast.WS['Sanguine Blade'], sets.precast.WS.Acc)
@@ -491,8 +492,10 @@ function init_gear_sets()
      sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
          head="Otomi Helm",
          neck="Shadow Gorget",
+         body="Fallen's Cuirass +1",
          hands="Fallen's Finger Gauntlets +1",
          back="Bleating Mantle",
+         legs="Limbo Trousers",
          waist="Soil Belt",
      })
      sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
