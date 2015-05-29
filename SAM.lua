@@ -100,7 +100,7 @@ function init_gear_sets()
     Acro.Hands.Haste = {name="Acro gauntlets", augments={'STR+1 VIT+1','Accuracy+18 Attack+18','Haste+2'}} 
     Acro.Hands.STP = {name="Acro gauntlets", augments={'Accuracy+19 Attack+19','"Store TP"+5','Weapon skill damage +3%'}}
 
-    Acro.Feet.STP = {name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}} 
+    Acro.Feet.STP = {name="Acro Leggings", augments={'STR+7 AGI+7','Accuracy+17 Attack+17','"Store TP"+6'}} 
     Acro.Feet.WSD = {name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3','Weapon skill damage +2%'}} 
     
     -- Precast Sets
