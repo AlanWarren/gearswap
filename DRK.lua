@@ -38,7 +38,7 @@ function job_setup()
     state.SouleaterMode = M(true, 'Soul Eater Mode')
     
     wsList = S{'Spiral Hell', 'Torcleaver'}
-    gsList = S{'Tunglmyrkvi', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
+    gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
     drk_sub_weapons = S{"Sangarius", "Usonmunku", "Perun"}
 
     get_combat_form()
