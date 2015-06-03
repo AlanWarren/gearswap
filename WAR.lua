@@ -638,11 +638,11 @@ end
 function select_default_macro_book()
     -- Default macro set/book
 	if player.sub_job == 'DNC' then
-		set_macro_page(6, 7)
+		set_macro_page(2, 8)
 	elseif player.sub_job == 'SAM' then
-		set_macro_page(7, 7)
+		set_macro_page(1, 8)
 	else
-		set_macro_page(8, 7)
+		set_macro_page(1, 8)
 	end
 end
 
