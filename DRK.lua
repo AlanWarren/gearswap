@@ -38,7 +38,7 @@ function job_setup()
     state.SouleaterMode = M(true, 'Soul Eater Mode')
     
     wsList = S{'Spiral Hell', 'Torcleaver'}
-    gsList = S{'Tunglmyrkvi', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
+    gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
     drk_sub_weapons = S{"Sangarius", "Usonmunku", "Perun"}
 
     get_combat_form()
@@ -94,7 +94,7 @@ function init_gear_sets()
      Acro.Hands.Haste = {name="Acro gauntlets", augments={'STR+1 VIT+1','Accuracy+18 Attack+18','Haste+2'}} 
      Acro.Hands.STP = {name="Acro gauntlets", augments={'Accuracy+19 Attack+19','"Store TP"+5','Weapon skill damage +3%'}}
 
-     Acro.Feet.STP = {name="Acro Leggings", augments={'DEX+4','Accuracy+17 Attack+17','"Store TP"+6'}} 
+     Acro.Feet.STP = {name="Acro Leggings", augments={'STR+7 AGI+7','Accuracy+17 Attack+17','"Store TP"+6'}} 
      Acro.Feet.WSD = {name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3','Weapon skill damage +2%'}} 
 
      Niht = {}
@@ -398,13 +398,13 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
-         ear1="Psystorm Earring",
-         hands=Acro.Hands.STP,
+         hands="Fallen's Finger Gauntlets +1",
          ring1="Shiva Ring",
          ring2="Shiva Ring",
          back="Toro Cape",
          waist="Soil Belt",
-         legs="Yorium Cuisses"
+         legs="Ignominy Flanchard +1",
+         feet="Heathen's Sollerets +1"
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
          legs="Yorium Cuisses"
@@ -441,6 +441,7 @@ function init_gear_sets()
      sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
          head="Heathen's Burgonet +1",
          neck="Aqua Gorget",
+         body="Phorcys Korazin",
          legs="Yorium Cuisses",
          waist="Metalsinger belt",
      })
@@ -458,7 +459,7 @@ function init_gear_sets()
          back="Toro Cape",
          legs="Limbo Trousers",
          waist="Caudata Belt",
-         feet="Ignominy Sollerets"
+         feet="Heathen's Sollerets +1"
       })
 
      sets.precast.WS['Shadow of Death'].Mid = set_combine(sets.precast.WS['Shadow of Death'], sets.precast.WS.Mid, {head="Heathen's Burgonet +1"})
@@ -467,8 +468,8 @@ function init_gear_sets()
      -- DARK HARVEST 
      -- 40% STR 40% INT - Darkness Elemental
      sets.precast.WS['Dark Harvest'] = sets.precast.WS['Shadow of Death']
-     sets.precast.WS['Dark Harvest'].Mid = set_combine(sets.precast.WS['Shadow of Death'], {head="Ignominy burgeonet +1", feet="Ignominy Sollerets"})
-     sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {head="Ignominy burgeonet +1", feet="Ignominy Sollerets", ring1="Sangoma Ring"})
+     sets.precast.WS['Dark Harvest'].Mid = set_combine(sets.precast.WS['Shadow of Death'], {head="Ignominy burgeonet +1", feet="Heathen's Sollerets +1"})
+     sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {head="Ignominy burgeonet +1", feet="Heathen's Sollerets +1", ring1="Sangoma Ring"})
 
      -- Sword WS's
      -- SANGUINE BLADE
@@ -482,7 +483,7 @@ function init_gear_sets()
          legs="Limbo Trousers",
          ring2="Acumen Ring",
          back="Toro Cape",
-         feet="Ignominy Sollerets"
+         feet="Heathen's Sollerets +1"
      })
      sets.precast.WS['Sanguine Blade'].Mid = set_combine(sets.precast.WS['Sanguine Blade'], sets.precast.WS.Mid)
      sets.precast.WS['Sanguine Blade'].Acc = set_combine(sets.precast.WS['Sanguine Blade'], sets.precast.WS.Acc)
@@ -492,8 +493,10 @@ function init_gear_sets()
      sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
          head="Otomi Helm",
          neck="Shadow Gorget",
+         body="Fallen's Cuirass +1",
          hands="Fallen's Finger Gauntlets +1",
          back="Bleating Mantle",
+         legs="Limbo Trousers",
          waist="Soil Belt",
      })
      sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
@@ -683,12 +686,12 @@ function init_gear_sets()
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
 
-     --sets.engaged.DW = set_combine(sets.engaged, {
-     --   head="Otomi Helm",
-     --   ear1="Dudgeon Earring",
-     --   ear2="Heartseeker Earring",
-     --   waist="Patentia Sash"
-     --})
+     sets.engaged.DW = set_combine(sets.engaged, {
+        head="Otomi Helm",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        waist="Patentia Sash"
+     })
      --sets.engaged.OneHand = set_combine(sets.engaged, {
      --    head="Yaoyotl Helm",
      --    ring2="Mars's Ring",
@@ -731,6 +734,18 @@ function job_pretarget(spell, action, spellMap, eventArgs)
     --    eventArgs.cancel = true
     --    add_to_chat(122,"Outside WS Range! /Canceling")
     end
+    --Drain toggle
+    --if spell.english == "Drain" then
+    --    if state.drain then
+    --        state.drain:reset()
+    --        cancel_spell()
+    --        send_command('input /ma "Drain" <t>')
+    --    else
+    --        state.drain:set()
+    --        cancel_spell()
+    --        send_command('input /ma "Drain II" <t>')
+    --    end
+    --end
 end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
@@ -739,18 +754,6 @@ function job_precast(spell, action, spellMap, eventArgs)
     --if spell.action_type == 'Magic' then
     --    equip(sets.precast.FC)
     --end
-    -- Drain toggle
-    if spell.english == "Drain" then
-        if state.drain then
-            state.drain:reset()
-            cancel_spell()
-            send_command('input /ma "Drain" <t>')
-        else
-            state.drain:set()
-            cancel_spell()
-            send_command('input /ma "Drain II" <t>')
-        end
-    end
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -864,7 +867,7 @@ function customize_melee_set(meleeSet)
 	if state.Buff.Souleater then
 		meleeSet = set_combine(meleeSet, sets.buff.Souleater)
 	end
-    if state.CombatForm.has_value then
+    if state.CombatForm.current == 'Haste' then
         meleeSet = set_combine(meleeSet, sets.HighHaste)
     end
     return meleeSet
@@ -902,7 +905,9 @@ function job_buff_change(buff, gain)
                 handle_equipping_gear(player.status)
             end
         else
-            state.CombatForm:reset()
+            if state.CombatForm.current ~= 'DW' then
+                state.CombatForm:reset()
+            end
             if not midaction() then
                 handle_equipping_gear(player.status)
             end
@@ -1021,13 +1026,17 @@ function get_combat_form()
     --    state.CombatForm:reset()
     --end
 
-    if (buffactive['Last Resort']) then
+    if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
+        state.CombatForm:set("DW")
+    elseif (buffactive['Last Resort']) then
         if (buffactive.embrava or buffactive.haste) and buffactive.march  then
             add_to_chat(8, '-------------Delay Capped-------------')
             state.CombatForm:set("Haste")
         else
             state.CombatForm:reset()
         end
+    else
+        state.CombatForm:reset()
     end
 end
 
