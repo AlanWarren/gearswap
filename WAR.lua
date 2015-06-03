@@ -20,6 +20,7 @@ function job_setup()
     state.Buff.Berserk = buffactive.berserk or false
     
     wsList = S{'Ukko\'s Fury'}
+    gsList = S{'Macbain', 'Kaquljaan'}
     war_sub_weapons = S{"Sangarius", "Usonmunku"}
 
     get_combat_form()
