@@ -357,7 +357,7 @@ function init_gear_sets()
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Acro Breeches",
-         feet="Ejekamal Boots"
+         feet="Ate's Sollerets"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Hasty Pinion +1",
@@ -424,6 +424,9 @@ function init_gear_sets()
      	head="Twilight Helm",neck="Twilight Torque",
      	body="Twilight Mail"
      })
+     sets.buff.Berserk = { 
+         feet="Warrior's Calligae" 
+     }
     
 end
 
@@ -484,6 +487,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if (state.HybridMode.current == 'PDT' and state.PhysicalDefenseMode.current == 'Reraise') then
         equip(sets.Reraise)
     end
+    if state.Buff.Berserk then
+        equip(sets.buff.Berserk)
+    end
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -516,6 +522,9 @@ end
  
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+    if state.Buff.Berserk then
+    	meleeSet = set_combine(meleeSet, sets.buff.Berserk)
+    end
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
@@ -529,6 +538,9 @@ end
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
+        if buffactive.Berserk then
+            equip(sets.buff.Berserk)
+        end
         get_combat_weapon()
     --elseif newStatus == 'Idle' then
     --    determine_idle_group()
@@ -551,6 +563,16 @@ function job_buff_change(buff, gain)
         end
     else
         enable('ring2')
+    end
+    
+    if buff == "Berserk" then
+        if gain then
+            equip(sets.buff.Berserk)
+        else
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
+        end
     end
 
 end
