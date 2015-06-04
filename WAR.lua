@@ -350,7 +350,7 @@ function init_gear_sets()
          head="Felistris Mask",
          neck="Asperity Necklace",
          ear1="Brutal Earring",
-         ear2="Lugra Earring +1",
+         ear2="Assault Earring",
     	 body="Acro Surcoat",
          --hands=Acro.Hands.STP,
          hands="Dusk Gloves +1",
