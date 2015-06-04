@@ -348,7 +348,6 @@ function init_gear_sets()
      })
      -- Mid assumes higher defense target
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
-         neck="Bale Choker",
          hands="Mikinaak Gauntlets",
          body="Ravenous Breastplate",
          legs="Heathen's Flanchard +1",
