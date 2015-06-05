@@ -358,7 +358,7 @@ function init_gear_sets()
          ring2="K'ayres Ring",
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
-         legs="Acro Breeches",
+         legs="Ravager's Cuisses +2",
          feet="Ravager's Calligae +2"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
