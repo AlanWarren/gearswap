@@ -18,6 +18,7 @@ function job_setup()
 
     --state.Buff.Souleater = buffactive.souleater or false
     state.Buff.Berserk = buffactive.berserk or false
+    state.Buff.Retaliation = buffactive.retaliation or false
     
     wsList = S{'Ukko\'s Fury'}
     gsList = S{'Macbain', 'Kaquljaan'}
@@ -429,6 +430,9 @@ function init_gear_sets()
      sets.buff.Berserk = { 
          feet="Warrior's Calligae" 
      }
+     sets.buff.Retaliation = { 
+         feet="Ravager's Calligae +2" 
+     }
     
 end
 
@@ -489,7 +493,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if (state.HybridMode.current == 'PDT' and state.PhysicalDefenseMode.current == 'Reraise') then
         equip(sets.Reraise)
     end
-    if state.Buff.Berserk then
+    if state.Buff.Berserk and not state.Buff.Retaliation then
         equip(sets.buff.Berserk)
     end
 end
@@ -524,7 +528,7 @@ end
  
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-    if state.Buff.Berserk then
+    if state.Buff.Berserk and not state.Buff.Retaliation then
     	meleeSet = set_combine(meleeSet, sets.buff.Berserk)
     end
     if state.CapacityMode.value then
@@ -540,7 +544,7 @@ end
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
-        if buffactive.Berserk then
+        if buffactive.Berserk and not state.Buff.Retaliation then
             equip(sets.buff.Berserk)
         end
         get_combat_weapon()
@@ -568,7 +572,7 @@ function job_buff_change(buff, gain)
     end
     
     if buff == "Berserk" then
-        if gain then
+        if gain and not buffactive['Retaliation'] then
             equip(sets.buff.Berserk)
         else
             if not midaction() then
