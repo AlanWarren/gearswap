@@ -349,8 +349,8 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Felistris Mask",
          neck="Asperity Necklace",
-         ear1="Brutal Earring",
-         ear2="Assault Earring",
+         ear1="Assault Earring",
+         ear2="Brutal Earring",
     	 body="Acro Surcoat",
          --hands=Acro.Hands.STP,
          hands="Dusk Gloves +1",
@@ -359,7 +359,7 @@ function init_gear_sets()
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Acro Breeches",
-         feet="Ate's Sollerets"
+         feet="Ravager's Calligae +2"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Hasty Pinion +1",
