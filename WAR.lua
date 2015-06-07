@@ -183,6 +183,13 @@ function init_gear_sets()
          hands="Crusher Gauntlets",
          waist="Olseni Belt",
      })
+    
+    sets.precast.WS['Raging Rush'] = set_combine(sets.precast.WS, {
+        neck="Aqua Gorget",
+        body="Kirin's Osode",
+        head="Ravager's mask +1",
+        hands="Ravager's Mufflers",
+    })
  
      -- RESOLUTION
      -- 86-100% STR
@@ -348,11 +355,11 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Ginsen",
-         head="Felistris Mask",
-         neck="Asperity Necklace",
+         head="Walahra Turban",
+         neck="Rancor Collar",
          ear1="Assault Earring",
          ear2="Brutal Earring",
-    	 body="Acro Surcoat",
+    	 body="Haubergeon +1",
          --hands=Acro.Hands.STP,
          hands="Dusk Gloves +1",
          ring1="Rajas Ring",
