@@ -186,7 +186,6 @@ function init_gear_sets()
     
     sets.precast.WS['Raging Rush'] = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
-        body="Kirin's Osode",
         head="Ravager's Mask +2",
         hands="Ravager's Mufflers",
     })
@@ -354,12 +353,12 @@ function init_gear_sets()
  
      -- Engaged set, assumes Liberator
      sets.engaged = {
-         ammo="Ginsen",
+         ammo="Fire Bomblet",
          head="Walahra Turban",
          neck="Rancor Collar",
          ear1="Assault Earring",
          ear2="Brutal Earring",
-    	 body="Haubergeon +1",
+    	 body="Ravager's Lorica +2",
          --hands=Acro.Hands.STP,
          hands="Dusk Gloves +1",
          ring1="Rajas Ring",
