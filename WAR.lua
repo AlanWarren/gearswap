@@ -187,7 +187,7 @@ function init_gear_sets()
     sets.precast.WS['Raging Rush'] = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
         body="Kirin's Osode",
-        head="Ravager's mask +1",
+        head="Ravager's Mask +2",
         hands="Ravager's Mufflers",
     })
  
