@@ -115,7 +115,6 @@ function init_gear_sets()
      -- Precast Sets
      -- Precast sets to enhance JAs
      sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets +1"}
-     sets.precast.JA['Arcane Circle'] = {feet="Ignominy Sollerets"}
      sets.precast.JA['Nether Void'] = {legs="Heathen's Flanchard +1"}
      sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet +1"}
      sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
@@ -145,7 +144,7 @@ function init_gear_sets()
         head="Fallen's Burgeonet +1",
         body="Yorium Cuirass",
         ear1="Loquacious Earring",
-        hands="Yorium Gauntlets",
+        hands="Buremte Gloves",
         ring2="Prolix Ring",
         legs="Limbo Trousers",
         feet="Yorium Sabatons"
@@ -623,7 +622,8 @@ function init_gear_sets()
          ring2="Patricius Ring",
      }
      sets.Defensive_Acc = {
-         head="Baghere Salade",
+         --head="Baghere Salade",
+         head="Ighwa Cap",
          neck="Agitator's Collar",
          hands="Crusher Gauntlets",
          body="Yorium Cuirass",
