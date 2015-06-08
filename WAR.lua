@@ -187,7 +187,8 @@ function init_gear_sets()
     sets.precast.WS['Raging Rush'] = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
         head="Ravager's Mask +2",
-        hands="Ravager's Mufflers",
+        hands="Warrior's Mufflers +2",
+        legs="Warrior's Cuisses +2"
     })
  
      -- RESOLUTION
@@ -255,7 +256,7 @@ function init_gear_sets()
          --head="Heathen's Burgonet +1",
          ear1="Lugra Earring +1",
          ear2="Tripudio Earring",
-         hands="Warrior's mufflers",
+         hands="Warrior's mufflers +2",
          ring1="Karieyh Ring",
          ring2="Dark Ring",
          back="Engulfer Cape +1",
@@ -267,7 +268,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Twilight Helm",
          body="Twilight Mail",
-         hands="Warrior's mufflers",
+         hands="Warrior's mufflers +2",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
          back="Engulfer Cape +1",
@@ -435,7 +436,7 @@ function init_gear_sets()
      	body="Twilight Mail"
      })
      sets.buff.Berserk = { 
-         feet="Warrior's Calligae" 
+         feet="Warrior's Calligae +2" 
      }
      sets.buff.Retaliation = { 
          feet="Ravager's Calligae +2" 
