@@ -357,7 +357,7 @@ function init_gear_sets()
      sets.engaged = {
          ammo="Fire Bomblet",
          head="Walahra Turban",
-         neck="Rancor Collar",
+         neck="Peacock Charm",
          ear1="Brutal Earring",
          ear2="Assault Earring",
     	 body="Ravager's Lorica +2",
