@@ -366,7 +366,7 @@ function init_gear_sets()
          ring1="Rajas Ring",
          ring2="Oneiros Ring",
          back="Bleating Mantle",
-         waist="Windbuffet Belt +1",
+         waist="Swift Belt",
          legs="Ravager's Cuisses +2",
          feet="Ravager's Calligae +2"
      }
