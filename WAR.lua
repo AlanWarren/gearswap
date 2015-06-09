@@ -362,7 +362,7 @@ function init_gear_sets()
          ear2="Assault Earring",
     	 body="Ravager's Lorica +2",
          --hands=Acro.Hands.STP,
-         hands="Dusk Gloves +1",
+         hands="Brego Gloves",
          ring1="Rajas Ring",
          ring2="Oneiros Ring",
          back="Bleating Mantle",
