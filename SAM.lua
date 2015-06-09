@@ -108,7 +108,7 @@ function init_gear_sets()
     sets.precast.JA.Meditate = {
         head="Wakido Kabuto",
         hands="Saotome Kote +2",
-        back={name="Takaha Mantle", augments={'STR+1','"Store TP"+1','"Zanshin"+1','Meditate eff. dur. +4'}},
+        back="Takaha Mantle",
     }
     sets.precast.JA.Seigan = {head="Unkai Kabuto +2"}
     sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto"}
@@ -381,7 +381,7 @@ function init_gear_sets()
         hands="Wakido Kote +1",
         ring1="Rajas Ring", 
         ring2="Oneiros Ring", 
-        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
+        back="Takaha Mantle",
         waist="Windbuffet Belt +1",
         legs="Acro Breeches",
         feet=Acro.Feet.STP
@@ -415,7 +415,7 @@ function init_gear_sets()
     sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
         head="Yaoyotl Helm",
    	    body="Mes'yohi Haubergeon",
-        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
+        back="Takaha Mantle",
     })
     
     sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, {
@@ -484,7 +484,7 @@ function init_gear_sets()
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="Oneiros Ring", 
-        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
+        back="Takaha Mantle",
         waist="Windbuffet Belt +1",
         legs="Acro Breeches",
         feet=Acro.Feet.STP
@@ -501,7 +501,7 @@ function init_gear_sets()
         ring2="Mars's Ring",
         hands="Sasuke Tekko +1",
         waist="Olseni Belt",
-        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
+        back="Takaha Mantle",
         legs="Acro Breeches",
         feet=Acro.Feet.STP
     })
@@ -538,7 +538,7 @@ function init_gear_sets()
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
         ring2="K'ayres Ring", -- 5
-        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
+        back="Takaha Mantle",
         waist="Windbuffet Belt +1", 
         legs="Otronif Brais +1", -- 6
         feet="Otronif Boots +1" -- 7
@@ -557,7 +557,7 @@ function init_gear_sets()
         ammo=gear.RAarrow,
         ring1="Patricius Ring",
         ring2="Mars's Ring",
-        back={name="Takaha Mantle", augments={'STR+3','"Store TP"+2','"Zanshin"+3'}},
+        back="Takaha Mantle",
         feet="Wakido Sune-Ate +1"
     })
     
