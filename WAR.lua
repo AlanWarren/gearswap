@@ -20,7 +20,7 @@ function job_setup()
     state.Buff.Berserk = buffactive.berserk or false
     state.Buff.Retaliation = buffactive.retaliation or false
     
-    wsList = S{'Ukko\'s Fury'}
+    wsList = S{}
     gsList = S{'Macbain', 'Kaquljaan'}
     war_sub_weapons = S{"Sangarius", "Usonmunku"}
 
@@ -181,17 +181,24 @@ function init_gear_sets()
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          ear1="Zennaroi Earring",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          waist="Olseni Belt",
      })
     
-    sets.precast.WS['Raging Rush'] = set_combine(sets.precast.WS, {
-        neck="Aqua Gorget",
-        head="Ravager's Mask +2",
-        hands="Warrior's Mufflers +2",
-        legs="Warrior's Cuisses +2"
+    sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {
+        neck="Flame Gorget",
+        body="Mes'yohi Haubergeon",
+        hands="Crusher's Gauntlets"
+        waist="Light Belt",
     })
  
+    sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {
+        ammo="Yetshila",
+        neck="Breeze Gorget",
+        hands=Acro.Hands.STP,
+        waist="Metalsinger Belt",
+        back="Mauler's Mantle"
+    })
      -- RESOLUTION
      -- 86-100% STR
      sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
@@ -208,7 +215,7 @@ function init_gear_sets()
      -- VIT 80%
      sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
          neck="Aqua Gorget",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          legs="Yorium Cuisses",
          waist="Caudata Belt"
      })
@@ -257,7 +264,7 @@ function init_gear_sets()
          head="Baghere Salade",
          ear1="Lugra Earring +1",
          ear2="Tripudio Earring",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          body="Mes'yohi Haubergeon",
          ring1="Karieyh Ring",
          ring2="Dark Ring",
@@ -295,7 +302,7 @@ function init_gear_sets()
          head="Yorium Barbuta",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
          ring2="Patricius Ring",
@@ -330,7 +337,7 @@ function init_gear_sets()
          head="Yorium Barbuta",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          ring2="Patricius Ring",
          back="Repulse Mantle",
          waist="Flume Belt",
@@ -341,14 +348,14 @@ function init_gear_sets()
          head="Yorium Barbuta",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          back="Repulse Mantle",
          ring2="Patricius Ring",
      }
      sets.Defensive_Acc = {
          head="Baghere Salade",
          neck="Agitator's Collar",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          body="Yorium Cuirass",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
