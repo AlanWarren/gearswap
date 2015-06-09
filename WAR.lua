@@ -170,6 +170,7 @@ function init_gear_sets()
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
          waist="Windbuffet Belt +1",
+         back="Mauler's Mantle",
          legs="Yorium Cuisses",
          feet=Acro.Feet.WSD
      }
@@ -365,7 +366,7 @@ function init_gear_sets()
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
          ring2="Oneiros Ring",
-         back="Bleating Mantle",
+         back="Mauler's Mantle",
          waist="Windbuffet Belt +1",
          legs="Acro Breeches",
          feet=Acro.Feet.STP
