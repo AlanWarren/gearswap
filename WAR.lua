@@ -354,8 +354,8 @@ function init_gear_sets()
  
      -- Engaged set, assumes Liberator
      sets.engaged = {
-         ammo="Ginsing",
-         head="Felistris Mask",
+         ammo="Yetshila",
+         head="Otomi Helm",
          neck="Asperity Necklace",
          ear1="Brutal Earring",
          ear2="Tripudio Earring",
@@ -366,10 +366,10 @@ function init_gear_sets()
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Acro Breeches",
-         feet="Ejekamal Boots"
+         feet=Acro.Feet.STP
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         ammo="Hasty Pinion +1",
+         ammo="Ginsing",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
          feet=Acro.Feet.STP
