@@ -436,10 +436,10 @@ function init_gear_sets()
      	body="Twilight Mail"
      })
      sets.buff.Berserk = { 
-         feet="Warrior's Calligae +2" 
+         --feet="Warrior's Calligae +2" 
      }
      sets.buff.Retaliation = { 
-         feet="Ravager's Calligae +2" 
+         --feet="Ravager's Calligae +2" 
      }
     
 end
