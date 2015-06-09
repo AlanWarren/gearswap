@@ -268,7 +268,7 @@ function init_gear_sets()
          body="Mes'yohi Haubergeon",
          ring1="Karieyh Ring",
          ring2="Dark Ring",
-         back="Engulfer Cape +1",
+         back="Mauler's Mantle",
          legs="Scuffler's Cosciales",
          waist="Flume Belt",
          feet="Hermes' Sandals"
