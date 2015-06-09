@@ -188,7 +188,7 @@ function init_gear_sets()
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {
         neck="Flame Gorget",
         body="Mes'yohi Haubergeon",
-        hands="Crusher's Gauntlets"
+        hands="Crusher's Gauntlets",
         waist="Light Belt",
     })
  
