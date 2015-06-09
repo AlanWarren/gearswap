@@ -1,6 +1,8 @@
 --[[     
  === Notes ===
- this is incomplete. my war is level 75
+ this is incomplete. my war just hit 99
+ Using warcry = Upheaval
+ Using bloodrage = Ukko's
 --]]
 --
 -- Initialization function for this job file.
