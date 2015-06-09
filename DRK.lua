@@ -299,7 +299,7 @@ function init_gear_sets()
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          ear1="Zennaroi Earring",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          body="Fallen's Cuirass +1",
          waist="Olseni Belt",
      })
@@ -321,7 +321,7 @@ function init_gear_sets()
      sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
          head="Fallen's burgeonet +1",
          neck="Aqua Gorget",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          legs="Yorium Cuisses",
          waist="Caudata Belt"
      })
@@ -518,7 +518,7 @@ function init_gear_sets()
          ear1="Lugra Earring +1",
          ear2="Tripudio Earring",
          body="Lugra Cloak +1",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          ring1="Karieyh Ring",
          ring2="Dark Ring",
          back="Engulfer Cape +1",
@@ -537,7 +537,7 @@ function init_gear_sets()
          --head="Baghere Salade",
          neck="Coatl Gorget +1",
          body="Lugra Cloak +1",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
          back="Engulfer Cape +1",
@@ -570,7 +570,7 @@ function init_gear_sets()
          head="Yorium Barbuta",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
          ring2="Patricius Ring",
@@ -606,7 +606,7 @@ function init_gear_sets()
          head="Yorium Barbuta",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          ring2="Patricius Ring",
          back="Repulse Mantle",
          waist="Flume Belt",
@@ -617,7 +617,7 @@ function init_gear_sets()
          head="Yorium Barbuta",
          neck="Agitator's Collar",
          body="Yorium Cuirass",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          back="Repulse Mantle",
          ring2="Patricius Ring",
      }
@@ -625,7 +625,7 @@ function init_gear_sets()
          --head="Baghere Salade",
          head="Ighwa Cap",
          neck="Agitator's Collar",
-         hands="Crusher Gauntlets",
+         hands="Crusher's Gauntlets",
          body="Yorium Cuirass",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
