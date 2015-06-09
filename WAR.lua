@@ -324,13 +324,6 @@ function init_gear_sets()
  
      sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
 
-     sets.HighHaste = {
-         ammo="Ginsen",
-         head="Acro Helm",
-         hands=Acro.Hands.STP,
-         feet=Acro.Feet.STP
-     }
-     
      -- Defensive sets to combine with various weapon-specific sets below
      -- These allow hybrid acc/pdt sets for difficult content
      sets.Defensive = {
@@ -368,47 +361,27 @@ function init_gear_sets()
          head="Otomi Helm",
          neck="Asperity Necklace",
          ear1="Brutal Earring",
-         ear2="Tripudio Earring",
+         ear2="Lugra Earring +1",
     	 body="Acro Surcoat",
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
          ring2="Oneiros Ring",
          back="Mauler's Mantle",
          waist="Windbuffet Belt +1",
-         legs="Acro Breeches",
-         feet=Acro.Feet.STP
+         legs="Yorium Cuisses",
+         feet=Acro.Feet.WSD
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Ginsing",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
-         feet=Acro.Feet.STP
+         feet=Acro.Feet.WSD
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          head="Acro Helm",
          neck="Defiant Collar",
          ring2="Mars's Ring",
          waist="Olseni Belt"
-     })
-     -- Liberator AM3
-     sets.engaged.AM3 = set_combine(sets.engaged, {
-         head="Acro Helm",
-         ear1="Enervating Earring",
-         ear2="Tripudio Earring",
-         body="Heathen's Cuirass +1",
-         hands=Acro.Hands.Haste,
-         feet=Acro.Feet.STP
-     })
-     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-         body="Acro Surcoat",
-         hands=Acro.Hands.Haste,
-         feet=Acro.Feet.STP
-     })
-     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
-         neck="Defiant Collar",
-         ear1="Zennaroi Earring",
-         ear2="Tripudio Earring",
-         waist="Olseni Belt",
      })
 
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
