@@ -100,7 +100,7 @@ function init_gear_sets()
         hands="Navarch's Gants +2",
         body="Lanun Frac +1",
         ring1="Barataria Ring",
-        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+2','Enmity-1','"Phantom Roll" ability delay -3'}},
+        back="Gunslinger's Cape",
         feet="Lanun Bottes"
     }
 	
@@ -205,7 +205,7 @@ function init_gear_sets()
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Karieyh Ring",
         ring2="Garuda Ring",
-        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
+        back="Gunslinger's Cape",
         waist="Aquiline Belt",
         legs="Shneddick Tights +1",
         feet="Lanun Bottes"
@@ -221,7 +221,7 @@ function init_gear_sets()
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
         body="Mekosuchinae Harness",
-        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
+        back="Gunslinger's Cape",
         ring1="Globidonta Ring",
         ring2="Sangoma Ring",
 		legs="Iuitl Tights +1",
@@ -241,7 +241,7 @@ function init_gear_sets()
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Acumen Ring",
         ring2="Garuda Ring",
-        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
+        back="Gunslinger's Cape",
         waist="Aquiline Belt",
         legs="Shneddick Tights +1",
         feet="Lanun Bottes"
@@ -270,7 +270,7 @@ function init_gear_sets()
         hands="Sigyn's Bazubands",
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
-        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
+        back="Gunslinger's Cape",
         waist="Elanid Belt",
         legs="Aetosaur Trousers +1",
         feet="Scopuli Nails +1"
@@ -318,7 +318,7 @@ function init_gear_sets()
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         ring1="Ifrit Ring +1",
         ring2="Karieyh Ring",
-        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
+        back="Gunslinger's Cape",
         waist="Flume Belt",
         legs="Taeon Tights",
         feet="Skadi's Jambeaux +1"
@@ -358,7 +358,7 @@ function init_gear_sets()
         hands="Sigyn's Bazubands",
         ring1="Rajas Ring",
         ring2="Longshot Ring",
-        back={name="Gunslinger's Cape", augments={'"Mag.Atk.Bns."+5','Enmity-4'}},
+        back="Gunslinger's Cape",
         waist="Elanid Belt",
         legs="Nahtirah Trousers",
         feet="Lanun Bottes"
