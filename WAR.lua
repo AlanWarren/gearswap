@@ -160,7 +160,7 @@ function init_gear_sets()
      -- WEAPONSKILL SETS
      -- General sets
      sets.precast.WS = {
-         ammo="Fracas Grenade",
+         --ammo="Fracas Grenade",
          head="Felistris Mask",
          neck="Defiant Collar",
          ear1="Brutal Earring",
@@ -256,7 +256,7 @@ function init_gear_sets()
          --head="Heathen's Burgonet +1",
          ear1="Lugra Earring +1",
          ear2="Tripudio Earring",
-         hands="Warrior's mufflers +2",
+         hands="Crusher Gauntlets",
          ring1="Karieyh Ring",
          ring2="Dark Ring",
          back="Engulfer Cape +1",
@@ -266,9 +266,8 @@ function init_gear_sets()
      
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
-         head="Twilight Helm",
-         body="Twilight Mail",
-         hands="Warrior's mufflers +2",
+         head="Baghere Salade",
+         body="Kumarbi's Akar",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
          back="Engulfer Cape +1",
@@ -355,20 +354,19 @@ function init_gear_sets()
  
      -- Engaged set, assumes Liberator
      sets.engaged = {
-         ammo="Fire Bomblet",
-         head="Walahra Turban",
-         neck="Peacock Charm",
+         ammo="Ginsing",
+         head="Felistris Mask",
+         neck="Asperity Necklace",
          ear1="Brutal Earring",
-         ear2="Assault Earring",
-    	 body="Ravager's Lorica +2",
-         --hands=Acro.Hands.STP,
-         hands="Brego Gloves",
+         ear2="Tripudio Earring",
+    	 body="Acro Surcoat",
+         hands=Acro.Hands.STP,
          ring1="Rajas Ring",
          ring2="Oneiros Ring",
          back="Bleating Mantle",
-         waist="Swift Belt",
-         legs="Ravager's Cuisses +2",
-         feet="Ravager's Calligae +2"
+         waist="Windbuffet Belt +1",
+         legs="Acro Breeches",
+         feet="Ejekamal Boots"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Hasty Pinion +1",
