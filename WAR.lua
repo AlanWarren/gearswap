@@ -253,13 +253,15 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         --head="Heathen's Burgonet +1",
+         head="Baghere Salade",
          ear1="Lugra Earring +1",
          ear2="Tripudio Earring",
          hands="Crusher Gauntlets",
+         body="Mes'yohi Haubergeon",
          ring1="Karieyh Ring",
          ring2="Dark Ring",
          back="Engulfer Cape +1",
+         legs="Scuffler's Cosciales",
          waist="Flume Belt",
          feet="Hermes' Sandals"
      }
