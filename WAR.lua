@@ -164,7 +164,7 @@ function init_gear_sets()
      -- General sets
      sets.precast.WS = {
          --ammo="Fracas Grenade",
-         head="Felistris Mask",
+         head="Otomi Helm",
          neck="Defiant Collar",
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
