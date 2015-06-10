@@ -23,8 +23,10 @@
 
     Moonshade earring is not used for WS's at 3000 TP. 
     
-    There is support for GS by using sets.engaged.GreatSword but you will have to edit gsList 
-    in job_setup so that your GS is present.
+    All of the default sets are geared around scyth. There is support for great sword by using 
+    sets.engaged.GreatSword but you will have to edit gsList in job_setup so that your GS is present. IF you would rather
+    all the default sets (like sets.engaged, etc.) cater to great sword instead of scyth, then simply remove the great swords 
+    listed in gsList and ignore sets.engaged.GreatSword. (but dont delete it)  
     
     Set format is as follows: 
     sets.engaged.[CombatForm][CombatWeapon][Offense or HybridMode][CustomMeleeGroups]
