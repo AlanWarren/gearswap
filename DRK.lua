@@ -93,7 +93,6 @@ function user_setup()
     state.MagicalDefenseMode:options('MDT')
     
     war_sj = player.sub_job == 'WAR' or false
-    state.drain = M(false)
     
     -- Additional local binds
     send_command('bind != gs c toggle CapacityMode')
