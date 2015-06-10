@@ -944,7 +944,7 @@ function job_buff_change(buff, gain)
         end
     end
     -- Drain II HP Boost. Set SE to stay on.
-    if buff == "Max HP Boost" then
+    if buff == "Max HP Boost" and state.SouleaterMode.value then
         if gain or buffactive['Max HP Boost'] then
             state.SouleaterMode:set(false)
         else
@@ -952,7 +952,7 @@ function job_buff_change(buff, gain)
         end
     end
     -- Make sure SE stays on for BW
-    if buff == 'Blood Weapon' then
+    if buff == 'Blood Weapon' and state.SouleaterMode.value then
         if gain or buffactive['Blood Weapon'] then
             state.SouleaterMode:set(false)
         else
