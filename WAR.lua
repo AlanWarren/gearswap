@@ -98,6 +98,7 @@ function init_gear_sets()
      -- Precast Sets
      -- Precast sets to enhance JAs
      --sets.precast.JA['Mighty Strikes'] = {hands="Fallen's Finger Gauntlets +1"}
+     sets.precast.JS['Blood Rage'] = { body="Boii Lorica +1" }
 
      sets.CapacityMantle  = { back="Mecistopins Mantle" }
      --sets.Berserker       = { neck="Berserker's Torque" }
@@ -364,7 +365,7 @@ function init_gear_sets()
          neck="Asperity Necklace",
          ear1="Brutal Earring",
          ear2="Lugra Earring +1",
-    	 body="Acro Surcoat",
+    	 body="Boii Lorica +1",
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
          ring2="Oneiros Ring",
