@@ -1,6 +1,6 @@
 --[[     
  === Features ===
-    !!!!Make sure you have my User-Globals.lua!!! Do not rename it
+    !!!!Make sure you have my User-Globals.lua!!! Do not rename it. It goes in the data folder along side this file.
 
     SouleaterMode: OFF by default. Toggle this with @F9 (window key + F9). This mode makes it possible to use Souleater
     in situations where you would normally avoid using it. When SouleaterMode is ON, Souleater will be canceled
