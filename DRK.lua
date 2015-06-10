@@ -558,11 +558,6 @@ function init_gear_sets()
          feet="Heathen's Sollerets +1"
      }
      
-    sets.cool = set_combine(sets.idle.Town, {
-         head="Otomi Helm",
-         legs="Acro Breeches",
-     })
-
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
          --head="Baghere Salade",
@@ -760,30 +755,12 @@ function job_pretarget(spell, action, spellMap, eventArgs)
     if spell.type:endswith('Magic') and buffactive.silence then
         eventArgs.cancel = true
         send_command('input /item "Echo Drops" <me>')
-    --elseif spell.target.distance > 8 and player.status == 'Engaged' then
-    --    eventArgs.cancel = true
-    --    add_to_chat(122,"Outside WS Range! /Canceling")
     end
-    --Drain toggle
-    --if spell.english == "Drain" then
-    --    if state.drain then
-    --        state.drain:reset()
-    --        cancel_spell()
-    --        send_command('input /ma "Drain" <t>')
-    --    else
-    --        state.drain:set()
-    --        cancel_spell()
-    --        send_command('input /ma "Drain II" <t>')
-    --    end
-    --end
 end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
     aw_custom_aftermath_timers_precast(spell)
-    --if spell.action_type == 'Magic' then
-    --    equip(sets.precast.FC)
-    --end
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -819,11 +796,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if buffactive['Reive Mark'] then
             equip(sets.reive)
         end
-        -- Use Tengu-No-Hane for WS during the day, when acc mode is toggled
-        -- Trepidity Mantle rule: if your Niht Mantle augs suck, uncomment below
-        --if world.day_element == 'Dark' then
-        --    equip(sets.WSBack)
-        --end
     end
 end
  
@@ -1043,18 +1015,6 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_form()
-    --if war_sj then
-        --state.CombatForm:set("War")
-    --else
-        --state.CombatForm:reset()
-    --end
-    --if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
-    --    state.CombatForm:set("DW")
-    --elseif S{'SAM', 'WAR'}:contains(player.sub_job) and player.equipment.sub == 'Rinda Shield' then
-    --    state.CombatForm:set("OneHand")
-    --else
-    --    state.CombatForm:reset()
-    --end
 
     if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
         state.CombatForm:set("DW")
@@ -1130,49 +1090,8 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    --if stateField == 'Look Cool' then
-    --    if newValue == 'On' then
-    --        send_command('gs equip sets.cool;wait 1.2;input /lockstyle on;wait 1.2;gs c update user')
-    --        --send_command('wait 1.2;gs c update user')
-    --    else
-    --        send_command('@input /lockstyle off')
-    --    end
-    --end
 end
 
---windower.register_event('Zone change', function(new,old)
---    if state.LookCool.value == 'On' then
---        send_command('wait 3; gs equip sets.cool;wait 1.2;input /lockstyle on;wait 1.2;gs c update user')
---    end
---end)
-
---function select_ammo()
---    if world.time >= (18*60) or world.time <= (6*60) then
---        return sets.NightAmmo
---    else
---        return sets.DayAmmo
---    end
---end
-
-
--- Handle zone specific rules
---windower.register_event('Zone change', function(new,old)
---    determine_idle_group()
---end)
---
---function determine_idle_group()
---    classes.CustomIdleGroups:clear()
---    if areas.Adoulin:contains(world.area) then
---    	classes.CustomIdleGroups:append('Adoulin')
---    end
---end
-
---function adjust_melee_groups()
---	classes.CustomMeleeGroups:clear()
---	if state.Buff.Aftermath then
---		classes.CustomMeleeGroups:append('AM')
---	end
---end
 function update_melee_groups()
 
 	classes.CustomMeleeGroups:clear()
