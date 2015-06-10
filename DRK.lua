@@ -1,22 +1,49 @@
 --[[     
- === Notes ===
-    Souleater: By default, souleater will cancel after any weaponskill is used.  
-               However, if Blood Weapon is used, Souleater will remain active for it's duration.
-               It will be canceled after your next weaponskill, following Blood Weapon wearing off. 
-               This behavior can be toggled off/on with @f9 (window key + f9) 
-               Another option is to Nethervoid + Drain II and pop SE. It will stay up in this
-               scenario as well.
-    Last Resort: There is an LR Hybrid Mode toggle present. This is useful when Last Resort may be risky.
+ === Features ===
+    !!!!Make sure you have my User-Globals.lua!!! You can rename this file YourName-Globals.lua but otherwise don't change it.
+
+    SouleaterMode: OFF by default. Toggle this with @F9 (window key + F9). This mode makes it possible to use Souleater
+    in situations where you would normally avoid using it. When SouleaterMode is ON, Souleater will be canceled
+    automatically after the first Weaponskill used, "with these exceptions". If Bloodweapon is active, or if Drain's HP Boost
+    buff is active, then Souleater will remain active until the next WS used after either buff wears off. 
+
+    LastResortMode OFF by default. Toggle with CTRL + `  (back tic is left of the 1 key). This mode will equip Fallen's sollerets
+    while LR is active to negate 10% of the defense penalty.
+
+    Note: You can change the default status of either mode by setting them to true in job_setup()
+
+    Gavialis Helm will automatically be used for all weaponskills on their respective days of the week. If you don't want
+    it used for a ws, then you have to add the WS to wsList = {} in job_setup 
+
+    Ygna's Resolve +1 will automatically be used when you're in a reive
+
+    CapacityMode will full-time whichever piece of gear you specify in sets.CapacityMantle 
+
+    This lua assumes you maintain a 1st place unity for Lugra Earring +1. 
+
+    Moonshade earring is not used for WS's at 3000 TP. 
     
-    I simplified this lua since I got Liberator. There is support for GS by using sets.engaged.GreatSword
-    but you will have to edit the list in job_setup so that your GS is present.
+    There is support for GS by using sets.engaged.GreatSword but you will have to edit gsList 
+    in job_setup so that your GS is present.
     
     Set format is as follows: 
-    sets.engaged.[CombatForm][CombatWeapon][Offense or DefenseMode][CustomGroup]
-    CustomGroups = AM3
+    sets.engaged.[CombatForm][CombatWeapon][Offense or HybridMode][CustomMeleeGroups]
     
-    TODO: Get STR/DEX Augment on Acro Legs.
-    Make a new pair of boots + gloves with acc/atk 20 stp+5 str/dex+7
+    CombatForm = Haste, DW 
+    CombatWeapon = GreatSword
+    OffenseMode = Normal, Mid, Acc
+    HybridMode = Normal, PDT
+    CustomMeleeGroups = AM3
+
+    Notes:
+    CombatForm Haste is used when Last Resort AND either Haste, March, Indi-Haste Geo-Haste is on you.
+    This allows you to equip full acro, even though it doesn't have 25% gear haste. You still cap. 
+
+    CombatForm DW will activate with /dnc or /nin AND a weapon listed in drk_sub_weapons equipped offhand.
+   
+    CombatWeapon GreatSword will activate when you equip a GS listed in gsList in job_setup() 
+
+    CustomMeleeGroups AM3 will activate when Aftermath lvl 3 is up. 
 --]]
 --
 -- Initialization function for this job file.
@@ -35,10 +62,14 @@ function job_setup()
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     -- Set the default to false if you'd rather SE always stay acitve
-    state.SouleaterMode = M(true, 'Soul Eater Mode')
-    
+    state.SouleaterMode = M(false, 'Soul Eater Mode')
+    state.LastResortMode = M(false, 'Last Resort Mode')
+   
+    -- Weaponskills you do NOT want Gavialis helm used with
     wsList = S{'Spiral Hell', 'Torcleaver'}
+    -- Greatswords you use. 
     gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
+    -- Offhand weapons used to activate DW mode
     drk_sub_weapons = S{"Sangarius", "Usonmunku", "Perun"}
 
     get_combat_form()
@@ -65,8 +96,7 @@ function user_setup()
     -- Additional local binds
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c toggle SouleaterMode')
-    send_command('bind ^` input /ja "Hasso" <me>')
-    send_command('bind !` input /ja "Seigan" <me>')
+    send_command('bind ^` gs c toggle LastResortMode')
     
     select_default_macro_book()
 end
@@ -118,7 +148,6 @@ function init_gear_sets()
      sets.precast.JA['Nether Void'] = {legs="Heathen's Flanchard +1"}
      sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet +1"}
      sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
-     --sets.precast.JA['Last Resort'] = {feet="Fallen's Sollerets +1"}
      sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
      sets.precast.JA['Weapon Bash'] = {hands="Ignominy Gauntlets +1"}
 
@@ -809,7 +838,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if (state.HybridMode.current == 'PDT' and state.PhysicalDefenseMode.current == 'Reraise') then
         equip(sets.Reraise)
     end
-    if state.Buff['Last Resort'] then
+    if state.Buff['Last Resort'] and state.LastResortMode.value then
         equip(sets.buff['Last Resort'])
     end
 end
@@ -860,7 +889,7 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    if state.Buff['Last Resort'] then
+    if state.Buff['Last Resort'] and state.LastResortMode.value then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
 	if state.Buff.Souleater then
@@ -879,7 +908,7 @@ end
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
-        if buffactive['Last Resort'] then
+        if state.Buff['Last Resort'] and state.LastResortMode.value then
             equip(sets.buff['Last Resort'])
         end
         get_combat_weapon()
@@ -966,7 +995,7 @@ function job_buff_change(buff, gain)
         end
     end
 
-    if buff == "Last Resort" then
+    if buff == "Last Resort" and state.LastResortMode.value then
         if gain then
             equip(sets.buff["Last Resort"])
         else
