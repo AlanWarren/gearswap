@@ -371,7 +371,7 @@ function init_gear_sets()
          ring2="Oneiros Ring",
          back="Mauler's Mantle",
          waist="Windbuffet Belt +1",
-         legs="Yorium Cuisses",
+         legs="Boii Cuisses +1",
          feet=Acro.Feet.WSD
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
