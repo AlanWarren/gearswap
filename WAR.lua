@@ -103,7 +103,6 @@ function init_gear_sets()
      sets.CapacityMantle  = { back="Mecistopins Mantle" }
      --sets.Berserker       = { neck="Berserker's Torque" }
      sets.WSDayBonus      = { head="Gavialis Helm" }
-     sets.WSBack          = { back="Trepidity Mantle" }
      -- TP ears for night and day, AM3 up and down. 
      sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
      sets.Lugra           = { ear1="Lugra Earring +1" }
@@ -134,7 +133,6 @@ function init_gear_sets()
      sets.midcast.FastRecast = {
          ammo="Impatiens",
          head="Otomi Helm",
-         hands="Cizin Mufflers +1",
          feet="Ejekamal Boots"
      }
             
@@ -256,7 +254,6 @@ function init_gear_sets()
      -- Resting sets
      sets.resting = {
          --head="Baghere Salade",
-         hands="Cizin Mufflers +1",
          ring1="Dark Ring",
          ring2="Paguroidea Ring",
      }
@@ -292,7 +289,6 @@ function init_gear_sets()
  
      sets.idle.Weak = {
          head="Twilight Helm",
-         neck="Coatl Gorget +1",
          body="Twilight Mail",
          ring2="Paguroidea Ring",
          back="Repulse Mantle",
@@ -375,7 +371,7 @@ function init_gear_sets()
          feet=Acro.Feet.WSD
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         ammo="Ginsing",
+         ammo="Ginsen",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
          feet=Acro.Feet.WSD
