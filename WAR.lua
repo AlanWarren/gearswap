@@ -271,7 +271,7 @@ function init_gear_sets()
          ring2="Ifrit Ring +1",
          back="Mauler's Mantle",
          legs="Boii Cuisses +1",
-         waist="Flume Belt",
+         waist="Windbuffet Belt +1",
          feet="Hermes' Sandals"
      }
      
