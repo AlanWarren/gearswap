@@ -261,15 +261,16 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Baghere Salade",
+         head="Felistris Mask",
+         neck="Defiant Collar",
          ear1="Lugra Earring +1",
          ear2="Tripudio Earring",
          hands="Crusher's Gauntlets",
-         body="Mes'yohi Haubergeon",
+         body="Boii Lorica +1",
          ring1="Karieyh Ring",
-         ring2="Dark Ring",
+         ring2="Ifrit Ring +1",
          back="Mauler's Mantle",
-         legs="Scuffler's Cosciales",
+         legs="Boii Cuisses +1",
          waist="Flume Belt",
          feet="Hermes' Sandals"
      }
