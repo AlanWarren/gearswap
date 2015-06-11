@@ -98,7 +98,7 @@ function init_gear_sets()
      -- Precast Sets
      -- Precast sets to enhance JAs
      --sets.precast.JA['Mighty Strikes'] = {hands="Fallen's Finger Gauntlets +1"}
-     sets.precast.JS['Blood Rage'] = { body="Boii Lorica +1" }
+     sets.precast.JA['Blood Rage'] = { body="Boii Lorica +1" }
 
      sets.CapacityMantle  = { back="Mecistopins Mantle" }
      --sets.Berserker       = { neck="Berserker's Torque" }
