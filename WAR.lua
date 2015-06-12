@@ -358,7 +358,7 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Yetshila",
-         head="Otomi Helm",
+         head="Acro Helm",
          neck="Asperity Necklace",
          ear1="Brutal Earring",
          ear2="Lugra Earring +1",
