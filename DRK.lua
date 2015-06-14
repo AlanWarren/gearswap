@@ -814,9 +814,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if (state.HybridMode.current == 'PDT' and state.PhysicalDefenseMode.current == 'Reraise') then
         equip(sets.Reraise)
     end
-    if state.Buff['Last Resort'] and state.LastResortMode.value then
-        equip(sets.buff['Last Resort'])
-    end
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
