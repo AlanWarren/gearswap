@@ -717,7 +717,7 @@ function init_gear_sets()
      sets.engaged.DW = set_combine(sets.engaged, {
         ammo="Yetshila",
         head="Otomi Helm",
-        body="Heathen's Cuirass +1",
+        body="Ravenous Breastplate",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         legs="Yorium Cuisses",
