@@ -1088,6 +1088,36 @@ function aw_custom_aftermath_timers_aftercast(spell)
     end
 end
 
+-- Set eventArgs.handled to true if we don't want the automatic display to be run.
+function display_current_job_state(eventArgs)
+    local msg = ''
+    msg = msg .. 'Offense: '..state.OffenseMode.current
+    msg = msg .. ', Hybrid: '..state.HybridMode.current
+
+    if state.DefenseMode.value ~= 'None' then
+        local defMode = state[state.DefenseMode.value ..'DefenseMode'].current
+        msg = msg .. ', Defense: '..state.DefenseMode.value..' '..defMode
+    end
+    if state.CombatForm.current == 'Haste' then
+        msg = msg .. ', Hight Haste ON: '
+    end
+    if state.SouleaterMode.value then
+        msg = msg .. ', SE Cancel: ON '
+    end
+    if state.LastResortMode.value then
+        msg = msg .. ', LR Defense: ON '
+    end
+    if state.PCTargetMode.value ~= 'default' then
+        msg = msg .. ', Target PC: '..state.PCTargetMode.value
+    end
+    if state.SelectNPCTargets.value then
+        msg = msg .. ', Target NPCs'
+    end
+
+    add_to_chat(123, msg)
+    eventArgs.handled = true
+end
+
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
 end
