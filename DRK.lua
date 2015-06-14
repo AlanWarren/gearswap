@@ -374,6 +374,7 @@ function init_gear_sets()
          waist="Windbuffet Belt +1",
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
+         head="Acro Helm",
          ear1="Lugra Earring +1",
          body="Acro Surcoat",
          neck="Shadow Gorget",
