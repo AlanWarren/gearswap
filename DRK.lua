@@ -715,10 +715,14 @@ function init_gear_sets()
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
 
      sets.engaged.DW = set_combine(sets.engaged, {
+        ammo="Yetshila",
         head="Otomi Helm",
+        body="Heathen's Cuirass +1",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        waist="Patentia Sash"
+        legs="Yorium Cuisses",
+        waist="Shetal Stone",
+        feet=Acro.Feet.WSD
      })
      --sets.engaged.OneHand = set_combine(sets.engaged, {
      --    head="Yaoyotl Helm",
