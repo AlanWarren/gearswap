@@ -864,14 +864,14 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    if state.Buff['Last Resort'] and state.LastResortMode.value then
-    	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
-    end
 	if state.Buff.Souleater then
 		meleeSet = set_combine(meleeSet, sets.buff.Souleater)
 	end
     if state.CombatForm.current == 'Haste' then
         meleeSet = set_combine(meleeSet, sets.HighHaste)
+    end
+    if state.Buff['Last Resort'] and state.LastResortMode.value then
+    	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
     return meleeSet
 end
