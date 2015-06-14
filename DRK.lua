@@ -1088,7 +1088,6 @@ function aw_custom_aftermath_timers_aftercast(spell)
     end
 end
 
--- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
     local msg = ''
     msg = msg .. 'Offense: '..state.OffenseMode.current
@@ -1099,13 +1098,16 @@ function display_current_job_state(eventArgs)
         msg = msg .. ', Defense: '..state.DefenseMode.value..' '..defMode
     end
     if state.CombatForm.current == 'Haste' then
-        msg = msg .. ', Hight Haste ON: '
+        msg = msg .. ', High Haste, '
+    end
+    if state.CapacityMode.value then
+        msg = msg .. ', Capacity, '
     end
     if state.SouleaterMode.value then
-        msg = msg .. ', SE Cancel: ON '
+        msg = msg .. ', SE Cancel, '
     end
     if state.LastResortMode.value then
-        msg = msg .. ', LR Defense: ON '
+        msg = msg .. ', LR Defense, '
     end
     if state.PCTargetMode.value ~= 'default' then
         msg = msg .. ', Target PC: '..state.PCTargetMode.value
@@ -1118,6 +1120,7 @@ function display_current_job_state(eventArgs)
     eventArgs.handled = true
 end
 
+-- Set eventArgs.handled to true if we don't want the automatic display to be run.
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
 end
