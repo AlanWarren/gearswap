@@ -375,6 +375,7 @@ function init_gear_sets()
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
          ear1="Lugra Earring +1",
+         body="Acro Surcoat",
          neck="Shadow Gorget",
      })
      -- Mid assumes higher defense target
@@ -385,7 +386,7 @@ function init_gear_sets()
          waist="Caudata Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
-         body="Acro Surcoat",
+         body="Fallen's Cuirass +1",
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Ravenous Breastplate",
