@@ -767,12 +767,12 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
  
 function job_post_precast(spell, action, spellMap, eventArgs)
-    if state.Buff.Souleater then
-        equip(sets.buff.Souleater)
-    end
 
     -- Make sure abilities using head gear don't swap 
 	if spell.type:lower() == 'weaponskill' then
+        if state.Buff.Souleater then
+            equip(sets.buff.Souleater)
+        end
         -- handle Gavialis Helm
         if is_sc_element_today(spell) then
             if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
@@ -804,9 +804,6 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-    if state.Buff.Souleater then
-        equip(sets.buff.Souleater)
-    end
 end
  
 -- Run after the default midcast() is done.
@@ -849,9 +846,6 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-	if state.Buff.Souleater then
-		idleSet = set_combine(idleSet, sets.buff.Souleater)
-	end
     if state.HybridMode.current == 'PDT' then
         idleSet = set_combine(idleSet, sets.defense.PDT)
     end
