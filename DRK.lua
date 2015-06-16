@@ -405,6 +405,8 @@ function init_gear_sets()
          waist="Windbuffet Belt +1"
      })
      sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {
+         head="Acro Helm",
+         body="Acro Surcoat",
          hands=Acro.Hands.STP,
      })
 
