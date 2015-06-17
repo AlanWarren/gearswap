@@ -346,7 +346,7 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
-		body="Acro Surcoat",
+		body="Peltast's Plackart +1",
         hands=Taeon.Hands,
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
