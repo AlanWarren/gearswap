@@ -272,7 +272,7 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
-		body="Acro Surcoat",
+		body="Peltast's Plackart +1",
         hands="Crusher Gauntlets",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
