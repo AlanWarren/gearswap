@@ -101,7 +101,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
-		body="Lancer's Plackart +2",
+		body="Peltast's Plackart +1",
         hands="Crusher Gauntlets",
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
