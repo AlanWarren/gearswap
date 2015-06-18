@@ -176,13 +176,13 @@ function init_gear_sets()
     }
     sets.midcast.RA = {
         head="Umbani Cap",
-        neck="Iqabi Necklace",
-        ear1="Volley Earring",
+        neck="Ocachi Gorget",
+        ear1="Tripudio Earring",
         ear2="Enervating Earring",
         body="Mekosuchinae Harness",
-        ring1="Longshot Ring",
-        ring2="Hajduk Ring",
-        waist="Elanid Belt",
+        ring1="Rajas Ring",
+        ring2="K'ayres Ring",
+        waist="Patentia Sash",
         legs="Aetosaur Trousers +1",
         feet="Scopuli Nails +1"
     }
