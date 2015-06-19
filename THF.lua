@@ -417,7 +417,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
 		head="Taeon Chapeau",
-        neck="Defiant Collar",
+        neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		--body="Skadi's Cuirie +1",
