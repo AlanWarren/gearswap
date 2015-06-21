@@ -290,12 +290,12 @@ function init_gear_sets()
         ear1="Lugra Earring +1",
         ear2="Tripudio Earring",
    	    body="Acro Surcoat",
-        hands="Wakido Kote +1",
+        hands=Acro.Hands.STP,
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Wakido Haidate +1",
+        legs="Kasuga Haidate +1",
         feet="Danzo Sune-ate"
     }
     sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
