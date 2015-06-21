@@ -376,21 +376,24 @@ function init_gear_sets()
         head="Otomi Helm",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
-        ear2="Trux Earring",
+        ear2="Lugra Earring +1",
         body="Acro Surcoat",
-        hands="Wakido Kote +1",
+        hands=Acro.Hands.STP,
         ring1="Rajas Ring", 
         ring2="Oneiros Ring", 
         back="Takaha Mantle",
         waist="Windbuffet Belt +1",
-        legs="Acro Breeches",
+        legs="Kasuga Haidate +1",
         feet=Acro.Feet.STP
     }
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
         ear1="Bladeborn Earring",
-        ear2="Steelflash Earring"
+        ear2="Steelflash Earring",
+        hands=Acro.Hands.Haste,
+        feet="Ejekamal Boots"
+
     })
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
@@ -481,28 +484,29 @@ function init_gear_sets()
         ear1="Brutal Earring", -- 1 
         ear2="Trux Earring", -- 1
         body="Acro Surcoat", -- 3
-        hands="Wakido Kote +1", -- 5
+        hands=Acro.Hands.STP,
         ring1="Rajas Ring", -- 5
         ring2="Oneiros Ring", 
         back="Takaha Mantle",
         waist="Windbuffet Belt +1",
-        legs="Acro Breeches",
+        legs="Kasuga Haidate +1"
         feet=Acro.Feet.STP
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
+        head="Acro Helm",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        head="Yaoyotl Helm",
+        hands=Acro.Hands.Haste,
     })
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
-        head="Yaoyotl Helm",
+        head="Acro Helm",
         neck="Defiant Collar",
         ring2="Mars's Ring",
-        hands="Sasuke Tekko +1",
+        hands=Acro.Hands.Haste,
         waist="Olseni Belt",
         back="Takaha Mantle",
-        legs="Acro Breeches",
+        legs="Kasuga Haidate +1",
         feet=Acro.Feet.STP
     })
     
