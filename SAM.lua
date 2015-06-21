@@ -289,7 +289,7 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Lugra Earring +1",
         ear2="Tripudio Earring",
-   	    body="Acro Surcoat",
+   	    body="Mes'yohi Haubergeon",
         hands=Acro.Hands.STP,
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
