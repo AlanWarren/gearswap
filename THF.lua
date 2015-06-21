@@ -353,6 +353,7 @@ function init_gear_sets()
     }
 
 	sets.idle.Town = set_combine(sets.idle, {
+        head="Lithelimb Cap",
         back="Canny Cape",
         neck="Defiant Collar",
         ring1="Karieyh Ring",
