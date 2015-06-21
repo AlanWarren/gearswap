@@ -489,7 +489,7 @@ function init_gear_sets()
         ring2="Oneiros Ring", 
         back="Takaha Mantle",
         waist="Windbuffet Belt +1",
-        legs="Kasuga Haidate +1"
+        legs="Kasuga Haidate +1",
         feet=Acro.Feet.STP
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
