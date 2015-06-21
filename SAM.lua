@@ -97,7 +97,7 @@ function init_gear_sets()
     Acro.Hands = {}
     Acro.Feet = {}
     
-    Acro.Hands.Haste = {name="Acro gauntlets", augments={'STR+1 VIT+1','Accuracy+18 Attack+18','Haste+2'}} 
+    Acro.Hands.Haste = {name="Acro gauntlets", augments={'STR+3 AGI+3','Accuracy+18 Attack+18','Haste+2'}} 
     Acro.Hands.STP = {name="Acro gauntlets", augments={'Accuracy+19 Attack+19','"Store TP"+5','Weapon skill damage +3%'}}
 
     Acro.Feet.STP = {name="Acro Leggings", augments={'STR+7 AGI+7','Accuracy+17 Attack+17','"Store TP"+6'}} 
