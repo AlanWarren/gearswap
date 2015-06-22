@@ -776,9 +776,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 
     -- Make sure abilities using head gear don't swap 
 	if spell.type:lower() == 'weaponskill' then
-        if state.Buff.Souleater then
-            equip(sets.buff.Souleater)
-        end
         -- handle Gavialis Helm
         if is_sc_element_today(spell) then
             if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
@@ -863,9 +860,6 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-	if state.Buff.Souleater then
-		meleeSet = set_combine(meleeSet, sets.buff.Souleater)
-	end
     if state.CombatForm.current == 'Haste' then
         meleeSet = set_combine(meleeSet, sets.HighHaste)
     end
@@ -955,18 +949,6 @@ function job_buff_change(buff, gain)
         end
     else
         enable('ring2')
-    end
-
-    if buff == "Souleater" then
-        if gain then
-            equip(sets.buff.Souleater)
-            --disable('head')
-        else
-            --enable('head')
-            if not midaction() then
-                handle_equipping_gear(player.status)
-            end
-        end
     end
 
     if buff == "Last Resort" and state.LastResortMode.value then
