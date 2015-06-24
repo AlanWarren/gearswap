@@ -934,7 +934,7 @@ function job_buff_change(buff, gain)
     end
     
     if S{'haste', 'march', 'embrava', 'geo-haste', 'indi-haste'}:contains(buff:lower()) and gain then
-        if buffactive['Last Resort'] then
+        if buffactive['Last Resort'] and player.equipment.main ~= 'Apocalypse'then
             state.CombatForm:set("Haste")
             if not midaction() then
                 handle_equipping_gear(player.status)
