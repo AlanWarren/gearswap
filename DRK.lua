@@ -381,7 +381,6 @@ function init_gear_sets()
      })
      -- Mid assumes higher defense target
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
-         hands="Mikinaak Gauntlets",
          body="Ravenous Breastplate",
          legs="Heathen's Flanchard +1",
          waist="Caudata Belt"
@@ -394,12 +393,25 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
+
+     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
+         head="Heathen's Burgonet +1",
+         neck="Shadow Gorget",
+         waist="Soil Belt"
+     })
+     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {
+         hands=Acro.Hands.STP,
+     })
+     sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
+         body="Ravenous Breastplate",
+         ear1="Zennaroi Earring",
+     })
      
      -- CROSS REAPER
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
          head="Heathen's Burgonet +1",
-         body="Ravenous Breastplate",
+         body="Acro Surcoat",
          neck="Aqua Gorget",
          hands="Fallen's Finger Gauntlets +1",
          waist="Windbuffet Belt +1"
@@ -665,34 +677,37 @@ function init_gear_sets()
  
      -- Engaged set, assumes Liberator
      sets.engaged = {
-         ammo="Ginsen",
-         head="Heathen's Burgonet +1",
+         sub="Bloodrain Strap",
+         ammo="Yetshila",
+         head="Otomi Helm",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Lugra Earring +1",
-    	 body="Acro Surcoat",
+         body="Acro Surcoat",
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Acro Breeches",
-         feet="Ejekamal Boots"
+         feet=Acro.Feet.STP
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         ammo="Hasty Pinion +1",
-         ear1="Bladeborn Earring",
-         ear2="Steelflash Earring",
-         feet=Acro.Feet.STP
+         ammo="Ginsen",
+         head="Heathen's Burgonet +1",
+         hands=Acro.Hands.Haste,
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-         head="Acro Helm",
+         ammo="Hasty Pinion +1",
+         ear1="Zennaroi Earring",
+         ear2="Steelflash Earring",
          neck="Defiant Collar",
          ring2="Mars's Ring",
          waist="Olseni Belt"
      })
      -- Liberator AM3
      sets.engaged.AM3 = set_combine(sets.engaged, {
+         ammo="Ginsen",
          head="Acro Helm",
          ear1="Enervating Earring",
          ear2="Tripudio Earring",
@@ -702,19 +717,46 @@ function init_gear_sets()
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
          body="Acro Surcoat",
-         hands=Acro.Hands.Haste,
-         feet=Acro.Feet.STP
+         ear1="Zennaroi Earring",
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          neck="Defiant Collar",
-         ear1="Zennaroi Earring",
-         ear2="Tripudio Earring",
+         ear2="Steelflash Earring",
          waist="Olseni Belt",
+         ring2="Mars's Ring",
+     })
+     
+     -- Apocalypse
+     sets.engaged.Apoc = set_combine(sets.engaged, {
+         sub="Pole Grip"
+     })
+     sets.engaged.Apoc.Mid = set_combine(sets.engaged.Mid, sets.engaged.Apoc)
+     sets.engaged.Apoc.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apoc)
+
+     sets.engaged.Apoc.AM = set_combine(sets.engaged.Apoc, {
+         head="Heathen's Burgonet +1",
+         body="Ravenous Breastplate",
+     })
+     sets.engaged.Apoc.Mid.AM = set_combine(sets.engaged.Apoc.AM, {
+         ammo="Ginsen",
+         hands=Acro.Hands.STP
+     })
+     sets.engaged.Apoc.Acc.AM = set_combine(sets.engaged.Apoc.Mid.AM, {
+         ammo="Hasty Pinion +1",
+         ear1="Zennaroi Earring",
+         ear2="Steelflash Earring",
+         neck="Defiant Collar",
+         ring2="Mars's Ring",
+         waist="Olseni Belt"
      })
 
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
+
+     sets.engaged.Apoc.PDT = set_combine(sets.engaged.Apoc, sets.Defensive)
+     sets.engaged.Apoc.Mid.PDT = set_combine(sets.engaged.Apoc.Mid, sets.Defensive_Mid)
+     sets.engaged.Apoc.Acc.PDT = set_combine(sets.engaged.Apoc.Acc, sets.Defensive_Acc)
 
      sets.engaged.DW = set_combine(sets.engaged, {
         ammo="Yetshila",
@@ -726,11 +768,6 @@ function init_gear_sets()
         waist="Shetal Stone",
         feet=Acro.Feet.WSD
      })
-     --sets.engaged.OneHand = set_combine(sets.engaged, {
-     --    head="Yaoyotl Helm",
-     --    ring2="Mars's Ring",
-     --    feet=Acro.Feet.STP
-     --})
 
      sets.engaged.GreatSword = set_combine(sets.engaged, {
          head="Otomi Helm",
@@ -738,6 +775,8 @@ function init_gear_sets()
          ear2="Tripudio Earring"
      })
      sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {
+         head="Acro Helm",
+         feet="Ejekamal Boots"
          --back="Grounded Mantle +1"
          --ring2="K'ayres RIng"
      })
@@ -925,31 +964,34 @@ function job_buff_change(buff, gain)
             state.SouleaterMode:set(true)
         end
     end
-    -- AM3 custom group
-    if buff == 'Aftermath: Lv.3' then
-        classes.CustomMeleeGroups:clear()
-	
-        if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
-            classes.CustomMeleeGroups:append('AM3')
-        end
+    -- AM custom groups
+    if S{'aftermath'}:contains(buff:lower()) then
+        if player.equipment.main == 'Liberator' then
+            classes.CustomMeleeGroups:clear()
+	        
+            if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
+                classes.CustomMeleeGroups:append('AM3')
+            end
 
-        if not midaction() then
-            handle_equipping_gear(player.status)
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
+        else
+            classes.CustomMeleeGroups:clear()
+
+            if buff == "Aftermath" and gain or buffactive.Aftermath then
+                classes.CustomMeleeGroups:append('AM')
+            end
+
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
         end
     end
     -- Automatically wake me when I'm slept
     --if string.lower(buff) == "sleep" and gain and player.hp > 200 then
     --    equip(sets.Berserker)
     --end
-
-    -- Warp ring rule, for any buff being lost
-    if S{'Warp', 'Vocation', 'Capacity'}:contains(player.equipment.ring2) then
-        if not buffactive['Dedication'] then
-            disable('ring2')
-        end
-    else
-        enable('ring2')
-    end
 
     if buff == "Last Resort" and state.LastResortMode.value then
         if gain then
@@ -1015,7 +1057,9 @@ end
 function get_combat_weapon()
     if gsList:contains(player.equipment.main) then
         state.CombatWeapon:set("GreatSword")
-    else -- use regular set
+    elseif player.equipment.main == 'Apocalypse' then
+        state.CombatWeapon:set("Apoc")
+    else -- use regular set, which caters to Liberator
         state.CombatWeapon:reset()
     end
 end
@@ -1110,10 +1154,17 @@ end
 function update_melee_groups()
 
 	classes.CustomMeleeGroups:clear()
-	
-    if buffactive['Aftermath: Lv.3'] then
-		classes.CustomMeleeGroups:append('AM3')
-	end
+    -- mythic AM	
+    if player.equipment.main == 'Liberator' then
+        if buffactive['Aftermath: Lv.3'] then
+	    	classes.CustomMeleeGroups:append('AM3')
+	    end
+    else
+        -- relic AM
+        if buffactive['Aftermath'] then
+	    	classes.CustomMeleeGroups:append('AM')
+        end
+    end
 end
 
 function select_default_macro_book()
