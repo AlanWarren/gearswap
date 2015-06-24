@@ -176,13 +176,13 @@ function init_gear_sets()
     }
     sets.midcast.RA = {
         head="Umbani Cap",
-        neck="Iqabi Necklace",
-        ear1="Volley Earring",
+        neck="Ocachi Gorget",
+        ear1="Tripudio Earring",
         ear2="Enervating Earring",
         body="Mekosuchinae Harness",
-        ring1="Longshot Ring",
-        ring2="Hajduk Ring",
-        waist="Elanid Belt",
+        ring1="Rajas Ring",
+        ring2="K'ayres Ring",
+        waist="Patentia Sash",
         legs="Aetosaur Trousers +1",
         feet="Scopuli Nails +1"
     }
@@ -353,6 +353,7 @@ function init_gear_sets()
     }
 
 	sets.idle.Town = set_combine(sets.idle, {
+        head="Lithelimb Cap",
         back="Canny Cape",
         neck="Defiant Collar",
         ring1="Karieyh Ring",
@@ -417,7 +418,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
 		head="Taeon Chapeau",
-        neck="Defiant Collar",
+        neck="Asperity Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
 		--body="Skadi's Cuirie +1",
