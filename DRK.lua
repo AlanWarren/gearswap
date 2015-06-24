@@ -727,21 +727,21 @@ function init_gear_sets()
      })
      
      -- Apocalypse
-     sets.engaged.Apoc = set_combine(sets.engaged, {
+     sets.engaged.Apocalypse = set_combine(sets.engaged, {
          sub="Pole Grip"
      })
-     sets.engaged.Apoc.Mid = set_combine(sets.engaged.Mid, sets.engaged.Apoc)
-     sets.engaged.Apoc.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apoc)
+     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, sets.engaged.Apocalypse)
+     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apocalypse)
 
-     sets.engaged.Apoc.AM = set_combine(sets.engaged.Apoc, {
+     sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
          head="Heathen's Burgonet +1",
          body="Ravenous Breastplate",
      })
-     sets.engaged.Apoc.Mid.AM = set_combine(sets.engaged.Apoc.AM, {
+     sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
          ammo="Ginsen",
          hands=Acro.Hands.STP
      })
-     sets.engaged.Apoc.Acc.AM = set_combine(sets.engaged.Apoc.Mid.AM, {
+     sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
          ammo="Hasty Pinion +1",
          ear1="Zennaroi Earring",
          ear2="Steelflash Earring",
@@ -754,9 +754,9 @@ function init_gear_sets()
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
 
-     sets.engaged.Apoc.PDT = set_combine(sets.engaged.Apoc, sets.Defensive)
-     sets.engaged.Apoc.Mid.PDT = set_combine(sets.engaged.Apoc.Mid, sets.Defensive_Mid)
-     sets.engaged.Apoc.Acc.PDT = set_combine(sets.engaged.Apoc.Acc, sets.Defensive_Acc)
+     sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, sets.Defensive)
+     sets.engaged.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive_Mid)
+     sets.engaged.Apocalypse.Acc.PDT = set_combine(sets.engaged.Apocalypse.Acc, sets.Defensive_Acc)
 
      sets.engaged.DW = set_combine(sets.engaged, {
         ammo="Yetshila",
@@ -767,6 +767,15 @@ function init_gear_sets()
         legs="Yorium Cuisses",
         waist="Shetal Stone",
         feet=Acro.Feet.WSD
+     })
+     sets.engaged.DW.Mid = set_combine(sets.engaged.DW, {
+         ammo="Ginsen",
+         head="Yaoyotl Helm",
+         hands=Acro.Hands.Haste
+     })
+     sets.engaged.DW.Acc = set_combine(sets.engaged.DW.Mid, {
+         ammo="Hasty Pinion +1",
+         back="Kayapa Cape"
      })
 
      sets.engaged.GreatSword = set_combine(sets.engaged, {
@@ -1057,8 +1066,8 @@ end
 function get_combat_weapon()
     if gsList:contains(player.equipment.main) then
         state.CombatWeapon:set("GreatSword")
-    elseif player.equipment.main == 'Apocalypse' then
-        state.CombatWeapon:set("Apoc")
+    elseif player.equipment.main ~= 'Liberator' then
+        state.CombatWeapon:set(player.equipment.main)
     else -- use regular set, which caters to Liberator
         state.CombatWeapon:reset()
     end
