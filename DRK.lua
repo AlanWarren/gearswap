@@ -539,7 +539,7 @@ function init_gear_sets()
      sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
          head="Otomi Helm",
          neck="Shadow Gorget",
-         body="Fallen's Cuirass +1",
+         body="Ravenous Breastplate",
          hands="Fallen's Finger Gauntlets +1",
          back="Bleating Mantle",
          legs="Limbo Trousers",
