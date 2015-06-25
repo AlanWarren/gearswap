@@ -548,29 +548,19 @@ function init_gear_sets()
      sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
      sets.precast.WS.Requiescat.Acc = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Acc)
      
-     -- Resting sets
-     sets.resting = {
-         --head="Baghere Salade",
-         body="Lugra Cloak +1",
-         hands="Cizin Mufflers +1",
-         ring1="Dark Ring",
-         ring2="Paguroidea Ring",
-         legs="Crimson Cuisses"
-     }
- 
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
          --head="Heathen's Burgonet +1",
-         neck="Coatl Gorget +1",
+         neck="Ganesha's Mala",
          ear1="Lugra Earring +1",
-         ear2="Tripudio Earring",
+         ear2="Enervating Earring",
          body="Lugra Cloak +1",
-         hands="Crusher's Gauntlets",
+         hands="Heathen's Gauntlets +1",
          ring1="Karieyh Ring",
-         ring2="Dark Ring",
-         back="Engulfer Cape +1",
-         waist="Flume Belt",
+         ring2="Ifrit Ring +1",
+         back=Niht.WSD,
+         waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
          feet="Heathen's Sollerets +1"
      }
