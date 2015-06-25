@@ -199,11 +199,13 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
+        body="Phorcys Korazin",
         hands=Acro.Hands.STP,
-        waist="Metalsinger Belt"
+        waist="Metalsinger Belt",
+        legs="Kasuga Haidate +1",
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
-        head="Yaoyotl Helm",
+        head="Acro Helm",
         waist="Light Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
@@ -212,8 +214,7 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
         neck="Breeze Gorget",
-   	    body="Mes'yohi Haubergeon",
-        feet="Ejekamal Boots",
+   	    body="Acro Surcoat",
         waist="Thunder Belt"
     })
     sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS.Acc, {
@@ -503,7 +504,7 @@ function init_gear_sets()
         hands=Acro.Hands.Haste,
         waist="Olseni Belt",
         back="Takaha Mantle",
-        legs="Kasuga Haidate +1",
+        legs="Acro Breeches",
         feet=Acro.Feet.STP
     })
     
