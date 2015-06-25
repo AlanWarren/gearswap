@@ -371,7 +371,7 @@ function init_gear_sets()
     -- I generally use Anahera outside of Adoulin areas, so this set aims for 47 STP + 5 from Anahera (52 total)
     -- Note, this set assumes use of Cibitshavore (hence the arrow as ammo)
     sets.engaged = {
-        --sub="Bloodrain Grip",
+        sub="Pole Grip",
         ammo=gear.RAarrow,
         head="Otomi Helm",
         neck="Ganesha's Mala",
@@ -380,7 +380,7 @@ function init_gear_sets()
         body="Acro Surcoat",
         hands=Acro.Hands.STP,
         ring1="Rajas Ring", 
-        ring2="Oneiros Ring", 
+        ring2="K'ayres Ring", 
         back="Takaha Mantle",
         waist="Windbuffet Belt +1",
         legs="Kasuga Haidate +1",
@@ -388,27 +388,20 @@ function init_gear_sets()
     }
     
     sets.engaged.Mid = set_combine(sets.engaged, {
-        head="Yaoyotl Helm",
+        head="Acro Helm",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         hands=Acro.Hands.Haste,
         feet="Ejekamal Boots"
-
     })
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
-        head="Sakonji Kabuto +1",
         neck="Defiant Collar",
         ear1="Zennaroi Earring",
         ring1="Mars's Ring",
+        legs="Acro Breeches",
+        feet=Aco.Feet.WSD
     })
-    
-    sets.engaged['Anahera Blade'] = set_combine(sets.engaged, {
-        body="Sakonji Domaru +1",
-        ring2="Oneiros Ring"
-    })
-    sets.engaged['Anahera Blade'].Mid = set_combine(sets.engaged.Mid, {})
-    sets.engaged['Anahera Blade'].Acc = set_combine(sets.engaged.Acc, {})
     
     sets.engaged.Yoichi = set_combine(sets.engaged, { 
         sub="Bloodrain Strap",
@@ -416,21 +409,25 @@ function init_gear_sets()
     })
     
     sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
-        head="Yaoyotl Helm",
-   	    body="Mes'yohi Haubergeon",
+        head="Acro Helm",
         back="Takaha Mantle",
+        hands=Acro.Hands.Haste
     })
     
     sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, {
-        ring1="Oneiros Ring",
+        neck="Defiant Collar",
+        ear1="Zennaroi Earring",
+        ring1="Patricius Ring",
         ring2="Mars's Ring",
-        feet="Wakido Sune-Ate +1"
+        legs="Acro Breeches",
+        feet=Acro.Feet.WSD
     })
     
     sets.engaged.PDT = set_combine(sets.engaged, { 
         head="Otronif Mask +1", 
         body="Otronif Harness +1",
         neck="Agitator's Collar",
+        hands="Crusher Gauntlets",
         ring1="Patricius Ring",
         back="Repulse Mantle",
         waist="Flume Belt",
@@ -490,7 +487,7 @@ function init_gear_sets()
         back="Takaha Mantle",
         waist="Windbuffet Belt +1",
         legs="Kasuga Haidate +1",
-        feet=Acro.Feet.STP
+        feet=Acro.Feet.WSD
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         head="Acro Helm",
