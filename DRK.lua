@@ -757,7 +757,8 @@ function init_gear_sets()
      sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, sets.Defensive)
      sets.engaged.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive_Mid)
      sets.engaged.Apocalypse.Acc.PDT = set_combine(sets.engaged.Apocalypse.Acc, sets.Defensive_Acc)
-
+    
+     -- dual wield
      sets.engaged.DW = set_combine(sets.engaged, {
         ammo="Yetshila",
         head="Otomi Helm",
@@ -778,6 +779,7 @@ function init_gear_sets()
          back="Kayapa Cape"
      })
 
+     -- great sword
      sets.engaged.GreatSword = set_combine(sets.engaged, {
          head="Otomi Helm",
          ear1="Brutal Earring",
@@ -791,6 +793,26 @@ function init_gear_sets()
      })
      sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {
          hands="Heathen's Gauntlets +1"
+     })
+
+     sets.engaged.GreatSword.PDT = set_combine(sets.engaged.GreatSword, sets.Defensive)
+     sets.engaged.GreatSword.Mid.PDT = set_combine(sets.engaged.GreatSword.Mid, sets.Defensive_Mid)
+     sets.engaged.GreatSword.Acc.PDT = set_combine(sets.engaged.GreatSword.Acc, sets.Defensive_Acc)
+     
+     -- sword is more multi-hit, less stp
+     sets.engaged.Sangarius = set_combine(sets.engaged, {
+         ammo="Yetshila",
+         head="Otomi Helm",
+         legs="Yorium Cuisses",
+         feet=Acro.Feet.WSD
+     })
+     sets.engaged.Sangarius.Mid = set_combine(sets.engaged.Mid, {
+         head="Yaoyotl Helm",
+         legs="Yorium Cuisses",
+         feet=Acro.Feet.WSD
+     })
+     sets.engaged.Sangarius.Acc = set_combine(sets.engaged.Acc, {
+         ammo="Hasty Pinion +1"
      })
 
      sets.engaged.Reraise = set_combine(sets.engaged, {
