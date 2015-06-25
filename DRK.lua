@@ -539,10 +539,9 @@ function init_gear_sets()
      sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
          head="Otomi Helm",
          neck="Shadow Gorget",
-         body="Ravenous Breastplate",
+         body="Acro Surcoat",
          hands="Fallen's Finger Gauntlets +1",
-         back="Bleating Mantle",
-         legs="Limbo Trousers",
+         legs="Scuffler's Cosciales",
          waist="Soil Belt",
      })
      sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
@@ -752,7 +751,8 @@ function init_gear_sets()
      sets.engaged.DW = set_combine(sets.engaged, {
         ammo="Yetshila",
         head="Otomi Helm",
-        body="Ravenous Breastplate",
+        body="Heathen's Cuirass +1",
+        hands=Acro.Hands.STP,
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         legs="Yorium Cuisses",
