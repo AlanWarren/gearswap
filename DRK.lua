@@ -569,6 +569,7 @@ function init_gear_sets()
          --head="Baghere Salade",
          neck="Coatl Gorget +1",
          body="Lugra Cloak +1",
+         ear2="Zennaroi Earring",
          hands="Crusher's Gauntlets",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
