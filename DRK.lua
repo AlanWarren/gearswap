@@ -655,7 +655,6 @@ function init_gear_sets()
      }
      sets.Defensive_Acc = {
          --head="Baghere Salade",
-         head="Ighwa Cap",
          neck="Agitator's Collar",
          hands="Crusher's Gauntlets",
          body="Yorium Cuirass",
