@@ -396,6 +396,7 @@ function init_gear_sets()
 
      sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
          --head="Heathen's Burgonet +1",
+         ear2="Trux Earring",
          head="Acro Helm",
          neck="Shadow Gorget",
          hands=Acro.Hands.STP,
@@ -669,12 +670,12 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          sub="Bloodrain Strap",
-         ammo="Yetshila",
+         ammo="Ginsen",
          head="Otomi Helm",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Lugra Earring +1",
-         body="Acro Surcoat",
+         body="Ravenous Breastplate",
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
@@ -684,7 +685,6 @@ function init_gear_sets()
          feet=Acro.Feet.STP
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         ammo="Ginsen",
          head="Heathen's Burgonet +1",
          hands=Acro.Hands.Haste,
      })
@@ -719,17 +719,16 @@ function init_gear_sets()
      
      -- Apocalypse
      sets.engaged.Apocalypse = set_combine(sets.engaged, {
-         --sub="Pole Grip"
-         ammo="Ginsen",
+         sub="Pole Grip"
+         ammo="Yetshila",
+         body="Ravenous Breastplate",
      })
      sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, sets.engaged.Apocalypse)
      sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apocalypse)
 
      sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
-         head="Acro Helm",
-         ear1="Enervating Earring",
-         ear2="Tripudio Earring"
-         --body="Ravenous Breastplate",
+         head="Heathen's Burgonet +1",
+         feet=Acro.Feet.WSD
      })
      sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
          ammo="Ginsen",
