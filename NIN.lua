@@ -871,10 +871,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.OffenseMode.value == 'Acc' then
             equip(select_ws_ammo())
         end
-        -- Use Trepidity mantle on Darksday
-        if world.day_element == 'Dark' then
-            equip(sets.WSBack)
-        end
         -- reive mark
         if buffactive['Reive Mark'] then
             equip(sets.reive)
