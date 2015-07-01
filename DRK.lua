@@ -726,7 +726,7 @@ function init_gear_sets()
      sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apocalypse)
 
      sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
-         haed="Acro Helm",
+         head="Acro Helm",
          ear1="Enervating Earring",
          ear2="Tripudio Earring"
          --body="Ravenous Breastplate",
