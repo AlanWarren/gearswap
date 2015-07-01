@@ -717,7 +717,8 @@ function init_gear_sets()
      
      -- Apocalypse
      sets.engaged.Apocalypse = set_combine(sets.engaged, {
-         sub="Pole Grip"
+         --sub="Pole Grip"
+         ammo="Ginsen"
      })
      sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, sets.engaged.Apocalypse)
      sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apocalypse)
