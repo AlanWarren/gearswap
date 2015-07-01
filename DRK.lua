@@ -725,7 +725,7 @@ function init_gear_sets()
 
      sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
          head="Heathen's Burgonet +1",
-         body="Ravenous Breastplate",
+         --body="Ravenous Breastplate",
      })
      sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
          ammo="Ginsen",
