@@ -395,7 +395,7 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
 
      sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
-         --head="Heathen's Burgonet +1",
+         head="Heathen's Burgonet +1",
          ear2="Trux Earring",
          head="Acro Helm",
          neck="Shadow Gorget",
