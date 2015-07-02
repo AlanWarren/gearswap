@@ -397,7 +397,6 @@ function init_gear_sets()
      sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
          head="Heathen's Burgonet +1",
          ear2="Trux Earring",
-         head="Acro Helm",
          neck="Shadow Gorget",
          hands=Acro.Hands.STP,
          waist="Soil Belt"
