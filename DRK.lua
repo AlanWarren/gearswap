@@ -290,7 +290,7 @@ function init_gear_sets()
      sets.midcast['Absorb-MND'] = sets.midcast.Absorb
      sets.midcast['Absorb-CHR'] = sets.midcast.Absorb
      sets.midcast['Absorb-Attri'] = sets.midcast.Absorb
-     sets.midcast['Absorb-Acc'] = sets.midcast.Absorb
+     sets.midcast['Absorb-ACC'] = sets.midcast.Absorb
      
      -- Ranged for xbow
      sets.precast.RA = {
