@@ -139,6 +139,7 @@ function init_gear_sets()
          sub="Sangarius",
          ring1="Apocalypse",
          neck="Bloodrain Strap",
+         neck="Pole Grip",
          head="Acro Helm",
          hands="Acro Gauntlets",
          body="Acro Surcoat",
