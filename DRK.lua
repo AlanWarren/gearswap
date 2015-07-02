@@ -137,6 +137,7 @@ function init_gear_sets()
      sets.Organizer = {
          main="Liberator",
          sub="Sangarius",
+         ring1="Apocalypse",
          neck="Bloodrain Strap",
          head="Acro Helm",
          hands="Acro Gauntlets",
