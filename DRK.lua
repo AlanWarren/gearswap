@@ -1038,6 +1038,9 @@ function job_buff_change(buff, gain)
             if buff == "Aftermath" and gain or buffactive.Aftermath then
                 classes.CustomMeleeGroups:append('AM')
             end
+            if war_sj then
+                classes.CustomMeleeGroups:append('WAR')
+            end
 
             if not midaction() then
                 handle_equipping_gear(player.status)
@@ -1210,9 +1213,6 @@ end
 function update_melee_groups()
 
 	classes.CustomMeleeGroups:clear()
-    if player.sub_job == 'WAR' then
-        classes.CustomMeleeGroups:append('WAR')
-    end
     -- mythic AM	
     if player.equipment.main == 'Liberator' then
         if buffactive['Aftermath: Lv.3'] then
@@ -1223,6 +1223,9 @@ function update_melee_groups()
         if buffactive['Aftermath'] then
 	    	classes.CustomMeleeGroups:append('AM')
         end
+    end
+    if war_sj then
+        classes.CustomMeleeGroups:append('WAR')
     end
 end
 
