@@ -749,27 +749,27 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         body="Acro Surcoat",
      })
-     sets.engaged.Apocalypse.WAR.Mid = set_combine(sets.engaged.Apocalypse.Mid, {
+     sets.engaged.Apocalypse.Mid.WAR = set_combine(sets.engaged.Apocalypse.Mid, {
         sub="Bloodrain Strap",
         ammo="Ginsen"
      })
-     sets.engaged.Apocalypse.WAR.Acc = set_combine(sets.engaged.Apocalypse.Acc, {
+     sets.engaged.Apocalypse.Acc.WAR = set_combine(sets.engaged.Apocalypse.Acc, {
         sub="Bloodrain Strap",
         ammo="Ginsen"
      })
      
-     sets.engaged.Apocalypse.WAR.AM = set_combine(sets.engaged.Apocalypse.AM, {
+     sets.engaged.Apocalypse.AM.WAR = set_combine(sets.engaged.Apocalypse.AM, {
         sub="Bloodrain Strap",
         ammo="Ginsen",
         head="Acro Helm",
         ear2="Tripudio Earring",
         body="Acro Surcoat",
      })
-     sets.engaged.Apocalypse.WAR.Mid.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
+     sets.engaged.Apocalypse.Mid.AM.WAR = set_combine(sets.engaged.Apocalypse.Mid.AM, {
         sub="Bloodrain Strap",
         ammo="Ginsen"
      })
-     sets.engaged.Apocalypse.WAR.Acc.AM = set_combine(sets.engaged.Apocalypse.Acc.AM, {
+     sets.engaged.Apocalypse.Acc.AM.WAR = set_combine(sets.engaged.Apocalypse.Acc.AM, {
         sub="Bloodrain Strap",
         ammo="Ginsen"
      })
