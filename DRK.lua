@@ -311,7 +311,7 @@ function init_gear_sets()
      -- WEAPONSKILL SETS
      -- General sets
      sets.precast.WS = {
-         ammo="Fracas Grenade",
+         ammo="Aqreqaq Bomblet",
          head="Otomi Helm",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
@@ -722,7 +722,7 @@ function init_gear_sets()
      sets.engaged.Apocalypse = set_combine(sets.engaged, {
          sub="Pole Grip",
          ammo="Yetshila",
-         body="Ravenous Breastplate",
+         body="Heathen's Cuirass +1",
      })
      sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, sets.engaged.Apocalypse)
      sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apocalypse)
