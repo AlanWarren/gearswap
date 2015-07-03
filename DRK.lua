@@ -743,6 +743,36 @@ function init_gear_sets()
          ring2="Mars's Ring",
          waist="Olseni Belt"
      })
+     sets.engaged.Apocalypse.WAR = set_combine(sets.engaged.Apocalypse, {
+        sub="Bloodrain Strap",
+        ammo="Ginsen",
+        ear2="Tripudio Earring",
+        body="Acro Surcoat",
+     })
+     sets.engaged.Apocalypse.WAR.Mid = set_combine(sets.engaged.Apocalypse.Mid, {
+        sub="Bloodrain Strap",
+        ammo="Ginsen"
+     })
+     sets.engaged.Apocalypse.WAR.Acc = set_combine(sets.engaged.Apocalypse.Acc, {
+        sub="Bloodrain Strap",
+        ammo="Ginsen"
+     })
+     
+     sets.engaged.Apocalypse.WAR.AM = set_combine(sets.engaged.Apocalypse.AM, {
+        sub="Bloodrain Strap",
+        ammo="Ginsen",
+        head="Acro Helm",
+        ear2="Tripudio Earring",
+        body="Acro Surcoat",
+     })
+     sets.engaged.Apocalypse.WAR.Mid.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
+        sub="Bloodrain Strap",
+        ammo="Ginsen"
+     })
+     sets.engaged.Apocalypse.WAR.Acc.AM = set_combine(sets.engaged.Apocalypse.Acc.AM, {
+        sub="Bloodrain Strap",
+        ammo="Ginsen"
+     })
 
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
@@ -1065,7 +1095,7 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_form()
-
+    
     if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
         state.CombatForm:set("DW")
     elseif (buffactive['Last Resort']) then
@@ -1180,6 +1210,9 @@ end
 function update_melee_groups()
 
 	classes.CustomMeleeGroups:clear()
+    if player.sub_job == 'WAR' then
+        classes.CustomMeleeGroups:append('WAR')
+    end
     -- mythic AM	
     if player.equipment.main == 'Liberator' then
         if buffactive['Aftermath: Lv.3'] then
