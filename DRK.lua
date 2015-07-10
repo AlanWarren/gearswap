@@ -556,8 +556,8 @@ function init_gear_sets()
          ammo="Ginsen",
          --head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
-         ear1="Lugra Earring +1",
-         ear2="Enervating Earring",
+         ear1="Enervating Earring",
+         ear2="Lugra Earring +1",
          body="Lugra Cloak +1",
          hands="Heathen's Gauntlets +1",
          ring1="Karieyh Ring",
@@ -722,6 +722,8 @@ function init_gear_sets()
          sub="Pole Grip",
          ammo="Yetshila",
          body="Heathen's Cuirass +1",
+         ear1="Brutal Earring",
+         ear2="Lugra Earring +1"
      })
      sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, sets.engaged.Apocalypse)
      sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apocalypse)
