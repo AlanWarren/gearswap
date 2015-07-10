@@ -573,7 +573,6 @@ function init_gear_sets()
          --head="Baghere Salade",
          neck="Coatl Gorget +1",
          body="Lugra Cloak +1",
-         ear2="Zennaroi Earring",
          hands="Crusher's Gauntlets",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
@@ -691,8 +690,8 @@ function init_gear_sets()
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          ammo="Hasty Pinion +1",
-         ear1="Zennaroi Earring",
-         ear2="Steelflash Earring",
+         ear1="Steelflash Earring",
+         ear2="Zennaroi Earring",
          neck="Defiant Collar",
          ring2="Mars's Ring",
          waist="Olseni Belt"
@@ -737,8 +736,8 @@ function init_gear_sets()
      })
      sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
          ammo="Hasty Pinion +1",
-         ear1="Zennaroi Earring",
-         ear2="Steelflash Earring",
+         ear1="Steelflash Earring",
+         ear2="Zennaroi Earring",
          neck="Defiant Collar",
          ring2="Mars's Ring",
          waist="Olseni Belt"
