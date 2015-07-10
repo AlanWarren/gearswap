@@ -743,36 +743,6 @@ function init_gear_sets()
          ring2="Mars's Ring",
          waist="Olseni Belt"
      })
-     sets.engaged.Apocalypse.WAR = set_combine(sets.engaged.Apocalypse, {
-        sub="Bloodrain Strap",
-        ammo="Ginsen",
-        ear2="Tripudio Earring",
-        body="Acro Surcoat",
-     })
-     sets.engaged.Apocalypse.Mid.WAR = set_combine(sets.engaged.Apocalypse.Mid, {
-        sub="Bloodrain Strap",
-        ammo="Ginsen"
-     })
-     sets.engaged.Apocalypse.Acc.WAR = set_combine(sets.engaged.Apocalypse.Acc, {
-        sub="Bloodrain Strap",
-        ammo="Ginsen"
-     })
-     
-     sets.engaged.Apocalypse.AM.WAR = set_combine(sets.engaged.Apocalypse.AM, {
-        sub="Bloodrain Strap",
-        ammo="Ginsen",
-        head="Acro Helm",
-        ear2="Tripudio Earring",
-        body="Acro Surcoat",
-     })
-     sets.engaged.Apocalypse.Mid.AM.WAR = set_combine(sets.engaged.Apocalypse.Mid.AM, {
-        sub="Bloodrain Strap",
-        ammo="Ginsen"
-     })
-     sets.engaged.Apocalypse.Acc.AM.WAR = set_combine(sets.engaged.Apocalypse.Acc.AM, {
-        sub="Bloodrain Strap",
-        ammo="Ginsen"
-     })
 
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
@@ -1038,9 +1008,6 @@ function job_buff_change(buff, gain)
             if buff == "Aftermath" and gain or buffactive.Aftermath then
                 classes.CustomMeleeGroups:append('AM')
             end
-            if war_sj then
-                classes.CustomMeleeGroups:append('WAR')
-            end
 
             if not midaction() then
                 handle_equipping_gear(player.status)
@@ -1223,9 +1190,6 @@ function update_melee_groups()
         if buffactive['Aftermath'] then
 	    	classes.CustomMeleeGroups:append('AM')
         end
-    end
-    if war_sj then
-        classes.CustomMeleeGroups:append('WAR')
     end
 end
 
