@@ -164,6 +164,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
+        neck="Nesanica Torque",
         hands="Telchine Gloves",
         legs="Telchine Braconi"
     })
