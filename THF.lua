@@ -437,8 +437,12 @@ function init_gear_sets()
         ring1="Rajas Ring",
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-		body="Mekosuchinae Harness",
-        hands=TaeonHands.DW,
+		body="Taeon Tabard",
+        hands=TaeonHands.TA,
+        neck="Defiant Collar",
+        ear1="Zennaroi Earring",
+        ear2="Steelflash Earring",
+        ring1="Patricius Ring",
         waist="Olseni Belt",
         feet="Taeon Boots"
     })
