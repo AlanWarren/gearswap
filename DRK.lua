@@ -580,7 +580,7 @@ function init_gear_sets()
          back="Engulfer Cape +1",
          waist="Flume Belt",
          legs="Crimson Cuisses",
-         feet="Cizin Greaves +1"
+         feet="Amm Greaves"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
          body="Lugra Cloak +1",
