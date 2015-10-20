@@ -298,7 +298,7 @@ function init_gear_sets()
         back="Repulse Mantle",
         waist="Flume Belt",
         legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
+        feet="Amm Greaves"
     }
     
     sets.defense.MDT = set_combine(sets.defense.PDT, {
@@ -306,7 +306,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         hands="Otronif Gloves +1",
         back="Engulfer Cape +1",
-        feet="Otronif Boots +1"
+        feet="Amm Greaves"
     })
     
     sets.DayMovement = {feet="Danzo sune-ate"}
@@ -315,6 +315,7 @@ function init_gear_sets()
     sets.Organizer = {
         main="Kannagi",
         sub="Achiuchikapu",
+        neck="Malevolence",
         head="Izuna",
         hands="Taeon Gloves"
     }
@@ -379,7 +380,7 @@ function init_gear_sets()
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
         legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
+        feet="Amm greaves"
     }
     sets.AccPDT = {
         head="Lithelimb Cap",
@@ -387,7 +388,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Umuthi Gloves",
         ring1="Patricius Ring",
-        feet="Otronif Boots +1"
+        feet="Amm greaves"
     }
 
     sets.engaged.PDT = set_combine(sets.engaged, sets.NormalPDT)
@@ -407,7 +408,7 @@ function init_gear_sets()
         waist="Flume Belt",
         ring1="Patricius Ring",
         legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
+        feet="Amm Greaves"
     }
 
     -- Delay Cap from spell + songs alone

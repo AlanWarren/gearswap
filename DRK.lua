@@ -614,7 +614,7 @@ function init_gear_sets()
          back="Repulse Mantle",
          waist="Flume Belt",
          legs="Cizin Breeches +1",
-         feet="Cizin Greaves +1"
+         feet="Amm Greaves"
      }
      sets.defense.Reraise = sets.idle.Weak
  
@@ -648,7 +648,7 @@ function init_gear_sets()
          back="Repulse Mantle",
          waist="Flume Belt",
          legs="Cizin Breeches +1",
-         feet="Cizin Greaves +1"
+         feet="Amm Greaves"
      }
      sets.Defensive_Mid = {
          head="Yorium Barbuta",
