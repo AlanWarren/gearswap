@@ -138,6 +138,7 @@ function init_gear_sets()
          main="Liberator",
          sub="Sangarius",
          ring1="Apocalypse",
+         ring2="Loyalist Sabatons",
          neck="Bloodrain Strap",
          neck="Pole Grip",
          head="Acro Helm",
