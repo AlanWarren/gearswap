@@ -120,7 +120,8 @@ function init_gear_sets()
             sub="Odium",
             ammo="Perun",
             range="Yoichinoyumi",
-            hands="Taeon Gloves"
+            hands="Taeon Gloves",
+            feet="Legion Scutum"
         }
         -- Misc. Job Ability precasts
         sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes"}

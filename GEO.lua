@@ -150,6 +150,7 @@ function init_gear_sets()
     sets.midcast.Geomancy = {
         range="Dunna", 
         head="Azimuth Hood +1", -- 10
+        neck="Deceiver's Torque", -- 10
         ear1="Gwati Earring",
         hands="Geomancy Mitaines +1", -- 15
         body="Bagua Tunic", -- 10
@@ -252,7 +253,7 @@ function init_gear_sets()
     
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
         head="Bagua Galero",
-        neck="Dark Torque", 
+        neck="Deceiver's Torque", 
         ear1="Gwati Earring",
         ear2="Hirudinea Earring",
         ring1="Excelsis Ring",
