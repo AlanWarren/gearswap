@@ -212,7 +212,7 @@ function init_gear_sets()
      sets.midcast['Dark Magic'] = {
          ammo="Plumose Sachet",
          head="Ignominy burgeonet +1", -- 17
-         neck="Dark Torque", --7
+         neck="Deceiver's Torque", -- 10
          ear1="Lifestorm Earring",
          ear2="Psystorm Earring",
          body="Demon's Harness", --5
