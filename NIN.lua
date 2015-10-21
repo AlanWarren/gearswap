@@ -546,7 +546,6 @@ function init_gear_sets()
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Hattori Zukin +1",
-        body="Hattori Ningi +1",
         hands=TaeonHands.TA,
     })
     sets.engaged.Innin.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
