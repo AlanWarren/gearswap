@@ -555,11 +555,11 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         --head="Heathen's Burgonet +1",
+         head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
          ear1="Enervating Earring",
          ear2="Lugra Earring +1",
-         body="Lugra Cloak +1",
+         body="Vatic Byrnie",
          hands="Heathen's Gauntlets +1",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
@@ -677,7 +677,7 @@ function init_gear_sets()
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Lugra Earring +1",
-         body="Ravenous Breastplate",
+         body="Vatic Byrnie",
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
@@ -688,6 +688,7 @@ function init_gear_sets()
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          head="Heathen's Burgonet +1",
+         body="Ravenous Breastplate",
          hands=Acro.Hands.Haste,
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -704,7 +705,7 @@ function init_gear_sets()
          head="Acro Helm",
          ear1="Enervating Earring",
          ear2="Tripudio Earring",
-         body="Heathen's Cuirass +1",
+         body="Acro Surcoat",
          hands=Acro.Hands.Haste,
          feet=Acro.Feet.STP
      })
