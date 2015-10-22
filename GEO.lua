@@ -433,7 +433,7 @@ function init_gear_sets()
     }
     sets.engaged.Melee = set_combine(sets.engaged, {
         main="Malevolence",
-    }
+    })
     --------------------------------------
     -- Custom buff sets
     --------------------------------------
