@@ -431,6 +431,9 @@ function init_gear_sets()
         legs="Geomancy Pants +1",
         feet="Umbani Boots"
     }
+    sets.engaged.Melee = set_combine(sets.engaged, {
+        main="Malevolence",
+    }
     --------------------------------------
     -- Custom buff sets
     --------------------------------------
@@ -543,6 +546,9 @@ function customize_idle_set(idleSet)
     end
     if state.CapacityMode.value then
         idleSet = set_combine(idleSet, sets.CapacityMantle)
+    end
+    if state.OffenseMode.value == 'Melee' then
+        idleSet = set_combine(sets.idle, sets.idle.Melee)
     end
     return idleSet
 end
