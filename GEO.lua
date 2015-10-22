@@ -339,8 +339,8 @@ function init_gear_sets()
     })
 
     sets.idle.Melee = set_combine(sets.idle, {
-        main="Nehushtan",
-        sub="Bolelabunga"
+        main="Malevolence",
+        --sub="Bolelabunga"
     })
 
     -- .Indi sets are for when an Indi-spell is active.
