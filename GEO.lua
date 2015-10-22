@@ -363,7 +363,7 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         head="Azimuth Hood +1",
-        neck="Eddy Necklace",
+        neck="Deceiver's Torque",
         waist="Fucho-no-obi",
     })
 
