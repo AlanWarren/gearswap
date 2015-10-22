@@ -148,6 +148,8 @@ function init_gear_sets()
     }
 
     sets.midcast.Geomancy = {
+        main="Lehbrailg +2",
+        sub="Giuoco Grip",
         range="Dunna", 
         head="Azimuth Hood +1", -- 10
         neck="Deceiver's Torque", -- 10
@@ -219,6 +221,7 @@ function init_gear_sets()
     sets.precast.JA['Concentric Pulse'] = sets.midcast.HightTierNuke
 
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
+        sub="Giuoco Grip",
         head="Hagondes Hat",
         ear2="Crematio Earring",
         feet="Umbani Boots"
