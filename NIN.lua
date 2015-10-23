@@ -124,7 +124,6 @@ function init_gear_sets()
     sets.precast.Waltz = {
         head="Uk'uxkaj Cap",
         body="Dread Jupon",
-        hands="Umuthi Gloves",
         waist="Chaac Belt",
         legs="Nahtirah Trousers",
         feet="Mochizuki Kyahan +1"
@@ -153,7 +152,7 @@ function init_gear_sets()
         body="Hattori Ningi +1",
         neck="Defiant Collar",
         ear1="Zennaroi Earring",
-        hands="Sasuke Tekko +1",
+        hands="Ryuo Tekko",
         back="Yokaze Mantle",
         ring1="Mars's Ring",
         waist="Olseni Belt",
@@ -254,7 +253,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
-        hands="Otronif Gloves +1",
+        hands="Ryuo Tekko",
         ring1="Karieyh Ring",
         ring2="Dark Ring",
     	back="Engulfer Cape +1",
@@ -274,7 +273,7 @@ function init_gear_sets()
         neck="Defiant Collar",
         ear1="Lugra Earring +1",
         ring1="Karieyh Ring",
-        hands="Sasuke Tekko +1",
+        hands="Ryuo Tekko",
         ring2="Ifrit Ring +1",
         body="Vatic Byrnie",
         legs="Hachiya Hakama +1",
@@ -292,7 +291,7 @@ function init_gear_sets()
         head="Otronif Mask +1",
         neck="Twilight Torque",
         body="Emet Harness +1",
-        hands="Otronif Gloves +1",
+        hands="Ryuo Tekko",
         ring1="Patricius Ring",
         ring2="Dark Ring",
         back="Repulse Mantle",
@@ -304,7 +303,7 @@ function init_gear_sets()
     sets.defense.MDT = set_combine(sets.defense.PDT, {
         head="Ptica Headgear",
         neck="Twilight Torque",
-        hands="Otronif Gloves +1",
+        hands="Ryuo Tekko",
         back="Engulfer Cape +1",
         feet="Amm Greaves"
     })
@@ -351,7 +350,7 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        hands=TaeonHands.TA,
+        hands="Ryuo Tekko",
         ring2="Mars's Ring",
         waist="Olseni Belt",
     })
@@ -377,7 +376,7 @@ function init_gear_sets()
         head="Otronif Mask +1",
         body="Emet Harness +1",
         neck="Agitator's Collar",
-        hands="Otronif Gloves +1",
+        hands="Ryuo Tekko",
         ring1="Patricius Ring",
         legs="Otronif Brais +1",
         feet="Amm greaves"
@@ -386,7 +385,7 @@ function init_gear_sets()
         head="Lithelimb Cap",
         body="Emet Harness +1",
         neck="Agitator's Collar",
-        hands="Umuthi Gloves",
+        hands="Ryuo Tekko",
         ring1="Patricius Ring",
         feet="Amm greaves"
     }
@@ -403,7 +402,7 @@ function init_gear_sets()
 
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
-        hands="Otronif Gloves +1",
+        hands="Ryuo Tekko",
         body="Emet Harness +1",
         waist="Flume Belt",
         ring1="Patricius Ring",
@@ -418,7 +417,7 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         neck="Asperity Necklace",
         body="Vatic Byrnie",
-        hands=TaeonHands.TA,
+        hands="Ryuo Tekko",
         ring1="Oneiros Ring",
         back="Iga Dochugappa",
         waist="Windbuffet Belt +1",
@@ -432,7 +431,7 @@ function init_gear_sets()
         ear2="Steelflash Earring",
         body="Hattori Ningi +1",
         ring1="Rajas Ring",
-        hands=TaeonHands.TA,
+        hands="Ryuo Tekko",
         back="Bleating Mantle",
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
@@ -468,7 +467,7 @@ function init_gear_sets()
         head="Ptica Headgear",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        hands=TaeonHands.TA,
+        hands="Ryuo Tekko",
     })
     sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
         head="Ptica Headgear",
@@ -515,7 +514,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
-        hands=TaeonHands.TA,
+        hands="Ryuo Tekko",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
         back="Iga Dochugappa",
@@ -528,7 +527,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
         neck="Defiant Collar",
         body="Mochizuki Chainmail +1",
-        hands=TaeonHands.TA,
+        hands="Ryuo Tekko",
         back="Bleating Mantle"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
@@ -546,7 +545,7 @@ function init_gear_sets()
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Hattori Zukin +1",
-        hands=TaeonHands.TA,
+        hands="Ryuo Tekko",
     })
     sets.engaged.Innin.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
         head="Hattori Zukin +1",
@@ -663,6 +662,7 @@ function init_gear_sets()
         ammo="Yetshila",
         neck="Rancor Collar",
         body="Dread Jupon",
+        hands="Ryuo Tekko",
         ring1="Ifrit Ring +1",
         waist="Windbuffet Belt +1",
         back="Yokaze Mantle",
@@ -687,7 +687,7 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         neck="Hope Torque",
         body="Hattori Ningi +1",
-        hands="Sasuke Tekko +1",
+        hands="Ryuo Tekko",
         ring1="Karieyh Ring",
         waist="Windbuffet Belt +1",
         feet="Taeon Boots"
