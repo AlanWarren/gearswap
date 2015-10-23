@@ -212,7 +212,7 @@ function init_gear_sets()
         head="Hachiya Hatsuburi +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
-        neck="Stoicheion Medal",
+        neck="Henic Torque",
         --neck="Ardor Pendant +1",
         body="Mekosuchinae Harness",
         hands=TaeonHands.TA,

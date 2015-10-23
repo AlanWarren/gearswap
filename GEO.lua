@@ -167,7 +167,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
-        neck="Nesanica Torque",
+        neck="Henic Torque",
         hands="Telchine Gloves",
         legs="Telchine Braconi"
     })
@@ -268,6 +268,7 @@ function init_gear_sets()
     sets.midcast.Stun = sets.midcast.Macc
     
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
+        neck="Henic Torque",
         waist="Casso Sash",
         back="Lifestream Cape",
         hands="Azimuth Gloves",

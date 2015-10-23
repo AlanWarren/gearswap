@@ -228,7 +228,7 @@ function init_gear_sets()
      }
      
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
-         neck="Eddy Necklace",
+         neck="Henic Torque",
          head="Otomi Helm",
          body="Ignominy Cuirass +1",
          ring1="Globidonta Ring",
