@@ -714,7 +714,7 @@ function init_gear_sets()
         head="Gavialis Helm",
         neck="Flame Gorget",
         ear2="Trux Earring",
-        hands="Mochizuki Tekko +1",
+        hands="Ryuo Tekko",
         ring1="Ramuh Ring",
         back="Yokaze Mantle",
         waist="Light Belt",
