@@ -139,6 +139,7 @@ function init_gear_sets()
     -- Base fast recast for spells
     sets.midcast.FastRecast = {
         ear2="Loquacious Earring",
+        neck="Incanter's Torque",
         body="Azimuth Coat +1", -- 3%
         hands="Geomancy Mitaines +1", -- 3%
         ring1="Prolix Ring",
@@ -152,7 +153,7 @@ function init_gear_sets()
         sub="Giuoco Grip",
         range="Dunna", 
         head="Azimuth Hood +1", -- 10
-        neck="Deceiver's Torque", -- 10
+        neck="Incanter's Torque", -- 10
         ear1="Gwati Earring",
         hands="Geomancy Mitaines +1", -- 15
         body="Bagua Tunic", -- 10
@@ -167,7 +168,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
-        neck="Henic Torque",
+        neck="Incanter's Torque",
         hands="Telchine Gloves",
         legs="Telchine Braconi"
     })
@@ -257,7 +258,7 @@ function init_gear_sets()
     
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
         head="Bagua Galero",
-        neck="Deceiver's Torque", 
+        neck="Incanter's Torque", 
         ear1="Gwati Earring",
         ear2="Hirudinea Earring",
         ring1="Excelsis Ring",
@@ -269,7 +270,7 @@ function init_gear_sets()
     sets.midcast.Stun = sets.midcast.Macc
     
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
-        neck="Henic Torque",
+        neck="Incanter's Torque",
         waist="Casso Sash",
         back="Lifestream Cape",
         hands="Azimuth Gloves",
@@ -368,7 +369,7 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         head="Azimuth Hood +1",
-        neck="Deceiver's Torque",
+        neck="Incanter's Torque",
         waist="Fucho-no-obi",
     })
 
