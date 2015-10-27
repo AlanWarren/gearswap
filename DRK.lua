@@ -486,7 +486,7 @@ function init_gear_sets()
          back=Niht.WSD,
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
-         legs="Heathen's Flanchard +1"
+         legs="Heathen's Flanchard +1",
          back=Niht.WSD,
      })
      sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
