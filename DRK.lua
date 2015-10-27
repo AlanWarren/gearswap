@@ -179,7 +179,7 @@ function init_gear_sets()
         head="Fallen's Burgeonet +1",
         body="Yorium Cuirass",
         ear1="Loquacious Earring",
-        hands="Buremte Gloves",
+        hands="Leyline Gloves",
         ring2="Prolix Ring",
         legs="Limbo Trousers",
         feet="Yorium Sabatons"
@@ -199,6 +199,7 @@ function init_gear_sets()
      sets.midcast.FastRecast = {
          ammo="Impatiens",
          head="Otomi Helm",
+         neck="Incanter's Torque", -- 10
          hands="Cizin Mufflers +1",
          feet="Ejekamal Boots"
      }
@@ -230,7 +231,8 @@ function init_gear_sets()
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
          neck="Incanter's Torque",
          head="Otomi Helm",
-         body="Ignominy Cuirass +1",
+         body="Founder's breastplate",
+         hands="Leyline Gloves",
          ring1="Globidonta Ring",
          back="Aput Mantle"
      })
@@ -242,8 +244,8 @@ function init_gear_sets()
          neck="Eddy Necklace", -- 11 matk
          ear1="Friomisi Earring", -- 10 matk
          ear2="Crematio Earring", -- 6 matk 6 mdmg
-         body="Fallen's Cuirass +1", -- 15 matk
-         hands="Fallen's Finger Gauntlets +1", -- 14 matk
+         body="Founder's breastplate", -- 15 matk
+         hands="Leyline Gloves",
          ring1="Shiva Ring", -- int 8
          ring2="Shiva Ring", -- matk 4
          waist="Caudata Belt", -- int 6
@@ -275,7 +277,7 @@ function init_gear_sets()
      sets.midcast.Aspir = sets.midcast.Drain
 
      sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
-         body="Haruspex Coat",
+         body="Founder's Breastplate",
          back="Chuparrosa Mantle",
          hands="Pavor Gauntlets",
      })
@@ -559,8 +561,8 @@ function init_gear_sets()
          neck="Ganesha's Mala",
          ear1="Enervating Earring",
          ear2="Lugra Earring +1",
-         body="Vatic Byrnie",
-         hands="Heathen's Gauntlets +1",
+         body="Founder's Breastplate",
+         hands="Founder's Gauntlets",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
          back=Niht.WSD,
@@ -658,6 +660,7 @@ function init_gear_sets()
          hands="Crusher's Gauntlets",
          back="Repulse Mantle",
          ring2="Patricius Ring",
+         feet="Loyalist Sabatons"
      }
      sets.Defensive_Acc = {
          --head="Baghere Salade",
@@ -666,7 +669,7 @@ function init_gear_sets()
          body="Yorium Cuirass",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
-         feet="Cizin Greaves +1"
+         feet="Loyalist Sabatons"
      }
  
      -- Engaged set, assumes Liberator
