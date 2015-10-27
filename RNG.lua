@@ -160,7 +160,7 @@ function init_gear_sets()
             ear1="Loquacious Earring",
             body="Samnuha Coat",
             legs="Quiahuiz Trousers",
-            hands="Buremte Gloves",
+            hands="Leyline Gloves",
             ring1="Prolix Ring"
         }
         sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
@@ -498,7 +498,7 @@ function init_gear_sets()
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
             neck="Stoicheion Medal",
-            hands=TaeonHands.TA,
+            hands="Leyline Gloves",
             ring1="Acumen Ring",
             ring2="Garuda Ring",
             back="Argochampsa Mantle",
