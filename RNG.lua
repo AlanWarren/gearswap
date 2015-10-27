@@ -128,7 +128,7 @@ function init_gear_sets()
         sets.precast.JA['Double Shot'] = {head="Sylvan Gapette +2"}
         sets.precast.JA['Camouflage'] = {body="Orion Jerkin +1"}
         sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
-        sets.precast.JA['Velocity Shot'] = {body="Amini Caban"}
+        sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1"}
         sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
 
         sets.CapacityMantle = {back="Mecistopins Mantle"}
@@ -158,6 +158,7 @@ function init_gear_sets()
         sets.precast.FC = {
             head="Ejekamal Mask",
             ear1="Loquacious Earring",
+            body="Samnuha Coat",
             legs="Quiahuiz Trousers",
             hands="Buremte Gloves",
             ring1="Prolix Ring"
@@ -257,7 +258,7 @@ function init_gear_sets()
         ------------------------------------------------------------------
         sets.precast.RA = {
             head="Sylvan Gapette +2", -- 5
-            body="Amini Caban", -- 10
+            --body="Amini Caban +1", -- 10
             hands="Iuitl Wristbands +1", -- 5
             back="Lutian Cape", -- 3
             legs="Nahtirah Trousers", -- 9
@@ -407,7 +408,7 @@ function init_gear_sets()
         }
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             back="Lutian Cape",
-            body="Amini Caban",
+            body="Amini Caban +1",
             hands="Amini Glovelettes",
             legs="Amini Brague +1", 
             feet="Orion Socks +1"
@@ -493,7 +494,7 @@ function init_gear_sets()
         -- WILDFIRE
         sets.Wildfire = {
             head="Umbani Cap",
-            body="Orion Jerkin +1",
+            body="Samnuha Coat",
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
             neck="Stoicheion Medal",
