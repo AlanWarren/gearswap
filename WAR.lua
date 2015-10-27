@@ -301,7 +301,7 @@ function init_gear_sets()
      sets.defense.PDT = {
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Yorium Cuirass",
+         body="Founder's Breastplate",
          hands="Crusher's Gauntlets",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
@@ -309,7 +309,7 @@ function init_gear_sets()
          back="Repulse Mantle",
          waist="Flume Belt",
          legs="Cizin Breeches +1",
-         feet="Cizin Greaves +1"
+         feet="Amm Greaves"
      }
      sets.defense.Reraise = sets.idle.Weak
  
@@ -329,30 +329,31 @@ function init_gear_sets()
      sets.Defensive = {
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Yorium Cuirass",
+         body="Founder's Breastplate",
          hands="Crusher's Gauntlets",
          ring2="Patricius Ring",
          back="Repulse Mantle",
          waist="Flume Belt",
          legs="Cizin Breeches +1",
-         feet="Cizin Greaves +1"
+         feet="Amm Greaves"
      }
      sets.Defensive_Mid = {
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Yorium Cuirass",
+         body="Founder's Breastplate",
          hands="Crusher's Gauntlets",
          back="Repulse Mantle",
          ring2="Patricius Ring",
+         feet="Loyalist Sabatons"
      }
      sets.Defensive_Acc = {
-         head="Baghere Salade",
+         head="Yorium Barbuta",
          neck="Agitator's Collar",
          hands="Crusher's Gauntlets",
-         body="Yorium Cuirass",
+         body="Founder's Breastplate",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",
-         feet="Cizin Greaves +1"
+         feet="Loyalist Sabatons"
      }
  
      -- Engaged set, assumes Liberator

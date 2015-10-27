@@ -212,9 +212,9 @@ function init_gear_sets()
         head="Hachiya Hatsuburi +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
-        neck="Henic Torque",
+        neck="Incanter's Torque",
         --neck="Ardor Pendant +1",
-        body="Mekosuchinae Harness",
+        body="Samnuha Coat",
         hands="Leyline Gloves",
         ring1="Sangoma Ring",
         ring2="Perception Ring",
@@ -232,7 +232,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         neck="Stoicheion Medal",
-        body="Mekosuchinae Harness",
+        body="Samnuha Coat",
         hands="Leyline Gloves",
         back="Aput Mantle",
         ring1="Shiva Ring",
@@ -276,7 +276,7 @@ function init_gear_sets()
         ring1="Karieyh Ring",
         hands="Ryuo Tekko",
         ring2="Ifrit Ring +1",
-        body="Vatic Byrnie",
+        body="Samnuha Coat",
         legs="Mochizuki Hakama +1",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1"
@@ -388,7 +388,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Ryuo Tekko",
         ring1="Patricius Ring",
-        feet="Amm greaves"
+        feet="Loyalist Sabatons"
     }
 
     sets.engaged.PDT = set_combine(sets.engaged, sets.NormalPDT)

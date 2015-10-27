@@ -73,6 +73,8 @@ function job_setup()
     wsList = S{'Spiral Hell', 'Torcleaver'}
     -- Greatswords you use. 
     gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
+    -- Mote has capitalization errors in the default Absorb mappings, so we correct them
+    absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
     -- Offhand weapons used to activate DW mode
     drk_sub_weapons = S{"Sangarius", "Usonmunku", "Perun"}
 
@@ -88,7 +90,7 @@ function user_setup()
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
     state.HybridMode:options('Normal', 'PDT')
     state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
-    state.CastingMode:options('Normal')
+    state.CastingMode:options('Normal', 'Acc')
     state.IdleMode:options('Normal')
     state.RestingMode:options('Normal')
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
@@ -201,12 +203,15 @@ function init_gear_sets()
          head="Otomi Helm",
          neck="Incanter's Torque", -- 10
          hands="Cizin Mufflers +1",
-         feet="Ejekamal Boots"
+         feet="Loyalist Sabatons"
      }
             
      -- Specific spells
      sets.midcast.Utsusemi = {
          head="Otomi Helm",
+         neck="Incanter's Torque",
+         body="Founder's Breastplate",
+         hands="Leyline Gloves",
          feet="Ejekamal Boots"
      }
  
@@ -228,8 +233,12 @@ function init_gear_sets()
          feet="Heathen's Sollerets +1"
      }
      
+     sets.midcast['Dark Magic'].Acc = set_combine(sets.midcast['Dark Magic'], {
+         body="Founder's Breastplate",
+         hands="Leyline Gloves"
+     })
+     
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
-         neck="Incanter's Torque",
          head="Otomi Helm",
          body="Founder's breastplate",
          hands="Leyline Gloves",
@@ -255,6 +264,7 @@ function init_gear_sets()
          feet="Heathen's Sollerets +1" -- matk 8
      }
 	 
+     -- Gear that boosts HP is preferred over anything else.  
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
          ammo="Impatiens",
          head="Gavialis Helm",
@@ -264,36 +274,42 @@ function init_gear_sets()
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
          legs="Heathen's Flanchard +1",
-         feet="Ejekamal Boots"
+         feet="Amm Greaves"
      })
      
+     -- Drain spells 
      sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
          ear1="Gwati Earring",
          ear2="Hirudinea Earring",
          body="Lugra Cloak +1",
          ring1="Excelsis Ring",
      })
-
      sets.midcast.Aspir = sets.midcast.Drain
 
+     sets.midcast.Drain.Acc = set_combine(sets.midcast.Drain, {
+        head="Ignominy Burgeonet +1",
+        body="Founder's Breastplate",
+        hands="Leyline Gloves"
+     })
+     sets.midcast.Aspir.Acc = sets.midcast.Drain.Acc
+
+     -- Absorbs
      sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
-         body="Founder's Breastplate",
          back="Chuparrosa Mantle",
+         body="Founder's Breastplate",
          hands="Pavor Gauntlets",
      })
 
      sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
          hands="Heathen's Gauntlets +1"
      })
-     sets.midcast['Absorb-STR'] = sets.midcast.Absorb
-     sets.midcast['Absorb-DEX'] = sets.midcast.Absorb
-     sets.midcast['Absorb-VIT'] = sets.midcast.Absorb
-     sets.midcast['Absorb-AGI'] = sets.midcast.Absorb
-     sets.midcast['Absorb-INT'] = sets.midcast.Absorb
-     sets.midcast['Absorb-MND'] = sets.midcast.Absorb
-     sets.midcast['Absorb-CHR'] = sets.midcast.Absorb
-     sets.midcast['Absorb-Attri'] = sets.midcast.Absorb
-     sets.midcast['Absorb-ACC'] = sets.midcast.Absorb
+
+     sets.midcast.Absorb.Acc = set_combine(sets.midcast['Dark Magic'].Acc, {
+         back="Chuparrosa Mantle",
+     })
+     sets.midcast['Absorb-TP'].Acc = set_combine(sets.midcast.Absorb.Acc, {
+         hands="Heathen's Gauntlets +1"
+     })
      
      -- Ranged for xbow
      sets.precast.RA = {
@@ -380,24 +396,30 @@ function init_gear_sets()
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
          head="Acro Helm",
+         neck="Shadow Gorget",
          ear1="Lugra Earring +1",
          body="Acro Surcoat",
-         neck="Shadow Gorget",
      })
      -- Mid assumes higher defense target
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
+         neck="Shadow Gorget",
          body="Ravenous Breastplate",
          legs="Heathen's Flanchard +1",
          waist="Caudata Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Fallen's Cuirass +1",
+         waist="Light Belt"
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Ravenous Breastplate",
          ear1="Zennaroi Earring",
      })
-     sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
+     sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {
+         head="Acro Helm",
+         neck="Shadow Gorget",
+         waist="Light Belt"
+     })
 
      sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
          head="Heathen's Burgonet +1",
@@ -451,19 +473,21 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
-         hands="Fallen's Finger Gauntlets +1",
-         ring1="Shiva Ring",
+         body="Founder's Breastplate",
+         hands="Founder's Gauntlets",
          ring2="Shiva Ring",
          back="Toro Cape",
          waist="Soil Belt",
-         legs="Ignominy Flanchard +1",
+         legs="Heathen's Flanchard +1",
          feet="Heathen's Sollerets +1"
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
-         legs="Yorium Cuisses"
+         legs="Heathen's Flanchard +1",
+         back=Niht.WSD,
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
-         legs="Yorium Cuisses"
+         legs="Heathen's Flanchard +1"
+         back=Niht.WSD,
      })
      sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
      sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {})
@@ -506,9 +530,9 @@ function init_gear_sets()
      sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
          head="Heathen's Burgonet +1",
          neck="Eddy Necklace",
-         body="Fallen's Cuirass +1",
+         body="Founder's Breastplate",
          ear1="Friomisi Earring",
-         hands="Fallen's Finger Gauntlets +1",
+         hands="Founder's Gauntlets",
          back="Toro Cape",
          legs="Limbo Trousers",
          waist="Caudata Belt",
@@ -531,10 +555,9 @@ function init_gear_sets()
          head="Ignominy burgeonet +1",
          neck="Stoicheion Medal",
          ear1="Friomisi Earring",
-         body="Fallen's Cuirass +1",
-         hands=Acro.Hands.STP,
+         body="Founder's Breastplate",
+         hands="Founder's Gauntlets",
          legs="Limbo Trousers",
-         ring2="Acumen Ring",
          back="Toro Cape",
          feet="Heathen's Sollerets +1"
      })
@@ -573,10 +596,10 @@ function init_gear_sets()
      
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
-         --head="Baghere Salade",
+         head="Baghere Salade",
          ear1="Zennaroi Earring",
          neck="Coatl Gorget +1",
-         body="Lugra Cloak +1",
+         body="Founder's Breastplate",
          hands="Crusher's Gauntlets",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
@@ -586,7 +609,9 @@ function init_gear_sets()
          feet="Amm Greaves"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
+         neck="Coatl Gorget +1",
          body="Lugra Cloak +1",
+         head="",
      })
  
      sets.idle.Weak = {
@@ -600,16 +625,13 @@ function init_gear_sets()
          feet="Cizin Greaves +1"
      }
 
-     sets.refresh = { 
-         neck="Coatl Gorget +1",
-         --body="Ares' Cuirass +1"
-     }
      
      -- Defense sets
      sets.defense.PDT = {
+         ammo="Hasty Pinion +1",
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Yorium Cuirass",
+         body="Founder's Breastplate",
          hands="Crusher's Gauntlets",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
@@ -643,32 +665,34 @@ function init_gear_sets()
      -- Defensive sets to combine with various weapon-specific sets below
      -- These allow hybrid acc/pdt sets for difficult content
      sets.Defensive = {
-         head="Yorium Barbuta",
-         neck="Agitator's Collar",
-         body="Yorium Cuirass",
-         hands="Crusher's Gauntlets",
+         ammo="Hasty Pinion +1",
+         head="Yorium Barbuta", -- 7% haste
+         neck="Agitator's Collar", -- 3%
+         body="Founder's Breastplate",
+         hands="Crusher's Gauntlets", -- 4%
          ring2="Patricius Ring",
          back="Repulse Mantle",
          waist="Flume Belt",
-         legs="Cizin Breeches +1",
+         legs="Scuffler's Cosciales", -- 5%
          feet="Amm Greaves"
      }
      sets.Defensive_Mid = {
+         ammo="Hasty Pinion +1",
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Yorium Cuirass",
+         body="Founder's Breastplate",
          hands="Crusher's Gauntlets",
          back="Repulse Mantle",
          ring2="Patricius Ring",
          feet="Loyalist Sabatons"
      }
      sets.Defensive_Acc = {
-         --head="Baghere Salade",
+         ammo="Hasty Pinion +1",
+         head="Yorium Barbuta",
          neck="Agitator's Collar",
          hands="Crusher's Gauntlets",
-         body="Yorium Cuirass",
+         body="Founder's Breastplate",
          ring2="Patricius Ring",
-         legs="Cizin Breeches +1",
          feet="Loyalist Sabatons"
      }
  
@@ -691,13 +715,14 @@ function init_gear_sets()
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          head="Heathen's Burgonet +1",
-         body="Ravenous Breastplate",
-         hands=Acro.Hands.Haste,
+         body="Acro Surcoat",
+         feet="Loyalist Sabatons",
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          ammo="Hasty Pinion +1",
          ear1="Steelflash Earring",
          ear2="Zennaroi Earring",
+         body="Ravenous Breastplate",
          neck="Defiant Collar",
          ring2="Mars's Ring",
          waist="Olseni Belt"
@@ -721,6 +746,7 @@ function init_gear_sets()
          ear2="Steelflash Earring",
          waist="Olseni Belt",
          ring2="Mars's Ring",
+         feet="Loyalist Sabatons"
      })
      
      -- Apocalypse
@@ -916,8 +942,8 @@ function job_handle_equipping_gear(status, eventArgs)
 end
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-    if player.mpp < 50 then
-        idleSet = set_combine(idleSet, sets.refresh)
+    if player.mpp < 70 then
+        idleSet = set_combine(idleSet, sets.idle.Regen)
     end
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
@@ -1183,6 +1209,13 @@ end
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
+end
+
+-- Creating a custom spellMap, since Mote capitalized absorbs incorrectly
+function job_get_spell_map(spell, default_spell_map)
+    if spell.skill == 'Dark Magic' and absorbs:contains(spell.english) then
+        return 'Absorb'
+    end
 end
 
 function update_melee_groups()
