@@ -945,7 +945,7 @@ function customize_idle_set(idleSet)
     if player.mpp < 70 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    if player.hpp < 90 then
+    if player.hpp < 70 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
     if state.HybridMode.current == 'PDT' then
