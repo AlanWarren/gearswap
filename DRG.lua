@@ -98,7 +98,7 @@ function init_gear_sets()
 	sets.precast.JA.Jump = {
         ammo="Ginsen",
 		head="Acro Helm",
-        neck="Asperity Necklace",
+        neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
 		body="Peltast's Plackart +1",
@@ -107,8 +107,8 @@ function init_gear_sets()
         ring2="Oneiros Ring",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Taeon Tights",
-        feet="Taeon Boots"
+        legs="Acro Breeches",
+        feet=Acro.Feet.STP
     }
 
 	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais" }
@@ -155,7 +155,8 @@ function init_gear_sets()
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		head="Yaoyotl Helm",
-		back="Bleating Mantle"}
+		back="Bleating Mantle"
+    }
 		
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
@@ -165,7 +166,7 @@ function init_gear_sets()
         ammo="Impatiens",
         head="Cizin Helm +1", 
         ear1="Loquacious Earring", 
-        hands="Buremte Gloves",
+        hands="Leyline Gloves",
         legs="Limbo Trousers",
         ring1="Prolix Ring"
     }
@@ -283,9 +284,9 @@ function init_gear_sets()
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
-        head="Otomi Helm",
+        head="Ighwa Cap",
         neck="Twilight Torque",
-		body="Kumarbi's Akar",
+		body="Founder's Breastplate",
         ring1="Karieyh Ring",
         ring2="Paguroidea Ring",
         waist="Flume Belt",
@@ -316,7 +317,7 @@ function init_gear_sets()
 		back="Repulse Mantle",
         waist="Flume Belt",
         legs="Cizin Breeches +1",
-        feet="Cizin Greaves +1"
+        feet="Amm Greaves"
     }
 
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {
@@ -342,30 +343,34 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
         ammo="Ginsen",
-		head="Taeon Chapeau",
+		head="Otomi Helm",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
-		body="Peltast's Plackart +1",
-        hands=Taeon.Hands,
+		body="Peltast's Plackart +1", -- 3%
+        hands=Acro.Hands.STP, -- 4%
         ring1="Rajas Ring",
         ring2="Oneiros Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Taeon Tights",
-        feet=Acro.Feet.STP
+        legs="Taeon Tights", -- 6%
+        feet=Acro.Feet.STP -- 3%
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
         head="Yaoyotl Helm",
         ear1="Zennaroi Earring",
+        hands=Acro.Hands.Haste,
+        legs="Acro Breeches"
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        ammo="Hasty Pinion +1",
         neck="Defiant Collar",
         waist="Olseni Belt",
         ring1="Mars's Ring",
-        hands="Crusher Gauntlets",
+        body="Ravenous Breastplate",
+        hands="Leyline Gloves",
         back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
         legs="Acro Breeches"
     })
@@ -375,15 +380,15 @@ function init_gear_sets()
         neck="Twilight Torque",
         body="Emet Harness +1",
         ring2="Patricius Ring",
-        hands="Crusher Gauntlets",
+        hands="Cizin Mufflers +1",
         back="Repulse Mantle",
-        legs="Cizin Breeches +1",
-        feet="Cizin Greaves +1"
+        legs="Scuffler's Cosciales",
+        feet="Amm Greaves"
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
         head="Ighwa Cap",
         ring2="Patricius Ring",
-        body="Emet Harness +1",
+        body="Founder's Breastplate",
         hands="Crusher Gauntlets",
         back="Repulse Mantle",
         legs="Cizin Breeches +1",
@@ -391,7 +396,7 @@ function init_gear_sets()
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
         head="Ighwa Cap",
         ring2="Patricius Ring",
-        body="Emet Harness +1",
+        body="Founder's Breastplate",
         hands="Crusher Gauntlets",
         back="Repulse Mantle",
         legs="Cizin Breeches +1",
