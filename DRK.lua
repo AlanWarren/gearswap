@@ -202,7 +202,7 @@ function init_gear_sets()
          ammo="Impatiens",
          head="Otomi Helm",
          neck="Incanter's Torque", -- 10
-         hands="Cizin Mufflers +1",
+         hands="Leyline gloves",
          feet="Loyalist Sabatons"
      }
             
