@@ -190,7 +190,7 @@ function init_gear_sets()
             ring2="Dark Ring"
         })
         sets.idle.Town = set_combine(sets.idle, {
-            body="Kyujutsugi",
+            body="Amini Caban +1",
             ring1="Karieyh Ring",
             ring2="Ifrit Ring +1",
             back="Lutian Cape"
