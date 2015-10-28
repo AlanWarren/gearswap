@@ -317,7 +317,11 @@ function init_gear_sets()
         sub="Achiuchikapu",
         neck="Malevolence",
         head="Izuna",
-        hands="Taeon Gloves"
+        hands="Taeon Gloves",
+        shihei="Shihei",
+        inoshi="Inoshishinofuda",
+        shika="Shikanofuda",
+        chono="Chonofuda"
     }
 
     -- Normal melee group without buffs
@@ -340,18 +344,17 @@ function init_gear_sets()
     sets.engaged.Low = set_combine(sets.engaged, {
         neck="Defiant Collar",
         ear1="Trux Earring",
-        back="Bleating Mantle"
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
+        hands="Ryuo Tekko",
         ring1="Rajas Ring",
         back="Yokaze Mantle"
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        hands="Ryuo Tekko",
         ring2="Mars's Ring",
         waist="Olseni Belt",
     })
@@ -415,12 +418,13 @@ function init_gear_sets()
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head="Taeon Chapeau",
         ear1="Brutal Earring",
-        ear2="Tripudio Earring",
+        ear2="Trux Earring",
         neck="Asperity Necklace",
         body="Vatic Byrnie",
         hands="Ryuo Tekko",
         ring1="Oneiros Ring",
-        back="Iga Dochugappa",
+        --back="Iga Dochugappa",
+        back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Taeon Tights",
         feet="Taeon Boots"
@@ -432,18 +436,14 @@ function init_gear_sets()
         ear2="Steelflash Earring",
         body="Hattori Ningi +1",
         ring1="Rajas Ring",
-        hands="Ryuo Tekko",
-        back="Bleating Mantle",
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         ring1="Patricius Ring",
         back="Yokaze Mantle",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
-        head="Gavialis Helm",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
-        ring2="Mars's Ring",
         waist="Olseni Belt"
     })
     -- do nothing here
