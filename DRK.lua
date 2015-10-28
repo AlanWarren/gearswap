@@ -202,7 +202,7 @@ function init_gear_sets()
          ammo="Impatiens",
          head="Otomi Helm",
          neck="Incanter's Torque", -- 10
-         hands="Cizin Mufflers +1",
+         hands="Leyline gloves",
          feet="Loyalist Sabatons"
      }
             
@@ -486,7 +486,7 @@ function init_gear_sets()
          back=Niht.WSD,
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
-         legs="Heathen's Flanchard +1"
+         legs="Heathen's Flanchard +1",
          back=Niht.WSD,
      })
      sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
@@ -945,7 +945,7 @@ function customize_idle_set(idleSet)
     if player.mpp < 70 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    if player.hpp < 90 then
+    if player.hpp < 70 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
     if state.HybridMode.current == 'PDT' then
