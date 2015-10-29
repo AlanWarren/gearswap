@@ -291,6 +291,7 @@ function init_gear_sets()
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             neck="Iqabi Necklace", hands="Sigyn's Bazubands",
             ring1="Hajduk Ring", ring2="Longshot Ring",
+            body="Amini Caban +1",
             legs="Arcadian Braccae +1"
         })
     
