@@ -3,8 +3,10 @@ sets.reive = {neck="Ygnas's Resolve +1"}
 
 function user_post_precast(spell, action, spellMap, eventArgs)
     -- reive mark
-    if buffactive['Reive Mark'] then
-        equip(sets.reive)
+	if spell.type:lower() == 'weaponskill' then
+        if buffactive['Reive Mark'] then
+            equip(sets.reive)
+        end
     end
 end
 
