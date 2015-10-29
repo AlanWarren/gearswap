@@ -1,6 +1,12 @@
 
 sets.reive = {neck="Ygnas's Resolve +1"}
 
+function user_post_precast(spell, action, spellMap, eventArgs)
+    -- reive mark
+    if buffactive['Reive Mark'] then
+        equip(sets.reive)
+    end
+end
 
 function user_customize_melee_set(meleeSet)
     if buffactive['Reive Mark'] then

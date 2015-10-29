@@ -11,9 +11,11 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
+
     state.Buff.Migawari = buffactive.migawari or false
     state.Buff.Sange = buffactive.sange or false
     state.Buff.Innin = buffactive.innin or false
+    state.Buff.Yonin = buffactive.innin or false
     
     include('Mote-TreasureHunter')
     state.TreasureMode:set('Tag')
@@ -27,12 +29,12 @@ function job_setup()
     select_ammo()
     LugraWSList = S{'Blade: Shun', 'Blade: Ku', 'Blade: Jin'}
     state.CapacityMode = M(false, 'Capacity Point Mantle')
+    
     gear.RegularAmmo = 'Happo Shuriken'
     gear.SangeAmmo = 'Hachiya Shuriken'
     
     wsList = S{'Blade: Hi'}
 
-    --determine_haste_group()
     update_combat_form()
     
     state.warned = M(false)
@@ -66,14 +68,6 @@ function user_setup()
     send_command('bind @[ gs c cycle Runes')
     send_command('bind ^] gs c toggle UseRune')
     
-    -- auto ws
-    --windower.register_event('tp change', autoHi)
-    --windower.register_event('tp change', function(new, old)
-    --    if player.tp >= 1000 then
-    --        --
-    --    end
-    --end)
-
     state.time = M(false)
     windower.raw_register_event('time change', time_change)
 end
@@ -90,7 +84,7 @@ end
 
 
 -- Define sets and vars used by this job file.
--- visualized at http://www.ffxiah.com/node/194
+-- visualized at http://www.ffxiah.com/node/194 (not currently up to date 10/29/2015)
 -- Happo
 -- Hachiya
 -- sets.engaged[state.CombatForm][state.CombatWeapon][state.OffenseMode][state.HybridMode][classes.CustomMeleeGroups (any number)
@@ -102,13 +96,15 @@ end
 
 function init_gear_sets()
     --------------------------------------
-    -- Start defining the sets
+    -- Augments
     --------------------------------------
     TaeonHands = {}
     TaeonHands.TA = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
     TaeonHands.DW = {name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}}
-
-    -- Precast sets to enhance JAs
+    
+    --------------------------------------
+    -- Job Abilties
+    --------------------------------------
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
     sets.precast.JA['Futae'] = { hands="Iga Tekko +2" }
     sets.precast.JA['Provoke'] = { 
@@ -119,8 +115,7 @@ function init_gear_sets()
     }
     sets.precast.JA.Sange = { ammo=gear.SangeAmmo, body="Mochizuki Chainmail +1" }
     
-    sets.reive = {neck="Ygnas's Resolve +1"}
-    -- Waltz set (chr and vit)
+    -- Waltz (chr and vit)
     sets.precast.Waltz = {
         head="Uk'uxkaj Cap",
         body="Dread Jupon",
@@ -130,7 +125,23 @@ function init_gear_sets()
     }
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
+    -- Set for acc on steps, since Yonin drops acc a fair bit
+    sets.precast.Step = {
+        head="Gavialis Helm",
+        body="Hattori Ningi +1",
+        neck="Defiant Collar",
+        ear1="Zennaroi Earring",
+        hands="Ryuo Tekko",
+        back="Yokaze Mantle",
+        ring1="Mars's Ring",
+        waist="Olseni Belt",
+        legs="Taeon Tights",
+        feet="Mochizuki Kyahan +1"
+    }
     
+    --------------------------------------
+    -- Utility Sets for rules below
+    --------------------------------------
     sets.TreasureHunter = { waist="Chaac Belt" }
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
@@ -146,20 +157,10 @@ function init_gear_sets()
     sets.NightAccAmmo   = { ammo="Ginsen" }
     sets.DayAccAmmo     = { ammo="Tengu-no-Hane" }
 
-    -- Set for acc on steps, since Yonin drops acc a fair bit
-    sets.precast.Step = {
-        head="Gavialis Helm",
-        body="Hattori Ningi +1",
-        neck="Defiant Collar",
-        ear1="Zennaroi Earring",
-        hands="Ryuo Tekko",
-        back="Yokaze Mantle",
-        ring1="Mars's Ring",
-        waist="Olseni Belt",
-        legs="Taeon Tights",
-        feet="Mochizuki Kyahan +1"
-    }
+    --------------------------------------
     -- Ranged
+    --------------------------------------
+    
     sets.precast.RA = {
         head="Uk'uxkaj Cap",
         hands="Buremte Gloves",
@@ -367,7 +368,10 @@ function init_gear_sets()
         waist="Windbuffet Belt +1",
     })
     sets.engaged.Innin.Low = set_combine(sets.engaged.Innin, {
-        back="Bleating Mantle"
+        back="Bleating Mantle",
+        neck="Defiant Collar",
+        ear1="Trux Earring",
+        body="Mochizuki Chainmail +1"
     })
     sets.engaged.Innin.Mid = set_combine(sets.engaged.Innin.Low, {
         ring1="Patricius Ring",
@@ -403,6 +407,11 @@ function init_gear_sets()
     sets.engaged.Innin.Low.PDT = set_combine(sets.engaged.Innin.Low, sets.NormalPDT, {head="Hattori Zukin +1"})
     sets.engaged.Innin.Mid.PDT = set_combine(sets.engaged.Innin.Mid, sets.NormalPDT, {head="Hattori Zukin +1"})
     sets.engaged.Innin.Acc.PDT = set_combine(sets.engaged.Innin.Acc, sets.AccPDT)
+
+    sets.engaged.Yonin = sets.engaged.PDT
+    sets.engaged.Yonin.Low = sets.engaged.Low.PDT
+    sets.engaged.Yonin.Mid = sets.engaged.Mid.PDT
+    sets.engaged.Yonin.Acc = sets.engaged.Acc.PDT
 
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
@@ -462,6 +471,11 @@ function init_gear_sets()
     sets.engaged.Innin.Low.PDT.MaxHaste = set_combine(sets.engaged.Innin.Low.MaxHaste, sets.NormalPDT)
     sets.engaged.Innin.Mid.PDT.MaxHaste = set_combine(sets.engaged.Innin.Mid.MaxHaste, sets.NormalPDT)
     sets.engaged.Innin.Acc.PDT.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
+
+    sets.engaged.Yonin.MaxHaste = sets.engaged.PDT.MaxHaste
+    sets.engaged.Yonin.Low.MaxHaste = sets.engaged.Low.PDT.MaxHaste
+    sets.engaged.Yonin.Mid.MaxHaste = sets.engaged.Mid.PDT.MaxHaste
+    sets.engaged.Yonin.Acc.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
     
     -- 35% Haste 
     sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
@@ -819,8 +833,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-    --Aftermath for Kannagi
-    aw_custom_aftermath_timers_precast(spell)
     
     if spell.skill == "Ninjutsu" and spell.target.type:lower() == 'self' and spellMap ~= "Utsusemi" then
         if spell.english == "Migawari" then
@@ -872,10 +884,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         -- Swap in special ammo for WS in high Acc mode
         if state.OffenseMode.value == 'Acc' then
             equip(select_ws_ammo())
-        end
-        -- reive mark
-        if buffactive['Reive Mark'] then
-            equip(sets.reive)
         end
         -- Lugra Earring for some WS
         if LugraWSList:contains(spell.english) then
@@ -988,6 +996,11 @@ function job_buff_change(buff, gain)
         if not midaction() then
             handle_equipping_gear(player.status)
         end
+    elseif buff == 'Yonin' and gain or buffactive['Yonin'] then
+        state.CombatForm:set('Yonin')
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
     else
         state.CombatForm:reset()
         if not midaction() then
@@ -1007,11 +1020,7 @@ end
 
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == 'Engaged' then
-        if buffactive['Innin'] then
-            state.CombatForm:set('Innin')
-        else
-            state.CombatForm:reset()
-        end
+        update_combat_form()
     end
 end
 
@@ -1263,6 +1272,8 @@ end
 function update_combat_form()
     if state.Buff.Innin then
         state.CombatForm:set('Innin')
+    elseif state.Buff.Yonin then
+        state.CombatForm:set('Yonin')
     else
         state.CombatForm:reset()
     end
