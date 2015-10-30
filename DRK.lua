@@ -168,7 +168,6 @@ function init_gear_sets()
      sets.Lugra           = { ear1="Lugra Earring +1" }
      sets.Brutal          = { ear1="Brutal Earring" }
  
-     sets.reive = {neck="Ygnas's Resolve +1"}
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {
         head="Yaoyotl Helm",
@@ -896,10 +895,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             else
                 equip(sets.Brutal)
             end
-        end
-        -- Use SOA neck piece for WS in rieves
-        if buffactive['Reive Mark'] then
-            equip(sets.reive)
         end
     end
 end
