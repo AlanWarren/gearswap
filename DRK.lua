@@ -335,7 +335,7 @@ function init_gear_sets()
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
          body="Acro Surcoat",
-         hands="Mikinaak Gauntlets",
+         hands="Founder's Gauntlets",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
          back=Niht.WSD,
