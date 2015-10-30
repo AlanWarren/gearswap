@@ -198,7 +198,8 @@ function init_gear_sets()
         neck="Breeze Gorget",
         hands=Acro.Hands.STP,
         waist="Metalsinger Belt",
-        back="Mauler's Mantle"
+        back="Mauler's Mantle",
+        feet="Thereoid Greaves"
     })
      -- RESOLUTION
      -- 86-100% STR

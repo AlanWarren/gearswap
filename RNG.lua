@@ -278,20 +278,22 @@ function init_gear_sets()
             hands="Amini Glovelettes",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
-            back="Sylvan Chlamys",
+            back="Lutian Cape", 
             waist="Elanid Belt", 
             legs="Amini Brague +1", 
-            feet="Arcadian Socks +1"
+            feet="Thereoid Greaves"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             back="Lutian Cape", 
-            ring1="Longshot Ring",
+            ring2="Longshot Ring",
             body="Kyujutsugi",
+            feet="Arcadian Socks +1"
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
-            neck="Iqabi Necklace", hands="Sigyn's Bazubands",
-            ring1="Hajduk Ring", ring2="Longshot Ring",
+            neck="Iqabi Necklace", 
+            hands="Sigyn's Bazubands",
             body="Amini Caban +1",
+            ring1="Hajduk Ring", 
             legs="Arcadian Braccae +1"
         })
     
@@ -405,7 +407,7 @@ function init_gear_sets()
             back="Sylvan Chlamys",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
-            feet="Arcadian Socks +1"
+            feet="Thereoid Greaves"
         }
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             back="Lutian Cape",
@@ -450,7 +452,7 @@ function init_gear_sets()
         
         -- Sam SJ / Bow - assuming you'll use a Stave here..
         sets.midcast.RA.SAM.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.SAM, {
-            feet="Arcadian Socks +1"
+            feet="Thereoid Greaves"
         })
         sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
             feet="Orion Socks +1"
@@ -604,7 +606,8 @@ function init_gear_sets()
             waist="Light Belt",
             legs="Amini Brague +1", 
             ring2="Rajas Ring",
-            back="Rancorous Mantle"
+            back="Rancorous Mantle",
+            feet="Thereoid Greaves"
         }
         sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, sets.Jishnus)
         sets.precast.WS['Jishnu\'s Radiance'].Mid = set_combine(sets.precast.WS.Mid, sets.Jishnus)

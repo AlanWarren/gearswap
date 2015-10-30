@@ -734,11 +734,12 @@ function init_gear_sets()
          ear2="Tripudio Earring",
          body="Acro Surcoat",
          hands=Acro.Hands.Haste,
-         feet=Acro.Feet.STP
+         feet="Thereoid Greaves"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
          body="Acro Surcoat",
          ear1="Zennaroi Earring",
+         feet=Acro.Feet.STP
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          neck="Defiant Collar",

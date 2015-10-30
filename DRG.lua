@@ -235,7 +235,8 @@ function init_gear_sets()
         hands="Mikinaak Gauntlets",
         back="Rancorous Mantle",
         hands=Acro.Hands.STP,
-        waist="Windbuffet Belt +1"
+        waist="Windbuffet Belt +1",
+        feet="Thereoid Greaves"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
         back="Updraft Mantle",
