@@ -590,7 +590,7 @@ function init_gear_sets()
          back="Impassive Mantle",
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
-         feet="Heathen's Sollerets +1"
+         feet="Thereoid Greaves"
      }
      
      sets.idle.Field = set_combine(sets.idle.Town, {
