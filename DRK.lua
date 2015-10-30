@@ -475,7 +475,7 @@ function init_gear_sets()
          body="Founder's Breastplate",
          hands="Founder's Gauntlets",
          ring2="Shiva Ring",
-         back="Toro Cape",
+         back=Niht.WSD,
          waist="Soil Belt",
          legs="Heathen's Flanchard +1",
          feet="Heathen's Sollerets +1"
@@ -587,7 +587,7 @@ function init_gear_sets()
          hands="Founder's Gauntlets",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
-         back=Niht.WSD,
+         back="Impassive Mantle",
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
          feet="Heathen's Sollerets +1"
@@ -602,7 +602,7 @@ function init_gear_sets()
          hands="Crusher's Gauntlets",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
-         back="Engulfer Cape +1",
+         back="Impassive Mantle",
          waist="Flume Belt",
          legs="Crimson Cuisses",
          feet="Amm Greaves"
@@ -618,7 +618,7 @@ function init_gear_sets()
          neck="Coatl Gorget +1",
          body="Twilight Mail",
          ring2="Paguroidea Ring",
-         back="Repulse Mantle",
+         back="Impassive Mantle",
          waist="Flume Belt",
          legs="Crimson Cuisses",
          feet="Cizin Greaves +1"
@@ -635,7 +635,7 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
          ring2="Patricius Ring",
-         back="Repulse Mantle",
+         back="Impassive Mantle",
          waist="Flume Belt",
          legs="Cizin Breeches +1",
          feet="Amm Greaves"
@@ -647,7 +647,7 @@ function init_gear_sets()
          body="Lugra Cloak +1",
          ear1="Zennaroi Earring",
          ring2="K'ayres Ring",
-         back="Engulfer Cape +1"
+         back="Impassive Mantle",
      })
  
      sets.Kiting = {legs="Crimson Cuisses"}
@@ -670,7 +670,7 @@ function init_gear_sets()
          body="Founder's Breastplate",
          hands="Crusher's Gauntlets", -- 4%
          ring2="Patricius Ring",
-         back="Repulse Mantle",
+         back="Impassive Mantle",
          waist="Flume Belt",
          legs="Scuffler's Cosciales", -- 5%
          feet="Amm Greaves"
@@ -681,7 +681,7 @@ function init_gear_sets()
          neck="Agitator's Collar",
          body="Founder's Breastplate",
          hands="Crusher's Gauntlets",
-         back="Repulse Mantle",
+         back="Impassive Mantle",
          ring2="Patricius Ring",
          feet="Loyalist Sabatons"
      }

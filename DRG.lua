@@ -257,7 +257,7 @@ function init_gear_sets()
         hands="Cizin Mufflers +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
-		back="Repulse Mantle",
+        back="Impassive Mantle",
         legs="Crimson Cuisses",
         feet="Whirlpool Greaves"
     }
@@ -290,7 +290,7 @@ function init_gear_sets()
         ring1="Karieyh Ring",
         ring2="Paguroidea Ring",
         waist="Flume Belt",
-        back="Engulfer Cape +1"
+        back="Impassive Mantle",
     })
 
     sets.idle.Regen = set_combine(sets.idle.Field, {
@@ -314,7 +314,7 @@ function init_gear_sets()
         hands="Crusher Gauntlets",
         ring1="Patricius Ring",
         ring2="Dark Ring",
-		back="Repulse Mantle",
+        back="Impassive Mantle",
         waist="Flume Belt",
         legs="Cizin Breeches +1",
         feet="Amm Greaves"
@@ -326,7 +326,7 @@ function init_gear_sets()
     })
 
 	sets.defense.MDT = set_combine(sets.defense.PDT, {
-         back="Engulfer Cape +1"
+         back="Impassive Mantle",
     })
 
 	sets.Kiting = {legs="Crimson Cuisses"}

@@ -281,7 +281,7 @@ function init_gear_sets()
          body="Kumarbi's Akar",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
-         back="Engulfer Cape +1",
+         back="Impassive Mantle",
          waist="Flume Belt",
          feet="Hermes' Sandals"
      })
@@ -292,7 +292,7 @@ function init_gear_sets()
          head="Twilight Helm",
          body="Twilight Mail",
          ring2="Paguroidea Ring",
-         back="Repulse Mantle",
+         back="Impassive Mantle",
          waist="Flume Belt",
          feet="Cizin Greaves +1"
      }
@@ -306,7 +306,7 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
          ring2="Patricius Ring",
-         back="Repulse Mantle",
+         back="Impassive Mantle",
          waist="Flume Belt",
          legs="Cizin Breeches +1",
          feet="Amm Greaves"
@@ -317,7 +317,7 @@ function init_gear_sets()
          neck="Twilight Torque",
          ear1="Zennaroi Earring",
          ring2="K'ayres Ring",
-         back="Engulfer Cape +1"
+         back="Impassive Mantle",
      })
  
      sets.Kiting = {feet="Hermes' Sandals"}
@@ -332,7 +332,7 @@ function init_gear_sets()
          body="Founder's Breastplate",
          hands="Crusher's Gauntlets",
          ring2="Patricius Ring",
-         back="Repulse Mantle",
+         back="Impassive Mantle",
          waist="Flume Belt",
          legs="Cizin Breeches +1",
          feet="Amm Greaves"
@@ -342,7 +342,7 @@ function init_gear_sets()
          neck="Agitator's Collar",
          body="Founder's Breastplate",
          hands="Crusher's Gauntlets",
-         back="Repulse Mantle",
+         back="Impassive Mantle",
          ring2="Patricius Ring",
          feet="Loyalist Sabatons"
      }
