@@ -621,7 +621,7 @@ function init_gear_sets()
          back="Impassive Mantle",
          waist="Flume Belt",
          legs="Crimson Cuisses",
-         feet="Cizin Greaves +1"
+         feet="Amm Greaves"
      }
 
      
@@ -719,10 +719,11 @@ function init_gear_sets()
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          ammo="Hasty Pinion +1",
+         neck="Defiant Collar",
          ear1="Steelflash Earring",
          ear2="Zennaroi Earring",
          body="Ravenous Breastplate",
-         neck="Defiant Collar",
+         hands="Leyline Gloves",
          ring2="Mars's Ring",
          waist="Olseni Belt"
      })
