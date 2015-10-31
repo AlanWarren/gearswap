@@ -119,6 +119,7 @@ function init_gear_sets()
             main="Annihilator",
             sub="Odium",
             ammo="Perun",
+            axe="Perun +1",
             range="Yoichinoyumi",
             hands="Taeon Gloves",
             feet="Legion Scutum"
