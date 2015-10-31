@@ -1022,12 +1022,14 @@ function job_buff_change(buff, gain)
         end
     end
     -- AM custom groups
-    if S{'aftermath'}:contains(buff:lower()) then
+    if string.find(buff, 'Aftermath') then
+    --if S{'Aftermath'}:contains(buff) then
         if player.equipment.main == 'Liberator' then
             classes.CustomMeleeGroups:clear()
 	        
             if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
                 classes.CustomMeleeGroups:append('AM3')
+                add_to_chat(8, '-------------AM3 UP-------------')
             end
 
             if not midaction() then
@@ -1045,10 +1047,10 @@ function job_buff_change(buff, gain)
             end
         end
     end
-    -- Automatically wake me when I'm slept
-    --if string.lower(buff) == "sleep" and gain and player.hp > 200 then
-    --    equip(sets.Berserker)
-    --end
+     --Automatically wake me when I'm slept
+    if string.lower(buff) == "sleep" and gain and player.hp > 200 then
+        equip(sets.Berserker)
+    end
 
     if buff == "Last Resort" and state.LastResortMode.value then
         if gain then
