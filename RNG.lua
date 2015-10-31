@@ -190,7 +190,7 @@ function init_gear_sets()
             ring2="Dark Ring"
         })
         sets.idle.Town = set_combine(sets.idle, {
-            body="Amini Caban +1",
+            body="Councilor's garb",
             ring1="Karieyh Ring",
             ring2="Ifrit Ring +1",
             back="Lutian Cape"
@@ -245,7 +245,7 @@ function init_gear_sets()
             head="Taeon Chapeau",
             ear1="Dudgeon Earring",
             ear2="Heartseeker Earring",
-            body="Taeon Tabard",
+            body="Samnuha Coat",
             hands=TaeonHands.DW,
             back="Bleating Mantle",
             waist="Patentia Sash",
