@@ -143,7 +143,7 @@ function init_gear_sets()
             ring1="Ifrit Ring",
             ring2="Ifrit Ring +1",
             legs="Amini Brague +1", 
-            feet="Arcadian Socks +1"
+            feet="Thereoid Greaves"
         })
         sets.precast.JA['Eagle Eye Shot'].Mid = set_combine(sets.precast.JA['Eagle Eye Shot'], {
             back="Lutian Cape",
@@ -287,7 +287,7 @@ function init_gear_sets()
             back="Lutian Cape", 
             ring2="Longshot Ring",
             body="Kyujutsugi",
-            feet="Arcadian Socks +1"
+            feet="Thereoid Greaves"
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             neck="Iqabi Necklace", 
@@ -484,7 +484,7 @@ function init_gear_sets()
             back="Buquwik Cape",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
-            feet="Arcadian Socks +1"
+            feet="Thereoid Greaves"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             ear1="Enervating Earring",
