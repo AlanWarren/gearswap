@@ -308,7 +308,7 @@ function init_gear_sets()
         ring2="Patricius Ring",
         ear1="Zennaroi Earring",
         ear2="Lugra Earring +1",
-   	    body="Sakonji Domaru +1",
+   	    body="Founder's Breastplate",
         hands="Crusher Gauntlets",
         back="Engulfer Cape +1",
         waist="Flume Belt",
@@ -338,7 +338,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Otronif Harness +1",
+   	    body="Founder's Breastplate",
         hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
@@ -390,9 +390,10 @@ function init_gear_sets()
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Acro Helm",
+        body="Acro Surcoat",
+        hands="Ryuo Tekko",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        hands="Ryuo Tekko",
         feet="Loyalist Sabatons"
     })
     
@@ -426,13 +427,13 @@ function init_gear_sets()
     
     sets.engaged.PDT = set_combine(sets.engaged, { 
         head="Otronif Mask +1", 
-        body="Otronif Harness +1",
+   	    body="Founder's Breastplate",
         neck="Agitator's Collar",
         hands="Crusher Gauntlets",
         ring1="Patricius Ring",
         back="Repulse Mantle",
         waist="Flume Belt",
-        feet="Otronif boots +1"
+        feet="Loyalist Sabatons"
     })
     
     sets.engaged.Yoichi.PDT = set_combine(sets.engaged.PDT,  {
@@ -511,13 +512,13 @@ function init_gear_sets()
     sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {
         head="Otronif Mask +1",
         neck="Agitator's Collar",
-        body="Otronif Harness +1",
+   	    body="Founder's Breastplate",
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
         back="Repulse Mantle",
         legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
+        feet="Loyalist Sabatons"
     })
     
     sets.engaged.Adoulin.Acc.PDT = set_combine(sets.engaged.Adoulin.Acc, {
@@ -525,7 +526,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         ring1="Patricius Ring",
         legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
+        feet="Loyalist Sabatons"
     })
     
     -- Tsurumaru 4-hit 19% DA, 28% haste 
