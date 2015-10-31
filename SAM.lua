@@ -206,10 +206,12 @@ function init_gear_sets()
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
         head="Acro Helm",
-        waist="Light Belt"
+        body="Acro Surcoat",
+        --waist="Light Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
-        body="Sakonji Domaru +1",
+        body="Acro Surcoat",
+        back="Takaha Mantle"
     })
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
