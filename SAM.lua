@@ -401,7 +401,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ring1="Mars's Ring",
         legs="Acro Breeches",
-        feet=Aco.Feet.WSD
+        feet=Acro.Feet.WSD
     })
     
     sets.engaged.Yoichi = set_combine(sets.engaged, { 
