@@ -356,13 +356,15 @@ function init_gear_sets()
             hands="Amini Glovelettes",
             ring1="Rajas Ring", 
             ring2="K'ayres Ring",
-            back="Sylvan Chlamys",
+            back="Lutian Cape",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
-            feet="Orion Socks +1"
+            feet="Thereoid Greaves"
         }
         sets.midcast.RA.SAM.Mid = set_combine(sets.midcast.RA.SAM, { 
             hands="Amini Glovelettes",
+            body="Amini Caban +1",
+            feet="Orion Socks +1"
         })
         sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mid, {
             back="Lutian Cape", 
@@ -404,13 +406,12 @@ function init_gear_sets()
             hands="Amini Glovelettes",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
-            back="Sylvan Chlamys",
+            back="Lutian Cape",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
             feet="Thereoid Greaves"
         }
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
-            back="Lutian Cape",
             body="Amini Caban +1",
             hands="Amini Glovelettes",
             legs="Amini Brague +1", 
