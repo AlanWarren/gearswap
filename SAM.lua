@@ -400,6 +400,7 @@ function init_gear_sets()
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Gavialis Helm",
         neck="Defiant Collar",
+        body="Mes'yohi Haubergeon",
         ear1="Zennaroi Earring",
         ring1="Mars's Ring",
         legs="Acro Breeches",
