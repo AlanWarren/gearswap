@@ -392,7 +392,7 @@ function init_gear_sets()
         head="Acro Helm",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        hands=Acro.Hands.Haste,
+        hands=Acro.Hands.STP,
         feet="Ejekamal Boots"
     })
     
