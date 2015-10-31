@@ -290,8 +290,8 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Lugra Earring +1",
         ear2="Tripudio Earring",
-   	    body="Mes'yohi Haubergeon",
-        hands=Acro.Hands.STP,
+   	    body="Vatic Byrnie",
+        hands="Ryuo Tekko",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
         back="Bleating Mantle",
@@ -372,13 +372,13 @@ function init_gear_sets()
     -- I generally use Anahera outside of Adoulin areas, so this set aims for 47 STP + 5 from Anahera (52 total)
     -- Note, this set assumes use of Cibitshavore (hence the arrow as ammo)
     sets.engaged = {
-        sub="Pole Grip",
+        sub="Bloodrain Grip",
         ammo=gear.RAarrow,
         head="Otomi Helm",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Lugra Earring +1",
-        body="Acro Surcoat",
+        body="Vatic Byrnie",
         hands=Acro.Hands.STP,
         ring1="Rajas Ring", 
         ring2="K'ayres Ring", 
@@ -392,16 +392,16 @@ function init_gear_sets()
         head="Acro Helm",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        hands=Acro.Hands.STP,
-        feet="Ejekamal Boots"
+        hands="Ryuo Tekko",
+        feet="Loyalist Sabatons"
     })
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
+        head="Gavialis Helm",
         neck="Defiant Collar",
         ear1="Zennaroi Earring",
         ring1="Mars's Ring",
         legs="Acro Breeches",
-        feet=Acro.Feet.WSD
     })
     
     sets.engaged.Yoichi = set_combine(sets.engaged, { 
