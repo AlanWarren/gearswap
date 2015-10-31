@@ -753,14 +753,14 @@ function init_gear_sets()
      -- Apocalypse
      sets.engaged.Apocalypse = set_combine(sets.engaged, {
          --sub="Pole Grip",
-         --ammo="Yetshila",
-         head="Acro Helm",
-         body="Acro Surcoat",
+         ammo="Yetshila",
+         --head="Acro Helm",
+         --body="Acro Surcoat",
          ear1="Brutal Earring",
          ear2="Lugra Earring +1"
      })
-     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, sets.engaged.Apocalypse)
-     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apocalypse)
+     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, sets.engaged.Apocalypse, {ammo="Ginsen"})
+     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apocalypse, {ammo="Ginsen"})
 
      sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
          head="Heathen's Burgonet +1",
@@ -768,7 +768,8 @@ function init_gear_sets()
      })
      sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
          ammo="Ginsen",
-         hands=Acro.Hands.STP
+         hands=Acro.Hands.STP,
+         feet="Loyalist Sabatons"
      })
      sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
          ammo="Hasty Pinion +1",
