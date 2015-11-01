@@ -72,7 +72,7 @@ function user_setup()
         gear.Bow = "Yoichinoyumi"
         gear.Stave = "Mekki Shakki"
        
-        rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Sabebus', 
+        rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Perun', 
             'Eminent Axe', 'Odium', 'Aphotic Kukri', 'Atoyac'}
         
         sam_sj = player.sub_job == 'SAM' or false
