@@ -584,13 +584,13 @@ function init_gear_sets()
          neck="Ganesha's Mala",
          ear1="Enervating Earring",
          ear2="Lugra Earring +1",
-         body="Founder's Breastplate",
+         body="Councilor's Garb",
          hands="Founder's Gauntlets",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
          back="Impassive Mantle",
          waist="Windbuffet Belt +1",
-         legs="Crimson Cuisses",
+         legs="Scuffler's Cosciales",
          feet="Thereoid Greaves"
      }
      

@@ -368,6 +368,7 @@ function init_gear_sets()
     })
 
     sets.idle.Town = set_combine(sets.idle, {
+        body="Councilor's Garb",
         head="Azimuth Hood +1",
         neck="Incanter's Torque",
         waist="Fucho-no-obi",

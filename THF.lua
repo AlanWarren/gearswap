@@ -356,6 +356,7 @@ function init_gear_sets()
         head="Lithelimb Cap",
         back="Canny Cape",
         neck="Defiant Collar",
+        body="Councilor's Garb",
         ring1="Karieyh Ring",
         ring2="Epona's Ring",
         waist="Windbuffet Belt +1",

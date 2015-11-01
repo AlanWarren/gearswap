@@ -277,7 +277,7 @@ function init_gear_sets()
         ring1="Karieyh Ring",
         hands="Ryuo Tekko",
         ring2="Ifrit Ring +1",
-        body="Samnuha Coat",
+        body="Councilor's Garb",
         legs="Mochizuki Hakama +1",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1"
