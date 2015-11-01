@@ -390,7 +390,7 @@ function init_gear_sets()
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
          head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
-         body="Ravenous Breastplate",
+         body="Acro Surcoat",
          hands=Acro.Hands.STP,
          waist="Windbuffet Belt +1",
      })
@@ -403,7 +403,7 @@ function init_gear_sets()
      -- Mid assumes higher defense target
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          neck="Shadow Gorget",
-         body="Ravenous Breastplate",
+         body="Founder's Breastplate",
          legs="Heathen's Flanchard +1",
          waist="Caudata Belt"
      })
@@ -412,7 +412,7 @@ function init_gear_sets()
          waist="Light Belt"
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
-         body="Ravenous Breastplate",
+         body="Mes'yohi Haubergeon",
          ear1="Zennaroi Earring",
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {
@@ -432,7 +432,7 @@ function init_gear_sets()
          hands=Acro.Hands.STP,
      })
      sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
-         body="Ravenous Breastplate",
+         body="Mes'yohi Haubergeon",
          ear1="Zennaroi Earring",
      })
      
@@ -723,7 +723,7 @@ function init_gear_sets()
          neck="Defiant Collar",
          ear1="Steelflash Earring",
          ear2="Zennaroi Earring",
-         body="Ravenous Breastplate",
+         body="Mes'yohi Haubergeon",
          hands="Leyline Gloves",
          ring2="Mars's Ring",
          waist="Olseni Belt"
