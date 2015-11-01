@@ -170,8 +170,12 @@ function init_gear_sets()
  
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {
-        head="Yaoyotl Helm",
-        legs="Cizin Breeches +1",
+        head="Fallen's Burgeonet +1",
+        neck="Ganesha's Mala",
+        body="Founder's Breastplate",
+        hands="Crusher's Gauntlets",
+        legs="Scuffler's Cosciales",
+        feet="Amm Greaves"
      }
             
      -- Fast cast sets for spells
@@ -268,7 +272,7 @@ function init_gear_sets()
          ammo="Impatiens",
          head="Gavialis Helm",
          body="Heathen's Cuirass +1",
-         hands="Ignominy Gauntlets +1",
+         hands=Acro.Hands.Haste,
          ring1="Beeline Ring",
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
@@ -313,13 +317,10 @@ function init_gear_sets()
      -- Ranged for xbow
      sets.precast.RA = {
          head="Otomi Helm",
-         hands="Buremte Gloves",
          feet="Ejekamal Boots"
      }
      sets.midcast.RA = {
-         neck="Iqabi Necklace",
          ear2="Tripudio Earring",
-         hands="Buremte Gloves",
          ring1="Beeline Ring",
          ring2="Garuda Ring",
          waist="Chaac Belt",
@@ -346,7 +347,7 @@ function init_gear_sets()
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
          head="Yaoyotl Helm",
-         body="Ravenous Breastplate",
+         body="Mes'yohi Haubergeon",
          hands="Ignominy Gauntlets +1",
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
@@ -637,7 +638,7 @@ function init_gear_sets()
          ring2="Patricius Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
-         legs="Cizin Breeches +1",
+         legs="Scuffler's Cosciales",
          feet="Amm Greaves"
      }
      sets.defense.Reraise = sets.idle.Weak
