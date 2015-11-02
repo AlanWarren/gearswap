@@ -435,7 +435,7 @@ function init_gear_sets()
         --back="Iga Dochugappa",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         feet="Taeon Boots"
     })
     -- Base set for hard content
@@ -534,7 +534,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back="Iga Dochugappa",
         waist="Windbuffet Belt +1",
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         feet="Taeon Boots"
     })
     sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_35, {
@@ -605,7 +605,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_30, {
         hands=TaeonHands.DW,
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         waist="Patentia Sash"
     })
     
@@ -644,7 +644,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         feet="Taeon Boots"
     }
 
@@ -654,7 +654,7 @@ function init_gear_sets()
     sets.precast.WS.Low = sets.precast.WS.Mid
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
     })
 
     sets.Kamu = {
@@ -693,7 +693,7 @@ function init_gear_sets()
     })
     sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid, {
         ring1="Karieyh Ring",
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
     })
     
     -- BLADE: HI
@@ -721,7 +721,7 @@ function init_gear_sets()
 
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         ear1="Trux Earring",
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
     })
     
     -- BLADE: SHUN
@@ -733,7 +733,7 @@ function init_gear_sets()
         ring1="Ramuh Ring",
         back="Yokaze Mantle",
         waist="Light Belt",
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         feet="Taeon Boots"
     }
 
@@ -770,7 +770,7 @@ function init_gear_sets()
     })
     sets.precast.WS['Blade: Ku'].Mid = sets.precast.WS['Blade: Ku'].Low
     sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'].Mid, {
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         feet="Mochizuki Kyahan +1"
     })
     
@@ -790,7 +790,7 @@ function init_gear_sets()
         waist="Caudata Belt"
     })
     sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid, {
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         feet="Mochizuki Kyahan +1"
     })
     
