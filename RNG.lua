@@ -125,7 +125,7 @@ function init_gear_sets()
             feet="Legion Scutum"
         }
         -- Misc. Job Ability precasts
-        sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes"}
+        sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1"}
         sets.precast.JA['Double Shot'] = {head="Amini Gapette"}
         sets.precast.JA['Camouflage'] = {body="Orion Jerkin +1"}
         sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
@@ -140,7 +140,7 @@ function init_gear_sets()
             ear2="Flame Pearl",
             neck="Rancor Collar",
             back="Buquwik Cape",
-            hands="Amini Glovelettes",
+            hands="Amini Glovelettes +1",
             ring1="Ifrit Ring",
             ring2="Ifrit Ring +1",
             legs="Amini Brague +1", 
@@ -276,7 +276,7 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring", 
             body="Arcadian Jerkin +1",
-            hands="Amini Glovelettes",
+            hands="Amini Glovelettes +1",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
             back="Lutian Cape", 
@@ -326,7 +326,7 @@ function init_gear_sets()
         })
         sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
             ring2="Longshot Ring",
-            back="Lutian Cape",hands="Amini Glovelettes",
+            back="Lutian Cape",hands="Amini Glovelettes +1",
             legs="Amini Brague +1", 
         })
         sets.midcast.RA.Acc.SamRoll = set_combine(sets.midcast.RA.Mid.SamRoll, {
@@ -343,7 +343,7 @@ function init_gear_sets()
         sets.midcast.RA.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.Stave.Mid, {
             body="Arcadian Jerkin +1",
             legs="Amini Brague +1", 
-            hands="Amini Glovelettes",
+            hands="Amini Glovelettes +1",
         })
         sets.midcast.RA.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Acc, {})
         
@@ -354,7 +354,7 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring", 
             body="Kyujutsugi",
-            hands="Amini Glovelettes",
+            hands="Amini Glovelettes +1",
             ring1="Rajas Ring", 
             ring2="K'ayres Ring",
             back="Lutian Cape",
@@ -363,7 +363,7 @@ function init_gear_sets()
             feet="Thereoid Greaves"
         }
         sets.midcast.RA.SAM.Mid = set_combine(sets.midcast.RA.SAM, { 
-            hands="Amini Glovelettes",
+            hands="Amini Glovelettes +1",
             body="Amini Caban +1",
             feet="Orion Socks +1"
         })
@@ -375,7 +375,7 @@ function init_gear_sets()
 
         -- Stave set for SAM
         sets.midcast.RA.SAM.Stave = set_combine(sets.midcast.RA.SAM, {
-            hands="Amini Glovelettes"
+            hands="Amini Glovelettes +1"
         })
         sets.midcast.RA.SAM.Stave.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
             hands="Sigyn's Bazubands",
@@ -385,7 +385,7 @@ function init_gear_sets()
         
         -- Samurai Roll for /sam, assume we're using a staff
         sets.midcast.RA.SAM.Stave.SamRoll = set_combine(sets.midcast.RA.SAM.Stave, {
-            hands="Amini Glovelettes"
+            hands="Amini Glovelettes +1"
         })
         sets.midcast.RA.SAM.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Mid, {
             ear1="Enervating Earring",
@@ -404,7 +404,7 @@ function init_gear_sets()
             ear2="Tripudio Earring",
             body="Kyujutsugi",
             --body="Arcadian Jerkin +1",
-            hands="Amini Glovelettes",
+            hands="Amini Glovelettes +1",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
             back="Lutian Cape",
@@ -414,7 +414,7 @@ function init_gear_sets()
         }
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             body="Amini Caban +1",
-            hands="Amini Glovelettes",
+            hands="Amini Glovelettes +1",
             legs="Amini Brague +1", 
             feet="Orion Socks +1"
         })
@@ -429,7 +429,7 @@ function init_gear_sets()
         sets.midcast.RA.Falubeza.Acc = sets.midcast.RA.Yoichinoyumi.Acc
 
         -- Stave
-        sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Amini Glovelettes" })
+        sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Amini Glovelettes +1" })
         sets.midcast.RA.Stave.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, { 
             legs="Amini Brague +1", 
         })
@@ -438,7 +438,7 @@ function init_gear_sets()
         -- Stave with Sam roll
         sets.midcast.RA.Stave.Yoichinoyumi.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
             body="Arcadian Jerkin +1",
-            hands="Amini Glovelettes",
+            hands="Amini Glovelettes +1",
             ring2="Paqichikaji Ring",
             back="Lutian Cape"
         })
@@ -447,7 +447,7 @@ function init_gear_sets()
         })
         sets.midcast.RA.Stave.Yoichinoyumi.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mid.SamRoll, {
             neck="Iqabi Necklace",
-            hands="Amini Glovelettes",
+            hands="Amini Glovelettes +1",
             ring1="Longshot Ring",
             feet="Orion Socks +1"
         })
@@ -528,7 +528,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            hands="Amini Glovelettes",
+            hands="Amini Glovelettes +1",
             legs="Amini Brague +1", 
         })
 
@@ -548,7 +548,7 @@ function init_gear_sets()
             neck="Aqua Gorget",
             ear1="Tripudio Earring",
             ear2="Moonshade Earring",
-            hands="Amini Glovelettes",
+            hands="Amini Glovelettes +1",
             ring2="Garuda Ring",
             waist="Light Belt",
             legs="Amini Brague +1", 
@@ -584,7 +584,7 @@ function init_gear_sets()
         sets.Namas = {
             neck="Aqua Gorget",
             waist="Light Belt",
-            hands="Amini Glovelettes", -- override since we don't want sigyns in Mid or Acc
+            hands="Amini Glovelettes +1", -- override since we don't want sigyns in Mid or Acc
             back="Sylvan Chlamys",
             feet="Arcadian Socks +1"
         }
