@@ -126,7 +126,7 @@ function init_gear_sets()
         }
         -- Misc. Job Ability precasts
         sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes"}
-        sets.precast.JA['Double Shot'] = {head="Sylvan Gapette +2"}
+        sets.precast.JA['Double Shot'] = {head="Amini Gapette"}
         sets.precast.JA['Camouflage'] = {body="Orion Jerkin +1"}
         sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
         sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1"}
@@ -258,8 +258,8 @@ function init_gear_sets()
         -- Preshot / Snapshot sets
         ------------------------------------------------------------------
         sets.precast.RA = {
-            head="Sylvan Gapette +2", -- 5
-            --body="Amini Caban +1", -- 10
+            head="Amini Gapette", -- 5
+            body="Amini Caban +1", -- 10
             hands="Iuitl Wristbands +1", -- 5
             back="Lutian Cape", -- 3
             legs="Nahtirah Trousers", -- 9
