@@ -279,7 +279,7 @@ function init_gear_sets()
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
     	body="Mekosuchinae Harness",
         ring1="Paqichikaji Ring",
-        waist="Impulse Belt"
+        waist="Elanid Belt"
     })
 	
 	-- Sets to return to when not performing an action.
