@@ -278,7 +278,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring2="Ifrit Ring +1",
         body="Councilor's Garb",
-        legs="Mochizuki Hakama +1",
+        legs="Samnuha Tights",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1"
     })
