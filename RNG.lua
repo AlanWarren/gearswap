@@ -229,7 +229,7 @@ function init_gear_sets()
             ring2="Epona's Ring",
             back="Bleating Mantle",
             waist="Windbuffet Belt +1",
-            legs="Taeon Tights",
+            legs="Samnuha Tights",
             feet="Taeon Boots"
         }
         sets.engaged.Yoichinoyumi.Melee = sets.engaged.Melee
@@ -250,7 +250,7 @@ function init_gear_sets()
             hands=TaeonHands.DW,
             back="Bleating Mantle",
             waist="Patentia Sash",
-            legs="Taeon Tights",
+            legs="Samnuha Tights",
             feet="Taeon Boots"
         })
 
@@ -288,6 +288,7 @@ function init_gear_sets()
             back="Lutian Cape", 
             ring2="Longshot Ring",
             body="Kyujutsugi",
+            legs="Samnuha Tights",
             feet="Thereoid Greaves"
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
@@ -295,7 +296,7 @@ function init_gear_sets()
             hands="Alruna's Gloves +1",
             body="Amini Caban +1",
             ring1="Hajduk Ring", 
-            legs="Arcadian Braccae +1"
+            legs="Samnuha Tights",
         })
     
         ------------------------------------------------------------------
@@ -315,7 +316,7 @@ function init_gear_sets()
         })
         sets.midcast.RA.Stave.Acc = set_combine(sets.midcast.RA.Stave.Mid, {
             neck="Iqabi Necklace",
-            legs="Aetosaur Trousers +1",
+            legs="Samnuha Tights",
             ring1="Paqichikaji Ring"
         })
         
@@ -333,7 +334,7 @@ function init_gear_sets()
             neck="Iqabi Necklace", 
             ring1="Hajduk Ring", 
             ring2="Longshot Ring",
-            legs="Arcadian Braccae +1"
+            legs="Samnuha Tights",
         })
         -- Stave Sam Roll
         sets.midcast.RA.Stave.SamRoll = set_combine(sets.midcast.RA.Stave, {
@@ -415,14 +416,13 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             body="Amini Caban +1",
             hands="Amini Glovelettes +1",
-            legs="Amini Brague +1", 
+            legs="Samnuha Tights",
             feet="Orion Socks +1"
         })
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
             neck="Iqabi Necklace",
             ring1="Longshot Ring",
             ring2="Hajduk Ring",
-            legs="Arcadian Braccae +1"
         })
         sets.midcast.RA.Falubeza = sets.midcast.RA.Yoichinoyumi
         sets.midcast.RA.Falubeza.Mid = sets.midcast.RA.Yoichinoyumi.Mid
@@ -431,7 +431,7 @@ function init_gear_sets()
         -- Stave
         sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Amini Glovelettes +1" })
         sets.midcast.RA.Stave.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, { 
-            legs="Amini Brague +1", 
+            legs="Samnuha Tights",
         })
         sets.midcast.RA.Stave.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Acc, {})
        

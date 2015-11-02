@@ -225,6 +225,7 @@ function init_gear_sets()
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
         sub="Giuoco Grip",
         ear2="Crematio Earring",
+        body="Witching Robe",
         feet="Umbani Boots"
     })
     
