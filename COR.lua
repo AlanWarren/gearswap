@@ -315,7 +315,7 @@ function init_gear_sets()
         ear1="Enervating Earring",
         ear2="Crematio Earring",
         body="Councilor's Garb",
-        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
+        hands="Alruna's Gloves +1",
         ring1="Ifrit Ring +1",
         ring2="Karieyh Ring",
         back="Gunslinger's Cape",
