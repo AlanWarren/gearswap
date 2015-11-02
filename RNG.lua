@@ -276,7 +276,7 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring", 
             body="Arcadian Jerkin +1",
-            hands="Amini Glovelettes +1",
+            hands="Alruna's Gloves +1",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
             back="Lutian Cape", 
@@ -292,7 +292,7 @@ function init_gear_sets()
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             neck="Iqabi Necklace", 
-            hands="Sigyn's Bazubands",
+            hands="Alruna's Gloves +1",
             body="Amini Caban +1",
             ring1="Hajduk Ring", 
             legs="Arcadian Braccae +1"
@@ -378,7 +378,7 @@ function init_gear_sets()
             hands="Amini Glovelettes +1"
         })
         sets.midcast.RA.SAM.Stave.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
-            hands="Sigyn's Bazubands",
+            hands="Alruna's Gloves +1",
             legs="Amini Brague +1", 
         })
         sets.midcast.RA.SAM.Stave.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
@@ -389,11 +389,11 @@ function init_gear_sets()
         })
         sets.midcast.RA.SAM.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Mid, {
             ear1="Enervating Earring",
-            hands="Sigyn's Bazubands",
+            hands="Alruna's Gloves +1",
             legs="Amini Brague +1", 
         })
         sets.midcast.RA.SAM.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Acc, {
-            hands="Sigyn's Bazubands",
+            hands="Alruna's Gloves +1",
         })
 
         -- Bow base set.
