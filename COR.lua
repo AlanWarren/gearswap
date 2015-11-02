@@ -272,7 +272,7 @@ function init_gear_sets()
         ring2="Hajduk Ring",
         back="Gunslinger's Cape",
         waist="Elanid Belt",
-        legs="Aetosaur Trousers +1",
+        legs="Samnuha Tights",
         feet="Scopuli Nails +1"
     }
 
