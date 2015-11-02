@@ -279,6 +279,7 @@ function init_gear_sets()
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
     	body="Mekosuchinae Harness",
         ring1="Paqichikaji Ring",
+        hands="Floral Gauntlets",
         waist="Elanid Belt"
     })
 	
