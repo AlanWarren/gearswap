@@ -94,7 +94,7 @@ function init_gear_sets()
         ring2="Rajas Ring",
 		back="Bleating Mantle",
         waist="Chaac Belt",
-        legs="Pillager's Culottes +1",
+        legs="Samnuha Tights",
         feet="Raider's Poulaines +2"
     }
 
@@ -108,7 +108,7 @@ function init_gear_sets()
         ring2="Garuda Ring",
 		back="Canny Cape",
         waist="Chaac Belt",
-        legs="Pillager's Culottes +1",
+        legs="Samnuha Tights",
         feet="Raider's Poulaines +2"
     }
     -- Precast Sets
@@ -147,7 +147,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         waist="Chaac Belt",
-        legs="Pillager's Culottes +1",
+        legs="Samnuha Tights",
         feet="Raider's Poulaines +2"
     }
 	sets.precast.Flourish1 = sets.TreasureHunter
@@ -183,7 +183,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="K'ayres Ring",
         waist="Patentia Sash",
-        legs="Aetosaur Trousers +1",
+        legs="Samnuha Tights",
         feet="Scopuli Nails +1"
     }
     --sets.midcast['Enfeebling Magic'] = sets.midcast.RA
@@ -201,7 +201,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
 		back="Bleating Mantle",
         waist="Elanid Belt",
-        legs="Pillager's Culottes +1",
+        legs="Samnuha Tights",
         feet="Taeon Boots"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -221,7 +221,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         body="Dread Jupon",
         ring1="Garuda Ring",
-		legs="Quiahuiz Trousers", 
+        legs="Samnuha Tights",
         waist="Elanid Belt",
         back="Canny Cape"
     })
@@ -233,7 +233,7 @@ function init_gear_sets()
 	sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mid, {
         neck="Breeze Gorget", 
         hands="Pillager's Armlets +1", 
-        legs="Pillager's Culottes +1"
+        legs="Samnuha Tights",
     })
 	sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'].Mid, {
         neck="Breeze Gorget",
@@ -254,7 +254,7 @@ function init_gear_sets()
         hands="Pillager's Armlets +1",
         ring1="Ramuh Ring",
         waist="Light Belt",
-        legs="Pillager's Culottes +1",
+        legs="Samnuha Tights",
         back="Bleating Mantle",
         feet="Plunderer's Poulaines"
     })
@@ -279,7 +279,7 @@ function init_gear_sets()
         ring1="Ramuh Ring",
         ring2="Karieyh Ring",
         waist="Windbuffet Belt +1",
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         back="Kayapa Cape",
         feet="Plunderer's Poulaines"
     })
@@ -297,7 +297,8 @@ function init_gear_sets()
 
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Uk'uxkaj Cap", neck="Breeze Gorget",
 		ear1="Brutal Earring",ear2="Trux Earring", hands="Pillager's Armlets +1", ring1="Ramuh Ring", ring2="Rajas Ring",
-        legs="Pillager's Culottes +1"})
+        legs="Samnuha Tights",
+        })
 	sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head="Whirlpool Mask"})
 	sets.precast.WS['Shark Bite'].Mid = set_combine(sets.precast.WS['Shark Bite'], {waist="Thunder Belt"})
 	sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget", ring1="Ramuh Ring"})
@@ -348,7 +349,7 @@ function init_gear_sets()
         ring2="Dark Ring",
 		back="Engulfer Cape +1",
         waist="Flume Belt",
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         feet="Skadi's Jambeaux +1"
     }
 
@@ -379,7 +380,7 @@ function init_gear_sets()
         ring1="Beeline Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
-        legs="Pillager's Culottes +1",
+        legs="Samnuha Tights",
         feet="Taeon Boots"
     }
 
@@ -429,7 +430,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
 		back="Canny Cape",
         waist="Patentia Sash",
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         feet="Taeon Boots"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
