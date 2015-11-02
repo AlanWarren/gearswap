@@ -311,7 +311,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Emet Harness +1",
+        body="Jumalik Mail",
         hands="Crusher Gauntlets",
         ring1="Patricius Ring",
         ring2="Dark Ring",
@@ -379,7 +379,7 @@ function init_gear_sets()
     sets.engaged.PDT = set_combine(sets.engaged, {
         head="Ighwa Cap",
         neck="Twilight Torque",
-        body="Emet Harness +1",
+        body="Jumalik Mail",
         ring2="Patricius Ring",
         hands="Cizin Mufflers +1",
         back="Repulse Mantle",

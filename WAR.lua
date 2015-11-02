@@ -302,7 +302,7 @@ function init_gear_sets()
      sets.defense.PDT = {
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Founder's Breastplate",
+         body="Jumalik Mail",
          hands="Crusher's Gauntlets",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
@@ -330,7 +330,7 @@ function init_gear_sets()
      sets.Defensive = {
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Founder's Breastplate",
+         body="Jumalik Mail",
          hands="Crusher's Gauntlets",
          ring2="Patricius Ring",
          back="Impassive Mantle",
@@ -341,7 +341,7 @@ function init_gear_sets()
      sets.Defensive_Mid = {
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Founder's Breastplate",
+         body="Jumalik Mail",
          hands="Crusher's Gauntlets",
          back="Impassive Mantle",
          ring2="Patricius Ring",

@@ -631,7 +631,7 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Founder's Breastplate",
+         body="Jumalik Mail",
          hands="Crusher's Gauntlets",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
@@ -668,7 +668,7 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          head="Yorium Barbuta", -- 7% haste
          neck="Agitator's Collar", -- 3%
-         body="Founder's Breastplate",
+         body="Jumalik Mail",
          hands="Crusher's Gauntlets", -- 4%
          ring2="Patricius Ring",
          back="Impassive Mantle",
@@ -680,7 +680,7 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Founder's Breastplate",
+         body="Jumalik Mail",
          hands="Crusher's Gauntlets",
          back="Impassive Mantle",
          ring2="Patricius Ring",
