@@ -201,7 +201,7 @@ function init_gear_sets()
         ring1="Shiva Ring",
         ring2="Shiva Ring",
         back="Toro Cape",
-        waist="Yamabuki-no-obi", 
+        waist="Refoccilation Stone", 
         legs="Azimuth Tights +1",
         feet="Helios Boots"
     }
