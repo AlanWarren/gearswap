@@ -585,7 +585,7 @@ function init_gear_sets()
          ear1="Enervating Earring",
          ear2="Lugra Earring +1",
          body="Councilor's Garb",
-         hands="Founder's Gauntlets",
+         hands="Redan Gloves",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
          back="Impassive Mantle",
