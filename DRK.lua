@@ -632,7 +632,7 @@ function init_gear_sets()
          head="Yorium Barbuta",
          neck="Agitator's Collar",
          body="Jumalik Mail",
-         hands="Crusher's Gauntlets",
+         hands="Redan Gloves",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
          ring2="Patricius Ring",
@@ -669,7 +669,7 @@ function init_gear_sets()
          head="Yorium Barbuta", -- 7% haste
          neck="Agitator's Collar", -- 3%
          body="Jumalik Mail",
-         hands="Crusher's Gauntlets", -- 4%
+         hands="Redan Gloves",
          ring2="Patricius Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
@@ -681,7 +681,7 @@ function init_gear_sets()
          head="Yorium Barbuta",
          neck="Agitator's Collar",
          body="Jumalik Mail",
-         hands="Crusher's Gauntlets",
+         hands="Redan Gloves",
          back="Impassive Mantle",
          ring2="Patricius Ring",
          feet="Loyalist Sabatons"
@@ -690,7 +690,7 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         hands="Crusher's Gauntlets",
+         hands="Redan Gloves",
          body="Founder's Breastplate",
          ring2="Patricius Ring",
          feet="Loyalist Sabatons"
