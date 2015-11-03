@@ -248,7 +248,7 @@ function init_gear_sets()
             ear1="Dudgeon Earring",
             ear2="Heartseeker Earring",
             body="Samnuha Coat",
-            hands=TaeonHands.DW,
+            hands="Floral Gauntlets",
             back="Bleating Mantle",
             waist="Patentia Sash",
             legs="Samnuha Tights",
