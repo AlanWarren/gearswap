@@ -194,6 +194,7 @@ function init_gear_sets()
             body="Councilor's garb",
             ring1="Karieyh Ring",
             ring2="Ifrit Ring +1",
+            hands="Amini Glovelettes +1",
             back="Lutian Cape"
         })
  
@@ -424,9 +425,9 @@ function init_gear_sets()
             ring1="Longshot Ring",
             ring2="Hajduk Ring",
         })
-        sets.midcast.RA.Falubeza = sets.midcast.RA.Yoichinoyumi
-        sets.midcast.RA.Falubeza.Mid = sets.midcast.RA.Yoichinoyumi.Mid
-        sets.midcast.RA.Falubeza.Acc = sets.midcast.RA.Yoichinoyumi.Acc
+        sets.midcast.RA.Hangaku-no-Yumi = sets.midcast.RA.Yoichinoyumi
+        sets.midcast.RA.Hangaku-no-Yumi.Mid = sets.midcast.RA.Yoichinoyumi.Mid
+        sets.midcast.RA.Hangaku-no-Yumi.Acc = sets.midcast.RA.Yoichinoyumi.Acc
 
         -- Stave
         sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Amini Glovelettes +1" })
