@@ -1118,8 +1118,8 @@ end
 function get_combat_weapon()
     if gsList:contains(player.equipment.main) then
         state.CombatWeapon:set("GreatSword")
-    elseif player.equipment.main ~= 'Liberator' then
-        state.CombatWeapon:set('Apocalypse')
+    --elseif player.equipment.main ~= 'Liberator' then
+        --state.CombatWeapon:set('Apocalypse')
     else -- use regular set, which caters to Liberator
         state.CombatWeapon:reset()
     end
