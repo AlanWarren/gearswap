@@ -173,7 +173,7 @@ function init_gear_sets()
         head="Fallen's Burgeonet +1",
         neck="Ganesha's Mala",
         body="Founder's Breastplate",
-        hands="Crusher's Gauntlets",
+        hands="Redan Gloves",
         legs="Scuffler's Cosciales",
         feet="Amm Greaves"
      }
@@ -600,7 +600,7 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
          neck="Coatl Gorget +1",
          body="Founder's Breastplate",
-         hands="Crusher's Gauntlets",
+         hands="Redan Gloves",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
          back="Impassive Mantle",
