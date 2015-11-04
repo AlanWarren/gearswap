@@ -614,7 +614,7 @@ function init_gear_sets()
          head="",
      })
  
-     sets.idle.Weak = {
+     sets.idle.Weak = set_combine(sets.defense.PDT, {
          head="Twilight Helm",
          neck="Coatl Gorget +1",
          body="Twilight Mail",
@@ -623,7 +623,7 @@ function init_gear_sets()
          waist="Flume Belt",
          legs="Crimson Cuisses",
          feet="Amm Greaves"
-     }
+     })
 
      
      -- Defense sets
