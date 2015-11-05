@@ -729,6 +729,7 @@ function init_gear_sets()
          body="Mes'yohi Haubergeon",
          hands="Leyline Gloves",
          ring2="Mars's Ring",
+         back="Kayapa Cape",
          waist="Olseni Belt"
      })
      -- Liberator AM3
@@ -742,16 +743,20 @@ function init_gear_sets()
          feet="Thereoid Greaves"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-         body="Acro Surcoat",
-         ear1="Zennaroi Earring",
+         ear2="Zennaroi Earring",
          feet=Acro.Feet.STP
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
+         ammo="Hasty Pinion +1",
+         head="Gavialis Helm",
          neck="Defiant Collar",
-         ear2="Steelflash Earring",
-         waist="Olseni Belt",
+         ear1="Steelflash Earring",
+         body="Mes'yohi Haubergeon",
+         hands="Leyline Gloves",
+         ring1="Patricius Ring",
          ring2="Mars's Ring",
-         feet="Loyalist Sabatons"
+         back="Kayapa Cape",
+         waist="Olseni Belt",
      })
      
      -- Apocalypse
@@ -763,8 +768,12 @@ function init_gear_sets()
          ear1="Brutal Earring",
          ear2="Lugra Earring +1"
      })
-     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, sets.engaged.Apocalypse, {ammo="Ginsen"})
-     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apocalypse, {ammo="Ginsen"})
+     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
+         feet=Acro.Feet.WSD
+     })
+     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
+         feet=Acro.Feet.WSD
+     })
 
      sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
          head="Heathen's Burgonet +1",
@@ -1123,8 +1132,8 @@ end
 function get_combat_weapon()
     if gsList:contains(player.equipment.main) then
         state.CombatWeapon:set("GreatSword")
-    --elseif player.equipment.main ~= 'Liberator' then
-        --state.CombatWeapon:set('Apocalypse')
+    elseif player.equipment.main == 'Apocalypse' then
+        state.CombatWeapon:set('Apocalypse')
     else -- use regular set, which caters to Liberator
         state.CombatWeapon:reset()
     end
