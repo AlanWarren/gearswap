@@ -1043,7 +1043,7 @@ function job_buff_change(buff, gain)
         end
     end
     -- AM custom groups
-    if spell.english:startswith('Aftermath') then
+    if buff:startswith('Aftermath') then
     --if string.startswith(spell.en, "Aftermath") then
     --if string.find(buff, 'Aftermath') then
     --if S{'Aftermath'}:contains(buff) then
