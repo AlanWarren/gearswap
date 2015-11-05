@@ -989,7 +989,14 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         if state.Buff['Last Resort'] and state.LastResortMode.value then
             equip(sets.buff['Last Resort'])
         end
-        get_combat_weapon()
+        -- handle weapon sets
+        if gsList:contains(player.equipment.main) then
+            state.CombatWeapon:set("GreatSword")
+        elseif player.equipment.main == 'Apocalypse' then
+            state.CombatWeapon:set('Apocalypse')
+        else -- use regular set, which caters to Liberator
+            state.CombatWeapon:reset()
+        end
     --elseif newStatus == 'Idle' then
     --    determine_idle_group()
     end
