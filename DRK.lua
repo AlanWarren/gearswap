@@ -590,7 +590,7 @@ function init_gear_sets()
          ring2="Ifrit Ring +1",
          back="Impassive Mantle",
          waist="Windbuffet Belt +1",
-         legs="Scuffler's Cosciales",
+         legs="Crimson Cuisses",
          feet="Thereoid Greaves"
      }
      
