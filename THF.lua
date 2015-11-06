@@ -483,22 +483,27 @@ function init_gear_sets()
     
     -- Haste 43%
     sets.engaged.Haste_43 = set_combine(sets.engaged, {
+        head="Taeon Chapeau",
         ear1="Trux Earring",
         ear2="Brutal Earring",
-        --body="Thaumas Coat",
+        body="Qaaxo Harness",
+        hands=TaeonHands.TA,
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        feet="Plunderer's Poulaines"
+        legs="Samnuha Tights",
+        feet="Taeon Boots"
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
-        --body="Qaaxo Harness",
-        ring1="Patricius Ring"
+        body="Taeon Tabard",
+        ring1="Patricius Ring",
+        feet="Taeon Boots"
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
-        head="Whirlpool Mask",
-		body="Mekosuchinae Harness",
+        body="Taeon Tabard",
         neck="Defiant Collar",
-        hands=TaeonHands.TA,
+        hands="Leyline Gloves",
+        ear1="Zennaroi Earring",
+        ear2="Steelflash Earring",
         ring1="Mars's Ring",
         ring2="Patricius Ring",
         waist="Olseni Belt",
