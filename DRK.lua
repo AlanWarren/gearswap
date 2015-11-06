@@ -582,7 +582,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
-         ear1="Enervating Earring",
+         ear1="Crematio Earring",
          ear2="Lugra Earring +1",
          body="Councilor's Garb",
          hands="Redan Gloves",
