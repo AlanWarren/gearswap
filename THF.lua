@@ -138,7 +138,7 @@ function init_gear_sets()
     }
 	-- TH actions
 	sets.precast.Step = {
-        head="Whirlpool Mask",
+        head="Teon Chapeau",
         neck="Iqabi Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
@@ -156,7 +156,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	sets.precast.FC = {
         --ammo="Impatiens",
-        head="Ejekamal Mask",
+        head="Teon Chapeau",
         ear1="Loquacious Earring",
         hands="Buremte Gloves",
         body="Dread Jupon",
