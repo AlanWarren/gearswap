@@ -15,7 +15,6 @@ function job_setup()
     state.Buff.Migawari = buffactive.migawari or false
     state.Buff.Sange = buffactive.sange or false
     state.Buff.Innin = buffactive.innin or false
-    state.Buff.Yonin = buffactive.innin or false
     
     include('Mote-TreasureHunter')
     state.TreasureMode:set('Tag')
@@ -408,11 +407,6 @@ function init_gear_sets()
     sets.engaged.Innin.Mid.PDT = set_combine(sets.engaged.Innin.Mid, sets.NormalPDT, {head="Hattori Zukin +1"})
     sets.engaged.Innin.Acc.PDT = set_combine(sets.engaged.Innin.Acc, sets.AccPDT)
 
-    sets.engaged.Yonin = sets.engaged.PDT
-    sets.engaged.Yonin.Low = sets.engaged.Low.PDT
-    sets.engaged.Yonin.Mid = sets.engaged.Mid.PDT
-    sets.engaged.Yonin.Acc = sets.engaged.Acc.PDT
-
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
         hands="Ryuo Tekko",
@@ -472,11 +466,6 @@ function init_gear_sets()
     sets.engaged.Innin.Mid.PDT.MaxHaste = set_combine(sets.engaged.Innin.Mid.MaxHaste, sets.NormalPDT)
     sets.engaged.Innin.Acc.PDT.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
 
-    sets.engaged.Yonin.MaxHaste = sets.engaged.PDT.MaxHaste
-    sets.engaged.Yonin.Low.MaxHaste = sets.engaged.Low.PDT.MaxHaste
-    sets.engaged.Yonin.Mid.MaxHaste = sets.engaged.Mid.PDT.MaxHaste
-    sets.engaged.Yonin.Acc.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
-    
     -- 35% Haste 
     sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
         head="Ptica Headgear",
@@ -996,11 +985,6 @@ function job_buff_change(buff, gain)
         if not midaction() then
             handle_equipping_gear(player.status)
         end
-    elseif buff == 'Yonin' and gain or buffactive['Yonin'] then
-        state.CombatForm:set('Yonin')
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
     else
         state.CombatForm:reset()
         if not midaction() then
@@ -1272,8 +1256,6 @@ end
 function update_combat_form()
     if state.Buff.Innin then
         state.CombatForm:set('Innin')
-    elseif state.Buff.Yonin then
-        state.CombatForm:set('Yonin')
     else
         state.CombatForm:reset()
     end
