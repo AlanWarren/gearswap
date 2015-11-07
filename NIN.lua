@@ -249,7 +249,7 @@ function init_gear_sets()
     
     sets.idle = {
         ammo=gear.RegularAmmo,
-        head="Ptica Headgear",
+        head="Rao Kabuto",
         neck="Twilight Torque",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
@@ -640,18 +640,20 @@ function init_gear_sets()
     }
 
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-        head="Gavialis Helm",
+        head="Rao Kabuto",
     })
     sets.precast.WS.Low = sets.precast.WS.Mid
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
+        head="Gavialis Helm",
         legs="Samnuha Tights",
     })
 
     sets.Kamu = {
         ammo="Ginsen",
         neck="Breeze Gorget",
-        body="Dread Jupon",
+        head="Rao Kabuto",
+        body="Vatic Byrnie",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
         back="Yokaze Mantle",
@@ -664,7 +666,7 @@ function init_gear_sets()
     
     -- BLADE: JIN
     sets.Jin = {
-        head="Taeon Chapeau",
+        head="Rao Kabuto",
         ammo="Yetshila",
         neck="Rancor Collar",
         body="Dread Jupon",
@@ -704,7 +706,7 @@ function init_gear_sets()
         back="Yokaze Mantle"
     })
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-        head="Ptica Headgear",
+        head="Rao Kabuto",
         neck="Shadow Gorget",
         waist="Caudata Belt",
         back="Yokaze Mantle",
@@ -747,7 +749,7 @@ function init_gear_sets()
     
     -- BLADE: KU 
     sets.Ku = {
-        head="Felistris Mask",
+        head="Rao Kabuto",
         ear2="Trux Earring",
         body="Dread Jupon",
         neck="Shadow Gorget",
@@ -766,9 +768,9 @@ function init_gear_sets()
     })
     
     sets.Ten = {
-        head="Felistris Mask",
+        head="Rao Kabuto",
         neck="Shadow Gorget",
-        body="Dread Jupon",
+        body="Vatic Byrnie",
         waist="Metalsinger Belt",
     }
 
@@ -789,7 +791,8 @@ function init_gear_sets()
         head="Mochizuki Hatsuburi +1",
         ear1="Friomisi Earring",
         neck="Stoicheion Medal",
-        body="Mekosuchinae Harness",
+        body="Samnuha Coat",
+        hands="Leyline Gloves",
         ring1="Garuda Ring",
         ring2="Acumen Ring",
         legs="Shneddick Tights +1",
