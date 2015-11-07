@@ -703,6 +703,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
+        head="Taeon Chapeau",
         neck="Shadow Gorget",
         back="Yokaze Mantle"
     })
