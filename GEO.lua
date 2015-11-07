@@ -70,7 +70,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        --ammo="Impatiens",
+        main="Marin Staff",
         head="Welkin Crown",
         ear2="Loquacious Earring",
         hands="Magavan Mitts",
@@ -149,7 +149,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Geomancy = {
-        main="Lehbrailg +2",
+        main="Marin Staff",
         sub="Giuoco Grip",
         range="Dunna", 
         head="Azimuth Hood +1", -- 10
@@ -188,7 +188,7 @@ function init_gear_sets()
     --sets.midcast.Shellra = {ring1="Sheltered Ring"}
 
     sets.midcast.HighTierNuke = {
-        main="Lehbrailg +2",
+        main="Marin Staff",
         sub="Mephitis Grip",
         --sub="Wizzan Grip",
         --ammo="Witchstone",
@@ -240,7 +240,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Macc = { 
-        main="Lehbrailg +2", 
+        main="Marin Staff",
         sub="Mephitis Grip", 
         ammo="Plumose Sachet",
         head="Bagua Galero",
