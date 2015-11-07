@@ -970,7 +970,7 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    if state.CombatForm.current == 'Haste' then
+    if state.CombatForm.current == 'Haste' and state.OffenseMode ~= 'Acc' then
         meleeSet = set_combine(meleeSet, sets.HighHaste)
     end
     if state.Buff['Last Resort'] and state.LastResortMode.value then
