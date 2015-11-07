@@ -264,7 +264,7 @@ function init_gear_sets()
      }
 
     sets.idle.Regen = set_combine(sets.idle, {
-        head="Ocelomeh Headpiece +1",
+        head="Rao Kabuto",
         body="Kheper Jacket",
         ring2="Paguroidea Ring"
     })
