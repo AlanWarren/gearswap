@@ -250,7 +250,7 @@ function init_gear_sets()
     sets.idle = {
         ammo=gear.RegularAmmo,
         head="Rao Kabuto",
-        neck="Agitator's Collar",
+        neck="Lissome Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
@@ -271,7 +271,7 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         head="Ptica Headgear",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Lugra Earring +1",
         ring1="Karieyh Ring",
         hands="Ryuo Tekko",
@@ -342,7 +342,7 @@ function init_gear_sets()
     }
     -- assumptions made about target, Rancor no longer "OK" 
     sets.engaged.Low = set_combine(sets.engaged, {
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Trux Earring",
     })
 
@@ -369,7 +369,7 @@ function init_gear_sets()
     })
     sets.engaged.Innin.Low = set_combine(sets.engaged.Innin, {
         back="Bleating Mantle",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Trux Earring",
         body="Mochizuki Chainmail +1"
     })
@@ -435,7 +435,7 @@ function init_gear_sets()
     })
     -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Hattori Ningi +1",
@@ -478,7 +478,7 @@ function init_gear_sets()
     })
     sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
         head="Ptica Headgear",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
     })
@@ -532,7 +532,7 @@ function init_gear_sets()
     sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_35, {
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         body="Mochizuki Chainmail +1",
         hands="Ryuo Tekko",
         back="Bleating Mantle"

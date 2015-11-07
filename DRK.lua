@@ -463,7 +463,7 @@ function init_gear_sets()
      })
      sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
          ammo="Ginsen",
-         neck="Defiant Collar",
+         neck="Aqua Gorget",
          body="Fallen's Cuirass +1"
      })
      
@@ -749,7 +749,7 @@ function init_gear_sets()
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          ammo="Hasty Pinion +1",
          head="Gavialis Helm",
-         neck="Defiant Collar",
+         neck="Lissome Necklace",
          ear1="Steelflash Earring",
          body="Mes'yohi Haubergeon",
          hands="Leyline Gloves",

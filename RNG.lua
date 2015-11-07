@@ -229,7 +229,7 @@ function init_gear_sets()
             ring2="Epona's Ring",
             back="Bleating Mantle",
             waist="Windbuffet Belt +1",
-            legs="Samnuha Tights",
+            legs="Adhemar Kecks",
             feet="Taeon Boots"
         }
         sets.engaged.Bow.Melee = sets.engaged.Melee
@@ -250,7 +250,7 @@ function init_gear_sets()
             hands="Floral Gauntlets",
             back="Bleating Mantle",
             waist="Patentia Sash",
-            legs="Samnuha Tights",
+            legs="Adhemar Kecks",
             feet="Taeon Boots"
         })
 
@@ -288,7 +288,7 @@ function init_gear_sets()
             back="Lutian Cape", 
             ring2="Longshot Ring",
             body="Kyujutsugi",
-            legs="Samnuha Tights",
+            legs="Adhemar Kecks",
             feet="Thereoid Greaves"
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
@@ -296,7 +296,7 @@ function init_gear_sets()
             hands="Alruna's Gloves +1",
             body="Amini Caban +1",
             ring1="Hajduk Ring", 
-            legs="Samnuha Tights",
+            legs="Adhemar Kecks",
         })
     
         -- Samurai Roll sets 
@@ -313,7 +313,7 @@ function init_gear_sets()
             neck="Iqabi Necklace", 
             ring1="Hajduk Ring", 
             ring2="Longshot Ring",
-            legs="Samnuha Tights",
+            legs="Adhemar Kecks",
         })
         
         -- SAM Subjob
@@ -349,7 +349,7 @@ function init_gear_sets()
         sets.midcast.RA.SAM.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Mid, {
             ear1="Enervating Earring",
             hands="Alruna's Gloves +1",
-            legs="Samnuha Tights", 
+            legs="Adhemar Kecks", 
         })
         sets.midcast.RA.SAM.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Acc, {
             hands="Alruna's Gloves +1",
@@ -373,7 +373,7 @@ function init_gear_sets()
         sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
             body="Amini Caban +1",
             neck="Yarak Torque",
-            legs="Samnuha Tights",
+            legs="Adhemar Kecks",
             feet="Orion Socks +1"
         })
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
@@ -598,7 +598,7 @@ function init_gear_sets()
             ring2="Longshot Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
-            legs="Amini Brague +1", 
+            legs="Adhemar Kecks", 
             feet="Orion Socks +1"
         }
         -- placeholder until I can get to it
