@@ -289,7 +289,7 @@ function init_gear_sets()
 
     -- Defense sets
     sets.defense.PDT = {
-        head="Otronif Mask +1",
+        head="Lithelimb Cap",
         neck="Twilight Torque",
         body="Emet Harness +1",
         hands="Ryuo Tekko",
@@ -381,7 +381,7 @@ function init_gear_sets()
 
     -- Defenseive sets
     sets.NormalPDT = {
-        head="Otronif Mask +1",
+        head="Lithelimb Cap",
         body="Emet Harness +1",
         neck="Agitator's Collar",
         hands="Ryuo Tekko",
