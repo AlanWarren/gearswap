@@ -479,7 +479,7 @@ function init_gear_sets()
          back=Niht.WSD,
          waist="Soil Belt",
          legs="Heathen's Flanchard +1",
-         feet="Heathen's Sollerets +1"
+         feet=Acro.Feet.WSD
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
          legs="Heathen's Flanchard +1",
