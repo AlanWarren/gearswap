@@ -120,7 +120,7 @@ function init_gear_sets()
 	sets.precast.Waltz = {
 		head="Whirlpool Mask",
         hands="Iuitl Wristbands +1",
-		legs="Nahtirah Trousers",
+        legs="Adhemar Kecks",
     }
 
     sets.Organizer = {
@@ -152,7 +152,7 @@ function init_gear_sets()
 		hands="Iuitl Wristbands +1",
 		back="Navarch's Mantle",
         waist="Impulse Belt",
-        legs="Nahtirah Trousers",
+        legs="Adhemar Kecks",
         feet="Wurrukatte Boots"
     }
 
@@ -169,7 +169,7 @@ function init_gear_sets()
         ring2="Ifrit Ring +1",
 		back="Buquwik Cape",
         waist=gear.ElementalBelt,
-        legs="Nahtirah Trousers",
+        legs="Adhemar Kecks",
         feet="Lanun Bottes"
     }
 
@@ -272,7 +272,7 @@ function init_gear_sets()
         ring2="Hajduk Ring",
         back="Gunslinger's Cape",
         waist="Elanid Belt",
-        legs="Samnuha Tights",
+        legs="Adhemar Kecks",
         feet="Scopuli Nails +1"
     }
 
@@ -301,7 +301,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         back="Repulse Mantle",
         waist="Flume Belt",
-        legs="Iuitl Tights +1",
+        legs="Adhemar Kecks",
         feet="Skadi's Jambeaux +1"
     }
     sets.idle.Regen = set_combine(sets.idle, {
@@ -321,7 +321,7 @@ function init_gear_sets()
         ring2="Karieyh Ring",
         back="Gunslinger's Cape",
         waist="Flume Belt",
-        legs="Taeon Tights",
+        legs="Adhemar Kecks",
         feet="Skadi's Jambeaux +1"
     }
 	
@@ -361,7 +361,7 @@ function init_gear_sets()
         ring2="Longshot Ring",
         back="Gunslinger's Cape",
         waist="Elanid Belt",
-        legs="Nahtirah Trousers",
+        legs="Adhemar Kecks",
         feet="Lanun Bottes"
     }
 	-- Normal melee group
@@ -377,7 +377,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         feet="Taeon Boots"
     }
 
@@ -388,7 +388,7 @@ function init_gear_sets()
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
         body="Taeon Tabard",
         ring1="Oneiros Ring",
-        legs="Taeon Tights",
+        legs="Samnuha Tights",
         waist="Shetal Stone",
         back="Bleating Mantle",
         feet="Taeon Boots"

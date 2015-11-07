@@ -262,7 +262,7 @@ function init_gear_sets()
             body="Amini Caban +1", -- 10
             hands="Iuitl Wristbands +1", -- 5
             back="Lutian Cape", -- 3
-            legs="Nahtirah Trousers", -- 9
+            legs="Adhemar Kecks",
             waist="Impulse Belt", -- 2
             feet="Wurrukatte Boots" -- 3
         }
