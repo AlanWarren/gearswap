@@ -250,7 +250,7 @@ function init_gear_sets()
     sets.idle = {
         ammo=gear.RegularAmmo,
         head="Rao Kabuto",
-        neck="Twilight Torque",
+        neck="Agitator's Collar",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
