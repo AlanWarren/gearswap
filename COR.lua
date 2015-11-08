@@ -306,13 +306,14 @@ function init_gear_sets()
     }
     sets.idle.Regen = set_combine(sets.idle, {
         head="Ocelomeh Headpiece +1",
-        body="Kheper jacket"
+        neck="Lissome Necklace",
+        body="Kheper jacket",
     })
 
 	sets.idle.Town = {
         ammo=gear.RAbullet,
         head="Lanun Tricorne +1",
-        neck="Iqabi Necklace",
+        neck="Lissome Necklace",
         ear1="Enervating Earring",
         ear2="Crematio Earring",
         body="Councilor's Garb",
@@ -386,7 +387,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
-        body="Taeon Tabard",
+        body="Samnuha Coat",
         ring1="Oneiros Ring",
         legs="Samnuha Tights",
         waist="Shetal Stone",
@@ -395,12 +396,11 @@ function init_gear_sets()
     })
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
-    	body="Mekosuchinae Harness",
         ring2="Mars's Ring",
         waist="Olseni Belt"
     })
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Melee.DW, {
-        neck="Iqabi Necklace",
+        neck="Lissome Necklace",
         ring2="Mars's Ring"
     })
 end

@@ -167,13 +167,13 @@ function init_gear_sets()
         
         sets.idle = {
             head="Arcadian Beret +1",
-            neck="Twilight Torque",
+            neck="Lissome Necklace",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Mekosuchinae Harness",
-            hands="Iuitl Wristbands +1",
+            body="Kyujutsugi",
+            hands="Amini Glovelettes +1",
             ring1="Karieyh Ring",
-            ring2="Dark Ring",
+            ring2="Paguroidea Ring"
             back="Repulse Mantle",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
@@ -182,6 +182,7 @@ function init_gear_sets()
         sets.idle.Regen = set_combine(sets.idle, {
             head="Ocelomeh Headpiece +1",
             body="Kheper Jacket",
+            neck="Lissome Necklace",
             ring2="Paguroidea Ring"
         })
         sets.idle.PDT = set_combine(sets.idle, {
@@ -250,7 +251,7 @@ function init_gear_sets()
             hands="Floral Gauntlets",
             back="Bleating Mantle",
             waist="Patentia Sash",
-            legs="Adhemar Kecks",
+            legs="Samnuha Tights",
             feet="Taeon Boots"
         })
 

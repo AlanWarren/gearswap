@@ -142,7 +142,7 @@ function init_gear_sets()
          ring1="Apocalypse",
          ring2="Loyalist Sabatons",
          neck="Bloodrain Strap",
-         neck="Pole Grip",
+         grip="Pole Grip",
          head="Acro Helm",
          hands="Acro Gauntlets",
          body="Acro Surcoat",
@@ -581,7 +581,7 @@ function init_gear_sets()
      sets.idle.Town = {
          ammo="Ginsen",
          head="Heathen's Burgonet +1",
-         neck="Ganesha's Mala",
+         neck="Lissome Necklace",
          ear1="Crematio Earring",
          ear2="Lugra Earring +1",
          body="Councilor's Garb",
@@ -744,6 +744,7 @@ function init_gear_sets()
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
          ear2="Zennaroi Earring",
+         neck="Lissome Necklace",
          feet=Acro.Feet.STP
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {

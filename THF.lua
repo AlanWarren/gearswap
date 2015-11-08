@@ -108,7 +108,7 @@ function init_gear_sets()
         ring2="Garuda Ring",
 		back="Canny Cape",
         waist="Chaac Belt",
-        legs="Samnuha Tights",
+        legs="Adhemar Kecks",
         feet="Raider's Poulaines +2"
     }
     -- Precast Sets
@@ -139,7 +139,7 @@ function init_gear_sets()
 	-- TH actions
 	sets.precast.Step = {
         head="Teon Chapeau",
-        neck="Iqabi Necklace",
+        neck="Lissome Necklace",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         hands=TaeonHands.TA,
@@ -340,7 +340,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = {
 		head="Iuitl Headgear +1",
-        neck="Twilight Torque",
+        neck="Lissome Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
@@ -356,7 +356,7 @@ function init_gear_sets()
 	sets.idle.Town = set_combine(sets.idle, {
         head="Lithelimb Cap",
         back="Canny Cape",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         body="Councilor's Garb",
         hands="Leyline Gloves",
         ring1="Karieyh Ring",
@@ -436,14 +436,13 @@ function init_gear_sets()
         feet="Taeon Boots"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
-        head="Whirlpool Mask",
-		body="Samnuha Coat",
+        neck="Lissome Necklace",
         ring1="Rajas Ring",
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
 		body="Samnuha Coat",
         hands=TaeonHands.TA,
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Zennaroi Earring",
         ear2="Steelflash Earring",
         ring1="Patricius Ring",
@@ -500,7 +499,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
         body="Taeon Tabard",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         hands="Leyline Gloves",
         ear1="Zennaroi Earring",
         ear2="Steelflash Earring",

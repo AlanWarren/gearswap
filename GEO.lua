@@ -313,7 +313,7 @@ function init_gear_sets()
         sub="Genbu's Shield",
         range="Dunna",
         head="Azimuth Hood +1",
-        neck="Twilight Torque",
+        neck="Lissome Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Azimuth Coat +1",
