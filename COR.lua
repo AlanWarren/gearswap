@@ -177,9 +177,9 @@ function init_gear_sets()
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, { ear2="Moonshade Earring"})
 
-	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {legs="Nahtirah Trousers"})
+	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {legs="Samnuha Tights"})
 
-	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {ear2="Moonshade Earring", legs="Nahtirah Trousers"})
+	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {ear2="Moonshade Earring", legs="Samnuha Tights"})
 
 	sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
         ammo=gear.WSbullet,
@@ -224,7 +224,7 @@ function init_gear_sets()
         back="Gunslinger's Cape",
         ring1="Globidonta Ring",
         ring2="Sangoma Ring",
-		legs="Iuitl Tights +1",
+		legs="Adhemar Kecks",
         waist="Aquiline Belt",
     }
 		
