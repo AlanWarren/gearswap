@@ -176,7 +176,7 @@ function init_gear_sets()
             ring2="Paguroidea Ring",
             back="Repulse Mantle",
             waist="Elanid Belt",
-            legs="Amini Brague +1", 
+            legs="Adhemar Kecks",
             feet="Skadi's Jambeaux +1"
         }
         sets.idle.Regen = set_combine(sets.idle, {
@@ -195,6 +195,7 @@ function init_gear_sets()
             ring1="Karieyh Ring",
             ring2="Ifrit Ring +1",
             hands="Amini Glovelettes +1",
+            legs="Adhemar Kecks",
             back="Lutian Cape"
         })
  
