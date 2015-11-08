@@ -173,7 +173,7 @@ function init_gear_sets()
             body="Kyujutsugi",
             hands="Amini Glovelettes +1",
             ring1="Karieyh Ring",
-            ring2="Paguroidea Ring"
+            ring2="Paguroidea Ring",
             back="Repulse Mantle",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
