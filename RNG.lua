@@ -117,8 +117,7 @@ function init_gear_sets()
         sets.Organizer = {
             main="Annihilator",
             sub="Odium",
-            ammo="Perun",
-            axe="Perun +1",
+            ammo="Perun +1",
             range="Yoichinoyumi",
             hands="Taeon Gloves",
             feet="Legion Scutum"
@@ -214,6 +213,8 @@ function init_gear_sets()
             feet="Orion Socks +1"
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
+            hands="Iuitl Wristbands +1",
+            back="Engulfer Cape +1",
             neck="Twilight Torque",
             ring1="Dark Ring",
             ring2="Patricius Ring"
