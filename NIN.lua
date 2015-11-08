@@ -1275,6 +1275,8 @@ function select_default_macro_book()
         set_macro_page(2, 2)
     elseif player.sub_job == 'WAR' then
         set_macro_page(2, 1)
+    elseif player.sub_job == 'RUN' then
+        set_macro_page(2, 9)
     else
         set_macro_page(2, 2)
     end
