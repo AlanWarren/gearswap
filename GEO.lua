@@ -199,7 +199,7 @@ function init_gear_sets()
         body="Azimuth Coat +1",
         hands="Helios Gloves",
         ring1="Shiva Ring",
-        ring2="Shiva Ring",
+        ring2="Resonance Ring",
         back="Toro Cape",
         waist="Refoccilation Stone", 
         legs="Azimuth Tights +1",
@@ -234,7 +234,8 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Gwati Earring", 
         legs="Azimuth Tights +1",
-        ring2="Sangoma Ring",
+        ring1="Sangoma Ring",
+        ring2="Resonance Ring",
         back="Refraction Cape",
         feet="Helios Boots"
     })
