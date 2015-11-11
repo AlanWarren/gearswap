@@ -276,7 +276,7 @@ function init_gear_sets()
          ring1="Beeline Ring",
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
-         legs="Heathen's Flanchard +1",
+         legs="Founder's Hose",
          feet="Amm Greaves"
      })
      
