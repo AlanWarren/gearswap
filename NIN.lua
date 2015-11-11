@@ -127,7 +127,6 @@ function init_gear_sets()
     sets.precast.Waltz['Healing Waltz'] = {}
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
-        head="Gavialis Helm",
         body="Hattori Ningi +1",
         neck="Defiant Collar",
         ear1="Zennaroi Earring",
