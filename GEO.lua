@@ -70,7 +70,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        --ammo="Impatiens",
+        main="Marin Staff",
         head="Welkin Crown",
         ear2="Loquacious Earring",
         hands="Magavan Mitts",
@@ -149,7 +149,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Geomancy = {
-        main="Lehbrailg +2",
+        main="Marin Staff",
         sub="Giuoco Grip",
         range="Dunna", 
         head="Azimuth Hood +1", -- 10
@@ -188,7 +188,7 @@ function init_gear_sets()
     --sets.midcast.Shellra = {ring1="Sheltered Ring"}
 
     sets.midcast.HighTierNuke = {
-        main="Lehbrailg +2",
+        main="Marin Staff",
         sub="Mephitis Grip",
         --sub="Wizzan Grip",
         --ammo="Witchstone",
@@ -201,7 +201,7 @@ function init_gear_sets()
         ring1="Shiva Ring",
         ring2="Shiva Ring",
         back="Toro Cape",
-        waist="Yamabuki-no-obi", 
+        waist="Refoccilation Stone", 
         legs="Azimuth Tights +1",
         feet="Helios Boots"
     }
@@ -225,6 +225,7 @@ function init_gear_sets()
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
         sub="Giuoco Grip",
         ear2="Crematio Earring",
+        body="Witching Robe",
         feet="Umbani Boots"
     })
     
@@ -239,7 +240,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Macc = { 
-        main="Lehbrailg +2", 
+        main="Marin Staff",
         sub="Mephitis Grip", 
         ammo="Plumose Sachet",
         head="Bagua Galero",
@@ -312,7 +313,7 @@ function init_gear_sets()
         sub="Genbu's Shield",
         range="Dunna",
         head="Azimuth Hood +1",
-        neck="Twilight Torque",
+        neck="Lissome Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Azimuth Coat +1",
@@ -369,9 +370,10 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         body="Councilor's Garb",
-        head="Azimuth Hood +1",
+        head="Welkin Crown",
         neck="Incanter's Torque",
-        waist="Fucho-no-obi",
+        waist="Refoccilation Stone",
+        legs="Geomancy Pants +1"
     })
 
     sets.idle.Weak = sets.idle

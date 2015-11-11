@@ -302,8 +302,8 @@ function init_gear_sets()
      sets.defense.PDT = {
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Founder's Breastplate",
-         hands="Crusher's Gauntlets",
+         body="Jumalik Mail",
+         hands="Redan Gloves",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
          ring2="Patricius Ring",
@@ -330,8 +330,8 @@ function init_gear_sets()
      sets.Defensive = {
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Founder's Breastplate",
-         hands="Crusher's Gauntlets",
+         body="Jumalik Mail",
+         hands="Redan Gloves",
          ring2="Patricius Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
@@ -341,8 +341,8 @@ function init_gear_sets()
      sets.Defensive_Mid = {
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Founder's Breastplate",
-         hands="Crusher's Gauntlets",
+         body="Jumalik Mail",
+         hands="Redan Gloves",
          back="Impassive Mantle",
          ring2="Patricius Ring",
          feet="Loyalist Sabatons"
@@ -350,7 +350,7 @@ function init_gear_sets()
      sets.Defensive_Acc = {
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         hands="Crusher's Gauntlets",
+         hands="Redan Gloves",
          body="Founder's Breastplate",
          ring2="Patricius Ring",
          legs="Cizin Breeches +1",

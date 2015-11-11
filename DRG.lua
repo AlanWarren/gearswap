@@ -286,7 +286,7 @@ function init_gear_sets()
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
         head="Ighwa Cap",
-        neck="Twilight Torque",
+        neck="Lissome Necklace",
 		body="Founder's Breastplate",
         ring1="Karieyh Ring",
         ring2="Paguroidea Ring",
@@ -297,6 +297,7 @@ function init_gear_sets()
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="Twilight Helm",
 		body="Kumarbi's Akar",
+        neck="Lissome Necklace",
     })
 
 	sets.idle.Weak = set_combine(sets.idle.Field, {
@@ -311,7 +312,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-		body="Emet Harness +1",
+        body="Jumalik Mail",
         hands="Crusher Gauntlets",
         ring1="Patricius Ring",
         ring2="Dark Ring",
@@ -367,7 +368,7 @@ function init_gear_sets()
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         ammo="Hasty Pinion +1",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         waist="Olseni Belt",
         ring1="Mars's Ring",
         body="Ravenous Breastplate",
@@ -379,7 +380,7 @@ function init_gear_sets()
     sets.engaged.PDT = set_combine(sets.engaged, {
         head="Ighwa Cap",
         neck="Twilight Torque",
-        body="Emet Harness +1",
+        body="Jumalik Mail",
         ring2="Patricius Ring",
         hands="Cizin Mufflers +1",
         back="Repulse Mantle",

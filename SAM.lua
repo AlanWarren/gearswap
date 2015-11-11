@@ -143,7 +143,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         --ammo="Paeapua",
-        head="Otomi Helm",
+        head="Rao Kabuto",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
@@ -157,7 +157,7 @@ function init_gear_sets()
         feet=Acro.Feet.WSD
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-        head="Yaoyotl Helm",
+        head="Rao Kabuto",
         body="Sakonji Domaru +1",
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
@@ -205,7 +205,7 @@ function init_gear_sets()
         legs="Kasuga Haidate +1",
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
-        head="Acro Helm",
+        head="Rao Kabuto",
         body="Acro Surcoat",
         --waist="Light Belt"
     })
@@ -220,7 +220,7 @@ function init_gear_sets()
         waist="Thunder Belt"
     })
     sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS.Acc, {
-        head="Yaoyotl Helm",
+        head="Rao Kabuto",
         neck="Breeze Gorget",
         waist="Thunder Belt"
     })
@@ -250,7 +250,7 @@ function init_gear_sets()
     })
     -- CHR Mod
     sets.precast.WS['Tachi: Ageha'] = {
-        head="Sakonji Kabuto +1",
+        head="Rao Kabuto",
         neck="Defiant Collar",
         --body="Unkai Domaru +2",
         hands="Wakido Kote +1",
@@ -288,7 +288,7 @@ function init_gear_sets()
     sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
-        head="Ptica Headgear",
+        head="Rao Kabuto",
         neck="Ganesha's Mala",
         ear1="Lugra Earring +1",
         ear2="Tripudio Earring",
@@ -306,7 +306,7 @@ function init_gear_sets()
     })
     
     sets.idle.Field = set_combine(sets.idle.Town, {
-        neck="Twilight Torque",
+        neck="Lissome Necklace",
         ring2="Patricius Ring",
         ear1="Zennaroi Earring",
         ear2="Lugra Earring +1",
@@ -401,7 +401,7 @@ function init_gear_sets()
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Gavialis Helm",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         body="Mes'yohi Haubergeon",
         ear1="Zennaroi Earring",
         ring1="Mars's Ring",
@@ -416,11 +416,12 @@ function init_gear_sets()
     sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
         head="Acro Helm",
         back="Takaha Mantle",
+        neck="Lissome Necklace",
         hands=Acro.Hands.Haste
     })
     
     sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, {
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Zennaroi Earring",
         ring1="Patricius Ring",
         ring2="Mars's Ring",

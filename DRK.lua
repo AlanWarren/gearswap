@@ -142,7 +142,7 @@ function init_gear_sets()
          ring1="Apocalypse",
          ring2="Loyalist Sabatons",
          neck="Bloodrain Strap",
-         neck="Pole Grip",
+         grip="Pole Grip",
          head="Acro Helm",
          hands="Acro Gauntlets",
          body="Acro Surcoat",
@@ -173,7 +173,7 @@ function init_gear_sets()
         head="Fallen's Burgeonet +1",
         neck="Ganesha's Mala",
         body="Founder's Breastplate",
-        hands="Crusher's Gauntlets",
+        hands="Redan Gloves",
         legs="Scuffler's Cosciales",
         feet="Amm Greaves"
      }
@@ -463,7 +463,7 @@ function init_gear_sets()
      })
      sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
          ammo="Ginsen",
-         neck="Defiant Collar",
+         neck="Aqua Gorget",
          body="Fallen's Cuirass +1"
      })
      
@@ -479,7 +479,7 @@ function init_gear_sets()
          back=Niht.WSD,
          waist="Soil Belt",
          legs="Heathen's Flanchard +1",
-         feet="Heathen's Sollerets +1"
+         feet=Acro.Feet.WSD
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
          legs="Heathen's Flanchard +1",
@@ -581,16 +581,16 @@ function init_gear_sets()
      sets.idle.Town = {
          ammo="Ginsen",
          head="Heathen's Burgonet +1",
-         neck="Ganesha's Mala",
-         ear1="Enervating Earring",
+         neck="Lissome Necklace",
+         ear1="Crematio Earring",
          ear2="Lugra Earring +1",
          body="Councilor's Garb",
-         hands="Founder's Gauntlets",
+         hands="Redan Gloves",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
          back="Impassive Mantle",
          waist="Windbuffet Belt +1",
-         legs="Scuffler's Cosciales",
+         legs="Crimson Cuisses",
          feet="Thereoid Greaves"
      }
      
@@ -600,7 +600,7 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
          neck="Coatl Gorget +1",
          body="Founder's Breastplate",
-         hands="Crusher's Gauntlets",
+         hands="Redan Gloves",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
          back="Impassive Mantle",
@@ -614,16 +614,19 @@ function init_gear_sets()
          head="",
      })
  
-     sets.idle.Weak = {
-         head="Twilight Helm",
-         neck="Coatl Gorget +1",
-         body="Twilight Mail",
-         ring2="Paguroidea Ring",
+     sets.idle.Weak = set_combine(sets.defense.PDT, {
+         ammo="Hasty Pinion +1",
+         neck="Agitator's Collar",
+         hands="Redan Gloves",
+         ear1="Zennaroi Earring",
+         ring1="Dark Ring",
+         ring2="Patricius Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
-         legs="Crimson Cuisses",
+         legs="Scuffler's Cosciales",
          feet="Amm Greaves"
-     }
+
+     })
 
      
      -- Defense sets
@@ -631,8 +634,8 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Founder's Breastplate",
-         hands="Crusher's Gauntlets",
+         body="Jumalik Mail",
+         hands="Redan Gloves",
          ear1="Zennaroi Earring",
          ring1="Dark Ring",
          ring2="Patricius Ring",
@@ -668,8 +671,8 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          head="Yorium Barbuta", -- 7% haste
          neck="Agitator's Collar", -- 3%
-         body="Founder's Breastplate",
-         hands="Crusher's Gauntlets", -- 4%
+         body="Jumalik Mail",
+         hands="Redan Gloves",
          ring2="Patricius Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
@@ -680,8 +683,8 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Founder's Breastplate",
-         hands="Crusher's Gauntlets",
+         body="Jumalik Mail",
+         hands="Redan Gloves",
          back="Impassive Mantle",
          ring2="Patricius Ring",
          feet="Loyalist Sabatons"
@@ -690,7 +693,7 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         hands="Crusher's Gauntlets",
+         hands="Redan Gloves",
          body="Founder's Breastplate",
          ring2="Patricius Ring",
          feet="Loyalist Sabatons"
@@ -726,6 +729,7 @@ function init_gear_sets()
          body="Mes'yohi Haubergeon",
          hands="Leyline Gloves",
          ring2="Mars's Ring",
+         back="Kayapa Cape",
          waist="Olseni Belt"
      })
      -- Liberator AM3
@@ -739,16 +743,21 @@ function init_gear_sets()
          feet="Thereoid Greaves"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-         body="Acro Surcoat",
-         ear1="Zennaroi Earring",
+         ear2="Zennaroi Earring",
+         neck="Lissome Necklace",
          feet=Acro.Feet.STP
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
-         neck="Defiant Collar",
-         ear2="Steelflash Earring",
-         waist="Olseni Belt",
+         ammo="Hasty Pinion +1",
+         head="Gavialis Helm",
+         neck="Lissome Necklace",
+         ear1="Steelflash Earring",
+         body="Mes'yohi Haubergeon",
+         hands="Leyline Gloves",
+         ring1="Patricius Ring",
          ring2="Mars's Ring",
-         feet="Loyalist Sabatons"
+         back="Kayapa Cape",
+         waist="Olseni Belt",
      })
      
      -- Apocalypse
@@ -760,8 +769,12 @@ function init_gear_sets()
          ear1="Brutal Earring",
          ear2="Lugra Earring +1"
      })
-     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, sets.engaged.Apocalypse, {ammo="Ginsen"})
-     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, sets.engaged.Apocalypse, {ammo="Ginsen"})
+     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
+         feet=Acro.Feet.WSD
+     })
+     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
+         feet=Acro.Feet.WSD
+     })
 
      sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
          head="Heathen's Burgonet +1",
@@ -958,7 +971,7 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    if state.CombatForm.current == 'Haste' then
+    if state.CombatForm.current == 'Haste' and state.OffenseMode ~= 'Acc' then
         meleeSet = set_combine(meleeSet, sets.HighHaste)
     end
     if state.Buff['Last Resort'] and state.LastResortMode.value then
@@ -977,7 +990,14 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         if state.Buff['Last Resort'] and state.LastResortMode.value then
             equip(sets.buff['Last Resort'])
         end
-        get_combat_weapon()
+        -- handle weapon sets
+        if gsList:contains(player.equipment.main) then
+            state.CombatWeapon:set("GreatSword")
+        elseif player.equipment.main == 'Apocalypse' then
+            state.CombatWeapon:set('Apocalypse')
+        else -- use regular set, which caters to Liberator
+            state.CombatWeapon:reset()
+        end
     --elseif newStatus == 'Idle' then
     --    determine_idle_group()
     end
@@ -1024,7 +1044,7 @@ function job_buff_change(buff, gain)
         end
     end
     -- AM custom groups
-    if spell.english:startswith('Aftermath') then
+    if buff:startswith('Aftermath') then
     --if string.startswith(spell.en, "Aftermath") then
     --if string.find(buff, 'Aftermath') then
     --if S{'Aftermath'}:contains(buff) then
@@ -1120,7 +1140,7 @@ end
 function get_combat_weapon()
     if gsList:contains(player.equipment.main) then
         state.CombatWeapon:set("GreatSword")
-    elseif player.equipment.main ~= 'Liberator' then
+    elseif player.equipment.main == 'Apocalypse' then
         state.CombatWeapon:set('Apocalypse')
     else -- use regular set, which caters to Liberator
         state.CombatWeapon:reset()

@@ -5,17 +5,16 @@
  === Notes ===
  -- Set format is as follows:
     sets.midcast.RA.[CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
-    ex: sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll = {}
+    ex: sets.midcast.RA.SAM.Bow.Mid.SamRoll = {}
     you can also append CustomRangedGroups to each other
  
  -- These are the available sets per category
  -- CustomClass = SAM
- -- CombatForm = Stave, DW
+ -- CombatForm = DW
  -- CombatWeapon = weapon name, ex: Yoichinoyumi  (you can make new sets for any ranged weapon)
  -- RangedMode = Normal, Mid, Acc
  -- CustomRangedGroup = SamRoll
 
- -- Gear.Stave should be set to your 2-handed weapon of choice if you wish to take advantage of sets.midcast.RA.Stave
  -- SamRoll is applied automatically whenever you have the roll on you. 
  -- SAM is used when you're RNG/SAM 
 
@@ -70,7 +69,7 @@ function user_setup()
 
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
-        gear.Stave = "Mekki Shakki"
+        --gear.Bow = "Hangaku-no-Yumi"
        
         rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Perun', 
             'Eminent Axe', 'Odium', 'Aphotic Kukri', 'Atoyac'}
@@ -118,8 +117,7 @@ function init_gear_sets()
         sets.Organizer = {
             main="Annihilator",
             sub="Odium",
-            ammo="Perun",
-            axe="Perun +1",
+            ammo="Perun +1",
             range="Yoichinoyumi",
             hands="Taeon Gloves",
             feet="Legion Scutum"
@@ -168,21 +166,22 @@ function init_gear_sets()
         
         sets.idle = {
             head="Arcadian Beret +1",
-            neck="Twilight Torque",
+            neck="Lissome Necklace",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Mekosuchinae Harness",
-            hands="Iuitl Wristbands +1",
+            body="Kyujutsugi",
+            hands="Amini Glovelettes +1",
             ring1="Karieyh Ring",
-            ring2="Dark Ring",
+            ring2="Paguroidea Ring",
             back="Repulse Mantle",
             waist="Elanid Belt",
-            legs="Amini Brague +1", 
+            legs="Adhemar Kecks",
             feet="Skadi's Jambeaux +1"
         }
         sets.idle.Regen = set_combine(sets.idle, {
             head="Ocelomeh Headpiece +1",
             body="Kheper Jacket",
+            neck="Lissome Necklace",
             ring2="Paguroidea Ring"
         })
         sets.idle.PDT = set_combine(sets.idle, {
@@ -194,6 +193,8 @@ function init_gear_sets()
             body="Councilor's garb",
             ring1="Karieyh Ring",
             ring2="Ifrit Ring +1",
+            hands="Amini Glovelettes +1",
+            legs="Adhemar Kecks",
             back="Lutian Cape"
         })
  
@@ -212,11 +213,13 @@ function init_gear_sets()
             feet="Orion Socks +1"
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
+            hands="Iuitl Wristbands +1",
+            back="Engulfer Cape +1",
             neck="Twilight Torque",
             ring1="Dark Ring",
             ring2="Patricius Ring"
         })
-        sets.engaged.Yoichinoyumi = set_combine(sets.engaged, {})
+        sets.engaged.Bow = set_combine(sets.engaged, {})
 
         sets.engaged.Melee = {
             head="Taeon Chapeau",
@@ -229,10 +232,10 @@ function init_gear_sets()
             ring2="Epona's Ring",
             back="Bleating Mantle",
             waist="Windbuffet Belt +1",
-            legs="Taeon Tights",
+            legs="Adhemar Kecks",
             feet="Taeon Boots"
         }
-        sets.engaged.Yoichinoyumi.Melee = sets.engaged.Melee
+        sets.engaged.Bow.Melee = sets.engaged.Melee
 
         sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
             neck="Twilight Torque",
@@ -247,10 +250,10 @@ function init_gear_sets()
             ear1="Dudgeon Earring",
             ear2="Heartseeker Earring",
             body="Samnuha Coat",
-            hands=TaeonHands.DW,
+            hands="Floral Gauntlets",
             back="Bleating Mantle",
             waist="Patentia Sash",
-            legs="Taeon Tights",
+            legs="Samnuha Tights",
             feet="Taeon Boots"
         })
 
@@ -262,7 +265,7 @@ function init_gear_sets()
             body="Amini Caban +1", -- 10
             hands="Iuitl Wristbands +1", -- 5
             back="Lutian Cape", -- 3
-            legs="Nahtirah Trousers", -- 9
+            legs="Adhemar Kecks",
             waist="Impulse Belt", -- 2
             feet="Wurrukatte Boots" -- 3
         }
@@ -288,6 +291,7 @@ function init_gear_sets()
             back="Lutian Cape", 
             ring2="Longshot Ring",
             body="Kyujutsugi",
+            legs="Adhemar Kecks",
             feet="Thereoid Greaves"
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
@@ -295,30 +299,9 @@ function init_gear_sets()
             hands="Alruna's Gloves +1",
             body="Amini Caban +1",
             ring1="Hajduk Ring", 
-            legs="Arcadian Braccae +1"
+            legs="Adhemar Kecks",
         })
     
-        ------------------------------------------------------------------
-        -- Specialized Gear Sets
-        ------------------------------------------------------------------
-
-        -- Stave sets 
-        sets.midcast.RA.Stave = set_combine(sets.midcast.RA, {
-            body="Arcadian Jerkin +1",
-            back="Lutian Cape",
-            legs="Amini Brague +1", 
-        })
-
-        sets.midcast.RA.Stave.Mid = set_combine(sets.midcast.RA.Stave, {
-            body="Kyujutsugi",
-            ring2="Longshot Ring",
-        })
-        sets.midcast.RA.Stave.Acc = set_combine(sets.midcast.RA.Stave.Mid, {
-            neck="Iqabi Necklace",
-            legs="Aetosaur Trousers +1",
-            ring1="Paqichikaji Ring"
-        })
-        
         -- Samurai Roll sets 
         sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
             body="Arcadian Jerkin +1",
@@ -333,19 +316,8 @@ function init_gear_sets()
             neck="Iqabi Necklace", 
             ring1="Hajduk Ring", 
             ring2="Longshot Ring",
-            legs="Arcadian Braccae +1"
+            legs="Adhemar Kecks",
         })
-        -- Stave Sam Roll
-        sets.midcast.RA.Stave.SamRoll = set_combine(sets.midcast.RA.Stave, {
-            body="Arcadian Jerkin +1",
-            waist="Elanid Belt"
-        })
-        sets.midcast.RA.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.Stave.Mid, {
-            body="Arcadian Jerkin +1",
-            legs="Amini Brague +1", 
-            hands="Amini Glovelettes +1",
-        })
-        sets.midcast.RA.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Acc, {})
         
         -- SAM Subjob
         sets.midcast.RA.SAM = {
@@ -373,37 +345,26 @@ function init_gear_sets()
             ring2="Longshot Ring"
         })
 
-        -- Stave set for SAM
-        sets.midcast.RA.SAM.Stave = set_combine(sets.midcast.RA.SAM, {
-            hands="Amini Glovelettes +1"
-        })
-        sets.midcast.RA.SAM.Stave.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
-            hands="Alruna's Gloves +1",
-            legs="Amini Brague +1", 
-        })
-        sets.midcast.RA.SAM.Stave.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
-        
         -- Samurai Roll for /sam, assume we're using a staff
-        sets.midcast.RA.SAM.Stave.SamRoll = set_combine(sets.midcast.RA.SAM.Stave, {
+        sets.midcast.RA.SAM.SamRoll = set_combine(sets.midcast.RA.SAM, {
             hands="Amini Glovelettes +1"
         })
-        sets.midcast.RA.SAM.Stave.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Mid, {
+        sets.midcast.RA.SAM.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Mid, {
             ear1="Enervating Earring",
             hands="Alruna's Gloves +1",
-            legs="Amini Brague +1", 
+            legs="Adhemar Kecks", 
         })
-        sets.midcast.RA.SAM.Stave.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Acc, {
+        sets.midcast.RA.SAM.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Acc, {
             hands="Alruna's Gloves +1",
         })
 
         -- Bow base set.
-        sets.midcast.RA.Yoichinoyumi = {
+        sets.midcast.RA.Bow = {
             head="Arcadian Beret +1",
             neck="Ocachi Gorget",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Kyujutsugi",
-            --body="Arcadian Jerkin +1",
             hands="Amini Glovelettes +1",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
@@ -412,65 +373,54 @@ function init_gear_sets()
             legs="Amini Brague +1", 
             feet="Thereoid Greaves"
         }
-        sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
+        sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
             body="Amini Caban +1",
-            hands="Amini Glovelettes +1",
-            legs="Amini Brague +1", 
+            neck="Yarak Torque",
+            legs="Adhemar Kecks",
             feet="Orion Socks +1"
         })
-        sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
-            neck="Iqabi Necklace",
+        sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
             ring1="Longshot Ring",
             ring2="Hajduk Ring",
-            legs="Arcadian Braccae +1"
         })
-        sets.midcast.RA.Falubeza = sets.midcast.RA.Yoichinoyumi
-        sets.midcast.RA.Falubeza.Mid = sets.midcast.RA.Yoichinoyumi.Mid
-        sets.midcast.RA.Falubeza.Acc = sets.midcast.RA.Yoichinoyumi.Acc
-
-        -- Stave
-        sets.midcast.RA.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.Yoichinoyumi, { hands="Amini Glovelettes +1" })
-        sets.midcast.RA.Stave.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, { 
-            legs="Amini Brague +1", 
-        })
-        sets.midcast.RA.Stave.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Acc, {})
        
-        -- Stave with Sam roll
-        sets.midcast.RA.Stave.Yoichinoyumi.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi, {
+        -- Bow Sam roll
+        sets.midcast.RA.Bow.SamRoll = set_combine(sets.midcast.RA.Bow, {
             body="Arcadian Jerkin +1",
             hands="Amini Glovelettes +1",
             ring2="Paqichikaji Ring",
             back="Lutian Cape"
         })
-        sets.midcast.RA.Stave.Yoichinoyumi.Mid.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.SamRoll, {
+        sets.midcast.RA.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.Bow.SamRoll, {
             body="Kyujutsugi",
         })
-        sets.midcast.RA.Stave.Yoichinoyumi.Acc.SamRoll = set_combine(sets.midcast.RA.Stave.Yoichinoyumi.Mid.SamRoll, {
-            neck="Iqabi Necklace",
+        sets.midcast.RA.Bow.Acc.SamRoll = set_combine(sets.midcast.RA.Bow.Mid.SamRoll, {
+            neck="Yarak Torque",
             hands="Amini Glovelettes +1",
+            body="Amini Caban +1",
             ring1="Longshot Ring",
             feet="Orion Socks +1"
         })
         
-        -- Sam SJ / Bow - assuming you'll use a Stave here..
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi = set_combine(sets.midcast.RA.SAM, {
+        -- Sam SJ / Bow 
+        sets.midcast.RA.SAM.Bow = set_combine(sets.midcast.RA.SAM, {
             feet="Thereoid Greaves"
         })
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
+        sets.midcast.RA.SAM.Bow.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
             feet="Orion Socks +1"
         })
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
+        sets.midcast.RA.SAM.Bow.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
 
         -- Sam SJ / Bow / Sam's Roll
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi, {
+        sets.midcast.RA.SAM.Bow.SamRoll = set_combine(sets.midcast.RA.SAM.Bow, {
             waist="Elanid Belt",
             feet="Orion Socks +1"
         })
 
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi.Mid, {
+        sets.midcast.RA.SAM.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Bow.Mid, {
             waist="Elanid Belt",
         })
-        sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Stave.Yoichinoyumi.Acc, {})
+        sets.midcast.RA.SAM.Bow.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Bow.Acc, {})
 
 
         -- Weaponskill sets  
@@ -651,7 +601,7 @@ function init_gear_sets()
             ring2="Longshot Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
-            legs="Amini Brague +1", 
+            legs="Adhemar Kecks", 
             feet="Orion Socks +1"
         }
         -- placeholder until I can get to it
@@ -689,8 +639,8 @@ function job_precast(spell, action, spellMap, eventArgs)
             classes.CustomClass = 'SAM'
         end
 
-        if spell.action_type == 'Ranged Attack' then
-            state.CombatWeapon:set(player.equipment.range)
+        if spell.action_type == 'Ranged Attack' and player.equipment.range == gear.Bow then
+            state.CombatWeapon:set('Bow')
         end
         -- add support for RangedMode toggles to EES
         if spell.english == 'Eagle Eye Shot' then
@@ -856,8 +806,8 @@ function customize_melee_set(meleeSet)
 end
  
 function job_status_change(newStatus, oldStatus, eventArgs)
-    if newStatus == "Engaged" then
-         state.CombatWeapon:set(player.equipment.range)
+    if newStatus == "Engaged" and player.equipment.range == gear.Bow then
+         state.CombatWeapon:set('Bow')
     end
 
     if camo_active() then
@@ -944,14 +894,10 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_form()
-    if player.equipment.main == gear.Stave then
-        state.CombatForm:set("Stave")
+    if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
+        state.CombatForm:set("DW")
     else
-        if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
-            state.CombatForm:set("DW")
-        else
-            state.CombatForm:reset()
-        end
+        state.CombatForm:reset()
     end
 end
 

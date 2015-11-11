@@ -15,7 +15,6 @@ function job_setup()
     state.Buff.Migawari = buffactive.migawari or false
     state.Buff.Sange = buffactive.sange or false
     state.Buff.Innin = buffactive.innin or false
-    state.Buff.Yonin = buffactive.innin or false
     
     include('Mote-TreasureHunter')
     state.TreasureMode:set('Tag')
@@ -249,8 +248,8 @@ function init_gear_sets()
     
     sets.idle = {
         ammo=gear.RegularAmmo,
-        head="Ptica Headgear",
-        neck="Twilight Torque",
+        head="Rao Kabuto",
+        neck="Lissome Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
@@ -264,20 +263,20 @@ function init_gear_sets()
      }
 
     sets.idle.Regen = set_combine(sets.idle, {
-        head="Ocelomeh Headpiece +1",
+        head="Rao Kabuto",
         body="Kheper Jacket",
         ring2="Paguroidea Ring"
     })
     
     sets.idle.Town = set_combine(sets.idle, {
         head="Ptica Headgear",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Lugra Earring +1",
         ring1="Karieyh Ring",
         hands="Ryuo Tekko",
         ring2="Ifrit Ring +1",
         body="Councilor's Garb",
-        legs="Mochizuki Hakama +1",
+        legs="Samnuha Tights",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1"
     })
@@ -289,7 +288,7 @@ function init_gear_sets()
 
     -- Defense sets
     sets.defense.PDT = {
-        head="Otronif Mask +1",
+        head="Lithelimb Cap",
         neck="Twilight Torque",
         body="Emet Harness +1",
         hands="Ryuo Tekko",
@@ -342,7 +341,7 @@ function init_gear_sets()
     }
     -- assumptions made about target, Rancor no longer "OK" 
     sets.engaged.Low = set_combine(sets.engaged, {
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Trux Earring",
     })
 
@@ -355,6 +354,7 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        neck="Yarak Torque",
         ring2="Mars's Ring",
         waist="Olseni Belt",
     })
@@ -368,7 +368,7 @@ function init_gear_sets()
     })
     sets.engaged.Innin.Low = set_combine(sets.engaged.Innin, {
         back="Bleating Mantle",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Trux Earring",
         body="Mochizuki Chainmail +1"
     })
@@ -380,7 +380,7 @@ function init_gear_sets()
 
     -- Defenseive sets
     sets.NormalPDT = {
-        head="Otronif Mask +1",
+        head="Lithelimb Cap",
         body="Emet Harness +1",
         neck="Agitator's Collar",
         hands="Ryuo Tekko",
@@ -406,11 +406,6 @@ function init_gear_sets()
     sets.engaged.Innin.Low.PDT = set_combine(sets.engaged.Innin.Low, sets.NormalPDT, {head="Hattori Zukin +1"})
     sets.engaged.Innin.Mid.PDT = set_combine(sets.engaged.Innin.Mid, sets.NormalPDT, {head="Hattori Zukin +1"})
     sets.engaged.Innin.Acc.PDT = set_combine(sets.engaged.Innin.Acc, sets.AccPDT)
-
-    sets.engaged.Yonin = sets.engaged.PDT
-    sets.engaged.Yonin.Low = sets.engaged.Low.PDT
-    sets.engaged.Yonin.Mid = sets.engaged.Mid.PDT
-    sets.engaged.Yonin.Acc = sets.engaged.Acc.PDT
 
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
@@ -439,7 +434,7 @@ function init_gear_sets()
     })
     -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
         body="Hattori Ningi +1",
@@ -450,6 +445,8 @@ function init_gear_sets()
         back="Yokaze Mantle",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+        head="Rao Kabuto",
+        neck="Yarak Torque",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         waist="Olseni Belt"
@@ -471,11 +468,6 @@ function init_gear_sets()
     sets.engaged.Innin.Mid.PDT.MaxHaste = set_combine(sets.engaged.Innin.Mid.MaxHaste, sets.NormalPDT)
     sets.engaged.Innin.Acc.PDT.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
 
-    sets.engaged.Yonin.MaxHaste = sets.engaged.PDT.MaxHaste
-    sets.engaged.Yonin.Low.MaxHaste = sets.engaged.Low.PDT.MaxHaste
-    sets.engaged.Yonin.Mid.MaxHaste = sets.engaged.Mid.PDT.MaxHaste
-    sets.engaged.Yonin.Acc.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
-    
     -- 35% Haste 
     sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
         head="Ptica Headgear",
@@ -485,7 +477,7 @@ function init_gear_sets()
     })
     sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
         head="Ptica Headgear",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
     })
@@ -531,7 +523,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
-        back="Iga Dochugappa",
+        back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
         feet="Taeon Boots"
@@ -539,7 +531,7 @@ function init_gear_sets()
     sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_35, {
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        neck="Defiant Collar",
+        neck="Lissome Necklace",
         body="Mochizuki Chainmail +1",
         hands="Ryuo Tekko",
         back="Bleating Mantle"
@@ -648,18 +640,20 @@ function init_gear_sets()
     }
 
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-        head="Gavialis Helm",
+        head="Rao Kabuto",
     })
     sets.precast.WS.Low = sets.precast.WS.Mid
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
+        head="Gavialis Helm",
         legs="Samnuha Tights",
     })
 
     sets.Kamu = {
         ammo="Ginsen",
         neck="Breeze Gorget",
-        body="Dread Jupon",
+        head="Rao Kabuto",
+        body="Vatic Byrnie",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
         back="Yokaze Mantle",
@@ -672,7 +666,7 @@ function init_gear_sets()
     
     -- BLADE: JIN
     sets.Jin = {
-        head="Taeon Chapeau",
+        head="Rao Kabuto",
         ammo="Yetshila",
         neck="Rancor Collar",
         body="Dread Jupon",
@@ -708,11 +702,12 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
+        head="Taeon Chapeau",
         neck="Shadow Gorget",
         back="Yokaze Mantle"
     })
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-        head="Ptica Headgear",
+        head="Rao Kabuto",
         neck="Shadow Gorget",
         waist="Caudata Belt",
         back="Yokaze Mantle",
@@ -755,7 +750,7 @@ function init_gear_sets()
     
     -- BLADE: KU 
     sets.Ku = {
-        head="Felistris Mask",
+        head="Rao Kabuto",
         ear2="Trux Earring",
         body="Dread Jupon",
         neck="Shadow Gorget",
@@ -774,9 +769,9 @@ function init_gear_sets()
     })
     
     sets.Ten = {
-        head="Felistris Mask",
+        head="Rao Kabuto",
         neck="Shadow Gorget",
-        body="Dread Jupon",
+        body="Vatic Byrnie",
         waist="Metalsinger Belt",
     }
 
@@ -797,7 +792,8 @@ function init_gear_sets()
         head="Mochizuki Hatsuburi +1",
         ear1="Friomisi Earring",
         neck="Stoicheion Medal",
-        body="Mekosuchinae Harness",
+        body="Samnuha Coat",
+        hands="Leyline Gloves",
         ring1="Garuda Ring",
         ring2="Acumen Ring",
         legs="Shneddick Tights +1",
@@ -992,11 +988,6 @@ function job_buff_change(buff, gain)
     
     if buff == 'Innin' and gain  or buffactive['Innin'] then
         state.CombatForm:set('Innin')
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
-    elseif buff == 'Yonin' and gain or buffactive['Yonin'] then
-        state.CombatForm:set('Yonin')
         if not midaction() then
             handle_equipping_gear(player.status)
         end
@@ -1271,8 +1262,6 @@ end
 function update_combat_form()
     if state.Buff.Innin then
         state.CombatForm:set('Innin')
-    elseif state.Buff.Yonin then
-        state.CombatForm:set('Yonin')
     else
         state.CombatForm:reset()
     end
@@ -1285,6 +1274,8 @@ function select_default_macro_book()
         set_macro_page(2, 2)
     elseif player.sub_job == 'WAR' then
         set_macro_page(2, 1)
+    elseif player.sub_job == 'RUN' then
+        set_macro_page(2, 9)
     else
         set_macro_page(2, 2)
     end
