@@ -440,7 +440,8 @@ function init_gear_sets()
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             ear1="Enervating Earring",
-            feet="Orion Socks +1"
+            legs="Adhemar Kecks",
+            feet="Orion Socks +1",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
             back="Lutian Cape"
@@ -562,8 +563,21 @@ function init_gear_sets()
             feet="Thereoid Greaves"
         }
         sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, sets.Jishnus)
-        sets.precast.WS['Jishnu\'s Radiance'].Mid = set_combine(sets.precast.WS.Mid, sets.Jishnus)
-        sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS.Acc, sets.Jishnus)
+        sets.precast.WS['Jishnu\'s Radiance'].Mid = set_combine(sets.precast.WS.Mid, {
+            neck="Flame Gorget",
+            ear2="Moonshade Earring",
+            waist="Light Belt",
+            legs="Adhemar Kecks",
+            ring2="Rajas Ring",
+            back="Lutian Cape",
+            feet="Orion Socks +1"
+
+        })
+        sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS.Acc, {
+            neck="Flame Gorget",
+            ear2="Moonshade Earring",
+            waist="Light Belt"
+        })
 
         -- SIDEWINDER
         sets.Sidewinder = {
