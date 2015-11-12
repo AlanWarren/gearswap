@@ -67,8 +67,6 @@ function user_setup()
     send_command('bind @[ gs c cycle Runes')
     send_command('bind ^] gs c toggle UseRune')
     
-    state.time = M(false)
-    windower.raw_register_event('time change', time_change)
 end
 
 
@@ -1225,22 +1223,6 @@ function aw_custom_aftermath_timers_aftercast(spell)
         send_command('timers c "'..aftermath_name..'" '..tostring(info.aftermath.duration)..' down abilities/aftermath'..tostring(info.aftermath.level)..'.png')
 
         info.aftermath = {}
-    end
-end
-
-function time_change(new, old)
-    if new > 17.00 or new < 7.00 then
-        if state.time then
-            state.time:reset()
-            windower.add_to_chat(204, "******************* Dusk *******************")
-            send_command('gs c update user')
-        end
-    else
-        if state.time.value == false then
-            state.time:set()
-            windower.add_to_chat(204, "******************* Dawn *******************")
-            send_command('gs c update user')
-        end
     end
 end
 
