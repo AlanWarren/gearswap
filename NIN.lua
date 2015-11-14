@@ -347,7 +347,7 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        hands="Ryuo Tekko",
+        hands="Floral Gauntlets",
         ring1="Rajas Ring",
         back="Yokaze Mantle"
     })
@@ -355,6 +355,7 @@ function init_gear_sets()
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Yarak Torque",
         ring2="Mars's Ring",
+        hands="Ryuo Tekko",
         waist="Olseni Belt",
     })
     
