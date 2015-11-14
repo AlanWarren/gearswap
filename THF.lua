@@ -69,7 +69,7 @@ function init_gear_sets()
 	-- Start defining the sets
 	--------------------------------------
     TaeonHands = {}
-    TaeonHands.TA = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
+    TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
 
 	sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
