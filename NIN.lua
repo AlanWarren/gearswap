@@ -629,7 +629,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         body="Hattori Ningi +1",
-        hands=TaeonHands.TA,
+        hands="Ryuo Tekko",
         ring1="Karieyh Ring",
         ring2="Epona's Ring",
         back="Yokaze Mantle",
