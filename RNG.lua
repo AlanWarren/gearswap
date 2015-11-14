@@ -112,7 +112,7 @@ function init_gear_sets()
         -- Augmented gear
         TaeonHands = {}
         TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
-        TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+8'}}
+        TaeonHands.Snap = {name="Taeon Gloves", augments={'"Snapshot"+5', 'Attack+22','"Snapshot"+3'}}
 
         sets.Organizer = {
             main="Annihilator",
