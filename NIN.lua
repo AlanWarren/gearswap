@@ -98,7 +98,7 @@ function init_gear_sets()
     -- Augments
     --------------------------------------
     TaeonHands = {}
-    TaeonHands.TA = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
+    TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
     
     --------------------------------------
     -- Job Abilties
@@ -629,7 +629,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         body="Hattori Ningi +1",
-        hands="Ryuo Tekko",
+        hands=TaeonHands.TA,
         ring1="Karieyh Ring",
         ring2="Epona's Ring",
         back="Yokaze Mantle",
