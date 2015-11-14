@@ -70,6 +70,7 @@ function init_gear_sets()
 	--------------------------------------
     TaeonHands = {}
     TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
+    TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+8'}}
 
 	sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
@@ -169,7 +170,7 @@ function init_gear_sets()
 	-- Ranged snapshot gear
 	sets.precast.RA = {
         head="Uk'uxkaj Cap",
-        hands="Iuitl Wristbands +1",
+        hands=TaeonHands.Snap,
         legs="Nahtirah Trousers", 
         feet="Wurrukatte Boots"
     }

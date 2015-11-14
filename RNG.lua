@@ -111,8 +111,8 @@ end
 function init_gear_sets()
         -- Augmented gear
         TaeonHands = {}
-        TaeonHands.TA = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
-        TaeonHands.DW = {name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}}
+        TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
+        TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+8'}}
 
         sets.Organizer = {
             main="Annihilator",
@@ -263,8 +263,8 @@ function init_gear_sets()
         sets.precast.RA = {
             head="Amini Gapette", -- 7
             body="Amini Caban +1", -- 10
-            hands="Iuitl Wristbands +1", -- 5
-            back="Lutian Cape", -- 3
+            hands=TaeonHands.Snap, --8
+            back="Lutian Cape", -- 2
             legs="Adhemar Kecks",
             waist="Impulse Belt", -- 2
             feet="Wurrukatte Boots" -- 3

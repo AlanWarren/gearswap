@@ -103,6 +103,7 @@ function init_gear_sets()
         back="Gunslinger's Cape",
         feet="Lanun Bottes"
     }
+    TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+8'}}
 	
 	--sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
 	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
@@ -149,7 +150,7 @@ function init_gear_sets()
 
 	sets.precast.RA = {
         ammo=gear.RAbullet,
-		hands="Iuitl Wristbands +1",
+		hands=TaeonHands.Snap,
 		back="Navarch's Mantle",
         waist="Impulse Belt",
         legs="Adhemar Kecks",
@@ -386,7 +387,7 @@ function init_gear_sets()
         head="Taeon Chapeau",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        hands={name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}},
+        hands="Floral Gauntlets",
         body="Samnuha Coat",
         ring1="Oneiros Ring",
         legs="Samnuha Tights",
