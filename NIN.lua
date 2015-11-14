@@ -99,7 +99,6 @@ function init_gear_sets()
     --------------------------------------
     TaeonHands = {}
     TaeonHands.TA = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
-    TaeonHands.DW = {name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}}
     
     --------------------------------------
     -- Job Abilties
@@ -331,7 +330,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
-        hands=TaeonHands.DW,
+        hands="Floral Gauntlets",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
@@ -556,7 +555,7 @@ function init_gear_sets()
     sets.engaged.Innin.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
         head="Hattori Zukin +1",
         body="Hattori Ningi +1",
-        hands=TaeonHands.DW,
+        hands="Floral Gauntlets",
     })
     sets.engaged.Innin.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         head="Hattori Zukin +1",
@@ -579,23 +578,23 @@ function init_gear_sets()
     -- 5 - 20% Haste 
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
         head="Ptica Headgear",
-        hands=TaeonHands.DW,
+        hands="Floral Gauntlets",
         back="Bleating Mantle",
         waist="Patentia Sash",
     })
     sets.engaged.Low.Haste_15 = set_combine(sets.engaged.Low.Haste_30, {
         back="Yokaze Mantle",
-        hands=TaeonHands.DW,
+        hands="Floral Gauntlets",
         waist="Patentia Sash"
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Mid.Haste_30, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        hands=TaeonHands.DW,
+        hands="Floral Gauntlets",
         waist="Patentia Sash"
     })
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_30, {
-        hands=TaeonHands.DW,
+        hands="Floral Gauntlets",
         legs="Samnuha Tights",
         waist="Patentia Sash"
     })
