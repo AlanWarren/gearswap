@@ -70,7 +70,6 @@ function init_gear_sets()
 	--------------------------------------
     TaeonHands = {}
     TaeonHands.TA = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
-    TaeonHands.DW = {name="Taeon Gloves", augments={'STR+3 VIT+3', 'Attack+22','"Dual Wield" +5'}}
 
 	sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
@@ -427,7 +426,7 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
 		--body="Skadi's Cuirie +1",
 		body="Samnuha Coat",
-        hands=TaeonHands.DW,
+        hands="Floral Gauntlets",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
