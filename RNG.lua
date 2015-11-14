@@ -261,7 +261,7 @@ function init_gear_sets()
         -- Preshot / Snapshot sets
         ------------------------------------------------------------------
         sets.precast.RA = {
-            head="Amini Gapette", -- 5
+            head="Amini Gapette", -- 7
             body="Amini Caban +1", -- 10
             hands="Iuitl Wristbands +1", -- 5
             back="Lutian Cape", -- 3
