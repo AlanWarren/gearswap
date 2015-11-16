@@ -251,7 +251,7 @@ function init_gear_sets()
 
      sets.midcast['Elemental Magic'] = {
          ammo="Plumose Sachet",
-         head="Ignominy burgeonet +1", -- int 20
+         head="Terminal Helm", -- mab+15 mdmg+15
          --head="Eschite Helm",
          neck="Eddy Necklace", -- 11 matk
          ear1="Friomisi Earring", -- 10 matk

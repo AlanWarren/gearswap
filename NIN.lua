@@ -445,7 +445,7 @@ function init_gear_sets()
         back="Yokaze Mantle",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
-        head="Rao Kabuto",
+        head="Taeon Chapeau",
         neck="Yarak Torque",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
