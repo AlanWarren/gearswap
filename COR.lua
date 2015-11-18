@@ -152,6 +152,7 @@ function init_gear_sets()
         ammo=gear.RAbullet,
 		hands=TaeonHands.Snap,
 		back="Navarch's Mantle",
+        body="Pursuer's Doublet",
         waist="Impulse Belt",
         legs="Adhemar Kecks",
         feet="Wurrukatte Boots"
@@ -164,7 +165,7 @@ function init_gear_sets()
         neck=gear.ElementalGorget,
         ear1="Flame Pearl",
         ear2="Flame Pearl",
-		body="Lanun Frac +1",
+        body="Pursuer's Doublet",
         hands="Alruna's Gloves +1",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
@@ -221,7 +222,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
-        body="Mekosuchinae Harness",
+        body="Pursuer's Doublet",
         back="Gunslinger's Cape",
         ring1="Globidonta Ring",
         ring2="Sangoma Ring",
@@ -267,7 +268,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Enervating Earring",
         ear2="Volley Earring",
-        body="Lanun Frac +1",
+        body="Pursuer's Doublet",
         hands="Alruna's Gloves +1",
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
@@ -278,7 +279,7 @@ function init_gear_sets()
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-    	body="Mekosuchinae Harness",
+        body="Pursuer's Doublet",
         ring1="Paqichikaji Ring",
         hands="Floral Gauntlets",
         waist="Elanid Belt"
@@ -296,7 +297,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Zennaroi Earring",
         ear2="Crematio Earring",
-        body="Lanun Frac +1",
+        body="Pursuer's Doublet",
         hands="Iuitl Wristbands +1",
         ring1="Karieyh Ring",
         ring2="Paguroidea Ring",
@@ -357,7 +358,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Enervating Earring",
         ear2="Volley Earring",
-        body="Lanun Frac +1",
+        body="Pursuer's Doublet",
         hands="Alruna's Gloves +1",
         ring1="Rajas Ring",
         ring2="Longshot Ring",

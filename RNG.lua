@@ -262,7 +262,7 @@ function init_gear_sets()
         ------------------------------------------------------------------
         sets.precast.RA = {
             head="Amini Gapette", -- 7
-            body="Amini Caban +1", -- 10
+            body="Amini Caban +1", -- 7
             hands=TaeonHands.Snap, --8
             back="Lutian Cape", -- 2
             legs="Adhemar Kecks",
@@ -278,7 +278,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Enervating Earring",
             ear2="Tripudio Earring", 
-            body="Arcadian Jerkin +1",
+            body="Pursuer's Doublet",
             hands="Alruna's Gloves +1",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
@@ -290,7 +290,6 @@ function init_gear_sets()
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             back="Lutian Cape", 
             ring2="Longshot Ring",
-            body="Kyujutsugi",
             legs="Adhemar Kecks",
             feet="Thereoid Greaves"
         })
@@ -325,7 +324,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Enervating Earring",
             ear2="Tripudio Earring", 
-            body="Kyujutsugi",
+            body="Pursuer's Doublet",
             hands="Amini Glovelettes +1",
             ring1="Rajas Ring", 
             ring2="K'ayres Ring",
@@ -364,7 +363,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Kyujutsugi",
+            body="Pursuer's Doublet",
             hands="Amini Glovelettes +1",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
@@ -374,12 +373,12 @@ function init_gear_sets()
             feet="Thereoid Greaves"
         }
         sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
-            body="Amini Caban +1",
             neck="Yarak Torque",
             legs="Adhemar Kecks",
             feet="Orion Socks +1"
         })
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
+            body="Amini Caban +1",
             ring1="Longshot Ring",
             ring2="Hajduk Ring",
         })
@@ -392,7 +391,7 @@ function init_gear_sets()
             back="Lutian Cape"
         })
         sets.midcast.RA.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.Bow.SamRoll, {
-            body="Kyujutsugi",
+            body="Pursuer's Doublet",
         })
         sets.midcast.RA.Bow.Acc.SamRoll = set_combine(sets.midcast.RA.Bow.Mid.SamRoll, {
             neck="Yarak Torque",
@@ -429,7 +428,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Flame Pearl",
             ear2="Flame Pearl",
-            body="Kyujutsugi",
+            body="Amini Caban +1",
             hands="Arcadian Bracers +1",
             ring1="Karieyh Ring",
             ring2="Ifrit Ring +1",
@@ -609,7 +608,7 @@ function init_gear_sets()
             neck="Rancor Collar",
             ear1="Flame Pearl",
             ear2="Flame Pearl",
-            body="Orion Jerkin +1",
+            body="Pursuer's Doublet",
             hands="Orion Bracers +1",
             ring1="Ifrit Ring +1",
             ring2="Longshot Ring",
