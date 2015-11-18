@@ -210,7 +210,7 @@ function init_gear_sets()
         head="Hagondes Hat",
         ear1="Friomisi Earring",
         ear2="Gwati Earring", 
-        hands="Azimuth Gloves",
+        hands="Psycloth Manillas",
         back="Refraction Cape",
         legs="Azimuth Tights +1",
         feet="Helios Boots"
@@ -249,7 +249,7 @@ function init_gear_sets()
         ear1="Lifestorm Earring", 
         ear2="Psystorm Earring",
         body="Azimuth Coat +1",
-        hands="Helios Gloves",
+        hands="Psycloth Manillas",
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
         back="Refraction Cape",
