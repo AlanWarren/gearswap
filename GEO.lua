@@ -107,24 +107,19 @@ function init_gear_sets()
         ring2="Ifrit Ring +1",
         back="Buquwik Cape",
         waist=gear.ElementalBelt,
-        --legs="Hagondes Pants",
-        feet="Hagondes Sabots"
     }
 
     sets.precast.WS['Flash Nova'] = {
         --ammo="Dosis Tathlum",
-        head="Hagondes Hat",
+        head="Welkin Crown",
         neck="Eddy Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-        --body="Hagondes Coat",
         --hands="Yaoyotl Gloves",
         ring1="Acumen Ring",
         --ring2="Strendu Ring",
         back="Toro Cape",
         --waist="Snow Belt",
-        --legs="Hagondes Pants",
-        feet="Hagondes Sabots"
     }
 
     sets.precast.WS['Starlight'] = {ear2="Moonshade Earring"}
@@ -172,14 +167,6 @@ function init_gear_sets()
         hands="Telchine Gloves",
         legs="Telchine Braconi"
     })
-        --main="Tamaxchi",
-        --sub="Genbu's Shield",
-        --body="Heka's Kalasiris",
-        --ring1="Haoma Ring",
-        --ring2="Sirona's Ring",
-        --back="Swith Cape +1",
-        --legs="Nares Trews",
-        --feet="Hagondes Sabots"
     
     sets.midcast.Curaga = sets.midcast.Cure
 
@@ -207,7 +194,7 @@ function init_gear_sets()
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
-        head="Hagondes Hat",
+        head="Welkin Crown",
         ear1="Friomisi Earring",
         ear2="Gwati Earring", 
         hands="Psycloth Manillas",
@@ -230,7 +217,7 @@ function init_gear_sets()
     })
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
-        head="Hagondes Hat",
+        head="Welkin Crown",
         ear1="Friomisi Earring",
         ear2="Gwati Earring", 
         legs="Azimuth Tights +1",
@@ -327,7 +314,7 @@ function init_gear_sets()
         feet="Geomancy Sandals"
     }
     sets.idle.PDT = set_combine(sets.idle, {
-        head="Hagondes Hat",
+        head="Hike Khat +1",
         hands="Geomancy Mitaines +1",
         ring2="Patricius Ring",
         back="Repulse Mantle",
@@ -383,7 +370,7 @@ function init_gear_sets()
 
     sets.defense.PDT = {
         range="Dunna",
-        head="Hagondes Hat",
+        head="Welkin Crown",
         neck="Twilight Torque",
         ear1="Zennaroi Earring",
         body="Azimuth Coat +1",
@@ -391,7 +378,6 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Dark Ring",
         --back="Umbra Cape",
-        --legs="Hagondes Pants",
         feet="Azimuth Gaiters"
     }
 
@@ -408,7 +394,6 @@ function init_gear_sets()
         --back="Umbra Cape",
         waist="Yamabuki-no-Obi",
         --legs="Bokwus Slops",
-        --feet="Hagondes Sabots"
     }
 
     sets.Kiting = {}
