@@ -169,7 +169,7 @@ function init_gear_sets()
             neck="Lissome Necklace",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Kyujutsugi",
+            body="Pursuer's Doublet",
             hands="Amini Glovelettes +1",
             ring1="Karieyh Ring",
             ring2="Paguroidea Ring",
