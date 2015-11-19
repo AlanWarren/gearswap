@@ -475,7 +475,7 @@ function init_gear_sets()
             ring1="Acumen Ring",
             ring2="Garuda Ring",
             back="Argochampsa Mantle",
-            waist="Yamabuki-no-Obi",
+            waist="Soil Belt",
             legs="Limbo Trousers",
             feet="Taeon Boots"
         }
