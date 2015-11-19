@@ -464,6 +464,24 @@ function init_gear_sets()
         sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
         sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS.Mid, sets.Wildfire)
         sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS.Acc, sets.Wildfire)
+        
+        sets.TrueFlight = {
+            head="Umbani Cap",
+            body="Samnuha Coat",
+            ear1="Crematio Earring",
+            ear2="Friomisi Earring",
+            neck="Stoicheion Medal",
+            hands="Leyline Gloves",
+            ring1="Acumen Ring",
+            ring2="Garuda Ring",
+            back="Argochampsa Mantle",
+            waist="Yamabuki-no-Obi",
+            legs="Limbo Trousers",
+            feet="Taeon Boots"
+        }
+        sets.precast.WS['True Flight'] = set_combine(sets.precast.WS, sets.TrueFlight)
+        sets.precast.WS['True Flight'].Mid = set_combine(sets.precast.WS.Mid, sets.TrueFlight)
+        sets.precast.WS['True Flight'].Acc = set_combine(sets.precast.WS.Acc, sets.TrueFlight)
 
         -- CORONACH
         sets.Coronach = {
