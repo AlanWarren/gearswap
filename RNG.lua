@@ -204,7 +204,7 @@ function init_gear_sets()
             neck="Twilight Torque",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Arcadian Jerkin +1", 
+            body="Pursuer's Doublet", 
             hands="Iuitl Wristbands +1",
             ring1="Karieyh Ring",
             ring2="Dark Ring",
