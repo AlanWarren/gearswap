@@ -449,6 +449,8 @@ function init_gear_sets()
         neck="Yarak Torque",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
+        ring1="Patricius Ring",
+        ring2="Mars's Ring",
         waist="Olseni Belt"
     })
     -- do nothing here
