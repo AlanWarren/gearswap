@@ -489,9 +489,11 @@ function init_gear_sets()
         ear2="Suppanomimi",
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
-        head="Ptica Headgear",
+        head="Taeon Chapeau",
         ear1="Zennaroi Earring",
-        ear2="Steelflash Earring",
+        ear2="Suppanomimi",
+        body="Hattori Ningi +1",
+        legs="Samnuha Tights"
     })
 
     sets.engaged.Innin.Haste_35 = set_combine(sets.engaged.Haste_35, {
@@ -544,11 +546,15 @@ function init_gear_sets()
         back="Yokaze Mantle"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
-        ear2="Suppanomimi",
+        head="Taeon Chapeau",
+        neck="Yarak Torque",
         ear1="Zennaroi Earring",
-        body="Mochizuki Chainmail +1",
+        ear2="Suppanomimi",
+        body="Hattori Ningi +1",
+        hands="Ryuo Tekko",
         ring1="Patricius Ring",
-        legs="Hachiya Hakama +1"
+        ring2="Mars's Ring",
+        legs="Samnuha Tights"
     })
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
