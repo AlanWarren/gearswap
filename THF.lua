@@ -205,7 +205,6 @@ function init_gear_sets()
         feet="Taeon Boots"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-        head="Whirlpool Mask",
         hands="Plunderer's Armlets +1",
         ring2="Patricius Ring",
         back="Canny Cape",
@@ -214,7 +213,7 @@ function init_gear_sets()
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMid version isn't found.
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
-        head="Felistris Mask", 
+        head="Teon Chapeau",
         neck="Moepapa Medal",
         ear1="Brutal Earring",
         ear2="Trux Earring",
@@ -241,7 +240,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Dancing Edge'] = set_combine(sets.precast.WS, {neck="Breeze Gorget", waist="Thunder Belt"})
 	sets.precast.WS['Dancing Edge'].Mid = set_combine(sets.precast.WS['Dancing Edge'], {waist="Thunder Belt"})
-	sets.precast.WS['Dancing Edge'].Acc = set_combine(sets.precast.WS['Dancing Edge'], {head="Whirlpool Mask", waist="Olseni Belt"})
+	sets.precast.WS['Dancing Edge'].Acc = set_combine(sets.precast.WS['Dancing Edge'], {head="Taeon Chapeau", waist="Olseni Belt"})
 	sets.precast.WS['Dancing Edge'].SA = set_combine(sets.precast.WS['Dancing Edge'].Mid, {neck="Breeze Gorget"})
 	sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'].Mid, {neck="Breeze Gorget"})
 	sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mid, {neck="Breeze Gorget"})
@@ -258,7 +257,7 @@ function init_gear_sets()
     })
 	sets.precast.WS['Evisceration'].Mid = set_combine(sets.precast.WS['Evisceration'], {back="Canny Cape"})
 	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
-        head="Whirlpool Mask",
+        head="Teon Chapeau",
         hands="Plunderer's Armlets +1",
         ring1="Rajas Ring",
         ring2="Ramuh Ring",
@@ -282,7 +281,7 @@ function init_gear_sets()
     })
 	sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {back="Canny Cape"})
 	sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
-        head="Whirlpool Mask",
+        head="Teon Chapeau",
         ring1="Rajas Ring",
         ring2="Ramuh Ring",
         back="Canny Cape",
@@ -296,7 +295,7 @@ function init_gear_sets()
 		ear1="Brutal Earring",ear2="Trux Earring", hands="Pillager's Armlets +1", ring1="Ramuh Ring", ring2="Rajas Ring",
         legs="Samnuha Tights",
         })
-	sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head="Whirlpool Mask"})
+	sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head="Taeon Chapeau"})
 	sets.precast.WS['Shark Bite'].Mid = set_combine(sets.precast.WS['Shark Bite'], {waist="Thunder Belt"})
 	sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget", ring1="Ramuh Ring"})
 	sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
