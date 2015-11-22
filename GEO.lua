@@ -182,7 +182,7 @@ function init_gear_sets()
         head="Welkin Crown",
         neck="Eddy Necklace",
         ear1="Friomisi Earring",
-        ear2="Hecate's Earring",
+        ear2="Crematio Earring",
         body="Azimuth Coat +1",
         hands="Helios Gloves",
         ring1="Shiva Ring",
