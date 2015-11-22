@@ -637,7 +637,7 @@ function init_gear_sets()
         neck="Defiant Collar",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
-        body="Hattori Ningi +1",
+        body="Rawhide Vest",
         hands=TaeonHands.TA,
         ring1="Karieyh Ring",
         ring2="Epona's Ring",
@@ -674,10 +674,10 @@ function init_gear_sets()
     
     -- BLADE: JIN
     sets.Jin = {
-        head="Rao Kabuto",
+        head="Taeon Chapeau",
         ammo="Yetshila",
         neck="Rancor Collar",
-        body="Dread Jupon",
+        body="Hattori Ningi +1",
         hands="Ryuo Tekko",
         ring1="Ifrit Ring +1",
         waist="Windbuffet Belt +1",
@@ -728,9 +728,8 @@ function init_gear_sets()
     
     -- BLADE: SHUN
     sets.Shun = {
-        head="Gavialis Helm",
+        head="Taeon Chapeau",
         neck="Flame Gorget",
-        ear2="Trux Earring",
         hands="Ryuo Tekko",
         ring1="Ramuh Ring",
         back="Yokaze Mantle",
@@ -760,7 +759,7 @@ function init_gear_sets()
     sets.Ku = {
         head="Rao Kabuto",
         ear2="Trux Earring",
-        body="Dread Jupon",
+        body="Rawhide Vest",
         neck="Shadow Gorget",
         waist="Metalsinger Belt",
     }
