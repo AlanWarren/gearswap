@@ -423,7 +423,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Trux Earring",
         neck="Asperity Necklace",
-        body="Vatic Byrnie",
+        body="Rawhide Vest",
         hands="Ryuo Tekko",
         ring1="Oneiros Ring",
         --back="Iga Dochugappa",
@@ -437,11 +437,11 @@ function init_gear_sets()
         neck="Lissome Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Hattori Ningi +1",
         ring1="Rajas Ring",
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         ring1="Patricius Ring",
+        body="Hattori Ningi +1",
         back="Yokaze Mantle",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
@@ -661,7 +661,7 @@ function init_gear_sets()
         ammo="Ginsen",
         neck="Breeze Gorget",
         head="Rao Kabuto",
-        body="Vatic Byrnie",
+        body="Rawhide Vest",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
         back="Yokaze Mantle",
@@ -779,7 +779,7 @@ function init_gear_sets()
     sets.Ten = {
         head="Rao Kabuto",
         neck="Shadow Gorget",
-        body="Vatic Byrnie",
+        body="Rawhide Vest",
         waist="Metalsinger Belt",
     }
 
