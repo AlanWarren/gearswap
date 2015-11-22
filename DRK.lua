@@ -231,8 +231,8 @@ function init_gear_sets()
          ring1="Perception Ring",
          ring2="Sangoma Ring",
          back=Niht.Darkmagic,
-         legs="Heathen's Flanchard +1", --20
-         --legs="Eschite Cuisses", 
+         --legs="Heathen's Flanchard +1", --20
+         legs="Eschite Cuisses", 
          feet="Heathen's Sollerets +1"
      }
      
@@ -276,7 +276,7 @@ function init_gear_sets()
          ring1="Beeline Ring",
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
-         legs="Founder's Hose",
+         legs="Eschite Cuisses", 
          feet="Amm Greaves"
      })
      
