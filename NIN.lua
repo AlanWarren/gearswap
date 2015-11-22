@@ -314,7 +314,7 @@ function init_gear_sets()
         main="Kannagi",
         sub="Achiuchikapu",
         neck="Malevolence",
-        head="Izuna",
+        head="Mijin",
         hands="Taeon Gloves",
         shihei="Shihei",
         inoshi="Inoshishinofuda",
