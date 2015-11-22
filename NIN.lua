@@ -177,7 +177,7 @@ function init_gear_sets()
         feet="Taeon Boots"
     }
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        body="Mekosuchinae Harness"
+        body="Mochizuki Chainmail +1"
     })
     sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
     
@@ -688,8 +688,6 @@ function init_gear_sets()
         waist="Thunder Belt",
     })
     sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS['Blade: Jin'].Low, {
-        head="Gavialis Helm",
-        body="Mes'yohi Haubergeon"
     })
     sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid, {
         ring1="Karieyh Ring",
@@ -783,7 +781,6 @@ function init_gear_sets()
 
     sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, sets.Ten)
     sets.precast.WS['Blade: Ten'].Low = set_combine(sets.precast.WS['Blade: Ten'], {
-        head="Gavialis Helm",
         body="Mes'yohi Haubergeon",
     })
     sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS['Blade: Ten'].Low, {
