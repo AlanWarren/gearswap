@@ -361,7 +361,6 @@ function init_gear_sets()
     
     sets.engaged.Innin = set_combine(sets.engaged, {
         head="Hattori Zukin +1",
-        body="Hachiya Chainmail +1",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         waist="Windbuffet Belt +1",
@@ -548,8 +547,8 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
         head="Taeon Chapeau",
         neck="Yarak Torque",
-        ear1="Zennaroi Earring",
-        ear2="Suppanomimi",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
         body="Hattori Ningi +1",
         hands="Ryuo Tekko",
         ring1="Patricius Ring",
