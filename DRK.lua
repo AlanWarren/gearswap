@@ -157,7 +157,6 @@ function init_gear_sets()
      sets.precast.JA['Dark Seal'] = {head="Fallen's burgeonet +1"}
      sets.precast.JA['Souleater'] = {head="Ignominy burgeonet +1"}
      sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
-     sets.precast.JA['Weapon Bash'] = {hands="Ignominy Gauntlets +1"}
 
      sets.CapacityMantle  = { back="Mecistopins Mantle" }
      --sets.Berserker       = { neck="Berserker's Torque" }
@@ -331,7 +330,7 @@ function init_gear_sets()
      -- General sets
      sets.precast.WS = {
          ammo="Aqreqaq Bomblet",
-         head="Otomi Helm",
+         head="Argosy Celata",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
@@ -346,13 +345,12 @@ function init_gear_sets()
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
-         head="Yaoyotl Helm",
+         head="Argosy Celata",
          body="Mes'yohi Haubergeon",
-         hands="Ignominy Gauntlets +1",
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          ear1="Zennaroi Earring",
-         hands="Crusher's Gauntlets",
+         hands="Leyline Gloves",
          body="Fallen's Cuirass +1",
          waist="Olseni Belt",
      })
@@ -365,14 +363,14 @@ function init_gear_sets()
      })
      sets.precast.WS.Resolution.Mid = set_combine(sets.precast.WS.Resolution, {
          ammo="Ginsen",
-         head="Yaoyotl Helm",
+         head="Argosy Celata",
      })
      sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
 
      -- TORCLEAVER 
      -- VIT 80%
      sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
-         head="Fallen's burgeonet +1",
+         head="Argosy Celata",
          neck="Aqua Gorget",
          hands="Crusher's Gauntlets",
          legs="Yorium Cuisses",
@@ -388,14 +386,14 @@ function init_gear_sets()
      -- 20% STR / 20% INT 
      -- Base set only used at 3000TP to put AM3 up
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
-         head="Heathen's Burgonet +1",
+         head="Argosy Celata",
          neck="Ganesha's Mala",
          body="Acro Surcoat",
          hands=Acro.Hands.STP,
          waist="Windbuffet Belt +1",
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
-         head="Acro Helm",
+         head="Argosy Celata",
          neck="Shadow Gorget",
          ear1="Lugra Earring +1",
          body="Acro Surcoat",
@@ -416,13 +414,13 @@ function init_gear_sets()
          ear1="Zennaroi Earring",
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {
-         head="Acro Helm",
+         head="Argosy Celata",
          neck="Shadow Gorget",
          waist="Light Belt"
      })
 
      sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
-         head="Heathen's Burgonet +1",
+         head="Argosy Celata",
          ear2="Trux Earring",
          neck="Shadow Gorget",
          hands=Acro.Hands.STP,
@@ -439,20 +437,20 @@ function init_gear_sets()
      -- CROSS REAPER
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-         head="Heathen's Burgonet +1",
+         head="Argosy Celata",
          body="Acro Surcoat",
          neck="Aqua Gorget",
          hands="Fallen's Finger Gauntlets +1",
          waist="Windbuffet Belt +1"
      })
      sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {
-         head="Acro Helm",
+         head="Argosy Celata",
          body="Acro Surcoat",
          hands=Acro.Hands.STP,
      })
 
      sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
-         head="Heathen's Burgonet +1",
+         head="Argosy Celata",
          neck="Ganesha's Mala",
          hands=Acro.Hands.STP,
          waist="Metalsinger Belt",
@@ -471,7 +469,7 @@ function init_gear_sets()
      -- 86-100% INT 
      sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
          ammo="Ginsen",
-         head="Heathen's Burgonet +1",
+         head="Argosy Celata",
          neck="Shadow Gorget",
          body="Founder's Breastplate",
          hands="Founder's Gauntlets",
@@ -495,7 +493,7 @@ function init_gear_sets()
      -- Quietus
      -- 60% STR / MND 
      sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
-         head="Heathen's Burgonet +1",
+         head="Argosy Celata",
          neck="Shadow Gorget",
          ear2="Lugra Earring +1",
          hands=Acro.Hands.STP,
@@ -504,7 +502,7 @@ function init_gear_sets()
      })
      sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {})
      sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
-         head="Yaoyotl Helm",
+         head="Argosy Celata",
          waist="Caudata Belt",
      })
      sets.precast.WS.Quietus.AM3Mid = set_combine(sets.precast.WS.Quietus.Mid, {
@@ -516,19 +514,23 @@ function init_gear_sets()
      -- SPIRAL HELL
      -- 50% STR / 50% INT 
      sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
-         head="Heathen's Burgonet +1",
+         head="Argosy Celata",
          neck="Aqua Gorget",
          body="Phorcys Korazin",
          legs="Yorium Cuisses",
          waist="Metalsinger belt",
      })
-     sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid, {head="Heathen's Burgonet +1"})
-     sets.precast.WS['Spiral Hell'].Acc = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Acc, {head="Heathen's Burgonet +1"})
+     sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid, {
+         head="Argosy Celata",
+     })
+     sets.precast.WS['Spiral Hell'].Acc = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Acc, {
+         head="Argosy Celata",
+     })
 
      -- SHADOW OF DEATH
      -- 40% STR 40% INT - Darkness Elemental
      sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
-         head="Heathen's Burgonet +1",
+         head="Argosy Celata",
          neck="Eddy Necklace",
          body="Founder's Breastplate",
          ear1="Friomisi Earring",
@@ -539,20 +541,24 @@ function init_gear_sets()
          feet="Heathen's Sollerets +1"
       })
 
-     sets.precast.WS['Shadow of Death'].Mid = set_combine(sets.precast.WS['Shadow of Death'], sets.precast.WS.Mid, {head="Heathen's Burgonet +1"})
-     sets.precast.WS['Shadow of Death'].Acc = set_combine(sets.precast.WS['Shadow of Death'], sets.precast.WS.Acc, {head="Heathen's Burgonet +1"})
+     sets.precast.WS['Shadow of Death'].Mid = set_combine(sets.precast.WS['Shadow of Death'], sets.precast.WS.Mid, {
+         head="Argosy Celata",
+     })
+     sets.precast.WS['Shadow of Death'].Acc = set_combine(sets.precast.WS['Shadow of Death'], sets.precast.WS.Acc, {
+         head="Argosy Celata",
+     })
 
      -- DARK HARVEST 
      -- 40% STR 40% INT - Darkness Elemental
      sets.precast.WS['Dark Harvest'] = sets.precast.WS['Shadow of Death']
-     sets.precast.WS['Dark Harvest'].Mid = set_combine(sets.precast.WS['Shadow of Death'], {head="Ignominy burgeonet +1", feet="Heathen's Sollerets +1"})
-     sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {head="Ignominy burgeonet +1", feet="Heathen's Sollerets +1", ring1="Sangoma Ring"})
+     sets.precast.WS['Dark Harvest'].Mid = set_combine(sets.precast.WS['Shadow of Death'], {head="Terminal Helm", feet="Heathen's Sollerets +1"})
+     sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {head="Terminal Helm", feet="Heathen's Sollerets +1", ring1="Sangoma Ring"})
 
      -- Sword WS's
      -- SANGUINE BLADE
      -- 50% MND / 50% STR Darkness Elemental
      sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {
-         head="Ignominy burgeonet +1",
+         head="Terminal Helm",
          neck="Stoicheion Medal",
          ear1="Friomisi Earring",
          body="Founder's Breastplate",
@@ -567,7 +573,7 @@ function init_gear_sets()
      -- REQUISCAT
      -- 73% MND - breath damage
      sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
-         head="Otomi Helm",
+         head="Argosy Celata",
          neck="Shadow Gorget",
          body="Acro Surcoat",
          hands="Fallen's Finger Gauntlets +1",
@@ -580,7 +586,7 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Heathen's Burgonet +1",
+         head="Argosy Celata",
          neck="Lissome Necklace",
          ear1="Crematio Earring",
          ear2="Lugra Earring +1",
@@ -660,7 +666,7 @@ function init_gear_sets()
 
      sets.HighHaste = {
          ammo="Ginsen",
-         head="Acro Helm",
+         head="Argosy Celata",
          hands=Acro.Hands.STP,
          feet=Acro.Feet.STP
      }
@@ -717,7 +723,7 @@ function init_gear_sets()
          feet=Acro.Feet.STP
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         head="Heathen's Burgonet +1",
+         head="Argosy Celata",
          body="Acro Surcoat",
          feet="Loyalist Sabatons",
      })
@@ -735,7 +741,7 @@ function init_gear_sets()
      -- Liberator AM3
      sets.engaged.AM3 = set_combine(sets.engaged, {
          ammo="Ginsen",
-         head="Acro Helm",
+         head="Argosy Celata",
          ear1="Enervating Earring",
          ear2="Tripudio Earring",
          body="Acro Surcoat",
@@ -749,7 +755,7 @@ function init_gear_sets()
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          ammo="Hasty Pinion +1",
-         head="Gavialis Helm",
+         head="Argosy Celata",
          neck="Lissome Necklace",
          ear1="Steelflash Earring",
          body="Mes'yohi Haubergeon",
@@ -764,7 +770,8 @@ function init_gear_sets()
      sets.engaged.Apocalypse = set_combine(sets.engaged, {
          --sub="Pole Grip",
          ammo="Yetshila",
-         --head="Acro Helm",
+         head="Argosy Celata",
+         hands=Acro.Hands.Haste,
          --body="Acro Surcoat",
          ear1="Brutal Earring",
          ear2="Lugra Earring +1"
@@ -777,7 +784,7 @@ function init_gear_sets()
      })
 
      sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
-         head="Heathen's Burgonet +1",
+         head="Argosy Celata",
          feet=Acro.Feet.WSD
      })
      sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
@@ -816,7 +823,7 @@ function init_gear_sets()
      })
      sets.engaged.DW.Mid = set_combine(sets.engaged.DW, {
          ammo="Ginsen",
-         head="Yaoyotl Helm",
+         head="Argosy Celata",
          hands=Acro.Hands.Haste
      })
      sets.engaged.DW.Acc = set_combine(sets.engaged.DW.Mid, {
@@ -831,8 +838,8 @@ function init_gear_sets()
          ear2="Tripudio Earring"
      })
      sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {
-         head="Acro Helm",
-         feet="Ejekamal Boots"
+         head="Argosy Celata",
+         feet="Loyalist Sabatons"
          --back="Grounded Mantle +1"
          --ring2="K'ayres RIng"
      })
@@ -847,8 +854,9 @@ function init_gear_sets()
      -- sword is more multi-hit, less stp
      sets.engaged.Sangarius = set_combine(sets.engaged, {
          ammo="Yetshila",
-         head="Otomi Helm",
+         head="Argosy Celata",
          legs="Yorium Cuisses",
+         hands=Acro.Hands.Haste,
          feet=Acro.Feet.WSD
      })
      sets.engaged.Sangarius.Mid = set_combine(sets.engaged.Mid, {
