@@ -855,7 +855,7 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
     -- Ranged Attacks 
-    if spell.action_type == 'Ranged Attack' then
+    if spell.action_type == 'Ranged Attack' and state.OffenseMode ~= 'Acc' then
         equip( sets.SangeAmmo )
     end
     -- protection for lag
@@ -1248,7 +1248,7 @@ function time_change(new, old)
 end
 
 function select_ammo()
-    if state.Buff.Sange then
+    if state.Buff.Sange  and state.OffenseMode ~= 'Acc' then
         return sets.SangeAmmo
     else
         return sets.RegularAmmo
