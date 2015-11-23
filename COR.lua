@@ -128,6 +128,7 @@ function init_gear_sets()
         main="Arendsi Fleuret",
         sub="Odium",
         range="Doomsday",
+        hands="Compensator",
         ammo="Legion Scutum"
     }
 		
