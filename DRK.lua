@@ -399,6 +399,7 @@ function init_gear_sets()
          neck="Shadow Gorget",
          ear1="Lugra Earring +1",
          body="Acro Surcoat",
+         feet=Acro.Feet.STP
      })
      -- Mid assumes higher defense target
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
@@ -410,6 +411,7 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Fallen's Cuirass +1",
          waist="Light Belt"
+         feet=Acro.Feet.STP
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Mes'yohi Haubergeon",
@@ -419,6 +421,7 @@ function init_gear_sets()
          head="Acro Helm",
          neck="Shadow Gorget",
          waist="Light Belt"
+         feet=Acro.Feet.STP
      })
 
      sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
