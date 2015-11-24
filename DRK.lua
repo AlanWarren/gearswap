@@ -145,6 +145,7 @@ function init_gear_sets()
          grip="Pole Grip",
          head="Acro Helm",
          hands="Acro Gauntlets",
+         waist="Mes. Haubergeon",
          body="Acro Surcoat",
          legs="Acro Breeches",
          feet="Acro Leggings"
