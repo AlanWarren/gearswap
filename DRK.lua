@@ -661,7 +661,7 @@ function init_gear_sets()
      sets.HighHaste = {
          ammo="Ginsen",
          head="Argosy Celata",
-         hands=Acro.Hands.STP,
+         --hands=Acro.Hands.STP,
          feet=Acro.Feet.STP
      }
      
