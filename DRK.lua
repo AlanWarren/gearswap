@@ -416,7 +416,7 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {
          head="Argosy Celata",
          neck="Shadow Gorget",
-         waist="Light Belt"
+         waist="Light Belt",
          feet=Acro.Feet.STP
      })
 
