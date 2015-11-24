@@ -400,13 +400,13 @@ function init_gear_sets()
      -- Mid assumes higher defense target
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          neck="Shadow Gorget",
-         body="Founder's Breastplate",
+         body="Acro Surcoat",
          legs="Heathen's Flanchard +1",
          waist="Caudata Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Fallen's Cuirass +1",
-         waist="Light Belt"
+         waist="Light Belt",
          feet=Acro.Feet.STP
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
