@@ -336,7 +336,7 @@ function init_gear_sets()
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
          body="Acro Surcoat",
-         hands="Founder's Gauntlets",
+         hands="Odyssean Gauntlets",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
          back=Niht.WSD,
@@ -348,11 +348,9 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Yaoyotl Helm",
          body="Mes'yohi Haubergeon",
-         hands="Ignominy Gauntlets +1",
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          ear1="Zennaroi Earring",
-         hands="Crusher's Gauntlets",
          body="Fallen's Cuirass +1",
          waist="Olseni Belt",
      })
@@ -374,7 +372,7 @@ function init_gear_sets()
      sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
          head="Fallen's burgeonet +1",
          neck="Aqua Gorget",
-         hands="Crusher's Gauntlets",
+         hands="Odyssean Gauntlets",
          legs="Yorium Cuisses",
          waist="Caudata Belt"
      })
@@ -391,7 +389,6 @@ function init_gear_sets()
          head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
          body="Acro Surcoat",
-         hands=Acro.Hands.STP,
          waist="Windbuffet Belt +1",
      })
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
@@ -428,12 +425,9 @@ function init_gear_sets()
          head="Heathen's Burgonet +1",
          ear2="Trux Earring",
          neck="Shadow Gorget",
-         hands=Acro.Hands.STP,
          waist="Soil Belt"
      })
-     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {
-         hands=Acro.Hands.STP,
-     })
+     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {})
      sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
          body="Mes'yohi Haubergeon",
          ear1="Zennaroi Earring",
@@ -445,19 +439,16 @@ function init_gear_sets()
          head="Heathen's Burgonet +1",
          body="Acro Surcoat",
          neck="Aqua Gorget",
-         hands="Fallen's Finger Gauntlets +1",
          waist="Windbuffet Belt +1"
      })
      sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {
          head="Acro Helm",
          body="Acro Surcoat",
-         hands=Acro.Hands.STP,
      })
 
      sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
          head="Heathen's Burgonet +1",
          neck="Ganesha's Mala",
-         hands=Acro.Hands.STP,
          waist="Metalsinger Belt",
          legs="Heathen's Flanchard +1",
      })
@@ -477,7 +468,6 @@ function init_gear_sets()
          head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
          body="Founder's Breastplate",
-         hands="Founder's Gauntlets",
          ring2="Shiva Ring",
          back=Niht.WSD,
          waist="Soil Belt",
@@ -501,7 +491,6 @@ function init_gear_sets()
          head="Heathen's Burgonet +1",
          neck="Shadow Gorget",
          ear2="Lugra Earring +1",
-         hands=Acro.Hands.STP,
          waist="Windbuffet Belt +1",
          legs="Yorium Cuisses",
      })
@@ -535,7 +524,7 @@ function init_gear_sets()
          neck="Eddy Necklace",
          body="Founder's Breastplate",
          ear1="Friomisi Earring",
-         hands="Founder's Gauntlets",
+         hands="Leyline Gloves",
          back="Toro Cape",
          legs="Limbo Trousers",
          waist="Caudata Belt",
@@ -720,20 +709,19 @@ function init_gear_sets()
          feet=Acro.Feet.STP
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
+         ammo="Hasty Pinion +1",
          head="Heathen's Burgonet +1",
-         body="Acro Surcoat",
-         feet="Loyalist Sabatons",
+         ear1="Bladeborn Earring",
+         ear2="Steelflash Earring",
+         body="Mes'yohi Haubergeon",
+         back="Kayapa Cape",
+         hands=Acro.Hands.Haste,
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-         ammo="Hasty Pinion +1",
-         neck="Defiant Collar",
-         ear1="Steelflash Earring",
-         ear2="Zennaroi Earring",
-         body="Mes'yohi Haubergeon",
-         hands="Leyline Gloves",
+         neck="Lissome Necklace",
+         hands="Odyssean Gauntlets",
          ring2="Mars's Ring",
-         back="Kayapa Cape",
-         waist="Olseni Belt"
+         waist="Olseni Belt",
      })
      -- Liberator AM3
      sets.engaged.AM3 = set_combine(sets.engaged, {
@@ -746,20 +734,21 @@ function init_gear_sets()
          feet="Thereoid Greaves"
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-         ear2="Zennaroi Earring",
-         neck="Lissome Necklace",
+         ammo="Hasty Pinion +1",
+         ear1="Zennaroi Earring",
+         body="Mes'yohi Haubergeon",
+         back="Kayapa Cape",
          feet=Acro.Feet.STP
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          ammo="Hasty Pinion +1",
          head="Gavialis Helm",
          neck="Lissome Necklace",
-         ear1="Steelflash Earring",
+         ear2="Steelflash Earring",
          body="Mes'yohi Haubergeon",
-         hands="Leyline Gloves",
-         ring1="Patricius Ring",
+         hands="Odyssean Gauntlets",
+         ring1="Rajas Ring",
          ring2="Mars's Ring",
-         back="Kayapa Cape",
          waist="Olseni Belt",
      })
      
