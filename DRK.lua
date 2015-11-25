@@ -341,7 +341,7 @@ function init_gear_sets()
          ring2="Ifrit Ring +1",
          back=Niht.WSD,
          waist="Windbuffet Belt +1",
-         legs="Yorium Cuisses",
+         legs="Argosy Breeches",
          feet=Acro.Feet.WSD
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -373,7 +373,7 @@ function init_gear_sets()
          head="Argosy Celata",
          neck="Aqua Gorget",
          hands="Odyssean Gauntlets",
-         legs="Yorium Cuisses",
+         legs="Argosy Breeches",
          waist="Caudata Belt"
      })
      sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
@@ -402,7 +402,7 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          neck="Shadow Gorget",
          body="Acro Surcoat",
-         legs="Heathen's Flanchard +1",
+         legs="Argosy Breeches",
          waist="Caudata Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
@@ -450,7 +450,7 @@ function init_gear_sets()
          head="Argosy Celata",
          neck="Ganesha's Mala",
          waist="Metalsinger Belt",
-         legs="Heathen's Flanchard +1",
+         legs="Argosy Breeches",
      })
      sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
          neck="Aqua Gorget",
@@ -471,15 +471,15 @@ function init_gear_sets()
          ring2="Shiva Ring",
          back=Niht.WSD,
          waist="Soil Belt",
-         legs="Heathen's Flanchard +1",
+         legs="Argosy Breeches",
          feet=Acro.Feet.WSD
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
-         legs="Heathen's Flanchard +1",
+         legs="Argosy Breeches",
          back=Niht.WSD,
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
-         legs="Heathen's Flanchard +1",
+         legs="Argosy Breeches",
          back=Niht.WSD,
      })
      sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
@@ -492,7 +492,7 @@ function init_gear_sets()
          neck="Shadow Gorget",
          ear2="Lugra Earring +1",
          waist="Windbuffet Belt +1",
-         legs="Yorium Cuisses",
+         legs="Argosy Breeches",
      })
      sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {})
      sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
@@ -511,7 +511,7 @@ function init_gear_sets()
          head="Argosy Celata",
          neck="Aqua Gorget",
          body="Phorcys Korazin",
-         legs="Yorium Cuisses",
+         legs="Argosy Breeches",
          waist="Metalsinger belt",
      })
      sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid, {
@@ -713,7 +713,7 @@ function init_gear_sets()
          ring2="K'ayres Ring",
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
-         legs="Acro Breeches",
+         legs="Argosy Breeches",
          feet=Acro.Feet.STP
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
@@ -723,6 +723,7 @@ function init_gear_sets()
          ear2="Steelflash Earring",
          body="Mes'yohi Haubergeon",
          back="Kayapa Cape",
+         legs="Acro Breeches",
          hands=Acro.Hands.Haste,
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -738,6 +739,7 @@ function init_gear_sets()
          ear1="Enervating Earring",
          ear2="Tripudio Earring",
          body="Acro Surcoat",
+         legs="Acro Breeches",
          hands=Acro.Hands.Haste,
          feet="Thereoid Greaves"
      })
