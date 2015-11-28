@@ -186,7 +186,7 @@ function init_gear_sets()
         ear1="Loquacious Earring",
         hands="Leyline Gloves",
         ring2="Prolix Ring",
-        legs="Limbo Trousers",
+        legs="Eschite Cuisses",
         feet="Yorium Sabatons"
      }
 
@@ -242,7 +242,6 @@ function init_gear_sets()
      })
      
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
-         head="Otomi Helm",
          body="Founder's breastplate",
          hands="Leyline Gloves",
          ring1="Globidonta Ring",
@@ -262,7 +261,7 @@ function init_gear_sets()
          ring2="Shiva Ring", -- matk 4
          waist="Caudata Belt", -- int 6
          --legs="Haruspex Slops",
-         legs="Limbo Trousers", -- matk 17
+         legs="Eschite Cuisses", -- matk 25 
          back="Aput Mantle", -- mdmg 10
          feet="Heathen's Sollerets +1" -- matk 8
      }
