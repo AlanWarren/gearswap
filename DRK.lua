@@ -581,7 +581,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Argosy Celata",
          neck="Lissome Necklace",
-         ear1="Crematio Earring",
+         ear1="Zennaroi Earring",
          ear2="Lugra Earring +1",
          body="Councilor's Garb",
          hands="Odyssean Gauntlets",
