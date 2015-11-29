@@ -146,6 +146,7 @@ function init_gear_sets()
          head="Acro Helm",
          hands="Acro Gauntlets",
          waist="Mes. Haubergeon",
+         back=Niht.DarkMagic,
          body="Acro Surcoat",
          legs="Acro Breeches",
          feet="Acro Leggings"
@@ -230,7 +231,7 @@ function init_gear_sets()
          waist="Casso Sash", -- 5
          ring1="Perception Ring",
          ring2="Sangoma Ring",
-         back=Niht.Darkmagic,
+         back=Niht.DarkMagic,
          --legs="Heathen's Flanchard +1", --20
          legs="Eschite Cuisses", 
          feet="Heathen's Sollerets +1"
