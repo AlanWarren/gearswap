@@ -264,7 +264,7 @@ function init_gear_sets()
          --legs="Haruspex Slops",
          legs="Eschite Cuisses", -- matk 25 
          back="Aput Mantle", -- mdmg 10
-         feet="Heathen's Sollerets +1" -- matk 8
+         feet="Founder's Greaves" -- matk 29
      }
 	 
      -- Gear that boosts HP is preferred over anything else.  
@@ -696,7 +696,7 @@ function init_gear_sets()
          hands="Redan Gloves",
          body="Founder's Breastplate",
          ring2="Patricius Ring",
-         feet="Loyalist Sabatons"
+         feet="Founder's Greaves" -- matk 29
      }
  
      -- Engaged set, assumes Liberator
