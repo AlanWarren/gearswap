@@ -580,7 +580,7 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Argosy Celata",
+         head="Valorous Mask",
          neck="Lissome Necklace",
          ear1="Zennaroi Earring",
          ear2="Lugra Earring +1",
@@ -596,7 +596,7 @@ function init_gear_sets()
      
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
-         head="Baghere Salade",
+         head="Valorous Mask",
          ear1="Zennaroi Earring",
          neck="Coatl Gorget +1",
          body="Founder's Breastplate",
@@ -616,6 +616,7 @@ function init_gear_sets()
  
      sets.idle.Weak = set_combine(sets.defense.PDT, {
          ammo="Hasty Pinion +1",
+         head="Valorous Mask",
          neck="Agitator's Collar",
          hands="Redan Gloves",
          ear1="Zennaroi Earring",
@@ -728,6 +729,7 @@ function init_gear_sets()
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          neck="Lissome Necklace",
+         head="Valorous Mask",
          hands="Odyssean Gauntlets",
          ring2="Mars's Ring",
          waist="Olseni Belt",
@@ -752,7 +754,7 @@ function init_gear_sets()
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          ammo="Hasty Pinion +1",
-         head="Argosy Celata",
+         head="Valorous Mask",
          neck="Lissome Necklace",
          ear2="Steelflash Earring",
          body="Mes'yohi Haubergeon",
