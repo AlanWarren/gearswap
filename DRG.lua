@@ -185,7 +185,7 @@ function init_gear_sets()
 
 	sets.precast.WS = {
         ammo="Thew Bomblet",
-		head="Otomi Helm",
+        head="Valorous Mask",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
@@ -200,7 +200,7 @@ function init_gear_sets()
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         back="Updraft Mantle",
-        head="Yaoyotl Helm",
+        head="Valorous Mask",
         legs="Acro Breeches"
     })
 	
@@ -210,7 +210,7 @@ function init_gear_sets()
         waist="Soil Belt"
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
-        head="Yaoyotl Helm",
+        head="Valorous Mask",
         back="Updraft Mantle",
     })
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})
@@ -270,7 +270,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle.Town = {
         ammo="Ginsen",
-		head="Otomi Helm",
+        head="Valorous Mask",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Tripudio Earring",
@@ -285,7 +285,7 @@ function init_gear_sets()
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
-        head="Ighwa Cap",
+        head="Valorous Mask",
         neck="Lissome Necklace",
 		body="Founder's Breastplate",
         ring1="Karieyh Ring",
@@ -295,7 +295,7 @@ function init_gear_sets()
     })
 
     sets.idle.Regen = set_combine(sets.idle.Field, {
-        head="Twilight Helm",
+        head="Valorous Mask",
 		body="Kumarbi's Akar",
         neck="Lissome Necklace",
     })

@@ -199,13 +199,13 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
+        head="Valorous Mask",
         body="Phorcys Korazin",
         hands=Acro.Hands.STP,
         waist="Metalsinger Belt",
         legs="Kasuga Haidate +1",
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
-        head="Rao Kabuto",
         body="Acro Surcoat",
         --waist="Light Belt"
     })
@@ -288,7 +288,7 @@ function init_gear_sets()
     sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
-        head="Rao Kabuto",
+        head="Valorous Mask",
         neck="Ganesha's Mala",
         ear1="Lugra Earring +1",
         ear2="Tripudio Earring",
@@ -320,7 +320,7 @@ function init_gear_sets()
     sets.idle.Regen = set_combine(sets.idle.Town, {
         neck="Twilight Torque",
         ring2="Paguroidea Ring",
-        head="Twilight Helm",
+        head="Valorous Mask",
         body="Kumarbi's Akar",
         back="Repulse Mantle",
         feet="Danzo Sune-ate"

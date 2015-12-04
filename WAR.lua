@@ -162,12 +162,12 @@ function init_gear_sets()
      -- General sets
      sets.precast.WS = {
          --ammo="Fracas Grenade",
-         head="Otomi Helm",
+         head="Valorous Mask",
          neck="Defiant Collar",
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
          body="Acro Surcoat",
-         hands="Mikinaak Gauntlets",
+         hands="Odyssean Gauntlets",
          ring1="Karieyh Ring",
          ring2="Ifrit Ring +1",
          waist="Windbuffet Belt +1",
@@ -177,7 +177,7 @@ function init_gear_sets()
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
-         head="Yaoyotl Helm",
+         head="Valorous Mask",
          --body="Ravenous Breastplate",
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
@@ -209,7 +209,7 @@ function init_gear_sets()
      })
      sets.precast.WS.Resolution.Mid = set_combine(sets.precast.WS.Resolution, {
          ammo="Ginsen",
-         head="Yaoyotl Helm",
+         head="Valorous Mask",
      })
      sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
 
@@ -262,7 +262,7 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Felistris Mask",
+         head="Valorous Mask",
          neck="Defiant Collar",
          ear1="Lugra Earring +1",
          ear2="Tripudio Earring",
@@ -278,7 +278,7 @@ function init_gear_sets()
      
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
-         head="Baghere Salade",
+         head="Valorous Mask",
          body="Kumarbi's Akar",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
@@ -290,7 +290,7 @@ function init_gear_sets()
      })
  
      sets.idle.Weak = {
-         head="Twilight Helm",
+         head="Valorous Mask",
          body="Twilight Mail",
          ring2="Paguroidea Ring",
          back="Impassive Mantle",
