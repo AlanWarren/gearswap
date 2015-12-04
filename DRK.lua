@@ -573,8 +573,8 @@ function init_gear_sets()
          ear2="Lugra Earring +1",
          body="Councilor's Garb",
          hands="Odyssean Gauntlets",
-         ring1="Ifrit Ring +1",
-         ring2="Karieyh Ring",
+         ring1="Karieyh Ring",
+         ring2="Ifrit Ring +1",
          back="Impassive Mantle",
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
@@ -717,7 +717,7 @@ function init_gear_sets()
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          neck="Lissome Necklace",
          hands="Odyssean Gauntlets",
-         ring2="Karieyh Ring",
+         ring2="Mars's Ring",
          waist="Olseni Belt",
      })
      -- Liberator AM3
