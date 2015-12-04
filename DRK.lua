@@ -716,7 +716,6 @@ function init_gear_sets()
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          neck="Lissome Necklace",
-         head="Valorous Mask",
          hands="Odyssean Gauntlets",
          ring2="Karieyh Ring",
          waist="Olseni Belt",
@@ -741,13 +740,13 @@ function init_gear_sets()
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          ammo="Hasty Pinion +1",
-         head="Valorous Mask",
+         head="Argosy Celata",
          neck="Lissome Necklace",
          ear2="Steelflash Earring",
          body="Mes'yohi Haubergeon",
          hands="Odyssean Gauntlets",
          ring1="Rajas Ring",
-         ring2="Karieyh Ring",
+         ring2="Mars's Ring",
          waist="Olseni Belt",
      })
      
