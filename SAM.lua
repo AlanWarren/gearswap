@@ -199,7 +199,6 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
-        head="Valorous Mask",
         body="Phorcys Korazin",
         hands=Acro.Hands.STP,
         waist="Metalsinger Belt",
@@ -210,6 +209,7 @@ function init_gear_sets()
         --waist="Light Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
+        head="Valorous Mask",
         body="Acro Surcoat",
         back="Takaha Mantle"
     })
@@ -400,7 +400,7 @@ function init_gear_sets()
     })
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
-        head="Gavialis Helm",
+        head="Valorous Mask",
         neck="Lissome Necklace",
         body="Mes'yohi Haubergeon",
         ear1="Zennaroi Earring",
@@ -421,6 +421,7 @@ function init_gear_sets()
     })
     
     sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, {
+        head="Valorous Mask",
         neck="Lissome Necklace",
         ear1="Zennaroi Earring",
         ring1="Patricius Ring",
@@ -503,7 +504,7 @@ function init_gear_sets()
     })
     
     sets.engaged.Adoulin.Acc = set_combine(sets.engaged.Adoulin.Mid, { 
-        head="Acro Helm",
+        head="Valorous Mask",
         neck="Defiant Collar",
         ring2="Mars's Ring",
         hands=Acro.Hands.Haste,
@@ -562,6 +563,7 @@ function init_gear_sets()
     
     sets.engaged.Adoulin.Yoichi.Acc = set_combine(sets.engaged.Adoulin.Yoichi.Mid, {
         ammo=gear.RAarrow,
+        head="Valorous Mask",
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         back="Takaha Mantle",
