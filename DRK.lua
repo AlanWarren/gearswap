@@ -731,7 +731,7 @@ function init_gear_sets()
          neck="Lissome Necklace",
          head="Valorous Mask",
          hands="Odyssean Gauntlets",
-         ring2="Mars's Ring",
+         ring2="Karieyh Ring",
          waist="Olseni Belt",
      })
      -- Liberator AM3
@@ -760,7 +760,7 @@ function init_gear_sets()
          body="Mes'yohi Haubergeon",
          hands="Odyssean Gauntlets",
          ring1="Rajas Ring",
-         ring2="Mars's Ring",
+         ring2="Karieyh Ring",
          waist="Olseni Belt",
      })
      
