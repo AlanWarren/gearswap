@@ -569,7 +569,7 @@ function init_gear_sets()
          body="Councilor's Garb",
          hands="Odyssean Gauntlets",
          ring1="Karieyh Ring",
-         ring2="Ifrit Ring +1",
+         ring1="Evanescence Ring",
          back="Impassive Mantle",
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
