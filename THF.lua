@@ -92,7 +92,7 @@ function init_gear_sets()
         hands="Pillager's Armlets +1",
         ring1="Ramuh Ring",
         ring2="Rajas Ring",
-		back="Bleating Mantle",
+        back="Grounded Mantle +1"
         waist="Chaac Belt",
         legs="Samnuha Tights",
         feet="Raider's Poulaines +2"
@@ -441,6 +441,7 @@ function init_gear_sets()
         neck="Lissome Necklace",
         ear1="Zennaroi Earring",
         ear2="Steelflash Earring",
+        back="Grounded Mantle +1",
         ring1="Patricius Ring",
         waist="Olseni Belt",
         feet="Taeon Boots"
@@ -483,7 +484,7 @@ function init_gear_sets()
         ear2="Brutal Earring",
         body="Rawhide Vest",
         hands=TaeonHands.TA,
-        back="Bleating Mantle",
+        back="Canny Cape"
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
         feet="Taeon Boots"
@@ -502,7 +503,7 @@ function init_gear_sets()
         ring1="Mars's Ring",
         ring2="Patricius Ring",
         waist="Olseni Belt",
-        back="Canny Cape"
+        back="Grounded Mantle +1"
     })
     sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, { body="Rawhide Vest", ring1="Beeline Ring", feet="Taeon Boots"})
     sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
@@ -544,7 +545,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
         waist="Patentia Sash",
-        back="Canny Cape",
+        back="Grounded Mantle +1"
         feet="Taeon Boots"
     })
     sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, { body="Samnuha Coat", ring1="Beeline Ring", feet="Taeon Boots"})

@@ -360,7 +360,7 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Yetshila",
-         head="Acro Helm",
+         head="Argosy Celata",
          neck="Asperity Necklace",
          ear1="Brutal Earring",
          ear2="Lugra Earring +1",
@@ -380,10 +380,11 @@ function init_gear_sets()
          feet=Acro.Feet.WSD
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-         head="Acro Helm",
+         head="Argosy Celata",
          neck="Defiant Collar",
          ring2="Mars's Ring",
-         waist="Olseni Belt"
+         waist="Olseni Belt",
+         back="Grounded Mantle +1"
      })
 
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)

@@ -371,12 +371,12 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged.Melee = {
         ammo=gear.RAbullet,
-        head="Whirlpool Mask",
+        head="Taeon Chapeau",
         neck="Defiant Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Qaaxo Harness",
-        hands="Iuitl Wristbands +1",
+        body="Rawhide Vest",
+        hands="Floral Gauntlets",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
@@ -401,10 +401,12 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
         ring2="Mars's Ring",
         waist="Olseni Belt"
+        back="Grounded Mantle +1",
     })
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Melee.DW, {
         neck="Lissome Necklace",
         ring2="Mars's Ring"
+        back="Grounded Mantle +1",
     })
 end
 

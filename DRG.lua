@@ -360,7 +360,7 @@ function init_gear_sets()
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
-        head="Yaoyotl Helm",
+        head="Valorous Mask",
         ear1="Zennaroi Earring",
         hands=Acro.Hands.Haste,
         legs="Acro Breeches"
@@ -371,9 +371,9 @@ function init_gear_sets()
         neck="Lissome Necklace",
         waist="Olseni Belt",
         ring1="Mars's Ring",
-        body="Ravenous Breastplate",
+        body="Acro Surcoat",
         hands="Leyline Gloves",
-        back={name="Updraft Mantle", augments={'STR+2','Weapon skill damage +3%','Pet: Damage taken -3%'}},
+        back="Grounded Mantle +1"
         legs="Acro Breeches"
     })
 
