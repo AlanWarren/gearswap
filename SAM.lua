@@ -403,6 +403,7 @@ function init_gear_sets()
         head="Valorous Mask",
         neck="Lissome Necklace",
         body="Mes'yohi Haubergeon",
+        back="Grounded Mantle +1",
         ear1="Zennaroi Earring",
         ring1="Mars's Ring",
         legs="Acro Breeches",
@@ -427,6 +428,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         legs="Acro Breeches",
+        back="Grounded Mantle +1",
         feet=Acro.Feet.WSD
     })
     
@@ -509,7 +511,7 @@ function init_gear_sets()
         ring2="Mars's Ring",
         hands=Acro.Hands.Haste,
         waist="Olseni Belt",
-        back="Takaha Mantle",
+        back="Grounded Mantle +1",
         legs="Acro Breeches",
         feet=Acro.Feet.STP
     })
@@ -531,6 +533,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         ring1="Patricius Ring",
         legs="Otronif Brais +1",
+        back="Grounded Mantle +1",
         feet="Loyalist Sabatons"
     })
     

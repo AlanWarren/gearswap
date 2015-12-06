@@ -198,6 +198,7 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         body="Dread Jupon",
         hands="Leyline Gloves",
+        back="Grounded Mantle +1",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         feet="Mochizuki Kyahan +1"
@@ -354,6 +355,7 @@ function init_gear_sets()
         neck="Yarak Torque",
         ring2="Mars's Ring",
         hands="Ryuo Tekko",
+        back="Grounded Mantle +1",
         waist="Olseni Belt",
     })
     
@@ -448,6 +450,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         ring1="Patricius Ring",
         ring2="Mars's Ring",
+        back="Grounded Mantle +1",
         waist="Olseni Belt"
     })
     -- do nothing here
@@ -549,6 +552,7 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
         body="Hattori Ningi +1",
         hands="Ryuo Tekko",
+        back="Grounded Mantle +1",
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         legs="Samnuha Tights"
@@ -602,6 +606,7 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_30, {
         hands="Floral Gauntlets",
         legs="Samnuha Tights",
+        back="Grounded Mantle +1",
         waist="Patentia Sash"
     })
     

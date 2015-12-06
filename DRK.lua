@@ -206,6 +206,7 @@ function init_gear_sets()
          ammo="Impatiens",
          head="Otomi Helm",
          neck="Incanter's Torque", -- 10
+         back="Grounded Mantle +1",
          hands="Leyline gloves",
          feet="Loyalist Sabatons"
      }
@@ -216,6 +217,7 @@ function init_gear_sets()
          neck="Incanter's Torque",
          body="Founder's Breastplate",
          hands="Leyline Gloves",
+         back="Grounded Mantle +1",
          feet="Ejekamal Boots"
      }
  
@@ -227,12 +229,10 @@ function init_gear_sets()
          ear2="Psystorm Earring",
          body="Demon's Harness", --5
          hands="Fallen's Finger Gauntlets +1", -- 14
-         --hands="Eschite Gauntlets",
          waist="Casso Sash", -- 5
          ring1="Perception Ring",
          ring2="Sangoma Ring",
          back=Niht.DarkMagic,
-         --legs="Heathen's Flanchard +1", --20
          legs="Eschite Cuisses", 
          feet="Heathen's Sollerets +1"
      }
@@ -252,7 +252,6 @@ function init_gear_sets()
      sets.midcast['Elemental Magic'] = {
          ammo="Plumose Sachet",
          head="Terminal Helm", -- mab+15 mdmg+15
-         --head="Eschite Helm",
          neck="Eddy Necklace", -- 11 matk
          ear1="Friomisi Earring", -- 10 matk
          ear2="Crematio Earring", -- 6 matk 6 mdmg
@@ -261,7 +260,6 @@ function init_gear_sets()
          ring1="Shiva Ring", -- int 8
          ring2="Shiva Ring", -- matk 4
          waist="Caudata Belt", -- int 6
-         --legs="Haruspex Slops",
          legs="Eschite Cuisses", -- matk 25 
          back="Aput Mantle", -- mdmg 10
          feet="Founder's Greaves" -- matk 29
@@ -644,12 +642,12 @@ function init_gear_sets()
  
      sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
 
-     sets.HighHaste = {
-         ammo="Ginsen",
-         head="Argosy Celata",
-         --hands=Acro.Hands.STP,
-         feet=Acro.Feet.STP
-     }
+    -- sets.HighHaste = {
+    --     ammo="Ginsen",
+    --     head="Argosy Celata",
+    --     --hands=Acro.Hands.STP,
+    --     feet=Acro.Feet.STP
+    -- }
      
      -- Defensive sets to combine with various weapon-specific sets below
      -- These allow hybrid acc/pdt sets for difficult content
@@ -681,6 +679,7 @@ function init_gear_sets()
          neck="Agitator's Collar",
          hands="Redan Gloves",
          body="Founder's Breastplate",
+         back="Grounded Mantle +1",
          ring2="Patricius Ring",
          feet="Founder's Greaves" -- matk 29
      }
@@ -703,16 +702,16 @@ function init_gear_sets()
          feet=Acro.Feet.STP
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         ammo="Hasty Pinion +1",
          head="Argosy Celata",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
-         body="Mes'yohi Haubergeon",
-         back="Kayapa Cape",
-         legs="Acro Breeches",
          hands=Acro.Hands.Haste,
+         body="Mes'yohi Haubergeon",
+         back="Grounded Mantle +1",
+         legs="Acro Breeches",
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+         ammo="Hasty Pinion +1",
          head="Valorous Mask",
          neck="Lissome Necklace",
          hands="Odyssean Gauntlets",
@@ -723,19 +722,17 @@ function init_gear_sets()
      sets.engaged.AM3 = set_combine(sets.engaged, {
          ammo="Ginsen",
          head="Argosy Celata",
+         body="Acro Surcoat",
+         hands=Acro.Hands.Haste,
          ear1="Enervating Earring",
          ear2="Tripudio Earring",
-         body="Acro Surcoat",
          legs="Acro Breeches",
-         hands=Acro.Hands.Haste,
-         feet="Thereoid Greaves"
+         feet=Acro.Feet.STP
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-         ammo="Hasty Pinion +1",
          ear1="Zennaroi Earring",
          body="Mes'yohi Haubergeon",
-         back="Kayapa Cape",
-         feet=Acro.Feet.STP
+         back="Grounded Mantle +1",
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          ammo="Hasty Pinion +1",
@@ -811,7 +808,7 @@ function init_gear_sets()
      })
      sets.engaged.DW.Acc = set_combine(sets.engaged.DW.Mid, {
          ammo="Hasty Pinion +1",
-         back="Kayapa Cape"
+         back="Grounded Mantle +1",
      })
 
      -- great sword
@@ -961,9 +958,9 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    if state.CombatForm.current == 'Haste' and state.OffenseMode ~= 'Acc' then
-        meleeSet = set_combine(meleeSet, sets.HighHaste)
-    end
+    --if state.CombatForm.current == 'Haste' and state.OffenseMode ~= 'Acc' then
+        --meleeSet = set_combine(meleeSet, sets.HighHaste)
+    --end
     if state.Buff['Last Resort'] and state.LastResortMode.value then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
