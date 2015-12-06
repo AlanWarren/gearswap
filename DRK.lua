@@ -222,7 +222,7 @@ function init_gear_sets()
      }
  
      sets.midcast['Dark Magic'] = {
-         ammo="Plumose Sachet",
+         ammo="Plumose Sachet", 
          head="Ignominy burgeonet +1", -- 17
          neck="Incanter's Torque", -- 10
          ear1="Lifestorm Earring",
@@ -230,10 +230,10 @@ function init_gear_sets()
          body="Demon's Harness", --5
          hands="Fallen's Finger Gauntlets +1", -- 14
          waist="Casso Sash", -- 5
-         ring1="Perception Ring",
+         ring1="Evanescence Ring", -- 10
          ring2="Sangoma Ring",
-         back=Niht.DarkMagic,
-         legs="Eschite Cuisses", 
+         back=Niht.DarkMagic, -- 10
+         legs="Eschite Cuisses",  -- 20
          feet="Heathen's Sollerets +1"
      }
      
@@ -257,7 +257,7 @@ function init_gear_sets()
          ear2="Crematio Earring", -- 6 matk 6 mdmg
          body="Founder's breastplate", -- 15 matk
          hands="Leyline Gloves",
-         ring1="Shiva Ring", -- int 8
+         ring1="Resonance Ring", -- int 8
          ring2="Shiva Ring", -- matk 4
          waist="Caudata Belt", -- int 6
          legs="Eschite Cuisses", -- matk 25 
@@ -271,7 +271,6 @@ function init_gear_sets()
          head="Gavialis Helm",
          body="Heathen's Cuirass +1",
          hands=Acro.Hands.Haste,
-         ring1="Beeline Ring",
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
          legs="Eschite Cuisses", 
@@ -283,7 +282,7 @@ function init_gear_sets()
          ear1="Gwati Earring",
          ear2="Hirudinea Earring",
          body="Lugra Cloak +1",
-         ring1="Excelsis Ring",
+         ring2="Excelsis Ring",
      })
      sets.midcast.Aspir = sets.midcast.Drain
 
