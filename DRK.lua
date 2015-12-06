@@ -236,6 +236,9 @@ function init_gear_sets()
          legs="Eschite Cuisses",  -- 20
          feet="Heathen's Sollerets +1"
      }
+    sets.midcast.Endark = set_combine(sets.midcast['Dark Magic'], {
+         ammo="Impatiens",
+    })
      
      sets.midcast['Dark Magic'].Acc = set_combine(sets.midcast['Dark Magic'], {
          body="Founder's Breastplate",
@@ -569,7 +572,7 @@ function init_gear_sets()
          body="Councilor's Garb",
          hands="Odyssean Gauntlets",
          ring1="Karieyh Ring",
-         ring1="Evanescence Ring",
+         ring2="Ifrit Ring +1",
          back="Impassive Mantle",
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
