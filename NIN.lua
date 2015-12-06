@@ -30,7 +30,7 @@ function job_setup()
     state.CapacityMode = M(false, 'Capacity Point Mantle')
     
     gear.RegularAmmo = 'Happo Shuriken'
-    gear.SangeAmmo = 'Hachiya Shuriken'
+    gear.SangeAmmo = 'Happo Shuriken'
     
     wsList = S{'Blade: Hi'}
 
