@@ -716,6 +716,7 @@ function init_gear_sets()
          hands="Odyssean Gauntlets",
          ring2="Mars's Ring",
          waist="Olseni Belt",
+         feet="Founder's Greaves"
      })
      -- Liberator AM3
      sets.engaged.AM3 = set_combine(sets.engaged, {
@@ -743,6 +744,7 @@ function init_gear_sets()
          ring1="Rajas Ring",
          ring2="Mars's Ring",
          waist="Olseni Belt",
+         feet="Founder's Greaves"
      })
      
      -- Apocalypse
