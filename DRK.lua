@@ -688,7 +688,7 @@ function init_gear_sets()
  
      -- Engaged set, assumes Liberator
      sets.engaged = {
-         sub="Bloodrain Strap",
+         --sub="Bloodrain Strap",
          ammo="Ginsen",
          head="Otomi Helm",
          neck="Ganesha's Mala",
