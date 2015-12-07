@@ -254,7 +254,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring1="Karieyh Ring",
         ring2="Dark Ring",
-    	back="Engulfer Cape +1",
+    	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Otronif Brais +1",
         feet="Danzo Sune-ate"
@@ -292,7 +292,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring1="Patricius Ring",
         ring2="Dark Ring",
-        back="Repulse Mantle",
+    	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Otronif Brais +1",
         feet="Amm Greaves"
@@ -302,7 +302,6 @@ function init_gear_sets()
         head="Ptica Headgear",
         neck="Twilight Torque",
         hands="Ryuo Tekko",
-        back="Engulfer Cape +1",
         feet="Amm Greaves"
     })
     
@@ -383,6 +382,7 @@ function init_gear_sets()
         body="Emet Harness +1",
         neck="Agitator's Collar",
         hands="Ryuo Tekko",
+    	back="Solemnity Cape",
         ring1="Patricius Ring",
         legs="Otronif Brais +1",
         feet="Amm greaves"
@@ -412,6 +412,7 @@ function init_gear_sets()
         body="Emet Harness +1",
         waist="Flume Belt",
         ring1="Patricius Ring",
+    	back="Solemnity Cape",
         legs="Otronif Brais +1",
         feet="Amm Greaves"
     }

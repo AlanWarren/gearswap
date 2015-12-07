@@ -302,7 +302,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Karieyh Ring",
         ring2="Paguroidea Ring",
-        back="Repulse Mantle",
+    	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Adhemar Kecks",
         feet="Skadi's Jambeaux +1"
@@ -337,6 +337,7 @@ function init_gear_sets()
         body="Emet Harness +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
+    	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Iuitl Tights +1",
         feet="Lanun Bottes"

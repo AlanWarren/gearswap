@@ -166,6 +166,7 @@ function init_gear_sets()
         main="Serenity",
         neck="Incanter's Torque",
         hands="Telchine Gloves",
+    	back="Solemnity Cape",
         legs="Telchine Braconi"
     })
     
@@ -310,7 +311,7 @@ function init_gear_sets()
         hands="Bagua Mitaines",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
-        back="Repulse Mantle",
+    	back="Solemnity Cape",
         waist="Fucho-no-obi",
         legs="Azimuth Tights +1",
         feet="Geomancy Sandals"
@@ -319,7 +320,7 @@ function init_gear_sets()
         head="Hike Khat +1",
         hands="Geomancy Mitaines +1",
         ring2="Patricius Ring",
-        back="Repulse Mantle",
+    	back="Solemnity Cape",
         feet="Azimuth Gaiters"
     })
 

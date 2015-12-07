@@ -312,7 +312,7 @@ function init_gear_sets()
         ear2="Lugra Earring +1",
    	    body="Founder's Breastplate",
         hands="Crusher Gauntlets",
-        back="Engulfer Cape +1",
+    	back="Solemnity Cape",
         waist="Flume Belt",
         feet="Danzo Sune-ate"
     })
@@ -322,7 +322,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         head="Valorous Mask",
         body="Kumarbi's Akar",
-        back="Repulse Mantle",
+    	back="Solemnity Cape",
         feet="Danzo Sune-ate"
     })
     
@@ -344,7 +344,7 @@ function init_gear_sets()
         hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Patricius Ring",
-        back="Repulse Mantle",
+    	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Otronif Brais +1",
         feet="Otronif Boots +1"
@@ -357,7 +357,7 @@ function init_gear_sets()
     
     sets.defense.MDT = set_combine(sets.defense.PDT, {
          neck="Twilight Torque",
-         back="Engulfer Cape +1"
+      	 back="Solemnity Cape",
     })
     
     sets.Kiting = {feet="Danzo Sune-ate"}
@@ -438,7 +438,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Crusher Gauntlets",
         ring1="Patricius Ring",
-        back="Repulse Mantle",
+    	back="Solemnity Cape",
         waist="Flume Belt",
         feet="Loyalist Sabatons"
     })
@@ -523,7 +523,7 @@ function init_gear_sets()
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
-        back="Repulse Mantle",
+    	back="Solemnity Cape",
         legs="Otronif Brais +1",
         feet="Loyalist Sabatons"
     })

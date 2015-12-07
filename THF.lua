@@ -343,7 +343,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Karieyh Ring",
         ring2="Dark Ring",
-		back="Engulfer Cape +1",
+    	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Samnuha Tights",
         feet="Skadi's Jambeaux +1"
@@ -389,7 +389,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
-		back="Repulse Mantle",
+    	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Iuitl Tights +1",
     }
@@ -401,7 +401,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         ring1="Dark Ring",
         ring2="Epona's Ring",
-		back="Engulfer Cape +1",
+    	back="Solemnity Cape",
         legs="Nahtirah Trousers",
         feet="Taeon Boots"
     }
@@ -462,7 +462,7 @@ function init_gear_sets()
         neck="Twilight Torque",
 		body="Emet Harness +1",
         ring1="Patricius Ring",
-        back="Repulse Mantle",
+    	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Iuitl Tights +1",
     })
@@ -512,7 +512,7 @@ function init_gear_sets()
             body="Rawhide Vest", 
             ring1="Patricius Ring", 
             ring2="Dark Ring", 
-            back="Repulse Mantle", 
+    	    back="Solemnity Cape",
             legs="Iuitl Tights +1", 
             feet="Taeon Boots" 
     })
@@ -527,9 +527,21 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.Haste_43, {
         ear1="Suppanomimi"
     })
-    sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, { body="Rawhide Vest", ring1="Beeline Ring", feet="Taeon Boots"})
-    sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, { head="Lithelimb Cap", neck="Twilight Torque", 
-        body="Rawhide Vest", ring1="Patricius Ring", ring2="Dark Ring", back="Repulse Mantle", legs="Iuitl Tights +1", feet="Taeon Boots" })
+    sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, {
+            body="Rawhide Vest", 
+            ring1="Beeline Ring", 
+            feet="Taeon Boots"
+    })
+    sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, { 
+            head="Lithelimb Cap", 
+            neck="Twilight Torque", 
+            body="Rawhide Vest", 
+            ring1="Patricius Ring", 
+            ring2="Dark Ring", 
+    	    back="Solemnity Cape",
+            legs="Iuitl Tights +1", 
+            feet="Taeon Boots" 
+    })
 
      -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_40, {
@@ -549,8 +561,15 @@ function init_gear_sets()
         feet="Taeon Boots"
     })
     sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, { body="Samnuha Coat", ring1="Beeline Ring", feet="Taeon Boots"})
-    sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { head="Lithelimb Cap", neck="Twilight Torque", 
-        body="Rawhide Vest", ring1="Patricius Ring", ring2="Dark Ring", back="Repulse Mantle", legs="Iuitl Tights +1", feet="Taeon Boots" })
+    sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { 
+            head="Lithelimb Cap", 
+            neck="Twilight Torque", 
+            body="Rawhide Vest", 
+            ring1="Patricius Ring", 
+            ring2="Dark Ring", 
+    	    back="Solemnity Cape",
+            legs="Iuitl Tights +1", 
+            feet="Taeon Boots" })
 
      -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
@@ -564,8 +583,15 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, { body="Samnuha Coat" })
     sets.engaged.Evasion.Haste_25 = set_combine(sets.engaged.Haste_25, { body="Samnuha Coat", ring1="Beeline Ring", feet="Taeon Boots"})
-    sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, { head="Lithelimb Cap", neck="Twilight Torque", 
-        body="Rawhide Vest", ring1="Patricius Ring", ring2="Dark Ring", back="Repulse Mantle", legs="Iuitl Tights +1", feet="Taeon Boots" })
+    sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, { 
+            head="Lithelimb Cap", 
+            neck="Twilight Torque", 
+            body="Rawhide Vest", 
+            ring1="Patricius Ring", 
+            ring2="Dark Ring", 
+    	    back="Solemnity Cape",
+            legs="Iuitl Tights +1", 
+            feet="Taeon Boots" })
 end
 
 

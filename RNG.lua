@@ -173,7 +173,7 @@ function init_gear_sets()
             hands="Amini Glovelettes +1",
             ring1="Karieyh Ring",
             ring2="Paguroidea Ring",
-            back="Repulse Mantle",
+    	    back="Solemnity Cape",
             waist="Elanid Belt",
             legs="Adhemar Kecks",
             feet="Skadi's Jambeaux +1"
@@ -214,7 +214,7 @@ function init_gear_sets()
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
             hands="Iuitl Wristbands +1",
-            back="Engulfer Cape +1",
+    	    back="Solemnity Cape",
             neck="Twilight Torque",
             ring1="Dark Ring",
             ring2="Patricius Ring"
@@ -241,6 +241,7 @@ function init_gear_sets()
             neck="Twilight Torque",
             ring1="Dark Ring",
             ring2="Patricius Ring"
+    	    back="Solemnity Cape",
         })
 
         sets.engaged.DW = set_combine(sets.engaged, {})
