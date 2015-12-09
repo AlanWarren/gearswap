@@ -426,6 +426,7 @@ function init_gear_sets()
         body="Rawhide Vest",
         hands="Ryuo Tekko",
         ring1="Oneiros Ring",
+        ring2="Epona's Ring",
         --back="Iga Dochugappa",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
