@@ -141,8 +141,8 @@ function init_gear_sets()
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
     sets.WSBack         = { back="Trepidity Mantle" }
-    sets.BrutalLugra    = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
-    sets.BrutalTrux     = { ear1="Brutal Earring", ear2="Trux Earring" }
+    sets.BrutalLugra    = { ear1="Cessance Earring", ear2="Lugra Earring +1" }
+    sets.BrutalTrux     = { ear1="Cessance Earring", ear2="Trux Earring" }
     sets.BrutalMoon     = { ear1="Brutal Earring", ear2="Moonshade Earring" }
     sets.Rajas          = { ring1="Rajas Ring" }
 
@@ -269,7 +269,8 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
         head="Ptica Headgear",
         neck="Lissome Necklace",
-        ear1="Lugra Earring +1",
+        ear1="Cessance Earring",
+        ear2="Trux Earring",
         ring1="Karieyh Ring",
         hands="Ryuo Tekko",
         ring2="Ifrit Ring +1",
@@ -325,7 +326,7 @@ function init_gear_sets()
         ammo=gear.RegularAmmo,
         head="Ptica Headgear",
         neck="Asperity Necklace",
-        ear1="Brutal Earring",
+        ear1="Cessance Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         hands="Floral Gauntlets",
@@ -339,7 +340,6 @@ function init_gear_sets()
     -- assumptions made about target, Rancor no longer "OK" 
     sets.engaged.Low = set_combine(sets.engaged, {
         neck="Lissome Necklace",
-        ear1="Trux Earring",
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
@@ -367,7 +367,7 @@ function init_gear_sets()
     sets.engaged.Innin.Low = set_combine(sets.engaged.Innin, {
         back="Bleating Mantle",
         neck="Lissome Necklace",
-        ear1="Trux Earring",
+        ear1="Cessance Earring",
         body="Mochizuki Chainmail +1"
     })
     sets.engaged.Innin.Mid = set_combine(sets.engaged.Innin.Low, {
@@ -420,7 +420,7 @@ function init_gear_sets()
     -- Delay Cap from spell + songs alone
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head="Taeon Chapeau",
-        ear1="Brutal Earring",
+        ear1="Cessance Earring",
         ear2="Trux Earring",
         neck="Asperity Necklace",
         body="Rawhide Vest",
@@ -436,8 +436,6 @@ function init_gear_sets()
     -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         neck="Lissome Necklace",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
         ring1="Rajas Ring",
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
@@ -482,12 +480,12 @@ function init_gear_sets()
     sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
         head="Ptica Headgear",
         neck="Lissome Necklace",
-        ear1="Brutal Earring",
+        ear1="Cessance Earring",
         ear2="Suppanomimi",
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Ptica Headgear",
-        ear1="Brutal Earring",
+        ear1="Cessance Earring",
         ear2="Suppanomimi",
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
@@ -523,7 +521,7 @@ function init_gear_sets()
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
         neck="Asperity Necklace",
-        ear1="Brutal Earring",
+        ear1="Cessance Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         hands="Ryuo Tekko",
@@ -535,7 +533,7 @@ function init_gear_sets()
         feet="Taeon Boots"
     })
     sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_35, {
-        ear1="Brutal Earring",
+        ear1="Cessance Earring",
         ear2="Suppanomimi",
         neck="Lissome Necklace",
         body="Mochizuki Chainmail +1",
@@ -543,7 +541,6 @@ function init_gear_sets()
         back="Bleating Mantle"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
-        ear1="Trux Earring",
         body="Mochizuki Chainmail +1",
         back="Yokaze Mantle"
     })
