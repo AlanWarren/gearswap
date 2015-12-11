@@ -165,7 +165,7 @@ function init_gear_sets()
      sets.WSDayBonus      = { head="Gavialis Helm" }
      sets.WSBack          = { back="Trepidity Mantle" }
      -- TP ears for night and day, AM3 up and down. 
-     sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
+     sets.BrutalLugra     = { ear1="Cessance Earring", ear2="Lugra Earring +1" }
      sets.Lugra           = { ear1="Lugra Earring +1" }
      sets.Brutal          = { ear1="Brutal Earring" }
  
@@ -567,7 +567,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Valorous Mask",
          neck="Lissome Necklace",
-         ear1="Zennaroi Earring",
+         ear1="Cessance Earring",
          ear2="Lugra Earring +1",
          body="Councilor's Garb",
          hands="Odyssean Gauntlets",
@@ -692,8 +692,8 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Otomi Helm",
          neck="Ganesha's Mala",
-         ear1="Brutal Earring",
-         ear2="Lugra Earring +1",
+         ear1="Cessance Earring",
+         ear2="Brutal Earring",
          body="Vatic Byrnie",
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
@@ -716,6 +716,8 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          head="Valorous Mask",
          neck="Lissome Necklace",
+         ear1="Cessance Earring",
+         ear2="Zennaroi Earring",
          hands="Odyssean Gauntlets",
          ring2="Mars's Ring",
          waist="Olseni Belt",
@@ -727,13 +729,12 @@ function init_gear_sets()
          head="Argosy Celata",
          body="Acro Surcoat",
          hands=Acro.Hands.Haste,
-         ear1="Enervating Earring",
+         ear1="Cessance Earring",
          ear2="Tripudio Earring",
          legs="Acro Breeches",
          feet=Acro.Feet.STP
      })
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-         ear1="Zennaroi Earring",
          body="Mes'yohi Haubergeon",
          back="Grounded Mantle +1",
      })
@@ -741,7 +742,8 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          head="Valorous Mask",
          neck="Lissome Necklace",
-         ear2="Steelflash Earring",
+         ear1="Cessance Earring",
+         ear2="Zennaroi Earring",
          body="Mes'yohi Haubergeon",
          hands="Odyssean Gauntlets",
          ring1="Rajas Ring",
@@ -757,8 +759,8 @@ function init_gear_sets()
          head="Argosy Celata",
          hands=Acro.Hands.Haste,
          --body="Acro Surcoat",
-         ear1="Brutal Earring",
-         ear2="Lugra Earring +1"
+         ear1="Cessance Earring",
+         ear2="Brutal Earring"
      })
      sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
          feet=Acro.Feet.WSD
@@ -779,7 +781,7 @@ function init_gear_sets()
      sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
          head="Valorous Mask",
          ammo="Hasty Pinion +1",
-         ear1="Steelflash Earring",
+         ear1="Cessance Earring",
          ear2="Zennaroi Earring",
          neck="Defiant Collar",
          ring2="Mars's Ring",
