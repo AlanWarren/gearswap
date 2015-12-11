@@ -99,7 +99,7 @@ function init_gear_sets()
         ammo="Ginsen",
 		head="Acro Helm",
         neck="Ganesha's Mala",
-        ear1="Brutal Earring",
+        ear1="Cessance Earring",
         ear2="Tripudio Earring",
 		body="Peltast's Plackart +1",
         hands="Crusher Gauntlets",
@@ -140,8 +140,8 @@ function init_gear_sets()
         ammo="Ginsen",
 		head="Wyrm Armet",
         neck="Lancer's Torque",
-        ear1="Steelflash Earring",
-        ear2="Bladeborn Earring",
+        ear1="Cessance Earring",
+        ear2="Tripudio Earring",
 		body="Acro Surcoat",
         hands="Crusher Gauntlets",
         ring1="Dark Ring",
@@ -272,7 +272,7 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Valorous Mask",
         neck="Ganesha's Mala",
-        ear1="Brutal Earring",
+        ear1="Cessance Earring",
         ear2="Tripudio Earring",
 		body="Peltast's Plackart +1",
         hands="Crusher Gauntlets",
@@ -310,8 +310,8 @@ function init_gear_sets()
         ammo="Ginsen",
 		head="Ighwa Cap",
         neck="Twilight Torque",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
+        ear1="Cessance Earring",
+        ear2="Tripudio Earring",
         body="Jumalik Mail",
         hands="Crusher Gauntlets",
         ring1="Patricius Ring",
@@ -347,7 +347,7 @@ function init_gear_sets()
         ammo="Ginsen",
 		head="Otomi Helm",
         neck="Ganesha's Mala",
-        ear1="Brutal Earring",
+        ear1="Cessance Earring",
         ear2="Tripudio Earring",
 		body="Peltast's Plackart +1", -- 3%
         hands=Acro.Hands.STP, -- 4%
@@ -361,7 +361,7 @@ function init_gear_sets()
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
         head="Valorous Mask",
-        ear1="Zennaroi Earring",
+        ear2="Zennaroi Earring",
         hands=Acro.Hands.Haste,
         legs="Acro Breeches"
     })
