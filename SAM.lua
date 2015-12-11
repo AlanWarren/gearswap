@@ -290,7 +290,7 @@ function init_gear_sets()
         --sub="Pole Grip",
         head="Valorous Mask",
         neck="Ganesha's Mala",
-        ear1="Lugra Earring +1",
+        ear1="Cessance Earring",
         ear2="Tripudio Earring",
         body="Councilor's Garb",
         hands="Ryuo Tekko",
@@ -378,8 +378,8 @@ function init_gear_sets()
         ammo=gear.RAarrow,
         head="Otomi Helm",
         neck="Ganesha's Mala",
-        ear1="Brutal Earring",
-        ear2="Lugra Earring +1",
+        ear1="Cessance Earring",
+        ear2="Tripudio Earring",
         body="Vatic Byrnie",
         hands=Acro.Hands.STP,
         ring1="Rajas Ring", 
@@ -394,8 +394,6 @@ function init_gear_sets()
         head="Acro Helm",
         body="Acro Surcoat",
         hands="Ryuo Tekko",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
         feet="Loyalist Sabatons"
     })
     
@@ -487,8 +485,8 @@ function init_gear_sets()
         ammo=gear.RAarrow,
         head="Otomi Helm",
         neck="Ganesha's Mala", -- 3
-        ear1="Brutal Earring", -- 1 
-        ear2="Trux Earring", -- 1
+        ear1="Cessance Earring", -- 1 
+        ear2="Brutal Earring", -- 1
         body="Acro Surcoat", -- 3
         hands=Acro.Hands.STP,
         ring1="Rajas Ring", -- 5
@@ -500,8 +498,6 @@ function init_gear_sets()
     }
     sets.engaged.Adoulin.Mid = set_combine(sets.engaged.Adoulin, { -- 840.5 accuracy
         head="Acro Helm",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
         hands=Acro.Hands.Haste,
     })
     
@@ -543,8 +539,8 @@ function init_gear_sets()
         ammo=gear.RAarrow,
         head="Otomi Helm",
         neck="Asperity Necklace", -- 3
-        ear1="Bladeborn Earring", -- 1 
-        ear2="Steelflash Earring", -- 1
+        ear1="Cessance Earring", -- 1 
+        ear2="Tripudio Earring", -- 1
         body="Acro Surcoat", -- 8
         hands="Wakido Kote +1", -- 5
         ring1="Rajas Ring", -- 5
