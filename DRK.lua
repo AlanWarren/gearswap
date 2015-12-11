@@ -672,6 +672,7 @@ function init_gear_sets()
          body="Jumalik Mail",
          hands="Redan Gloves",
          back="Impassive Mantle",
+         ring1="Supershear Ring",
          ring2="Patricius Ring",
          feet="Loyalist Sabatons"
      }
@@ -682,6 +683,7 @@ function init_gear_sets()
          hands="Redan Gloves",
          body="Founder's Breastplate",
          back="Grounded Mantle +1",
+         ring1="Supershear Ring",
          ring2="Patricius Ring",
          feet="Founder's Greaves" -- matk 29
      }
