@@ -107,6 +107,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Trux Earring", 
         body="Emet Harness +1",
+        ring1="Supershear Ring",
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.JA.Sange = { ammo=gear.SangeAmmo, body="Mochizuki Chainmail +1" }
@@ -393,6 +394,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Ryuo Tekko",
         ring1="Patricius Ring",
+        ring2="Supershear Ring",
         feet="Loyalist Sabatons"
     }
 
