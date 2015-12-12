@@ -517,7 +517,7 @@ function init_gear_sets()
          ear1="Friomisi Earring",
          hands="Leyline Gloves",
          back="Toro Cape",
-         legs="Limbo Trousers",
+         legs="Eschite Cuisses",
          waist="Caudata Belt",
          feet="Heathen's Sollerets +1"
       })
@@ -542,7 +542,7 @@ function init_gear_sets()
          ear1="Friomisi Earring",
          body="Founder's Breastplate",
          hands="Founder's Gauntlets",
-         legs="Limbo Trousers",
+         legs="Eschite Cuisses",
          back="Toro Cape",
          feet="Heathen's Sollerets +1"
      })
