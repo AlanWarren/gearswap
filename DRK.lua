@@ -213,12 +213,13 @@ function init_gear_sets()
             
      -- Specific spells
      sets.midcast.Utsusemi = {
+         ammo="Impatiens",
          head="Otomi Helm",
          neck="Incanter's Torque",
          body="Founder's Breastplate",
          hands="Leyline Gloves",
          back="Grounded Mantle +1",
-         feet="Ejekamal Boots"
+         feet="Loyalist Sabatons"
      }
  
      sets.midcast['Dark Magic'] = {
@@ -317,7 +318,6 @@ function init_gear_sets()
      -- Ranged for xbow
      sets.precast.RA = {
          head="Otomi Helm",
-         feet="Ejekamal Boots"
      }
      sets.midcast.RA = {
          ear2="Tripudio Earring",
@@ -576,7 +576,7 @@ function init_gear_sets()
          back="Impassive Mantle",
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
-         feet="Thereoid Greaves"
+         feet="Amm Greaves"
      }
      
      sets.idle.Field = set_combine(sets.idle.Town, {
