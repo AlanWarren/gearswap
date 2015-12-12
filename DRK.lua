@@ -584,7 +584,7 @@ function init_gear_sets()
          head="Valorous Mask",
          ear1="Zennaroi Earring",
          neck="Coatl Gorget +1",
-         body="Founder's Breastplate",
+         body="Jumalik Mail",
          hands="Redan Gloves",
          ring1="Karieyh Ring",
          ring2="Paguroidea Ring",
