@@ -802,20 +802,23 @@ function init_gear_sets()
      sets.engaged.DW = set_combine(sets.engaged, {
         ammo="Yetshila",
         head="Valorous Mask",
-        body="Heathen's Cuirass +1",
+        body="Vatic Byrnie",
         hands=Acro.Hands.STP,
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        legs="Yorium Cuisses",
+        legs="Argosy Breeches",
         waist="Shetal Stone",
         feet=Acro.Feet.WSD
      })
      sets.engaged.DW.Mid = set_combine(sets.engaged.DW, {
          ammo="Ginsen",
+         body="Acro Surcoat",
+         back="Grounded Mantle +1",
          hands=Acro.Hands.Haste
      })
      sets.engaged.DW.Acc = set_combine(sets.engaged.DW.Mid, {
          ammo="Hasty Pinion +1",
+         hands="Odyssean Gauntlets",
          back="Grounded Mantle +1",
      })
 
