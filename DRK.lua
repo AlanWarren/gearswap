@@ -846,12 +846,13 @@ function init_gear_sets()
      sets.engaged.Sangarius = set_combine(sets.engaged, {
          ammo="Yetshila",
          head="Valorous Mask",
-         legs="Yorium Cuisses",
+         legs="Argosy Breeches",
          hands=Acro.Hands.Haste,
          feet=Acro.Feet.WSD
      })
      sets.engaged.Sangarius.Mid = set_combine(sets.engaged.Mid, {
-         legs="Yorium Cuisses",
+         ammo="Ginsen",
+         hands="Odyssean Gauntlets",
          feet=Acro.Feet.WSD
      })
      sets.engaged.Sangarius.Acc = set_combine(sets.engaged.Acc, {
