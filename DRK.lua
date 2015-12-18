@@ -210,6 +210,16 @@ function init_gear_sets()
          hands="Leyline gloves",
          feet="Loyalist Sabatons"
      }
+    sets.midcast.Trust =  {
+         head="Valorous Mask",
+         hands="Odyssean Gauntlets",
+         body="Founder's Breastplate",
+         legs="Eschite Cuisses",
+         feet="Amm Greaves"
+    }
+     sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
+         body="Apururu Unity shirt",
+     })
             
      -- Specific spells
      sets.midcast.Utsusemi = {
@@ -1237,6 +1247,9 @@ end
 function job_get_spell_map(spell, default_spell_map)
     if spell.skill == 'Dark Magic' and absorbs:contains(spell.english) then
         return 'Absorb'
+    end
+    if spell.type == 'Trust' then
+        return 'Trust'
     end
 end
 
