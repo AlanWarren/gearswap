@@ -142,6 +142,16 @@ function init_gear_sets()
         waist="Witful Belt", -- 4%
         legs="Geomancy Pants +1", -- 5%
     }
+    sets.midcast.Trust =  {
+         head="Azimuth hood +1",
+         hands="Geomancy Mitaines +1",
+         body="Azimuth Coat +1",
+         legs="Azimuth Tights +1",
+         feet="Helios Boots"
+    }
+     sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
+         body="Apururu Unity shirt",
+     })
 
     sets.midcast.Geomancy = {
         main="Serenity",
@@ -304,7 +314,7 @@ function init_gear_sets()
         sub="Genbu's Shield",
         range="Dunna",
         head="Azimuth Hood +1",
-        neck="Lissome Necklace",
+        neck="Twilight Torque",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Azimuth Coat +1",
