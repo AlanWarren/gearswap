@@ -543,8 +543,10 @@ function job_get_spell_map(spell, default_spell_map)
             else
                 return 'HighTierNuke'
             end
-        end
+        elseif spell.type == 'Trust' then
+            return 'Trust'
 
+        end
     end
 end
 

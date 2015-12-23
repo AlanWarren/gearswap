@@ -134,6 +134,16 @@ function init_gear_sets()
         legs="Taeon Tights",
         feet="Mochizuki Kyahan +1"
     }
+    sets.midcast.Trust =  {
+         head="Ptica Headgear",
+         hands="Ryuo Tekko",
+         body="Rawhide Vest",
+         legs="Samnuha Tights",
+         feet="Hachiya Kyahan +1"
+    }
+     sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
+         body="Apururu Unity shirt",
+     })
     
     --------------------------------------
     -- Utility Sets for rules below
@@ -1158,6 +1168,12 @@ end
 --        return 'HighTierNuke'
 --    end
 --end
+-- Creating a custom spellMap, since Mote capitalized absorbs incorrectly
+function job_get_spell_map(spell, default_spell_map)
+    if spell.type == 'Trust' then
+        return 'Trust'
+    end
+end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
