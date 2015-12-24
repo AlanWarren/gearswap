@@ -695,7 +695,7 @@ function init_gear_sets()
          ammo="Hasty Pinion +1",
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         hands="Odyssean Gauntlets",
+         hands="Redan Gloves",
          body="Founder's Breastplate",
          back="Grounded Mantle +1",
          ring1="Supershear Ring",
