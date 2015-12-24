@@ -166,7 +166,7 @@ function init_gear_sets()
         
         sets.idle = {
             head="Arcadian Beret +1",
-            neck="Lissome Necklace",
+            neck="Sanctity Necklace",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Pursuer's Doublet",
@@ -181,7 +181,7 @@ function init_gear_sets()
         sets.idle.Regen = set_combine(sets.idle, {
             head="Ocelomeh Headpiece +1",
             body="Kheper Jacket",
-            neck="Lissome Necklace",
+            neck="Sanctity Necklace",
             ring2="Paguroidea Ring"
         })
         sets.idle.PDT = set_combine(sets.idle, {
@@ -453,7 +453,7 @@ function init_gear_sets()
             body="Samnuha Coat",
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
-            neck="Stoicheion Medal",
+            neck="Sanctity Necklace",
             hands="Leyline Gloves",
             ring1="Acumen Ring",
             ring2="Garuda Ring",
@@ -471,7 +471,7 @@ function init_gear_sets()
             body="Samnuha Coat",
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
-            neck="Stoicheion Medal",
+            neck="Sanctity Necklace",
             hands="Leyline Gloves",
             ring1="Acumen Ring",
             ring2="Garuda Ring",

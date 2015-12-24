@@ -201,7 +201,7 @@ function init_gear_sets()
 	sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
         head="Lanun Tricorne +1",
-        neck="Stoicheion Medal",
+        neck="Sanctity Necklace",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
         body="Samnuha Coat",
@@ -219,7 +219,7 @@ function init_gear_sets()
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
 		head="Uk'uxkaj Cap",
-        neck="Stoicheion Medal",
+        neck="Sanctity Necklace",
         hands="Iuitl Wristbands +1",
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
@@ -237,7 +237,7 @@ function init_gear_sets()
 	sets.midcast.CorsairShot = {
         ammo=gear.QDbullet,
         head="Umbani Cap",
-        neck="Stoicheion Medal",
+        neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Samnhua Coat",
@@ -309,14 +309,14 @@ function init_gear_sets()
     }
     sets.idle.Regen = set_combine(sets.idle, {
         head="Ocelomeh Headpiece +1",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         body="Kheper jacket",
     })
 
 	sets.idle.Town = {
         ammo=gear.RAbullet,
         head="Lanun Tricorne +1",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         ear1="Enervating Earring",
         ear2="Crematio Earring",
         body="Councilor's Garb",

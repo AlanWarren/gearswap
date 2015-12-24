@@ -595,7 +595,7 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Valorous Mask",
          ear1="Zennaroi Earring",
-         neck="Coatl Gorget +1",
+         neck="Sanctity Necklace",
          body="Jumalik Mail",
          hands="Redan Gloves",
          ring1="Karieyh Ring",
@@ -606,9 +606,12 @@ function init_gear_sets()
          feet="Amm Greaves"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
-         neck="Coatl Gorget +1",
+         neck="Sanctity Necklace",
          body="Lugra Cloak +1",
          head="",
+     })
+     sets.idle.Refresh = set_combine(sets.idle.Regen, {
+         neck="Coatl Gorget +1"
      })
  
      sets.idle.Weak = set_combine(sets.defense.PDT, {
@@ -970,7 +973,7 @@ end
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
     if player.mpp < 70 then
-        idleSet = set_combine(idleSet, sets.idle.Regen)
+        idleSet = set_combine(idleSet, sets.idle.Refresh)
     end
     if player.hpp < 70 then
         idleSet = set_combine(idleSet, sets.idle.Regen)

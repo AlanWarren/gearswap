@@ -239,7 +239,7 @@ function init_gear_sets()
         head="Mochizuki Hatsuburi +1",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-        neck="Stoicheion Medal",
+        neck="Sanctity Necklace",
         body="Samnuha Coat",
         hands="Leyline Gloves",
         back="Aput Mantle",
@@ -258,7 +258,7 @@ function init_gear_sets()
     sets.idle = {
         ammo=gear.RegularAmmo,
         head="Rao Kabuto",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
@@ -279,7 +279,7 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         head="Ptica Headgear",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
         ring1="Karieyh Ring",

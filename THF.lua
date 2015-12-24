@@ -302,7 +302,7 @@ function init_gear_sets()
 	sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
 
 	sets.precast.WS['Aeolian Edge'] = {
-		neck="Stoicheion Medal",
+        neck="Sanctity Necklace",
         ear1="Crematio Earring",
         head="Umbani Cap",
 		body="Samnuha Coat",
@@ -336,7 +336,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = {
 		head="Iuitl Headgear +1",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
@@ -352,7 +352,7 @@ function init_gear_sets()
 	sets.idle.Town = set_combine(sets.idle, {
         head="Lithelimb Cap",
         back="Canny Cape",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         body="Councilor's Garb",
         hands="Leyline Gloves",
         ring1="Karieyh Ring",
