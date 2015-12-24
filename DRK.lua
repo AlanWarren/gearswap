@@ -257,6 +257,7 @@ function init_gear_sets()
      })
      
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
+         head="Valorous Mask",
          body="Founder's breastplate",
          hands="Leyline Gloves",
          ring1="Globidonta Ring",
