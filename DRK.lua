@@ -702,12 +702,12 @@ function init_gear_sets()
      sets.engaged = {
          --sub="Bloodrain Strap",
          ammo="Ginsen",
-         head="Otomi Helm",
+         head="Valorous Mask",
          neck="Ganesha's Mala",
          ear1="Cessance Earring",
          ear2="Brutal Earring",
          body="Vatic Byrnie",
-         hands=Acro.Hands.STP,
+         hands=Acro.Hands.Haste,
          ring1="Rajas Ring",
          ring2="K'ayres Ring",
          back="Bleating Mantle",
@@ -716,7 +716,7 @@ function init_gear_sets()
          feet=Acro.Feet.STP
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
-         head="Argosy Celata",
+         head="Valorous Mask",
          ear1="Bladeborn Earring",
          ear2="Steelflash Earring",
          hands=Acro.Hands.Haste,
@@ -726,7 +726,7 @@ function init_gear_sets()
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          ammo="Hasty Pinion +1",
-         head="Valorous Mask",
+         head="Argosy Celata",
          neck="Lissome Necklace",
          ear1="Cessance Earring",
          ear2="Zennaroi Earring",
@@ -738,7 +738,7 @@ function init_gear_sets()
      -- Liberator AM3
      sets.engaged.AM3 = set_combine(sets.engaged, {
          ammo="Ginsen",
-         head="Argosy Celata",
+         head="Valorous Mask",
          body="Acro Surcoat",
          hands=Acro.Hands.Haste,
          ear1="Cessance Earring",
@@ -752,7 +752,7 @@ function init_gear_sets()
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          ammo="Hasty Pinion +1",
-         head="Valorous Mask",
+         head="Argosy Celata",
          neck="Lissome Necklace",
          ear1="Cessance Earring",
          ear2="Zennaroi Earring",
