@@ -550,7 +550,7 @@ function init_gear_sets()
      -- 50% MND / 50% STR Darkness Elemental
      sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {
          head="Terminal Helm",
-         neck="Stoicheion Medal",
+         neck="Eddy Necklace",
          ear1="Friomisi Earring",
          body="Founder's Breastplate",
          hands="Founder's Gauntlets",
