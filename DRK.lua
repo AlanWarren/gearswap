@@ -394,6 +394,7 @@ function init_gear_sets()
      -- 20% STR / 20% INT 
      -- Base set only used at 3000TP to put AM3 up
      sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
+         head="Valorous Mask",
          neck="Shadow Gorget",
          body="Acro Surcoat",
          waist="Windbuffet Belt +1",
@@ -416,12 +417,12 @@ function init_gear_sets()
          feet=Acro.Feet.STP
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
-         head="Valorous Mask",
+         head="Argosy Celata",
          body="Mes'yohi Haubergeon",
          ear1="Zennaroi Earring",
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {
-         head="Valorous Mask",
+         head="Argosy Celata",
          neck="Shadow Gorget",
          waist="Light Belt",
          feet=Acro.Feet.STP
@@ -803,6 +804,10 @@ function init_gear_sets()
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
+     
+     sets.engaged.PDT.AM3 = set_combine(sets.engaged.AM3, sets.Defensive)
+     sets.engaged.Mid.PDT.AM3 = set_combine(sets.engaged.Mid.AM3, sets.Defensive_Mid)
+     sets.engaged.Acc.PDT.AM3 = set_combine(sets.engaged.Acc.AM3, sets.Defensive_Acc)
 
      sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, sets.Defensive)
      sets.engaged.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive_Mid)
