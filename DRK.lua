@@ -134,7 +134,7 @@ function init_gear_sets()
 
      Niht = {}
      Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
-     Niht.WSD = {name="Niht Mantle", augments={'Attack+9','Dark magic skill +4', '"Drain" and "Aspir" potency +11','Weapon skill damage +4%'}}
+     Niht.WSD = {name="Niht Mantle", augments={'Attack+13','Dark magic skill +2', 'Weapon skill damage +4%'}}
 
      sets.Organizer = {
          main="Liberator",
