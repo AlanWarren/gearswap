@@ -265,7 +265,7 @@ function init_gear_sets()
         ring1="Evanescence Ring",
         ring2="Excelsis Ring",
         body="Geomancy tunic +1",
-        waist="Fucho-no-obi",
+        waist="Austerity Belt +1",
         legs="Azimuth Tights +1",
     })
     sets.midcast.Drain = sets.midcast.Aspir
