@@ -236,8 +236,8 @@ function init_gear_sets()
          ammo="Plumose Sachet", 
          head="Ignominy burgeonet +1", -- 17
          neck="Incanter's Torque", -- 10
-         ear1="Lifestorm Earring",
-         ear2="Psystorm Earring",
+         ear1="Gwati Earring",
+         ear2="Dark Earring", -- 3
          body="Demon's Harness", --5
          hands="Fallen's Finger Gauntlets +1", -- 14
          waist="Casso Sash", -- 5
