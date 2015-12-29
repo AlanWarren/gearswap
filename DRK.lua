@@ -585,7 +585,7 @@ function init_gear_sets()
          body="Councilor's Garb",
          hands="Odyssean Gauntlets",
          ring1="Karieyh Ring",
-         ring2="Ifrit Ring +1",
+         ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Windbuffet Belt +1",
          legs="Crimson Cuisses",
@@ -600,7 +600,7 @@ function init_gear_sets()
          body="Jumalik Mail",
          hands="Redan Gloves",
          ring1="Karieyh Ring",
-         ring2="Paguroidea Ring",
+         ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
          legs="Crimson Cuisses",
@@ -609,6 +609,7 @@ function init_gear_sets()
      sets.idle.Regen = set_combine(sets.idle.Field, {
          neck="Sanctity Necklace",
          body="Lugra Cloak +1",
+         ring2="Paguroidea Ring",
          head="",
      })
      sets.idle.Refresh = set_combine(sets.idle.Regen, {
@@ -621,8 +622,8 @@ function init_gear_sets()
          neck="Agitator's Collar",
          hands="Redan Gloves",
          ear1="Zennaroi Earring",
-         ring1="Dark Ring",
-         ring2="Patricius Ring",
+         ring1="Patricius Ring",
+         ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
          legs="Scuffler's Cosciales",
@@ -639,8 +640,8 @@ function init_gear_sets()
          body="Jumalik Mail",
          hands="Redan Gloves",
          ear1="Zennaroi Earring",
-         ring1="Dark Ring",
-         ring2="Patricius Ring",
+         ring1="Patricius Ring",
+         ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
          legs="Scuffler's Cosciales",
@@ -652,7 +653,7 @@ function init_gear_sets()
          neck="Twilight Torque",
          body="Lugra Cloak +1",
          ear1="Zennaroi Earring",
-         ring2="K'ayres Ring",
+         ring1="Dark Ring",
          back="Impassive Mantle",
      })
  
@@ -675,7 +676,8 @@ function init_gear_sets()
          neck="Agitator's Collar", -- 3%
          body="Jumalik Mail",
          hands="Redan Gloves",
-         ring2="Patricius Ring",
+         ring1="Patricius Ring",
+         ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
          legs="Scuffler's Cosciales", -- 5%
@@ -688,8 +690,8 @@ function init_gear_sets()
          body="Jumalik Mail",
          hands="Redan Gloves",
          back="Impassive Mantle",
-         ring1="Supershear Ring",
-         ring2="Patricius Ring",
+         ring1="Patricius Ring",
+         ring2="Defending Ring",
          feet="Loyalist Sabatons"
      }
      sets.Defensive_Acc = {
