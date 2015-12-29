@@ -320,7 +320,7 @@ function init_gear_sets()
         body="Azimuth Coat +1",
         hands="Bagua Mitaines",
         ring1="Dark Ring",
-        ring2="Paguroidea Ring",
+        ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Fucho-no-obi",
         legs="Azimuth Tights +1",
@@ -329,7 +329,6 @@ function init_gear_sets()
     sets.idle.PDT = set_combine(sets.idle, {
         head="Hike Khat +1",
         hands="Geomancy Mitaines +1",
-        ring2="Patricius Ring",
     	back="Solemnity Cape",
         feet="Azimuth Gaiters"
     })
@@ -388,8 +387,8 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
-        ring1="Patricius Ring",
-        ring2="Dark Ring",
+        ring1="Dark Ring",
+        ring2="Defending Ring",
         --back="Umbra Cape",
         feet="Azimuth Gaiters"
     }
