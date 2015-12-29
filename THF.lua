@@ -342,7 +342,7 @@ function init_gear_sets()
         body="Emet Harness +1",
         hands="Iuitl Wristbands +1",
         ring1="Karieyh Ring",
-        ring2="Dark Ring",
+        ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Samnuha Tights",
@@ -399,7 +399,7 @@ function init_gear_sets()
         neck="Twilight Torque",
 		body="Rawhide Vest",
         hands="Iuitl Wristbands +1",
-        ring1="Dark Ring",
+        ring1="Defending Ring",
         ring2="Epona's Ring",
     	back="Solemnity Cape",
         legs="Nahtirah Trousers",
@@ -511,7 +511,7 @@ function init_gear_sets()
             neck="Twilight Torque", 
             body="Rawhide Vest", 
             ring1="Patricius Ring", 
-            ring2="Dark Ring", 
+            ring2="Defending Ring", 
     	    back="Solemnity Cape",
             legs="Iuitl Tights +1", 
             feet="Taeon Boots" 
@@ -537,7 +537,7 @@ function init_gear_sets()
             neck="Twilight Torque", 
             body="Rawhide Vest", 
             ring1="Patricius Ring", 
-            ring2="Dark Ring", 
+            ring2="Defending Ring", 
     	    back="Solemnity Cape",
             legs="Iuitl Tights +1", 
             feet="Taeon Boots" 
@@ -566,7 +566,7 @@ function init_gear_sets()
             neck="Twilight Torque", 
             body="Rawhide Vest", 
             ring1="Patricius Ring", 
-            ring2="Dark Ring", 
+            ring2="Defending Ring", 
     	    back="Solemnity Cape",
             legs="Iuitl Tights +1", 
             feet="Taeon Boots" })
@@ -588,7 +588,7 @@ function init_gear_sets()
             neck="Twilight Torque", 
             body="Rawhide Vest", 
             ring1="Patricius Ring", 
-            ring2="Dark Ring", 
+            ring2="Defending Ring", 
     	    back="Solemnity Cape",
             legs="Iuitl Tights +1", 
             feet="Taeon Boots" })
