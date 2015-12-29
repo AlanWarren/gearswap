@@ -295,7 +295,7 @@ function init_gear_sets()
         body="Councilor's Garb",
         hands="Ryuo Tekko",
         ring1="Karieyh Ring",
-        ring2="Ifrit Ring +1",
+        ring2="Defending Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Kasuga Haidate +1",
@@ -343,7 +343,7 @@ function init_gear_sets()
    	    body="Founder's Breastplate",
         hands="Otronif Gloves +1",
         ring1="Dark Ring",
-        ring2="Patricius Ring",
+        ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Otronif Brais +1",
@@ -450,13 +450,12 @@ function init_gear_sets()
          head="Lithelimb Cap",
          neck="Agitator's Collar",
          ring1="Patricius Ring",
-         ring2="Dark Ring"
+         ring2="Defending Ring"
     })
     
     sets.engaged.Reraise = set_combine(sets.engaged.PDT, {
         head="Twilight Helm", 
         body="Twilight Mail",
-        ring2="Paguroidea Ring"
     })
     
     sets.engaged.Reraise.Yoichi = set_combine(sets.engaged.Reraise, {
@@ -518,7 +517,7 @@ function init_gear_sets()
    	    body="Founder's Breastplate",
         hands="Otronif Gloves +1",
         ring1="Patricius Ring",
-        ring2="Dark Ring",
+        ring2="Defending Ring",
     	back="Solemnity Cape",
         legs="Otronif Brais +1",
         feet="Loyalist Sabatons"
@@ -577,7 +576,7 @@ function init_gear_sets()
     sets.engaged.Adoulin.Yoichi.Acc.PDT = set_combine(sets.engaged.Adoulin.Yoichi.Acc, { 
         head="Lithelimb Cap",
         neck="Agitator's Collar",
-        ring2="Dark Ring"
+        ring2="Defending Ring"
     })
     
     sets.engaged.Adoulin.Reraise = set_combine(sets.engaged.Adoulin, {
