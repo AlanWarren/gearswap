@@ -356,7 +356,7 @@ function init_gear_sets()
         body="Councilor's Garb",
         hands="Leyline Gloves",
         ring1="Karieyh Ring",
-        ring2="Epona's Ring",
+        ring2="Defending Ring",
         legs="Samnuha Tights",
         waist="Windbuffet Belt +1",
     })
