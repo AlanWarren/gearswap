@@ -472,19 +472,20 @@ function init_gear_sets()
      sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
          ammo="Ginsen",
          neck="Shadow Gorget",
+         head="Valorous Mask",
          body="Founder's Breastplate",
          ring2="Shiva Ring",
          back=Niht.WSD,
          waist="Soil Belt",
-         legs="Argosy Breeches",
+         legs="Heathen's Flanchard +1",
          feet=Acro.Feet.WSD
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
-         legs="Argosy Breeches",
+         legs="Acro Breeches",
          back=Niht.WSD,
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
-         legs="Argosy Breeches",
+         legs="Acro Breeches",
          back=Niht.WSD,
      })
      sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
@@ -568,7 +569,7 @@ function init_gear_sets()
          head="Acro Helm",
          neck="Shadow Gorget",
          body="Acro Surcoat",
-         hands="Fallen's Finger Gauntlets +1",
+         hands="Odyssean Gauntlets",
          legs="Scuffler's Cosciales",
          waist="Soil Belt",
      })
