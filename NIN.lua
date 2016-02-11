@@ -29,7 +29,7 @@ function job_setup()
     LugraWSList = S{'Blade: Shun', 'Blade: Ku', 'Blade: Jin'}
     state.CapacityMode = M(false, 'Capacity Point Mantle')
     
-    gear.RegularAmmo = 'Happo Shuriken'
+    gear.RegularAmmo = 'Togakushi Shuriken'
     gear.SangeAmmo = 'Happo Shuriken'
     
     wsList = S{'Blade: Hi'}
@@ -1251,7 +1251,7 @@ function aw_custom_aftermath_timers_aftercast(spell)
 end
 
 function select_ammo()
-    if state.Buff.Sange  and state.OffenseMode ~= 'Acc' then
+    if state.Buff.Sange then
         return sets.SangeAmmo
     else
         return sets.RegularAmmo
