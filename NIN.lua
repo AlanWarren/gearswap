@@ -436,7 +436,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         body="Rawhide Vest",
         hands="Ryuo Tekko",
-        ring1="Oneiros Ring",
+        ring1="Rajas Ring",
         ring2="Epona's Ring",
         --back="Iga Dochugappa",
         back="Bleating Mantle",
@@ -555,18 +555,19 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1",
         back="Yokaze Mantle"
     })
-    sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
-        head="Taeon Chapeau",
-        neck="Yarak Torque",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        body="Hattori Ningi +1",
-        hands="Ryuo Tekko",
-        back="Grounded Mantle +1",
-        ring1="Patricius Ring",
-        ring2="Mars's Ring",
-        legs="Samnuha Tights"
-    })
+    --sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
+    --    head="Taeon Chapeau",
+    --    neck="Yarak Torque",
+    --    ear1="Dudgeon Earring",
+    --    ear2="Heartseeker Earring",
+    --    body="Hattori Ningi +1",
+    --    hands="Ryuo Tekko",
+    --    back="Grounded Mantle +1",
+    --    ring1="Patricius Ring",
+    --    ring2="Mars's Ring",
+    --    legs="Samnuha Tights"
+    --})
+    sets.engaged.Acc.Haste_30 = sets.engaged.Acc.MaxHaste 
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Hattori Zukin +1",
