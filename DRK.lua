@@ -1044,9 +1044,6 @@ function job_buff_change(buff, gain)
     end
     -- AM custom groups
     if buff:startswith('Aftermath') then
-    --if string.startswith(spell.en, "Aftermath") then
-    --if string.find(buff, 'Aftermath') then
-    --if S{'Aftermath'}:contains(buff) then
         if player.equipment.main == 'Liberator' then
             classes.CustomMeleeGroups:clear()
 	        
