@@ -710,7 +710,7 @@ function init_gear_sets()
     
     -- BLADE: HI
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-        ammo="Yetshila",
+        --ammo="Yetshila",
         head="Uk'uxkaj Cap",
         neck="Hope Torque",
         body="Hattori Ningi +1",
