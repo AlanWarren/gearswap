@@ -297,7 +297,6 @@ function init_gear_sets()
          ear1="Gwati Earring",
          ear2="Hirudinea Earring",
          body="Lugra Cloak +1",
-         waist="Austerity Belt +1",
          ring2="Excelsis Ring",
      })
      sets.midcast.Aspir = sets.midcast.Drain
