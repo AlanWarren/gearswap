@@ -337,7 +337,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         hands="Floral Gauntlets",
-        ring1="Oneiros Ring",
+        ring1="Rajas Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Patentia Sash",
