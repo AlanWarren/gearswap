@@ -178,10 +178,8 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         body="Mochizuki Chainmail +1",
         hands="Hachiya Tekko +1",
-        --ring1="Longshot Ring",
         ring2="Hajduk Ring",
         back="Yokaze Mantle",
-        --waist="Hurling Belt",
         legs="Hachiya Hakama +1",
         feet="Taeon Boots"
     }
@@ -221,7 +219,6 @@ function init_gear_sets()
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         neck="Incanter's Torque",
-        --neck="Ardor Pendant +1",
         body="Samnuha Coat",
         hands="Leyline Gloves",
         ring1="Sangoma Ring",
@@ -231,7 +228,7 @@ function init_gear_sets()
     }
     -- any ninjutsu cast on self
     sets.midcast.SelfNinjutsu = sets.midcast.Ninjutsu
-    sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {feet="Iga Kyahan +2"})
+    sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {hands="Mochizuki Tekko +1", feet="Iga Kyahan +2"})
     sets.midcast.Migawari = set_combine(sets.midcast.Ninjutsu, {body="Hattori Ningi +1"})
 
     -- Nuking Ninjutsu (skill & magic attack)

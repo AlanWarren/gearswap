@@ -296,7 +296,6 @@ function init_gear_sets()
          ring2="Paguroidea Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
-         feet="Cizin Greaves +1"
      }
 
      -- Defense sets
