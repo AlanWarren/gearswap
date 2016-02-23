@@ -390,7 +390,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Ryuo Tekko",
     	back="Solemnity Cape",
-        ring1="Patricius Ring",
+        ring1="Defending Ring",
         legs="Otronif Brais +1",
         feet="Amm greaves"
     }
