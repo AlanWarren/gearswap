@@ -253,7 +253,7 @@ function init_gear_sets()
     sets.precast.Effusion.Swipe = sets.midcast.ElementalNinjutsu
     
     sets.idle = {
-        ammo=gear.RegularAmmo,
+        ammo="Togakushi Shuriken",
         head="Rao Kabuto",
         neck="Sanctity Necklace",
         ear1="Zennaroi Earring",
