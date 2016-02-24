@@ -398,10 +398,10 @@ function init_gear_sets()
         head="Lithelimb Cap",
         body="Emet Harness +1",
         neck="Agitator's Collar",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
         ring1="Patricius Ring",
         ring2="Supershear Ring",
-        feet="Loyalist Sabatons"
+        feet="Herculean Boots"
     }
 
     sets.engaged.PDT = set_combine(sets.engaged, sets.NormalPDT)
@@ -435,7 +435,6 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
-        --back="Iga Dochugappa",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
@@ -459,7 +458,8 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         back="Grounded Mantle +1",
-        waist="Olseni Belt"
+        waist="Olseni Belt",
+        feet="Herculean Boots"
     })
     -- do nothing here
     sets.engaged.Innin.MaxHaste     = sets.engaged.MaxHaste
@@ -648,13 +648,13 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         body="Rawhide Vest",
-        hands=TaeonHands.TA,
+        hands="Herculean Gloves",
         ring1="Karieyh Ring",
         ring2="Epona's Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
-        feet="Taeon Boots"
+        feet="Herculean Boots"
     }
 
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -664,7 +664,6 @@ function init_gear_sets()
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         head="Gavialis Helm",
-        legs="Samnuha Tights",
     })
 
     sets.Kamu = {
@@ -714,7 +713,6 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring1="Karieyh Ring",
         waist="Windbuffet Belt +1",
-        feet="Taeon Boots"
     })
 
     sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
@@ -738,12 +736,10 @@ function init_gear_sets()
     sets.Shun = {
         head="Taeon Chapeau",
         neck="Flame Gorget",
-        hands="Ryuo Tekko",
         ring1="Ramuh Ring",
         back="Yokaze Mantle",
         waist="Light Belt",
         legs="Samnuha Tights",
-        feet="Taeon Boots"
     }
 
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
