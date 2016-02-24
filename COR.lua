@@ -103,6 +103,7 @@ function init_gear_sets()
         back="Gunslinger's Cape",
         feet="Lanun Bottes"
     }
+    TaeonHands = {}
     TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+8'}}
 	
 	--sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
@@ -201,7 +202,7 @@ function init_gear_sets()
 	sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
         head="Lanun Tricorne +1",
-        neck="Stoicheion Medal",
+        neck="Sanctity Necklace",
         ear1="Crematio Earring",
         ear2="Friomisi Earring",
         body="Samnuha Coat",
@@ -219,7 +220,7 @@ function init_gear_sets()
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
 		head="Uk'uxkaj Cap",
-        neck="Stoicheion Medal",
+        neck="Sanctity Necklace",
         hands="Iuitl Wristbands +1",
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
@@ -237,7 +238,7 @@ function init_gear_sets()
 	sets.midcast.CorsairShot = {
         ammo=gear.QDbullet,
         head="Umbani Cap",
-        neck="Stoicheion Medal",
+        neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Samnhua Coat",
@@ -270,7 +271,7 @@ function init_gear_sets()
         ear1="Enervating Earring",
         ear2="Volley Earring",
         body="Pursuer's Doublet",
-        hands="Alruna's Gloves +1",
+        hands="Floral Gauntlets",
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
         back="Gunslinger's Cape",
@@ -295,13 +296,13 @@ function init_gear_sets()
 	sets.idle = {
         ammo=gear.RAbullet,
         head="Lanun Tricorne +1",
-        neck="Twilight Torque",
+        neck="Sanctity Necklace",
         ear1="Zennaroi Earring",
         ear2="Crematio Earring",
         body="Pursuer's Doublet",
         hands="Iuitl Wristbands +1",
         ring1="Karieyh Ring",
-        ring2="Paguroidea Ring",
+        ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Adhemar Kecks",
@@ -309,20 +310,20 @@ function init_gear_sets()
     }
     sets.idle.Regen = set_combine(sets.idle, {
         head="Ocelomeh Headpiece +1",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         body="Kheper jacket",
     })
 
 	sets.idle.Town = {
         ammo=gear.RAbullet,
         head="Lanun Tricorne +1",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         ear1="Enervating Earring",
         ear2="Crematio Earring",
         body="Councilor's Garb",
         hands="Alruna's Gloves +1",
-        ring1="Ifrit Ring +1",
-        ring2="Karieyh Ring",
+        ring1="Karieyh Ring",
+        ring2="Defending Ring",
         back="Gunslinger's Cape",
         waist="Flume Belt",
         legs="Adhemar Kecks",
@@ -336,7 +337,7 @@ function init_gear_sets()
         hands="Iuitl Wristbands +1",
         body="Emet Harness +1",
         ring1="Patricius Ring",
-        ring2="Dark Ring",
+        ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Iuitl Tights +1",
@@ -378,7 +379,7 @@ function init_gear_sets()
         ear2="Steelflash Earring",
         body="Rawhide Vest",
         hands="Floral Gauntlets",
-        ring1="Patricius Ring",
+        ring1="Rajas Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
@@ -401,12 +402,12 @@ function init_gear_sets()
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
         ring2="Mars's Ring",
-        waist="Olseni Belt"
+        waist="Olseni Belt",
         back="Grounded Mantle +1",
     })
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Melee.DW, {
         neck="Lissome Necklace",
-        ring2="Mars's Ring"
+        ring2="Mars's Ring",
         back="Grounded Mantle +1",
     })
 end

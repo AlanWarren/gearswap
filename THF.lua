@@ -92,7 +92,7 @@ function init_gear_sets()
         hands="Pillager's Armlets +1",
         ring1="Ramuh Ring",
         ring2="Rajas Ring",
-        back="Grounded Mantle +1"
+        back="Grounded Mantle +1",
         waist="Chaac Belt",
         legs="Samnuha Tights",
         feet="Raider's Poulaines +2"
@@ -302,7 +302,7 @@ function init_gear_sets()
 	sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
 
 	sets.precast.WS['Aeolian Edge'] = {
-		neck="Stoicheion Medal",
+        neck="Sanctity Necklace",
         ear1="Crematio Earring",
         head="Umbani Cap",
 		body="Samnuha Coat",
@@ -336,13 +336,13 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = {
 		head="Iuitl Headgear +1",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
         hands="Iuitl Wristbands +1",
         ring1="Karieyh Ring",
-        ring2="Dark Ring",
+        ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Samnuha Tights",
@@ -352,11 +352,11 @@ function init_gear_sets()
 	sets.idle.Town = set_combine(sets.idle, {
         head="Lithelimb Cap",
         back="Canny Cape",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         body="Councilor's Garb",
         hands="Leyline Gloves",
         ring1="Karieyh Ring",
-        ring2="Epona's Ring",
+        ring2="Defending Ring",
         legs="Samnuha Tights",
         waist="Windbuffet Belt +1",
     })
@@ -399,7 +399,7 @@ function init_gear_sets()
         neck="Twilight Torque",
 		body="Rawhide Vest",
         hands="Iuitl Wristbands +1",
-        ring1="Dark Ring",
+        ring1="Defending Ring",
         ring2="Epona's Ring",
     	back="Solemnity Cape",
         legs="Nahtirah Trousers",
@@ -484,7 +484,7 @@ function init_gear_sets()
         ear2="Brutal Earring",
         body="Rawhide Vest",
         hands=TaeonHands.TA,
-        back="Canny Cape"
+        back="Canny Cape",
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
         feet="Taeon Boots"
@@ -511,7 +511,7 @@ function init_gear_sets()
             neck="Twilight Torque", 
             body="Rawhide Vest", 
             ring1="Patricius Ring", 
-            ring2="Dark Ring", 
+            ring2="Defending Ring", 
     	    back="Solemnity Cape",
             legs="Iuitl Tights +1", 
             feet="Taeon Boots" 
@@ -537,7 +537,7 @@ function init_gear_sets()
             neck="Twilight Torque", 
             body="Rawhide Vest", 
             ring1="Patricius Ring", 
-            ring2="Dark Ring", 
+            ring2="Defending Ring", 
     	    back="Solemnity Cape",
             legs="Iuitl Tights +1", 
             feet="Taeon Boots" 
@@ -557,7 +557,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
         waist="Patentia Sash",
-        back="Grounded Mantle +1"
+        back="Grounded Mantle +1",
         feet="Taeon Boots"
     })
     sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, { body="Samnuha Coat", ring1="Beeline Ring", feet="Taeon Boots"})
@@ -566,7 +566,7 @@ function init_gear_sets()
             neck="Twilight Torque", 
             body="Rawhide Vest", 
             ring1="Patricius Ring", 
-            ring2="Dark Ring", 
+            ring2="Defending Ring", 
     	    back="Solemnity Cape",
             legs="Iuitl Tights +1", 
             feet="Taeon Boots" })
@@ -588,7 +588,7 @@ function init_gear_sets()
             neck="Twilight Torque", 
             body="Rawhide Vest", 
             ring1="Patricius Ring", 
-            ring2="Dark Ring", 
+            ring2="Defending Ring", 
     	    back="Solemnity Cape",
             legs="Iuitl Tights +1", 
             feet="Taeon Boots" })

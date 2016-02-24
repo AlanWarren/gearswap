@@ -166,7 +166,7 @@ function init_gear_sets()
         
         sets.idle = {
             head="Arcadian Beret +1",
-            neck="Lissome Necklace",
+            neck="Sanctity Necklace",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Pursuer's Doublet",
@@ -181,18 +181,18 @@ function init_gear_sets()
         sets.idle.Regen = set_combine(sets.idle, {
             head="Ocelomeh Headpiece +1",
             body="Kheper Jacket",
-            neck="Lissome Necklace",
+            neck="Sanctity Necklace",
             ring2="Paguroidea Ring"
         })
         sets.idle.PDT = set_combine(sets.idle, {
             head="Iuitl Headgear +1",
-            ring1="Patricius Ring",
-            ring2="Dark Ring"
+            ring1="Dark Ring",
+            ring2="Defending Ring"
         })
         sets.idle.Town = set_combine(sets.idle, {
             body="Councilor's garb",
             ring1="Karieyh Ring",
-            ring2="Ifrit Ring +1",
+            ring2="Defending Ring",
             hands="Amini Glovelettes +1",
             legs="Adhemar Kecks",
             back="Lutian Cape"
@@ -207,7 +207,7 @@ function init_gear_sets()
             body="Pursuer's Doublet", 
             hands="Iuitl Wristbands +1",
             ring1="Karieyh Ring",
-            ring2="Dark Ring",
+            ring2="Defending Ring",
             waist="Impulse Belt",
             legs="Nahtirah Trousers", 
             feet="Orion Socks +1"
@@ -217,7 +217,7 @@ function init_gear_sets()
     	    back="Solemnity Cape",
             neck="Twilight Torque",
             ring1="Dark Ring",
-            ring2="Patricius Ring"
+            ring2="Defending Ring"
         })
         sets.engaged.Bow = set_combine(sets.engaged, {})
 
@@ -239,8 +239,8 @@ function init_gear_sets()
 
         sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
             neck="Twilight Torque",
-            ring1="Dark Ring",
-            ring2="Patricius Ring"
+            ring1="Patricius Ring"
+            ring2="Defending Ring",
     	    back="Solemnity Cape",
         })
 
@@ -453,7 +453,7 @@ function init_gear_sets()
             body="Samnuha Coat",
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
-            neck="Stoicheion Medal",
+            neck="Sanctity Necklace",
             hands="Leyline Gloves",
             ring1="Acumen Ring",
             ring2="Garuda Ring",
@@ -471,7 +471,7 @@ function init_gear_sets()
             body="Samnuha Coat",
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
-            neck="Stoicheion Medal",
+            neck="Sanctity Necklace",
             hands="Leyline Gloves",
             ring1="Acumen Ring",
             ring2="Garuda Ring",

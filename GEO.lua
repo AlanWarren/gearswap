@@ -142,6 +142,16 @@ function init_gear_sets()
         waist="Witful Belt", -- 4%
         legs="Geomancy Pants +1", -- 5%
     }
+    sets.midcast.Trust =  {
+         head="Azimuth hood +1",
+         hands="Geomancy Mitaines +1",
+         body="Azimuth Coat +1",
+         legs="Azimuth Tights +1",
+         feet="Helios Boots"
+    }
+     sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
+         body="Apururu Unity shirt",
+     })
 
     sets.midcast.Geomancy = {
         main="Serenity",
@@ -255,7 +265,6 @@ function init_gear_sets()
         ring1="Evanescence Ring",
         ring2="Excelsis Ring",
         body="Geomancy tunic +1",
-        waist="Fucho-no-obi",
         legs="Azimuth Tights +1",
     })
     sets.midcast.Drain = sets.midcast.Aspir
@@ -304,13 +313,13 @@ function init_gear_sets()
         sub="Genbu's Shield",
         range="Dunna",
         head="Azimuth Hood +1",
-        neck="Lissome Necklace",
+        neck="Twilight Torque",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Azimuth Coat +1",
         hands="Bagua Mitaines",
         ring1="Dark Ring",
-        ring2="Paguroidea Ring",
+        ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Fucho-no-obi",
         legs="Azimuth Tights +1",
@@ -319,7 +328,6 @@ function init_gear_sets()
     sets.idle.PDT = set_combine(sets.idle, {
         head="Hike Khat +1",
         hands="Geomancy Mitaines +1",
-        ring2="Patricius Ring",
     	back="Solemnity Cape",
         feet="Azimuth Gaiters"
     })
@@ -378,8 +386,8 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         body="Azimuth Coat +1",
         hands="Geomancy Mitaines +1",
-        ring1="Patricius Ring",
-        ring2="Dark Ring",
+        ring1="Dark Ring",
+        ring2="Defending Ring",
         --back="Umbra Cape",
         feet="Azimuth Gaiters"
     }
@@ -533,8 +541,10 @@ function job_get_spell_map(spell, default_spell_map)
             else
                 return 'HighTierNuke'
             end
-        end
+        elseif spell.type == 'Trust' then
+            return 'Trust'
 
+        end
     end
 end
 

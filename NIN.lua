@@ -29,7 +29,7 @@ function job_setup()
     LugraWSList = S{'Blade: Shun', 'Blade: Ku', 'Blade: Jin'}
     state.CapacityMode = M(false, 'Capacity Point Mantle')
     
-    gear.RegularAmmo = 'Happo Shuriken'
+    gear.RegularAmmo = 'Togakushi Shuriken'
     gear.SangeAmmo = 'Happo Shuriken'
     
     wsList = S{'Blade: Hi'}
@@ -134,6 +134,16 @@ function init_gear_sets()
         legs="Taeon Tights",
         feet="Mochizuki Kyahan +1"
     }
+    sets.midcast.Trust =  {
+         head="Ptica Headgear",
+         hands="Ryuo Tekko",
+         body="Rawhide Vest",
+         legs="Samnuha Tights",
+         feet="Hachiya Kyahan +1"
+    }
+     sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
+         body="Apururu Unity shirt",
+     })
     
     --------------------------------------
     -- Utility Sets for rules below
@@ -168,10 +178,8 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         body="Mochizuki Chainmail +1",
         hands="Hachiya Tekko +1",
-        --ring1="Longshot Ring",
         ring2="Hajduk Ring",
         back="Yokaze Mantle",
-        --waist="Hurling Belt",
         legs="Hachiya Hakama +1",
         feet="Taeon Boots"
     }
@@ -211,7 +219,6 @@ function init_gear_sets()
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         neck="Incanter's Torque",
-        --neck="Ardor Pendant +1",
         body="Samnuha Coat",
         hands="Leyline Gloves",
         ring1="Sangoma Ring",
@@ -221,7 +228,7 @@ function init_gear_sets()
     }
     -- any ninjutsu cast on self
     sets.midcast.SelfNinjutsu = sets.midcast.Ninjutsu
-    sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {feet="Iga Kyahan +2"})
+    sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {hands="Mochizuki Tekko +1", feet="Iga Kyahan +2"})
     sets.midcast.Migawari = set_combine(sets.midcast.Ninjutsu, {body="Hattori Ningi +1"})
 
     -- Nuking Ninjutsu (skill & magic attack)
@@ -229,7 +236,7 @@ function init_gear_sets()
         head="Mochizuki Hatsuburi +1",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-        neck="Stoicheion Medal",
+        neck="Sanctity Necklace",
         body="Samnuha Coat",
         hands="Leyline Gloves",
         back="Aput Mantle",
@@ -246,15 +253,15 @@ function init_gear_sets()
     sets.precast.Effusion.Swipe = sets.midcast.ElementalNinjutsu
     
     sets.idle = {
-        ammo=gear.RegularAmmo,
+        ammo="Togakushi Shuriken",
         head="Rao Kabuto",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
         hands="Ryuo Tekko",
         ring1="Karieyh Ring",
-        ring2="Dark Ring",
+        ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Otronif Brais +1",
@@ -269,12 +276,11 @@ function init_gear_sets()
     
     sets.idle.Town = set_combine(sets.idle, {
         head="Ptica Headgear",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
         ring1="Karieyh Ring",
         hands="Ryuo Tekko",
-        ring2="Ifrit Ring +1",
         body="Councilor's Garb",
         legs="Samnuha Tights",
         back="Yokaze Mantle",
@@ -293,7 +299,7 @@ function init_gear_sets()
         body="Emet Harness +1",
         hands="Ryuo Tekko",
         ring1="Patricius Ring",
-        ring2="Dark Ring",
+        ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Otronif Brais +1",
@@ -331,7 +337,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         hands="Floral Gauntlets",
-        ring1="Oneiros Ring",
+        ring1="Rajas Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Patentia Sash",
@@ -384,7 +390,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Ryuo Tekko",
     	back="Solemnity Cape",
-        ring1="Patricius Ring",
+        ring1="Defending Ring",
         legs="Otronif Brais +1",
         feet="Amm greaves"
     }
@@ -427,7 +433,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         body="Rawhide Vest",
         hands="Ryuo Tekko",
-        ring1="Oneiros Ring",
+        ring1="Rajas Ring",
         ring2="Epona's Ring",
         --back="Iga Dochugappa",
         back="Bleating Mantle",
@@ -546,18 +552,19 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1",
         back="Yokaze Mantle"
     })
-    sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
-        head="Taeon Chapeau",
-        neck="Yarak Torque",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        body="Hattori Ningi +1",
-        hands="Ryuo Tekko",
-        back="Grounded Mantle +1",
-        ring1="Patricius Ring",
-        ring2="Mars's Ring",
-        legs="Samnuha Tights"
-    })
+    --sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
+    --    head="Taeon Chapeau",
+    --    neck="Yarak Torque",
+    --    ear1="Dudgeon Earring",
+    --    ear2="Heartseeker Earring",
+    --    body="Hattori Ningi +1",
+    --    hands="Ryuo Tekko",
+    --    back="Grounded Mantle +1",
+    --    ring1="Patricius Ring",
+    --    ring2="Mars's Ring",
+    --    legs="Samnuha Tights"
+    --})
+    sets.engaged.Acc.Haste_30 = sets.engaged.Acc.MaxHaste 
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Hattori Zukin +1",
@@ -700,7 +707,7 @@ function init_gear_sets()
     
     -- BLADE: HI
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-        ammo="Yetshila",
+        --ammo="Yetshila",
         head="Uk'uxkaj Cap",
         neck="Hope Torque",
         body="Hattori Ningi +1",
@@ -1158,6 +1165,12 @@ end
 --        return 'HighTierNuke'
 --    end
 --end
+-- Creating a custom spellMap, since Mote capitalized absorbs incorrectly
+function job_get_spell_map(spell, default_spell_map)
+    if spell.type == 'Trust' then
+        return 'Trust'
+    end
+end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
@@ -1236,7 +1249,7 @@ function aw_custom_aftermath_timers_aftercast(spell)
 end
 
 function select_ammo()
-    if state.Buff.Sange  and state.OffenseMode ~= 'Acc' then
+    if state.Buff.Sange then
         return sets.SangeAmmo
     else
         return sets.RegularAmmo
