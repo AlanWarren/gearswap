@@ -259,7 +259,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
         ring1="Karieyh Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
