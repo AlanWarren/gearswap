@@ -438,7 +438,7 @@ function init_gear_sets()
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
-        feet="Herculean Boots"
+        feet="Taeon Boots"
     })
     -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
@@ -651,13 +651,13 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         body="Rawhide Vest",
-        hands=TaeonHands.TA,
+        hands="Herculean Gloves",
         ring1="Karieyh Ring",
         ring2="Epona's Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
-        feet="Taeon Boots"
+        feet="Herculean Boots"
     }
 
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -717,7 +717,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring1="Karieyh Ring",
         waist="Windbuffet Belt +1",
-        feet="Taeon Boots"
+        feet="Herculean Boots"
     })
 
     sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
@@ -746,7 +746,7 @@ function init_gear_sets()
         back="Yokaze Mantle",
         waist="Light Belt",
         legs="Samnuha Tights",
-        feet="Taeon Boots"
+        feet="Herculean Boots"
     }
 
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
@@ -783,7 +783,7 @@ function init_gear_sets()
     sets.precast.WS['Blade: Ku'].Mid = sets.precast.WS['Blade: Ku'].Low
     sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'].Mid, {
         legs="Samnuha Tights",
-        feet="Mochizuki Kyahan +1"
+        feet="Herculean Boots"
     })
     
     sets.Ten = {
@@ -802,7 +802,7 @@ function init_gear_sets()
     })
     sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid, {
         legs="Samnuha Tights",
-        feet="Mochizuki Kyahan +1"
+        feet="Herculean Boots"
     })
     
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
@@ -815,14 +815,14 @@ function init_gear_sets()
         ring2="Acumen Ring",
         legs="Shneddick Tights +1",
         waist="Thunder Belt",
-        feet="Hachiya Kyahan +1"
+        feet="Herculean Boots"
      })
     sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
         ring1="Shiva Ring",
         ring2="Acumen Ring",
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
-        feet="Hachiya Kyahan +1"
+        feet="Herculean Boots"
     })
     sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
 
