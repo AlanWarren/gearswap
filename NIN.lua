@@ -280,7 +280,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Trux Earring",
         ring1="Karieyh Ring",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
         body="Councilor's Garb",
         legs="Samnuha Tights",
         back="Yokaze Mantle",
