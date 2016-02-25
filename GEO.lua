@@ -188,7 +188,7 @@ function init_gear_sets()
 
     sets.midcast.HighTierNuke = {
         main="Serenity",
-        sub="Mephitis Grip",
+        sub="Niobid Strap",
         --sub="Wizzan Grip",
         --ammo="Witchstone",
         head="Welkin Crown",
@@ -241,7 +241,7 @@ function init_gear_sets()
 
     sets.midcast.Macc = { 
         main="Serenity",
-        sub="Mephitis Grip", 
+        sub="Niobid Strap", 
         ammo="Plumose Sachet",
         head="Bagua Galero",
         neck="Eddy Necklace", 
