@@ -419,7 +419,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         body="Emet Harness +1",
         waist="Flume Belt",
-        ring1="Patricius Ring",
+        ring1="Defending Ring",
     	back="Solemnity Cape",
         legs="Otronif Brais +1",
         feet="Amm Greaves"
@@ -432,24 +432,23 @@ function init_gear_sets()
         ear2="Trux Earring",
         neck="Asperity Necklace",
         body="Rawhide Vest",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
-        --back="Iga Dochugappa",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
-        feet="Taeon Boots"
+        feet="Herculean Boots"
     })
     -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         neck="Lissome Necklace",
-        ring1="Rajas Ring",
+        hands="Ryuo Tekko",
+        back="Yokaze Mantle",
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         ring1="Patricius Ring",
         body="Hattori Ningi +1",
-        back="Yokaze Mantle",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Taeon Chapeau",
@@ -483,11 +482,13 @@ function init_gear_sets()
         head="Ptica Headgear",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
+        feet="Taeon Boots"
     })
     sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
         head="Ptica Headgear",
         neck="Lissome Necklace",
+        hands="Ryuo Tekko",
         ear1="Cessance Earring",
         ear2="Suppanomimi",
     })
@@ -495,6 +496,7 @@ function init_gear_sets()
         head="Ptica Headgear",
         ear1="Cessance Earring",
         ear2="Suppanomimi",
+        feet="Taeon Boots"
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
         head="Taeon Chapeau",
@@ -502,6 +504,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Hattori Ningi +1",
         legs="Samnuha Tights"
+        feet="Taeon Boots"
     })
 
     sets.engaged.Innin.Haste_35 = set_combine(sets.engaged.Haste_35, {
@@ -532,7 +535,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
         ring1="Oneiros Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
