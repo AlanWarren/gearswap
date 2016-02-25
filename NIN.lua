@@ -503,7 +503,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Suppanomimi",
         body="Hattori Ningi +1",
-        legs="Samnuha Tights"
+        legs="Samnuha Tights",
         feet="Taeon Boots"
     })
 
