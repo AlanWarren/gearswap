@@ -191,7 +191,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {
         head="Ejekamal Mask",
-        ammo="Impatiens",
+        --ammo="Impatiens",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         hands="Leyline Gloves",
@@ -707,7 +707,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring1="Karieyh Ring",
         waist="Windbuffet Belt +1",
-        back="Yokaze Mantle"
+        back="Yokaze Mantle",
         feet="Herculean Boots"
     })
 
