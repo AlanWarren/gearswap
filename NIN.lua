@@ -453,7 +453,8 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Mars's Ring",
         back="Grounded Mantle +1",
-        waist="Olseni Belt"
+        waist="Olseni Belt",
+        feet="Taeon Boots"
     })
     -- do nothing here
     sets.engaged.Innin.MaxHaste     = sets.engaged.MaxHaste
