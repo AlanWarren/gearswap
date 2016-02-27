@@ -779,7 +779,6 @@ function init_gear_sets()
      sets.engaged.Apocalypse = set_combine(sets.engaged, {
          --sub="Pole Grip",
          ammo="Yetshila",
-         head="Argosy Celata",
          hands=Acro.Hands.Haste,
          --body="Acro Surcoat",
          ear1="Cessance Earring",
