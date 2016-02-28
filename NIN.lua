@@ -258,7 +258,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
-        body="Emet Harness +1",
+        body="Rao Togi",
         hands="Herculean Gloves",
         ring1="Karieyh Ring",
         ring2="Defending Ring",
@@ -297,7 +297,7 @@ function init_gear_sets()
         head="Lithelimb Cap",
         neck="Twilight Torque",
         body="Emet Harness +1",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
         ring1="Patricius Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
@@ -383,7 +383,7 @@ function init_gear_sets()
         head="Lithelimb Cap",
         body="Emet Harness +1",
         neck="Agitator's Collar",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
     	back="Solemnity Cape",
         ring1="Defending Ring",
         legs="Otronif Brais +1",
@@ -443,7 +443,8 @@ function init_gear_sets()
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         ring1="Patricius Ring",
-        body="Hattori Ningi +1",
+        hands="Ryuo Tekko",
+        body="Rao Togi",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Taeon Chapeau",
@@ -495,6 +496,7 @@ function init_gear_sets()
         head="Taeon Chapeau",
         ear1="Zennaroi Earring",
         ear2="Suppanomimi",
+        hands="Ryuo Tekko",
         body="Hattori Ningi +1",
         legs="Samnuha Tights",
         feet="Taeon Boots"
