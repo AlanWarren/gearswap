@@ -735,7 +735,7 @@ function init_gear_sets()
     sets.Shun = {
         head="Taeon Chapeau",
         neck="Flame Gorget",
-        hands="Herculean Gloves",
+        hands="Ryuo Tekko",
         ring1="Ramuh Ring",
         back="Yokaze Mantle",
         waist="Light Belt",
