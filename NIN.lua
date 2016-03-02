@@ -395,7 +395,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Ryuo Tekko",
         ring1="Patricius Ring",
-        ring2="Supershear Ring",
+        ring2="Defending Ring",
         feet="Loyalist Sabatons"
     }
 
