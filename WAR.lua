@@ -390,17 +390,13 @@ function init_gear_sets()
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
 
-     --sets.engaged.DW = set_combine(sets.engaged, {
-     --   head="Otomi Helm",
-     --   ear1="Dudgeon Earring",
-     --   ear2="Heartseeker Earring",
-     --   waist="Patentia Sash"
-     --})
-     --sets.engaged.OneHand = set_combine(sets.engaged, {
-     --    head="Yaoyotl Helm",
-     --    ring2="Mars's Ring",
-     --    feet=Acro.Feet.STP
-     --})
+     sets.engaged.DW = set_combine(sets.engaged, {
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        waist="Shetal Stone"
+     })
+     sets.engaged.OneHand = set_combine(sets.engaged, {
+     })
 
      sets.engaged.GreatSword = set_combine(sets.engaged, {
          ear1="Cessance Earring",
@@ -599,13 +595,13 @@ function get_combat_form()
     --else
         --state.CombatForm:reset()
     --end
-    --if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
-    --    state.CombatForm:set("DW")
-    --elseif S{'SAM', 'WAR'}:contains(player.sub_job) and player.equipment.sub == 'Rinda Shield' then
-    --    state.CombatForm:set("OneHand")
-    --else
-    --    state.CombatForm:reset()
-    --end
+    if S{'NIN', 'DNC'}:contains(player.sub_job) and war_sub_weapons:contains(player.equipment.sub) then
+        state.CombatForm:set("DW")
+    elseif S{'SAM', 'WAR'}:contains(player.sub_job) and player.equipment.sub == 'Rinda Shield' then
+        state.CombatForm:set("OneHand")
+    else
+        state.CombatForm:reset()
+    end
 
 end
 
