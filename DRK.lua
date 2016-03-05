@@ -358,6 +358,7 @@ function init_gear_sets()
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
          body="Mes'yohi Haubergeon",
+         legs="Odyssean Cuisses"
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          head="Valorous Mask",
