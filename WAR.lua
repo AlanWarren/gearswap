@@ -268,7 +268,7 @@ function init_gear_sets()
          hands="Redan Gloves",
          body="Boii Lorica +1",
          ring1="Karieyh Ring",
-         ring2="Ifrit Ring",
+         ring2="Defending Ring",
          back="Mauler's Mantle",
          legs="Boii Cuisses +1",
          waist="Windbuffet Belt +1",
