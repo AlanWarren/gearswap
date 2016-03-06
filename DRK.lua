@@ -175,7 +175,6 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         body="Founder's Breastplate",
         hands="Redan Gloves",
-        legs="Scuffler's Cosciales",
         feet="Amm Greaves"
      }
             
@@ -513,7 +512,6 @@ function init_gear_sets()
      -- 50% STR / 50% INT 
      sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
          neck="Aqua Gorget",
-         body="Phorcys Korazin",
          legs="Argosy Breeches",
          waist="Metalsinger belt",
      })
@@ -570,7 +568,7 @@ function init_gear_sets()
          neck="Shadow Gorget",
          body="Acro Surcoat",
          hands="Odyssean Gauntlets",
-         legs="Scuffler's Cosciales",
+         legs="Odyssean Cuisses",
          waist="Soil Belt",
      })
      sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
