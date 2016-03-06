@@ -257,9 +257,9 @@ function init_gear_sets()
      
 	 sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
          head="Valorous Mask",
+         neck="Sanctity Necklace",
          body="Founder's breastplate",
          hands="Leyline Gloves",
-         ring1="Globidonta Ring",
          back="Aput Mantle"
      })
 
@@ -279,7 +279,7 @@ function init_gear_sets()
          feet="Founder's Greaves" -- matk 29
      }
 	 
-     -- Gear that boosts HP is preferred over anything else.  
+     -- Mix of HP boost, -Spell interruption%, and Dark Skill
      sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
          ammo="Impatiens",
          head="Gavialis Helm",
@@ -287,7 +287,7 @@ function init_gear_sets()
          hands=Acro.Hands.Haste,
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
-         legs="Eschite Cuisses", 
+         legs="Founder's Hose", 
          feet="Odyssean Greaves"
      })
      
