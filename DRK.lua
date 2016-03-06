@@ -348,7 +348,7 @@ function init_gear_sets()
          body="Acro Surcoat",
          hands="Odyssean Gauntlets",
          ring1="Karieyh Ring",
-         ring2="Ifrit Ring +1",
+         ring2="Ifrit Ring",
          back=Niht.WSD,
          waist="Windbuffet Belt +1",
          legs="Argosy Breeches",
