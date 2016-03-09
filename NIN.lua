@@ -171,6 +171,7 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         hands="Buremte Gloves",
         legs="Nahtirah Trousers",
+        ring2="Haverton Ring",
         feet="Wurrukatte Boots"
     }
     sets.midcast.RA = {
@@ -178,7 +179,8 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         body="Mochizuki Chainmail +1",
         hands="Hachiya Tekko +1",
-        ring2="Hajduk Ring",
+        ring1="Hajduk Ring",
+        ring2="Haverton Ring",
         back="Yokaze Mantle",
         legs="Hachiya Hakama +1",
         feet="Taeon Boots"
@@ -222,7 +224,7 @@ function init_gear_sets()
         body="Samnuha Coat",
         hands="Leyline Gloves",
         ring1="Sangoma Ring",
-        ring2="Perception Ring",
+        ring2="Haverton Ring",
         back="Yokaze Mantle",
         feet="Mochizuki Kyahan +1"
     }
@@ -241,7 +243,7 @@ function init_gear_sets()
         hands="Leyline Gloves",
         back="Aput Mantle",
         ring1="Shiva Ring",
-        ring2="Acumen Ring",
+        ring2="Haverton Ring",
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
         feet="Hachiya Kyahan +1"
@@ -260,7 +262,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         body="Rao Togi",
         hands="Herculean Gloves",
-        ring1="Karieyh Ring",
+        ring1="Paguroidea Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
@@ -279,7 +281,6 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
-        ring1="Karieyh Ring",
         hands="Ryuo Tekko",
         body="Councilor's Garb",
         legs="Samnuha Tights",
@@ -333,11 +334,11 @@ function init_gear_sets()
         ammo=gear.RegularAmmo,
         head="Ptica Headgear",
         neck="Asperity Necklace",
-        ear1="Heartseeker Earring",
-        ear2="Dudgeon Earring",
+        ear1="Brutal Earring",
+        ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         hands="Herculean Gloves",
-        ring1="Rajas Ring",
+        ring1="Haverton Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Patentia Sash",
@@ -347,19 +348,23 @@ function init_gear_sets()
     -- assumptions made about target, Rancor no longer "OK" 
     sets.engaged.Low = set_combine(sets.engaged, {
         neck="Lissome Necklace",
+        ear1="Cessance Earring",
         back="Yokaze Mantle"
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
-        ring1="Patricius Ring",
-        legs="Taeon Tights"
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        feet="Herculean Boots"
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Yarak Torque",
         ring2="Mars's Ring",
         back="Grounded Mantle +1",
+        hands="Ryuo Tekko",
         waist="Olseni Belt",
+        legs="Taeon Tights"
     })
     
     sets.engaged.Innin = set_combine(sets.engaged, {
@@ -373,7 +378,9 @@ function init_gear_sets()
         body="Mochizuki Chainmail +1"
     })
     sets.engaged.Innin.Mid = set_combine(sets.engaged.Innin.Low, {
-        ring1="Patricius Ring",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        feet="Herculean Boots"
         back="Yokaze Mantle"
     })
     sets.engaged.Innin.Acc = sets.engaged.Acc
@@ -427,7 +434,7 @@ function init_gear_sets()
         ear2="Brutal Earring",
         neck="Asperity Necklace",
         body="Rawhide Vest",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
         ring1="Rajas Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
@@ -478,22 +485,25 @@ function init_gear_sets()
 
     -- 35% Haste 
     sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
-        head="Ptica Headgear",
+        head="Taeon Chapeau",
         ear1="Cessance Earring",
         ear2="Suppanomimi",
-        hands="Ryuo Tekko",
+        ring1="Haverton Ring",
+        hands="Herculean Gloves",
     })
     sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
-        head="Ptica Headgear",
+        head="Taeon Chapeau",
         neck="Lissome Necklace",
         ear1="Cessance Earring",
         ear2="Suppanomimi",
-        hands="Ryuo Tekko",
+        ring1="Haverton Ring",
+        hands="Herculean Gloves",
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Ptica Headgear",
         ear1="Cessance Earring",
-        ear2="Suppanomimi",
+        ear2="Trux Earring",
+        ring1="Haverton Ring",
         hands="Ryuo Tekko",
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
@@ -535,7 +545,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
         hands="Herculean Gloves",
-        ring1="Oneiros Ring",
+        ring1="Haverton Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
@@ -600,20 +610,23 @@ function init_gear_sets()
 
     -- 5 - 20% Haste 
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
-        head="Ptica Headgear",
+        head="Hattori Zukin +1",
         back="Bleating Mantle",
         hands="Herculean Gloves",
         waist="Patentia Sash",
+        feet="Taeon Boots"
     })
     sets.engaged.Low.Haste_15 = set_combine(sets.engaged.Low.Haste_30, {
         back="Yokaze Mantle",
-        waist="Patentia Sash"
+        waist="Patentia Sash",
+        feet="Taeon Boots"
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Mid.Haste_30, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         hands="Ryuo Tekko",
-        waist="Patentia Sash"
+        waist="Patentia Sash",
+        feet="Taeon Boots"
     })
     sets.engaged.Acc.Haste_15 = sets.engaged.Acc.MaxHaste
     
@@ -648,7 +661,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Rawhide Vest",
         hands="Ryuo Tekko",
-        ring1="Karieyh Ring",
+        ring1="Ifrit Ring",
         ring2="Epona's Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
@@ -671,8 +684,8 @@ function init_gear_sets()
         neck="Breeze Gorget",
         head="Rao Kabuto",
         body="Rawhide Vest",
-        ring1="Karieyh Ring",
-        ring2="Ifrit Ring +1",
+        ring1="Rajas Ring",
+        ring2="Ifrit Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
     }
@@ -700,7 +713,6 @@ function init_gear_sets()
     sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS['Blade: Jin'].Low, {
     })
     sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid, {
-        ring1="Karieyh Ring",
         legs="Samnuha Tights",
     })
     
@@ -711,7 +723,7 @@ function init_gear_sets()
         neck="Hope Torque",
         body="Hattori Ningi +1",
         hands="Ryuo Tekko",
-        ring1="Karieyh Ring",
+        ring1="Garuda Ring",
         waist="Windbuffet Belt +1",
         back="Yokaze Mantle",
         feet="Herculean Boots"

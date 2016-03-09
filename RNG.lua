@@ -171,8 +171,8 @@ function init_gear_sets()
             ear2="Tripudio Earring",
             body="Pursuer's Doublet",
             hands="Amini Glovelettes +1",
-            ring1="Karieyh Ring",
-            ring2="Paguroidea Ring",
+            ring1="Paguroidea Ring",
+            ring2="Defending Ring",
     	    back="Solemnity Cape",
             waist="Elanid Belt",
             legs="Adhemar Kecks",
@@ -191,7 +191,7 @@ function init_gear_sets()
         })
         sets.idle.Town = set_combine(sets.idle, {
             body="Councilor's garb",
-            ring1="Karieyh Ring",
+            ring1="Paguroidea Ring",
             ring2="Defending Ring",
             hands="Amini Glovelettes +1",
             legs="Adhemar Kecks",
@@ -206,7 +206,7 @@ function init_gear_sets()
             ear2="Tripudio Earring",
             body="Pursuer's Doublet", 
             hands="Iuitl Wristbands +1",
-            ring1="Karieyh Ring",
+            ring1="Paguroidea Ring",
             ring2="Defending Ring",
             waist="Impulse Belt",
             legs="Nahtirah Trousers", 
@@ -252,6 +252,7 @@ function init_gear_sets()
             ear2="Heartseeker Earring",
             body="Samnuha Coat",
             hands="Floral Gauntlets",
+            ring1="Haverton Ring",
             back="Bleating Mantle",
             waist="Patentia Sash",
             legs="Samnuha Tights",
@@ -267,6 +268,7 @@ function init_gear_sets()
             hands=TaeonHands.Snap, --8
             back="Lutian Cape", -- 2
             legs="Adhemar Kecks",
+            ring1="Haverton Ring", -- 6
             waist="Impulse Belt", -- 2
             feet="Wurrukatte Boots" -- 3
         }
@@ -290,7 +292,7 @@ function init_gear_sets()
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             back="Lutian Cape", 
-            ring2="Longshot Ring",
+            ring2="Haverton Ring",
             legs="Adhemar Kecks",
             feet="Thereoid Greaves"
         })
@@ -305,7 +307,7 @@ function init_gear_sets()
         -- Samurai Roll sets 
         sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
             body="Arcadian Jerkin +1",
-            ring2="Longshot Ring",
+            ring2="Haverton Ring",
         })
         sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
             ring2="Longshot Ring",
@@ -315,7 +317,7 @@ function init_gear_sets()
         sets.midcast.RA.Acc.SamRoll = set_combine(sets.midcast.RA.Mid.SamRoll, {
             neck="Iqabi Necklace", 
             ring1="Hajduk Ring", 
-            ring2="Longshot Ring",
+            ring2="Haverton Ring",
             legs="Adhemar Kecks",
         })
         
@@ -342,7 +344,7 @@ function init_gear_sets()
         sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mid, {
             back="Lutian Cape", 
             neck="Iqabi Necklace", 
-            ring2="Longshot Ring"
+            ring2="Haverton Ring"
         })
 
         -- Samurai Roll for /sam, assume we're using a staff
@@ -380,15 +382,15 @@ function init_gear_sets()
         })
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
             body="Amini Caban +1",
-            ring1="Longshot Ring",
-            ring2="Hajduk Ring",
+            ring1="Hajduk Ring",
+            ring2="Haverton Ring",
         })
        
         -- Bow Sam roll
         sets.midcast.RA.Bow.SamRoll = set_combine(sets.midcast.RA.Bow, {
             body="Arcadian Jerkin +1",
             hands="Amini Glovelettes +1",
-            ring2="Paqichikaji Ring",
+            ring2="Haverton Ring",
             back="Lutian Cape"
         })
         sets.midcast.RA.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.Bow.SamRoll, {
@@ -431,8 +433,8 @@ function init_gear_sets()
             ear2="Flame Pearl",
             body="Amini Caban +1",
             hands="Arcadian Bracers +1",
-            ring1="Karieyh Ring",
-            ring2="Ifrit Ring +1",
+            ring1="Ifrit Ring",
+            ring2="Ifrit Ring",
             back="Buquwik Cape",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
@@ -629,8 +631,8 @@ function init_gear_sets()
             ear2="Flame Pearl",
             body="Pursuer's Doublet",
             hands="Orion Bracers +1",
-            ring1="Ifrit Ring +1",
-            ring2="Longshot Ring",
+            ring1="Ifrit Ring",
+            ring2="Haverton Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
             legs="Adhemar Kecks", 

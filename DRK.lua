@@ -7,12 +7,12 @@
     SouleaterMode: OFF by default. Toggle this with @F9 (window key + F9). This mode makes it possible to use Souleater
     in situations where you would normally avoid using it. When SouleaterMode is ON, Souleater will be canceled
     automatically after the first Weaponskill used, "with these exceptions". If Bloodweapon is active, or if Drain's HP Boost
-    buff is active, then Souleater will remain active until the next WS used after either buff wears off. 
+    buff is active, then Souleater will remain active until the next WS used after either buff wears off. Pretty cool right.
 
     LastResortMode OFF by default. Toggle with CTRL + `  (back tic is left of the 1 key). This mode will equip Fallen's sollerets
     while LR is active to negate 10% of the defense penalty.
 
-    Note: You can change the default status of either mode by setting them to true in job_setup()
+    Note: You can change the default status of either mode by setting them to true in job_setup().
 
     Gavialis Helm will automatically be used for all weaponskills on their respective days of the week. If you don't want
     it used for a ws, then you have to add the WS to wsList = {} in job_setup 
@@ -328,6 +328,7 @@ function init_gear_sets()
      -- Ranged for xbow
      sets.precast.RA = {
          head="Otomi Helm",
+         ring1="Haverton Ring"
      }
      sets.midcast.RA = {
          ear2="Tripudio Earring",
@@ -347,7 +348,7 @@ function init_gear_sets()
          ear2="Moonshade Earring",
          body="Acro Surcoat",
          hands="Odyssean Gauntlets",
-         ring1="Karieyh Ring",
+         ring1="Ifrit Ring",
          ring2="Ifrit Ring",
          back=Niht.WSD,
          waist="Windbuffet Belt +1",
@@ -583,7 +584,7 @@ function init_gear_sets()
          ear2="Tripudio Earring",
          body="Councilor's Garb",
          hands="Odyssean Gauntlets",
-         ring1="Karieyh Ring",
+         ring1="Paguroidea Ring",
          ring2="Defending Ring",
          back=Niht.WSD,
          waist="Windbuffet Belt +1",
@@ -598,7 +599,7 @@ function init_gear_sets()
          neck="Sanctity Necklace",
          body="Jumalik Mail",
          hands="Redan Gloves",
-         ring1="Karieyh Ring",
+         ring1="Dark Ring",
          ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
@@ -829,6 +830,7 @@ function init_gear_sets()
         hands=Acro.Hands.STP,
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
+        ring2="Haverton Ring",
         legs="Argosy Breeches",
         waist="Shetal Stone",
         feet=Acro.Feet.WSD
@@ -889,7 +891,6 @@ function init_gear_sets()
     
      sets.buff.Souleater = { 
          head="Ignominy Burgeonet +1",
-         body="Acro Surcoat"
      }
 
      sets.buff['Last Resort'] = { 
@@ -998,6 +999,9 @@ function customize_melee_set(meleeSet)
     --end
     if state.Buff['Last Resort'] and state.LastResortMode.value then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
+    end
+    if state.Buff['Souleater'] then
+        meleeSet = set_combine(meleeSet, sets.buff.Souleater)
     end
     return meleeSet
 end

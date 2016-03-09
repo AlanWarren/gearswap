@@ -103,8 +103,8 @@ function init_gear_sets()
         ear2="Steelflash Earring",
         --body="Vanir Cotehardie",
         --hands="Yaoyotl Gloves",
-        ring1="Karieyh Ring",
-        ring2="Ifrit Ring +1",
+        ring1="Ifrit Ring",
+        ring2="Ifrit Ring",
         back="Buquwik Cape",
         waist=gear.ElementalBelt,
     }

@@ -197,7 +197,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
 		body="Rawhide Vest",
         hands="Taeon Gloves",
-        ring1="Karieyh Ring",
+        ring1="Ramuh Ring",
         ring2="Epona's Ring",
 		back="Bleating Mantle",
         waist="Elanid Belt",
@@ -273,7 +273,7 @@ function init_gear_sets()
         neck="Moepapa Medal",
         hands=TaeonHands.TA,
         ring1="Ramuh Ring",
-        ring2="Karieyh Ring",
+        ring2="Epona's Ring",
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
         back="Kayapa Cape",
@@ -341,7 +341,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         body="Emet Harness +1",
         hands="Iuitl Wristbands +1",
-        ring1="Karieyh Ring",
+        ring1="Paguroidea Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
@@ -355,7 +355,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         body="Councilor's Garb",
         hands="Leyline Gloves",
-        ring1="Karieyh Ring",
+        ring1="Paguroidea Ring",
         ring2="Defending Ring",
         legs="Samnuha Tights",
         waist="Windbuffet Belt +1",
@@ -424,7 +424,7 @@ function init_gear_sets()
 		--body="Skadi's Cuirie +1",
 		body="Samnuha Coat",
         hands="Floral Gauntlets",
-        ring1="Oneiros Ring",
+        ring1="Haverton Ring",
         ring2="Epona's Ring",
 		back="Canny Cape",
         waist="Patentia Sash",
@@ -437,14 +437,14 @@ function init_gear_sets()
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
 		body="Samnuha Coat",
-        hands=TaeonHands.TA,
+        hands="Herculean Gloves",
         neck="Lissome Necklace",
         ear1="Zennaroi Earring",
         ear2="Steelflash Earring",
         back="Grounded Mantle +1",
         ring1="Patricius Ring",
         waist="Olseni Belt",
-        feet="Taeon Boots"
+        feet="Herculean Boots"
     })
 	sets.engaged.Evasion = set_combine(sets.engaged, {
 		body="Rawhide Vest",
@@ -462,6 +462,7 @@ function init_gear_sets()
         neck="Twilight Torque",
 		body="Emet Harness +1",
         ring1="Patricius Ring",
+        ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Iuitl Tights +1",
@@ -480,26 +481,26 @@ function init_gear_sets()
     -- Haste 43%
     sets.engaged.Haste_43 = set_combine(sets.engaged, {
         head="Taeon Chapeau",
-        ear1="Trux Earring",
-        ear2="Brutal Earring",
+        ear1="Brutal Earring",
+        ear2="Cessance Earring",
         body="Rawhide Vest",
-        hands=TaeonHands.TA,
+        hands="Herculean Gloves",
         back="Canny Cape",
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
-        feet="Taeon Boots"
+        feet="Herculean Boots"
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
         body="Rawhide Vest",
         ring1="Patricius Ring",
-        feet="Taeon Boots"
+        feet="Herculean Boots"
     })
     sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
         body="Rawhide Vest",
         neck="Lissome Necklace",
-        hands="Leyline Gloves",
+        hands="Herculean Gloves",
         ear1="Zennaroi Earring",
-        ear2="Steelflash Earring",
+        ear2="Cessance Earring",
         ring1="Mars's Ring",
         ring2="Patricius Ring",
         waist="Olseni Belt",
@@ -514,18 +515,20 @@ function init_gear_sets()
             ring2="Defending Ring", 
     	    back="Solemnity Cape",
             legs="Iuitl Tights +1", 
-            feet="Taeon Boots" 
+            feet="Herculean Boots" 
     })
     
      -- 40
     sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
-		body="Samnuha Coat",
+		body="Rawhide Vest",
         ear1="Suppanomimi",
+        ring1="Haverton Ring"
     })
     sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, { body="Samnuha Coat" })
 
     sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.Haste_43, {
-        ear1="Suppanomimi"
+        ear1="Suppanomimi",
+        ring1="Haverton Ring"
     })
     sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, {
             body="Rawhide Vest", 
@@ -540,14 +543,15 @@ function init_gear_sets()
             ring2="Defending Ring", 
     	    back="Solemnity Cape",
             legs="Iuitl Tights +1", 
-            feet="Taeon Boots" 
+            feet="Herculean Boots" 
     })
 
      -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_40, {
-        waist="Patentia Sash",
 		body="Samnuha Coat",
-        hands=TaeonHands.TA,
+        hands="Herculean Gloves",
+        ear2="Suppanomimi",
+        ring1="Haverton Ring",
         back="Canny Cape",
         feet="Taeon Boots"
     })
@@ -557,6 +561,8 @@ function init_gear_sets()
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
         waist="Patentia Sash",
+        neck="Lissome Necklace",
+        ear1="Cessance Earring",
         back="Grounded Mantle +1",
         feet="Taeon Boots"
     })
