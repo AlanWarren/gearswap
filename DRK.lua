@@ -353,7 +353,7 @@ function init_gear_sets()
          back=Niht.WSD,
          waist="Windbuffet Belt +1",
          legs="Argosy Breeches",
-         feet=Acro.Feet.WSD
+         feet="Argosy Sollerets"
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
@@ -384,11 +384,13 @@ function init_gear_sets()
          neck="Aqua Gorget",
          hands="Odyssean Gauntlets",
          legs="Argosy Breeches",
-         waist="Caudata Belt"
+         waist="Caudata Belt",
+         feet=Acro.Feet.WSD
      })
      sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
          ammo="Ginsen",
          neck="Aqua Gorget",
+         feet=Acro.Feet.WSD
      })
      sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, sets.precast.WS.Acc)
 
@@ -404,7 +406,6 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
          ear1="Lugra Earring +1",
          body="Acro Surcoat",
-         feet=Acro.Feet.STP
      })
      -- Mid assumes higher defense target
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
@@ -416,7 +417,6 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Fallen's Cuirass +1",
          waist="Light Belt",
-         feet=Acro.Feet.STP
      })
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          head="Argosy Celata",
@@ -427,7 +427,6 @@ function init_gear_sets()
          head="Argosy Celata",
          neck="Shadow Gorget",
          waist="Light Belt",
-         feet=Acro.Feet.STP
      })
 
      sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
@@ -477,12 +476,12 @@ function init_gear_sets()
          ring2="Shiva Ring",
          back=Niht.WSD,
          waist="Soil Belt",
-         legs="Heathen's Flanchard +1",
-         feet=Acro.Feet.WSD
+         legs="Odyssean Cuisses",
+         feet="Heathen's Sollerets +1"
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
-         legs="Acro Breeches",
          back=Niht.WSD,
+         feet=Acro.Feet.WSD
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
          legs="Acro Breeches",
@@ -630,7 +629,6 @@ function init_gear_sets()
          feet="Amm Greaves"
 
      })
-
      
      -- Defense sets
      sets.defense.PDT = {
