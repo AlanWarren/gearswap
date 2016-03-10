@@ -348,7 +348,7 @@ function init_gear_sets()
          ear2="Moonshade Earring",
          body="Acro Surcoat",
          hands="Odyssean Gauntlets",
-         ring1="Ifrit Ring",
+         ring1="Rajas Ring",
          ring2="Ifrit Ring",
          back=Niht.WSD,
          waist="Windbuffet Belt +1",
