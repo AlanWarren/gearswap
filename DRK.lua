@@ -306,6 +306,11 @@ function init_gear_sets()
         hands="Leyline Gloves"
      })
      sets.midcast.Aspir.Acc = sets.midcast.Drain.Acc
+     
+     sets.midcast.Drain.Reduction = set_combine(sets.midcast.Drain, {
+         legs="Founder's Hose", 
+         feet="Odyssean Greaves"
+     })
 
      -- Absorbs
      sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
@@ -944,6 +949,12 @@ end
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
+    if spell.english:startswith('Drain') then
+        if player.status == 'Engaged' and state.CastingMode.current == 'Normal' then
+            classes.CustomClass = 'Reduction'
+        end
+    end
+
     if (state.HybridMode.current == 'PDT' and state.PhysicalDefenseMode.current == 'Reraise') then
         equip(sets.Reraise)
     end
