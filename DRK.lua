@@ -2,7 +2,7 @@
  === Features ===
     !!!!Make sure you have my User-Globals.lua!!! Do not rename it. It goes in the data folder along side this file.
 
-    If you don't use organizer, then remove the include in get_sets() and remove sets.Organizer
+    If you don't use organizer, then remove the include('organizer-lib') in get_sets() and remove sets.Organizer
 
     SouleaterMode: OFF by default. Toggle this with @F9 (window key + F9). This mode makes it possible to use Souleater
     in situations where you would normally avoid using it. When SouleaterMode is ON, Souleater will be canceled
