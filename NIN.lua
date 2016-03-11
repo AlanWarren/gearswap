@@ -380,7 +380,7 @@ function init_gear_sets()
     sets.engaged.Innin.Mid = set_combine(sets.engaged.Innin.Low, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        feet="Herculean Boots"
+        feet="Herculean Boots",
         back="Yokaze Mantle"
     })
     sets.engaged.Innin.Acc = sets.engaged.Acc
