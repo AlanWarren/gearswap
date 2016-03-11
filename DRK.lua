@@ -4,28 +4,37 @@
 
     If you don't use organizer, then remove the include('organizer-lib') in get_sets() and remove sets.Organizer
 
-    SouleaterMode: OFF by default. Toggle this with @F9 (window key + F9). This mode makes it possible to use Souleater
-    in situations where you would normally avoid using it. When SouleaterMode is ON, Souleater will be canceled
-    automatically after the first Weaponskill used, "with these exceptions". If Bloodweapon is active, or if Drain's HP Boost
-    buff is active, then Souleater will remain active until the next WS used after either buff wears off. 
+    This lua has a few MODES you can toggle with hotkeys, and there's a few situational RULES that activate without hotkeys
+    I'd recommend reading and understanding the following information if you plan on using this file.
 
-    LastResortMode OFF by default. Toggle with CTRL + `  (back tic is left of the 1 key). This mode will equip Fallen's sollerets
-    while LR is active to negate 10% of the defense penalty.
+    ::MODES::
 
-    Note: You can change the default status of either mode by setting them to true in job_setup()
+    SouleaterMode: OFF by default. Toggle this with @F9 (window key + F9). 
+    This mode makes it possible to use Souleater in situations where you would normally avoid using it. When SouleaterMode 
+    is ON, Souleater will be canceled automatically after the first Weaponskill used, WITH THESE EXCEPTIONS. If Bloodweapon 
+    is active, or if Drain's HP Boost buff is active, then Souleater will remain active until the next WS used after either buff wears off. 
+
+    LastResortMode OFF by default. Toggle with CTRL + `  (back tic is left of the 1 key). 
+    This mode will equip Fallen's sollerets while LR is active to negate 10% of the defense penalty. 
+    (this is probably less useful now days, with current gear)
+    
+    CapacityMode OFF by default. Toggle with ALT + = 
+    It will full-time whichever piece of gear you specify in sets.CapacityMantle 
+
+    NOTE: You can change the default (true|false) status of any MODE by setting them to true in job_setup().
+
+    ::RULES::
 
     Gavialis Helm will automatically be used for all weaponskills on their respective days of the week. If you don't want
-    it used for a ws, then you have to add the WS to wsList = {} in job_setup 
+    it used for a ws, then you have to add the WS to wsList = {} in job_setup. You also need my User-Globals.lua for this
+    to even work. 
 
-    Ygna's Resolve +1 will automatically be used when you're in a reive
-
-    CapacityMode will full-time whichever piece of gear you specify in sets.CapacityMantle 
-
-    This lua assumes you maintain a 1st place unity for Lugra Earring +1. 
+    Ygna's Resolve +1 will automatically be used when you're in a reive. If you have my User-Globals.lua this will work
+    with all your jobs that use mote's includes. Not just this one! 
 
     Moonshade earring is not used for WS's at 3000 TP. 
     
-    All of the default sets are geared around scyth. There is support for great sword by using 
+    All of the default sets are geared around scythe. There is support for great sword by using 
     sets.engaged.GreatSword but you will have to edit gsList in job_setup so that your GS is present. IF you would rather
     all the default sets (like sets.engaged, etc.) cater to great sword instead of scyth, then simply remove the great swords 
     listed in gsList and ignore sets.engaged.GreatSword. (but dont delete it)  
