@@ -22,7 +22,7 @@
     CapacityMode OFF by default. Toggle with ALT + = 
     It will full-time whichever piece of gear you specify in sets.CapacityMantle 
 
-    NOTE: You can change the default (true|false) status of any MODE by setting them to true in job_setup().
+    NOTE: You can change the default (true|false) status of any MODE by changing their values in job_setup()
 
     ::RULES::
 
