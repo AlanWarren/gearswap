@@ -360,18 +360,18 @@ function init_gear_sets()
          ring2="Ifrit Ring",
          back=Niht.WSD,
          waist="Windbuffet Belt +1",
-         legs="Argosy Breeches",
+         legs="Valorous Hose",
          feet="Argosy Sollerets"
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
          body="Mes'yohi Haubergeon",
-         legs="Odyssean Cuisses"
+         legs="Valorous Hose",
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-         head="Valorous Mask",
          ear1="Zennaroi Earring",
          body="Fallen's Cuirass +1",
+         legs="Odyssean Cuisses"
          waist="Olseni Belt",
      })
  
@@ -419,7 +419,6 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          neck="Shadow Gorget",
          body="Acro Surcoat",
-         legs="Argosy Breeches",
          waist="Caudata Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
@@ -429,6 +428,7 @@ function init_gear_sets()
      sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
          head="Argosy Celata",
          body="Mes'yohi Haubergeon",
+         legs="Odyssean Cuisses",
          ear1="Zennaroi Earring",
      })
      sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {
@@ -451,6 +451,7 @@ function init_gear_sets()
      -- CROSS REAPER
      -- 60% STR / 60% MND
      sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
+         head="Valorous Mask",
          body="Acro Surcoat",
          neck="Aqua Gorget",
          waist="Windbuffet Belt +1"
@@ -462,16 +463,14 @@ function init_gear_sets()
      sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
          neck="Ganesha's Mala",
          waist="Metalsinger Belt",
-         legs="Argosy Breeches",
      })
      sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
          neck="Aqua Gorget",
      })
      sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
          ammo="Ginsen",
-         head="Valorous Mask",
          neck="Aqua Gorget",
-         body="Fallen's Cuirass +1"
+         legs="Odyssean Cuisses",
      })
      
      -- ENTROPY
@@ -484,7 +483,6 @@ function init_gear_sets()
          ring2="Shiva Ring",
          back=Niht.WSD,
          waist="Soil Belt",
-         legs="Odyssean Cuisses",
          feet="Heathen's Sollerets +1"
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
@@ -492,7 +490,7 @@ function init_gear_sets()
          feet=Acro.Feet.WSD
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
-         legs="Acro Breeches",
+         legs="Odyssean Cuisses",
          back=Niht.WSD,
      })
      sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
@@ -504,7 +502,6 @@ function init_gear_sets()
          neck="Shadow Gorget",
          ear2="Lugra Earring +1",
          waist="Windbuffet Belt +1",
-         legs="Argosy Breeches",
      })
      sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {})
      sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
@@ -520,7 +517,6 @@ function init_gear_sets()
      -- 50% STR / 50% INT 
      sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
          neck="Aqua Gorget",
-         legs="Argosy Breeches",
          waist="Metalsinger belt",
      })
      sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid, {
@@ -537,7 +533,7 @@ function init_gear_sets()
          ear1="Friomisi Earring",
          hands="Leyline Gloves",
          back="Toro Cape",
-         legs="Eschite Cuisses",
+         legs="Valorous Hose",
          waist="Caudata Belt",
          feet="Heathen's Sollerets +1"
       })
@@ -562,7 +558,6 @@ function init_gear_sets()
          ear1="Friomisi Earring",
          body="Founder's Breastplate",
          hands="Founder's Gauntlets",
-         legs="Eschite Cuisses",
          back="Toro Cape",
          feet="Heathen's Sollerets +1"
      })
@@ -576,7 +571,7 @@ function init_gear_sets()
          neck="Shadow Gorget",
          body="Acro Surcoat",
          hands="Odyssean Gauntlets",
-         legs="Odyssean Cuisses",
+         legs="Valorous Hose",
          waist="Soil Belt",
      })
      sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
