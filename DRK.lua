@@ -616,7 +616,7 @@ function init_gear_sets()
      sets.idle.Regen = set_combine(sets.idle.Field, {
          neck="Sanctity Necklace",
          body="Lugra Cloak +1",
-         ring2="Paguroidea Ring",
+         ring1="Paguroidea Ring",
          head="",
      })
      sets.idle.Refresh = set_combine(sets.idle.Regen, {
