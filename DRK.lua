@@ -12,7 +12,8 @@
     SouleaterMode: OFF by default. Toggle this with @F9 (window key + F9). 
     This mode makes it possible to use Souleater in situations where you would normally avoid using it. When SouleaterMode 
     is ON, Souleater will be canceled automatically after the first Weaponskill used, WITH THESE EXCEPTIONS. If Bloodweapon 
-    is active, or if Drain's HP Boost buff is active, then Souleater will remain active until the next WS used after either buff wears off. 
+    is active, or if Drain's HP Boost buff is active, then Souleater will remain active until the next WS used after 
+    either buff wears off. 
 
     LastResortMode OFF by default. Toggle with CTRL + `  (back tic is left of the 1 key). 
     This mode will equip Fallen's sollerets while LR is active to negate 10% of the defense penalty. 
