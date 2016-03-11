@@ -188,7 +188,7 @@ function init_gear_sets()
 
     sets.midcast.HighTierNuke = {
         main="Serenity",
-        sub="Mephitis Grip",
+        sub="Niobid Strap",
         --sub="Wizzan Grip",
         --ammo="Witchstone",
         head="Welkin Crown",
@@ -201,7 +201,7 @@ function init_gear_sets()
         ring2="Resonance Ring",
         back="Toro Cape",
         waist="Refoccilation Stone", 
-        legs="Azimuth Tights +1",
+        legs="Merlinic Shalwar",
         feet="Helios Boots"
     }
     
@@ -211,7 +211,7 @@ function init_gear_sets()
         ear2="Gwati Earring", 
         hands="Psycloth Manillas",
         back="Refraction Cape",
-        legs="Azimuth Tights +1",
+        legs="Merlinic SHalwar",
         feet="Helios Boots"
         --feet="Bokwus Boots"
     })
@@ -232,7 +232,7 @@ function init_gear_sets()
         head="Welkin Crown",
         ear1="Friomisi Earring",
         ear2="Gwati Earring", 
-        legs="Azimuth Tights +1",
+        legs="Merlinic SHalwar",
         ring1="Sangoma Ring",
         ring2="Resonance Ring",
         back="Refraction Cape",
@@ -241,7 +241,7 @@ function init_gear_sets()
 
     sets.midcast.Macc = { 
         main="Serenity",
-        sub="Mephitis Grip", 
+        sub="Niobid Strap", 
         ammo="Plumose Sachet",
         head="Bagua Galero",
         neck="Eddy Necklace", 
@@ -252,7 +252,7 @@ function init_gear_sets()
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
         back="Refraction Cape",
-        legs="Azimuth Tights +1",
+        legs="Merlinic SHalwar",
         waist="Yamabuki-no-obi", 
         feet="Helios Boots"
     }

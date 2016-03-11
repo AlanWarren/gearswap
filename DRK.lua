@@ -188,7 +188,7 @@ function init_gear_sets()
         hands="Leyline Gloves",
         ring2="Prolix Ring",
         legs="Eschite Cuisses",
-        feet="Yorium Sabatons"
+        feet="Odyssean Greaves"
      }
 
      sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
@@ -208,7 +208,7 @@ function init_gear_sets()
          neck="Incanter's Torque", -- 10
          back="Grounded Mantle +1",
          hands="Leyline gloves",
-         feet="Loyalist Sabatons"
+         feet="Odyssean Greaves"
      }
     sets.midcast.Trust =  {
          head="Valorous Mask",
@@ -229,7 +229,7 @@ function init_gear_sets()
          body="Founder's Breastplate",
          hands="Leyline Gloves",
          back="Grounded Mantle +1",
-         feet="Loyalist Sabatons"
+         feet="Odyssean Greaves"
      }
  
      sets.midcast['Dark Magic'] = {
@@ -245,7 +245,7 @@ function init_gear_sets()
          ring2="Sangoma Ring",
          back=Niht.DarkMagic, -- 10
          legs="Eschite Cuisses",  -- 20
-         feet="Heathen's Sollerets +1"
+         feet="Odyssean Greaves"
      }
     sets.midcast.Endark = set_combine(sets.midcast['Dark Magic'], {
          ammo="Impatiens",
@@ -289,7 +289,7 @@ function init_gear_sets()
          ring2="K'ayres Ring",
          back="Trepidity Mantle",
          legs="Eschite Cuisses", 
-         feet="Amm Greaves"
+         feet="Odyssean Greaves"
      })
      
      -- Drain spells 
@@ -358,6 +358,7 @@ function init_gear_sets()
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
          body="Mes'yohi Haubergeon",
+         legs="Odyssean Cuisses"
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          head="Valorous Mask",
@@ -581,7 +582,7 @@ function init_gear_sets()
          head="Valorous Mask",
          neck="Ganesha's Mala",
          ear1="Cessance Earring",
-         ear2="Lugra Earring +1",
+         ear2="Tripudio Earring",
          body="Councilor's Garb",
          hands="Odyssean Gauntlets",
          ring1="Karieyh Ring",
@@ -626,7 +627,7 @@ function init_gear_sets()
          ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
-         legs="Scuffler's Cosciales",
+         legs="Valorous Hose",
          feet="Amm Greaves"
 
      })
@@ -644,7 +645,7 @@ function init_gear_sets()
          ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
-         legs="Scuffler's Cosciales",
+         legs="Valorous Hose",
          feet="Amm Greaves"
      }
      sets.defense.Reraise = sets.idle.Weak
@@ -680,18 +681,19 @@ function init_gear_sets()
          ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
-         legs="Scuffler's Cosciales", -- 5%
+         legs="Valorous Hose",
          feet="Amm Greaves"
      }
      sets.Defensive_Mid = {
          ammo="Hasty Pinion +1",
          head="Yorium Barbuta",
          neck="Agitator's Collar",
-         body="Jumalik Mail",
+         body="Founder's Breastplate",
          hands="Redan Gloves",
          back="Impassive Mantle",
          ring1="Patricius Ring",
          ring2="Defending Ring",
+         legs="Valorous Hose",
          feet="Loyalist Sabatons"
      }
      sets.Defensive_Acc = {
@@ -703,6 +705,7 @@ function init_gear_sets()
          back="Grounded Mantle +1",
          ring1="Supershear Ring",
          ring2="Patricius Ring",
+         legs="Valorous Hose",
          feet="Founder's Greaves" -- matk 29
      }
  
@@ -720,7 +723,7 @@ function init_gear_sets()
          ring2="K'ayres Ring",
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
-         legs="Argosy Breeches",
+         legs="Acro Breeches",
          feet=Acro.Feet.STP
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
@@ -730,7 +733,7 @@ function init_gear_sets()
          hands=Acro.Hands.Haste,
          body="Mes'yohi Haubergeon",
          back="Grounded Mantle +1",
-         legs="Acro Breeches",
+         legs="Odyssean Cuisses",
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          ammo="Hasty Pinion +1",
@@ -757,6 +760,7 @@ function init_gear_sets()
      sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
          body="Mes'yohi Haubergeon",
          back="Grounded Mantle +1",
+         legs="Odyssean Cuisses",
      })
      sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
          ammo="Hasty Pinion +1",
@@ -776,7 +780,6 @@ function init_gear_sets()
      sets.engaged.Apocalypse = set_combine(sets.engaged, {
          --sub="Pole Grip",
          ammo="Yetshila",
-         head="Argosy Celata",
          hands=Acro.Hands.Haste,
          --body="Acro Surcoat",
          ear1="Cessance Earring",

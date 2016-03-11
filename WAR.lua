@@ -121,25 +121,24 @@ function init_gear_sets()
          head="Cizin Helm +1",
          body="Yorium Cuirass",
          ear1="Loquacious Earring",
-         hands="Yorium Gauntlets",
+         hands="Leyline Gloves",
          ring2="Prolix Ring",
-         legs="Limbo Trousers",
-         feet="Yorium Sabatons"
+         legs="Eschite Cuisses",
+         feet="Odyssean Greaves"
      }
-
      sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
 
      -- Midcast Sets
      sets.midcast.FastRecast = {
          ammo="Impatiens",
          head="Otomi Helm",
-         feet="Ejekamal Boots"
+         feet="Odyssean Greaves"
      }
             
      -- Specific spells
      sets.midcast.Utsusemi = {
          head="Otomi Helm",
-         feet="Ejekamal Boots"
+         feet="Odyssean Greaves"
      }
  
      -- Ranged for xbow
@@ -169,10 +168,10 @@ function init_gear_sets()
          body="Acro Surcoat",
          hands="Odyssean Gauntlets",
          ring1="Karieyh Ring",
-         ring2="Ifrit Ring +1",
+         ring2="Ifrit Ring",
          waist="Windbuffet Belt +1",
          back="Mauler's Mantle",
-         legs="Yorium Cuisses",
+         legs="Argosy Breeches",
          feet=Acro.Feet.WSD
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -264,12 +263,12 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Valorous Mask",
          neck="Sanctity Necklace",
-         ear1="Lugra Earring +1",
+         ear1="Cessance Earring",
          ear2="Tripudio Earring",
-         hands="Crusher's Gauntlets",
+         hands="Redan Gloves",
          body="Boii Lorica +1",
          ring1="Karieyh Ring",
-         ring2="Ifrit Ring +1",
+         ring2="Defending Ring",
          back="Mauler's Mantle",
          legs="Boii Cuisses +1",
          waist="Windbuffet Belt +1",
@@ -309,8 +308,8 @@ function init_gear_sets()
          ring2="Patricius Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
-         legs="Cizin Breeches +1",
-         feet="Amm Greaves"
+         legs="Odyssean Cuisses",
+         feet="Odyssean Greaves"
      }
      sets.defense.Reraise = sets.idle.Weak
  
@@ -332,7 +331,7 @@ function init_gear_sets()
          neck="Agitator's Collar",
          body="Jumalik Mail",
          hands="Redan Gloves",
-         ring2="Patricius Ring",
+         ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
          legs="Cizin Breeches +1",
@@ -344,7 +343,7 @@ function init_gear_sets()
          body="Jumalik Mail",
          hands="Redan Gloves",
          back="Impassive Mantle",
-         ring2="Patricius Ring",
+         ring2="Defending Ring",
          feet="Loyalist Sabatons"
      }
      sets.Defensive_Acc = {
@@ -352,7 +351,7 @@ function init_gear_sets()
          neck="Agitator's Collar",
          hands="Redan Gloves",
          body="Founder's Breastplate",
-         ring2="Patricius Ring",
+         ring2="Defending Ring",
          legs="Cizin Breeches +1",
          feet="Loyalist Sabatons"
      }
@@ -360,52 +359,47 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Yetshila",
-         head="Argosy Celata",
+         head="Valorous Mask",
          neck="Asperity Necklace",
          ear1="Brutal Earring",
-         ear2="Lugra Earring +1",
+         ear2="Cessance Earring",
     	 body="Boii Lorica +1",
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
          ring2="Oneiros Ring",
          back="Mauler's Mantle",
          waist="Windbuffet Belt +1",
-         legs="Boii Cuisses +1",
+         legs="Odyssean Cuisses",
          feet=Acro.Feet.WSD
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Ginsen",
-         ear1="Bladeborn Earring",
-         ear2="Steelflash Earring",
+         neck="Lissome Necklace",
+         hands="Odyssean Gauntlets",
          feet=Acro.Feet.WSD
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          head="Argosy Celata",
-         neck="Defiant Collar",
          ring2="Mars's Ring",
          waist="Olseni Belt",
-         back="Grounded Mantle +1"
+         back="Grounded Mantle +1",
+         feet="Loyalist Sabatons"
      })
 
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
      sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
 
-     --sets.engaged.DW = set_combine(sets.engaged, {
-     --   head="Otomi Helm",
-     --   ear1="Dudgeon Earring",
-     --   ear2="Heartseeker Earring",
-     --   waist="Patentia Sash"
-     --})
-     --sets.engaged.OneHand = set_combine(sets.engaged, {
-     --    head="Yaoyotl Helm",
-     --    ring2="Mars's Ring",
-     --    feet=Acro.Feet.STP
-     --})
+     sets.engaged.DW = set_combine(sets.engaged, {
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        waist="Shetal Stone"
+     })
+     sets.engaged.OneHand = set_combine(sets.engaged, {
+     })
 
      sets.engaged.GreatSword = set_combine(sets.engaged, {
-         head="Otomi Helm",
-         ear1="Brutal Earring",
+         ear1="Cessance Earring",
          ear2="Tripudio Earring"
      })
      sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {
@@ -601,13 +595,13 @@ function get_combat_form()
     --else
         --state.CombatForm:reset()
     --end
-    --if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
-    --    state.CombatForm:set("DW")
-    --elseif S{'SAM', 'WAR'}:contains(player.sub_job) and player.equipment.sub == 'Rinda Shield' then
-    --    state.CombatForm:set("OneHand")
-    --else
-    --    state.CombatForm:reset()
-    --end
+    if S{'NIN', 'DNC'}:contains(player.sub_job) and war_sub_weapons:contains(player.equipment.sub) then
+        state.CombatForm:set("DW")
+    elseif S{'SAM', 'WAR'}:contains(player.sub_job) and player.equipment.sub == 'Rinda Shield' then
+        state.CombatForm:set("OneHand")
+    else
+        state.CombatForm:reset()
+    end
 
 end
 
