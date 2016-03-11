@@ -12,6 +12,9 @@
     LastResortMode OFF by default. Toggle with CTRL + `  (back tic is left of the 1 key). This mode will equip Fallen's sollerets
     while LR is active to negate 10% of the defense penalty.
 
+    There's an "OhShit" mode that's activated when casting drain while engaged, with less than 70% HP. It only works 
+    when CastingMode is == Normal. 
+
     Note: You can change the default status of either mode by setting them to true in job_setup().
 
     Gavialis Helm will automatically be used for all weaponskills on their respective days of the week. If you don't want
@@ -307,7 +310,7 @@ function init_gear_sets()
      })
      sets.midcast.Aspir.Acc = sets.midcast.Drain.Acc
      
-     sets.midcast.Drain.Reduction = set_combine(sets.midcast.Drain, {
+     sets.midcast.Drain.OhShit = set_combine(sets.midcast.Drain, {
          legs="Founder's Hose", 
          feet="Odyssean Greaves"
      })
@@ -950,8 +953,8 @@ end
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
     if spell.english:startswith('Drain') then
-        if player.status == 'Engaged' and state.CastingMode.current == 'Normal' then
-            classes.CustomClass = 'Reduction'
+        if player.status == 'Engaged' and state.CastingMode.current == 'Normal' and player.hpp < 70 then
+            classes.CustomClass = 'OhShit'
         end
     end
 
