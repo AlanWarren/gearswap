@@ -34,7 +34,11 @@
     with all your jobs that use mote's includes. Not just this one! 
 
     Moonshade earring is not used for WS's at 3000 TP. 
-    
+
+    You can hit F12 to display custom MODE status as well as the default stuff. 
+
+    ::NOTES::
+
     All of the default sets are geared around scythe. There is support for great sword by using 
     sets.engaged.GreatSword but you will have to edit gsList in job_setup so that your GS is present. IF you would rather
     all the default sets (like sets.engaged, etc.) cater to great sword instead of scyth, then simply remove the great swords 
@@ -49,7 +53,6 @@
     HybridMode = Normal, PDT
     CustomMeleeGroups = AM3
 
-    Notes:
     CombatForm Haste is used when Last Resort AND either Haste, March, Indi-Haste Geo-Haste is on you.
     This allows you to equip full acro, even though it doesn't have 25% gear haste. You still cap. 
 
@@ -78,7 +81,8 @@ function job_setup()
     -- Set the default to false if you'd rather SE always stay acitve
     state.SouleaterMode = M(false, 'Soul Eater Mode')
     state.LastResortMode = M(false, 'Last Resort Mode')
-   
+    -- If you have a fully upgraded Apoc, set this to true 
+    state.ApocHaste = M(false, 'Apoc Haste Mode')   
     -- Weaponskills you do NOT want Gavialis helm used with
     wsList = S{'Spiral Hell', 'Torcleaver'}
     -- Greatswords you use. 
@@ -1005,9 +1009,6 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    --if state.CombatForm.current == 'Haste' and state.OffenseMode ~= 'Acc' then
-        --meleeSet = set_combine(meleeSet, sets.HighHaste)
-    --end
     if state.Buff['Last Resort'] and state.LastResortMode.value then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
@@ -1047,10 +1048,12 @@ function job_buff_change(buff, gain)
     end
     
     if S{'haste', 'march', 'embrava', 'geo-haste', 'indi-haste'}:contains(buff:lower()) and gain then
-        if buffactive['Last Resort'] and player.equipment.main ~= 'Apocalypse'then
-            state.CombatForm:set("Haste")
-            if not midaction() then
-                handle_equipping_gear(player.status)
+        if (buffactive['Last Resort'] or (buffactive.hasso and (state.ApocHaste.value and buffactive['Aftermath']))) then
+            if (buffactive.embrava or buffactive.haste) and buffactive.march then
+                state.CombatForm:set("Haste")
+                if not midaction() then
+                    handle_equipping_gear(player.status)
+                end
             end
         else
             if state.CombatForm.current ~= 'DW' then
@@ -1102,10 +1105,6 @@ function job_buff_change(buff, gain)
             end
         end
     end
-     --Automatically wake me when I'm slept
-    if string.lower(buff) == "sleep" and gain and player.hp > 200 then
-        equip(sets.Berserker)
-    end
 
     if buff == "Last Resort" and state.LastResortMode.value then
         if gain then
@@ -1156,8 +1155,8 @@ function get_combat_form()
     
     if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
         state.CombatForm:set("DW")
-    elseif (buffactive['Last Resort']) then
-        if (buffactive.embrava or buffactive.haste) and buffactive.march  then
+    elseif (buffactive['Last Resort'] or (buffactive.hasso and (state.ApocHaste.value and buffactive['Aftermath']))) then
+        if (buffactive.embrava or buffactive.haste) and buffactive.march then
             add_to_chat(8, '-------------Delay Capped-------------')
             state.CombatForm:set("Haste")
         else
