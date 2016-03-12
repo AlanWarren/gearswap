@@ -400,7 +400,7 @@ function init_gear_sets()
         head="Lithelimb Cap",
         body="Emet Harness +1",
         neck="Agitator's Collar",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
         ring1="Patricius Ring",
         ring2="Defending Ring",
         feet="Loyalist Sabatons"
@@ -660,8 +660,8 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         body="Rawhide Vest",
-        hands="Ryuo Tekko",
         ring1="Ifrit Ring",
+        hands="Herculean Gloves",
         ring2="Epona's Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
@@ -676,7 +676,6 @@ function init_gear_sets()
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         head="Gavialis Helm",
-        legs="Samnuha Tights",
     })
 
     sets.Kamu = {
@@ -750,7 +749,6 @@ function init_gear_sets()
     sets.Shun = {
         head="Taeon Chapeau",
         neck="Flame Gorget",
-        hands="Ryuo Tekko",
         ring1="Ramuh Ring",
         back="Yokaze Mantle",
         waist="Light Belt",

@@ -2,33 +2,44 @@
  === Features ===
     !!!!Make sure you have my User-Globals.lua!!! Do not rename it. It goes in the data folder along side this file.
 
-    If you don't use organizer, then remove the include in get_sets() and remove sets.Organizer
+    If you don't use organizer, then remove the include('organizer-lib') in get_sets() and remove sets.Organizer
 
-    SouleaterMode: OFF by default. Toggle this with @F9 (window key + F9). This mode makes it possible to use Souleater
-    in situations where you would normally avoid using it. When SouleaterMode is ON, Souleater will be canceled
-    automatically after the first Weaponskill used, "with these exceptions". If Bloodweapon is active, or if Drain's HP Boost
-    buff is active, then Souleater will remain active until the next WS used after either buff wears off. Pretty cool right.
+    This lua has a few MODES you can toggle with hotkeys, and there's a few situational RULES that activate without hotkeys
+    I'd recommend reading and understanding the following information if you plan on using this file.
 
-    LastResortMode OFF by default. Toggle with CTRL + `  (back tic is left of the 1 key). This mode will equip Fallen's sollerets
-    while LR is active to negate 10% of the defense penalty.
+    ::MODES::
 
-    There's an "OhShit" mode that's activated when casting drain while engaged, with less than 70% HP. It only works 
-    when CastingMode is == Normal. 
+    SouleaterMode: OFF by default. Toggle this with @F9 (window key + F9). 
+    This mode makes it possible to use Souleater in situations where you would normally avoid using it. When SouleaterMode 
+    is ON, Souleater will be canceled automatically after the first Weaponskill used, WITH THESE EXCEPTIONS. If Bloodweapon 
+    is active, or if Drain's HP Boost buff is active, then Souleater will remain active until the next WS used after 
+    either buff wears off. If you use DRK at events, I'd recommend making this default to ON, as it's damn useful.
 
-    Note: You can change the default status of either mode by setting them to true in job_setup().
+    LastResortMode OFF by default. Toggle with CTRL + `  (back tic is left of the 1 key). 
+    This mode will equip Fallen's sollerets while LR is active to negate 10% of the defense penalty. 
+    (this is probably less useful now days, with current gear)
+    
+    CapacityMode OFF by default. Toggle with ALT + = 
+    It will full-time whichever piece of gear you specify in sets.CapacityMantle 
+
+    NOTE: You can change the default (true|false) status of any MODE by changing their values in job_setup()
+
+    ::RULES::
 
     Gavialis Helm will automatically be used for all weaponskills on their respective days of the week. If you don't want
-    it used for a ws, then you have to add the WS to wsList = {} in job_setup 
+    it used for a ws, then you have to add the WS to wsList = {} in job_setup. You also need my User-Globals.lua for this
+    to even work. 
 
-    Ygna's Resolve +1 will automatically be used when you're in a reive
-
-    CapacityMode will full-time whichever piece of gear you specify in sets.CapacityMantle 
-
-    This lua assumes you maintain a 1st place unity for Lugra Earring +1. 
+    Ygna's Resolve +1 will automatically be used when you're in a reive. If you have my User-Globals.lua this will work
+    with all your jobs that use mote's includes. Not just this one! 
 
     Moonshade earring is not used for WS's at 3000 TP. 
-    
-    All of the default sets are geared around scyth. There is support for great sword by using 
+
+    You can hit F12 to display custom MODE status as well as the default stuff. 
+
+    ::NOTES::
+
+    All of the default sets are geared around scythe. There is support for great sword by using 
     sets.engaged.GreatSword but you will have to edit gsList in job_setup so that your GS is present. IF you would rather
     all the default sets (like sets.engaged, etc.) cater to great sword instead of scyth, then simply remove the great swords 
     listed in gsList and ignore sets.engaged.GreatSword. (but dont delete it)  
@@ -42,7 +53,6 @@
     HybridMode = Normal, PDT
     CustomMeleeGroups = AM3
 
-    Notes:
     CombatForm Haste is used when Last Resort AND either Haste, March, Indi-Haste Geo-Haste is on you.
     This allows you to equip full acro, even though it doesn't have 25% gear haste. You still cap. 
 
@@ -71,7 +81,8 @@ function job_setup()
     -- Set the default to false if you'd rather SE always stay acitve
     state.SouleaterMode = M(false, 'Soul Eater Mode')
     state.LastResortMode = M(false, 'Last Resort Mode')
-   
+    -- If you have a fully upgraded Apoc, set this to true 
+    state.ApocHaste = M(false, 'Apoc Haste Mode')   
     -- Weaponskills you do NOT want Gavialis helm used with
     wsList = S{'Spiral Hell', 'Torcleaver'}
     -- Greatswords you use. 
@@ -350,7 +361,7 @@ function init_gear_sets()
      -- General sets
      sets.precast.WS = {
          ammo="Aqreqaq Bomblet",
-         head="Argosy Celata",
+         head="Valorous Mask",
          neck="Ganesha's Mala",
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
@@ -365,13 +376,13 @@ function init_gear_sets()
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
+         head="Argosy Celata",
          body="Mes'yohi Haubergeon",
-         legs="Valorous Hose",
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
          ear1="Zennaroi Earring",
          body="Fallen's Cuirass +1",
-         legs="Odyssean Cuisses"
+         legs="Odyssean Cuisses",
          waist="Olseni Belt",
      })
  
@@ -1001,9 +1012,6 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    --if state.CombatForm.current == 'Haste' and state.OffenseMode ~= 'Acc' then
-        --meleeSet = set_combine(meleeSet, sets.HighHaste)
-    --end
     if state.Buff['Last Resort'] and state.LastResortMode.value then
     	meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
     end
@@ -1046,10 +1054,12 @@ function job_buff_change(buff, gain)
     end
     
     if S{'haste', 'march', 'embrava', 'geo-haste', 'indi-haste'}:contains(buff:lower()) and gain then
-        if buffactive['Last Resort'] and player.equipment.main ~= 'Apocalypse'then
-            state.CombatForm:set("Haste")
-            if not midaction() then
-                handle_equipping_gear(player.status)
+        if (buffactive['Last Resort'] or (buffactive.hasso and (state.ApocHaste.value and buffactive['Aftermath']))) then
+            if (buffactive.embrava or buffactive.haste) and buffactive.march then
+                state.CombatForm:set("Haste")
+                if not midaction() then
+                    handle_equipping_gear(player.status)
+                end
             end
         else
             if state.CombatForm.current ~= 'DW' then
@@ -1078,9 +1088,6 @@ function job_buff_change(buff, gain)
     end
     -- AM custom groups
     if buff:startswith('Aftermath') then
-    --if string.startswith(spell.en, "Aftermath") then
-    --if string.find(buff, 'Aftermath') then
-    --if S{'Aftermath'}:contains(buff) then
         if player.equipment.main == 'Liberator' then
             classes.CustomMeleeGroups:clear()
 	        
@@ -1103,10 +1110,6 @@ function job_buff_change(buff, gain)
                 handle_equipping_gear(player.status)
             end
         end
-    end
-     --Automatically wake me when I'm slept
-    if string.lower(buff) == "sleep" and gain and player.hp > 200 then
-        equip(sets.Berserker)
     end
 
     if buff == "Last Resort" and state.LastResortMode.value then
@@ -1158,8 +1161,8 @@ function get_combat_form()
     
     if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
         state.CombatForm:set("DW")
-    elseif (buffactive['Last Resort']) then
-        if (buffactive.embrava or buffactive.haste) and buffactive.march  then
+    elseif (buffactive['Last Resort'] or (buffactive.hasso and (state.ApocHaste.value and buffactive['Aftermath']))) then
+        if (buffactive.embrava or buffactive.haste) and buffactive.march then
             add_to_chat(8, '-------------Delay Capped-------------')
             state.CombatForm:set("Haste")
         else
