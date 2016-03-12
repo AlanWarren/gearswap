@@ -402,7 +402,6 @@ function init_gear_sets()
      sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
          neck="Aqua Gorget",
          hands="Odyssean Gauntlets",
-         legs="Argosy Breeches",
          waist="Caudata Belt",
          feet=Acro.Feet.WSD
      })
