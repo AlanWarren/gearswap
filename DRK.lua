@@ -590,11 +590,11 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Valorous Mask",
+         head="",
          neck="Ganesha's Mala",
          ear1="Cessance Earring",
          ear2="Tripudio Earring",
-         body="Councilor's Garb",
+         body="Lugra Cloak +1",
          hands="Odyssean Gauntlets",
          ring1="Paguroidea Ring",
          ring2="Defending Ring",
@@ -606,10 +606,10 @@ function init_gear_sets()
      
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
-         head="Valorous Mask",
+         head="",
          ear1="Zennaroi Earring",
          neck="Sanctity Necklace",
-         body="Jumalik Mail",
+         body="Lugra Cloak +1",
          hands="Redan Gloves",
          ring1="Dark Ring",
          ring2="Defending Ring",
