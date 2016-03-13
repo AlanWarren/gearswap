@@ -239,7 +239,7 @@ function init_gear_sets()
 
         sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
             neck="Twilight Torque",
-            ring1="Patricius Ring"
+            ring1="Patricius Ring",
             ring2="Defending Ring",
     	    back="Solemnity Cape",
         })
