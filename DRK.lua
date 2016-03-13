@@ -591,15 +591,15 @@ function init_gear_sets()
      sets.idle.Town = {
          ammo="Ginsen",
          head="",
-         neck="Ganesha's Mala",
+         neck="Sanctity Necklace",
          ear1="Cessance Earring",
          ear2="Tripudio Earring",
          body="Lugra Cloak +1",
          hands="Odyssean Gauntlets",
          ring1="Paguroidea Ring",
          ring2="Defending Ring",
-         back=Niht.WSD,
-         waist="Windbuffet Belt +1",
+         back="Impassive Mantle",
+         waist="Flume Belt",
          legs="Crimson Cuisses",
          feet="Amm Greaves"
      }
