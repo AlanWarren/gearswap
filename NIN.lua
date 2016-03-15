@@ -366,6 +366,19 @@ function init_gear_sets()
         waist="Olseni Belt",
         legs="Taeon Tights"
     })
+
+    -- set for fooling around without dual wield
+    sets.NoDW = set_combine(sets.engaged, {
+        head="Taeon Chapeau",
+        neck="Lissom Necklace",
+        ear2="Cessance Earring",
+        body="Rao Togi",
+        hands="Herculean Gloves",
+        ring1="Rajas Ring",
+        waist="Olseni Belt",
+        legs="Taeon Tights",
+        feet="Herculean Boots"
+    })
     
     sets.engaged.Innin = set_combine(sets.engaged, {
         head="Hattori Zukin +1",
@@ -987,6 +1000,9 @@ function customize_melee_set(meleeSet)
     end
     if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
         meleeSet = set_combine(meleeSet, sets.buff.Migawari)
+    end
+    if player.equipment.sub == 'empty' then
+        meleeSet = set_combine(meleeSet, sets.NoDW)
     end
     if player.mp < 100 and state.OffenseMode.value ~= 'Acc' then
         -- use Rajas instead of Oneiros for normal + mid
