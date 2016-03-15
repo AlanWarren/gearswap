@@ -370,7 +370,7 @@ function init_gear_sets()
     -- set for fooling around without dual wield
     sets.NoDW = set_combine(sets.engaged, {
         head="Taeon Chapeau",
-        neck="Lissom Necklace",
+        neck="Lissome Necklace",
         ear2="Cessance Earring",
         body="Rao Togi",
         hands="Herculean Gloves",
