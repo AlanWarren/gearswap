@@ -376,6 +376,7 @@ function init_gear_sets()
         hands="Herculean Gloves",
         ring1="Rajas Ring",
         waist="Olseni Belt",
+        back="Grounded Mantle +1",
         legs="Taeon Tights",
         feet="Herculean Boots"
     })
