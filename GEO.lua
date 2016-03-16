@@ -313,7 +313,7 @@ function init_gear_sets()
         sub="Genbu's Shield",
         range="Dunna",
         head="Azimuth Hood +1",
-        neck="Twilight Torque",
+        neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Azimuth Coat +1",
@@ -327,6 +327,7 @@ function init_gear_sets()
     }
     sets.idle.PDT = set_combine(sets.idle, {
         head="Hike Khat +1",
+        neck="Twilight Torque",
         hands="Geomancy Mitaines +1",
     	back="Solemnity Cape",
         feet="Azimuth Gaiters"
@@ -335,6 +336,7 @@ function init_gear_sets()
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = set_combine(sets.idle, {
         head="Azimuth Hood +1",
+        neck="Twilight Torque",
         hands="Geomancy Mitaines +1",
         back="Lifestream Cape",
         feet="Bagua Sandals"
@@ -346,6 +348,7 @@ function init_gear_sets()
 
     sets.idle.Melee = set_combine(sets.idle, {
         main="Malevolence",
+        neck="Lissome Necklace",
         --sub="Bolelabunga"
     })
 
@@ -369,9 +372,6 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         body="Councilor's Garb",
-        head="Welkin Crown",
-        neck="Incanter's Torque",
-        waist="Refoccilation Stone",
     })
 
     sets.idle.Weak = sets.idle
