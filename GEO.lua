@@ -322,7 +322,7 @@ function init_gear_sets()
         ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Fucho-no-obi",
-        legs="Azimuth Tights +1",
+        legs="Merlinic Shalwar",
         feet="Geomancy Sandals"
     }
     sets.idle.PDT = set_combine(sets.idle, {
