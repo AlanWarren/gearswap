@@ -211,7 +211,7 @@ function init_gear_sets()
         ear2="Gwati Earring", 
         hands="Psycloth Manillas",
         back="Refraction Cape",
-        legs="Merlinic SHalwar",
+        legs="Merlinic Shalwar",
         feet="Helios Boots"
         --feet="Bokwus Boots"
     })
@@ -232,7 +232,7 @@ function init_gear_sets()
         head="Welkin Crown",
         ear1="Friomisi Earring",
         ear2="Gwati Earring", 
-        legs="Merlinic SHalwar",
+        legs="Merlinic Shalwar",
         ring1="Sangoma Ring",
         ring2="Resonance Ring",
         back="Refraction Cape",
@@ -252,7 +252,7 @@ function init_gear_sets()
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
         back="Refraction Cape",
-        legs="Merlinic SHalwar",
+        legs="Merlinic Shalwar",
         waist="Yamabuki-no-obi", 
         feet="Helios Boots"
     }
