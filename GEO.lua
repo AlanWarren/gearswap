@@ -372,7 +372,6 @@ function init_gear_sets()
         head="Welkin Crown",
         neck="Incanter's Torque",
         waist="Refoccilation Stone",
-        legs="Geomancy Pants +1"
     })
 
     sets.idle.Weak = sets.idle
