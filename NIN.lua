@@ -281,7 +281,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
         body="Councilor's Garb",
         legs="Samnuha Tights",
         back="Yokaze Mantle",
