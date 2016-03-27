@@ -471,7 +471,7 @@ function init_gear_sets()
         neck="Yarak Torque",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
-        body="Hattori Ningi +1",
+        body="Rao Togi",
         hands="Ryuo Tekko",
         ring1="Patricius Ring",
         ring2="Mars's Ring",
@@ -523,7 +523,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
         hands="Ryuo Tekko",
-        body="Hattori Ningi +1",
+        body="Rao Togi",
         legs="Samnuha Tights",
         feet="Taeon Boots"
     })
