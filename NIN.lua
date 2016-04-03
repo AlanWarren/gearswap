@@ -345,7 +345,7 @@ function init_gear_sets()
         legs="Mochizuki Hakama +1",
         feet="Taeon Boots"
     }
-    -- assumptions made about target, Rancor no longer "OK" 
+    -- assumptions made about targe
     sets.engaged.Low = set_combine(sets.engaged, {
         neck="Lissome Necklace",
         ear1="Cessance Earring",
@@ -709,7 +709,7 @@ function init_gear_sets()
     sets.Jin = {
         head="Taeon Chapeau",
         ammo="Yetshila",
-        neck="Rancor Collar",
+        neck="Breeze Gorget",
         body="Hattori Ningi +1",
         hands="Ryuo Tekko",
         ring1="Ifrit Ring +1",
@@ -776,7 +776,7 @@ function init_gear_sets()
     
     -- BLADE: Rin
     sets.Rin = {
-        neck="Rancor Collar",
+        neck="Defiant Collar",
         ring1="Rajas Ring",
         waist="Windbuffet Belt +1",
         back="Yokaze Mantle",
