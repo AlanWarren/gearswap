@@ -461,11 +461,12 @@ function init_gear_sets()
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         neck="Lissome Necklace",
         ear2="Trux Earring",
+        body="Hattori Ningi +1",
         back="Yokaze Mantle",
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         ring1="Patricius Ring",
-        body="Hattori Ningi +1",
+        body="Rao Togi",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Taeon Chapeau",
@@ -605,7 +606,7 @@ function init_gear_sets()
     })
     sets.engaged.Innin.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         head="Hattori Zukin +1",
-        body="Hattori Ningi +1",
+        body="Rao Togi",
         waist="Patentia Sash"
     })
     sets.engaged.Innin.Acc.Haste_30 = sets.engaged.Acc.Haste_30
