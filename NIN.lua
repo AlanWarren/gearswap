@@ -277,13 +277,14 @@ function init_gear_sets()
     })
     
     sets.idle.Town = set_combine(sets.idle, {
-        head="Ptica Headgear",
+        head="Hattori Zukin +1",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
         hands="Herculean Gloves",
         body="Councilor's Garb",
         legs="Samnuha Tights",
+        ring1="Haverton Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1"
     })
