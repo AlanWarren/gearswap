@@ -828,7 +828,7 @@ function init_gear_sets()
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
         head="Mochizuki Hatsuburi +1",
         ear1="Friomisi Earring",
-        neck="Stoicheion Medal",
+        neck="Sanctity Necklace",
         body="Samnuha Coat",
         hands="Leyline Gloves",
         ring1="Garuda Ring",
