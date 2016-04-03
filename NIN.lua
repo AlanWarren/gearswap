@@ -277,7 +277,7 @@ function init_gear_sets()
     })
     
     sets.idle.Town = set_combine(sets.idle, {
-        head="Hattori Zukin +1",
+        head="Taeon Chapeau",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
@@ -446,8 +446,8 @@ function init_gear_sets()
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head="Taeon Chapeau",
         ear1="Cessance Earring",
-        ear2="Brutal Earring",
-        neck="Asperity Necklace",
+        ear2="Tripudio Earring",
+        neck="Lissome Necklace",
         body="Rawhide Vest",
         hands="Herculean Gloves",
         ring1="Rajas Ring",
