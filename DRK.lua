@@ -372,7 +372,7 @@ function init_gear_sets()
          back=Niht.WSD,
          waist="Windbuffet Belt +1",
          legs="Valorous Hose",
-         feet="Argosy Sollerets"
+         feet="Sulevia's Leggings +1"
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
@@ -403,12 +403,10 @@ function init_gear_sets()
          neck="Aqua Gorget",
          hands="Odyssean Gauntlets",
          waist="Caudata Belt",
-         feet=Acro.Feet.WSD
      })
      sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
          ammo="Ginsen",
          neck="Aqua Gorget",
-         feet=Acro.Feet.WSD
      })
      sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, sets.precast.WS.Acc)
 
@@ -497,7 +495,7 @@ function init_gear_sets()
      })
      sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
          back=Niht.WSD,
-         feet=Acro.Feet.WSD
+         feet="Sulevia's Leggings +1"
      })
      sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
          legs="Odyssean Cuisses",
@@ -545,7 +543,7 @@ function init_gear_sets()
          back="Toro Cape",
          legs="Valorous Hose",
          waist="Caudata Belt",
-         feet="Heathen's Sollerets +1"
+         feet="Sulevia's Leggings +1"
       })
 
      sets.precast.WS['Shadow of Death'].Mid = set_combine(sets.precast.WS['Shadow of Death'], sets.precast.WS.Mid, {
