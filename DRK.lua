@@ -614,7 +614,7 @@ function init_gear_sets()
          back="Impassive Mantle",
          waist="Flume Belt",
          legs="Crimson Cuisses",
-         feet="Amm Greaves"
+         feet="Sulevia's leggings +1"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
          neck="Sanctity Necklace",
@@ -716,6 +716,13 @@ function init_gear_sets()
          legs="Valorous Hose",
          feet="Founder's Greaves" -- matk 29
      }
+     sets.Sulevia = set_combine(sets.Defensive_Mid, {
+         head="Sulevia's Mask",
+         body="Sulevia's Platemail",
+         hands="Sulevia's Gauntlets",
+         legs="Sulevia's Cuisses",
+         feet="Sulevia's Leggings +1"
+    })
  
      -- Engaged set, assumes Liberator
      sets.engaged = {
@@ -802,12 +809,13 @@ function init_gear_sets()
 
      sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
          head="Argosy Celata",
+         legs="Sulevia's Cuisses",
          feet=Acro.Feet.WSD
      })
      sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
          ammo="Ginsen",
          hands=Acro.Hands.STP,
-         feet="Loyalist Sabatons"
+         feet="Sulevia's Leggings +1"
      })
      sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
          head="Valorous Mask",
@@ -827,9 +835,9 @@ function init_gear_sets()
      sets.engaged.Mid.PDT.AM3 = set_combine(sets.engaged.Mid.AM3, sets.Defensive_Mid)
      sets.engaged.Acc.PDT.AM3 = set_combine(sets.engaged.Acc.AM3, sets.Defensive_Acc)
 
-     sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, sets.Defensive)
-     sets.engaged.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive_Mid)
-     sets.engaged.Apocalypse.Acc.PDT = set_combine(sets.engaged.Apocalypse.Acc, sets.Defensive_Acc)
+     sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, sets.Sulevia)
+     sets.engaged.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid, sets.Sulevia)
+     sets.engaged.Apocalypse.Acc.PDT = set_combine(sets.engaged.Apocalypse.Acc, sets.Sulevia)
     
      -- dual wield
      sets.engaged.DW = set_combine(sets.engaged, {
