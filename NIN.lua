@@ -274,7 +274,7 @@ function init_gear_sets()
     sets.idle.Regen = set_combine(sets.idle, {
         head="Rao Kabuto",
         body="Rao Togi",
-        ring2="Paguroidea Ring"
+        ring1="Paguroidea Ring"
     })
     
     sets.idle.Town = set_combine(sets.idle, {
