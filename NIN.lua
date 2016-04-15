@@ -407,7 +407,7 @@ function init_gear_sets()
         head="Lithelimb Cap",
         body="Emet Harness +1",
         neck="Agitator's Collar",
-        hands="Herculean Gloves",
+        hands="Floral Gauntlets",
     	back="Solemnity Cape",
         ring1="Defending Ring",
         legs="Otronif Brais +1",
@@ -417,7 +417,7 @@ function init_gear_sets()
         head="Lithelimb Cap",
         body="Emet Harness +1",
         neck="Agitator's Collar",
-        hands="Ryuo Tekko",
+        hands="Floral Gauntlets",
         ring1="Patricius Ring",
         ring2="Defending Ring",
         feet="Loyalist Sabatons"
