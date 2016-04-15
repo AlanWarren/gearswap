@@ -357,6 +357,7 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
+        hands="Floral Gauntlets",
         feet="Herculean Boots"
     })
 
@@ -364,7 +365,7 @@ function init_gear_sets()
         neck="Yarak Torque",
         ring2="Mars's Ring",
         back="Grounded Mantle +1",
-        hands="Ryuo Tekko",
+        hands="Floral Gauntlets",
         waist="Olseni Belt",
         legs="Taeon Tights"
     })
