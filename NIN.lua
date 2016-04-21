@@ -767,7 +767,7 @@ function init_gear_sets()
         neck="Flame Gorget",
         ring1="Ramuh Ring",
         hands="Ryuo Tekko",
-        back="Yokaze Mantle",
+        back="Andartia's Mantle",
         waist="Light Belt",
         legs="Samnuha Tights",
         feet="Herculean Boots"
