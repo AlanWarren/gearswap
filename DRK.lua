@@ -588,12 +588,12 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Sulevia's Mask",
+         head="Sulevia's Mask +1",
          neck="Sanctity Necklace",
          ear1="Cessance Earring",
          ear2="Tripudio Earring",
          body="Sulevia's platemail",
-         hands="Sulevia's Gauntlets",
+         hands="Sulevia's Gauntlets +1",
          ring1="Paguroidea Ring",
          ring2="Defending Ring",
          back="Impassive Mantle",
@@ -717,9 +717,9 @@ function init_gear_sets()
          feet="Founder's Greaves" -- matk 29
      }
      sets.Sulevia = set_combine(sets.Defensive_Mid, {
-         head="Sulevia's Mask",
+         head="Sulevia's Mask +1",
          body="Sulevia's Platemail",
-         hands="Sulevia's Gauntlets",
+         hands="Sulevia's Gauntlets +1",
          legs="Sulevia's Cuisses",
          feet="Sulevia's Leggings +1"
     })
