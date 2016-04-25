@@ -102,7 +102,7 @@ function init_gear_sets()
     -- Job Abilties
     --------------------------------------
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
-    sets.precast.JA['Mikage'] = {back="Andartia's Mantle"}
+    --sets.precast.JA['Mikage'] = {back="Andartia's Mantle"}
     sets.precast.JA['Futae'] = { hands="Iga Tekko +2" }
     sets.precast.JA['Provoke'] = { 
         ear1="Friomisi Earring",
@@ -232,7 +232,9 @@ function init_gear_sets()
     -- any ninjutsu cast on self
     sets.midcast.SelfNinjutsu = sets.midcast.Ninjutsu
     sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {hands="Mochizuki Tekko +1", back="Andartia's Mantle", feet="Iga Kyahan +2"})
-    sets.midcast.Migawari = set_combine(sets.midcast.Ninjutsu, {body="Hattori Ningi +1"})
+    sets.midcast.Migawari = set_combine(sets.midcast.Ninjutsu, {
+            body="Hattori Ningi +1", back="Andartia's Mantle",
+            })
 
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.ElementalNinjutsu = {
