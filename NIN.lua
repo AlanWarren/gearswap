@@ -129,7 +129,7 @@ function init_gear_sets()
         neck="Defiant Collar",
         ear1="Zennaroi Earring",
         hands="Ryuo Tekko",
-        back="Yokaze Mantle",
+        back="Andartia's Mantle",
         ring1="Mars's Ring",
         waist="Olseni Belt",
         legs="Taeon Tights",
@@ -231,10 +231,15 @@ function init_gear_sets()
     }
     -- any ninjutsu cast on self
     sets.midcast.SelfNinjutsu = sets.midcast.Ninjutsu
-    sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {hands="Mochizuki Tekko +1", back="Andartia's Mantle", feet="Iga Kyahan +2"})
+    sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {
+        hands="Mochizuki Tekko +1", 
+        back="Andartia's Mantle", 
+        feet="Iga Kyahan +2"
+    })
     sets.midcast.Migawari = set_combine(sets.midcast.Ninjutsu, {
-            body="Hattori Ningi +1", back="Andartia's Mantle",
-            })
+        body="Hattori Ningi +1", 
+        back="Andartia's Mantle",
+    })
 
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.ElementalNinjutsu = {
@@ -288,7 +293,7 @@ function init_gear_sets()
         body="Councilor's Garb",
         legs="Samnuha Tights",
         ring1="Haverton Ring",
-        back="Yokaze Mantle",
+        back="Andartia's Mantle",
         waist="Windbuffet Belt +1"
     })
     --sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
@@ -365,7 +370,7 @@ function init_gear_sets()
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Yarak Torque",
         ring2="Mars's Ring",
-        back="Grounded Mantle +1",
+        back="Andartia's Mantle",
         hands="Floral Gauntlets",
         waist="Olseni Belt",
         legs="Taeon Tights"
@@ -480,7 +485,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring1="Patricius Ring",
         ring2="Mars's Ring",
-        back="Grounded Mantle +1",
+        back="Andartia's Mantle",
         waist="Olseni Belt",
         feet="Herculean Boots"
     })
