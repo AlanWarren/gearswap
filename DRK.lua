@@ -757,7 +757,7 @@ function init_gear_sets()
          ear1="Cessance Earring",
          ear2="Zennaroi Earring",
          hands="Odyssean Gauntlets",
-         ring2="Mars's Ring",
+         ring2="Cacoethic Ring +1",
          waist="Olseni Belt",
          feet="Founder's Greaves"
      })
@@ -786,7 +786,7 @@ function init_gear_sets()
          body="Mes'yohi Haubergeon",
          hands="Odyssean Gauntlets",
          ring1="Rajas Ring",
-         ring2="Mars's Ring",
+         ring2="Cacoethic Ring +1",
          waist="Olseni Belt",
          feet="Founder's Greaves"
      })
@@ -823,7 +823,7 @@ function init_gear_sets()
          ear1="Cessance Earring",
          ear2="Zennaroi Earring",
          neck="Defiant Collar",
-         ring2="Mars's Ring",
+         ring2="Cacoethic Ring +1",
          waist="Olseni Belt"
      })
 
