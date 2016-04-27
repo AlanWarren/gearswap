@@ -369,7 +369,7 @@ function init_gear_sets()
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Yarak Torque",
-        ring2="Mars's Ring",
+        ring1="Cacoethic Ring +1",
         back="Andartia's Mantle",
         hands="Floral Gauntlets",
         waist="Olseni Belt",
@@ -473,7 +473,7 @@ function init_gear_sets()
         back="Andartia's Mantle",
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
-        ring1="Patricius Ring",
+        ring1="Cacoethic Ring +1",
         body="Rao Togi",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
@@ -483,8 +483,8 @@ function init_gear_sets()
         ear2="Zennaroi Earring",
         body="Rao Togi",
         hands="Ryuo Tekko",
-        ring1="Patricius Ring",
-        ring2="Mars's Ring",
+        ring1="Cacoethic Ring +1",
+        ring2="Patricius Ring",
         back="Andartia's Mantle",
         waist="Olseni Belt",
         feet="Herculean Boots"
@@ -605,17 +605,12 @@ function init_gear_sets()
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Hattori Zukin +1",
-        hands="Ryuo Tekko",
     })
     sets.engaged.Innin.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
         head="Hattori Zukin +1",
-        body="Hattori Ningi +1",
-        hands="Ryuo Tekko",
     })
     sets.engaged.Innin.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         head="Hattori Zukin +1",
-        body="Rao Togi",
-        waist="Patentia Sash"
     })
     sets.engaged.Innin.Acc.Haste_30 = sets.engaged.Acc.Haste_30
     
@@ -682,8 +677,8 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         body="Rawhide Vest",
-        ring1="Ifrit Ring",
         hands="Herculean Gloves",
+        ring1="Ifrit Ring",
         ring2="Epona's Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
