@@ -6,16 +6,16 @@ function get_sets()
     mote_include_version = 2
     include('Mote-Include.lua')
     include('organizer-lib')
-end
+    end
 
 
--- Setup vars that are user-independent.
+    -- Setup vars that are user-independent.
 function job_setup()
 
     state.Buff.Migawari = buffactive.migawari or false
     state.Buff.Sange = buffactive.sange or false
     state.Buff.Innin = buffactive.innin or false
-    
+
     include('Mote-TreasureHunter')
     state.TreasureMode:set('Tag')
 
@@ -28,14 +28,14 @@ function job_setup()
     select_ammo()
     LugraWSList = S{'Blade: Shun', 'Blade: Ku', 'Blade: Jin'}
     state.CapacityMode = M(false, 'Capacity Point Mantle')
-    
+
     gear.RegularAmmo = 'Togakushi Shuriken'
     gear.SangeAmmo = 'Happo Shuriken'
-    
+
     wsList = S{'Blade: Hi'}
 
     update_combat_form()
-    
+
     state.warned = M(false)
     options.ammo_warning_limit = 25
     -- For th_action_check():
@@ -622,7 +622,7 @@ function init_gear_sets()
     -- 5 - 20% Haste 
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
         head="Ptica Headgear",
-        neck="Asperity",
+        neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Rawhide Vest",
@@ -736,6 +736,7 @@ function init_gear_sets()
     -- BLADE: HI
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
         --ammo="Yetshila",
+        ear1="Ishvara Earring",
         head="Uk'uxkaj Cap",
         neck="Hope Torque",
         body="Hattori Ningi +1",
