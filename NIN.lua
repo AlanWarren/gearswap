@@ -292,7 +292,7 @@ function init_gear_sets()
         hands="Herculean Gloves",
         body="Councilor's Garb",
         legs="Samnuha Tights",
-        ring1="Haverton Ring",
+        ring1="Petrov Ring",
         back="Andartia's Mantle",
         waist="Windbuffet Belt +1"
     })
