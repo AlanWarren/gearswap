@@ -357,7 +357,7 @@ function init_gear_sets()
 	
     sets.engaged = {
         ammo=gear.RAbullet,
-        head="Umbani Cap",
+        head="Taeon Chapeau",
         neck="Iqabi Necklace",
         ear1="Enervating Earring",
         ear2="Volley Earring",
@@ -374,12 +374,12 @@ function init_gear_sets()
 	sets.engaged.Melee = {
         ammo=gear.RAbullet,
         head="Taeon Chapeau",
-        neck="Defiant Collar",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
+        neck="Lissome Necklace",
+        ear1="Cessance Earring",
+        ear2="Brutal Earring",
         body="Rawhide Vest",
         hands="Floral Gauntlets",
-        ring1="Rajas Ring",
+        ring1="Petrov Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
@@ -393,9 +393,9 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
         hands="Floral Gauntlets",
         body="Samnuha Coat",
-        ring1="Oneiros Ring",
+        ring1="Haverton Ring",
         legs="Samnuha Tights",
-        waist="Shetal Stone",
+        waist="Patentia Sash",
         back="Bleating Mantle",
         feet="Taeon Boots"
     })
