@@ -735,7 +735,7 @@ function init_gear_sets()
          body="Vatic Byrnie",
          hands=Acro.Hands.Haste,
          ring1="Rajas Ring",
-         ring2="K'ayres Ring",
+         ring2="Petrov Ring",
          back="Bleating Mantle",
          waist="Windbuffet Belt +1",
          legs="Acro Breeches",
@@ -757,7 +757,7 @@ function init_gear_sets()
          ear1="Cessance Earring",
          ear2="Zennaroi Earring",
          hands="Odyssean Gauntlets",
-         ring2="Cacoethic Ring +1",
+         ring1="Cacoethic Ring +1",
          waist="Olseni Belt",
          feet="Founder's Greaves"
      })
