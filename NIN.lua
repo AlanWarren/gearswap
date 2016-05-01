@@ -420,11 +420,12 @@ function init_gear_sets()
     }
     sets.AccPDT = {
         head="Rao Kabuto",
-        body="Emet Harness +1",
+        body="Hattori Ningi +1",
         neck="Agitator's Collar",
         hands="Floral Gauntlets",
         ring1="Patricius Ring",
         ring2="Defending Ring",
+        legs="Ryuo Hakama",
         feet="Loyalist Sabatons"
     }
 
@@ -440,7 +441,7 @@ function init_gear_sets()
 
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
-        hands="Ryuo Tekko",
+        hands="Herculean Gloves",
         body="Emet Harness +1",
         waist="Flume Belt",
         ring1="Defending Ring",
@@ -468,7 +469,6 @@ function init_gear_sets()
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         neck="Lissome Necklace",
         ear2="Trux Earring",
-        body="Hattori Ningi +1",
         back="Andartia's Mantle",
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
@@ -480,7 +480,6 @@ function init_gear_sets()
         neck="Yarak Torque",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
-        body="Rao Togi",
         hands="Ryuo Tekko",
         ring1="Cacoethic Ring +1",
         ring2="Patricius Ring",
@@ -495,9 +494,9 @@ function init_gear_sets()
     sets.engaged.Innin.Acc.MaxHaste = sets.engaged.Acc.MaxHaste
    
     -- Defensive sets
-    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.NormalPDT)
-    sets.engaged.Low.PDT.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, sets.NormalPDT)
-    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.NormalPDT)
+    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HastePDT)
+    sets.engaged.Low.PDT.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, sets.engaged.HastePDT)
+    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.AccPDT)
     
     sets.engaged.Innin.PDT.MaxHaste = set_combine(sets.engaged.Innin.MaxHaste, sets.NormalPDT)
