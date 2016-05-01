@@ -274,7 +274,7 @@ function init_gear_sets()
         ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Otronif Brais +1",
+        legs="Ryuo Hakama",
         feet="Danzo Sune-ate"
      }
 
@@ -312,7 +312,7 @@ function init_gear_sets()
         ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Otronif Brais +1",
+        legs="Ryuo Hakama",
         feet="Amm Greaves"
     }
     
@@ -415,11 +415,11 @@ function init_gear_sets()
         hands="Floral Gauntlets",
     	back="Solemnity Cape",
         ring1="Defending Ring",
-        legs="Otronif Brais +1",
+        legs="Ryuo Hakama",
         feet="Amm greaves"
     }
     sets.AccPDT = {
-        head="Lithelimb Cap",
+        head="Rao Kabuto",
         body="Emet Harness +1",
         neck="Agitator's Collar",
         hands="Floral Gauntlets",
@@ -445,7 +445,7 @@ function init_gear_sets()
         waist="Flume Belt",
         ring1="Defending Ring",
     	back="Solemnity Cape",
-        legs="Otronif Brais +1",
+        legs="Ryuo Hakama",
         feet="Amm Greaves"
     }
 
@@ -693,6 +693,7 @@ function init_gear_sets()
     sets.precast.WS.Low = sets.precast.WS.Mid
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
+        body="Rao Togi",
         head="Gavialis Helm",
     })
 
