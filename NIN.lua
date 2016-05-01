@@ -382,7 +382,7 @@ function init_gear_sets()
         ear2="Cessance Earring",
         body="Rao Togi",
         hands="Herculean Gloves",
-        ring1="Rajas Ring",
+        ring1="Petrov Ring",
         waist="Olseni Belt",
         back="Andartia's Mantle",
         legs="Samnuha Tights",
@@ -458,7 +458,7 @@ function init_gear_sets()
         neck="Lissome Necklace",
         body="Rawhide Vest",
         hands="Herculean Gloves",
-        ring1="Rajas Ring",
+        ring1="Petrov Ring",
         ring2="Epona's Ring",
         back="Andartia's Mantle",
         waist="Windbuffet Belt +1",
@@ -701,7 +701,7 @@ function init_gear_sets()
         neck="Breeze Gorget",
         head="Rao Kabuto",
         body="Rawhide Vest",
-        ring1="Rajas Ring",
+        ring1="Petrov Ring",
         ring2="Ifrit Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
@@ -784,7 +784,7 @@ function init_gear_sets()
     -- BLADE: Rin
     sets.Rin = {
         neck="Defiant Collar",
-        ring1="Rajas Ring",
+        ring1="Petrov Ring",
         waist="Windbuffet Belt +1",
         back="Yokaze Mantle",
     }
