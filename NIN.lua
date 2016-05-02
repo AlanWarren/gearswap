@@ -108,7 +108,8 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Trux Earring", 
         body="Emet Harness +1",
-        ring1="Supershear Ring",
+        ring1="Petrov Ring",
+        ring2="SUpershear Ring",
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.JA.Sange = { ammo=gear.SangeAmmo, body="Mochizuki Chainmail +1" }
@@ -130,7 +131,6 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         hands="Ryuo Tekko",
         back="Andartia's Mantle",
-        ring1="Mars's Ring",
         waist="Olseni Belt",
         legs="Taeon Tights",
         feet="Mochizuki Kyahan +1"
@@ -718,7 +718,7 @@ function init_gear_sets()
         neck="Breeze Gorget",
         body="Hattori Ningi +1",
         hands="Ryuo Tekko",
-        ring1="Ifrit Ring +1",
+        ring1="Ifrit Ring",
         waist="Windbuffet Belt +1",
         back="Andartia's Mantle",
     }
