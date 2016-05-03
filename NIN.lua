@@ -102,7 +102,6 @@ function init_gear_sets()
     -- Job Abilties
     --------------------------------------
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
-    --sets.precast.JA['Mikage'] = {back="Andartia's Mantle"}
     sets.precast.JA['Futae'] = { hands="Iga Tekko +2" }
     sets.precast.JA['Provoke'] = { 
         ear1="Friomisi Earring",
