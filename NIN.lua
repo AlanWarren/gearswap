@@ -345,7 +345,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
-        hands="Floral Gantlets",
+        hands="Floral Gauntlets",
         ring1="Haverton Ring",
         ring2="Epona's Ring",
         back="Andartia's Mantle",
