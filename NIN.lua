@@ -102,7 +102,6 @@ function init_gear_sets()
     -- Job Abilties
     --------------------------------------
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
-    --sets.precast.JA['Mikage'] = {back="Andartia's Mantle"}
     sets.precast.JA['Futae'] = { hands="Iga Tekko +2" }
     sets.precast.JA['Provoke'] = { 
         ear1="Friomisi Earring",
@@ -735,13 +734,13 @@ function init_gear_sets()
     
     -- BLADE: HI
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-        --ammo="Yetshila",
+        ammo="Yetshila",
         ear1="Ishvara Earring",
         head="Uk'uxkaj Cap",
         neck="Hope Torque",
         body="Hattori Ningi +1",
-        ring1="Garuda Ring",
         hands="Ryuo Tekko",
+        ring1="Garuda Ring",
         waist="Windbuffet Belt +1",
         back="Yokaze Mantle",
         feet="Herculean Boots"
@@ -750,16 +749,15 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
         head="Taeon Chapeau",
         neck="Shadow Gorget",
-        back="Yokaze Mantle"
     })
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-        head="Rao Kabuto",
         neck="Shadow Gorget",
         waist="Caudata Belt",
         back="Yokaze Mantle",
     })
 
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
+        head="Rao Kabuto",
         ear1="Trux Earring",
         legs="Samnuha Tights",
     })
