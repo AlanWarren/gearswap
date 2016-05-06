@@ -90,7 +90,7 @@ function job_setup()
     -- Mote has capitalization errors in the default Absorb mappings, so we correct them
     absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
     -- Offhand weapons used to activate DW mode
-    drk_sub_weapons = S{"Sangarius", "Usonmunku", "Perun"}
+    drk_sub_weapons = S{"Sangarius", "Usonmunku", "Perun", "Tanmogayi"}
 
     get_combat_form()
     get_combat_weapon()
@@ -427,8 +427,8 @@ function init_gear_sets()
      -- Mid assumes higher defense target
      sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
          neck="Shadow Gorget",
-         body="Acro Surcoat",
-         waist="Caudata Belt"
+         body="Mes'yohi Haubergeon",
+         waist="Light Belt"
      })
      sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
          body="Fallen's Cuirass +1",
@@ -447,7 +447,7 @@ function init_gear_sets()
      })
 
      sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
-         ear2="Trux Earring",
+         ear2="Ishvara Earring",
          neck="Shadow Gorget",
          waist="Soil Belt"
      })
