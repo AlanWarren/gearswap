@@ -138,7 +138,7 @@ function init_gear_sets()
          head="Ptica Headgear",
          hands="Ryuo Tekko",
          body="Rawhide Vest",
-         legs="Samnuha Tights",
+         legs="Herculean Trousers",
          feet="Hachiya Kyahan +1"
     }
      sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
@@ -290,7 +290,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         hands="Herculean Gloves",
         body="Councilor's Garb",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
         ring1="Petrov Ring",
         back="Andartia's Mantle",
         waist="Windbuffet Belt +1"
@@ -370,7 +370,7 @@ function init_gear_sets()
         back="Andartia's Mantle",
         hands="Floral Gauntlets",
         waist="Olseni Belt",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
         legs="Taeon Tights"
     })
 
@@ -384,7 +384,7 @@ function init_gear_sets()
         ring1="Petrov Ring",
         waist="Olseni Belt",
         back="Andartia's Mantle",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
         feet="Herculean Boots"
     })
     
@@ -461,7 +461,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back="Andartia's Mantle",
         waist="Windbuffet Belt +1",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
         feet="Herculean Boots"
     })
     -- Base set for hard content
@@ -531,7 +531,7 @@ function init_gear_sets()
         ear2="Zennaroi Earring",
         hands="Ryuo Tekko",
         body="Rao Togi",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
         feet="Taeon Boots"
     })
 
@@ -568,7 +568,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back="Andartia's Mantle",
         waist="Windbuffet Belt +1",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
         feet="Herculean Boots"
     })
     sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Haste_30, {
@@ -640,7 +640,7 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, {
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
         waist="Patentia Sash",
         feet="Herculean Boots"
     })
