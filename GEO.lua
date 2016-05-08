@@ -449,6 +449,7 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 function job_precast(spell, action, spellMap, eventArgs)
+	refine_various_spells(spell, action, spellMap, eventArgs)
     --if state.Buff.Poison then
     --    classes.CustomClass = 'Mindmelter'
     --end
@@ -589,4 +590,214 @@ end
 function select_default_macro_book()
     set_macro_page(1, 6)
 end
+--Refine Nuke Spells
+function refine_various_spells(spell, action, spellMap, eventArgs)
+	aspirs = S{'Aspir','Aspir II','Aspir III'}
+	sleeps = S{'Sleep II','Sleep'}
+	sleepgas = S{'Sleepga II','Sleepga'}
+	nukes = S{'Fire', 'Blizzard', 'Aero', 'Stone', 'Thunder', 'Water',
+	'Fire II', 'Blizzard II', 'Aero II', 'Stone II', 'Thunder II', 'Water II',
+	'Fire III', 'Blizzard III', 'Aero III', 'Stone III', 'Thunder III', 'Water III',
+	'Fire IV', 'Blizzard IV', 'Aero IV', 'Stone IV', 'Thunder IV', 'Water IV',
+	'Fire V', 'Blizzard V', 'Aero V', 'Stone V', 'Thunder V', 'Water V',
+	'Fire VI', 'Blizzard VI', 'Aero VI', 'Stone VI', 'Thunder VI', 'Water VI',
+	'Firaga', 'Blizzaga', 'Aeroga', 'Stonega', 'Thundaga', 'Waterga',
+	'Firaga II', 'Blizzaga II', 'Aeroga II', 'Stonega II', 'Thundaga II', 'Waterga II',
+	'Firaga III', 'Blizzaga III', 'Aeroga III', 'Stonega III', 'Thundaga III', 'Waterga III',	
+	'Firaja', 'Blizzaja', 'Aeroja', 'Stoneja', 'Thundaja', 'Waterja',
+	}
+	cures = S{'Cure IV','Cure V','Cure IV','Cure III','Curaga III','Curaga II', 'Curaga',}
+	
+	if spell.skill == 'Healing Magic' then
+		if not cures:contains(spell.english) then
+			return
+		end
+		
+		local newSpell = spell.english
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+		local cancelling = 'All '..spell.english..' spells are on cooldown. Cancelling spell casting.'
+		
+		if spell_recasts[spell.recast_id] > 0 then
+			if cures:contains(spell.english) then
+				if spell.english == 'Cure' then
+					add_to_chat(122,cancelling)
+					eventArgs.cancel = true
+				return
+				elseif spell.english == 'Cure IV' then
+					newSpell = 'Cure V'
+				elseif spell.english == 'Cure V' then
+					newSpell = 'Cure IV'
+				elseif spell.english == 'Cure IV' then
+					newSpell = 'Cure III'
+				end
+			end
+		end
+		
+		if newSpell ~= spell.english then
+			send_command('@input /ma "'..newSpell..'" '..tostring(spell.target.raw))
+			eventArgs.cancel = true
+			return
+		end
+	elseif spell.skill == 'Dark Magic' then
+		if not aspirs:contains(spell.english) then
+			return
+		end
+		
+		local newSpell = spell.english
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+		local cancelling = 'All '..spell.english..' spells are on cooldown. Cancelling spell casting.'
+
+		if spell_recasts[spell.recast_id] > 0 then
+			if aspirs:contains(spell.english) then
+				if spell.english == 'Aspir' then
+					add_to_chat(122,cancelling)
+					eventArgs.cancel = true
+				return
+				elseif spell.english == 'Aspir II' then
+					newSpell = 'Aspir'
+				elseif spell.english == 'Aspir III' then
+					newSpell = 'Aspir II'
+				end
+			end
+		end
+		
+		if newSpell ~= spell.english then
+			send_command('@input /ma "'..newSpell..'" '..tostring(spell.target.raw))
+			eventArgs.cancel = true
+			return
+		end
+	elseif spell.skill == 'Elemental Magic' then
+		if not sleepgas:contains(spell.english) and not sleeps:contains(spell.english) and not nukes:contains(spell.english) then
+			return
+		end
+
+		local newSpell = spell.english
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+		local cancelling = 'All '..spell.english..' spells are on cooldown. Cancelling spell casting.'
+
+		if spell_recasts[spell.recast_id] > 0 then
+			if sleeps:contains(spell.english) then
+				if spell.english == 'Sleep' then
+					add_to_chat(122,cancelling)
+					eventArgs.cancel = true
+				return
+				elseif spell.english == 'Sleep II' then
+					newSpell = 'Sleep'
+				end
+			elseif sleepgas:contains(spell.english) then
+				if spell.english == 'Sleepga' then
+					add_to_chat(122,cancelling)
+					eventArgs.cancel = true
+					return
+				elseif spell.english == 'Sleepga II' then
+					newSpell = 'Sleepga'
+				end
+			elseif nukes:contains(spell.english) then	
+				if spell.english == 'Fire' then
+					eventArgs.cancel = true
+					return
+				elseif spell.english == 'Fire VI' then
+					newSpell = 'Fire V'
+				elseif spell.english == 'Fire V' then
+					newSpell = 'Fire IV'
+				elseif spell.english == 'Fire IV' then
+					newSpell = 'Fire III'	
+				elseif spell.english == 'Fire II' then
+					newSpell = 'Fire'
+				elseif spell.english == 'Firaja' then
+					newSpell = 'Firaga III'
+				elseif spell.english == 'Firaga II' then
+					newSpell = 'Firaga'
+				end 
+				if spell.english == 'Blizzard' then
+					eventArgs.cancel = true
+					return
+				elseif spell.english == 'Blizzard VI' then
+					newSpell = 'Blizzard V'
+				elseif spell.english == 'Blizzard V' then
+					newSpell = 'Blizzard IV'
+				elseif spell.english == 'Blizzard IV' then
+					newSpell = 'Blizzard III'	
+				elseif spell.english == 'Blizzard II' then
+					newSpell = 'Blizzard'
+				elseif spell.english == 'Blizzaja' then
+					newSpell = 'Blizzaga III'
+				elseif spell.english == 'Blizzaga II' then
+					newSpell = 'Blizzaga'	
+				end 
+				if spell.english == 'Aero' then
+					eventArgs.cancel = true
+					return
+				elseif spell.english == 'Aero VI' then
+					newSpell = 'Aero V'
+				elseif spell.english == 'Aero V' then
+					newSpell = 'Aero IV'
+				elseif spell.english == 'Aero IV' then
+					newSpell = 'Aero III'	
+				elseif spell.english == 'Aero II' then
+					newSpell = 'Aero'
+				elseif spell.english == 'Aeroja' then
+					newSpell = 'Aeroga III'
+				elseif spell.english == 'Aeroga II' then
+					newSpell = 'Aeroga'	
+				end 
+				if spell.english == 'Stone' then
+					eventArgs.cancel = true
+					return
+				elseif spell.english == 'Stone VI' then
+					newSpell = 'Stone V'
+				elseif spell.english == 'Stone V' then
+					newSpell = 'Stone IV'
+				elseif spell.english == 'Stone IV' then
+					newSpell = 'Stone III'	
+				elseif spell.english == 'Stone II' then
+					newSpell = 'Stone'
+				elseif spell.english == 'Stoneja' then
+					newSpell = 'Stonega III'
+				elseif spell.english == 'Stonega II' then
+					newSpell = 'Stonega'	
+				end 
+				if spell.english == 'Thunder' then
+					eventArgs.cancel = true
+					return
+				elseif spell.english == 'Thunder VI' then
+					newSpell = 'Thunder V'
+				elseif spell.english == 'Thunder V' then
+					newSpell = 'Thunder IV'
+				elseif spell.english == 'Thunder IV' then
+					newSpell = 'Thunder III'	
+				elseif spell.english == 'Thunder II' then
+					newSpell = 'Thunder'
+				elseif spell.english == 'Thundaja' then
+					newSpell = 'Thundaga III'
+				elseif spell.english == 'Thundaga II' then
+					newSpell = 'Thundaga'	
+				end 
+				if spell.english == 'Water' then
+					eventArgs.cancel = true
+					return
+				elseif spell.english == 'Water VI' then
+					newSpell = 'Water V'
+				elseif spell.english == 'Water V' then
+					newSpell = 'Water IV'
+				elseif spell.english == 'Water IV' then
+					newSpell = 'Water III'	
+				elseif spell.english == 'Water II' then
+					newSpell = 'Water'
+				elseif spell.english == 'Waterja' then
+					newSpell = 'Waterga III'
+				elseif spell.english == 'Waterga II' then
+					newSpell = 'Waterga'	
+				end 
+			end
+		end
+
+		if newSpell ~= spell.english then
+			send_command('@input /ma "'..newSpell..'" '..tostring(spell.target.raw))
+			eventArgs.cancel = true
+			return
+		end
+	end
+end
+
 

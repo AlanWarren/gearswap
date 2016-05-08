@@ -700,7 +700,7 @@ function init_gear_sets()
         neck="Breeze Gorget",
         head="Rao Kabuto",
         body="Rawhide Vest",
-        ring1="Petrov Ring",
+        ring1="Apate Ring",
         ring2="Ifrit Ring",
         back="Yokaze Mantle",
         waist="Windbuffet Belt +1",
@@ -717,7 +717,7 @@ function init_gear_sets()
         neck="Breeze Gorget",
         body="Hattori Ningi +1",
         hands="Ryuo Tekko",
-        ring1="Ifrit Ring",
+        ring1="Apate Ring",
         waist="Windbuffet Belt +1",
         back="Andartia's Mantle",
     }
@@ -740,9 +740,10 @@ function init_gear_sets()
         neck="Hope Torque",
         body="Hattori Ningi +1",
         hands="Ryuo Tekko",
-        ring1="Garuda Ring",
+        ring1="Apate Ring",
         waist="Windbuffet Belt +1",
         back="Yokaze Mantle",
+        legs="Herculean Trousers",
         feet="Herculean Boots"
     })
 
@@ -759,7 +760,6 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         head="Rao Kabuto",
         ear1="Trux Earring",
-        legs="Samnuha Tights",
     })
     
     -- BLADE: SHUN
