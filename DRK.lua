@@ -372,7 +372,7 @@ function init_gear_sets()
          ring2="Ifrit Ring",
          back=Niht.WSD,
          waist="Windbuffet Belt +1",
-         legs="Valorous Hose",
+         legs="Sulevia's Cuisses +1",
          feet="Sulevia's Leggings +1"
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -721,7 +721,7 @@ function init_gear_sets()
          head="Sulevia's Mask +1",
          body="Sulevia's Platemail",
          hands="Sulevia's Gauntlets +1",
-         legs="Sulevia's Cuisses",
+         legs="Sulevia's Cuisses +1",
          feet="Sulevia's Leggings +1"
     })
  
@@ -810,7 +810,7 @@ function init_gear_sets()
 
      sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
          head="Argosy Celata",
-         legs="Sulevia's Cuisses",
+         legs="Sulevia's Cuisses +1",
          feet=Acro.Feet.WSD
      })
      sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
