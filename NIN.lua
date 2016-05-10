@@ -267,7 +267,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
-        body="Rao Togi",
+        body="Hizamaru Haramaki",
         hands="Herculean Gloves",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
@@ -279,7 +279,7 @@ function init_gear_sets()
 
     sets.idle.Regen = set_combine(sets.idle, {
         head="Rao Kabuto",
-        body="Rao Togi",
+        body="Hizamaru Haramaki",
         ring1="Paguroidea Ring"
     })
     
