@@ -95,8 +95,8 @@ function init_gear_sets()
     --------------------------------------
     -- Augments
     --------------------------------------
-    TaeonHands = {}
-    TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
+    Andartia = {}
+    Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
     
     --------------------------------------
     -- Job Abilties
@@ -129,7 +129,7 @@ function init_gear_sets()
         neck="Defiant Collar",
         ear1="Zennaroi Earring",
         hands="Ryuo Tekko",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
         waist="Olseni Belt",
         legs="Taeon Tights",
         feet="Mochizuki Kyahan +1"
@@ -232,12 +232,12 @@ function init_gear_sets()
     sets.midcast.SelfNinjutsu = sets.midcast.Ninjutsu
     sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {
         hands="Mochizuki Tekko +1", 
-        back="Andartia's Mantle", 
+        back=Andartia.DEX,
         feet="Iga Kyahan +2"
     })
     sets.midcast.Migawari = set_combine(sets.midcast.Ninjutsu, {
         body="Hattori Ningi +1", 
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
     })
 
     -- Nuking Ninjutsu (skill & magic attack)
@@ -292,7 +292,7 @@ function init_gear_sets()
         body="Councilor's Garb",
         legs="Herculean Trousers",
         ring1="Petrov Ring",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
         waist="Windbuffet Belt +1"
     })
     --sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
@@ -348,7 +348,7 @@ function init_gear_sets()
         hands="Floral Gauntlets",
         ring1="Haverton Ring",
         ring2="Epona's Ring",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Mochizuki Hakama +1",
         feet="Taeon Boots"
@@ -367,7 +367,7 @@ function init_gear_sets()
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Yarak Torque",
         ring1="Cacoethic Ring +1",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
         hands="Floral Gauntlets",
         waist="Olseni Belt",
         legs="Herculean Trousers",
@@ -383,7 +383,7 @@ function init_gear_sets()
         hands="Herculean Gloves",
         ring1="Petrov Ring",
         waist="Olseni Belt",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
         legs="Herculean Trousers",
         feet="Herculean Boots"
     })
@@ -402,7 +402,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         feet="Herculean Boots",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
     })
     sets.engaged.Innin.Acc = sets.engaged.Acc
 
@@ -459,7 +459,7 @@ function init_gear_sets()
         hands="Herculean Gloves",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Herculean Trousers",
         feet="Herculean Boots"
@@ -468,7 +468,7 @@ function init_gear_sets()
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         neck="Lissome Necklace",
         ear2="Trux Earring",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         ring1="Cacoethic Ring +1",
@@ -482,7 +482,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring1="Cacoethic Ring +1",
         ring2="Patricius Ring",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
         waist="Olseni Belt",
         feet="Herculean Boots"
     })
@@ -566,7 +566,7 @@ function init_gear_sets()
         hands="Floral Gauntlets",
         ring1="Haverton Ring",
         ring2="Epona's Ring",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Herculean Trousers",
         feet="Herculean Boots"
@@ -627,7 +627,7 @@ function init_gear_sets()
         hands="Floral Gauntlets",
         ring1="Haverton Ring",
         ring2="Epona's Ring",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Mochizuki Hakama +1",
         feet="Taeon Boots"
@@ -719,7 +719,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring1="Apate Ring",
         waist="Windbuffet Belt +1",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
     }
     sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
     sets.precast.WS['Blade: Jin'].Low = set_combine(sets.precast.WS['Blade: Jin'], {
@@ -768,7 +768,7 @@ function init_gear_sets()
         neck="Flame Gorget",
         ring1="Ramuh Ring",
         hands="Ryuo Tekko",
-        back="Andartia's Mantle",
+        back=Andartia.DEX,
         waist="Light Belt",
         legs="Samnuha Tights",
         feet="Herculean Boots"
