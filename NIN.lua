@@ -97,7 +97,7 @@ function init_gear_sets()
     --------------------------------------
     Andartia = {}
     Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
-    Andartia.AGI = { name="Andartia's Mantle", augments={'AGI+20','Accuracy+9 Attack+9','Weapon skill damage +10%',}}
+    Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+18 Attack+18','Weapon skill damage +10%',}}
     
     --------------------------------------
     -- Job Abilties
