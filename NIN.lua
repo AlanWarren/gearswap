@@ -349,9 +349,9 @@ function init_gear_sets()
         ring1="Haverton Ring",
         ring2="Epona's Ring",
         back=Andartia.DEX,
-        waist="Windbuffet Belt +1",
-        legs="Mochizuki Hakama +1",
-        feet="Taeon Boots"
+        waist="Patentia Sash",
+        legs="Herculean Trousers",
+        feet="Hizamaru Sune-ate +1"
     }
     -- assumptions made about targe
     sets.engaged.Low = set_combine(sets.engaged, {
@@ -361,7 +361,7 @@ function init_gear_sets()
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
         waist="Patentia Sash",
-        feet="Herculean Boots"
+        --feet="Herculean Boots"
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -371,7 +371,6 @@ function init_gear_sets()
         hands="Floral Gauntlets",
         waist="Olseni Belt",
         legs="Herculean Trousers",
-        legs="Taeon Tights"
     })
 
     -- set for fooling around without dual wield
