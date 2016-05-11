@@ -97,6 +97,7 @@ function init_gear_sets()
     --------------------------------------
     Andartia = {}
     Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+    Andartia.AGI = { name="Andartia's Mantle", augments={'AGI+14','Weapon skill damage +10%',}}
     
     --------------------------------------
     -- Job Abilties
@@ -701,7 +702,7 @@ function init_gear_sets()
         body="Rawhide Vest",
         ring1="Apate Ring",
         ring2="Ifrit Ring",
-        back="Yokaze Mantle",
+        back=Andartia.DEX,
         waist="Windbuffet Belt +1",
     }
     sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
@@ -741,7 +742,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         ring1="Apate Ring",
         waist="Windbuffet Belt +1",
-        back="Yokaze Mantle",
+        back=Andartia.AGI,
         legs="Herculean Trousers",
         feet="Herculean Boots"
     })
@@ -753,7 +754,6 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         neck="Shadow Gorget",
         waist="Caudata Belt",
-        back="Yokaze Mantle",
     })
 
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
@@ -783,7 +783,7 @@ function init_gear_sets()
         neck="Defiant Collar",
         ring1="Petrov Ring",
         waist="Windbuffet Belt +1",
-        back="Yokaze Mantle",
+        back=Andartia.DEX,
     }
     sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
     sets.precast.WS['Blade: Rin'].Low = set_combine(sets.precast.WS.Low, sets.Rin)
@@ -796,6 +796,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         body="Rawhide Vest",
         neck="Shadow Gorget",
+        back=Andartia.DEX,
         waist="Metalsinger Belt",
     }
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
@@ -814,6 +815,7 @@ function init_gear_sets()
         head="Rao Kabuto",
         neck="Shadow Gorget",
         body="Rawhide Vest",
+        back=Andartia.AGI,
         waist="Metalsinger Belt",
     }
 
@@ -846,6 +848,7 @@ function init_gear_sets()
         ring2="Acumen Ring",
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
+        back=Andartia.AGI,
         feet="Herculean Boots"
     })
     sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
