@@ -70,7 +70,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        main="Nehushtan",
+        main="Grioavolr",
         head="Welkin Crown",
         ear2="Loquacious Earring",
         hands="Magavan Mitts",
@@ -154,7 +154,7 @@ function init_gear_sets()
      })
 
     sets.midcast.Geomancy = {
-        main="Serenity",
+        main="Grioavolr",
         sub="Giuoco Grip",
         range="Dunna", 
         head="Azimuth Hood +1", -- 10
@@ -173,7 +173,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
-        main="Serenity",
+        main="Grioavolr",
         neck="Incanter's Torque",
         hands="Telchine Gloves",
     	back="Solemnity Cape",
@@ -187,7 +187,7 @@ function init_gear_sets()
     --sets.midcast.Shellra = {ring1="Sheltered Ring"}
 
     sets.midcast.HighTierNuke = {
-        main="Serenity",
+        main="Grioavolr",
         sub="Niobid Strap",
         --sub="Wizzan Grip",
         --ammo="Witchstone",
@@ -240,7 +240,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Macc = { 
-        main="Serenity",
+        main="Grioavolr",
         sub="Niobid Strap", 
         ammo="Plumose Sachet",
         head="Bagua Galero",
