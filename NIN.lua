@@ -1152,7 +1152,7 @@ function determine_haste_group()
         elseif (buffactive[33] and buffactive['haste samba'] and buffactive.march == 1) or buffactive.embrava or (buffactive.march == 2 and buffactive['haste samba']) then
             add_to_chat(8, '-------------Haste 35%-------------')
             classes.CustomMeleeGroups:append('Haste_35')
-        elseif buffactive.march == 2 or (buffactive[33] and buffactive.march == 1) or buffactive[580] then
+        elseif buffactive.march == 2 or (buffactive[33] and buffactive.march == 1) or buffactive[580] or (buffactive.haste and buffactive["Mighty Guard"]) then
             add_to_chat(8, '-------------Haste 30%-------------')
             classes.CustomMeleeGroups:append('Haste_30')
         elseif buffactive[33] or buffactive.march == 1 then
