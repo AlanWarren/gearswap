@@ -675,11 +675,11 @@ function init_gear_sets()
         neck="Defiant Collar",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
-        body="Rawhide Vest",
+        body="Rao Togi",
         hands="Herculean Gloves",
-        ring1="Ifrit Ring",
+        ring1="Apate Ring",
         ring2="Epona's Ring",
-        back="Yokaze Mantle",
+        back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
         feet="Herculean Boots"
@@ -699,10 +699,6 @@ function init_gear_sets()
         ammo="Ginsen",
         neck="Breeze Gorget",
         head="Rao Kabuto",
-        body="Rawhide Vest",
-        ring1="Apate Ring",
-        ring2="Ifrit Ring",
-        back=Andartia.DEX,
         waist="Windbuffet Belt +1",
     }
     sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
@@ -712,14 +708,12 @@ function init_gear_sets()
     
     -- BLADE: JIN
     sets.Jin = {
-        head="Taeon Chapeau",
         ammo="Yetshila",
+        head="Rao Kabuto",
         neck="Breeze Gorget",
         body="Hattori Ningi +1",
         hands="Ryuo Tekko",
-        ring1="Apate Ring",
         waist="Windbuffet Belt +1",
-        back=Andartia.DEX,
     }
     sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
     sets.precast.WS['Blade: Jin'].Low = set_combine(sets.precast.WS['Blade: Jin'], {
@@ -735,14 +729,14 @@ function init_gear_sets()
     -- BLADE: HI
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
         ammo="Yetshila",
-        ear1="Ishvara Earring",
         head="Uk'uxkaj Cap",
         neck="Hope Torque",
+        ear1="Ishvara Earring",
         body="Hattori Ningi +1",
         hands="Ryuo Tekko",
         ring1="Apate Ring",
-        waist="Windbuffet Belt +1",
         back=Andartia.AGI,
+        waist="Windbuffet Belt +1",
         legs="Herculean Trousers",
         feet="Herculean Boots"
     })
@@ -752,21 +746,21 @@ function init_gear_sets()
         neck="Shadow Gorget",
     })
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
+        head="Rao Kabuto",
         neck="Shadow Gorget",
         waist="Caudata Belt",
     })
 
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
-        head="Rao Kabuto",
-        ear1="Trux Earring",
+        ear1="Cessance Earring",
     })
     
     -- BLADE: SHUN
     sets.Shun = {
-        head="Taeon Chapeau",
+        head="Rao Kabuto",
         neck="Flame Gorget",
-        ring1="Ramuh Ring",
-        hands="Ryuo Tekko",
+        ring1="Apate Ring",
+        hands="Herculean Gloves",
         back=Andartia.DEX,
         waist="Light Belt",
         legs="Samnuha Tights",
@@ -781,7 +775,6 @@ function init_gear_sets()
     -- BLADE: Rin
     sets.Rin = {
         neck="Defiant Collar",
-        ring1="Petrov Ring",
         waist="Windbuffet Belt +1",
         back=Andartia.DEX,
     }
@@ -794,14 +787,11 @@ function init_gear_sets()
     sets.Ku = {
         head="Rao Kabuto",
         ear2="Trux Earring",
-        body="Rawhide Vest",
         neck="Shadow Gorget",
         back=Andartia.DEX,
-        waist="Metalsinger Belt",
     }
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
     sets.precast.WS['Blade: Ku'].Low = set_combine(sets.precast.WS['Blade: Ku'], {
-        head="Gavialis Helm",
         body="Hattori Ningi +1",
         waist="Soil Belt"
     })
@@ -814,7 +804,6 @@ function init_gear_sets()
     sets.Ten = {
         head="Rao Kabuto",
         neck="Shadow Gorget",
-        body="Rawhide Vest",
         back=Andartia.AGI,
         waist="Metalsinger Belt",
     }
