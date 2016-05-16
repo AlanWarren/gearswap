@@ -556,13 +556,13 @@ function init_gear_sets()
     sets.engaged.Innin.Mid.PDT.Haste_35 = set_combine(sets.engaged.Innin.Mid.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Innin.Acc.PDT.Haste_35 = sets.engaged.Acc.PDT.Haste_35
     
-    -- 30% Haste
+    -- 30% Haste 1626 / 798
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ptica Headgear",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Rawhide Vest",
+        body="Rao Togi",
         hands="Floral Gauntlets",
         ring1="Haverton Ring",
         ring2="Epona's Ring",
@@ -571,38 +571,47 @@ function init_gear_sets()
         legs="Herculean Trousers",
         feet="Herculean Boots"
     })
+    -- This can alternatively be used for high-def targets. 
     sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Haste_30, {
-        ear1="Cessance Earring",
+        head="Rao Kabuto",
         neck="Lissome Necklace",
+        ear1="Cessance Earring",
+        ear2="Suppanomimi",
+        body="Rao Togi",
+        hands="Floral Gauntlets",
+        ring1="Haverton Ring",
+        ring2="Epona's Ring",
+        back=Andartia.DEX,
+        waist="Windbuffet Belt +1",
+        legs="Samnuha Tights",
+        feet="Hizamaru Sune-ate +1"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
-        neck="Yarak Torque",
-        hands="Ryuo Tekko",
-        body="Rao Togi",
-        legs="Taeon Tights",
+        body="Hattori Ningi +1",
+        legs="Herculean Trousers",
     })
-    --sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
-    --    head="Taeon Chapeau",
-    --    neck="Yarak Torque",
-    --    ear1="Dudgeon Earring",
-    --    ear2="Heartseeker Earring",
-    --    body="Hattori Ningi +1",
-    --    hands="Ryuo Tekko",
-    --    back="Grounded Mantle +1",
-    --    ring1="Patricius Ring",
-    --    ring2="Mars's Ring",
-    --    legs="Samnuha Tights"
-    --})
-    sets.engaged.Acc.Haste_30 = sets.engaged.Acc.MaxHaste 
+    sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
+        head="Rao Kabuto",
+        neck="Yarak Torque",
+        body="Hattori Ningi +1",
+        hands="Floral Gauntlets",
+        ring2="Cacoethic Ring +1",
+        back=Andartia.DEX,
+        waist="Olseni Belt",
+        legs="Herculean Trousers",
+        feet="Hizamaru Sune-ate +1"
+    })
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Hattori Zukin +1",
     })
     sets.engaged.Innin.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
         head="Hattori Zukin +1",
+        feet="Herculean Boots"
     })
     sets.engaged.Innin.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         head="Hattori Zukin +1",
+        feet="Herculean Boots"
     })
     sets.engaged.Innin.Acc.Haste_30 = sets.engaged.Acc.Haste_30
     
@@ -623,28 +632,25 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Rawhide Vest",
+        body="Rao Togi",
         hands="Floral Gauntlets",
         ring1="Haverton Ring",
         ring2="Epona's Ring",
         back=Andartia.DEX,
-        waist="Windbuffet Belt +1",
-        legs="Mochizuki Hakama +1",
-        feet="Taeon Boots"
+        waist="Patentia Sash",
+        legs="Herculean Trousers",
+        feet="Hizamaru Sune-ate +1"
     })
     sets.engaged.Low.Haste_15 = set_combine(sets.engaged.Haste_15, {
+        neck="Lissome Necklace",
         ear1="Cessance Earring",
-        waist="Patentia Sash",
-        feet="Herculean Boots"
     })
-    sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, {
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
+    sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, { -- 676
         legs="Herculean Trousers",
         waist="Patentia Sash",
-        feet="Herculean Boots"
+        feet="Hizamaru Sune-ate +1"
     })
-    sets.engaged.Acc.Haste_15 = sets.engaged.Acc.MaxHaste
+    sets.engaged.Acc.Haste_15 = sets.engaged.Acc.Haste_30
     
     sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, {
         head="Hattori Zukin +1",
