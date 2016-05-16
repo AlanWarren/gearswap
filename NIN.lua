@@ -646,8 +646,9 @@ function init_gear_sets()
         ear1="Cessance Earring",
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, { -- 676
-        legs="Herculean Trousers",
+        body="Hattori Ningi +1",
         waist="Patentia Sash",
+        legs="Herculean Trousers",
         feet="Hizamaru Sune-ate +1"
     })
     sets.engaged.Acc.Haste_15 = sets.engaged.Acc.Haste_30
