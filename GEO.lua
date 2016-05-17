@@ -353,22 +353,22 @@ function init_gear_sets()
     })
 
     -- .Indi sets are for when an Indi-spell is active.
-    sets.idle.Indi = set_combine(sets.idle, {
-        legs="Bagua Pants", 
-        feet="Geomancy Sandals",
-        back="Lifestream Cape",
-        --feet="Azimuth Gaiters"
-    })
-    sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {
-        legs="Bagua Pants", 
-    })
-    sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {
-        legs="Bagua Pants", 
-        feet="Azimuth Gaiters"
-    })
-    sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {
-        legs="Bagua Pants", 
-    })
+    --sets.idle.Indi = set_combine(sets.idle, {
+    --    legs="Bagua Pants", 
+    --    feet="Geomancy Sandals",
+    --    back="Lifestream Cape",
+    --    --feet="Azimuth Gaiters"
+    --})
+    --sets.idle.Pet.Indi = set_combine(sets.idle.Pet, {
+    --    legs="Bagua Pants", 
+    --})
+    --sets.idle.PDT.Indi = set_combine(sets.idle.PDT, {
+    --    legs="Bagua Pants", 
+    --    feet="Azimuth Gaiters"
+    --})
+    --sets.idle.PDT.Pet.Indi = set_combine(sets.idle.PDT.Pet, {
+    --    legs="Bagua Pants", 
+    --})
 
     sets.idle.Town = set_combine(sets.idle, {
         body="Councilor's Garb",
