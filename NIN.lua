@@ -341,7 +341,7 @@ function init_gear_sets()
     -- Normal melee group without buffs
     sets.engaged = {
         ammo=gear.RegularAmmo,
-        head="Ptica Headgear",
+        head="Ryuo Somen",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
@@ -352,7 +352,7 @@ function init_gear_sets()
         back=Andartia.DEX,
         waist="Patentia Sash",
         legs="Herculean Trousers",
-        feet="Hizamaru Sune-ate +1"
+        feet="Taeon Boots"
     }
     -- assumptions made about targe
     sets.engaged.Low = set_combine(sets.engaged, {
@@ -361,17 +361,15 @@ function init_gear_sets()
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
-        waist="Patentia Sash",
-        --feet="Herculean Boots"
+        neck="Yarak Torque",
+        ear1="Dudgeon Earring",
+        ear2="Heartseeker Earring",
+        waist="Olseni Belt",
+        feet="Hizamaru Sune-ate +1"
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        neck="Yarak Torque",
         ring1="Cacoethic Ring +1",
-        back=Andartia.DEX,
-        hands="Floral Gauntlets",
-        waist="Olseni Belt",
-        legs="Herculean Trousers",
     })
 
     -- set for fooling around without dual wield
@@ -558,12 +556,27 @@ function init_gear_sets()
     
     -- 30% Haste 1626 / 798
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
-        head="Ptica Headgear",
+        head="Ryuo Somen",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
-        ear2="Suppanomimi",
-        body="Rao Togi",
-        hands="Floral Gauntlets",
+        ear2="Cessance Earring",
+        body="Mochizuki Chainmail +1",
+        hands="Herculean Gloves",
+        ring1="Haverton Ring",
+        ring2="Epona's Ring",
+        back=Andartia.DEX,
+        waist="Windbuffet Belt +1",
+        legs="Samnuha Tights",
+        feet="Herculean Boots"
+    })
+    -- This can alternatively be used for high-def targets. 
+    sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Haste_30, {
+        head="Ryuo Somen",
+        neck="Lissome Necklace",
+        ear1="Trux Earring",
+        ear2="Cessance Earring",
+        body="Mochizuki Chainmail +1",
+        hands="Herculean Gloves",
         ring1="Haverton Ring",
         ring2="Epona's Ring",
         back=Andartia.DEX,
@@ -571,24 +584,9 @@ function init_gear_sets()
         legs="Herculean Trousers",
         feet="Herculean Boots"
     })
-    -- This can alternatively be used for high-def targets. 
-    sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Haste_30, {
-        head="Rao Kabuto",
-        neck="Lissome Necklace",
-        ear1="Cessance Earring",
-        ear2="Suppanomimi",
-        body="Rao Togi",
-        hands="Floral Gauntlets",
-        ring1="Haverton Ring",
-        ring2="Epona's Ring",
-        back=Andartia.DEX,
-        waist="Windbuffet Belt +1",
-        legs="Samnuha Tights",
-        feet="Hizamaru Sune-ate +1"
-    })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
-        body="Hattori Ningi +1",
-        legs="Herculean Trousers",
+        body="Rao Togi",
+        feet="Hizamaru Sune-ate +1"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         head="Rao Kabuto",
@@ -628,26 +626,26 @@ function init_gear_sets()
 
     -- 5 - 20% Haste 
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
-        head="Ptica Headgear",
+        head="Ryuo Somen",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Rao Togi",
-        hands="Floral Gauntlets",
+        body="Mochizuki Chainmail +1",
+        hands="Herculean Gloves",
         ring1="Haverton Ring",
         ring2="Epona's Ring",
         back=Andartia.DEX,
-        waist="Patentia Sash",
-        legs="Herculean Trousers",
+        waist="Windbuffet Belt +1",
+        legs="Samnuha Tights",
         feet="Hizamaru Sune-ate +1"
     })
     sets.engaged.Low.Haste_15 = set_combine(sets.engaged.Haste_15, {
         neck="Lissome Necklace",
-        ear1="Cessance Earring",
+        legs="Herculean Trousers"
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, { -- 676
-        body="Hattori Ningi +1",
-        waist="Patentia Sash",
+        ear1="Cessance Earring",
+        neck="Yarak Torque",
         legs="Herculean Trousers",
         feet="Hizamaru Sune-ate +1"
     })
