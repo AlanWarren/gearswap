@@ -285,7 +285,7 @@ function init_gear_sets()
     })
     
     sets.idle.Town = set_combine(sets.idle, {
-        head="Taeon Chapeau",
+        head="Ryuo Somen",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
