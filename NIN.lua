@@ -346,13 +346,13 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +1",
-        hands="Floral Gauntlets",
+        hands="Herculean Gloves",
         ring1="Haverton Ring",
         ring2="Epona's Ring",
         back=Andartia.DEX,
-        waist="Patentia Sash",
+        waist="Shetal Stone",
         legs="Herculean Trousers",
-        feet="Taeon Boots"
+        feet="Hizamaru Sune-ate +1"
     }
     -- assumptions made about targe
     sets.engaged.Low = set_combine(sets.engaged, {
@@ -624,7 +624,7 @@ function init_gear_sets()
     sets.engaged.Innin.Acc.PDT.Haste_30 = sets.engaged.Acc.PDT.Haste_30
     
 
-    -- 5 - 20% Haste 
+    -- haste spell - 139 dex | 275 acc | 1150 total acc (with shigi R15)
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
         head="Ryuo Somen",
         neck="Asperity Necklace",
