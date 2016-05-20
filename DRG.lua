@@ -259,7 +259,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
         back="Impassive Mantle",
-        legs="Crimson Cuisses",
+        legs="Carmine Cuisses +1",
         feet="Whirlpool Greaves"
     }
 	
@@ -280,7 +280,7 @@ function init_gear_sets()
         ring2="Ifrit Ring",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Crimson Cuisses",
+        legs="Carmine Cuisses +1",
         feet=Acro.Feet.WSD
     }
 	
@@ -331,7 +331,9 @@ function init_gear_sets()
          back="Impassive Mantle",
     })
 
-	sets.Kiting = {legs="Crimson Cuisses"}
+	sets.Kiting = {
+        legs="Carmine Cuisses +1",
+    }
 
 	sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
 

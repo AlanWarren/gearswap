@@ -175,8 +175,8 @@ function init_gear_sets()
             ring2="Defending Ring",
     	    back="Solemnity Cape",
             waist="Elanid Belt",
-            legs="Adhemar Kecks",
-            feet="Skadi's Jambeaux +1"
+            legs="Carmine Cuisses +1",
+            feet="Herculean Boots"
         }
         sets.idle.Regen = set_combine(sets.idle, {
             head="Ocelomeh Headpiece +1",
@@ -194,7 +194,7 @@ function init_gear_sets()
             ring1="Paguroidea Ring",
             ring2="Defending Ring",
             hands="Amini Glovelettes +1",
-            legs="Adhemar Kecks",
+            legs="Carmine Cuisses +1",
             back="Lutian Cape"
         })
  
@@ -255,7 +255,7 @@ function init_gear_sets()
             ring1="Haverton Ring",
             back="Bleating Mantle",
             waist="Patentia Sash",
-            legs="Samnuha Tights",
+            legs="Carmine Cuisses +1",
             feet="Taeon Boots"
         })
 

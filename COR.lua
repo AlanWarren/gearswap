@@ -305,8 +305,8 @@ function init_gear_sets()
         ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Adhemar Kecks",
-        feet="Skadi's Jambeaux +1"
+        legs="Carmine Cuisses +1",
+        feet="Herculean Boots"
     }
     sets.idle.Regen = set_combine(sets.idle, {
         head="Ocelomeh Headpiece +1",
@@ -326,8 +326,8 @@ function init_gear_sets()
         ring2="Defending Ring",
         back="Gunslinger's Cape",
         waist="Flume Belt",
-        legs="Adhemar Kecks",
-        feet="Skadi's Jambeaux +1"
+        legs="Carmine Cuisses +1",
+        feet="Herculean Boots"
     }
 	
 	-- Defense sets
@@ -394,7 +394,7 @@ function init_gear_sets()
         hands="Floral Gauntlets",
         body="Samnuha Coat",
         ring1="Haverton Ring",
-        legs="Samnuha Tights",
+        legs="Carmine Cuisses +1",
         waist="Patentia Sash",
         back="Bleating Mantle",
         feet="Taeon Boots"
