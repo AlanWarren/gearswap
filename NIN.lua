@@ -809,6 +809,9 @@ function init_gear_sets()
     sets.Ten = {
         head="Rao Kabuto",
         neck="Shadow Gorget",
+        ear1="Lugra Earring +1",
+        ear2="Moonshade Earring",
+        body="Rao Togi",
         back=Andartia.AGI,
         waist="Metalsinger Belt",
     }
