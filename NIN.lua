@@ -11,6 +11,7 @@ function get_sets()
     mote_include_version = 2
     include('Mote-Include.lua')
     include('organizer-lib')
+    require('vectors')
 end
 
 
@@ -872,7 +873,10 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-
+    if facing_away(spell) then
+        -- this removes Innin rule, if not behind enemy
+        state.CombatForm:reset()
+    end
     if spell.skill == "Ninjutsu" and spell.target.type:lower() == 'self' and spellMap ~= "Utsusemi" then
         if spell.english == "Migawari" then
             classes.CustomClass = "Migawari"
@@ -1036,7 +1040,7 @@ function job_buff_change(buff, gain)
         end
     end
 
-    if buff == 'Innin' and gain or buffactive['Innin'] then
+    if (buff == 'Innin' and gain or buffactive['Innin']) then
         state.CombatForm:set('Innin')
         if not midaction() then
             handle_equipping_gear(player.status)
@@ -1079,6 +1083,22 @@ function job_update(cmdParams, eventArgs)
 end
 
 -------------------------------------------------------------------------------------------------------------------
+-- Facing ratio
+-------------------------------------------------------------------------------------------------------------------
+function facing_away(spell)
+    if spell.target.type == 'MONSTER' then
+        local dir = V{spell.target.x, spell.target.y} - V{player.x, player.y}
+        local heading = V{}.from_radian(player.facing)
+        local angle = V{}.angle(dir, heading):degree():abs()
+        if angle > 90 then
+            add_to_chat(8, 'Aborting... angle > 90')
+            return true
+        else
+            return false
+        end
+    end
+end
+-------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
@@ -1102,223 +1122,224 @@ function th_action_check(category, param)
         (category == 3 and param == 30) or -- Aeolian Edge
         (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
         (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
-        then return true
+        then 
+            return true
+    end
+end
+
+function select_movement()
+    -- world.time is given in minutes into each day
+    -- 7:00 AM would be 420 minutes
+    -- 17:00 PM would be 1020 minutes
+    if world.time >= (17*60) or world.time <= (7*60) then
+        return sets.NightMovement
+    else
+        return sets.DayMovement
+    end
+end
+
+function determine_haste_group()
+
+    classes.CustomMeleeGroups:clear()
+    -- assuming +4 for marches (ghorn has +5)
+    -- Haste (white magic) 15%
+    -- Haste Samba (Sub) 5%
+    -- Haste (Merited DNC) 10% (never account for this)
+    -- Victory March +0/+3/+4/+5    9.4/14%/15.6%/17.1% +0
+    -- Advancing March +0/+3/+4/+5  6.3/10.9%/12.5%/14%  +0
+    -- Embrava 25%
+    -- buffactive[580] = geo haste
+    -- buffactive[33] = regular haste
+    -- state.HasteMode = toggle for when you know Haste II is being cast on you
+    -- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
+    -- but wtf can  you do..   I macro it, and use it often. 
+    if state.HasteMode.value == 'Hi' then
+        if ( ((buffactive[33] or buffactive[580]) and buffactive.march) or (buffactive.embrava and buffactive[33]) or (buffactive.embrava and buffactive.march == 1) ) then
+            add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
+            classes.CustomMeleeGroups:append('MaxHaste')
+        elseif ( (buffactive[33] or buffactive.march == 2) and buffactive['haste samba'] ) or buffactive.embrava then
+            add_to_chat(8, '-------------Haste 35%-------------')
+            classes.CustomMeleeGroups:append('Haste_35')
+        elseif buffactive[580] or buffactive[33] or buffactive.march == 2 then
+            add_to_chat(8, '-------------Haste 30%-------------')
+            classes.CustomMeleeGroups:append('Haste_30')
+        elseif buffactive.march == 1 then
+            add_to_chat(8, '-------------Haste 15%-------------')
+            classes.CustomMeleeGroups:append('Haste_15')
+        end
+    else
+        if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava) ) or 
+            ( buffactive.embrava and buffactive.march == 2 ) or (buffactive[33] and buffactive.march == 2) or 
+            ( buffactive.embrava and ( buffactive.march == 1 or buffactive[33] ) ) then
+            add_to_chat(8, '-------------Max Haste Mode Enabled--------------')
+            classes.CustomMeleeGroups:append('MaxHaste')
+        elseif (buffactive[33] and buffactive['haste samba'] and buffactive.march == 1) or buffactive.embrava or (buffactive.march == 2 and buffactive['haste samba']) then
+            add_to_chat(8, '-------------Haste 35%-------------')
+            classes.CustomMeleeGroups:append('Haste_35')
+        elseif buffactive.march == 2 or (buffactive[33] and buffactive.march == 1) or buffactive[580] then
+            add_to_chat(8, '-------------Haste 30%-------------')
+            classes.CustomMeleeGroups:append('Haste_30')
+        elseif buffactive[33] or buffactive.march == 1 then
+            add_to_chat(8, '-------------Haste 15%-------------')
+            classes.CustomMeleeGroups:append('Haste_15')
         end
     end
 
-    function select_movement()
-        -- world.time is given in minutes into each day
-        -- 7:00 AM would be 420 minutes
-        -- 17:00 PM would be 1020 minutes
-        if world.time >= (17*60) or world.time <= (7*60) then
-            return sets.NightMovement
-        else
-            return sets.DayMovement
-        end
-    end
+end
 
-    function determine_haste_group()
-
-        classes.CustomMeleeGroups:clear()
-        -- assuming +4 for marches (ghorn has +5)
-        -- Haste (white magic) 15%
-        -- Haste Samba (Sub) 5%
-        -- Haste (Merited DNC) 10% (never account for this)
-        -- Victory March +0/+3/+4/+5    9.4/14%/15.6%/17.1% +0
-        -- Advancing March +0/+3/+4/+5  6.3/10.9%/12.5%/14%  +0
-        -- Embrava 25%
-        -- buffactive[580] = geo haste
-        -- buffactive[33] = regular haste
-        -- state.HasteMode = toggle for when you know Haste II is being cast on you
-        -- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
-        -- but wtf can  you do..   I macro it, and use it often. 
-        if state.HasteMode.value == 'Hi' then
-            if ( ((buffactive[33] or buffactive[580]) and buffactive.march) or (buffactive.embrava and buffactive[33]) or (buffactive.embrava and buffactive.march == 1) ) then
-                add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
-                classes.CustomMeleeGroups:append('MaxHaste')
-            elseif ( (buffactive[33] or buffactive.march == 2) and buffactive['haste samba'] ) or buffactive.embrava then
-                add_to_chat(8, '-------------Haste 35%-------------')
-                classes.CustomMeleeGroups:append('Haste_35')
-            elseif buffactive[580] or buffactive[33] or buffactive.march == 2 then
-                add_to_chat(8, '-------------Haste 30%-------------')
-                classes.CustomMeleeGroups:append('Haste_30')
-            elseif buffactive.march == 1 then
-                add_to_chat(8, '-------------Haste 15%-------------')
-                classes.CustomMeleeGroups:append('Haste_15')
-            end
-        else
-            if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava) ) or 
-                ( buffactive.embrava and buffactive.march == 2 ) or (buffactive[33] and buffactive.march == 2) or 
-                ( buffactive.embrava and ( buffactive.march == 1 or buffactive[33] ) ) then
-                add_to_chat(8, '-------------Max Haste Mode Enabled--------------')
-                classes.CustomMeleeGroups:append('MaxHaste')
-            elseif (buffactive[33] and buffactive['haste samba'] and buffactive.march == 1) or buffactive.embrava or (buffactive.march == 2 and buffactive['haste samba']) then
-                add_to_chat(8, '-------------Haste 35%-------------')
-                classes.CustomMeleeGroups:append('Haste_35')
-            elseif buffactive.march == 2 or (buffactive[33] and buffactive.march == 1) or buffactive[580] then
-                add_to_chat(8, '-------------Haste 30%-------------')
-                classes.CustomMeleeGroups:append('Haste_30')
-            elseif buffactive[33] or buffactive.march == 1 then
-                add_to_chat(8, '-------------Haste 15%-------------')
-                classes.CustomMeleeGroups:append('Haste_15')
-            end
-        end
-
-    end
-
-    -- Handle notifications of general user state change.
-    function job_state_change(stateField, newValue, oldValue)
-        if stateField == 'Capacity Point Mantle' then
-            gear.Back = newValue
-        elseif stateField == 'Runes' then
-            local msg = ''
-            if newValue == 'Ignis' then
-                msg = msg .. 'Increasing resistence against ICE and deals FIRE damage.'
-            elseif newValue == 'Gelus' then
-                msg = msg .. 'Increasing resistence against WIND and deals ICE damage.'
-            elseif newValue == 'Flabra' then
-                msg = msg .. 'Increasing resistence against EARTH and deals WIND damage.'
-            elseif newValue == 'Tellus' then
-                msg = msg .. 'Increasing resistence against LIGHTNING and deals EARTH damage.'
-            elseif newValue == 'Sulpor' then
-                msg = msg .. 'Increasing resistence against WATER and deals LIGHTNING damage.'
-            elseif newValue == 'Unda' then
-                msg = msg .. 'Increasing resistence against FIRE and deals WATER damage.'
-            elseif newValue == 'Lux' then
-                msg = msg .. 'Increasing resistence against DARK and deals LIGHT damage.'
-            elseif newValue == 'Tenebrae' then
-                msg = msg .. 'Increasing resistence against LIGHT and deals DARK damage.'
-            end
-            add_to_chat(123, msg)
-        elseif stateField == 'Use Rune' then
-            send_command('@input /ja '..state.Runes.value..' <me>')
-        end
-    end
-
-    --- Custom spell mapping.
-    --function job_get_spell_map(spell, default_spell_map)
-    --    if spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' then
-    --        return 'HighTierNuke'
-    --    end
-    --end
-    -- Creating a custom spellMap, since Mote capitalized absorbs incorrectly
-    function job_get_spell_map(spell, default_spell_map)
-        if spell.type == 'Trust' then
-            return 'Trust'
-        end
-    end
-
-    -- Set eventArgs.handled to true if we don't want the automatic display to be run.
-    function display_current_job_state(eventArgs)
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+    if stateField == 'Capacity Point Mantle' then
+        gear.Back = newValue
+    elseif stateField == 'Runes' then
         local msg = ''
-        msg = msg .. 'Offense: '..state.OffenseMode.current
-        msg = msg .. ', Hybrid: '..state.HybridMode.current
-
-        if state.DefenseMode.value ~= 'None' then
-            local defMode = state[state.DefenseMode.value ..'DefenseMode'].current
-            msg = msg .. ', Defense: '..state.DefenseMode.value..' '..defMode
+        if newValue == 'Ignis' then
+            msg = msg .. 'Increasing resistence against ICE and deals FIRE damage.'
+        elseif newValue == 'Gelus' then
+            msg = msg .. 'Increasing resistence against WIND and deals ICE damage.'
+        elseif newValue == 'Flabra' then
+            msg = msg .. 'Increasing resistence against EARTH and deals WIND damage.'
+        elseif newValue == 'Tellus' then
+            msg = msg .. 'Increasing resistence against LIGHTNING and deals EARTH damage.'
+        elseif newValue == 'Sulpor' then
+            msg = msg .. 'Increasing resistence against WATER and deals LIGHTNING damage.'
+        elseif newValue == 'Unda' then
+            msg = msg .. 'Increasing resistence against FIRE and deals WATER damage.'
+        elseif newValue == 'Lux' then
+            msg = msg .. 'Increasing resistence against DARK and deals LIGHT damage.'
+        elseif newValue == 'Tenebrae' then
+            msg = msg .. 'Increasing resistence against LIGHT and deals DARK damage.'
         end
-        if state.HasteMode.value ~= 'Normal' then
-            msg = msg .. ', Haste: '..state.HasteMode.current
-        end
-        if state.RangedMode.value ~= 'Normal' then
-            msg = msg .. ', Rng: '..state.RangedMode.current
-        end
-        if state.Kiting.value then
-            msg = msg .. ', Kiting'
-        end
-        if state.PCTargetMode.value ~= 'default' then
-            msg = msg .. ', Target PC: '..state.PCTargetMode.value
-        end
-        if state.SelectNPCTargets.value then
-            msg = msg .. ', Target NPCs'
-        end
-
         add_to_chat(123, msg)
-        eventArgs.handled = true
+    elseif stateField == 'Use Rune' then
+        send_command('@input /ja '..state.Runes.value..' <me>')
+    end
+end
+
+--- Custom spell mapping.
+--function job_get_spell_map(spell, default_spell_map)
+--    if spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' then
+--        return 'HighTierNuke'
+--    end
+--end
+-- Creating a custom spellMap, since Mote capitalized absorbs incorrectly
+function job_get_spell_map(spell, default_spell_map)
+    if spell.type == 'Trust' then
+        return 'Trust'
+    end
+end
+
+-- Set eventArgs.handled to true if we don't want the automatic display to be run.
+function display_current_job_state(eventArgs)
+    local msg = ''
+    msg = msg .. 'Offense: '..state.OffenseMode.current
+    msg = msg .. ', Hybrid: '..state.HybridMode.current
+
+    if state.DefenseMode.value ~= 'None' then
+        local defMode = state[state.DefenseMode.value ..'DefenseMode'].current
+        msg = msg .. ', Defense: '..state.DefenseMode.value..' '..defMode
+    end
+    if state.HasteMode.value ~= 'Normal' then
+        msg = msg .. ', Haste: '..state.HasteMode.current
+    end
+    if state.RangedMode.value ~= 'Normal' then
+        msg = msg .. ', Rng: '..state.RangedMode.current
+    end
+    if state.Kiting.value then
+        msg = msg .. ', Kiting'
+    end
+    if state.PCTargetMode.value ~= 'default' then
+        msg = msg .. ', Target PC: '..state.PCTargetMode.value
+    end
+    if state.SelectNPCTargets.value then
+        msg = msg .. ', Target NPCs'
     end
 
-    -- Call from job_precast() to setup aftermath information for custom timers.
-    function aw_custom_aftermath_timers_precast(spell)
-        if spell.type == 'WeaponSkill' then
-            info.aftermath = {}
+    add_to_chat(123, msg)
+    eventArgs.handled = true
+end
 
-            local empy_ws = "Blade: Hi"
+-- Call from job_precast() to setup aftermath information for custom timers.
+function aw_custom_aftermath_timers_precast(spell)
+    if spell.type == 'WeaponSkill' then
+        info.aftermath = {}
 
-            info.aftermath.weaponskill = empy_ws
-            info.aftermath.duration = 0
+        local empy_ws = "Blade: Hi"
 
-            info.aftermath.level = math.floor(player.tp / 1000)
-            if info.aftermath.level == 0 then
-                info.aftermath.level = 1
+        info.aftermath.weaponskill = empy_ws
+        info.aftermath.duration = 0
+
+        info.aftermath.level = math.floor(player.tp / 1000)
+        if info.aftermath.level == 0 then
+            info.aftermath.level = 1
+        end
+
+        if spell.english == empy_ws and player.equipment.main == 'Kannagi' then
+            -- nothing can overwrite lvl 3
+            if buffactive['Aftermath: Lv.3'] then
+                return
+            end
+            -- only lvl 3 can overwrite lvl 2
+            if info.aftermath.level ~= 3 and buffactive['Aftermath: Lv.2'] then
+                return
             end
 
-            if spell.english == empy_ws and player.equipment.main == 'Kannagi' then
-                -- nothing can overwrite lvl 3
-                if buffactive['Aftermath: Lv.3'] then
-                    return
-                end
-                -- only lvl 3 can overwrite lvl 2
-                if info.aftermath.level ~= 3 and buffactive['Aftermath: Lv.2'] then
-                    return
-                end
-
-                -- duration is based on aftermath level
-                info.aftermath.duration = 30 * info.aftermath.level
-            end
+            -- duration is based on aftermath level
+            info.aftermath.duration = 30 * info.aftermath.level
         end
     end
+end
 
-    -- Call from job_aftercast() to create the custom aftermath timer.
-    function aw_custom_aftermath_timers_aftercast(spell)
-        -- prevent gear being locked when it's currently impossible to cast 
-        if not spell.interrupted and spell.type == 'WeaponSkill' and
-            info.aftermath and info.aftermath.weaponskill == spell.english and info.aftermath.duration > 0 then
+-- Call from job_aftercast() to create the custom aftermath timer.
+function aw_custom_aftermath_timers_aftercast(spell)
+    -- prevent gear being locked when it's currently impossible to cast 
+    if not spell.interrupted and spell.type == 'WeaponSkill' and
+        info.aftermath and info.aftermath.weaponskill == spell.english and info.aftermath.duration > 0 then
 
-            local aftermath_name = 'Aftermath: Lv.'..tostring(info.aftermath.level)
-            send_command('timers d "Aftermath: Lv.1"')
-            send_command('timers d "Aftermath: Lv.2"')
-            send_command('timers d "Aftermath: Lv.3"')
-            send_command('timers c "'..aftermath_name..'" '..tostring(info.aftermath.duration)..' down abilities/aftermath'..tostring(info.aftermath.level)..'.png')
+        local aftermath_name = 'Aftermath: Lv.'..tostring(info.aftermath.level)
+        send_command('timers d "Aftermath: Lv.1"')
+        send_command('timers d "Aftermath: Lv.2"')
+        send_command('timers d "Aftermath: Lv.3"')
+        send_command('timers c "'..aftermath_name..'" '..tostring(info.aftermath.duration)..' down abilities/aftermath'..tostring(info.aftermath.level)..'.png')
 
-            info.aftermath = {}
-        end
+        info.aftermath = {}
     end
+end
 
-    function select_ammo()
-        if state.Buff.Sange then
-            return sets.SangeAmmo
-        else
-            return sets.RegularAmmo
-        end
+function select_ammo()
+    if state.Buff.Sange then
+        return sets.SangeAmmo
+    else
+        return sets.RegularAmmo
     end
+end
 
-    function select_ws_ammo()
-        if world.time >= (18*60) or world.time <= (6*60) then
-            return sets.NightAccAmmo
-        else
-            return sets.DayAccAmmo
-        end
+function select_ws_ammo()
+    if world.time >= (18*60) or world.time <= (6*60) then
+        return sets.NightAccAmmo
+    else
+        return sets.DayAccAmmo
     end
-    function update_combat_form()
-        if state.Buff.Innin then
-            state.CombatForm:set('Innin')
-        else
-            state.CombatForm:reset()
-        end
+end
+function update_combat_form()
+    if state.Buff.Innin then
+        state.CombatForm:set('Innin')
+    else
+        state.CombatForm:reset()
     end
+end
 
-    -- Select default macro book on initial load or subjob change.
-    function select_default_macro_book()
-        -- Default macro set/book
-        if player.sub_job == 'DNC' then
-            set_macro_page(2, 2)
-        elseif player.sub_job == 'WAR' then
-            set_macro_page(2, 1)
-        elseif player.sub_job == 'RUN' then
-            set_macro_page(2, 9)
-        else
-            set_macro_page(2, 2)
-        end
+-- Select default macro book on initial load or subjob change.
+function select_default_macro_book()
+    -- Default macro set/book
+    if player.sub_job == 'DNC' then
+        set_macro_page(2, 2)
+    elseif player.sub_job == 'WAR' then
+        set_macro_page(2, 1)
+    elseif player.sub_job == 'RUN' then
+        set_macro_page(2, 9)
+    else
+        set_macro_page(2, 2)
     end
+end
 
