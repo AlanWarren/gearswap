@@ -965,9 +965,6 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-    if midaction() then
-        return
-    end
     -- Aftermath timer creation
     aw_custom_aftermath_timers_aftercast(spell)
     --if spell.type == 'WeaponSkill' then
@@ -1031,29 +1028,21 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
     if state.Buff[buff] ~= nil then
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
+        handle_equipping_gear(player.status)
     end
 
     if buff == 'Innin' and gain or buffactive['Innin'] then
         state.CombatForm:set('Innin')
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
+        handle_equipping_gear(player.status)
     else
         state.CombatForm:reset()
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
+        handle_equipping_gear(player.status)
     end
 
     -- If we gain or lose any haste buffs, adjust which gear set we target.
     if S{'haste', 'march', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
         determine_haste_group()
-        if not midaction() then
-            handle_equipping_gear(player.status)
-        end
+        handle_equipping_gear(player.status)
     end
 
 end
