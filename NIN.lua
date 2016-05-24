@@ -455,7 +455,7 @@ function init_gear_sets()
 
     -- Delay Cap from spell + songs alone
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
-        head="Taeon Chapeau",
+        head="Herculean Helm",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
         neck="Lissome Necklace",
@@ -479,7 +479,7 @@ function init_gear_sets()
         body="Rao Togi",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
-        head="Taeon Chapeau",
+        head="Herculean Helm",
         neck="Yarak Torque",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
@@ -509,28 +509,28 @@ function init_gear_sets()
 
     -- 35% Haste 
     sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
-        head="Taeon Chapeau",
+        head="Herculean Helm",
         ear1="Cessance Earring",
         ear2="Suppanomimi",
         ring1="Haverton Ring",
         hands="Herculean Gloves",
     })
     sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
-        head="Taeon Chapeau",
+        head="Herculean Helm",
         neck="Lissome Necklace",
         ear1="Cessance Earring",
         ear2="Suppanomimi",
         ring1="Haverton Ring",
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {
-        head="Ptica Headgear",
+        head="Ryuo Somen",
         ear1="Cessance Earring",
         ear2="Trux Earring",
         ring1="Haverton Ring",
         hands="Ryuo Tekko",
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
-        head="Taeon Chapeau",
+        head="Herculean Helm",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
         hands="Ryuo Tekko",
@@ -595,7 +595,7 @@ function init_gear_sets()
         feet="Hizamaru Sune-ate +1"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
-        head="Rao Kabuto",
+        head="Herculean Helm",
         neck="Yarak Torque",
         body="Hattori Ningi +1",
         hands="Floral Gauntlets",
@@ -682,7 +682,7 @@ sets.buff.Migawari = {body="Hattori Ningi +1"}
 
 -- Weaponskills 
 sets.precast.WS = {
-    head="Taeon Chapeau",
+    head="Herculean Helm",
     neck="Defiant Collar",
     ear1="Brutal Earring",
     ear2="Moonshade Earring",
@@ -697,13 +697,12 @@ sets.precast.WS = {
 }
 
 sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-    head="Rao Kabuto",
+    legs="Herculean Trousers",
 })
 sets.precast.WS.Low = sets.precast.WS.Mid
 
 sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
     body="Rao Togi",
-    head="Gavialis Helm",
 })
 
 sets.Kamu = {
