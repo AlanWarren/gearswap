@@ -848,27 +848,25 @@ function init_gear_sets()
 
     -- dual wield
     sets.engaged.DW = set_combine(sets.engaged, {
-        ammo="Yetshila",
+        ammo="Ginsen",
         head="Valorous Mask",
         body="Vatic Byrnie",
         hands=Acro.Hands.STP,
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
+        ear1="Brutal Earring",
+        ear2="Suppanomimi",
         ring2="Haverton Ring",
+        waist="Patientia Sash",
         legs="Carmine Cuisses +1",
-        waist="Shetal Stone",
-        feet=Acro.Feet.WSD
+        feet=Acro.Feet.STP
     })
     sets.engaged.DW.Mid = set_combine(sets.engaged.DW, {
         ammo="Ginsen",
         body="Acro Surcoat",
-        back="Grounded Mantle +1",
         hands=Acro.Hands.Haste
     })
     sets.engaged.DW.Acc = set_combine(sets.engaged.DW.Mid, {
         ammo="Hasty Pinion +1",
         hands="Odyssean Gauntlets",
-        back="Grounded Mantle +1",
     })
 
     -- great sword
