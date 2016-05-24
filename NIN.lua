@@ -765,10 +765,10 @@ sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid,
 
 -- BLADE: SHUN
 sets.Shun = {
-    head="Rao Kabuto",
+    head="Herculean Helm",
     neck="Flame Gorget",
-    ring1="Apate Ring",
     hands="Herculean Gloves",
+    ring1="Ramuh Ring",
     back=Andartia.DEX,
     waist="Light Belt",
     legs="Samnuha Tights",
