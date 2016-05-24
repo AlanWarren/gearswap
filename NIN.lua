@@ -194,7 +194,7 @@ function init_gear_sets()
     
     -- Fast cast sets for spells
     sets.precast.FC = {
-        head="Ejekamal Mask",
+        head="Herculean Helm",
         --ammo="Impatiens",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
@@ -734,7 +734,7 @@ function init_gear_sets()
     -- BLADE: HI
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
         ammo="Yetshila",
-        head="Uk'uxkaj Cap",
+        head="Herculean Helm",
         neck="Hope Torque",
         ear1="Ishvara Earring",
         body="Hattori Ningi +1",
@@ -747,11 +747,9 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
-        head="Taeon Chapeau",
         neck="Shadow Gorget",
     })
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-        head="Rao Kabuto",
         neck="Shadow Gorget",
         waist="Caudata Belt",
     })
@@ -1030,7 +1028,7 @@ function job_buff_change(buff, gain)
         end
     end
     
-    if buff == 'Innin' and gain  or buffactive['Innin'] then
+    if buff == 'Innin' and gain or buffactive['Innin'] then
         state.CombatForm:set('Innin')
         if not midaction() then
             handle_equipping_gear(player.status)
