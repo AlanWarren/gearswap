@@ -300,7 +300,7 @@ function init_gear_sets()
         hands=Acro.Hands.Haste,
         ring2="K'ayres Ring",
         back="Trepidity Mantle",
-        legs="Founder's Hose", 
+        legs="Carmine Cuisses +1",
         feet="Odyssean Greaves"
     })
 
@@ -321,7 +321,7 @@ function init_gear_sets()
     sets.midcast.Aspir.Acc = sets.midcast.Drain.Acc
 
     sets.midcast.Drain.OhShit = set_combine(sets.midcast.Drain, {
-        legs="Founder's Hose", 
+        legs="Carmine Cuisses +1",
         feet="Odyssean Greaves"
     })
 
@@ -601,7 +601,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
-        legs="Crimson Cuisses",
+        legs="Carmine Cuisses +1",
         feet="Sulevia's leggings +1"
     }
 
@@ -616,7 +616,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
-        legs="Crimson Cuisses",
+        legs="Carmine Cuisses +1",
         feet="Sulevia's leggings +1"
     })
     sets.idle.Regen = set_combine(sets.idle.Field, {
@@ -669,7 +669,9 @@ function init_gear_sets()
         back="Impassive Mantle",
     })
 
-    sets.Kiting = {legs="Crimson Cuisses"}
+    sets.Kiting = {
+        legs="Carmine Cuisses +1",
+    }
 
     sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
 
@@ -853,7 +855,7 @@ function init_gear_sets()
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         ring2="Haverton Ring",
-        legs="Argosy Breeches",
+        legs="Carmine Cuisses +1",
         waist="Shetal Stone",
         feet=Acro.Feet.WSD
     })

@@ -116,11 +116,12 @@ function init_gear_sets()
     
     -- Waltz (chr and vit)
     sets.precast.Waltz = {
-        head="Uk'uxkaj Cap",
-        body="Dread Jupon",
+        head="Hachiya Hatsuburi +1",
+        body="Rao Togi",
+        hands="Herculean Gloves",
         waist="Chaac Belt",
         legs="Nahtirah Trousers",
-        feet="Mochizuki Kyahan +1"
+        feet="Hizamaru Sune-ate +1"
     }
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
@@ -330,8 +331,7 @@ function init_gear_sets()
         main="Kannagi",
         sub="Achiuchikapu",
         neck="Malevolence",
-        head="Mijin",
-        hands="Taeon Gloves",
+        head="Shigi",
         shihei="Shihei",
         inoshi="Inoshishinofuda",
         shika="Shikanofuda",
