@@ -1154,32 +1154,41 @@ function determine_haste_group()
     -- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
     -- but wtf can  you do..   I macro it, and use it often. 
     if state.HasteMode.value == 'Hi' then
-        if ( ((buffactive[33] or buffactive[580]) and buffactive.march) or (buffactive.embrava and buffactive[33]) or (buffactive.embrava and buffactive.march == 1) ) then
+        if ( ( (buffactive[33] or buffactive[580] or buffactive.embrava) and (buffactive.march or buffactive[604]) ) or
+             ( buffactive[33] and (buffactive[580] or buffactive.embrava) ) or
+             ( buffactive.march == 2 and buffactive[604] ) ) then
             add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
             classes.CustomMeleeGroups:append('MaxHaste')
-        elseif ( (buffactive[33] or buffactive.march == 2) and buffactive['haste samba'] ) or buffactive.embrava then
+        elseif ( (buffactive[33] or buffactive.march == 2 or buffactive[580]) and buffactive['haste samba'] ) then
             add_to_chat(8, '-------------Haste 35%-------------')
             classes.CustomMeleeGroups:append('Haste_35')
-        elseif buffactive[580] or buffactive[33] or buffactive.march == 2 then
+        elseif ( ( buffactive[580] or buffactive[33] or buffactive.march == 2 ) or
+                 ( buffactive.march == 1 and buffactive[604] ) ) then
             add_to_chat(8, '-------------Haste 30%-------------')
             classes.CustomMeleeGroups:append('Haste_30')
-        elseif buffactive.march == 1 then
+        elseif ( buffactive.march == 1 or buffactive[604] ) then
             add_to_chat(8, '-------------Haste 15%-------------')
             classes.CustomMeleeGroups:append('Haste_15')
         end
     else
-        if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava) ) or 
-            ( buffactive.embrava and buffactive.march == 2 ) or (buffactive[33] and buffactive.march == 2) or 
-            ( buffactive.embrava and ( buffactive.march == 1 or buffactive[33] ) ) then
+        if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava or buffactive[604]) ) or  -- geo haste + anything
+           ( buffactive.embrava and (buffactive.march or buffactive[33] or buffactive[604]) ) or  -- embrava + anything
+           ( buffactive.march == 2 and (buffactive[33] or buffactive[604]) ) or  -- two marches + anything
+           ( buffactive[33] and buffactive[604] and buffactive.march ) then -- haste + mighty guard + any marches
             add_to_chat(8, '-------------Max Haste Mode Enabled--------------')
             classes.CustomMeleeGroups:append('MaxHaste')
-        elseif (buffactive[33] and buffactive['haste samba'] and buffactive.march == 1) or buffactive.embrava or (buffactive.march == 2 and buffactive['haste samba']) then
+        elseif ( (buffactive[604] or buffactive[33]) and buffactive['haste samba'] and buffactive.march == 1) or -- MG or haste + samba with 1 march
+               ( buffactive.march == 2 and buffactive['haste samba'] ) or
+               ( buffactive[580] and buffactive['haste samba'] ) then 
             add_to_chat(8, '-------------Haste 35%-------------')
             classes.CustomMeleeGroups:append('Haste_35')
-        elseif buffactive.march == 2 or (buffactive[33] and buffactive.march == 1) or buffactive[580] then
+        elseif ( buffactive.march == 2 ) or -- two marches from ghorn
+               ( (buffactive[33] or buffactive[604]) and buffactive.march == 1 ) or  -- MG or haste + 1 march
+               ( buffactive[580] ) or  -- geo haste
+               ( buffactive[33] and buffactive[604] ) then  -- haste with MG
             add_to_chat(8, '-------------Haste 30%-------------')
             classes.CustomMeleeGroups:append('Haste_30')
-        elseif buffactive[33] or buffactive.march == 1 then
+        elseif buffactive[33] or buffactive[604] or buffactive.march == 1 then
             add_to_chat(8, '-------------Haste 15%-------------')
             classes.CustomMeleeGroups:append('Haste_15')
         end
