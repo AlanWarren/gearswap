@@ -194,7 +194,7 @@ function init_gear_sets()
     
     -- Fast cast sets for spells
     sets.precast.FC = {
-        head="Ejekamal Mask",
+        head="Herculean Helm",
         --ammo="Impatiens",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
