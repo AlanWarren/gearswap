@@ -1147,12 +1147,13 @@ function determine_haste_group()
     -- Haste (Merited DNC) 10% (never account for this)
     -- Victory March +0/+3/+4/+5    9.4/14%/15.6%/17.1% +0
     -- Advancing March +0/+3/+4/+5  6.3/10.9%/12.5%/14%  +0
-    -- Embrava 25%
+    -- Embrava 30% with 500 enhancing skill
+    -- Mighty Guard - 15%
     -- buffactive[580] = geo haste
     -- buffactive[33] = regular haste
+    -- buffactive[604] = mighty guard
     -- state.HasteMode = toggle for when you know Haste II is being cast on you
     -- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
-    -- but wtf can  you do..   I macro it, and use it often. 
     if state.HasteMode.value == 'Hi' then
         if ( ( (buffactive[33] or buffactive[580] or buffactive.embrava) and (buffactive.march or buffactive[604]) ) or
              ( buffactive[33] and (buffactive[580] or buffactive.embrava) ) or
