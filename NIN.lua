@@ -965,6 +965,9 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
+    if midaction() then
+        return
+    end
     -- Aftermath timer creation
     aw_custom_aftermath_timers_aftercast(spell)
     --if spell.type == 'WeaponSkill' then
@@ -1269,9 +1272,6 @@ function th_action_check(category, param)
     -- Call from job_aftercast() to create the custom aftermath timer.
     function aw_custom_aftermath_timers_aftercast(spell)
         -- prevent gear being locked when it's currently impossible to cast 
-        if midaction() then
-            return
-        end
         if not spell.interrupted and spell.type == 'WeaponSkill' and
             info.aftermath and info.aftermath.weaponskill == spell.english and info.aftermath.duration > 0 then
 
