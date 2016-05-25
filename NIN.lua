@@ -261,7 +261,7 @@ function init_gear_sets()
         ring2="Haverton Ring",
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
-        feet="Hachiya Kyahan +1"
+        feet="Hachiya Kyahan +1" -- int 10 mab+13 mac+13
     }
 
     -- Effusions
@@ -423,12 +423,12 @@ function init_gear_sets()
     }
     sets.AccPDT = {
         head="Rao Kabuto",
-        body="Hattori Ningi +1",
+        body="Emet Harness +1",
         neck="Agitator's Collar",
         hands="Floral Gauntlets",
         ring1="Patricius Ring",
         ring2="Defending Ring",
-        legs="Ryuo Hakama",
+        legs="Herculean Trousers",
         feet="Loyalist Sabatons"
     }
 
