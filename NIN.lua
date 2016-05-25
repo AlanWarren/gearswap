@@ -456,9 +456,9 @@ function init_gear_sets()
     -- Delay Cap from spell + songs alone
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head="Herculean Helm",
-        ear1="Cessance Earring",
-        ear2="Tripudio Earring",
-        neck="Lissome Necklace",
+        neck="Asperity Necklace",
+        ear1="Brutal Earring",
+        ear2="Cessance Earring",
         body="Rawhide Vest",
         hands="Herculean Gloves",
         ring1="Petrov Ring",
@@ -471,7 +471,7 @@ function init_gear_sets()
     -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         neck="Lissome Necklace",
-        ear2="Trux Earring",
+        ear1="Trux Earring",
         back=Andartia.DEX,
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
@@ -481,8 +481,7 @@ function init_gear_sets()
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Herculean Helm",
         neck="Yarak Torque",
-        ear1="Cessance Earring",
-        ear2="Zennaroi Earring",
+        ear1="Zennaroi Earring",
         hands="Ryuo Tekko",
         ring1="Cacoethic Ring +1",
         ring2="Patricius Ring",
@@ -740,11 +739,11 @@ sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mi
 sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
     ammo="Yetshila",
     head="Herculean Helm",
-    neck="Hope Torque",
+    neck="Rancor Collar",
     ear1="Ishvara Earring",
     body="Hattori Ningi +1",
     hands="Ryuo Tekko",
-    ring1="Apate Ring",
+    ring1="Garuda Ring",
     back=Andartia.AGI,
     waist="Windbuffet Belt +1",
     legs="Herculean Trousers",
@@ -765,10 +764,10 @@ sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid,
 
 -- BLADE: SHUN
 sets.Shun = {
-    head="Rao Kabuto",
+    head="Herculean Helm",
     neck="Flame Gorget",
-    ring1="Apate Ring",
     hands="Herculean Gloves",
+    ring1="Ramuh Ring",
     back=Andartia.DEX,
     waist="Light Belt",
     legs="Samnuha Tights",
