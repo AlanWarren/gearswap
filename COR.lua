@@ -210,7 +210,7 @@ function init_gear_sets()
         ring1="Acumen Ring",
         ring2="Garuda Ring",
         back="Gunslinger's Cape",
-        waist="Aquiline Belt",
+        waist="Eschan Stone",
         legs="Shneddick Tights +1",
         feet="Lanun Bottes"
     }
@@ -246,7 +246,7 @@ function init_gear_sets()
         ring1="Acumen Ring",
         ring2="Garuda Ring",
         back="Gunslinger's Cape",
-        waist="Aquiline Belt",
+        waist="Eschan Stone",
         legs="Shneddick Tights +1",
         feet="Lanun Bottes"
     }
@@ -284,7 +284,7 @@ function init_gear_sets()
         body="Pursuer's Doublet",
         ring1="Paqichikaji Ring",
         hands="Floral Gauntlets",
-        waist="Elanid Belt"
+        waist="Eschan Stone"
     })
 	
 	-- Sets to return to when not performing an action.
@@ -325,7 +325,7 @@ function init_gear_sets()
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
         back="Gunslinger's Cape",
-        waist="Flume Belt",
+        waist="Eschan Stone",
         legs="Carmine Cuisses +1",
         feet="Herculean Boots"
     }
@@ -357,7 +357,7 @@ function init_gear_sets()
 	
     sets.engaged = {
         ammo=gear.RAbullet,
-        head="Taeon Chapeau",
+        head="Skormoth Mask",
         neck="Iqabi Necklace",
         ear1="Enervating Earring",
         ear2="Volley Earring",
@@ -373,7 +373,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged.Melee = {
         ammo=gear.RAbullet,
-        head="Taeon Chapeau",
+        head="Skormoth Mask",
         neck="Lissome Necklace",
         ear1="Cessance Earring",
         ear2="Brutal Earring",
