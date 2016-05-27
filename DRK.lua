@@ -766,6 +766,7 @@ function init_gear_sets()
         ear2="Zennaroi Earring",
         hands="Odyssean Gauntlets",
         ring1="Cacoethic Ring +1",
+        back="Ankou's Mantle",
         waist="Olseni Belt",
         feet="Founder's Greaves"
     })
@@ -796,7 +797,7 @@ function init_gear_sets()
         hands="Odyssean Gauntlets",
         ring1="Rajas Ring",
         ring2="Cacoethic Ring +1",
-        back="Grounded Mantle +1",
+        back="Ankou's Mantle",
         waist="Olseni Belt",
         feet="Founder's Greaves"
     })
@@ -812,6 +813,7 @@ function init_gear_sets()
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
         feet=Acro.Feet.WSD
+        back="Ankou's Mantle",
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
         feet=Acro.Feet.WSD
