@@ -265,7 +265,8 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'].Acc = set_combine(sets.midcast['Dark Magic'], {
         body="Founder's Breastplate",
-        hands="Leyline Gloves"
+        hands="Leyline Gloves",
+        waist="Eschan Stone"
     })
 
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
@@ -286,7 +287,7 @@ function init_gear_sets()
         hands="Leyline Gloves",
         ring1="Resonance Ring", -- int 8
         ring2="Shiva Ring", -- matk 4
-        waist="Caudata Belt", -- int 6
+        waist="Eschan Stone", -- macc/matk 7
         legs="Eschite Cuisses", -- matk 25 
         back="Aput Mantle", -- mdmg 10
         feet="Founder's Greaves" -- matk 29
@@ -300,6 +301,7 @@ function init_gear_sets()
         hands=Acro.Hands.Haste,
         ring2="K'ayres Ring",
         back="Trepidity Mantle",
+        waist="Eschan Stone", -- macc/matk 7
         legs="Carmine Cuisses +1",
         feet="Odyssean Greaves"
     })
@@ -317,6 +319,7 @@ function init_gear_sets()
         head="Ignominy Burgeonet +1",
         body="Founder's Breastplate",
         hands="Leyline Gloves"
+        waist="Eschan Stone", -- macc/matk 7
     })
     sets.midcast.Aspir.Acc = sets.midcast.Drain.Acc
 
@@ -545,7 +548,7 @@ function init_gear_sets()
         hands="Leyline Gloves",
         back="Toro Cape",
         legs="Valorous Hose",
-        waist="Caudata Belt",
+        waist="Eschan Stone", -- macc/matk 7
         feet="Sulevia's Leggings +1"
     })
 

@@ -234,6 +234,7 @@ function init_gear_sets()
         ring1="Sangoma Ring",
         ring2="Haverton Ring",
         back="Yokaze Mantle",
+        waist="Eschan Stone",
         feet="Mochizuki Kyahan +1"
     }
     -- any ninjutsu cast on self
@@ -259,7 +260,7 @@ function init_gear_sets()
         back="Aput Mantle",
         ring1="Shiva Ring",
         ring2="Haverton Ring",
-        waist="Caudata Belt",
+        waist="Eschan Stone",
         legs="Shneddick Tights +1",
         feet="Hachiya Kyahan +1" -- int 10 mab+13 mac+13
     }
@@ -292,7 +293,7 @@ function init_gear_sets()
     })
 
     sets.idle.Town = set_combine(sets.idle, {
-        head="Herculean Helm",
+        head="Skormoth Mask",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
@@ -380,13 +381,13 @@ function init_gear_sets()
 
     -- set for fooling around without dual wield
     sets.NoDW = set_combine(sets.engaged, {
-        head="Taeon Chapeau",
+        head="Skormoth Mask",
         neck="Lissome Necklace",
         ear2="Cessance Earring",
         body="Rao Togi",
         hands="Herculean Gloves",
         ring1="Petrov Ring",
-        waist="Olseni Belt",
+        waist="Windbuffet Belt +1",
         back=Andartia.DEX,
         legs="Herculean Trousers",
         feet="Herculean Boots"
@@ -455,7 +456,7 @@ function init_gear_sets()
 
     -- Delay Cap from spell + songs alone
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
-        head="Herculean Helm",
+        head="Skormoth Mask",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Cessance Earring",
@@ -475,6 +476,7 @@ function init_gear_sets()
         back=Andartia.DEX,
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
+        head="Herculean Helm",
         ring1="Cacoethic Ring +1",
         body="Rao Togi",
     })

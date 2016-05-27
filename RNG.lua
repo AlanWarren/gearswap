@@ -301,6 +301,7 @@ function init_gear_sets()
             hands="Alruna's Gloves +1",
             body="Amini Caban +1",
             ring1="Hajduk Ring", 
+            waist="Eschan Stone",
             legs="Adhemar Kecks",
         })
     
@@ -344,7 +345,8 @@ function init_gear_sets()
         sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mid, {
             back="Lutian Cape", 
             neck="Iqabi Necklace", 
-            ring2="Haverton Ring"
+            ring2="Haverton Ring",
+            waist="Eschan Stone"
         })
 
         -- Samurai Roll for /sam, assume we're using a staff
@@ -384,6 +386,7 @@ function init_gear_sets()
             body="Amini Caban +1",
             ring1="Hajduk Ring",
             ring2="Haverton Ring",
+            waist="Eschan Stone"
         })
        
         -- Bow Sam roll
@@ -460,7 +463,7 @@ function init_gear_sets()
             ring1="Acumen Ring",
             ring2="Garuda Ring",
             back="Argochampsa Mantle",
-            waist="Yamabuki-no-Obi",
+            waist="Eschan Stone",
             legs="Limbo Trousers",
             feet="Taeon Boots"
         }
@@ -478,7 +481,7 @@ function init_gear_sets()
             ring1="Acumen Ring",
             ring2="Garuda Ring",
             back="Argochampsa Mantle",
-            waist="Soil Belt",
+            waist="Eschan Stone",
             legs="Limbo Trousers",
             feet="Taeon Boots"
         }
