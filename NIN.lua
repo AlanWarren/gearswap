@@ -814,6 +814,7 @@ sets.Ten = {
     ear1="Lugra Earring +1",
     ear2="Moonshade Earring",
     body="Rao Togi",
+    legs="Hizamaru Hizayoroi +1",
     back=Andartia.AGI,
     waist="Metalsinger Belt",
 }
