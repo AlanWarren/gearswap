@@ -949,9 +949,6 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-    if spell.action_type == 'Magic' then
-        equip(sets.midcast.FastRecast)
-    end
     if spell.english == "Monomi: Ichi" then
         if buffactive['Sneak'] then
             send_command('@wait 1.7;cancel sneak')
@@ -1104,7 +1101,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 -- State buff checks that will equip buff gear and mark the event as handled.
--- State buff checks that will equip buff gear and mark the event as handled.
 function check_buff(buff_name, eventArgs)
     if state.Buff[buff_name] then
         equip(sets.buff[buff_name] or {})
@@ -1185,7 +1181,7 @@ function determine_haste_group()
         elseif ( ( buffactive[580] or buffactive[33] ) ) then
             add_to_chat(8, '-------------Haste 30%-------------')
             classes.CustomMeleeGroups:append('Haste_30')
-        elseif ( buffactive.march == 1 or buffactive[604] ) then
+        elseif ( buffactive.march == 2 or buffactive[604] ) then
             add_to_chat(8, '-------------Haste 15%-------------')
             classes.CustomMeleeGroups:append('Haste_15')
         end
