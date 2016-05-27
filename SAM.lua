@@ -153,7 +153,7 @@ function init_gear_sets()
         ring2="Ifrit Ring +1",
         back="Buquwik Cape",
         waist="Windbuffet Belt +1",
-        legs="Scuffler's Cosciales",
+        legs="Valorous Hose",
         feet=Acro.Feet.WSD
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -177,7 +177,7 @@ function init_gear_sets()
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
         waist="Metalsinger Belt",
-        legs="Wakido Haidate +1",
+        legs="Hizamaru Hizayoroi +1",
         feet="Wakido Sune-ate +1"
     }
     sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS['Namas Arrow'], {
@@ -199,10 +199,10 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
-        body="Phorcys Korazin",
         hands=Acro.Hands.STP,
+        body="Acro Surcoat",
         waist="Metalsinger Belt",
-        legs="Kasuga Haidate +1",
+        legs="Hizamaru Hizayoroi +1",
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
         body="Acro Surcoat",
@@ -294,7 +294,7 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         body="Councilor's Garb",
         hands="Ryuo Tekko",
-        ring1="Karieyh Ring",
+        ring1="Dark Ring",
         ring2="Defending Ring",
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
@@ -376,14 +376,14 @@ function init_gear_sets()
     sets.engaged = {
         sub="Bloodrain Grip",
         ammo=gear.RAarrow,
-        head="Otomi Helm",
+        head="Valorous Helm",
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
         body="Vatic Byrnie",
         hands=Acro.Hands.STP,
         ring1="Rajas Ring", 
-        ring2="K'ayres Ring", 
+        ring2="Petrov Ring", 
         back="Takaha Mantle",
         waist="Windbuffet Belt +1",
         legs="Kasuga Haidate +1",
