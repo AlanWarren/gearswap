@@ -493,7 +493,6 @@ function init_gear_sets()
     })
     -- do nothing here
     sets.engaged.Innin.MaxHaste     = set_combine(sets.engaged.MaxHaste, {
-        head="Hattori Zukin +1",
     })
     sets.engaged.Innin.Low.MaxHaste = sets.engaged.Low.MaxHaste
     sets.engaged.Innin.Mid.MaxHaste = sets.engaged.Mid.MaxHaste
