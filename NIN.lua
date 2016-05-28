@@ -492,7 +492,9 @@ function init_gear_sets()
         feet="Herculean Boots"
     })
     -- do nothing here
-    sets.engaged.Innin.MaxHaste     = sets.engaged.MaxHaste
+    sets.engaged.Innin.MaxHaste     = set_combine(sets.engaged.MaxHaste, {
+        head="Hattori Zukin +1",
+    })
     sets.engaged.Innin.Low.MaxHaste = sets.engaged.Low.MaxHaste
     sets.engaged.Innin.Mid.MaxHaste = sets.engaged.Mid.MaxHaste
     sets.engaged.Innin.Acc.MaxHaste = sets.engaged.Acc.MaxHaste
@@ -528,7 +530,6 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Trux Earring",
         ring1="Haverton Ring",
-        hands="Ryuo Tekko",
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
         head="Herculean Helm",
@@ -547,7 +548,6 @@ function init_gear_sets()
         head="Hattori Zukin +1",
     })
     sets.engaged.Innin.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
-        head="Hattori Zukin +1",
     })
     sets.engaged.Innin.Acc.Haste_35 = sets.engaged.Acc.Haste_35
 
@@ -609,15 +609,13 @@ function init_gear_sets()
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Hattori Zukin +1",
+        feet="Herculean Boots"
     })
     sets.engaged.Innin.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
         head="Hattori Zukin +1",
         feet="Herculean Boots"
     })
-    sets.engaged.Innin.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
-        head="Hattori Zukin +1",
-        feet="Herculean Boots"
-    })
+    sets.engaged.Innin.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {})
     sets.engaged.Innin.Acc.Haste_30 = sets.engaged.Acc.Haste_30
 
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
@@ -651,209 +649,210 @@ function init_gear_sets()
         legs="Herculean Trousers"
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, { -- 676
-    ear1="Cessance Earring",
-    neck="Yarak Torque",
-    legs="Herculean Trousers",
-    feet="Hizamaru Sune-ate +1"
-})
-sets.engaged.Acc.Haste_15 = sets.engaged.Acc.Haste_30
-
-sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, {
-    head="Hattori Zukin +1",
-})
-sets.engaged.Innin.Low.Haste_15 = set_combine(sets.engaged.Low.Haste_15, {
-    head="Hattori Zukin +1",
-})
-sets.engaged.Innin.Mid.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, {
-    head="Hattori Zukin +1",
-})
-sets.engaged.Innin.Acc.Haste_15 = sets.engaged.Acc.Haste_15
-
-sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, sets.engaged.HastePDT)
-sets.engaged.Low.PDT.Haste_15 = set_combine(sets.engaged.Low.Haste_15, sets.engaged.HastePDT)
-sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, sets.engaged.HastePDT)
-sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, sets.engaged.AccPDT)
-
-sets.engaged.Innin.PDT.Haste_15 = set_combine(sets.engaged.Innin.Haste_15, sets.engaged.HastePDT)
-sets.engaged.Innin.Low.PDT.Haste_15 = set_combine(sets.engaged.Innin.Low.Haste_15, sets.engaged.HastePDT)
-sets.engaged.Innin.Mid.PDT.Haste_15 = set_combine(sets.engaged.Innin.Mid.Haste_15, sets.engaged.HastePDT)
-sets.engaged.Innin.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
-
-sets.buff.Migawari = {body="Hattori Ningi +1"}
-
--- Weaponskills 
-sets.precast.WS = {
-    head="Herculean Helm",
-    neck="Defiant Collar",
-    ear1="Brutal Earring",
-    ear2="Moonshade Earring",
-    body="Rao Togi",
-    hands="Herculean Gloves",
-    ring1="Apate Ring",
-    ring2="Epona's Ring",
-    back=Andartia.DEX,
-    waist="Windbuffet Belt +1",
-    legs="Samnuha Tights",
-    feet="Herculean Boots"
-}
-
-sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-    legs="Herculean Trousers",
-})
-sets.precast.WS.Low = sets.precast.WS.Mid
-
-sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-    body="Rao Togi",
-})
-
-sets.Kamu = {
-    ammo="Ginsen",
-    neck="Breeze Gorget",
-    head="Rao Kabuto",
-    waist="Windbuffet Belt +1",
-}
-sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
-sets.precast.WS['Blade: Kamu'].Low = set_combine(sets.precast.WS.Low, sets.Kamu)
-sets.precast.WS['Blade: Kamu'].Mid = set_combine(sets.precast.WS.Mid, sets.Kamu)
-sets.precast.WS['Blade: Kamu'].Acc = set_combine(sets.precast.WS.Acc, sets.Kamu, {waist="Caudata Belt"})
-
--- BLADE: JIN
-sets.Jin = {
-    ammo="Yetshila",
-    head="Rao Kabuto",
-    neck="Breeze Gorget",
-    body="Hattori Ningi +1",
-    hands="Ryuo Tekko",
-    waist="Windbuffet Belt +1",
-}
-sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
-sets.precast.WS['Blade: Jin'].Low = set_combine(sets.precast.WS['Blade: Jin'], {
-    neck="Breeze Gorget",
-    waist="Thunder Belt",
-})
-sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS['Blade: Jin'].Low, {
-})
-sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid, {
-    legs="Samnuha Tights",
-})
-
--- BLADE: HI
-sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-    ammo="Yetshila",
-    head="Herculean Helm",
-    neck="Rancor Collar",
-    ear1="Ishvara Earring",
-    body="Hattori Ningi +1",
-    hands="Ryuo Tekko",
-    ring1="Garuda Ring",
-    back=Andartia.AGI,
-    waist="Windbuffet Belt +1",
-    legs="Herculean Trousers",
-    feet="Herculean Boots"
-})
-
-sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
-    neck="Shadow Gorget",
-})
-sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-    neck="Shadow Gorget",
-    waist="Caudata Belt",
-})
-
-sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
-    ear1="Cessance Earring",
-})
-
--- BLADE: SHUN
-sets.Shun = {
-    head="Herculean Helm",
-    neck="Flame Gorget",
-    hands="Herculean Gloves",
-    ring1="Ramuh Ring",
-    back=Andartia.DEX,
-    waist="Light Belt",
-    legs="Samnuha Tights",
-    feet="Herculean Boots"
-}
-
-sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
-sets.precast.WS['Blade: Shun'].Low = set_combine(sets.precast.WS.Low, sets.Shun)
-sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
-sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
-
--- BLADE: Rin
-sets.Rin = {
-    neck="Defiant Collar",
-    waist="Windbuffet Belt +1",
-    back=Andartia.DEX,
-}
-sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
-sets.precast.WS['Blade: Rin'].Low = set_combine(sets.precast.WS.Low, sets.Rin)
-sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
-sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin, {waist="Light Belt"})
-
--- BLADE: KU 
-sets.Ku = {
-    head="Rao Kabuto",
-    ear2="Trux Earring",
-    neck="Shadow Gorget",
-    back=Andartia.DEX,
-}
-sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
-sets.precast.WS['Blade: Ku'].Low = set_combine(sets.precast.WS['Blade: Ku'], {
-    body="Hattori Ningi +1",
-    waist="Soil Belt"
-})
-sets.precast.WS['Blade: Ku'].Mid = sets.precast.WS['Blade: Ku'].Low
-sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'].Mid, {
-    legs="Samnuha Tights",
-    feet="Herculean Boots"
-})
-
-sets.Ten = {
-    head="Rao Kabuto",
-    neck="Shadow Gorget",
-    ear1="Lugra Earring +1",
-    ear2="Moonshade Earring",
-    body="Rao Togi",
-    legs="Hizamaru Hizayoroi +1",
-    back=Andartia.AGI,
-    waist="Metalsinger Belt",
-}
-
-sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, sets.Ten)
-sets.precast.WS['Blade: Ten'].Low = set_combine(sets.precast.WS['Blade: Ten'], {
-    body="Mes'yohi Haubergeon",
-})
-sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS['Blade: Ten'].Low, {
-    waist="Caudata Belt"
-})
-sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid, {
-    legs="Samnuha Tights",
-    feet="Herculean Boots"
-})
-
-sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    head="Mochizuki Hatsuburi +1",
-    ear1="Friomisi Earring",
-    neck="Sanctity Necklace",
-    body="Samnuha Coat",
-    hands="Leyline Gloves",
-    ring1="Garuda Ring",
-    ring2="Acumen Ring",
-    legs="Shneddick Tights +1",
-    waist="Thunder Belt",
-    feet="Herculean Boots"
-})
-sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
-    ring1="Shiva Ring",
-    ring2="Acumen Ring",
-    waist="Caudata Belt",
-    legs="Shneddick Tights +1",
-    back=Andartia.AGI,
-    feet="Herculean Boots"
-})
-sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
+        ear1="Cessance Earring",
+        neck="Yarak Torque",
+        legs="Herculean Trousers",
+        feet="Hizamaru Sune-ate +1"
+    })
+    sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_30, {
+        head="Ryuo Somen",
+        feet="Hizamaru Sune-ate +1"
+    })
+    
+    sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, {
+        head="Hattori Zukin +1",
+    })
+    sets.engaged.Innin.Low.Haste_15 = set_combine(sets.engaged.Low.Haste_15, {
+        head="Hattori Zukin +1",
+    })
+    sets.engaged.Innin.Mid.Haste_15 = sets.engaged.Mid.Haste_15
+    sets.engaged.Innin.Acc.Haste_15 = sets.engaged.Acc.Haste_15
+    
+    sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Low.PDT.Haste_15 = set_combine(sets.engaged.Low.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, sets.engaged.AccPDT)
+    
+    sets.engaged.Innin.PDT.Haste_15 = set_combine(sets.engaged.Innin.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Innin.Low.PDT.Haste_15 = set_combine(sets.engaged.Innin.Low.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Innin.Mid.PDT.Haste_15 = set_combine(sets.engaged.Innin.Mid.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Innin.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
+    
+    sets.buff.Migawari = {body="Hattori Ningi +1"}
+    
+    -- Weaponskills 
+    sets.precast.WS = {
+        head="Herculean Helm",
+        neck="Defiant Collar",
+        ear1="Brutal Earring",
+        ear2="Moonshade Earring",
+        body="Rao Togi",
+        hands="Herculean Gloves",
+        ring1="Apate Ring",
+        ring2="Epona's Ring",
+        back=Andartia.DEX,
+        waist="Windbuffet Belt +1",
+        legs="Samnuha Tights",
+        feet="Herculean Boots"
+    }
+    
+    sets.precast.WS.Mid = set_combine(sets.precast.WS, {
+        legs="Herculean Trousers",
+    })
+    sets.precast.WS.Low = sets.precast.WS.Mid
+    
+    sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
+        body="Rao Togi",
+    })
+    
+    sets.Kamu = {
+        ammo="Ginsen",
+        neck="Breeze Gorget",
+        head="Rao Kabuto",
+        waist="Windbuffet Belt +1",
+    }
+    sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
+    sets.precast.WS['Blade: Kamu'].Low = set_combine(sets.precast.WS.Low, sets.Kamu)
+    sets.precast.WS['Blade: Kamu'].Mid = set_combine(sets.precast.WS.Mid, sets.Kamu)
+    sets.precast.WS['Blade: Kamu'].Acc = set_combine(sets.precast.WS.Acc, sets.Kamu, {waist="Caudata Belt"})
+    
+    -- BLADE: JIN
+    sets.Jin = {
+        ammo="Yetshila",
+        head="Herculean Helm",
+        neck="Breeze Gorget",
+        body="Hattori Ningi +1",
+        hands="Ryuo Tekko",
+        waist="Windbuffet Belt +1",
+    }
+    sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
+    sets.precast.WS['Blade: Jin'].Low = set_combine(sets.precast.WS['Blade: Jin'], {
+        neck="Breeze Gorget",
+        waist="Thunder Belt",
+    })
+    sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS['Blade: Jin'].Low, {
+    })
+    sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid, {
+        legs="Samnuha Tights",
+    })
+    
+    -- BLADE: HI
+    sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
+        ammo="Yetshila",
+        head="Herculean Helm",
+        neck="Rancor Collar",
+        ear1="Ishvara Earring",
+        body="Hattori Ningi +1",
+        hands="Ryuo Tekko",
+        ring1="Garuda Ring",
+        back=Andartia.AGI,
+        waist="Windbuffet Belt +1",
+        legs="Herculean Trousers",
+        feet="Herculean Boots"
+    })
+    
+    sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
+        neck="Shadow Gorget",
+    })
+    sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
+        neck="Shadow Gorget",
+        waist="Caudata Belt",
+    })
+    
+    sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
+        ear1="Cessance Earring",
+    })
+    
+    -- BLADE: SHUN
+    sets.Shun = {
+        head="Herculean Helm",
+        neck="Flame Gorget",
+        hands="Herculean Gloves",
+        ring1="Ramuh Ring",
+        back=Andartia.DEX,
+        waist="Light Belt",
+        legs="Samnuha Tights",
+        feet="Herculean Boots"
+    }
+    
+    sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
+    sets.precast.WS['Blade: Shun'].Low = set_combine(sets.precast.WS.Low, sets.Shun)
+    sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
+    sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
+    
+    -- BLADE: Rin
+    sets.Rin = {
+        neck="Defiant Collar",
+        waist="Windbuffet Belt +1",
+        back=Andartia.DEX,
+    }
+    sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
+    sets.precast.WS['Blade: Rin'].Low = set_combine(sets.precast.WS.Low, sets.Rin)
+    sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
+    sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin, {waist="Light Belt"})
+    
+    -- BLADE: KU 
+    sets.Ku = {
+        head="Rao Kabuto",
+        ear2="Trux Earring",
+        neck="Shadow Gorget",
+        back=Andartia.DEX,
+    }
+    sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
+    sets.precast.WS['Blade: Ku'].Low = set_combine(sets.precast.WS['Blade: Ku'], {
+        body="Hattori Ningi +1",
+        waist="Soil Belt"
+    })
+    sets.precast.WS['Blade: Ku'].Mid = sets.precast.WS['Blade: Ku'].Low
+    sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'].Mid, {
+        legs="Samnuha Tights",
+        feet="Herculean Boots"
+    })
+    
+    sets.Ten = {
+        head="Rao Kabuto",
+        neck="Shadow Gorget",
+        ear1="Lugra Earring +1",
+        ear2="Moonshade Earring",
+        body="Rao Togi",
+        legs="Hizamaru Hizayoroi +1",
+        back=Andartia.AGI,
+        waist="Metalsinger Belt",
+    }
+    
+    sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, sets.Ten)
+    sets.precast.WS['Blade: Ten'].Low = set_combine(sets.precast.WS['Blade: Ten'], {
+        body="Mes'yohi Haubergeon",
+    })
+    sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS['Blade: Ten'].Low, {
+        waist="Caudata Belt"
+    })
+    sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid, {
+        legs="Samnuha Tights",
+        feet="Herculean Boots"
+    })
+    
+    sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
+        head="Mochizuki Hatsuburi +1",
+        ear1="Friomisi Earring",
+        neck="Sanctity Necklace",
+        body="Samnuha Coat",
+        hands="Leyline Gloves",
+        ring1="Garuda Ring",
+        ring2="Acumen Ring",
+        legs="Shneddick Tights +1",
+        waist="Thunder Belt",
+        feet="Herculean Boots"
+    })
+    sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
+        ring1="Shiva Ring",
+        ring2="Acumen Ring",
+        waist="Caudata Belt",
+        legs="Shneddick Tights +1",
+        back=Andartia.AGI,
+        feet="Herculean Boots"
+    })
+    sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
 
 end
 
