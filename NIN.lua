@@ -293,7 +293,7 @@ function init_gear_sets()
     })
 
     sets.idle.Town = set_combine(sets.idle, {
-        head="Skormoth Mask",
+        head="Herculean Helm",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
@@ -381,7 +381,7 @@ function init_gear_sets()
 
     -- set for fooling around without dual wield
     sets.NoDW = set_combine(sets.engaged, {
-        head="Skormoth Mask",
+        head="Herculean Helm",
         neck="Lissome Necklace",
         ear2="Cessance Earring",
         body="Rao Togi",
@@ -456,7 +456,7 @@ function init_gear_sets()
 
     -- Delay Cap from spell + songs alone
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
-        head="Skormoth Mask",
+        head="Herculean Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Cessance Earring",
