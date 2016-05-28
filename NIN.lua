@@ -25,7 +25,7 @@ function job_setup()
     include('Mote-TreasureHunter')
     state.TreasureMode:set('Tag')
 
-    state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi', 'Trust'}
+    state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
     state.Runes = M{['description']='Runes', "Ignis", "Gelus", "Flabra", "Tellus", "Sulpor", "Unda", "Lux", "Tenebrae"}
     state.UseRune = M(false, 'Use Rune')
 
@@ -1163,23 +1163,6 @@ function determine_haste_group()
             add_to_chat(8, '-------------Haste 30%-------------')
             classes.CustomMeleeGroups:append('Haste_30')
         elseif ( buffactive.march == 1 or buffactive[604] ) then
-            add_to_chat(8, '-------------Haste 15%-------------')
-            classes.CustomMeleeGroups:append('Haste_15')
-        end
-    elseif state.HasteMode.value == 'Trust' then
-        if ( ( (buffactive[33] or buffactive[580] or buffactive.embrava) and (buffactive.march == 2 or buffactive[604]) ) or
-             ( buffactive[33] and (buffactive[580] or buffactive.embrava) ) ) then
-            add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
-            classes.CustomMeleeGroups:append('MaxHaste')
-        elseif ( (buffactive[33] or buffactive[580]) and buffactive['haste samba'] or
-                ( buffactive.march == 2 and buffactive[604] ) or
-                ( buffactive.march == 1 and buffactive[33] ) ) then
-            add_to_chat(8, '-------------Haste 35%-------------')
-            classes.CustomMeleeGroups:append('Haste_35')
-        elseif ( ( buffactive[580] or buffactive[33] ) ) then
-            add_to_chat(8, '-------------Haste 30%-------------')
-            classes.CustomMeleeGroups:append('Haste_30')
-        elseif ( buffactive.march == 2 or buffactive[604] ) then
             add_to_chat(8, '-------------Haste 15%-------------')
             classes.CustomMeleeGroups:append('Haste_15')
         end
