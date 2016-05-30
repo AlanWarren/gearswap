@@ -774,7 +774,7 @@ function init_gear_sets()
     sets.engaged.AM3 = set_combine(sets.engaged, {
         ammo="Ginsen",
         head="Valorous Mask",
-        body="Acro Surcoat",
+        body="Odyssean Chestplate",
         hands=Acro.Hands.Haste,
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
@@ -784,7 +784,6 @@ function init_gear_sets()
         feet=Acro.Feet.STP
     })
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-        body="Mes'yohi Haubergeon",
         legs="Odyssean Cuisses",
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
