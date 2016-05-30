@@ -143,7 +143,7 @@ function init_gear_sets()
         feet="Mochizuki Kyahan +1"
     }
     sets.midcast.Trust =  {
-        head="Ptica Headgear",
+        head="Hatori Zukin +1",
         hands="Ryuo Tekko",
         body="Rawhide Vest",
         legs="Herculean Trousers",
@@ -399,16 +399,8 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
         waist="Windbuffet Belt +1",
     })
-    sets.engaged.Innin.Low = set_combine(sets.engaged.Innin, {
-        neck="Lissome Necklace",
-        body="Mochizuki Chainmail +1"
-    })
-    sets.engaged.Innin.Mid = set_combine(sets.engaged.Innin.Low, {
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        feet="Herculean Boots",
-        back=Andartia.DEX,
-    })
+    sets.engaged.Innin.Low = sets.engaged.Low
+    sets.engaged.Innin.Mid = sets.engaged.Mid
     sets.engaged.Innin.Acc = sets.engaged.Acc
 
     -- Defenseive sets
@@ -439,9 +431,9 @@ function init_gear_sets()
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.AccPDT)
 
     sets.engaged.Innin.PDT = set_combine(sets.engaged.Innin, sets.NormalPDT, {head="Hattori Zukin +1"})
-    sets.engaged.Innin.Low.PDT = set_combine(sets.engaged.Innin.Low, sets.NormalPDT, {head="Hattori Zukin +1"})
-    sets.engaged.Innin.Mid.PDT = set_combine(sets.engaged.Innin.Mid, sets.NormalPDT, {head="Hattori Zukin +1"})
-    sets.engaged.Innin.Acc.PDT = set_combine(sets.engaged.Innin.Acc, sets.AccPDT)
+    sets.engaged.Innin.Low.PDT = sets.engaged.Low.PDT
+    sets.engaged.Innin.Mid.PDT = sets.engaged.Mid.PDT
+    sets.engaged.Innin.Acc.PDT = sets.engaged.Acc.PDT
 
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
@@ -491,9 +483,7 @@ function init_gear_sets()
         waist="Olseni Belt",
         feet="Herculean Boots"
     })
-    -- do nothing here
-    sets.engaged.Innin.MaxHaste     = set_combine(sets.engaged.MaxHaste, {
-    })
+    sets.engaged.Innin.MaxHaste     = set_combine(sets.engaged.MaxHaste, {head="Hattori Zukin +1"})
     sets.engaged.Innin.Low.MaxHaste = sets.engaged.Low.MaxHaste
     sets.engaged.Innin.Mid.MaxHaste = sets.engaged.Mid.MaxHaste
     sets.engaged.Innin.Acc.MaxHaste = sets.engaged.Acc.MaxHaste
@@ -505,8 +495,8 @@ function init_gear_sets()
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.AccPDT)
 
     sets.engaged.Innin.PDT.MaxHaste = set_combine(sets.engaged.Innin.MaxHaste, sets.NormalPDT)
-    sets.engaged.Innin.Low.PDT.MaxHaste = set_combine(sets.engaged.Innin.Low.MaxHaste, sets.NormalPDT)
-    sets.engaged.Innin.Mid.PDT.MaxHaste = set_combine(sets.engaged.Innin.Mid.MaxHaste, sets.NormalPDT)
+    sets.engaged.Innin.Low.PDT.MaxHaste = sets.engaged.Low.PDT.MaxHaste
+    sets.engaged.Innin.Mid.PDT.MaxHaste = sets.engaged.Mid.PDT.MaxHaste
     sets.engaged.Innin.Acc.PDT.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
 
     -- 35% Haste 
@@ -543,11 +533,8 @@ function init_gear_sets()
     sets.engaged.Innin.Haste_35 = set_combine(sets.engaged.Haste_35, {
         head="Hattori Zukin +1",
     })
-    sets.engaged.Innin.Low.Haste_35 = set_combine(sets.engaged.Low.Haste_35, {
-        head="Hattori Zukin +1",
-    })
-    sets.engaged.Innin.Mid.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
-    })
+    sets.engaged.Innin.Low.Haste_35 = sets.engaged.Low.Haste_35
+    sets.engaged.Innin.Mid.Haste_35 = sets.engaged.Mid.Haste_35
     sets.engaged.Innin.Acc.Haste_35 = sets.engaged.Acc.Haste_35
 
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HastePDT)
@@ -556,8 +543,8 @@ function init_gear_sets()
     sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.AccPDT)
 
     sets.engaged.Innin.PDT.Haste_35 = set_combine(sets.engaged.Innin.Haste_35, sets.engaged.HastePDT)
-    sets.engaged.Innin.Low.PDT.Haste_35 = set_combine(sets.engaged.Innin.Low.Haste_35, sets.engaged.HastePDT)
-    sets.engaged.Innin.Mid.PDT.Haste_35 = set_combine(sets.engaged.Innin.Mid.Haste_35, sets.engaged.HastePDT)
+    sets.engaged.Innin.Low.PDT.Haste_35 = sets.engaged.Low.PDT.Haste_35
+    sets.engaged.Innin.Mid.PDT.Haste_35 = sets.engaged.Mid.PDT.Haste_35
     sets.engaged.Innin.Acc.PDT.Haste_35 = sets.engaged.Acc.PDT.Haste_35
 
     -- 30% Haste 1626 / 798
@@ -610,11 +597,8 @@ function init_gear_sets()
         head="Hattori Zukin +1",
         feet="Herculean Boots"
     })
-    sets.engaged.Innin.Low.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
-        head="Hattori Zukin +1",
-        feet="Herculean Boots"
-    })
-    sets.engaged.Innin.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {})
+    sets.engaged.Innin.Low.Haste_30 = sets.engaged.Low.Haste_30
+    sets.engaged.Innin.Mid.Haste_30 = sets.engaged.Mid.Haste_30
     sets.engaged.Innin.Acc.Haste_30 = sets.engaged.Acc.Haste_30
 
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
@@ -623,8 +607,8 @@ function init_gear_sets()
     sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.AccPDT)
 
     sets.engaged.Innin.PDT.Haste_30 = set_combine(sets.engaged.Innin.Haste_30, sets.engaged.HastePDT)
-    sets.engaged.Innin.Low.PDT.Haste_30 = set_combine(sets.engaged.Innin.Low.Haste_30, sets.engaged.HastePDT)
-    sets.engaged.Innin.Mid.PDT.Haste_30 = set_combine(sets.engaged.Innin.Mid.Haste_30, sets.engaged.HastePDT)
+    sets.engaged.Innin.Low.PDT.Haste_30 = sets.engaged.Low.PDT.Haste_30
+    sets.engaged.Innin.Mid.PDT.Haste_30 = sets.engaged.Mid.PDT.Haste_30
     sets.engaged.Innin.Acc.PDT.Haste_30 = sets.engaged.Acc.PDT.Haste_30
 
 
@@ -661,9 +645,7 @@ function init_gear_sets()
     sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, {
         head="Hattori Zukin +1",
     })
-    sets.engaged.Innin.Low.Haste_15 = set_combine(sets.engaged.Low.Haste_15, {
-        head="Hattori Zukin +1",
-    })
+    sets.engaged.Innin.Low.Haste_15 = sets.engaged.Low.Haste_15
     sets.engaged.Innin.Mid.Haste_15 = sets.engaged.Mid.Haste_15
     sets.engaged.Innin.Acc.Haste_15 = sets.engaged.Acc.Haste_15
     
@@ -673,8 +655,8 @@ function init_gear_sets()
     sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, sets.engaged.AccPDT)
     
     sets.engaged.Innin.PDT.Haste_15 = set_combine(sets.engaged.Innin.Haste_15, sets.engaged.HastePDT)
-    sets.engaged.Innin.Low.PDT.Haste_15 = set_combine(sets.engaged.Innin.Low.Haste_15, sets.engaged.HastePDT)
-    sets.engaged.Innin.Mid.PDT.Haste_15 = set_combine(sets.engaged.Innin.Mid.Haste_15, sets.engaged.HastePDT)
+    sets.engaged.Innin.Low.PDT.Haste_15 = sets.engaged.Low.PDT.Haste_15
+    sets.engaged.Innin.Mid.PDT.Haste_15 = sets.engaged.Mid.PDT.Haste_15
     sets.engaged.Innin.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
     
     sets.buff.Migawari = {body="Hattori Ningi +1"}
@@ -911,7 +893,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
             equip(sets.TreasureHunter)
         end
-        -- Mecistopins Mantle rule
+        -- Mecistopins Mantle rule (if you kill with ws)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
@@ -1005,9 +987,9 @@ function customize_melee_set(meleeSet)
     if state.TreasureMode.value == 'Fulltime' then
         meleeSet = set_combine(meleeSet, sets.TreasureHunter)
     end
-    if state.CapacityMode.value then
-        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
-    end
+    --if state.CapacityMode.value then
+    --    meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+    --end
     if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
         meleeSet = set_combine(meleeSet, sets.buff.Migawari)
     end
