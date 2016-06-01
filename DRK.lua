@@ -1050,6 +1050,8 @@ function job_status_change(newStatus, oldStatus, eventArgs)
             state.CombatWeapon:set("GreatSword")
         elseif player.equipment.main == 'Apocalypse' then
             state.CombatWeapon:set('Apocalypse')
+        elseif player.equipment.main == 'Ragnarok' then
+            state.CombatWeapon:set('Ragnarok')
         else -- use regular set, which caters to Liberator
             state.CombatWeapon:reset()
         end
