@@ -207,6 +207,7 @@ function init_gear_sets()
         hands="Leyline Gloves",
         body="Dread Jupon",
         legs="Quiahuiz Trousers",
+        back="Mujin Mantle",
         feet="Mochizuki Kyahan +1" -- special enhancement for casting ninjutsu III
     }
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads", body="Mochizuki Chainmail +1" })
@@ -987,9 +988,9 @@ function customize_melee_set(meleeSet)
     if state.TreasureMode.value == 'Fulltime' then
         meleeSet = set_combine(meleeSet, sets.TreasureHunter)
     end
-    --if state.CapacityMode.value then
-    --    meleeSet = set_combine(meleeSet, sets.CapacityMantle)
-    --end
+    if state.CapacityMode.value then
+        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+    end
     if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
         meleeSet = set_combine(meleeSet, sets.buff.Migawari)
     end
