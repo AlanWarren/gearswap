@@ -1127,6 +1127,14 @@ function job_buff_change(buff, gain)
             end
         end
     end
+    
+    if  buff == "Samurai Roll" then
+        classes.CustomRangedGroups:clear()
+        if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
+            classes.CustomRangedGroups:append('SamRoll')
+        end
+       
+    end
 
     if buff == "Last Resort" and state.LastResortMode.value then
         if gain then
@@ -1308,6 +1316,9 @@ function update_melee_groups()
         -- relic AM
         if buffactive['Aftermath'] then
             classes.CustomMeleeGroups:append('AM')
+        end
+        if buffactive['Samurai Roll'] then
+            classes.CustomRangedGroups:append('SamRoll')
         end
     end
 end
