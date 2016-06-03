@@ -28,7 +28,7 @@ function job_setup()
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
     state.Runes = M{['description']='Runes', "Ignis", "Gelus", "Flabra", "Tellus", "Sulpor", "Unda", "Lux", "Tenebrae"}
     state.UseRune = M(false, 'Use Rune')
-    state.Warp = M(false, 'Warp')
+    state.UseWarp = M(false, 'Use Warp')
 
     run_sj = player.sub_job == 'RUN' or false
 
@@ -67,7 +67,7 @@ function user_setup()
     select_default_macro_book()
 
     send_command('bind ^= gs c cycle treasuremode')
-    send_command('bind ^[ gs c cyle Warp')
+    send_command('bind ^[ gs c toggle UseWarp')
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c cycle HasteMode')
@@ -1204,11 +1204,11 @@ function job_state_change(stateField, newValue, oldValue)
         add_to_chat(123, msg)
     elseif stateField == 'Use Rune' then
         send_command('@input /ja '..state.Runes.value..' <me>')
-    elseif stateField == 'Warp' then
-        equip(sets.Warp)
-        dsiable('ring1')
-        add_to_chat(123, '------------WARPING-----------')
-        send_command('wait 9; input /item "Warp Ring" <me>; input gs enable ring1;')
+    elseif stateField == 'Use Warp' then
+        add_to_chat(8, '------------WARPING-----------')
+        --equip({ring1="Warp Ring"})
+        send_command('input //gs equip sets.Warp;')
+        send_command('input //gs disable ring1;@wait 10.0;input /item "Warp Ring" <me>;input //gs enable ring1;')
     end
 end
 
