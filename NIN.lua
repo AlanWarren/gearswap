@@ -1015,9 +1015,6 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-    if not gain and player.equipment.ring1 == 'Warp Ring' then
-        eventArgs.handled = true
-    end
 
     if state.Buff[buff] ~= nil then
         if not midaction() then
@@ -1210,6 +1207,7 @@ function job_state_change(stateField, newValue, oldValue)
     elseif stateField == 'Warp' then
         equip(sets.Warp)
         dsiable('ring1')
+        add_to_chat(123, '------------WARPING-----------')
         send_command('wait 9; input /item "Warp Ring" <me>; input gs enable ring1;')
     end
 end
