@@ -17,7 +17,7 @@ either buff wears off. If you use DRK at events, I'd recommend making this defau
 
 LastResortMode OFF by default. Toggle with CTRL + `  (back tic is left of the 1 key). 
 This mode will equip Fallen's sollerets while LR is active to negate 10% of the defense penalty. 
-(this is probably less useful now days, with current gear)
+(this is an old rule, and doesn't really have a use now days)
 
 CapacityMode OFF by default. Toggle with ALT + = 
 It will full-time whichever piece of gear you specify in sets.CapacityMantle 
@@ -37,6 +37,8 @@ Moonshade earring is not used for WS's at 3000 TP.
 
 You can hit F12 to display custom MODE status as well as the default stuff. 
 
+Single handed weapons are han
+
 ::NOTES::
 
 All of the default sets are geared around scythe. There is support for great sword by using 
@@ -47,20 +49,23 @@ listed in gsList and ignore sets.engaged.GreatSword. (but dont delete it)
 Set format is as follows: 
 sets.engaged.[CombatForm][CombatWeapon][Offense or HybridMode][CustomMeleeGroups]
 
-CombatForm = Haste, DW 
-CombatWeapon = GreatSword
+CombatForm = Haste, DW, SW
+CombatWeapon = GreatSword, Apocalypse, Ragnarok
 OffenseMode = Normal, Mid, Acc
 HybridMode = Normal, PDT
-CustomMeleeGroups = AM3
+CustomMeleeGroups = AM3, AM
 
 CombatForm Haste is used when Last Resort AND either Haste, March, Indi-Haste Geo-Haste is on you.
 This allows you to equip full acro, even though it doesn't have 25% gear haste. You still cap. 
 
-CombatForm DW will activate with /dnc or /nin AND a weapon listed in drk_sub_weapons equipped offhand.
+CombatForm DW will activate with /dnc or /nin AND a weapon listed in drk_sub_weapons equipped offhand. 
+           SW is active with an empty sub-slot, or a shield listed in the shields = S{} list.  
 
-CombatWeapon GreatSword will activate when you equip a GS listed in gsList in job_setup() 
+CombatWeapon GreatSword will activate when you equip a GS listed in gsList in job_setup(). Apocalypse and Ragnarok are
+active when either weapon is equipped. If you have trouble creating sets for Ragnarok, study how I've defined Apoc's sets.
 
-CustomMeleeGroups AM3 will activate when Aftermath lvl 3 is up. 
+CustomMeleeGroups AM3 will activate when Aftermath lvl 3 is up, and AM will activate when relic Aftermath is up.
+
 --]]
 --
 -- Initialization function for this job file.
@@ -87,6 +92,7 @@ function job_setup()
     wsList = S{'Spiral Hell', 'Torcleaver'}
     -- Greatswords you use. 
     gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
+    shields = S{'Rinda Shield'}
     -- Mote has capitalization errors in the default Absorb mappings, so we correct them
     absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
     -- Offhand weapons used to activate DW mode
@@ -894,19 +900,18 @@ function init_gear_sets()
     sets.engaged.GreatSword.Acc.PDT = set_combine(sets.engaged.GreatSword.Acc, sets.Defensive_Acc)
 
     -- sword is more multi-hit, less stp
-    sets.engaged.Sangarius = set_combine(sets.engaged, {
+    sets.engaged.SW = set_combine(sets.engaged, {
         ammo="Yetshila",
         head="Valorous Mask",
-        legs="Argosy Breeches",
         hands=Acro.Hands.Haste,
         feet=Acro.Feet.WSD
     })
-    sets.engaged.Sangarius.Mid = set_combine(sets.engaged.Mid, {
+    sets.engaged.SW.Mid = set_combine(sets.engaged.Mid, {
         ammo="Ginsen",
         hands="Odyssean Gauntlets",
         feet=Acro.Feet.WSD
     })
-    sets.engaged.Sangarius.Acc = set_combine(sets.engaged.Acc, {
+    sets.engaged.SW.Acc = set_combine(sets.engaged.Acc, {
         ammo="Hasty Pinion +1"
     })
 
@@ -1078,7 +1083,7 @@ function job_buff_change(buff, gain)
                 end
             end
         else
-            if state.CombatForm.current ~= 'DW' then
+            if state.CombatForm.current ~= 'DW' and state.CombatForm.current ~= 'SW' then
                 state.CombatForm:reset()
             end
             if not midaction() then
@@ -1185,6 +1190,8 @@ function get_combat_form()
 
     if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
         state.CombatForm:set("DW")
+    elseif player.equipment.sub == '' or shields:contains(player.equipment.sub) then
+        state.CombatForm:set("SW")
     elseif (buffactive['Last Resort'] or (buffactive.hasso and (state.ApocHaste.value and buffactive['Aftermath']))) then
         if (buffactive.embrava or buffactive.haste) and buffactive.march then
             add_to_chat(8, '-------------Delay Capped-------------')
