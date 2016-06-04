@@ -693,6 +693,8 @@ function init_gear_sets()
         ammo="Ginsen",
         neck="Breeze Gorget",
         head="Rao Kabuto",
+        back=Andartia.AGI,
+        legs="Hizamaru Hizayoroi +1",
         waist="Windbuffet Belt +1",
     }
     sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
