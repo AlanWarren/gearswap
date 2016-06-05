@@ -1332,6 +1332,7 @@ function adoulin_zone_change(new_zone_id, old_zone_id)
     register_zone(gearswap.res.zones[new_zone_id][language])
 end
 function register_zone(zone)
+    add_to_chat(8, '-----------'..zone..'------------')
     if zone == 'Western Adoulin' or zone == 'Eastern Adoulin' then
         state.Adoulin:toggle()
     end
