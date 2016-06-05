@@ -12,6 +12,7 @@ function get_sets()
     include('Mote-Include.lua')
     include('organizer-lib')
     require('vectors')
+    windower.raw_register_event('zone change', adoulin_zone_change)
 end
 
 
@@ -29,6 +30,7 @@ function job_setup()
     state.Runes = M{['description']='Runes', "Ignis", "Gelus", "Flabra", "Tellus", "Sulpor", "Unda", "Lux", "Tenebrae"}
     state.UseRune = M(false, 'Use Rune')
     state.UseWarp = M(false, 'Use Warp')
+    state.Adoulin = M(false, 'Adoulin')
 
     run_sj = player.sub_job == 'RUN' or false
 
@@ -294,14 +296,16 @@ function init_gear_sets()
         body="Hizamaru Haramaki",
         ring1="Paguroidea Ring"
     })
-
+    sets.Adoulin = {
+        body="Councilor's Garb",
+    }
     sets.idle.Town = set_combine(sets.idle, {
         head="Herculean Helm",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
         hands="Herculean Gloves",
-        body="Councilor's Garb",
+        body="Hizamaru Haramaki",
         legs="Herculean Trousers",
         ring1="Petrov Ring",
         back=Andartia.DEX,
@@ -310,7 +314,7 @@ function init_gear_sets()
     --sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
     --    body="Councilor's Garb"
     --})
-
+    
     sets.idle.Weak = sets.idle
 
     -- Defense sets
@@ -980,6 +984,9 @@ function customize_idle_set(idleSet)
     else
         idleSet = set_combine(idleSet, select_movement())
     end
+    if state.Adoulin.value then
+        idleSet = set_combine(idleSet, sets.Adoulin)
+    end
     return idleSet
 end
 
@@ -1322,7 +1329,14 @@ function update_combat_form()
         state.CombatForm:reset()
     end
 end
-
+function adoulin_zone_change(new_zone_id, old_zone_id)
+    register_zone(gearswap.res.zones[new_zone_id][language])
+end
+function register_zone(zone)
+    if zone == 'Western Adoulin' or zone == 'Eastern Adoulin' then
+        state.Adoulin:toggle()
+    end
+end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
