@@ -1212,8 +1212,7 @@ function job_state_change(stateField, newValue, oldValue)
     elseif stateField == 'Use Warp' then
         add_to_chat(8, '------------WARPING-----------')
         --equip({ring1="Warp Ring"})
-        send_command('input //gs equip sets.Warp;')
-        send_command('input //gs disable ring1;@wait 10.0;input /item "Warp Ring" <me>;input //gs enable ring1;')
+        send_command('input //gs equip sets.Warp;@wait 10.0;input /item "Warp Ring" <me>;')
     end
 end
 
