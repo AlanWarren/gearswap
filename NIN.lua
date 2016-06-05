@@ -11,8 +11,6 @@ function get_sets()
     mote_include_version = 2
     include('Mote-Include.lua')
     include('organizer-lib')
-    require('vectors')
-    windower.raw_register_event('zone change', adoulin_zone_change)
 end
 
 
@@ -984,7 +982,11 @@ function customize_idle_set(idleSet)
     else
         idleSet = set_combine(idleSet, select_movement())
     end
-    if state.Adoulin.value then
+    local res = require('resources')
+    local info = windower.ffxi.get_info()
+    local zone = res.zones[info.zone].name
+    add_to_chat(8, '------------'..zone..'------------')
+    if zone:match('Adoulin') then
         idleSet = set_combine(idleSet, sets.Adoulin)
     end
     return idleSet
@@ -1069,22 +1071,6 @@ function job_update(cmdParams, eventArgs)
     th_update(cmdParams, eventArgs)
 end
 
--------------------------------------------------------------------------------------------------------------------
--- Facing ratio
--------------------------------------------------------------------------------------------------------------------
-function facing_away(spell)
-    if spell.target.type == 'MONSTER' then
-        local dir = V{spell.target.x, spell.target.y} - V{player.x, player.y}
-        local heading = V{}.from_radian(player.facing)
-        local angle = V{}.angle(dir, heading):degree():abs()
-        if angle > 90 then
-            add_to_chat(8, 'Aborting... angle > 90')
-            return true
-        else
-            return false
-        end
-    end
-end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
@@ -1326,15 +1312,6 @@ function update_combat_form()
         state.CombatForm:set('Innin')
     else
         state.CombatForm:reset()
-    end
-end
-function adoulin_zone_change(new_zone_id, old_zone_id)
-    register_zone(gearswap.res.zones[new_zone_id][language])
-end
-function register_zone(zone)
-    add_to_chat(8, '-----------'..zone..'------------')
-    if zone == 'Western Adoulin' or zone == 'Eastern Adoulin' then
-        state.Adoulin:toggle()
     end
 end
 -- Select default macro book on initial load or subjob change.
