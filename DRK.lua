@@ -154,10 +154,9 @@ function init_gear_sets()
 
     Niht = {}
     Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
-    Ankou.WSD = {name="Niht Mantle", augments={'Attack+14','Dark magic skill +4', '"Drain" and "Aspir" potency +17', 'Weapon skill damage +5%'}}
+    Niht.WSD = {name="Niht Mantle", augments={'Attack+14','Dark magic skill +4', '"Drain" and "Aspir" potency +17', 'Weapon skill damage +5%'}}
     
     Ankou = {}
-
     Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
     Ankou.WSD = { name="Ankou's Mantle", augments={'STR+12','Accuracy+14 Attack+14','Weapon skill damage +10%',}}
 
@@ -185,7 +184,7 @@ function init_gear_sets()
     sets.precast.JA['Dark Seal']    = {head="Fallen's burgeonet +1"}
     sets.precast.JA['Souleater']    = {head="Ignominy burgeonet +1"}
     sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
-    sets.precast.JA['Last Resort']  = {back="Ankou's Mantle"}
+    sets.precast.JA['Last Resort']  = {back=Ankou.STP}
 
     sets.CapacityMantle  = { back="Mecistopins Mantle" }
     sets.WSDayBonus      = { head="Gavialis Helm" }
@@ -774,7 +773,7 @@ function init_gear_sets()
         ear2="Zennaroi Earring",
         hands="Odyssean Gauntlets",
         ring1="Cacoethic Ring +1",
-        back="Ankou's Mantle",
+        back=Ankou.STP,
         waist="Olseni Belt",
         feet="Founder's Greaves"
     })
@@ -786,7 +785,7 @@ function init_gear_sets()
         hands=Acro.Hands.Haste,
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
-        back="Ankou's Mantle",
+        back=Ankou.STP,
         waist="Sarissapho Belt",
         legs="Acro Breeches",
         feet=Acro.Feet.STP
@@ -804,7 +803,7 @@ function init_gear_sets()
         hands="Odyssean Gauntlets",
         ring1="Rajas Ring",
         ring2="Cacoethic Ring +1",
-        back="Ankou's Mantle",
+        back=Ankou.STP,
         waist="Olseni Belt",
         feet="Founder's Greaves"
     })
@@ -820,7 +819,7 @@ function init_gear_sets()
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
         feet=Acro.Feet.WSD,
-        back="Ankou's Mantle",
+        back=Ankou.STP,
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
         feet=Acro.Feet.WSD
