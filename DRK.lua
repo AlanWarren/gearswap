@@ -324,7 +324,7 @@ function init_gear_sets()
     sets.midcast.Drain.Acc = set_combine(sets.midcast.Drain, {
         head="Ignominy Burgeonet +1",
         body="Founder's Breastplate",
-        hands="Leyline Gloves"
+        hands="Leyline Gloves",
         waist="Eschan Stone", -- macc/matk 7
     })
     sets.midcast.Aspir.Acc = sets.midcast.Drain.Acc
