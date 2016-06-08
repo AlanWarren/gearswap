@@ -154,7 +154,12 @@ function init_gear_sets()
 
     Niht = {}
     Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
-    Niht.WSD = {name="Niht Mantle", augments={'Attack+14','Dark magic skill +4', '"Drain" and "Aspir" potency +17', 'Weapon skill damage +5%'}}
+    Ankou.WSD = {name="Niht Mantle", augments={'Attack+14','Dark magic skill +4', '"Drain" and "Aspir" potency +17', 'Weapon skill damage +5%'}}
+    
+    Ankou = {}
+
+    Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+    Ankou.WSD = { name="Ankou's Mantle", augments={'STR+12','Accuracy+14 Attack+14','Weapon skill damage +10%',}}
 
     sets.Organizer = {
         main="Liberator",
@@ -376,7 +381,7 @@ function init_gear_sets()
         hands="Odyssean Gauntlets",
         ring1="Rajas Ring",
         ring2="Ifrit Ring",
-        back=Niht.WSD,
+        back=Ankou.WSD,
         waist="Windbuffet Belt +1",
         legs="Valorous Hose",
         feet="Sulevia's Leggings +1"
@@ -501,17 +506,14 @@ function init_gear_sets()
         head="Valorous Mask",
         body="Founder's Breastplate",
         ring2="Shiva Ring",
-        back=Niht.WSD,
         waist="Soil Belt",
         feet="Heathen's Sollerets +1"
     })
     sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
-        back=Niht.WSD,
         feet="Sulevia's Leggings +1"
     })
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
         legs="Odyssean Cuisses",
-        back=Niht.WSD,
     })
     sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
     sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {})
@@ -604,7 +606,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
-        body="Sulevia's platemail",
+        body="Odyssean Chestplate",
         hands="Sulevia's Gauntlets +1",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
@@ -750,7 +752,7 @@ function init_gear_sets()
         hands=Acro.Hands.Haste,
         ring1="Rajas Ring",
         ring2="Petrov Ring",
-        back="Ankou's Mantle",
+        back=Ankou.STP,
         waist="Windbuffet Belt +1",
         legs="Acro Breeches",
         feet=Acro.Feet.STP
@@ -817,7 +819,7 @@ function init_gear_sets()
         ear2="Brutal Earring"
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
-        feet=Acro.Feet.WSD
+        feet=Acro.Feet.WSD,
         back="Ankou's Mantle",
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
