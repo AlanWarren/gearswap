@@ -158,7 +158,7 @@ function init_gear_sets()
     
     Ankou = {}
     Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
-    Ankou.WSD = { name="Ankou's Mantle", augments={'STR+12','Accuracy+14 Attack+14','Weapon skill damage +10%',}}
+    Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
     sets.Organizer = {
         main="Liberator",
