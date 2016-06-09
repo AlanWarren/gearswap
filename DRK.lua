@@ -882,7 +882,7 @@ function init_gear_sets()
 
     -- great sword
     sets.engaged.GreatSword = set_combine(sets.engaged, {
-        head="Otomi Helm",
+        head="Valorous Helm",
         ear1="Brutal Earring",
         ear2="Tripudio Earring"
     })
