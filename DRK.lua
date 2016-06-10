@@ -772,7 +772,6 @@ function init_gear_sets()
         legs="Odyssean Cuisses",
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        sub="Gracile grip",
         ammo="Hasty Pinion +1",
         head="Argosy Celata",
         neck="Lissome Necklace",
@@ -802,7 +801,7 @@ function init_gear_sets()
         hands="Odyssean Gauntlets"
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
-        sub="Gracile grip",
+        ammo="Hasty Pinion +1",
         head="Sulevia's Mask +1",
         neck="Lissome Necklace",
         ear1="Cessance Earring",
@@ -811,7 +810,7 @@ function init_gear_sets()
         hands="Odyssean Gauntlets",
         ring1="Rajas Ring",
         ring2="Cacoethic Ring +1",
-        back=Ankou.STP,
+        back="Grounded Mantle +1",
         waist="Olseni Belt",
         feet="Founder's Greaves"
     })
