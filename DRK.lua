@@ -696,6 +696,7 @@ function init_gear_sets()
     -- These allow hybrid acc/pdt sets for difficult content
     sets.Defensive = {
         ammo="Hasty Pinion +1",
+        sub="Gracile grip",
         head="Yorium Barbuta", -- 7% haste
         neck="Agitator's Collar", -- 3%
         body="Jumalik Mail",
@@ -709,29 +710,34 @@ function init_gear_sets()
     }
     sets.Defensive_Mid = {
         ammo="Hasty Pinion +1",
-        head="Yorium Barbuta",
+        sub="Gracile grip",
+        head="Sulevia's Mask +1",
         neck="Agitator's Collar",
-        body="Founder's Breastplate",
-        hands="Redan Gloves",
+        body="Sulevia'as Platemail",
+        hands="Sulevia's Gauntlets +1",
         back="Impassive Mantle",
         ring1="Patricius Ring",
         ring2="Defending Ring",
+        waist="Sarissaphoroi belt",
         legs="Valorous Hose",
-        feet="Loyalist Sabatons"
+        feet="Amm Greaves"
     }
     sets.Defensive_Acc = {
+        sub="Gracile grip",
         ammo="Hasty Pinion +1",
-        head="Yorium Barbuta",
+        head="Sulevia's Mask +1",
         neck="Agitator's Collar",
-        hands="Redan Gloves",
-        body="Founder's Breastplate",
+        hands="Sulevia's Gauntlets +1",
+        body="Sulevia'as Platemail",
         back="Grounded Mantle +1",
         ring1="Supershear Ring",
         ring2="Patricius Ring",
-        legs="Valorous Hose",
+        waist="Sarissaphoroi belt",
+        legs="Sulevia's Cuisses +1",
         feet="Founder's Greaves" -- matk 29
     }
     sets.Sulevia = set_combine(sets.Defensive_Mid, {
+        sub="Gracile grip",
         head="Sulevia's Mask +1",
         body="Sulevia's Platemail",
         hands="Sulevia's Gauntlets +1",
@@ -741,7 +747,7 @@ function init_gear_sets()
 
     -- Engaged set, assumes Liberator
     sets.engaged = {
-        --sub="Bloodrain Strap",
+        sub="Bloodrain Strap",
         ammo="Ginsen",
         head="Valorous Mask",
         neck="Ganesha's Mala",
@@ -766,6 +772,7 @@ function init_gear_sets()
         legs="Odyssean Cuisses",
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        sub="Gracile grip",
         ammo="Hasty Pinion +1",
         head="Argosy Celata",
         neck="Lissome Necklace",
@@ -786,15 +793,16 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
         back=Ankou.STP,
-        waist="Sarissapho Belt",
+        waist="Sarissaphoroi Belt",
         legs="Acro Breeches",
         feet=Acro.Feet.STP
     })
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
         legs="Odyssean Cuisses",
+        hands="Odyssean Gauntlets"
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
-        ammo="Hasty Pinion +1",
+        sub="Gracile grip",
         head="Sulevia's Mask +1",
         neck="Lissome Necklace",
         ear1="Cessance Earring",
@@ -866,7 +874,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         ring2="Haverton Ring",
-        waist="Patientia Sash",
+        waist="Patentia Sash",
         legs="Carmine Cuisses +1",
         feet=Acro.Feet.STP
     })
@@ -882,7 +890,7 @@ function init_gear_sets()
 
     -- great sword
     sets.engaged.GreatSword = set_combine(sets.engaged, {
-        head="Valorous Helm",
+        head="Valorous Mask",
         ear1="Brutal Earring",
         ear2="Tripudio Earring"
     })
