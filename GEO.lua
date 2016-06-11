@@ -169,8 +169,8 @@ function init_gear_sets()
 
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
         legs="Bagua Pants",
-        feet="Azimuth Gaiters"
-        back="Nantosuelta's Cape", -- 9
+        feet="Azimuth Gaiters",
+        back="Lifestream Cape", -- 9
     })
 
     sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
