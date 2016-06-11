@@ -57,7 +57,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     sets.precast.JA.Bolster = {body="Bagua Tunic"}
-    sets.precast.JA['Life Cycle'] = {head="Azimuth Hood +1", body="Geomancy Tunic +1"}
+    sets.precast.JA['Life Cycle'] = {head="Azimuth Hood +1", body="Geomancy Tunic +1", back="Nantosuelta's Cape"}
     sets.precast.JA['Full Circle'] = {hands="Bagua Mitaines"}
     sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals"}
 
@@ -170,6 +170,7 @@ function init_gear_sets()
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
         legs="Bagua Pants",
         feet="Azimuth Gaiters"
+        back="Nantosuelta's Cape", -- 9
     })
 
     sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
