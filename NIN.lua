@@ -985,7 +985,6 @@ function customize_idle_set(idleSet)
     local res = require('resources')
     local info = windower.ffxi.get_info()
     local zone = res.zones[info.zone].name
-    add_to_chat(8, '------------'..zone..'------------')
     if zone:match('Adoulin') then
         idleSet = set_combine(idleSet, sets.Adoulin)
     end
