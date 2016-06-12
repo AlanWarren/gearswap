@@ -29,6 +29,7 @@ function job_setup()
     state.UseRune = M(false, 'Use Rune')
     state.UseWarp = M(false, 'Use Warp')
     state.Adoulin = M(false, 'Adoulin')
+    state.Moving  = M(false, "moving")
 
     run_sj = player.sub_job == 'RUN' or false
 
@@ -982,12 +983,12 @@ function customize_idle_set(idleSet)
     else
         idleSet = set_combine(idleSet, select_movement())
     end
-    local res = require('resources')
-    local info = windower.ffxi.get_info()
-    local zone = res.zones[info.zone].name
-    if zone:match('Adoulin') then
-        idleSet = set_combine(idleSet, sets.Adoulin)
-    end
+    --local res = require('resources')
+    --local info = windower.ffxi.get_info()
+    --local zone = res.zones[info.zone].name
+    --if zone:match('Adoulin') then
+    --    idleSet = set_combine(idleSet, sets.Adoulin)
+    --end
     return idleSet
 end
 
@@ -1055,13 +1056,47 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         update_combat_form()
     end
 end
-
--------------------------------------------------------------------------------------------------------------------
--- User code that supplements self-commands.
--------------------------------------------------------------------------------------------------------------------
+mov = {counter=0}
+if player and player.index and windower.ffxi.get_mob_by_index(player.index) then
+    mov.x = windower.ffxi.get_mob_by_index(player.index).x
+    mov.y = windower.ffxi.get_mob_by_index(player.index).y
+    mov.z = windower.ffxi.get_mob_by_index(player.index).z
+end
+moving = false
+windower.raw_register_event('prerender',function()
+    mov.counter = mov.counter + 1;
+    if mov.counter>15 then
+        local pl = windower.ffxi.get_mob_by_index(player.index)
+        if pl and pl.x and mov.x then
+            dist = math.sqrt( (pl.x-mov.x)^2 + (pl.y-mov.y)^2 + (pl.z-mov.z)^2 )
+            if dist > 1 and not moving then
+                state.Moving.value = true
+                local res = require('resources')
+                local info = windower.ffxi.get_info()
+                local zone = res.zones[info.zone].name
+                if zone:match('Adoulin') then
+                    equip(sets.Adoulin)
+                end
+                equip(select_movement())
+                moving = true
+            elseif dist < 1 and moving then
+                state.Moving.value = false
+                --send_command('gs c update')
+                moving = false
+            end
+        end
+        if pl and pl.x then
+            mov.x = pl.x
+            mov.y = pl.y
+            mov.z = pl.z
+        end
+        mov.counter = 0
+    end
+end)
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
+
     select_ammo()
     determine_haste_group()
     update_combat_form()
@@ -1192,6 +1227,17 @@ function job_state_change(stateField, newValue, oldValue)
             msg = msg .. 'Increasing resistence against LIGHT and deals DARK damage.'
         end
         add_to_chat(123, msg)
+   -- elseif stateField == 'moving' then
+   --     if state.Moving.value then
+   --         local res = require('resources')
+   --         local info = windower.ffxi.get_info()
+   --         local zone = res.zones[info.zone].name
+   --         if zone:match('Adoulin') then
+   --             equip(sets.Adoulin)
+   --         end
+   --         equip(select_movement())
+   --     end
+        
     elseif stateField == 'Use Rune' then
         send_command('@input /ja '..state.Runes.value..' <me>')
     elseif stateField == 'Use Warp' then
