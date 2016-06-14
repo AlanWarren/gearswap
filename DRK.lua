@@ -15,9 +15,7 @@ is ON, Souleater will be canceled automatically after the first Weaponskill used
 is active, or if Drain's HP Boost buff is active, then Souleater will remain active until the next WS used after 
 either buff wears off. If you use DRK at events, I'd recommend making this default to ON, as it's damn useful.
 
-LastResortMode OFF by default. Toggle with CTRL + `  (back tic is left of the 1 key). 
-This mode will equip Fallen's sollerets while LR is active to negate 10% of the defense penalty. 
-(this is an old rule, and doesn't really have a use now days)
+LastResortMode: Removed.  In it's place, I'm testing a rule that automatically applies / removes hasso
 
 CapacityMode OFF by default. Toggle with ALT + = 
 It will full-time whichever piece of gear you specify in sets.CapacityMantle 
@@ -121,7 +119,7 @@ function user_setup()
     -- Additional local binds
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c toggle SouleaterMode')
-    send_command('bind ^` gs c toggle LastResortMode')
+    --send_command('bind ^` gs c toggle LastResortMode')
 
     select_default_macro_book()
 end
@@ -1039,9 +1037,6 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    if state.Buff['Last Resort'] and state.LastResortMode.value then
-        meleeSet = set_combine(meleeSet, sets.buff['Last Resort'])
-    end
     if state.Buff['Souleater'] then
         meleeSet = set_combine(meleeSet, sets.buff.Souleater)
     end
@@ -1055,8 +1050,8 @@ end
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
-        if state.Buff['Last Resort'] and state.LastResortMode.value then
-            equip(sets.buff['Last Resort'])
+        if state.Buff['Last Resort'] then
+            send_command('@wait 1.0;cancel hasso')
         end
         -- handle weapon sets
         if gsList:contains(player.equipment.main) then
@@ -1149,12 +1144,12 @@ function job_buff_change(buff, gain)
        
     end
 
-    if buff == "Last Resort" and state.LastResortMode.value then
+    if buff == "Last Resort" then
         if gain then
-            equip(sets.buff["Last Resort"])
+            send_command('@wait 1.0;cancel hasso')
         else
             if not midaction() then
-                handle_equipping_gear(player.status)
+                send_command('@wait 1.0;input /ja "Hasso" <me>')
             end
         end
     end
