@@ -1071,13 +1071,7 @@ windower.raw_register_event('prerender',function()
             dist = math.sqrt( (pl.x-mov.x)^2 + (pl.y-mov.y)^2 + (pl.z-mov.z)^2 )
             if dist > 1 and not moving then
                 state.Moving.value = true
-                local res = require('resources')
-                local info = windower.ffxi.get_info()
-                local zone = res.zones[info.zone].name
-                if zone:match('Adoulin') then
-                    equip(sets.Adoulin)
-                end
-                equip(select_movement())
+                send_command('gs c update')
                 moving = true
             elseif dist < 1 and moving then
                 state.Moving.value = false
@@ -1096,7 +1090,15 @@ end)
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
-
+    if state.Moving.value == true then
+        local res = require('resources')
+        local info = windower.ffxi.get_info()
+        local zone = res.zones[info.zone].name
+        if zone:match('Adoulin') then
+            equip(sets.Adoulin)
+        end
+        equip(select_movement())
+    end
     select_ammo()
     determine_haste_group()
     update_combat_form()
