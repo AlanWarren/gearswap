@@ -376,7 +376,7 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
-        body="Acro Surcoat",
+        body="Odyssean Chestplate",
         hands="Odyssean Gauntlets",
         ring1="Rajas Ring",
         ring2="Ifrit Ring",
@@ -427,7 +427,7 @@ function init_gear_sets()
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
         head="Valorous Mask",
         neck="Shadow Gorget",
-        body="Acro Surcoat",
+        body="Odyssean Chestplate",
         waist="Windbuffet Belt +1",
     })
     sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
@@ -776,6 +776,7 @@ function init_gear_sets()
         head="Argosy Celata",
         neck="Lissome Necklace",
         ear1="Cessance Earring",
+        body="Odyssean Chestplate",
         ear2="Zennaroi Earring",
         hands="Odyssean Gauntlets",
         ring1="Cacoethic Ring +1",
@@ -806,7 +807,6 @@ function init_gear_sets()
         neck="Lissome Necklace",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
-        body="Mes'yohi Haubergeon",
         hands="Odyssean Gauntlets",
         ring1="Rajas Ring",
         ring2="Cacoethic Ring +1",
