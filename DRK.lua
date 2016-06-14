@@ -15,9 +15,7 @@ is ON, Souleater will be canceled automatically after the first Weaponskill used
 is active, or if Drain's HP Boost buff is active, then Souleater will remain active until the next WS used after 
 either buff wears off. If you use DRK at events, I'd recommend making this default to ON, as it's damn useful.
 
-LastResortMode OFF by default. Toggle with CTRL + `  (back tic is left of the 1 key). 
-This mode will equip Fallen's sollerets while LR is active to negate 10% of the defense penalty. 
-(this is an old rule, and doesn't really have a use now days)
+LastResortMode: Removed.  In it's place, I'm testing a rule that automatically applies / removes hasso
 
 CapacityMode OFF by default. Toggle with ALT + = 
 It will full-time whichever piece of gear you specify in sets.CapacityMantle 
