@@ -1048,12 +1048,6 @@ function job_buff_change(buff, gain)
             handle_equipping_gear(player.status)
         end
     end
-    -- Sick and tired of rings being unequip when you have 10,000 buffs being gain/lost?  
-    if not gain then
-        if player.equipment.ring2 == 'Capacity Ring' or player.equipment.ring2 == 'Warp Ring' or player.equipment.ring2 == 'Trizek Ring'then
-            eventArgs.handled = true
-        end
-    end
 
 end
 
@@ -1096,10 +1090,10 @@ end)
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
+    local res = require('resources')
+    local info = windower.ffxi.get_info()
+    local zone = res.zones[info.zone].name
     if state.Moving.value == true then
-        local res = require('resources')
-        local info = windower.ffxi.get_info()
-        local zone = res.zones[info.zone].name
         if zone:match('Adoulin') then
             equip(sets.Adoulin)
         end
