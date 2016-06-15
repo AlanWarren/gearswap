@@ -40,7 +40,7 @@ function job_setup()
     gear.RegularAmmo = 'Togakushi Shuriken'
     gear.SangeAmmo = 'Happo Shuriken'
 
-    wsList = S{'Blade: Hi'}
+    wsList = S{'Blade: Hi', 'Blade: Kamu', 'Blade: Ten'}
 
     update_combat_form()
 
@@ -903,7 +903,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         end
         -- Gavialis Helm rule
         if is_sc_element_today(spell) then
-            if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
+            if wsList:contains(spell.english) then
                 -- do nothing
             else
                 equip(sets.WSDayBonus)
@@ -1046,6 +1046,12 @@ function job_buff_change(buff, gain)
         determine_haste_group()
         if not midaction() then
             handle_equipping_gear(player.status)
+        end
+    end
+    -- Sick and tired of rings being unequip when you have 10,000 buffs being gain/lost?  
+    if not gain then
+        if player.equipment.ring2 == 'Capacity Ring' or player.equipment.ring2 == 'Warp Ring' or player.equipment.ring2 == 'Trizek Ring'then
+            eventArgs.handled = true
         end
     end
 
