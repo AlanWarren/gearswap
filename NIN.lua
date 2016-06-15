@@ -1106,7 +1106,7 @@ function job_update(cmdParams, eventArgs)
         equip(select_movement())
     end
     select_ammo()
-    determine_haste_group()
+    --determine_haste_group()
     update_combat_form()
     run_sj = player.sub_job == 'RUN' or false
     --select_movement()
