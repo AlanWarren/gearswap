@@ -986,9 +986,9 @@ function customize_idle_set(idleSet)
     else
         idleSet = set_combine(idleSet, select_movement())
     end
-     if zone:match('Adoulin') then
-         idleSet = set_combine(idleSet, sets.Adoulin)
-     end
+     --if zone:match('Adoulin') then
+     --    idleSet = set_combine(idleSet, sets.Adoulin)
+     --end
 
     --local res = require('resources')
     --local info = windower.ffxi.get_info()
