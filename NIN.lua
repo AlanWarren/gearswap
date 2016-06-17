@@ -1097,9 +1097,6 @@ end)
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    local res = require('resources')
-    local info = windower.ffxi.get_info()
-    local zone = res.zones[info.zone].name
     if state.Moving.value == true then
         if zone:match('Adoulin') then
             equip(sets.Adoulin)
