@@ -11,9 +11,6 @@ function get_sets()
     mote_include_version = 2
     include('Mote-Include.lua')
     include('organizer-lib')
-    res = require('resources')
-    info = windower.ffxi.get_info()
-    zone = res.zones[info.zone].name
 end
 
 
@@ -986,10 +983,6 @@ function customize_idle_set(idleSet)
     else
         idleSet = set_combine(idleSet, select_movement())
     end
-     --if zone:match('Adoulin') then
-     --    idleSet = set_combine(idleSet, sets.Adoulin)
-     --end
-
     --local res = require('resources')
     --local info = windower.ffxi.get_info()
     --local zone = res.zones[info.zone].name
@@ -1097,6 +1090,9 @@ end)
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
+    local res = require('resources')
+    local info = windower.ffxi.get_info()
+    local zone = res.zones[info.zone].name
     if state.Moving.value == true then
         if zone:match('Adoulin') then
             equip(sets.Adoulin)
