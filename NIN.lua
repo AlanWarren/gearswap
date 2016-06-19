@@ -471,6 +471,7 @@ function init_gear_sets()
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         neck="Lissome Necklace",
         ear1="Trux Earring",
+        body="Rao Togi",
         back=Andartia.DEX,
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
@@ -1056,49 +1057,49 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         update_combat_form()
     end
 end
-mov = {counter=0}
-if player and player.index and windower.ffxi.get_mob_by_index(player.index) then
-    mov.x = windower.ffxi.get_mob_by_index(player.index).x
-    mov.y = windower.ffxi.get_mob_by_index(player.index).y
-    mov.z = windower.ffxi.get_mob_by_index(player.index).z
-end
-moving = false
-windower.raw_register_event('prerender',function()
-    mov.counter = mov.counter + 1;
-    if mov.counter>15 then
-        local pl = windower.ffxi.get_mob_by_index(player.index)
-        if pl and pl.x and mov.x then
-            dist = math.sqrt( (pl.x-mov.x)^2 + (pl.y-mov.y)^2 + (pl.z-mov.z)^2 )
-            if dist > 1 and not moving then
-                state.Moving.value = true
-                send_command('gs c update')
-                moving = true
-            elseif dist < 1 and moving then
-                state.Moving.value = false
-                --send_command('gs c update')
-                moving = false
-            end
-        end
-        if pl and pl.x then
-            mov.x = pl.x
-            mov.y = pl.y
-            mov.z = pl.z
-        end
-        mov.counter = 0
-    end
-end)
+--mov = {counter=0}
+--if player and player.index and windower.ffxi.get_mob_by_index(player.index) then
+--    mov.x = windower.ffxi.get_mob_by_index(player.index).x
+--    mov.y = windower.ffxi.get_mob_by_index(player.index).y
+--    mov.z = windower.ffxi.get_mob_by_index(player.index).z
+--end
+--moving = false
+--windower.raw_register_event('prerender',function()
+--    mov.counter = mov.counter + 1;
+--    if mov.counter>15 then
+--        local pl = windower.ffxi.get_mob_by_index(player.index)
+--        if pl and pl.x and mov.x then
+--            dist = math.sqrt( (pl.x-mov.x)^2 + (pl.y-mov.y)^2 + (pl.z-mov.z)^2 )
+--            if dist > 1 and not moving then
+--                state.Moving.value = true
+--                send_command('gs c update')
+--                moving = true
+--            elseif dist < 1 and moving then
+--                state.Moving.value = false
+--                --send_command('gs c update')
+--                moving = false
+--            end
+--        end
+--        if pl and pl.x then
+--            mov.x = pl.x
+--            mov.y = pl.y
+--            mov.z = pl.z
+--        end
+--        mov.counter = 0
+--    end
+--end)
 
 -- Called by the default 'update' self-command.
 function job_update(cmdParams, eventArgs)
-    local res = require('resources')
-    local info = windower.ffxi.get_info()
-    local zone = res.zones[info.zone].name
-    if state.Moving.value == true then
-        if zone:match('Adoulin') then
-            equip(sets.Adoulin)
-        end
-        equip(select_movement())
-    end
+   -- local res = require('resources')
+   -- local info = windower.ffxi.get_info()
+   -- local zone = res.zones[info.zone].name
+   -- if state.Moving.value == true then
+   --     if zone:match('Adoulin') then
+   --         equip(sets.Adoulin)
+   --     end
+   --     equip(select_movement())
+   -- end
     select_ammo()
     --determine_haste_group()
     update_combat_form()
