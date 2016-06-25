@@ -111,7 +111,7 @@ function init_gear_sets()
     -- Job Abilties
     --------------------------------------
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
-    sets.precast.JA['Futae'] = { hands="Iga Tekko +2" }
+    sets.precast.JA['Futae'] = { hands="Hattori Tekko" }
     sets.precast.JA['Provoke'] = { 
         ear1="Friomisi Earring",
         ear2="Trux Earring", 
@@ -260,7 +260,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         neck="Sanctity Necklace",
         body="Samnuha Coat",
-        hands="Leyline Gloves",
+        hands="Hattori Tekko",
         back="Aput Mantle",
         ring1="Shiva Ring",
         ring2="Haverton Ring",
@@ -471,7 +471,6 @@ function init_gear_sets()
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         neck="Lissome Necklace",
         ear1="Trux Earring",
-        body="Rao Togi",
         back=Andartia.DEX,
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
