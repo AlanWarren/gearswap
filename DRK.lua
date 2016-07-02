@@ -188,7 +188,7 @@ function init_gear_sets()
     sets.precast.JA['Dark Seal']    = {head="Fallen's burgeonet +1"}
     sets.precast.JA['Souleater']    = {head="Ignominy burgeonet +1"}
     sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
-    sets.precast.JA['Last Resort']  = {back=Ankou.STP}
+    sets.precast.JA['Last Resort']  = {back=Ankou.WSD}
 
     sets.CapacityMantle  = { back="Mecistopins Mantle" }
     sets.WSDayBonus      = { head="Gavialis Helm" }
