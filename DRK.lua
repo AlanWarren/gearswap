@@ -158,6 +158,11 @@ function init_gear_sets()
     Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
     Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
+    Odyssean = {["Legs"]=""}
+    Odyssean.Legs.TP = { name="Odyssean Cuisses", augments={'Accuracy+23 Attack+23','"Dbl.Atk."+2','STR+3','Accuracy+11','Attack+8',}}
+    Odyssean.Legs.WS = { name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+7','Accuracy+11',}}
+ 
+
     sets.Organizer = {
         main="Liberator",
         sub="Sangarius",
@@ -387,11 +392,12 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Argosy Celata",
         body="Mes'yohi Haubergeon",
+        legs=Odyssean.Legs.WS
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         ear1="Zennaroi Earring",
         body="Fallen's Cuirass +1",
-        legs="Sulevia's Cuisses +1",
+        --legs="Sulevia's Cuisses +1",
         waist="Olseni Belt",
     })
 
@@ -510,7 +516,7 @@ function init_gear_sets()
         feet="Sulevia's Leggings +1"
     })
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
-        legs="Odyssean Cuisses",
+        legs=Odyssean.Legs.WS
     })
     sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
     sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {})
@@ -767,7 +773,7 @@ function init_gear_sets()
         hands=Acro.Hands.Haste,
         body="Mes'yohi Haubergeon",
         back="Grounded Mantle +1",
-        legs="Odyssean Cuisses",
+        legs=Odyssean.Legs.TP
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         ammo="Hasty Pinion +1",
@@ -796,7 +802,7 @@ function init_gear_sets()
         feet=Acro.Feet.STP
     })
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-        legs="Odyssean Cuisses",
+        legs=Odyssean.Legs.TP,
         hands="Odyssean Gauntlets"
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
