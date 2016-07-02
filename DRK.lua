@@ -1055,9 +1055,9 @@ end
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == "Engaged" then
-        if state.Buff['Last Resort'] then
-            send_command('@wait 1.0;cancel hasso')
-        end
+        --if state.Buff['Last Resort'] then
+        --    send_command('@wait 1.0;cancel hasso')
+        --end
         -- handle weapon sets
         if gsList:contains(player.equipment.main) then
             state.CombatWeapon:set("GreatSword")
@@ -1149,15 +1149,15 @@ function job_buff_change(buff, gain)
        
     end
 
-    if buff == "Last Resort" then
-        if gain then
-            send_command('@wait 1.0;cancel hasso')
-        else
-            if not midaction() then
-                send_command('@wait 1.0;input /ja "Hasso" <me>')
-            end
-        end
-    end
+    --if buff == "Last Resort" then
+    --    if gain then
+    --        send_command('@wait 1.0;cancel hasso')
+    --    else
+    --        if not midaction() then
+    --            send_command('@wait 1.0;input /ja "Hasso" <me>')
+    --        end
+    --    end
+    --end
 end
 
 
