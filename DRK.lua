@@ -769,10 +769,9 @@ function init_gear_sets()
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Valorous Mask",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-        hands=Acro.Hands.Haste,
+        hands="Emicho Gauntlets",
         body="Mes'yohi Haubergeon",
+        waist="Sarissaphoroi Belt",
         back="Grounded Mantle +1",
         legs=Odyssean.Legs.TP
     })
@@ -783,7 +782,6 @@ function init_gear_sets()
         ear1="Cessance Earring",
         body="Odyssean Chestplate",
         ear2="Zennaroi Earring",
-        hands="Odyssean Gauntlets",
         ring1="Cacoethic Ring +1",
         back=Ankou.STP,
         waist="Olseni Belt",
@@ -794,7 +792,7 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Valorous Mask",
         body="Odyssean Chestplate",
-        hands=Acro.Hands.Haste,
+        hands="Emicho Gauntlets",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
         back=Ankou.STP,
@@ -804,15 +802,15 @@ function init_gear_sets()
     })
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
         legs=Odyssean.Legs.TP,
-        hands="Odyssean Gauntlets"
+        hands="Emicho Gauntlets",
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
         ammo="Hasty Pinion +1",
-        head="Sulevia's Mask +1",
+        head="Argosy Celata",
         neck="Lissome Necklace",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
-        hands="Odyssean Gauntlets",
+        hands="Emicho Gauntlets",
         ring1="Rajas Ring",
         ring2="Cacoethic Ring +1",
         back="Grounded Mantle +1",
