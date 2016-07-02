@@ -312,7 +312,7 @@ function init_gear_sets()
         ammo="Impatiens",
         head="Gavialis Helm",
         body="Heathen's Cuirass +1",
-        hands=Acro.Hands.Haste,
+        hands="Emicho Gauntlets",
         ring2="K'ayres Ring",
         back="Trepidity Mantle",
         waist="Eschan Stone", -- macc/matk 7
@@ -382,11 +382,11 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Odyssean Chestplate",
         hands="Odyssean Gauntlets",
-        ring1="Rajas Ring",
+        ring1="Apate Ring",
         ring2="Ifrit Ring",
+        legs="Valorous Hose",
         back=Ankou.WSD,
         waist="Windbuffet Belt +1",
-        legs="Valorous Hose",
         feet="Sulevia's Leggings +1"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
