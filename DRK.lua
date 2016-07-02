@@ -622,10 +622,10 @@ function init_gear_sets()
 
     sets.idle.Field = set_combine(sets.idle.Town, {
         ammo="Ginsen",
-        head="",
+        head="Valorous Mask",
         ear1="Zennaroi Earring",
         neck="Sanctity Necklace",
-        body="Lugra Cloak +1",
+        body="Jumalik mail",
         hands="Redan Gloves",
         ring1="Dark Ring",
         ring2="Defending Ring",
