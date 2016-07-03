@@ -162,6 +162,10 @@ function init_gear_sets()
     Odyssean.Legs = {}
     Odyssean.Legs.TP = { name="Odyssean Cuisses", augments={'Accuracy+23 Attack+23','"Dbl.Atk."+2','STR+3','Accuracy+11','Attack+8',}}
     Odyssean.Legs.WS = { name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+7','Accuracy+11',}}
+    Odyssean.Feet = {}
+    Odyssean.Feet.FC = { name="Odyssean Greaves", augments={'Attack+20','"Fast Cast"+4','Accuracy+15',}}
+    Odyssean.Feet.TP = { name="Odyssean Greaves", augments={'Accuracy+16 Attack+16','"Store TP"+4','DEX+1','Accuracy+13','Attack+15',}}
+
  
 
     sets.Organizer = {
@@ -216,7 +220,7 @@ function init_gear_sets()
         hands="Leyline Gloves",
         ring2="Prolix Ring",
         legs="Eschite Cuisses",
-        feet="Odyssean Greaves"
+        feet=Odyssean.Feet.FC
     }
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, { 
@@ -255,7 +259,7 @@ function init_gear_sets()
         body="Founder's Breastplate",
         hands="Leyline Gloves",
         back="Grounded Mantle +1",
-        feet="Odyssean Greaves"
+        feet=Odyssean.Feet.FC
     }
 
     sets.midcast['Dark Magic'] = {
@@ -271,10 +275,10 @@ function init_gear_sets()
         ring2="Sangoma Ring",
         back=Niht.DarkMagic, -- 10
         legs="Eschite Cuisses",  -- 20
-        feet="Odyssean Greaves"
+        feet="Heathen's Sollerets +1"
     }
     sets.midcast.Endark = set_combine(sets.midcast['Dark Magic'], {
-        ammo="Impatiens",
+        feet=Odyssean.Feet.FC
     })
 
     sets.midcast['Dark Magic'].Acc = set_combine(sets.midcast['Dark Magic'], {
@@ -317,7 +321,7 @@ function init_gear_sets()
         back="Trepidity Mantle",
         waist="Eschan Stone", -- macc/matk 7
         legs="Carmine Cuisses +1",
-        feet="Odyssean Greaves"
+        feet=Odyssean.Feet.FC
     })
 
     -- Drain spells 
@@ -339,7 +343,7 @@ function init_gear_sets()
 
     sets.midcast.Drain.OhShit = set_combine(sets.midcast.Drain, {
         legs="Carmine Cuisses +1",
-        feet="Odyssean Greaves"
+        feet=Odyssean.Feet.FC
     })
 
     -- Absorbs
@@ -772,8 +776,9 @@ function init_gear_sets()
         hands="Emicho Gauntlets",
         body="Mes'yohi Haubergeon",
         waist="Sarissaphoroi Belt",
-        back="Grounded Mantle +1",
-        legs=Odyssean.Legs.TP
+        back=Ankou.STP,
+        legs=Odyssean.Legs.TP,
+        feet=Odyssean.Feet.TP
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         ammo="Hasty Pinion +1",
@@ -785,7 +790,6 @@ function init_gear_sets()
         ring1="Cacoethic Ring +1",
         back=Ankou.STP,
         waist="Olseni Belt",
-        feet="Founder's Greaves"
     })
     -- Liberator AM3
     sets.engaged.AM3 = set_combine(sets.engaged, {
@@ -803,6 +807,7 @@ function init_gear_sets()
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
         legs=Odyssean.Legs.TP,
         hands="Emicho Gauntlets",
+        feet=Odyssean.Feet.TP
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
         ammo="Hasty Pinion +1",
@@ -814,8 +819,8 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Cacoethic Ring +1",
         back="Grounded Mantle +1",
+        legs="Sulevia's Cuisses +1",
         waist="Olseni Belt",
-        feet="Founder's Greaves"
     })
 
     -- Apocalypse
