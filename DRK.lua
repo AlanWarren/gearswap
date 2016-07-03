@@ -380,7 +380,7 @@ function init_gear_sets()
     -- General sets
     sets.precast.WS = {
         ammo="Aqreqaq Bomblet",
-        head="Valorous Mask",
+        head="Argosy Celata",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
@@ -434,7 +434,6 @@ function init_gear_sets()
     -- 20% STR / 20% INT 
     -- Base set only used at 3000TP to put AM3 up
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
-        head="Valorous Mask",
         neck="Shadow Gorget",
         body="Odyssean Chestplate",
         waist="Windbuffet Belt +1",
@@ -483,7 +482,6 @@ function init_gear_sets()
     -- CROSS REAPER
     -- 60% STR / 60% MND
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-        head="Valorous Mask",
         body="Acro Surcoat",
         neck="Aqua Gorget",
         waist="Windbuffet Belt +1"
@@ -511,7 +509,6 @@ function init_gear_sets()
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
         ammo="Ginsen",
         neck="Shadow Gorget",
-        head="Valorous Mask",
         body="Founder's Breastplate",
         ring2="Shiva Ring",
         waist="Soil Belt",
@@ -775,7 +772,6 @@ function init_gear_sets()
         head="Valorous Mask",
         hands="Emicho Gauntlets",
         body="Mes'yohi Haubergeon",
-        waist="Sarissaphoroi Belt",
         back=Ankou.STP,
         legs=Odyssean.Legs.TP,
         feet=Odyssean.Feet.TP
@@ -800,7 +796,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
         back=Ankou.STP,
-        waist="Sarissaphoroi Belt",
+        --waist="Sarissaphoroi Belt",
         legs="Acro Breeches",
         feet=Acro.Feet.STP
     })
