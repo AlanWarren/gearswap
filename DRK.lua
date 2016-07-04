@@ -330,6 +330,7 @@ function init_gear_sets()
         ear2="Hirudinea Earring",
         body="Lugra Cloak +1",
         ring2="Excelsis Ring",
+        feet=Odyssean.Feet.FC
     })
     sets.midcast.Aspir = sets.midcast.Drain
 
