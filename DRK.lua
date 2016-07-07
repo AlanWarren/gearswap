@@ -441,18 +441,15 @@ function init_gear_sets()
     })
     sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
         ear1="Lugra Earring +1",
-        body="Acro Surcoat",
     })
     -- Mid assumes higher defense target
     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
         neck="Shadow Gorget",
-        body="Mes'yohi Haubergeon",
         legs="Sulevia's Cuisses +1",
         waist="Light Belt"
     })
     sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
         head="Sulevia's Mask +1",
-        body="Fallen's Cuirass +1",
         legs="Sulevia's Cuisses +1",
         waist="Light Belt",
     })
@@ -483,16 +480,15 @@ function init_gear_sets()
     -- CROSS REAPER
     -- 60% STR / 60% MND
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-        body="Acro Surcoat",
         neck="Aqua Gorget",
         waist="Windbuffet Belt +1"
     })
     sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {
-        body="Acro Surcoat",
+        head="Sulevia's Mask +1",
+        legs="Sulevia's Cuisses +1",
     })
 
     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
-        neck="Ganesha's Mala",
         waist="Metalsinger Belt",
     })
     sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
@@ -510,7 +506,6 @@ function init_gear_sets()
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
         ammo="Ginsen",
         neck="Shadow Gorget",
-        body="Founder's Breastplate",
         ring2="Shiva Ring",
         waist="Soil Belt",
         feet="Heathen's Sollerets +1"
@@ -756,7 +751,7 @@ function init_gear_sets()
     sets.engaged = {
         --sub="Bloodrain Strap",
         ammo="Ginsen",
-        head="Valorous Mask",
+        head="Acro Helm",
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
         ear2="Brutal Earring",
@@ -779,7 +774,6 @@ function init_gear_sets()
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         ammo="Hasty Pinion +1",
-        head="Argosy Celata",
         neck="Lissome Necklace",
         ear1="Cessance Earring",
         body="Odyssean Chestplate",
@@ -791,24 +785,25 @@ function init_gear_sets()
     -- Liberator AM3
     sets.engaged.AM3 = set_combine(sets.engaged, {
         ammo="Ginsen",
-        head="Valorous Mask",
+        head="Acro Helm",
         body="Odyssean Chestplate",
         hands="Emicho Gauntlets",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
         back=Ankou.STP,
-        --waist="Sarissaphoroi Belt",
+        waist="Sarissaphoroi Belt",
         legs="Acro Breeches",
         feet=Acro.Feet.STP
     })
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-        legs=Odyssean.Legs.TP,
+        head="Valorous Mask",
         hands="Emicho Gauntlets",
+        legs=Odyssean.Legs.TP,
         feet=Odyssean.Feet.TP
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
         ammo="Hasty Pinion +1",
-        head="Argosy Celata",
+        head="Valorous Mask",
         neck="Lissome Necklace",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
@@ -816,7 +811,6 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Cacoethic Ring +1",
         back="Grounded Mantle +1",
-        legs="Sulevia's Cuisses +1",
         waist="Olseni Belt",
     })
 
