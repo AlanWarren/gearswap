@@ -323,6 +323,11 @@ function init_gear_sets()
         legs="Carmine Cuisses +1",
         feet=Odyssean.Feet.FC
     })
+    sets.midcast['Dread Spikes'].Acc = set_combine(sets.midcast['Dark Magic'], {
+        body="Heathen's Cuirass +1",
+        hands="Leyline Gloves",
+        waist="Eschan Stone", -- macc/matk 7
+    })
 
     -- Drain spells 
     sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
