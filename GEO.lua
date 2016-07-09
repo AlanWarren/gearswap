@@ -512,10 +512,10 @@ end
 
 function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Offense Mode' then
-        if newValue == 'Normal' then
-            disable('main','sub','range')
+        if newValue == 'Melee' then
+            disable('main','sub')
         else
-            enable('main','sub','range')
+            enable('main','sub')
         end
     end
 end
