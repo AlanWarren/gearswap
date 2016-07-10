@@ -335,29 +335,29 @@ function init_gear_sets()
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = {
-		head="Iuitl Headgear +1",
+		head="Herculean Helm",
         neck="Sanctity Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
         body="Emet Harness +1",
-        hands="Iuitl Wristbands +1",
+        hands="Herculean Gloves",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
         feet="Skadi's Jambeaux +1"
     }
 
 	sets.idle.Town = set_combine(sets.idle, {
-        head="Lithelimb Cap",
+		head="Herculean Helm",
         back="Canny Cape",
         neck="Sanctity Necklace",
-        body="Councilor's Garb",
+        body="Emet Harness +1",
         hands="Herculean Gloves",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
         waist="Windbuffet Belt +1",
     })
 
@@ -417,7 +417,7 @@ function init_gear_sets()
 	
 	-- Normal melee group
 	sets.engaged = {
-		head="Taeon Chapeau",
+        head="Herculean Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi Earring",
@@ -434,13 +434,14 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged, {
         neck="Lissome Necklace",
         ring1="Rajas Ring",
+        legs="Herculean Trousers",
     })
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
 		body="Samnuha Coat",
         hands="Herculean Gloves",
         neck="Lissome Necklace",
         ear1="Zennaroi Earring",
-        ear2="Steelflash Earring",
+        ear2="Cessance Earring",
         back="Grounded Mantle +1",
         ring1="Patricius Ring",
         waist="Olseni Belt",
@@ -480,14 +481,17 @@ function init_gear_sets()
     
     -- Haste 43%
     sets.engaged.Haste_43 = set_combine(sets.engaged, {
-        head="Taeon Chapeau",
+        head="Herculean Helm",
+        neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Cessance Earring",
         body="Rawhide Vest",
         hands="Herculean Gloves",
+        ring1="Petrov Ring",
+        ring2="Epona's Ring",
         back="Canny Cape",
         waist="Windbuffet Belt +1",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
         feet="Herculean Boots"
     })
     sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
@@ -579,7 +583,7 @@ function init_gear_sets()
 
      -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
-        hands=TaeonHands.TA,
+        hands="Herculean Gloves",
         ear1="Heartseeker Earring",
         ear2="Dudgeon Earring"
     })
