@@ -1046,6 +1046,7 @@ function customize_melee_set(meleeSet)
     if state.Buff['Souleater'] then
         meleeSet = set_combine(meleeSet, sets.buff.Souleater)
     end
+    --meleeSet = set_combine(meleeSet, select_earring())
     return meleeSet
 end
 
@@ -1317,6 +1318,14 @@ function job_get_spell_map(spell, default_spell_map)
     end
     if spell.type == 'Trust' then
         return 'Trust'
+    end
+end
+
+function select_earring()
+    if world.time >= (17*60) or world.time <= (7*60) then
+        return sets.Lugra
+    else
+        return sets.Brutal
     end
 end
 
