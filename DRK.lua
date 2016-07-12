@@ -453,7 +453,7 @@ function init_gear_sets()
     sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {})
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
         ear1="Zennaroi Earring",
-        waist="Olseni Belt"
+        waist="Olseni Belt",
         legs=Odyssean.Legs.WS, 
     })
     sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
@@ -466,7 +466,7 @@ function init_gear_sets()
     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {})
     sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
         ear1="Zennaroi Earring",
-        waist="Olseni Belt"
+        waist="Olseni Belt",
         legs=Odyssean.Legs.WS, 
     })
 
