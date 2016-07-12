@@ -87,7 +87,7 @@ function job_setup()
     -- If you have a fully upgraded Apoc, set this to true 
     state.ApocHaste = M(false, 'Apoc Haste Mode')   
     -- Weaponskills you do NOT want Gavialis helm used with
-    wsList = S{'Spiral Hell', 'Torcleaver'}
+    wsList = S{'Spiral Hell', 'Torcleaver', 'Insurgency', 'Quietus'}
     -- Greatswords you use. 
     gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
     shields = S{'Rinda Shield'}
@@ -386,7 +386,7 @@ function init_gear_sets()
     -- General sets
     sets.precast.WS = {
         ammo="Aqreqaq Bomblet",
-        head="Argosy Celata",
+        head="Valorous Mask",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
@@ -407,7 +407,6 @@ function init_gear_sets()
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         ear1="Zennaroi Earring",
-        body="Fallen's Cuirass +1",
         --legs="Sulevia's Cuisses +1",
         waist="Olseni Belt",
     })
@@ -445,31 +444,19 @@ function init_gear_sets()
         waist="Windbuffet Belt +1",
     })
     sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
-        ear1="Lugra Earring +1",
     })
     -- Mid assumes higher defense target
     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
-        neck="Shadow Gorget",
         legs="Sulevia's Cuisses +1",
         waist="Light Belt"
     })
-    sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {
-        head="Sulevia's Mask +1",
-        legs="Sulevia's Cuisses +1",
-        waist="Light Belt",
-    })
+    sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {})
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
-        head="Argosy Celata",
-        body="Mes'yohi Haubergeon",
-        legs="Sulevia's Cuisses +1",
         ear1="Zennaroi Earring",
+        waist="Olseni Belt"
+        legs=Odyssean.Legs.WS, 
     })
-    sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {
-        head="Sulevia's Mask +1",
-        neck="Shadow Gorget",
-        legs="Sulevia's Cuisses +1",
-        waist="Light Belt",
-    })
+    sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
 
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
         ear2="Ishvara Earring",
@@ -478,8 +465,9 @@ function init_gear_sets()
     })
     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {})
     sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
-        body="Mes'yohi Haubergeon",
         ear1="Zennaroi Earring",
+        waist="Olseni Belt"
+        legs=Odyssean.Legs.WS, 
     })
 
     -- CROSS REAPER
@@ -503,32 +491,34 @@ function init_gear_sets()
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
         ammo="Ginsen",
         neck="Aqua Gorget",
-        legs="Sulevia's Cuisses +1",
+        legs=Odyssean.Legs.WS, 
     })
-
     -- ENTROPY
     -- 86-100% INT 
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
         ammo="Ginsen",
+        head="Heathen's Burgonet +1",
         neck="Shadow Gorget",
+        body="Fallen's Cuirass +1",
         ring2="Shiva Ring",
         waist="Soil Belt",
-        feet="Heathen's Sollerets +1"
-    })
-    sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {
+        legs="Sulevia's Cuisses +1",
         feet="Sulevia's Leggings +1"
     })
-    sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, { 
-        legs=Odyssean.Legs.WS
+    sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, { })
+    sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
+        body="Odyssean Chestplate",
     })
     sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
-    sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {})
+    sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {
+        legs=Odyssean.Legs.WS
+    })
 
     -- Quietus
     -- 60% STR / MND 
     sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
-        ear2="Lugra Earring +1",
+        ear2="Ishvara Earring",
         waist="Windbuffet Belt +1",
     })
     sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {})
@@ -537,9 +527,9 @@ function init_gear_sets()
     })
     sets.precast.WS.Quietus.AM3Mid = set_combine(sets.precast.WS.Quietus.Mid, {
         ear1="Lugra Earring +1",
-        ear2="Brutal Earring",
+        ear2="Ishvara Earring",
     })
-    sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, sets.precast.WS.Acc)
+    sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, {})
 
     -- SPIRAL HELL
     -- 50% STR / 50% INT 
@@ -547,10 +537,8 @@ function init_gear_sets()
         neck="Aqua Gorget",
         waist="Metalsinger belt",
     })
-    sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid, {
-    })
-    sets.precast.WS['Spiral Hell'].Acc = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Acc, {
-    })
+    sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid, { })
+    sets.precast.WS['Spiral Hell'].Acc = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Acc, { })
 
     -- SHADOW OF DEATH
     -- 40% STR 40% INT - Darkness Elemental
@@ -815,7 +803,7 @@ function init_gear_sets()
         hands="Emicho Gauntlets",
         ring1="Rajas Ring",
         ring2="Cacoethic Ring +1",
-        back="Grounded Mantle +1",
+        --back="Grounded Mantle +1",
         waist="Olseni Belt",
     })
 
