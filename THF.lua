@@ -269,15 +269,16 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mid, {neck="Shadow Gorget"})
 	
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-        head="Taeon Chapeau",
+        head="Herculean Helm",
         neck="Moepapa Medal",
-        hands=TaeonHands.TA,
+        body="Rawhide Vest",
+        hands="Herculean Gloves",
         ring1="Ramuh Ring",
         ring2="Epona's Ring",
         waist="Windbuffet Belt +1",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
+        feet="Herculean Boots",
         back="Kayapa Cape",
-        feet="Plunderer's Poulaines"
     })
 	sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {back="Canny Cape"})
 	sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
