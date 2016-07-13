@@ -23,8 +23,8 @@ function job_setup()
     state.Buff.Retaliation = buffactive.retaliation or false
     
     wsList = S{}
-    gsList = S{'Macbain', 'Kaquljaan'}
-    war_sub_weapons = S{"Sangarius", "Usonmunku"}
+    gsList = S{'Macbain', 'Kaquljaan', 'Nativus Halberd'}
+    war_sub_weapons = S{"Sangarius", "Usonmunku", "Perun", "Tanmogayi"}
 
     get_combat_form()
     get_combat_weapon()
@@ -83,6 +83,13 @@ function init_gear_sets()
      Niht = {}
      Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
      Niht.WSD = {name="Niht Mantle", augments={'Attack+9','Dark magic skill +4', '"Drain" and "Aspir" potency +11','Weapon skill damage +4%'}}
+    Odyssean = {}
+    Odyssean.Legs = {}
+    Odyssean.Legs.TP = { name="Odyssean Cuisses", augments={'Accuracy+23 Attack+23','"Dbl.Atk."+2','STR+3','Accuracy+11','Attack+8',}}
+    Odyssean.Legs.WS = { name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+7','Accuracy+11',}}
+    Odyssean.Feet = {}
+    Odyssean.Feet.FC = { name="Odyssean Greaves", augments={'Attack+20','"Fast Cast"+4','Accuracy+15',}}
+    Odyssean.Feet.TP = { name="Odyssean Greaves", augments={'Accuracy+16 Attack+16','"Store TP"+4','DEX+1','Accuracy+13','Attack+15',}}
 
      sets.Organizer = {
          main="Devivifier",
@@ -160,19 +167,19 @@ function init_gear_sets()
      -- WEAPONSKILL SETS
      -- General sets
      sets.precast.WS = {
-         --ammo="Fracas Grenade",
+         ammo="Aqreqaq Bomblet",
          head="Valorous Mask",
          neck="Defiant Collar",
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
-         body="Acro Surcoat",
+         body="Odyssean Chestplate",
          hands="Odyssean Gauntlets",
-         ring1="Karieyh Ring",
+         ring1="Apate Ring",
          ring2="Ifrit Ring",
-         waist="Windbuffet Belt +1",
+         legs="Valorous Hose",
          back="Mauler's Mantle",
-         legs="Argosy Breeches",
-         feet=Acro.Feet.WSD
+         waist="Windbuffet Belt +1",
+         feet="Sulevia's Leggings +1"
      }
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
          ammo="Ginsen",
@@ -187,7 +194,6 @@ function init_gear_sets()
     
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {
         neck="Flame Gorget",
-        body="Mes'yohi Haubergeon",
         hands="Crusher's Gauntlets",
         waist="Light Belt",
     })
@@ -226,6 +232,11 @@ function init_gear_sets()
      })
      sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, sets.precast.WS.Acc)
 
+    sets.precast.WS.Stardiver = set_combine(sets.precast.WS, {
+        neck="Shadow Gorget",
+        waist="Soil Belt",
+        legs="Sulevia's Cuisses +1",
+    })
      -- Sword WS's
      -- SANGUINE BLADE
      -- 50% MND / 50% STR Darkness Elemental
@@ -358,7 +369,7 @@ function init_gear_sets()
  
      -- Engaged set, assumes Liberator
      sets.engaged = {
-         ammo="Yetshila",
+         ammo="Ginsen",
          head="Valorous Mask",
          neck="Asperity Necklace",
          ear1="Brutal Earring",
@@ -366,24 +377,25 @@ function init_gear_sets()
     	 body="Boii Lorica +1",
          hands=Acro.Hands.STP,
          ring1="Rajas Ring",
-         ring2="Oneiros Ring",
+         ring2="Petrov Ring",
          back="Mauler's Mantle",
          waist="Windbuffet Belt +1",
          legs="Odyssean Cuisses",
-         feet=Acro.Feet.WSD
+         feet=Acro.Feet.STP
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Ginsen",
          neck="Lissome Necklace",
-         hands="Odyssean Gauntlets",
-         feet=Acro.Feet.WSD
+         hands="Emicho Gauntlets",
+         waist="Sarissaphoroi Belt",
+         legs=Odyssean.Legs.TP,
+         feet=Odyssean.Feet.TP
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-         head="Argosy Celata",
          ring2="Mars's Ring",
+         body="Odyssean Chestplate",
          waist="Olseni Belt",
          back="Grounded Mantle +1",
-         feet="Loyalist Sabatons"
      })
 
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
