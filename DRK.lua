@@ -616,7 +616,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         neck="Sanctity Necklace",
         body="Jumalik mail",
-        hands="Redan Gloves",
+        hands="Sulevia's Gauntlets +1",
         ring1="Dark Ring",
         ring2="Defending Ring",
         back="Impassive Mantle",
@@ -947,7 +947,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.type:lower() == 'weaponskill' then
         -- handle Gavialis Helm
         if is_sc_element_today(spell) then
-            if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
+            if wsList:contains(spell.english) then
                 -- do nothing
             else
                 equip(sets.WSDayBonus)

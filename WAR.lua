@@ -126,12 +126,12 @@ function init_gear_sets()
      sets.precast.FC = {
          ammo="Impatiens",
          head="Cizin Helm +1",
-         body="Yorium Cuirass",
+         body="Odyssean Chestplate",
          ear1="Loquacious Earring",
          hands="Leyline Gloves",
          ring2="Prolix Ring",
          legs="Eschite Cuisses",
-         feet="Odyssean Greaves"
+         Odyssean.Feet.FC
      }
      sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
 
@@ -288,13 +288,15 @@ function init_gear_sets()
      
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
-         head="Valorous Mask",
+         head="Sulevia's Mask",
          neck="Sanctity Necklace",
-         body="Kumarbi's Akar",
-         ring1="Karieyh Ring",
-         ring2="Paguroidea Ring",
+         body="Sulevia's platemail",
+         ring1="Paguroidea Ring",
+         ring2="Defending Ring",
+         hands="Sulevia's Gauntlets +1",
          back="Impassive Mantle",
          waist="Flume Belt",
+         legs="Sulevia's Cuisses +1",
          feet="Hermes' Sandals"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {

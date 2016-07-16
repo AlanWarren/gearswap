@@ -136,7 +136,7 @@ function init_gear_sets()
         ear2="Loquacious Earring",
         neck="Incanter's Torque",
         body="Azimuth Coat +1", -- 3%
-        hands="Geomancy Mitaines +1", -- 3%
+        hands="Amalric Gages", 
         ring1="Prolix Ring",
         back="Lifestream Cape",
         waist="Witful Belt", -- 4%
@@ -144,7 +144,7 @@ function init_gear_sets()
     }
     sets.midcast.Trust =  {
          head="Azimuth hood +1",
-         hands="Geomancy Mitaines +1",
+         hands="Amalric Gages", 
          body="Azimuth Coat +1",
          legs="Azimuth Tights +1",
          feet="Helios Boots"
@@ -197,7 +197,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Azimuth Coat +1",
-        hands="Helios Gloves",
+        hands="Amalric Gages", 
         ring1="Shiva Ring",
         ring2="Resonance Ring",
         back="Toro Cape",
@@ -210,7 +210,7 @@ function init_gear_sets()
         head="Welkin Crown",
         ear1="Friomisi Earring",
         ear2="Gwati Earring", 
-        hands="Psycloth Manillas",
+        hands="Amalric Gages", 
         back="Refraction Cape",
         legs="Merlinic Shalwar",
         feet="Helios Boots"
@@ -233,6 +233,7 @@ function init_gear_sets()
         head="Welkin Crown",
         ear1="Friomisi Earring",
         ear2="Gwati Earring", 
+        hands="Amalric Gages", 
         legs="Merlinic Shalwar",
         ring1="Sangoma Ring",
         ring2="Resonance Ring",
