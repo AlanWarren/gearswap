@@ -234,11 +234,12 @@ function init_gear_sets()
     -- Midcast Sets
     sets.midcast.FastRecast = {
         ammo="Impatiens",
-        head="Otomi Helm",
-        body="Heathen's Cuirass +1",
+        head="Fallen's Burgeonet +1",
+        body="Odyssean Chestplate",
         hands=Acro.Hands.Haste,
         back="Grounded Mantle +1",
-        feet="Odyssean Greaves"
+        legs="Carmine Cuisses +1",
+        feet=Odyssean.Feet.FC
     }
     sets.midcast.Trust =  {
         head="Valorous Mask",
@@ -596,11 +597,11 @@ function init_gear_sets()
     -- Idle sets
     sets.idle.Town = {
         ammo="Ginsen",
-        head="Sulevia's Mask +1",
+        head="",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
-        body="Odyssean Chestplate",
+        body="Lugra Cloak +1",
         hands="Sulevia's Gauntlets +1",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
