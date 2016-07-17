@@ -242,11 +242,11 @@ function init_gear_sets()
         feet=Odyssean.Feet.FC
     }
     sets.midcast.Trust =  {
-        head="Valorous Mask",
+        head="Fallen's Burgeonet +1",
         hands=Acro.Hands.Haste,
-        body="Heathen's Cuirass +1",
-        legs="Eschite Cuisses",
-        feet="Amm Greaves"
+        body="Odyssean Chestplate",
+        legs="Carmine Cuisses +1",
+        feet=Odyssean.Feet.FC
     }
     sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
         body="Apururu Unity shirt",
