@@ -230,6 +230,9 @@ function init_gear_sets()
     sets.precast.FC['Enfeebling Magic'] = set_combine(sets.precast.FC, {
         head="Cizin Helm +1",
     })
+    sets.precast.FC.Cure = set_combine(sets.precast.FC, {
+        body="Jumalik Mail",
+    })
 
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -302,7 +305,7 @@ function init_gear_sets()
         neck="Eddy Necklace", -- 11 matk
         ear1="Friomisi Earring", -- 10 matk
         ear2="Crematio Earring", -- 6 matk 6 mdmg
-        body="Founder's breastplate", -- 15 matk
+        body="Founder's breastplate", -- 21 matk 20 macc
         hands="Leyline Gloves",
         ring1="Resonance Ring", -- int 8
         ring2="Shiva Ring", -- matk 4
@@ -653,16 +656,16 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = {
         ammo="Hasty Pinion +1",
-        head="Yorium Barbuta",
+        head="Sulevia's Mask +1",
         neck="Agitator's Collar",
         body="Jumalik Mail",
-        hands="Redan Gloves",
+        hands="Sulevia's Gauntlets +1",
         ear1="Zennaroi Earring",
         ring1="Patricius Ring",
         ring2="Defending Ring",
-        back="Impassive Mantle",
-        waist="Flume Belt",
-        legs="Valorous Hose",
+        back="Grounded Mantle +1",
+        waist="Ioskeha Belt",
+        legs="Sulevia's Cuisses +1",
         feet="Amm Greaves"
     }
     sets.defense.Reraise = sets.idle.Weak
@@ -691,49 +694,26 @@ function init_gear_sets()
     -- Defensive sets to combine with various weapon-specific sets below
     -- These allow hybrid acc/pdt sets for difficult content
     sets.Defensive = {
-        ammo="Hasty Pinion +1",
-        sub="Gracile grip",
-        head="Yorium Barbuta", -- 7% haste
-        neck="Agitator's Collar", -- 3%
-        body="Jumalik Mail",
-        hands="Redan Gloves",
-        ring1="Patricius Ring",
-        ring2="Defending Ring",
-        back="Impassive Mantle",
-        waist="Flume Belt",
-        legs="Valorous Hose",
-        feet="Amm Greaves"
-    }
-    sets.Defensive_Mid = {
-        ammo="Hasty Pinion +1",
-        sub="Gracile grip",
+        --sub="Gracile grip",
+        --ammo="Hasty Pinion +1",
         head="Sulevia's Mask +1",
         neck="Agitator's Collar",
-        body="Sulevia'as Platemail",
+        body="Odyssean Chestplate",
         hands="Sulevia's Gauntlets +1",
-        back="Impassive Mantle",
         ring1="Patricius Ring",
         ring2="Defending Ring",
-        waist="Sarissaphoroi belt",
-        legs="Valorous Hose",
-        feet="Amm Greaves"
-    }
-    sets.Defensive_Acc = {
-        sub="Gracile grip",
-        ammo="Hasty Pinion +1",
-        head="Sulevia's Mask +1",
-        neck="Agitator's Collar",
-        hands="Sulevia's Gauntlets +1",
-        body="Sulevia'as Platemail",
-        back="Grounded Mantle +1",
-        ring1="Supershear Ring",
-        ring2="Patricius Ring",
-        waist="Sarissaphoroi belt",
+        back=Ankou.STP,
+        waist="Ioskeha Belt",
         legs="Sulevia's Cuisses +1",
-        feet="Founder's Greaves" -- matk 29
+        feet="Loyalist Sabatons"
     }
+    sets.Defensive_Mid = set_combine(sets.Defensive, {
+        ear1="Zennaroi Earring",
+        ring2="Supershear Ring",
+    })
+    sets.Defensive_Acc = sets.Defensive_Mid
+
     sets.Sulevia = set_combine(sets.Defensive_Mid, {
-        sub="Gracile grip",
         head="Sulevia's Mask +1",
         body="Sulevia's Platemail",
         hands="Sulevia's Gauntlets +1",
@@ -750,7 +730,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Brutal Earring",
         body="Vatic Byrnie",
-        hands=Acro.Hands.Haste,
+        hands="Emicho Gauntlets",
         ring1="Rajas Ring",
         ring2="Petrov Ring",
         back=Ankou.STP,
@@ -763,6 +743,7 @@ function init_gear_sets()
         hands="Emicho Gauntlets",
         body="Mes'yohi Haubergeon",
         back=Ankou.STP,
+        waist="Ioskeha Belt",
         legs=Odyssean.Legs.TP,
         feet=Odyssean.Feet.TP
     })
@@ -774,18 +755,19 @@ function init_gear_sets()
         ear2="Zennaroi Earring",
         ring1="Cacoethic Ring +1",
         back=Ankou.STP,
-        waist="Olseni Belt",
+        waist="Ioskeha Belt",
     })
     -- Liberator AM3
     sets.engaged.AM3 = set_combine(sets.engaged, {
         ammo="Ginsen",
         head="Acro Helm",
         body="Odyssean Chestplate",
+        neck="Ganesha's Mala",
         hands="Emicho Gauntlets",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
         back=Ankou.STP,
-        waist="Sarissaphoroi Belt",
+        waist="Windbuffet Belt +1",
         legs="Acro Breeches",
         feet=Acro.Feet.STP
     })
