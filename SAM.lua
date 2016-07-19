@@ -376,7 +376,7 @@ function init_gear_sets()
     sets.engaged = {
         sub="Bloodrain Grip",
         ammo=gear.RAarrow,
-        head="Valorous Helm",
+        head="Valorous Mask",
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
@@ -392,7 +392,7 @@ function init_gear_sets()
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Acro Helm",
-        body="Acro Surcoat",
+        body="Reiki Osode",
         hands="Ryuo Tekko",
         feet="Loyalist Sabatons"
     })
@@ -400,7 +400,7 @@ function init_gear_sets()
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Valorous Mask",
         neck="Lissome Necklace",
-        body="Mes'yohi Haubergeon",
+        body="Reiki Osode",
         back="Grounded Mantle +1",
         ear1="Zennaroi Earring",
         ring1="Mars's Ring",

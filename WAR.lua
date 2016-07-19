@@ -395,7 +395,7 @@ function init_gear_sets()
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          ring2="Mars's Ring",
-         body="Odyssean Chestplate",
+         body="Reiki Osode",
          waist="Olseni Belt",
          back="Grounded Mantle +1",
      })
