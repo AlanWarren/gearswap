@@ -304,7 +304,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Trux Earring",
         hands="Herculean Gloves",
-        body="Hizamaru Haramaki",
+        body="Reiki Osode",
         legs="Herculean Trousers",
         ring1="Petrov Ring",
         back=Andartia.DEX,
