@@ -382,6 +382,7 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        body="Reiki Osode",
         ring1="Cacoethic Ring +1",
     })
 
@@ -482,6 +483,7 @@ function init_gear_sets()
         head="Herculean Helm",
         neck="Yarak Torque",
         ear1="Zennaroi Earring",
+        body="Reiki Osode",
         hands="Ryuo Tekko",
         ring1="Cacoethic Ring +1",
         ring2="Patricius Ring",
