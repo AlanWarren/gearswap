@@ -15,6 +15,7 @@ end
 function job_setup()
     indi_timer = ''
     indi_duration = 180
+    absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 end
 
@@ -258,6 +259,15 @@ function init_gear_sets()
         waist="Yamabuki-no-obi", 
         feet="Helios Boots"
     }
+    sets.midcast.Absorb = set_combine(sets.midcast.Macc, {
+        head="Bagua Galero",
+        neck="Incanter's Torque", 
+        ear1="Gwati Earring",
+        ring1="Evanescence Ring",
+        ring2="Excelsis Ring",
+        body="Geomancy tunic +1",
+        legs="Azimuth Tights +1",
+    })
     
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
         head="Bagua Galero",
@@ -374,6 +384,7 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         body="Councilor's Garb",
+        hands="Amalric Gages", 
     })
 
     sets.idle.Weak = sets.idle
@@ -533,6 +544,8 @@ function job_get_spell_map(spell, default_spell_map)
             else
                 return 'IntEnfeebles'
             end
+        elseif spell.skill == 'Dark Magic' and absorbs:contains(spell.english) then
+            return 'Absorb'
         elseif spell.skill == 'Geomancy' then
             if spell.english:startswith('Indi') then
                 return 'Indi'
