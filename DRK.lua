@@ -395,7 +395,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Odyssean Chestplate",
         hands="Odyssean Gauntlets",
-        ring1="Apate Ring",
+        ring1="Karieyh Ring",
         ring2="Ifrit Ring",
         legs="Valorous Hose",
         back=Ankou.WSD,
@@ -566,7 +566,7 @@ function init_gear_sets()
     -- 40% STR 40% INT - Darkness Elemental
     sets.precast.WS['Dark Harvest'] = sets.precast.WS['Shadow of Death']
     sets.precast.WS['Dark Harvest'].Mid = set_combine(sets.precast.WS['Shadow of Death'], {head="Terminal Helm", feet="Heathen's Sollerets +1"})
-    sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {head="Terminal Helm", feet="Heathen's Sollerets +1", ring1="Sangoma Ring"})
+    sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {head="Terminal Helm", feet="Heathen's Sollerets +1", ring1="Karieyh Ring"})
 
     -- Sword WS's
     -- SANGUINE BLADE
@@ -605,7 +605,7 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         body="Lugra Cloak +1",
         hands="Sulevia's Gauntlets +1",
-        ring1="Paguroidea Ring",
+        ring1="Karieyh Ring",
         ring2="Defending Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
@@ -620,7 +620,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         body="Jumalik mail",
         hands="Sulevia's Gauntlets +1",
-        ring1="Dark Ring",
+        ring1="Karieyh Ring",
         ring2="Defending Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
@@ -630,7 +630,7 @@ function init_gear_sets()
     sets.idle.Regen = set_combine(sets.idle.Field, {
         neck="Sanctity Necklace",
         body="Lugra Cloak +1",
-        ring1="Paguroidea Ring",
+        ring2="Paguroidea Ring",
         head="",
     })
     sets.idle.Refresh = set_combine(sets.idle.Regen, {
@@ -643,7 +643,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Redan Gloves",
         ear1="Zennaroi Earring",
-        ring1="Patricius Ring",
+        ring1="Karieyh Ring",
         ring2="Defending Ring",
         back="Impassive Mantle",
         waist="Flume Belt",

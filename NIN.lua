@@ -280,7 +280,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         body="Hizamaru Haramaki",
         hands="Herculean Gloves",
-        ring1="Paguroidea Ring",
+        ring1="Karieyh Ring",
         ring2="Defending Ring",
         back="Solemnity Cape",
         waist="Flume Belt",
@@ -291,7 +291,7 @@ function init_gear_sets()
     sets.idle.Regen = set_combine(sets.idle, {
         head="Rao Kabuto",
         body="Hizamaru Haramaki",
-        ring1="Paguroidea Ring"
+        ring2="Paguroidea Ring"
     })
     sets.Adoulin = {
         body="Councilor's Garb",
@@ -304,7 +304,7 @@ function init_gear_sets()
         hands="Herculean Gloves",
         body="Reiki Osode",
         legs="Herculean Trousers",
-        ring1="Petrov Ring",
+        ring1="Karieyh Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1"
     })
@@ -677,7 +677,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Rao Togi",
         hands="Herculean Gloves",
-        ring1="Apate Ring",
+        ring1="Karieyh Ring",
         ring2="Epona's Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
@@ -735,7 +735,7 @@ function init_gear_sets()
         ear1="Ishvara Earring",
         body="Hattori Ningi +1",
         hands="Ryuo Tekko",
-        ring1="Garuda Ring",
+        ring1="Karieyh Ring",
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
         legs="Herculean Trousers",
@@ -829,14 +829,14 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         body="Samnuha Coat",
         hands="Leyline Gloves",
-        ring1="Garuda Ring",
+        ring1="Karieyh Ring",
         ring2="Acumen Ring",
         legs="Shneddick Tights +1",
         waist="Thunder Belt",
         feet="Herculean Boots"
     })
     sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
-        ring1="Shiva Ring",
+        ring1="Karieyh Ring",
         ring2="Acumen Ring",
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
