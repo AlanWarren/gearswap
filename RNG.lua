@@ -252,7 +252,6 @@ function init_gear_sets()
             ear2="Heartseeker Earring",
             body="Samnuha Coat",
             hands="Floral Gauntlets",
-            ring1="Haverton Ring",
             back="Bleating Mantle",
             waist="Patentia Sash",
             legs="Carmine Cuisses +1",
@@ -268,7 +267,6 @@ function init_gear_sets()
             hands=TaeonHands.Snap, --8
             back="Lutian Cape", -- 2
             legs="Adhemar Kecks",
-            ring1="Haverton Ring", -- 6
             waist="Impulse Belt", -- 2
             feet="Wurrukatte Boots" -- 3
         }
@@ -284,7 +282,7 @@ function init_gear_sets()
             body="Pursuer's Doublet",
             hands="Alruna's Gloves +1",
             ring1="Rajas Ring",
-            ring2="K'ayres Ring",
+            ring2="Petrov Ring",
             back="Lutian Cape", 
             waist="Elanid Belt", 
             legs="Amini Brague +1", 
@@ -292,7 +290,6 @@ function init_gear_sets()
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             back="Lutian Cape", 
-            ring2="Haverton Ring",
             legs="Adhemar Kecks",
             feet="Thereoid Greaves"
         })
@@ -308,7 +305,7 @@ function init_gear_sets()
         -- Samurai Roll sets 
         sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
             body="Arcadian Jerkin +1",
-            ring2="Haverton Ring",
+            ring2="Longshot Ring",
         })
         sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
             ring2="Longshot Ring",
@@ -318,7 +315,7 @@ function init_gear_sets()
         sets.midcast.RA.Acc.SamRoll = set_combine(sets.midcast.RA.Mid.SamRoll, {
             neck="Iqabi Necklace", 
             ring1="Hajduk Ring", 
-            ring2="Haverton Ring",
+            ring2="Longshot Ring",
             legs="Adhemar Kecks",
         })
         
@@ -345,7 +342,7 @@ function init_gear_sets()
         sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mid, {
             back="Lutian Cape", 
             neck="Iqabi Necklace", 
-            ring2="Haverton Ring",
+            ring2="Longshot Ring",
             waist="Eschan Stone"
         })
 
@@ -385,7 +382,7 @@ function init_gear_sets()
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
             body="Amini Caban +1",
             ring1="Hajduk Ring",
-            ring2="Haverton Ring",
+            ring2="Longshot Ring",
             waist="Eschan Stone"
         })
        
@@ -393,7 +390,7 @@ function init_gear_sets()
         sets.midcast.RA.Bow.SamRoll = set_combine(sets.midcast.RA.Bow, {
             body="Arcadian Jerkin +1",
             hands="Amini Glovelettes +1",
-            ring2="Haverton Ring",
+            ring2="Longshot Ring",
             back="Lutian Cape"
         })
         sets.midcast.RA.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.Bow.SamRoll, {
@@ -635,7 +632,7 @@ function init_gear_sets()
             body="Pursuer's Doublet",
             hands="Orion Bracers +1",
             ring1="Ifrit Ring",
-            ring2="Haverton Ring",
+            ring2="Longshot Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
             legs="Adhemar Kecks", 

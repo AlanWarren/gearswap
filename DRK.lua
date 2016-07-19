@@ -377,12 +377,11 @@ function init_gear_sets()
     -- Ranged for xbow
     sets.precast.RA = {
         head="Otomi Helm",
-        ring2="Haverton Ring"
+        feet="Ejekamal Boots",
     }
     sets.midcast.RA = {
         ear2="Tripudio Earring",
         ring1="Beeline Ring",
-        ring2="Haverton Ring",
         waist="Chaac Belt",
     }
 
@@ -847,7 +846,6 @@ function init_gear_sets()
         hands=Acro.Hands.STP,
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        ring2="Haverton Ring",
         waist="Patentia Sash",
         legs="Carmine Cuisses +1",
         feet=Acro.Feet.STP

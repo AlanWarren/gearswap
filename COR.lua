@@ -393,7 +393,6 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
         hands="Floral Gauntlets",
         body="Samnuha Coat",
-        ring1="Haverton Ring",
         legs="Carmine Cuisses +1",
         waist="Patentia Sash",
         back="Bleating Mantle",
