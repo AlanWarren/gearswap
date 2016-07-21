@@ -160,7 +160,7 @@ function init_gear_sets()
 
     Odyssean = {}
     Odyssean.Legs = {}
-    Odyssean.Legs.TP = { name="Odyssean Cuisses", augments={'Accuracy+23 Attack+23','"Dbl.Atk."+2','STR+3','Accuracy+11','Attack+8',}}
+    Odyssean.Legs.TP = { name="Odyssean Cuisses", augments={'Accuracy+24','"Store TP"+4','DEX+10','Attack+9',}}
     Odyssean.Legs.WS = { name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+7','Accuracy+11',}}
     Odyssean.Feet = {}
     Odyssean.Feet.FC = { name="Odyssean Greaves", augments={'Attack+20','"Fast Cast"+4','Accuracy+15',}}
