@@ -160,8 +160,8 @@ function init_gear_sets()
 
     Odyssean = {}
     Odyssean.Legs = {}
-    Odyssean.Legs.TP = { name="Odyssean Cuisses", augments={'Accuracy+24','"Store TP"+4','DEX+10','Attack+9',}}
-    Odyssean.Legs.WS = { name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+7','Accuracy+11',}}
+    Odyssean.Legs.TP = { name="Odyssean Cuisses", augments={'"Triple Atk."+2','"Mag.Atk.Bns."+5','Quadruple Attack +1','Accuracy+17 Attack+17',}}
+    Odyssean.Legs.WS = { name="Odyssean Cuisses", augments={'Accuracy+25','DEX+1','Weapon skill damage +7%','Accuracy+10 Attack+10',}}
     Odyssean.Feet = {}
     Odyssean.Feet.FC = { name="Odyssean Greaves", augments={'Attack+20','"Fast Cast"+4','Accuracy+15',}}
     Odyssean.Feet.TP = { name="Odyssean Greaves", augments={'Accuracy+16 Attack+16','"Store TP"+4','DEX+1','Accuracy+13','Attack+15',}}
@@ -397,7 +397,7 @@ function init_gear_sets()
         hands="Odyssean Gauntlets",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring",
-        legs="Valorous Hose",
+        legs=Odyssean.Legs.WS,
         back=Ankou.WSD,
         waist="Windbuffet Belt +1",
         feet="Sulevia's Leggings +1"
@@ -450,7 +450,7 @@ function init_gear_sets()
     })
     -- Mid assumes higher defense target
     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
-        legs="Sulevia's Cuisses +1",
+        legs=Odyssean.Legs.WS,
         waist="Light Belt"
     })
     sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {})
@@ -481,14 +481,14 @@ function init_gear_sets()
     })
     sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {
         head="Sulevia's Mask +1",
-        legs="Sulevia's Cuisses +1",
+        legs=Odyssean.Legs.TP,
     })
 
     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
         waist="Metalsinger Belt",
     })
     sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
-        legs="Sulevia's Cuisses +1",
+        legs=Odyssean.Legs.TP,
         neck="Aqua Gorget",
     })
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
@@ -505,7 +505,7 @@ function init_gear_sets()
         body="Fallen's Cuirass +1",
         ring2="Shiva Ring",
         waist="Soil Belt",
-        legs="Sulevia's Cuisses +1",
+        legs=Odyssean.Legs.TP,
         feet="Sulevia's Leggings +1"
     })
     sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, { })
@@ -552,7 +552,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         hands="Leyline Gloves",
         back="Toro Cape",
-        legs="Valorous Hose",
+        legs=Odyssean.Legs.WS,
         waist="Eschan Stone", -- macc/matk 7
         feet="Sulevia's Leggings +1"
     })
@@ -590,7 +590,7 @@ function init_gear_sets()
         neck="Shadow Gorget",
         body="Acro Surcoat",
         hands="Odyssean Gauntlets",
-        legs="Valorous Hose",
+        legs=Odyssean.Legs.WS,
         waist="Soil Belt",
     })
     sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
@@ -734,7 +734,7 @@ function init_gear_sets()
         ring2="Petrov Ring",
         back=Ankou.STP,
         waist="Windbuffet Belt +1",
-        legs="Acro Breeches",
+        legs=Odyssean.Legs.TP,
         feet=Acro.Feet.STP
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
@@ -767,7 +767,7 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         back=Ankou.STP,
         waist="Windbuffet Belt +1",
-        legs="Acro Breeches",
+        legs=Odyssean.Legs.TP,
         feet=Acro.Feet.STP
     })
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
@@ -808,7 +808,7 @@ function init_gear_sets()
 
     sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
         head="Argosy Celata",
-        legs="Sulevia's Cuisses +1",
+        legs=Odyssean.Legs.TP,
         feet=Acro.Feet.WSD
     })
     sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
