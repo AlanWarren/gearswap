@@ -625,7 +625,7 @@ function init_gear_sets()
         back="Impassive Mantle",
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
-        feet="Sulevia's leggings +1"
+        feet="Amm Greaves"
     })
     sets.idle.Regen = set_combine(sets.idle.Field, {
         neck="Sanctity Necklace",
