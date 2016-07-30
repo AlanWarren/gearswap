@@ -599,18 +599,18 @@ function init_gear_sets()
     -- Idle sets
     sets.idle.Town = {
         ammo="Ginsen",
-        head="",
+        head="Valorous Mask",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
-        body="Lugra Cloak +1",
+        body="Heathen's Cuirass +1",
         hands="Sulevia's Gauntlets +1",
         ring1="Karieyh Ring",
         ring2="Defending Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
-        feet="Sulevia's leggings +1"
+        feet="Amm Greaves"
     }
 
     sets.idle.Field = set_combine(sets.idle.Town, {
