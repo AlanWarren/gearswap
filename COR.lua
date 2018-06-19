@@ -121,7 +121,7 @@ function init_gear_sets()
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		head="Whirlpool Mask",
-        hands="Iuitl Wristbands +1",
+        hands="Meghanada Gloves",
         legs="Adhemar Kecks",
     }
 
@@ -157,7 +157,7 @@ function init_gear_sets()
         body="Pursuer's Doublet",
         waist="Impulse Belt",
         legs="Adhemar Kecks",
-        feet="Wurrukatte Boots"
+        feet="Meghanada Jambeaux"
     }
 
 	-- Weaponskill sets
@@ -168,7 +168,7 @@ function init_gear_sets()
         ear1="Flame Pearl",
         ear2="Flame Pearl",
         body="Pursuer's Doublet",
-        hands="Alruna's Gloves +1",
+        hands="Meghanada Gloves",
         ring1="Ifrit Ring",
         ring2="Ifrit Ring",
 		back="Buquwik Cape",
@@ -221,7 +221,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Uk'uxkaj Cap",
         neck="Sanctity Necklace",
-        hands="Iuitl Wristbands +1",
+        hands="Meghanada Gloves",
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
         body="Pursuer's Doublet",
@@ -300,7 +300,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Crematio Earring",
         body="Pursuer's Doublet",
-        hands="Iuitl Wristbands +1",
+        hands="Meghanada Gloves",
         ring1="Paguroiedea Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
@@ -332,15 +332,15 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = set_combine(sets.idle, {
-        head="Lithelimb Cap",
+        head="Meghanada Visor",
         neck="Twilight Torque",
-        hands="Iuitl Wristbands +1",
+        hands="Meghanada Gloves",
         body="Emet Harness +1",
         ring1="Patricius Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Iuitl Tights +1",
+        legs="Meghanada Chausses",
         feet="Lanun Bottes"
     })
 
