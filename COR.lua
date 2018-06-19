@@ -121,7 +121,7 @@ function init_gear_sets()
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		head="Whirlpool Mask",
-        hands="Meghanada Gloves",
+        hands="Meghanada Gloves +1",
         legs="Adhemar Kecks",
     }
 
@@ -157,7 +157,7 @@ function init_gear_sets()
         body="Pursuer's Doublet",
         waist="Impulse Belt",
         legs="Adhemar Kecks",
-        feet="Meghanada Jambeaux"
+        feet="Meghanada Jambeaux +1"
     }
 
 	-- Weaponskill sets
@@ -168,7 +168,7 @@ function init_gear_sets()
         ear1="Flame Pearl",
         ear2="Flame Pearl",
         body="Pursuer's Doublet",
-        hands="Meghanada Gloves",
+        hands="Meghanada Gloves +1",
         ring1="Ifrit Ring",
         ring2="Ifrit Ring",
 		back="Buquwik Cape",
@@ -221,7 +221,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Uk'uxkaj Cap",
         neck="Sanctity Necklace",
-        hands="Meghanada Gloves",
+        hands="Meghanada Gloves +1",
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
         body="Pursuer's Doublet",
@@ -266,24 +266,23 @@ function init_gear_sets()
 	-- Ranged gear
 	sets.midcast.RA = {
         ammo=gear.RAbullet,
-        head="Umbani Cap",
+        head="Meghanada Visor +1",
         neck="Iqabi Necklace",
         ear1="Enervating Earring",
         ear2="Volley Earring",
         body="Pursuer's Doublet",
-        hands="Floral Gauntlets",
+        hands="Meghanada Gloves +1",
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
         back="Gunslinger's Cape",
         waist="Elanid Belt",
         legs="Adhemar Kecks",
-        feet="Scopuli Nails +1"
+        feet="Meghanada Jambeaux +1"
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
         body="Pursuer's Doublet",
         ring1="Paqichikaji Ring",
-        hands="Floral Gauntlets",
         waist="Eschan Stone"
     })
 	
@@ -300,7 +299,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Crematio Earring",
         body="Pursuer's Doublet",
-        hands="Meghanada Gloves",
+        hands="Meghanada Gloves +1",
         ring1="Paguroiedea Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
@@ -321,7 +320,7 @@ function init_gear_sets()
         ear1="Enervating Earring",
         ear2="Crematio Earring",
         body="Councilor's Garb",
-        hands="Alruna's Gloves +1",
+        hands="Meghanada Gloves +1",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
         back="Gunslinger's Cape",
@@ -332,15 +331,15 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = set_combine(sets.idle, {
-        head="Meghanada Visor",
+        head="Meghanada Visor +1",
         neck="Twilight Torque",
-        hands="Meghanada Gloves",
+        hands="Meghanada Gloves +1",
         body="Emet Harness +1",
         ring1="Patricius Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Meghanada Chausses",
+        legs="Meghanada Chausses +1",
         feet="Lanun Bottes"
     })
 

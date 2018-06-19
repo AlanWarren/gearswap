@@ -47,6 +47,7 @@ function user_setup()
     send_command('bind ^= gs c cycle treasuremode')
     send_command('bind !- gs c cycle targetmode')
     send_command('bind != gs c toggle CapacityMode')
+    send_command('bind !- gs equip sets.crafting')
 
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
@@ -84,22 +85,22 @@ function init_gear_sets()
     }
 
     sets.buff['Sneak Attack'] = {
-        head="Uk'uxkaj Cap",
+        head="Herculean Helm",
         neck="Moepapa Medal",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        body="Dread Jupon",
+        body="Herculean Vest",
         hands="Pillager's Armlets +1",
         ring1="Ramuh Ring",
         ring2="Rajas Ring",
         back="Grounded Mantle +1",
         waist="Chaac Belt",
-        legs="Samnuha Tights",
+        legs="Herculean Trousers",
         feet="Raider's Poulaines +2"
     }
 
     sets.buff['Trick Attack'] = {
-        head="Uk'uxkaj Cap",
+        head="Herculean Helm",
         neck="Moepapa Medal",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
@@ -191,21 +192,20 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Taeon Chapeau",
+        head="Herculean Helm",
         neck="Moepapa Medal",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
-        body="Rawhide Vest",
-        hands="Taeon Gloves",
+        body="Herculean Vest",
+        hands="Herculean Gloves",
         ring1="Ramuh Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Elanid Belt",
         legs="Samnuha Tights",
-        feet="Taeon Boots"
+        feet="Herculean Boots"
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-        hands="Plunderer's Armlets +1",
         ring2="Patricius Ring",
         back="Canny Cape",
         waist="Olseni Belt"
@@ -213,7 +213,7 @@ function init_gear_sets()
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMid version isn't found.
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
-        head="Teon Chapeau",
+        head="Herculean Helm",
         neck="Moepapa Medal",
         ear1="Brutal Earring",
         ear2="Trux Earring",
@@ -313,7 +313,7 @@ sets.precast.WS['Aeolian Edge'] = {
     back="Argochampsa Mantle",
     waist="Thunder Belt",
     legs="Limbo Trousers",
-    feet="Taeon Boots"
+    feet="Herculean Boots"
 }
 
 -- Midcast Sets
@@ -336,6 +336,7 @@ sets.resting = {ring2="Paguroidea Ring"}
 
 -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 sets.idle = {
+    main="Taming Sari",
     head="Herculean Helm",
     neck="Sanctity Necklace",
     ear1="Zennaroi Earring",
@@ -347,14 +348,14 @@ sets.idle = {
     back="Solemnity Cape",
     waist="Flume Belt",
     legs="Herculean Trousers",
-    feet="Skadi's Jambeaux +1"
+    feet="Jute Boots +1"
 }
 
 sets.idle.Town = set_combine(sets.idle, {
     head="Herculean Helm",
     back="Canny Cape",
     neck="Sanctity Necklace",
-    body="Emet Harness +1",
+    body="Councilor's Garb",
     hands="Herculean Gloves",
     ring1="Paguroidea Ring",
     ring2="Defending Ring",
@@ -372,39 +373,39 @@ sets.idle.Weak = sets.idle
 
 -- Defense sets
 sets.defense.Evasion = {
-    head="Felistris Mask",
+    head="Herculean Helm",
     neck="Defiant Collar",
-    body="Rawhide Vest",
-    hands="Pillager's Armlets +1",
+    body="Herculean Vest",
+    hands="Herculean Gloves",
     ring1="Beeline Ring",
     ring2="Epona's Ring",
     back="Canny Cape",
     legs="Samnuha Tights",
-    feet="Taeon Boots"
+    feet="Herculean Boots"
 }
 
 sets.defense.PDT = {
-    head="Iuitl Headgear +1",
+    head="Herculean Helm",
     neck="Twilight Torque",
     body="Emet Harness +1",
-    hands="Iuitl Wristbands +1",
+    hands="Herculean Gloves",
     ring1="Patricius Ring",
     ring2="Epona's Ring",
     back="Solemnity Cape",
     waist="Flume Belt",
-    legs="Iuitl Tights +1",
+    legs="Herculean Trousers",
 }
 
 sets.defense.MDT = {
     head="Whirlpool Mask",
     neck="Twilight Torque",
-    body="Rawhide Vest",
-    hands="Iuitl Wristbands +1",
+    body="Herculean Vest",
+    hands="Herculean Gloves",
     ring1="Defending Ring",
     ring2="Epona's Ring",
     back="Solemnity Cape",
-    legs="Nahtirah Trousers",
-    feet="Taeon Boots"
+    legs="Herculean Trousers",
+    feet="Herculean Boots"
 }
 
 sets.Kiting = {feet="Skadi's Jambeaux +1"}
@@ -420,7 +421,7 @@ sets.Kiting = {feet="Skadi's Jambeaux +1"}
 sets.engaged = {
     head="Herculean Helm",
     neck="Asperity Necklace",
-    ear1="Brutal Earring",
+    ear1="Eabani Earring",
     ear2="Suppanomimi Earring",
     --body="Skadi's Cuirie +1",
     body="Samnuha Coat",
@@ -429,7 +430,7 @@ sets.engaged = {
     ring2="Epona's Ring",
     back="Canny Cape",
     waist="Patentia Sash",
-    legs="Samnuha Tights",
+    legs="Herculean Trousers",
     feet="Taeon Boots"
 }
 sets.engaged.Mid = set_combine(sets.engaged, {
@@ -438,10 +439,11 @@ sets.engaged.Mid = set_combine(sets.engaged, {
     legs="Herculean Trousers",
 })
 sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-    body="Samnuha Coat",
+    body="Herculean Vest",
     neck="Lissome Necklace",
     ear1="Zennaroi Earring",
     ear2="Cessance Earring",
+    hands="Herculean Gloves",
     back="Grounded Mantle +1",
     ring1="Patricius Ring",
     waist="Olseni Belt",
@@ -485,7 +487,7 @@ sets.engaged.Haste_43 = set_combine(sets.engaged, {
     neck="Asperity Necklace",
     ear1="Brutal Earring",
     ear2="Cessance Earring",
-    body="Rawhide Vest",
+    body="Herculean Vest",
     hands="Herculean Gloves",
     ring1="Petrov Ring",
     ring2="Epona's Ring",
@@ -495,12 +497,10 @@ sets.engaged.Haste_43 = set_combine(sets.engaged, {
     feet="Herculean Boots"
 })
 sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
-    body="Rawhide Vest",
     ring1="Patricius Ring",
     feet="Herculean Boots"
 })
 sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
-    body="Rawhide Vest",
     neck="Lissome Necklace",
     hands="Herculean Gloves",
     ear1="Zennaroi Earring",
@@ -510,7 +510,7 @@ sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
     waist="Olseni Belt",
     back="Grounded Mantle +1"
 })
-sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, { body="Rawhide Vest", ring1="Beeline Ring", feet="Taeon Boots"})
+sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, { body="Rawhide Vest", ring1="Beeline Ring", feet="Herculean Boots"})
 sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
     head="Iuitl Headgear +1",
     neck="Twilight Torque", 
@@ -524,7 +524,7 @@ sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
 
 -- 40
 sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
-    body="Rawhide Vest",
+    body="Herculean Vest",
     ear1="Suppanomimi",
 })
 sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, { body="Samnuha Coat" })
@@ -533,9 +533,9 @@ sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.Haste_43, {
     ear1="Suppanomimi",
 })
 sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, {
-    body="Rawhide Vest", 
+    body="Herculean Vest",
     ring1="Beeline Ring", 
-    feet="Taeon Boots"
+    feet="Herculean Boots"
 })
 sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, { 
     head="Lithelimb Cap", 
@@ -565,18 +565,18 @@ sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
     neck="Lissome Necklace",
     ear1="Cessance Earring",
     back="Grounded Mantle +1",
-    feet="Taeon Boots"
+    feet="Herculean Boots"
 })
-sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, { body="Samnuha Coat", ring1="Beeline Ring", feet="Taeon Boots"})
+sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, { body="Samnuha Coat", ring1="Beeline Ring", feet="Herculean Boots"})
 sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { 
     head="Lithelimb Cap", 
     neck="Twilight Torque", 
-    body="Rawhide Vest", 
+    body="Herculean Vest", 
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
     back="Solemnity Cape",
-    legs="Iuitl Tights +1", 
-    feet="Taeon Boots" })
+    legs="Herculean Trousers", 
+    feet="Herculean Boots" })
 
     -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
@@ -593,11 +593,11 @@ sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, { 
         head="Lithelimb Cap", 
         neck="Twilight Torque", 
-        body="Rawhide Vest", 
+        body="Herculean Vest", 
         ring1="Patricius Ring", 
         ring2="Defending Ring", 
         back="Solemnity Cape",
-        legs="Iuitl Tights +1", 
+        legs="Herculean Trousers", 
         feet="Taeon Boots" })
     end
 
@@ -691,7 +691,6 @@ sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
         if player.hpp < 80 then
             idleSet = set_combine(idleSet, sets.idle.Regen)
         end
-
         return idleSet
     end
 

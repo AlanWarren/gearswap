@@ -83,10 +83,11 @@ function init_gear_sets()
      Niht = {}
      Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
      Niht.WSD = {name="Niht Mantle", augments={'Attack+9','Dark magic skill +4', '"Drain" and "Aspir" potency +11','Weapon skill damage +4%'}}
+    
     Odyssean = {}
     Odyssean.Legs = {}
-    Odyssean.Legs.TP = { name="Odyssean Cuisses", augments={'Accuracy+23 Attack+23','"Dbl.Atk."+2','STR+3','Accuracy+11','Attack+8',}}
-    Odyssean.Legs.WS = { name="Odyssean Cuisses", augments={'Accuracy+25 Attack+25','Weapon skill damage +2%','STR+7','Accuracy+11',}}
+    Odyssean.Legs.TP = { name="Odyssean Cuisses", augments={'"Triple Atk."+2','"Mag.Atk.Bns."+5','Quadruple Attack +1','Accuracy+17 Attack+17',}}
+    Odyssean.Legs.WS = { name="Odyssean Cuisses", augments={'Accuracy+25','DEX+1','Weapon skill damage +7%','Accuracy+10 Attack+10',}}
     Odyssean.Feet = {}
     Odyssean.Feet.FC = { name="Odyssean Greaves", augments={'Attack+20','"Fast Cast"+4','Accuracy+15',}}
     Odyssean.Feet.TP = { name="Odyssean Greaves", augments={'Accuracy+16 Attack+16','"Store TP"+4','DEX+1','Accuracy+13','Attack+15',}}
@@ -95,11 +96,8 @@ function init_gear_sets()
          main="Devivifier",
          sub="Sangarius",
          neck="Bloodrain Strap",
-         head="Acro Helm",
-         hands="Acro Gauntlets",
-         body="Acro Surcoat",
-         legs="Acro Breeches",
-         feet="Acro Leggings"
+         legs="Odyssean Cuisses",
+         feet="Odyssean Greaves"
      }
 
      -- Precast Sets
@@ -119,7 +117,6 @@ function init_gear_sets()
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {
         head="Yaoyotl Helm",
-        legs="Cizin Breeches +1",
      }
             
      -- Fast cast sets for spells
@@ -139,13 +136,13 @@ function init_gear_sets()
      sets.midcast.FastRecast = {
          ammo="Impatiens",
          head="Otomi Helm",
-         feet="Odyssean Greaves"
+         Odyssean.Feet.FC
      }
             
      -- Specific spells
      sets.midcast.Utsusemi = {
          head="Otomi Helm",
-         feet="Odyssean Greaves"
+         Odyssean.Feet.FC
      }
  
      -- Ranged for xbow
@@ -168,7 +165,7 @@ function init_gear_sets()
      -- General sets
      sets.precast.WS = {
          ammo="Aqreqaq Bomblet",
-         head="Valorous Mask",
+         head="Argosy Celata",
          neck="Defiant Collar",
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
@@ -176,7 +173,7 @@ function init_gear_sets()
          hands="Odyssean Gauntlets",
          ring1="Apate Ring",
          ring2="Ifrit Ring",
-         legs="Valorous Hose",
+         legs=Odyssean.Legs.WS,
          back="Mauler's Mantle",
          waist="Windbuffet Belt +1",
          feet="Sulevia's Leggings +1"
@@ -204,7 +201,7 @@ function init_gear_sets()
         hands=Acro.Hands.STP,
         waist="Metalsinger Belt",
         back="Mauler's Mantle",
-        feet="Thereoid Greaves"
+         feet="Sulevia's Leggings +1"
     })
      -- RESOLUTION
      -- 86-100% STR
@@ -223,7 +220,7 @@ function init_gear_sets()
      sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
          neck="Aqua Gorget",
          hands="Crusher's Gauntlets",
-         legs="Yorium Cuisses",
+         legs=Odyssean.Legs.WS,
          waist="Caudata Belt"
      })
      sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
@@ -277,11 +274,11 @@ function init_gear_sets()
          ear1="Cessance Earring",
          ear2="Tripudio Earring",
          hands="Redan Gloves",
-         body="Boii Lorica +1",
+         body="Valorous Mail",
          ring1="Karieyh Ring",
          ring2="Defending Ring",
          back="Mauler's Mantle",
-         legs="Boii Cuisses +1",
+         legs=Odyssean.Legs.TP,
          waist="Windbuffet Belt +1",
          feet="Hermes' Sandals"
      }
@@ -312,7 +309,7 @@ function init_gear_sets()
 
      -- Defense sets
      sets.defense.PDT = {
-         head="Yorium Barbuta",
+         head="Sulevia's Mask +1",
          neck="Agitator's Collar",
          body="Jumalik Mail",
          hands="Redan Gloves",
@@ -321,8 +318,8 @@ function init_gear_sets()
          ring2="Patricius Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
-         legs="Odyssean Cuisses",
-         feet="Odyssean Greaves"
+         legs="Sulevia's Cuisses +1",
+         feet="Amm Greaves"
      }
      sets.defense.Reraise = sets.idle.Weak
  
@@ -340,55 +337,56 @@ function init_gear_sets()
      -- Defensive sets to combine with various weapon-specific sets below
      -- These allow hybrid acc/pdt sets for difficult content
      sets.Defensive = {
-         head="Yorium Barbuta",
+         head="Sulevia's Mask +1",
          neck="Agitator's Collar",
          body="Jumalik Mail",
          hands="Redan Gloves",
          ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
-         legs="Cizin Breeches +1",
+         legs="Sulevia's Cuisses +1",
          feet="Amm Greaves"
      }
      sets.Defensive_Mid = {
-         head="Yorium Barbuta",
+         head="Sulevia's Mask +1",
          neck="Agitator's Collar",
          body="Jumalik Mail",
          hands="Redan Gloves",
          back="Impassive Mantle",
          ring2="Defending Ring",
-         feet="Loyalist Sabatons"
+         feet="Sulevia's Leggings +1"
      }
      sets.Defensive_Acc = {
-         head="Yorium Barbuta",
+         head="Sulevia's Mask +1",
          neck="Agitator's Collar",
          hands="Redan Gloves",
          body="Founder's Breastplate",
          ring2="Defending Ring",
-         legs="Cizin Breeches +1",
-         feet="Loyalist Sabatons"
+         legs="Sulevia's Cuisses +1",
+         feet="Sulevia's Leggings +1"
      }
  
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Ginsen",
-         head="Valorous Mask",
-         neck="Asperity Necklace",
+         head="Skormoth Mask",
+         neck="Lissome Necklace",
          ear1="Brutal Earring",
          ear2="Cessance Earring",
     	 body="Boii Lorica +1",
-         hands=Acro.Hands.STP,
+         hands="Emicho Gauntlets",
          ring1="Rajas Ring",
          ring2="Petrov Ring",
          back="Mauler's Mantle",
          waist="Windbuffet Belt +1",
-         legs="Odyssean Cuisses",
-         feet=Acro.Feet.STP
+         legs=Odyssean.Legs.TP,
+         feet=Odyssean.Feet.TP
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Ginsen",
          neck="Lissome Necklace",
          hands="Emicho Gauntlets",
+         body="Valorous Mail",
          waist="Sarissaphoroi Belt",
          legs=Odyssean.Legs.TP,
          feet=Odyssean.Feet.TP
