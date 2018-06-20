@@ -390,7 +390,7 @@ function init_gear_sets()
     -- WEAPONSKILL SETS
     -- General sets
     sets.precast.WS = {
-        ammo="Aqreqaq Bomblet",
+        ammo="Knobkierrie",
         head="Valorous Mask",
         neck="Ganesha's Mala",
         ear1="Ishvara Earring",
@@ -405,7 +405,6 @@ function init_gear_sets()
         feet="Sulevia's Leggings +1"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-        ammo="Ginsen",
         head="Argosy Celata",
         body="Mes'yohi Haubergeon",
         legs=Odyssean.Legs.WS
@@ -423,9 +422,6 @@ function init_gear_sets()
         neck="Breeze Gorget",
         waist="Soil Belt"
     })
-    sets.precast.WS.Resolution.Mid = set_combine(sets.precast.WS.Resolution, {
-        ammo="Ginsen",
-    })
     sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
 
     -- TORCLEAVER 
@@ -436,7 +432,6 @@ function init_gear_sets()
         waist="Caudata Belt",
     })
     sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
-        ammo="Ginsen",
         neck="Aqua Gorget",
     })
     sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, sets.precast.WS.Acc)
@@ -495,14 +490,12 @@ function init_gear_sets()
         neck="Aqua Gorget",
     })
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
-        ammo="Ginsen",
         neck="Aqua Gorget",
         legs=Odyssean.Legs.WS, 
     })
     -- ENTROPY
     -- 86-100% INT 
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
-        ammo="Ginsen",
         head="Heathen's Burgonet +1",
         neck="Shadow Gorget",
         body="Fallen's Cuirass +1",

@@ -184,7 +184,7 @@ function init_gear_sets()
 	sets.precast.WS = {}
 
 	sets.precast.WS = {
-        ammo="Thew Bomblet",
+        ammo="Knobkierrie",
         head="Valorous Mask",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
