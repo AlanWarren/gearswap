@@ -291,6 +291,7 @@ function init_gear_sets()
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             hands="Meghanada Gloves +1",
+            ring2="Cacoethic Ring +1",
             feet="Meghanada Jambeaux +1"
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
@@ -298,8 +299,8 @@ function init_gear_sets()
             neck="Iqabi Necklace", 
             hands="Meghanada Gloves +1",
             body="Amini Caban +1",
-            ring1="Hajduk Ring", 
-            ring2="Longshot Ring",
+            ring1="Longshot Ring",
+            ring2="Cacoethic Ring +1",
             waist="Eschan Stone",
             legs="Adhemar Kecks",
         })
@@ -380,13 +381,14 @@ function init_gear_sets()
         sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
             neck="Yarak Torque",
             legs="Adhemar Kecks",
+            ring2="Cacoethic Ring +1",
             feet="Meghanada Jambeaux +1"
         })
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
             head="Meghanada Visor +1",
             body="Amini Caban +1",
-            ring1="Hajduk Ring",
-            ring2="Longshot Ring",
+            ring1="Longshot Ring",
+            ring2="Cacoethic Ring +1",
             waist="Eschan Stone"
         })
        
