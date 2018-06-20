@@ -76,8 +76,8 @@ function user_setup()
         
         sam_sj = player.sub_job == 'SAM' or false
 
-      	DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"}
-	    U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"} 
+          DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"}
+        U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"} 
 
         get_combat_form()
         get_custom_ranged_groups()
@@ -174,7 +174,7 @@ function init_gear_sets()
             hands="Amini Glovelettes +1",
             ring1="Paguroidea Ring",
             ring2="Defending Ring",
-    	    back="Solemnity Cape",
+            back="Solemnity Cape",
             waist="Elanid Belt",
             legs="Carmine Cuisses +1",
             feet="Herculean Boots"
@@ -215,7 +215,7 @@ function init_gear_sets()
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
             hands="Meghanada Gloves +1",
-    	    back="Solemnity Cape",
+            back="Solemnity Cape",
             neck="Twilight Torque",
             ring1="Dark Ring",
             ring2="Defending Ring"
@@ -242,7 +242,7 @@ function init_gear_sets()
             neck="Twilight Torque",
             ring1="Patricius Ring",
             ring2="Defending Ring",
-    	    back="Solemnity Cape",
+            back="Solemnity Cape",
         })
 
         sets.engaged.DW = set_combine(sets.engaged, {})
@@ -281,22 +281,23 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring", 
             body="Pursuer's Doublet",
-            hands="Alruna's Gloves +1",
+            hands="Meghanada Gloves +1",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
             back="Lutian Cape", 
             waist="Elanid Belt", 
-            legs="Amini Brague +1", 
-            feet="Thereoid Greaves"
+            legs="Adhemar Kecks", 
+            feet="Meghanada Jambeaux +1"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             back="Lutian Cape", 
             legs="Adhemar Kecks",
-            feet="Thereoid Greaves"
+            hands="Meghanada Gloves +1",
+            feet="Meghanada Jambeaux +1"
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             neck="Iqabi Necklace", 
-            hands="Alruna's Gloves +1",
+            hands="Meghanada Gloves +1",
             body="Amini Caban +1",
             ring1="Hajduk Ring", 
             waist="Eschan Stone",
@@ -310,8 +311,9 @@ function init_gear_sets()
         })
         sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
             ring2="Longshot Ring",
+            body="Amini Caban +1",
             back="Lutian Cape",hands="Amini Glovelettes +1",
-            legs="Amini Brague +1", 
+            legs="Adhemar Kecks",
         })
         sets.midcast.RA.Acc.SamRoll = set_combine(sets.midcast.RA.Mid.SamRoll, {
             neck="Iqabi Necklace", 
@@ -353,11 +355,11 @@ function init_gear_sets()
         })
         sets.midcast.RA.SAM.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Mid, {
             ear1="Enervating Earring",
-            hands="Alruna's Gloves +1",
+            hands="Meghanada Gloves +1",
             legs="Adhemar Kecks", 
         })
         sets.midcast.RA.SAM.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Acc, {
-            hands="Alruna's Gloves +1",
+            hands="Meghanada Gloves +1",
         })
 
         -- Bow base set.
@@ -367,18 +369,18 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Pursuer's Doublet",
-            hands="Amini Glovelettes +1",
+            hands="Meghanada Gloves +1",
             ring1="Rajas Ring",
             ring2="K'ayres Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
-            feet="Thereoid Greaves"
+            feet="Meghanada Jambeaux +1"
         }
         sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
             neck="Yarak Torque",
             legs="Adhemar Kecks",
-            feet="Orion Socks +1"
+            feet="Meghanada Jambeaux +1"
         })
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
             body="Amini Caban +1",
@@ -390,7 +392,7 @@ function init_gear_sets()
         -- Bow Sam roll
         sets.midcast.RA.Bow.SamRoll = set_combine(sets.midcast.RA.Bow, {
             body="Arcadian Jerkin +1",
-            hands="Amini Glovelettes +1",
+            hands="Meghanada Gloves +1",
             ring2="Longshot Ring",
             back="Lutian Cape"
         })
@@ -399,25 +401,25 @@ function init_gear_sets()
         })
         sets.midcast.RA.Bow.Acc.SamRoll = set_combine(sets.midcast.RA.Bow.Mid.SamRoll, {
             neck="Yarak Torque",
-            hands="Amini Glovelettes +1",
+            hands="Meghanada Gloves +1",
             body="Amini Caban +1",
             ring1="Longshot Ring",
-            feet="Orion Socks +1"
+            feet="Meghanada Jambeaux +1"
         })
         
         -- Sam SJ / Bow 
         sets.midcast.RA.SAM.Bow = set_combine(sets.midcast.RA.SAM, {
-            feet="Thereoid Greaves"
+            feet="Meghanada Jambeaux +1"
         })
         sets.midcast.RA.SAM.Bow.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
-            feet="Orion Socks +1"
+            feet="Meghanada Jambeaux +1"
         })
         sets.midcast.RA.SAM.Bow.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
 
         -- Sam SJ / Bow / Sam's Roll
         sets.midcast.RA.SAM.Bow.SamRoll = set_combine(sets.midcast.RA.SAM.Bow, {
             waist="Elanid Belt",
-            feet="Orion Socks +1"
+            feet="Meghanada Jambeaux +1"
         })
 
         sets.midcast.RA.SAM.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Bow.Mid, {
@@ -433,13 +435,13 @@ function init_gear_sets()
             ear1="Flame Pearl",
             ear2="Flame Pearl",
             body="Amini Caban +1",
-            hands="Arcadian Bracers +1",
+            hands="Meghanada Gloves +1",
             ring1="Ifrit Ring",
             ring2="Ifrit Ring",
             back="Buquwik Cape",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
-            feet="Thereoid Greaves"
+            feet="Meghanada Jambeaux +1"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             ear1="Enervating Earring",
@@ -699,7 +701,7 @@ function job_precast(spell, action, spellMap, eventArgs)
             end
         end
         -- Ammo checks
-	    if spell.action_type == 'Ranged Attack' or
+        if spell.action_type == 'Ranged Attack' or
           (spell.type == 'WeaponSkill' and (spell.skill == 'Marksmanship' or spell.skill == 'Archery')) then
             check_ammo(spell, action, spellMap, eventArgs)
         end
@@ -818,9 +820,9 @@ function customize_idle_set(idleSet)
     elseif state.HybridMode.value ~= 'PDT' then
         state.IdleMode.value = 'Normal'
     end
-	if state.Buff.Camouflage then
-		idleSet = set_combine(idleSet, sets.buff.Camouflage)
-	end
+    if state.Buff.Camouflage then
+        idleSet = set_combine(idleSet, sets.buff.Camouflage)
+    end
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
@@ -829,10 +831,10 @@ end
  
 function customize_melee_set(meleeSet)
     if state.Buff.Camouflage then
-    	meleeSet = set_combine(meleeSet, sets.buff.Camouflage)
+        meleeSet = set_combine(meleeSet, sets.buff.Camouflage)
     end
     if state.Buff.Overkill then
-    	meleeSet = set_combine(meleeSet, sets.Overkill)
+        meleeSet = set_combine(meleeSet, sets.Overkill)
     end
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
@@ -937,7 +939,7 @@ function get_combat_form()
 end
 
 function get_custom_ranged_groups()
-	classes.CustomRangedGroups:clear()
+    classes.CustomRangedGroups:clear()
     
     if buffactive['Samurai Roll'] then
         classes.CustomRangedGroups:append('SamRoll')
@@ -999,48 +1001,48 @@ function camo_active()
 end
 -- Check for proper ammo when shooting or weaponskilling
 function check_ammo(spell, action, spellMap, eventArgs)
-	-- Filter ammo checks depending on Unlimited Shot
-	if state.Buff['Unlimited Shot'] then
-		if player.equipment.ammo ~= U_Shot_Ammo[player.equipment.range] then
-			if player.inventory[U_Shot_Ammo[player.equipment.range]] or player.wardrobe[U_Shot_Ammo[player.equipment.range]] then
-				add_to_chat(122,"Unlimited Shot active. Using custom ammo.")
-				equip({ammo=U_Shot_Ammo[player.equipment.range]})
-			elseif player.inventory[DefaultAmmo[player.equipment.range]] or player.wardrobe[DefaultAmmo[player.equipment.range]] then
-				add_to_chat(122,"Unlimited Shot active but no custom ammo available. Using default ammo.")
-				equip({ammo=DefaultAmmo[player.equipment.range]})
-			else
-				add_to_chat(122,"Unlimited Shot active but unable to find any custom or default ammo.")
-			end
-		end
-	else
-		if player.equipment.ammo == U_Shot_Ammo[player.equipment.range] and player.equipment.ammo ~= DefaultAmmo[player.equipment.range] then
-			if DefaultAmmo[player.equipment.range] then
-				if player.inventory[DefaultAmmo[player.equipment.range]] then
-					add_to_chat(122,"Unlimited Shot not active. Using Default Ammo")
-					equip({ammo=DefaultAmmo[player.equipment.range]})
-				else
-					add_to_chat(122,"Default ammo unavailable.  Removing Unlimited Shot ammo.")
-					equip({ammo=empty})
-				end
-			else
-				add_to_chat(122,"Unable to determine default ammo for current weapon.  Removing Unlimited Shot ammo.")
-				equip({ammo=empty})
-			end
-		elseif player.equipment.ammo == 'empty' then
-			if DefaultAmmo[player.equipment.range] then
-				if player.inventory[DefaultAmmo[player.equipment.range]] then
-					add_to_chat(122,"Using Default Ammo")
-					equip({ammo=DefaultAmmo[player.equipment.range]})
-				else
-					add_to_chat(122,"Default ammo unavailable.  Leaving empty.")
-				end
-			else
-				add_to_chat(122,"Unable to determine default ammo for current weapon.  Leaving empty.")
-			end
-		elseif player.inventory[player.equipment.ammo].count < 15 then
-			add_to_chat(122,"Ammo '"..player.inventory[player.equipment.ammo].shortname.."' running low ("..player.inventory[player.equipment.ammo].count..")")
-		end
-	end
+    -- Filter ammo checks depending on Unlimited Shot
+    if state.Buff['Unlimited Shot'] then
+        if player.equipment.ammo ~= U_Shot_Ammo[player.equipment.range] then
+            if player.inventory[U_Shot_Ammo[player.equipment.range]] or player.wardrobe[U_Shot_Ammo[player.equipment.range]] then
+                add_to_chat(122,"Unlimited Shot active. Using custom ammo.")
+                equip({ammo=U_Shot_Ammo[player.equipment.range]})
+            elseif player.inventory[DefaultAmmo[player.equipment.range]] or player.wardrobe[DefaultAmmo[player.equipment.range]] then
+                add_to_chat(122,"Unlimited Shot active but no custom ammo available. Using default ammo.")
+                equip({ammo=DefaultAmmo[player.equipment.range]})
+            else
+                add_to_chat(122,"Unlimited Shot active but unable to find any custom or default ammo.")
+            end
+        end
+    else
+        if player.equipment.ammo == U_Shot_Ammo[player.equipment.range] and player.equipment.ammo ~= DefaultAmmo[player.equipment.range] then
+            if DefaultAmmo[player.equipment.range] then
+                if player.inventory[DefaultAmmo[player.equipment.range]] then
+                    add_to_chat(122,"Unlimited Shot not active. Using Default Ammo")
+                    equip({ammo=DefaultAmmo[player.equipment.range]})
+                else
+                    add_to_chat(122,"Default ammo unavailable.  Removing Unlimited Shot ammo.")
+                    equip({ammo=empty})
+                end
+            else
+                add_to_chat(122,"Unable to determine default ammo for current weapon.  Removing Unlimited Shot ammo.")
+                equip({ammo=empty})
+            end
+        elseif player.equipment.ammo == 'empty' then
+            if DefaultAmmo[player.equipment.range] then
+                if player.inventory[DefaultAmmo[player.equipment.range]] then
+                    add_to_chat(122,"Using Default Ammo")
+                    equip({ammo=DefaultAmmo[player.equipment.range]})
+                else
+                    add_to_chat(122,"Default ammo unavailable.  Leaving empty.")
+                end
+            else
+                add_to_chat(122,"Unable to determine default ammo for current weapon.  Leaving empty.")
+            end
+        elseif player.inventory[player.equipment.ammo].count < 15 then
+            add_to_chat(122,"Ammo '"..player.inventory[player.equipment.ammo].shortname.."' running low ("..player.inventory[player.equipment.ammo].count..")")
+        end
+    end
 end
 -- Orestes uses Samurai Roll. The total comes to 5!
 --function detect_cor_rolls(old,new,color,newcolor)
@@ -1050,13 +1052,13 @@ end
 --end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-	-- Default macro set/book
-	if player.sub_job == 'WAR'then
-		    set_macro_page(3, 5)
-	elseif player.sub_job == 'SAM' then
-		    set_macro_page(4, 5)
-	else
-		set_macro_page(3, 5)
-	end
+    -- Default macro set/book
+    if player.sub_job == 'WAR'then
+            set_macro_page(3, 5)
+    elseif player.sub_job == 'SAM' then
+            set_macro_page(4, 5)
+    else
+        set_macro_page(3, 5)
+    end
 end
 
