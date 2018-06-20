@@ -390,7 +390,7 @@ function init_gear_sets()
     -- WEAPONSKILL SETS
     -- General sets
     sets.precast.WS = {
-        ammo="Aqreqaq Bomblet",
+        ammo="Knobkierrie",
         head="Valorous Mask",
         neck="Ganesha's Mala",
         ear1="Ishvara Earring",
@@ -405,9 +405,9 @@ function init_gear_sets()
         feet="Sulevia's Leggings +1"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-        ammo="Ginsen",
+        ammo="Knobkierrie",
         head="Argosy Celata",
-        body="Mes'yohi Haubergeon",
+        body="Odyssean Chestplate",
         legs=Odyssean.Legs.WS
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
@@ -760,31 +760,30 @@ function init_gear_sets()
     })
     -- Liberator AM3
     sets.engaged.AM3 = set_combine(sets.engaged, {
-        ammo="Hasty Pinion +1",
+        ammo="Ginsen",
         head="Flamma Zucchetto +1",
         body="Valorous Mail",
         neck="Ganesha's Mala",
         hands="Emicho Gauntlets",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
+        ring1="Rajas Ring",
+        ring2="Flamma Ring",
         back=Ankou.STP,
-        waist="Windbuffet Belt +1",
+        waist="Sarissaphoroi Belt",
         legs=Odyssean.Legs.TP,
-        feet=Acro.Feet.STP
+        feet="Flamma Gambieras +1"
     })
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
+        --ammo="Hasty Pinion +1",
         neck="Lissome Necklace",
-        legs=Odyssean.Legs.TP,
-        ring1="Flamma Ring",
-        feet=Odyssean.Feet.TP
+        --legs="Sulevia's Cuisses +2"
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
-        neck="Lissome Necklace",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
         body="Odyssean Chestplate",
-        ring1="Flamma Ring",
-        ring2="Sulevia's Ring",
+        ring1="Sulevia's Ring",
         legs="Carmine Cuisses +1",
         --back="Grounded Mantle +1",
         waist="Olseni Belt",
@@ -793,24 +792,18 @@ function init_gear_sets()
     -- Apocalypse
     sets.engaged.Apocalypse = set_combine(sets.engaged, {
         --sub="Pole Grip",
-        ammo="Yetshila",
-        hands=Acro.Hands.Haste,
         --body="Acro Surcoat",
         ear1="Cessance Earring",
         ear2="Brutal Earring"
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
-        feet=Acro.Feet.WSD,
         back=Ankou.STP,
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
-        feet=Acro.Feet.WSD
     })
 
     sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
-        head="Argosy Celata",
         legs=Odyssean.Legs.TP,
-        feet=Acro.Feet.WSD
     })
     sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
         ammo="Ginsen",
@@ -818,8 +811,6 @@ function init_gear_sets()
         feet="Sulevia's Leggings +1"
     })
     sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
-        head="Valorous Mask",
-        ammo="Hasty Pinion +1",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
         neck="Defiant Collar",
