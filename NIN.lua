@@ -74,6 +74,7 @@ function user_setup()
     send_command('bind @f9 gs c cycle HasteMode')
     send_command('bind @[ gs c cycle Runes')
     send_command('bind ^] gs c toggle UseRune')
+    send_command('bind !- gs equip sets.crafting')
 
 end
 
@@ -125,7 +126,6 @@ function init_gear_sets()
     -- Waltz (chr and vit)
     sets.precast.Waltz = {
         head="Hachiya Hatsuburi +1",
-        body="Rao Togi",
         hands="Herculean Gloves",
         waist="Chaac Belt",
         legs="Nahtirah Trousers",
@@ -145,9 +145,8 @@ function init_gear_sets()
         feet="Mochizuki Kyahan +1"
     }
     sets.midcast.Trust =  {
-        head="Hatori Zukin +1",
+        head="Hattori Zukin +1",
         hands="Ryuo Tekko",
-        body="Rawhide Vest",
         legs="Herculean Trousers",
         feet="Hachiya Kyahan +1"
     }
@@ -298,11 +297,11 @@ function init_gear_sets()
     }
     sets.idle.Town = set_combine(sets.idle, {
         head="Herculean Helm",
+        body="Kendatsuba Samue",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
         hands="Herculean Gloves",
-        body="Reiki Osode",
         legs="Herculean Trousers",
         ring1="Karieyh Ring",
         back=Andartia.DEX,
@@ -457,7 +456,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Cessance Earring",
-        body="Rawhide Vest",
+        body="Kendatsuba Samue",
         hands="Herculean Gloves",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
@@ -475,7 +474,7 @@ function init_gear_sets()
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         head="Herculean Helm",
         ring1="Cacoethic Ring +1",
-        body="Rao Togi",
+        body="Kendatsuba Samue",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Herculean Helm",
@@ -586,14 +585,14 @@ function init_gear_sets()
         feet="Herculean Boots"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
-        body="Rao Togi",
+        body="Kendatsuba Samue",
         hands="Herculean Gloves",
         feet="Hizamaru Sune-ate +1"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         head="Herculean Helm",
         neck="Yarak Torque",
-        body="Reiki Osode",
+        body="Kendatsuba Samue",
         ring2="Cacoethic Ring +1",
         back=Andartia.DEX,
         waist="Olseni Belt",
@@ -675,7 +674,7 @@ function init_gear_sets()
         neck="Defiant Collar",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
-        body="Rao Togi",
+        body="Kendatsuba Samue",
         hands="Herculean Gloves",
         ring1="Karieyh Ring",
         ring2="Epona's Ring",
@@ -691,7 +690,7 @@ function init_gear_sets()
     sets.precast.WS.Low = sets.precast.WS.Mid
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-        body="Rao Togi",
+        body="Herculean Vest",
     })
     
     sets.Kamu = {
@@ -712,7 +711,6 @@ function init_gear_sets()
         ammo="Yetshila",
         head="Herculean Helm",
         neck="Breeze Gorget",
-        body="Hattori Ningi +1",
         hands="Ryuo Tekko",
         waist="Windbuffet Belt +1",
     }
@@ -733,7 +731,7 @@ function init_gear_sets()
         head="Herculean Helm",
         neck="Rancor Collar",
         ear1="Ishvara Earring",
-        body="Hattori Ningi +1",
+        body="Kendatsuba Samue",
         hands="Ryuo Tekko",
         ring1="Karieyh Ring",
         back=Andartia.AGI,
@@ -805,7 +803,7 @@ function init_gear_sets()
         neck="Shadow Gorget",
         ear1="Lugra Earring +1",
         ear2="Moonshade Earring",
-        body="Rao Togi",
+        body="Kendatsuba Samue",
         legs="Hizamaru Hizayoroi +1",
         back=Andartia.AGI,
         waist="Metalsinger Belt",
@@ -975,6 +973,9 @@ end
 function customize_idle_set(idleSet)
     if player.hpp < 80 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
+    end
+    if state.CraftingMode then
+        idleSet = set_combine(idleSet, sets.crafting)
     end
     if state.HybridMode.value == 'PDT' then
         if state.Buff.Migawari then

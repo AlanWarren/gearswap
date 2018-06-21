@@ -147,7 +147,7 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
-        body="Acro Surcoat",
+        body="Valorous Mail",
         hands="Mikinaak Gauntlets",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring +1",
@@ -158,7 +158,6 @@ function init_gear_sets()
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         head="Rao Kabuto",
-        body="Sakonji Domaru +1",
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         ring2="Mars's Ring",
@@ -171,7 +170,7 @@ function init_gear_sets()
         neck="Aqua Gorget",
         ear1="Flame Pearl",
         ear2="Flame Pearl",
-        body="Acro Surcoat",
+        body="Valorous Mail",
         hands=Acro.Hands.STP,
         back="Buquwik Cape",
         ring1="Karieyh Ring",
@@ -336,18 +335,18 @@ function init_gear_sets()
     
     -- Defense sets
     sets.defense.PDT = {
-        head="Otronif Mask +1",
+        --head="Otronif Mask +1",
         neck="Agitator's Collar",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
    	    body="Founder's Breastplate",
-        hands="Otronif Gloves +1",
+        --hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Otronif Brais +1",
-        feet="Otronif Boots +1"
+        --legs="Otronif Brais +1",
+        --feet="Otronif Boots +1"
     }
     
     sets.defense.Reraise = set_combine(sets.defense.PDT, {
@@ -380,7 +379,7 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
-        body="Vatic Byrnie",
+        body="Valorous Mail",
         hands=Acro.Hands.STP,
         ring1="Rajas Ring", 
         ring2="Petrov Ring", 
@@ -392,7 +391,6 @@ function init_gear_sets()
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Acro Helm",
-        body="Reiki Osode",
         hands="Ryuo Tekko",
         feet="Loyalist Sabatons"
     })
@@ -431,7 +429,7 @@ function init_gear_sets()
     })
     
     sets.engaged.PDT = set_combine(sets.engaged, { 
-        head="Otronif Mask +1", 
+        --head="Otronif Mask +1", 
    	    body="Founder's Breastplate",
         neck="Agitator's Collar",
         hands="Crusher Gauntlets",
@@ -512,14 +510,14 @@ function init_gear_sets()
     })
     
     sets.engaged.Adoulin.PDT = set_combine(sets.engaged.Adoulin, {
-        head="Otronif Mask +1",
+        --head="Otronif Mask +1",
         neck="Agitator's Collar",
    	    body="Founder's Breastplate",
-        hands="Otronif Gloves +1",
+        --hands="Otronif Gloves +1",
         ring1="Patricius Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
-        legs="Otronif Brais +1",
+        --legs="Otronif Brais +1",
         feet="Loyalist Sabatons"
     })
     
@@ -527,7 +525,7 @@ function init_gear_sets()
         head="Lithelimb Cap",
         neck="Agitator's Collar",
         ring1="Patricius Ring",
-        legs="Otronif Brais +1",
+        --legs="Otronif Brais +1",
         back="Grounded Mantle +1",
         feet="Loyalist Sabatons"
     })
@@ -546,8 +544,8 @@ function init_gear_sets()
         ring2="K'ayres Ring", -- 5
         back="Takaha Mantle",
         waist="Windbuffet Belt +1", 
-        legs="Otronif Brais +1", -- 6
-        feet="Otronif Boots +1" -- 7
+        --legs="Otronif Brais +1", -- 6
+        --feet="Otronif Boots +1" -- 7
     }
     
     sets.engaged.Adoulin.Yoichi.Mid = set_combine(sets.engaged.Adoulin.Yoichi, 
@@ -623,7 +621,7 @@ function init_gear_sets()
     sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate +1"}
     
     sets.thirdeye = {head="Unkai Kabuto +2", legs="Sakonji Haidate"}
-    sets.seigan = {hands="Otronif Gloves +1"}
+    --sets.seigan = {hands="Otronif Gloves +1"}
     sets.bow = {ammo=gear.RAarrow}
 end
 

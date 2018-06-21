@@ -88,6 +88,7 @@ function user_setup()
         send_command('bind !f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
         send_command('bind ^] gs c cycle WeaponskillMode')
+        send_command('bind !- gs equip sets.crafting')
         send_command('bind ^- gs c cycle AutoRA')
         send_command('bind ^[ input /lockstyle on')
         send_command('bind ![ input /lockstyle off')
@@ -133,7 +134,7 @@ function init_gear_sets()
         sets.CapacityMantle = {back="Mecistopins Mantle"}
 
         sets.precast.JA['Eagle Eye Shot'] = set_combine(sets.midcast.RA, {
-            head="Uk'uxkaj Cap", 
+            head="Meghanada Visor +1", 
             ear1="Flame Pearl",
             ear2="Flame Pearl",
             neck="Rancor Collar",
@@ -185,7 +186,7 @@ function init_gear_sets()
             ring2="Paguroidea Ring"
         })
         sets.idle.PDT = set_combine(sets.idle, {
-            head="Iuitl Headgear +1",
+            head="Meghanada Visor +1",
             ring1="Dark Ring",
             ring2="Defending Ring"
         })
@@ -205,7 +206,7 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Pursuer's Doublet", 
-            hands="Iuitl Wristbands +1",
+            hands="Meghanada Gloves +1",
             ring1="Paguroidea Ring",
             ring2="Defending Ring",
             waist="Impulse Belt",
@@ -213,7 +214,7 @@ function init_gear_sets()
             feet="Orion Socks +1"
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
-            hands="Iuitl Wristbands +1",
+            hands="Meghanada Gloves +1",
     	    back="Solemnity Cape",
             neck="Twilight Torque",
             ring1="Dark Ring",
@@ -268,7 +269,7 @@ function init_gear_sets()
             back="Lutian Cape", -- 2
             legs="Adhemar Kecks",
             waist="Impulse Belt", -- 2
-            feet="Wurrukatte Boots" -- 3
+            feet="Meghanada Jambeaux +1" -- 3
         }
         
         ------------------------------------------------------------------

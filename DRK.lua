@@ -119,6 +119,7 @@ function user_setup()
     -- Additional local binds
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c toggle SouleaterMode')
+    send_command('bind !- gs equip sets.crafting')
     --send_command('bind ^` gs c toggle LastResortMode')
 
     select_default_macro_book()
@@ -191,6 +192,7 @@ function init_gear_sets()
     sets.precast.JA['Nether Void']  = {legs="Heathen's Flanchard +1"}
     sets.precast.JA['Dark Seal']    = {head="Fallen's burgeonet +1"}
     sets.precast.JA['Souleater']    = {head="Ignominy burgeonet +1"}
+    sets.precast.JA['Weapn Bash']   = {hands="Ignominy Gauntlets +1"}
     sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
     sets.precast.JA['Last Resort']  = {back=Ankou.WSD}
 
@@ -279,11 +281,11 @@ function init_gear_sets()
         ring2="Sangoma Ring",
         back=Niht.DarkMagic, -- 10
         legs="Eschite Cuisses",  -- 20
-        feet="Heathen's Sollerets +1"
+        feet="Ratri Sollerets"
     }
-    sets.midcast.Endark = set_combine(sets.midcast['Dark Magic'], {
-        feet=Odyssean.Feet.FC
-    })
+    -- sets.midcast.Endark = set_combine(sets.midcast['Dark Magic'], {
+    --     feet=Odyssean.Feet.FC
+    -- })
 
     sets.midcast['Dark Magic'].Acc = set_combine(sets.midcast['Dark Magic'], {
         body="Founder's Breastplate",
@@ -325,7 +327,7 @@ function init_gear_sets()
         back="Trepidity Mantle",
         waist="Eschan Stone", -- macc/matk 7
         legs="Carmine Cuisses +1",
-        feet=Odyssean.Feet.FC
+        feet="Ratri Sollerets"
     })
     sets.midcast['Dread Spikes'].Acc = set_combine(sets.midcast['Dark Magic'], {
         body="Heathen's Cuirass +1",
@@ -339,7 +341,7 @@ function init_gear_sets()
         ear2="Hirudinea Earring",
         body="Lugra Cloak +1",
         ring2="Excelsis Ring",
-        feet=Odyssean.Feet.FC
+        feet="Ratri Sollerets"
     })
     sets.midcast.Aspir = sets.midcast.Drain
 
@@ -353,7 +355,7 @@ function init_gear_sets()
 
     sets.midcast.Drain.OhShit = set_combine(sets.midcast.Drain, {
         legs="Carmine Cuisses +1",
-        feet=Odyssean.Feet.FC
+        feet="Ratri Sollerets"
     })
 
     -- Absorbs
@@ -381,7 +383,7 @@ function init_gear_sets()
     }
     sets.midcast.RA = {
         ear2="Tripudio Earring",
-        ring1="Beeline Ring",
+        ring1="Cacoethic Ring +1",
         waist="Chaac Belt",
     }
 
@@ -391,7 +393,7 @@ function init_gear_sets()
         ammo="Aqreqaq Bomblet",
         head="Valorous Mask",
         neck="Ganesha's Mala",
-        ear1="Brutal Earring",
+        ear1="Ishvara Earring",
         ear2="Moonshade Earring",
         body="Odyssean Chestplate",
         hands="Odyssean Gauntlets",
@@ -412,6 +414,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         --legs="Sulevia's Cuisses +1",
         waist="Olseni Belt",
+        feet="Ratri Sollerets"
     })
 
     -- RESOLUTION
@@ -599,11 +602,11 @@ function init_gear_sets()
     -- Idle sets
     sets.idle.Town = {
         ammo="Ginsen",
-        head="Valorous Mask",
+        --head="Valorous Mask",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
-        body="Heathen's Cuirass +1",
+        body="Lugra Cloak +1",
         hands="Sulevia's Gauntlets +1",
         ring1="Karieyh Ring",
         ring2="Defending Ring",
@@ -643,7 +646,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Redan Gloves",
         ear1="Zennaroi Earring",
-        ring1="Karieyh Ring",
+        ring1="Sulevia's Ring",
         ring2="Defending Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
@@ -660,10 +663,10 @@ function init_gear_sets()
         body="Jumalik Mail",
         hands="Sulevia's Gauntlets +1",
         ear1="Zennaroi Earring",
-        ring1="Patricius Ring",
+        ring1="Sulevia's Ring",
         ring2="Defending Ring",
         back="Grounded Mantle +1",
-        waist="Ioskeha Belt",
+        waist="Sarissaphoroi Belt",
         legs="Sulevia's Cuisses +1",
         feet="Amm Greaves"
     }
@@ -673,7 +676,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         body="Lugra Cloak +1",
         ear1="Zennaroi Earring",
-        ring1="Dark Ring",
+        ring1="Sulevia's Ring",
         back="Impassive Mantle",
     })
 
@@ -699,16 +702,16 @@ function init_gear_sets()
         neck="Agitator's Collar",
         body="Odyssean Chestplate",
         hands="Sulevia's Gauntlets +1",
-        ring1="Patricius Ring",
+        ring1="Sulevia's Ring",
         ring2="Defending Ring",
         back=Ankou.STP,
-        waist="Ioskeha Belt",
+        waist="Sarissaphoroi Belt",
         legs="Sulevia's Cuisses +1",
         feet="Loyalist Sabatons"
     }
     sets.Defensive_Mid = set_combine(sets.Defensive, {
         ear1="Zennaroi Earring",
-        ring2="Supershear Ring",
+        ring2="Patricius Ring",
     })
     sets.Defensive_Acc = sets.Defensive_Mid
 
@@ -724,11 +727,11 @@ function init_gear_sets()
     sets.engaged = {
         --sub="Bloodrain Strap",
         ammo="Ginsen",
-        head="Acro Helm",
+        head="Argosy Celata",
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
         ear2="Brutal Earring",
-        body="Vatic Byrnie",
+        body="Valorous Mail",
         hands="Emicho Gauntlets",
         ring1="Rajas Ring",
         ring2="Petrov Ring",
@@ -738,11 +741,10 @@ function init_gear_sets()
         feet=Acro.Feet.STP
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
-        head="Valorous Mask",
-        hands="Emicho Gauntlets",
-        body="Mes'yohi Haubergeon",
-        back=Ankou.STP,
-        waist="Ioskeha Belt",
+        head="Argosy Celata",
+        body="Valorous Mail",
+        waist="Sarissaphoroi Belt",
+        ring1="Flamma Ring",
         legs=Odyssean.Legs.TP,
         feet=Odyssean.Feet.TP
     })
@@ -752,15 +754,15 @@ function init_gear_sets()
         ear1="Cessance Earring",
         body="Odyssean Chestplate",
         ear2="Zennaroi Earring",
-        ring1="Cacoethic Ring +1",
+        legs="Carmine Cuisses +1",
         back=Ankou.STP,
-        waist="Ioskeha Belt",
+        waist="Sarissaphoroi Belt",
     })
     -- Liberator AM3
     sets.engaged.AM3 = set_combine(sets.engaged, {
-        ammo="Ginsen",
-        head="Acro Helm",
-        body="Odyssean Chestplate",
+        ammo="Hasty Pinion +1",
+        head="Flamma Zucchetto +1",
+        body="Valorous Mail",
         neck="Ganesha's Mala",
         hands="Emicho Gauntlets",
         ear1="Cessance Earring",
@@ -771,20 +773,19 @@ function init_gear_sets()
         feet=Acro.Feet.STP
     })
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-        head="Valorous Mask",
-        hands="Emicho Gauntlets",
+        neck="Lissome Necklace",
         legs=Odyssean.Legs.TP,
+        ring1="Flamma Ring",
         feet=Odyssean.Feet.TP
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
-        ammo="Hasty Pinion +1",
-        head="Valorous Mask",
         neck="Lissome Necklace",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
-        hands="Emicho Gauntlets",
-        ring1="Rajas Ring",
-        ring2="Cacoethic Ring +1",
+        body="Odyssean Chestplate",
+        ring1="Flamma Ring",
+        ring2="Sulevia's Ring",
+        legs="Carmine Cuisses +1",
         --back="Grounded Mantle +1",
         waist="Olseni Belt",
     })
