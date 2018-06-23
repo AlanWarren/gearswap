@@ -139,7 +139,7 @@ function init_gear_sets()
             ear2="Flame Pearl",
             neck="Rancor Collar",
             back="Buquwik Cape",
-            hands="Amini Glovelettes +1",
+            hands="Meghanada Gloves +1",
             ring1="Ifrit Ring",
             ring2="Ifrit Ring +1",
             legs="Amini Brague +1", 
@@ -249,8 +249,8 @@ function init_gear_sets()
 
         sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
             head="Taeon Chapeau",
-            ear1="Dudgeon Earring",
-            ear2="Heartseeker Earring",
+            ear1="Eabani Earring",
+            ear2="Suppanomimi",
             body="Samnuha Coat",
             hands="Floral Gauntlets",
             back="Bleating Mantle",
@@ -267,9 +267,9 @@ function init_gear_sets()
             body="Amini Caban +1", -- 7
             hands=TaeonHands.Snap, --8
             back="Lutian Cape", -- 2
-            legs="Adhemar Kecks",
+            legs="Adhemar Kecks", -- 9
             waist="Impulse Belt", -- 2
-            feet="Meghanada Jambeaux +1" -- 3
+            feet="Meghanada Jambeaux +1" -- 8
         }
         
         ------------------------------------------------------------------
@@ -290,77 +290,78 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +1"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            back="Lutian Cape", 
-            legs="Adhemar Kecks",
             hands="Meghanada Gloves +1",
+            ring2="Cacoethic Ring +1",
             feet="Meghanada Jambeaux +1"
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
+            head="Meghanada Visor +1",
             neck="Iqabi Necklace", 
             hands="Meghanada Gloves +1",
             body="Amini Caban +1",
-            ring1="Hajduk Ring", 
+            ring1="Longshot Ring",
+            ring2="Cacoethic Ring +1",
             waist="Eschan Stone",
             legs="Adhemar Kecks",
         })
     
-        -- Samurai Roll sets 
-        sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
-            body="Arcadian Jerkin +1",
-            ring2="Longshot Ring",
-        })
-        sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
-            ring2="Longshot Ring",
-            body="Amini Caban +1",
-            back="Lutian Cape",hands="Amini Glovelettes +1",
-            legs="Adhemar Kecks",
-        })
-        sets.midcast.RA.Acc.SamRoll = set_combine(sets.midcast.RA.Mid.SamRoll, {
-            neck="Iqabi Necklace", 
-            ring1="Hajduk Ring", 
-            ring2="Longshot Ring",
-            legs="Adhemar Kecks",
-        })
+        -- -- Samurai Roll sets 
+        -- sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
+        --     body="Arcadian Jerkin +1",
+        --     ring2="Longshot Ring",
+        -- })
+        -- sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
+        --     ring2="Longshot Ring",
+        --     body="Amini Caban +1",
+        --     back="Lutian Cape",hands="Amini Glovelettes +1",
+        --     legs="Adhemar Kecks",
+        -- })
+        -- sets.midcast.RA.Acc.SamRoll = set_combine(sets.midcast.RA.Mid.SamRoll, {
+        --     neck="Iqabi Necklace", 
+        --     ring1="Hajduk Ring", 
+        --     ring2="Longshot Ring",
+        --     legs="Adhemar Kecks",
+        -- })
         
         -- SAM Subjob
-        sets.midcast.RA.SAM = {
-            head="Arcadian Beret +1",
-            neck="Ocachi Gorget",
-            ear1="Enervating Earring",
-            ear2="Tripudio Earring", 
-            body="Pursuer's Doublet",
-            hands="Amini Glovelettes +1",
-            ring1="Rajas Ring", 
-            ring2="K'ayres Ring",
-            back="Lutian Cape",
-            waist="Elanid Belt",
-            legs="Amini Brague +1", 
-            feet="Thereoid Greaves"
-        }
-        sets.midcast.RA.SAM.Mid = set_combine(sets.midcast.RA.SAM, { 
-            hands="Amini Glovelettes +1",
-            body="Amini Caban +1",
-            feet="Orion Socks +1"
-        })
-        sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mid, {
-            back="Lutian Cape", 
-            neck="Iqabi Necklace", 
-            ring2="Longshot Ring",
-            waist="Eschan Stone"
-        })
+        -- sets.midcast.RA.SAM = {
+        --     head="Arcadian Beret +1",
+        --     neck="Ocachi Gorget",
+        --     ear1="Enervating Earring",
+        --     ear2="Tripudio Earring", 
+        --     body="Pursuer's Doublet",
+        --     hands="Amini Glovelettes +1",
+        --     ring1="Rajas Ring", 
+        --     ring2="K'ayres Ring",
+        --     back="Lutian Cape",
+        --     waist="Elanid Belt",
+        --     legs="Amini Brague +1", 
+        --     feet="Thereoid Greaves"
+        -- }
+        -- sets.midcast.RA.SAM.Mid = set_combine(sets.midcast.RA.SAM, { 
+        --     hands="Amini Glovelettes +1",
+        --     body="Amini Caban +1",
+        --     feet="Orion Socks +1"
+        -- })
+        -- sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mid, {
+        --     back="Lutian Cape", 
+        --     neck="Iqabi Necklace", 
+        --     ring2="Longshot Ring",
+        --     waist="Eschan Stone"
+        -- })
 
-        -- Samurai Roll for /sam, assume we're using a staff
-        sets.midcast.RA.SAM.SamRoll = set_combine(sets.midcast.RA.SAM, {
-            hands="Amini Glovelettes +1"
-        })
-        sets.midcast.RA.SAM.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Mid, {
-            ear1="Enervating Earring",
-            hands="Meghanada Gloves +1",
-            legs="Adhemar Kecks", 
-        })
-        sets.midcast.RA.SAM.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Acc, {
-            hands="Meghanada Gloves +1",
-        })
+        -- -- Samurai Roll for /sam, assume we're using a staff
+        -- sets.midcast.RA.SAM.SamRoll = set_combine(sets.midcast.RA.SAM, {
+        --     hands="Amini Glovelettes +1"
+        -- })
+        -- sets.midcast.RA.SAM.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Mid, {
+        --     ear1="Enervating Earring",
+        --     hands="Meghanada Gloves +1",
+        --     legs="Adhemar Kecks", 
+        -- })
+        -- sets.midcast.RA.SAM.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Acc, {
+        --     hands="Meghanada Gloves +1",
+        -- })
 
         -- Bow base set.
         sets.midcast.RA.Bow = {
@@ -371,7 +372,7 @@ function init_gear_sets()
             body="Pursuer's Doublet",
             hands="Meghanada Gloves +1",
             ring1="Rajas Ring",
-            ring2="K'ayres Ring",
+            ring2="Petrov Ring",
             back="Lutian Cape",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
@@ -380,52 +381,54 @@ function init_gear_sets()
         sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
             neck="Yarak Torque",
             legs="Adhemar Kecks",
+            ring2="Cacoethic Ring +1",
             feet="Meghanada Jambeaux +1"
         })
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
+            head="Meghanada Visor +1",
             body="Amini Caban +1",
-            ring1="Hajduk Ring",
-            ring2="Longshot Ring",
+            ring1="Longshot Ring",
+            ring2="Cacoethic Ring +1",
             waist="Eschan Stone"
         })
        
         -- Bow Sam roll
-        sets.midcast.RA.Bow.SamRoll = set_combine(sets.midcast.RA.Bow, {
-            body="Arcadian Jerkin +1",
-            hands="Meghanada Gloves +1",
-            ring2="Longshot Ring",
-            back="Lutian Cape"
-        })
-        sets.midcast.RA.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.Bow.SamRoll, {
-            body="Pursuer's Doublet",
-        })
-        sets.midcast.RA.Bow.Acc.SamRoll = set_combine(sets.midcast.RA.Bow.Mid.SamRoll, {
-            neck="Yarak Torque",
-            hands="Meghanada Gloves +1",
-            body="Amini Caban +1",
-            ring1="Longshot Ring",
-            feet="Meghanada Jambeaux +1"
-        })
+        -- sets.midcast.RA.Bow.SamRoll = set_combine(sets.midcast.RA.Bow, {
+        --     body="Arcadian Jerkin +1",
+        --     hands="Meghanada Gloves +1",
+        --     ring2="Longshot Ring",
+        --     back="Lutian Cape"
+        -- })
+        -- sets.midcast.RA.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.Bow.SamRoll, {
+        --     body="Pursuer's Doublet",
+        -- })
+        -- sets.midcast.RA.Bow.Acc.SamRoll = set_combine(sets.midcast.RA.Bow.Mid.SamRoll, {
+        --     neck="Yarak Torque",
+        --     hands="Meghanada Gloves +1",
+        --     body="Amini Caban +1",
+        --     ring1="Longshot Ring",
+        --     feet="Meghanada Jambeaux +1"
+        -- })
         
         -- Sam SJ / Bow 
-        sets.midcast.RA.SAM.Bow = set_combine(sets.midcast.RA.SAM, {
-            feet="Meghanada Jambeaux +1"
-        })
-        sets.midcast.RA.SAM.Bow.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
-            feet="Meghanada Jambeaux +1"
-        })
-        sets.midcast.RA.SAM.Bow.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
+        -- sets.midcast.RA.SAM.Bow = set_combine(sets.midcast.RA.SAM, {
+        --     feet="Meghanada Jambeaux +1"
+        -- })
+        -- sets.midcast.RA.SAM.Bow.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
+        --     feet="Meghanada Jambeaux +1"
+        -- })
+        -- sets.midcast.RA.SAM.Bow.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
 
         -- Sam SJ / Bow / Sam's Roll
-        sets.midcast.RA.SAM.Bow.SamRoll = set_combine(sets.midcast.RA.SAM.Bow, {
-            waist="Elanid Belt",
-            feet="Meghanada Jambeaux +1"
-        })
+        -- sets.midcast.RA.SAM.Bow.SamRoll = set_combine(sets.midcast.RA.SAM.Bow, {
+        --     waist="Elanid Belt",
+        --     feet="Meghanada Jambeaux +1"
+        -- })
 
-        sets.midcast.RA.SAM.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Bow.Mid, {
-            waist="Elanid Belt",
-        })
-        sets.midcast.RA.SAM.Bow.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Bow.Acc, {})
+        -- sets.midcast.RA.SAM.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Bow.Mid, {
+        --     waist="Elanid Belt",
+        -- })
+        -- sets.midcast.RA.SAM.Bow.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Bow.Acc, {})
 
 
         -- Weaponskill sets  
@@ -446,9 +449,9 @@ function init_gear_sets()
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             ear1="Enervating Earring",
             legs="Adhemar Kecks",
-            feet="Orion Socks +1",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
+            head="Meghanada Visor +1",
             back="Lutian Cape"
         })
 
@@ -498,13 +501,13 @@ function init_gear_sets()
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.Coronach)
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, sets.Coronach)
 
-        sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
-            neck="Ocachi Gorget",
-            ear1="Enervating Earring",
-            ear2="Tripudio Earring",
-            hands="Amini Glovelettes +1",
-            legs="Amini Brague +1", 
-        })
+        -- sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
+        --     neck="Ocachi Gorget",
+        --     ear1="Enervating Earring",
+        --     ear2="Tripudio Earring",
+        --     hands="Amini Glovelettes +1",
+        --     legs="Amini Brague +1", 
+        -- })
 
         -- LAST STAND
         sets.LastStand = {
