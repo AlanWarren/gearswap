@@ -391,7 +391,7 @@ function init_gear_sets()
     -- General sets
     sets.precast.WS = {
         ammo="Knobkierrie",
-        head="Valorous Mask",
+        head="Flamma Zucchetto +2",
         neck="Ganesha's Mala",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
@@ -406,7 +406,6 @@ function init_gear_sets()
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
-        head="Argosy Celata",
         body="Odyssean Chestplate",
         legs=Odyssean.Legs.WS
     })
@@ -721,24 +720,21 @@ function init_gear_sets()
     sets.engaged = {
         --sub="Bloodrain Strap",
         ammo="Ginsen",
-        head="Argosy Celata",
+        head="Flamma Zucchetto +2",
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
         ear2="Brutal Earring",
         body="Valorous Mail",
         hands="Emicho Gauntlets",
-        ring1="Rajas Ring",
+        ring1="Flamma Ring",
         ring2="Petrov Ring",
         back=Ankou.STP,
-        waist="Windbuffet Belt +1",
+        waist="Sarissaphoroi Belt",
         legs=Odyssean.Legs.TP,
-        feet=Acro.Feet.STP
+        feet="Flamma Gambieras +1"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
-        head="Argosy Celata",
-        body="Valorous Mail",
         waist="Sarissaphoroi Belt",
-        ring1="Flamma Ring",
         legs=Odyssean.Legs.TP,
         feet=Odyssean.Feet.TP
     })
@@ -755,7 +751,7 @@ function init_gear_sets()
     -- Liberator AM3
     sets.engaged.AM3 = set_combine(sets.engaged, {
         ammo="Ginsen",
-        head="Flamma Zucchetto +1",
+        head="Flamma Zucchetto +2",
         body="Valorous Mail",
         neck="Ganesha's Mala",
         hands="Emicho Gauntlets",
@@ -769,15 +765,18 @@ function init_gear_sets()
         feet="Flamma Gambieras +1"
     })
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
-        --ammo="Hasty Pinion +1",
         neck="Lissome Necklace",
-        --legs="Sulevia's Cuisses +2"
+        legs=Odyssean.Legs.TP,
+        ring1="Flamma Ring",
+        feet=Odyssean.Feet.TP
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
+        neck="Lissome Necklace",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
         body="Odyssean Chestplate",
-        ring1="Sulevia's Ring",
+        ring1="Flamma Ring",
+        ring2="Sulevia's Ring",
         legs="Carmine Cuisses +1",
         --back="Grounded Mantle +1",
         waist="Olseni Belt",

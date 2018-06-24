@@ -1,6 +1,6 @@
 Rings = S{'Capacity Ring', 'Warp Ring', 'Trizek Ring', 'Expertise Ring', 'Emperor Band', 'Caliber Ring', 'Echad Ring', 'Facility Ring'}
 sets.reive = {neck="Ygnas's Resolve +1"}
-sets.crafting = { head="Midras's Helm +1", main="Caduceus", neck="Alchemist's Torque", ring1="Craftmaster's ring" }
+sets.crafting = { body="Alchemist's Apron", head="Midras's Helm +1", main="Caduceus", neck="Alchemist's Torque", ring1="Craftmaster's ring" }
 
 function user_post_precast(spell, action, spellMap, eventArgs)
     -- reive mark

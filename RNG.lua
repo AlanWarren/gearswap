@@ -215,7 +215,7 @@ function init_gear_sets()
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
             hands="Meghanada Gloves +1",
-            back="Solemnity Cape",
+    	    back="Solemnity Cape",
             neck="Twilight Torque",
             ring1="Dark Ring",
             ring2="Defending Ring"
