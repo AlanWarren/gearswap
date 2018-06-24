@@ -391,7 +391,7 @@ function init_gear_sets()
     -- General sets
     sets.precast.WS = {
         ammo="Knobkierrie",
-        head="Valorous Mask",
+        head="Flamma Zucchetto +2",
         neck="Ganesha's Mala",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
@@ -406,7 +406,6 @@ function init_gear_sets()
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
-        head="Argosy Celata",
         body="Odyssean Chestplate",
         legs=Odyssean.Legs.WS
     })
