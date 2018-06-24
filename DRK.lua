@@ -727,24 +727,21 @@ function init_gear_sets()
     sets.engaged = {
         --sub="Bloodrain Strap",
         ammo="Ginsen",
-        head="Argosy Celata",
+        head="Flamma Zucchetto +2",
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
         ear2="Brutal Earring",
         body="Valorous Mail",
         hands="Emicho Gauntlets",
-        ring1="Rajas Ring",
+        ring1="Flamma Ring",
         ring2="Petrov Ring",
         back=Ankou.STP,
-        waist="Windbuffet Belt +1",
+        waist="Sarissaphoroi Belt",
         legs=Odyssean.Legs.TP,
-        feet=Acro.Feet.STP
+        feet="Flamma Gambieras +1"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
-        head="Argosy Celata",
-        body="Valorous Mail",
         waist="Sarissaphoroi Belt",
-        ring1="Flamma Ring",
         legs=Odyssean.Legs.TP,
         feet=Odyssean.Feet.TP
     })
@@ -761,7 +758,7 @@ function init_gear_sets()
     -- Liberator AM3
     sets.engaged.AM3 = set_combine(sets.engaged, {
         ammo="Ginsen",
-        head="Flamma Zucchetto +1",
+        head="Flamma Zucchetto +2",
         body="Valorous Mail",
         neck="Ganesha's Mala",
         hands="Emicho Gauntlets",
