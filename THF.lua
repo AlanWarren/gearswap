@@ -172,8 +172,8 @@ function init_gear_sets()
     sets.precast.RA = {
         head="Uk'uxkaj Cap",
         hands=TaeonHands.Snap,
-        legs="Nahtirah Trousers", 
-        feet="Wurrukatte Boots"
+        legs="Adhemar Kecks",
+        feet="Meghanada Jambeaux +1" -- 8
     }
     sets.midcast.RA = {
         head="Umbani Cap",
@@ -341,13 +341,13 @@ sets.idle = {
     neck="Sanctity Necklace",
     ear1="Zennaroi Earring",
     ear2="Trux Earring",
-    body="Emet Harness +1",
-    hands="Herculean Gloves",
+    body="Meghanada Cuirie",
+    hands="Meghanada Gloves +2",
     ring1="Paguroidea Ring",
     ring2="Defending Ring",
     back="Solemnity Cape",
     waist="Flume Belt",
-    legs="Herculean Trousers",
+    legs="Meghanada Chausses +1",
     feet="Jute Boots +1"
 }
 
