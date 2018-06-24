@@ -128,7 +128,7 @@ function init_gear_sets()
         sets.precast.JA['Double Shot'] = {head="Amini Gapette"}
         sets.precast.JA['Camouflage'] = {body="Orion Jerkin +1"}
         sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
-        sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1"}
+        sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1", back="Belenus's Cape" }
         sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
 
         sets.CapacityMantle = {back="Mecistopins Mantle"}
