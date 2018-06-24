@@ -121,7 +121,7 @@ function init_gear_sets()
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		head="Whirlpool Mask",
-        hands="Meghanada Gloves +1",
+        hands="Meghanada Gloves +2",
         legs="Adhemar Kecks",
     }
 
@@ -168,7 +168,7 @@ function init_gear_sets()
         ear1="Flame Pearl",
         ear2="Flame Pearl",
         body="Pursuer's Doublet",
-        hands="Meghanada Gloves +1",
+        hands="Meghanada Gloves +2",
         ring1="Ifrit Ring",
         ring2="Ifrit Ring",
 		back="Buquwik Cape",
@@ -221,7 +221,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
 		head="Uk'uxkaj Cap",
         neck="Sanctity Necklace",
-        hands="Meghanada Gloves +1",
+        hands="Meghanada Gloves +2",
         ear1="Psystorm Earring",
         ear2="Lifestorm Earring",
         body="Pursuer's Doublet",
@@ -271,7 +271,7 @@ function init_gear_sets()
         ear1="Enervating Earring",
         ear2="Volley Earring",
         body="Pursuer's Doublet",
-        hands="Meghanada Gloves +1",
+        hands="Meghanada Gloves +2",
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
         back="Gunslinger's Cape",
@@ -299,7 +299,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         ear2="Crematio Earring",
         body="Pursuer's Doublet",
-        hands="Meghanada Gloves +1",
+        hands="Meghanada Gloves +2",
         ring1="Paguroiedea Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
@@ -320,7 +320,7 @@ function init_gear_sets()
         ear1="Enervating Earring",
         ear2="Crematio Earring",
         body="Councilor's Garb",
-        hands="Meghanada Gloves +1",
+        hands="Meghanada Gloves +2",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
         back="Gunslinger's Cape",
@@ -333,7 +333,7 @@ function init_gear_sets()
 	sets.defense.PDT = set_combine(sets.idle, {
         head="Meghanada Visor +1",
         neck="Twilight Torque",
-        hands="Meghanada Gloves +1",
+        hands="Meghanada Gloves +2",
         body="Emet Harness +1",
         ring1="Patricius Ring",
         ring2="Defending Ring",

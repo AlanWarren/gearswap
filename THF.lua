@@ -197,12 +197,12 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         body="Herculean Vest",
-        hands="Herculean Gloves",
+        hands="Meghanada Gloves +2",
         ring1="Ramuh Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
         waist="Elanid Belt",
-        legs="Samnuha Tights",
+        legs="Meghanada Chausses +1",
         feet="Herculean Boots"
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {

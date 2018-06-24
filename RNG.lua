@@ -139,7 +139,7 @@ function init_gear_sets()
             ear2="Flame Pearl",
             neck="Rancor Collar",
             back="Buquwik Cape",
-            hands="Meghanada Gloves +1",
+            hands="Meghanada Gloves +2",
             ring1="Ifrit Ring",
             ring2="Ifrit Ring +1",
             legs="Amini Brague +1", 
@@ -170,8 +170,8 @@ function init_gear_sets()
             neck="Sanctity Necklace",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Pursuer's Doublet",
-            hands="Amini Glovelettes +1",
+            body="Meghanada Cuirie",
+            hands="Meghanada Gloves +2",
             ring1="Paguroidea Ring",
             ring2="Defending Ring",
             back="Solemnity Cape",
@@ -187,6 +187,9 @@ function init_gear_sets()
         })
         sets.idle.PDT = set_combine(sets.idle, {
             head="Meghanada Visor +1",
+            body="Meghanada Cuirie",
+            hands="Meghanada Gloves +2",
+            legs="Meghanada Chausses +1",
             ring1="Dark Ring",
             ring2="Defending Ring"
         })
@@ -206,7 +209,7 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Pursuer's Doublet", 
-            hands="Meghanada Gloves +1",
+            hands="Meghanada Gloves +2",
             ring1="Paguroidea Ring",
             ring2="Defending Ring",
             waist="Impulse Belt",
@@ -214,7 +217,7 @@ function init_gear_sets()
             feet="Orion Socks +1"
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
-            hands="Meghanada Gloves +1",
+            hands="Meghanada Gloves +2",
     	    back="Solemnity Cape",
             neck="Twilight Torque",
             ring1="Dark Ring",
@@ -281,7 +284,7 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring", 
             body="Pursuer's Doublet",
-            hands="Meghanada Gloves +1",
+            hands="Meghanada Gloves +2",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
             back="Belenus's Cape"
@@ -290,14 +293,14 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +1"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            hands="Meghanada Gloves +1",
+            hands="Meghanada Gloves +2",
             ring2="Cacoethic Ring +1",
             feet="Meghanada Jambeaux +1"
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             head="Meghanada Visor +1",
             neck="Iqabi Necklace", 
-            hands="Meghanada Gloves +1",
+            hands="Meghanada Gloves +2",
             body="Amini Caban +1",
             ring1="Longshot Ring",
             ring2="Cacoethic Ring +1",
@@ -370,7 +373,7 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Pursuer's Doublet",
-            hands="Meghanada Gloves +1",
+            hands="Meghanada Gloves +2",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
             back="Belenus's Cape"
@@ -438,7 +441,7 @@ function init_gear_sets()
             ear1="Flame Pearl",
             ear2="Flame Pearl",
             body="Amini Caban +1",
-            hands="Meghanada Gloves +1",
+            hands="Meghanada Gloves +2",
             ring1="Ifrit Ring",
             ring2="Ifrit Ring",
             back="Buquwik Cape",
