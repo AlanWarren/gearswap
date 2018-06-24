@@ -196,7 +196,7 @@ function init_gear_sets()
             ring2="Defending Ring",
             hands="Amini Glovelettes +1",
             legs="Carmine Cuisses +1",
-            back="Lutian Cape"
+            back="Belenus's Cape"
         })
  
         -- Engaged sets
@@ -284,7 +284,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +1",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
-            back="Lutian Cape", 
+            back="Belenus's Cape"
             waist="Elanid Belt", 
             legs="Adhemar Kecks", 
             feet="Meghanada Jambeaux +1"
@@ -373,7 +373,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +1",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
-            back="Lutian Cape",
+            back="Belenus's Cape"
             waist="Elanid Belt",
             legs="Amini Brague +1", 
             feet="Meghanada Jambeaux +1"

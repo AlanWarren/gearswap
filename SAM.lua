@@ -142,7 +142,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        --ammo="Paeapua",
+        ammo="Knobkierrie",
         head="Rao Kabuto",
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
