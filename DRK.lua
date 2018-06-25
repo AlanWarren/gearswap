@@ -23,7 +23,7 @@ It will full-time whichever piece of gear you specify in sets.CapacityMantle
 NOTE: You can change the default (true|false) status of any MODE by changing their values in job_setup()
 
 ::RULES::
-
+Gavialis helm is now disabled by default. You must set use_gavialis = true for the info that follows to apply. 
 Gavialis Helm will automatically be used for all weaponskills on their respective days of the week. If you don't want
 it used for a ws, then you have to add the WS to wsList = {} in job_setup. You also need my User-Globals.lua for this
 to even work. 
@@ -35,7 +35,7 @@ Moonshade earring is not used for WS's at 3000 TP.
 
 You can hit F12 to display custom MODE status as well as the default stuff. 
 
-Single handed weapons are han
+Single handed weapons are handled in the sets.engaged.SW set. (sword + shield, etc.)
 
 ::NOTES::
 
@@ -86,10 +86,12 @@ function job_setup()
     state.LastResortMode = M(false, 'Last Resort Mode')
     -- If you have a fully upgraded Apoc, set this to true 
     state.ApocHaste = M(false, 'Apoc Haste Mode')   
+    -- Use Gavialis helm?
+    use_gavialis = false
     -- Weaponskills you do NOT want Gavialis helm used with
     wsList = S{'Spiral Hell', 'Torcleaver', 'Insurgency', 'Quietus'}
     -- Greatswords you use. 
-    gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade' }
+    gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Raetic Algol' }
     shields = S{'Rinda Shield'}
     -- Mote has capitalization errors in the default Absorb mappings, so we correct them
     absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
@@ -635,15 +637,15 @@ function init_gear_sets()
 
     sets.idle.Weak = set_combine(sets.defense.PDT, {
         ammo="Hasty Pinion +1",
-        head="Valorous Mask",
+        head="Sulevia's Mask +1",
         neck="Agitator's Collar",
-        hands="Redan Gloves",
+        hands="Sulevia's Gauntlets +1",
         ear1="Zennaroi Earring",
         ring1="Sulevia's Ring",
         ring2="Defending Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
-        legs="Valorous Hose",
+        legs="Sulevia's Cuisses +1",
         feet="Amm Greaves"
 
     })
@@ -800,8 +802,7 @@ function init_gear_sets()
     })
     sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
         ammo="Ginsen",
-        hands=Acro.Hands.STP,
-        feet="Sulevia's Leggings +1"
+        feet="Flamma Gambieras +1"
     })
     sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
         ear1="Cessance Earring",
@@ -825,34 +826,34 @@ function init_gear_sets()
 
     -- dual wield
     sets.engaged.DW = set_combine(sets.engaged, {
-        ammo="Ginsen",
-        head="Valorous Mask",
-        body="Vatic Byrnie",
-        hands=Acro.Hands.STP,
-        ear1="Brutal Earring",
+        ammo="Hasty Pinion +1",
+        head="Flamma Zucchetto +2",
+        body="Valorous Mail",
+        hands="Emicho Gauntlets",
+        ear1="Eabani Earring",
         ear2="Suppanomimi",
         waist="Patentia Sash",
         legs="Carmine Cuisses +1",
         feet=Acro.Feet.STP
     })
     sets.engaged.DW.Mid = set_combine(sets.engaged.DW, {
-        ammo="Ginsen",
-        body="Acro Surcoat",
-        hands=Acro.Hands.Haste
+        -- ammo="Ginsen",
+        -- body="Acro Surcoat",
+        -- hands=Acro.Hands.Haste
     })
     sets.engaged.DW.Acc = set_combine(sets.engaged.DW.Mid, {
-        ammo="Hasty Pinion +1",
-        hands="Odyssean Gauntlets",
+        -- ammo="Hasty Pinion +1",
+        -- hands="Odyssean Gauntlets",
     })
 
     -- great sword
     sets.engaged.GreatSword = set_combine(sets.engaged, {
-        head="Valorous Mask",
+        head="Flamma Zucchetto +2",
         ear1="Brutal Earring",
         ear2="Tripudio Earring"
     })
     sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {
-        head="Valorous Mask",
+        head="Flamma Zucchetto +2",
         feet="Loyalist Sabatons"
         --back="Grounded Mantle +1"
         --ring2="K'ayres RIng"
@@ -868,7 +869,7 @@ function init_gear_sets()
     -- sword is more multi-hit, less stp
     sets.engaged.SW = set_combine(sets.engaged, {
         ammo="Yetshila",
-        head="Valorous Mask",
+        head="Flamma Zucchetto +2",
         hands=Acro.Hands.Haste,
         feet=Acro.Feet.WSD
     })
@@ -890,9 +891,9 @@ function init_gear_sets()
         head="Ignominy Burgeonet +1",
     }
 
-    sets.buff['Last Resort'] = { 
-        feet="Fallen's Sollerets +1" 
-    }
+    -- sets.buff['Last Resort'] = { 
+    --     feet="Fallen's Sollerets +1" 
+    -- }
 end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
@@ -912,11 +913,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     -- Make sure abilities using head gear don't swap 
     if spell.type:lower() == 'weaponskill' then
         -- handle Gavialis Helm
-        if is_sc_element_today(spell) then
-            if wsList:contains(spell.english) then
-                -- do nothing
-            else
-                equip(sets.WSDayBonus)
+        if use_gavialis then
+            if is_sc_element_today(spell) then
+                if wsList:contains(spell.english) then
+                    -- do nothing
+                else
+                    equip(sets.WSDayBonus)
+                end
             end
         end
         -- CP mantle must be worn when a mob dies, so make sure it's equipped for WS.
