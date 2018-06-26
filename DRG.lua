@@ -91,13 +91,11 @@ function init_gear_sets()
         range="Upukirex",
         back="Updraft Mantle",
         legs="Taeon Gloves",
-        hands="Acro Gauntlets",
-        feet="Acro Leggings"
     }
 
 	sets.precast.JA.Jump = {
         ammo="Ginsen",
-		head="Acro Helm",
+		head="Flamma Zucchetto +2",
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
@@ -107,8 +105,8 @@ function init_gear_sets()
         ring2="Oneiros Ring",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Acro Breeches",
-        feet=Acro.Feet.STP
+        legs="Sulevia's Cuisses +1",
+        feet="Flamma Gambieras +1"
     }
 
 	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais" }
@@ -142,7 +140,7 @@ function init_gear_sets()
         neck="Lancer's Torque",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
-		body="Acro Surcoat",
+		body="Valorous Mail",
         hands="Crusher Gauntlets",
         ring1="Dark Ring",
         ring2="K'ayres Ring",
@@ -154,8 +152,6 @@ function init_gear_sets()
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
-		head="Yaoyotl Helm",
-		back="Bleating Mantle"
     }
 		
 	-- Don't need any special gear for Healing Waltz.
@@ -173,9 +169,6 @@ function init_gear_sets()
     
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
-		head="Otomi Helm",
-        hands="Umuthi Gloves",
-        feet="Ejekamal Boots",
     }	
 		
 	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Vishap Armet +1" })
@@ -185,18 +178,18 @@ function init_gear_sets()
 
 	sets.precast.WS = {
         ammo="Knobkierrie",
-        head="Valorous Mask",
+        head="Flamma Zucchetto +2", 
         neck="Ganesha's Mala",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
-		body="Acro Surcoat",
+		body="Valorous Mail",
         hands=Taeon.Hands,
         ring1="Ifrit Ring",
         ring2="Ifrit Ring +1",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Taeon Tights",
-        feet=Acro.Feet.WSD
+        feet="Flamma Gambieras +1"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         back="Updraft Mantle",
@@ -217,14 +210,13 @@ function init_gear_sets()
 
     sets.precast.WS["Camlann's Torment"] = set_combine(sets.precast.WS, {
         neck="Breeze Gorget",
-        body="Phorcys Korazin",
+        body="Valorous Mail",
         back="Buquwik Cape",
-        hands=Acro.Hands.STP,
+        hands="Emicho Gauntlets",
         waist="Windbuffet Belt +1",
         back="Updraft Mantle",
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
-        head="Yaoyotl Helm", 
         ear1="Bladeborn Earring", 
         ear2="Steelflash Earring", 
         back="Updraft Mantle",
@@ -232,16 +224,13 @@ function init_gear_sets()
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
 
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
-        hands="Mikinaak Gauntlets",
+        hands="Emicho Gauntlets",
         back="Rancorous Mantle",
-        hands=Acro.Hands.STP,
         waist="Windbuffet Belt +1",
         feet="Thereoid Greaves"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
         back="Updraft Mantle",
-        head="Yaoyotl Helm",
-        hands=Acro.Hands.STP,
     })
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
 
@@ -252,15 +241,14 @@ function init_gear_sets()
 	sets.resting = {
         head="Twilight Helm",
         neck="Twilight Torque",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
+        ear1="Cessance Earring",
+        ear2="Tripudio Earring",
 		body="Twilight Mail",
-        hands="Cizin Mufflers +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
         back="Impassive Mantle",
         legs="Carmine Cuisses +1",
-        feet="Whirlpool Greaves"
+        feet="Flamma Gambieras +1"
     }
 	
 
@@ -270,24 +258,25 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle.Town = {
         ammo="Ginsen",
-        head="Valorous Mask",
+        head="Flamma Zucchetto +2",
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
 		body="Peltast's Plackart +1",
         hands="Crusher Gauntlets",
-        ring1="Ifrit Ring",
-        ring2="Ifrit Ring",
+        ring1="Rajas Ring",
+        ring2="Petrov Ring",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
-        feet=Acro.Feet.WSD
+        feet="Flamma Gambieras +1"
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
-        head="Valorous Mask",
+        head="Sulevia's Mask +1",
         neck="Lissome Necklace",
-		body="Founder's Breastplate",
+        body="Jumalik Mail",
+        hands="Sulevia's Gauntlets +1",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
         waist="Flume Belt",
@@ -307,18 +296,18 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = {
-        ammo="Ginsen",
-		head="Ighwa Cap",
+        ammo="Hasty Pinion +1",
+		head="Sulevia's Mask +1",
         neck="Twilight Torque",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
         body="Jumalik Mail",
-        hands="Crusher Gauntlets",
+        hands="Sulevia's Gauntlets +1",
         ring1="Patricius Ring",
         ring2="Dark Ring",
         back="Impassive Mantle",
-        waist="Flume Belt",
-        legs="Cizin Breeches +1",
+        waist="Sarissaphoroi Belt",
+        legs="Sulevia's Cuisses +1",
         feet="Amm Greaves"
     }
 
@@ -347,46 +336,41 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged = {
         ammo="Ginsen",
-		head="Otomi Helm",
+		head="Flamma Zucchetto +2",
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
 		body="Peltast's Plackart +1", -- 3%
-        hands=Acro.Hands.STP, -- 4%
+        hands="Emicho Gauntlets",
         ring1="Rajas Ring",
-        ring2="Oneiros Ring",
+        ring2="Petrov Ring",
         back="Bleating Mantle",
-        waist="Windbuffet Belt +1",
+        waist="Sarissaphoroi Belt",
         legs="Taeon Tights", -- 6%
-        feet=Acro.Feet.STP -- 3%
+        feet="Flamma Gambieras +1"
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
-        head="Valorous Mask",
         ear2="Zennaroi Earring",
-        hands=Acro.Hands.Haste,
-        legs="Acro Breeches"
+        body="Valorous Mail",
+        legs="Carmine Cuisses +1",
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         ammo="Hasty Pinion +1",
         neck="Lissome Necklace",
         waist="Olseni Belt",
-        ring1="Mars's Ring",
-        body="Acro Surcoat",
-        hands="Leyline Gloves",
         back="Grounded Mantle +1"
-        legs="Acro Breeches"
+        legs="Sulevia's Cuisses +1"
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
-        head="Ighwa Cap",
+        head="Sulevia's Mask +1",
         neck="Twilight Torque",
         body="Jumalik Mail",
         ring2="Patricius Ring",
-        hands="Cizin Mufflers +1",
-        back="Repulse Mantle",
-        legs="Scuffler's Cosciales",
+        hands="Sulevia's Gauntlets +1",
+        waist="Sarissaphoroi Belt",
         feet="Amm Greaves"
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
@@ -407,14 +391,12 @@ function init_gear_sets()
     })
 
     sets.engaged.War = set_combine(sets.engaged, {
-        hands=Acro.Hands.STP,
+        hands="Emicho Gauntlets",
         neck="Asperity Necklace",
-        ring2="K'ayres Ring"
+        ring2="Petrov Ring"
     })
     sets.engaged.War.Mid = set_combine(sets.engaged.Mid, {
-        hands=Acro.Hands.STP,
         neck="Defiant Collar",
-        ring2="K'ayres Ring"
     })
 
 	sets.engaged.Reraise = set_combine(sets.engaged, {

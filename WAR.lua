@@ -66,23 +66,10 @@ end
        
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-     --------------------------------------
-     -- Start defining the sets
-     --------------------------------------
-     -- Augmented gear
-     Acro = {}
-     Acro.Hands = {}
-     Acro.Feet = {}
-    
-     Acro.Hands.Haste = {name="Acro gauntlets", augments={'STR+3 AGI+3','Accuracy+18 Attack+18','Haste+2'}} 
-     Acro.Hands.STP = {name="Acro gauntlets", augments={'Accuracy+19 Attack+19','"Store TP"+5','Weapon skill damage +3%'}}
-
-     Acro.Feet.STP = {name="Acro Leggings", augments={'STR+7 AGI+7','Accuracy+17 Attack+17','"Store TP"+6'}} 
-     Acro.Feet.WSD = {name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3','Weapon skill damage +2%'}} 
-
-     Niht = {}
-     Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
-     Niht.WSD = {name="Niht Mantle", augments={'Attack+9','Dark magic skill +4', '"Drain" and "Aspir" potency +11','Weapon skill damage +4%'}}
+    --------------------------------------
+    -- Start defining the sets
+    --------------------------------------
+    -- Augmented gear
     
     Odyssean = {}
     Odyssean.Legs = {}
@@ -198,7 +185,7 @@ function init_gear_sets()
     sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {
         ammo="Yetshila",
         neck="Breeze Gorget",
-        hands=Acro.Hands.STP,
+        hands="Odyssean Gauntlets",
         waist="Metalsinger Belt",
         back="Mauler's Mantle",
          feet="Sulevia's Leggings +1"
@@ -240,7 +227,7 @@ function init_gear_sets()
      sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {
          neck="Stoicheion Medal",
          ear1="Friomisi Earring",
-         hands=Acro.Hands.STP,
+         hands="Odyssean Gauntlets",
          legs="Limbo Trousers",
          ring2="Acumen Ring",
          back="Toro Cape",

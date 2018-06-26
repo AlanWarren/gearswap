@@ -143,16 +143,6 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
     -- Augmented gear
-    Acro = {}
-    Acro.Hands = {}
-    Acro.Feet = {}
-
-    Acro.Hands.Haste = {name="Acro gauntlets", augments={'STR+4 DEX+4','Accuracy+18 Attack+18','Haste+2'}} 
-    Acro.Hands.STP = {name="Acro gauntlets", augments={'Accuracy+19 Attack+19','"Store TP"+5','Weapon skill damage +3%'}}
-
-    Acro.Feet.STP = {name="Acro Leggings", augments={'STR+7 AGI+7','Accuracy+17 Attack+17','"Store TP"+6'}} 
-    Acro.Feet.WSD = {name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3','Weapon skill damage +2%'}} 
-
     Niht = {}
     Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
     Niht.WSD = {name="Niht Mantle", augments={'Attack+14','Dark magic skill +4', '"Drain" and "Aspir" potency +17', 'Weapon skill damage +5%'}}
@@ -179,13 +169,8 @@ function init_gear_sets()
         ring2="Loyalist Sabatons",
         neck="Bloodrain Strap",
         grip="Pole Grip",
-        head="Acro Helm",
-        hands="Acro Gauntlets",
         waist="Mes. Haubergeon",
         back=Niht.DarkMagic,
-        body="Acro Surcoat",
-        legs="Acro Breeches",
-        feet="Acro Leggings"
     }
 
     -- Precast Sets
@@ -243,14 +228,14 @@ function init_gear_sets()
         ammo="Impatiens",
         head="Fallen's Burgeonet +1",
         body="Odyssean Chestplate",
-        hands=Acro.Hands.Haste,
+        hands="Odyssean Gauntlets",
         back="Grounded Mantle +1",
         legs="Carmine Cuisses +1",
         feet=Odyssean.Feet.FC
     }
     sets.midcast.Trust =  {
         head="Fallen's Burgeonet +1",
-        hands=Acro.Hands.Haste,
+        hands="Odyssean Gauntlets",
         body="Odyssean Chestplate",
         legs="Carmine Cuisses +1",
         feet=Odyssean.Feet.FC
@@ -584,9 +569,9 @@ function init_gear_sets()
     -- REQUISCAT
     -- 73% MND - breath damage
     sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
-        head="Acro Helm",
+        head="Flamma Zucchetto +2",
         neck="Shadow Gorget",
-        body="Acro Surcoat",
+        body="Odyssean Chestplate",
         hands="Odyssean Gauntlets",
         legs=Odyssean.Legs.WS,
         waist="Soil Belt",
@@ -684,8 +669,6 @@ function init_gear_sets()
     -- sets.HighHaste = {
     --     ammo="Ginsen",
     --     head="Argosy Celata",
-    --     --hands=Acro.Hands.STP,
-    --     feet=Acro.Feet.STP
     -- }
 
     -- Defensive sets to combine with various weapon-specific sets below
@@ -787,7 +770,6 @@ function init_gear_sets()
     -- Apocalypse
     sets.engaged.Apocalypse = set_combine(sets.engaged, {
         --sub="Pole Grip",
-        --body="Acro Surcoat",
         ear1="Cessance Earring",
         ear2="Brutal Earring"
     })
@@ -834,12 +816,10 @@ function init_gear_sets()
         ear2="Suppanomimi",
         waist="Patentia Sash",
         legs="Carmine Cuisses +1",
-        feet=Acro.Feet.STP
+        feet=Odyssean.Feet.TP
     })
     sets.engaged.DW.Mid = set_combine(sets.engaged.DW, {
         -- ammo="Ginsen",
-        -- body="Acro Surcoat",
-        -- hands=Acro.Hands.Haste
     })
     sets.engaged.DW.Acc = set_combine(sets.engaged.DW.Mid, {
         -- ammo="Hasty Pinion +1",
@@ -870,13 +850,12 @@ function init_gear_sets()
     sets.engaged.SW = set_combine(sets.engaged, {
         ammo="Yetshila",
         head="Flamma Zucchetto +2",
-        hands=Acro.Hands.Haste,
-        feet=Acro.Feet.WSD
+        feet=Odyssean.Feet.TP
     })
     sets.engaged.SW.Mid = set_combine(sets.engaged.Mid, {
         ammo="Ginsen",
         hands="Odyssean Gauntlets",
-        feet=Acro.Feet.WSD
+        feet=Odyssean.Feet.TP
     })
     sets.engaged.SW.Acc = set_combine(sets.engaged.Acc, {
         ammo="Hasty Pinion +1"
