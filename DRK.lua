@@ -187,7 +187,7 @@ function init_gear_sets()
     sets.WSDayBonus      = { head="Gavialis Helm" }
     sets.WSBack          = { back="Trepidity Mantle" }
     -- Earring considerations, given Lugra's day/night stats
-    sets.BrutalLugra     = { ear1="Cessance Earring", ear2="Lugra Earring +1" }
+    sets.BrutalLugra     = { ear1="Bale Earring", ear2="Lugra Earring +1" }
     sets.Lugra           = { ear1="Lugra Earring +1" }
     sets.Brutal          = { ear1="Brutal Earring" }
 
@@ -430,6 +430,7 @@ function init_gear_sets()
         neck="Shadow Gorget",
         body="Odyssean Chestplate",
         waist="Windbuffet Belt +1",
+        feet="Ratri Sollerets"
     })
     sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
     })
@@ -449,7 +450,8 @@ function init_gear_sets()
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
         ear2="Ishvara Earring",
         neck="Shadow Gorget",
-        waist="Soil Belt"
+        waist="Soil Belt",
+        feet="Ratri Sollerets"
     })
     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {})
     sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
@@ -461,19 +463,15 @@ function init_gear_sets()
     -- CROSS REAPER
     -- 60% STR / 60% MND
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-        neck="Aqua Gorget",
-        waist="Windbuffet Belt +1"
-    })
-    sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {
-        head="Sulevia's Mask +1",
-        legs=Odyssean.Legs.TP,
-    })
-
-    sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
+        neck="Bale Choker",
+        ear1="Bale Earring",
         waist="Metalsinger Belt",
+        feet="Ratri Sollerets"
     })
+    sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {})
+
+    sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {})
     sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
-        legs=Odyssean.Legs.TP,
         neck="Aqua Gorget",
     })
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
