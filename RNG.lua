@@ -287,7 +287,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +2",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
-            back="Belenus's Cape"
+            back="Belenus's Cape",
             waist="Elanid Belt", 
             legs="Adhemar Kecks", 
             feet="Meghanada Jambeaux +1"
@@ -376,7 +376,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +2",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
-            back="Belenus's Cape"
+            back="Belenus's Cape",
             waist="Elanid Belt",
             legs="Amini Brague +1", 
             feet="Meghanada Jambeaux +1"
