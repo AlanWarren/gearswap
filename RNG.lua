@@ -117,7 +117,7 @@ function init_gear_sets()
 
         sets.Organizer = {
             main="Annihilator",
-            sub="Odium",
+            sub="Nusku Shield",
             ammo="Perun +1",
             range="Yoichinoyumi",
             hands="Taeon Gloves",
@@ -304,7 +304,7 @@ function init_gear_sets()
             body="Amini Caban +1",
             ring1="Longshot Ring",
             ring2="Cacoethic Ring +1",
-            waist="Eschan Stone",
+            waist="Kwahu Kachina Belt", 
             legs="Adhemar Kecks",
         })
     
