@@ -71,7 +71,7 @@ function user_setup()
         gear.Bow = "Yoichinoyumi"
         --gear.Bow = "Hangaku-no-Yumi"
        
-        rng_sub_weapons = S{'Hurlbat', 'Vanir Knife', 'Perun', 
+        rng_sub_weapons = S{'Malevolence', 'Vanir Knife', 'Perun', 
             'Eminent Axe', 'Odium', 'Aphotic Kukri', 'Atoyac'}
         
         sam_sj = player.sub_job == 'SAM' or false
@@ -152,7 +152,7 @@ function init_gear_sets()
         })
         sets.precast.JA['Eagle Eye Shot'].Acc = set_combine(sets.precast.JA['Eagle Eye Shot'].Mid, {
             neck="Iqabi Necklace",
-            waist="Elanid Belt"
+            waist="Kwahu Kachina Belt"
         })
 
         sets.precast.FC = {
@@ -175,13 +175,13 @@ function init_gear_sets()
             ring1="Paguroidea Ring",
             ring2="Defending Ring",
             back="Solemnity Cape",
-            waist="Elanid Belt",
+            waist="Kwahu Kachina Belt",
             legs="Carmine Cuisses +1",
             feet="Herculean Boots"
         }
         sets.idle.Regen = set_combine(sets.idle, {
-            head="Ocelomeh Headpiece +1",
-            body="Kheper Jacket",
+            --head="Ocelomeh Headpiece +1",
+            --body="Kheper Jacket",
             neck="Sanctity Necklace",
             ring2="Paguroidea Ring"
         })
@@ -197,7 +197,7 @@ function init_gear_sets()
             body="Councilor's garb",
             ring1="Paguroidea Ring",
             ring2="Defending Ring",
-            hands="Amini Glovelettes +1",
+            hands="Meghanada Gloves +2",
             legs="Carmine Cuisses +1",
             back="Belenus's Cape"
         })
@@ -218,7 +218,7 @@ function init_gear_sets()
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
             hands="Meghanada Gloves +2",
-    	    back="Solemnity Cape",
+            back="Solemnity Cape",
             neck="Twilight Torque",
             ring1="Dark Ring",
             ring2="Defending Ring"
@@ -251,7 +251,7 @@ function init_gear_sets()
         sets.engaged.DW = set_combine(sets.engaged, {})
 
         sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
-            head="Taeon Chapeau",
+            head="Herculean Helm",
             ear1="Eabani Earring",
             ear2="Suppanomimi",
             body="Samnuha Coat",
@@ -288,7 +288,7 @@ function init_gear_sets()
             ring1="Rajas Ring",
             ring2="Petrov Ring",
             back="Belenus's Cape",
-            waist="Elanid Belt", 
+            waist="Kwahu Kachina Belt", 
             legs="Adhemar Kecks", 
             feet="Meghanada Jambeaux +1"
         }
@@ -337,7 +337,7 @@ function init_gear_sets()
         --     ring1="Rajas Ring", 
         --     ring2="K'ayres Ring",
         --     back="Lutian Cape",
-        --     waist="Elanid Belt",
+        --     waist="Kwahu Kachina Belt",
         --     legs="Amini Brague +1", 
         --     feet="Thereoid Greaves"
         -- }
@@ -377,7 +377,7 @@ function init_gear_sets()
             ring1="Rajas Ring",
             ring2="Petrov Ring",
             back="Belenus's Cape",
-            waist="Elanid Belt",
+            waist="Kwahu Kachina Belt",
             legs="Amini Brague +1", 
             feet="Meghanada Jambeaux +1"
         }
@@ -424,12 +424,12 @@ function init_gear_sets()
 
         -- Sam SJ / Bow / Sam's Roll
         -- sets.midcast.RA.SAM.Bow.SamRoll = set_combine(sets.midcast.RA.SAM.Bow, {
-        --     waist="Elanid Belt",
+        --     waist="Kwahu Kachina Belt",
         --     feet="Meghanada Jambeaux +1"
         -- })
 
         -- sets.midcast.RA.SAM.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Bow.Mid, {
-        --     waist="Elanid Belt",
+        --     waist="Kwahu Kachina Belt",
         -- })
         -- sets.midcast.RA.SAM.Bow.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Bow.Acc, {})
 
@@ -445,7 +445,7 @@ function init_gear_sets()
             ring1="Ifrit Ring",
             ring2="Ifrit Ring",
             back="Buquwik Cape",
-            waist="Elanid Belt",
+            waist="Kwahu Kachina Belt",
             legs="Amini Brague +1", 
             feet="Meghanada Jambeaux +1"
         }
@@ -643,7 +643,7 @@ function init_gear_sets()
             ring1="Ifrit Ring",
             ring2="Longshot Ring",
             back="Lutian Cape",
-            waist="Elanid Belt",
+            waist="Kwahu Kachina Belt",
             legs="Adhemar Kecks", 
             feet="Orion Socks +1"
         }
