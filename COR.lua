@@ -130,7 +130,7 @@ function init_gear_sets()
         sub="Odium",
         range="Doomsday",
         hands="Compensator",
-        ammo="Legion Scutum"
+        ammo="Nusku Shield"
     }
 		
 	-- Don't need any special gear for Healing Waltz.
@@ -140,7 +140,7 @@ function init_gear_sets()
 	
 	sets.precast.FC = {
         --ammo="Impatiens",
-        head="Ejekamal Mask",
+        head="Herculean Helm",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
         body="Dread Jupon",
@@ -169,7 +169,7 @@ function init_gear_sets()
         ear2="Flame Pearl",
         body="Pursuer's Doublet",
         hands="Meghanada Gloves +2",
-        ring1="Ifrit Ring",
+        ring1="Karieyh Ring",
         ring2="Ifrit Ring",
 		back="Buquwik Cape",
         waist=gear.ElementalBelt,
