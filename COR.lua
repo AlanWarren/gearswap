@@ -167,7 +167,7 @@ function init_gear_sets()
         neck=gear.ElementalGorget,
         ear1="Flame Pearl",
         ear2="Flame Pearl",
-        body="Pursuer's Doublet",
+        body="Meghanada Cuirie +1",
         hands="Meghanada Gloves +2",
         ring1="Karieyh Ring",
         ring2="Ifrit Ring",
@@ -270,7 +270,7 @@ function init_gear_sets()
         neck="Iqabi Necklace",
         ear1="Enervating Earring",
         ear2="Volley Earring",
-        body="Pursuer's Doublet",
+        body="Meghanada Cuirie +1",
         hands="Meghanada Gloves +2",
         ring1="Rajas Ring",
         ring2="Hajduk Ring",
@@ -281,7 +281,6 @@ function init_gear_sets()
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        body="Pursuer's Doublet",
         ring1="Paqichikaji Ring",
         waist="Eschan Stone"
     })
@@ -298,7 +297,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Zennaroi Earring",
         ear2="Crematio Earring",
-        body="Pursuer's Doublet",
+        body="Meghanada Cuirie +1",
         hands="Meghanada Gloves +2",
         ring1="Paguroiedea Ring",
         ring2="Defending Ring",
@@ -334,7 +333,7 @@ function init_gear_sets()
         head="Meghanada Visor +1",
         neck="Twilight Torque",
         hands="Meghanada Gloves +2",
-        body="Emet Harness +1",
+        body="Meghanada Cuirie +1",
         ring1="Patricius Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",

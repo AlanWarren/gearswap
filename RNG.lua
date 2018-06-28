@@ -170,7 +170,7 @@ function init_gear_sets()
             neck="Sanctity Necklace",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Meghanada Cuirie",
+            body="Meghanada Cuirie +1",
             hands="Meghanada Gloves +2",
             ring1="Paguroidea Ring",
             ring2="Defending Ring",
@@ -187,7 +187,7 @@ function init_gear_sets()
         })
         sets.idle.PDT = set_combine(sets.idle, {
             head="Meghanada Visor +1",
-            body="Meghanada Cuirie",
+            body="Meghanada Cuirie +1",
             hands="Meghanada Gloves +2",
             legs="Meghanada Chausses +1",
             ring1="Dark Ring",
@@ -296,11 +296,11 @@ function init_gear_sets()
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             neck="Iqabi Necklace", 
+            body="Meghanada Cuirie +1",
             ring2="Cacoethic Ring +1",
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             head="Meghanada Visor +1",
-            body="Amini Caban +1",
             ring1="Longshot Ring",
             ring2="Cacoethic Ring +1",
             waist="Kwahu Kachina Belt", 
@@ -383,11 +383,12 @@ function init_gear_sets()
         sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
             neck="Yarak Torque",
             legs="Adhemar Kecks",
+            body="Amini Caban +1",
             ring2="Cacoethic Ring +1",
         })
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
             head="Meghanada Visor +1",
-            body="Amini Caban +1",
+            body="Meghanada Cuirie +1",
             ring1="Longshot Ring",
         })
        
@@ -447,6 +448,7 @@ function init_gear_sets()
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             ear1="Enervating Earring",
+            body="Meghanada Cuirie +1",
             legs="Adhemar Kecks",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
