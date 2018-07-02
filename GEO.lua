@@ -210,6 +210,7 @@ function init_gear_sets()
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
         head="Welkin Crown",
         ear1="Friomisi Earring",
+        neck="Erra Pendant",
         ear2="Gwati Earring", 
         hands="Amalric Gages", 
         back="Refraction Cape",
@@ -234,6 +235,8 @@ function init_gear_sets()
         head="Welkin Crown",
         ear1="Friomisi Earring",
         ear2="Gwati Earring", 
+        neck="Erra Pendant",
+        body="Azimuth Coat +1",
         hands="Amalric Gages", 
         legs="Merlinic Shalwar",
         ring1="Sangoma Ring",
@@ -247,7 +250,7 @@ function init_gear_sets()
         sub="Niobid Strap", 
         ammo="Plumose Sachet",
         head="Bagua Galero",
-        neck="Eddy Necklace", 
+        neck="Erra Pendant",
         ear1="Lifestorm Earring", 
         ear2="Psystorm Earring",
         body="Azimuth Coat +1",
@@ -261,7 +264,7 @@ function init_gear_sets()
     }
     sets.midcast.Absorb = set_combine(sets.midcast.Macc, {
         head="Bagua Galero",
-        neck="Incanter's Torque", 
+        neck="Erra Pendant",
         ear1="Gwati Earring",
         ring1="Evanescence Ring",
         ring2="Excelsis Ring",
@@ -271,7 +274,7 @@ function init_gear_sets()
     
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
         head="Bagua Galero",
-        neck="Incanter's Torque", 
+        neck="Erra Pendant",
         ear1="Gwati Earring",
         ear2="Hirudinea Earring",
         ring1="Evanescence Ring",
@@ -283,7 +286,7 @@ function init_gear_sets()
     sets.midcast.Stun = sets.midcast.Macc
     
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
-        neck="Incanter's Torque",
+        neck="Erra Pendant",
         waist="Casso Sash",
         back="Lifestream Cape",
         hands="Azimuth Gloves",

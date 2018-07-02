@@ -258,7 +258,7 @@ function init_gear_sets()
     sets.midcast['Dark Magic'] = {
         ammo="Plumose Sachet", 
         head="Ignominy burgeonet +1", -- 17
-        neck="Incanter's Torque", -- 10
+        neck="Erra Pendant", -- 10 + 17 macc
         ear1="Gwati Earring",
         ear2="Dark Earring", -- 3
         body="Demon's Harness", --5
@@ -282,7 +282,7 @@ function init_gear_sets()
 
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
         head="Valorous Mask",
-        neck="Sanctity Necklace",
+        neck="Erra Pendant", -- 10 + 17 macc
         body="Founder's breastplate",
         hands="Leyline Gloves",
         back="Aput Mantle"

@@ -89,7 +89,7 @@ function init_gear_sets()
         neck="Moepapa Medal",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        body="Herculean Vest",
+        body="Meghanada Cuirie +1",
         hands="Pillager's Armlets +1",
         ring1="Ramuh Ring",
         ring2="Rajas Ring",
@@ -104,7 +104,7 @@ function init_gear_sets()
         neck="Moepapa Medal",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
-        body="Dread Jupon",
+        body="Meghanada Cuirie +1",
         hands="Pillager's Armlets +1",
         ring2="Garuda Ring",
         back="Canny Cape",
@@ -229,6 +229,7 @@ function init_gear_sets()
     })
     sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mid, {
         neck="Breeze Gorget", 
+        body="Meghanada Cuirie +1",
         hands="Pillager's Armlets +1", 
         legs="Samnuha Tights",
     })
@@ -319,7 +320,6 @@ sets.precast.WS['Aeolian Edge'] = {
 -- Midcast Sets
 sets.midcast.FastRecast = {
     head="Felistris Mask",
-    hands="Iuitl Wristbands +1",
     legs="Quiahuiz Trousers"
 }
 
@@ -341,7 +341,7 @@ sets.idle = {
     neck="Sanctity Necklace",
     ear1="Zennaroi Earring",
     ear2="Trux Earring",
-    body="Meghanada Cuirie",
+    body="Meghanada Cuirie +1",
     hands="Meghanada Gloves +2",
     ring1="Paguroidea Ring",
     ring2="Defending Ring",
@@ -461,14 +461,16 @@ sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
     waist="Olseni Belt"
 })
 sets.engaged.PDT = set_combine(sets.engaged, {
-    head="Iuitl Headgear +1",
+    head="Meghanada Visor +1",
     neck="Twilight Torque",
-    body="Emet Harness +1",
+    body="Meghanada Cuirie +1",
+    hands="Meghanada Gloves +2",
     ring1="Patricius Ring",
     ring2="Defending Ring",
     back="Solemnity Cape",
     waist="Flume Belt",
-    legs="Iuitl Tights +1",
+    legs="Meghanada Chausses +1",
+    feet="Meghanada Jambeaux +1"
 })
 sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
     ring1="Patricius Ring",
@@ -512,13 +514,11 @@ sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
 })
 sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, { body="Rawhide Vest", ring1="Beeline Ring", feet="Herculean Boots"})
 sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
-    head="Iuitl Headgear +1",
     neck="Twilight Torque", 
     body="Rawhide Vest", 
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
     back="Solemnity Cape",
-    legs="Iuitl Tights +1", 
     feet="Herculean Boots" 
 })
 
@@ -544,7 +544,6 @@ sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, {
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
     back="Solemnity Cape",
-    legs="Iuitl Tights +1", 
     feet="Herculean Boots" 
 })
 

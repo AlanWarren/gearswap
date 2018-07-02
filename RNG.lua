@@ -126,7 +126,7 @@ function init_gear_sets()
         -- Misc. Job Ability precasts
         sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1"}
         sets.precast.JA['Double Shot'] = {head="Amini Gapette"}
-        sets.precast.JA['Camouflage'] = {body="Orion Jerkin +1"}
+        sets.precast.JA['Camouflage'] = {body="Orion Jerkin +2"}
         sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
         sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1", back="Belenus's Cape" }
         sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
@@ -138,10 +138,11 @@ function init_gear_sets()
             ear1="Flame Pearl",
             ear2="Flame Pearl",
             neck="Rancor Collar",
+            body="Orion Jerkin +2",
             back="Buquwik Cape",
             hands="Meghanada Gloves +2",
             ring1="Ifrit Ring",
-            ring2="Ifrit Ring +1",
+            ring2="Apate Ring",
             legs="Amini Brague +1", 
             feet="Thereoid Greaves"
         })
@@ -170,14 +171,14 @@ function init_gear_sets()
             neck="Sanctity Necklace",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Meghanada Cuirie +1",
+            body="Orion Jerkin +2",
             hands="Meghanada Gloves +2",
             ring1="Paguroidea Ring",
             ring2="Defending Ring",
             back="Solemnity Cape",
             waist="Kwahu Kachina Belt",
-            legs="Carmine Cuisses +1",
-            feet="Herculean Boots"
+            legs="Meghanada Chausses +1",
+            feet="Jute Boots +1"
         }
         sets.idle.Regen = set_combine(sets.idle, {
             --head="Ocelomeh Headpiece +1",
@@ -194,12 +195,13 @@ function init_gear_sets()
             ring2="Defending Ring"
         })
         sets.idle.Town = set_combine(sets.idle, {
-            body="Councilor's garb",
+            body="Orion Jerkin +2",
             ring1="Paguroidea Ring",
             ring2="Defending Ring",
             hands="Meghanada Gloves +2",
-            legs="Carmine Cuisses +1",
-            back="Belenus's Cape"
+            legs="Meghanada Chausses +1",
+            back="Belenus's Cape",
+            feet="Jute Boots +1"
         })
  
         -- Engaged sets
@@ -208,14 +210,14 @@ function init_gear_sets()
             neck="Twilight Torque",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Pursuer's Doublet", 
+            body="Orion Jerkin +2",
             hands="Meghanada Gloves +2",
             ring1="Paguroidea Ring",
             ring2="Defending Ring",
             waist="Impulse Belt",
             back="Belenus's Cape",
             legs="Meghanada Chausses +1", 
-            feet="Meghanada Jambeaux +1"
+            feet="Jute Boots +1"
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
             hands="Meghanada Gloves +2",
@@ -285,7 +287,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Enervating Earring",
             ear2="Tripudio Earring", 
-            body="Pursuer's Doublet",
+            body="Orion Jerkin +2", 
             hands="Meghanada Gloves +2",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
@@ -295,8 +297,7 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +1"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            neck="Iqabi Necklace", 
-            body="Meghanada Cuirie +1",
+            neck="Sanctity Necklace", 
             ring2="Cacoethic Ring +1",
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
@@ -371,7 +372,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Pursuer's Doublet",
+            body="Orion Jerkin +2", 
             hands="Meghanada Gloves +2",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
@@ -383,12 +384,12 @@ function init_gear_sets()
         sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
             neck="Yarak Torque",
             legs="Adhemar Kecks",
-            body="Amini Caban +1",
+            body="Orion Jerkin +2", 
             ring2="Cacoethic Ring +1",
         })
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
             head="Meghanada Visor +1",
-            body="Meghanada Cuirie +1",
+            body="Orion Jerkin +2", 
             ring1="Longshot Ring",
         })
        
@@ -437,7 +438,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Ishvara Earring",
             ear2="Flame Pearl",
-            body="Amini Caban +1",
+            body="Orion Jerkin +2",
             hands="Meghanada Gloves +2",
             ring1="Karieyh Ring",
             ring2="Ifrit Ring",
@@ -448,7 +449,7 @@ function init_gear_sets()
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             ear1="Enervating Earring",
-            body="Meghanada Cuirie +1",
+            body="Orion Jerkin +2",
             legs="Adhemar Kecks",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
@@ -616,7 +617,7 @@ function init_gear_sets()
             neck="Iqabi Necklace",
             ear1="Flame Pearl",
             ear2="Flame Pearl",
-            body="Pursuer's Doublet",
+            body="Orion Jerkin +2",
             hands="Orion Bracers +1",
             ring1="Longshot Ring",
             ring2="Cacoethic Ring +1",
