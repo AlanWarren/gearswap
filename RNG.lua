@@ -480,6 +480,8 @@ function init_gear_sets()
         sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS.Mid, sets.Trueflight)
         sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS.Acc, sets.Trueflight)
 
+        sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Wildfire']
+
         -- CORONACH
         sets.Coronach = {
             neck="Breeze Gorget",
