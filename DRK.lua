@@ -741,7 +741,7 @@ function init_gear_sets()
         ring1="Rajas Ring",
         ring2="Flamma Ring",
         back=Ankou.STP,
-        waist="Sarissaphoroi Belt",
+        waist="Ioskeha Belt",
         legs=Odyssean.Legs.TP,
         feet="Flamma Gambieras +1"
     })
@@ -760,7 +760,7 @@ function init_gear_sets()
         ring2="Sulevia's Ring",
         legs="Carmine Cuisses +1",
         --back="Grounded Mantle +1",
-        waist="Olseni Belt",
+        -- waist="Olseni Belt",
     })
 
     -- Apocalypse
