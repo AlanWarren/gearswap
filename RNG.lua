@@ -174,7 +174,7 @@ function init_gear_sets()
             body="Orion Jerkin +2",
             hands="Meghanada Gloves +2",
             ring1="Paguroidea Ring",
-            ring2="Defending Ring",
+            ring2="Karieyh Ring",
             back="Solemnity Cape",
             waist="Kwahu Kachina Belt",
             legs="Meghanada Chausses +1",
@@ -196,9 +196,9 @@ function init_gear_sets()
         })
         sets.idle.Town = set_combine(sets.idle, {
             body="Orion Jerkin +2",
-            ring1="Paguroidea Ring",
-            ring2="Defending Ring",
-            hands="Meghanada Gloves +2",
+            ring1="Defending Ring",
+            ring2="Karieyh Ring",
+            hands="Adhemar Wristbands",
             legs="Meghanada Chausses +1",
             back="Belenus's Cape",
             feet="Jute Boots +1"
@@ -213,8 +213,8 @@ function init_gear_sets()
             ear2="Tripudio Earring",
             body="Orion Jerkin +2",
             hands="Meghanada Gloves +2",
-            ring1="Paguroidea Ring",
-            ring2="Defending Ring",
+            ring1="Defending Ring",
+            ring2="Karieyh Ring",
             waist="Impulse Belt",
             back="Belenus's Cape",
             legs="Meghanada Chausses +1", 
