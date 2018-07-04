@@ -258,24 +258,27 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'] = {
         ammo="Plumose Sachet", 
-        head="Ignominy burgeonet +1", -- 17
-        neck="Erra Pendant", -- 10 + 17 macc
+        --head="Flamma Zucchetto +2", -- 44 macc
+        head="Ignominy Burgeonet +1", -- 17
+        neck="Erra Pendant", -- 10 dark + 17 macc
         ear1="Gwati Earring",
         ear2="Dark Earring", -- 3
         body="Founder's Breastplate", --20 macc
         hands="Fallen's Finger Gauntlets +1", -- 14
         waist="Casso Sash", -- 5
         ring1="Evanescence Ring", -- 10
-        ring2="Sangoma Ring",
+        ring2="Sangoma Ring", -- 8 macc
         back=Niht.DarkMagic, -- 10
         legs="Eschite Cuisses",  -- 20
-        feet="Ratri Sollerets"
+        feet="Ratri Sollerets" -- macc 33
     }
-    -- sets.midcast.Endark = set_combine(sets.midcast['Dark Magic'], {
-    --     feet=Odyssean.Feet.FC
-    -- })
+    sets.midcast.Endark = set_combine(sets.midcast['Dark Magic'], {
+        head="Ignominy Burgeonet +1",
+        hands="Fallen's Finger Gauntlets +1"
+    })
 
     sets.midcast['Dark Magic'].Acc = set_combine(sets.midcast['Dark Magic'], {
+        head="Flamma Zucchetto +2", -- 44 macc
         body="Founder's Breastplate",
         hands="Leyline Gloves",
         waist="Eschan Stone"
@@ -286,6 +289,7 @@ function init_gear_sets()
         neck="Erra Pendant", -- 10 + 17 macc
         body="Founder's breastplate",
         hands="Leyline Gloves",
+        ring2="Kishar Ring",
         back="Aput Mantle"
     })
 
@@ -308,19 +312,13 @@ function init_gear_sets()
     -- Mix of HP boost, -Spell interruption%, and Dark Skill
     sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
         ammo="Impatiens",
-        head="Gavialis Helm",
         body="Heathen's Cuirass +1",
-        hands="Emicho Gauntlets",
-        ring2="K'ayres Ring",
         back="Trepidity Mantle",
-        waist="Eschan Stone", -- macc/matk 7
         legs="Carmine Cuisses +1",
-        feet="Ratri Sollerets"
     })
     sets.midcast['Dread Spikes'].Acc = set_combine(sets.midcast['Dark Magic'], {
         body="Heathen's Cuirass +1",
         hands="Leyline Gloves",
-        waist="Eschan Stone", -- macc/matk 7
     })
 
     -- Drain spells 
@@ -334,7 +332,7 @@ function init_gear_sets()
     sets.midcast.Aspir = sets.midcast.Drain
 
     sets.midcast.Drain.Acc = set_combine(sets.midcast.Drain, {
-        head="Ignominy Burgeonet +1",
+        head="Flamma Zucchetto +2",
         body="Founder's Breastplate",
         hands="Leyline Gloves",
         waist="Eschan Stone", -- macc/matk 7
@@ -348,18 +346,19 @@ function init_gear_sets()
 
     -- Absorbs
     sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
+        head="Flamma Zucchetto +2", -- 44 macc
         back="Chuparrosa Mantle",
         hands="Pavor Gauntlets",
         ring2="Kishar Ring",
     })
 
     sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
-        hands="Heathen's Gauntlets +1"
+        hands="Heathen's Gauntlets +1",
         ring2="Kishar Ring",
     })
 
     sets.midcast['Absorb-TP'].Acc = set_combine(sets.midcast.Absorb.Acc, {
-        hands="Heathen's Gauntlets +1"
+        hands="Heathen's Gauntlets +1",
         ring2="Kishar Ring",
     })
     sets.midcast.Absorb.Acc = set_combine(sets.midcast['Dark Magic'].Acc, {
