@@ -148,7 +148,7 @@ function init_gear_sets()
     Niht.WSD = {name="Niht Mantle", augments={'Attack+14','Dark magic skill +4', '"Drain" and "Aspir" potency +17', 'Weapon skill damage +5%'}}
     
     Ankou = {}
-    Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+24 Attack+20','"Store TP"+10',}}
+    Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Store TP"+10',}}
     Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
     Odyssean = {}
@@ -207,7 +207,8 @@ function init_gear_sets()
         body="Odyssean Chestplate",
         ear1="Loquacious Earring",
         hands="Leyline Gloves",
-        ring2="Prolix Ring",
+        ring1="Prolix Ring",
+        ring2="Kishar Ring",
         legs="Eschite Cuisses",
         feet=Odyssean.Feet.FC
     }
@@ -261,7 +262,7 @@ function init_gear_sets()
         neck="Erra Pendant", -- 10 + 17 macc
         ear1="Gwati Earring",
         ear2="Dark Earring", -- 3
-        body="Demon's Harness", --5
+        body="Founder's Breastplate", --20 macc
         hands="Fallen's Finger Gauntlets +1", -- 14
         waist="Casso Sash", -- 5
         ring1="Evanescence Ring", -- 10
@@ -348,19 +349,23 @@ function init_gear_sets()
     -- Absorbs
     sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
         back="Chuparrosa Mantle",
-        body="Founder's Breastplate",
         hands="Pavor Gauntlets",
+        ring2="Kishar Ring",
     })
 
     sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
         hands="Heathen's Gauntlets +1"
+        ring2="Kishar Ring",
     })
 
-    sets.midcast.Absorb.Acc = set_combine(sets.midcast['Dark Magic'].Acc, {
-        back="Chuparrosa Mantle",
-    })
     sets.midcast['Absorb-TP'].Acc = set_combine(sets.midcast.Absorb.Acc, {
         hands="Heathen's Gauntlets +1"
+        ring2="Kishar Ring",
+    })
+    sets.midcast.Absorb.Acc = set_combine(sets.midcast['Dark Magic'].Acc, {
+        back="Chuparrosa Mantle",
+        hands="Pavor Gauntlets",
+        ring2="Kishar Ring",
     })
 
     -- Ranged for xbow
@@ -384,8 +389,8 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Odyssean Chestplate",
         hands="Odyssean Gauntlets",
-        ring1="Karieyh Ring",
-        ring2="Ifrit Ring",
+        ring1="Niqmaddu Ring",
+        ring2="Karieyh Ring",
         legs=Odyssean.Legs.WS,
         back=Ankou.WSD,
         waist="Windbuffet Belt +1",
@@ -547,7 +552,7 @@ function init_gear_sets()
     -- 40% STR 40% INT - Darkness Elemental
     sets.precast.WS['Dark Harvest'] = sets.precast.WS['Shadow of Death']
     sets.precast.WS['Dark Harvest'].Mid = set_combine(sets.precast.WS['Shadow of Death'], {head="Terminal Helm", feet="Heathen's Sollerets +1"})
-    sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {head="Terminal Helm", feet="Heathen's Sollerets +1", ring1="Karieyh Ring"})
+    sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {head="Terminal Helm", feet="Heathen's Sollerets +1"})
 
     -- Sword WS's
     -- SANGUINE BLADE
@@ -586,8 +591,8 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         body="Lugra Cloak +1",
         hands="Sulevia's Gauntlets +1",
-        ring1="Karieyh Ring",
-        ring2="Defending Ring",
+        ring1="Niqmaddu Ring",
+        ring2="Karieyh Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
@@ -601,8 +606,8 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         body="Jumalik mail",
         hands="Sulevia's Gauntlets +1",
-        ring1="Karieyh Ring",
-        ring2="Defending Ring",
+        ring1="Defending Ring",
+        ring2="Karieyh Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
@@ -611,7 +616,7 @@ function init_gear_sets()
     sets.idle.Regen = set_combine(sets.idle.Field, {
         neck="Sanctity Necklace",
         body="Lugra Cloak +1",
-        ring2="Paguroidea Ring",
+        ring1="Paguroidea Ring",
         head="",
     })
     sets.idle.Refresh = set_combine(sets.idle.Regen, {
@@ -624,8 +629,8 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Sulevia's Gauntlets +1",
         ear1="Zennaroi Earring",
-        ring1="Sulevia's Ring",
-        ring2="Defending Ring",
+        ring1="Defending Ring",
+        ring2="Sulevia's Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
         legs="Sulevia's Cuisses +1",
@@ -641,8 +646,8 @@ function init_gear_sets()
         body="Jumalik Mail",
         hands="Sulevia's Gauntlets +1",
         ear1="Zennaroi Earring",
-        ring1="Sulevia's Ring",
-        ring2="Defending Ring",
+        ring1="Defending Ring",
+        ring2="Sulevia's Ring",
         back="Grounded Mantle +1",
         waist="Sarissaphoroi Belt",
         legs="Sulevia's Cuisses +1",
@@ -654,7 +659,6 @@ function init_gear_sets()
         neck="Twilight Torque",
         body="Lugra Cloak +1",
         ear1="Zennaroi Earring",
-        ring1="Sulevia's Ring",
         back="Impassive Mantle",
     })
 
@@ -678,8 +682,8 @@ function init_gear_sets()
         neck="Agitator's Collar",
         body="Odyssean Chestplate",
         hands="Sulevia's Gauntlets +1",
-        ring1="Sulevia's Ring",
-        ring2="Defending Ring",
+        ring1="Defending Ring",
+        ring2="Sulevia's Ring",
         back=Ankou.STP,
         waist="Sarissaphoroi Belt",
         legs="Sulevia's Cuisses +1",
@@ -687,7 +691,7 @@ function init_gear_sets()
     }
     sets.Defensive_Mid = set_combine(sets.Defensive, {
         ear1="Zennaroi Earring",
-        ring2="Patricius Ring",
+        ring1="Patricius Ring",
     })
     sets.Defensive_Acc = sets.Defensive_Mid
 
@@ -709,8 +713,8 @@ function init_gear_sets()
         ear2="Brutal Earring",
         body="Valorous Mail",
         hands="Emicho Gauntlets",
-        ring1="Flamma Ring",
-        ring2="Petrov Ring",
+        ring1="Niqmaddu Ring",
+        ring2="Flamma Ring",
         back=Ankou.STP,
         waist="Ioskeha Belt",
         legs=Odyssean.Legs.TP,
@@ -738,7 +742,7 @@ function init_gear_sets()
         hands="Emicho Gauntlets",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
-        ring1="Rajas Ring",
+        ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
         back=Ankou.STP,
         waist="Ioskeha Belt",
@@ -748,7 +752,6 @@ function init_gear_sets()
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
         neck="Lissome Necklace",
         legs=Odyssean.Legs.TP,
-        ring1="Flamma Ring",
         feet=Odyssean.Feet.TP
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
@@ -756,8 +759,6 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
         body="Odyssean Chestplate",
-        ring1="Flamma Ring",
-        ring2="Sulevia's Ring",
         legs="Carmine Cuisses +1",
         --back="Grounded Mantle +1",
         -- waist="Olseni Belt",

@@ -206,6 +206,7 @@ function init_gear_sets()
  
         -- Engaged sets
         sets.engaged =  {
+            sub="Nusku Shield",
             head="Arcadian Beret +1",
             neck="Twilight Torque",
             ear1="Enervating Earring",
