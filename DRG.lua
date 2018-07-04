@@ -101,8 +101,8 @@ function init_gear_sets()
         ear2="Tripudio Earring",
 		body="Peltast's Plackart +1",
         hands="Crusher Gauntlets",
-        ring1="Rajas Ring",
-        ring2="Oneiros Ring",
+        ring1="Niqmaddu Ring",
+        ring2="Flamma Ring",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Sulevia's Cuisses +1",
@@ -164,7 +164,7 @@ function init_gear_sets()
         ear1="Loquacious Earring", 
         hands="Leyline Gloves",
         legs="Limbo Trousers",
-        ring1="Prolix Ring"
+        ring1="Prolix Ring",
     }
     
 	-- Midcast Sets
@@ -184,8 +184,8 @@ function init_gear_sets()
         ear2="Moonshade Earring",
 		body="Valorous Mail",
         hands=Taeon.Hands,
-        ring1="Ifrit Ring",
-        ring2="Ifrit Ring +1",
+        ring1="Niqmaddu Ring",
+        ring2="Karieyh Ring",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Taeon Tights",
@@ -264,8 +264,8 @@ function init_gear_sets()
         ear2="Tripudio Earring",
 		body="Peltast's Plackart +1",
         hands="Crusher Gauntlets",
-        ring1="Rajas Ring",
-        ring2="Petrov Ring",
+        ring1="Niqmaddu Ring",
+        ring2="Karieyh Ring",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
@@ -342,10 +342,10 @@ function init_gear_sets()
         ear2="Tripudio Earring",
 		body="Peltast's Plackart +1", -- 3%
         hands="Emicho Gauntlets",
-        ring1="Rajas Ring",
-        ring2="Petrov Ring",
+        ring1="Niqmaddu Ring",
+        ring2="Flamma Ring",
         back="Bleating Mantle",
-        waist="Sarissaphoroi Belt",
+        waist="Ioskeha Belt",
         legs="Taeon Tights", -- 6%
         feet="Flamma Gambieras +1"
     }
@@ -357,10 +357,7 @@ function init_gear_sets()
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        ammo="Hasty Pinion +1",
         neck="Lissome Necklace",
-        waist="Olseni Belt",
-        back="Grounded Mantle +1"
         legs="Sulevia's Cuisses +1"
     })
 
@@ -368,6 +365,7 @@ function init_gear_sets()
         head="Sulevia's Mask +1",
         neck="Twilight Torque",
         body="Jumalik Mail",
+        ring1="Sulevia's Ring",
         ring2="Patricius Ring",
         hands="Sulevia's Gauntlets +1",
         waist="Sarissaphoroi Belt",

@@ -149,8 +149,8 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Valorous Mail",
         hands="Ryuo Tekko",
-        ring1="Karieyh Ring",
-        ring2="Flamma Ring",
+        ring1="Niqmaddu Ring",
+        ring2="Karieyh Ring",
         back="Buquwik Cape",
         waist="Windbuffet Belt +1",
         legs="Hizamaru Hizayoroi +1",
@@ -173,8 +173,8 @@ function init_gear_sets()
         body="Valorous Mail",
         hands=Acro.Hands.STP,
         back="Buquwik Cape",
-        ring1="Karieyh Ring",
-        ring2="Ifrit Ring +1",
+        ring1="Niqmaddu Ring",
+        ring2="Karieyh Ring",
         waist="Metalsinger Belt",
         legs="Hizamaru Hizayoroi +1",
         feet="Wakido Sune-ate +1"
@@ -253,7 +253,6 @@ function init_gear_sets()
         neck="Defiant Collar",
         --body="Unkai Domaru +2",
         hands="Wakido Kote +1",
-        ring2="Ifrit Ring +1",
         back="Buquwik Cape",
         waist="Soil Belt",
         legs="Wakido Haidate +1",
@@ -293,7 +292,7 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         body="Councilor's Garb",
         hands="Ryuo Tekko",
-        ring1="Dark Ring",
+        ring1="Niqmaddu Ring",
         ring2="Defending Ring",
         back="Solemnity Cape",
         waist="Windbuffet Belt +1",
@@ -382,8 +381,8 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         body="Valorous Mail",
         hands="Ryuo Tekko",
-        ring1="Flamma Ring", 
-        ring2="Petrov Ring", 
+        ring1="Niqmaddu Ring", 
+        ring2="Flamma Ring", 
         back="Takaha Mantle",
         waist="Ioskeha Belt",
         legs="Kasuga Haidate +1",
@@ -423,8 +422,6 @@ function init_gear_sets()
         head="Valorous Mask",
         neck="Lissome Necklace",
         ear1="Zennaroi Earring",
-        ring1="Patricius Ring",
-        ring2="Mars's Ring",
         legs="Acro Breeches",
         back="Grounded Mantle +1",
         feet=Acro.Feet.WSD
@@ -435,7 +432,7 @@ function init_gear_sets()
    	    body="Founder's Breastplate",
         neck="Agitator's Collar",
         hands="Crusher Gauntlets",
-        ring1="Patricius Ring",
+        ring2="Patricius Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
         feet="Loyalist Sabatons"
@@ -537,16 +534,18 @@ function init_gear_sets()
     sets.engaged.Adoulin.Yoichi = {
         --sub="Bloodrain Strap",
         ammo=gear.RAarrow,
-        head="Otomi Helm",
-        neck="Asperity Necklace", -- 3
-        ear1="Cessance Earring", -- 1 
-        ear2="Tripudio Earring", -- 1
-        body="Acro Surcoat", -- 8
-        hands="Wakido Kote +1", -- 5
-        ring1="Rajas Ring", -- 5
-        ring2="K'ayres Ring", -- 5
+        head="Flamma Zucchetto +2",
+        neck="Ganesha's Mala",
+        ear1="Cessance Earring",
+        ear2="Tripudio Earring",
+        body="Valorous Mail",
+        hands="Ryuo Tekko",
+        ring1="Niqmaddu Ring", 
+        ring2="Flamma Ring", 
         back="Takaha Mantle",
-        waist="Windbuffet Belt +1", 
+        waist="Ioskeha Belt",
+        legs="Kasuga Haidate +1",
+        feet="Flamma Gambieras +1"
         --legs="Otronif Brais +1", -- 6
         --feet="Otronif Boots +1" -- 7
     }

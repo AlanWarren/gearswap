@@ -158,8 +158,8 @@ function init_gear_sets()
          ear2="Moonshade Earring",
          body="Odyssean Chestplate",
          hands="Odyssean Gauntlets",
-         ring1="Apate Ring",
-         ring2="Ifrit Ring",
+         ring1="Niqmaddu Ring",
+         ring2="Karieyh Ring",
          legs=Odyssean.Legs.WS,
          back="Mauler's Mantle",
          waist="Windbuffet Belt +1",
@@ -263,7 +263,7 @@ function init_gear_sets()
          hands="Redan Gloves",
          body="Valorous Mail",
          ring1="Karieyh Ring",
-         ring2="Defending Ring",
+         ring2="Niqmaddu Ring",
          back="Mauler's Mantle",
          legs=Odyssean.Legs.TP,
          waist="Windbuffet Belt +1",
@@ -301,7 +301,7 @@ function init_gear_sets()
          body="Jumalik Mail",
          hands="Redan Gloves",
          ear1="Zennaroi Earring",
-         ring1="Dark Ring",
+         ring1="Sulevia's Ring",
          ring2="Patricius Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
@@ -328,6 +328,7 @@ function init_gear_sets()
          neck="Agitator's Collar",
          body="Jumalik Mail",
          hands="Redan Gloves",
+         ring1="Sulevia's Ring",
          ring2="Defending Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
@@ -340,6 +341,7 @@ function init_gear_sets()
          body="Jumalik Mail",
          hands="Redan Gloves",
          back="Impassive Mantle",
+         ring1="Sulevia's Ring",
          ring2="Defending Ring",
          feet="Sulevia's Leggings +1"
      }
@@ -348,6 +350,7 @@ function init_gear_sets()
          neck="Agitator's Collar",
          hands="Redan Gloves",
          body="Founder's Breastplate",
+         ring1="Sulevia's Ring",
          ring2="Defending Ring",
          legs="Sulevia's Cuisses +1",
          feet="Sulevia's Leggings +1"
@@ -356,33 +359,27 @@ function init_gear_sets()
      -- Engaged set, assumes Liberator
      sets.engaged = {
          ammo="Ginsen",
-         head="Skormoth Mask",
+         head="Flamma Zucchetto +2",
          neck="Lissome Necklace",
          ear1="Brutal Earring",
          ear2="Cessance Earring",
     	 body="Boii Lorica +1",
          hands="Emicho Gauntlets",
-         ring1="Rajas Ring",
-         ring2="Petrov Ring",
+         ring1="Niqmaddu Ring",
+         ring2="Flamma Ring",
          back="Mauler's Mantle",
-         waist="Windbuffet Belt +1",
+         waist="Ioskeha Belt",
          legs=Odyssean.Legs.TP,
-         feet=Odyssean.Feet.TP
+         feet="Flamma Gambieras +1"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Ginsen",
          neck="Lissome Necklace",
          hands="Emicho Gauntlets",
          body="Valorous Mail",
-         waist="Sarissaphoroi Belt",
-         legs=Odyssean.Legs.TP,
-         feet=Odyssean.Feet.TP
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-         ring2="Mars's Ring",
-         body="Reiki Osode",
-         waist="Olseni Belt",
-         back="Grounded Mantle +1",
+        --  back="Grounded Mantle +1",
      })
 
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
