@@ -289,24 +289,24 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring", 
             body="Orion Jerkin +2", 
-            hands="Meghanada Gloves +2",
+            hands="Adhemar Wristbands",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
             back="Belenus's Cape",
             waist="Kwahu Kachina Belt", 
-            legs="Adhemar Kecks", 
+            legs="Amini Brague +1", 
             feet="Meghanada Jambeaux +1"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             neck="Sanctity Necklace", 
-            ring2="Cacoethic Ring +1",
+            ring1="Cacoethic Ring +1",
+            ring2="Apate Ring",
+            legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             head="Meghanada Visor +1",
-            ring1="Longshot Ring",
-            ring2="Cacoethic Ring +1",
-            waist="Kwahu Kachina Belt", 
-            legs="Adhemar Kecks",
+            ring2="Longshot Ring",
+            hands="Meghanada Gloves +2",
         })
     
         -- -- Samurai Roll sets 
@@ -374,7 +374,7 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Orion Jerkin +2", 
-            hands="Meghanada Gloves +2",
+            hands="Amini Glovelettes +1",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
             back="Belenus's Cape",
@@ -384,14 +384,15 @@ function init_gear_sets()
         }
         sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
             neck="Yarak Torque",
+            hands="Adhemar Wristbands",
             legs="Adhemar Kecks",
             body="Orion Jerkin +2", 
-            ring2="Cacoethic Ring +1",
+            ring1="Cacoethic Ring +1",
         })
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
             head="Meghanada Visor +1",
-            body="Orion Jerkin +2", 
-            ring1="Longshot Ring",
+            hands="Meghanada Gloves +2",
+            ring2="Longshot Ring",
         })
        
         -- Bow Sam roll
@@ -449,8 +450,6 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +1"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-            ear1="Enervating Earring",
-            body="Orion Jerkin +2",
             legs="Adhemar Kecks",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
@@ -465,7 +464,7 @@ function init_gear_sets()
             neck="Sanctity Necklace",
             hands="Leyline Gloves",
             body="Samnuha Coat",
-            ring1="Acumen Ring",
+            ring1="Karieyh Ring",
             ring2="Garuda Ring",
             back="Belenus's Cape",
             waist="Eschan Stone",
@@ -507,7 +506,7 @@ function init_gear_sets()
             ring2="Garuda Ring",
             back="Belenus's Cape",
             waist="Light Belt",
-            feet="Orion Socks +1"
+            feet="Meghanada Jambeaux +1"
         }
         sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, sets.LastStand)
         sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS.Mid, sets.LastStand)
@@ -528,7 +527,6 @@ function init_gear_sets()
            ear2="Moonshade Earring",
            neck="Flame Gorget",
            waist="Light Belt",
-           feet="Arcadian Socks +1"
         }
         sets.precast.WS['Detonator'] = set_combine(sets.precast.WS, sets.Detonator)
         sets.precast.WS['Detonator'].Mid = set_combine(sets.precast.WS.Mid, sets.Detonator)
@@ -539,7 +537,6 @@ function init_gear_sets()
            neck="Breeze Gorget",
            ear2="Moonshade Earring",
            waist="Light Belt",
-           feet="Arcadian Socks +1"
         }
         sets.precast.WS['Slug Shot'] = set_combine(sets.precast.WS, sets.SlugShot)
         sets.precast.WS['Slug Shot'].Mid = set_combine(sets.precast.WS.Mid, sets.SlugShot)
@@ -575,6 +572,7 @@ function init_gear_sets()
             waist="Light Belt",
             ring2="Rajas Ring",
             back="Rancorous Mantle",
+            legs="Herculean Trousers",
             feet="Thereoid Greaves"
         }
         sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, sets.Jishnus)
@@ -584,7 +582,6 @@ function init_gear_sets()
             waist="Light Belt",
             legs="Adhemar Kecks",
             ring2="Rajas Ring",
-            back="Lutian Cape",
 
         })
         sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS.Acc, {
@@ -626,7 +623,7 @@ function init_gear_sets()
             ring2="Cacoethic Ring +1",
             back="Belenus's Cape",
             waist="Kwahu Kachina Belt",
-            legs="Adhemar Kecks", 
+            legs="Meghanada Chausses +1", 
             feet="Meghanada Jambeaux +1"
         }
         -- placeholder until I can get to it
