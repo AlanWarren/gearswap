@@ -390,9 +390,9 @@ function init_gear_sets()
         hands="Odyssean Gauntlets",
         ring1="Niqmaddu Ring",
         ring2="Karieyh Ring",
-        legs=Odyssean.Legs.WS,
         back=Ankou.WSD,
         waist="Windbuffet Belt +1",
+        legs=Odyssean.Legs.WS,
         feet="Sulevia's Leggings +1"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -432,21 +432,17 @@ function init_gear_sets()
     -- Base set only used at 3000TP to put AM3 up
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
-        body="Odyssean Chestplate",
-        waist="Windbuffet Belt +1",
-        feet="Ratri Sollerets"
+        legs="Sulevia's Cuisses +1",
+        waist="Light Belt"
     })
     sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
     })
     -- Mid assumes higher defense target
     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
-        legs=Odyssean.Legs.WS,
         waist="Light Belt"
     })
     sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {})
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
-        ear1="Zennaroi Earring",
-        waist="Olseni Belt",
         legs=Odyssean.Legs.WS, 
     })
     sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
@@ -717,7 +713,7 @@ function init_gear_sets()
         back=Ankou.STP,
         waist="Ioskeha Belt",
         legs=Odyssean.Legs.TP,
-        feet="Flamma Gambieras +1"
+        feet="Flamma Gambieras +2"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         legs=Odyssean.Legs.TP,
@@ -746,16 +742,13 @@ function init_gear_sets()
         back=Ankou.STP,
         waist="Ioskeha Belt",
         legs=Odyssean.Legs.TP,
-        feet="Flamma Gambieras +1"
+        feet="Flamma Gambieras +2"
     })
     sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
         neck="Lissome Necklace",
         legs=Odyssean.Legs.TP,
-        feet=Odyssean.Feet.TP
     })
     sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
-        neck="Lissome Necklace",
-        ear1="Cessance Earring",
         ear2="Zennaroi Earring",
         body="Odyssean Chestplate",
         legs="Carmine Cuisses +1",
@@ -780,7 +773,7 @@ function init_gear_sets()
     })
     sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
         ammo="Ginsen",
-        feet="Flamma Gambieras +1"
+        feet="Flamma Gambieras +2"
     })
     sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
         ear1="Cessance Earring",
@@ -830,7 +823,6 @@ function init_gear_sets()
     })
     sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {
         head="Flamma Zucchetto +2",
-        feet="Loyalist Sabatons"
         --back="Grounded Mantle +1"
         --ring2="K'ayres RIng"
     })
@@ -846,12 +838,10 @@ function init_gear_sets()
     sets.engaged.SW = set_combine(sets.engaged, {
         ammo="Yetshila",
         head="Flamma Zucchetto +2",
-        feet=Odyssean.Feet.TP
     })
     sets.engaged.SW.Mid = set_combine(sets.engaged.Mid, {
         ammo="Ginsen",
         hands="Odyssean Gauntlets",
-        feet=Odyssean.Feet.TP
     })
     sets.engaged.SW.Acc = set_combine(sets.engaged.Acc, {
         ammo="Hasty Pinion +1"

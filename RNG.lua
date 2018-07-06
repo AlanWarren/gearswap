@@ -114,6 +114,10 @@ function init_gear_sets()
         TaeonHands = {}
         TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
         TaeonHands.Snap = {name="Taeon Gloves", augments={'"Snapshot"+5', 'Attack+22','"Snapshot"+3'}}
+        
+        Belenus = {}
+        Belenus.STP = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+1','"Store TP"+10',}}
+        Belenus.Snap = {name="Belenus's Cape", augments={'"Snapshot"+10',}}
 
         sets.Organizer = {
             main="Annihilator",
@@ -128,7 +132,7 @@ function init_gear_sets()
         sets.precast.JA['Double Shot'] = {head="Amini Gapette"}
         sets.precast.JA['Camouflage'] = {body="Orion Jerkin +2"}
         sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
-        sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1", back="Belenus's Cape" }
+        sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1", back=Belenus.Snap }
         sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
 
         sets.CapacityMantle = {back="Mecistopins Mantle"}
@@ -149,7 +153,7 @@ function init_gear_sets()
         sets.precast.JA['Eagle Eye Shot'].Mid = set_combine(sets.precast.JA['Eagle Eye Shot'], {
             back="Lutian Cape",
             ring2="Longshot Ring",
-            feet="Meghanada Jambeaux +1"
+            feet="Meghanada Jambeaux +2"
         })
         sets.precast.JA['Eagle Eye Shot'].Acc = set_combine(sets.precast.JA['Eagle Eye Shot'].Mid, {
             neck="Iqabi Necklace",
@@ -167,6 +171,7 @@ function init_gear_sets()
         sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
         
         sets.idle = {
+            --sub="Nusku Shield",
             head="Arcadian Beret +1",
             neck="Sanctity Necklace",
             ear1="Enervating Earring",
@@ -200,7 +205,7 @@ function init_gear_sets()
             ring2="Karieyh Ring",
             hands="Adhemar Wristbands",
             legs="Meghanada Chausses +1",
-            back="Belenus's Cape",
+            back=Belenus.STP,
             feet="Jute Boots +1"
         })
  
@@ -216,7 +221,7 @@ function init_gear_sets()
             ring1="Defending Ring",
             ring2="Karieyh Ring",
             waist="Impulse Belt",
-            back="Belenus's Cape",
+            back=Belenus.STP,
             legs="Meghanada Chausses +1", 
             feet="Jute Boots +1"
         }
@@ -274,10 +279,10 @@ function init_gear_sets()
             head="Amini Gapette", -- 7
             body="Amini Caban +1", -- 7% VS
             hands=TaeonHands.Snap, --8
-            back="Belenus's Cape", -- 2% VS
+            back=Belenus.Snap, -- 2% VS / 10 snap (for now)
             legs="Adhemar Kecks", -- 9
             waist="Impulse Belt", -- 2
-            feet="Meghanada Jambeaux +1" -- 8
+            feet="Meghanada Jambeaux +2" -- 10
         }
         
         ------------------------------------------------------------------
@@ -292,15 +297,15 @@ function init_gear_sets()
             hands="Adhemar Wristbands",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
-            back="Belenus's Cape",
+            back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
             legs="Amini Brague +1", 
-            feet="Meghanada Jambeaux +1"
+            feet="Meghanada Jambeaux +2"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             neck="Sanctity Necklace", 
             ring1="Cacoethic Ring +1",
-            ring2="Apate Ring",
+            ring2="Petrov Ring",
             legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
@@ -377,10 +382,10 @@ function init_gear_sets()
             hands="Amini Glovelettes +1",
             ring1="Rajas Ring",
             ring2="Petrov Ring",
-            back="Belenus's Cape",
+            back=Belenus.STP,
             waist="Kwahu Kachina Belt",
             legs="Amini Brague +1", 
-            feet="Meghanada Jambeaux +1"
+            feet="Meghanada Jambeaux +2"
         }
         sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
             neck="Yarak Torque",
@@ -442,12 +447,12 @@ function init_gear_sets()
             ear2="Flame Pearl",
             body="Orion Jerkin +2",
             hands="Meghanada Gloves +2",
-            ring1="Karieyh Ring",
-            ring2="Ifrit Ring",
+            ring2="Karieyh Ring",
+            ring1="Ifrit Ring",
             back="Buquwik Cape",
             waist="Kwahu Kachina Belt",
             legs="Meghanada Chausses +1", 
-            feet="Meghanada Jambeaux +1"
+            feet="Meghanada Jambeaux +2"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             legs="Adhemar Kecks",
@@ -464,9 +469,9 @@ function init_gear_sets()
             neck="Sanctity Necklace",
             hands="Leyline Gloves",
             body="Samnuha Coat",
-            ring1="Karieyh Ring",
-            ring2="Garuda Ring",
-            back="Belenus's Cape",
+            ring2="Karieyh Ring",
+            ring1="Garuda Ring",
+            back=Belenus.STP,
             waist="Eschan Stone",
             legs="Meghanada Chausses +1",
             feet="Herculean Boots"
@@ -504,9 +509,9 @@ function init_gear_sets()
             neck="Aqua Gorget",
             ear2="Moonshade Earring",
             ring2="Garuda Ring",
-            back="Belenus's Cape",
+            back=Belenus.STP,
             waist="Light Belt",
-            feet="Meghanada Jambeaux +1"
+            feet="Meghanada Jambeaux +2"
         }
         sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, sets.LastStand)
         sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS.Mid, sets.LastStand)
@@ -550,7 +555,7 @@ function init_gear_sets()
         sets.Namas = {
             neck="Aqua Gorget",
             waist="Light Belt",
-            back="Belenus's Cape",
+            back=Belenus.STP
         }
         sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS, sets.Namas)
         sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS.Mid, sets.Namas)
@@ -621,10 +626,10 @@ function init_gear_sets()
             hands="Orion Bracers +1",
             ring1="Longshot Ring",
             ring2="Cacoethic Ring +1",
-            back="Belenus's Cape",
+            back=Belenus.STP,
             waist="Kwahu Kachina Belt",
             legs="Meghanada Chausses +1", 
-            feet="Meghanada Jambeaux +1"
+            feet="Meghanada Jambeaux +2"
         }
         -- placeholder until I can get to it
         sets.buff.Barrage.Mid = sets.buff.Barrage
