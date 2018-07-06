@@ -146,10 +146,11 @@ function init_gear_sets()
     Niht = {}
     Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
     Niht.WSD = {name="Niht Mantle", augments={'Attack+14','Dark magic skill +4', '"Drain" and "Aspir" potency +17', 'Weapon skill damage +5%'}}
-    
+
     Ankou = {}
-    Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Store TP"+10',}}
-    Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    Ankou.FC  = { name="Ankou's Mantle", augments={'"Fast Cast"+10',}}
+    Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
+    Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+6','Weapon skill damage +10%',}}
 
     Odyssean = {}
     Odyssean.Legs = {}
@@ -210,6 +211,7 @@ function init_gear_sets()
         ring1="Prolix Ring",
         ring2="Kishar Ring",
         legs="Eschite Cuisses",
+        back=Ankou.FC,
         feet=Odyssean.Feet.FC
     }
 

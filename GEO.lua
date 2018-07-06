@@ -77,6 +77,7 @@ function init_gear_sets()
         hands="Magavan Mitts",
         --body="Vanir Cotehardie",
         ring1="Prolix Ring",
+        ring2="Kishar Ring",
         back="Lifestream Cape",
         waist="Witful Belt",
         legs="Geomancy Pants +1",
@@ -201,21 +202,19 @@ function init_gear_sets()
         hands="Amalric Gages", 
         ring1="Shiva Ring",
         ring2="Resonance Ring",
-        back="Toro Cape",
+        back="Nantosuelta's Cape",
         waist="Refoccilation Stone", 
         legs="Merlinic Shalwar",
         feet="Helios Boots"
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
-        head="Welkin Crown",
+        head="Mallquis Chapeau +1",
         ear1="Friomisi Earring",
         neck="Erra Pendant",
         ear2="Gwati Earring", 
         hands="Amalric Gages", 
-        back="Refraction Cape",
-        legs="Merlinic Shalwar",
-        feet="Helios Boots"
+        feet="Mallquis Clogs +1"
         --feet="Bokwus Boots"
     })
     --sets.midcast['Elemental Magic'].Mindmelter = set_combine(sets.midcast.HighTierNuke, {
@@ -227,47 +226,46 @@ function init_gear_sets()
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
         sub="Giuoco Grip",
         ear2="Crematio Earring",
-        body="Witching Robe",
-        feet="Umbani Boots"
+        head="Mallquis Chapeau +1",
+        hands="Mallquis Cuffs +1",
+        body="Mallquis Saio +1",
+        legs="Mallquis Trews +1",
+        feet="Mallquis CLogs +1"
     })
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
-        head="Welkin Crown",
         ear1="Friomisi Earring",
         ear2="Gwati Earring", 
         neck="Erra Pendant",
-        body="Azimuth Coat +1",
-        hands="Amalric Gages", 
         legs="Merlinic Shalwar",
         ring1="Sangoma Ring",
         ring2="Resonance Ring",
-        back="Refraction Cape",
-        feet="Helios Boots"
+        back="Nantosuelta's Cape",
     })
 
     sets.midcast.Macc = { 
         main="Grioavolr",
         sub="Niobid Strap", 
         ammo="Plumose Sachet",
-        head="Bagua Galero",
+        head="Mallquis Chapeau +1",
         neck="Erra Pendant",
         ear1="Lifestorm Earring", 
         ear2="Psystorm Earring",
         body="Azimuth Coat +1",
-        hands="Psycloth Manillas",
+        hands="Mallquis Cuffs +1",
         ring1="Perception Ring", 
         ring2="Sangoma Ring",
-        back="Refraction Cape",
+        back="Nantosuelta's Cape",
         legs="Merlinic Shalwar",
         waist="Yamabuki-no-obi", 
-        feet="Helios Boots"
+        feet="Mallquis CLogs +1"
     }
     sets.midcast.Absorb = set_combine(sets.midcast.Macc, {
         head="Bagua Galero",
         neck="Erra Pendant",
         ear1="Gwati Earring",
         ring1="Evanescence Ring",
-        ring2="Excelsis Ring",
+        ring2="Kishar Ring",
         body="Geomancy tunic +1",
         legs="Azimuth Tights +1",
     })
@@ -288,15 +286,16 @@ function init_gear_sets()
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
         neck="Erra Pendant",
         waist="Casso Sash",
-        back="Lifestream Cape",
+        back="Nantosuelta's Cape",
         hands="Azimuth Gloves",
+        ring1="Kishar Ring",
         ring2="Globidonta Ring",
         feet="Bagua Sandals"
     })
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.Macc, {
         waist="Casso Sash",
-        back="Lifestream Cape",
-        ring1="Shiva Ring",
+        back="Nantosuelta's Cape",
+        ring1="Kishar Ring",
         ring2="Globidonta Ring",
         feet="Bagua Sandals"
     })
@@ -343,6 +342,7 @@ function init_gear_sets()
     sets.idle.PDT = set_combine(sets.idle, {
         head="Hike Khat +1",
         neck="Twilight Torque",
+        body="Mallquis Saio +1",
         hands="Geomancy Mitaines +1",
     	back="Solemnity Cape",
         feet="Azimuth Gaiters"
@@ -352,6 +352,7 @@ function init_gear_sets()
     sets.idle.Pet = set_combine(sets.idle, {
         head="Azimuth Hood +1",
         neck="Twilight Torque",
+        body="Mallquis Saio +1",
         hands="Geomancy Mitaines +1",
         back="Lifestream Cape",
         feet="Bagua Sandals"
