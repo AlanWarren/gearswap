@@ -41,6 +41,7 @@ function job_setup()
     gear.SangeAmmo = 'Happo Shuriken'
 
     wsList = S{'Blade: Hi', 'Blade: Kamu', 'Blade: Ten'}
+    nukeList = S{'Katon: San', 'Doton: San', 'Suiton: San', 'Raiton: San', 'Hyoton: San', 'Huton: San'}
 
     update_combat_form()
 
@@ -936,7 +937,7 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-    if (spell.type:endswith('Magic') or spell.type == "Ninjutsu") and buffactive['Futae'] then
+    if nukeList:contains(spell.english) and buffactive['Futae'] then
         equip(sets.Burst)
     end
     if spell.english == "Monomi: Ichi" then
