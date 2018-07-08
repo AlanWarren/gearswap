@@ -277,6 +277,7 @@ function init_gear_sets()
         ------------------------------------------------------------------
         sets.precast.RA = {
             head="Amini Gapette", -- 7
+            neck="Scout's gorget", -- 2
             body="Amini Caban +1", -- 7% VS
             hands=TaeonHands.Snap, --8
             back=Belenus.Snap, -- 2% VS / 10 snap (for now)
@@ -303,7 +304,7 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +2"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            neck="Sanctity Necklace", 
+            neck="Scout's Gorget", 
             ring1="Cacoethic Ring +1",
             ring2="Petrov Ring",
             legs="Adhemar Kecks", 

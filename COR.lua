@@ -100,7 +100,7 @@ function init_gear_sets()
         hands="Navarch's Gants +2",
         body="Lanun Frac +1",
         ring1="Barataria Ring",
-        back="Gunslinger's Cape",
+        back="Camulus's Mantle",
         feet="Lanun Bottes"
     }
     TaeonHands = {}
@@ -157,7 +157,7 @@ function init_gear_sets()
         body="Pursuer's Doublet",
         waist="Impulse Belt",
         legs="Adhemar Kecks",
-        feet="Meghanada Jambeaux +1"
+        feet="Meghanada Jambeaux +2"
     }
 
 	-- Weaponskill sets
@@ -277,7 +277,7 @@ function init_gear_sets()
         back="Gunslinger's Cape",
         waist="Elanid Belt",
         legs="Adhemar Kecks",
-        feet="Meghanada Jambeaux +1"
+        feet="Meghanada Jambeaux +2"
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {

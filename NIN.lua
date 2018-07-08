@@ -267,6 +267,7 @@ function init_gear_sets()
         legs="Shneddick Tights +1",
         feet="Hachiya Kyahan +1" -- int 10 mab+13 mac+13
     }
+    sets.Burst = set_combine(sets.midcast.ElementalNinjutsu, { hands="Hattori Tekko +1"})
 
     -- Effusions
     sets.precast.Effusion = {}
@@ -935,6 +936,9 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
+    if (spell.type:endswith('Magic') or spell.type == "Ninjutsu") and buffactive['Futae'] then
+        equip(sets.Burst)
+    end
     if spell.english == "Monomi: Ichi" then
         if buffactive['Sneak'] then
             send_command('@wait 1.7;cancel sneak')

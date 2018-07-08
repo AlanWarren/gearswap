@@ -91,7 +91,7 @@ function job_setup()
     -- Weaponskills you do NOT want Gavialis helm used with
     wsList = S{'Spiral Hell', 'Torcleaver', 'Insurgency', 'Quietus'}
     -- Greatswords you use. 
-    gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Raetic Algol' }
+    gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Caladbolg', 'Sunblade' }
     shields = S{'Rinda Shield'}
     -- Mote has capitalization errors in the default Absorb mappings, so we correct them
     absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
@@ -265,7 +265,7 @@ function init_gear_sets()
         neck="Erra Pendant", -- 10 dark + 17 macc
         ear1="Gwati Earring",
         ear2="Dark Earring", -- 3
-        body="Founder's Breastplate", --20 macc
+        body="Ratri Breastplate",
         hands="Fallen's Finger Gauntlets +1", -- 14
         waist="Casso Sash", -- 5
         ring1="Evanescence Ring", -- 10
@@ -281,15 +281,16 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'].Acc = set_combine(sets.midcast['Dark Magic'], {
         head="Flamma Zucchetto +2", -- 44 macc
-        body="Founder's Breastplate",
+        body="Ratri Breastplate",
         hands="Leyline Gloves",
+        legs="Fallen's Flanchard +2",  
         waist="Eschan Stone"
     })
 
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
         head="Valorous Mask",
         neck="Erra Pendant", -- 10 + 17 macc
-        body="Founder's breastplate",
+        body="Ratri Breastplate",
         hands="Leyline Gloves",
         ring2="Kishar Ring",
         back="Aput Mantle"
@@ -301,7 +302,7 @@ function init_gear_sets()
         neck="Eddy Necklace", -- 11 matk
         ear1="Friomisi Earring", -- 10 matk
         ear2="Crematio Earring", -- 6 matk 6 mdmg
-        body="Founder's breastplate", -- 21 matk 20 macc
+        body="Ratri Breastplate",
         hands="Leyline Gloves",
         ring1="Resonance Ring", -- int 8
         ring2="Shiva Ring", -- matk 4
@@ -394,7 +395,8 @@ function init_gear_sets()
         ring2="Karieyh Ring",
         back=Ankou.WSD,
         waist="Windbuffet Belt +1",
-        legs=Odyssean.Legs.WS,
+        legs="Sulevia's Cuisses +2",
+        --legs=Odyssean.Legs.WS,
         feet="Sulevia's Leggings +1"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -421,37 +423,43 @@ function init_gear_sets()
     -- VIT 80%
     sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
-        hands="Odyssean Gauntlets",
         waist="Caudata Belt",
+        legs=Odyssean.Legs.WS,
     })
     sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
         neck="Aqua Gorget",
+        legs="Fallen's Flanchard +2",  
     })
-    sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, sets.precast.WS.Acc)
+    sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, {
+        neck="Aqua Gorget",
+        legs=Odyssean.Legs.WS
+    })
 
     -- INSURGENCY
     -- 20% STR / 20% INT 
     -- Base set only used at 3000TP to put AM3 up
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
-        legs="Sulevia's Cuisses +1",
-        waist="Light Belt"
+        ear2="Ishvara Earring",
+        body="Ratri Breastplate",
+        legs="Sulevia's Cuisses +2",
+        ring2="Flamma Ring",
+        waist="Caudata Belt",
+        feet="Ratri Sollerets"
     })
-    sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {
-    })
-    -- Mid assumes higher defense target
-    sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
-        waist="Light Belt"
-    })
+    sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {})
+    sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {})
     sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {})
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
-        legs=Odyssean.Legs.WS, 
+        legs=Odyssean.Legs.WS
     })
     sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
 
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
         ear2="Ishvara Earring",
         neck="Shadow Gorget",
+        body="Ratri Breastplate",
+        legs=Odyssean.Legs.WS,
         waist="Soil Belt",
         feet="Ratri Sollerets"
     })
@@ -459,53 +467,49 @@ function init_gear_sets()
     sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
         ear1="Zennaroi Earring",
         waist="Olseni Belt",
-        legs=Odyssean.Legs.WS, 
     })
 
     -- CROSS REAPER
     -- 60% STR / 60% MND
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-        neck="Bale Choker",
-        ear1="Bale Earring",
+        body="Ratri Breastplate",
         waist="Metalsinger Belt",
+        ring2="Flamma Ring", -- assumes flamma head+2
         feet="Ratri Sollerets"
     })
     sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {})
-
     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {})
     sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
         neck="Aqua Gorget",
     })
-    sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
-        neck="Aqua Gorget",
-        legs=Odyssean.Legs.WS, 
-    })
+    sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {})
     -- ENTROPY
     -- 86-100% INT 
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
-        head="Heathen's Burgonet +1",
         neck="Shadow Gorget",
-        body="Fallen's Cuirass +1",
+        body="Ratri Breastplate",
+        hands="Emicho Gauntlets",
         ring2="Shiva Ring",
         waist="Soil Belt",
-        legs=Odyssean.Legs.TP,
-        feet="Sulevia's Leggings +1"
+        ring2="Flamma Ring",
+        legs="Sulevia's Cuisses +2",
+        feet="Ratri Sollerets"
     })
-    sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, { })
-    sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
-        body="Odyssean Chestplate",
-    })
+    sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {})
+    sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {})
     sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
-    sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {
-        legs=Odyssean.Legs.WS
-    })
+    sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {})
 
     -- Quietus
     -- 60% STR / MND 
     sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         ear2="Ishvara Earring",
-        waist="Windbuffet Belt +1",
+        body="Ratri Breastplate",
+        hands="Odyssean Gauntlets",
+        waist="Caudata Belt",
+        legs=Odyssean.Legs.WS,
+        feet="Ratri Sollerets"
     })
     sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {})
     sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
@@ -521,7 +525,9 @@ function init_gear_sets()
     -- 50% STR / 50% INT 
     sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
         neck="Aqua Gorget",
+        body="Ratri Breastplate",
         waist="Metalsinger belt",
+        feet="Ratri Sollerets"
     })
     sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid, { })
     sets.precast.WS['Spiral Hell'].Acc = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Acc, { })
@@ -600,6 +606,7 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Valorous Mask",
         ear1="Zennaroi Earring",
+        ear2="Eabani Earring",
         neck="Sanctity Necklace",
         body="Jumalik mail",
         hands="Sulevia's Gauntlets +1",
@@ -625,12 +632,13 @@ function init_gear_sets()
         head="Sulevia's Mask +1",
         neck="Agitator's Collar",
         hands="Sulevia's Gauntlets +1",
+        body="Jumalik mail",
         ear1="Zennaroi Earring",
         ring1="Defending Ring",
         ring2="Sulevia's Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
-        legs="Sulevia's Cuisses +1",
+        legs="Sulevia's Cuisses +2",
         feet="Amm Greaves"
 
     })
@@ -646,8 +654,8 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Sulevia's Ring",
         back="Grounded Mantle +1",
-        waist="Sarissaphoroi Belt",
-        legs="Sulevia's Cuisses +1",
+        waist="Ioskeha Belt",
+        legs="Sulevia's Cuisses +2",
         feet="Amm Greaves"
     }
     sets.defense.Reraise = sets.idle.Weak
@@ -674,16 +682,16 @@ function init_gear_sets()
     -- These allow hybrid acc/pdt sets for difficult content
     sets.Defensive = {
         --sub="Gracile grip",
-        --ammo="Hasty Pinion +1",
+        ammo="Hasty Pinion +1",
         head="Sulevia's Mask +1",
         neck="Agitator's Collar",
-        body="Odyssean Chestplate",
+        body="Valorous Mail",
         hands="Sulevia's Gauntlets +1",
         ring1="Defending Ring",
         ring2="Sulevia's Ring",
         back=Ankou.STP,
-        waist="Sarissaphoroi Belt",
-        legs="Sulevia's Cuisses +1",
+        waist="Ioskeha Belt",
+        legs="Sulevia's Cuisses +2",
         feet="Loyalist Sabatons"
     }
     sets.Defensive_Mid = set_combine(sets.Defensive, {
@@ -694,9 +702,9 @@ function init_gear_sets()
 
     sets.Sulevia = set_combine(sets.Defensive_Mid, {
         head="Sulevia's Mask +1",
-        body="Sulevia's Platemail",
+        body="Sulevia's Platemail +1",
         hands="Sulevia's Gauntlets +1",
-        legs="Sulevia's Cuisses +1",
+        legs="Sulevia's Cuisses +2",
         feet="Sulevia's Leggings +1"
     })
 
@@ -856,6 +864,7 @@ function init_gear_sets()
 
     sets.buff.Souleater = { 
         head="Ignominy Burgeonet +1",
+        body="Ratri Breastplate",
     }
 
     -- sets.buff['Last Resort'] = { 
@@ -1025,7 +1034,7 @@ function job_buff_change(buff, gain)
             end
         end
     end
-    -- Drain II HP Boost. Set SE to stay on.
+    -- Drain II/III HP Boost. Set SE to stay on.
     if buff == "Max HP Boost" and state.SouleaterMode.value then
         if gain or buffactive['Max HP Boost'] then
             state.SouleaterMode:set(false)
@@ -1067,13 +1076,13 @@ function job_buff_change(buff, gain)
         end
     end
     
-    if  buff == "Samurai Roll" then
-        classes.CustomRangedGroups:clear()
-        if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
-            classes.CustomRangedGroups:append('SamRoll')
-        end
+    -- if  buff == "Samurai Roll" then
+    --     classes.CustomRangedGroups:clear()
+    --     if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
+    --         classes.CustomRangedGroups:append('SamRoll')
+    --     end
        
-    end
+    -- end
 
     --if buff == "Last Resort" then
     --    if gain then
@@ -1099,6 +1108,13 @@ function job_update(cmdParams, eventArgs)
     get_combat_form()
     get_combat_weapon()
     update_melee_groups()
+    if gsList:contains(player.equipment.main) then
+        set_macro_page(5, 4)
+    elseif player.sub_job == 'SAM' then
+        set_macro_page(7, 4)
+    else 
+        set_macro_page(8, 4)
+    end
 
 end
 
@@ -1266,9 +1282,9 @@ function update_melee_groups()
         if buffactive['Aftermath'] then
             classes.CustomMeleeGroups:append('AM')
         end
-        if buffactive['Samurai Roll'] then
-            classes.CustomRangedGroups:append('SamRoll')
-        end
+        -- if buffactive['Samurai Roll'] then
+        --     classes.CustomRangedGroups:append('SamRoll')
+        -- end
     end
 end
 
@@ -1278,6 +1294,8 @@ function select_default_macro_book()
         set_macro_page(6, 2)
     elseif player.sub_job == 'SAM' then
         set_macro_page(7, 4)
+    elseif gsList:contains(player.equipment.main) then
+        set_macro_page(5, 4)
     else
         set_macro_page(8, 4)
     end
