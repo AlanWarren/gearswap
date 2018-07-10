@@ -89,7 +89,7 @@ function job_setup()
     -- Use Gavialis helm?
     use_gavialis = false
     -- Weaponskills you do NOT want Gavialis helm used with
-    wsList = S{'Spiral Hell', 'Torcleaver', 'Insurgency', 'Quietus'}
+    wsList = S{'Spiral Hell', 'Torcleaver', 'Insurgency', 'Quietus', 'Cross Reaper'}
     -- Greatswords you use. 
     gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Caladbolg', 'Sunblade' }
     shields = S{'Rinda Shield'}
@@ -188,9 +188,11 @@ function init_gear_sets()
     sets.WSDayBonus      = { head="Gavialis Helm" }
     sets.WSBack          = { back="Trepidity Mantle" }
     -- Earring considerations, given Lugra's day/night stats
-    sets.BrutalLugra     = { ear1="Bale Earring", ear2="Lugra Earring +1" }
+    sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
+    sets.IshvaraLugra     = { ear1="Ishvara Earring", ear2="Lugra Earring +1" }
     sets.Lugra           = { ear1="Lugra Earring +1" }
     sets.Brutal          = { ear1="Brutal Earring" }
+    sets.Ishvara          = { ear1="Ishvara Earring" }
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -904,12 +906,20 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         end
 
         if player.tp > 2999 then
-            equip(sets.BrutalLugra)
+            if wsList:contains(spell.english) then
+                equip(sets.IshvaraLugra)
+            else
+                equip(sets.BrutalLugra)
+            end
         else -- use Lugra + moonshade
             if world.time >= (17*60) or world.time <= (7*60) then
                 equip(sets.Lugra)
             else
-                equip(sets.Brutal)
+                if wsList:contains(spell.english) then
+                    equip(sets.Ishvara)
+                else
+                    equip(sets.Brutal)
+                end
             end
         end
     end
