@@ -200,6 +200,7 @@ function init_gear_sets()
             ring2="Defending Ring"
         })
         sets.idle.Town = set_combine(sets.idle, {
+            head="Orion Beret +2",
             body="Orion Jerkin +2",
             ring1="Defending Ring",
             ring2="Karieyh Ring",
@@ -310,7 +311,7 @@ function init_gear_sets()
             legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
-            head="Meghanada Visor +1",
+            head="Orion Beret +2",
             ring2="Longshot Ring",
             hands="Meghanada Gloves +2",
         })
@@ -396,7 +397,7 @@ function init_gear_sets()
             ring1="Cacoethic Ring +1",
         })
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
-            head="Meghanada Visor +1",
+            head="Orion Beret +2",
             hands="Meghanada Gloves +2",
             ring2="Longshot Ring",
         })
@@ -442,7 +443,7 @@ function init_gear_sets()
 
         -- Weaponskill sets  
         sets.precast.WS = {
-            head="Arcadian Beret +1",
+            head="Orion Beret +2",
             neck="Ocachi Gorget",
             ear1="Ishvara Earring",
             ear2="Flame Pearl",
@@ -459,16 +460,16 @@ function init_gear_sets()
             legs="Adhemar Kecks",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-            head="Meghanada Visor +1",
+            -- head="Meghanada Visor +1",
         })
 
         -- WILDFIRE
         sets.Wildfire = {
-            head="Herculean Helm",
+            head="Orion Beret +2",
             ear1="Crematio Earring",
             ear2="Friomisi Earring",
             neck="Sanctity Necklace",
-            hands="Leyline Gloves",
+            hands="Meghanada Gloves +2",
             body="Samnuha Coat",
             ring2="Karieyh Ring",
             ring1="Garuda Ring",

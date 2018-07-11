@@ -189,10 +189,10 @@ function init_gear_sets()
     sets.WSBack          = { back="Trepidity Mantle" }
     -- Earring considerations, given Lugra's day/night stats
     sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
-    sets.IshvaraLugra     = { ear1="Ishvara Earring", ear2="Lugra Earring +1" }
+    sets.IshvaraLugra     = { ear1="Bale Earring", ear2="Lugra Earring +1" }
     sets.Lugra           = { ear1="Lugra Earring +1" }
     sets.Brutal          = { ear1="Brutal Earring" }
-    sets.Ishvara          = { ear1="Ishvara Earring" }
+    sets.Ishvara          = { ear1="Bale Earring" }
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
