@@ -15,15 +15,13 @@ is ON, Souleater will be canceled automatically after the first Weaponskill used
 is active, or if Drain's HP Boost buff is active, then Souleater will remain active until the next WS used after 
 either buff wears off. If you use DRK at events, I'd recommend making this default to ON, as it's damn useful.
 
-LastResortMode: Removed.  In it's place, I'm testing a rule that automatically applies / removes hasso
-
 CapacityMode OFF by default. Toggle with ALT + = 
 It will full-time whichever piece of gear you specify in sets.CapacityMantle 
 
 NOTE: You can change the default (true|false) status of any MODE by changing their values in job_setup()
 
 ::RULES::
-Gavialis helm is now disabled by default. You must set use_gavialis = true for the info that follows to apply. 
+Gavialis helm is now disabled by default, as it's mostly unused. You must set use_gavialis = true for the info that follows to apply. 
 Gavialis Helm will automatically be used for all weaponskills on their respective days of the week. If you don't want
 it used for a ws, then you have to add the WS to wsList = {} in job_setup. You also need my User-Globals.lua for this
 to even work. 
@@ -39,30 +37,29 @@ Single handed weapons are handled in the sets.engaged.SW set. (sword + shield, e
 
 ::NOTES::
 
-All of the default sets are geared around scythe. There is support for great sword by using 
-sets.engaged.GreatSword but you will have to edit gsList in job_setup so that your GS is present. IF you would rather
-all the default sets (like sets.engaged, etc.) cater to great sword instead of scyth, then simply remove the great swords 
-listed in gsList and ignore sets.engaged.GreatSword. (but dont delete it)  
-
-Set format is as follows: 
+My sets have a specific order, or they will not function correctly. 
 sets.engaged.[CombatForm][CombatWeapon][Offense or HybridMode][CustomMeleeGroups]
 
 CombatForm = Haste, DW, SW
-CombatWeapon = GreatSword, Apocalypse, Ragnarok
-OffenseMode = Normal, Mid, Acc
-HybridMode = Normal, PDT
-CustomMeleeGroups = AM3, AM
+CombatWeapon = GreatSword, Scythe, Apocalypse, Ragnarok, Caladbolg, Liberator, Anguta
+OffenseMode = Mid, Acc
+HybridMode = PDT
+CustomMeleeGroups = AM3, AM, Haste
 
-CombatForm Haste is used when Last Resort AND either Haste, March, Indi-Haste Geo-Haste is on you.
-This allows you to equip full acro, even though it doesn't have 25% gear haste. You still cap. 
+CombatForm Haste is used when Last Resort OR Apoc AM (JA haste) + Hasso AND either Haste, March, Indi-Haste Geo-Haste is on you.
 
 CombatForm DW will activate with /dnc or /nin AND a weapon listed in drk_sub_weapons equipped offhand. 
-           SW is active with an empty sub-slot, or a shield listed in the shields = S{} list.  
+SW is active with an empty sub-slot, or a shield listed in the shields = S{} list.  
 
-CombatWeapon GreatSword will activate when you equip a GS listed in gsList in job_setup(). Apocalypse and Ragnarok are
-active when either weapon is equipped. If you have trouble creating sets for Ragnarok, study how I've defined Apoc's sets.
+CombatWeapon GreatSword will activate when you equip a GS listed in gsList in job_setup(). 
+CombatWeapon Scythe will activate when you equip a Scythe listed in scytheList in job_setup(). 
+Weapons that do not fall into these groups, or have sets by weapon name, will use default sets.engaged
+
+most gear sets derrive themselves from sets.engaged, so try to keep it updated. It's much smarter to derrive sets than to 
+completely re-invent each gear set for every weapon.  You will end up writing lua more than playing the game.
 
 CustomMeleeGroups AM3 will activate when Aftermath lvl 3 is up, and AM will activate when relic Aftermath is up.
+There are no empy AM sets for now.
 
 --]]
 --
@@ -91,12 +88,13 @@ function job_setup()
     -- Weaponskills you do NOT want Gavialis helm used with
     wsList = S{'Spiral Hell', 'Torcleaver', 'Insurgency', 'Quietus', 'Cross Reaper'}
     -- Greatswords you use. 
-    gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Caladbolg', 'Sunblade' }
+    gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Raetic Algol +1', 'Caladbolg', 'Montante +1' }
+    scytheList = S{'Raetic Scythe', 'Deathbane', 'Twilight Scythe' }
     shields = S{'Rinda Shield'}
     -- Mote has capitalization errors in the default Absorb mappings, so we correct them
     absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
     -- Offhand weapons used to activate DW mode
-    drk_sub_weapons = S{"Sangarius", "Usonmunku", "Perun", "Tanmogayi"}
+    drk_sub_weapons = S{"Sangarius", "Sangarius +1", "Usonmunku", "Perun +1", "Tanmogayi"}
 
     get_combat_form()
     get_combat_weapon()
@@ -187,21 +185,16 @@ function init_gear_sets()
     sets.CapacityMantle  = { back="Mecistopins Mantle" }
     sets.WSDayBonus      = { head="Gavialis Helm" }
     sets.WSBack          = { back="Trepidity Mantle" }
-    -- Earring considerations, given Lugra's day/night stats
+    
+    -- Earring considerations, given Lugra's day/night stats 
     sets.BrutalLugra     = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
-    sets.IshvaraLugra     = { ear1="Bale Earring", ear2="Lugra Earring +1" }
+    sets.IshvaraLugra     = { ear1="Ishvara Earring", ear2="Lugra Earring +1" }
     sets.Lugra           = { ear1="Lugra Earring +1" }
     sets.Brutal          = { ear1="Brutal Earring" }
-    sets.Ishvara          = { ear1="Bale Earring" }
+    sets.Ishvara          = { ear1="Ishvara Earring" }
 
-    -- Waltz set (chr and vit)
-    sets.precast.Waltz = {
-        head="Fallen's Burgeonet +1",
-        neck="Ganesha's Mala",
-        body="Founder's Breastplate",
-        hands="Redan Gloves",
-        feet="Amm Greaves"
-    }
+    -- Waltz set (chr and vit) 
+    -- sets.precast.Waltz = {}
 
     -- Fast cast sets for spells
     sets.precast.FC = {
@@ -410,7 +403,6 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         --legs="Sulevia's Cuisses +1",
         waist="Olseni Belt",
-        feet="Ratri Sollerets"
     })
 
     -- RESOLUTION
@@ -449,13 +441,10 @@ function init_gear_sets()
         waist="Caudata Belt",
         feet="Ratri Sollerets"
     })
-    sets.precast.WS.Insurgency.AM3 = set_combine(sets.precast.WS.Insurgency, {})
     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {})
-    sets.precast.WS.Insurgency.AM3Mid = set_combine(sets.precast.WS.Insurgency.Mid, {})
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
         legs=Odyssean.Legs.WS
     })
-    sets.precast.WS.Insurgency.AM3Acc = set_combine(sets.precast.WS.Insurgency.Acc, {})
 
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
         ear2="Ishvara Earring",
@@ -479,11 +468,7 @@ function init_gear_sets()
         ring2="Flamma Ring", -- assumes flamma head+2
         feet="Ratri Sollerets"
     })
-    sets.precast.WS['Cross Reaper'].AM3 = set_combine(sets.precast.WS['Cross Reaper'], {})
     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {})
-    sets.precast.WS['Cross Reaper'].AM3Mid = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
-        neck="Aqua Gorget",
-    })
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {})
     -- ENTROPY
     -- 86-100% INT 
@@ -497,9 +482,7 @@ function init_gear_sets()
         legs="Sulevia's Cuisses +2",
         feet="Ratri Sollerets"
     })
-    sets.precast.WS.Entropy.AM3 = set_combine(sets.precast.WS.Entropy, {})
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {})
-    sets.precast.WS.Entropy.AM3Mid = set_combine(sets.precast.WS.Entropy.Mid, {})
     sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {})
 
     -- Quietus
@@ -513,14 +496,7 @@ function init_gear_sets()
         legs=Odyssean.Legs.WS,
         feet="Ratri Sollerets"
     })
-    sets.precast.WS.Quietus.AM3 = set_combine(sets.precast.WS.Quietus, {})
-    sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
-        waist="Caudata Belt",
-    })
-    sets.precast.WS.Quietus.AM3Mid = set_combine(sets.precast.WS.Quietus.Mid, {
-        ear1="Lugra Earring +1",
-        ear2="Ishvara Earring",
-    })
+    sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {})
     sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, {})
 
     -- SPIRAL HELL
@@ -620,10 +596,10 @@ function init_gear_sets()
         feet="Amm Greaves"
     })
     sets.idle.Regen = set_combine(sets.idle.Field, {
+        head="",
         neck="Sanctity Necklace",
         body="Lugra Cloak +1",
         ring1="Paguroidea Ring",
-        head="",
     })
     sets.idle.Refresh = set_combine(sets.idle.Regen, {
         neck="Coatl Gorget +1"
@@ -702,7 +678,8 @@ function init_gear_sets()
     })
     sets.Defensive_Acc = sets.Defensive_Mid
 
-    sets.Sulevia = set_combine(sets.Defensive_Mid, {
+    -- Higher DT, less haste
+    sets.DefensiveHigh = set_combine(sets.Defensive, {
         head="Sulevia's Mask +1",
         body="Sulevia's Platemail +1",
         hands="Sulevia's Gauntlets +1",
@@ -710,7 +687,7 @@ function init_gear_sets()
         feet="Sulevia's Leggings +1"
     })
 
-    -- Engaged set, assumes Liberator
+    -- Base set (global catch-all set)
     sets.engaged = {
         sub="Bloodrain Strap",
         ammo="Ginsen",
@@ -728,20 +705,42 @@ function init_gear_sets()
         feet="Flamma Gambieras +2"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
+        neck="Lissome Necklace",
         legs=Odyssean.Legs.TP,
-        -- feet=Odyssean.Feet.TP
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         -- ammo="Hasty Pinion +1",
-        neck="Lissome Necklace",
         ear1="Cessance Earring",
         body="Odyssean Chestplate",
         ear2="Zennaroi Earring",
         legs="Carmine Cuisses +1",
         back=Ankou.STP,
     })
+
+    -- These only apply when delay is capped.
+    sets.engaged.Haste = set_combine(sets.engaged, {
+        waist="Windbuffet Belt +1"
+    })
+    sets.engaged.Haste.Mid = set_combine(sets.engaged.Mid, {})
+    sets.engaged.Haste.Acc = set_combine(sets.engaged.Acc, {})
+
+    -- Hybrid
+    sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
+
+    -- Hybrid with capped delay
+    sets.engaged.Haste.PDT = set_combine(sets.engaged.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.Mid.PDT = set_combine(sets.engaged.Mid.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.Acc.PDT = set_combine(sets.engaged.Acc.PDT, sets.DefensiveHigh)
+
+    -- Liberator
+    sets.engaged.Liberator = sets.engaged
+    sets.engaged.Liberator.Mid = sets.engaged.Mid
+    sets.engaged.Liberator.Acc = sets.engaged.Acc
+
     -- Liberator AM3
-    sets.engaged.AM3 = set_combine(sets.engaged, {
+    sets.engaged.Liberator.AM3 = set_combine(sets.engaged.Liberator, {
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
         body="Valorous Mail",
@@ -756,111 +755,164 @@ function init_gear_sets()
         legs=Odyssean.Legs.TP,
         feet="Flamma Gambieras +2"
     })
-    sets.engaged.Mid.AM3 = set_combine(sets.engaged.AM3, {
+    sets.engaged.Liberator.Mid.AM3 = set_combine(sets.engaged.Liberator.AM3, {
         neck="Lissome Necklace",
         legs=Odyssean.Legs.TP,
     })
-    sets.engaged.Acc.AM3 = set_combine(sets.engaged.Mid.AM3, {
+    sets.engaged.Liberator.Acc.AM3 = set_combine(sets.engaged.Liberator.Mid.AM3, {
         ear2="Zennaroi Earring",
         body="Odyssean Chestplate",
         legs="Carmine Cuisses +1",
-        --back="Grounded Mantle +1",
-        -- waist="Olseni Belt",
     })
+    sets.engaged.Haste.Liberator = set_combine(sets.engaged.Liberator, {
+        waist="Windbuffet Belt +1"
+    })
+    sets.engaged.Haste.Liberator.Mid = sets.engaged.Liberator.Mid
+    sets.engaged.Haste.Liberator.Acc = sets.engaged.Liberator.Acc
+    
+    sets.engaged.Haste.Liberator.AM3 = set_combine(sets.engaged.Liberator.AM3, {
+        waist="Windbuffet Belt +1"
+    })
+    sets.engaged.Haste.Liberator.Mid.AM3 = sets.engaged.Liberator.Mid.AM3
+    sets.engaged.Haste.Liberator.Acc.AM3 = sets.engaged.Liberator.Acc.AM3
+    
+    -- Hybrid
+    sets.engaged.Liberator.PDT = set_combine(sets.engaged, sets.Defensive)
+    sets.engaged.Liberator.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
+    sets.engaged.Liberator.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
+    -- Hybrid with AM3 up
+    sets.engaged.Liberator.PDT.AM3 = set_combine(sets.engaged.AM3, sets.Defensive)
+    sets.engaged.Liberator.Mid.PDT.AM3 = set_combine(sets.engaged.Mid.AM3, sets.Defensive_Mid)
+    sets.engaged.Liberator.Acc.PDT.AM3 = set_combine(sets.engaged.Acc.AM3, sets.Defensive_Acc)
+    -- Hybrid with capped delay
+    sets.engaged.Haste.Liberator.PDT = set_combine(sets.engaged.Liberator.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.Liberator.Mid.PDT = set_combine(sets.engaged.Liberator.Mid.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.Liberator.Acc.PDT = set_combine(sets.engaged.Liberator.Acc.PDT, sets.DefensiveHigh)
+    -- Hybrid with capped delay + AM3 up
+    sets.engaged.Haste.Liberator.PDT.AM3 = set_combine(sets.engaged.Liberator.PDT.AM3, sets.DefensiveHigh)
+    sets.engaged.Haste.Liberator.Mid.PDT.AM3 = set_combine(sets.engaged.Liberator.Mid.PDT.AM3, sets.DefensiveHigh)
+    sets.engaged.Haste.Liberator.Acc.PDT.AM3 = set_combine(sets.engaged.Liberator.Acc.PDT.AM3, sets.DefensiveHigh)
 
     -- Apocalypse
     sets.engaged.Apocalypse = set_combine(sets.engaged, {
-        --sub="Pole Grip",
         ear1="Cessance Earring",
         ear2="Brutal Earring"
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
-        back=Ankou.STP,
+        neck="lissome Necklace",
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
+        ear2="Zennaroi Earring",
+        body="Odyssean Chestplate",
+        legs="Carmine Cuisses +1"
     })
-
+    
     sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
-        legs=Odyssean.Legs.TP,
+        waist="Windbuffet Belt +1"
     })
     sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
-        ammo="Ginsen",
-        feet="Flamma Gambieras +2"
     })
     sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
-        neck="Defiant Collar",
         ring2="Cacoethic Ring +1",
-        waist="Olseni Belt"
+        waist="Ioskeha Belt"
     })
+    sets.engaged.Haste.Apocalypse = set_combine(sets.engaged.Apocalypse {
+        waist="Windbuffet Belt +1"
+    })
+    sets.engaged.Haste.Apocalypse.Mid = sets.engaged.Apocalypse.Mid
+    sets.engaged.Haste.Apocalypse.Acc = sets.engaged.Apocalypse.Acc
 
-    sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
+    -- Hybrid
+    sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, sets.Defensive)
+    sets.engaged.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive_Mid)
+    sets.engaged.Apocalypse.Acc.PDT = set_combine(sets.engaged.Apocalypse.Acc, sets.Defensive_Acc)
+    -- Hybrid with relic AM 
+    sets.engaged.Apocalypse.PDT.AM = set_combine(sets.engaged.Apocalypse, sets.Defensive)
+    sets.engaged.Apocalypse.Mid.PDT.AM = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive_Mid)
+    sets.engaged.Apocalypse.Acc.PDT.AM = set_combine(sets.engaged.Apocalypse.Acc, sets.Defensive_Acc)
+    -- Hybrid with capped delay
+    sets.engaged.Haste.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.Apocalypse.Acc.PDT = set_combine(sets.engaged.Apocalypse.Acc.PDT, sets.DefensiveHigh)
+    -- Hybrid with capped delay + AM3 up
+    sets.engaged.Haste.Apocalypse.PDT.AM3 = set_combine(sets.engaged.Apocalypse.PDT.AM3, sets.DefensiveHigh)
+    sets.engaged.Haste.Apocalypse.Mid.PDT.AM3 = set_combine(sets.engaged.Apocalypse.Mid.PDT.AM3, sets.DefensiveHigh)
+    sets.engaged.Haste.Apocalypse.Acc.PDT.AM3 = set_combine(sets.engaged.Apocalypse.Acc.PDT.AM3, sets.DefensiveHigh)
 
-    sets.engaged.PDT.AM3 = set_combine(sets.engaged.AM3, sets.Defensive)
-    sets.engaged.Mid.PDT.AM3 = set_combine(sets.engaged.Mid.AM3, sets.Defensive_Mid)
-    sets.engaged.Acc.PDT.AM3 = set_combine(sets.engaged.Acc.AM3, sets.Defensive_Acc)
+    -- generic scythe
+    sets.engaged.Scythe = set_combine(sets.engaged, {})
+    sets.engaged.Scythe.Mid = set_combine(sets.engaged.Mid, {})
+    sets.engaged.Scythe.Acc = set_combine(sets.engaged.Acc, {})
 
-    sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, sets.Sulevia)
-    sets.engaged.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid, sets.Sulevia)
-    sets.engaged.Apocalypse.Acc.PDT = set_combine(sets.engaged.Apocalypse.Acc, sets.Sulevia)
+    sets.engaged.Scythe.PDT = set_combine(sets.engaged.Scythe, sets.Defensive)
+    sets.engaged.Scythe.Mid.PDT = set_combine(sets.engaged.Scythe.Mid, sets.Defensive_Mid)
+    sets.engaged.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc, sets.Defensive_Acc)
 
-    -- dual wield
-    sets.engaged.DW = set_combine(sets.engaged, {
-        ammo="Hasty Pinion +1",
-        head="Flamma Zucchetto +2",
-        body="Valorous Mail",
-        hands="Emicho Gauntlets",
-        ear1="Eabani Earring",
-        ear2="Suppanomimi",
-        waist="Patentia Sash",
-        legs="Carmine Cuisses +1",
-        feet=Odyssean.Feet.TP
-    })
-    sets.engaged.DW.Mid = set_combine(sets.engaged.DW, {
-        -- ammo="Ginsen",
-    })
-    sets.engaged.DW.Acc = set_combine(sets.engaged.DW.Mid, {
-        -- ammo="Hasty Pinion +1",
-        -- hands="Odyssean Gauntlets",
-    })
+    sets.engaged.Haste.Scythe.PDT = set_combine(sets.engaged.Scythe.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.Scythe.Mid.PDT = set_combine(sets.engaged.Scythe.Mid.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc.PDT, sets.DefensiveHigh)
 
-    -- great sword
-    sets.engaged.GreatSword = set_combine(sets.engaged, {
-        head="Flamma Zucchetto +2",
-        ear1="Brutal Earring",
-        ear2="Tripudio Earring"
-    })
-    sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {
-        head="Flamma Zucchetto +2",
-        --back="Grounded Mantle +1"
-        --ring2="K'ayres RIng"
-    })
-    sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {
-        hands="Heathen's Gauntlets +1"
-    })
+    -- generic great sword
+    sets.engaged.GreatSword = set_combine(sets.engaged, {})
+    sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {})
+    sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {})
 
     sets.engaged.GreatSword.PDT = set_combine(sets.engaged.GreatSword, sets.Defensive)
     sets.engaged.GreatSword.Mid.PDT = set_combine(sets.engaged.GreatSword.Mid, sets.Defensive_Mid)
     sets.engaged.GreatSword.Acc.PDT = set_combine(sets.engaged.GreatSword.Acc, sets.Defensive_Acc)
 
-    -- sword is more multi-hit, less stp
-    sets.engaged.SW = set_combine(sets.engaged, {
-        ammo="Yetshila",
-        head="Flamma Zucchetto +2",
+    sets.engaged.Haste.GreatSword.PDT = set_combine(sets.engaged.GreatSword.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.GreatSword.Mid.PDT = set_combine(sets.engaged.GreatSword.Mid.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.GreatSword.Acc.PDT = set_combine(sets.engaged.GreatSword.Acc.PDT, sets.DefensiveHigh)
+
+    -- Ragnarok
+    sets.engaged.Ragnarok = set_combine(sets.engaged.GreatSword, {})
+    sets.engaged.Ragnarok.Mid = set_combine(sets.engaged.GreatSword.Mid, {})
+    sets.engaged.Ragnarok.Acc = set_combine(sets.engaged.GreatSword.Acc, {})
+    
+    sets.engaged.Ragnarok.PDT = set_combine(sets.engaged.Ragnarok, sets.Defensive)
+    sets.engaged.Ragnarok.Mid.PDT = set_combine(sets.engaged.Ragnarok.Mid, sets.Defensive_Mid)
+    sets.engaged.Ragnarok.Acc.PDT = set_combine(sets.engaged.Ragnarok.Acc, sets.Defensive_Acc)
+    
+    -- Caladbolg
+    sets.engaged.Caladbolg = set_combine(sets.engaged.GreatSword, {})
+    sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {})
+    sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {})
+    
+    sets.engaged.Caladbolg.PDT = set_combine(sets.engaged.Caladbolg, sets.Defensive)
+    sets.engaged.Caladbolg.Mid.PDT = set_combine(sets.engaged.Caladbolg.Mid, sets.Defensive_Mid)
+    sets.engaged.Caladbolg.Acc.PDT = set_combine(sets.engaged.Caladbolg.Acc, sets.Defensive_Acc)
+    
+    sets.engaged.Haste.Caladbolg.PDT = set_combine(sets.engaged.Caladbolg.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.Caladbolg.Mid.PDT = set_combine(sets.engaged.Caladbolg.Mid.PDT, sets.DefensiveHigh)
+    sets.engaged.Haste.Caladbolg.Acc.PDT = set_combine(sets.engaged.Caladbolg.Acc.PDT, sets.DefensiveHigh)
+    
+    -- dual wield
+    sets.engaged.DW = set_combine(sets.engaged, {
+        ear1="Eabani Earring",
+        ear2="Suppanomimi",
+        waist="Patentia Sash",
+        legs="Carmine Cuisses +1",
     })
-    sets.engaged.SW.Mid = set_combine(sets.engaged.Mid, {
-        ammo="Ginsen",
-        hands="Odyssean Gauntlets",
+    sets.engaged.DW.Mid = set_combine(sets.engaged.DW, {
+        neck="Lissome Necklace"
     })
-    sets.engaged.SW.Acc = set_combine(sets.engaged.Acc, {
-        ammo="Hasty Pinion +1"
+    sets.engaged.DW.Acc = set_combine(sets.engaged.DW.Mid, {
+        ear2="Zennaroi Earring",
     })
 
+    -- single wield (sword + shield possibly)
+    sets.engaged.SW = set_combine(sets.engaged, {
+        ammo="Yetshila",
+    })
+    sets.engaged.SW.Mid = set_combine(sets.engaged.Mid, {})
+    sets.engaged.SW.Acc = set_combine(sets.engaged.Acc, {})
+
     sets.engaged.Reraise = set_combine(sets.engaged, {
-        head="Twilight Helm",neck="Twilight Torque",
+        head="Twilight Helm",
+        neck="Twilight Torque",
         body="Twilight Mail"
     })
 
@@ -1006,10 +1058,18 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         -- handle weapon sets
         if gsList:contains(player.equipment.main) then
             state.CombatWeapon:set("GreatSword")
+        if scytheList:contains(player.equipment.main) then
+            state.CombatWeapon:set("Scythe")
         elseif player.equipment.main == 'Apocalypse' then
             state.CombatWeapon:set('Apocalypse')
+        elseif player.equipment.main == 'Anguta' then
+            state.CombatWeapon:set('Anguta')
         elseif player.equipment.main == 'Ragnarok' then
             state.CombatWeapon:set('Ragnarok')
+        elseif player.equipment.main == 'Caladbolg' then
+            state.CombatWeapon:set('Caladbolg')
+        elseif player.equipment.main == 'Liberator' then
+            state.CombatWeapon:set('Liberator')
         else -- use regular set, which caters to Liberator
             state.CombatWeapon:reset()
         end
@@ -1018,6 +1078,15 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     end
 end
 
+-- hasso + apoc haste = 20% JA haste
+-- this function returns true or false
+function apoc_haste_mode()
+    if (buffactive.hasso and (state.ApocHaste.value and buffactive['Aftermath'])) then
+        return true
+    else
+        return false
+    end
+end
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
@@ -1028,7 +1097,7 @@ function job_buff_change(buff, gain)
     end
 
     if S{'haste', 'march', 'embrava', 'geo-haste', 'indi-haste'}:contains(buff:lower()) and gain then
-        if (buffactive['Last Resort'] or (buffactive.hasso and (state.ApocHaste.value and buffactive['Aftermath']))) then
+        if (buffactive['Last Resort'] or apoc_haste_mode()) then
             if (buffactive.embrava or buffactive.haste) and buffactive.march then
                 state.CombatForm:set("Haste")
                 if not midaction() then
@@ -1067,7 +1136,7 @@ function job_buff_change(buff, gain)
 
             if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
                 classes.CustomMeleeGroups:append('AM3')
-                add_to_chat(8, '-------------AM3 UP-------------')
+                add_to_chat(8, '-------------Mythic AM3 UP-------------')
             end
 
             if not midaction() then
@@ -1128,21 +1197,21 @@ function job_update(cmdParams, eventArgs)
 
 end
 
-function get_custom_wsmode(spell, spellMap, default_wsmode)
-    if state.OffenseMode.current == 'Mid' then
-        if buffactive['Aftermath: Lv.3'] then
-            return 'AM3Mid'
-        end
-    elseif state.OffenseMode.current == 'Acc' then
-        if buffactive['Aftermath: Lv.3'] then
-            return 'AM3Acc'
-        end
-    else
-        if buffactive['Aftermath: Lv.3'] then
-            return 'AM3'
-        end
-    end
-end
+-- function get_custom_wsmode(spell, spellMap, default_wsmode)
+--     if state.OffenseMode.current == 'Mid' then
+--         if buffactive['Aftermath: Lv.3'] then
+--             return 'AM3Mid'
+--         end
+--     elseif state.OffenseMode.current == 'Acc' then
+--         if buffactive['Aftermath: Lv.3'] then
+--             return 'AM3Acc'
+--         end
+--     else
+--         if buffactive['Aftermath: Lv.3'] then
+--             return 'AM3'
+--         end
+--     end
+-- end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
@@ -1152,7 +1221,7 @@ function get_combat_form()
         state.CombatForm:set("DW")
     elseif player.equipment.sub == '' or shields:contains(player.equipment.sub) then
         state.CombatForm:set("SW")
-    elseif (buffactive['Last Resort'] or (buffactive.hasso and (state.ApocHaste.value and buffactive['Aftermath']))) then
+    elseif (buffactive['Last Resort'] or apoc_haste_mode()) then
         if (buffactive.embrava or buffactive.haste) and buffactive.march then
             add_to_chat(8, '-------------Delay Capped-------------')
             state.CombatForm:set("Haste")
@@ -1167,8 +1236,18 @@ end
 function get_combat_weapon()
     if gsList:contains(player.equipment.main) then
         state.CombatWeapon:set("GreatSword")
+    if scytheList:contains(player.equipment.main) then
+        state.CombatWeapon:set("Scythe")
     elseif player.equipment.main == 'Apocalypse' then
         state.CombatWeapon:set('Apocalypse')
+    elseif player.equipment.main == 'Anguta' then
+        state.CombatWeapon:set('Anguta')
+    elseif player.equipment.main == 'Ragnarok' then
+        state.CombatWeapon:set('Ragnarok')
+    elseif player.equipment.main == 'Caladbolg' then
+        state.CombatWeapon:set('Caladbolg')
+    elseif player.equipment.main == 'Liberator' then
+        state.CombatWeapon:set('Liberator')
     else -- use regular set, which caters to Liberator
         state.CombatWeapon:reset()
     end
