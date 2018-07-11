@@ -1364,6 +1364,7 @@ function select_ws_ammo()
         return sets.DayAccAmmo
     end
 end
+
 function update_combat_form()
     if state.Buff.Innin then
         state.CombatForm:set('Innin')

@@ -42,22 +42,10 @@ end
 
 -- setup vars that are user-independent.
 function job_setup()
-end
- 
--- setup vars that are user-dependent. 
-function user_setup()
-        -- Options: Override default values
-        state.OffenseMode:options('Normal', 'Melee')
-        state.RangedMode:options('Normal', 'Mid', 'Acc')
-        state.HybridMode:options('Normal', 'PDT')
-        state.IdleMode:options('Normal', 'PDT')
-        state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
-        state.PhysicalDefenseMode:options('PDT')
-        state.MagicalDefenseMode:options('MDT')
- 
         state.Buff.Barrage = buffactive.Barrage or false
         state.Buff.Camouflage = buffactive.Camouflage or false
         state.Buff.Overkill = buffactive.Overkill or false
+        state.Buff['Double Shot'] = buffactive['Double Shot'] or false
 
         -- settings
         state.CapacityMode = M(false, 'Capacity Point Mantle')
@@ -79,8 +67,20 @@ function user_setup()
           DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"}
         U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"} 
 
-        get_combat_form()
+        update_combat_form()
         get_custom_ranged_groups()
+end
+ 
+function user_setup()
+        -- Options: Override default values
+        state.OffenseMode:options('Normal', 'Melee')
+        state.RangedMode:options('Normal', 'Mid', 'Acc')
+        state.HybridMode:options('Normal', 'PDT')
+        state.IdleMode:options('Normal', 'PDT')
+        state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
+        state.PhysicalDefenseMode:options('PDT')
+        state.MagicalDefenseMode:options('MDT')
+ 
         select_default_macro_book()
 
         send_command('bind != gs c toggle CapacityMode')
@@ -92,9 +92,6 @@ function user_setup()
         send_command('bind ^- gs c cycle AutoRA')
         send_command('bind ^[ input /lockstyle on')
         send_command('bind ![ input /lockstyle off')
-        
-        -- Testing 
-        --windower.register_event('incoming text', detect_cor_rolls)
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -286,6 +283,13 @@ function init_gear_sets()
             waist="Impulse Belt", -- 2
             feet="Meghanada Jambeaux +2" -- 10
         }
+        sets.precast.RA.F1 = set_combine(sets.precast.RA, {
+            head="Orion Beret +2"
+        })
+        sets.precast.RA.F2 = set_combine(sets.precast.RA.F1, {
+            -- waist="Yemaya Belt",
+            -- feet="Pursuer's Gaiters"
+        })
         
         ------------------------------------------------------------------
         -- Default Base Gear Sets for Ranged Attacks. Geared for Gun
@@ -315,6 +319,14 @@ function init_gear_sets()
             ring2="Longshot Ring",
             hands="Meghanada Gloves +2",
         })
+
+        sets.midcast.RA.DoubleShot = set_combine(sets.midcast.RA, {
+            -- head="Oshosi Mask",
+            body="Arcadian Jerkin +1",
+            -- feet="Oshosi Leggings"
+        })
+        sets.midcast.RA.Mid.DoubleShot = set_combine(sets.midcast.RA.Mid, sets.midcast.RA.DoubleShot)
+        sets.midcast.RA.Acc.DoubleShot = set_combine(sets.midcast.RA.Acc {})
     
         -- -- Samurai Roll sets 
         -- sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
@@ -449,8 +461,8 @@ function init_gear_sets()
             ear2="Flame Pearl",
             body="Orion Jerkin +2",
             hands="Meghanada Gloves +2",
-            ring2="Karieyh Ring",
             ring1="Ifrit Ring",
+            ring2="Karieyh Ring",
             back="Buquwik Cape",
             waist="Kwahu Kachina Belt",
             legs="Meghanada Chausses +1", 
@@ -471,8 +483,8 @@ function init_gear_sets()
             neck="Sanctity Necklace",
             hands="Meghanada Gloves +2",
             body="Samnuha Coat",
-            ring2="Karieyh Ring",
             ring1="Garuda Ring",
+            ring2="Karieyh Ring",
             back=Belenus.STP,
             waist="Eschan Stone",
             legs="Meghanada Chausses +1",
@@ -508,6 +520,7 @@ function init_gear_sets()
 
         -- LAST STAND
         sets.LastStand = {
+            head="Meghanada Visor +1",
             neck="Aqua Gorget",
             ear2="Moonshade Earring",
             ring2="Garuda Ring",
@@ -647,6 +660,9 @@ function init_gear_sets()
 end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
+    if state.Buff[spell.english] ~= nil then
+        state.Buff[spell.english] = true
+    end
     -- If autora enabled, use WS automatically at 100+ TP
     if spell.action_type == 'Ranged Attack' then
         if player.tp >= 1000 and state.AutoRA.value == 'WS' and not buffactive.amnesia then
@@ -763,7 +779,6 @@ function job_buff_change(buff, gain)
     --if string.find(buff:lower(), 'samba') then
 
     if state.Buff[buff] ~= nil then
-        state.Buff[buff] = gain
         handle_equipping_gear(player.status)
     end
     if buff == 'Velocity Shot' and gain then
@@ -781,6 +796,28 @@ function job_buff_change(buff, gain)
             classes.CustomRangedGroups:append('SamRoll')
         end
        
+    end
+    
+    -- DoubleShot CombatForm
+    if (buff == 'Double Shot' and gain or buffactive['Double Shot']) then
+        state.CombatForm:set('DoubleShot')
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    else
+        state.CombatForm:reset()
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end
+    
+    -- Flurry I = 265, Flurry II = 581
+    if (string.find(buff:lower(), 'flurry') and gain) then
+        if buffactive[265] then
+            classes.CustomRangedGroups:append('F1')
+        elseif buffactive[581] then
+            classes.CustomRangedGroups:append('F2')
+        end
     end
 
     if buff == "Camouflage" then
@@ -835,10 +872,12 @@ function customize_melee_set(meleeSet)
 end
  
 function job_status_change(newStatus, oldStatus, eventArgs)
+    if newStatus == 'Engaged' then
+        update_combat_form()
+    end
     if newStatus == "Engaged" and player.equipment.range == gear.Bow then
          state.CombatWeapon:set('Bow')
     end
-
     if camo_active() then
         disable('body')
     else
@@ -858,7 +897,7 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
-    get_combat_form()
+    update_combat_form()
     get_custom_ranged_groups()
     sam_sj = player.sub_job == 'SAM' or false
     -- called here incase buff_change failed to update value
@@ -911,6 +950,7 @@ function display_current_job_state(eventArgs)
     eventArgs.handled = true
  
 end
+
 -- Special WS mode for Sam subjob
 function get_custom_wsmode(spell, spellMap, ws_mode)
     if spell.skill == 'Archery' or spell.skill == 'Marksmanship' then
@@ -922,11 +962,20 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
-function get_combat_form()
+function update_combat_form()
     if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
         state.CombatForm:set("DW")
     else
-        state.CombatForm:reset()
+        if state.CombatForm.current ~= 'DoubleShot' then
+            state.CombatForm:reset()
+        end
+    end
+    if state.Buff['Double Shot'] then
+        state.CombatForm:set('DoubleShot')
+    else
+        if state.CombatForm.current ~= 'DW' then
+            state.CombatForm:reset()
+        end
     end
 end
 
@@ -935,6 +984,15 @@ function get_custom_ranged_groups()
     
     if buffactive['Samurai Roll'] then
         classes.CustomRangedGroups:append('SamRoll')
+    end
+    
+    -- Flurry I = 265, Flurry II = 581
+    if (string.find(buff:lower(), 'flurry') and gain) then
+        if buffactive[265] then
+            classes.CustomRangedGroups:append('F1')
+        elseif buffactive[581] then
+            classes.CustomRangedGroups:append('F2')
+        end
     end
 
 end
