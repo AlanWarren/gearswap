@@ -88,7 +88,7 @@ function job_setup()
     -- Weaponskills you do NOT want Gavialis helm used with
     wsList = S{'Spiral Hell', 'Torcleaver', 'Insurgency', 'Quietus', 'Cross Reaper'}
     -- Greatswords you use. 
-    gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Raetic Algol +1', 'Caladbolg', 'Montante +1' }
+    gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Raetic Algol +1', 'Caladbolg', 'Montante +1', 'Albion' }
     scytheList = S{'Raetic Scythe', 'Deathbane', 'Twilight Scythe' }
     shields = S{'Rinda Shield'}
     -- Mote has capitalization errors in the default Absorb mappings, so we correct them
@@ -1199,14 +1199,7 @@ function job_update(cmdParams, eventArgs)
     get_combat_form()
     get_combat_weapon()
     update_melee_groups()
-    if gsList:contains(player.equipment.main) then
-        set_macro_page(5, 4)
-    elseif player.sub_job == 'SAM' then
-        set_macro_page(7, 4)
-    else 
-        set_macro_page(8, 4)
-    end
-
+    select_default_macro_book()
 end
 
 -- function get_custom_wsmode(spell, spellMap, default_wsmode)
@@ -1397,10 +1390,12 @@ function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'DNC' then
         set_macro_page(6, 2)
-    elseif player.sub_job == 'SAM' then
-        set_macro_page(7, 4)
+    elseif player.equipment.main == 'Apocalypse' then
+        set_macro_page(9, 4)
     elseif gsList:contains(player.equipment.main) then
         set_macro_page(5, 4)
+    elseif player.sub_job == 'SAM' then
+        set_macro_page(7, 4)
     else
         set_macro_page(8, 4)
     end
