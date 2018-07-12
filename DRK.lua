@@ -94,7 +94,7 @@ function job_setup()
     -- Mote has capitalization errors in the default Absorb mappings, so we correct them
     absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
     -- Offhand weapons used to activate DW mode
-    drk_sub_weapons = S{"Sangarius", "Sangarius +1", "Usonmunku", "Perun +1", "Tanmogayi"}
+    swordList = S{"Sangarius", "Sangarius +1", "Usonmunku", "Perun +1", "Tanmogayi"}
 
     get_combat_form()
     get_combat_weapon()
@@ -689,7 +689,7 @@ function init_gear_sets()
 
     -- Base set (global catch-all set)
     sets.engaged = {
-        sub="Bloodrain Strap",
+        -- sub="Bloodrain Strap",
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
         neck="Ganesha's Mala",
@@ -796,10 +796,10 @@ function init_gear_sets()
     -- Apocalypse
     sets.engaged.Apocalypse = set_combine(sets.engaged, {
         ear1="Cessance Earring",
-        ear2="Brutal Earring"
+        ear2="Brutal Earring",
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
-        neck="lissome Necklace",
+        neck="Lissome Necklace",
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
         ear2="Zennaroi Earring",
@@ -818,7 +818,7 @@ function init_gear_sets()
         ring2="Cacoethic Ring +1",
         waist="Ioskeha Belt"
     })
-    sets.engaged.Haste.Apocalypse = set_combine(sets.engaged.Apocalypse {
+    sets.engaged.Haste.Apocalypse = set_combine(sets.engaged.Apocalypse, {
         waist="Windbuffet Belt +1"
     })
     sets.engaged.Haste.Apocalypse.Mid = sets.engaged.Apocalypse.Mid
@@ -850,6 +850,10 @@ function init_gear_sets()
     sets.engaged.Scythe.Mid.PDT = set_combine(sets.engaged.Scythe.Mid, sets.Defensive_Mid)
     sets.engaged.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc, sets.Defensive_Acc)
 
+    sets.engaged.Haste.Scythe = set_combine(sets.engaged.Haste, {})
+    sets.engaged.Haste.Scythe.Mid = set_combine(sets.engaged.Haste.Mid, {})
+    sets.engaged.Haste.Scythe.Acc = set_combine(sets.engaged.Haste.Acc, {})
+
     sets.engaged.Haste.Scythe.PDT = set_combine(sets.engaged.Scythe.PDT, sets.DefensiveHigh)
     sets.engaged.Haste.Scythe.Mid.PDT = set_combine(sets.engaged.Scythe.Mid.PDT, sets.DefensiveHigh)
     sets.engaged.Haste.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc.PDT, sets.DefensiveHigh)
@@ -862,6 +866,10 @@ function init_gear_sets()
     sets.engaged.GreatSword.PDT = set_combine(sets.engaged.GreatSword, sets.Defensive)
     sets.engaged.GreatSword.Mid.PDT = set_combine(sets.engaged.GreatSword.Mid, sets.Defensive_Mid)
     sets.engaged.GreatSword.Acc.PDT = set_combine(sets.engaged.GreatSword.Acc, sets.Defensive_Acc)
+
+    sets.engaged.Haste.GreatSword = set_combine(sets.engaged.Haste, {})
+    sets.engaged.Haste.GreatSword.Mid = set_combine(sets.engaged.Haste.Mid, {})
+    sets.engaged.Haste.GreatSword.Acc = set_combine(sets.engaged.Haste.Acc, {})
 
     sets.engaged.Haste.GreatSword.PDT = set_combine(sets.engaged.GreatSword.PDT, sets.DefensiveHigh)
     sets.engaged.Haste.GreatSword.Mid.PDT = set_combine(sets.engaged.GreatSword.Mid.PDT, sets.DefensiveHigh)
@@ -885,6 +893,10 @@ function init_gear_sets()
     sets.engaged.Caladbolg.Mid.PDT = set_combine(sets.engaged.Caladbolg.Mid, sets.Defensive_Mid)
     sets.engaged.Caladbolg.Acc.PDT = set_combine(sets.engaged.Caladbolg.Acc, sets.Defensive_Acc)
     
+    sets.engaged.Haste.Caladbolg = set_combine(sets.engaged.Haste, {})
+    sets.engaged.Haste.Caladbolg.Mid = set_combine(sets.engaged.Haste.Mid, {})
+    sets.engaged.Haste.Caladbolg.Acc = set_combine(sets.engaged.Haste.Acc, {})
+
     sets.engaged.Haste.Caladbolg.PDT = set_combine(sets.engaged.Caladbolg.PDT, sets.DefensiveHigh)
     sets.engaged.Haste.Caladbolg.Mid.PDT = set_combine(sets.engaged.Caladbolg.Mid.PDT, sets.DefensiveHigh)
     sets.engaged.Haste.Caladbolg.Acc.PDT = set_combine(sets.engaged.Caladbolg.Acc.PDT, sets.DefensiveHigh)
@@ -1058,7 +1070,7 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         -- handle weapon sets
         if gsList:contains(player.equipment.main) then
             state.CombatWeapon:set("GreatSword")
-        if scytheList:contains(player.equipment.main) then
+        elseif scytheList:contains(player.equipment.main) then
             state.CombatWeapon:set("Scythe")
         elseif player.equipment.main == 'Apocalypse' then
             state.CombatWeapon:set('Apocalypse')
@@ -1217,9 +1229,10 @@ end
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_form()
 
-    if S{'NIN', 'DNC'}:contains(player.sub_job) and drk_sub_weapons:contains(player.equipment.sub) then
+    if S{'NIN', 'DNC'}:contains(player.sub_job) and swordList:contains(player.equipment.main) then
         state.CombatForm:set("DW")
-    elseif player.equipment.sub == '' or shields:contains(player.equipment.sub) then
+    --elseif player.equipment.sub == '' or shields:contains(player.equipment.sub) then
+    elseif swordList:contains(player.equipment.main) then
         state.CombatForm:set("SW")
     elseif (buffactive['Last Resort'] or apoc_haste_mode()) then
         if (buffactive.embrava or buffactive.haste) and buffactive.march then
@@ -1236,7 +1249,7 @@ end
 function get_combat_weapon()
     if gsList:contains(player.equipment.main) then
         state.CombatWeapon:set("GreatSword")
-    if scytheList:contains(player.equipment.main) then
+    elseif scytheList:contains(player.equipment.main) then
         state.CombatWeapon:set("Scythe")
     elseif player.equipment.main == 'Apocalypse' then
         state.CombatWeapon:set('Apocalypse')
@@ -1312,11 +1325,14 @@ function display_current_job_state(eventArgs)
         local defMode = state[state.DefenseMode.value ..'DefenseMode'].current
         msg = msg .. ', Defense: '..state.DefenseMode.value..' '..defMode
     end
-    if state.CombatForm.current == 'Haste' then
-        msg = msg .. ', High Haste, '
+    if state.CombatForm.current ~= '' then 
+        msg = msg .. ', Form: ' .. state.CombatForm.current 
+    end
+    if state.CombatWeapon.current ~= '' then 
+        msg = msg .. ', Weapon: ' .. state.CombatWeapon.current 
     end
     if state.CapacityMode.value then
-        msg = msg .. ', Capacity, '
+        msg = msg .. ', Capacity: ON, '
     end
     if state.SouleaterMode.value then
         msg = msg .. ', SE Cancel, '
