@@ -418,11 +418,10 @@ function init_gear_sets()
     sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
         waist="Caudata Belt",
-        legs=Odyssean.Legs.WS,
+        legs="Fallen's Flanchard +2",  
     })
     sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
         neck="Aqua Gorget",
-        legs="Fallen's Flanchard +2",  
     })
     sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, {
         neck="Aqua Gorget",
@@ -450,7 +449,7 @@ function init_gear_sets()
         ear2="Ishvara Earring",
         neck="Shadow Gorget",
         body="Ratri Breastplate",
-        legs=Odyssean.Legs.WS,
+        legs="Fallen's Flanchard +2",  
         waist="Soil Belt",
         feet="Ratri Sollerets"
     })
@@ -493,7 +492,7 @@ function init_gear_sets()
         body="Ratri Breastplate",
         hands="Odyssean Gauntlets",
         waist="Caudata Belt",
-        legs=Odyssean.Legs.WS,
+        legs="Fallen's Flanchard +2",  
         feet="Ratri Sollerets"
     })
     sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {})
@@ -519,7 +518,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         hands="Leyline Gloves",
         back="Toro Cape",
-        legs=Odyssean.Legs.WS,
+        legs="Fallen's Flanchard +2",  
         waist="Eschan Stone", -- macc/matk 7
         feet="Sulevia's Leggings +1"
     })

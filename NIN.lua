@@ -343,9 +343,8 @@ function init_gear_sets()
 
     sets.Organizer = {
         main="Kannagi",
-        sub="Achiuchikapu",
-        neck="Malevolence",
-        head="Shigi",
+        sub="Shigi",
+        neck="Taka",
         shihei="Shihei",
         inoshi="Inoshishinofuda",
         shika="Shikanofuda",
@@ -378,27 +377,29 @@ function init_gear_sets()
         neck="Yarak Torque",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
+        ring1="Mummu Ring",
         waist="Olseni Belt",
         feet="Hizamaru Sune-ate +1"
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        body="Reiki Osode",
+        body="Kendatsuba Samue",
         ring1="Cacoethic Ring +1",
     })
 
     -- set for fooling around without dual wield
+    -- using this as weak / proc set now
     sets.NoDW = set_combine(sets.engaged, {
-        head="Herculean Helm",
-        neck="Lissome Necklace",
+        head="Hizamaru Somen +1",
+        neck="Carnal Torque",
         ear2="Cessance Earring",
-        body="Rao Togi",
-        hands="Herculean Gloves",
+        body="Reiki Osode",
+        hands="Hattori Tekko",
         ring1="Petrov Ring",
         waist="Windbuffet Belt +1",
         back=Andartia.DEX,
-        legs="Herculean Trousers",
-        feet="Herculean Boots"
+        legs="Quiahuiz Trousers",
+        feet="Hachiya Kyahan +1"
     })
 
     sets.engaged.Innin = set_combine(sets.engaged, {
@@ -477,17 +478,17 @@ function init_gear_sets()
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         head="Herculean Helm",
-        ring1="Cacoethic Ring +1",
+        ring1="Mummu Ring",
         body="Kendatsuba Samue",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Herculean Helm",
         neck="Yarak Torque",
         ear1="Zennaroi Earring",
-        body="Reiki Osode",
+        body="Kendatsuba Samue",
         hands="Ryuo Tekko",
-        ring1="Cacoethic Ring +1",
-        ring2="Patricius Ring",
+        ring1="Mummu Ring",
+        ring2="Cacoethic Ring +1",
         back=Andartia.DEX,
         waist="Olseni Belt",
         feet="Herculean Boots"
@@ -529,14 +530,14 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Trux Earring",
         hands="Floral Gauntlets",
-        ring1="Petrov Ring",
+        ring1="Mummu Ring",
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
         head="Herculean Helm",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
         hands="Ryuo Tekko",
-        body="Reiki Osode",
+        body="Kendatsuba Samue",
         legs="Herculean Trousers",
         feet="Hizamaru Sune-ate +1"
     })
@@ -591,7 +592,8 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
         body="Kendatsuba Samue",
         hands="Herculean Gloves",
-        feet="Hizamaru Sune-ate +1"
+        feet="Hizamaru Sune-ate +1",
+        ring1="Mummu Ring",
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         head="Herculean Helm",
@@ -680,8 +682,8 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Kendatsuba Samue",
         hands="Herculean Gloves",
-        ring1="Karieyh Ring",
-        ring2="Epona's Ring",
+        ring1="Epona's Ring",
+        ring2="Karieyh Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Samnuha Tights",
@@ -694,7 +696,7 @@ function init_gear_sets()
     sets.precast.WS.Low = sets.precast.WS.Mid
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-        body="Herculean Vest",
+        -- body="Herculean Vest",
     })
     
     sets.Kamu = {
@@ -737,7 +739,6 @@ function init_gear_sets()
         ear1="Ishvara Earring",
         body="Kendatsuba Samue",
         hands="Ryuo Tekko",
-        ring1="Karieyh Ring",
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
         legs="Herculean Trousers",
@@ -746,6 +747,7 @@ function init_gear_sets()
     
     sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
         neck="Shadow Gorget",
+        ring1="Mummu Ring",
     })
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         neck="Shadow Gorget",

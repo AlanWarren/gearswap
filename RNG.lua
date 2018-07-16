@@ -112,6 +112,9 @@ function init_gear_sets()
         TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
         TaeonHands.Snap = {name="Taeon Gloves", augments={'"Snapshot"+5', 'Attack+22','"Snapshot"+3'}}
         
+        TaeonHead = {}
+        TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
+        
         Belenus = {}
         Belenus.STP = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10',}}
         Belenus.Snap = {name="Belenus's Cape", augments={'"Snapshot"+10',}}
@@ -274,7 +277,7 @@ function init_gear_sets()
         -- count towards cap.
         ------------------------------------------------------------------
         sets.precast.RA = {
-            head="Amini Gapette", -- 7
+            head=TaeonHead.Snap, -- 9
             neck="Scout's gorget", -- 2
             body="Amini Caban +1", -- 7% VS
             hands=TaeonHands.Snap, --8
@@ -326,7 +329,7 @@ function init_gear_sets()
             -- feet="Oshosi Leggings"
         })
         sets.midcast.RA.Mid.DoubleShot = set_combine(sets.midcast.RA.Mid, sets.midcast.RA.DoubleShot)
-        sets.midcast.RA.Acc.DoubleShot = set_combine(sets.midcast.RA.Acc {})
+        sets.midcast.RA.Acc.DoubleShot = set_combine(sets.midcast.RA.Acc, {})
     
         -- -- Samurai Roll sets 
         -- sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
@@ -459,7 +462,7 @@ function init_gear_sets()
             neck="Ocachi Gorget",
             ear1="Ishvara Earring",
             ear2="Flame Pearl",
-            body="Orion Jerkin +2",
+            body="Herculean Vest",
             hands="Meghanada Gloves +2",
             ring1="Ifrit Ring",
             ring2="Karieyh Ring",
@@ -478,8 +481,8 @@ function init_gear_sets()
         -- WILDFIRE
         sets.Wildfire = {
             head="Orion Beret +2",
-            ear1="Crematio Earring",
-            ear2="Friomisi Earring",
+            ear1="Friomisi Earring",
+            ear2="Crematio Earring",
             neck="Sanctity Necklace",
             hands="Meghanada Gloves +2",
             body="Samnuha Coat",
@@ -494,7 +497,7 @@ function init_gear_sets()
         sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS.Mid, sets.Wildfire)
         sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS.Acc, sets.Wildfire)
         
-        sets.Trueflight = sets.Wildfire
+        sets.Trueflight = set_combine(sets.Wildfire, {ear2="Moonshade Earring"})
         sets.precast.WS['Trueflight'] = set_combine(sets.precast.WS, sets.Trueflight)
         sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS.Mid, sets.Trueflight)
         sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS.Acc, sets.Trueflight)
@@ -520,10 +523,9 @@ function init_gear_sets()
 
         -- LAST STAND
         sets.LastStand = {
-            head="Meghanada Visor +1",
+            head="Orion Beret +2",
             neck="Aqua Gorget",
             ear2="Moonshade Earring",
-            ring2="Garuda Ring",
             back=Belenus.STP,
             waist="Light Belt",
             feet="Meghanada Jambeaux +2"
@@ -639,7 +641,7 @@ function init_gear_sets()
             ear2="Flame Pearl",
             body="Orion Jerkin +2",
             hands="Orion Bracers +1",
-            ring1="Longshot Ring",
+            ring1="Mummu Ring",
             ring2="Cacoethic Ring +1",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
@@ -650,7 +652,7 @@ function init_gear_sets()
         sets.buff.Barrage.Mid = sets.buff.Barrage
         sets.buff.Barrage.Acc = sets.buff.Barrage
 
-        sets.buff.Camouflage =  {body="Orion Jerkin +1"}
+        sets.buff.Camouflage =  {body="Orion Jerkin +2"}
 
         sets.Overkill =  {
             body="Arcadian Jerkin +1"
@@ -987,12 +989,10 @@ function get_custom_ranged_groups()
     end
     
     -- Flurry I = 265, Flurry II = 581
-    if (string.find(buff:lower(), 'flurry') and gain) then
-        if buffactive[265] then
-            classes.CustomRangedGroups:append('F1')
-        elseif buffactive[581] then
-            classes.CustomRangedGroups:append('F2')
-        end
+    if buffactive[265] then
+        classes.CustomRangedGroups:append('F1')
+    elseif buffactive[581] then
+        classes.CustomRangedGroups:append('F2')
     end
 
 end
