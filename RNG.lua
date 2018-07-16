@@ -305,22 +305,22 @@ function init_gear_sets()
             body="Orion Jerkin +2", 
             hands="Adhemar Wristbands",
             ring1="Rajas Ring",
-            ring2="Petrov Ring",
+            ring2="Apate Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
             legs="Amini Brague +1", 
             feet="Meghanada Jambeaux +2"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            neck="Scout's Gorget", 
-            ring1="Cacoethic Ring +1",
-            ring2="Petrov Ring",
-            legs="Adhemar Kecks", 
+            head="Meghanada Visor +1",
+            ring2="Cacoethic Ring +1",
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
-            head="Orion Beret +2",
-            ring2="Longshot Ring",
+            -- head="Orion Beret +2",
+            neck="Scout's Gorget", 
+            ring1="Longshot Ring",
             hands="Meghanada Gloves +2",
+            legs="Adhemar Kecks", 
         })
 
         sets.midcast.RA.DoubleShot = set_combine(sets.midcast.RA, {
@@ -464,15 +464,15 @@ function init_gear_sets()
             ear2="Flame Pearl",
             body="Herculean Vest",
             hands="Meghanada Gloves +2",
-            ring1="Ifrit Ring",
+            ring1="Apate Ring",
             ring2="Karieyh Ring",
             back="Buquwik Cape",
             waist="Kwahu Kachina Belt",
-            legs="Meghanada Chausses +1", 
+            legs="Amini Brague +1", 
             feet="Meghanada Jambeaux +2"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-            legs="Adhemar Kecks",
+            legs="Meghanada Chausses +1", 
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
             -- head="Meghanada Visor +1",
@@ -508,6 +508,7 @@ function init_gear_sets()
         sets.Coronach = {
             neck="Breeze Gorget",
             waist="Thunder Belt",
+            back=Belenus.STP,
         }
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.Coronach)
@@ -636,13 +637,13 @@ function init_gear_sets()
        
         sets.buff.Barrage = {
             head="Meghanada Visor +1",
-            neck="Iqabi Necklace",
-            ear1="Flame Pearl",
+            neck="Scout's gorget", 
+            ear1="Enervating Earring",
             ear2="Flame Pearl",
             body="Orion Jerkin +2",
             hands="Orion Bracers +1",
-            ring1="Mummu Ring",
-            ring2="Cacoethic Ring +1",
+            ring1="Apate Ring",
+            ring2="Mummu Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
             legs="Meghanada Chausses +1", 
@@ -650,8 +651,10 @@ function init_gear_sets()
         }
         -- placeholder until I can get to it
         sets.buff.Barrage.Mid = sets.buff.Barrage
-        sets.buff.Barrage.Acc = sets.buff.Barrage
-
+        sets.buff.Barrage.Acc = set_combine(sets.buff.Barrage, {
+            hands="Meghanada Gloves +2",
+            ring1="Cacoethic Ring +1"
+        })
         sets.buff.Camouflage =  {body="Orion Jerkin +2"}
 
         sets.Overkill =  {
