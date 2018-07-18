@@ -228,6 +228,7 @@ function init_gear_sets()
         body="Odyssean Chestplate",
         hands="Odyssean Gauntlets",
         back="Grounded Mantle +1",
+        waist="Ioskeha Belt",
         legs="Carmine Cuisses +1",
         feet=Odyssean.Feet.FC
     }
@@ -321,17 +322,16 @@ function init_gear_sets()
 
     -- Drain spells 
     sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
+        head="Fallen's Burgeonet +1",
         ear1="Gwati Earring",
         ear2="Hirudinea Earring",
-        body="Lugra Cloak +1",
+        -- body="Lugra Cloak +1",
         ring2="Excelsis Ring",
         feet="Ratri Sollerets"
     })
     sets.midcast.Aspir = sets.midcast.Drain
 
     sets.midcast.Drain.Acc = set_combine(sets.midcast.Drain, {
-        head="Flamma Zucchetto +2",
-        body="Founder's Breastplate",
         hands="Leyline Gloves",
         waist="Eschan Stone", -- macc/matk 7
     })
