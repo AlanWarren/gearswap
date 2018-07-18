@@ -325,10 +325,10 @@ function init_gear_sets()
 
         sets.midcast.RA.DoubleShot = set_combine(sets.midcast.RA, {
             -- head="Oshosi Mask",
-            body="Arcadian Jerkin +1",
+            -- body="Arcadian Jerkin +1",
             -- feet="Oshosi Leggings"
         })
-        sets.midcast.RA.Mid.DoubleShot = set_combine(sets.midcast.RA.Mid, sets.midcast.RA.DoubleShot)
+        sets.midcast.RA.Mid.DoubleShot = set_combine(sets.midcast.RA.Mid, {})
         sets.midcast.RA.Acc.DoubleShot = set_combine(sets.midcast.RA.Acc, {})
     
         -- -- Samurai Roll sets 
