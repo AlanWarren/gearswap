@@ -1148,6 +1148,8 @@ function job_buff_change(buff, gain)
             if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
                 classes.CustomMeleeGroups:append('AM3')
                 add_to_chat(8, '-------------Mythic AM3 UP-------------')
+            elseif (buff == "Aftermath: Lv.3" and not gain) then
+                add_to_chat(8, '-------------Mythic AM3 DOWN-------------')
             end
 
             if not midaction() then

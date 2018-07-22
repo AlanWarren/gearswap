@@ -191,7 +191,7 @@ function init_gear_sets()
         hands="Hachiya Tekko +1",
         ring1="Hajduk Ring",
         back="Yokaze Mantle",
-        legs="Hachiya Hakama +1",
+        legs="Kendatsuba Hakama",
         feet="Taeon Boots"
     }
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
@@ -287,7 +287,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Ryuo Hakama",
+        legs="Kendatsuba Hakama",
         feet="Danzo Sune-ate"
     }
 
@@ -306,7 +306,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Trux Earring",
         hands="Herculean Gloves",
-        legs="Herculean Trousers",
+        legs="Kendatsuba Hakama",
         ring1="Karieyh Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1"
@@ -321,13 +321,13 @@ function init_gear_sets()
     sets.defense.PDT = {
         head="Lithelimb Cap",
         neck="Twilight Torque",
-        body="Emet Harness +1",
+        body="Kendatsuba Samue",
         hands="Herculean Gloves",
         ring1="Patricius Ring",
         ring2="Defending Ring",
         back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Ryuo Hakama",
+        legs="Kendatsuba Hakama",
         feet="Amm Greaves"
     }
 
@@ -364,7 +364,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back=Andartia.DEX,
         waist="Shetal Stone",
-        legs="Herculean Trousers",
+        legs="Kendatsuba Hakama",
         feet="Hizamaru Sune-ate +1"
     }
     -- assumptions made about targe
@@ -425,12 +425,12 @@ function init_gear_sets()
     }
     sets.AccPDT = {
         head="Rao Kabuto",
-        body="Emet Harness +1",
+        body="Kendatsuba Samue",
         neck="Agitator's Collar",
         hands="Floral Gauntlets",
         ring1="Patricius Ring",
         ring2="Defending Ring",
-        legs="Herculean Trousers",
+        legs="Kendatsuba Hakama",
         feet="Loyalist Sabatons"
     }
 
@@ -451,7 +451,7 @@ function init_gear_sets()
         waist="Flume Belt",
         ring1="Defending Ring",
         back="Solemnity Cape",
-        legs="Ryuo Hakama",
+        legs="Kendatsuba Hakama",
         feet="Amm Greaves"
     }
 
@@ -467,7 +467,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
-        legs="Herculean Trousers",
+        legs="Kendatsuba Hakama",
         feet="Herculean Boots"
     })
     -- Base set for hard content
@@ -538,7 +538,7 @@ function init_gear_sets()
         ear2="Zennaroi Earring",
         hands="Ryuo Tekko",
         body="Kendatsuba Samue",
-        legs="Herculean Trousers",
+        legs="Kendatsuba Hakama",
         feet="Hizamaru Sune-ate +1"
     })
 
@@ -571,7 +571,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
-        legs="Samnuha Tights",
+        legs="Kendatsuba Hakama",
         feet="Herculean Boots"
     })
     -- This can alternatively be used for high-def targets. 
@@ -586,7 +586,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
-        legs="Herculean Trousers",
+        legs="Kendatsuba Hakama",
         feet="Herculean Boots"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
@@ -602,7 +602,7 @@ function init_gear_sets()
         ring2="Cacoethic Ring +1",
         back=Andartia.DEX,
         waist="Olseni Belt",
-        legs="Herculean Trousers",
+        legs="Kendatsuba Hakama",
         feet="Hizamaru Sune-ate +1"
     })
 
@@ -637,17 +637,17 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
-        legs="Samnuha Tights",
+        legs="Kendatsuba Hakama",
         feet="Hizamaru Sune-ate +1"
     })
     sets.engaged.Low.Haste_15 = set_combine(sets.engaged.Haste_15, {
         neck="Lissome Necklace",
-        legs="Herculean Trousers"
+        legs="Kendatsuba Hakama",
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, { -- 676
         ear1="Cessance Earring",
         neck="Yarak Torque",
-        legs="Herculean Trousers",
+        legs="Kendatsuba Hakama",
         feet="Hizamaru Sune-ate +1"
     })
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_30, {
@@ -686,12 +686,11 @@ function init_gear_sets()
         ring2="Karieyh Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
-        legs="Samnuha Tights",
+        legs="Kendatsuba Hakama",
         feet="Herculean Boots"
     }
     
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-        legs="Herculean Trousers",
     })
     sets.precast.WS.Low = sets.precast.WS.Mid
     
@@ -728,7 +727,6 @@ function init_gear_sets()
     sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS['Blade: Jin'].Low, {
     })
     sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid, {
-        legs="Samnuha Tights",
     })
     
     -- BLADE: HI
@@ -756,6 +754,7 @@ function init_gear_sets()
     
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         ear1="Cessance Earring",
+        legs="Kendatsuba Hakama",
     })
     
     -- BLADE: SHUN
