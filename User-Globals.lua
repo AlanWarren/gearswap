@@ -11,11 +11,11 @@ function user_post_precast(spell, action, spellMap, eventArgs)
     end
 end
 
-function user_post_aftercast(spell, action, spellMap, eventArgs)
-    if spell.type:lower() == 'weaponskill' then
-        send_command('wait 1; input /echo ---------------- TP <tp> ----------------')
-    end
-end
+ function user_post_aftercast(spell, action, spellMap, eventArgs)
+     if spell.type:lower() == 'weaponskill' then
+         send_command('wait 1; input /echo ---------------- TP <tp> ----------------')
+     end
+ end
 
 function user_customize_melee_set(meleeSet)
     if buffactive['Reive Mark'] then
