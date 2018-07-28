@@ -60,7 +60,7 @@ end
 function user_setup()
     -- Options: Override default values
     state.OffenseMode:options('Normal', 'Low', 'Mid', 'Acc')
-    state.HybridMode:options('Normal', 'PDT')
+    state.HybridMode:options('Normal', 'PDT', 'Proc')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Low', 'Mid', 'Acc')
     state.PhysicalDefenseMode:options('PDT')
@@ -1014,7 +1014,7 @@ function customize_melee_set(meleeSet)
     if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
         meleeSet = set_combine(meleeSet, sets.buff.Migawari)
     end
-    if player.equipment.sub == 'empty' then
+    if state.HybridMode.value == 'Proc' then
         meleeSet = set_combine(meleeSet, sets.NoDW)
     end
     if player.mp < 100 and state.OffenseMode.value ~= 'Acc' then
