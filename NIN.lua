@@ -562,10 +562,10 @@ function init_gear_sets()
     -- 30% Haste 1626 / 798
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head="Ryuo Somen",
-        neck="Asperity Necklace",
-        ear1="Brutal Earring",
-        ear2="Cessance Earring",
-        body="Mochizuki Chainmail +1",
+        neck="Rancor Collar",
+        ear1="Eabani Earring",
+        ear2="Suppanomimi",
+        body="Kendatsuba Samue",
         hands="Floral Gauntlets",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
@@ -577,10 +577,10 @@ function init_gear_sets()
     -- This can alternatively be used for high-def targets. 
     sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Haste_30, {
         head="Ryuo Somen",
-        neck="Lissome Necklace",
-        ear1="Trux Earring",
-        ear2="Cessance Earring",
-        body="Mochizuki Chainmail +1",
+        neck="Rancor Collar",
+        ear1="Eabani Earring",
+        ear2="Suppanomimi",
+        body="Kendatsuba Samue",
         hands="Floral Gauntlets",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
@@ -590,20 +590,13 @@ function init_gear_sets()
         feet="Herculean Boots"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
-        body="Kendatsuba Samue",
-        hands="Herculean Gloves",
-        feet="Hizamaru Sune-ate +1",
+        neck="Yarak Torque",
         ring1="Mummu Ring",
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
-        head="Herculean Helm",
-        neck="Yarak Torque",
-        body="Kendatsuba Samue",
         ring2="Cacoethic Ring +1",
         back=Andartia.DEX,
         waist="Olseni Belt",
-        legs="Kendatsuba Hakama",
-        feet="Hizamaru Sune-ate +1"
     })
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
