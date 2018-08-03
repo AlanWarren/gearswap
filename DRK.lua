@@ -1398,7 +1398,7 @@ function select_default_macro_book()
     elseif gsList:contains(player.equipment.main) then
         set_macro_page(5, 4)
     elseif player.sub_job == 'SAM' then
-        set_macro_page(7, 4)
+        set_macro_page(8, 4)
     else
         set_macro_page(8, 4)
     end

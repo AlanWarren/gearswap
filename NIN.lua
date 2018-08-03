@@ -36,6 +36,8 @@ function job_setup()
     select_ammo()
     LugraWSList = S{'Blade: Shun', 'Blade: Ku', 'Blade: Jin'}
     state.CapacityMode = M(false, 'Capacity Point Mantle')
+    state.Proc = M(false, 'Proc')
+    state.unProc = M(false, 'unProc')
 
     gear.RegularAmmo = 'Togakushi Shuriken'
     gear.SangeAmmo = 'Happo Shuriken'
@@ -374,17 +376,17 @@ function init_gear_sets()
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
-        neck="Yarak Torque",
         ear1="Dudgeon Earring",
         ear2="Heartseeker Earring",
         ring1="Mummu Ring",
-        waist="Olseni Belt",
         feet="Hizamaru Sune-ate +1"
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        neck="Yarak Torque",
         body="Kendatsuba Samue",
         ring1="Cacoethic Ring +1",
+        waist="Olseni Belt",
     })
 
     -- set for fooling around without dual wield
@@ -401,12 +403,22 @@ function init_gear_sets()
         legs="Quiahuiz Trousers",
         feet="Hachiya Kyahan +1"
     })
+    sets.Proc = {
+        main="Knife",
+        sub=empty,
+        ammo="Ginsen"
+    }
+    sets.unProc = set_combine(sets.engaged, {
+        main="Kannagi",
+        sub="Taka",
+        ammo="Togakushi Shuriken"
+    })
 
     sets.engaged.Innin = set_combine(sets.engaged, {
-        head="Hattori Zukin +1",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        waist="Windbuffet Belt +1",
+        -- head="Hattori Zukin +1",
+        -- ear1="Dudgeon Earring",
+        -- ear2="Heartseeker Earring",
+        -- waist="Windbuffet Belt +1",
     })
     sets.engaged.Innin.Low = sets.engaged.Low
     sets.engaged.Innin.Mid = sets.engaged.Mid
@@ -439,7 +451,7 @@ function init_gear_sets()
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.NormalPDT)
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.AccPDT)
 
-    sets.engaged.Innin.PDT = set_combine(sets.engaged.Innin, sets.NormalPDT, {head="Hattori Zukin +1"})
+    sets.engaged.Innin.PDT = set_combine(sets.engaged.Innin, sets.NormalPDT )
     sets.engaged.Innin.Low.PDT = sets.engaged.Low.PDT
     sets.engaged.Innin.Mid.PDT = sets.engaged.Mid.PDT
     sets.engaged.Innin.Acc.PDT = sets.engaged.Acc.PDT
@@ -493,7 +505,7 @@ function init_gear_sets()
         waist="Olseni Belt",
         feet="Herculean Boots"
     })
-    sets.engaged.Innin.MaxHaste     = set_combine(sets.engaged.MaxHaste, {head="Hattori Zukin +1"})
+    sets.engaged.Innin.MaxHaste     = sets.engaged.MaxHaste
     sets.engaged.Innin.Low.MaxHaste = sets.engaged.Low.MaxHaste
     sets.engaged.Innin.Mid.MaxHaste = sets.engaged.Mid.MaxHaste
     sets.engaged.Innin.Acc.MaxHaste = sets.engaged.Acc.MaxHaste
@@ -504,7 +516,7 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.AccPDT)
 
-    sets.engaged.Innin.PDT.MaxHaste = set_combine(sets.engaged.Innin.MaxHaste, sets.NormalPDT)
+    sets.engaged.Innin.PDT.MaxHaste = sets.engaged.Innin.MaxHaste
     sets.engaged.Innin.Low.PDT.MaxHaste = sets.engaged.Low.PDT.MaxHaste
     sets.engaged.Innin.Mid.PDT.MaxHaste = sets.engaged.Mid.PDT.MaxHaste
     sets.engaged.Innin.Acc.PDT.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
@@ -542,9 +554,7 @@ function init_gear_sets()
         feet="Hizamaru Sune-ate +1"
     })
 
-    sets.engaged.Innin.Haste_35 = set_combine(sets.engaged.Haste_35, {
-        head="Hattori Zukin +1",
-    })
+    sets.engaged.Innin.Haste_35 = set_combine(sets.engaged.Haste_35, { })
     sets.engaged.Innin.Low.Haste_35 = sets.engaged.Low.Haste_35
     sets.engaged.Innin.Mid.Haste_35 = sets.engaged.Mid.Haste_35
     sets.engaged.Innin.Acc.Haste_35 = sets.engaged.Acc.Haste_35
@@ -606,10 +616,7 @@ function init_gear_sets()
         feet="Hizamaru Sune-ate +1"
     })
 
-    sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {
-        head="Hattori Zukin +1",
-        feet="Herculean Boots"
-    })
+    sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, { })
     sets.engaged.Innin.Low.Haste_30 = sets.engaged.Low.Haste_30
     sets.engaged.Innin.Mid.Haste_30 = sets.engaged.Mid.Haste_30
     sets.engaged.Innin.Acc.Haste_30 = sets.engaged.Acc.Haste_30
@@ -655,9 +662,7 @@ function init_gear_sets()
         feet="Hizamaru Sune-ate +1"
     })
     
-    sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, {
-        head="Hattori Zukin +1",
-    })
+    sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, { })
     sets.engaged.Innin.Low.Haste_15 = sets.engaged.Low.Haste_15
     sets.engaged.Innin.Mid.Haste_15 = sets.engaged.Mid.Haste_15
     sets.engaged.Innin.Acc.Haste_15 = sets.engaged.Acc.Haste_15
@@ -1220,6 +1225,13 @@ end
 function job_state_change(stateField, newValue, oldValue)
     if stateField == 'Capacity Point Mantle' then
         gear.Back = newValue
+    elseif stateField == 'Proc' then
+        --send_command('@input /console gs enable all')
+        equip(sets.Proc)
+        --send_command('@input /console gs disable all')
+    elseif stateField == 'unProc' then
+        send_command('@input /console gs enable all')
+        equip(sets.unProc)
     elseif stateField == 'Runes' then
         local msg = ''
         if newValue == 'Ignis' then
