@@ -617,23 +617,23 @@ function init_gear_sets()
         waist="Flume Belt",
         legs="Sulevia's Cuisses +2",
         feet="Ratri Sollerets"
-
     })
 
     -- Defense sets
     sets.defense.PDT = {
-        ammo="Hasty Pinion +1",
-        head="Sulevia's Mask +1",
+        ammo="Hasty Pinion +1", -- 2% haste
+        head="Sulevia's Mask +1", -- 3% haste
         neck="Agitator's Collar",
-        body="Jumalik Mail",
-        hands="Sulevia's Gauntlets +1",
+        body="Jumalik Mail", -- 3% haste
+        --body="Sulevia's Platemail +1", -- 1% haste
+        hands="Sulevia's Gauntlets +1", -- 3% haste
         ear1="Zennaroi Earring",
         ring1="Defending Ring",
         ring2="Sulevia's Ring",
-        back="Grounded Mantle +1",
-        waist="Ioskeha Belt",
-        legs="Sulevia's Cuisses +2",
-        feet="Volte Sollerets"
+        back="Grounded Mantle +1", -- 2% haste
+        waist="Ioskeha Belt", -- 7% haste
+        legs="Sulevia's Cuisses +2", -- 2% haste
+        feet="Volte Sollerets" -- 3% haste
     }
     sets.defense.Reraise = sets.idle.Weak
 
@@ -669,13 +669,14 @@ function init_gear_sets()
         back=Ankou.STP,
         waist="Ioskeha Belt",
         legs="Sulevia's Cuisses +2",
-        feet="Loyalist Sabatons"
+        feet="Volte Sollerets" 
     }
     sets.Defensive_Mid = set_combine(sets.Defensive, {
+        neck="Twilight Torque",
         ear1="Zennaroi Earring",
-        ring1="Patricius Ring",
+        -- ring1="Patricius Ring",
     })
-    sets.Defensive_Acc = sets.Defensive_Mid
+    sets.Defensive_Acc = set_combine(sets.Defensive_Mid, sets.DefensiveHigh)
 
     -- Higher DT, less haste
     sets.DefensiveHigh = set_combine(sets.Defensive, {
