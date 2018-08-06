@@ -576,7 +576,7 @@ function init_gear_sets()
         back="Impassive Mantle",
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
-        feet="Amm Greaves"
+        feet="Volte Sollerets"
     }
 
     sets.idle.Field = set_combine(sets.idle.Town, {
@@ -592,7 +592,7 @@ function init_gear_sets()
         back="Impassive Mantle",
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
-        feet="Amm Greaves"
+        feet="Volte Sollerets"
     })
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="",
@@ -609,14 +609,14 @@ function init_gear_sets()
         head="Sulevia's Mask +1",
         neck="Agitator's Collar",
         hands="Sulevia's Gauntlets +1",
-        body="Jumalik mail",
+        body="Ratri Breastplate",
         ear1="Zennaroi Earring",
         ring1="Defending Ring",
         ring2="Sulevia's Ring",
         back="Impassive Mantle",
         waist="Flume Belt",
         legs="Sulevia's Cuisses +2",
-        feet="Amm Greaves"
+        feet="Ratri Sollerets"
 
     })
 
@@ -633,7 +633,7 @@ function init_gear_sets()
         back="Grounded Mantle +1",
         waist="Ioskeha Belt",
         legs="Sulevia's Cuisses +2",
-        feet="Amm Greaves"
+        feet="Volte Sollerets"
     }
     sets.defense.Reraise = sets.idle.Weak
 
@@ -683,7 +683,7 @@ function init_gear_sets()
         body="Sulevia's Platemail +1",
         hands="Sulevia's Gauntlets +1",
         legs="Sulevia's Cuisses +2",
-        feet="Sulevia's Leggings +1"
+        feet="Volte Sollerets"
     })
 
     -- Base set (global catch-all set)
@@ -736,7 +736,9 @@ function init_gear_sets()
     -- Liberator
     sets.engaged.Liberator = sets.engaged
     sets.engaged.Liberator.Mid = sets.engaged.Mid
-    sets.engaged.Liberator.Acc = sets.engaged.Acc
+    sets.engaged.Liberator.Acc = set_combine(sets.engaged.Acc, {
+        body="Ratri Breastplate"
+    })
 
     -- Liberator AM3
     sets.engaged.Liberator.AM3 = set_combine(sets.engaged.Liberator, {
@@ -760,7 +762,7 @@ function init_gear_sets()
     })
     sets.engaged.Liberator.Acc.AM3 = set_combine(sets.engaged.Liberator.Mid.AM3, {
         ear2="Zennaroi Earring",
-        body="Odyssean Chestplate",
+        body="Ratri Breastplate",
         legs="Carmine Cuisses +1",
     })
     sets.engaged.Haste.Liberator = set_combine(sets.engaged.Liberator, {
@@ -1148,8 +1150,8 @@ function job_buff_change(buff, gain)
             if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
                 classes.CustomMeleeGroups:append('AM3')
                 add_to_chat(8, '-------------Mythic AM3 UP-------------')
-            elseif (buff == "Aftermath: Lv.3" and not gain) then
-                add_to_chat(8, '-------------Mythic AM3 DOWN-------------')
+            -- elseif (buff == "Aftermath: Lv.3" and not gain) then
+            --     add_to_chat(8, '-------------Mythic AM3 DOWN-------------')
             end
 
             if not midaction() then
@@ -1396,7 +1398,7 @@ function select_default_macro_book()
     elseif gsList:contains(player.equipment.main) then
         set_macro_page(5, 4)
     elseif player.sub_job == 'SAM' then
-        set_macro_page(7, 4)
+        set_macro_page(8, 4)
     else
         set_macro_page(8, 4)
     end
