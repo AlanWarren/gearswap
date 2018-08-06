@@ -124,7 +124,7 @@ function init_gear_sets()
         ring2="SUpershear Ring",
         feet="Mochizuki Kyahan +1"
     }
-    sets.precast.JA.Sange = { ammo=gear.SangeAmmo, body="Mochizuki Chainmail +1" }
+    sets.precast.JA.Sange = { ammo=gear.SangeAmmo, body="Mochizuki Chainmail +2" }
 
     -- Waltz (chr and vit)
     sets.precast.Waltz = {
@@ -189,7 +189,7 @@ function init_gear_sets()
     sets.midcast.RA = {
         head="Taeon Chapeau",
         neck="Iqabi Necklace",
-        body="Mochizuki Chainmail +1",
+        body="Mochizuki Chainmail +2",
         hands="Hachiya Tekko +1",
         ring1="Hajduk Ring",
         back="Yokaze Mantle",
@@ -197,7 +197,7 @@ function init_gear_sets()
         feet="Taeon Boots"
     }
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        body="Mochizuki Chainmail +1"
+        body="Mochizuki Chainmail +2"
     })
     sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
 
@@ -214,7 +214,7 @@ function init_gear_sets()
         back="Mujin Mantle",
         feet="Mochizuki Kyahan +1" -- special enhancement for casting ninjutsu III
     }
-    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads", body="Mochizuki Chainmail +1" })
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads", body="Mochizuki Chainmail +2" })
 
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -360,7 +360,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Mochizuki Chainmail +1",
+        body="Mochizuki Chainmail +2",
         hands="Floral Gauntlets",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
@@ -631,7 +631,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Mochizuki Chainmail +1",
+        body="Mochizuki Chainmail +2",
         hands="Floral Gauntlets",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
@@ -729,7 +729,7 @@ function init_gear_sets()
     
     -- BLADE: HI
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-        ammo="Yetshila",
+        --ammo="Yetshila",
         head="Herculean Helm",
         neck="Rancor Collar",
         ear1="Ishvara Earring",

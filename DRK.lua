@@ -576,7 +576,7 @@ function init_gear_sets()
         back="Impassive Mantle",
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
-        feet="Amm Greaves"
+        feet="Volte Sollerets"
     }
 
     sets.idle.Field = set_combine(sets.idle.Town, {
@@ -592,7 +592,7 @@ function init_gear_sets()
         back="Impassive Mantle",
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
-        feet="Amm Greaves"
+        feet="Volte Sollerets"
     })
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="",
@@ -633,7 +633,7 @@ function init_gear_sets()
         back="Grounded Mantle +1",
         waist="Ioskeha Belt",
         legs="Sulevia's Cuisses +2",
-        feet="Amm Greaves"
+        feet="Volte Sollerets"
     }
     sets.defense.Reraise = sets.idle.Weak
 
@@ -683,7 +683,7 @@ function init_gear_sets()
         body="Sulevia's Platemail +1",
         hands="Sulevia's Gauntlets +1",
         legs="Sulevia's Cuisses +2",
-        feet="Sulevia's Leggings +1"
+        feet="Volte Sollerets"
     })
 
     -- Base set (global catch-all set)
