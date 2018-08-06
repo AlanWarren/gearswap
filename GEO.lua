@@ -191,7 +191,7 @@ function init_gear_sets()
 
     sets.midcast.HighTierNuke = {
         main="Grioavolr",
-        sub="Niobid Strap",
+        sub="Enki Strap",
         --sub="Wizzan Grip",
         --ammo="Witchstone",
         head="Welkin Crown",
@@ -224,7 +224,7 @@ function init_gear_sets()
     sets.precast.JA['Concentric Pulse'] = sets.midcast.HightTierNuke
 
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
-        sub="Giuoco Grip",
+        sub="Enki Strap",
         ear2="Crematio Earring",
         head="Mallquis Chapeau +1",
         hands="Mallquis Cuffs +1",
@@ -245,7 +245,7 @@ function init_gear_sets()
 
     sets.midcast.Macc = { 
         main="Grioavolr",
-        sub="Niobid Strap", 
+        sub="Enki Strap", 
         ammo="Plumose Sachet",
         head="Mallquis Chapeau +1",
         neck="Erra Pendant",
