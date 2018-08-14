@@ -326,7 +326,7 @@ function init_gear_sets()
         main="Bolelabunga",
         sub="Genbu's Shield",
         range="Dunna",
-        head="Azimuth Hood +1",
+        head="Befouled Crown",
         neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",

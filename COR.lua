@@ -103,8 +103,11 @@ function init_gear_sets()
         back="Camulus's Mantle",
         feet="Lanun Bottes"
     }
-    TaeonHands = {}
-    TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+8'}}
+        TaeonHands = {}
+        TaeonHands.Snap = {name="Taeon Gloves", augments={'"Snapshot"+5', 'Attack+22','"Snapshot"+3'}}
+        
+        TaeonHead = {}
+        TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
 	
 	--sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
 	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
@@ -143,6 +146,7 @@ function init_gear_sets()
         head="Herculean Helm",
         ear1="Loquacious Earring",
         ring1="Prolix Ring",
+        ring2="Kishar Ring",
         body="Dread Jupon",
         hands="Leyline Gloves",
         legs="Quiahuiz Trousers",
@@ -152,7 +156,8 @@ function init_gear_sets()
 
 	sets.precast.RA = {
         ammo=gear.RAbullet,
-		hands=TaeonHands.Snap,
+        head=TaeonHead.Snap,
+        hands=TaeonHands.Snap,
 		back="Navarch's Mantle",
         body="Pursuer's Doublet",
         waist="Impulse Belt",
@@ -163,18 +168,18 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-        head="Lanun Tricorne +1",
+        head="Meghanada Visor +1",
         neck=gear.ElementalGorget,
-        ear1="Flame Pearl",
+        ear1="Ishvara Earring",
         ear2="Flame Pearl",
-        body="Meghanada Cuirie +1",
+        body="Herculean Vest",
         hands="Meghanada Gloves +2",
         ring1="Karieyh Ring",
-        ring2="Ifrit Ring",
+        ring2="Apate Ring",
 		back="Buquwik Cape",
         waist=gear.ElementalBelt,
         legs="Adhemar Kecks",
-        feet="Lanun Bottes"
+        feet="Meghanada Jambeaux +2"
     }
 
 
@@ -196,23 +201,24 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         back="Buquwik Cape",
         ring1="Ifrit Ring",
-        ring2="Garuda Ring"
+        ring2="Mummu Ring",
+        feet="Mummu Gamashes +2"
     })
 
 	sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
         head="Lanun Tricorne +1",
         neck="Sanctity Necklace",
-        ear1="Crematio Earring",
+        ear1="Ishvara Earring",
         ear2="Friomisi Earring",
         body="Samnuha Coat",
         hands="Leyline Gloves",
-        ring1="Acumen Ring",
+        ring1="Mummu Ring",
         ring2="Garuda Ring",
         back="Gunslinger's Cape",
         waist="Eschan Stone",
         legs="Shneddick Tights +1",
-        feet="Lanun Bottes"
+        feet="Mummu Gamashes +2"
     }
 
 	sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], { ear2="Moonshade Earring"})
@@ -237,7 +243,7 @@ function init_gear_sets()
 
 	sets.midcast.CorsairShot = {
         ammo=gear.QDbullet,
-        head="Umbani Cap",
+        head="Herculean Helm",
         neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -269,20 +275,19 @@ function init_gear_sets()
         head="Meghanada Visor +1",
         neck="Iqabi Necklace",
         ear1="Enervating Earring",
-        ear2="Volley Earring",
+        ear2="Tripudio Earring",
         body="Meghanada Cuirie +1",
-        hands="Meghanada Gloves +2",
-        ring1="Rajas Ring",
-        ring2="Hajduk Ring",
+        hands="Adhemar Wristbands",
+        ring1="Mummu Ring",
+        ring2="Petrov Ring",
         back="Gunslinger's Cape",
-        waist="Elanid Belt",
+        waist="Kwahu Kachina Belt",
         legs="Adhemar Kecks",
-        feet="Meghanada Jambeaux +2"
+        feet="Mummu Gamashes +2"
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        ring1="Paqichikaji Ring",
-        waist="Eschan Stone"
+        ring2="Cacoethic Ring +1",
     })
 	
 	-- Sets to return to when not performing an action.
@@ -299,7 +304,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         body="Meghanada Cuirie +1",
         hands="Meghanada Gloves +2",
-        ring1="Paguroiedea Ring",
+        ring1="Paguroidea Ring",
         ring2="Defending Ring",
     	back="Solemnity Cape",
         waist="Flume Belt",
@@ -339,7 +344,7 @@ function init_gear_sets()
     	back="Solemnity Cape",
         waist="Flume Belt",
         legs="Meghanada Chausses +1",
-        feet="Lanun Bottes"
+        feet="Meghanada Jambeaux +2"
     })
 
 	sets.defense.MDT = sets.defense.PDT
@@ -355,40 +360,38 @@ function init_gear_sets()
 	
     sets.engaged = {
         ammo=gear.RAbullet,
-        head="Skormoth Mask",
-        neck="Iqabi Necklace",
-        ear1="Enervating Earring",
-        ear2="Volley Earring",
-        body="Pursuer's Doublet",
-        hands="Alruna's Gloves +1",
-        ring1="Rajas Ring",
-        ring2="Longshot Ring",
-        back="Gunslinger's Cape",
-        waist="Elanid Belt",
-        legs="Adhemar Kecks",
-        feet="Lanun Bottes"
+        head="Meghanada Visor +1",
+        neck="Twilight Torque",
+        ear1="Eabani Earring",
+        ear2="Zennaroi Earring",
+        body="Meghanada Cuirie +1",
+        hands="Meghanada Gloves +2",
+        ring1="Karieyh Ring",
+        ring2="Defending Ring",
+        back="Solemnity Cape",
+        waist="Flume Belt",
+        legs="Meghanada Chausses +1",
+        feet="Meghanada Jambeaux +2"
     }
 	-- Normal melee group
 	sets.engaged.Melee = {
-        ammo=gear.RAbullet,
-        head="Skormoth Mask",
-        neck="Lissome Necklace",
-        ear1="Cessance Earring",
-        ear2="Brutal Earring",
-        body="Rawhide Vest",
-        hands="Floral Gauntlets",
+        head="Herculean Helm",
+        neck="Iqabi Necklace",
+        ear1="Brutal Earring",
+        ear2="Cessance Earring",
+        body="Meghanada Cuirie +1",
+        hands="Herculean Gloves",
         ring1="Petrov Ring",
-        ring2="Epona's Ring",
-        back="Bleating Mantle",
+        ring2="Mummu Ring",
+        back="Gunslinger's Cape",
         waist="Windbuffet Belt +1",
-        legs="Samnuha Tights",
-        feet="Taeon Boots"
+        legs="Meghanada Chausses +1",
+        feet="Mummu Gamashes +2"
     }
 
 	sets.engaged.DW = set_combine(sets.engaged.Melee, {
-        head="Taeon Chapeau",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
+        ear1="Eabani Earring",
+        ear2="Suppanomimi",
         hands="Floral Gauntlets",
         body="Samnuha Coat",
         legs="Carmine Cuisses +1",
@@ -398,14 +401,14 @@ function init_gear_sets()
     })
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
-        ring2="Mars's Ring",
         waist="Olseni Belt",
         back="Grounded Mantle +1",
     })
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Melee.DW, {
         neck="Lissome Necklace",
-        ring2="Mars's Ring",
+        ring2="Mummu Ring",
         back="Grounded Mantle +1",
+        feet="Mummu Gamashes +2"
     })
 end
 

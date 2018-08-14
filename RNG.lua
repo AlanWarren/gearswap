@@ -204,16 +204,16 @@ function init_gear_sets()
             body="Orion Jerkin +2",
             ring1="Defending Ring",
             ring2="Karieyh Ring",
-            hands="Adhemar Wristbands",
-            legs="Meghanada Chausses +1",
+            hands="Meghanada Gloves +2",
             back=Belenus.STP,
-            feet="Jute Boots +1"
+            legs="Carmine Cuisses +1",
+            feet="Mummu Gamashes +2"
         })
  
         -- Engaged sets
         sets.engaged =  {
             sub="Nusku Shield",
-            head="Arcadian Beret +1",
+            head="Meghanada Visor +1",
             neck="Twilight Torque",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
@@ -221,7 +221,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +2",
             ring1="Defending Ring",
             ring2="Karieyh Ring",
-            waist="Impulse Belt",
+            waist="Flume Belt",
             back=Belenus.STP,
             legs="Meghanada Chausses +1", 
             feet="Jute Boots +1"
@@ -309,16 +309,16 @@ function init_gear_sets()
             back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
             legs="Amini Brague +1", 
-            feet="Meghanada Jambeaux +2"
+            feet="Mummu Gamashes +2"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             head="Meghanada Visor +1",
-            ring2="Cacoethic Ring +1",
+            ring2="Mummu Ring",
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             -- head="Orion Beret +2",
             neck="Scout's Gorget", 
-            ring1="Longshot Ring",
+            ring1="Cacoethic Ring +1",
             hands="Meghanada Gloves +2",
             legs="Adhemar Kecks", 
         })
@@ -491,7 +491,7 @@ function init_gear_sets()
             back=Belenus.STP,
             waist="Eschan Stone",
             legs="Meghanada Chausses +1",
-            feet="Herculean Boots"
+            feet="Mummu Gamashes +2"
         }
         sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
         sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS.Mid, sets.Wildfire)
@@ -647,7 +647,7 @@ function init_gear_sets()
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
             legs="Meghanada Chausses +1", 
-            feet="Meghanada Jambeaux +2"
+            feet="Mummu Gamashes +2"
         }
         -- placeholder until I can get to it
         sets.buff.Barrage.Mid = sets.buff.Barrage

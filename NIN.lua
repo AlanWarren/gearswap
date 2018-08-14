@@ -283,7 +283,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Zennaroi Earring",
         ear2="Trux Earring",
-        body="Hizamaru Haramaki",
+        body="Hizamaru Haramaki +1",
         hands="Herculean Gloves",
         ring1="Karieyh Ring",
         ring2="Defending Ring",
@@ -295,7 +295,7 @@ function init_gear_sets()
 
     sets.idle.Regen = set_combine(sets.idle, {
         head="Rao Kabuto",
-        body="Hizamaru Haramaki",
+        body="Hizamaru Haramaki +1",
         ring2="Paguroidea Ring"
     })
     sets.Adoulin = {
@@ -303,7 +303,7 @@ function init_gear_sets()
     }
     sets.idle.Town = set_combine(sets.idle, {
         head="Herculean Helm",
-        body="Kendatsuba Samue",
+        body="Mochizuki Chainmail +2",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
@@ -503,7 +503,7 @@ function init_gear_sets()
         ring2="Cacoethic Ring +1",
         back=Andartia.DEX,
         waist="Olseni Belt",
-        feet="Herculean Boots"
+        feet="Mummu Gamashes +2"
     })
     sets.engaged.Innin.MaxHaste     = sets.engaged.MaxHaste
     sets.engaged.Innin.Low.MaxHaste = sets.engaged.Low.MaxHaste
@@ -731,19 +731,20 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
         --ammo="Yetshila",
         head="Herculean Helm",
-        neck="Rancor Collar",
+        neck="Shadow Gorget",
         ear1="Ishvara Earring",
         body="Kendatsuba Samue",
         hands="Ryuo Tekko",
+        ring1="Begrudging Ring",
+        ring2="Mummu Ring",
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
         legs="Herculean Trousers",
-        feet="Herculean Boots"
+        feet="Mummu Gamashes +2"
     })
     
     sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
         neck="Shadow Gorget",
-        ring1="Mummu Ring",
     })
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         neck="Shadow Gorget",

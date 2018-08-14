@@ -87,16 +87,13 @@ function init_gear_sets()
     sets.buff['Sneak Attack'] = {
         head="Herculean Helm",
         neck="Moepapa Medal",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
         body="Meghanada Cuirie +1",
         hands="Pillager's Armlets +1",
-        ring1="Ramuh Ring",
+        ring1="Mummu Ring",
         ring2="Rajas Ring",
-        back="Grounded Mantle +1",
         waist="Chaac Belt",
         legs="Herculean Trousers",
-        feet="Raider's Poulaines +2"
+        feet="Mummu Gamashes +2"
     }
 
     sets.buff['Trick Attack'] = {
@@ -106,11 +103,12 @@ function init_gear_sets()
         ear2="Heartseeker Earring",
         body="Meghanada Cuirie +1",
         hands="Pillager's Armlets +1",
+        ring1="Mummu Ring",
         ring2="Garuda Ring",
         back="Canny Cape",
         waist="Chaac Belt",
         legs="Adhemar Kecks",
-        feet="Raider's Poulaines +2"
+        feet="Mummu Gamashes +2"
     }
     -- Precast Sets
 
@@ -162,6 +160,7 @@ function init_gear_sets()
         hands="Buremte Gloves",
         body="Dread Jupon",
         ring1="Prolix Ring",
+        ring2="Kishar Ring",
         legs="Limbo Trousers",
     }
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
@@ -176,16 +175,16 @@ function init_gear_sets()
         feet="Meghanada Jambeaux +1" -- 8
     }
     sets.midcast.RA = {
-        head="Umbani Cap",
+        head="Meghanada Visor +1",
         neck="Ocachi Gorget",
         ear1="Tripudio Earring",
         ear2="Enervating Earring",
-        body="Mekosuchinae Harness",
+        body="Meghanada Cuirie +1",
         ring1="Rajas Ring",
-        ring2="K'ayres Ring",
-        waist="Patentia Sash",
-        legs="Samnuha Tights",
-        feet="Scopuli Nails +1"
+        ring2="Mummu Ring",
+        waist="Eschan Stone",
+        legs="Adhemar Kecks",
+        feet="Mummu Gamashes +2"
     }
     --sets.midcast['Enfeebling Magic'] = sets.midcast.RA
 
@@ -194,14 +193,14 @@ function init_gear_sets()
     sets.precast.WS = {
         head="Herculean Helm",
         neck="Moepapa Medal",
-        ear1="Brutal Earring",
+        ear1="Ishvara Earring",
         ear2="Moonshade Earring",
         body="Herculean Vest",
         hands="Meghanada Gloves +2",
         ring1="Ramuh Ring",
         ring2="Epona's Ring",
         back="Bleating Mantle",
-        waist="Elanid Belt",
+        waist="Windbuffet Belt +1",
         legs="Meghanada Chausses +1",
         feet="Herculean Boots"
     }
@@ -247,22 +246,15 @@ function init_gear_sets()
     sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mid, {neck="Breeze Gorget"})
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-        head="Uk'uxkaj Cap",
         neck="Moepapa Medal",
-        hands="Pillager's Armlets +1",
-        ring1="Ramuh Ring",
+        ring1="Mummu Ring",
         waist="Light Belt",
         legs="Samnuha Tights",
         back="Bleating Mantle",
-        feet="Plunderer's Poulaines"
+        feet="Mummu Gamashes +2"
     })
     sets.precast.WS['Evisceration'].Mid = set_combine(sets.precast.WS['Evisceration'], {back="Canny Cape"})
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
-        head="Teon Chapeau",
-        hands="Plunderer's Armlets +1",
-        ring1="Rajas Ring",
-        ring2="Ramuh Ring",
-        back="Canny Cape",
         waist="Olseni Belt"
     })
     sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'].Mid, {neck="Shadow Gorget"})
@@ -274,18 +266,15 @@ function init_gear_sets()
         neck="Moepapa Medal",
         body="Herculean Vest",
         hands="Meghanada Gloves +2",
-        ring1="Ramuh Ring",
-        ring2="Epona's Ring",
+        ring1="Mummu Ring",
+        ring2="Karieyh Ring",
         waist="Windbuffet Belt +1",
         back="Kayapa Cape",
         legs="Samnuha Tights",
-        feet="Herculean Boots",
+        feet="Mummu Gamashes +2",
     })
     sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {back="Canny Cape"})
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
-        head="Teon Chapeau",
-        ring1="Rajas Ring",
-        ring2="Ramuh Ring",
         back="Canny Cape",
         waist="Olseni Belt"
     })
@@ -305,16 +294,16 @@ sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].M
 
 sets.precast.WS['Aeolian Edge'] = {
     neck="Sanctity Necklace",
-    ear1="Crematio Earring",
-    head="Umbani Cap",
+    ear1="Ishvara Earring",
+    head="Herculean Helm",
     body="Samnuha Coat",
     hands="Leyline Gloves",
-    ring1="Acumen Ring",
+    ring1="Mummu Ring",
     ring2="Garuda Ring",
     back="Argochampsa Mantle",
     waist="Thunder Belt",
     legs="Limbo Trousers",
-    feet="Herculean Boots"
+    feet="Mummu Gamashes +2"
 }
 
 -- Midcast Sets

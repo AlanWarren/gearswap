@@ -148,7 +148,7 @@ function init_gear_sets()
     Ankou = {}
     Ankou.FC  = { name="Ankou's Mantle", augments={'"Fast Cast"+10',}}
     Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
-    Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+6','Weapon skill damage +10%',}}
+    Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 
     Odyssean = {}
     Odyssean.Legs = {}
@@ -416,6 +416,7 @@ function init_gear_sets()
     -- TORCLEAVER 
     -- VIT 80%
     sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
+        head="Odyssean Helm",
         neck="Aqua Gorget",
         waist="Caudata Belt",
         legs="Fallen's Flanchard +2",  
@@ -446,6 +447,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
+        head="Odyssean Helm",
         ear2="Ishvara Earring",
         neck="Shadow Gorget",
         body="Ratri Breastplate",
@@ -565,12 +567,12 @@ function init_gear_sets()
     -- Idle sets
     sets.idle.Town = {
         ammo="Ginsen",
-        --head="Valorous Mask",
+        head="Valorous Mask",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
-        body="Lugra Cloak +1",
-        hands="Sulevia's Gauntlets +1",
+        body="Jumalik mail",
+        hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Karieyh Ring",
         back="Impassive Mantle",
@@ -586,7 +588,7 @@ function init_gear_sets()
         ear2="Eabani Earring",
         neck="Sanctity Necklace",
         body="Jumalik mail",
-        hands="Sulevia's Gauntlets +1",
+        hands="Sulevia's Gauntlets +2",
         ring1="Defending Ring",
         ring2="Karieyh Ring",
         back="Impassive Mantle",
@@ -601,6 +603,7 @@ function init_gear_sets()
         ring1="Paguroidea Ring",
     })
     sets.idle.Refresh = set_combine(sets.idle.Regen, {
+        head="Befouled Crown",
         neck="Coatl Gorget +1"
     })
 
@@ -608,8 +611,8 @@ function init_gear_sets()
         ammo="Hasty Pinion +1",
         head="Sulevia's Mask +1",
         neck="Agitator's Collar",
-        hands="Sulevia's Gauntlets +1",
         body="Ratri Breastplate",
+        hands="Sulevia's Gauntlets +2",
         ear1="Zennaroi Earring",
         ring1="Defending Ring",
         ring2="Sulevia's Ring",
@@ -626,7 +629,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         body="Jumalik Mail", -- 3% haste
         --body="Sulevia's Platemail +1", -- 1% haste
-        hands="Sulevia's Gauntlets +1", -- 3% haste
+        hands="Sulevia's Gauntlets +2", -- 3% haste
         ear1="Zennaroi Earring",
         ring1="Defending Ring",
         ring2="Sulevia's Ring",
@@ -663,7 +666,7 @@ function init_gear_sets()
         head="Sulevia's Mask +1",
         neck="Agitator's Collar",
         body="Valorous Mail",
-        hands="Sulevia's Gauntlets +1",
+        hands="Sulevia's Gauntlets +2",
         ring1="Defending Ring",
         ring2="Sulevia's Ring",
         back=Ankou.STP,
@@ -682,7 +685,7 @@ function init_gear_sets()
     sets.DefensiveHigh = set_combine(sets.Defensive, {
         head="Sulevia's Mask +1",
         body="Sulevia's Platemail +1",
-        hands="Sulevia's Gauntlets +1",
+        hands="Sulevia's Gauntlets +2",
         legs="Sulevia's Cuisses +2",
         feet="Volte Sollerets"
     })
@@ -1244,11 +1247,7 @@ function get_combat_form()
 end
 
 function get_combat_weapon()
-    if gsList:contains(player.equipment.main) then
-        state.CombatWeapon:set("GreatSword")
-    elseif scytheList:contains(player.equipment.main) then
-        state.CombatWeapon:set("Scythe")
-    elseif player.equipment.main == 'Apocalypse' then
+    if player.equipment.main == 'Apocalypse' then
         state.CombatWeapon:set('Apocalypse')
     elseif player.equipment.main == 'Anguta' then
         state.CombatWeapon:set('Anguta')
@@ -1258,6 +1257,10 @@ function get_combat_weapon()
         state.CombatWeapon:set('Caladbolg')
     elseif player.equipment.main == 'Liberator' then
         state.CombatWeapon:set('Liberator')
+    elseif gsList:contains(player.equipment.main) then
+        state.CombatWeapon:set("GreatSword")
+    elseif scytheList:contains(player.equipment.main) then
+        state.CombatWeapon:set("Scythe")
     else -- use regular set, which caters to Liberator
         state.CombatWeapon:reset()
     end
