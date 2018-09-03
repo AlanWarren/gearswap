@@ -273,6 +273,8 @@ function init_gear_sets()
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Ginsen",
          head="Sulevia's Mask +1",
+         ear1="Etiolation Earring",
+         ear2="Eabani Earring",
          neck="Sanctity Necklace",
          body="Sulevia's platemail",
          ring1="Paguroidea Ring",

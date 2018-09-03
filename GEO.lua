@@ -194,7 +194,7 @@ function init_gear_sets()
         sub="Enki Strap",
         --sub="Wizzan Grip",
         --ammo="Witchstone",
-        head="Welkin Crown",
+        head="Jhakri Coronal +1",
         neck="Eddy Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -205,16 +205,14 @@ function init_gear_sets()
         back="Nantosuelta's Cape",
         waist="Refoccilation Stone", 
         legs="Merlinic Shalwar",
-        feet="Helios Boots"
+        feet="Jhakri Pigaches +1"
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
-        head="Mallquis Chapeau +1",
         ear1="Friomisi Earring",
         neck="Erra Pendant",
         ear2="Gwati Earring", 
         hands="Amalric Gages", 
-        feet="Mallquis Clogs +1"
         --feet="Bokwus Boots"
     })
     --sets.midcast['Elemental Magic'].Mindmelter = set_combine(sets.midcast.HighTierNuke, {

@@ -205,7 +205,8 @@ function init_gear_sets()
     sets.precast.FC = {
         head="Herculean Helm",
         --ammo="Impatiens",
-        ear1="Loquacious Earring",
+        ear1="Etiolation Earring",
+        ear2="Loquacious Earring",
         ring1="Prolix Ring",
         ring2="Kishar Ring",
         hands="Leyline Gloves",
@@ -281,8 +282,8 @@ function init_gear_sets()
         ammo="Togakushi Shuriken",
         head="Rao Kabuto",
         neck="Sanctity Necklace",
-        ear1="Zennaroi Earring",
-        ear2="Trux Earring",
+        ear1="Etiolation Earring",
+        ear2="Eabani Earring",
         body="Hizamaru Haramaki +1",
         hands="Herculean Gloves",
         ring1="Karieyh Ring",
@@ -335,6 +336,7 @@ function init_gear_sets()
 
     sets.defense.MDT = set_combine(sets.defense.PDT, {
         head="Ptica Headgear",
+        ear1="Etiolation Earring",
         neck="Twilight Torque",
         hands="Ryuo Tekko",
         feet="Amm Greaves"

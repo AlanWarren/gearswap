@@ -269,14 +269,16 @@ function init_gear_sets()
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
-        feet="Flamma Gambieras +1"
+        feet="Flamma Gambieras +2"
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
         head="Sulevia's Mask +1",
         neck="Lissome Necklace",
         body="Jumalik Mail",
-        hands="Sulevia's Gauntlets +1",
+        ear1="Etiolation Earring",
+        ear2="Eabani Earring",
+        hands="Sulevia's Gauntlets +2",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
         waist="Flume Belt",

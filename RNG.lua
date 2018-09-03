@@ -117,6 +117,7 @@ function init_gear_sets()
         
         Belenus = {}
         Belenus.STP = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10',}}
+        Belenus.WSD = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+1','Weapon skill damage +10%',}}
         Belenus.Snap = {name="Belenus's Cape", augments={'"Snapshot"+10',}}
 
         sets.Organizer = {
@@ -162,7 +163,8 @@ function init_gear_sets()
 
         sets.precast.FC = {
             head="Herculean Helm",
-            ear1="Loquacious Earring",
+            ear1="Etiolation Earring",
+            ear2="Loquacious Earring",
             body="Samnuha Coat",
             legs="Quiahuiz Trousers",
             hands="Leyline Gloves",
@@ -172,18 +174,18 @@ function init_gear_sets()
         
         sets.idle = {
             --sub="Nusku Shield",
-            head="Arcadian Beret +1",
+            head="Meghanada Visor +1",
             neck="Sanctity Necklace",
-            ear1="Enervating Earring",
-            ear2="Tripudio Earring",
+            ear1="Etiolation Earring",
+            ear2="Eabani Earring",
             body="Orion Jerkin +2",
             hands="Meghanada Gloves +2",
-            ring1="Paguroidea Ring",
+            ring1="Meghanada Ring",
             ring2="Karieyh Ring",
             back="Solemnity Cape",
             waist="Kwahu Kachina Belt",
-            legs="Meghanada Chausses +1",
-            feet="Jute Boots +1"
+            legs="Carmine Cuisses +1",
+            feet="Meghanada Jambeaux +2" -- 10
         }
         sets.idle.Regen = set_combine(sets.idle, {
             --head="Ocelomeh Headpiece +1",
@@ -466,7 +468,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +2",
             ring1="Apate Ring",
             ring2="Karieyh Ring",
-            back="Buquwik Cape",
+            back=Belenus.WSD,
             waist="Kwahu Kachina Belt",
             legs="Amini Brague +1", 
             feet="Meghanada Jambeaux +2"
@@ -488,7 +490,7 @@ function init_gear_sets()
             body="Samnuha Coat",
             ring1="Garuda Ring",
             ring2="Karieyh Ring",
-            back=Belenus.STP,
+            back=Belenus.WSD,
             waist="Eschan Stone",
             legs="Meghanada Chausses +1",
             feet="Mummu Gamashes +2"
@@ -508,7 +510,7 @@ function init_gear_sets()
         sets.Coronach = {
             neck="Breeze Gorget",
             waist="Thunder Belt",
-            back=Belenus.STP,
+            back=Belenus.WSD,
         }
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.Coronach)
@@ -527,7 +529,7 @@ function init_gear_sets()
             head="Orion Beret +2",
             neck="Aqua Gorget",
             ear2="Moonshade Earring",
-            back=Belenus.STP,
+            back=Belenus.WSD,
             waist="Light Belt",
             feet="Meghanada Jambeaux +2"
         }
@@ -573,7 +575,7 @@ function init_gear_sets()
         sets.Namas = {
             neck="Aqua Gorget",
             waist="Light Belt",
-            back=Belenus.STP
+            back=Belenus.WSD,
         }
         sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS, sets.Namas)
         sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS.Mid, sets.Namas)
@@ -594,7 +596,7 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             waist="Light Belt",
             ring2="Rajas Ring",
-            back="Rancorous Mantle",
+            back=Belenus.WSD,
             legs="Herculean Trousers",
             feet="Thereoid Greaves"
         }
