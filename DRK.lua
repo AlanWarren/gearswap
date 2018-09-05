@@ -312,6 +312,8 @@ function init_gear_sets()
     -- Mix of HP boost, -Spell interruption%, and Dark Skill
     sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
         ammo="Impatiens",
+        ear1="Etiolation Earring",
+        ear2="Eabani Earring", -- 3
         body="Heathen's Cuirass +1",
         back="Trepidity Mantle",
         legs="Carmine Cuisses +1",
@@ -385,7 +387,7 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
-        body="Odyssean Chestplate",
+        body="Ignominy Cuirass +2",
         hands="Odyssean Gauntlets",
         ring1="Niqmaddu Ring",
         ring2="Karieyh Ring",
@@ -397,7 +399,7 @@ function init_gear_sets()
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
-        body="Odyssean Chestplate",
+        body="Ignominy Cuirass +2",
         legs=Odyssean.Legs.WS
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
@@ -410,6 +412,7 @@ function init_gear_sets()
     -- 86-100% STR
     sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
         neck="Breeze Gorget",
+        body="Ignominy Cuirass +2",
         waist="Soil Belt"
     })
     sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
@@ -418,6 +421,7 @@ function init_gear_sets()
     -- VIT 80%
     sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
         head="Odyssean Helm",
+        body="Ignominy Cuirass +2",
         neck="Aqua Gorget",
         waist="Caudata Belt",
         --legs="Fallen's Flanchard +2",  
@@ -518,7 +522,7 @@ function init_gear_sets()
     sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
         head="Terminal Helm",
         neck="Eddy Necklace",
-        body="Founder's Breastplate",
+        body="Ratri Breastplate",
         ear1="Friomisi Earring",
         hands="Leyline Gloves",
         back="Toro Cape",
@@ -558,7 +562,7 @@ function init_gear_sets()
     sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
         head="Flamma Zucchetto +2",
         neck="Shadow Gorget",
-        body="Odyssean Chestplate",
+        body="Ignominy Cuirass +2",
         hands="Odyssean Gauntlets",
         legs=Odyssean.Legs.WS,
         waist="Soil Belt",
@@ -707,7 +711,6 @@ function init_gear_sets()
         -- ammo="Hasty Pinion +1",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
-        body="Odyssean Chestplate",
         legs="Carmine Cuisses +1",
         back=Ankou.STP,
     })
@@ -800,7 +803,6 @@ function init_gear_sets()
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
         ear2="Zennaroi Earring",
-        body="Odyssean Chestplate",
         legs="Carmine Cuisses +1"
     })
     
