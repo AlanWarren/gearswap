@@ -411,9 +411,12 @@ function init_gear_sets()
     -- RESOLUTION
     -- 86-100% STR
     sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
+        ear1="Brutal Earring",
         neck="Breeze Gorget",
-        body="Ignominy Cuirass +2",
-        waist="Soil Belt"
+        body="Valorous Mail",
+        hands="Sulevia's Gauntlets +2",
+        waist="Soil Belt",
+        feet="Flamma Gambieras +2"
     })
     sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
 
@@ -423,7 +426,7 @@ function init_gear_sets()
         head="Odyssean Helm",
         body="Ignominy Cuirass +2",
         neck="Aqua Gorget",
-        waist="Caudata Belt",
+        waist="Light Belt",
         --legs="Fallen's Flanchard +2",  
         legs=Odyssean.Legs.WS,
     })
