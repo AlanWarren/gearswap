@@ -4,32 +4,49 @@
 
 If you don't use organizer, then remove the include('organizer-lib') in get_sets() and remove sets.Organizer
 
-This lua has a few MODES you can toggle with hotkeys, and there's a few situational RULES that activate without hotkeys
-I'd recommend reading and understanding the following information if you plan on using this file.
+This lua has a few MODES you can toggle with hotkeys or macros, and there's a few situational RULES that activate without hotkeys
 
 ::MODES::
 
-SouleaterMode: OFF by default. Toggle this with @F9 (window key + F9). 
-This mode makes it possible to use Souleater in situations where you would normally avoid using it. When SouleaterMode 
+SouleaterMode 
+Status: OFF by default. 
+Hotkey: Toggle this with @F9 (window key + F9). 
+Macro: /console gs c togggle SouleaterMode
+
+Notes: This mode makes it possible to use Souleater in situations where you would normally avoid using it. When SouleaterMode 
 is ON, Souleater will be canceled automatically after the first Weaponskill used, WITH THESE EXCEPTIONS. If Bloodweapon 
 is active, or if Drain's HP Boost buff is active, then Souleater will remain active until the next WS used after 
-either buff wears off. If you use DRK at events, I'd recommend making this default to ON, as it's damn useful.
+either buff wears off. 
 
-CapacityMode OFF by default. Toggle with ALT + = 
-It will full-time whichever piece of gear you specify in sets.CapacityMantle 
+CapacityMode
+Status: OFF by default. 
+Hotkey: with ALT + = 
+Macro: /console cs c toggle CapacityMode
 
-NOTE: You can change the default (true|false) status of any MODE by changing their values in job_setup()
+Notes: It will full-time whichever piece of gear you specify in sets.CapacityMantle 
+
+Extra Info: You can change the default (true|false) status of any MODE by changing their values in job_setup()
 
 ::RULES::
-Gavialis helm is now disabled by default, as it's mostly unused. You must set use_gavialis = true for the info that follows to apply. 
-Gavialis Helm will automatically be used for all weaponskills on their respective days of the week. If you don't want
-it used for a ws, then you have to add the WS to wsList = {} in job_setup. You also need my User-Globals.lua for this
+
+Gavialis helm
+Status: disabled
+Setting: set use_gavialis = true below in job_setup. 
+
+Notes: Gavialis Helm will automatically be used for all weaponskills on their respective days of the week. If you would like to 
+exclude a weapon skill, you must add it to wsList below. (found in job_setup) You also need my User-Globals.lua for this
 to even work. 
 
-Ygna's Resolve +1 will automatically be used when you're in a reive. If you have my User-Globals.lua this will work
+Ygna's Resolve +1 
+Status: enabled in Reive
+Setting: n/a
+
+Notes: Will automatically be used when you're in a reive. If you have my User-Globals.lua this will work
 with all your jobs that use mote's includes. Not just this one! 
 
-Moonshade earring is not used for WS's at 3000 TP. 
+Moonshade earring
+Status: Not used for WS's at 3000 TP. 
+Setting: n/a
 
 You can hit F12 to display custom MODE status as well as the default stuff. 
 
@@ -38,15 +55,16 @@ Single handed weapons are handled in the sets.engaged.SW set. (sword + shield, e
 ::NOTES::
 
 My sets have a specific order, or they will not function correctly. 
-sets.engaged.[CombatForm][CombatWeapon][Offense or HybridMode][CustomMeleeGroups]
+sets.engaged.[CombatForm][CombatWeapon][Offense or HybridMode][CustomMeleeGroups or CustomClass]
 
 CombatForm = Haste, DW, SW
 CombatWeapon = GreatSword, Scythe, Apocalypse, Ragnarok, Caladbolg, Liberator, Anguta
 OffenseMode = Mid, Acc
 HybridMode = PDT
 CustomMeleeGroups = AM3, AM, Haste
+CustomClass = OhShit 
 
-CombatForm Haste is used when Last Resort OR Apoc AM (JA haste) + Hasso AND either Haste, March, Indi-Haste Geo-Haste is on you.
+CombatForm Haste is used when Last Resort + Hasso AND either Haste, March, Indi-Haste Geo-Haste is on you.
 
 CombatForm DW will activate with /dnc or /nin AND a weapon listed in drk_sub_weapons equipped offhand. 
 SW is active with an empty sub-slot, or a shield listed in the shields = S{} list.  
@@ -56,9 +74,9 @@ CombatWeapon Scythe will activate when you equip a Scythe listed in scytheList i
 Weapons that do not fall into these groups, or have sets by weapon name, will use default sets.engaged
 
 most gear sets derrive themselves from sets.engaged, so try to keep it updated. It's much smarter to derrive sets than to 
-completely re-invent each gear set for every weapon.  You will end up writing lua more than playing the game.
+completely re-invent each gear set for every weapon. Let your gear inherit. Less code written means less errors. 
 
-CustomMeleeGroups AM3 will activate when Aftermath lvl 3 is up, and AM will activate when relic Aftermath is up.
+CustomMeleeGroups AM3 will activate when Aftermath lvl 3 is up, and CustomMeleeGroups AM will activate when relic Aftermath is up.
 There are no empy AM sets for now.
 
 --]]
@@ -80,18 +98,16 @@ function job_setup()
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     -- Set the default to false if you'd rather SE always stay acitve
     state.SouleaterMode = M(false, 'Soul Eater Mode')
-    state.LastResortMode = M(false, 'Last Resort Mode')
-    -- If you have a fully upgraded Apoc, set this to true 
-    state.ApocHaste = M(false, 'Apoc Haste Mode')   
+    -- state.LastResortMode = M(false, 'Last Resort Mode')
     -- Use Gavialis helm?
     use_gavialis = false
-    -- Weaponskills you do NOT want Gavialis helm used with
+    -- Weaponskills you do NOT want Gavialis helm used with (only considered if use_gavialis = true)
     wsList = S{'Spiral Hell', 'Torcleaver', 'Insurgency', 'Quietus', 'Cross Reaper'}
     -- Greatswords you use. 
     gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Raetic Algol +1', 'Caladbolg', 'Montante +1', 'Albion' }
     scytheList = S{'Raetic Scythe', 'Deathbane', 'Twilight Scythe' }
     shields = S{'Rinda Shield'}
-    -- Mote has capitalization errors in the default Absorb mappings, so we correct them
+    -- Mote has capitalization errors in the default Absorb mappings, so we use our own
     absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
     -- Offhand weapons used to activate DW mode
     swordList = S{"Sangarius", "Sangarius +1", "Usonmunku", "Perun +1", "Tanmogayi"}
@@ -953,7 +969,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-
+    local recast = windower.ffxi.get_ability_recasts()
     -- Make sure abilities using head gear don't swap 
     if spell.type:lower() == 'weaponskill' then
         -- handle Gavialis Helm
@@ -969,6 +985,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         -- CP mantle must be worn when a mob dies, so make sure it's equipped for WS.
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
+        end
+
+        if spell.english == 'Entropy' and recast[95] == 0 then
+            eventArgs.cancel = true
+            windower.chat.input('/ja "Consume Mana" <me>')
+            windower.chat.input:schedule(1, '/ws "Entropy" <t>')
+            return
         end
 
         if player.tp > 2999 then
@@ -1092,15 +1115,6 @@ function job_status_change(newStatus, oldStatus, eventArgs)
     end
 end
 
--- hasso + apoc haste = 20% JA haste
--- this function returns true or false
-function apoc_haste_mode()
-    if (buffactive.hasso and (state.ApocHaste.value and buffactive['Aftermath'])) then
-        return true
-    else
-        return false
-    end
-end
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
@@ -1111,7 +1125,7 @@ function job_buff_change(buff, gain)
     end
 
     if S{'haste', 'march', 'embrava', 'geo-haste', 'indi-haste'}:contains(buff:lower()) and gain then
-        if (buffactive['Last Resort'] or apoc_haste_mode()) then
+        if (buffactive['Last Resort']) then
             if (buffactive.embrava or buffactive.haste) and buffactive.march then
                 state.CombatForm:set("Haste")
                 if not midaction() then
@@ -1231,7 +1245,7 @@ function get_combat_form()
     --elseif player.equipment.sub == '' or shields:contains(player.equipment.sub) then
     elseif swordList:contains(player.equipment.main) then
         state.CombatForm:set("SW")
-    elseif (buffactive['Last Resort'] or apoc_haste_mode()) then
+    elseif buffactive['Last Resort'] then
         if (buffactive.embrava or buffactive.haste) and buffactive.march then
             add_to_chat(8, '-------------Delay Capped-------------')
             state.CombatForm:set("Haste")
@@ -1334,9 +1348,9 @@ function display_current_job_state(eventArgs)
     if state.SouleaterMode.value then
         msg = msg .. ', SE Cancel, '
     end
-    if state.LastResortMode.value then
-        msg = msg .. ', LR Defense, '
-    end
+    -- if state.LastResortMode.value then
+    --     msg = msg .. ', LR Defense, '
+    -- end
     if state.PCTargetMode.value ~= 'default' then
         msg = msg .. ', Target PC: '..state.PCTargetMode.value
     end
