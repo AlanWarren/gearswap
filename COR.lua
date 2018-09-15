@@ -123,7 +123,6 @@ function init_gear_sets()
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
-		head="Whirlpool Mask",
         hands="Meghanada Gloves +2",
         legs="Adhemar Kecks",
     }
@@ -131,6 +130,7 @@ function init_gear_sets()
     sets.Organizer = {
         main="Arendsi Fleuret",
         sub="Odium",
+        ear2="Reraise Earring",
         range="Doomsday",
         hands="Compensator",
         ammo="Nusku Shield"

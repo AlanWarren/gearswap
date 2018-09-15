@@ -131,7 +131,6 @@ function init_gear_sets()
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
-        head="Whirlpool Mask",
         body="Mekosuchinae Harness",
         legs="Nahtirah Trousers",
     }
@@ -386,7 +385,7 @@ sets.defense.PDT = {
 }
 
 sets.defense.MDT = {
-    head="Whirlpool Mask",
+    head="Meghanada Visor +1",
     neck="Twilight Torque",
     ear1="Etiolation Earring",
     body="Herculean Vest",
@@ -446,7 +445,6 @@ sets.engaged.Evasion = set_combine(sets.engaged, {
 })
 sets.engaged.Mid.Evasion = sets.engaged.Evasion
 sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
-    head="Whirlpool Mask",
     ring1="Patricius Ring",
     waist="Olseni Belt"
 })
@@ -467,7 +465,6 @@ sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
     body="Emet Harness +1",
 })
 sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
-    head="Whirlpool Mask",
     body="Emet Harness +1",
     ring2="Mars's Ring",
     waist="Olseni Belt"

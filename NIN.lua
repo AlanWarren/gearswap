@@ -349,6 +349,7 @@ function init_gear_sets()
         main="Kannagi",
         sub="Shigi",
         neck="Taka",
+        ear2="Reraise Earring",
         shihei="Shihei",
         inoshi="Inoshishinofuda",
         shika="Shikanofuda",

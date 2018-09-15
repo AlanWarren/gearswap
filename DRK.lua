@@ -166,6 +166,7 @@ function init_gear_sets()
         ammo="Caladbolg",
         ring1="Apocalypse",
         ring2="Loyalist Sabatons",
+        ear2="Reraise Earring",
         neck="Bloodrain Strap",
         grip="Pole Grip",
         waist="Mes. Haubergeon",
@@ -179,7 +180,7 @@ function init_gear_sets()
     sets.precast.JA['Dark Seal']    = {head="Fallen's burgeonet +1"}
     sets.precast.JA['Souleater']    = {head="Ignominy burgeonet +1"}
     sets.precast.JA['Weapn Bash']   = {hands="Ignominy Gauntlets +1"}
-    sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +1"}
+    sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +3"}
     sets.precast.JA['Last Resort']  = {back=Ankou.WSD}
 
     sets.CapacityMantle  = { back="Mecistopins Mantle" }
@@ -200,7 +201,7 @@ function init_gear_sets()
     sets.precast.FC = {
         ammo="Impatiens",
         head="Fallen's Burgeonet +1",
-        body="Odyssean Chestplate",
+        body="Fallen's Cuirass +3",
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
         hands="Leyline Gloves",
@@ -262,7 +263,7 @@ function init_gear_sets()
         neck="Erra Pendant", -- 10 dark + 17 macc
         ear1="Gwati Earring",
         ear2="Dark Earring", -- 3
-        body="Ratri Breastplate",
+        body="Fallen's Cuirass +3",
         hands="Fallen's Finger Gauntlets +1", -- 14
         waist="Casso Sash", -- 5
         ring1="Evanescence Ring", -- 10
@@ -278,7 +279,6 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'].Acc = set_combine(sets.midcast['Dark Magic'], {
         head="Flamma Zucchetto +2", -- 44 macc
-        body="Ratri Breastplate",
         hands="Leyline Gloves",
         legs="Fallen's Flanchard +2",  
         waist="Eschan Stone"
@@ -287,7 +287,6 @@ function init_gear_sets()
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
         head="Valorous Mask",
         neck="Erra Pendant", -- 10 + 17 macc
-        body="Ratri Breastplate",
         hands="Leyline Gloves",
         ring2="Kishar Ring",
         back="Aput Mantle"
@@ -299,7 +298,7 @@ function init_gear_sets()
         neck="Eddy Necklace", -- 11 matk
         ear1="Friomisi Earring", -- 10 matk
         ear2="Crematio Earring", -- 6 matk 6 mdmg
-        body="Ratri Breastplate",
+        body="Fallen's Cuirass +3",
         hands="Leyline Gloves",
         ring1="Resonance Ring", -- int 8
         ring2="Shiva Ring", -- matk 4
@@ -399,11 +398,11 @@ function init_gear_sets()
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
-        body="Ignominy Cuirass +2",
         legs=Odyssean.Legs.WS
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-        ear1="Zennaroi Earring",
+        body="Fallen's Cuirass +3",
+        -- body="Fallen's Cuirass +3",
         --legs="Sulevia's Cuisses +1",
         waist="Olseni Belt",
     })
@@ -432,6 +431,7 @@ function init_gear_sets()
     })
     sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
         neck="Aqua Gorget",
+        body="Fallen's Cuirass +3",
     })
     sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, {
         neck="Aqua Gorget",
@@ -452,6 +452,7 @@ function init_gear_sets()
     })
     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {})
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
+        body="Fallen's Cuirass +3",
         legs=Odyssean.Legs.WS
     })
 
@@ -467,6 +468,7 @@ function init_gear_sets()
     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {})
     sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
         ear1="Zennaroi Earring",
+        body="Fallen's Cuirass +3",
         waist="Olseni Belt",
     })
 
@@ -479,7 +481,10 @@ function init_gear_sets()
         feet="Ratri Sollerets"
     })
     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {})
-    sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {})
+    sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
+        body="Fallen's Cuirass +3",
+        legs=Odyssean.Legs.WS
+    })
     -- ENTROPY
     -- 86-100% INT 
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
@@ -492,7 +497,9 @@ function init_gear_sets()
         legs="Sulevia's Cuisses +2",
         feet="Ratri Sollerets"
     })
-    sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {})
+    sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
+        body="Fallen's Cuirass +3",
+    })
     sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {})
 
     -- Quietus
@@ -506,7 +513,10 @@ function init_gear_sets()
         legs="Fallen's Flanchard +2",  
         feet="Ratri Sollerets"
     })
-    sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {})
+    sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
+        body="Fallen's Cuirass +3",
+        legs=Odyssean.Legs.WS
+    })
     sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, {})
 
     -- SPIRAL HELL
@@ -525,7 +535,7 @@ function init_gear_sets()
     sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
         head="Terminal Helm",
         neck="Eddy Necklace",
-        body="Ratri Breastplate",
+        body="Fallen's Cuirass +3",
         ear1="Friomisi Earring",
         hands="Leyline Gloves",
         back="Toro Cape",
@@ -552,7 +562,7 @@ function init_gear_sets()
         head="Terminal Helm",
         neck="Eddy Necklace",
         ear1="Friomisi Earring",
-        body="Founder's Breastplate",
+        body="Fallen's Cuirass +3",
         hands="Founder's Gauntlets",
         back=Ankou.WSD,
         feet="Heathen's Sollerets +1"
@@ -580,7 +590,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Jumalik mail",
+        body="Fallen's Cuirass +3",
         hands="Sulevia's Gauntlets +2",
         ring1="Defending Ring",
         ring2="Karieyh Ring",
@@ -591,6 +601,7 @@ function init_gear_sets()
     }
 
     sets.idle.Field = set_combine(sets.idle.Town, {
+        body="Jumalik mail",
     })
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="",
@@ -610,7 +621,6 @@ function init_gear_sets()
         neck="Agitator's Collar",
         body="Ratri Breastplate",
         hands="Sulevia's Gauntlets +2",
-        ear1="Zennaroi Earring",
         ring1="Defending Ring",
         ring2="Sulevia's Ring",
         back=Ankou.STP,
@@ -708,13 +718,14 @@ function init_gear_sets()
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         neck="Lissome Necklace",
-        legs=Odyssean.Legs.TP,
+        body="Fallen's Cuirass +3",
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         -- ammo="Hasty Pinion +1",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
-        legs="Carmine Cuisses +1",
+        body="Fallen's Cuirass +3",
+        legs=Odyssean.Legs.WS,
         back=Ankou.STP,
     })
 
@@ -739,7 +750,7 @@ function init_gear_sets()
     sets.engaged.Liberator = sets.engaged
     sets.engaged.Liberator.Mid = sets.engaged.Mid
     sets.engaged.Liberator.Acc = set_combine(sets.engaged.Acc, {
-        body="Ratri Breastplate"
+        body="Fallen's Cuirass +3",
     })
 
     -- Liberator AM3
@@ -764,7 +775,7 @@ function init_gear_sets()
     })
     sets.engaged.Liberator.Acc.AM3 = set_combine(sets.engaged.Liberator.Mid.AM3, {
         ear2="Zennaroi Earring",
-        body="Ratri Breastplate",
+        body="Fallen's Cuirass +3",
         legs="Carmine Cuisses +1",
     })
     sets.engaged.Haste.Liberator = set_combine(sets.engaged.Liberator, {
@@ -861,9 +872,13 @@ function init_gear_sets()
     sets.engaged.Haste.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc.PDT, sets.DefensiveHigh)
 
     -- generic great sword
-    sets.engaged.GreatSword = set_combine(sets.engaged, {})
+    sets.engaged.GreatSword = set_combine(sets.engaged, {
+    })
     sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {})
-    sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {})
+    sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {
+        body="Fallen's Cuirass +3",
+        legs=Odyssean.Legs.WS, -- these have 50 acc and still have 5 stp so meh
+    })
 
     sets.engaged.GreatSword.PDT = set_combine(sets.engaged.GreatSword, sets.Defensive)
     sets.engaged.GreatSword.Mid.PDT = set_combine(sets.engaged.GreatSword.Mid, sets.Defensive_Mid)
@@ -888,16 +903,27 @@ function init_gear_sets()
     
     -- Caladbolg
     sets.engaged.Caladbolg = set_combine(sets.engaged.GreatSword, {})
-    sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {})
-    sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {})
+    sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {
+        body="Fallen's Cuirass +3",
+    })
+    sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {
+        legs=Odyssean.Legs.WS, -- these have 50 acc and still have 5 stp so meh
+    })
     
     sets.engaged.Caladbolg.PDT = set_combine(sets.engaged.Caladbolg, sets.Defensive)
     sets.engaged.Caladbolg.Mid.PDT = set_combine(sets.engaged.Caladbolg.Mid, sets.Defensive_Mid)
     sets.engaged.Caladbolg.Acc.PDT = set_combine(sets.engaged.Caladbolg.Acc, sets.Defensive_Acc)
     
-    sets.engaged.Haste.Caladbolg = set_combine(sets.engaged.Haste, {})
-    sets.engaged.Haste.Caladbolg.Mid = set_combine(sets.engaged.Haste.Mid, {})
-    sets.engaged.Haste.Caladbolg.Acc = set_combine(sets.engaged.Haste.Acc, {})
+    sets.engaged.Haste.Caladbolg = set_combine(sets.engaged.Caladbolg, { 
+        hands="Sulevia's Gauntlets +2",
+        waist="Windbuffet Belt +1"
+    })
+    sets.engaged.Haste.Caladbolg.Mid = set_combine(sets.engaged.Caladbolg.Mid, {
+        hands="Sulevia's Gauntlets +2",
+    })
+    sets.engaged.Haste.Caladbolg.Acc = set_combine(sets.engaged.Caladbolg.Acc, {
+        hands="Sulevia's Gauntlets +2",
+    })
 
     sets.engaged.Haste.Caladbolg.PDT = set_combine(sets.engaged.Caladbolg.PDT, sets.DefensiveHigh)
     sets.engaged.Haste.Caladbolg.Mid.PDT = set_combine(sets.engaged.Caladbolg.Mid.PDT, sets.DefensiveHigh)

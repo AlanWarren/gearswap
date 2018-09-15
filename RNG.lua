@@ -124,6 +124,7 @@ function init_gear_sets()
             main="Annihilator",
             sub="Nusku Shield",
             ammo="Perun +1",
+            ear2="Reraise Earring",
             range="Yoichinoyumi",
             hands="Taeon Gloves",
             feet="Legion Scutum"

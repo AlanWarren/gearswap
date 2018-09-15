@@ -66,6 +66,7 @@ function init_gear_sets()
 
     sets.Organizer = {
         main="Nehushtan", 
+        ear2="Reraise Earring",
     }
 
     -- Fast cast sets for spells
