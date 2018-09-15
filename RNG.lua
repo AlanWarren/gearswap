@@ -308,7 +308,7 @@ function init_gear_sets()
             body="Orion Jerkin +2", 
             hands="Adhemar Wristbands",
             ring1="Rajas Ring",
-            ring2="Apate Ring",
+            ring2="Petrov Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
             legs="Amini Brague +1", 
@@ -317,13 +317,15 @@ function init_gear_sets()
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             head="Meghanada Visor +1",
             ring2="Mummu Ring",
+            legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             -- head="Orion Beret +2",
             neck="Scout's Gorget", 
-            ring1="Cacoethic Ring +1",
             hands="Meghanada Gloves +2",
-            legs="Adhemar Kecks", 
+            ring1="Cacoethic Ring +1",
+            ring2="Longshot Ring",
+            feet="Meghanada Jambeaux +2"
         })
 
         sets.midcast.RA.DoubleShot = set_combine(sets.midcast.RA, {
