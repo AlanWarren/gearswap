@@ -98,8 +98,11 @@ function init_gear_sets()
 	sets.precast.CorsairRoll = {
         head="Lanun Tricorne +1",
         hands="Navarch's Gants +2",
-        body="Lanun Frac +1",
+        ear1="Etiolation Earring",
+        ear2="Eabani Earring",
+        body="Meghanada Cuirie +1",
         ring1="Barataria Ring",
+        ring2="Defending Ring",
         back="Camulus's Mantle",
         feet="Lanun Bottes"
     }

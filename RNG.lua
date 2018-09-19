@@ -316,7 +316,7 @@ function init_gear_sets()
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             head="Meghanada Visor +1",
-            ring2="Mummu Ring",
+            ring2="Apate Ring",
             legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
