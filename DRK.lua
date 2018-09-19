@@ -175,7 +175,6 @@ function init_gear_sets()
     Odyssean.Feet.TP = { name="Odyssean Greaves", augments={'Accuracy+16 Attack+16','"Store TP"+4','DEX+1','Accuracy+13','Attack+15',}}
 
  
-
     sets.Organizer = {
         main="Liberator",
         sub="Sangarius",
@@ -877,7 +876,9 @@ function init_gear_sets()
     sets.engaged.Haste.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc.PDT, sets.DefensiveHigh)
 
     -- generic great sword
-    sets.engaged.GreatSword = set_combine(sets.engaged, {})
+    sets.engaged.GreatSword = set_combine(sets.engaged, {
+        hands="Flamma Manopolas +1"
+    })
     sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {})
     sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {})
 
