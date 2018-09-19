@@ -410,7 +410,7 @@ function init_gear_sets()
         waist="Windbuffet Belt +1",
         legs="Sulevia's Cuisses +2",
         --legs=Odyssean.Legs.WS,
-        feet="Sulevia's Leggings +1"
+        feet="Sulevia's Leggings +2"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
@@ -557,7 +557,7 @@ function init_gear_sets()
         back="Toro Cape",
         legs="Fallen's Flanchard +2",  
         waist="Eschan Stone", -- macc/matk 7
-        feet="Sulevia's Leggings +1"
+        feet="Sulevia's Leggings +2"
     })
 
     sets.precast.WS['Shadow of Death'].Mid = set_combine(sets.precast.WS['Shadow of Death'], sets.precast.WS.Mid, {
@@ -1013,12 +1013,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.CapacityMantle)
         end
 
-        if spell.english == 'Entropy' and recast[95] == 0 then
-            eventArgs.cancel = true
-            windower.chat.input('/ja "Consume Mana" <me>')
-            windower.chat.input:schedule(1, '/ws "Entropy" <t>')
-            return
-        end
+        -- if spell.english == 'Entropy' and recast[95] == 0 then
+        --     eventArgs.cancel = true
+        --     send_command('@wait 4.0;input /ja "Consume Mana" <me>')
+        --     --windower.chat.input:schedule(1, '/ws "Entropy" <t>')
+        --     return
+        -- end
 
         if player.tp > 2999 then
             if wsList:contains(spell.english) then
@@ -1150,7 +1150,7 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
     end
 
-    if S{'haste', 'march', 'embrava', 'geo-haste', 'indi-haste'}:contains(buff:lower()) and gain then
+    if S{'haste', 'march', 'embrava', 'geo-haste', 'indi-haste', 'last resort'}:contains(buff:lower()) then
         if (buffactive['Last Resort']) then
             if (buffactive.embrava or buffactive.haste) and buffactive.march then
                 state.CombatForm:set("Haste")
