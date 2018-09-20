@@ -180,7 +180,7 @@ function init_gear_sets()
         ammo="Knobkierrie",
         head="Flamma Zucchetto +2", 
         neck="Ganesha's Mala",
-        ear1="Brutal Earring",
+        ear1="Sherida Earring",
         ear2="Moonshade Earring",
 		body="Valorous Mail",
         hands=Taeon.Hands,
@@ -217,8 +217,6 @@ function init_gear_sets()
         back="Updraft Mantle",
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
-        ear1="Bladeborn Earring", 
-        ear2="Steelflash Earring", 
         back="Updraft Mantle",
     })
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
@@ -242,7 +240,7 @@ function init_gear_sets()
         head="Twilight Helm",
         neck="Twilight Torque",
         ear1="Cessance Earring",
-        ear2="Tripudio Earring",
+        ear2="Sherida Earring",
 		body="Twilight Mail",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -261,7 +259,7 @@ function init_gear_sets()
         head="Flamma Zucchetto +2",
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
-        ear2="Tripudio Earring",
+        ear2="Sherida Earring",
 		body="Peltast's Plackart +1",
         hands="Crusher Gauntlets",
         ring1="Niqmaddu Ring",
@@ -341,7 +339,7 @@ function init_gear_sets()
 		head="Flamma Zucchetto +2",
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
-        ear2="Tripudio Earring",
+        ear2="Sherida Earring",
 		body="Peltast's Plackart +1", -- 3%
         hands="Emicho Gauntlets",
         ring1="Niqmaddu Ring",
@@ -349,11 +347,10 @@ function init_gear_sets()
         back="Bleating Mantle",
         waist="Ioskeha Belt",
         legs="Taeon Tights", -- 6%
-        feet="Flamma Gambieras +1"
+        feet="Flamma Gambieras +2"
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
-        ear2="Zennaroi Earring",
         body="Valorous Mail",
         legs="Carmine Cuisses +1",
     })

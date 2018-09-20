@@ -94,6 +94,7 @@ function init_gear_sets()
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {
         neck="Stoicheion Medal",
         hands="Bagua Mitaines",
+        ring1="Mallquis Ring",
     })
 
     
@@ -228,6 +229,7 @@ function init_gear_sets()
         head="Mallquis Chapeau +1",
         hands="Mallquis Cuffs +1",
         body="Mallquis Saio +1",
+        ring2="Mallquis Ring",
         legs="Mallquis Trews +1",
         feet="Mallquis CLogs +1"
     })
@@ -238,7 +240,6 @@ function init_gear_sets()
         neck="Erra Pendant",
         legs="Merlinic Shalwar",
         ring1="Sangoma Ring",
-        ring2="Resonance Ring",
         back="Nantosuelta's Cape",
     })
 

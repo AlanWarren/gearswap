@@ -175,7 +175,6 @@ function init_gear_sets()
     Odyssean.Feet.TP = { name="Odyssean Greaves", augments={'Accuracy+16 Attack+16','"Store TP"+4','DEX+1','Accuracy+13','Attack+15',}}
 
  
-
     sets.Organizer = {
         main="Liberator",
         sub="Sangarius",
@@ -459,12 +458,10 @@ function init_gear_sets()
     -- Base set only used at 3000TP to put AM3 up
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
-        ear2="Ishvara Earring",
         body="Ratri Breastplate",
-        legs="Sulevia's Cuisses +2",
+        legs=Odyssean.Legs.WS,
         ring2="Flamma Ring",
-        waist="Caudata Belt",
-        feet="Ratri Sollerets"
+        waist="Light Belt",
     })
     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {})
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
@@ -474,16 +471,13 @@ function init_gear_sets()
 
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
         head="Odyssean Helm",
-        ear2="Ishvara Earring",
         neck="Shadow Gorget",
         body="Ratri Breastplate",
         legs="Fallen's Flanchard +2",  
         waist="Soil Belt",
-        feet="Ratri Sollerets"
     })
     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {})
     sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
-        ear1="Zennaroi Earring",
         body="Fallen's Cuirass +3",
         waist="Olseni Belt",
     })
@@ -493,8 +487,6 @@ function init_gear_sets()
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
         body="Ratri Breastplate",
         waist="Metalsinger Belt",
-        ring2="Flamma Ring", -- assumes flamma head+2
-        feet="Ratri Sollerets"
     })
     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {})
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
@@ -506,12 +498,9 @@ function init_gear_sets()
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         body="Ratri Breastplate",
-        hands="Emicho Gauntlets",
-        ring2="Shiva Ring",
         waist="Soil Belt",
         ring2="Flamma Ring",
-        legs="Sulevia's Cuisses +2",
-        feet="Ratri Sollerets"
+        legs="Fallen's Flanchard +2",  
     })
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
         body="Fallen's Cuirass +3",
@@ -522,12 +511,10 @@ function init_gear_sets()
     -- 60% STR / MND 
     sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
-        ear2="Ishvara Earring",
         body="Ratri Breastplate",
         hands="Odyssean Gauntlets",
         waist="Caudata Belt",
         legs="Fallen's Flanchard +2",  
-        feet="Ratri Sollerets"
     })
     sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
         body="Fallen's Cuirass +3",
@@ -541,7 +528,6 @@ function init_gear_sets()
         neck="Aqua Gorget",
         body="Ratri Breastplate",
         waist="Metalsinger belt",
-        feet="Ratri Sollerets"
     })
     sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid, { })
     sets.precast.WS['Spiral Hell'].Acc = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Acc, { })
@@ -699,7 +685,6 @@ function init_gear_sets()
     }
     sets.Defensive_Mid = set_combine(sets.Defensive, {
         neck="Twilight Torque",
-        ear1="Zennaroi Earring",
         -- ring1="Patricius Ring",
     })
     sets.Defensive_Acc = set_combine(sets.Defensive_Mid, sets.DefensiveHigh)
@@ -708,6 +693,7 @@ function init_gear_sets()
     sets.DefensiveHigh = set_combine(sets.Defensive, {
         ammo="Ginsen",
         head="Sulevia's Mask +1",
+        neck="Agitator's Collar",
         body="Sulevia's Platemail +1",
         hands="Sulevia's Gauntlets +2",
         legs="Sulevia's Cuisses +2",
@@ -889,6 +875,7 @@ function init_gear_sets()
 
     -- generic great sword
     sets.engaged.GreatSword = set_combine(sets.engaged, {
+        hands="Flamma Manopolas +1"
     })
     sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {})
     sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {
@@ -920,9 +907,9 @@ function init_gear_sets()
     -- Caladbolg
     sets.engaged.Caladbolg = set_combine(sets.engaged.GreatSword, {})
     sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {
-        body="Fallen's Cuirass +3",
     })
     sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {
+        body="Fallen's Cuirass +3",
         legs=Odyssean.Legs.WS, -- these have 50 acc and still have 5 stp so meh
     })
     
