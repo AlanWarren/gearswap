@@ -30,7 +30,7 @@ Extra Info: You can change the default (true|false) status of any MODE by changi
 ::RULES::
 
 Gavialis helm
-Status: disabled
+Status: enabled
 Setting: set use_gavialis = true below in job_setup. 
 
 Notes: Gavialis Helm will automatically be used for all weaponskills on their respective days of the week. If you would like to 
@@ -100,7 +100,7 @@ function job_setup()
     state.SouleaterMode = M(false, 'Soul Eater Mode')
     -- state.LastResortMode = M(false, 'Last Resort Mode')
     -- Use Gavialis helm?
-    use_gavialis = false
+    use_gavialis = true
     -- Weaponskills you do NOT want Gavialis helm used with (only considered if use_gavialis = true)
     wsList = S{'Spiral Hell', 'Torcleaver', 'Insurgency', 'Quietus', 'Cross Reaper'}
     -- Greatswords you use. 
@@ -495,10 +495,20 @@ function init_gear_sets()
     })
     -- ENTROPY
     -- 86-100% INT 
+    -- body="Fallen's Cuirass +3"
+    -- ring1="Niqmaddu Ring",
+    -- ring2="Karieyh Ring",
+    -- legs=Odyssean.Legs.WS
+    -- feet="Sulevia's Leggings +1"
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         body="Ratri Breastplate",
+<<<<<<< HEAD
+=======
+        hands="Emicho Gauntlets",
+>>>>>>> 3c16ee476814e99682ecc7047346b3ae4639f9a3
         waist="Soil Belt",
+        ring2="Shiva Ring",
         ring2="Flamma Ring",
         legs="Fallen's Flanchard +2",  
     })
@@ -509,6 +519,9 @@ function init_gear_sets()
 
     -- Quietus
     -- 60% STR / MND 
+    -- body="Fallen's Cuirass +3"
+    -- legs=Odyssean.Legs.WS
+    -- feet="Sulevia's Leggings +1"
     sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         body="Ratri Breastplate",
