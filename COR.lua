@@ -97,7 +97,7 @@ function init_gear_sets()
 	
 	sets.precast.CorsairRoll = {
         head="Lanun Tricorne +1",
-        hands="Navarch's Gants +2",
+        hands="Chasseur's Gants +1",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         body="Meghanada Cuirie +1",
@@ -116,7 +116,7 @@ function init_gear_sets()
 	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
 	--sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Navarch's Tricorne +1"})
 	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Navarch's Frac +2"})
-	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Navarch's Gants +2"})
+	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
 	
 	sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
     --sets.precast.FoldDoubleBust = {hands="Lanun Gants"}
@@ -131,7 +131,7 @@ function init_gear_sets()
     }
 
     sets.Organizer = {
-        main="Arendsi Fleuret",
+        main="Fettering Blade",
         sub="Odium",
         ear2="Reraise Earring",
         range="Doomsday",

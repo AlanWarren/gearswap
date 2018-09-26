@@ -173,7 +173,7 @@ function init_gear_sets()
 
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
         legs="Bagua Pants",
-        feet="Azimuth Gaiters",
+        feet="Azimuth Gaiters +1",
         back="Lifestream Cape", -- 9
     })
 
@@ -345,7 +345,7 @@ function init_gear_sets()
         body="Mallquis Saio +1",
         hands="Geomancy Mitaines +1",
     	back="Solemnity Cape",
-        feet="Azimuth Gaiters"
+        feet="Azimuth Gaiters +1"
     })
 
     -- .Pet sets are for when Luopan is present.
@@ -405,7 +405,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Defending Ring",
         --back="Umbra Cape",
-        feet="Azimuth Gaiters"
+        feet="Azimuth Gaiters +1"
     }
 
     sets.defense.MDT = {

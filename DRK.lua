@@ -427,10 +427,10 @@ function init_gear_sets()
     sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
         ear1="Brutal Earring",
         neck="Breeze Gorget",
-        body="Valorous Mail",
+        --body="Valorous Mail",
         hands="Sulevia's Gauntlets +2",
         waist="Soil Belt",
-        feet="Flamma Gambieras +2"
+        --feet="Flamma Gambieras +2"
     })
     sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
 

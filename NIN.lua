@@ -124,7 +124,7 @@ function init_gear_sets()
         ring2="SUpershear Ring",
         feet="Mochizuki Kyahan +1"
     }
-    sets.precast.JA.Sange = { ammo=gear.SangeAmmo, body="Mochizuki Chainmail +2" }
+    sets.precast.JA.Sange = { ammo=gear.SangeAmmo, body="Mochizuki Chainmail +3" }
 
     -- Waltz (chr and vit)
     sets.precast.Waltz = {
@@ -189,7 +189,7 @@ function init_gear_sets()
     sets.midcast.RA = {
         head="Taeon Chapeau",
         neck="Iqabi Necklace",
-        body="Mochizuki Chainmail +2",
+        body="Mochizuki Chainmail +3",
         hands="Hachiya Tekko +1",
         ring1="Hajduk Ring",
         back="Yokaze Mantle",
@@ -197,14 +197,13 @@ function init_gear_sets()
         feet="Taeon Boots"
     }
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        body="Mochizuki Chainmail +2"
+        body="Mochizuki Chainmail +3"
     })
     sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
 
     -- Fast cast sets for spells
     sets.precast.FC = {
         head="Herculean Helm",
-        --ammo="Impatiens",
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
         ring1="Prolix Ring",
@@ -215,7 +214,7 @@ function init_gear_sets()
         back="Mujin Mantle",
         feet="Mochizuki Kyahan +1" -- special enhancement for casting ninjutsu III
     }
-    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads", body="Mochizuki Chainmail +2" })
+    sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads", body="Mochizuki Chainmail +3" })
 
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -304,7 +303,7 @@ function init_gear_sets()
     }
     sets.idle.Town = set_combine(sets.idle, {
         head="Herculean Helm",
-        body="Mochizuki Chainmail +2",
+        body="Mochizuki Chainmail +3",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Trux Earring",
@@ -363,7 +362,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Mochizuki Chainmail +2",
+        body="Mochizuki Chainmail +3",
         hands="Floral Gauntlets",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
@@ -387,7 +386,7 @@ function init_gear_sets()
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Yarak Torque",
-        body="Kendatsuba Samue",
+        body="Mochizuki Chainmail +3",
         ring1="Cacoethic Ring +1",
         waist="Olseni Belt",
     })
@@ -500,7 +499,7 @@ function init_gear_sets()
         head="Herculean Helm",
         neck="Yarak Torque",
         ear1="Zennaroi Earring",
-        body="Kendatsuba Samue",
+        body="Mochizuki Chainmail +3",
         -- hands="Ryuo Tekko",
         ring1="Mummu Ring",
         ring2="Cacoethic Ring +1",
@@ -572,20 +571,20 @@ function init_gear_sets()
     sets.engaged.Innin.Mid.PDT.Haste_35 = sets.engaged.Mid.PDT.Haste_35
     sets.engaged.Innin.Acc.PDT.Haste_35 = sets.engaged.Acc.PDT.Haste_35
 
-    -- 30% Haste 1626 / 798
+    -- 30% Haste 1626 / 798  +260 acc
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
-        head="Ryuo Somen",
+        head="Herculean Helm",
         neck="Asperity Necklace",
         ear1="Brutal Earring",
-        ear2="Cessance Earring",
-        body="Mochizuki Chainmail +2",
-        hands="Floral Gauntlets",
+        ear2="Suppanomimi", 
+        body="Mochizuki Chainmail +3",
+        hands="Herculean Gloves", 
         ring1="Petrov Ring",
         ring2="Epona's Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Kendatsuba Hakama",
-        feet="Herculean Boots"
+        feet="Hizamaru Sune-ate +1" 
     })
     -- Using Low for high-def targets. (stacking attack + acc)
     sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Haste_30, {
@@ -593,14 +592,14 @@ function init_gear_sets()
         neck="Lissome Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Mochizuki Chainmail +2",
+        body="Mochizuki Chainmail +3",
         hands="Herculean Gloves",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
-        legs="Herculean Trousers",
-        feet="Herculean Boots"
+        legs="Kendatsuba Hakama",
+        feet="Hizamaru Sune-ate +1" 
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
         neck="Lissome Necklace",
@@ -633,15 +632,15 @@ function init_gear_sets()
     -- haste spell - 139 dex | 275 acc | 1150 total acc (with shigi R15)
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
         head="Ryuo Somen",
-        neck="Rancor Collar",
+        neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Mochizuki Chainmail +2",
+        body="Mochizuki Chainmail +3",
         hands="Floral Gauntlets",
-        ring1="Petrov Ring",
+        ring1="Begrudging Ring",
         ring2="Epona's Ring",
         back=Andartia.DEX,
-        waist="Shetal Stone",
+        waist="Patentia Sash",
         legs="Kendatsuba Hakama",
         feet="Herculean Boots"
     })
@@ -696,7 +695,7 @@ function init_gear_sets()
     sets.precast.WS.Low = sets.precast.WS.Mid
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-        -- body="Herculean Vest",
+        body="Mochizuki Chainmail +3",
     })
     
     sets.Kamu = {
@@ -756,6 +755,7 @@ function init_gear_sets()
     
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         ear1="Cessance Earring",
+        body="Mochizuki Chainmail +3",
         legs="Kendatsuba Hakama",
     })
     
@@ -764,6 +764,7 @@ function init_gear_sets()
         head="Herculean Helm",
         neck="Flame Gorget",
         hands="Herculean Gloves",
+        body="Mochizuki Chainmail +3",
         ring1="Ramuh Ring",
         back=Andartia.DEX,
         waist="Light Belt",
