@@ -503,10 +503,6 @@ function init_gear_sets()
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         body="Ratri Breastplate",
-<<<<<<< HEAD
-=======
-        hands="Emicho Gauntlets",
->>>>>>> 3c16ee476814e99682ecc7047346b3ae4639f9a3
         waist="Soil Belt",
         ring2="Shiva Ring",
         ring2="Flamma Ring",
