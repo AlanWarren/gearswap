@@ -171,10 +171,10 @@ function init_gear_sets()
         head="Uk'uxkaj Cap",
         hands=TaeonHands.Snap,
         legs="Adhemar Kecks",
-        feet="Meghanada Jambeaux +1" -- 8
+        feet="Meghanada Jambeaux +2" -- 8
     }
     sets.midcast.RA = {
-        head="Meghanada Visor +1",
+        head="Meghanada Visor +2",
         neck="Ocachi Gorget",
         ear1="Tripudio Earring",
         ear2="Enervating Earring",

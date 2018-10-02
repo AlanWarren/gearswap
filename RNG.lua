@@ -140,7 +140,7 @@ function init_gear_sets()
         sets.CapacityMantle = {back="Mecistopins Mantle"}
 
         sets.precast.JA['Eagle Eye Shot'] = set_combine(sets.midcast.RA, {
-            head="Meghanada Visor +1", 
+            head="Meghanada Visor +2", 
             ear1="Flame Pearl",
             ear2="Flame Pearl",
             neck="Rancor Collar",
@@ -175,7 +175,7 @@ function init_gear_sets()
         
         sets.idle = {
             --sub="Nusku Shield",
-            head="Meghanada Visor +1",
+            head="Meghanada Visor +2",
             neck="Sanctity Necklace",
             ear1="Etiolation Earring",
             ear2="Eabani Earring",
@@ -195,10 +195,10 @@ function init_gear_sets()
             ring2="Paguroidea Ring"
         })
         sets.idle.PDT = set_combine(sets.idle, {
-            head="Meghanada Visor +1",
+            head="Meghanada Visor +2",
             body="Meghanada Cuirie +1",
             hands="Meghanada Gloves +2",
-            legs="Meghanada Chausses +1",
+            legs="Mummu Kecks +1",
             ring1="Dark Ring",
             ring2="Defending Ring"
         })
@@ -216,7 +216,7 @@ function init_gear_sets()
         -- Engaged sets
         sets.engaged =  {
             sub="Nusku Shield",
-            head="Meghanada Visor +1",
+            head="Meghanada Visor +2",
             neck="Twilight Torque",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
@@ -233,6 +233,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +2",
     	    back="Solemnity Cape",
             ring1="Dark Ring",
+            legs="Mummu Kecks +1"
         })
         sets.engaged.Bow = set_combine(sets.engaged, {})
 
@@ -257,6 +258,7 @@ function init_gear_sets()
             ring1="Patricius Ring",
             ring2="Defending Ring",
             back="Solemnity Cape",
+            legs="Mummu Kecks +1"
         })
 
         sets.engaged.DW = set_combine(sets.engaged, {})
@@ -315,7 +317,7 @@ function init_gear_sets()
             feet="Mummu Gamashes +2"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            head="Meghanada Visor +1",
+            head="Meghanada Visor +2",
             ring2="Apate Ring",
             legs="Adhemar Kecks", 
         })
@@ -641,7 +643,7 @@ function init_gear_sets()
         --sets.Kiting = {feet="Fajin Boots"}
        
         sets.buff.Barrage = {
-            head="Meghanada Visor +1",
+            head="Meghanada Visor +2",
             neck="Scout's gorget", 
             ear1="Enervating Earring",
             ear2="Flame Pearl",

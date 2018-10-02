@@ -104,6 +104,7 @@ function init_gear_sets()
         ring1="Barataria Ring",
         ring2="Defending Ring",
         back="Camulus's Mantle",
+        legs="Mummu Kecks +1",
         feet="Lanun Bottes"
     }
         TaeonHands = {}
@@ -172,7 +173,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-        head="Meghanada Visor +1",
+        head="Meghanada Visor +2",
         neck=gear.ElementalGorget,
         ear1="Ishvara Earring",
         ear2="Flame Pearl",
@@ -180,7 +181,7 @@ function init_gear_sets()
         hands="Meghanada Gloves +2",
         ring1="Karieyh Ring",
         ring2="Apate Ring",
-		back="Buquwik Cape",
+        back="Camulus's Mantle",
         waist=gear.ElementalBelt,
         legs="Adhemar Kecks",
         feet="Meghanada Jambeaux +2"
@@ -203,15 +204,15 @@ function init_gear_sets()
         ammo=gear.WSbullet,
         ear1="Enervating Earring",
         ear2="Moonshade Earring",
-        back="Buquwik Cape",
         ring1="Ifrit Ring",
         ring2="Mummu Ring",
+        back="Camulus's Mantle",
         feet="Mummu Gamashes +2"
     })
 
 	sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
-        head="Lanun Tricorne +1",
+        head="Mummu Bonnet +1",
         neck="Sanctity Necklace",
         ear1="Ishvara Earring",
         ear2="Friomisi Earring",
@@ -219,9 +220,9 @@ function init_gear_sets()
         hands="Leyline Gloves",
         ring1="Mummu Ring",
         ring2="Garuda Ring",
-        back="Gunslinger's Cape",
+        back="Camulus's Mantle",
         waist="Eschan Stone",
-        legs="Shneddick Tights +1",
+        legs="Mummu Kecks +1",
         feet="Mummu Gamashes +2"
     }
 
@@ -247,7 +248,7 @@ function init_gear_sets()
 
 	sets.midcast.CorsairShot = {
         ammo=gear.QDbullet,
-        head="Herculean Helm",
+        head="Mummu Bonnet +1",
         neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -257,12 +258,13 @@ function init_gear_sets()
         ring2="Garuda Ring",
         back="Gunslinger's Cape",
         waist="Eschan Stone",
-        legs="Shneddick Tights +1",
+        legs="Mummu Kecks +1",
         feet="Lanun Bottes"
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
         body="Mekosuchinae Harness",
+        head="Mummu Bonnet +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         ring1="Perception Ring",
@@ -276,15 +278,15 @@ function init_gear_sets()
 	-- Ranged gear
 	sets.midcast.RA = {
         ammo=gear.RAbullet,
-        head="Meghanada Visor +1",
+        head="Meghanada Visor +2",
         neck="Iqabi Necklace",
         ear1="Enervating Earring",
         ear2="Tripudio Earring",
-        body="Meghanada Cuirie +1",
+        body="Mummu Jacket +1",
         hands="Adhemar Wristbands",
         ring1="Rajas Ring",
         ring2="Apate Ring",
-        back="Gunslinger's Cape",
+        back="Camulus's Mantle",
         waist="Kwahu Kachina Belt",
         legs="Adhemar Kecks",
         feet="Mummu Gamashes +2"
@@ -302,7 +304,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
         ammo=gear.RAbullet,
-        head="Meghanada Visor +1",
+        head="Meghanada Visor +2",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
@@ -339,7 +341,7 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = set_combine(sets.idle, {
-        head="Meghanada Visor +1",
+        head="Meghanada Visor +2",
         neck="Twilight Torque",
         hands="Meghanada Gloves +2",
         body="Meghanada Cuirie +1",
@@ -364,7 +366,7 @@ function init_gear_sets()
 	
     sets.engaged = {
         ammo=gear.RAbullet,
-        head="Meghanada Visor +1",
+        head="Meghanada Visor +2",
         neck="Twilight Torque",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",

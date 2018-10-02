@@ -163,7 +163,7 @@ function init_gear_sets()
 
     Ankou = {}
     Ankou.FC  = { name="Ankou's Mantle", augments={'"Fast Cast"+10',}}
-    Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-4%',}}
+    Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}}
     Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 
     Odyssean = {}
@@ -235,15 +235,15 @@ function init_gear_sets()
         head="Cizin Helm +1",
     })
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-        body="Jumalik Mail",
+        -- body="Jumalik Mail",
     })
 
     -- Midcast Sets
     sets.midcast.FastRecast = {
         ammo="Impatiens",
         head="Fallen's Burgeonet +1",
-        body="Odyssean Chestplate",
-        hands="Odyssean Gauntlets",
+        -- body="Odyssean Chestplate",
+        -- hands="Odyssean Gauntlets",
         back="Grounded Mantle +1",
         waist="Ioskeha Belt",
         legs="Carmine Cuisses +1",
@@ -495,18 +495,14 @@ function init_gear_sets()
     })
     -- ENTROPY
     -- 86-100% INT 
-    -- body="Fallen's Cuirass +3"
-    -- ring1="Niqmaddu Ring",
-    -- ring2="Karieyh Ring",
-    -- legs=Odyssean.Legs.WS
-    -- feet="Sulevia's Leggings +1"
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
-        body="Ratri Breastplate",
+        body="Fallen's Cuirass +3",
         waist="Soil Belt",
-        ring2="Shiva Ring",
-        ring2="Flamma Ring",
+        ring1="Niqmaddu Ring",
+        ring2="Karieyh Ring",
         legs="Fallen's Flanchard +2",  
+        feet="Sulevia's Leggings +1"
     })
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
         body="Fallen's Cuirass +3",
@@ -884,7 +880,7 @@ function init_gear_sets()
 
     -- generic great sword
     sets.engaged.GreatSword = set_combine(sets.engaged, {
-        hands="Flamma Manopolas +1"
+        hands="Flamma Manopolas +2"
     })
     sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {})
     sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {
@@ -914,10 +910,14 @@ function init_gear_sets()
     sets.engaged.Ragnarok.Acc.PDT = set_combine(sets.engaged.Ragnarok.Acc, sets.Defensive_Acc)
     
     -- Caladbolg
-    sets.engaged.Caladbolg = set_combine(sets.engaged.GreatSword, {})
+    sets.engaged.Caladbolg = set_combine(sets.engaged.GreatSword, {
+        hands="Flamma Manopolas +2"
+    })
     sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {
+        hands="Flamma Manopolas +2"
     })
     sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {
+        hands="Flamma Manopolas +2",
         body="Fallen's Cuirass +3",
         legs=Odyssean.Legs.WS, -- these have 50 acc and still have 5 stp so meh
     })
