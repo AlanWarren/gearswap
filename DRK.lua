@@ -242,8 +242,6 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         ammo="Impatiens",
         head="Fallen's Burgeonet +1",
-        -- body="Odyssean Chestplate",
-        -- hands="Odyssean Gauntlets",
         back="Grounded Mantle +1",
         waist="Ioskeha Belt",
         legs="Carmine Cuisses +1",
@@ -284,7 +282,7 @@ function init_gear_sets()
         ring1="Evanescence Ring", -- 10
         ring2="Sangoma Ring", -- 8 macc
         back=Niht.DarkMagic, -- 10
-        legs="Eschite Cuisses",  -- 20
+        legs="Fallen's Flanchard +3",  -- 18 + 39macc
         feet="Ratri Sollerets" -- macc 33
     }
     sets.midcast.Endark = set_combine(sets.midcast['Dark Magic'], {
@@ -295,7 +293,6 @@ function init_gear_sets()
     sets.midcast['Dark Magic'].Acc = set_combine(sets.midcast['Dark Magic'], {
         head="Flamma Zucchetto +2", -- 44 macc
         hands="Leyline Gloves",
-        legs="Fallen's Flanchard +2",  
         waist="Eschan Stone"
     })
 
@@ -330,7 +327,6 @@ function init_gear_sets()
         ear2="Eabani Earring", -- 3
         body="Heathen's Cuirass +1",
         back="Trepidity Mantle",
-        legs="Carmine Cuisses +1",
     })
     sets.midcast['Dread Spikes'].Acc = set_combine(sets.midcast['Dark Magic'], {
         body="Heathen's Cuirass +1",
@@ -342,7 +338,6 @@ function init_gear_sets()
         head="Fallen's Burgeonet +1",
         ear1="Gwati Earring",
         ear2="Hirudinea Earring",
-        -- body="Lugra Cloak +1",
         ring2="Excelsis Ring",
         feet="Ratri Sollerets"
     })
@@ -407,18 +402,15 @@ function init_gear_sets()
         ring2="Karieyh Ring",
         back=Ankou.WSD,
         waist="Windbuffet Belt +1",
-        legs="Sulevia's Cuisses +2",
-        --legs=Odyssean.Legs.WS,
+        legs="Fallen's Flanchard +3",
         feet="Sulevia's Leggings +2"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
-        legs=Odyssean.Legs.WS
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         body="Fallen's Cuirass +3",
-        -- body="Fallen's Cuirass +3",
-        --legs="Sulevia's Cuisses +1",
+        legs=Odyssean.Legs.WS
         waist="Olseni Belt",
     })
 
@@ -441,8 +433,7 @@ function init_gear_sets()
         body="Ignominy Cuirass +2",
         neck="Aqua Gorget",
         waist="Light Belt",
-        --legs="Fallen's Flanchard +2",  
-        legs=Odyssean.Legs.WS,
+        legs="Fallen's Flanchard +3",
     })
     sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
         neck="Aqua Gorget",
@@ -459,7 +450,7 @@ function init_gear_sets()
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         body="Ratri Breastplate",
-        legs=Odyssean.Legs.WS,
+        legs="Fallen's Flanchard +3",
         ring2="Flamma Ring",
         waist="Light Belt",
     })
@@ -473,7 +464,7 @@ function init_gear_sets()
         head="Odyssean Helm",
         neck="Shadow Gorget",
         body="Ratri Breastplate",
-        legs="Fallen's Flanchard +2",  
+        legs="Fallen's Flanchard +3",  
         waist="Soil Belt",
     })
     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {})
@@ -487,6 +478,7 @@ function init_gear_sets()
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
         body="Ratri Breastplate",
         waist="Metalsinger Belt",
+        legs="Fallen's Flanchard +3",
     })
     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {})
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
@@ -501,7 +493,7 @@ function init_gear_sets()
         waist="Soil Belt",
         ring1="Niqmaddu Ring",
         ring2="Karieyh Ring",
-        legs="Fallen's Flanchard +2",  
+        legs="Fallen's Flanchard +3",  
         feet="Sulevia's Leggings +1"
     })
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
@@ -519,13 +511,14 @@ function init_gear_sets()
         body="Ratri Breastplate",
         hands="Odyssean Gauntlets",
         waist="Caudata Belt",
-        legs="Fallen's Flanchard +2",  
+        legs="Fallen's Flanchard +3",  
     })
     sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
         body="Fallen's Cuirass +3",
+    })
+    sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, {
         legs=Odyssean.Legs.WS
     })
-    sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, {})
 
     -- SPIRAL HELL
     -- 50% STR / 50% INT 
@@ -546,7 +539,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         hands="Leyline Gloves",
         back="Toro Cape",
-        legs="Fallen's Flanchard +2",  
+        legs="Fallen's Flanchard +3",  
         waist="Eschan Stone", -- macc/matk 7
         feet="Sulevia's Leggings +2"
     })
@@ -584,7 +577,6 @@ function init_gear_sets()
         neck="Shadow Gorget",
         body="Ignominy Cuirass +2",
         hands="Odyssean Gauntlets",
-        legs=Odyssean.Legs.WS,
         waist="Soil Belt",
     })
     sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)

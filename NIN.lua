@@ -109,7 +109,7 @@ function init_gear_sets()
     --------------------------------------
     Andartia = {}
     Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
-    Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+3','Weapon skill damage +10%',}}
 
     --------------------------------------
     -- Job Abilties
@@ -406,7 +406,7 @@ function init_gear_sets()
         feet="Hachiya Kyahan +1"
     })
     sets.Proc = {
-        main="Knife",
+        -- main="Knife",
         sub=empty,
         ammo="Ginsen"
     }

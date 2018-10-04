@@ -279,7 +279,7 @@ function init_gear_sets()
 	sets.midcast.RA = {
         ammo=gear.RAbullet,
         head="Meghanada Visor +2",
-        neck="Iqabi Necklace",
+        neck="Iskur Gorget",
         ear1="Enervating Earring",
         ear2="Tripudio Earring",
         body="Mummu Jacket +1",
@@ -326,7 +326,7 @@ function init_gear_sets()
 	sets.idle.Town = {
         ammo=gear.RAbullet,
         head="Lanun Tricorne +1",
-        neck="Sanctity Necklace",
+        neck="Iskur Gorget",
         ear1="Enervating Earring",
         ear2="Crematio Earring",
         body="Councilor's Garb",
@@ -382,7 +382,7 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged.Melee = {
         head="Herculean Helm",
-        neck="Iqabi Necklace",
+        neck="Lissome Necklace",
         ear1="Brutal Earring",
         ear2="Cessance Earring",
         body="Meghanada Cuirie +1",
