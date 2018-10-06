@@ -495,22 +495,14 @@ function init_gear_sets()
     })
     -- ENTROPY
     -- 86-100% INT 
-    -- body="Fallen's Cuirass +3"
-    -- ring1="Niqmaddu Ring",
-    -- ring2="Karieyh Ring",
-    -- legs=Odyssean.Legs.WS
-    -- feet="Sulevia's Leggings +1"
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
-        body="Ratri Breastplate",
-<<<<<<< HEAD
-=======
-        hands="Emicho Gauntlets",
->>>>>>> 3c16ee476814e99682ecc7047346b3ae4639f9a3
+        body="Fallen's Cuirass +3",
         waist="Soil Belt",
-        ring2="Shiva Ring",
-        ring2="Flamma Ring",
-        legs="Fallen's Flanchard +2",  
+        ring1="Niqmaddu Ring",
+        ring2="Karieyh Ring",
+        legs=Odyssean.Legs.WS,
+        feet="Sulevia's Leggings +1"
     })
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
         body="Fallen's Cuirass +3",
@@ -519,15 +511,13 @@ function init_gear_sets()
 
     -- Quietus
     -- 60% STR / MND 
-    -- body="Fallen's Cuirass +3"
-    -- legs=Odyssean.Legs.WS
-    -- feet="Sulevia's Leggings +1"
     sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         body="Ratri Breastplate",
         hands="Odyssean Gauntlets",
         waist="Caudata Belt",
-        legs="Fallen's Flanchard +2",  
+        legs=Odyssean.Legs.WS,
+        feet="Sulevia's Leggings +1"
     })
     sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
         body="Fallen's Cuirass +3",

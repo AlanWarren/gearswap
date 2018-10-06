@@ -121,7 +121,7 @@ function init_gear_sets()
         ear2="Trux Earring", 
         body="Emet Harness +1",
         ring1="Petrov Ring",
-        ring2="SUpershear Ring",
+        ring2="Supershear Ring",
         feet="Mochizuki Kyahan +1"
     }
     sets.precast.JA.Sange = { ammo=gear.SangeAmmo, body="Mochizuki Chainmail +3" }

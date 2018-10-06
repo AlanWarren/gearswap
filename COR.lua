@@ -61,6 +61,8 @@ function user_setup()
     get_combat_form()
 	-- Additional local binds
 	-- Cor doesn't use hybrid defense mode; using that for ranged mode adjustments.
+    send_command('bind f9 gs c cycle RangedMode')
+    send_command('bind !f9 gs c cycle OffenseMode')
 	send_command('bind ^` input /ja "Double-up" <me>')
 	send_command('bind !` input /ja "Bolter\'s Roll" <me>')
     send_command('bind != gs c toggle CapacityMode')
@@ -291,6 +293,7 @@ function init_gear_sets()
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
+        ring1="Longshot Ring",
         ring2="Cacoethic Ring +1",
     })
 	
@@ -334,7 +337,7 @@ function init_gear_sets()
         back="Gunslinger's Cape",
         waist="Eschan Stone",
         legs="Carmine Cuisses +1",
-        feet="Herculean Boots"
+        feet="Meghanada Jambeaux +2"
     }
 	
 	-- Defense sets
