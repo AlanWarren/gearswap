@@ -141,19 +141,17 @@ function init_gear_sets()
 
         sets.precast.JA['Eagle Eye Shot'] = set_combine(sets.midcast.RA, {
             head="Meghanada Visor +2", 
-            ear1="Flame Pearl",
-            ear2="Flame Pearl",
-            neck="Rancor Collar",
+            ear1="Enervating Earring",
+            ear2="Sherida Earring",
             body="Orion Jerkin +2",
-            back="Buquwik Cape",
+            back=Belenus.STP,
             hands="Meghanada Gloves +2",
-            ring1="Ifrit Ring",
+            ring1="Rajas Ring",
             ring2="Apate Ring",
-            legs="Amini Brague +1", 
+            legs="Arcadian Braccae +1", 
             feet="Thereoid Greaves"
         })
         sets.precast.JA['Eagle Eye Shot'].Mid = set_combine(sets.precast.JA['Eagle Eye Shot'], {
-            back="Lutian Cape",
             ring2="Longshot Ring",
             feet="Meghanada Jambeaux +2"
         })
@@ -244,11 +242,11 @@ function init_gear_sets()
             neck="Lissome Necklace",
             ear1="Brutal Earring",
             ear2="Sherida Earring",
-            body="Herculean Vest",
+            body="Mummu Jacket +1",
             hands="Herculean Gloves",
             ring1="Petrov Ring",
             ring2="Epona's Ring",
-            back="Bleating Mantle",
+            back="Grounded Mantle +1",
             waist="Windbuffet Belt +1",
             legs="Meghanada Chausses +1", 
             feet="Herculean Boots"
@@ -271,10 +269,10 @@ function init_gear_sets()
             ear2="Suppanomimi",
             body="Samnuha Coat",
             hands="Floral Gauntlets",
-            back="Bleating Mantle",
+            back="Grounded Mantle +1",
             waist="Patentia Sash",
             legs="Carmine Cuisses +1",
-            feet="Taeon Boots"
+            feet="Herculean Boots"
         })
 
         ------------------------------------------------------------------
@@ -377,9 +375,9 @@ function init_gear_sets()
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             legs="Meghanada Chausses +1", 
+            body="Orion Jerkin +2",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-            -- head="Meghanada Visor +1",
         })
 
         -- WILDFIRE
@@ -549,7 +547,7 @@ function init_gear_sets()
             head="Meghanada Visor +2",
             neck="Iskur Gorget",
             ear1="Enervating Earring",
-            ear2="Flame Pearl",
+            ear2="Sherida Earring",
             body="Orion Jerkin +2",
             hands="Orion Bracers +1",
             ring1="Apate Ring",
