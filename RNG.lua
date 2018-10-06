@@ -117,7 +117,7 @@ function init_gear_sets()
         
         Belenus = {}
         Belenus.STP = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10',}}
-        Belenus.WSD = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+1','Weapon skill damage +10%',}}
+        Belenus.WSD = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+3','Weapon skill damage +10%',}}
         Belenus.Snap = {name="Belenus's Cape", augments={'"Snapshot"+10',}}
 
         sets.Organizer = {
@@ -140,7 +140,7 @@ function init_gear_sets()
         sets.CapacityMantle = {back="Mecistopins Mantle"}
 
         sets.precast.JA['Eagle Eye Shot'] = set_combine(sets.midcast.RA, {
-            head="Meghanada Visor +1", 
+            head="Meghanada Visor +2", 
             ear1="Flame Pearl",
             ear2="Flame Pearl",
             neck="Rancor Collar",
@@ -158,7 +158,7 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +2"
         })
         sets.precast.JA['Eagle Eye Shot'].Acc = set_combine(sets.precast.JA['Eagle Eye Shot'].Mid, {
-            neck="Iqabi Necklace",
+            neck="Iskur Gorget",
             waist="Kwahu Kachina Belt"
         })
 
@@ -175,7 +175,7 @@ function init_gear_sets()
         
         sets.idle = {
             --sub="Nusku Shield",
-            head="Meghanada Visor +1",
+            head="Meghanada Visor +2",
             neck="Sanctity Necklace",
             ear1="Etiolation Earring",
             ear2="Eabani Earring",
@@ -195,16 +195,18 @@ function init_gear_sets()
             ring2="Paguroidea Ring"
         })
         sets.idle.PDT = set_combine(sets.idle, {
-            head="Meghanada Visor +1",
+            head="Meghanada Visor +2",
             body="Meghanada Cuirie +1",
             hands="Meghanada Gloves +2",
-            legs="Meghanada Chausses +1",
+            legs="Mummu Kecks +1",
             ring1="Dark Ring",
             ring2="Defending Ring"
         })
         sets.idle.Town = set_combine(sets.idle, {
             head="Orion Beret +2",
             body="Orion Jerkin +2",
+            ear2="Sherida Earring",
+            neck="Iskur Gorget",
             ring1="Defending Ring",
             ring2="Karieyh Ring",
             hands="Meghanada Gloves +2",
@@ -216,7 +218,7 @@ function init_gear_sets()
         -- Engaged sets
         sets.engaged =  {
             sub="Nusku Shield",
-            head="Meghanada Visor +1",
+            head="Meghanada Visor +2",
             neck="Twilight Torque",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
@@ -233,6 +235,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +2",
     	    back="Solemnity Cape",
             ring1="Dark Ring",
+            legs="Mummu Kecks +1"
         })
         sets.engaged.Bow = set_combine(sets.engaged, {})
 
@@ -257,6 +260,7 @@ function init_gear_sets()
             ring1="Patricius Ring",
             ring2="Defending Ring",
             back="Solemnity Cape",
+            legs="Mummu Kecks +1"
         })
 
         sets.engaged.DW = set_combine(sets.engaged, {})
@@ -302,7 +306,7 @@ function init_gear_sets()
         ------------------------------------------------------------------
         sets.midcast.RA = { 
             head="Arcadian Beret +1",
-            neck="Ocachi Gorget",
+            neck="Iskur Gorget",
             ear1="Enervating Earring",
             ear2="Sherida Earring", 
             body="Orion Jerkin +2", 
@@ -315,89 +319,24 @@ function init_gear_sets()
             feet="Mummu Gamashes +2"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            head="Meghanada Visor +1",
+            head="Meghanada Visor +2",
+            neck="Iskur Gorget",
             ring2="Apate Ring",
             legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             -- head="Orion Beret +2",
-            neck="Scout's Gorget", 
+            neck="Iskur Gorget",
             hands="Meghanada Gloves +2",
             ring1="Cacoethic Ring +1",
             ring2="Longshot Ring",
             feet="Meghanada Jambeaux +2"
         })
 
-        sets.midcast.RA.DoubleShot = set_combine(sets.midcast.RA, {
-            -- head="Oshosi Mask",
-            -- body="Arcadian Jerkin +1",
-            -- feet="Oshosi Leggings"
-        })
-        sets.midcast.RA.Mid.DoubleShot = set_combine(sets.midcast.RA.Mid, {})
-        sets.midcast.RA.Acc.DoubleShot = set_combine(sets.midcast.RA.Acc, {})
-    
-        -- -- Samurai Roll sets 
-        -- sets.midcast.RA.SamRoll = set_combine(sets.midcast.RA, {
-        --     body="Arcadian Jerkin +1",
-        --     ring2="Longshot Ring",
-        -- })
-        -- sets.midcast.RA.Mid.SamRoll = set_combine(sets.midcast.RA.SamRoll, {
-        --     ring2="Longshot Ring",
-        --     body="Amini Caban +1",
-        --     back="Lutian Cape",hands="Amini Glovelettes +1",
-        --     legs="Adhemar Kecks",
-        -- })
-        -- sets.midcast.RA.Acc.SamRoll = set_combine(sets.midcast.RA.Mid.SamRoll, {
-        --     neck="Iqabi Necklace", 
-        --     ring1="Hajduk Ring", 
-        --     ring2="Longshot Ring",
-        --     legs="Adhemar Kecks",
-        -- })
-        
-        -- SAM Subjob
-        -- sets.midcast.RA.SAM = {
-        --     head="Arcadian Beret +1",
-        --     neck="Ocachi Gorget",
-        --     ear1="Enervating Earring",
-        --     ear2="Tripudio Earring", 
-        --     body="Pursuer's Doublet",
-        --     hands="Amini Glovelettes +1",
-        --     ring1="Rajas Ring", 
-        --     ring2="K'ayres Ring",
-        --     back="Lutian Cape",
-        --     waist="Kwahu Kachina Belt",
-        --     legs="Amini Brague +1", 
-        --     feet="Thereoid Greaves"
-        -- }
-        -- sets.midcast.RA.SAM.Mid = set_combine(sets.midcast.RA.SAM, { 
-        --     hands="Amini Glovelettes +1",
-        --     body="Amini Caban +1",
-        --     feet="Orion Socks +1"
-        -- })
-        -- sets.midcast.RA.SAM.Acc = set_combine(sets.midcast.RA.SAM.Mid, {
-        --     back="Lutian Cape", 
-        --     neck="Iqabi Necklace", 
-        --     ring2="Longshot Ring",
-        --     waist="Eschan Stone"
-        -- })
-
-        -- -- Samurai Roll for /sam, assume we're using a staff
-        -- sets.midcast.RA.SAM.SamRoll = set_combine(sets.midcast.RA.SAM, {
-        --     hands="Amini Glovelettes +1"
-        -- })
-        -- sets.midcast.RA.SAM.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Mid, {
-        --     ear1="Enervating Earring",
-        --     hands="Meghanada Gloves +1",
-        --     legs="Adhemar Kecks", 
-        -- })
-        -- sets.midcast.RA.SAM.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Acc, {
-        --     hands="Meghanada Gloves +1",
-        -- })
-
         -- Bow base set.
         sets.midcast.RA.Bow = {
             head="Arcadian Beret +1",
-            neck="Ocachi Gorget",
+            neck="Iskur Gorget",
             ear1="Enervating Earring",
             ear2="Sherida Earring",
             body="Orion Jerkin +2", 
@@ -410,7 +349,6 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +2"
         }
         sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
-            neck="Yarak Torque",
             hands="Adhemar Wristbands",
             legs="Adhemar Kecks",
             body="Orion Jerkin +2", 
@@ -422,49 +360,10 @@ function init_gear_sets()
             ring2="Longshot Ring",
         })
        
-        -- Bow Sam roll
-        -- sets.midcast.RA.Bow.SamRoll = set_combine(sets.midcast.RA.Bow, {
-        --     body="Arcadian Jerkin +1",
-        --     hands="Meghanada Gloves +1",
-        --     ring2="Longshot Ring",
-        --     back="Lutian Cape"
-        -- })
-        -- sets.midcast.RA.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.Bow.SamRoll, {
-        --     body="Pursuer's Doublet",
-        -- })
-        -- sets.midcast.RA.Bow.Acc.SamRoll = set_combine(sets.midcast.RA.Bow.Mid.SamRoll, {
-        --     neck="Yarak Torque",
-        --     hands="Meghanada Gloves +1",
-        --     body="Amini Caban +1",
-        --     ring1="Longshot Ring",
-        --     feet="Meghanada Jambeaux +1"
-        -- })
-        
-        -- Sam SJ / Bow 
-        -- sets.midcast.RA.SAM.Bow = set_combine(sets.midcast.RA.SAM, {
-        --     feet="Meghanada Jambeaux +1"
-        -- })
-        -- sets.midcast.RA.SAM.Bow.Mid = set_combine(sets.midcast.RA.SAM.Mid, {
-        --     feet="Meghanada Jambeaux +1"
-        -- })
-        -- sets.midcast.RA.SAM.Bow.Acc = set_combine(sets.midcast.RA.SAM.Acc, {})
-
-        -- Sam SJ / Bow / Sam's Roll
-        -- sets.midcast.RA.SAM.Bow.SamRoll = set_combine(sets.midcast.RA.SAM.Bow, {
-        --     waist="Kwahu Kachina Belt",
-        --     feet="Meghanada Jambeaux +1"
-        -- })
-
-        -- sets.midcast.RA.SAM.Bow.Mid.SamRoll = set_combine(sets.midcast.RA.SAM.Bow.Mid, {
-        --     waist="Kwahu Kachina Belt",
-        -- })
-        -- sets.midcast.RA.SAM.Bow.Acc.SamRoll = set_combine(sets.midcast.RA.SAM.Bow.Acc, {})
-
-
         -- Weaponskill sets  
         sets.precast.WS = {
             head="Orion Beret +2",
-            neck="Ocachi Gorget",
+            neck="Iskur Gorget",
             ear1="Ishvara Earring",
             ear2="Sherida Earring",
             body="Herculean Vest",
@@ -510,14 +409,17 @@ function init_gear_sets()
         sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Wildfire']
 
         -- CORONACH
-        sets.Coronach = {
+        sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
             neck="Breeze Gorget",
             waist="Thunder Belt",
             back=Belenus.WSD,
-        }
-        sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, sets.Coronach)
-        sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS.Mid, sets.Coronach)
-        sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS.Acc, sets.Coronach)
+        })
+        sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS['Coronach'], {
+            body="Orion Jerkin +2", 
+        })
+        sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS['Coronach'].Mid, {
+            legs="Adhemar Kecks",
+        })
 
         -- sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
         --     neck="Ocachi Gorget",
@@ -528,17 +430,20 @@ function init_gear_sets()
         -- })
 
         -- LAST STAND
-        sets.LastStand = {
+        sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
             head="Orion Beret +2",
             neck="Aqua Gorget",
             ear2="Moonshade Earring",
             back=Belenus.WSD,
             waist="Light Belt",
             feet="Meghanada Jambeaux +2"
-        }
-        sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, sets.LastStand)
-        sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS.Mid, sets.LastStand)
-        sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS.Acc, sets.LastStand)
+        })
+        sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS['Last Stand'], {
+            body="Orion Jerkin +2", 
+        })
+        sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'].Mid, {
+            legs="Adhemar Kecks",
+        })
 
         -- sets.precast.WS['Last Stand'].SAM = set_combine(sets.precast.WS, {
         --     neck="Aqua Gorget",
@@ -641,8 +546,8 @@ function init_gear_sets()
         --sets.Kiting = {feet="Fajin Boots"}
        
         sets.buff.Barrage = {
-            head="Meghanada Visor +1",
-            neck="Scout's gorget", 
+            head="Meghanada Visor +2",
+            neck="Iskur Gorget",
             ear1="Enervating Earring",
             ear2="Flame Pearl",
             body="Orion Jerkin +2",
@@ -802,15 +707,15 @@ function job_buff_change(buff, gain)
     if  buff == "Samurai Roll" or buff == "Courser's Roll" or string.find(buff:lower(), 'flurry') then
         classes.CustomRangedGroups:clear()
 
-        if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
-            classes.CustomRangedGroups:append('SamRoll')
-        end
+        -- if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
+        --     classes.CustomRangedGroups:append('SamRoll')
+        -- end
        
     end
     
     -- DoubleShot CombatForm
     if (buff == 'Double Shot' and gain or buffactive['Double Shot']) then
-        state.CombatForm:set('DoubleShot')
+        -- state.CombatForm:set('DoubleShot')
         if not midaction() then
             handle_equipping_gear(player.status)
         end
@@ -981,7 +886,7 @@ function update_combat_form()
         end
     end
     if state.Buff['Double Shot'] then
-        state.CombatForm:set('DoubleShot')
+        -- state.CombatForm:set('DoubleShot')
     else
         if state.CombatForm.current ~= 'DW' then
             state.CombatForm:reset()
@@ -992,9 +897,9 @@ end
 function get_custom_ranged_groups()
     classes.CustomRangedGroups:clear()
     
-    if buffactive['Samurai Roll'] then
-        classes.CustomRangedGroups:append('SamRoll')
-    end
+    -- if buffactive['Samurai Roll'] then
+    --     classes.CustomRangedGroups:append('SamRoll')
+    -- end
     
     -- Flurry I = 265, Flurry II = 581
     if buffactive[265] then
