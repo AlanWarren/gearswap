@@ -448,6 +448,7 @@ function init_gear_sets()
     -- 20% STR / 20% INT 
     -- Base set only used at 3000TP to put AM3 up
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
+        head="Odyssean Helm",
         neck="Shadow Gorget",
         body="Ratri Breastplate",
         legs="Fallen's Flanchard +3",

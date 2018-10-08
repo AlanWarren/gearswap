@@ -215,7 +215,6 @@ function init_gear_sets()
  
         -- Engaged sets
         sets.engaged =  {
-            sub="Nusku Shield",
             head="Meghanada Visor +2",
             neck="Twilight Torque",
             ear1="Enervating Earring",
@@ -261,13 +260,13 @@ function init_gear_sets()
             legs="Mummu Kecks +1"
         })
 
-        sets.engaged.DW = set_combine(sets.engaged, {})
+        sets.engaged.DW = sets.engaged
 
         sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
             head="Herculean Helm",
             ear1="Eabani Earring",
-            ear2="Suppanomimi",
-            body="Samnuha Coat",
+            ear2="Sherida Earring",
+            body="Rawhide Vest",
             hands="Floral Gauntlets",
             back="Grounded Mantle +1",
             waist="Patentia Sash",
@@ -718,7 +717,9 @@ function job_buff_change(buff, gain)
             handle_equipping_gear(player.status)
         end
     else
-        state.CombatForm:reset()
+        if state.CombatForm.current ~= 'DW' then
+            state.CombatForm:reset()
+        end
         if not midaction() then
             handle_equipping_gear(player.status)
         end
