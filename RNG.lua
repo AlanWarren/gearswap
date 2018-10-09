@@ -219,7 +219,7 @@ function init_gear_sets()
             neck="Twilight Torque",
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
-            body="Orion Jerkin +2",
+            body="Arcadian Jerkin +2",
             hands="Meghanada Gloves +2",
             ring1="Defending Ring",
             ring2="Karieyh Ring",
@@ -302,29 +302,27 @@ function init_gear_sets()
         -- Default Base Gear Sets for Ranged Attacks. Geared for Gun
         ------------------------------------------------------------------
         sets.midcast.RA = { 
-            head="Arcadian Beret +1",
+            head="Meghanada Visor +2",
             neck="Iskur Gorget",
             ear1="Enervating Earring",
             ear2="Sherida Earring", 
-            body="Orion Jerkin +2", 
+            body="Arcadian Jerkin +2", 
             hands="Adhemar Wristbands",
             ring1="Rajas Ring",
-            ring2="Petrov Ring",
+            ring2="Apate Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
             legs="Amini Brague +1", 
             feet="Mummu Gamashes +2"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            head="Meghanada Visor +2",
             neck="Iskur Gorget",
-            ring2="Apate Ring",
             legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
-            -- head="Orion Beret +2",
             neck="Iskur Gorget",
             hands="Meghanada Gloves +2",
+            body="Orion Jerkin +2",
             ring1="Cacoethic Ring +1",
             ring2="Longshot Ring",
             feet="Meghanada Jambeaux +2"
@@ -332,28 +330,26 @@ function init_gear_sets()
 
         -- Bow base set.
         sets.midcast.RA.Bow = {
-            head="Arcadian Beret +1",
+            head="Meghanada Visor +2",
             neck="Iskur Gorget",
             ear1="Enervating Earring",
             ear2="Sherida Earring",
-            body="Orion Jerkin +2", 
+            body="Arcadian Jerkin +2", 
             hands="Amini Glovelettes +1",
             ring1="Rajas Ring",
-            ring2="Petrov Ring",
+            ring2="Apate Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
             legs="Amini Brague +1", 
-            feet="Meghanada Jambeaux +2"
+            feet="Mummu Gamashes +2"
         }
         sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
             hands="Adhemar Wristbands",
             legs="Adhemar Kecks",
-            body="Orion Jerkin +2", 
-            ring1="Cacoethic Ring +1",
         })
         sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
-            head="Orion Beret +2",
             hands="Meghanada Gloves +2",
+            body="Orion Jerkin +2",
             ring2="Longshot Ring",
         })
        
@@ -361,8 +357,8 @@ function init_gear_sets()
         sets.precast.WS = {
             head="Orion Beret +2",
             neck="Iskur Gorget",
-            ear1="Ishvara Earring",
-            ear2="Sherida Earring",
+            ear1="Sherida Earring",
+            ear2="Tripudio Earring",
             body="Herculean Vest",
             hands="Meghanada Gloves +2",
             ring1="Apate Ring",
@@ -373,10 +369,11 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +2"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-            legs="Meghanada Chausses +1", 
-            body="Orion Jerkin +2",
+            body="Arcadian Jerkin +2",
+            legs="Adhemar Kecks",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
+            body="Orion Jerkin +2",
         })
 
         -- WILDFIRE
@@ -412,10 +409,11 @@ function init_gear_sets()
             back=Belenus.WSD,
         })
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS['Coronach'], {
-            body="Orion Jerkin +2", 
+            body="Arcadian Jerkin +2", 
         })
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS['Coronach'].Mid, {
             legs="Adhemar Kecks",
+            body="Orion Jerkin +2", 
         })
 
         -- sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
@@ -436,9 +434,10 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +2"
         })
         sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS['Last Stand'], {
-            body="Orion Jerkin +2", 
+            body="Arcadian Jerkin +2", 
         })
         sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'].Mid, {
+            body="Orion Jerkin +2", 
             legs="Adhemar Kecks",
         })
 
