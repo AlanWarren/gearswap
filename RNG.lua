@@ -357,8 +357,8 @@ function init_gear_sets()
         sets.precast.WS = {
             head="Orion Beret +3",
             neck="Iskur Gorget",
-            ear1="Sherida Earring",
-            ear2="Tripudio Earring",
+            ear1="Tripudio Earring",
+            ear2="Sherida Earring",
             body="Herculean Vest",
             hands="Meghanada Gloves +2",
             ring1="Apate Ring",
@@ -369,11 +369,12 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +2"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
+            ear1="Enervating Earring",
             body="Arcadian Jerkin +2",
-            legs="Adhemar Kecks",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
             body="Orion Jerkin +2",
+            legs="Adhemar Kecks",
         })
 
         -- WILDFIRE
@@ -410,26 +411,21 @@ function init_gear_sets()
             legs="Herculean Trousers", 
         })
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS['Coronach'], {
+            ear1="Enervating Earring",
             body="Arcadian Jerkin +2", 
         })
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS['Coronach'].Mid, {
+            neck="Iskur Gorget",
             body="Orion Jerkin +2", 
             legs="Adhemar Kecks"
         })
-
-        -- sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
-        --     neck="Ocachi Gorget",
-        --     ear1="Enervating Earring",
-        --     ear2="Tripudio Earring",
-        --     hands="Amini Glovelettes +1",
-        --     legs="Amini Brague +1", 
-        -- })
 
         -- LAST STAND
         sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
             head="Orion Beret +3",
             neck="Aqua Gorget",
-            ear2="Moonshade Earring",
+            ear1="Moonshade Earring",
+            ear2="Sherida Earring",
             back=Belenus.WSD,
             waist="Light Belt",
             legs="Herculean Trousers", 
@@ -439,6 +435,7 @@ function init_gear_sets()
             body="Arcadian Jerkin +2", 
         })
         sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'].Mid, {
+            neck="Iskur Gorget",
             body="Orion Jerkin +2", 
             legs="Adhemar Kecks",
         })
