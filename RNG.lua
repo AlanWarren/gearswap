@@ -164,7 +164,7 @@ function init_gear_sets()
             head="Herculean Helm",
             ear1="Etiolation Earring",
             ear2="Loquacious Earring",
-            body="Samnuha Coat",
+            body="Dread Jupon",
             legs="Quiahuiz Trousers",
             hands="Leyline Gloves",
             ring1="Prolix Ring"
@@ -201,8 +201,8 @@ function init_gear_sets()
             ring2="Defending Ring"
         })
         sets.idle.Town = set_combine(sets.idle, {
-            head="Orion Beret +2",
-            body="Orion Jerkin +2",
+            head="Orion Beret +3",
+            body="Arcadian Jerkin +2", 
             ear2="Sherida Earring",
             neck="Iskur Gorget",
             ring1="Defending Ring",
@@ -291,7 +291,7 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +2" -- 10
         }
         sets.precast.RA.F1 = set_combine(sets.precast.RA, {
-            head="Orion Beret +2"
+            head="Orion Beret +3"
         })
         sets.precast.RA.F2 = set_combine(sets.precast.RA.F1, {
             -- waist="Yemaya Belt",
@@ -355,7 +355,7 @@ function init_gear_sets()
        
         -- Weaponskill sets  
         sets.precast.WS = {
-            head="Orion Beret +2",
+            head="Orion Beret +3",
             neck="Iskur Gorget",
             ear1="Sherida Earring",
             ear2="Tripudio Earring",
@@ -365,7 +365,7 @@ function init_gear_sets()
             ring2="Karieyh Ring",
             back=Belenus.WSD,
             waist="Kwahu Kachina Belt",
-            legs="Amini Brague +1", 
+            legs="Herculean Trousers", 
             feet="Meghanada Jambeaux +2"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -378,7 +378,7 @@ function init_gear_sets()
 
         -- WILDFIRE
         sets.Wildfire = {
-            head="Orion Beret +2",
+            head="Orion Beret +3",
             ear1="Friomisi Earring",
             ear2="Crematio Earring",
             neck="Sanctity Necklace",
@@ -388,7 +388,7 @@ function init_gear_sets()
             ring2="Karieyh Ring",
             back=Belenus.WSD,
             waist="Eschan Stone",
-            legs="Meghanada Chausses +1",
+            legs="Herculean Trousers", 
             feet="Mummu Gamashes +2"
         }
         sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
@@ -407,13 +407,14 @@ function init_gear_sets()
             neck="Breeze Gorget",
             waist="Thunder Belt",
             back=Belenus.WSD,
+            legs="Herculean Trousers", 
         })
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS['Coronach'], {
             body="Arcadian Jerkin +2", 
         })
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS['Coronach'].Mid, {
-            legs="Adhemar Kecks",
             body="Orion Jerkin +2", 
+            legs="Adhemar Kecks"
         })
 
         -- sets.precast.WS['Coronach'].SAM = set_combine(sets.precast.WS, {
@@ -426,11 +427,12 @@ function init_gear_sets()
 
         -- LAST STAND
         sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
-            head="Orion Beret +2",
+            head="Orion Beret +3",
             neck="Aqua Gorget",
             ear2="Moonshade Earring",
             back=Belenus.WSD,
             waist="Light Belt",
+            legs="Herculean Trousers", 
             feet="Meghanada Jambeaux +2"
         })
         sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS['Last Stand'], {
@@ -552,7 +554,7 @@ function init_gear_sets()
             ring2="Mummu Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
-            legs="Meghanada Chausses +1", 
+            legs="Adhemar Kecks", 
             feet="Mummu Gamashes +2"
         }
         -- placeholder until I can get to it

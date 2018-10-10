@@ -150,7 +150,6 @@ function init_gear_sets()
     sets.midcast.Trust =  {
         head="Hattori Zukin +1",
         hands="Ryuo Tekko",
-        legs="Herculean Trousers",
         feet="Hachiya Kyahan +1"
     }
     sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
@@ -741,7 +740,7 @@ function init_gear_sets()
         ring2="Mummu Ring",
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
-        legs="Herculean Trousers",
+        legs="Hizamaru Hizayoroi +1",
         feet="Mummu Gamashes +2"
     })
     

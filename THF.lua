@@ -92,7 +92,7 @@ function init_gear_sets()
         ring1="Mummu Ring",
         ring2="Rajas Ring",
         waist="Chaac Belt",
-        legs="Herculean Trousers",
+        legs="Samnuha Tights",
         feet="Mummu Gamashes +2"
     }
 
@@ -347,7 +347,7 @@ sets.idle.Town = set_combine(sets.idle, {
     hands="Meghanada Gloves +2",
     ring1="Meghanada Ring",
     ring2="Defending Ring",
-    legs="Herculean Trousers",
+    legs="Meghanada Chausses +1",
     waist="Windbuffet Belt +1",
 })
 
@@ -381,7 +381,7 @@ sets.defense.PDT = {
     ring2="Epona's Ring",
     back="Solemnity Cape",
     waist="Flume Belt",
-    legs="Herculean Trousers",
+    legs="Meghanada Chausses +1",
 }
 
 sets.defense.MDT = {
@@ -393,7 +393,6 @@ sets.defense.MDT = {
     ring1="Defending Ring",
     ring2="Epona's Ring",
     back="Solemnity Cape",
-    legs="Herculean Trousers",
     feet="Herculean Boots"
 }
 
@@ -425,7 +424,6 @@ sets.engaged = {
 sets.engaged.Mid = set_combine(sets.engaged, {
     neck="Lissome Necklace",
     ring1="Rajas Ring",
-    legs="Herculean Trousers",
 })
 sets.engaged.Acc = set_combine(sets.engaged.Mid, {
     body="Meghanada Cuirie +1",
@@ -482,7 +480,7 @@ sets.engaged.Haste_43 = set_combine(sets.engaged, {
     ring2="Epona's Ring",
     back="Canny Cape",
     waist="Windbuffet Belt +1",
-    legs="Herculean Trousers",
+    legs="Meghanada Chausses +1",
     feet="Herculean Boots"
 })
 sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
@@ -561,7 +559,7 @@ sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
     back="Solemnity Cape",
-    legs="Herculean Trousers", 
+    legs="Samnuha Tights",
     feet="Herculean Boots" })
 
     -- 25
@@ -583,7 +581,7 @@ sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
         ring1="Patricius Ring", 
         ring2="Defending Ring", 
         back="Solemnity Cape",
-        legs="Herculean Trousers", 
+        legs="Samnuha Tights",
         feet="Taeon Boots" })
     end
 
