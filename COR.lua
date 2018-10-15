@@ -179,13 +179,13 @@ function init_gear_sets()
         neck=gear.ElementalGorget,
         ear1="Ishvara Earring",
         ear2="Flame Pearl",
-        body="Herculean Vest",
+        body="Mummu Jacket +1",
         hands="Meghanada Gloves +2",
         ring1="Karieyh Ring",
         ring2="Apate Ring",
         back="Camulus's Mantle",
         waist=gear.ElementalBelt,
-        legs="Adhemar Kecks",
+        legs="Herculean Trousers",
         feet="Meghanada Jambeaux +2"
     }
 
@@ -224,7 +224,7 @@ function init_gear_sets()
         ring2="Garuda Ring",
         back="Camulus's Mantle",
         waist="Eschan Stone",
-        legs="Mummu Kecks +1",
+        legs="Herculean Trousers",
         feet="Mummu Gamashes +2"
     }
 

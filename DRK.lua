@@ -410,7 +410,7 @@ function init_gear_sets()
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         body="Fallen's Cuirass +3",
-        legs=Odyssean.Legs.WS
+        -- legs=Odyssean.Legs.WS,
         waist="Olseni Belt",
     })
 
@@ -509,8 +509,8 @@ function init_gear_sets()
         body="Ratri Breastplate",
         hands="Odyssean Gauntlets",
         waist="Caudata Belt",
-        feet="Sulevia's Leggings +1"
         legs="Fallen's Flanchard +3",  
+        feet="Sulevia's Leggings +1",
     })
     sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
         body="Fallen's Cuirass +3",
@@ -706,7 +706,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Brutal Earring",
         body="Valorous Mail",
-        hands="Emicho Gauntlets",
+        hands="Flamma Manopolas +2",
         ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
         back=Ankou.STP,
@@ -757,7 +757,7 @@ function init_gear_sets()
         head="Flamma Zucchetto +2",
         body="Valorous Mail",
         neck="Ganesha's Mala",
-        hands="Emicho Gauntlets",
+        hands="Flamma Manopolas +2",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
         ring1="Niqmaddu Ring",
