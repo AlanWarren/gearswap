@@ -328,7 +328,7 @@ function init_gear_sets()
 
 	sets.idle.Town = {
         ammo=gear.RAbullet,
-        head="Lanun Tricorne +1",
+        head="Meghanada Visor +2",
         neck="Iskur Gorget",
         ear1="Enervating Earring",
         ear2="Crematio Earring",

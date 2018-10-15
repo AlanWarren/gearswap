@@ -406,11 +406,10 @@ function init_gear_sets()
         feet="Sulevia's Leggings +2"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-        ammo="Knobkierrie",
+        legs="Fallen's Flanchard +3",
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         body="Fallen's Cuirass +3",
-        legs=Odyssean.Legs.WS
         waist="Olseni Belt",
     })
 
@@ -509,8 +508,8 @@ function init_gear_sets()
         body="Ratri Breastplate",
         hands="Odyssean Gauntlets",
         waist="Caudata Belt",
-        feet="Sulevia's Leggings +1"
         legs="Fallen's Flanchard +3",  
+        feet="Sulevia's Leggings +1"
     })
     sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
         body="Fallen's Cuirass +3",
