@@ -319,7 +319,6 @@ function init_gear_sets()
         --legs="Nares Trews",
     }
 
-
     -- Idle sets
     sets.idle = {
         main="Bolelabunga",
@@ -365,6 +364,7 @@ function init_gear_sets()
     sets.idle.Melee = set_combine(sets.idle, {
         main="Malevolence",
         neck="Lissome Necklace",
+        feet="Jhakri Pigaches +1"
         --sub="Bolelabunga"
     })
 
