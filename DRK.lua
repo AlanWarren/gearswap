@@ -1,6 +1,7 @@
 --[[     
 === Features ===
-!!!!Make sure you have my User-Globals.lua!!! Do not rename it. It goes in the data folder along side this file.
+If you want auto Reive detection for Ygnas Resolve+1, and Gavialis Helm for some of your WS, then you will need my User-Globals.lua
+Otherwise, you might be able to get away without it.  (not tested)
 
 If you don't use organizer, then remove the include('organizer-lib') in get_sets() and remove sets.Organizer
 
@@ -14,7 +15,7 @@ Hotkey: Toggle this with @F9 (window key + F9).
 Macro: /console gs c togggle SouleaterMode
 
 Notes: This mode makes it possible to use Souleater in situations where you would normally avoid using it. When SouleaterMode 
-is ON, Souleater will be canceled automatically after the first Weaponskill used, WITH THESE EXCEPTIONS. If Bloodweapon 
+is ON, Souleater will be canceled automatically after the first Weaponskill used. CAVEAT -. If Bloodweapon 
 is active, or if Drain's HP Boost buff is active, then Souleater will remain active until the next WS used after 
 either buff wears off. 
 
@@ -271,13 +272,13 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'] = {
         ammo="Plumose Sachet", 
-        --head="Flamma Zucchetto +2", -- 44 macc
+        -- head="Flamma Zucchetto +2", -- 44 macc
         head="Ignominy Burgeonet +1", -- 17
         neck="Erra Pendant", -- 10 dark + 17 macc
         ear1="Gwati Earring",
         ear2="Dark Earring", -- 3
         body="Fallen's Cuirass +3",
-        hands="Fallen's Finger Gauntlets +1", -- 14
+        hands="Flamma Manopolas +2",
         waist="Casso Sash", -- 5
         ring1="Evanescence Ring", -- 10
         ring2="Sangoma Ring", -- 8 macc
@@ -323,14 +324,16 @@ function init_gear_sets()
     -- Mix of HP boost, -Spell interruption%, and Dark Skill
     sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
         ammo="Impatiens",
+        head="Ignominy Burgeonet +1", -- 17
         ear1="Etiolation Earring",
         ear2="Eabani Earring", -- 3
         body="Heathen's Cuirass +1",
+        hands="Fallen's Finger Gauntlets +1"
         back="Trepidity Mantle",
     })
     sets.midcast['Dread Spikes'].Acc = set_combine(sets.midcast['Dark Magic'], {
         body="Heathen's Cuirass +1",
-        hands="Leyline Gloves",
+        hands="Fallen's Finger Gauntlets +1"
     })
 
     -- Drain spells 
