@@ -205,7 +205,7 @@ function init_gear_sets()
             body="Arcadian Jerkin +2", 
             ear2="Sherida Earring",
             neck="Iskur Gorget",
-            ring1="Defending Ring",
+            ring1="Dingir Ring",
             ring2="Karieyh Ring",
             hands="Meghanada Gloves +2",
             back=Belenus.STP,
@@ -309,7 +309,7 @@ function init_gear_sets()
             body="Arcadian Jerkin +2", 
             hands="Adhemar Wristbands",
             ring1="Rajas Ring",
-            ring2="Apate Ring",
+            ring2="Dingir Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
             legs="Amini Brague +1", 
@@ -324,7 +324,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +2",
             body="Orion Jerkin +2",
             ring1="Cacoethic Ring +1",
-            ring2="Longshot Ring",
+            ring2="Dingir Ring",
             feet="Meghanada Jambeaux +2"
         })
 
@@ -361,7 +361,7 @@ function init_gear_sets()
             ear2="Sherida Earring",
             body="Arcadian Jerkin +2",
             hands="Meghanada Gloves +2",
-            ring1="Apate Ring",
+            ring1="Dingir Ring",
             ring2="Karieyh Ring",
             back=Belenus.WSD,
             waist="Kwahu Kachina Belt",
@@ -385,7 +385,7 @@ function init_gear_sets()
             neck="Sanctity Necklace",
             hands="Meghanada Gloves +2",
             body="Samnuha Coat",
-            ring1="Garuda Ring",
+            ring1="Dingir Ring",
             ring2="Karieyh Ring",
             back=Belenus.WSD,
             waist="Eschan Stone",
@@ -407,6 +407,7 @@ function init_gear_sets()
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
             neck="Breeze Gorget",
             waist="Thunder Belt",
+            ring1="Dingir Ring",
             back=Belenus.WSD,
             legs="Herculean Trousers", 
         })
@@ -427,6 +428,7 @@ function init_gear_sets()
             ear1="Moonshade Earring",
             ear2="Sherida Earring",
             back=Belenus.WSD,
+            ring1="Dingir Ring",
             waist="Light Belt",
             legs="Herculean Trousers", 
             feet="Meghanada Jambeaux +2"

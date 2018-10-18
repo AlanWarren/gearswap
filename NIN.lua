@@ -255,6 +255,7 @@ function init_gear_sets()
 
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.ElementalNinjutsu = {
+        ammo="Seething Bomblet +1",
         head="Mummu Bonnet +1",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -263,7 +264,7 @@ function init_gear_sets()
         hands="Hattori Tekko",
         back="Aput Mantle",
         ring1="Shiva Ring",
-        ring2="Sangoma Ring",
+        ring2="Dingir Ring",
         waist="Eschan Stone",
         legs="Mummu Kecks +1",
         feet="Mummu Gamashes +2" -- int 10 mab+13 mac+13
@@ -834,14 +835,14 @@ function init_gear_sets()
         body="Samnuha Coat",
         hands="Leyline Gloves",
         ring1="Karieyh Ring",
-        ring2="Acumen Ring",
+        ring2="Dingir Ring",
         legs="Shneddick Tights +1",
         waist="Thunder Belt",
         feet="Herculean Boots"
     })
     sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
         ring1="Karieyh Ring",
-        ring2="Acumen Ring",
+        ring2="Dingir Ring",
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
         back=Andartia.AGI,

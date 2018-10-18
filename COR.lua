@@ -181,8 +181,8 @@ function init_gear_sets()
         ear2="Flame Pearl",
         body="Mummu Jacket +1",
         hands="Meghanada Gloves +2",
-        ring1="Karieyh Ring",
-        ring2="Apate Ring",
+        ring1="Dingir Ring",
+        ring2="Karieyh Ring",
         back="Camulus's Mantle",
         waist=gear.ElementalBelt,
         legs="Herculean Trousers",
@@ -206,7 +206,7 @@ function init_gear_sets()
         ammo=gear.WSbullet,
         ear1="Enervating Earring",
         ear2="Moonshade Earring",
-        ring1="Ifrit Ring",
+        ring1="Dingir Ring",
         ring2="Mummu Ring",
         back="Camulus's Mantle",
         feet="Mummu Gamashes +2"
@@ -220,8 +220,8 @@ function init_gear_sets()
         ear2="Friomisi Earring",
         body="Samnuha Coat",
         hands="Leyline Gloves",
-        ring1="Mummu Ring",
-        ring2="Garuda Ring",
+        ring1="Dingir Ring",
+        ring2="Mummu Ring",
         back="Camulus's Mantle",
         waist="Eschan Stone",
         legs="Herculean Trousers",
@@ -256,7 +256,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         body="Samnuha Coat",
         hands="Leyline Gloves",
-        ring1="Apate Ring",
+        ring1="Dingir Ring",
         ring2="Garuda Ring",
         back="Gunslinger's Cape",
         waist="Eschan Stone",
@@ -269,7 +269,7 @@ function init_gear_sets()
         head="Mummu Bonnet +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
-        ring1="Perception Ring",
+        ring1="Dingir Ring",
         ring2="Sangoma Ring",
         feet="Navarch's Bottes +2"
     })
@@ -286,7 +286,7 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         body="Mummu Jacket +1",
         hands="Adhemar Wristbands",
-        ring1="Rajas Ring",
+        ring1="Dingir Ring",
         ring2="Apate Ring",
         back="Camulus's Mantle",
         waist="Kwahu Kachina Belt",
@@ -295,7 +295,7 @@ function init_gear_sets()
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        ring1="Longshot Ring",
+        ring1="Dingir Ring",
         ring2="Cacoethic Ring +1",
     })
 	
@@ -334,7 +334,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         body="Councilor's Garb",
         hands="Meghanada Gloves +2",
-        ring1="Meghanada Ring",
+        ring1="Dingir Ring",
         ring2="Defending Ring",
         back="Gunslinger's Cape",
         waist="Eschan Stone",
