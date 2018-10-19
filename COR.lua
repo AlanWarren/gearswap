@@ -265,7 +265,7 @@ function init_gear_sets()
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
-        body="Mekosuchinae Harness",
+        body="Mummu Jacket +1",
         head="Mummu Bonnet +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
@@ -311,7 +311,8 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Mekosuchinae Harness",
+        --body="Mekosuchinae Harness",
+        body="Meghanada Cuirie +1",
         hands="Meghanada Gloves +2",
         ring1="Meghanada Ring",
         ring2="Defending Ring",
@@ -328,11 +329,11 @@ function init_gear_sets()
 
 	sets.idle.Town = {
         ammo=gear.RAbullet,
-        head="Lanun Tricorne +1",
+        head="Meghanada Visor +2",
         neck="Iskur Gorget",
-        ear1="Enervating Earring",
-        ear2="Crematio Earring",
-        body="Councilor's Garb",
+        ear1="Etiolation Earring",
+        ear2="Eabani Earring",
+        body="Meghanada Cuirie +1",
         hands="Meghanada Gloves +2",
         ring1="Dingir Ring",
         ring2="Defending Ring",
