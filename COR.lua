@@ -46,9 +46,9 @@ function user_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 
-	gear.RAbullet = "Decimating Bullet"
-	gear.WSbullet = "Decimating Bullet"
-	gear.MAbullet = "Decimating Bullet"
+	gear.RAbullet = "Adlivun Bullet"
+	gear.WSbullet = "Adlivun Bullet"
+	gear.MAbullet = "Adlivun Bullet"
 	gear.QDbullet = "Animikii Bullet"
 	--gear.QDbullet = "Adlivun Bullet"
 	options.ammo_warning_limit = 15
@@ -179,13 +179,13 @@ function init_gear_sets()
         neck=gear.ElementalGorget,
         ear1="Ishvara Earring",
         ear2="Flame Pearl",
-        body="Herculean Vest",
+        body="Mummu Jacket +1",
         hands="Meghanada Gloves +2",
-        ring1="Karieyh Ring",
-        ring2="Apate Ring",
+        ring1="Dingir Ring",
+        ring2="Karieyh Ring",
         back="Camulus's Mantle",
         waist=gear.ElementalBelt,
-        legs="Adhemar Kecks",
+        legs="Herculean Trousers",
         feet="Meghanada Jambeaux +2"
     }
 
@@ -206,7 +206,7 @@ function init_gear_sets()
         ammo=gear.WSbullet,
         ear1="Enervating Earring",
         ear2="Moonshade Earring",
-        ring1="Ifrit Ring",
+        ring1="Dingir Ring",
         ring2="Mummu Ring",
         back="Camulus's Mantle",
         feet="Mummu Gamashes +2"
@@ -220,11 +220,11 @@ function init_gear_sets()
         ear2="Friomisi Earring",
         body="Samnuha Coat",
         hands="Leyline Gloves",
-        ring1="Mummu Ring",
-        ring2="Garuda Ring",
+        ring1="Dingir Ring",
+        ring2="Mummu Ring",
         back="Camulus's Mantle",
         waist="Eschan Stone",
-        legs="Mummu Kecks +1",
+        legs="Herculean Trousers",
         feet="Mummu Gamashes +2"
     }
 
@@ -256,7 +256,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         body="Samnuha Coat",
         hands="Leyline Gloves",
-        ring1="Apate Ring",
+        ring1="Dingir Ring",
         ring2="Garuda Ring",
         back="Gunslinger's Cape",
         waist="Eschan Stone",
@@ -265,11 +265,11 @@ function init_gear_sets()
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
-        body="Mekosuchinae Harness",
+        body="Mummu Jacket +1",
         head="Mummu Bonnet +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
-        ring1="Perception Ring",
+        ring1="Dingir Ring",
         ring2="Sangoma Ring",
         feet="Navarch's Bottes +2"
     })
@@ -286,7 +286,7 @@ function init_gear_sets()
         ear2="Tripudio Earring",
         body="Mummu Jacket +1",
         hands="Adhemar Wristbands",
-        ring1="Rajas Ring",
+        ring1="Dingir Ring",
         ring2="Apate Ring",
         back="Camulus's Mantle",
         waist="Kwahu Kachina Belt",
@@ -295,7 +295,7 @@ function init_gear_sets()
     }
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        ring1="Longshot Ring",
+        ring1="Dingir Ring",
         ring2="Cacoethic Ring +1",
     })
 	
@@ -311,7 +311,8 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Mekosuchinae Harness",
+        --body="Mekosuchinae Harness",
+        body="Meghanada Cuirie +1",
         hands="Meghanada Gloves +2",
         ring1="Meghanada Ring",
         ring2="Defending Ring",
@@ -330,11 +331,11 @@ function init_gear_sets()
         ammo=gear.RAbullet,
         head="Meghanada Visor +2",
         neck="Iskur Gorget",
-        ear1="Enervating Earring",
-        ear2="Crematio Earring",
-        body="Councilor's Garb",
+        ear1="Etiolation Earring",
+        ear2="Eabani Earring",
+        body="Meghanada Cuirie +1",
         hands="Meghanada Gloves +2",
-        ring1="Meghanada Ring",
+        ring1="Dingir Ring",
         ring2="Defending Ring",
         back="Gunslinger's Cape",
         waist="Eschan Stone",

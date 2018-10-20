@@ -180,7 +180,6 @@ function init_gear_sets()
     --------------------------------------
 
     sets.precast.RA = {
-        head="Uk'uxkaj Cap",
         hands="Buremte Gloves",
         legs="Nahtirah Trousers",
         feet="Wurrukatte Boots"
@@ -218,7 +217,6 @@ function init_gear_sets()
     -- Midcast Sets
     sets.midcast.FastRecast = {
         --ammo="Impatiens",
-        head="Uk'uxkaj Cap",
         body="Dread Jupon",
         hands="Leyline Gloves",
         back="Grounded Mantle +1",
@@ -229,18 +227,19 @@ function init_gear_sets()
 
     -- skill ++ 
     sets.midcast.Ninjutsu = {
-        head="Hachiya Hatsuburi +1",
+        head="Mummu Bonnet +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         neck="Incanter's Torque",
-        body="Samnuha Coat",
+        body="Mochizuki Chainmail +3",
         hands="Leyline Gloves",
         ring1="Sangoma Ring",
         ring2="Kishar Ring",
         --ring2="Haverton Ring",
         back="Yokaze Mantle",
         waist="Eschan Stone",
-        feet="Mochizuki Kyahan +1"
+        legs="Mummu Kecks +1",
+        feet="Mummu Gamashes +2"
     }
     -- any ninjutsu cast on self
     sets.midcast.SelfNinjutsu = sets.midcast.Ninjutsu
@@ -256,7 +255,8 @@ function init_gear_sets()
 
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.ElementalNinjutsu = {
-        head="Mochizuki Hatsuburi +1",
+        ammo="Seething Bomblet +1",
+        head="Mummu Bonnet +1",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         neck="Sanctity Necklace",
@@ -264,10 +264,10 @@ function init_gear_sets()
         hands="Hattori Tekko",
         back="Aput Mantle",
         ring1="Shiva Ring",
-        ring2="Sangoma Ring",
+        ring2="Dingir Ring",
         waist="Eschan Stone",
-        legs="Shneddick Tights +1",
-        feet="Hachiya Kyahan +1" -- int 10 mab+13 mac+13
+        legs="Mummu Kecks +1",
+        feet="Mummu Gamashes +2" -- int 10 mab+13 mac+13
     }
     sets.Burst = set_combine(sets.midcast.ElementalNinjutsu, { hands="Hattori Tekko +1"})
 
@@ -328,7 +328,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Kendatsuba Hakama",
+        legs="Mummu Kecks +1",
         feet="Amm Greaves"
     }
 
@@ -740,7 +740,7 @@ function init_gear_sets()
         ring2="Mummu Ring",
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
-        legs="Hizamaru Hizayoroi +1",
+        legs="Mummu Kecks +1",
         feet="Mummu Gamashes +2"
     })
     
@@ -835,14 +835,14 @@ function init_gear_sets()
         body="Samnuha Coat",
         hands="Leyline Gloves",
         ring1="Karieyh Ring",
-        ring2="Acumen Ring",
+        ring2="Dingir Ring",
         legs="Shneddick Tights +1",
         waist="Thunder Belt",
         feet="Herculean Boots"
     })
     sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
         ring1="Karieyh Ring",
-        ring2="Acumen Ring",
+        ring2="Dingir Ring",
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
         back=Andartia.AGI,

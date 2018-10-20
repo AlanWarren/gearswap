@@ -34,12 +34,12 @@ end
 function user_setup()
     -- Options: Override default values
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
-    state.HybridMode:options('Normal', 'Evasion', 'PDT')
+    state.HybridMode:options('Normal', 'PDT')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     state.IdleMode:options('Normal')
     state.RestingMode:options('Normal')
-    state.PhysicalDefenseMode:options('Evasion', 'PDT')
+    state.PhysicalDefenseMode:options('PDT')
     state.MagicalDefenseMode:options('MDT')
     state.RangedMode:options('Normal')
 
@@ -85,10 +85,10 @@ function init_gear_sets()
     }
 
     sets.buff['Sneak Attack'] = {
-        head="Herculean Helm",
+        head="Meghanada Visor +2",
         neck="Moepapa Medal",
         body="Meghanada Cuirie +1",
-        hands="Pillager's Armlets +1",
+        hands="Meghanada Gloves +2",
         ring1="Mummu Ring",
         ring2="Rajas Ring",
         waist="Chaac Belt",
@@ -99,15 +99,14 @@ function init_gear_sets()
     sets.buff['Trick Attack'] = {
         head="Herculean Helm",
         neck="Moepapa Medal",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        body="Meghanada Cuirie +1",
+        ear1="Sherida Earring",
+        body="Mummu Jacket +1",
         hands="Pillager's Armlets +1",
         ring1="Mummu Ring",
-        ring2="Garuda Ring",
+        ring2="Dingir Ring",
         back="Canny Cape",
         waist="Chaac Belt",
-        legs="Adhemar Kecks",
+        legs="Mummu Kecks +1",
         feet="Mummu Gamashes +2"
     }
     -- Precast Sets
@@ -136,14 +135,13 @@ function init_gear_sets()
     }
     -- TH actions
     sets.precast.Step = {
-        head="Teon Chapeau",
+        head="Herculean Helm",
         neck="Lissome Necklace",
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
-        hands=TaeonHands.TA,
+        ear1="Brutal Earring",
+        ear2="Sherida Earring",
         back="Canny Cape",
-        ring1="Patricius Ring",
-        ring2="Mars's Ring",
+        ring1="Petrov Ring",
+        ring2="Cacoethic Ring +1",
         waist="Chaac Belt",
         legs="Samnuha Tights",
         feet="Raider's Poulaines +2"
@@ -154,13 +152,13 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {
         --ammo="Impatiens",
-        head="Teon Chapeau",
+        head="Herculean Helm",
         ear1="Loquacious Earring",
-        hands="Buremte Gloves",
+        hands="Leyline Gloves",
         body="Dread Jupon",
         ring1="Prolix Ring",
         ring2="Kishar Ring",
-        legs="Limbo Trousers",
+        legs="Quiahuiz Trousers",
     }
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
         neck="Magoraga Beads"
@@ -168,18 +166,17 @@ function init_gear_sets()
 
     -- Ranged snapshot gear
     sets.precast.RA = {
-        head="Uk'uxkaj Cap",
         hands=TaeonHands.Snap,
         legs="Adhemar Kecks",
         feet="Meghanada Jambeaux +2" -- 8
     }
     sets.midcast.RA = {
         head="Meghanada Visor +2",
-        neck="Ocachi Gorget",
-        ear1="Tripudio Earring",
-        ear2="Enervating Earring",
+        neck="Iskur Gorget",
+        ear1="Enervating Earring",
+        ear2="Sherida Earring",
         body="Meghanada Cuirie +1",
-        ring1="Rajas Ring",
+        ring1="Dingir Ring",
         ring2="Mummu Ring",
         waist="Eschan Stone",
         legs="Adhemar Kecks",
@@ -204,7 +201,7 @@ function init_gear_sets()
         feet="Herculean Boots"
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-        ring2="Patricius Ring",
+        ring2="Cacoethic Ring +1",
         back="Canny Cape",
         waist="Olseni Belt"
     })
@@ -239,16 +236,17 @@ function init_gear_sets()
 
     sets.precast.WS['Dancing Edge'] = set_combine(sets.precast.WS, {neck="Breeze Gorget", waist="Thunder Belt"})
     sets.precast.WS['Dancing Edge'].Mid = set_combine(sets.precast.WS['Dancing Edge'], {waist="Thunder Belt"})
-    sets.precast.WS['Dancing Edge'].Acc = set_combine(sets.precast.WS['Dancing Edge'], {head="Taeon Chapeau", waist="Olseni Belt"})
+    sets.precast.WS['Dancing Edge'].Acc = set_combine(sets.precast.WS['Dancing Edge'], {head="Herculean Helm", waist="Olseni Belt"})
     sets.precast.WS['Dancing Edge'].SA = set_combine(sets.precast.WS['Dancing Edge'].Mid, {neck="Breeze Gorget"})
     sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'].Mid, {neck="Breeze Gorget"})
     sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mid, {neck="Breeze Gorget"})
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
         neck="Moepapa Medal",
+        body="Mummu Jacket +1",
         ring1="Mummu Ring",
-        waist="Light Belt",
-        legs="Samnuha Tights",
+        waist="Windbuffet Belt",
+        legs="Mummu Kecks +1",
         back="Bleating Mantle",
         feet="Mummu Gamashes +2"
     })
@@ -262,30 +260,29 @@ function init_gear_sets()
 
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
         head="Herculean Helm",
-        neck="Moepapa Medal",
+        neck="Aqua Gorget",
         body="Herculean Vest",
         hands="Meghanada Gloves +2",
         ring1="Mummu Ring",
         ring2="Karieyh Ring",
-        waist="Windbuffet Belt +1",
-        back="Kayapa Cape",
+        waist="Snow Belt",
+        back="Grounded Mantle +1",
         legs="Samnuha Tights",
         feet="Mummu Gamashes +2",
     })
     sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {back="Canny Cape"})
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
-        back="Canny Cape",
         waist="Olseni Belt"
     })
-    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
-    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
+    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget", body="Meghanada Cuirie +1"})
+    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget", body="Mummu Jacket +1"})
     sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
 
-    sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Uk'uxkaj Cap", neck="Breeze Gorget",
+    sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Herculean Helm", neck="Breeze Gorget",
     ear1="Brutal Earring",ear2="Trux Earring", hands="Pillager's Armlets +1", ring1="Ramuh Ring", ring2="Rajas Ring",
     legs="Samnuha Tights",
 })
-sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head="Taeon Chapeau"})
+sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head="Herculean Helm"})
 sets.precast.WS['Shark Bite'].Mid = set_combine(sets.precast.WS['Shark Bite'], {waist="Thunder Belt"})
 sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget", ring1="Ramuh Ring"})
 sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
@@ -298,7 +295,7 @@ sets.precast.WS['Aeolian Edge'] = {
     body="Samnuha Coat",
     hands="Leyline Gloves",
     ring1="Mummu Ring",
-    ring2="Garuda Ring",
+    ring2="Dingir Ring",
     back="Argochampsa Mantle",
     waist="Thunder Belt",
     legs="Limbo Trousers",
@@ -307,7 +304,6 @@ sets.precast.WS['Aeolian Edge'] = {
 
 -- Midcast Sets
 sets.midcast.FastRecast = {
-    head="Felistris Mask",
     legs="Quiahuiz Trousers"
 }
 
@@ -325,14 +321,14 @@ sets.resting = {ring2="Paguroidea Ring"}
 -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 sets.idle = {
     main="Taming Sari",
-    head="Meghanada Visor +1",
+    head="Meghanada Visor +2",
     neck="Sanctity Necklace",
-    ear1="Etiolation Earring",
-    ear2="Eabani Earring",
+    ear1="Eabani Earring",
+    ear2="Etiolation Earring",
     body="Meghanada Cuirie +1",
     hands="Meghanada Gloves +2",
-    ring1="Paguroidea Ring",
-    ring2="Meghanada Ring",
+    ring1="Meghanada Ring",
+    ring2="Paguroidea Ring",
     back="Solemnity Cape",
     waist="Flume Belt",
     legs="Meghanada Chausses +1",
@@ -340,7 +336,7 @@ sets.idle = {
 }
 
 sets.idle.Town = set_combine(sets.idle, {
-    head="Herculean Helm",
+    head="Meghanada Visor +2",
     back="Canny Cape",
     neck="Sanctity Necklace",
     body="Councilor's Garb",
@@ -352,25 +348,16 @@ sets.idle.Town = set_combine(sets.idle, {
 })
 
 sets.idle.Regen = set_combine(sets.idle, {
-    -- head="Ocelomeh Headpiece +1",
-    body="Kheper Jacket",
+    head="Meghanada Visor +2",
+    hands="Meghanada Gloves +2",
+    body="Meghanada Cuirie +1",
+    ring1="Meghanada Ring",
     ring2="Paguroidea Ring",
 })
 
 sets.idle.Weak = sets.idle
 
 -- Defense sets
-sets.defense.Evasion = {
-    head="Herculean Helm",
-    neck="Defiant Collar",
-    body="Herculean Vest",
-    hands="Herculean Gloves",
-    ring1="Beeline Ring",
-    ring2="Epona's Ring",
-    back="Canny Cape",
-    legs="Samnuha Tights",
-    feet="Herculean Boots"
-}
 
 sets.defense.PDT = {
     head="Herculean Helm",
@@ -381,7 +368,7 @@ sets.defense.PDT = {
     ring2="Epona's Ring",
     back="Solemnity Cape",
     waist="Flume Belt",
-    legs="Meghanada Chausses +1",
+    legs="Mummu Kecks +1",
 }
 
 sets.defense.MDT = {
@@ -393,7 +380,8 @@ sets.defense.MDT = {
     ring1="Defending Ring",
     ring2="Epona's Ring",
     back="Solemnity Cape",
-    feet="Herculean Boots"
+    legs="Mummu Kecks +1",
+    feet="Herculean Boots",
 }
 
 sets.Kiting = {feet="Skadi's Jambeaux +1"}
@@ -403,7 +391,6 @@ sets.Kiting = {feet="Skadi's Jambeaux +1"}
 -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
 -- sets if more refined versions aren't defined.
 -- If you create a set with both offense and defense modes, the offense mode should be first.
--- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 -- Normal melee group
 sets.engaged = {
@@ -411,40 +398,29 @@ sets.engaged = {
     neck="Asperity Necklace",
     ear1="Eabani Earring",
     ear2="Suppanomimi",
-    --body="Skadi's Cuirie +1",
     body="Samnuha Coat",
     hands="Floral Gauntlets",
     ring1="Petrov Ring",
     ring2="Epona's Ring",
     back="Canny Cape",
     waist="Patentia Sash",
-    legs="Meghanada Chausses +1",
-    feet="Taeon Boots"
+    legs="Samnuha Tights",
+    feet="Herculean Boots"
 }
 sets.engaged.Mid = set_combine(sets.engaged, {
     neck="Lissome Necklace",
-    ring1="Rajas Ring",
+    legs="Meghanada Chausses +1",
 })
 sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-    body="Meghanada Cuirie +1",
     neck="Lissome Necklace",
-    ear1="Zennaroi Earring",
-    ear2="Cessance Earring",
+    ear1="Cessance Earring",
+    ear2="Sherida Earring",
+    body="Herculean Vest",
     hands="Herculean Gloves",
     back="Grounded Mantle +1",
-    ring1="Patricius Ring",
+    ring1="Cacoethic Ring +1",
     waist="Olseni Belt",
     feet="Herculean Boots"
-})
-sets.engaged.Evasion = set_combine(sets.engaged, {
-    body="Rawhide Vest",
-    ring1="Beeline Ring",
-    feet="Taeon Boots"
-})
-sets.engaged.Mid.Evasion = sets.engaged.Evasion
-sets.engaged.Acc.Evasion = set_combine(sets.engaged.Evasion, {
-    ring1="Patricius Ring",
-    waist="Olseni Belt"
 })
 sets.engaged.PDT = set_combine(sets.engaged, {
     head="Meghanada Visor +1",
@@ -455,7 +431,7 @@ sets.engaged.PDT = set_combine(sets.engaged, {
     ring2="Defending Ring",
     back="Solemnity Cape",
     waist="Flume Belt",
-    legs="Meghanada Chausses +1",
+    legs="Mummu Kecks +1",
     feet="Meghanada Jambeaux +1"
 })
 sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
@@ -474,7 +450,7 @@ sets.engaged.Haste_43 = set_combine(sets.engaged, {
     neck="Asperity Necklace",
     ear1="Brutal Earring",
     ear2="Sherida Earring",
-    body="Rawhide Vest",
+    body="Herculean Vest",
     hands="Herculean Gloves",
     ring1="Petrov Ring",
     ring2="Epona's Ring",
@@ -484,7 +460,7 @@ sets.engaged.Haste_43 = set_combine(sets.engaged, {
     feet="Herculean Boots"
 })
 sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
-    ring1="Patricius Ring",
+    neck="Lissome Necklace",
     feet="Herculean Boots"
 })
 sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
@@ -497,10 +473,9 @@ sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
     waist="Olseni Belt",
     back="Grounded Mantle +1"
 })
-sets.engaged.Evasion.Haste_43 = set_combine(sets.engaged.Haste_43, { body="Rawhide Vest", ring1="Beeline Ring", feet="Herculean Boots"})
 sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
     neck="Twilight Torque", 
-    body="Rawhide Vest", 
+    body="Herculean Vest", 
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
     back="Solemnity Cape",
@@ -509,25 +484,23 @@ sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
 
 -- 40
 sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
-    body="Rawhide Vest",
-    ear1="Suppanomimi",
+    body="Herculean Vest",
+    ear1="Sherida Earring",
+    ear2="Suppanomimi",
 })
 sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, { body="Samnuha Coat" })
 
 sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.Haste_43, {
-    ear1="Suppanomimi",
-})
-sets.engaged.Evasion.Haste_40 = set_combine(sets.engaged.Haste_40, {
-    body="Rawhide Vest",
-    ring1="Beeline Ring", 
-    feet="Herculean Boots"
+    ear1="Sherida Earring",
+    ear2="Suppanomimi",
 })
 sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, { 
     head="Lithelimb Cap", 
     neck="Twilight Torque", 
-    body="Rawhide Vest", 
+    body="Herculean Vest", 
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
+    legs="Mummu Kecks +1",
     back="Solemnity Cape",
     feet="Herculean Boots" 
 })
@@ -536,13 +509,13 @@ sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, {
 sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_40, {
     body="Samnuha Coat",
     hands="Herculean Gloves",
+    ear1="Eabani Earring",
     ear2="Suppanomimi",
     back="Canny Cape",
-    feet="Taeon Boots"
+    feet="Herculean Boots" 
 })
 sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
-    body="Samnuha Coat",
-    feet="Taeon Boots"
+    body="Herculean Vest",
 })
 sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
     waist="Patentia Sash",
@@ -551,11 +524,10 @@ sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
     back="Grounded Mantle +1",
     feet="Herculean Boots"
 })
-sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Haste_30, { body="Samnuha Coat", ring1="Beeline Ring", feet="Herculean Boots"})
 sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { 
     head="Lithelimb Cap", 
     neck="Twilight Torque", 
-    body="Rawhide Vest", 
+    body="Herculean Vest", 
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
     back="Solemnity Cape",
@@ -565,19 +537,18 @@ sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
     -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
         hands="Herculean Gloves",
-        ear1="Heartseeker Earring",
-        ear2="Dudgeon Earring"
+        ear1="Eabani Earring",
+        ear2="Suppanomimi",
     })
     sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Acc.Haste_30, {
-        ear1="Heartseeker Earring",
-        ear2="Dudgeon Earring"
+        ear1="Eabani Earring",
+        ear2="Suppanomimi",
     })
     sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, { body="Samnuha Coat" })
-    sets.engaged.Evasion.Haste_25 = set_combine(sets.engaged.Haste_25, { body="Samnuha Coat", ring1="Beeline Ring", feet="Taeon Boots"})
     sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, { 
         head="Lithelimb Cap", 
         neck="Twilight Torque", 
-        body="Rawhide Vest", 
+        body="Herculean Vest", 
         ring1="Patricius Ring", 
         ring2="Defending Ring", 
         back="Solemnity Cape",
@@ -826,9 +797,9 @@ sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
             if player.sub_job == 'DNC' then
                 set_macro_page(5, 2)
             elseif player.sub_job == 'WAR' then
-                set_macro_page(5, 1)
+                set_macro_page(4, 1)
             elseif player.sub_job == 'NIN' then
-                set_macro_page(5, 1)
+                set_macro_page(5, 2)
             else
                 set_macro_page(5, 2)
             end

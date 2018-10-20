@@ -182,7 +182,6 @@ function init_gear_sets()
         neck="Incanter's Torque",
         hands="Telchine Gloves",
     	back="Solemnity Cape",
-        legs="Telchine Braconi"
     })
     
     sets.midcast.Curaga = sets.midcast.Cure
@@ -320,16 +319,15 @@ function init_gear_sets()
         --legs="Nares Trews",
     }
 
-
     -- Idle sets
     sets.idle = {
         main="Bolelabunga",
         sub="Genbu's Shield",
         range="Dunna",
         head="Befouled Crown",
-        neck="Sanctity Necklace",
-        ear1="Friomisi Earring",
-        ear2="Crematio Earring",
+        neck="Twilight Torque",
+        ear1="Etiolation Earring",
+        ear2="Eabani Earring",
         body="Azimuth Coat +1",
         hands="Bagua Mitaines",
         ring1="Dark Ring",
@@ -354,6 +352,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         body="Mallquis Saio +1",
         hands="Geomancy Mitaines +1",
+        legs="Telchine Braconi",
         back="Lifestream Cape",
         feet="Bagua Sandals"
     })
@@ -365,6 +364,7 @@ function init_gear_sets()
     sets.idle.Melee = set_combine(sets.idle, {
         main="Malevolence",
         neck="Lissome Necklace",
+        feet="Jhakri Pigaches +1"
         --sub="Bolelabunga"
     })
 

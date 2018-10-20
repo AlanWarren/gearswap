@@ -1,6 +1,7 @@
 --[[     
 === Features ===
-!!!!Make sure you have my User-Globals.lua!!! Do not rename it. It goes in the data folder along side this file.
+If you want auto Reive detection for Ygnas Resolve+1, and Gavialis Helm for some of your WS, then you will need my User-Globals.lua
+Otherwise, you might be able to get away without it.  (not tested)
 
 If you don't use organizer, then remove the include('organizer-lib') in get_sets() and remove sets.Organizer
 
@@ -14,7 +15,7 @@ Hotkey: Toggle this with @F9 (window key + F9).
 Macro: /console gs c togggle SouleaterMode
 
 Notes: This mode makes it possible to use Souleater in situations where you would normally avoid using it. When SouleaterMode 
-is ON, Souleater will be canceled automatically after the first Weaponskill used, WITH THESE EXCEPTIONS. If Bloodweapon 
+is ON, Souleater will be canceled automatically after the first Weaponskill used. CAVEAT -. If Bloodweapon 
 is active, or if Drain's HP Boost buff is active, then Souleater will remain active until the next WS used after 
 either buff wears off. 
 
@@ -271,13 +272,13 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'] = {
         ammo="Plumose Sachet", 
-        --head="Flamma Zucchetto +2", -- 44 macc
+        -- head="Flamma Zucchetto +2", -- 44 macc
         head="Ignominy Burgeonet +1", -- 17
         neck="Erra Pendant", -- 10 dark + 17 macc
         ear1="Gwati Earring",
         ear2="Dark Earring", -- 3
         body="Fallen's Cuirass +3",
-        hands="Fallen's Finger Gauntlets +1", -- 14
+        hands="Flamma Manopolas +2",
         waist="Casso Sash", -- 5
         ring1="Evanescence Ring", -- 10
         ring2="Sangoma Ring", -- 8 macc
@@ -305,7 +306,7 @@ function init_gear_sets()
     })
 
     sets.midcast['Elemental Magic'] = {
-        ammo="Plumose Sachet",
+        ammo="Seething Bomblet +1",
         head="Terminal Helm", -- mab+15 mdmg+15
         neck="Eddy Necklace", -- 11 matk
         ear1="Friomisi Earring", -- 10 matk
@@ -323,14 +324,16 @@ function init_gear_sets()
     -- Mix of HP boost, -Spell interruption%, and Dark Skill
     sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
         ammo="Impatiens",
+        head="Ignominy Burgeonet +1", -- 17
         ear1="Etiolation Earring",
         ear2="Eabani Earring", -- 3
         body="Heathen's Cuirass +1",
+        hands="Fallen's Finger Gauntlets +1",
         back="Trepidity Mantle",
     })
     sets.midcast['Dread Spikes'].Acc = set_combine(sets.midcast['Dark Magic'], {
         body="Heathen's Cuirass +1",
-        hands="Leyline Gloves",
+        hands="Fallen's Finger Gauntlets +1"
     })
 
     -- Drain spells 
@@ -421,9 +424,14 @@ function init_gear_sets()
         --body="Valorous Mail",
         hands="Sulevia's Gauntlets +2",
         waist="Soil Belt",
-        --feet="Flamma Gambieras +2"
+        legs="Fallen's Flanchard +3",
+        feet="Sulevia's Leggings +2"
     })
-    sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
+    sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, {
+        ammo="Seething Bomblet +1",
+        legs="Fallen's Flanchard +3",
+        feet="Sulevia's Leggings +2"
+    }) 
 
     -- TORCLEAVER 
     -- VIT 80%
@@ -456,6 +464,7 @@ function init_gear_sets()
     })
     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {})
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
+        ammo="Seething Bomblet +1",
         body="Fallen's Cuirass +3",
         legs=Odyssean.Legs.WS
     })
@@ -482,6 +491,7 @@ function init_gear_sets()
     })
     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {})
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
+        ammo="Seething Bomblet +1",
         body="Fallen's Cuirass +3",
         legs=Odyssean.Legs.WS
     })
@@ -499,7 +509,9 @@ function init_gear_sets()
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
         body="Fallen's Cuirass +3",
     })
-    sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {})
+    sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {
+        ammo="Seething Bomblet +1",
+    })
 
     -- Quietus
     -- 60% STR / MND 
@@ -509,12 +521,13 @@ function init_gear_sets()
         hands="Odyssean Gauntlets",
         waist="Caudata Belt",
         legs="Fallen's Flanchard +3",  
-        feet="Sulevia's Leggings +1"
+        feet="Sulevia's Leggings +1",
     })
     sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
         body="Fallen's Cuirass +3",
     })
     sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, {
+        ammo="Seething Bomblet +1",
         legs=Odyssean.Legs.WS
     })
 
@@ -613,17 +626,16 @@ function init_gear_sets()
     })
 
     sets.idle.Weak = set_combine(sets.defense.PDT, {
-        ammo="Hasty Pinion +1",
-        head="Sulevia's Mask +1",
-        neck="Agitator's Collar",
+        head="Baghere Salade",
+        neck="Sanctity Necklace",
         body="Ratri Breastplate",
         hands="Sulevia's Gauntlets +2",
         ring1="Defending Ring",
-        ring2="Sulevia's Ring",
+        ring2="Paguroidea Ring",
         back=Ankou.STP,
         waist="Flume Belt",
         legs="Sulevia's Cuisses +2",
-        feet="Ratri Sollerets"
+        feet="Volte Sollerets"
     })
 
     -- Defense sets
@@ -678,10 +690,19 @@ function init_gear_sets()
         legs="Sulevia's Cuisses +2",
         feet="Volte Sollerets" 
     }
-    sets.Defensive_Mid = set_combine(sets.Defensive, {
+    sets.Defensive_Mid = {
+        ammo="Hasty Pinion +1",
+        head="Sulevia's Mask +1",
         neck="Twilight Torque",
-        -- ring1="Patricius Ring",
-    })
+        body="Valorous Mail",
+        hands="Sulevia's Gauntlets +2",
+        ring1="Defending Ring",
+        ring2="Sulevia's Ring",
+        back=Ankou.STP,
+        waist="Ioskeha Belt",
+        legs="Sulevia's Cuisses +2",
+        feet="Volte Sollerets" 
+    }
     sets.Defensive_Acc = set_combine(sets.Defensive_Mid, sets.DefensiveHigh)
 
     -- Higher DT, less haste
@@ -705,7 +726,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Brutal Earring",
         body="Valorous Mail",
-        hands="Emicho Gauntlets",
+        hands="Flamma Manopolas +2",
         ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
         back=Ankou.STP,
@@ -756,7 +777,7 @@ function init_gear_sets()
         head="Flamma Zucchetto +2",
         body="Valorous Mail",
         neck="Ganesha's Mala",
-        hands="Emicho Gauntlets",
+        hands="Flamma Manopolas +2",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
         ring1="Niqmaddu Ring",
@@ -788,13 +809,26 @@ function init_gear_sets()
     sets.engaged.Haste.Liberator.Acc.AM3 = sets.engaged.Liberator.Acc.AM3
     
     -- Hybrid
-    sets.engaged.Liberator.PDT = set_combine(sets.engaged, sets.Defensive)
-    sets.engaged.Liberator.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
-    sets.engaged.Liberator.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
+    sets.engaged.Liberator.PDT = set_combine(sets.engaged.Liberator, {
+        -- head="Sulevia's Mask +1",
+        neck="Agitator's Collar",
+        body="Ratri Breastplate",
+        hands="Sulevia's Gauntlets +2",
+        ring1="Defending Ring",
+        ring2="Flamma Ring",
+        back=Ankou.STP,
+        waist="Ioskeha Belt",
+        feet="Volte Sollerets" 
+    })
+    sets.engaged.Liberator.Mid.PDT = set_combine(sets.engaged.Liberator.PDT, {
+        ammo="Hasty Pinion +1",
+        body="Sulevia's Platemail +1"
+    })
+    sets.engaged.Liberator.Acc.PDT = set_combine(sets.engaged.Liberator.Acc, sets.Defensive_Acc)
     -- Hybrid with AM3 up
-    sets.engaged.Liberator.PDT.AM3 = set_combine(sets.engaged.AM3, sets.Defensive)
-    sets.engaged.Liberator.Mid.PDT.AM3 = set_combine(sets.engaged.Mid.AM3, sets.Defensive_Mid)
-    sets.engaged.Liberator.Acc.PDT.AM3 = set_combine(sets.engaged.Acc.AM3, sets.Defensive_Acc)
+    sets.engaged.Liberator.PDT.AM3 = set_combine(sets.engaged.Liberator.AM3, sets.Defensive)
+    sets.engaged.Liberator.Mid.PDT.AM3 = set_combine(sets.engaged.Liberator.Mid.AM3, sets.Defensive_Mid)
+    sets.engaged.Liberator.Acc.PDT.AM3 = set_combine(sets.engaged.Liberator.Acc.AM3, sets.Defensive_Acc)
     -- Hybrid with capped delay
     sets.engaged.Haste.Liberator.PDT = set_combine(sets.engaged.Liberator.PDT, sets.DefensiveHigh)
     sets.engaged.Haste.Liberator.Mid.PDT = set_combine(sets.engaged.Liberator.Mid.PDT, sets.DefensiveHigh)
