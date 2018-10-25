@@ -164,6 +164,7 @@ function init_gear_sets()
         head="Azimuth Hood +1", -- 10
         neck="Incanter's Torque", -- 10
         ear1="Gwati Earring",
+        ear2="Lempo Earring",
         hands="Geomancy Mitaines +1", -- 15
         body="Bagua Tunic", -- 10
         back="Lifestream Cape", -- 9
@@ -249,8 +250,8 @@ function init_gear_sets()
         ammo="Plumose Sachet",
         head="Mallquis Chapeau +1",
         neck="Erra Pendant",
-        ear1="Lifestorm Earring", 
-        ear2="Psystorm Earring",
+        ear1="Gwati Earring",
+        ear2="Lempo Earring",
         body="Azimuth Coat +1",
         hands="Mallquis Cuffs +1",
         ring1="Perception Ring", 
