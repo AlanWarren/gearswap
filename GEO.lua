@@ -72,7 +72,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        main="Grioavolr",
+        main="Sucellus",
         head="Welkin Crown",
         ear2="Loquacious Earring",
         hands="Magavan Mitts",
@@ -223,6 +223,7 @@ function init_gear_sets()
     sets.precast.JA['Concentric Pulse'] = sets.midcast.HightTierNuke
 
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
+        main="Grioavolr",
         sub="Enki Strap",
         ear2="Crematio Earring",
         head="Mallquis Chapeau +1",
@@ -348,6 +349,7 @@ function init_gear_sets()
 
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = set_combine(sets.idle, {
+        main="Sucellus",
         head="Azimuth Hood +1",
         neck="Twilight Torque",
         body="Mallquis Saio +1",
