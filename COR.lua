@@ -28,6 +28,7 @@ function job_setup()
 	state.LuzafRing = M(false, "Luzaf's Ring")
 	state.warned = M(false)
     state.CapacityMode = M(false, 'Capacity Point Mantle')
+    state.Buff['Triple Shot'] = buffactive['Triple Shot'] or false
 
 	define_roll_values()
 end
@@ -90,7 +91,7 @@ function init_gear_sets()
 
 	-- Precast sets to enhance JAs
 	
-	sets.precast.JA['Triple Shot'] = {body="Navarch's Frac +2"}
+	sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
 	--sets.precast.JA['Snake Eye'] = {legs="Commodore Culottes +1"}
 	sets.precast.JA['Wild Card'] = {feet="Lanun Bottes"}
 	sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
@@ -102,8 +103,9 @@ function init_gear_sets()
         hands="Chasseur's Gants +1",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
+        neck="Regal Necklace",
         body="Meghanada Cuirie +1",
-        ring1="Barataria Ring",
+        ring1="Dark Ring",
         ring2="Defending Ring",
         back="Camulus's Mantle",
         legs="Mummu Kecks +1",
@@ -118,10 +120,10 @@ function init_gear_sets()
 	--sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
 	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
 	--sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Navarch's Tricorne +1"})
-	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Navarch's Frac +2"})
+	sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
 	sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
 	
-	sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
+	sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
     --sets.precast.FoldDoubleBust = {hands="Lanun Gants"}
 	
 	sets.precast.CorsairShot = {}
@@ -164,7 +166,7 @@ function init_gear_sets()
 	sets.precast.RA = {
         ammo=gear.RAbullet,
         head=TaeonHead.Snap,
-        hands=TaeonHands.Snap,
+        hands="Carmine Finger Gauntlets +1",
 		back="Navarch's Mantle",
         body="Pursuer's Doublet",
         waist="Impulse Belt",
@@ -219,7 +221,7 @@ function init_gear_sets()
         ear1="Ishvara Earring",
         ear2="Friomisi Earring",
         body="Samnuha Coat",
-        hands="Leyline Gloves",
+        hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
         ring2="Mummu Ring",
         back="Camulus's Mantle",
@@ -255,7 +257,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Samnuha Coat",
-        hands="Leyline Gloves",
+        hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
         ring2="Garuda Ring",
         back="Gunslinger's Cape",
@@ -294,9 +296,19 @@ function init_gear_sets()
         feet="Mummu Gamashes +2"
     }
 
+
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
         ring1="Dingir Ring",
         ring2="Cacoethic Ring +1",
+        feet="Meghanada Jambeaux +2"
+    })
+
+    sets.midcast.RA.Triple = set_combine(sets.midcast.RA, {
+        body="Chasseur's Frac +1"
+    })
+	sets.midcast.RA.Triple.Acc = set_combine(sets.midcast.RA.Triple, {
+        ring2="Cacoethic Ring +1",
+        feet="Meghanada Jambeaux +2"
     })
 	
 	-- Sets to return to when not performing an action.
@@ -324,17 +336,18 @@ function init_gear_sets()
     sets.idle.Regen = set_combine(sets.idle, {
         --head="Ocelomeh Headpiece +1",
         neck="Sanctity Necklace",
-        body="Kheper jacket",
+        body="Meghanada Cuirie +1",
+        ring1="Meghanada Ring",
     })
 
 	sets.idle.Town = {
         ammo=gear.RAbullet,
         head="Meghanada Visor +2",
-        neck="Iskur Gorget",
+        neck="Regal Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         body="Meghanada Cuirie +1",
-        hands="Meghanada Gloves +2",
+        hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
         ring2="Defending Ring",
         back="Gunslinger's Cape",
@@ -359,7 +372,7 @@ function init_gear_sets()
 
 	sets.defense.MDT = sets.defense.PDT
 
-	sets.Kiting = {feet="Skadi's Jambeaux +1"}
+	sets.Kiting = {legs="Carmine Cuisses +1"}
 
 	-- Engaged sets
 
@@ -389,14 +402,14 @@ function init_gear_sets()
         neck="Lissome Necklace",
         ear1="Brutal Earring",
         ear2="Cessance Earring",
-        body="Meghanada Cuirie +1",
+        body="Herculean Vest",
         hands="Herculean Gloves",
         ring1="Petrov Ring",
-        ring2="Mummu Ring",
-        back="Gunslinger's Cape",
+        ring2="Epona's Ring",
+        back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Meghanada Chausses +1",
-        feet="Mummu Gamashes +2"
+        feet="Herculean Boots"
     }
 
 	sets.engaged.DW = set_combine(sets.engaged.Melee, {
@@ -512,16 +525,42 @@ end
 
 -- Called when the player's status changes.
 function job_status_change(newStatus, oldStatus, eventArgs)
+    if newStatus == 'Engaged' then
+        get_combat_form()
+    end
 end
 
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-
+    if state.Buff[buff] ~= nil then
+        handle_equipping_gear(player.status)
+    end
+    if buff == 'Triple Shot' and gain then
+        if (buffactive['Triple Shot']) then
+            state.CombatForm:set('Triple')
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
+        else
+            if state.CombatForm.current ~= 'DW' then
+                state.CombatForm:reset()
+            end
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
+        end
+    end
 end
 
-
+function update_combat_form()
+    if state.Buff['Triple Shot'] then
+        state.CombatForm:set('Triple')
+    else
+        state.CombatForm:reset()
+    end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------
@@ -583,8 +622,11 @@ function get_combat_form()
         else
             state.CombatForm:reset()
         end
+    end
+    if state.Buff['Triple Shot'] then
+        state.CombatForm:set('Triple')
     else
-        state.CombatForm:set('Stave')
+        state.CombatForm:reset()
     end
 end
 
