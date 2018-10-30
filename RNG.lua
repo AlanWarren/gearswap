@@ -145,7 +145,7 @@ function init_gear_sets()
             ear2="Sherida Earring",
             body="Orion Jerkin +2",
             back=Belenus.STP,
-            hands="Meghanada Gloves +2",
+            hands="Carmine Finger Gauntlets +1",
             ring1="Rajas Ring",
             ring2="Apate Ring",
             legs="Arcadian Braccae +1", 
@@ -207,7 +207,7 @@ function init_gear_sets()
             neck="Iskur Gorget",
             ring1="Dingir Ring",
             ring2="Karieyh Ring",
-            hands="Meghanada Gloves +2",
+            hands="Carmine Finger Gauntlets +1",
             back=Belenus.STP,
             legs="Carmine Cuisses +1",
             feet="Mummu Gamashes +2"
@@ -284,7 +284,7 @@ function init_gear_sets()
             head=TaeonHead.Snap, -- 9
             neck="Scout's gorget", -- 2
             body="Amini Caban +1", -- 7% VS
-            hands=TaeonHands.Snap, --8
+            hands="Carmine Finger Gauntlets +1",
             back=Belenus.Snap, -- 2% VS / 10 snap (for now)
             legs="Adhemar Kecks", -- 9
             waist="Impulse Belt", -- 2
@@ -307,7 +307,7 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Sherida Earring", 
             body="Arcadian Jerkin +2", 
-            hands="Adhemar Wristbands",
+            hands="Carmine Finger Gauntlets +1",
             ring1="Rajas Ring",
             ring2="Dingir Ring",
             back=Belenus.STP,
@@ -316,7 +316,7 @@ function init_gear_sets()
             feet="Mummu Gamashes +2"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            neck="Iskur Gorget",
+            hands="Adhemar Wristbands",
             legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
@@ -383,7 +383,7 @@ function init_gear_sets()
             ear1="Friomisi Earring",
             ear2="Crematio Earring",
             neck="Sanctity Necklace",
-            hands="Meghanada Gloves +2",
+            hands="Carmine Finger Gauntlets +1",
             body="Samnuha Coat",
             ring1="Dingir Ring",
             ring2="Karieyh Ring",

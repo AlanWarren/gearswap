@@ -95,6 +95,9 @@ end
 function job_setup()
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
+    include('Mote-TreasureHunter')
+    state.TreasureMode:set('Tag')
+
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     -- Set the default to false if you'd rather SE always stay acitve
@@ -134,6 +137,7 @@ function user_setup()
     war_sj = player.sub_job == 'WAR' or false
 
     -- Additional local binds
+    send_command('bind ^= gs c cycle treasuremode')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind @f9 gs c toggle SouleaterMode')
     send_command('bind !- gs equip sets.crafting')
@@ -166,6 +170,8 @@ function init_gear_sets()
     Ankou.FC  = { name="Ankou's Mantle", augments={'"Fast Cast"+10',}}
     Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}}
     Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+
+    sets.TreasureHunter = { waist="Chaac Belt" }
 
     Odyssean = {}
     Odyssean.Legs = {}
@@ -312,7 +318,7 @@ function init_gear_sets()
         ear1="Friomisi Earring", -- 10 matk
         ear2="Crematio Earring", -- 6 matk 6 mdmg
         body="Fallen's Cuirass +3",
-        hands="Leyline Gloves",
+        hands="Carmine Finger Gauntlets +1",
         ring1="Resonance Ring", -- int 8
         ring2="Shiva Ring", -- matk 4
         waist="Eschan Stone", -- macc/matk 7
@@ -384,6 +390,7 @@ function init_gear_sets()
     sets.precast.RA = {
         head="Otomi Helm",
         feet="Ejekamal Boots",
+        hands="Carmine Finger Gauntlets +1"
     }
     sets.midcast.RA = {
         ear2="Tripudio Earring",
@@ -1118,6 +1125,9 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+    if state.TreasureMode.value == 'Fulltime' then
+        meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+    end
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
@@ -1266,6 +1276,29 @@ function job_update(cmdParams, eventArgs)
     select_default_macro_book()
 end
 
+-- State buff checks that will equip buff gear and mark the event as handled.
+function check_buff(buff_name, eventArgs)
+    if state.Buff[buff_name] then
+        equip(sets.buff[buff_name] or {})
+        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
+            equip(sets.TreasureHunter)
+        end
+        eventArgs.handled = true
+    end
+end
+-- Check for various actions that we've specified in user code as being used with TH gear.
+-- This will only ever be called if TreasureMode is not 'None'.
+-- Category and Param are as specified in the action event packet.
+function th_action_check(category, param)
+    if category == 2 or -- any ranged attack
+        --category == 4 or -- any magic action
+        (category == 3 and param == 30) or -- Aeolian Edge
+        (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
+        (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
+        then 
+            return true
+    end
+end
 -- function get_custom_wsmode(spell, spellMap, default_wsmode)
 --     if state.OffenseMode.current == 'Mid' then
 --         if buffactive['Aftermath: Lv.3'] then

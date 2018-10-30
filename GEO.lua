@@ -179,7 +179,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
-        main="Grioavolr",
+        main="Serenity",
         neck="Incanter's Torque",
         hands="Telchine Gloves",
     	back="Solemnity Cape",
