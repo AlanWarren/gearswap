@@ -87,7 +87,7 @@ function init_gear_sets()
     sets.buff['Sneak Attack'] = {
         head="Meghanada Visor +2",
         neck="Moepapa Medal",
-        body="Meghanada Cuirie +1",
+        body="Meghanada Cuirie +2",
         hands="Meghanada Gloves +2",
         ring1="Mummu Ring",
         ring2="Rajas Ring",
@@ -175,7 +175,7 @@ function init_gear_sets()
         neck="Iskur Gorget",
         ear1="Enervating Earring",
         ear2="Sherida Earring",
-        body="Meghanada Cuirie +1",
+        body="Meghanada Cuirie +2",
         ring1="Dingir Ring",
         ring2="Mummu Ring",
         waist="Eschan Stone",
@@ -224,7 +224,7 @@ function init_gear_sets()
     })
     sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mid, {
         neck="Breeze Gorget", 
-        body="Meghanada Cuirie +1",
+        body="Meghanada Cuirie +2",
         hands="Pillager's Armlets +1", 
         legs="Samnuha Tights",
     })
@@ -274,7 +274,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
         waist="Olseni Belt"
     })
-    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget", body="Meghanada Cuirie +1"})
+    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget", body="Meghanada Cuirie +2"})
     sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget", body="Mummu Jacket +1"})
     sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
 
@@ -325,7 +325,7 @@ sets.idle = {
     neck="Sanctity Necklace",
     ear1="Eabani Earring",
     ear2="Etiolation Earring",
-    body="Meghanada Cuirie +1",
+    body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
     ring1="Meghanada Ring",
     ring2="Paguroidea Ring",
@@ -350,7 +350,7 @@ sets.idle.Town = set_combine(sets.idle, {
 sets.idle.Regen = set_combine(sets.idle, {
     head="Meghanada Visor +2",
     hands="Meghanada Gloves +2",
-    body="Meghanada Cuirie +1",
+    body="Meghanada Cuirie +2",
     ring1="Meghanada Ring",
     ring2="Paguroidea Ring",
 })
@@ -425,7 +425,7 @@ sets.engaged.Acc = set_combine(sets.engaged.Mid, {
 sets.engaged.PDT = set_combine(sets.engaged, {
     head="Meghanada Visor +1",
     neck="Twilight Torque",
-    body="Meghanada Cuirie +1",
+    body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
     ring1="Patricius Ring",
     ring2="Defending Ring",

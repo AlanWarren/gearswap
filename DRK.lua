@@ -607,7 +607,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Fallen's Cuirass +3",
+        body="Jumalik Mail",
         hands="Sulevia's Gauntlets +2",
         ring1="Defending Ring",
         ring2="Karieyh Ring",
