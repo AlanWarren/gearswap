@@ -358,7 +358,7 @@ function init_gear_sets()
         hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
         ring2="Defending Ring",
-        back="Gunslinger's Cape",
+        back=Camulus.STP,
         waist="Eschan Stone",
         legs="Carmine Cuisses +1",
         feet="Meghanada Jambeaux +2"
