@@ -115,7 +115,7 @@ function init_gear_sets()
         ring1="Dark Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
-        legs="Mummu Kecks +1",
+        legs="Mummu Kecks +2",
         feet="Lanun Bottes"
     }
     
@@ -268,7 +268,7 @@ function init_gear_sets()
         ring2="Garuda Ring",
         back="Gunslinger's Cape",
         waist="Eschan Stone",
-        legs="Mummu Kecks +1",
+        legs="Mummu Kecks +2",
         feet="Lanun Bottes"
     }
 

@@ -170,6 +170,7 @@ function init_gear_sets()
     Ankou.FC  = { name="Ankou's Mantle", augments={'"Fast Cast"+10',}}
     Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}}
     Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+    Ankou.VIT = { name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
 
     sets.TreasureHunter = { waist="Chaac Belt" }
 
@@ -257,7 +258,7 @@ function init_gear_sets()
     sets.midcast.Trust =  {
         head="Fallen's Burgeonet +1",
         hands="Odyssean Gauntlets",
-        body="Odyssean Chestplate",
+        body="Fallen's Cuirass +3",
         legs="Carmine Cuisses +1",
         feet=Odyssean.Feet.FC
     }
@@ -313,7 +314,7 @@ function init_gear_sets()
 
     sets.midcast['Elemental Magic'] = {
         ammo="Seething Bomblet +1",
-        head="Terminal Helm", -- mab+15 mdmg+15
+        head="Flamma Zucchetto +2", -- mab+15 mdmg+15
         neck="Eddy Necklace", -- 11 matk
         ear1="Friomisi Earring", -- 10 matk
         ear2="Crematio Earring", -- 6 matk 6 mdmg
@@ -406,7 +407,7 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
-        body="Ignominy Cuirass +2",
+        body="Ignominy Cuirass +3",
         hands="Odyssean Gauntlets",
         ring1="Niqmaddu Ring",
         ring2="Karieyh Ring",
@@ -444,17 +445,18 @@ function init_gear_sets()
     -- VIT 80%
     sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
         head="Odyssean Helm",
-        body="Ignominy Cuirass +2",
+        body="Ignominy Cuirass +3",
         neck="Aqua Gorget",
         waist="Light Belt",
+        back=Ankou.VIT,
         legs="Fallen's Flanchard +3",
     })
     sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
         neck="Aqua Gorget",
-        body="Fallen's Cuirass +3",
     })
     sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, {
         neck="Aqua Gorget",
+        body="Fallen's Cuirass +3",
         legs=Odyssean.Legs.WS
     })
 
@@ -462,9 +464,9 @@ function init_gear_sets()
     -- 20% STR / 20% INT 
     -- Base set only used at 3000TP to put AM3 up
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
-        head="Odyssean Helm",
+        head="Flamma Zucchetto +2",
         neck="Shadow Gorget",
-        body="Ratri Breastplate",
+        body="Ignominy Cuirass +3",
         legs="Fallen's Flanchard +3",
         ring2="Flamma Ring",
         waist="Light Belt",
@@ -479,7 +481,7 @@ function init_gear_sets()
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
         head="Odyssean Helm",
         neck="Shadow Gorget",
-        body="Ratri Breastplate",
+        body="Ignominy Cuirass +3",
         legs="Fallen's Flanchard +3",  
         waist="Soil Belt",
     })
@@ -492,7 +494,7 @@ function init_gear_sets()
     -- CROSS REAPER
     -- 60% STR / 60% MND
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-        body="Ratri Breastplate",
+        body="Ignominy Cuirass +3",
         waist="Metalsinger Belt",
         legs="Fallen's Flanchard +3",
     })
@@ -506,7 +508,7 @@ function init_gear_sets()
     -- 86-100% INT 
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
-        body="Fallen's Cuirass +3",
+        body="Ignominy Cuirass +3",
         waist="Soil Belt",
         ring1="Niqmaddu Ring",
         ring2="Karieyh Ring",
@@ -514,9 +516,9 @@ function init_gear_sets()
         feet="Sulevia's Leggings +1"
     })
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
-        body="Fallen's Cuirass +3",
     })
     sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {
+        body="Fallen's Cuirass +3",
         ammo="Seething Bomblet +1",
     })
 
@@ -524,16 +526,16 @@ function init_gear_sets()
     -- 60% STR / MND 
     sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
-        body="Ratri Breastplate",
+        body="Ignominy Cuirass +3",
         hands="Odyssean Gauntlets",
         waist="Caudata Belt",
         legs="Fallen's Flanchard +3",  
         feet="Sulevia's Leggings +1",
     })
     sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
-        body="Fallen's Cuirass +3",
     })
     sets.precast.WS.Quietus.Acc = set_combine(sets.precast.WS.Quietus.Mid, {
+        body="Fallen's Cuirass +3",
         ammo="Seething Bomblet +1",
         legs=Odyssean.Legs.WS
     })
@@ -542,7 +544,7 @@ function init_gear_sets()
     -- 50% STR / 50% INT 
     sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
         neck="Aqua Gorget",
-        body="Ratri Breastplate",
+        body="Ignominy Cuirass +3",
         waist="Metalsinger belt",
     })
     sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid, { })
@@ -551,12 +553,12 @@ function init_gear_sets()
     -- SHADOW OF DEATH
     -- 40% STR 40% INT - Darkness Elemental
     sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
-        head="Terminal Helm",
+        head="Odyssean Helm",
         neck="Eddy Necklace",
         body="Fallen's Cuirass +3",
         ear1="Friomisi Earring",
-        hands="Leyline Gloves",
-        back="Toro Cape",
+        hands="Carmine Finger Gauntlets +1",
+        back=Ankou.WSD,
         legs="Fallen's Flanchard +3",  
         waist="Eschan Stone", -- macc/matk 7
         feet="Sulevia's Leggings +2"
@@ -593,7 +595,7 @@ function init_gear_sets()
     sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
         head="Flamma Zucchetto +2",
         neck="Shadow Gorget",
-        body="Ignominy Cuirass +2",
+        body="Ignominy Cuirass +3",
         hands="Odyssean Gauntlets",
         waist="Soil Belt",
     })
@@ -603,14 +605,14 @@ function init_gear_sets()
     -- Idle sets
     sets.idle.Town = {
         ammo="Ginsen",
-        head="Valorous Mask",
+        head="Sulevia's Mask +2",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Jumalik Mail",
+        body="Sulevia's Platemail +2",
         hands="Sulevia's Gauntlets +2",
-        ring1="Defending Ring",
-        ring2="Karieyh Ring",
+        ring1="Karieyh Ring",
+        ring2="Defending Ring",
         back=Ankou.STP,
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
@@ -618,7 +620,8 @@ function init_gear_sets()
     }
 
     sets.idle.Field = set_combine(sets.idle.Town, {
-        body="Jumalik mail",
+        head="Valorous Mask",
+        body="Sulevia's Platemail +2",
     })
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="",
@@ -635,10 +638,10 @@ function init_gear_sets()
     sets.idle.Weak = set_combine(sets.defense.PDT, {
         head="Baghere Salade",
         neck="Sanctity Necklace",
-        body="Ratri Breastplate",
+        body="Sulevia's Platemail +2",
         hands="Sulevia's Gauntlets +2",
-        ring1="Defending Ring",
-        ring2="Paguroidea Ring",
+        ring1="Paguroidea Ring",
+        ring2="Defending Ring",
         back=Ankou.STP,
         waist="Flume Belt",
         legs="Sulevia's Cuisses +2",
@@ -648,14 +651,14 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = {
         ammo="Hasty Pinion +1", -- 2% haste
-        head="Sulevia's Mask +1", -- 3% haste
+        head="Sulevia's Mask +2", -- 3% haste
         neck="Agitator's Collar",
         body="Jumalik Mail", -- 3% haste
         --body="Sulevia's Platemail +1", -- 1% haste
         hands="Sulevia's Gauntlets +2", -- 3% haste
         ear1="Etiolation Earring",
-        ring1="Defending Ring",
-        ring2="Sulevia's Ring",
+        ring1="Patricius Ring",
+        ring2="Defending Ring",
         back="Grounded Mantle +1", -- 2% haste
         waist="Ioskeha Belt", -- 7% haste
         legs="Sulevia's Cuisses +2", -- 2% haste
@@ -686,43 +689,44 @@ function init_gear_sets()
     sets.Defensive = {
         --sub="Gracile grip",
         ammo="Hasty Pinion +1",
-        head="Sulevia's Mask +1",
-        neck="Agitator's Collar",
+        head="Sulevia's Mask +2", -- 6% 
+        neck="Agitator's Collar", -- 4% pdt
         body="Valorous Mail",
-        hands="Sulevia's Gauntlets +2",
-        ring1="Defending Ring",
-        ring2="Sulevia's Ring",
-        back=Ankou.STP,
+        hands="Sulevia's Gauntlets +2", -- 5% pdt
+        ring1="Niqmaddu Ring", 
+        ring2="Defending Ring", -- 10% dt
+        back=Ankou.STP, -- 5% dt
         waist="Ioskeha Belt",
-        legs="Sulevia's Cuisses +2",
-        feet="Volte Sollerets" 
+        legs="Sulevia's Cuisses +2", -- 7% dt
+        feet="Volte Sollerets"  -- 4% pdt | 6% mdt
     }
     sets.Defensive_Mid = {
         ammo="Hasty Pinion +1",
-        head="Sulevia's Mask +1",
+        head="Sulevia's Mask +2",
         neck="Twilight Torque",
         body="Valorous Mail",
         hands="Sulevia's Gauntlets +2",
-        ring1="Defending Ring",
-        ring2="Sulevia's Ring",
+        ring1="Patricius Ring",
+        ring2="Defending Ring",
         back=Ankou.STP,
         waist="Ioskeha Belt",
         legs="Sulevia's Cuisses +2",
         feet="Volte Sollerets" 
     }
-    sets.Defensive_Acc = set_combine(sets.Defensive_Mid, sets.DefensiveHigh)
-
     -- Higher DT, less haste
     sets.DefensiveHigh = set_combine(sets.Defensive, {
         ammo="Ginsen",
-        head="Sulevia's Mask +1",
+        head="Sulevia's Mask +2",
         neck="Agitator's Collar",
-        body="Sulevia's Platemail +1",
+        body="Sulevia's Platemail +2",
         hands="Sulevia's Gauntlets +2",
+        ring1="Niqmaddu Ring", 
+        ring2="Defending Ring",
         legs="Sulevia's Cuisses +2",
         feet="Volte Sollerets",
         back=Ankou.STP,
     })
+    sets.Defensive_Acc = set_combine(sets.Defensive_Mid, sets.DefensiveHigh)
 
     -- Base set (global catch-all set)
     sets.engaged = {
@@ -743,7 +747,7 @@ function init_gear_sets()
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         neck="Lissome Necklace",
-        body="Fallen's Cuirass +3",
+        body="Valorous Mail",
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         -- ammo="Hasty Pinion +1",
@@ -817,19 +821,17 @@ function init_gear_sets()
     
     -- Hybrid
     sets.engaged.Liberator.PDT = set_combine(sets.engaged.Liberator, {
-        -- head="Sulevia's Mask +1",
+        head="Sulevia's Mask +2",
         neck="Agitator's Collar",
-        body="Ratri Breastplate",
         hands="Sulevia's Gauntlets +2",
-        ring1="Defending Ring",
-        ring2="Flamma Ring",
+        ring2="Defending Ring",
         back=Ankou.STP,
         waist="Ioskeha Belt",
         feet="Volte Sollerets" 
     })
     sets.engaged.Liberator.Mid.PDT = set_combine(sets.engaged.Liberator.PDT, {
         ammo="Hasty Pinion +1",
-        body="Sulevia's Platemail +1"
+        body="Sulevia's Platemail +2"
     })
     sets.engaged.Liberator.Acc.PDT = set_combine(sets.engaged.Liberator.Acc, sets.Defensive_Acc)
     -- Hybrid with AM3 up
@@ -1486,7 +1488,7 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'DNC' then
-        set_macro_page(6, 2)
+        set_macro_page(8, 4)
     elseif player.equipment.main == 'Apocalypse' then
         set_macro_page(9, 4)
     elseif gsList:contains(player.equipment.main) then

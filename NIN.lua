@@ -109,7 +109,7 @@ function init_gear_sets()
     --------------------------------------
     Andartia = {}
     Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
-    Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+3','Weapon skill damage +10%',}}
+    Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+4','Weapon skill damage +10%',}}
 
     --------------------------------------
     -- Job Abilties
@@ -231,7 +231,7 @@ function init_gear_sets()
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         neck="Incanter's Torque",
-        body="Mochizuki Chainmail +3",
+        body="Mummu Jacket +2",
         hands="Leyline Gloves",
         ring1="Sangoma Ring",
         ring2="Kishar Ring",
@@ -740,7 +740,7 @@ function init_gear_sets()
         ring2="Mummu Ring",
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
-        legs="Mummu Kecks +1",
+        legs="Mummu Kecks +2",
         feet="Mummu Gamashes +2"
     })
     
@@ -763,7 +763,7 @@ function init_gear_sets()
         head="Herculean Helm",
         neck="Flame Gorget",
         hands="Herculean Gloves",
-        body="Mochizuki Chainmail +3",
+        body="Herculean Vest",
         ring1="Ramuh Ring",
         back=Andartia.DEX,
         waist="Light Belt",
@@ -792,11 +792,11 @@ function init_gear_sets()
         head="Rao Kabuto",
         ear2="Trux Earring",
         neck="Shadow Gorget",
+        body="Herculean Vest",
         back=Andartia.DEX,
     }
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
     sets.precast.WS['Blade: Ku'].Low = set_combine(sets.precast.WS['Blade: Ku'], {
-        body="Hattori Ningi +1",
         waist="Soil Belt"
     })
     sets.precast.WS['Blade: Ku'].Mid = sets.precast.WS['Blade: Ku'].Low
@@ -810,7 +810,7 @@ function init_gear_sets()
         neck="Shadow Gorget",
         ear1="Lugra Earring +1",
         ear2="Moonshade Earring",
-        body="Kendatsuba Samue",
+        body="Herculean Vest",
         legs="Hizamaru Hizayoroi +1",
         back=Andartia.AGI,
         waist="Metalsinger Belt",
@@ -818,7 +818,7 @@ function init_gear_sets()
     
     sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, sets.Ten)
     sets.precast.WS['Blade: Ten'].Low = set_combine(sets.precast.WS['Blade: Ten'], {
-        body="Mes'yohi Haubergeon",
+        body="Herculean Vest",
     })
     sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS['Blade: Ten'].Low, {
         waist="Caudata Belt"

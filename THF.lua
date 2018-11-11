@@ -100,13 +100,13 @@ function init_gear_sets()
         head="Herculean Helm",
         neck="Moepapa Medal",
         ear1="Sherida Earring",
-        body="Mummu Jacket +1",
+        body="Mummu Jacket +2",
         hands="Pillager's Armlets +1",
         ring1="Mummu Ring",
         ring2="Dingir Ring",
         back="Canny Cape",
         waist="Chaac Belt",
-        legs="Mummu Kecks +1",
+        legs="Mummu Kecks +2",
         feet="Mummu Gamashes +2"
     }
     -- Precast Sets
@@ -246,7 +246,7 @@ function init_gear_sets()
         body="Mummu Jacket +1",
         ring1="Mummu Ring",
         waist="Windbuffet Belt",
-        legs="Mummu Kecks +1",
+        legs="Mummu Kecks +2",
         back="Bleating Mantle",
         feet="Mummu Gamashes +2"
     })
@@ -368,7 +368,7 @@ sets.defense.PDT = {
     ring2="Epona's Ring",
     back="Solemnity Cape",
     waist="Flume Belt",
-    legs="Mummu Kecks +1",
+    legs="Mummu Kecks +2",
 }
 
 sets.defense.MDT = {
@@ -380,7 +380,7 @@ sets.defense.MDT = {
     ring1="Defending Ring",
     ring2="Epona's Ring",
     back="Solemnity Cape",
-    legs="Mummu Kecks +1",
+    legs="Mummu Kecks +2",
     feet="Herculean Boots",
 }
 
@@ -431,7 +431,7 @@ sets.engaged.PDT = set_combine(sets.engaged, {
     ring2="Defending Ring",
     back="Solemnity Cape",
     waist="Flume Belt",
-    legs="Mummu Kecks +1",
+    legs="Mummu Kecks +2",
     feet="Meghanada Jambeaux +1"
 })
 sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
@@ -500,7 +500,7 @@ sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, {
     body="Herculean Vest", 
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
-    legs="Mummu Kecks +1",
+    legs="Mummu Kecks +2",
     back="Solemnity Cape",
     feet="Herculean Boots" 
 })

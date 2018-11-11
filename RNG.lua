@@ -117,7 +117,7 @@ function init_gear_sets()
         
         Belenus = {}
         Belenus.STP = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10',}}
-        Belenus.WSD = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+3','Weapon skill damage +10%',}}
+        Belenus.WSD = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+7','Weapon skill damage +10%',}}
         Belenus.Snap = {name="Belenus's Cape", augments={'"Snapshot"+10',}}
 
         sets.Organizer = {
@@ -183,8 +183,8 @@ function init_gear_sets()
             ring2="Karieyh Ring",
             back="Solemnity Cape",
             waist="Kwahu Kachina Belt",
-            legs="Carmine Cuisses +1",
-            feet="Meghanada Jambeaux +2" -- 10
+            legs="Mummu Kecks +2",
+            feet="Jute Boots +1" -- 10
         }
         sets.idle.Regen = set_combine(sets.idle, {
             --head="Ocelomeh Headpiece +1",
@@ -196,7 +196,7 @@ function init_gear_sets()
             head="Meghanada Visor +2",
             body="Meghanada Cuirie +2",
             hands="Meghanada Gloves +2",
-            legs="Mummu Kecks +1",
+            legs="Mummu Kecks +2",
             ring1="Dark Ring",
             ring2="Defending Ring"
         })
@@ -232,7 +232,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +2",
     	    back="Solemnity Cape",
             ring1="Dark Ring",
-            legs="Mummu Kecks +1"
+            legs="Mummu Kecks +2"
         })
         sets.engaged.Bow = set_combine(sets.engaged, {})
 
@@ -257,7 +257,7 @@ function init_gear_sets()
             ring1="Patricius Ring",
             ring2="Defending Ring",
             back="Solemnity Cape",
-            legs="Mummu Kecks +1"
+            legs="Mummu Kecks +2"
         })
 
         sets.engaged.DW = sets.engaged
