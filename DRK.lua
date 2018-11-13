@@ -251,7 +251,7 @@ function init_gear_sets()
         ammo="Impatiens",
         head="Fallen's Burgeonet +1",
         back="Grounded Mantle +1",
-        waist="Ioskeha Belt",
+        waist="Sailfi Belt +1",
         legs="Carmine Cuisses +1",
         feet=Odyssean.Feet.FC
     }
@@ -794,7 +794,7 @@ function init_gear_sets()
         ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
         back=Ankou.STP,
-        waist="Ioskeha Belt",
+        waist="Sailfi Belt +1",
         legs=Odyssean.Legs.TP,
         feet="Flamma Gambieras +2"
     })
@@ -805,7 +805,8 @@ function init_gear_sets()
     sets.engaged.Liberator.Acc.AM3 = set_combine(sets.engaged.Liberator.Mid.AM3, {
         ear2="Zennaroi Earring",
         body="Fallen's Cuirass +3",
-        legs="Carmine Cuisses +1",
+        waist="Ioskeha Belt",
+        legs=Odyssean.Legs.WS,
     })
     sets.engaged.Haste.Liberator = set_combine(sets.engaged.Liberator, {
         waist="Windbuffet Belt +1"
@@ -826,7 +827,7 @@ function init_gear_sets()
         hands="Sulevia's Gauntlets +2",
         ring2="Defending Ring",
         back=Ankou.STP,
-        waist="Ioskeha Belt",
+        waist="Sailfi Belt +1",
         feet="Volte Sollerets" 
     })
     sets.engaged.Liberator.Mid.PDT = set_combine(sets.engaged.Liberator.PDT, {
