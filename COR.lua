@@ -47,9 +47,9 @@ function user_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 
-	gear.RAbullet = "Adlivun Bullet"
-	gear.WSbullet = "Adlivun Bullet"
-	gear.MAbullet = "Adlivun Bullet"
+	gear.RAbullet = "Decimating Bullet"
+	gear.WSbullet = "Decimating Bullet"
+	gear.MAbullet = "Decimating Bullet"
 	gear.QDbullet = "Animikii Bullet"
 	--gear.QDbullet = "Adlivun Bullet"
 	options.ammo_warning_limit = 15
@@ -235,8 +235,16 @@ function init_gear_sets()
         legs="Herculean Trousers",
         feet="Mummu Gamashes +2"
     }
+    sets.precast.WS['Wildfire'].Acc = {
+        body="Mummu Jacket +2",
+        legs="Mummu Kecks +2"
+    }
 
 	sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], { ear2="Moonshade Earring"})
+	sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], { 
+        body="Mummu Jacket +2",
+        legs="Mummu Kecks +2"
+    })
 	
 	-- Midcast Sets
 	sets.midcast.FastRecast = {
@@ -401,7 +409,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Meghanada Chausses +1",
+        legs="Mummu Kecks +2",
         feet="Meghanada Jambeaux +2"
     }
 	-- Normal melee group

@@ -278,7 +278,7 @@ function init_gear_sets()
     }
 
     sets.midcast['Dark Magic'] = {
-        ammo="Plumose Sachet", 
+        ammo="Pemphredo Tathlum", 
         -- head="Flamma Zucchetto +2", -- 44 macc
         head="Ignominy Burgeonet +1", -- 17
         neck="Erra Pendant", -- 10 dark + 17 macc
@@ -313,7 +313,7 @@ function init_gear_sets()
     })
 
     sets.midcast['Elemental Magic'] = {
-        ammo="Seething Bomblet +1",
+        ammo="Pemphredo Tathlum", 
         head="Flamma Zucchetto +2", -- mab+15 mdmg+15
         neck="Eddy Necklace", -- 11 matk
         ear1="Friomisi Earring", -- 10 matk

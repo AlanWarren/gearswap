@@ -227,12 +227,13 @@ function init_gear_sets()
 
     -- skill ++ 
     sets.midcast.Ninjutsu = {
+        ammo="Pemphredo Tathlum",
         head="Mummu Bonnet +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         neck="Incanter's Torque",
         body="Mummu Jacket +2",
-        hands="Leyline Gloves",
+        hands="Mummu Wrists +1",
         ring1="Sangoma Ring",
         ring2="Kishar Ring",
         --ring2="Haverton Ring",
