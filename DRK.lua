@@ -742,7 +742,7 @@ function init_gear_sets()
         ring2="Flamma Ring",
         back=Ankou.STP,
         waist="Ioskeha Belt",
-        legs=Odyssean.Legs.TP,
+        legs="Ignominy Flanchard +3",
         feet="Flamma Gambieras +2"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
@@ -754,7 +754,6 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
         body="Fallen's Cuirass +3",
-        legs=Odyssean.Legs.WS,
         back=Ankou.STP,
     })
 
@@ -806,7 +805,7 @@ function init_gear_sets()
         ear2="Zennaroi Earring",
         body="Fallen's Cuirass +3",
         waist="Ioskeha Belt",
-        legs=Odyssean.Legs.WS,
+        legs="Ignominy Flanchard +3",
     })
     sets.engaged.Haste.Liberator = set_combine(sets.engaged.Liberator, {
         waist="Windbuffet Belt +1"
@@ -858,7 +857,7 @@ function init_gear_sets()
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
         ear2="Zennaroi Earring",
-        legs="Carmine Cuisses +1"
+        legs="Ignominy Flanchard +3",
     })
     
     sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
@@ -919,7 +918,7 @@ function init_gear_sets()
     sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {})
     sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {
         body="Fallen's Cuirass +3",
-        legs=Odyssean.Legs.WS, -- these have 50 acc and still have 5 stp so meh
+        legs="Ignominy Flanchard +3",
     })
 
     sets.engaged.GreatSword.PDT = set_combine(sets.engaged.GreatSword, sets.Defensive)
@@ -953,7 +952,7 @@ function init_gear_sets()
     sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {
         hands="Flamma Manopolas +2",
         body="Fallen's Cuirass +3",
-        legs=Odyssean.Legs.WS, -- these have 50 acc and still have 5 stp so meh
+        legs="Ignominy Flanchard +3",
     })
     
     sets.engaged.Caladbolg.PDT = set_combine(sets.engaged.Caladbolg, sets.Defensive)
