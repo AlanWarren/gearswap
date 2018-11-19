@@ -699,6 +699,27 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
 end
  
+function determine_custom_ranged_groups()
+    classes.CustomRangedGroups:clear()
+    -- Flurry I = 265, Flurry II = 581
+    if buffactive[265] then
+        classes.CustomRangedGroups:append('F1')
+    elseif buffactive[581] then
+        classes.CustomRangedGroups:append('F2')
+    end
+    
+    -- relic aftermath is just "Aftermath", while empy + mythic are numbered
+    if buffactive.Aftermath then
+        classes.CustomRangedGroups:append('AM')
+    elseif buffactive['Aftermath: Lv.1'] then
+        classes.CustomRangedGroups:append('AM1')
+    elseif buffactive['Aftermath: Lv.2'] then
+        classes.CustomRangedGroups:append('AM2')
+    elseif buffactive['Aftermath: Lv.3'] then
+        classes.CustomRangedGroups:append('AM2')
+    end
+end
+ 
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
@@ -717,15 +738,6 @@ function job_buff_change(buff, gain)
         windower.send_command('wait 170;input /echo **DECOY SHOT** Wearing off in 10 Sec.];wait 120;input /echo **DECOY SHOT READY**')
     end
 
-    if  buff == "Samurai Roll" or buff == "Courser's Roll" or string.find(buff:lower(), 'flurry') then
-        classes.CustomRangedGroups:clear()
-
-        -- if (buff == "Samurai Roll" and gain) or buffactive['Samurai Roll'] then
-        --     classes.CustomRangedGroups:append('SamRoll')
-        -- end
-       
-    end
-    
     -- DoubleShot CombatForm
     if (buff == 'Double Shot' and gain or buffactive['Double Shot']) then
         -- state.CombatForm:set('DoubleShot')
@@ -741,15 +753,6 @@ function job_buff_change(buff, gain)
         end
     end
     
-    -- Flurry I = 265, Flurry II = 581
-    if (string.find(buff:lower(), 'flurry') and gain) then
-        if buffactive[265] then
-            classes.CustomRangedGroups:append('F1')
-        elseif buffactive[581] then
-            classes.CustomRangedGroups:append('F2')
-        end
-    end
-
     if buff == "Camouflage" then
         if gain then
             equip(sets.buff.Camouflage)
@@ -764,8 +767,15 @@ function job_buff_change(buff, gain)
             handle_equipping_gear(player.status)
         end
     end
+
+    if (( string.find(buff:lower(), 'flurry') and gain ) or buff:startswith('Aftermath')) then
+        determine_custom_ranged_groups()
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end
 end
- 
+
 -- Called before the Include starts constructing melee/idle/resting sets.
 -- Can customize state or custom melee class values at this point.
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
