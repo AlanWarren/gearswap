@@ -63,7 +63,7 @@ function job_setup()
         
         sam_sj = player.sub_job == 'SAM' or false
 
-          DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"}
+        DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"}
         U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"} 
 
         update_combat_form()
@@ -335,7 +335,7 @@ function init_gear_sets()
         })
 
         -- Bow base set.
-        sets.midcast.RA.Bow = {
+        sets.midcast.RA.Yoichinoyumi = {
             head="Meghanada Visor +2",
             neck="Iskur Gorget",
             ear1="Enervating Earring",
@@ -349,11 +349,11 @@ function init_gear_sets()
             legs="Amini Brague +1", 
             feet="Mummu Gamashes +2"
         }
-        sets.midcast.RA.Bow.Mid = set_combine(sets.midcast.RA.Bow, {
+        sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             hands="Adhemar Wristbands",
             legs="Adhemar Kecks",
         })
-        sets.midcast.RA.Bow.Acc = set_combine(sets.midcast.RA.Bow.Mid, {
+        sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
             hands="Meghanada Gloves +2",
             body="Orion Jerkin +2",
             ring2="Longshot Ring",
@@ -897,6 +897,7 @@ function get_custom_wsmode(spell, spellMap, ws_mode)
     end
 
 end
+
 
 function get_combat_weapon()
     state.CombatWeapon:reset()
