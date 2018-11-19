@@ -1003,7 +1003,7 @@ function init_gear_sets()
 
     sets.buff.Souleater = { 
         head="Ignominy Burgeonet +1",
-        body="Ratri Breastplate",
+        --body="Ratri Breastplate",
     }
 
     -- sets.buff['Last Resort'] = { 

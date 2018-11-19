@@ -115,6 +115,10 @@ function init_gear_sets()
         TaeonHead = {}
         TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
         
+        HercFeet = {}
+        HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
+        HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
+
         Belenus = {}
         Belenus.STP = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10',}}
         Belenus.WSD = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+7','Weapon skill damage +10%',}}
@@ -203,6 +207,7 @@ function init_gear_sets()
         sets.idle.Town = set_combine(sets.idle, {
             head="Orion Beret +3",
             body="Arcadian Jerkin +2", 
+            ear1="Enervating Earring",
             ear2="Sherida Earring",
             neck="Iskur Gorget",
             ring1="Dingir Ring",
@@ -248,7 +253,7 @@ function init_gear_sets()
             back="Grounded Mantle +1",
             waist="Windbuffet Belt +1",
             legs="Meghanada Chausses +1", 
-            feet="Herculean Boots"
+            feet=HercFeet.TP
         }
         sets.engaged.Bow.Melee = sets.engaged.Melee
 
@@ -262,17 +267,17 @@ function init_gear_sets()
 
         sets.engaged.DW = sets.engaged
 
-        sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
-            head="Herculean Helm",
-            ear1="Eabani Earring",
-            ear2="Sherida Earring",
-            body="Herculean Vest",
-            hands="Floral Gauntlets",
-            back="Grounded Mantle +1",
-            waist="Patentia Sash",
-            legs="Carmine Cuisses +1",
-            feet="Herculean Boots"
-        })
+        -- sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
+        --     head="Herculean Helm",
+        --     ear1="Eabani Earring",
+        --     ear2="Sherida Earring",
+        --     body="Herculean Vest",
+        --     hands="Floral Gauntlets",
+        --     back="Grounded Mantle +1",
+        --     waist="Patentia Sash",
+        --     legs="Carmine Cuisses +1",
+        --     feet=HercFeet.TP
+        -- })
 
         ------------------------------------------------------------------
         -- Preshot / Snapshot sets 
@@ -379,7 +384,7 @@ function init_gear_sets()
         })
 
         -- WILDFIRE
-        sets.Wildfire = {
+        sets.precast.WS['Wildfire'] = {
             head="Orion Beret +3",
             ear1="Friomisi Earring",
             ear2="Crematio Earring",
@@ -391,18 +396,29 @@ function init_gear_sets()
             back=Belenus.WSD,
             waist="Eschan Stone",
             legs="Herculean Trousers", 
-            feet="Mummu Gamashes +2"
+            feet=HercFeet.MAB
         }
-        sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS, sets.Wildfire)
-        sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS.Mid, sets.Wildfire)
-        sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS.Acc, sets.Wildfire)
+        sets.precast.WS['Wildfire'].Mid = sets.precast.WS['Wildfire']
+        sets.precast.WS['Wildfire'].Acc = sets.precast.WS['Wildfire']
         
-        sets.Trueflight = set_combine(sets.Wildfire, {ear2="Moonshade Earring"})
-        sets.precast.WS['Trueflight'] = set_combine(sets.precast.WS, sets.Trueflight)
-        sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS.Mid, sets.Trueflight)
-        sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS.Acc, sets.Trueflight)
+        sets.precast.WS['Trueflight'] = {
+            head="Orion Beret +3",
+            ear1="Friomisi Earring",
+            ear2="Moonshade Earring",
+            neck="Sanctity Necklace",
+            hands="Carmine Finger Gauntlets +1",
+            body="Samnuha Coat",
+            ring1="Dingir Ring",
+            ring2="Karieyh Ring",
+            back=Belenus.WSD,
+            waist="Eschan Stone",
+            legs="Herculean Trousers", 
+            feet=HercFeet.MAB
+        }
+        sets.precast.WS['Trueflight'].Mid = sets.precast.WS['Trueflight']
+        sets.precast.WS['Trueflight'].Acc = sets.precast.WS['Trueflight']
 
-        sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Wildfire']
+        sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Trueflight']
 
         -- CORONACH
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
@@ -878,7 +894,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 function update_combat_form()
     if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
-        state.CombatForm:set("DW")
+        --state.CombatForm:set("DW")
     else
         if state.CombatForm.current ~= 'DoubleShot' then
             state.CombatForm:reset()

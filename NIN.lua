@@ -110,6 +110,10 @@ function init_gear_sets()
     Andartia = {}
     Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
     Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+4','Weapon skill damage +10%',}}
+    
+    HercFeet = {}
+    HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
+    HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
 
     --------------------------------------
     -- Job Abilties
@@ -268,9 +272,9 @@ function init_gear_sets()
         ring2="Dingir Ring",
         waist="Eschan Stone",
         legs="Mummu Kecks +1",
-        feet="Mummu Gamashes +2" -- int 10 mab+13 mac+13
+        feet=HercFeet.MAB
     }
-    sets.Burst = set_combine(sets.midcast.ElementalNinjutsu, { hands="Hattori Tekko +1"})
+    sets.Burst = set_combine(sets.midcast.ElementalNinjutsu, { hands="Hattori Tekko +1", feet=HercFeet.MAB})
 
     -- Effusions
     sets.precast.Effusion = {}
@@ -482,7 +486,7 @@ function init_gear_sets()
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Kendatsuba Hakama",
-        feet="Herculean Boots"
+        feet=HercFeet.TP
     })
     -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
@@ -642,7 +646,7 @@ function init_gear_sets()
         back=Andartia.DEX,
         waist="Patentia Sash",
         legs="Kendatsuba Hakama",
-        feet="Herculean Boots"
+        feet=HercFeet.TP
     })
     sets.engaged.Low.Haste_15 = set_combine(sets.engaged.Haste_15, {
         ear1="Cessance Earring",
@@ -687,7 +691,7 @@ function init_gear_sets()
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Kendatsuba Hakama",
-        feet="Herculean Boots"
+        feet=HercFeet.TP
     }
     
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -769,7 +773,7 @@ function init_gear_sets()
         back=Andartia.DEX,
         waist="Light Belt",
         legs="Samnuha Tights",
-        feet="Herculean Boots"
+        feet=HercFeet.TP
     }
     
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
@@ -803,7 +807,7 @@ function init_gear_sets()
     sets.precast.WS['Blade: Ku'].Mid = sets.precast.WS['Blade: Ku'].Low
     sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'].Mid, {
         legs="Samnuha Tights",
-        feet="Herculean Boots"
+        feet=HercFeet.TP
     })
     
     sets.Ten = {
@@ -826,7 +830,7 @@ function init_gear_sets()
     })
     sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid, {
         legs="Samnuha Tights",
-        feet="Herculean Boots"
+        feet=HercFeet.TP
     })
     
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
@@ -839,7 +843,7 @@ function init_gear_sets()
         ring2="Dingir Ring",
         legs="Shneddick Tights +1",
         waist="Thunder Belt",
-        feet="Herculean Boots"
+        feet=HercFeet.MAB
     })
     sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
         ring1="Karieyh Ring",
@@ -847,7 +851,7 @@ function init_gear_sets()
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
         back=Andartia.AGI,
-        feet="Herculean Boots"
+        feet=HercFeet.MAB
     })
     sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
 

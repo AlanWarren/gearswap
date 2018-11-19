@@ -102,8 +102,12 @@ function init_gear_sets()
     TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
 
     Camulus = {}
-    Camulus.STP = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10',}}
+    Camulus.STP = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10','Phys. dmg. taken-10%',}}
     Camulus.WSD = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
+
+    HercFeet = {}
+    HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
+    HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
 
 	sets.precast.CorsairRoll = {
         head="Lanun Tricorne +1",
@@ -233,7 +237,7 @@ function init_gear_sets()
         back=Camulus.WSD,
         waist="Eschan Stone",
         legs="Herculean Trousers",
-        feet="Mummu Gamashes +2"
+        feet=HercFeet.MAB
     }
     sets.precast.WS['Wildfire'].Acc = {
         body="Mummu Jacket +2",
@@ -254,7 +258,7 @@ function init_gear_sets()
         ear1="Lempo Earring",
         ear2="Gwati Earring",
         body="Pursuer's Doublet",
-        back="Gunslinger's Cape",
+        back=Camulus.STP,
         ring1="Globidonta Ring",
         ring2="Sangoma Ring",
 		legs="Adhemar Kecks",
@@ -277,7 +281,7 @@ function init_gear_sets()
         back="Gunslinger's Cape",
         waist="Eschan Stone",
         legs="Mummu Kecks +2",
-        feet="Lanun Bottes"
+        feet=HercFeet.MAB
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
@@ -344,7 +348,7 @@ function init_gear_sets()
         hands="Meghanada Gloves +2",
         ring1="Meghanada Ring",
         ring2="Defending Ring",
-    	back="Solemnity Cape",
+        back=Camulus.STP,
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
         feet="Meghanada Jambeaux +2"
@@ -362,7 +366,7 @@ function init_gear_sets()
         neck="Regal Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Mummu Jacket +2",
+        body="Meghanada Cuirie +2",
         hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
         ring2="Defending Ring",
@@ -380,7 +384,7 @@ function init_gear_sets()
         body="Meghanada Cuirie +2",
         ring1="Patricius Ring",
         ring2="Defending Ring",
-    	back="Solemnity Cape",
+        back=Camulus.STP,
         waist="Flume Belt",
         legs="Meghanada Chausses +1",
         feet="Meghanada Jambeaux +2"
@@ -407,7 +411,7 @@ function init_gear_sets()
         hands="Meghanada Gloves +2",
         ring1="Karieyh Ring",
         ring2="Defending Ring",
-        back="Solemnity Cape",
+        back=Camulus.STP,
         waist="Flume Belt",
         legs="Mummu Kecks +2",
         feet="Meghanada Jambeaux +2"
@@ -422,10 +426,10 @@ function init_gear_sets()
         hands="Herculean Gloves",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
-        back="Bleating Mantle",
+        back=Camulus.STP,
         waist="Windbuffet Belt +1",
         legs="Meghanada Chausses +1",
-        feet="Herculean Boots"
+        feet=HercFeet.TP
     }
 
 	sets.engaged.DW = set_combine(sets.engaged.Melee, {
@@ -435,18 +439,17 @@ function init_gear_sets()
         body="Samnuha Coat",
         legs="Carmine Cuisses +1",
         waist="Patentia Sash",
-        back="Bleating Mantle",
+        back=Camulus.STP,
         feet="Taeon Boots"
     })
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
         waist="Olseni Belt",
-        back="Grounded Mantle +1",
     })
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Melee.DW, {
         neck="Lissome Necklace",
         ring2="Mummu Ring",
-        back="Grounded Mantle +1",
+        back=Camulus.STP,
         feet="Mummu Gamashes +2"
     })
 end
