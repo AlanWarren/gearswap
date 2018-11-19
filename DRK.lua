@@ -1339,6 +1339,7 @@ function get_combat_form()
 end
 
 function get_combat_weapon()
+    state.CombatWeapon:reset()
     if player.equipment.main == 'Apocalypse' then
         state.CombatWeapon:set('Apocalypse')
     elseif player.equipment.main == 'Anguta' then
@@ -1353,8 +1354,6 @@ function get_combat_weapon()
         state.CombatWeapon:set("GreatSword")
     elseif scytheList:contains(player.equipment.main) then
         state.CombatWeapon:set("Scythe")
-    else -- use regular set, which caters to Liberator
-        state.CombatWeapon:reset()
     end
 end
 

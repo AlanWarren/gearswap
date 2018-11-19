@@ -11,7 +11,6 @@
  -- These are the available sets per category
  -- CustomClass = SAM
  -- CombatForm = DW
- -- CombatWeapon = weapon name, ex: Yoichinoyumi  (you can make new sets for any ranged weapon)
  -- RangedMode = Normal, Mid, Acc
  -- CustomRangedGroup = SamRoll
 
@@ -68,6 +67,7 @@ function job_setup()
         U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"} 
 
         update_combat_form()
+        get_combat_weapon()
         get_custom_ranged_groups()
 end
  
@@ -612,9 +612,9 @@ function job_precast(spell, action, spellMap, eventArgs)
             classes.CustomClass = 'SAM'
         end
 
-        if spell.action_type == 'Ranged Attack' and player.equipment.range == gear.Bow then
-            state.CombatWeapon:set('Bow')
-        end
+        -- if spell.action_type == 'Ranged Attack' and player.equipment.range == gear.Bow then
+        --     state.CombatWeapon:set('Bow')
+        -- end
         -- add support for RangedMode toggles to EES
         if spell.english == 'Eagle Eye Shot' then
             classes.JAMode = state.RangedMode.value
@@ -697,27 +697,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
         state.Buff[spell.name] = not spell.interrupted or buffactive[spell.english]
     end
 
-end
- 
-function determine_custom_ranged_groups()
-    classes.CustomRangedGroups:clear()
-    -- Flurry I = 265, Flurry II = 581
-    if buffactive[265] then
-        classes.CustomRangedGroups:append('F1')
-    elseif buffactive[581] then
-        classes.CustomRangedGroups:append('F2')
-    end
-    
-    -- relic aftermath is just "Aftermath", while empy + mythic are numbered
-    if buffactive.Aftermath then
-        classes.CustomRangedGroups:append('AM')
-    elseif buffactive['Aftermath: Lv.1'] then
-        classes.CustomRangedGroups:append('AM1')
-    elseif buffactive['Aftermath: Lv.2'] then
-        classes.CustomRangedGroups:append('AM2')
-    elseif buffactive['Aftermath: Lv.3'] then
-        classes.CustomRangedGroups:append('AM2')
-    end
 end
  
 -- Called when a player gains or loses a buff.
@@ -814,9 +793,7 @@ end
 function job_status_change(newStatus, oldStatus, eventArgs)
     if newStatus == 'Engaged' then
         update_combat_form()
-    end
-    if newStatus == "Engaged" and player.equipment.range == gear.Bow then
-         state.CombatWeapon:set('Bow')
+        get_combat_weapon()
     end
     if camo_active() then
         disable('body')
@@ -838,6 +815,7 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
     update_combat_form()
+    get_combat_weapon()
     get_custom_ranged_groups()
     sam_sj = player.sub_job == 'SAM' or false
     -- called here incase buff_change failed to update value
@@ -891,50 +869,86 @@ function display_current_job_state(eventArgs)
  
 end
 
--- Special WS mode for Sam subjob
-function get_custom_wsmode(spell, spellMap, ws_mode)
-    if spell.skill == 'Archery' or spell.skill == 'Marksmanship' then
-        if player.sub_job == 'SAM' then
-            return 'SAM'
-        end
-    end
-end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
-function update_combat_form()
-    if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
-        --state.CombatForm:set("DW")
-    else
-        if state.CombatForm.current ~= 'DoubleShot' then
-            state.CombatForm:reset()
+-- Special WS mode for weapon types
+function get_custom_wsmode(spell, spellMap, ws_mode)
+    if spell.skill == 'Marksmanship' then
+        if player.equipment.main == 'Annihilator' then
+            return 'Annihilator'
+        elseif player.equipment.main == 'Armageddon' then
+            return 'Armageddon'
+        elseif player.equipment.main == 'Fomalhaut' then
+            return 'Fomalhaut'
+        elseif player.equipment.main == 'Gastraphetes' then
+            return 'Gastraphetes'
         end
     end
-    if state.Buff['Double Shot'] then
-        -- state.CombatForm:set('DoubleShot')
-    else
-        if state.CombatForm.current ~= 'DW' then
-            state.CombatForm:reset()
+
+    if spell.skill == 'Archery' then
+        if player.equipment.main == 'Yoichinoyumi' then
+            return 'Yoichinoyumi'
+        elseif player.equipment.main == 'Gandiva' then
+            return 'Gandiva'
+        elseif player.equipment.main == 'Fail-Not' then
+            return 'FailNot'
         end
+    end
+
+end
+
+function get_combat_weapon()
+    state.CombatWeapon:reset()
+    if player.equipment.main == 'Annihilator' then
+        state.CombatWeapon:set('Annihilator')
+    elseif player.equipment.main == 'Armageddon' then
+        state.CombatWeapon:set('Armageddon')
+    elseif player.equipment.main == 'Fomalhaut' then
+        state.CombatWeapon:set('Fomalhaut')
+    elseif player.equipment.main == 'Gastraphetes' then
+        state.CombatWeapon:set('Gastraphetes')
+    elseif player.equipment.main == 'Yoichinoyumi' then
+        state.CombatWeapon:set('Yoichinoyumi')
+    elseif player.equipment.main == 'Gandiva' then
+        state.CombatWeapon:set('Gandiva')
+    elseif player.equipment.main == 'Fail-Not' then
+        state.CombatWeapon:set('FailNot')
     end
 end
 
 function get_custom_ranged_groups()
     classes.CustomRangedGroups:clear()
-    
-    -- if buffactive['Samurai Roll'] then
-    --     classes.CustomRangedGroups:append('SamRoll')
-    -- end
-    
     -- Flurry I = 265, Flurry II = 581
     if buffactive[265] then
         classes.CustomRangedGroups:append('F1')
     elseif buffactive[581] then
         classes.CustomRangedGroups:append('F2')
     end
-
+    
+    -- relic aftermath is just "Aftermath", while empy + mythic are numbered
+    if buffactive.Aftermath then
+        classes.CustomRangedGroups:append('AM')
+    elseif buffactive['Aftermath: Lv.1'] then
+        classes.CustomRangedGroups:append('AM1')
+    elseif buffactive['Aftermath: Lv.2'] then
+        classes.CustomRangedGroups:append('AM2')
+    elseif buffactive['Aftermath: Lv.3'] then
+        classes.CustomRangedGroups:append('AM2')
+    end
+end
+function update_combat_form()
+    state.CombatForm:reset()
+    if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
+        state.CombatForm:set("DW")
+    end
+    
+    if buffactive['Double Shot'] then
+        state.CombatForm:set('DoubleShot')
+    end
 end
 
+ 
 function use_weaponskill()
     if player.equipment.range == gear.Bow then
         send_command('input /ws "'..auto_bow_ws..'" <t>')
