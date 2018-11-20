@@ -535,6 +535,10 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             waist="Light Belt"
         })
+        -- just a test (it works)
+        -- sets.precast.WS['Jishnu\'s Radiance'].Yoichinoyumi = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
+        --     neck="Iskur Gorget"
+        -- })
 
         -- SIDEWINDER
         sets.Sidewinder = {
@@ -875,23 +879,23 @@ end
 -- Special WS mode for weapon types
 function get_custom_wsmode(spell, spellMap, ws_mode)
     if spell.skill == 'Marksmanship' then
-        if player.equipment.main == 'Annihilator' then
+        if player.equipment.range == 'Annihilator' then
             return 'Annihilator'
-        elseif player.equipment.main == 'Armageddon' then
+        elseif player.equipment.range == 'Armageddon' then
             return 'Armageddon'
-        elseif player.equipment.main == 'Fomalhaut' then
+        elseif player.equipment.range == 'Fomalhaut' then
             return 'Fomalhaut'
-        elseif player.equipment.main == 'Gastraphetes' then
+        elseif player.equipment.range == 'Gastraphetes' then
             return 'Gastraphetes'
         end
     end
 
     if spell.skill == 'Archery' then
-        if player.equipment.main == 'Yoichinoyumi' then
+        if player.equipment.range == 'Yoichinoyumi' then
             return 'Yoichinoyumi'
-        elseif player.equipment.main == 'Gandiva' then
+        elseif player.equipment.range == 'Gandiva' then
             return 'Gandiva'
-        elseif player.equipment.main == 'Fail-Not' then
+        elseif player.equipment.range == 'Fail-Not' then
             return 'FailNot'
         end
     end
@@ -901,19 +905,19 @@ end
 
 function get_combat_weapon()
     state.CombatWeapon:reset()
-    if player.equipment.main == 'Annihilator' then
+    if player.equipment.range == 'Annihilator' then
         state.CombatWeapon:set('Annihilator')
-    elseif player.equipment.main == 'Armageddon' then
+    elseif player.equipment.range == 'Armageddon' then
         state.CombatWeapon:set('Armageddon')
-    elseif player.equipment.main == 'Fomalhaut' then
+    elseif player.equipment.range == 'Fomalhaut' then
         state.CombatWeapon:set('Fomalhaut')
-    elseif player.equipment.main == 'Gastraphetes' then
+    elseif player.equipment.range == 'Gastraphetes' then
         state.CombatWeapon:set('Gastraphetes')
-    elseif player.equipment.main == 'Yoichinoyumi' then
+    elseif player.equipment.range == 'Yoichinoyumi' then
         state.CombatWeapon:set('Yoichinoyumi')
-    elseif player.equipment.main == 'Gandiva' then
+    elseif player.equipment.range == 'Gandiva' then
         state.CombatWeapon:set('Gandiva')
-    elseif player.equipment.main == 'Fail-Not' then
+    elseif player.equipment.range == 'Fail-Not' then
         state.CombatWeapon:set('FailNot')
     end
 end
