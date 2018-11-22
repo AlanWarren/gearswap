@@ -307,7 +307,7 @@ function init_gear_sets()
         -- Default Base Gear Sets for Ranged Attacks. Geared for Gun
         ------------------------------------------------------------------
         sets.midcast.RA = { 
-            head="Meghanada Visor +2",
+            head="Arcadian Beret +2",
             neck="Iskur Gorget",
             ear1="Enervating Earring",
             ear2="Sherida Earring", 
@@ -326,6 +326,7 @@ function init_gear_sets()
             legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
+            head="Meghanada Visor +2",
             neck="Iskur Gorget",
             hands="Meghanada Gloves +2",
             body="Mummu Jacket +2",
