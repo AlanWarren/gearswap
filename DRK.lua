@@ -606,7 +606,7 @@ function init_gear_sets()
     sets.idle.Town = {
         ammo="Ginsen",
         head="Sulevia's Mask +2",
-        neck="Sanctity Necklace",
+        neck="Abyssal Bead Necklace +1",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         body="Sulevia's Platemail +2",
@@ -733,7 +733,7 @@ function init_gear_sets()
         -- sub="Bloodrain Strap",
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
-        neck="Ganesha's Mala",
+        neck="Abyssal Bead Necklace +1",
         ear1="Cessance Earring",
         ear2="Brutal Earring",
         body="Valorous Mail",
@@ -746,7 +746,6 @@ function init_gear_sets()
         feet="Flamma Gambieras +2"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
-        neck="Lissome Necklace",
         body="Valorous Mail",
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -786,7 +785,7 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
         body="Valorous Mail",
-        neck="Ganesha's Mala",
+        neck="Abyssal Bead Necklace +1",
         hands="Flamma Manopolas +2",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
@@ -798,7 +797,7 @@ function init_gear_sets()
         feet="Flamma Gambieras +2"
     })
     sets.engaged.Liberator.Mid.AM3 = set_combine(sets.engaged.Liberator.AM3, {
-        neck="Lissome Necklace",
+        neck="Abyssal Bead Necklace +1",
         legs=Odyssean.Legs.TP,
     })
     sets.engaged.Liberator.Acc.AM3 = set_combine(sets.engaged.Liberator.Mid.AM3, {
@@ -822,7 +821,7 @@ function init_gear_sets()
     -- Hybrid
     sets.engaged.Liberator.PDT = set_combine(sets.engaged.Liberator, {
         head="Sulevia's Mask +2",
-        neck="Agitator's Collar",
+        neck="Abyssal Bead Necklace +1",
         hands="Sulevia's Gauntlets +2",
         ring2="Defending Ring",
         back=Ankou.STP,
@@ -853,7 +852,7 @@ function init_gear_sets()
         ear2="Brutal Earring",
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
-        neck="Lissome Necklace",
+        neck="Abyssal Bead Necklace +1",
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
         ear2="Zennaroi Earring",
@@ -982,7 +981,7 @@ function init_gear_sets()
         legs="Carmine Cuisses +1",
     })
     sets.engaged.DW.Mid = set_combine(sets.engaged.DW, {
-        neck="Lissome Necklace"
+        neck="Abyssal Bead Necklace +1",
     })
     sets.engaged.DW.Acc = set_combine(sets.engaged.DW.Mid, {
         ear2="Zennaroi Earring",

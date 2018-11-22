@@ -206,7 +206,7 @@ function init_gear_sets()
         })
         sets.idle.Town = set_combine(sets.idle, {
             head="Orion Beret +3",
-            body="Arcadian Jerkin +2", 
+            body="Arcadian Jerkin +3", 
             ear1="Enervating Earring",
             ear2="Sherida Earring",
             neck="Iskur Gorget",
@@ -311,7 +311,7 @@ function init_gear_sets()
             neck="Iskur Gorget",
             ear1="Enervating Earring",
             ear2="Sherida Earring", 
-            body="Arcadian Jerkin +2", 
+            body="Arcadian Jerkin +3", 
             hands="Carmine Finger Gauntlets +1",
             ring1="Rajas Ring",
             ring2="Dingir Ring",
@@ -321,7 +321,7 @@ function init_gear_sets()
             feet="Mummu Gamashes +2"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            body="Mummu Jacket +2",
+            body="Arcadian Jerkin +3", 
             hands="Adhemar Wristbands",
             legs="Adhemar Kecks", 
         })
@@ -365,7 +365,7 @@ function init_gear_sets()
             neck="Iskur Gorget",
             ear1="Tripudio Earring",
             ear2="Sherida Earring",
-            body="Arcadian Jerkin +2",
+            body="Arcadian Jerkin +3",
             hands="Meghanada Gloves +2",
             ring1="Dingir Ring",
             ring2="Karieyh Ring",
@@ -376,7 +376,7 @@ function init_gear_sets()
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             ear1="Enervating Earring",
-            body="Arcadian Jerkin +2",
+            body="Arcadian Jerkin +3",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
             body="Orion Jerkin +2",
@@ -430,7 +430,7 @@ function init_gear_sets()
         })
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS['Coronach'], {
             ear1="Enervating Earring",
-            body="Arcadian Jerkin +2", 
+            body="Arcadian Jerkin +3", 
         })
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS['Coronach'].Mid, {
             neck="Iskur Gorget",
@@ -585,7 +585,7 @@ function init_gear_sets()
         sets.buff.Camouflage =  {body="Orion Jerkin +2"}
 
         sets.Overkill =  {
-            body="Arcadian Jerkin +1"
+            body="Arcadian Jerkin +3"
         }
         sets.Overkill.Preshot = set_combine(sets.precast.RA, sets.Overkill)
 
