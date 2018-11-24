@@ -233,7 +233,7 @@ function init_gear_sets()
         body="Samnuha Coat",
         hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
-        ring2="Mummu Ring",
+        ring2="Garuda Ring",
         back=Camulus.WSD,
         waist="Eschan Stone",
         legs="Herculean Trousers",
