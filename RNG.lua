@@ -116,6 +116,7 @@ function init_gear_sets()
         TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
         
         HercFeet = {}
+        HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
         HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
         HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
 
@@ -397,7 +398,7 @@ function init_gear_sets()
             back=Belenus.WSD,
             waist="Eschan Stone",
             legs="Herculean Trousers", 
-            feet=HercFeet.MAB
+            feet=HercFeet.TH
         }
         sets.precast.WS['Wildfire'].Mid = sets.precast.WS['Wildfire']
         sets.precast.WS['Wildfire'].Acc = sets.precast.WS['Wildfire']
@@ -414,7 +415,7 @@ function init_gear_sets()
             back=Belenus.WSD,
             waist="Eschan Stone",
             legs="Herculean Trousers", 
-            feet=HercFeet.MAB
+            feet=HercFeet.TH
         }
         sets.precast.WS['Trueflight'].Mid = sets.precast.WS['Trueflight']
         sets.precast.WS['Trueflight'].Acc = sets.precast.WS['Trueflight']

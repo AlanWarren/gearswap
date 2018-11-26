@@ -112,7 +112,8 @@ function init_gear_sets()
     Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+4','Weapon skill damage +10%',}}
     
     HercFeet = {}
-    HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
+    HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
+    --HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
 
     --------------------------------------
@@ -164,7 +165,7 @@ function init_gear_sets()
     --------------------------------------
     -- Utility Sets for rules below
     --------------------------------------
-    sets.TreasureHunter = { waist="Chaac Belt" }
+    sets.TreasureHunter = { waist="Chaac Belt", feet=HercFeet.TH }
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
     sets.WSBack         = { back="Trepidity Mantle" }
@@ -272,9 +273,9 @@ function init_gear_sets()
         ring2="Dingir Ring",
         waist="Eschan Stone",
         legs="Mummu Kecks +1",
-        feet=HercFeet.MAB
+        feet=HercFeet.TH
     }
-    sets.Burst = set_combine(sets.midcast.ElementalNinjutsu, { hands="Hattori Tekko +1", feet=HercFeet.MAB})
+    sets.Burst = set_combine(sets.midcast.ElementalNinjutsu, { hands="Hattori Tekko +1", feet=HercFeet.TH})
 
     -- Effusions
     sets.precast.Effusion = {}
@@ -843,7 +844,7 @@ function init_gear_sets()
         ring2="Dingir Ring",
         legs="Shneddick Tights +1",
         waist="Thunder Belt",
-        feet=HercFeet.MAB
+        feet=HercFeet.TH
     })
     sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
         ring1="Karieyh Ring",
@@ -851,7 +852,7 @@ function init_gear_sets()
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
         back=Andartia.AGI,
-        feet=HercFeet.MAB
+        feet=HercFeet.TH
     })
     sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
 

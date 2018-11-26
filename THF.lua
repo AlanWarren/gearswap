@@ -73,7 +73,12 @@ function init_gear_sets()
     TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
     TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+8'}}
 
-    sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
+    HercFeet = {}
+    HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
+    --HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
+    HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
+
+    sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet=HercFeet.TH, waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
     sets.CapacityMantle = {back="Mecistopins Mantle"}
 
@@ -198,7 +203,7 @@ function init_gear_sets()
         back="Bleating Mantle",
         waist="Windbuffet Belt +1",
         legs="Meghanada Chausses +1",
-        feet="Herculean Boots"
+        feet=HercFeet.TP
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         ring2="Cacoethic Ring +1",
@@ -381,7 +386,7 @@ sets.defense.MDT = {
     ring2="Epona's Ring",
     back="Solemnity Cape",
     legs="Mummu Kecks +2",
-    feet="Herculean Boots",
+    feet=HercFeet.TP
 }
 
 sets.Kiting = {feet="Skadi's Jambeaux +1"}
@@ -405,7 +410,7 @@ sets.engaged = {
     back="Canny Cape",
     waist="Patentia Sash",
     legs="Samnuha Tights",
-    feet="Herculean Boots"
+    feet=HercFeet.TP
 }
 sets.engaged.Mid = set_combine(sets.engaged, {
     neck="Lissome Necklace",
@@ -420,7 +425,7 @@ sets.engaged.Acc = set_combine(sets.engaged.Mid, {
     back="Grounded Mantle +1",
     ring1="Cacoethic Ring +1",
     waist="Olseni Belt",
-    feet="Herculean Boots"
+    feet=HercFeet.TP
 })
 sets.engaged.PDT = set_combine(sets.engaged, {
     head="Meghanada Visor +1",
@@ -457,11 +462,11 @@ sets.engaged.Haste_43 = set_combine(sets.engaged, {
     back="Canny Cape",
     waist="Windbuffet Belt +1",
     legs="Meghanada Chausses +1",
-    feet="Herculean Boots"
+    feet=HercFeet.TP
 })
 sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
     neck="Lissome Necklace",
-    feet="Herculean Boots"
+    feet=HercFeet.TP
 })
 sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
     neck="Lissome Necklace",
@@ -479,7 +484,7 @@ sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
     back="Solemnity Cape",
-    feet="Herculean Boots" 
+    feet=HercFeet.TP
 })
 
 -- 40
@@ -502,7 +507,7 @@ sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, {
     ring2="Defending Ring", 
     legs="Mummu Kecks +2",
     back="Solemnity Cape",
-    feet="Herculean Boots" 
+    feet=HercFeet.TP
 })
 
 -- 30
@@ -512,7 +517,7 @@ sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_40, {
     ear1="Eabani Earring",
     ear2="Suppanomimi",
     back="Canny Cape",
-    feet="Herculean Boots" 
+    feet=HercFeet.TP
 })
 sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
     body="Herculean Vest",
@@ -522,7 +527,7 @@ sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
     neck="Lissome Necklace",
     ear1="Sherida Earring",
     back="Grounded Mantle +1",
-    feet="Herculean Boots"
+    feet=HercFeet.TP
 })
 sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { 
     head="Lithelimb Cap", 
@@ -532,7 +537,8 @@ sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
     ring2="Defending Ring", 
     back="Solemnity Cape",
     legs="Samnuha Tights",
-    feet="Herculean Boots" })
+    feet=HercFeet.TP
+})
 
     -- 25
     sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {

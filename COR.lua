@@ -93,7 +93,7 @@ function init_gear_sets()
 	
 	sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
 	--sets.precast.JA['Snake Eye'] = {legs="Commodore Culottes +1"}
-	sets.precast.JA['Wild Card'] = {feet="Lanun Bottes"}
+	sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +1"}
 	sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
 	--sets.precast.JA['Fold'] = {hands="Commodore Gants +2"}} 
     sets.CapacityMantle = {back="Mecistopins Mantle"}
@@ -106,7 +106,8 @@ function init_gear_sets()
     Camulus.WSD = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
 
     HercFeet = {}
-    HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
+    HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
+    --HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
 
 	sets.precast.CorsairRoll = {
@@ -120,7 +121,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back=Camulus.STP,
         legs="Mummu Kecks +2",
-        feet="Lanun Bottes"
+        feet="Lanun Bottes +1"
     }
     
 	--sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
@@ -237,7 +238,7 @@ function init_gear_sets()
         back=Camulus.WSD,
         waist="Eschan Stone",
         legs="Herculean Trousers",
-        feet=HercFeet.MAB
+        feet=HercFeet.TH
     }
     sets.precast.WS['Wildfire'].Acc = {
         body="Mummu Jacket +2",
@@ -281,7 +282,7 @@ function init_gear_sets()
         back="Gunslinger's Cape",
         waist="Eschan Stone",
         legs="Mummu Kecks +2",
-        feet=HercFeet.MAB
+        feet=HercFeet.TH
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
