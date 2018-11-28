@@ -206,7 +206,7 @@ function init_gear_sets()
             ring2="Defending Ring"
         })
         sets.idle.Town = set_combine(sets.idle, {
-            head="Orion Beret +3",
+            head="Arcadian Beret +3",
             body="Arcadian Jerkin +3", 
             ear1="Enervating Earring",
             ear2="Sherida Earring",
@@ -308,22 +308,24 @@ function init_gear_sets()
         -- Default Base Gear Sets for Ranged Attacks. Geared for Gun
         ------------------------------------------------------------------
         sets.midcast.RA = { 
-            head="Arcadian Beret +2",
+            head="Arcadian Beret +3",
             neck="Iskur Gorget",
             ear1="Enervating Earring",
             ear2="Sherida Earring", 
             body="Arcadian Jerkin +3", 
             hands="Carmine Finger Gauntlets +1",
-            ring1="Rajas Ring",
+            ring1="Mummu Ring",
             ring2="Dingir Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
-            legs="Amini Brague +1", 
+            legs="Mummu Kecks +2", 
             feet="Mummu Gamashes +2"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
+            head="Arcadian Beret +3",
             body="Arcadian Jerkin +3", 
             hands="Adhemar Wristbands",
+            ring1="Petrov Ring",
             legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
@@ -332,7 +334,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +2",
             body="Mummu Jacket +2",
             ring1="Cacoethic Ring +1",
-            ring2="Dingir Ring",
+            ring2="Longshot Ring",
             feet="Meghanada Jambeaux +2"
         })
 
@@ -414,8 +416,9 @@ function init_gear_sets()
             ring2="Karieyh Ring",
             back=Belenus.WSD,
             waist="Eschan Stone",
-            legs="Herculean Trousers", 
-            feet=HercFeet.TH
+            legs="Mummu Kecks +2", 
+            feet="Mummu Gamashes +2"
+            -- feet=HercFeet.TH
         }
         sets.precast.WS['Trueflight'].Mid = sets.precast.WS['Trueflight']
         sets.precast.WS['Trueflight'].Acc = sets.precast.WS['Trueflight']
