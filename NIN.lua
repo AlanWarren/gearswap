@@ -112,8 +112,8 @@ function init_gear_sets()
     Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+4','Weapon skill damage +10%',}}
     
     HercFeet = {}
-    HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
-    --HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
+    --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
+    HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
 
     --------------------------------------
@@ -165,7 +165,7 @@ function init_gear_sets()
     --------------------------------------
     -- Utility Sets for rules below
     --------------------------------------
-    sets.TreasureHunter = { waist="Chaac Belt", feet=HercFeet.TH }
+    sets.TreasureHunter = { waist="Chaac Belt" }
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
     sets.WSBack         = { back="Trepidity Mantle" }
@@ -232,13 +232,13 @@ function init_gear_sets()
 
     -- skill ++ 
     sets.midcast.Ninjutsu = {
-        ammo="Pemphredo Tathlum",
+        --ammo="Pemphredo Tathlum",
         head="Mummu Bonnet +1",
         ear1="Lifestorm Earring",
         ear2="Psystorm Earring",
         neck="Incanter's Torque",
         body="Mummu Jacket +2",
-        hands="Mummu Wrists +1",
+        hands="Mummu Wrists +2",
         ring1="Sangoma Ring",
         ring2="Kishar Ring",
         --ring2="Haverton Ring",
@@ -261,7 +261,7 @@ function init_gear_sets()
 
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.ElementalNinjutsu = {
-        ammo="Seething Bomblet +1",
+        --ammo="Seething Bomblet +1",
         head="Mummu Bonnet +1",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -273,9 +273,9 @@ function init_gear_sets()
         ring2="Dingir Ring",
         waist="Eschan Stone",
         legs="Mummu Kecks +1",
-        feet=HercFeet.TH
+        feet=HercFeet.MAB
     }
-    sets.Burst = set_combine(sets.midcast.ElementalNinjutsu, { hands="Hattori Tekko +1", feet=HercFeet.TH})
+    sets.Burst = set_combine(sets.midcast.ElementalNinjutsu, { hands="Hattori Tekko +1", feet=HercFeet.MAB})
 
     -- Effusions
     sets.precast.Effusion = {}
@@ -288,7 +288,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Hizamaru Haramaki +1",
+        body="Hizamaru Haramaki +2",
         hands="Herculean Gloves",
         ring1="Karieyh Ring",
         ring2="Defending Ring",
@@ -300,7 +300,7 @@ function init_gear_sets()
 
     sets.idle.Regen = set_combine(sets.idle, {
         head="Rao Kabuto",
-        body="Hizamaru Haramaki +1",
+        body="Hizamaru Haramaki +2",
         ring2="Paguroidea Ring"
     })
     sets.Adoulin = {
@@ -741,8 +741,8 @@ function init_gear_sets()
         neck="Shadow Gorget",
         ear1="Ishvara Earring",
         body="Kendatsuba Samue",
-        hands="Ryuo Tekko",
-        ring1="Begrudging Ring",
+        hands="Mummu Wrists +2",
+        ring1="Karieyh Ring",
         ring2="Mummu Ring",
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
@@ -844,7 +844,7 @@ function init_gear_sets()
         ring2="Dingir Ring",
         legs="Shneddick Tights +1",
         waist="Thunder Belt",
-        feet=HercFeet.TH
+        feet=HercFeet.MAB
     })
     sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
         ring1="Karieyh Ring",
@@ -852,7 +852,7 @@ function init_gear_sets()
         waist="Caudata Belt",
         legs="Shneddick Tights +1",
         back=Andartia.AGI,
-        feet=HercFeet.TH
+        feet=HercFeet.MAB
     })
     sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
 

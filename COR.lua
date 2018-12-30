@@ -60,6 +60,7 @@ function user_setup()
     auto_gun_ws = "Wildfire"
 
     get_combat_form()
+    get_custom_ranged_groups()
 	-- Additional local binds
 	-- Cor doesn't use hybrid defense mode; using that for ranged mode adjustments.
     send_command('bind f9 gs c cycle RangedMode')
@@ -94,7 +95,7 @@ function init_gear_sets()
 	sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
 	--sets.precast.JA['Snake Eye'] = {legs="Commodore Culottes +1"}
 	sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +1"}
-	sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
+	sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
 	--sets.precast.JA['Fold'] = {hands="Commodore Gants +2"}} 
     sets.CapacityMantle = {back="Mecistopins Mantle"}
 	
@@ -103,11 +104,11 @@ function init_gear_sets()
 
     Camulus = {}
     Camulus.STP = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10','Phys. dmg. taken-10%',}}
-    Camulus.WSD = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}}
+    Camulus.WSD = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+1','Weapon skill damage +10%',}}
 
     HercFeet = {}
-    HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
-    --HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
+    --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
+    HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
 
 	sets.precast.CorsairRoll = {
@@ -116,7 +117,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         neck="Regal Necklace",
-        body="Meghanada Cuirie +2",
+        body="Lanun Frac +3",
         ring1="Dark Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
@@ -179,6 +180,13 @@ function init_gear_sets()
         legs="Adhemar Kecks",
         feet="Meghanada Jambeaux +2"
     }
+    sets.precast.RA.F1 = set_combine(sets.precast.RA, {
+        body="Laksamana's Frac +2"
+    })
+    sets.precast.RA.F2 = set_combine(sets.precast.RA.F1, {
+        -- waist="Yemaya Belt",
+        -- feet="Pursuer's Gaiters"
+    })
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
@@ -187,7 +195,7 @@ function init_gear_sets()
         neck="Iskur Gorget",
         ear1="Ishvara Earring",
         ear2="Enervating Earring",
-        body="Mummu Jacket +2",
+        body="Laksamana's Frac +2",
         hands="Meghanada Gloves +2",
         ring1="Dingir Ring",
         ring2="Karieyh Ring",
@@ -210,7 +218,7 @@ function init_gear_sets()
         neck="Aqua Gorget",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
-        body="Meghanada Cuirie +2",
+        body="Laksamana's Frac +2",
         ring1="Dingir Ring",
         ring2="Karieyh Ring",
         waist="Light Belt",
@@ -231,23 +239,23 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Ishvara Earring",
         ear2="Friomisi Earring",
-        body="Samnuha Coat",
+        body="Lanun Frac +3",
         hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
         ring2="Garuda Ring",
         back=Camulus.WSD,
         waist="Eschan Stone",
         legs="Herculean Trousers",
-        feet=HercFeet.TH
+        feet=HercFeet.MAB
     }
     sets.precast.WS['Wildfire'].Acc = {
-        body="Mummu Jacket +2",
+        body="Lanun Frac +3",
         legs="Mummu Kecks +2"
     }
 
-	sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], { ear2="Moonshade Earring"})
+	sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], { head="Pixie Hairpin +1", ear2="Moonshade Earring"})
 	sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], { 
-        body="Mummu Jacket +2",
+        body="Lanun Frac +3",
         legs="Mummu Kecks +2"
     })
 	
@@ -275,18 +283,18 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
-        body="Samnuha Coat",
+        body="Lanun Frac +3",
         hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
         ring2="Garuda Ring",
         back="Gunslinger's Cape",
         waist="Eschan Stone",
         legs="Mummu Kecks +2",
-        feet=HercFeet.TH
+        feet=HercFeet.MAB
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
-        body="Mummu Jacket +2",
+        body="Lanun Frac +3",
         head="Mummu Bonnet +1",
         ear1="Lempo Earring",
         ear2="Gwati Earring",
@@ -304,10 +312,10 @@ function init_gear_sets()
         head="Meghanada Visor +2",
         neck="Iskur Gorget",
         ear1="Enervating Earring",
-        ear2="Tripudio Earring",
+        ear2="Dedition Earring",
         body="Mummu Jacket +2",
         hands="Adhemar Wristbands",
-        ring1="Dingir Ring",
+        ring1="Rajas Ring",
         ring2="Apate Ring",
         back=Camulus.STP,
         waist="Kwahu Kachina Belt",
@@ -317,6 +325,7 @@ function init_gear_sets()
 
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
+        ear2="Tripudio Earring",
         ring1="Dingir Ring",
         ring2="Cacoethic Ring +1",
         body="Meghanada Cuirie +2",
@@ -345,7 +354,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         --body="Mekosuchinae Harness",
-        body="Meghanada Cuirie +2",
+        body="Lanun Frac +3",
         hands="Meghanada Gloves +2",
         ring1="Meghanada Ring",
         ring2="Defending Ring",
@@ -367,7 +376,7 @@ function init_gear_sets()
         neck="Regal Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Meghanada Cuirie +2",
+        body="Lanun Frac +3",
         hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
         ring2="Defending Ring",
@@ -382,7 +391,7 @@ function init_gear_sets()
         head="Meghanada Visor +2",
         neck="Twilight Torque",
         hands="Meghanada Gloves +2",
-        body="Meghanada Cuirie +2",
+        body="Lanun Frac +3",
         ring1="Patricius Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
@@ -588,6 +597,12 @@ function job_buff_change(buff, gain)
             end
         end
     end
+    if (( string.find(buff:lower(), 'flurry') and gain )) then
+        get_custom_ranged_groups()
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end
 end
 
 function update_combat_form()
@@ -605,8 +620,29 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
     get_combat_form()
+    get_custom_ranged_groups()
 end
 
+function get_custom_ranged_groups()
+    classes.CustomRangedGroups:clear()
+    -- Flurry I = 265, Flurry II = 581
+    if buffactive[265] then
+        classes.CustomRangedGroups:append('F1')
+    elseif buffactive[581] then
+        classes.CustomRangedGroups:append('F2')
+    end
+    
+    -- relic aftermath is just "Aftermath", while empy + mythic are numbered
+    -- if buffactive.Aftermath then
+    --     classes.CustomRangedGroups:append('AM')
+    -- elseif buffactive['Aftermath: Lv.1'] then
+    --     classes.CustomRangedGroups:append('AM1')
+    -- elseif buffactive['Aftermath: Lv.2'] then
+    --     classes.CustomRangedGroups:append('AM2')
+    -- elseif buffactive['Aftermath: Lv.3'] then
+    --     classes.CustomRangedGroups:append('AM2')
+    -- end
+end
 -- Job-specific toggles.
 function job_toggle_state(field)
 	if field:lower() == 'luzaf' then

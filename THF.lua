@@ -76,9 +76,10 @@ function init_gear_sets()
     HercFeet = {}
     HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
     --HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
+    HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
 
-    sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet=HercFeet.TH, waist="Chaac Belt"}
+    sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
     sets.CapacityMantle = {back="Mecistopins Mantle"}
 
@@ -126,7 +127,7 @@ function init_gear_sets()
         hands="Pillager's Armlets +1",
         legs="Pillager's Culottes +1" 
     }
-    sets.precast.JA['Despoil'] = {}
+    sets.precast.JA['Despoil'] = {feet="Raider's Poulaines +2"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
     sets.precast.JA['Feint'] = {hands="Plunderer's Armlets +1"} -- {legs="Assassin's Culottes +2"}
 
@@ -304,7 +305,7 @@ sets.precast.WS['Aeolian Edge'] = {
     back="Argochampsa Mantle",
     waist="Thunder Belt",
     legs="Limbo Trousers",
-    feet="Mummu Gamashes +2"
+    feet=HercFeet.MAB
 }
 
 -- Midcast Sets
@@ -414,13 +415,15 @@ sets.engaged = {
 }
 sets.engaged.Mid = set_combine(sets.engaged, {
     neck="Lissome Necklace",
-    legs="Meghanada Chausses +1",
+    body="Mummu Jacket +2",
+    legs="Mummu Kecks +2",
+    feet="Mummu Gamashes +2"
 })
 sets.engaged.Acc = set_combine(sets.engaged.Mid, {
     neck="Lissome Necklace",
     ear1="Cessance Earring",
     ear2="Sherida Earring",
-    body="Herculean Vest",
+    body="Mummu Jacket +2",
     hands="Herculean Gloves",
     back="Grounded Mantle +1",
     ring1="Cacoethic Ring +1",
@@ -445,7 +448,6 @@ sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
 })
 sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
     body="Emet Harness +1",
-    ring2="Mars's Ring",
     waist="Olseni Belt"
 })
 
@@ -473,10 +475,12 @@ sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
     hands="Herculean Gloves",
     ear1="Zennaroi Earring",
     ear2="Sherida Earring",
-    ring1="Mars's Ring",
+    ring1="Mummu Ring",
     ring2="Patricius Ring",
     waist="Olseni Belt",
-    back="Grounded Mantle +1"
+    back="Grounded Mantle +1",
+    legs="Mummu Kecks +2",
+    feet="Mummu Gamashes +2"
 })
 sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
     neck="Twilight Torque", 
@@ -576,7 +580,7 @@ sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
     -- Run after the general precast() is done.
     function job_post_precast(spell, action, spellMap, eventArgs)
         if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
-            equip(sets.TreasureHunter)
+            --equip(sets.TreasureHunter)
         elseif spell.english=='Sneak Attack' or spell.english=='Trick Attack' or spell.type == 'WeaponSkill' then
             if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
                 equip(sets.TreasureHunter)

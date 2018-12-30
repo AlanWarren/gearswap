@@ -76,7 +76,7 @@ function init_gear_sets()
         head="Welkin Crown",
         ear2="Loquacious Earring",
         hands="Magavan Mitts",
-        --body="Vanir Cotehardie",
+        body="Shango Robe",
         ring1="Prolix Ring",
         ring2="Kishar Ring",
         back="Lifestream Cape",
@@ -272,7 +272,7 @@ function init_gear_sets()
     })
     
     sets.midcast.Aspir = set_combine(sets.midcast.Macc, { 
-        head="Bagua Galero",
+        head="Pixie Hairpin +1",
         neck="Erra Pendant",
         ear1="Gwati Earring",
         ear2="Hirudinea Earring",
