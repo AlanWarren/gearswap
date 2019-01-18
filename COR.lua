@@ -105,6 +105,7 @@ function init_gear_sets()
     Camulus = {}
     Camulus.STP = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10','Phys. dmg. taken-10%',}}
     Camulus.WSD = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+1','Weapon skill damage +10%',}}
+    Camulus.Snap = {name="Camulus's Mantle", augments={'"Snapshot"+10',}}
 
     HercFeet = {}
     --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
@@ -174,7 +175,7 @@ function init_gear_sets()
         ammo=gear.RAbullet,
         head=TaeonHead.Snap,
         hands="Carmine Finger Gauntlets +1",
-		back="Navarch's Mantle",
+        back=Camulus.Snap,
         body="Pursuer's Doublet",
         waist="Impulse Belt",
         legs="Adhemar Kecks",
@@ -198,7 +199,7 @@ function init_gear_sets()
         body="Laksamana's Frac +2",
         hands="Meghanada Gloves +2",
         ring1="Dingir Ring",
-        ring2="Karieyh Ring",
+        ring2="Garuda Ring",
         back=Camulus.WSD,
         waist="Kwahu Kachina Belt",
         legs="Herculean Trousers",
@@ -220,7 +221,8 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Laksamana's Frac +2",
         ring1="Dingir Ring",
-        ring2="Karieyh Ring",
+        ring2="Apate Ring",
+        legs="Meghanada Chausses +1",
         waist="Light Belt",
     })
 	sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
@@ -228,9 +230,9 @@ function init_gear_sets()
         ear1="Enervating Earring",
         ear2="Moonshade Earring",
         ring1="Dingir Ring",
-        ring2="Karieyh Ring",
+        ring2="Apate Ring",
         back=Camulus.WSD,
-        feet="Mummu Gamashes +2"
+        feet="Meghanada Jambeaux +2"
     })
 
 	sets.precast.WS['Wildfire'] = {
@@ -257,6 +259,9 @@ function init_gear_sets()
 	sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], { 
         body="Lanun Frac +3",
         legs="Mummu Kecks +2"
+    })
+    sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {
+        ear2="Moonshade Earring"
     })
 	
 	-- Midcast Sets
@@ -419,7 +424,7 @@ function init_gear_sets()
         ear2="Eabani Earring",
         body="Meghanada Cuirie +2",
         hands="Meghanada Gloves +2",
-        ring1="Karieyh Ring",
+        ring1="Meghanada Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
         waist="Flume Belt",

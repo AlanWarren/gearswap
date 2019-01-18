@@ -98,6 +98,7 @@ function init_gear_sets()
         ring1="Mummu Ring",
         ring2="Rajas Ring",
         waist="Chaac Belt",
+        back="Toutatis's Cape", 
         legs="Samnuha Tights",
         feet="Mummu Gamashes +2"
     }
@@ -270,7 +271,7 @@ function init_gear_sets()
         body="Herculean Vest",
         hands="Meghanada Gloves +2",
         ring1="Mummu Ring",
-        ring2="Karieyh Ring",
+        ring2="Rajas Ring",
         waist="Snow Belt",
         back="Grounded Mantle +1",
         legs="Samnuha Tights",
@@ -400,8 +401,9 @@ sets.Kiting = {feet="Skadi's Jambeaux +1"}
 
 -- Normal melee group
 sets.engaged = {
+    ammo="Yamarang",
     head="Herculean Helm",
-    neck="Asperity Necklace",
+    neck="Anu Torque",
     ear1="Eabani Earring",
     ear2="Suppanomimi",
     body="Herculean Vest",
@@ -414,7 +416,6 @@ sets.engaged = {
     feet=HercFeet.TP
 }
 sets.engaged.Mid = set_combine(sets.engaged, {
-    neck="Lissome Necklace",
     body="Mummu Jacket +2",
     legs="Mummu Kecks +2",
     feet="Mummu Gamashes +2"
@@ -454,7 +455,7 @@ sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
 -- Haste 43%
 sets.engaged.Haste_43 = set_combine(sets.engaged, {
     head="Herculean Helm",
-    neck="Asperity Necklace",
+    neck="Anu Torque",
     ear1="Brutal Earring",
     ear2="Sherida Earring",
     body="Herculean Vest",

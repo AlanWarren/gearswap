@@ -109,7 +109,7 @@ function init_gear_sets()
     --------------------------------------
     Andartia = {}
     Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
-    Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+4','Weapon skill damage +10%',}}
+    Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Weapon skill damage +10%',}}
     
     HercFeet = {}
     --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
@@ -234,17 +234,17 @@ function init_gear_sets()
     sets.midcast.Ninjutsu = {
         --ammo="Pemphredo Tathlum",
         head="Mummu Bonnet +1",
-        ear1="Lifestorm Earring",
-        ear2="Psystorm Earring",
+        ear1="Gwati Earring",
+        ear2="Lempo Earring",
         neck="Incanter's Torque",
         body="Mummu Jacket +2",
         hands="Mummu Wrists +2",
         ring1="Sangoma Ring",
-        ring2="Kishar Ring",
+        ring2="Mummu Ring",
         --ring2="Haverton Ring",
         back="Yokaze Mantle",
         waist="Eschan Stone",
-        legs="Mummu Kecks +1",
+        legs="Mummu Kecks +2",
         feet="Mummu Gamashes +2"
     }
     -- any ninjutsu cast on self
@@ -290,11 +290,11 @@ function init_gear_sets()
         ear2="Eabani Earring",
         body="Hizamaru Haramaki +2",
         hands="Herculean Gloves",
-        ring1="Karieyh Ring",
+        ring1="Dark Ring",
         ring2="Defending Ring",
         back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Kendatsuba Hakama",
+        legs="Mummu Kecks +2",
         feet="Danzo Sune-ate"
     }
 
@@ -314,7 +314,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         hands="Herculean Gloves",
         legs="Kendatsuba Hakama",
-        ring1="Karieyh Ring",
+        ring1="Dingir Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1"
     })
@@ -383,8 +383,8 @@ function init_gear_sets()
     })
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
+        ear1="Brutal Earring",
+        ear2="Suppanomimi",
         ring1="Mummu Ring",
         feet="Hizamaru Sune-ate +1"
     })
@@ -497,7 +497,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         head="Herculean Helm",
-        ring1="Mummu Ring",
+        ring1="Hizamaru Ring",
         body="Kendatsuba Samue",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
@@ -688,7 +688,7 @@ function init_gear_sets()
         body="Kendatsuba Samue",
         hands="Herculean Gloves",
         ring1="Epona's Ring",
-        ring2="Karieyh Ring",
+        ring2="Apate Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Kendatsuba Hakama",
@@ -742,7 +742,7 @@ function init_gear_sets()
         ear1="Ishvara Earring",
         body="Kendatsuba Samue",
         hands="Mummu Wrists +2",
-        ring1="Karieyh Ring",
+        ring1="Begrudging Ring",
         ring2="Mummu Ring",
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
@@ -840,14 +840,14 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         body="Samnuha Coat",
         hands="Leyline Gloves",
-        ring1="Karieyh Ring",
+        ring1="Garuda Ring",
         ring2="Dingir Ring",
         legs="Shneddick Tights +1",
         waist="Thunder Belt",
         feet=HercFeet.MAB
     })
     sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
-        ring1="Karieyh Ring",
+        ring1="Garuda Ring",
         ring2="Dingir Ring",
         waist="Caudata Belt",
         legs="Shneddick Tights +1",

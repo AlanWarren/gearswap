@@ -269,7 +269,7 @@ function init_gear_sets()
     -- Specific spells
     sets.midcast.Utsusemi = {
         ammo="Impatiens",
-        head="Otomi Helm",
+        --head="Otomi Helm",
         neck="Incanter's Torque",
         body="Founder's Breastplate",
         hands="Leyline Gloves",
@@ -396,8 +396,8 @@ function init_gear_sets()
 
     -- Ranged for xbow
     sets.precast.RA = {
-        head="Otomi Helm",
-        feet="Ejekamal Boots",
+        --head="Otomi Helm",
+        --feet="Ejekamal Boots",
         hands="Carmine Finger Gauntlets +1"
     }
     sets.midcast.RA = {
@@ -417,7 +417,7 @@ function init_gear_sets()
         body="Ignominy Cuirass +3",
         hands="Odyssean Gauntlets",
         ring1="Niqmaddu Ring",
-        ring2="Karieyh Ring",
+        ring2="Flamma Ring",
         back=Ankou.WSD,
         waist="Windbuffet Belt +1",
         legs="Fallen's Flanchard +3",
@@ -517,7 +517,7 @@ function init_gear_sets()
         body="Ignominy Cuirass +3",
         waist="Soil Belt",
         ring1="Niqmaddu Ring",
-        ring2="Karieyh Ring",
+        ring2="Flamma Ring",
         legs="Fallen's Flanchard +3",  
         feet="Sulevia's Leggings +1"
     })
@@ -617,7 +617,7 @@ function init_gear_sets()
         ear2="Eabani Earring",
         body="Sulevia's Platemail +2",
         hands="Sulevia's Gauntlets +2",
-        ring1="Karieyh Ring",
+        ring1="Niqmaddu Ring",
         ring2="Defending Ring",
         back=Ankou.STP,
         waist="Flume Belt",
@@ -804,6 +804,7 @@ function init_gear_sets()
     })
     sets.engaged.Liberator.Mid.AM3 = set_combine(sets.engaged.Liberator.AM3, {
         neck="Abyssal Bead Necklace +1",
+        ear1="Cessance Earring",
         legs=Odyssean.Legs.TP,
     })
     sets.engaged.Liberator.Acc.AM3 = set_combine(sets.engaged.Liberator.Mid.AM3, {

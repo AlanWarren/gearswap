@@ -197,7 +197,7 @@ function init_gear_sets()
         --sub="Wizzan Grip",
         --ammo="Witchstone",
         head="Jhakri Coronal +1",
-        neck="Eddy Necklace",
+        neck="Mizukage-no-Kubikazari",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Jhakri Robe +1",
