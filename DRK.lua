@@ -106,7 +106,7 @@ function job_setup()
     -- Use Gavialis helm?
     use_gavialis = true
     -- Weaponskills you do NOT want Gavialis helm used with (only considered if use_gavialis = true)
-    wsList = S{'Spiral Hell', 'Torcleaver', 'Insurgency', 'Quietus', 'Cross Reaper'}
+    wsList = S{'Spiral Hell', 'Catastrophe', 'Torcleaver', 'Insurgency', 'Quietus', 'Cross Reaper'}
     -- Greatswords you use. 
     gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Raetic Algol +1', 'Caladbolg', 'Montante +1', 'Albion' }
     scytheList = S{'Raetic Scythe', 'Deathbane', 'Twilight Scythe' }
@@ -169,6 +169,7 @@ function init_gear_sets()
     Ankou = {}
     Ankou.FC  = { name="Ankou's Mantle", augments={'"Fast Cast"+10',}}
     Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}}
+    Ankou.DA  = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+9',}}
     Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     Ankou.VIT = { name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
 
@@ -485,7 +486,8 @@ function init_gear_sets()
     })
 
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
-        head="Odyssean Helm",
+        head="Valorous Mask",
+        ear2="Brutal Earring",
         neck="Abyssal Bead Necklace +1",
         body="Ignominy Cuirass +3",
         legs="Fallen's Flanchard +3",  
@@ -858,23 +860,25 @@ function init_gear_sets()
     sets.engaged.Apocalypse = set_combine(sets.engaged, {
         ear1="Cessance Earring",
         ear2="Brutal Earring",
+        hands="Sulevia's Gauntlets +2",
+        back=Ankou.DA
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
-        neck="Abyssal Bead Necklace +1",
+        ear1="Cessance Earring",
+        ear2="Brutal Earring",
+        hands="Sulevia's Gauntlets +2",
+        back=Ankou.DA
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
-        ear2="Zennaroi Earring",
-        legs="Ignominy Flanchard +3",
-    })
-    
-    sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {
-        waist="Windbuffet Belt +1"
-    })
-    sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {
-    })
-    sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
+        hands="Sulevia's Gauntlets +2",
+        back=Ankou.DA
+    })
+    
+    sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {})
+    sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {})
+    sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
         ring2="Cacoethic Ring +1",
         waist="Ioskeha Belt"
     })
@@ -951,15 +955,18 @@ function init_gear_sets()
     
     -- Caladbolg
     sets.engaged.Caladbolg = set_combine(sets.engaged.GreatSword, {
-        hands="Flamma Manopolas +2"
+        hands="Flamma Manopolas +2",
+        back=Ankou.DA
     })
     sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {
-        hands="Flamma Manopolas +2"
+        hands="Flamma Manopolas +2",
+        back=Ankou.DA
     })
     sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {
         hands="Flamma Manopolas +2",
         body="Fallen's Cuirass +3",
         legs="Ignominy Flanchard +3",
+        back=Ankou.DA
     })
     
     sets.engaged.Caladbolg.PDT = set_combine(sets.engaged.Caladbolg, sets.Defensive)
@@ -967,7 +974,6 @@ function init_gear_sets()
     sets.engaged.Caladbolg.Acc.PDT = set_combine(sets.engaged.Caladbolg.Acc, sets.Defensive_Acc)
     
     sets.engaged.Haste.Caladbolg = set_combine(sets.engaged.Caladbolg, { 
-        hands="Sulevia's Gauntlets +2",
         waist="Windbuffet Belt +1"
     })
     sets.engaged.Haste.Caladbolg.Mid = set_combine(sets.engaged.Caladbolg.Mid, {

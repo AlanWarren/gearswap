@@ -98,12 +98,15 @@ function init_gear_sets()
     Valorous.Hands.TP = { name="Valorous Mitts", augments={'Accuracy+26','"Store TP"+6','AGI+10',}}
     Valorous.Hands.WS = { name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%','Accuracy+6',}}
     
+    Smertrios = {}
+    Smertrios.TP = {name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+    Smertrios.WS = {name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
     -- Precast Sets
     -- Precast sets to enhance JAs
     sets.precast.JA.Meditate = {
         head="Wakido Kabuto",
         hands="Saotome Kote +2",
-        back="Takaha Mantle",
+        back=Smertrios.TP
     }
     sets.precast.JA.Seigan = {head="Unkai Kabuto +2"}
     sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto"}
@@ -144,9 +147,9 @@ function init_gear_sets()
         hands=Valorous.Hands.WS,
         ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
-        back="Bleating Mantle",
+        back=Smertrios.WS,
         waist="Windbuffet Belt +1",
-        legs="Valorous Hose",
+        legs="Hizamaru Hizayoroi +2",
         feet="Flamma Gambieras +2"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -164,11 +167,11 @@ function init_gear_sets()
         ear1="Ishvara Earring",
         ear2="Flame Pearl",
         body="Valorous Mail",
-        back="Buquwik Cape",
+        back=Smertrios.WS,
         ring1="Niqmaddu Ring",
         ring2="Garuda Ring",
         waist="Metalsinger Belt",
-        legs="Hizamaru Hizayoroi +1",
+        legs="Hizamaru Hizayoroi +2",
         feet="Wakido Sune-ate +1"
     }
     sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS['Namas Arrow'], {
@@ -197,7 +200,6 @@ function init_gear_sets()
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
         head="Valorous Mask",
-        back="Takaha Mantle"
     })
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
@@ -257,7 +259,7 @@ function init_gear_sets()
         --main="Anahera Blade", 
         --sub="Pole Grip",
         head="Rao Kabuto",
-        neck="Ganesha's Mala",
+        neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
    	    body="Hizamaru Haramaki +2",
@@ -345,14 +347,14 @@ function init_gear_sets()
         sub="Bloodrain Grip",
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
-        neck="Ganesha's Mala",
+        neck="Moonbeam Nodowa",
         ear1="Cessance Earring",
         ear2="Brutal Earring",
         body="Valorous Mail",
         hands=Valorous.Hands.TP,
         ring1="Niqmaddu Ring", 
         ring2="Flamma Ring", 
-        back="Takaha Mantle",
+        back=Smertrios.TP,
         waist="Ioskeha Belt",
         legs="Kasuga Haidate +1",
         feet="Flamma Gambieras +2"
@@ -367,7 +369,6 @@ function init_gear_sets()
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         -- head="Valorous Mask",
-        neck="Lissome Necklace",
         hands="Flamma Manopolas +2",
         -- body="Reiki Osode",
         -- back="Grounded Mantle +1",
@@ -383,7 +384,7 @@ function init_gear_sets()
     })
     
     sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
-        back="Takaha Mantle",
+        back=Smertrios.TP,
         neck="Lissome Necklace",
     })
     
@@ -391,7 +392,7 @@ function init_gear_sets()
         head="Valorous Mask",
         neck="Lissome Necklace",
         ear1="Zennaroi Earring",
-        back="Grounded Mantle +1",
+        back=Smertrios.TP,
     })
     
     sets.engaged.PDT = set_combine(sets.engaged, { 
@@ -400,7 +401,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         hands="Crusher Gauntlets",
         ring2="Patricius Ring",
-    	back="Solemnity Cape",
+        back=Smertrios.TP,
         waist="Flume Belt",
         feet="Loyalist Sabatons"
     })

@@ -364,7 +364,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo=gear.RegularAmmo,
         head="Ryuo Somen",
-        neck="Asperity Necklace",
+        neck="Moonbeam Nodowa",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Mochizuki Chainmail +3",
@@ -378,7 +378,6 @@ function init_gear_sets()
     }
     -- assumptions made about targe
     sets.engaged.Low = set_combine(sets.engaged, {
-        neck="Lissome Necklace",
         ear1="Cessance Earring",
     })
 
@@ -390,7 +389,6 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        neck="Yarak Torque",
         body="Mochizuki Chainmail +3",
         ring1="Cacoethic Ring +1",
         waist="Olseni Belt",
@@ -400,7 +398,7 @@ function init_gear_sets()
     -- using this as weak / proc set now
     sets.NoDW = set_combine(sets.engaged, {
         head="Hizamaru Somen +1",
-        neck="Carnal Torque",
+        neck="Moonbeam Nodowa",
         ear2="Cessance Earring",
         body="Reiki Osode",
         hands="Hattori Tekko",
@@ -691,7 +689,7 @@ function init_gear_sets()
         ring2="Apate Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
-        legs="Kendatsuba Hakama",
+        legs="Hizamaru Hizayoroi +2",
         feet=HercFeet.TP
     }
     
@@ -708,7 +706,7 @@ function init_gear_sets()
         neck="Breeze Gorget",
         head="Rao Kabuto",
         back=Andartia.AGI,
-        legs="Hizamaru Hizayoroi +1",
+        legs="Hizamaru Hizayoroi +2",
         waist="Windbuffet Belt +1",
     }
     sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
@@ -817,7 +815,7 @@ function init_gear_sets()
         ear1="Lugra Earring +1",
         ear2="Moonshade Earring",
         body="Herculean Vest",
-        legs="Hizamaru Hizayoroi +1",
+        legs="Hizamaru Hizayoroi +2",
         back=Andartia.AGI,
         waist="Metalsinger Belt",
     }
@@ -850,7 +848,7 @@ function init_gear_sets()
         ring1="Garuda Ring",
         ring2="Dingir Ring",
         waist="Caudata Belt",
-        legs="Shneddick Tights +1",
+        legs="Hizamaru Hizayoroi +2",
         back=Andartia.AGI,
         feet=HercFeet.MAB
     })
