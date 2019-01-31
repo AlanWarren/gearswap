@@ -388,7 +388,7 @@ function init_gear_sets()
         back=Camulus.STP,
         waist="Eschan Stone",
         legs="Carmine Cuisses +1",
-        feet="Meghanada Jambeaux +2"
+        feet="Herculean Boots"
     }
 	
 	-- Defense sets

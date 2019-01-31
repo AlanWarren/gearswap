@@ -99,7 +99,7 @@ function init_gear_sets()
     Valorous.Hands.WS = { name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%','Accuracy+6',}}
     
     Smertrios = {}
-    Smertrios.TP = {name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+    Smertrios.TP = {name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-4%',}}
     Smertrios.WS = {name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
     -- Precast Sets
     -- Precast sets to enhance JAs
@@ -350,7 +350,7 @@ function init_gear_sets()
         neck="Moonbeam Nodowa",
         ear1="Cessance Earring",
         ear2="Brutal Earring",
-        body="Valorous Mail",
+        body="Kasuga Domaru +1",
         hands=Valorous.Hands.TP,
         ring1="Niqmaddu Ring", 
         ring2="Flamma Ring", 
@@ -362,6 +362,7 @@ function init_gear_sets()
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         hands=Valorous.Hands.TP,
+        body="Valorous Mail",
         legs="Ryuo Hakama",
         --body="Kendatsuba Samue",
         --legs="Kendatsuba Hakama",

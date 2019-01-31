@@ -103,7 +103,7 @@ function init_gear_sets()
      sets.reive = {neck="Ygnas's Resolve +1"}
      -- Waltz set (chr and vit)
      sets.precast.Waltz = {
-        head="Yaoyotl Helm",
+        -- head="Yaoyotl Helm",
      }
             
      -- Fast cast sets for spells

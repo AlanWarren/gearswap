@@ -91,6 +91,7 @@ function init_gear_sets()
     }
 
     sets.buff['Sneak Attack'] = {
+        ammo="Yetshila",
         head="Meghanada Visor +2",
         neck="Moepapa Medal",
         body="Meghanada Cuirie +2",
@@ -104,6 +105,7 @@ function init_gear_sets()
     }
 
     sets.buff['Trick Attack'] = {
+        ammo="Tengu-no-hane",
         head="Herculean Helm",
         neck="Moepapa Medal",
         ear1="Sherida Earring",
@@ -202,14 +204,14 @@ function init_gear_sets()
         hands="Meghanada Gloves +2",
         ring1="Ramuh Ring",
         ring2="Epona's Ring",
-        back="Bleating Mantle",
+        back="Toutatis's Cape", 
         waist="Windbuffet Belt +1",
         legs="Meghanada Chausses +1",
         feet=HercFeet.TP
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         ring2="Cacoethic Ring +1",
-        back="Canny Cape",
+        back="Toutatis's Cape", 
         waist="Olseni Belt"
     })
 
@@ -222,12 +224,12 @@ function init_gear_sets()
         ring1="Garuda Ring",
         legs="Samnuha Tights",
         waist="Elanid Belt",
-        back="Canny Cape"
+        back="Toutatis's Cape", 
     })
     sets.precast.WS['Exenterator'].Mid = set_combine(sets.precast.WS['Exenterator'], {waist="Thunder Belt"})
     sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'].Mid, {
         hands="Plunderer's Armlets +1",
-        back="Canny Cape"
+        back="Toutatis's Cape", 
     })
     sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mid, {
         neck="Breeze Gorget", 
@@ -254,10 +256,12 @@ function init_gear_sets()
         ring1="Mummu Ring",
         waist="Windbuffet Belt",
         legs="Mummu Kecks +2",
-        back="Bleating Mantle",
+        back="Toutatis's Cape", 
         feet="Mummu Gamashes +2"
     })
-    sets.precast.WS['Evisceration'].Mid = set_combine(sets.precast.WS['Evisceration'], {back="Canny Cape"})
+    sets.precast.WS['Evisceration'].Mid = set_combine(sets.precast.WS['Evisceration'], {
+        back="Toutatis's Cape", 
+    })
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
         waist="Olseni Belt"
     })
@@ -273,11 +277,13 @@ function init_gear_sets()
         ring1="Mummu Ring",
         ring2="Rajas Ring",
         waist="Snow Belt",
-        back="Grounded Mantle +1",
+        back="Toutatis's Cape", 
         legs="Samnuha Tights",
         feet="Mummu Gamashes +2",
     })
-    sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {back="Canny Cape"})
+    sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {
+        back="Toutatis's Cape", 
+    })
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
         waist="Olseni Belt"
     })
@@ -327,7 +333,8 @@ sets.resting = {ring2="Paguroidea Ring"}
 
 -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 sets.idle = {
-    main="Taming Sari",
+    ammo="Yamarang",
+    -- main="Taming Sari",
     head="Meghanada Visor +2",
     neck="Sanctity Necklace",
     ear1="Eabani Earring",
