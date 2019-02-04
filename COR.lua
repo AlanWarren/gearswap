@@ -291,7 +291,7 @@ function init_gear_sets()
         body="Lanun Frac +3",
         hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
-        ring2="Garuda Ring",
+        ring2="Ilabrat Ring",
         back="Gunslinger's Cape",
         waist="Eschan Stone",
         legs="Mummu Kecks +2",
@@ -303,8 +303,6 @@ function init_gear_sets()
         head="Mummu Bonnet +1",
         ear1="Lempo Earring",
         ear2="Gwati Earring",
-        ring1="Dingir Ring",
-        ring2="Sangoma Ring",
         feet="Navarch's Bottes +2"
     })
 
@@ -320,8 +318,8 @@ function init_gear_sets()
         ear2="Dedition Earring",
         body="Mummu Jacket +2",
         hands="Adhemar Wristbands",
-        ring1="Rajas Ring",
-        ring2="Apate Ring",
+        ring1="Dingir Ring",
+        ring2="Ilabrat Ring",
         back=Camulus.STP,
         waist="Kwahu Kachina Belt",
         legs="Adhemar Kecks",
@@ -384,7 +382,7 @@ function init_gear_sets()
         body="Lanun Frac +3",
         hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
-        ring2="Defending Ring",
+        ring2="Ilabrat Ring",
         back=Camulus.STP,
         waist="Eschan Stone",
         legs="Carmine Cuisses +1",
