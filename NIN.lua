@@ -314,6 +314,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         hands="Herculean Gloves",
         legs="Kendatsuba Hakama",
+        ring1="Epona's Ring",
         ring2="Ilabrat Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1"

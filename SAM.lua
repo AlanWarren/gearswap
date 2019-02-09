@@ -112,7 +112,13 @@ function init_gear_sets()
     sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto"}
     sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate"}
     --sets.precast.JA['Blade Bash'] = {hands="Saotome Kote +2"}
-    
+   
+    sets.precast.FC = {
+        ear1="Etiolation Earring",
+        ear2="Loquacious Earring",
+        hands="Leyline Gloves",
+        ring1="Prolix Ring",
+    }
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {}
 
@@ -123,7 +129,14 @@ function init_gear_sets()
         ammo="Cibitshavore",
         back="Takaha Mantle"
     }
-    	
+    sets.midcast.RA = {
+        head="Terminal Helm",
+        body="Kyujutsugi",
+        neck="Iqabi Necklace",
+        hands="Ryuo Tekko",
+        waist="Chaac Belt",
+        feet="Wakido Sune-ate +1"
+    }	
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
     
@@ -242,9 +255,10 @@ function init_gear_sets()
     -- Midcast Sets
     sets.midcast.FastRecast = {
     	-- head="Otomi Helm",
-        body="Kyujutsugi",
-    	legs="Wakido Haidate +1",
+        -- body="Kyujutsugi",
+    	-- legs="Wakido Haidate +1",
         -- feet="Ejekamal Boots"
+        waist="Sailfi Belt +1"
     }
     -- Sets to return to when not performing an action.
     
@@ -263,10 +277,10 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
    	    body="Hizamaru Haramaki +2",
-        hands=Valorous.Hands.TP,
+        hands="Wakido Kote +2",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",
-        back="Solemnity Cape",
+        back=Smertrios.TP,
         waist="Windbuffet Belt +1",
         legs="Kasuga Haidate +1",
         feet="Danzo Sune-ate"
@@ -281,9 +295,9 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
    	    body="Hizamaru Haramaki +2",
-        -- hands="Crusher Gauntlets",
-        ring2="Patricius Ring",
-    	back="Solemnity Cape",
+        hands="Wakido Kote +2",
+        ring1="Dark Ring",
+        back=Smertrios.TP,
         waist="Flume Belt",
         legs="Ryuo Hakama",
         feet="Danzo Sune-ate"
@@ -294,7 +308,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         head="Rao Kabuto",
    	    body="Hizamaru Haramaki +2",
-    	back="Solemnity Cape",
+        back=Smertrios.TP,
         feet="Danzo Sune-ate"
     })
     
@@ -351,7 +365,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Brutal Earring",
         body="Kasuga Domaru +1",
-        hands=Valorous.Hands.TP,
+        hands="Wakido Kote +2",
         ring1="Niqmaddu Ring", 
         ring2="Flamma Ring", 
         back=Smertrios.TP,
@@ -361,7 +375,7 @@ function init_gear_sets()
     }
     
     sets.engaged.Mid = set_combine(sets.engaged, {
-        hands=Valorous.Hands.TP,
+        -- hands=Valorous.Hands.TP,
         body="Valorous Mail",
         legs="Ryuo Hakama",
         --body="Kendatsuba Samue",
@@ -400,7 +414,7 @@ function init_gear_sets()
         --head="Otronif Mask +1", 
    	    body="Founder's Breastplate",
         neck="Agitator's Collar",
-        hands="Crusher Gauntlets",
+        hands="Wakido Kote +2",
         ring2="Patricius Ring",
         back=Smertrios.TP,
         waist="Flume Belt",

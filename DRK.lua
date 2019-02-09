@@ -471,7 +471,7 @@ function init_gear_sets()
     -- 20% STR / 20% INT 
     -- Base set only used at 3000TP to put AM3 up
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
-        head="Flamma Zucchetto +2",
+        head="Ratri Sallet",
         neck="Abyssal Bead Necklace +1",
         body="Ignominy Cuirass +3",
         legs="Fallen's Flanchard +3",
@@ -482,11 +482,10 @@ function init_gear_sets()
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
         ammo="Seething Bomblet +1",
         body="Fallen's Cuirass +3",
-        legs=Odyssean.Legs.WS
     })
 
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
-        head="Valorous Mask",
+        head="Ratri Sallet",
         ear2="Brutal Earring",
         neck="Abyssal Bead Necklace +1",
         body="Ignominy Cuirass +3",
@@ -628,7 +627,7 @@ function init_gear_sets()
     }
 
     sets.idle.Field = set_combine(sets.idle.Town, {
-        head="Valorous Mask",
+        head="Ratri Sallet",
         body="Sulevia's Platemail +2",
     })
     sets.idle.Regen = set_combine(sets.idle.Field, {

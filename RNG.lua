@@ -155,11 +155,11 @@ function init_gear_sets()
             ring1="Rajas Ring",
             ring2="Apate Ring",
             legs="Arcadian Braccae +2", 
-            feet="Thereoid Greaves"
+            feet="Arcadian Socks +3"
         })
         sets.precast.JA['Eagle Eye Shot'].Mid = set_combine(sets.precast.JA['Eagle Eye Shot'], {
             ring2="Longshot Ring",
-            feet="Arcadian Socks +2"
+            feet="Arcadian Socks +3"
         })
         sets.precast.JA['Eagle Eye Shot'].Acc = set_combine(sets.precast.JA['Eagle Eye Shot'].Mid, {
             neck="Iskur Gorget",
@@ -216,8 +216,8 @@ function init_gear_sets()
             ring2="Dingir Ring",
             hands="Carmine Finger Gauntlets +1",
             back=Belenus.STP,
-            legs="Arcadian Braccae +2",
-            feet="Jute Boots +1"
+            legs="Carmine Cuisses +1",
+            feet="Arcadian Socks +3"
         })
  
         -- Engaged sets
@@ -233,7 +233,7 @@ function init_gear_sets()
             waist="Flume Belt",
             back=Belenus.STP,
             legs="Mummu Kecks +2",
-            feet="Jute Boots +1"
+            feet="Arcadian Socks +3"
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
             hands="Meghanada Gloves +2",
@@ -303,7 +303,7 @@ function init_gear_sets()
         sets.precast.RA.F2 = set_combine(sets.precast.RA.F1, {
             -- waist="Yemaya Belt",
             -- feet="Pursuer's Gaiters"
-            feet="Arcadian Socks +2"
+            feet="Arcadian Socks +3"
         })
         
         ------------------------------------------------------------------
@@ -321,7 +321,7 @@ function init_gear_sets()
             back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
             legs="Mummu Kecks +2", 
-            feet="Arcadian Socks +2"
+            feet="Arcadian Socks +3"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             head="Arcadian Beret +3",
@@ -332,7 +332,6 @@ function init_gear_sets()
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             head="Meghanada Visor +2",
             neck="Scout's Gorget +2",
-            ear2="Sherida Earring",
             hands="Meghanada Gloves +2",
             body="Mummu Jacket +2",
             ring1="Cacoethic Ring +1",
@@ -359,7 +358,7 @@ function init_gear_sets()
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
             legs="Amini Brague +1", 
-            feet="Mummu Gamashes +2"
+            feet="Arcadian Socks +3"
         }
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             hands="Adhemar Wristbands",
@@ -384,7 +383,7 @@ function init_gear_sets()
             back=Belenus.WSD,
             waist="Kwahu Kachina Belt",
             legs="Arcadian Braccae +2", 
-            feet="Meghanada Jambeaux +2"
+            feet="Arcadian Socks +3"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
             ear1="Enervating Earring",
@@ -464,14 +463,15 @@ function init_gear_sets()
             ring2="Ilabrat Ring",
             waist="Light Belt",
             legs="Arcadian Braccae +2", 
-            feet="Meghanada Jambeaux +2"
+            feet="Arcadian Socks +3"
         })
         sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS['Last Stand'], {
             body="Meghanada Cuirie +2",
         })
         sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'].Mid, {
             neck="Iskur Gorget",
-            legs="Arcadian Braccae +2", 
+            legs="Arcadian Braccae +2",
+            feet="Meghanada Jambeaux +2"
         })
 
         -- sets.precast.WS['Last Stand'].SAM = set_combine(sets.precast.WS, {
@@ -591,7 +591,7 @@ function init_gear_sets()
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
             legs="Adhemar Kecks", 
-            feet="Mummu Gamashes +2"
+            feet="Arcadian Socks +3"
         }
         -- placeholder until I can get to it
         sets.buff.Barrage.Mid = sets.buff.Barrage
