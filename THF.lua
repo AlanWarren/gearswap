@@ -251,7 +251,7 @@ function init_gear_sets()
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
         neck="Moepapa Medal",
-        body="Mummu Jacket +1",
+        body="Mummu Jacket +2",
         ring1="Ilabrat Ring",
         ring2="Mummu Ring",
         waist="Windbuffet Belt",
@@ -272,6 +272,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
         head="Herculean Helm",
         neck="Aqua Gorget",
+        ear1="Sherida Earring",
         body="Herculean Vest",
         hands="Meghanada Gloves +2",
         ring1="Ilabrat Ring",
@@ -279,9 +280,10 @@ function init_gear_sets()
         waist="Snow Belt",
         back="Toutatis's Cape", 
         legs="Samnuha Tights",
-        feet="Mummu Gamashes +2",
+        feet=HercFeet.MAB
     })
     sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {
+        legs="Mummu Kecks +2",
         back="Toutatis's Cape", 
     })
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
@@ -423,9 +425,10 @@ sets.engaged = {
     feet=HercFeet.TP
 }
 sets.engaged.Mid = set_combine(sets.engaged, {
-    body="Mummu Jacket +2",
-    legs="Mummu Kecks +2",
-    feet="Mummu Gamashes +2"
+    -- body="Mummu Jacket +2",
+    neck="Lissome Necklace",
+    legs="Meghanada Chausses +1",
+    -- feet="Mummu Gamashes +2"
 })
 sets.engaged.Acc = set_combine(sets.engaged.Mid, {
     neck="Lissome Necklace",
@@ -814,7 +817,7 @@ sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
             if player.sub_job == 'DNC' then
                 set_macro_page(5, 2)
             elseif player.sub_job == 'WAR' then
-                set_macro_page(4, 1)
+                set_macro_page(5, 1)
             elseif player.sub_job == 'NIN' then
                 set_macro_page(5, 2)
             else
