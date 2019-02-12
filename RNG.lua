@@ -132,7 +132,6 @@ function init_gear_sets()
             ammo="Perun +1",
             ear2="Reraise Earring",
             range="Yoichinoyumi",
-            hands="Taeon Gloves",
             feet="Eradicating Bullet Pouch"
         }
         -- Misc. Job Ability precasts
@@ -151,18 +150,17 @@ function init_gear_sets()
             ear2="Sherida Earring",
             body="Meghanada Cuirie +2",
             back=Belenus.STP,
-            hands="Carmine Finger Gauntlets +1",
-            ring1="Rajas Ring",
-            ring2="Apate Ring",
+            hands="Meghanada Gloves +2",
+            ring1="Ilabrat Ring",
+            ring2="Dingir Ring",
             legs="Arcadian Braccae +2", 
             feet="Arcadian Socks +3"
         })
         sets.precast.JA['Eagle Eye Shot'].Mid = set_combine(sets.precast.JA['Eagle Eye Shot'], {
-            ring2="Longshot Ring",
+            ring1="Cacoethic Ring +1",
             feet="Arcadian Socks +3"
         })
         sets.precast.JA['Eagle Eye Shot'].Acc = set_combine(sets.precast.JA['Eagle Eye Shot'].Mid, {
-            neck="Iskur Gorget",
             waist="Kwahu Kachina Belt"
         })
 
@@ -312,21 +310,19 @@ function init_gear_sets()
         sets.midcast.RA = { 
             head="Arcadian Beret +3",
             neck="Scout's Gorget +2",
-            ear1="Enervating Earring",
-            ear2="Sherida Earring", 
+            ear1="Sherida Earring", 
+            ear2="Dedition Earring",
             body="Arcadian Jerkin +3", 
-            hands="Carmine Finger Gauntlets +1",
+            hands="Adhemar Wristbands",
             ring1="Ilabrat Ring",
             ring2="Dingir Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
-            legs="Mummu Kecks +2", 
+            legs="Amini Brague +1", 
             feet="Arcadian Socks +3"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            head="Arcadian Beret +3",
-            body="Arcadian Jerkin +3", 
-            hands="Adhemar Wristbands",
+            ear2="Enervating Earring",
             legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
@@ -335,6 +331,7 @@ function init_gear_sets()
             hands="Meghanada Gloves +2",
             body="Mummu Jacket +2",
             ring1="Cacoethic Ring +1",
+            legs="Mummu Kecks +2",
             feet="Mummu Gamashes +2"
         })
 
@@ -349,8 +346,8 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi = {
             head="Meghanada Visor +2",
             neck="Scout's Gorget +2",
-            ear1="Enervating Earring",
-            ear2="Sherida Earring",
+            ear1="Sherida Earring",
+            ear2="Enervating Earring",
             body="Mummu Jacket +2",
             hands="Amini Glovelettes +1",
             ring1="Ilabrat Ring",
@@ -374,8 +371,8 @@ function init_gear_sets()
         sets.precast.WS = {
             head="Orion Beret +3",
             neck="Scout's Gorget +2",
-            ear1="Tripudio Earring",
-            ear2="Sherida Earring",
+            ear1="Sherida Earring",
+            ear2="Tripudio Earring",
             body="Arcadian Jerkin +3",
             hands="Meghanada Gloves +2",
             ring1="Dingir Ring",
@@ -386,7 +383,6 @@ function init_gear_sets()
             feet="Arcadian Socks +3"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-            ear1="Enervating Earring",
             body="Arcadian Jerkin +3",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
@@ -436,6 +432,8 @@ function init_gear_sets()
         -- CORONACH
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
             neck="Scout's Gorget +2",
+            ear1="Sherida Earring",
+            ear2="Ishvara Earring",
             waist="Thunder Belt",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
@@ -443,11 +441,10 @@ function init_gear_sets()
             legs="Arcadian Braccae +2", 
         })
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS['Coronach'], {
-            ear1="Enervating Earring",
+            ear2="Enervating Earring",
             body="Arcadian Jerkin +3", 
         })
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS['Coronach'].Mid, {
-            neck="Iskur Gorget",
             body="Orion Jerkin +2", 
             legs="Arcadian Braccae +2", 
         })
@@ -456,8 +453,8 @@ function init_gear_sets()
         sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
             head="Orion Beret +3",
             neck="Scout's Gorget +2",
-            ear1="Moonshade Earring",
-            ear2="Sherida Earring",
+            ear1="Sherida Earring",
+            ear2="Moonshade Earring",
             back=Belenus.WSD,
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
@@ -469,7 +466,6 @@ function init_gear_sets()
             body="Meghanada Cuirie +2",
         })
         sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'].Mid, {
-            neck="Iskur Gorget",
             legs="Arcadian Braccae +2",
             feet="Meghanada Jambeaux +2"
         })
@@ -581,16 +577,16 @@ function init_gear_sets()
        
         sets.buff.Barrage = {
             head="Arcadian Beret +3",
-            neck="Iskur Gorget",
+            neck="Scout's Gorget +2",
             ear1="Enervating Earring",
             ear2="Sherida Earring",
             body="Mummu Jacket +2",
             hands="Orion Bracers +1",
-            ring1="Apate Ring",
+            ring1="Begrudging Ring",
             ring2="Mummu Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
-            legs="Adhemar Kecks", 
+            legs="Mummu Kecks +2",
             feet="Arcadian Socks +3"
         }
         -- placeholder until I can get to it
