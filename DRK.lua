@@ -105,11 +105,14 @@ function job_setup()
     -- state.LastResortMode = M(false, 'Last Resort Mode')
     -- Use Gavialis helm?
     use_gavialis = true
+
     -- Weaponskills you do NOT want Gavialis helm used with (only considered if use_gavialis = true)
     wsList = S{'Spiral Hell', 'Catastrophe', 'Torcleaver', 'Insurgency', 'Quietus', 'Cross Reaper'}
     -- Greatswords you use. 
     gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Raetic Algol +1', 'Caladbolg', 'Montante +1', 'Albion' }
     scytheList = S{'Raetic Scythe', 'Deathbane', 'Twilight Scythe' }
+    remaWeapons = S{'Apocalypse', 'Anguta', 'Liberator', 'Caladbolg', 'Ragnarok'}
+
     shields = S{'Rinda Shield'}
     -- Mote has capitalization errors in the default Absorb mappings, so we use our own
     absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
@@ -256,13 +259,13 @@ function init_gear_sets()
         legs="Carmine Cuisses +1",
         feet=Odyssean.Feet.FC
     }
-    sets.midcast.Trust =  {
-        head="Fallen's Burgeonet +1",
-        hands="Odyssean Gauntlets",
-        body="Fallen's Cuirass +3",
-        legs="Carmine Cuisses +1",
-        feet=Odyssean.Feet.FC
-    }
+    -- sets.midcast.Trust =  {
+    --     head="Fallen's Burgeonet +1",
+    --     hands="Odyssean Gauntlets",
+    --     body="Fallen's Cuirass +3",
+    --     legs="Carmine Cuisses +1",
+    --     feet=Odyssean.Feet.FC
+    -- }
     sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
         body="Apururu Unity shirt",
     })
@@ -338,7 +341,7 @@ function init_gear_sets()
     -- Mix of HP boost, -Spell interruption%, and Dark Skill
     sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
         ammo="Impatiens",
-        head="Ignominy Burgonet +2", -- 17
+        head="Ratri Sallet",
         ear1="Etiolation Earring",
         ear2="Eabani Earring", -- 3
         body="Heathen's Cuirass +1",
@@ -809,6 +812,7 @@ function init_gear_sets()
         legs=Odyssean.Legs.TP,
     })
     sets.engaged.Liberator.Acc.AM3 = set_combine(sets.engaged.Liberator.Mid.AM3, {
+        ammo="Seething Bomblet +1",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
         body="Fallen's Cuirass +3",
@@ -869,18 +873,20 @@ function init_gear_sets()
         back=Ankou.DA
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
+        ammo="Seething Bomblet +1",
         ear1="Cessance Earring",
         ear2="Zennaroi Earring",
+        body="Fallen's Cuirass +3",
         hands="Sulevia's Gauntlets +2",
         back=Ankou.DA
     })
     
-    sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {})
-    sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {})
-    sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
-        ring2="Cacoethic Ring +1",
-        waist="Ioskeha Belt"
-    })
+    -- sets.engaged.Apocalypse.AM = set_combine(sets.engaged.Apocalypse, {})
+    -- sets.engaged.Apocalypse.Mid.AM = set_combine(sets.engaged.Apocalypse.AM, {})
+    -- sets.engaged.Apocalypse.Acc.AM = set_combine(sets.engaged.Apocalypse.Mid.AM, {
+    --     ring2="Cacoethic Ring +1",
+    --     waist="Ioskeha Belt"
+    -- })
     sets.engaged.Haste.Apocalypse = set_combine(sets.engaged.Apocalypse, {
         waist="Windbuffet Belt +1"
     })
@@ -888,21 +894,29 @@ function init_gear_sets()
     sets.engaged.Haste.Apocalypse.Acc = sets.engaged.Apocalypse.Acc
 
     -- Hybrid
-    sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, sets.Defensive)
+    sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, {
+        head="Sulevia's Mask +2",
+        neck="Abyssal Bead Necklace +1",
+        hands="Sulevia's Gauntlets +2",
+        ring2="Defending Ring",
+        back=Ankou.STP,
+        waist="Sailfi Belt +1",
+        feet="Volte Sollerets" 
+    })
     sets.engaged.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive_Mid)
     sets.engaged.Apocalypse.Acc.PDT = set_combine(sets.engaged.Apocalypse.Acc, sets.Defensive_Acc)
     -- Hybrid with relic AM 
-    sets.engaged.Apocalypse.PDT.AM = set_combine(sets.engaged.Apocalypse, sets.Defensive)
-    sets.engaged.Apocalypse.Mid.PDT.AM = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive_Mid)
-    sets.engaged.Apocalypse.Acc.PDT.AM = set_combine(sets.engaged.Apocalypse.Acc, sets.Defensive_Acc)
+    -- sets.engaged.Apocalypse.PDT.AM = set_combine(sets.engaged.Apocalypse, sets.Defensive)
+    -- sets.engaged.Apocalypse.Mid.PDT.AM = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive_Mid)
+    -- sets.engaged.Apocalypse.Acc.PDT.AM = set_combine(sets.engaged.Apocalypse.Acc, sets.Defensive_Acc)
     -- Hybrid with capped delay
     sets.engaged.Haste.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse.PDT, sets.DefensiveHigh)
     sets.engaged.Haste.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid.PDT, sets.DefensiveHigh)
     sets.engaged.Haste.Apocalypse.Acc.PDT = set_combine(sets.engaged.Apocalypse.Acc.PDT, sets.DefensiveHigh)
     -- Hybrid with capped delay + AM3 up
-    sets.engaged.Haste.Apocalypse.PDT.AM3 = set_combine(sets.engaged.Apocalypse.PDT.AM3, sets.DefensiveHigh)
-    sets.engaged.Haste.Apocalypse.Mid.PDT.AM3 = set_combine(sets.engaged.Apocalypse.Mid.PDT.AM3, sets.DefensiveHigh)
-    sets.engaged.Haste.Apocalypse.Acc.PDT.AM3 = set_combine(sets.engaged.Apocalypse.Acc.PDT.AM3, sets.DefensiveHigh)
+    -- sets.engaged.Haste.Apocalypse.PDT.AM3 = set_combine(sets.engaged.Apocalypse.PDT.AM3, sets.DefensiveHigh)
+    -- sets.engaged.Haste.Apocalypse.Mid.PDT.AM3 = set_combine(sets.engaged.Apocalypse.Mid.PDT.AM3, sets.DefensiveHigh)
+    -- sets.engaged.Haste.Apocalypse.Acc.PDT.AM3 = set_combine(sets.engaged.Apocalypse.Acc.PDT.AM3, sets.DefensiveHigh)
 
     -- generic scythe
     sets.engaged.Scythe = set_combine(sets.engaged, {})
@@ -955,11 +969,11 @@ function init_gear_sets()
     -- Caladbolg
     sets.engaged.Caladbolg = set_combine(sets.engaged.GreatSword, {
         hands="Flamma Manopolas +2",
-        back=Ankou.DA
+        back=Ankou.STP
     })
     sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {
         hands="Flamma Manopolas +2",
-        back=Ankou.DA
+        back=Ankou.STP
     })
     sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {
         hands="Flamma Manopolas +2",
@@ -1163,23 +1177,16 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         --    send_command('@wait 1.0;cancel hasso')
         --end
         -- handle weapon sets
-        if gsList:contains(player.equipment.main) then
-            state.CombatWeapon:set("GreatSword")
-        elseif scytheList:contains(player.equipment.main) then
-            state.CombatWeapon:set("Scythe")
-        elseif player.equipment.main == 'Apocalypse' then
-            state.CombatWeapon:set('Apocalypse')
-        elseif player.equipment.main == 'Anguta' then
-            state.CombatWeapon:set('Anguta')
-        elseif player.equipment.main == 'Ragnarok' then
-            state.CombatWeapon:set('Ragnarok')
-        elseif player.equipment.main == 'Caladbolg' then
-            state.CombatWeapon:set('Caladbolg')
-        elseif player.equipment.main == 'Liberator' then
-            state.CombatWeapon:set('Liberator')
-        else -- use regular set, which caters to Liberator
-            state.CombatWeapon:reset()
-        end
+        state.CombatWeapon:set(player.equipment.main)
+        -- if gsList:contains(player.equipment.main) then
+        --     state.CombatWeapon:set("GreatSword")
+        -- elseif scytheList:contains(player.equipment.main) then
+        --     state.CombatWeapon:set("Scythe")
+        -- elseif remaWeapons:contains(player.equipment.main) then
+        --     state.CombatWeapon:set(player.equipment.main)
+        -- else -- use regular set, which caters to Liberator
+        --     state.CombatWeapon:reset()
+        -- end
         --elseif newStatus == 'Idle' then
         --    determine_idle_group()
     end
@@ -1352,21 +1359,14 @@ end
 
 function get_combat_weapon()
     state.CombatWeapon:reset()
-    if player.equipment.main == 'Apocalypse' then
-        state.CombatWeapon:set('Apocalypse')
-    elseif player.equipment.main == 'Anguta' then
-        state.CombatWeapon:set('Anguta')
-    elseif player.equipment.main == 'Ragnarok' then
-        state.CombatWeapon:set('Ragnarok')
-    elseif player.equipment.main == 'Caladbolg' then
-        state.CombatWeapon:set('Caladbolg')
-    elseif player.equipment.main == 'Liberator' then
-        state.CombatWeapon:set('Liberator')
-    elseif gsList:contains(player.equipment.main) then
-        state.CombatWeapon:set("GreatSword")
-    elseif scytheList:contains(player.equipment.main) then
-        state.CombatWeapon:set("Scythe")
-    end
+    state.CombatWeapon:set(player.equipment.main)
+    -- if remaWeapons:contains(player.equipment.main) then
+    --     state.CombatWeapon:set(player.equipment.main)
+    -- elseif gsList:contains(player.equipment.main) then
+    --     state.CombatWeapon:set("GreatSword")
+    -- elseif scytheList:contains(player.equipment.main) then
+    --     state.CombatWeapon:set("Scythe")
+    -- end
 end
 
 function aw_custom_aftermath_timers_precast(spell)
@@ -1464,9 +1464,9 @@ function job_get_spell_map(spell, default_spell_map)
     if spell.skill == 'Dark Magic' and absorbs:contains(spell.english) then
         return 'Absorb'
     end
-    if spell.type == 'Trust' then
-        return 'Trust'
-    end
+    -- if spell.type == 'Trust' then
+    --     return 'Trust'
+    -- end
 end
 
 function select_earring()
@@ -1505,7 +1505,7 @@ function select_default_macro_book()
     elseif gsList:contains(player.equipment.main) then
         set_macro_page(5, 4)
     elseif player.sub_job == 'SAM' then
-        set_macro_page(8, 4)
+        set_macro_page(9, 4)
     else
         set_macro_page(8, 4)
     end
