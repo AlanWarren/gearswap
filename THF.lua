@@ -250,11 +250,11 @@ function init_gear_sets()
     sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'].Mid, {neck="Breeze Gorget"})
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-        neck="Moepapa Medal",
+        neck="Shadow Gorget",
         body="Mummu Jacket +2",
         ring1="Ilabrat Ring",
         ring2="Mummu Ring",
-        waist="Windbuffet Belt",
+        waist="Soil Belt",
         legs="Pillager's culottes +2",
         back="Toutatis's Cape", 
         feet="Mummu Gamashes +2"
