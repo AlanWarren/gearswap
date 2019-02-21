@@ -193,6 +193,7 @@ function init_gear_sets()
     }
     --sets.midcast['Enfeebling Magic'] = sets.midcast.RA
 
+    sets.midcast['Enfeebling Magic'] = sets.TreasureHunter
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {

@@ -1177,7 +1177,9 @@ function job_status_change(newStatus, oldStatus, eventArgs)
         --    send_command('@wait 1.0;cancel hasso')
         --end
         -- handle weapon sets
+    if remaWeapons:contains(player.equipment.main) then
         state.CombatWeapon:set(player.equipment.main)
+    end
         -- if gsList:contains(player.equipment.main) then
         --     state.CombatWeapon:set("GreatSword")
         -- elseif scytheList:contains(player.equipment.main) then
@@ -1310,16 +1312,16 @@ end
 -- Check for various actions that we've specified in user code as being used with TH gear.
 -- This will only ever be called if TreasureMode is not 'None'.
 -- Category and Param are as specified in the action event packet.
-function th_action_check(category, param)
-    if category == 2 or -- any ranged attack
-        --category == 4 or -- any magic action
-        (category == 3 and param == 30) or -- Aeolian Edge
-        (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
-        (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
-        then 
-            return true
-    end
-end
+--function th_action_check(category, param)
+--    if category == 2 or -- any ranged attack
+--        --category == 4 or -- any magic action
+--        (category == 3 and param == 30) or -- Aeolian Edge
+--        (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
+--        (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
+--        then 
+--            return true
+--    end
+--end
 -- function get_custom_wsmode(spell, spellMap, default_wsmode)
 --     if state.OffenseMode.current == 'Mid' then
 --         if buffactive['Aftermath: Lv.3'] then
@@ -1359,7 +1361,9 @@ end
 
 function get_combat_weapon()
     state.CombatWeapon:reset()
-    state.CombatWeapon:set(player.equipment.main)
+    if remaWeapons:contains(player.equipment.main) then
+        state.CombatWeapon:set(player.equipment.main)
+    end
     -- if remaWeapons:contains(player.equipment.main) then
     --     state.CombatWeapon:set(player.equipment.main)
     -- elseif gsList:contains(player.equipment.main) then
