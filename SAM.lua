@@ -129,6 +129,9 @@ function init_gear_sets()
         ammo="Cibitshavore",
         back="Takaha Mantle"
     }
+    sets.precast.RA = {
+        hands="Buremte Gloves",
+    }
     sets.midcast.RA = {
         head="Terminal Helm",
         body="Kyujutsugi",

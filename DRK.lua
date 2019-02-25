@@ -615,16 +615,16 @@ function init_gear_sets()
     -- Idle sets
     sets.idle.Town = {
         ammo="Ginsen",
-        head="Sulevia's Mask +2",
+        head="Flamma Zucchetto +2",
         neck="Abyssal Bead Necklace +1",
-        ear1="Etiolation Earring",
-        ear2="Eabani Earring",
-        body="Sulevia's Platemail +2",
+        ear1="Brutal Earring",
+        ear2="Cessance Earring",
+        body="Ignominy Cuirass +3",
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",
         back=Ankou.STP,
-        waist="Flume Belt",
+        waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
         feet="Volte Sollerets"
     }
@@ -1505,9 +1505,17 @@ function select_default_macro_book()
     if player.sub_job == 'DNC' then
         set_macro_page(8, 4)
     elseif player.equipment.main == 'Apocalypse' then
-        set_macro_page(9, 4)
+        if war_sj then
+            set_macro_page(9, 10)
+        else
+            set_macro_page(9, 4)
+        end
     elseif gsList:contains(player.equipment.main) then
-        set_macro_page(5, 4)
+        if war_sj then
+            set_macro_page(5, 10)
+        else
+            set_macro_page(5, 4)
+        end
     elseif player.sub_job == 'SAM' then
         set_macro_page(9, 4)
     else

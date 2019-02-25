@@ -212,7 +212,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ring1="Ilabrat Ring",
             ring2="Dingir Ring",
-            hands="Carmine Finger Gauntlets +1",
+            hands="Adhemar Wristbands +1",
             back=Belenus.STP,
             legs="Carmine Cuisses +1",
             feet="Arcadian Socks +3"
@@ -246,8 +246,8 @@ function init_gear_sets()
             neck="Iskur Gorget",
             ear1="Brutal Earring",
             ear2="Sherida Earring",
-            body="Herculean Vest",
-            hands="Herculean Gloves",
+            body="Mummu Jacket +2",
+            hands="Adhemar Wristbands +1",
             ring1="Ilabrat Ring",
             ring2="Epona's Ring",
             back="Grounded Mantle +1",
@@ -267,17 +267,18 @@ function init_gear_sets()
 
         sets.engaged.DW = sets.engaged
 
-        -- sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
-        --     head="Herculean Helm",
-        --     ear1="Eabani Earring",
-        --     ear2="Sherida Earring",
-        --     body="Herculean Vest",
-        --     hands="Floral Gauntlets",
-        --     back="Grounded Mantle +1",
-        --     waist="Patentia Sash",
-        --     legs="Carmine Cuisses +1",
-        --     feet=HercFeet.TP
-        -- })
+        sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
+            head="Herculean Helm",
+            ear1="Eabani Earring",
+            ear2="Sherida Earring",
+            body="Mummu Jacket +2",
+            hands="Adhemar Wristbands +1",
+            --hands="Floral Gauntlets",
+            back="Grounded Mantle +1",
+            waist="Patentia Sash",
+            legs="Carmine Cuisses +1",
+            feet=HercFeet.TP
+        })
 
         ------------------------------------------------------------------
         -- Preshot / Snapshot sets 
@@ -313,7 +314,7 @@ function init_gear_sets()
             ear1="Sherida Earring", 
             ear2="Dedition Earring",
             body="Arcadian Jerkin +3", 
-            hands="Adhemar Wristbands",
+            hands="Adhemar Wristbands +1",
             ring1="Ilabrat Ring",
             ring2="Dingir Ring",
             back=Belenus.STP,
@@ -349,7 +350,7 @@ function init_gear_sets()
             ear1="Sherida Earring",
             ear2="Enervating Earring",
             body="Mummu Jacket +2",
-            hands="Amini Glovelettes +1",
+            hands="Adhemar Wristbands +1",
             ring1="Ilabrat Ring",
             ring2="Rajas Ring",
             back=Belenus.STP,
@@ -358,7 +359,7 @@ function init_gear_sets()
             feet="Arcadian Socks +3"
         }
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
-            hands="Adhemar Wristbands",
+            hands="Adhemar Wristbands +1",
             legs="Adhemar Kecks",
         })
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
@@ -434,6 +435,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Sherida Earring",
             ear2="Ishvara Earring",
+            body="Herculean Vest",
             waist="Thunder Belt",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",

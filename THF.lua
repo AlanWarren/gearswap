@@ -100,7 +100,7 @@ function init_gear_sets()
         ring2="Mummu Ring",
         waist="Chaac Belt",
         back="Toutatis's Cape", 
-        legs="Samnuha Tights",
+        legs="Pillager's Culottes +3",
         feet="Mummu Gamashes +2"
     }
 
@@ -128,7 +128,7 @@ function init_gear_sets()
     sets.precast.JA['Conspirator'] = {} -- {body="Raider's Vest +2"}
     sets.precast.JA['Steal'] = { 
         hands="Pillager's Armlets +1",
-        legs="Pillager's Culottes +2" 
+        legs="Pillager's Culottes +3" 
     }
     sets.precast.JA['Despoil'] = {feet="Raider's Poulaines +2"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
@@ -145,14 +145,14 @@ function init_gear_sets()
     -- TH actions
     sets.precast.Step = {
         head="Herculean Helm",
-        neck="Lissome Necklace",
+        neck="Assassin's Gorget +1",
         ear1="Brutal Earring",
         ear2="Sherida Earring",
         back="Canny Cape",
         ring1="Ilabrat Ring",
         ring2="Cacoethic Ring +1",
         waist="Chaac Belt",
-        legs="Samnuha Tights",
+        legs="Pillager's Culottes +3",
         feet="Raider's Poulaines +2"
     }
     sets.precast.Flourish1 = sets.TreasureHunter
@@ -188,6 +188,7 @@ function init_gear_sets()
         ring1="Dingir Ring",
         ring2="Mummu Ring",
         waist="Eschan Stone",
+        back="Quarrel Mantle",
         legs="Adhemar Kecks",
         feet="Mummu Gamashes +2"
     }
@@ -207,7 +208,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back="Toutatis's Cape", 
         waist="Windbuffet Belt +1",
-        legs="Pillager's culottes +2",
+        legs="Pillager's culottes +3",
         feet=HercFeet.TP
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -222,7 +223,7 @@ function init_gear_sets()
         neck="Moepapa Medal",
         ear1="Brutal Earring",
         ear2="Sherida Earring",
-        legs="Samnuha Tights",
+        legs="Pillager's Culottes +3",
         waist="Elanid Belt",
         back="Toutatis's Cape", 
     })
@@ -235,7 +236,7 @@ function init_gear_sets()
         neck="Breeze Gorget", 
         body="Meghanada Cuirie +2",
         --hands="Pillager's Armlets +1", 
-        legs="Samnuha Tights",
+        legs="Pillager's Culottes +3",
     })
     sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'].Mid, {
         neck="Breeze Gorget",
@@ -253,10 +254,10 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         body="Mummu Jacket +2",
-        ring1="Ilabrat Ring",
+        ring1="Begrudging Ring",
         ring2="Mummu Ring",
         waist="Soil Belt",
-        legs="Pillager's culottes +2",
+        legs="Pillager's culottes +3",
         back="Toutatis's Cape", 
         feet="Mummu Gamashes +2"
     })
@@ -280,14 +281,16 @@ function init_gear_sets()
         ring2="Mummu Ring",
         waist="Snow Belt",
         back="Toutatis's Cape", 
-        legs="Samnuha Tights",
+        legs="Pillager's culottes +3",
         feet=HercFeet.MAB
     })
     sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {
-        legs="Pillager's culottes +2",
-        back="Toutatis's Cape", 
+        legs="Pillager's culottes +3",
+        back="Toutatis's Cape",
+        feet="Mummu Gamashes +2"
     })
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
+        head="Meghanada Visor +2",
         waist="Olseni Belt"
     })
     sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget", body="Meghanada Cuirie +2"})
@@ -352,14 +355,16 @@ sets.idle = {
 }
 
 sets.idle.Town = set_combine(sets.idle, {
-    head="Meghanada Visor +2",
-    back="Canny Cape",
-    neck="Sanctity Necklace",
-    body="Councilor's Garb",
-    hands="Meghanada Gloves +2",
+    head="Herculean Helm",
+    neck="Assassin's Gorget +1",
+    ear1="Dedition Earring",
+    ear2="Sherida Earring",
+    body="Pillager's Vest +2",
+    hands="Adhemar Wristbands +1",
     ring1="Ilabrat Ring",
-    ring2="Defending Ring",
-    legs="Mummu Kecks +2",
+    ring2="Epona's Ring",
+    legs="Pillager's culottes +3",
+    back="Canny Cape",
     waist="Windbuffet Belt +1",
 })
 
@@ -415,27 +420,27 @@ sets.engaged = {
     neck="Anu Torque",
     ear1="Eabani Earring",
     ear2="Suppanomimi",
-    body="Herculean Vest",
+    body="Pillager's Vest +2",
     hands="Floral Gauntlets",
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
     back="Canny Cape",
     waist="Patentia Sash",
-    legs="Samnuha Tights",
+    legs="Pillager's culottes +3",
     feet=HercFeet.TP
 }
 sets.engaged.Mid = set_combine(sets.engaged, {
-    -- body="Mummu Jacket +2",
-    neck="Lissome Necklace",
-    legs="Pillager's culottes +2",
+    body="Pillager's Vest +2",
+    neck="Assassin's Gorget +1",
+    legs="Pillager's culottes +3",
     -- feet="Mummu Gamashes +2"
 })
 sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-    neck="Lissome Necklace",
+    neck="Assassin's Gorget +1",
     ear1="Cessance Earring",
     ear2="Sherida Earring",
-    body="Mummu Jacket +2",
-    hands="Herculean Gloves",
+    body="Pillager's Vest +2",
+    hands="Adhemar Wristbands +1",
     back="Grounded Mantle +1",
     ring1="Cacoethic Ring +1",
     waist="Olseni Belt",
@@ -468,34 +473,35 @@ sets.engaged.Haste_43 = set_combine(sets.engaged, {
     neck="Anu Torque",
     ear1="Dedition Earring",
     ear2="Sherida Earring",
-    body="Herculean Vest",
-    hands="Herculean Gloves",
+    body="Pillager's Vest +2",
+    hands="Adhemar Wristbands +1",
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
     back="Canny Cape",
     waist="Windbuffet Belt +1",
-    legs="Pillager's culottes +2",
+    legs="Pillager's culottes +3",
     feet=HercFeet.TP
 })
 sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
-    neck="Lissome Necklace",
+    neck="Assassin's Gorget +1",
     ear1="Brutal Earring",
+    body="Pillager's Vest +2",
     feet=HercFeet.TP
 })
 sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
-    neck="Lissome Necklace",
-    hands="Herculean Gloves",
+    neck="Assassin's Gorget +1",
+    hands="Adhemar Wristbands +1",
     ear1="Zennaroi Earring",
     ear2="Sherida Earring",
     ring1="Mummu Ring",
     waist="Olseni Belt",
     back="Grounded Mantle +1",
-    legs="Pillager's culottes +2",
+    legs="Pillager's culottes +3",
     feet="Mummu Gamashes +2"
 })
 sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
     neck="Twilight Torque", 
-    body="Herculean Vest", 
+    body="Pillager's Vest +2",
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
     back="Solemnity Cape",
@@ -504,11 +510,14 @@ sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
 
 -- 40
 sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
-    body="Herculean Vest",
+    body="Pillager's Vest +2",
     ear1="Sherida Earring",
     ear2="Suppanomimi",
 })
-sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, { body="Samnuha Coat" })
+sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, { 
+    body="Pillager's Vest +2",
+    neck="Assassin's Gorget +1",
+})
 
 sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.Haste_43, {
     ear1="Sherida Earring",
@@ -517,7 +526,7 @@ sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.Haste_43, {
 sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, { 
     head="Lithelimb Cap", 
     neck="Twilight Torque", 
-    body="Herculean Vest", 
+    body="Pillager's Vest +2",
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
     legs="Mummu Kecks +2",
@@ -527,57 +536,60 @@ sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, {
 
 -- 30
 sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_40, {
-    body="Samnuha Coat",
-    hands="Herculean Gloves",
-    ear1="Eabani Earring",
+    body="Pillager's Vest +2",
+    hands="Adhemar Wristbands +1",
+    ear1="Sherida Earring",
     ear2="Suppanomimi",
     back="Canny Cape",
     feet=HercFeet.TP
 })
 sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
-    body="Herculean Vest",
+    body="Pillager's Vest +2",
+    neck="Assassin's Gorget +1",
 })
 sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
     waist="Patentia Sash",
-    neck="Lissome Necklace",
-    body="Meghanada Cuirie +2",
+    body="Pillager's Vest +2",
+    neck="Assassin's Gorget +1",
     ear1="Sherida Earring",
     back="Grounded Mantle +1",
-    legs="Mummu Kecks +2",
     feet="Mummu Gamashes +2"
 })
 sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { 
     head="Lithelimb Cap", 
     neck="Twilight Torque", 
-    body="Herculean Vest", 
+    body="Pillager's Vest +2",
     ring1="Patricius Ring", 
     ring2="Defending Ring", 
     back="Solemnity Cape",
-    legs="Samnuha Tights",
+    legs="Pillager's culottes +3",
     feet=HercFeet.TP
 })
 
-    -- 25
-    sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
-        hands="Herculean Gloves",
-        ear1="Eabani Earring",
-        ear2="Suppanomimi",
-    })
-    sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Acc.Haste_30, {
-        ear1="Eabani Earring",
-        ear2="Suppanomimi",
-    })
-    sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, { body="Samnuha Coat" })
-    sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, { 
-        head="Lithelimb Cap", 
-        neck="Twilight Torque", 
-        body="Herculean Vest", 
-        ring1="Patricius Ring", 
-        ring2="Defending Ring", 
-        back="Solemnity Cape",
-        legs="Samnuha Tights",
-        feet="Taeon Boots" })
-    end
+-- 25
+sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
+    hands="Adhemar Wristbands +1",
+    ear1="Eabani Earring",
+    ear2="Suppanomimi",
+})
+sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, { 
+    body="Pillager's Vest +2",
+    neck="Assassin's Gorget +1",
+})
+sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Acc.Haste_30, {
+    ear1="Eabani Earring",
+    ear2="Suppanomimi",
+})
+sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, { 
+    head="Lithelimb Cap", 
+    neck="Twilight Torque", 
+    body="Pillager's Vest +2",
+    ring1="Patricius Ring", 
+    ring2="Defending Ring", 
+    back="Solemnity Cape",
+    legs="Pillager's culottes +3",
+    feet="Taeon Boots" })
+end
 
 
     -------------------------------------------------------------------------------------------------------------------
