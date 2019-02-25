@@ -22,6 +22,7 @@ function job_setup()
     determine_haste_group()
 
     state.CapacityMode = M(false, 'Capacity Point Mantle')
+    state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
     -- For th_action_check():
     -- JA IDs for actions that always have TH: Provoke, Animated Flourish
     info.default_ja_ids = S{35, 204}
@@ -49,6 +50,7 @@ function user_setup()
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind !- gs equip sets.crafting')
 
+    send_command('bind @f9 gs c cycle HasteMode')
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
 
@@ -62,6 +64,7 @@ function file_unload()
     send_command('unbind !-')
     send_command('unbind !=')
     send_command('unbind ^[')
+    send_command('unbind @f9')
     send_command('unbind ![')
 end
 
@@ -108,7 +111,7 @@ function init_gear_sets()
         ammo="Tengu-no-hane",
         head="Herculean Helm",
         neck="Moepapa Medal",
-        ear1="Sherida Earring",
+        ear2="Sherida Earring",
         body="Mummu Jacket +2",
         hands="Pillager's Armlets +1",
         ring1="Ilabrat Ring",
@@ -170,8 +173,8 @@ function init_gear_sets()
         legs="Quiahuiz Trousers",
     }
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-        neck="Magoraga Beads"
-    })
+            neck="Magoraga Beads"
+        })
 
     -- Ranged snapshot gear
     sets.precast.RA = {
@@ -224,7 +227,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Sherida Earring",
         legs="Pillager's Culottes +3",
-        waist="Elanid Belt",
+        waist="Windbuffet Belt +1",
         back="Toutatis's Cape", 
     })
     sets.precast.WS['Exenterator'].Mid = set_combine(sets.precast.WS['Exenterator'], {waist="Thunder Belt"})
@@ -254,14 +257,18 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         body="Mummu Jacket +2",
+        ear1="Moonshade Earring",
+        ear2="Ishvara Earring",
         ring1="Begrudging Ring",
         ring2="Mummu Ring",
+        hands="Mummu Wrists +2"
         waist="Soil Belt",
         legs="Pillager's culottes +3",
         back="Toutatis's Cape", 
         feet="Mummu Gamashes +2"
     })
     sets.precast.WS['Evisceration'].Mid = set_combine(sets.precast.WS['Evisceration'], {
+        hands="Adhemar Wristbands +1",
         back="Toutatis's Cape", 
     })
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
@@ -286,6 +293,7 @@ function init_gear_sets()
     })
     sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {
         legs="Pillager's culottes +3",
+        body="Meghanada Cuirie +2",
         back="Toutatis's Cape",
         feet="Mummu Gamashes +2"
     })
@@ -293,550 +301,621 @@ function init_gear_sets()
         head="Meghanada Visor +2",
         waist="Olseni Belt"
     })
-    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget", body="Meghanada Cuirie +2"})
-    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget", body="Mummu Jacket +1"})
-    sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {neck="Aqua Gorget"})
+    sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {
+        ammo="Yetshila",
+        neck="Aqua Gorget", 
+        body="Meghanada Cuirie +2"
+    })
+    sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {
+        neck="Aqua Gorget", 
+        body="Herculean Vest",
+    })
+    sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {
+        neck="Aqua Gorget"
+    })
 
-    sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {head="Herculean Helm", neck="Breeze Gorget",
-    ear1="Brutal Earring",ear2="Sherida Earring", hands="Pillager's Armlets +1", ring1="Ramuh Ring", ring2="Rajas Ring",
-    legs="Samnuha Tights",
-})
-sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head="Herculean Helm"})
-sets.precast.WS['Shark Bite'].Mid = set_combine(sets.precast.WS['Shark Bite'], {waist="Thunder Belt"})
-sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget", ring1="Ramuh Ring"})
-sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
-sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
+    sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {
+        head="Herculean Helm", 
+        neck="Breeze Gorget",
+        ear1="Brutal Earring",
+        ear2="Sherida Earring", 
+        hands="Pillager's Armlets +1", 
+        ring1="Ilabrat Ring", 
+        ring2="Rajas Ring",
+        legs="Pillager's culottes +3",
+    })
+    sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head="Herculean Helm"})
+    sets.precast.WS['Shark Bite'].Mid = set_combine(sets.precast.WS['Shark Bite'], {waist="Thunder Belt"})
+    sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget", ring1="Ramuh Ring"})
+    sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
+    sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
 
-sets.precast.WS['Aeolian Edge'] = {
-    neck="Sanctity Necklace",
-    head="Herculean Helm",
-    body="Samnuha Coat",
-    hands="Leyline Gloves",
-    ring1="Mummu Ring",
-    ring2="Dingir Ring",
-    back="Argochampsa Mantle",
-    waist="Thunder Belt",
-    legs="Limbo Trousers",
-    feet=HercFeet.MAB
-}
+    sets.precast.WS['Aeolian Edge'] = {
+        neck="Sanctity Necklace",
+        head="Herculean Helm",
+        body="Samnuha Coat",
+        hands="Leyline Gloves",
+        ring1="Mummu Ring",
+        ring2="Dingir Ring",
+        back="Argochampsa Mantle",
+        waist="Thunder Belt",
+        legs="Limbo Trousers",
+        feet=HercFeet.MAB
+    }
 
--- Midcast Sets
-sets.midcast.FastRecast = {
-    legs="Quiahuiz Trousers"
-}
+    -- Midcast Sets
+    sets.midcast.FastRecast = {
+        legs="Quiahuiz Trousers"
+    }
 
--- Specific spells
-sets.midcast.Utsusemi = sets.midcast.FastRecast
+    -- Specific spells
+    sets.midcast.Utsusemi = sets.midcast.FastRecast
 
--- Ranged gear -- acc + TH
-sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
+    -- Ranged gear -- acc + TH
+    sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
 
-sets.midcast.RA.Acc = sets.midcast.RA
+    sets.midcast.RA.Acc = sets.midcast.RA
 
--- Resting sets
-sets.resting = {ring2="Paguroidea Ring"}
+    -- Resting sets
+    sets.resting = {ring2="Paguroidea Ring"}
 
--- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-sets.idle = {
-    ammo="Yamarang",
-    -- main="Taming Sari",
-    head="Meghanada Visor +2",
-    neck="Sanctity Necklace",
-    ear1="Eabani Earring",
-    ear2="Etiolation Earring",
-    body="Meghanada Cuirie +2",
-    hands="Meghanada Gloves +2",
-    ring1="Meghanada Ring",
-    ring2="Paguroidea Ring",
-    back="Solemnity Cape",
-    waist="Flume Belt",
-    legs="Mummu Kecks +2",
-    feet="Jute Boots +1"
-}
+    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+    sets.idle = {
+        ammo="Yamarang",
+        -- main="Taming Sari",
+        head="Meghanada Visor +2",
+        neck="Sanctity Necklace",
+        ear1="Eabani Earring",
+        ear2="Etiolation Earring",
+        body="Meghanada Cuirie +2",
+        hands="Meghanada Gloves +2",
+        ring1="Meghanada Ring",
+        ring2="Paguroidea Ring",
+        back="Solemnity Cape",
+        waist="Flume Belt",
+        legs="Mummu Kecks +2",
+        feet="Jute Boots +1"
+    }
 
-sets.idle.Town = set_combine(sets.idle, {
-    head="Herculean Helm",
-    neck="Assassin's Gorget +1",
-    ear1="Dedition Earring",
-    ear2="Sherida Earring",
-    body="Pillager's Vest +2",
-    hands="Adhemar Wristbands +1",
-    ring1="Ilabrat Ring",
-    ring2="Epona's Ring",
-    legs="Pillager's culottes +3",
-    back="Canny Cape",
-    waist="Windbuffet Belt +1",
-})
+    sets.idle.Town = set_combine(sets.idle, {
+        head="Herculean Helm",
+        neck="Assassin's Gorget +1",
+        ear1="Dedition Earring",
+        ear2="Sherida Earring",
+        body="Pillager's Vest +2",
+        hands="Adhemar Wristbands +1",
+        ring1="Ilabrat Ring",
+        ring2="Epona's Ring",
+        legs="Pillager's culottes +3",
+        back="Canny Cape",
+        waist="Windbuffet Belt +1",
+    })
 
-sets.idle.Regen = set_combine(sets.idle, {
-    head="Meghanada Visor +2",
-    hands="Meghanada Gloves +2",
-    body="Meghanada Cuirie +2",
-    ring1="Meghanada Ring",
-    ring2="Paguroidea Ring",
-})
+    sets.idle.Regen = set_combine(sets.idle, {
+        head="Meghanada Visor +2",
+        hands="Meghanada Gloves +2",
+        body="Meghanada Cuirie +2",
+        ring1="Meghanada Ring",
+        ring2="Paguroidea Ring",
+    })
 
-sets.idle.Weak = sets.idle
+    sets.idle.Weak = sets.idle
 
--- Defense sets
+    -- Defense sets
 
-sets.defense.PDT = {
-    head="Herculean Helm",
-    neck="Twilight Torque",
-    body="Emet Harness +1",
-    hands="Herculean Gloves",
-    ring1="Patricius Ring",
-    ring2="Epona's Ring",
-    back="Solemnity Cape",
-    waist="Flume Belt",
-    legs="Mummu Kecks +2",
-}
+    sets.defense.PDT = {
+        head="Herculean Helm",
+        neck="Twilight Torque",
+        body="Emet Harness +1",
+        hands="Herculean Gloves",
+        ring1="Patricius Ring",
+        ring2="Epona's Ring",
+        back="Solemnity Cape",
+        waist="Flume Belt",
+        legs="Mummu Kecks +2",
+    }
 
-sets.defense.MDT = {
-    head="Meghanada Visor +1",
-    neck="Twilight Torque",
-    ear1="Etiolation Earring",
-    body="Herculean Vest",
-    hands="Herculean Gloves",
-    ring1="Defending Ring",
-    ring2="Epona's Ring",
-    back="Solemnity Cape",
-    legs="Mummu Kecks +2",
-    feet=HercFeet.TP
-}
+    sets.defense.MDT = {
+        head="Meghanada Visor +1",
+        neck="Twilight Torque",
+        ear1="Etiolation Earring",
+        body="Herculean Vest",
+        hands="Herculean Gloves",
+        ring1="Defending Ring",
+        ring2="Epona's Ring",
+        back="Solemnity Cape",
+        legs="Mummu Kecks +2",
+        feet=HercFeet.TP
+    }
 
-sets.Kiting = {feet="Skadi's Jambeaux +1"}
+    sets.Kiting = {feet="Skadi's Jambeaux +1"}
 
--- Engaged sets
+    -- Engaged sets
 
--- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
--- sets if more refined versions aren't defined.
--- If you create a set with both offense and defense modes, the offense mode should be first.
+    -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
+    -- sets if more refined versions aren't defined.
+    -- If you create a set with both offense and defense modes, the offense mode should be first.
 
--- Normal melee group
-sets.engaged = {
-    ammo="Yamarang",
-    head="Herculean Helm",
-    neck="Anu Torque",
-    ear1="Eabani Earring",
-    ear2="Suppanomimi",
-    body="Pillager's Vest +2",
-    hands="Floral Gauntlets",
-    ring1="Ilabrat Ring",
-    ring2="Epona's Ring",
-    back="Canny Cape",
-    waist="Patentia Sash",
-    legs="Pillager's culottes +3",
-    feet=HercFeet.TP
-}
-sets.engaged.Mid = set_combine(sets.engaged, {
-    body="Pillager's Vest +2",
-    neck="Assassin's Gorget +1",
-    legs="Pillager's culottes +3",
-    -- feet="Mummu Gamashes +2"
-})
-sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-    neck="Assassin's Gorget +1",
-    ear1="Cessance Earring",
-    ear2="Sherida Earring",
-    body="Pillager's Vest +2",
-    hands="Adhemar Wristbands +1",
-    back="Grounded Mantle +1",
-    ring1="Cacoethic Ring +1",
-    waist="Olseni Belt",
-    feet=HercFeet.TP
-})
-sets.engaged.PDT = set_combine(sets.engaged, {
-    head="Meghanada Visor +1",
-    neck="Twilight Torque",
-    body="Meghanada Cuirie +2",
-    hands="Meghanada Gloves +2",
-    ring1="Patricius Ring",
-    ring2="Defending Ring",
-    back="Solemnity Cape",
-    waist="Flume Belt",
-    legs="Mummu Kecks +2",
-    feet="Meghanada Jambeaux +1"
-})
-sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
-    ring1="Patricius Ring",
-    body="Emet Harness +1",
-})
-sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
-    body="Emet Harness +1",
-    waist="Olseni Belt"
-})
+    -- Normal melee group
+    sets.engaged = {
+        ammo="Yamarang",
+        head="Herculean Helm",
+        neck="Anu Torque",
+        ear1="Eabani Earring",
+        ear2="Suppanomimi",
+        body="Samnuha Coat",
+        hands="Floral Gauntlets",
+        ring1="Petrov Ring",
+        ring2="Epona's Ring",
+        back="Canny Cape",
+        waist="Patentia Sash",
+        legs="Pillager's culottes +3",
+        feet=HercFeet.TP
+    }
+    sets.engaged.Mid = set_combine(sets.engaged, {
+        body="Samnuha Coat",
+        neck="Assassin's Gorget +1",
+        ring1="Petrov Ring",
+        legs="Pillager's culottes +3",
+        -- feet="Mummu Gamashes +2"
+    })
+    sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        neck="Assassin's Gorget +1",
+        ear1="Cessance Earring",
+        ear2="Suppanomimi",
+        body="Pillager's Vest +2",
+        hands="Floral Gauntlets",
+        back="Canny Cape",
+        ring1="Ilabrat Ring",
+        waist="Olseni Belt",
+        feet=HercFeet.TP
+    })
+    sets.engaged.PDT = set_combine(sets.engaged, {
+        head="Meghanada Visor +2",
+        neck="Twilight Torque",
+        body="Pillager's Vest +2",
+        hands="Herculean Gloves",
+        ring1="Defending Ring",
+        ring2="Epona's Ring",
+        back="Solemnity Cape",
+        legs="Mummu Kecks +2",
+        feet=HercFeet.TP
+    })
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
+        body="Pillager's Vest +2",
+        ring1="Patricius Ring",
+        back="Canny Cape",
+    })
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
+        body="Pillager's Vest +2",
+        back="Canny Cape",
+        waist="Olseni Belt"
+    })
+   
+    -- Haste sets 
+    sets.engaged.Haste_15 = set_combine(sets.engaged, {
+        body="Pillager's Vest +2",
+    })
+    sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Mid, { 
+        body="Pillager's Vest +2",
+        neck="Assassin's Gorget +1",
+    })
+    sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc, {
+        hands="Adhemar Wristbands +1",
+    })
+    sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, { 
+        neck="Twilight Torque", 
+        body="Pillager's Vest +2",
+        ring1="Defending Ring", 
+        back="Solemnity Cape",
+        legs="Pillager's culottes +3",
+        feet="Taeon Boots" 
+    })
+    sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.PDT.Haste_15, {
+        body="Pillager's Vest +2",
+        ring1="Patricius Ring",
+        back="Canny Cape",
+    })
+    sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Mid.PDT.Haste_15, {
+        body="Pillager's Vest +2",
+        back="Canny Cape",
+        waist="Olseni Belt"
+    })
+    
+    -- 30
+    sets.engaged.Haste_30 = set_combine(sets.engaged, {
+        body="Pillager's Vest +2",
+        hands="Adhemar Wristbands +1",
+        -- ear1="Sherida Earring",
+        -- ear2="Suppanomimi",
+        back="Canny Cape",
+        feet=HercFeet.TP
+    })
+    sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
+        body="Pillager's Vest +2",
+        neck="Assassin's Gorget +1",
+    })
+    sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
+        waist="Patentia Sash",
+        body="Pillager's Vest +2",
+        neck="Assassin's Gorget +1",
+        ear2="Sherida Earring",
+        back="Grounded Mantle +1",
+        feet="Mummu Gamashes +2"
+    })
+    sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { 
+        neck="Twilight Torque", 
+        body="Pillager's Vest +2",
+        ring1="Defending Ring", 
+        back="Solemnity Cape",
+        legs="Pillager's culottes +3",
+        feet=HercFeet.TP
+    })
+    sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, {
+        body="Pillager's Vest +2",
+        ring1="Patricius Ring",
+        back="Canny Cape",
+    })
+    sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Mid.PDT.Haste_30, {
+        body="Pillager's Vest +2",
+        back="Canny Cape",
+        waist="Olseni Belt"
+    })
 
--- Haste 43%
-sets.engaged.Haste_43 = set_combine(sets.engaged, {
-    head="Herculean Helm",
-    neck="Anu Torque",
-    ear1="Dedition Earring",
-    ear2="Sherida Earring",
-    body="Pillager's Vest +2",
-    hands="Adhemar Wristbands +1",
-    ring1="Ilabrat Ring",
-    ring2="Epona's Ring",
-    back="Canny Cape",
-    waist="Windbuffet Belt +1",
-    legs="Pillager's culottes +3",
-    feet=HercFeet.TP
-})
-sets.engaged.Mid.Haste_43 = set_combine(sets.engaged.Haste_43, { 
-    neck="Assassin's Gorget +1",
-    ear1="Brutal Earring",
-    body="Pillager's Vest +2",
-    feet=HercFeet.TP
-})
-sets.engaged.Acc.Haste_43 = set_combine(sets.engaged.Haste_43, {
-    neck="Assassin's Gorget +1",
-    hands="Adhemar Wristbands +1",
-    ear1="Zennaroi Earring",
-    ear2="Sherida Earring",
-    ring1="Mummu Ring",
-    waist="Olseni Belt",
-    back="Grounded Mantle +1",
-    legs="Pillager's culottes +3",
-    feet="Mummu Gamashes +2"
-})
-sets.engaged.PDT.Haste_43 = set_combine(sets.engaged.Haste_43, {
-    neck="Twilight Torque", 
-    body="Pillager's Vest +2",
-    ring1="Patricius Ring", 
-    ring2="Defending Ring", 
-    back="Solemnity Cape",
-    feet=HercFeet.TP
-})
+    -- Haste 43%
+    sets.engaged.MaxHaste = set_combine(sets.engaged, {
+        head="Herculean Helm",
+        neck="Anu Torque",
+        ear1="Dedition Earring",
+        ear2="Sherida Earring",
+        body="Pillager's Vest +2",
+        hands="Adhemar Wristbands +1",
+        ring1="Petrov Ring",
+        ring2="Epona's Ring",
+        back="Canny Cape",
+        waist="Windbuffet Belt +1",
+        legs="Pillager's culottes +3",
+        feet=HercFeet.TP
+    })
+    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, { 
+        neck="Assassin's Gorget +1",
+        ear1="Cessance Earring",
+        body="Pillager's Vest +2",
+        feet=HercFeet.TP
+    })
+    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.MaxHaste.Mid, {
+        neck="Assassin's Gorget +1",
+        hands="Adhemar Wristbands +1",
+        ear1="Zennaroi Earring",
+        waist="Olseni Belt",
+        ring1="Ilabrat Ring",
+        back="Grounded Mantle +1",
+        legs="Pillager's culottes +3",
+        feet="Mummu Gamashes +2"
+    })
+    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        neck="Twilight Torque", 
+        body="Pillager's Vest +2",
+        ring1="Defending Ring", 
+        back="Canny Cape",
+        legs="Mummu Kecks +2",
+        feet=HercFeet.TP
+    })
+    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.PDT.MaxHaste, {
+        body="Pillager's Vest +2",
+        ring1="Patricius Ring",
+        back="Canny Cape",
+    })
+    sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Mid.PDT.MaxHaste, {
+        body="Pillager's Vest +2",
+        back="Canny Cape",
+        waist="Olseni Belt"
+    })
+    
 
--- 40
-sets.engaged.Haste_40 = set_combine(sets.engaged.Haste_43, {
-    body="Pillager's Vest +2",
-    ear1="Sherida Earring",
-    ear2="Suppanomimi",
-})
-sets.engaged.Mid.Haste_40 = set_combine(sets.engaged.Haste_40, { 
-    body="Pillager's Vest +2",
-    neck="Assassin's Gorget +1",
-})
 
-sets.engaged.Acc.Haste_40 = set_combine(sets.engaged.Acc.Haste_43, {
-    ear1="Sherida Earring",
-    ear2="Suppanomimi",
-})
-sets.engaged.PDT.Haste_40 = set_combine(sets.engaged.Haste_40, { 
-    head="Lithelimb Cap", 
-    neck="Twilight Torque", 
-    body="Pillager's Vest +2",
-    ring1="Patricius Ring", 
-    ring2="Defending Ring", 
-    legs="Mummu Kecks +2",
-    back="Solemnity Cape",
-    feet=HercFeet.TP
-})
-
--- 30
-sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_40, {
-    body="Pillager's Vest +2",
-    hands="Adhemar Wristbands +1",
-    ear1="Sherida Earring",
-    ear2="Suppanomimi",
-    back="Canny Cape",
-    feet=HercFeet.TP
-})
-sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
-    body="Pillager's Vest +2",
-    neck="Assassin's Gorget +1",
-})
-sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_40, {
-    waist="Patentia Sash",
-    body="Pillager's Vest +2",
-    neck="Assassin's Gorget +1",
-    ear1="Sherida Earring",
-    back="Grounded Mantle +1",
-    feet="Mummu Gamashes +2"
-})
-sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { 
-    head="Lithelimb Cap", 
-    neck="Twilight Torque", 
-    body="Pillager's Vest +2",
-    ring1="Patricius Ring", 
-    ring2="Defending Ring", 
-    back="Solemnity Cape",
-    legs="Pillager's culottes +3",
-    feet=HercFeet.TP
-})
-
--- 25
-sets.engaged.Haste_25 = set_combine(sets.engaged.Haste_30, {
-    hands="Adhemar Wristbands +1",
-    ear1="Eabani Earring",
-    ear2="Suppanomimi",
-})
-sets.engaged.Mid.Haste_25 = set_combine(sets.engaged.Haste_25, { 
-    body="Pillager's Vest +2",
-    neck="Assassin's Gorget +1",
-})
-sets.engaged.Acc.Haste_25 = set_combine(sets.engaged.Acc.Haste_30, {
-    ear1="Eabani Earring",
-    ear2="Suppanomimi",
-})
-sets.engaged.PDT.Haste_25 = set_combine(sets.engaged.Haste_25, { 
-    head="Lithelimb Cap", 
-    neck="Twilight Torque", 
-    body="Pillager's Vest +2",
-    ring1="Patricius Ring", 
-    ring2="Defending Ring", 
-    back="Solemnity Cape",
-    legs="Pillager's culottes +3",
-    feet="Taeon Boots" })
 end
 
 
-    -------------------------------------------------------------------------------------------------------------------
-    -- Job-specific hooks that are called to process player actions at specific points in time.
-    -------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks that are called to process player actions at specific points in time.
+-------------------------------------------------------------------------------------------------------------------
 
-    function job_precast(spell, action, spellMap, eventArgs)
-        if state.Buff[spell.english] ~= nil then
-            state.Buff[spell.english] = true
-        end
+function job_precast(spell, action, spellMap, eventArgs)
+    if state.Buff[spell.english] ~= nil then
+        state.Buff[spell.english] = true
     end
+end
 
-    -- Run after the general precast() is done.
-    function job_post_precast(spell, action, spellMap, eventArgs)
-        if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
-            --equip(sets.TreasureHunter)
-        elseif spell.english=='Sneak Attack' or spell.english=='Trick Attack' or spell.type == 'WeaponSkill' then
-            if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
-                equip(sets.TreasureHunter)
-            end
-        end
-        if spell.type == 'WeaponSkill' then
-            if state.CapacityMode.value then
-                equip(sets.CapacityMantle)
-            end
-        end
-    end
-
-    -- Run after the general midcast() set is constructed.
-    function job_post_midcast(spell, action, spellMap, eventArgs)
-        if state.TreasureMode.value ~= 'None' and spell.action_type == 'Ranged Attack' then
+-- Run after the general precast() is done.
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
+        --equip(sets.TreasureHunter)
+    elseif spell.english=='Sneak Attack' or spell.english=='Trick Attack' or spell.type == 'WeaponSkill' then
+        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
             equip(sets.TreasureHunter)
         end
     end
-
-    -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
-    function job_aftercast(spell, action, spellMap, eventArgs)
-        if state.Buff[spell.english] ~= nil then
-            state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
-        end
-
-        -- Weaponskills wipe SATA/Feint.  Turn those state vars off before default gearing is attempted.
-        if spell.type == 'WeaponSkill' and not spell.interrupted then
-            state.Buff['Sneak Attack'] = false
-            state.Buff['Trick Attack'] = false
-            state.Buff['Feint'] = false
-        end
-    end
-
-    -- Called after the default aftercast handling is complete.
-    function job_post_aftercast(spell, action, spellMap, eventArgs)
-        -- If Feint is active, put that gear set on on top of regular gear.
-        -- This includes overlaying SATA gear.
-        check_buff('Feint', eventArgs)
-    end
-
-
-    -------------------------------------------------------------------------------------------------------------------
-    -- Customization hooks.
-    -------------------------------------------------------------------------------------------------------------------
-
-    function get_custom_wsmode(spell, spellMap, defaut_wsmode)
-        local wsmode
-
-        if state.Buff['Sneak Attack'] then
-            wsmode = 'SA'
-        end
-        if state.Buff['Trick Attack'] then
-            wsmode = (wsmode or '') .. 'TA'
-        end
-
-        return wsmode
-    end
-
-
-    -- Called any time we attempt to handle automatic gear equips (ie: engaged or idle gear).
-    function job_handle_equipping_gear(playerStatus, eventArgs)
-        -- Check that ranged slot is locked, if necessary
-        check_range_lock()
-
-        -- Check for SATA when equipping gear.  If either is active, equip
-        -- that gear specifically, and block equipping default gear.
-        check_buff('Sneak Attack', eventArgs)
-        check_buff('Trick Attack', eventArgs)
-    end
-
-
-    function customize_idle_set(idleSet)
-        if player.hpp < 80 then
-            idleSet = set_combine(idleSet, sets.idle.Regen)
-        end
-        return idleSet
-    end
-
-
-    function customize_melee_set(meleeSet)
-        if state.TreasureMode.value == 'Fulltime' then
-            meleeSet = set_combine(meleeSet, sets.TreasureHunter)
-        end
+    if spell.type == 'WeaponSkill' then
         if state.CapacityMode.value then
-            meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+            equip(sets.CapacityMantle)
         end
-        return meleeSet
+    end
+end
+
+-- Run after the general midcast() set is constructed.
+function job_post_midcast(spell, action, spellMap, eventArgs)
+    if state.TreasureMode.value ~= 'None' and spell.action_type == 'Ranged Attack' then
+        equip(sets.TreasureHunter)
+    end
+end
+
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+function job_aftercast(spell, action, spellMap, eventArgs)
+    if state.Buff[spell.english] ~= nil then
+        state.Buff[spell.english] = not spell.interrupted or buffactive[spell.english]
     end
 
-    -------------------------------------------------------------------------------------------------------------------
-    -- General hooks for change events.
-    -------------------------------------------------------------------------------------------------------------------
+    -- Weaponskills wipe SATA/Feint.  Turn those state vars off before default gearing is attempted.
+    if spell.type == 'WeaponSkill' and not spell.interrupted then
+        state.Buff['Sneak Attack'] = false
+        state.Buff['Trick Attack'] = false
+        state.Buff['Feint'] = false
+    end
+end
 
-    -- Called when a player gains or loses a buff.
-    -- buff == buff gained or lost
-    -- gain == true if the buff was gained, false if it was lost.
-    function job_buff_change(buff, gain)
-        -- If we gain or lose any haste buffs, adjust which gear set we target.
-        if S{'haste','march', 'madrigal','embrava','haste samba'}:contains(buff:lower()) then
-            determine_haste_group()
+-- Called after the default aftercast handling is complete.
+function job_post_aftercast(spell, action, spellMap, eventArgs)
+    -- If Feint is active, put that gear set on on top of regular gear.
+    -- This includes overlaying SATA gear.
+    check_buff('Feint', eventArgs)
+end
+
+
+-------------------------------------------------------------------------------------------------------------------
+-- Customization hooks.
+-------------------------------------------------------------------------------------------------------------------
+
+function get_custom_wsmode(spell, spellMap, defaut_wsmode)
+    local wsmode
+
+    if state.Buff['Sneak Attack'] then
+        wsmode = 'SA'
+    end
+    if state.Buff['Trick Attack'] then
+        wsmode = (wsmode or '') .. 'TA'
+    end
+
+    return wsmode
+end
+
+
+-- Called any time we attempt to handle automatic gear equips (ie: engaged or idle gear).
+function job_handle_equipping_gear(playerStatus, eventArgs)
+    -- Check that ranged slot is locked, if necessary
+    check_range_lock()
+
+    -- Check for SATA when equipping gear.  If either is active, equip
+    -- that gear specifically, and block equipping default gear.
+    check_buff('Sneak Attack', eventArgs)
+    check_buff('Trick Attack', eventArgs)
+end
+
+
+function customize_idle_set(idleSet)
+    if player.hpp < 80 then
+        idleSet = set_combine(idleSet, sets.idle.Regen)
+    end
+    return idleSet
+end
+
+
+function customize_melee_set(meleeSet)
+    if state.TreasureMode.value == 'Fulltime' then
+        meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+    end
+    if state.CapacityMode.value then
+        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+    end
+    return meleeSet
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- General hooks for change events.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
+function job_buff_change(buff, gain)
+
+    -- If we gain or lose any haste buffs, adjust which gear set we target.
+    if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
+        determine_haste_group()
+        if not midaction() then
             handle_equipping_gear(player.status)
         end
-        if state.Buff[buff] ~= nil then
-            state.Buff[buff] = gain
-            if not midaction() then
-                handle_equipping_gear(player.status)
-            end
+    end
+    if state.Buff[buff] ~= nil then
+        state.Buff[buff] = gain
+        if not midaction() then
+            handle_equipping_gear(player.status)
         end
     end
+end
 
 
-    -------------------------------------------------------------------------------------------------------------------
-    -- Various update events.
-    -------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+-- Various update events.
+-------------------------------------------------------------------------------------------------------------------
 
-    -- Called by the 'update' self-command.
-    function job_update(cmdParams, eventArgs)
-        th_update(cmdParams, eventArgs)
-        determine_haste_group()
+-- Called by the 'update' self-command.
+function job_update(cmdParams, eventArgs)
+    th_update(cmdParams, eventArgs)
+    --determine_haste_group()
+end
+-- Function to display the current relevant user state when doing an update.
+-- Return true if display was handled, and you don't want the default info shown.
+function display_current_job_state(eventArgs)
+    local msg = 'Melee'
+    if state.CombatForm.has_value then
+        msg = msg .. ' (' .. state.CombatForm.value .. ')'
     end
-    -- Function to display the current relevant user state when doing an update.
-    -- Return true if display was handled, and you don't want the default info shown.
-    function display_current_job_state(eventArgs)
-        local msg = 'Melee'
-        if state.CombatForm.has_value then
-            msg = msg .. ' (' .. state.CombatForm.value .. ')'
+
+    msg = msg .. ': '
+    msg = msg .. state.OffenseMode.value
+
+    if state.HybridMode.value ~= 'Normal' then
+        msg = msg .. '/' .. state.HybridMode.value
+    end
+    msg = msg .. ', WS: ' .. state.WeaponskillMode.value
+
+    if state.DefenseMode.value ~= 'None' then
+        msg = msg .. ', ' .. 'Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
+    end
+
+    if state.Kiting.value == true then
+        msg = msg .. ', Kiting'
+    end
+
+    if state.PCTargetMode.value ~= 'default' then
+        msg = msg .. ', Target PC: '..state.PCTargetMode.value
+    end
+
+    if state.SelectNPCTargets.value == true then
+        msg = msg .. ', Target NPCs'
+    end
+
+    msg = msg .. ', TH: ' .. state.TreasureMode.value
+    add_to_chat(122, msg)
+    eventArgs.handled = true
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Utility functions specific to this job.
+-------------------------------------------------------------------------------------------------------------------
+
+-- State buff checks that will equip buff gear and mark the event as handled.
+function check_buff(buff_name, eventArgs)
+    if state.Buff[buff_name] then
+        equip(sets.buff[buff_name] or {})
+        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
+            equip(sets.TreasureHunter)
         end
-
-        msg = msg .. ': '
-        msg = msg .. state.OffenseMode.value
-
-        if state.HybridMode.value ~= 'Normal' then
-            msg = msg .. '/' .. state.HybridMode.value
-        end
-        msg = msg .. ', WS: ' .. state.WeaponskillMode.value
-
-        if state.DefenseMode.value ~= 'None' then
-            msg = msg .. ', ' .. 'Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
-        end
-
-        if state.Kiting.value == true then
-            msg = msg .. ', Kiting'
-        end
-
-        if state.PCTargetMode.value ~= 'default' then
-            msg = msg .. ', Target PC: '..state.PCTargetMode.value
-        end
-
-        if state.SelectNPCTargets.value == true then
-            msg = msg .. ', Target NPCs'
-        end
-
-        msg = msg .. ', TH: ' .. state.TreasureMode.value
-        add_to_chat(122, msg)
         eventArgs.handled = true
     end
+end
 
-    -------------------------------------------------------------------------------------------------------------------
-    -- Utility functions specific to this job.
-    -------------------------------------------------------------------------------------------------------------------
+-- function determine_haste_group()
 
-    -- State buff checks that will equip buff gear and mark the event as handled.
-    function check_buff(buff_name, eventArgs)
-        if state.Buff[buff_name] then
-            equip(sets.buff[buff_name] or {})
-            if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
-                equip(sets.TreasureHunter)
-            end
-            eventArgs.handled = true
-        end
-    end
+--     classes.CustomMeleeGroups:clear()
+--     -- Haste (white magic) 15%
+--     -- Haste Samba (Sub) 5%
+--     -- Haste (Merited DNC) 10%
+--     -- Victory March +3/+4/+5     14%/15.6%/17.1%
+--     -- Advancing March +3/+4/+5   10.9%/12.5%/14%
+--     -- Embrava 25%
+--     if (buffactive.embrava or buffactive.haste) and buffactive.march == 2 then
+--         add_to_chat(8, '-------------Haste 43%-------------')
+--         classes.CustomMeleeGroups:append('Haste_43')
+--     elseif buffactive.embrava and buffactive.haste then
+--         add_to_chat(8, '-------------Haste 40%-------------')
+--         classes.CustomMeleeGroups:append('Haste_40')
+--     elseif (buffactive.haste ) or (buffactive.march == 2 and buffactive['haste samba']) then
+--         add_to_chat(8, '-------------Haste 30%-------------')
+--         classes.CustomMeleeGroups:append('Haste_30')
+--     elseif buffactive.embrava or buffactive.march == 2 then
+--         add_to_chat(8, '-------------Haste 25%-------------')
+--         classes.CustomMeleeGroups:append('Haste_25')
+--     end
 
-    function determine_haste_group()
+-- end
 
-        classes.CustomMeleeGroups:clear()
-        -- Haste (white magic) 15%
-        -- Haste Samba (Sub) 5%
-        -- Haste (Merited DNC) 10%
-        -- Victory March +3/+4/+5     14%/15.6%/17.1%
-        -- Advancing March +3/+4/+5   10.9%/12.5%/14%
-        -- Embrava 25%
-        if (buffactive.embrava or buffactive.haste) and buffactive.march == 2 then
-            add_to_chat(8, '-------------Haste 43%-------------')
-            classes.CustomMeleeGroups:append('Haste_43')
-        elseif buffactive.embrava and buffactive.haste then
-            add_to_chat(8, '-------------Haste 40%-------------')
-            classes.CustomMeleeGroups:append('Haste_40')
-        elseif (buffactive.haste ) or (buffactive.march == 2 and buffactive['haste samba']) then
+function determine_haste_group()
+
+    classes.CustomMeleeGroups:clear()
+    -- assuming +4 for marches (ghorn has +5)
+    -- Haste (white magic) 15%
+    -- Haste Samba (Sub) 5%
+    -- Haste (Merited DNC) 10% (never account for this)
+    -- Victory March +0/+3/+4/+5    9.4/14%/15.6%/17.1% +0
+    -- Advancing March +0/+3/+4/+5  6.3/10.9%/12.5%/14%  +0
+    -- Embrava 30% with 500 enhancing skill
+    -- Mighty Guard - 15%
+    -- buffactive[580] = geo haste
+    -- buffactive[33] = regular haste
+    -- buffactive[604] = mighty guard
+    -- state.HasteMode = toggle for when you know Haste II is being cast on you
+    -- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
+    if state.HasteMode.value == 'Hi' then
+        if ( ( (buffactive[33] or buffactive[580] or buffactive.embrava) and (buffactive.march or buffactive[604]) ) or
+                ( buffactive[33] and (buffactive[580] or buffactive.embrava) ) or
+                ( buffactive.march == 2 and buffactive[604] ) ) then
+            add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
+            classes.CustomMeleeGroups:append('MaxHaste')
+        elseif ( ( buffactive[580] or buffactive[33] or buffactive.march == 2 ) or
+                ( buffactive.march == 1 and buffactive[604] ) ) then
             add_to_chat(8, '-------------Haste 30%-------------')
             classes.CustomMeleeGroups:append('Haste_30')
-        elseif buffactive.embrava or buffactive.march == 2 then
-            add_to_chat(8, '-------------Haste 25%-------------')
-            classes.CustomMeleeGroups:append('Haste_25')
+        elseif ( buffactive.march == 1 or buffactive[604] ) then
+            add_to_chat(8, '-------------Haste 15%-------------')
+            classes.CustomMeleeGroups:append('Haste_15')
         end
-
+    else
+        if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava or buffactive[604]) ) or  -- geo haste + anything
+            ( buffactive.embrava and (buffactive.march or buffactive[33] or buffactive[604]) ) or  -- embrava + anything
+            ( buffactive.march == 2 and (buffactive[33] or buffactive[604]) ) or  -- two marches + anything
+            ( buffactive[33] and buffactive[604] and buffactive.march ) then -- haste + mighty guard + any marches
+            add_to_chat(8, '-------------Max Haste Mode Enabled--------------')
+            classes.CustomMeleeGroups:append('MaxHaste')
+        elseif ( buffactive.march == 2 ) or -- two marches from ghorn
+            ( (buffactive[33] or buffactive[604]) and buffactive.march == 1 ) or  -- MG or haste + 1 march
+            ( buffactive[580] ) or  -- geo haste
+            ( buffactive[33] and buffactive[604] ) then  -- haste with MG
+            add_to_chat(8, '-------------Haste 30%-------------')
+            classes.CustomMeleeGroups:append('Haste_30')
+        elseif buffactive[33] or buffactive[604] or buffactive.march == 1 then
+            add_to_chat(8, '-------------Haste 15%-------------')
+            classes.CustomMeleeGroups:append('Haste_15')
+        end
     end
 
-    -- Check for various actions that we've specified in user code as being used with TH gear.
-    -- This will only ever be called if TreasureMode is not 'None'.
-    -- Category and Param are as specified in the action event packet.
-    function th_action_check(category, param)
-        if category == 2 or -- any ranged attack
-            --category == 4 or -- any magic action
-            (category == 3 and param == 30) or -- Aeolian Edge
-            (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
-            (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
-            then return true
-            end
-        end
+end
+
+-- Check for various actions that we've specified in user code as being used with TH gear.
+-- This will only ever be called if TreasureMode is not 'None'.
+-- Category and Param are as specified in the action event packet.
+function th_action_check(category, param)
+    if category == 2 or -- any ranged attack
+        --category == 4 or -- any magic action
+        (category == 3 and param == 30) or -- Aeolian Edge
+        (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
+        (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
+        then return true
+    end
+end
 
 
-        -- Function to lock the ranged slot if we have a ranged weapon equipped.
-        function check_range_lock()
-            if player.equipment.range ~= 'empty' then
-                disable('range', 'ammo')
-            else
-                enable('range', 'ammo')
-            end
-        end
+-- Function to lock the ranged slot if we have a ranged weapon equipped.
+function check_range_lock()
+    if player.equipment.range ~= 'empty' then
+        disable('range', 'ammo')
+    else
+        enable('range', 'ammo')
+    end
+end
 
-        -- Select default macro book on initial load or subjob change.
-        function select_default_macro_book()
-            -- Default macro set/book
-            if player.sub_job == 'DNC' then
-                set_macro_page(5, 2)
-            elseif player.sub_job == 'WAR' then
-                set_macro_page(4, 1)
-            elseif player.sub_job == 'NIN' then
-                set_macro_page(5, 2)
-            else
-                set_macro_page(5, 2)
-            end
-        end
+-- Select default macro book on initial load or subjob change.
+function select_default_macro_book()
+    -- Default macro set/book
+    if player.sub_job == 'DNC' then
+        set_macro_page(5, 2)
+    elseif player.sub_job == 'WAR' then
+        set_macro_page(4, 1)
+    elseif player.sub_job == 'NIN' then
+        set_macro_page(5, 2)
+    else
+        set_macro_page(5, 2)
+    end
+end
 
