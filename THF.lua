@@ -17,12 +17,12 @@ function job_setup()
     state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
     state.Buff['Trick Attack'] = buffactive['trick attack'] or false
     state.Buff['Feint'] = buffactive['feint'] or false
+    state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
 
     include('Mote-TreasureHunter')
     determine_haste_group()
 
     state.CapacityMode = M(false, 'Capacity Point Mantle')
-    state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
     -- For th_action_check():
     -- JA IDs for actions that always have TH: Provoke, Animated Flourish
     info.default_ja_ids = S{35, 204}
@@ -261,7 +261,7 @@ function init_gear_sets()
         ear2="Ishvara Earring",
         ring1="Begrudging Ring",
         ring2="Mummu Ring",
-        hands="Mummu Wrists +2"
+        hands="Mummu Wrists +2",
         waist="Soil Belt",
         legs="Pillager's culottes +3",
         back="Toutatis's Cape", 
@@ -769,6 +769,12 @@ function display_current_job_state(eventArgs)
         msg = msg .. '/' .. state.HybridMode.value
     end
     msg = msg .. ', WS: ' .. state.WeaponskillMode.value
+    
+    if state.HasteMode.value ~= 'Normal' then
+        msg = msg .. ', Haste: '..state.HasteMode.current
+    else
+        msg = msg .. ', Haste: '..state.HasteMode.current
+    end
 
     if state.DefenseMode.value ~= 'None' then
         msg = msg .. ', ' .. 'Defense: ' .. state.DefenseMode.value .. ' (' .. state[state.DefenseMode.value .. 'DefenseMode'].value .. ')'
