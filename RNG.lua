@@ -57,7 +57,7 @@ function job_setup()
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
         --gear.Bow = "Hangaku-no-Yumi"
-       
+        rng_rema = S{'Annihilator', 'Armageddon', 'Fomalhaut', 'Gastraphetes', 'Yoichinoyumi', 'Gandiva', 'Fail-Not'}       
         rng_sub_weapons = S{'Malevolence', 'Vanir Knife', 'Perun', 
             'Eminent Axe', 'Odium', 'Aphotic Kukri', 'Atoyac'}
         
@@ -892,48 +892,36 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 -- Special WS mode for weapon types
-function get_custom_wsmode(spell, spellMap, ws_mode)
-    if spell.skill == 'Marksmanship' then
-        if player.equipment.range == 'Annihilator' then
-            return 'Annihilator'
-        elseif player.equipment.range == 'Armageddon' then
-            return 'Armageddon'
-        elseif player.equipment.range == 'Fomalhaut' then
-            return 'Fomalhaut'
-        elseif player.equipment.range == 'Gastraphetes' then
-            return 'Gastraphetes'
-        end
-    end
+-- function get_custom_wsmode(spell, spellMap, ws_mode)
+--     if spell.skill == 'Marksmanship' then
+--         if player.equipment.range == 'Annihilator' then
+--             return 'Annihilator'
+--         elseif player.equipment.range == 'Armageddon' then
+--             return 'Armageddon'
+--         elseif player.equipment.range == 'Fomalhaut' then
+--             return 'Fomalhaut'
+--         elseif player.equipment.range == 'Gastraphetes' then
+--             return 'Gastraphetes'
+--         end
+--     end
 
-    if spell.skill == 'Archery' then
-        if player.equipment.range == 'Yoichinoyumi' then
-            return 'Yoichinoyumi'
-        elseif player.equipment.range == 'Gandiva' then
-            return 'Gandiva'
-        elseif player.equipment.range == 'Fail-Not' then
-            return 'FailNot'
-        end
-    end
+--     if spell.skill == 'Archery' then
+--         if player.equipment.range == 'Yoichinoyumi' then
+--             return 'Yoichinoyumi'
+--         elseif player.equipment.range == 'Gandiva' then
+--             return 'Gandiva'
+--         elseif player.equipment.range == 'Fail-Not' then
+--             return 'FailNot'
+--         end
+--     end
 
-end
+-- end
 
 
 function get_combat_weapon()
     state.CombatWeapon:reset()
-    if player.equipment.range == 'Annihilator' then
-        state.CombatWeapon:set('Annihilator')
-    elseif player.equipment.range == 'Armageddon' then
-        state.CombatWeapon:set('Armageddon')
-    elseif player.equipment.range == 'Fomalhaut' then
-        state.CombatWeapon:set('Fomalhaut')
-    elseif player.equipment.range == 'Gastraphetes' then
-        state.CombatWeapon:set('Gastraphetes')
-    elseif player.equipment.range == 'Yoichinoyumi' then
-        state.CombatWeapon:set('Yoichinoyumi')
-    elseif player.equipment.range == 'Gandiva' then
-        state.CombatWeapon:set('Gandiva')
-    elseif player.equipment.range == 'Fail-Not' then
-        state.CombatWeapon:set('FailNot')
+    if rng_rema:contains(player.equipment.range) then
+        state.CombatWeapon:set(player.equipment.range)
     end
 end
 
