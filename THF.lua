@@ -82,6 +82,10 @@ function init_gear_sets()
     HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
 
+    Toutatis = {}
+    Toutatis.STP = { name="Toutatis's Cape", augments={'DEX+2','Accuracy+20 Attack+20','"Store TP"+10',}}
+    Toutatis.WSD = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+
     sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
     sets.CapacityMantle = {back="Mecistopins Mantle"}
@@ -102,7 +106,7 @@ function init_gear_sets()
         ring1="Ilabrat Ring",
         ring2="Mummu Ring",
         waist="Chaac Belt",
-        back="Toutatis's Cape", 
+        back=Toutatis.WSD,
         legs="Pillager's Culottes +3",
         feet="Mummu Gamashes +2"
     }
@@ -151,7 +155,7 @@ function init_gear_sets()
         neck="Assassin's Gorget +1",
         ear1="Brutal Earring",
         ear2="Sherida Earring",
-        back="Canny Cape",
+        back=Toutatis.WSD,
         ring1="Ilabrat Ring",
         ring2="Cacoethic Ring +1",
         waist="Chaac Belt",
@@ -209,14 +213,14 @@ function init_gear_sets()
         hands="Meghanada Gloves +2",
         ring1="Ilabrat Ring",
         ring2="Epona's Ring",
-        back="Toutatis's Cape", 
+        back=Toutatis.WSD,
         waist="Windbuffet Belt +1",
         legs="Pillager's culottes +3",
         feet=HercFeet.TP
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         ring2="Cacoethic Ring +1",
-        back="Toutatis's Cape", 
+        back=Toutatis.WSD,
         waist="Olseni Belt"
     })
 
@@ -228,12 +232,12 @@ function init_gear_sets()
         ear2="Sherida Earring",
         legs="Pillager's Culottes +3",
         waist="Windbuffet Belt +1",
-        back="Toutatis's Cape", 
+        back=Toutatis.WSD,
     })
     sets.precast.WS['Exenterator'].Mid = set_combine(sets.precast.WS['Exenterator'], {waist="Thunder Belt"})
     sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'].Mid, {
         hands="Plunderer's Armlets +1",
-        back="Toutatis's Cape", 
+        back=Toutatis.WSD,
     })
     sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'].Mid, {
         neck="Breeze Gorget", 
@@ -264,12 +268,12 @@ function init_gear_sets()
         hands="Mummu Wrists +2",
         waist="Soil Belt",
         legs="Pillager's culottes +3",
-        back="Toutatis's Cape", 
+        back=Toutatis.WSD,
         feet="Mummu Gamashes +2"
     })
     sets.precast.WS['Evisceration'].Mid = set_combine(sets.precast.WS['Evisceration'], {
         hands="Adhemar Wristbands +1",
-        back="Toutatis's Cape", 
+        back=Toutatis.WSD,
     })
     sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
         waist="Olseni Belt"
@@ -287,14 +291,14 @@ function init_gear_sets()
         ring1="Ilabrat Ring",
         ring2="Mummu Ring",
         waist="Snow Belt",
-        back="Toutatis's Cape", 
+        back=Toutatis.WSD,
         legs="Pillager's culottes +3",
         feet=HercFeet.MAB
     })
     sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {
         legs="Pillager's culottes +3",
         body="Meghanada Cuirie +2",
-        back="Toutatis's Cape",
+        back=Toutatis.WSD,
         feet="Mummu Gamashes +2"
     })
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
@@ -387,7 +391,7 @@ function init_gear_sets()
         ring1="Ilabrat Ring",
         ring2="Epona's Ring",
         legs="Pillager's culottes +3",
-        back="Canny Cape",
+        back=Toutatis.WSD,
         waist="Windbuffet Belt +1",
     })
 
@@ -528,7 +532,7 @@ function init_gear_sets()
         hands="Adhemar Wristbands +1",
         -- ear1="Sherida Earring",
         -- ear2="Suppanomimi",
-        back="Canny Cape",
+        back=Toutatis.STP,
         feet=HercFeet.TP
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
@@ -540,7 +544,7 @@ function init_gear_sets()
         body="Pillager's Vest +2",
         neck="Assassin's Gorget +1",
         ear2="Sherida Earring",
-        back="Grounded Mantle +1",
+        back=Toutatis.STP,
         feet="Mummu Gamashes +2"
     })
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { 
@@ -554,11 +558,11 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, {
         body="Pillager's Vest +2",
         ring1="Patricius Ring",
-        back="Canny Cape",
+        back=Toutatis.STP,
     })
     sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Mid.PDT.Haste_30, {
         body="Pillager's Vest +2",
-        back="Canny Cape",
+        back=Toutatis.STP,
         waist="Olseni Belt"
     })
 
@@ -572,7 +576,7 @@ function init_gear_sets()
         hands="Adhemar Wristbands +1",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
-        back="Canny Cape",
+        back=Toutatis.STP,
         waist="Windbuffet Belt +1",
         legs="Pillager's culottes +3",
         feet=HercFeet.TP
@@ -589,7 +593,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         waist="Olseni Belt",
         ring1="Ilabrat Ring",
-        back="Grounded Mantle +1",
+        back=Toutatis.STP,
         legs="Pillager's culottes +3",
         feet="Mummu Gamashes +2"
     })
@@ -597,14 +601,14 @@ function init_gear_sets()
         neck="Twilight Torque", 
         body="Pillager's Vest +2",
         ring1="Defending Ring", 
-        back="Canny Cape",
+        back=Toutatis.STP,
         legs="Mummu Kecks +2",
         feet=HercFeet.TP
     })
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.PDT.MaxHaste, {
         body="Pillager's Vest +2",
         ring1="Patricius Ring",
-        back="Canny Cape",
+        back=Toutatis.STP,
     })
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Mid.PDT.MaxHaste, {
         body="Pillager's Vest +2",

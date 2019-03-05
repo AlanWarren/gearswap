@@ -137,7 +137,7 @@ function init_gear_sets()
         -- Misc. Job Ability precasts
         sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1"}
         sets.precast.JA['Double Shot'] = {head="Amini Gapette"}
-        sets.precast.JA['Camouflage'] = {body="Orion Jerkin +2"}
+        sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}
         sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
         sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1", back=Belenus.Snap }
         sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
@@ -206,7 +206,7 @@ function init_gear_sets()
         })
         sets.idle.Town = set_combine(sets.idle, {
             head="Arcadian Beret +3",
-            body="Arcadian Jerkin +3", 
+            body="Orion Jerkin +3", 
             ear1="Enervating Earring",
             ear2="Dedition Earring",
             neck="Scout's Gorget +2",
@@ -324,16 +324,25 @@ function init_gear_sets()
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             ear2="Enervating Earring",
+            body="Orion Jerkin +3", 
             legs="Adhemar Kecks", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             head="Meghanada Visor +2",
             neck="Scout's Gorget +2",
             hands="Meghanada Gloves +2",
-            body="Mummu Jacket +2",
             ring1="Cacoethic Ring +1",
             legs="Mummu Kecks +2",
             feet="Mummu Gamashes +2"
+        })
+        sets.midcast.RA.DoubleShot = set_combine(sets.midcast.RA, {
+            body="Arcadian Jerkin +3", 
+        })
+        sets.midcast.RA.DoubleShot.Mid = set_combine(sets.midcast.RA.Mid, {
+            body="Arcadian Jerkin +3", 
+        })
+        sets.midcast.RA.DoubleShot.Acc = set_combine(sets.midcast.RA.Acc, {
+            body="Arcadian Jerkin +3", 
         })
 
         -- sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {
@@ -364,7 +373,7 @@ function init_gear_sets()
         })
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
             hands="Meghanada Gloves +2",
-            body="Orion Jerkin +2",
+            body="Orion Jerkin +3",
             ring2="Longshot Ring",
         })
        
@@ -387,7 +396,7 @@ function init_gear_sets()
             body="Arcadian Jerkin +3",
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-            body="Orion Jerkin +2",
+            body="Orion Jerkin +3",
             legs="Adhemar Kecks",
         })
 
@@ -414,19 +423,25 @@ function init_gear_sets()
             ear1="Friomisi Earring",
             ear2="Moonshade Earring",
             neck="Scout's Gorget +2",
-            hands="Carmine Finger Gauntlets +1",
-            body="Samnuha Coat",
+            -- hands="Carmine Finger Gauntlets +1",
+            body="Orion Jerkin +3",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
             back=Belenus.WSD,
             waist="Eschan Stone",
-            legs="Herculean Trousers", 
+            hands="Mummu Wrists +2",
+            legs="Mummu Kecks +2",
             feet=HercFeet.MAB
         }
         sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {
+            body="Orion Jerkin +3",
             legs="Arcadian Braccae +2"
         })
-        sets.precast.WS['Trueflight'].Acc = sets.precast.WS['Trueflight'].Mid
+        sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
+            body="Mummu Jacket +2",
+            hands="Mummu Wrists +2",
+            legs="Mummu Kecks +2"
+        })
 
         sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Trueflight']
 
@@ -447,7 +462,7 @@ function init_gear_sets()
             body="Arcadian Jerkin +3", 
         })
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS['Coronach'].Mid, {
-            body="Orion Jerkin +2", 
+            body="Orion Jerkin +3", 
             legs="Arcadian Braccae +2", 
         })
 
@@ -597,7 +612,7 @@ function init_gear_sets()
             hands="Mummu Wrists +2",
             ring1="Cacoethic Ring +1"
         })
-        sets.buff.Camouflage =  {body="Orion Jerkin +2"}
+        sets.buff.Camouflage =  {body="Orion Jerkin +3"}
 
         sets.Overkill =  {
             body="Arcadian Jerkin +3"
@@ -738,7 +753,7 @@ function job_buff_change(buff, gain)
 
     -- DoubleShot CombatForm
     if (buff == 'Double Shot' and gain or buffactive['Double Shot']) then
-        -- state.CombatForm:set('DoubleShot')
+        state.CombatForm:set('DoubleShot')
         if not midaction() then
             handle_equipping_gear(player.status)
         end

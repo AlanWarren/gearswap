@@ -1504,7 +1504,7 @@ function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'DNC' then
         set_macro_page(8, 4)
-    elseif player.equipment.main == 'Apocalypse' then
+    elseif scytheList:contains(player.equipment.main) then
         if war_sj then
             set_macro_page(9, 10)
         else
@@ -1519,6 +1519,6 @@ function select_default_macro_book()
     elseif player.sub_job == 'SAM' then
         set_macro_page(9, 4)
     else
-        set_macro_page(8, 4)
+        set_macro_page(9, 4)
     end
 end
