@@ -244,7 +244,7 @@ function init_gear_sets()
         body="Lanun Frac +3",
         hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
-        ring2="Garuda Ring",
+        ring2="Ilabrat Ring",
         back=Camulus.WSD,
         waist="Eschan Stone",
         legs="Herculean Trousers",
@@ -252,13 +252,16 @@ function init_gear_sets()
     }
     sets.precast.WS['Wildfire'].Acc = {
         body="Lanun Frac +3",
-        legs="Mummu Kecks +2"
+        hands="Herculean Gloves",
     }
 
 	sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], { head="Pixie Hairpin +1", ear2="Moonshade Earring"})
 	sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], { 
         body="Lanun Frac +3",
-        legs="Mummu Kecks +2"
+        hands="Herculean Gloves",
+        legs="Mummu Kecks +2",
+        --feet="Mummu Gamashes +2"
+        feet=HercFeet.MAB
     })
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {
         ear2="Moonshade Earring"
@@ -328,10 +331,11 @@ function init_gear_sets()
 
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
+        body="Laksamana's Frac +2",
         ear2="Tripudio Earring",
-        ring1="Dingir Ring",
+        ring1="Hajduk Ring",
         ring2="Cacoethic Ring +1",
-        body="Meghanada Cuirie +2",
+        legs="Mummu Kecks +2",
         feet="Meghanada Jambeaux +2"
     })
 

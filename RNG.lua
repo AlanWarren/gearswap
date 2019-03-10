@@ -269,12 +269,14 @@ function init_gear_sets()
 
         sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
             head="Herculean Helm",
+            neck="Lissome Necklace",
             ear1="Eabani Earring",
             ear2="Sherida Earring",
             body="Mummu Jacket +2",
-            hands="Adhemar Wristbands +1",
-            --hands="Floral Gauntlets",
-            back="Grounded Mantle +1",
+            hands="Floral Gauntlets",
+            -- hands="Adhemar Wristbands +1",
+            back=Belenus.STP,
+            --back="Grounded Mantle +1",
             waist="Patentia Sash",
             legs="Carmine Cuisses +1",
             feet=HercFeet.TP
@@ -415,32 +417,39 @@ function init_gear_sets()
             legs="Herculean Trousers", 
             feet=HercFeet.MAB
         }
-        sets.precast.WS['Wildfire'].Mid = sets.precast.WS['Wildfire']
-        sets.precast.WS['Wildfire'].Acc = sets.precast.WS['Wildfire']
+        sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS['Wildfire'], {
+            body="Orion Jerkin +3",
+            hands="Herculean Gloves",
+            legs="Mummu Kecks +2"
+        })
+        sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS['Wildfire'].Mid, {
+            body="Mummu Jacket +2",
+            hands="Mummu Wrists +2",
+        })
         
         sets.precast.WS['Trueflight'] = {
             head="Orion Beret +3",
             ear1="Friomisi Earring",
             ear2="Moonshade Earring",
             neck="Scout's Gorget +2",
-            -- hands="Carmine Finger Gauntlets +1",
-            body="Orion Jerkin +3",
+            hands="Carmine Finger Gauntlets +1",
+            body="Samnuha Coat",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
             back=Belenus.WSD,
             waist="Eschan Stone",
-            hands="Mummu Wrists +2",
-            legs="Mummu Kecks +2",
+            legs="Herculean Trousers",
             feet=HercFeet.MAB
         }
         sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {
             body="Orion Jerkin +3",
-            legs="Arcadian Braccae +2"
+            hands="Herculean Gloves",
         })
         sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
+            head="Mummu Bonnet +1",
             body="Mummu Jacket +2",
-            hands="Mummu Wrists +2",
-            legs="Mummu Kecks +2"
+            legs="Mummu Kecks +2",
+            -- hands="Mummu Wrists +2",
         })
 
         sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Trueflight']
@@ -1081,9 +1090,9 @@ function select_default_macro_book()
     if player.sub_job == 'WAR'then
             set_macro_page(3, 5)
     elseif player.sub_job == 'SAM' then
-            set_macro_page(4, 5)
+            set_macro_page(2, 5)
     else
-        set_macro_page(3, 5)
+        set_macro_page(4, 5)
     end
 end
 
