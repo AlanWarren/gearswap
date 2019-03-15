@@ -231,7 +231,7 @@ function init_gear_sets()
             waist="Flume Belt",
             back=Belenus.STP,
             legs="Mummu Kecks +2",
-            feet="Arcadian Socks +3"
+            feet="Meghanada Jambeaux +2" -- 10
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
             hands="Meghanada Gloves +2",
@@ -270,8 +270,8 @@ function init_gear_sets()
         sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
             head="Herculean Helm",
             neck="Lissome Necklace",
-            ear1="Eabani Earring",
-            ear2="Sherida Earring",
+            ear1="Sherida Earring",
+            ear2="Eabani Earring",
             body="Mummu Jacket +2",
             hands="Floral Gauntlets",
             -- hands="Adhemar Wristbands +1",
@@ -446,8 +446,8 @@ function init_gear_sets()
             hands="Herculean Gloves",
         })
         sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
-            head="Mummu Bonnet +1",
-            body="Mummu Jacket +2",
+            --head="Mummu Bonnet +2",
+            --body="Mummu Jacket +2",
             legs="Mummu Kecks +2",
             -- hands="Mummu Wrists +2",
         })

@@ -172,7 +172,7 @@ function init_gear_sets()
     Ankou = {}
     Ankou.FC  = { name="Ankou's Mantle", augments={'"Fast Cast"+10',}}
     Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}}
-    Ankou.DA  = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+9',}}
+    Ankou.DA  = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}
     Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     Ankou.VIT = { name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
 
@@ -899,7 +899,7 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +1",
         hands="Sulevia's Gauntlets +2",
         ring2="Defending Ring",
-        back=Ankou.STP,
+        back=Ankou.DA,
         waist="Sailfi Belt +1",
         feet="Volte Sollerets" 
     })
@@ -968,15 +968,15 @@ function init_gear_sets()
     
     -- Caladbolg
     sets.engaged.Caladbolg = set_combine(sets.engaged.GreatSword, {
-        hands="Flamma Manopolas +2",
-        back=Ankou.STP
+        hands="Sulevia's Gauntlets +2",
+        back=Ankou.DA
     })
     sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {
-        hands="Flamma Manopolas +2",
-        back=Ankou.STP
+        hands="Sulevia's Gauntlets +2",
+        back=Ankou.DA
     })
     sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {
-        hands="Flamma Manopolas +2",
+        hands="Sulevia's Gauntlets +2",
         body="Fallen's Cuirass +3",
         legs="Ignominy Flanchard +3",
         back=Ankou.DA
@@ -1502,23 +1502,23 @@ end
 
 function select_default_macro_book()
     -- Default macro set/book
-    if player.sub_job == 'DNC' then
-        set_macro_page(8, 4)
-    elseif scytheList:contains(player.equipment.main) then
-        if war_sj then
-            set_macro_page(9, 10)
-        else
-            set_macro_page(9, 4)
-        end
-    elseif gsList:contains(player.equipment.main) then
-        if war_sj then
-            set_macro_page(5, 10)
-        else
-            set_macro_page(5, 4)
-        end
-    elseif player.sub_job == 'SAM' then
-        set_macro_page(9, 4)
-    else
-        set_macro_page(9, 4)
-    end
+    -- if player.sub_job == 'DNC' then
+    --     set_macro_page(8, 4)
+    -- elseif scytheList:contains(player.equipment.main) then
+    --     if war_sj then
+    --         set_macro_page(9, 10)
+    --     else
+    --         set_macro_page(9, 4)
+    --     end
+    -- elseif gsList:contains(player.equipment.main) then
+    --     if war_sj then
+    --         set_macro_page(5, 10)
+    --     else
+    --         set_macro_page(5, 4)
+    --     end
+    -- elseif player.sub_job == 'SAM' then
+    --     set_macro_page(5, 4)
+    -- else
+    --     set_macro_page(5, 4)
+    -- end
 end

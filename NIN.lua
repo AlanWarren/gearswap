@@ -233,7 +233,7 @@ function init_gear_sets()
     -- skill ++ 
     sets.midcast.Ninjutsu = {
         --ammo="Pemphredo Tathlum",
-        head="Mummu Bonnet +1",
+        head="Mummu Bonnet +2",
         ear1="Gwati Earring",
         ear2="Lempo Earring",
         neck="Incanter's Torque",
@@ -262,7 +262,7 @@ function init_gear_sets()
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.ElementalNinjutsu = {
         --ammo="Seething Bomblet +1",
-        head="Mummu Bonnet +1",
+        head="Mummu Bonnet +2",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         neck="Sanctity Necklace",
@@ -385,7 +385,7 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        ring2="Mummu Ring",
+        -- ring2="Mummu Ring",
         feet="Hizamaru Sune-ate +1"
     })
 
@@ -503,7 +503,7 @@ function init_gear_sets()
         ear1="Zennaroi Earring",
         body="Mochizuki Chainmail +3",
         -- hands="Ryuo Tekko",
-        ring1="Mummu Ring",
+        ring1="Ilabrat Ring",
         ring2="Cacoethic Ring +1",
         back=Andartia.DEX,
         waist="Olseni Belt",
@@ -603,7 +603,7 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
         neck="Moonbeam Nodowa",
         ear1="Trux Earring",
-        ring2="Mummu Ring",
+        ring2="Ilabrat Ring",
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         neck="Moonbeam Nodowa",
@@ -649,7 +649,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, { -- 676
         neck="Moonbeam Nodowa",
-        ring1="Mummu Ring",
+        ring1="Ilabrat Ring",
     })
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_30, {
         ring2="Cacoethic Ring +1",

@@ -104,7 +104,7 @@ function init_gear_sets()
 
     Camulus = {}
     Camulus.STP = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10','Phys. dmg. taken-10%',}}
-    Camulus.WSD = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+1','Weapon skill damage +10%',}}
+    Camulus.WSD = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+2','Weapon skill damage +10%',}}
     Camulus.Snap = {name="Camulus's Mantle", augments={'"Snapshot"+10',}}
 
     HercFeet = {}
@@ -237,7 +237,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
-        head="Mummu Bonnet +1",
+        head="Mummu Bonnet +2",
         neck="Sanctity Necklace",
         ear1="Ishvara Earring",
         ear2="Friomisi Earring",
@@ -287,7 +287,7 @@ function init_gear_sets()
 
 	sets.midcast.CorsairShot = {
         ammo=gear.QDbullet,
-        head="Mummu Bonnet +1",
+        head="Mummu Bonnet +2",
         neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -303,7 +303,7 @@ function init_gear_sets()
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
         body="Lanun Frac +3",
-        head="Mummu Bonnet +1",
+        head="Mummu Bonnet +2",
         ear1="Lempo Earring",
         ear2="Gwati Earring",
         feet="Navarch's Bottes +2"
