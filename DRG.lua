@@ -68,16 +68,6 @@ function init_gear_sets()
     Taeon = {}
     Taeon.Hands = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
 
-    Acro = {}
-    Acro.Hands = {}
-    Acro.Feet = {}
-    
-    Acro.Hands.Haste = {name="Acro gauntlets", augments={'STR+3 AGI+3','Accuracy+18 Attack+18','Haste+2'}} 
-    Acro.Hands.STP = {name="Acro gauntlets", augments={'Accuracy+19 Attack+19','"Store TP"+5','Weapon skill damage +3%'}}
-
-    Acro.Feet.STP = {name="Acro Leggings", augments={'STR+7 AGI+7','Accuracy+17 Attack+17','"Store TP"+6'}} 
-    Acro.Feet.WSD = {name="Acro Leggings", augments={'Accuracy+18 Attack+18','"Dbl. Atk."+3','Weapon skill damage +2%'}} 
-	
 	-- Precast Sets
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Angon = {ammo="Angon",hands="Pteroslaver Finger Gauntlets"}
@@ -96,17 +86,17 @@ function init_gear_sets()
 	sets.precast.JA.Jump = {
         ammo="Ginsen",
 		head="Flamma Zucchetto +2",
-        neck="Ganesha's Mala",
+        neck="Anu Torque",
         ear1="Cessance Earring",
-        ear2="Tripudio Earring",
+        ear2="Sherida Earring",
 		body="Peltast's Plackart +1",
-        hands="Crusher Gauntlets",
+        hands="Flamma Manopolas +2",
         ring1="Niqmaddu Ring",
-        ring2="Flamma Ring",
+        ring2="Petrov Ring",
 		back="Bleating Mantle",
-        waist="Windbuffet Belt +1",
-        legs="Sulevia's Cuisses +1",
-        feet="Flamma Gambieras +1"
+        waist="Ioskeha Belt",
+        legs="Sulevia's Cuisses +2",
+        feet="Flamma Gambieras +2"
     }
 
 	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais" }
@@ -141,7 +131,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
 		body="Valorous Mail",
-        hands="Crusher Gauntlets",
+        hands="Flamma Manopolas +2",
         ring1="Dark Ring",
         ring2="K'ayres Ring",
         back="Updraft Mantle",
@@ -183,18 +173,17 @@ function init_gear_sets()
         ear1="Sherida Earring",
         ear2="Moonshade Earring",
 		body="Valorous Mail",
-        hands=Taeon.Hands,
+        hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
-        ring2="Karieyh Ring",
+        ring2="Flamma Ring",
 		back="Bleating Mantle",
         waist="Windbuffet Belt +1",
-        legs="Taeon Tights",
-        feet="Flamma Gambieras +1"
+        legs="Sulevia's Cuisses +2",
+        feet="Flamma Gambieras +2"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         back="Updraft Mantle",
         head="Valorous Mask",
-        legs="Acro Breeches"
     })
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
