@@ -201,7 +201,7 @@ function init_gear_sets()
         neck="Breeze Gorget",
         body="Valorous Mail",
         back="Buquwik Cape",
-        hands="Emicho Gauntlets",
+        hands="Sulevia's Gauntlets +2",
         waist="Windbuffet Belt +1",
         back="Updraft Mantle",
     })
@@ -211,8 +211,7 @@ function init_gear_sets()
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
 
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
-        hands="Emicho Gauntlets",
-        back="Rancorous Mantle",
+        hands="Flamma Manopolas +2",
         waist="Windbuffet Belt +1",
         feet="Thereoid Greaves"
     })
@@ -250,17 +249,17 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Sherida Earring",
 		body="Peltast's Plackart +1",
-        hands="Crusher Gauntlets",
+        hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
-        ring2="Karieyh Ring",
-		back="Bleating Mantle",
+        ring2="Flamma Ring",
+        back="Impassive Mantle",
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
         feet="Flamma Gambieras +2"
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
-        head="Sulevia's Mask +1",
+        head="Sulevia's Mask +2",
         neck="Lissome Necklace",
         body="Jumalik Mail",
         ear1="Etiolation Earring",
@@ -286,18 +285,18 @@ function init_gear_sets()
 	-- Defense sets
 	sets.defense.PDT = {
         ammo="Hasty Pinion +1",
-		head="Sulevia's Mask +1",
+		head="Sulevia's Mask +2",
         neck="Twilight Torque",
         ear1="Cessance Earring",
-        ear2="Tripudio Earring",
+        ear2="Sherida Earring",
         body="Jumalik Mail",
-        hands="Sulevia's Gauntlets +1",
+        hands="Sulevia's Gauntlets +2",
         ring1="Patricius Ring",
         ring2="Dark Ring",
         back="Impassive Mantle",
-        waist="Sarissaphoroi Belt",
-        legs="Sulevia's Cuisses +1",
-        feet="Amm Greaves"
+        waist="Ioskeha Belt",
+        legs="Sulevia's Cuisses +2",
+        feet="Sulevia's Leggings +2"
     }
 
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {
@@ -329,13 +328,13 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Cessance Earring",
         ear2="Sherida Earring",
-		body="Peltast's Plackart +1", -- 3%
-        hands="Emicho Gauntlets",
+        body="Valorous Mail",
+        hands="Flamma Manopolas +2",
         ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
         back="Bleating Mantle",
         waist="Ioskeha Belt",
-        legs="Taeon Tights", -- 6%
+        legs="Valorous Hose", -- 6%
         feet="Flamma Gambieras +2"
     }
 
@@ -346,34 +345,34 @@ function init_gear_sets()
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Lissome Necklace",
-        legs="Sulevia's Cuisses +1"
+        legs="Sulevia's Cuisses +2"
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
-        head="Sulevia's Mask +1",
+        head="Sulevia's Mask +2",
         neck="Twilight Torque",
         body="Jumalik Mail",
         ring1="Sulevia's Ring",
         ring2="Patricius Ring",
-        hands="Sulevia's Gauntlets +1",
-        waist="Sarissaphoroi Belt",
+        hands="Sulevia's Gauntlets +2",
+        waist="Ioskeha Belt",
         feet="Amm Greaves"
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
-        head="Ighwa Cap",
+        -- head="Ighwa Cap",
         ring2="Patricius Ring",
         body="Founder's Breastplate",
-        hands="Crusher Gauntlets",
+        -- hands="Crusher Gauntlets",
         back="Repulse Mantle",
-        legs="Cizin Breeches +1",
+        -- legs="Cizin Breeches +1",
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
-        head="Ighwa Cap",
+        -- head="Ighwa Cap",
         ring2="Patricius Ring",
-        body="Founder's Breastplate",
-        hands="Crusher Gauntlets",
+        -- body="Founder's Breastplate",
+        -- hands="Crusher Gauntlets",
         back="Repulse Mantle",
-        legs="Cizin Breeches +1",
+        -- legs="Cizin Breeches +1",
     })
 
     sets.engaged.War = set_combine(sets.engaged, {
