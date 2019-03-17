@@ -46,6 +46,7 @@ function job_setup()
         state.Buff.Overkill = buffactive.Overkill or false
         state.Buff['Double Shot'] = buffactive['Double Shot'] or false
 
+        state.FlurryMode = M{['description']='Flurry Mode', 'Normal', 'Hi'}
         -- settings
         state.CapacityMode = M(false, 'Capacity Point Mantle')
 
@@ -87,6 +88,7 @@ function user_setup()
         send_command('bind f9 gs c cycle RangedMode')
         send_command('bind !f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
+        send_command('bind @f9 gs c cycle FlurryMode')
         send_command('bind ^] gs c cycle WeaponskillMode')
         send_command('bind !- gs equip sets.crafting')
         send_command('bind ^- gs c cycle AutoRA')
@@ -950,12 +952,16 @@ function get_combat_weapon()
 end
 
 function get_custom_ranged_groups()
+    
     classes.CustomRangedGroups:clear()
     -- Flurry I = 265, Flurry II = 581
-    if buffactive[265] then
-        classes.CustomRangedGroups:append('F1')
-    elseif buffactive[581] then
-        classes.CustomRangedGroups:append('F2')
+    if buffactive['Flurry'] then
+        if state.FlurryMode.value == 'Hi' then
+            classes.CustomRangedGroups:append('F2')
+        else
+            classes.CustomRangedGroups:append('F1')
+        end
+
     end
     
     -- relic aftermath is just "Aftermath", while empy + mythic are numbered
@@ -969,6 +975,7 @@ function get_custom_ranged_groups()
         classes.CustomRangedGroups:append('AM2')
     end
 end
+
 function update_combat_form()
     state.CombatForm:reset()
     if S{'NIN', 'DNC'}:contains(player.sub_job) and rng_sub_weapons:contains(player.equipment.sub) then
