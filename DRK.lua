@@ -1054,15 +1054,15 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     -- Make sure abilities using head gear don't swap 
     if spell.type:lower() == 'weaponskill' then
         -- handle Gavialis Helm
-        if use_gavialis then
-            if is_sc_element_today(spell) then
-                if wsList:contains(spell.english) then
-                    -- do nothing
-                else
-                    equip(sets.WSDayBonus)
-                end
-            end
-        end
+        -- if use_gavialis then
+        --     if is_sc_element_today(spell) then
+        --         if wsList:contains(spell.english) then
+        --             -- do nothing
+        --         else
+        --             equip(sets.WSDayBonus)
+        --         end
+        --     end
+        -- end
         -- CP mantle must be worn when a mob dies, so make sure it's equipped for WS.
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)

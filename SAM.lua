@@ -209,7 +209,7 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
         neck="Aqua Gorget",
-        -- waist="Metalsinger Belt",
+        waist="Metalsinger Belt",
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
         --waist="Light Belt"
@@ -219,15 +219,16 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
+        head="Flamma Zucchetto +2",
         neck="Breeze Gorget",
-        waist="Thunder Belt"
+        ear1="Brutal Earring",
+        ear2="Moonshade Earring",
+        waist="Thunder Belt",
+        back=Smertrios.WS,
+        feet="Flamma Gambieras +2",
     })
-    sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS.Acc, {
-        neck="Breeze Gorget",
-        waist="Thunder Belt"
-    })
-    sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {
-    })
+    sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS['Tachi: Shoha'], {})
+    sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {})
     
     sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
@@ -241,10 +242,15 @@ function init_gear_sets()
         waist="Soil Belt",
     })
     -- CHR Mod
-    sets.precast.WS['Tachi: Ageha'] = {
-        --body="Unkai Domaru +2",
+    sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
+        head="Flamma Zucchetto +2",
+        body="Flamma Korazin +1",
+        hands="Flamma Manopolas +2",
+        feet="Flamma Gambieras +2",
+        back=Smertrios.WS,
+        legs="Hizamaru Hizayoroi +2",
         waist="Soil Belt",
-    }
+    })
     sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS['Tachi: Ageha']
     
     sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Flame Gorget",waist="Light Belt"})
@@ -370,7 +376,7 @@ function init_gear_sets()
         body="Kasuga Domaru +1",
         hands="Wakido Kote +2",
         ring1="Niqmaddu Ring", 
-        ring2="Flamma Ring", 
+        ring2="Petrov Ring", 
         back=Smertrios.TP,
         waist="Ioskeha Belt",
         legs="Kasuga Haidate +1",
@@ -381,6 +387,7 @@ function init_gear_sets()
         -- hands=Valorous.Hands.TP,
         body="Valorous Mail",
         legs="Ryuo Hakama",
+        ring2="Flamma Ring",
         --body="Kendatsuba Samue",
         --legs="Kendatsuba Hakama",
     })
