@@ -56,7 +56,7 @@ function user_setup()
 
     state.AutoRA = M{['description']='Auto RA', 'Normal', 'Shoot', 'WS' }
 
-    cor_sub_weapons = S{"Arendsi Fleuret", "Vanir Knife", "Sabebus", "Aphotic Kukri", "Atoyac", "Surcouf's Jambiya"}
+    cor_sub_weapons = S{"Tauret", "Arendsi Fleuret", "Vanir Knife", "Sabebus", "Aphotic Kukri", "Atoyac", "Surcouf's Jambiya"}
     auto_gun_ws = "Wildfire"
 
     get_combat_form()
@@ -104,7 +104,7 @@ function init_gear_sets()
 
     Camulus = {}
     Camulus.STP = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10','Phys. dmg. taken-10%',}}
-    Camulus.WSD = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+2','Weapon skill damage +10%',}}
+    Camulus.WSD = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
     Camulus.Snap = {name="Camulus's Mantle", augments={'"Snapshot"+10',}}
 
     HercFeet = {}
@@ -222,7 +222,7 @@ function init_gear_sets()
         body="Laksamana's Frac +2",
         ring1="Dingir Ring",
         ring2="Apate Ring",
-        legs="Meghanada Chausses +1",
+        legs="Meghanada Chausses +2",
         waist="Light Belt",
     })
 	sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
@@ -364,7 +364,7 @@ function init_gear_sets()
         body="Lanun Frac +3",
         hands="Meghanada Gloves +2",
         ring1="Meghanada Ring",
-        ring2="Defending Ring",
+        ring2="Roller's Ring",
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
@@ -403,7 +403,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back=Camulus.STP,
         waist="Flume Belt",
-        legs="Meghanada Chausses +1",
+        legs="Meghanada Chausses +2",
         feet="Meghanada Jambeaux +2"
     })
 
@@ -445,7 +445,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back=Camulus.STP,
         waist="Windbuffet Belt +1",
-        legs="Meghanada Chausses +1",
+        legs="Meghanada Chausses +2",
         feet=HercFeet.TP
     }
 
@@ -459,6 +459,7 @@ function init_gear_sets()
         back=Camulus.STP,
         feet="Taeon Boots"
     })
+    sets.engaged.DW.Melee = sets.engaged.DW
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
         waist="Olseni Belt",

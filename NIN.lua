@@ -272,7 +272,7 @@ function init_gear_sets()
         ring1="Shiva Ring",
         ring2="Dingir Ring",
         waist="Eschan Stone",
-        legs="Mummu Kecks +1",
+        legs="Herculean Trousers",
         feet=HercFeet.MAB
     }
     sets.Burst = set_combine(sets.midcast.ElementalNinjutsu, { hands="Hattori Tekko +1", feet=HercFeet.MAB})
@@ -833,17 +833,21 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         neck="Sanctity Necklace",
         body="Samnuha Coat",
-        hands="Leyline Gloves",
+        hands="Herculean Gloves",
         ring1="Garuda Ring",
         ring2="Dingir Ring",
-        legs="Shneddick Tights +1",
+        legs="Herculean Trousers",
         waist="Thunder Belt",
         feet=HercFeet.MAB
     })
     sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
-        ring1="Garuda Ring",
+        head="Herculean Helm",
+        neck="Sanctity Necklace",
+        hands="Adhemar Wristbands +1",
+        body="Herculean Vest",
+        ring1="Ilabrat Ring",
         ring2="Dingir Ring",
-        waist="Caudata Belt",
+        waist="Eschan Stone",
         legs="Hizamaru Hizayoroi +2",
         back=Andartia.AGI,
         feet=HercFeet.MAB

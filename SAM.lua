@@ -43,7 +43,7 @@ function job_setup()
     wsList = S{'Tachi: Fudo', 'Tachi: Shoha'}
 
     gear.RAarrow = {name="Eminent Arrow"}
-    LugraWSList = S{'Tachi: Fudo', 'Tachi: Shoha', 'Namas Arrow'}
+    LugraWSList = S{'Tachi: Fudo', 'Tachi: Shoha', 'Namas Arrow', 'Impulse Drive', 'Stardiver'}
 
     state.Buff.Sekkanoki = buffactive.sekkanoki or false
     state.Buff.Sengikori = buffactive.sengikori or false
@@ -217,6 +217,17 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
         head="Valorous Mask",
     })
+    sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
+        neck="Shadow Gorget",
+        waist="Metalsinger Belt",
+        hands="Ryuo Tekko",
+        hands="Flamma Manopolas +2",
+        feet="Thereoid Greaves"
+    })
+    sets.precast.WS['Impulse Drive'].Mid = set_combine(sets.precast.WS['Impulse Drive'], {
+        feet="Flamma Gambieras +2"
+    })
+    sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS['Impulse Drive'].Mid, {})
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
         head="Flamma Zucchetto +2",
@@ -229,6 +240,13 @@ function init_gear_sets()
     })
     sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS['Tachi: Shoha'], {})
     sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {})
+
+    sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS['Tachi: Shoha'], {
+        neck="Shadow Gorget",
+        waist="Soil Belt"
+    })
+    sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {})
+    sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS['Stardiver'].Mid, {})
     
     sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",

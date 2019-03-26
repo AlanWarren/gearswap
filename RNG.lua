@@ -57,15 +57,19 @@ function job_setup()
 
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
-        --gear.Bow = "Hangaku-no-Yumi"
+        gear.Xbox = "Gastraphetes"
+        
         rng_rema = S{'Annihilator', 'Armageddon', 'Fomalhaut', 'Gastraphetes', 'Yoichinoyumi', 'Gandiva', 'Fail-Not'}       
-        rng_sub_weapons = S{'Malevolence', 'Vanir Knife', 'Perun', 
-            'Eminent Axe', 'Odium', 'Aphotic Kukri', 'Atoyac'}
+        rng_sub_weapons = S{'Malevolence', 'Tauret', 'Perun +1', 
+            'Perun', 'Odium', 'Aphotic Kukri', 'Atoyac'}
         
         sam_sj = player.sub_job == 'SAM' or false
+        
+        state.GastraAmmo = M{['description']='Marksmenship Ammo', "Quelling Bolt", "Abrasion Bolt"}
+        state.GunAmmo = M{['description']='Gun Ammo', "Decimating Bullet", "Eradicating Bullet"}
 
-        DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"}
-        U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Achiyalabopa bullet"} 
+        DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = state.GunAmmo.current, [gear.Xbox] = state.GastraAmmo.current}
+        -- U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Eradicating Bullet"} 
 
         update_combat_form()
         get_combat_weapon()
@@ -148,8 +152,8 @@ function init_gear_sets()
 
         sets.precast.JA['Eagle Eye Shot'] = set_combine(sets.midcast.RA, {
             head="Meghanada Visor +2", 
-            ear1="Enervating Earring",
-            ear2="Sherida Earring",
+            ear1="Sherida Earring",
+            ear2="Enervating Earring",
             body="Meghanada Cuirie +2",
             back=Belenus.STP,
             hands="Meghanada Gloves +2",
@@ -179,6 +183,7 @@ function init_gear_sets()
         
         sets.idle = {
             --sub="Nusku Shield",
+            -- ammo=DefaultAmmo[player.equipment.range],
             head="Meghanada Visor +2",
             neck="Sanctity Necklace",
             ear1="Etiolation Earring",
@@ -246,15 +251,15 @@ function init_gear_sets()
         sets.engaged.Melee = {
             head="Herculean Helm",
             neck="Iskur Gorget",
-            ear1="Brutal Earring",
-            ear2="Sherida Earring",
+            ear1="Sherida Earring",
+            ear2="Brutal Earring",
             body="Mummu Jacket +2",
             hands="Adhemar Wristbands +1",
-            ring1="Ilabrat Ring",
+            ring1="Petrov Ring",
             ring2="Epona's Ring",
             back="Grounded Mantle +1",
             waist="Windbuffet Belt +1",
-            legs="Meghanada Chausses +1", 
+            legs="Meghanada Chausses +2", 
             feet=HercFeet.TP
         }
         sets.engaged.Bow.Melee = sets.engaged.Melee
@@ -271,8 +276,8 @@ function init_gear_sets()
 
         sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
             head="Herculean Helm",
-            neck="Lissome Necklace",
-            ear1="Sherida Earring",
+            neck="Scout's Gorget +2",
+            ear1="Suppanomimi",
             ear2="Eabani Earring",
             body="Mummu Jacket +2",
             hands="Floral Gauntlets",
@@ -280,8 +285,10 @@ function init_gear_sets()
             back=Belenus.STP,
             --back="Grounded Mantle +1",
             waist="Patentia Sash",
+            -- legs="Meghanada Chausses +2",
             legs="Carmine Cuisses +1",
             feet=HercFeet.TP
+            --feet="Taeon Boots"
         })
 
         ------------------------------------------------------------------
@@ -313,6 +320,8 @@ function init_gear_sets()
         -- Default Base Gear Sets for Ranged Attacks. Geared for Gun
         ------------------------------------------------------------------
         sets.midcast.RA = { 
+            -- ammo=DefaultAmmo[player.equipment.range],
+            ammo="Eradicating bullet",
             head="Arcadian Beret +3",
             neck="Scout's Gorget +2",
             ear1="Sherida Earring", 
@@ -444,7 +453,7 @@ function init_gear_sets()
             feet=HercFeet.MAB
         }
         sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {
-            body="Orion Jerkin +3",
+            -- body="Orion Jerkin +3",
             hands="Herculean Gloves",
         })
         sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
@@ -594,6 +603,20 @@ function init_gear_sets()
         sets.precast.WS['Refulgent Arrow'] = sets.precast.WS['Sidewinder']
         sets.precast.WS['Refulgent Arrow'].Mid = sets.precast.WS['Sidewinder'].Mid
         sets.precast.WS['Refulgent Arrow'].Acc = sets.precast.WS['Sidewinder'].Acc
+
+        sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+            head="Mummu Bonnet +2",
+            neck="Scout's Gorget +2",
+            ear1="Sherida Earring",
+            ear2="Moonshade Earring",
+            body="Mummu Jacket +2",
+            ring1="Ilabrat Ring",
+            ring2="Epona's Ring",
+            hands="Mummu Wrists +2",
+            back=Belenus.WSD,
+            legs="Samnuha Tights",
+            feet="Thereoid Greaves"
+        })
        
         -- Resting sets
         sets.resting = {}
@@ -606,8 +629,8 @@ function init_gear_sets()
         sets.buff.Barrage = {
             head="Arcadian Beret +3",
             neck="Scout's Gorget +2",
-            ear1="Enervating Earring",
-            ear2="Sherida Earring",
+            ear1="Sherida Earring",
+            ear2="Enervating Earring",
             body="Mummu Jacket +2",
             hands="Orion Bracers +1",
             ring1="Begrudging Ring",
@@ -682,10 +705,10 @@ function job_precast(spell, action, spellMap, eventArgs)
             end
         end
         -- Ammo checks
-        if spell.action_type == 'Ranged Attack' or
-          (spell.type == 'WeaponSkill' and (spell.skill == 'Marksmanship' or spell.skill == 'Archery')) then
-            check_ammo(spell, action, spellMap, eventArgs)
-        end
+        -- if spell.action_type == 'Ranged Attack' or
+        --   (spell.type == 'WeaponSkill' and (spell.skill == 'Marksmanship' or spell.skill == 'Archery')) then
+        --     check_ammo(spell, action, spellMap, eventArgs)
+        -- end
 end
  
 -- Run after the default precast() is done.

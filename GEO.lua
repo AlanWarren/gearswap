@@ -168,7 +168,7 @@ function init_gear_sets()
         hands="Geomancy Mitaines +1", -- 15
         body="Bagua Tunic", -- 10
         back="Lifestream Cape", -- 9
-        legs="Geomancy Pants +1",
+        legs="Lengo Pants",
         feet="Umbani Boots"
     }
 

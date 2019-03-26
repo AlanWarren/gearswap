@@ -105,10 +105,10 @@ function init_gear_sets()
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
     }) 
 	sets.precast.JA['Soul Jump'] = set_combine(sets.precast.JA.Jump, {
-        legs="Lancer's Cuissots +2"
+        legs="Peltast's Cuissots +1"
     })
 	sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA.Jump, {
-        legs="Lancer's Cuissots +2"
+        legs="Peltast's Cuissots +1"
         --feet="Lancer's Schynbalds +2"
     })
 	sets.precast.JA['Super Jump'] = sets.precast.JA.Jump
@@ -129,11 +129,9 @@ function init_gear_sets()
 		head="Wyrm Armet",
         neck="Lancer's Torque",
         ear1="Cessance Earring",
-        ear2="Tripudio Earring",
+        ear2="Sherida Earring",
 		body="Valorous Mail",
         hands="Flamma Manopolas +2",
-        ring1="Dark Ring",
-        ring2="K'ayres Ring",
         back="Updraft Mantle",
         waist="Glassblower's Belt",
         legs="Vishap Brais",
@@ -201,7 +199,6 @@ function init_gear_sets()
         neck="Breeze Gorget",
         body="Valorous Mail",
         back="Buquwik Cape",
-        hands="Emicho Gauntlets",
         waist="Windbuffet Belt +1",
         back="Updraft Mantle",
     })
@@ -211,7 +208,6 @@ function init_gear_sets()
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
 
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
-        hands="Emicho Gauntlets",
         back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
         feet="Thereoid Greaves"
@@ -220,6 +216,18 @@ function init_gear_sets()
         back="Updraft Mantle",
     })
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
+    
+    sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
+        back="Rancorous Mantle",
+        waist="Windbuffet Belt +1",
+        legs="Peltast's Cuissots +1",
+        feet="Thereoid Greaves"
+    })
+	sets.precast.WS['Impulse Drive'].Mid = set_combine(sets.precast.WS['Impulse Drive'], {
+        back="Updraft Mantle",
+    })
+	sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS['Impulse Drive'].Mid, {
+    })
 
 	
 	-- Sets to return to when not performing an action.
