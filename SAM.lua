@@ -100,7 +100,7 @@ function init_gear_sets()
     
     Smertrios = {}
     Smertrios.TP = {name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-4%',}}
-    Smertrios.WS = {name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    Smertrios.WS = {name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     -- Precast Sets
     -- Precast sets to enhance JAs
     sets.precast.JA.Meditate = {
@@ -124,7 +124,7 @@ function init_gear_sets()
 
     sets.Organizer = {
         main="Tsurumaru",
-        sub="Bloodrain Strap",
+        sub="Utu Grip",
         range="Yoichinoyumi",
         ammo="Cibitshavore",
         back="Takaha Mantle"
@@ -385,7 +385,7 @@ function init_gear_sets()
     -- I generally use Anahera outside of Adoulin areas, so this set aims for 47 STP + 5 from Anahera (52 total)
     -- Note, this set assumes use of Cibitshavore (hence the arrow as ammo)
     sets.engaged = {
-        sub="Bloodrain Grip",
+        sub="Utu Grip",
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
         neck="Moonbeam Nodowa",
@@ -422,7 +422,7 @@ function init_gear_sets()
     })
     
     sets.engaged.Yoichi = set_combine(sets.engaged, { 
-        sub="Bloodrain Strap",
+        sub="Utu Grip",
         ammo=gear.RAarrow
     })
     
@@ -450,7 +450,7 @@ function init_gear_sets()
     })
     
     sets.engaged.Yoichi.PDT = set_combine(sets.engaged.PDT,  {
-        sub="Bloodrain Strap",
+        sub="Utu Grip",
         ammo=gear.RAarrow
     })
     
@@ -467,7 +467,7 @@ function init_gear_sets()
     })
     
     sets.engaged.Reraise.Yoichi = set_combine(sets.engaged.Reraise, {
-        sub="Bloodrain Strap",
+        sub="Utu Grip",
         ammo=gear.RAarrow
     })
     
@@ -478,7 +478,7 @@ function init_gear_sets()
     })
     
     sets.engaged.Acc.Reraise.Yoichi = set_combine(sets.engaged.Acc.Reraise, {
-        sub="Bloodrain Strap",
+        sub="Utu Grip",
         ammo=gear.RAarrow
     })
     	

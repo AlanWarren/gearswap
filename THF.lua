@@ -404,6 +404,14 @@ function init_gear_sets()
         ring1="Meghanada Ring",
         ring2="Paguroidea Ring",
     })
+    sets.idle.PDT = set_combine(sets.idle, {
+        head="Meghanada Visor +2",
+        body="Meghanada Cuirie +2",
+        hands="Meghanada Gloves +2",
+        legs="Mummu Kecks +2",
+        ring1="Dark Ring",
+        ring2="Defending Ring"
+    })
 
     sets.idle.Weak = sets.idle
 
@@ -711,6 +719,9 @@ end
 function customize_idle_set(idleSet)
     if player.hpp < 80 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
+    end
+    if state.HybridMode.value == 'PDT' then
+        idleSet = set_combine(idleSet, sets.idle.PDT)
     end
     return idleSet
 end

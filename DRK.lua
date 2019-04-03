@@ -194,7 +194,7 @@ function init_gear_sets()
         ring1="Apocalypse",
         ring2="Loyalist Sabatons",
         ear2="Reraise Earring",
-        neck="Bloodrain Strap",
+        neck="Utu Grip",
         grip="Pole Grip",
         waist="Mes. Haubergeon",
         back=Niht.DarkMagic,

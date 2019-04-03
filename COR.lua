@@ -108,9 +108,12 @@ function init_gear_sets()
     Camulus.Snap = {name="Camulus's Mantle", augments={'"Snapshot"+10',}}
 
     HercFeet = {}
+    HercHead = {}
     --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
     HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
+    HercHead.MAB = { name="Herculean Helm", augments={'Accuracy+6','Weapon skill damage +5%','INT+1','"Mag.Atk.Bns."+10',}}
+    HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
 
 	sets.precast.CorsairRoll = {
         head="Lanun Tricorne +1",
@@ -159,7 +162,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	sets.precast.FC = {
         --ammo="Impatiens",
-        head="Herculean Helm",
+        head=HercHead.TP,
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
         ring1="Prolix Ring",
@@ -237,7 +240,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
-        head="Mummu Bonnet +2",
+        head=HercHead.MAB,
         neck="Sanctity Necklace",
         ear1="Ishvara Earring",
         ear2="Friomisi Earring",
@@ -435,7 +438,7 @@ function init_gear_sets()
     }
 	-- Normal melee group
 	sets.engaged.Melee = {
-        head="Herculean Helm",
+        head=HercHead.TP,
         neck="Lissome Necklace",
         ear1="Brutal Earring",
         ear2="Cessance Earring",

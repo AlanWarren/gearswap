@@ -113,6 +113,8 @@ function file_unload()
 end
  
 function init_gear_sets()
+        
+        sets.Obi = { waist="Korin Obi" }
         -- Augmented gear
         TaeonHands = {}
         TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
@@ -122,14 +124,19 @@ function init_gear_sets()
         TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
         
         HercFeet = {}
+        HercHead = {}
         --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
        -- HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
         HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
         HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
+        --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
+        HercHead.MAB = { name="Herculean Helm", augments={'Accuracy+6','Weapon skill damage +5%','INT+1','"Mag.Atk.Bns."+10',}}
+        HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
 
         Belenus = {}
         Belenus.STP = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Damage taken-5%',}}
         Belenus.WSD = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
+        Belenus.TF  = { name="Belenus's Cape", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+2','Weapon skill damage +10%',}}
         Belenus.Snap = {name="Belenus's Cape", augments={'"Snapshot"+10',}}
 
         sets.Organizer = {
@@ -171,7 +178,7 @@ function init_gear_sets()
         })
 
         sets.precast.FC = {
-            head="Herculean Helm",
+            head=HercHead.TP,
             ear1="Etiolation Earring",
             ear2="Loquacious Earring",
             body="Dread Jupon",
@@ -189,12 +196,12 @@ function init_gear_sets()
             ear1="Etiolation Earring",
             ear2="Eabani Earring",
             body="Meghanada Cuirie +2",
-            hands="Meghanada Gloves +2",
+            hands="Oshosi Gloves",
             ring1="Meghanada Ring",
             ring2="Defending Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
-            legs="Mummu Kecks +2",
+            legs="Oshosi Trousers",
             feet="Jute Boots +1" -- 10
         }
         sets.idle.Regen = set_combine(sets.idle, {
@@ -249,8 +256,8 @@ function init_gear_sets()
         sets.engaged.Bow = set_combine(sets.engaged, {})
 
         sets.engaged.Melee = {
-            head="Herculean Helm",
-            neck="Iskur Gorget",
+            head=HercHead.TP,
+            neck="Asperity Necklace",
             ear1="Sherida Earring",
             ear2="Brutal Earring",
             body="Mummu Jacket +2",
@@ -275,8 +282,8 @@ function init_gear_sets()
         sets.engaged.DW = sets.engaged
 
         sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
-            head="Herculean Helm",
-            neck="Scout's Gorget +2",
+            head=HercHead.TP,
+            neck="Asperity Necklace",
             ear1="Suppanomimi",
             ear2="Eabani Earring",
             body="Mummu Jacket +2",
@@ -349,13 +356,22 @@ function init_gear_sets()
             feet="Mummu Gamashes +2"
         })
         sets.midcast.RA.DoubleShot = set_combine(sets.midcast.RA, {
+            hands="Oshosi Gloves",
+            legs="Oshosi Trousers",
             body="Arcadian Jerkin +3", 
+            feet="Oshosi Leggings"
         })
         sets.midcast.RA.DoubleShot.Mid = set_combine(sets.midcast.RA.Mid, {
+            hands="Oshosi Gloves",
+            legs="Oshosi Trousers",
             body="Arcadian Jerkin +3", 
+            feet="Oshosi Leggings"
         })
         sets.midcast.RA.DoubleShot.Acc = set_combine(sets.midcast.RA.Acc, {
+            hands="Oshosi Gloves",
+            legs="Oshosi Trousers",
             body="Arcadian Jerkin +3", 
+            feet="Oshosi Leggings"
         })
 
         -- sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {
@@ -392,6 +408,7 @@ function init_gear_sets()
        
         -- Weaponskill sets  
         sets.precast.WS = {
+            ammo="Eradicating bullet",
             head="Orion Beret +3",
             neck="Scout's Gorget +2",
             ear1="Sherida Earring",
@@ -415,7 +432,7 @@ function init_gear_sets()
 
         -- WILDFIRE
         sets.precast.WS['Wildfire'] = {
-            head="Orion Beret +3",
+            head=HercHead.MAB,
             ear1="Friomisi Earring",
             ear2="Crematio Earring",
             neck="Scout's Gorget +2",
@@ -423,7 +440,7 @@ function init_gear_sets()
             body="Samnuha Coat",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
-            back=Belenus.WSD,
+            back=Belenus.TF,
             waist="Eschan Stone",
             legs="Herculean Trousers", 
             feet=HercFeet.MAB
@@ -439,7 +456,7 @@ function init_gear_sets()
         })
         
         sets.precast.WS['Trueflight'] = {
-            head="Orion Beret +3",
+            head=HercHead.MAB,
             ear1="Friomisi Earring",
             ear2="Moonshade Earring",
             neck="Scout's Gorget +2",
@@ -447,7 +464,7 @@ function init_gear_sets()
             body="Samnuha Coat",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
-            back=Belenus.WSD,
+            back=Belenus.TF,
             waist="Eschan Stone",
             legs="Herculean Trousers",
             feet=HercFeet.MAB
@@ -721,6 +738,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip(sets.Overkill.Preshot)
     end
     if spell.type == 'WeaponSkill' then
+        if spell.english == 'Trueflight' then
+            if world.weather_element == 'Light' or world.day_element == 'Light' then
+                equip(sets.Obi)
+            end
+        end
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
