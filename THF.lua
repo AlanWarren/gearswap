@@ -77,10 +77,13 @@ function init_gear_sets()
     TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+8'}}
 
     HercFeet = {}
-    HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
-    --HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Magic burst dmg.+4%','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
+    HercHead = {}
+    
     HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
+    --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
+    HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
+    HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
 
     Toutatis = {}
     Toutatis.STP = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
@@ -113,7 +116,7 @@ function init_gear_sets()
 
     sets.buff['Trick Attack'] = {
         ammo="Tengu-no-hane",
-        head="Herculean Helm",
+        head=HercHead.TP,
         neck="Moepapa Medal",
         ear2="Sherida Earring",
         body="Mummu Jacket +2",
@@ -151,7 +154,7 @@ function init_gear_sets()
     }
     -- TH actions
     sets.precast.Step = {
-        head="Herculean Helm",
+        head=HercHead.TP,
         neck="Assassin's Gorget +1",
         ear1="Brutal Earring",
         ear2="Sherida Earring",
@@ -168,7 +171,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {
         --ammo="Impatiens",
-        head="Herculean Helm",
+        head=HercHead.TP,
         ear1="Loquacious Earring",
         hands="Leyline Gloves",
         body="Dread Jupon",
@@ -205,7 +208,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Herculean Helm",
+        head=HercHead.TP,
         neck="Moepapa Medal",
         ear1="Moonshade Earring",
         ear2="Ishvara Earring",
@@ -285,7 +288,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'].Mid, {neck="Shadow Gorget"})
 
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-        head="Herculean Helm",
+        head=HercHead.MAB,
         neck="Aqua Gorget",
         ear2="Sherida Earring",
         body="Herculean Vest",
@@ -321,7 +324,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {
-        head="Herculean Helm", 
+        head=HercHead.MAB,
         neck="Breeze Gorget",
         ear1="Brutal Earring",
         ear2="Sherida Earring", 
@@ -330,7 +333,7 @@ function init_gear_sets()
         ring2="Rajas Ring",
         legs="Pillager's culottes +3",
     })
-    sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head="Herculean Helm"})
+    sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {head=HercHead.TP})
     sets.precast.WS['Shark Bite'].Mid = set_combine(sets.precast.WS['Shark Bite'], {waist="Thunder Belt"})
     sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget", ring1="Ramuh Ring"})
     sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
@@ -338,12 +341,12 @@ function init_gear_sets()
 
     sets.precast.WS['Aeolian Edge'] = {
         neck="Sanctity Necklace",
-        head="Herculean Helm",
+        head=HercHead.MAB, 
         body="Samnuha Coat",
         hands="Leyline Gloves",
         ring1="Mummu Ring",
         ring2="Dingir Ring",
-        back="Argochampsa Mantle",
+        back="Toro Cape",
         waist="Thunder Belt",
         legs="Limbo Trousers",
         feet=HercFeet.MAB
@@ -374,7 +377,7 @@ function init_gear_sets()
         ear1="Eabani Earring",
         ear2="Etiolation Earring",
         body="Meghanada Cuirie +2",
-        hands="Meghanada Gloves +2",
+        hands="Regal Gloves",
         ring1="Meghanada Ring",
         ring2="Paguroidea Ring",
         back="Solemnity Cape",
@@ -384,12 +387,12 @@ function init_gear_sets()
     }
 
     sets.idle.Town = set_combine(sets.idle, {
-        head="Herculean Helm",
+        head=HercHead.TP,
         neck="Assassin's Gorget +1",
         ear1="Dedition Earring",
         ear2="Sherida Earring",
         body="Pillager's Vest +2",
-        hands="Adhemar Wristbands +1",
+        hands="Regal Gloves",
         ring1="Ilabrat Ring",
         ring2="Epona's Ring",
         legs="Pillager's culottes +3",
@@ -399,7 +402,7 @@ function init_gear_sets()
 
     sets.idle.Regen = set_combine(sets.idle, {
         head="Meghanada Visor +2",
-        hands="Meghanada Gloves +2",
+        hands="Regal Gloves",
         body="Meghanada Cuirie +2",
         ring1="Meghanada Ring",
         ring2="Paguroidea Ring",
@@ -418,7 +421,7 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {
-        head="Herculean Helm",
+        head=HercHead.TP,
         neck="Twilight Torque",
         body="Emet Harness +1",
         hands="Herculean Gloves",
@@ -453,7 +456,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
         ammo="Yamarang",
-        head="Herculean Helm",
+        head=HercHead.TP,
         neck="Anu Torque",
         ear1="Eabani Earring",
         ear2="Suppanomimi",
@@ -540,6 +543,7 @@ function init_gear_sets()
     sets.engaged.Haste_30 = set_combine(sets.engaged, {
         body="Pillager's Vest +2",
         hands="Adhemar Wristbands +1",
+        -- hands="Regal Gloves",
         -- ear1="Sherida Earring",
         -- ear2="Suppanomimi",
         back=Toutatis.STP,
@@ -578,7 +582,7 @@ function init_gear_sets()
 
     -- Haste 43%
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
-        head="Herculean Helm",
+        head=HercHead.TP,
         neck="Anu Torque",
         ear1="Dedition Earring",
         ear2="Sherida Earring",

@@ -172,7 +172,7 @@ function init_gear_sets()
     Ankou = {}
     Ankou.FC  = { name="Ankou's Mantle", augments={'"Fast Cast"+10',}}
     Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}}
-    Ankou.DA  = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}
+    Ankou.DA  = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-4%',}}
     Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     Ankou.VIT = { name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
 
@@ -747,10 +747,10 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Brutal Earring",
         body="Valorous Mail",
-        hands="Flamma Manopolas +2",
+        hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
-        back=Ankou.STP,
+        back=Ankou.DA,
         waist="Ioskeha Belt",
         legs="Ignominy Flanchard +3",
         feet="Flamma Gambieras +2"

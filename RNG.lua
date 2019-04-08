@@ -130,13 +130,17 @@ function init_gear_sets()
         HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
         HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
         --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
-        HercHead.MAB = { name="Herculean Helm", augments={'Accuracy+6','Weapon skill damage +5%','INT+1','"Mag.Atk.Bns."+10',}}
+        HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
         HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
+
+        AdhemarLegs = {}
+        AdhemarLegs.Snap = { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}}
+        AdhemarLegs.TP = { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
 
         Belenus = {}
         Belenus.STP = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Damage taken-5%',}}
         Belenus.WSD = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
-        Belenus.TF  = { name="Belenus's Cape", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+2','Weapon skill damage +10%',}}
+        Belenus.TF  = { name="Belenus's Cape", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+9','Weapon skill damage +10%',}}
         Belenus.Snap = {name="Belenus's Cape", augments={'"Snapshot"+10',}}
 
         sets.Organizer = {
@@ -196,7 +200,7 @@ function init_gear_sets()
             ear1="Etiolation Earring",
             ear2="Eabani Earring",
             body="Meghanada Cuirie +2",
-            hands="Oshosi Gloves",
+            hands="Regal Gloves",
             ring1="Meghanada Ring",
             ring2="Defending Ring",
             back=Belenus.STP,
@@ -226,7 +230,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ring1="Ilabrat Ring",
             ring2="Dingir Ring",
-            hands="Adhemar Wristbands +1",
+            hands="Regal Gloves",
             back=Belenus.STP,
             legs="Carmine Cuisses +1",
             feet="Arcadian Socks +3"
@@ -239,7 +243,7 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Meghanada Cuirie +2",
-            hands="Meghanada Gloves +2",
+            hands="Regal Gloves",
             ring1="Dark Ring",
             ring2="Defending Ring",
             waist="Flume Belt",
@@ -310,7 +314,7 @@ function init_gear_sets()
             body="Amini Caban +1", -- 7% VS
             hands="Carmine Finger Gauntlets +1",
             back=Belenus.Snap, -- 2% VS / 10 snap (for now)
-            legs="Adhemar Kecks", -- 9
+            legs=AdhemarLegs.Snap, -- 9
             waist="Impulse Belt", -- 2
             feet="Meghanada Jambeaux +2" -- 10
         }
@@ -345,12 +349,12 @@ function init_gear_sets()
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             ear2="Enervating Earring",
             body="Orion Jerkin +3", 
-            legs="Adhemar Kecks", 
+            legs=AdhemarLegs.TP, 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             head="Meghanada Visor +2",
             neck="Scout's Gorget +2",
-            hands="Meghanada Gloves +2",
+            -- hands="Meghanada Gloves +2",
             ring1="Cacoethic Ring +1",
             legs="Mummu Kecks +2",
             feet="Mummu Gamashes +2"
@@ -398,7 +402,7 @@ function init_gear_sets()
         }
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             hands="Adhemar Wristbands +1",
-            legs="Adhemar Kecks",
+            legs=AdhemarLegs.TP,
         })
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
             hands="Meghanada Gloves +2",
@@ -427,7 +431,7 @@ function init_gear_sets()
         })
         sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
             body="Orion Jerkin +3",
-            legs="Adhemar Kecks",
+            legs=AdhemarLegs.TP,
         })
 
         -- WILDFIRE
@@ -476,7 +480,7 @@ function init_gear_sets()
         sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
             --head="Mummu Bonnet +2",
             --body="Mummu Jacket +2",
-            legs="Mummu Kecks +2",
+            -- legs="Mummu Kecks +2",
             -- hands="Mummu Wrists +2",
         })
 

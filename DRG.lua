@@ -303,7 +303,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Dark Ring",
         back="Impassive Mantle",
-        waist="Sarissaphoroi Belt",
+        waist="Sailfi Belt +1",
         legs="Sulevia's Cuisses +1",
         feet="Amm Greaves"
     }
@@ -364,7 +364,7 @@ function init_gear_sets()
         ring1="Sulevia's Ring",
         ring2="Patricius Ring",
         hands="Sulevia's Gauntlets +1",
-        waist="Sarissaphoroi Belt",
+        waist="Sailfi Belt +1",
         feet="Amm Greaves"
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {

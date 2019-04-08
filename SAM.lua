@@ -99,7 +99,7 @@ function init_gear_sets()
     Valorous.Hands.WS = { name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%','Accuracy+6',}}
     
     Smertrios = {}
-    Smertrios.TP = {name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-4%',}}
+    Smertrios.TP = {name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
     Smertrios.WS = {name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     -- Precast Sets
     -- Precast sets to enhance JAs
