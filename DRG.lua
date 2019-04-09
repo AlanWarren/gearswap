@@ -21,8 +21,8 @@ function job_setup()
     
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 	
-    -- list of weaponskills that make better use of otomi helm in low acc situations
-    wsList = S{'Drakesbane'}
+    -- list of weaponskills that make better use of Gavialis helm
+    wsList = S{'Stardiver'}
 
 	state.Buff = {}
 	-- JA IDs for actions that always have TH: Provoke, Animated Flourish
@@ -65,9 +65,6 @@ function init_gear_sets()
 	--------------------------------------
 	-- Start defining the sets
 	--------------------------------------
-    Taeon = {}
-    Taeon.Hands = {name="Taeon Gloves", augments={'STR+9','Accuracy+17 Attack+17','"Triple Atk."+2'}}
-
 	-- Precast Sets
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Angon = {ammo="Angon",hands="Pteroslaver Finger Gauntlets"}
@@ -80,15 +77,14 @@ function init_gear_sets()
         sub="Bloodrain Strap",
         range="Upukirex",
         back="Updraft Mantle",
-        legs="Taeon Gloves",
     }
 
 	sets.precast.JA.Jump = {
         ammo="Ginsen",
 		head="Flamma Zucchetto +2",
         neck="Anu Torque",
-        ear1="Cessance Earring",
-        ear2="Sherida Earring",
+        ear1="Sherida Earring",
+        ear2="Cessance Earring",
 		body="Peltast's Plackart +1",
         hands="Flamma Manopolas +2",
         ring1="Niqmaddu Ring",
@@ -128,8 +124,8 @@ function init_gear_sets()
         ammo="Ginsen",
 		head="Wyrm Armet",
         neck="Lancer's Torque",
-        ear1="Cessance Earring",
-        ear2="Sherida Earring",
+        ear1="Sherida Earring",
+        ear2="Cessance Earring",
 		body="Valorous Mail",
         hands="Flamma Manopolas +2",
         back="Updraft Mantle",
@@ -197,10 +193,12 @@ function init_gear_sets()
 
     sets.precast.WS["Camlann's Torment"] = set_combine(sets.precast.WS, {
         neck="Breeze Gorget",
+        ear1="Ishvara Earring",
         body="Valorous Mail",
         back="Buquwik Cape",
         waist="Windbuffet Belt +1",
         back="Updraft Mantle",
+        feet="Sulevia's Leggings +2"
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
         back="Updraft Mantle",
@@ -208,8 +206,9 @@ function init_gear_sets()
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
 
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
-        back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
+        hands="Flamma Manopolas +2",
+        legs="Peltast's Cuissots +1",
         feet="Thereoid Greaves"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
@@ -218,8 +217,9 @@ function init_gear_sets()
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
     
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
-        back="Rancorous Mantle",
         waist="Windbuffet Belt +1",
+        ear1="Sherida Earring",
+        hands="Flamma Manopolas +2",
         legs="Peltast's Cuissots +1",
         feet="Thereoid Greaves"
     })
@@ -236,8 +236,8 @@ function init_gear_sets()
 	sets.resting = {
         head="Twilight Helm",
         neck="Twilight Torque",
-        ear1="Cessance Earring",
-        ear2="Sherida Earring",
+        ear1="Sherida Earring",
+        ear2="Cessance Earring",
 		body="Twilight Mail",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -254,23 +254,23 @@ function init_gear_sets()
 	sets.idle.Town = {
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
-        neck="Ganesha's Mala",
-        ear1="Cessance Earring",
-        ear2="Sherida Earring",
+        neck="Anu Torque",
+        ear1="Sherida Earring",
+        ear2="Cessance Earring",
 		body="Peltast's Plackart +1",
-        hands="Crusher Gauntlets",
+        hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
-        ring2="Karieyh Ring",
-		back="Bleating Mantle",
+        ring2="Defending Ring",
+		back="Updraft Mantle",
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
         feet="Flamma Gambieras +2"
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
-        head="Sulevia's Mask +1",
-        neck="Lissome Necklace",
-        body="Jumalik Mail",
+        head="Sulevia's Mask +2",
+        neck="Sanctity Necklace",
+        body="Sulevia's Platemail +2",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         hands="Sulevia's Gauntlets +2",
@@ -278,12 +278,13 @@ function init_gear_sets()
         ring2="Defending Ring",
         waist="Flume Belt",
         back="Impassive Mantle",
+        feet="Sulevia's Leggings +2"
     })
 
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="Valorous Mask",
 		body="Kumarbi's Akar",
-        neck="Lissome Necklace",
+        neck="Sanctity Necklace",
     })
 
 	sets.idle.Weak = set_combine(sets.idle.Field, {
@@ -293,19 +294,19 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = {
-        ammo="Hasty Pinion +1",
-		head="Sulevia's Mask +1",
+        -- ammo="Hasty Pinion +1",
+		head="Sulevia's Mask +2",
         neck="Twilight Torque",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
         body="Jumalik Mail",
-        hands="Sulevia's Gauntlets +1",
+        hands="Sulevia's Gauntlets +2",
         ring1="Patricius Ring",
         ring2="Dark Ring",
         back="Impassive Mantle",
         waist="Sailfi Belt +1",
-        legs="Sulevia's Cuisses +1",
-        feet="Amm Greaves"
+        legs="Sulevia's Cuisses +2",
+        feet="Sulevia's Leggings +2"
     }
 
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {
@@ -334,63 +335,58 @@ function init_gear_sets()
 	sets.engaged = {
         ammo="Ginsen",
 		head="Flamma Zucchetto +2",
-        neck="Ganesha's Mala",
-        ear1="Cessance Earring",
-        ear2="Sherida Earring",
-		body="Peltast's Plackart +1", -- 3%
-        hands="Emicho Gauntlets",
+        neck="Anu Torque",
+        ear1="Sherida Earring",
+        ear2="Brutal Earring",
+		body="Valorous Mail", 
+        hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
-        ring2="Flamma Ring",
+        ring2="Petrov Ring",
         back="Bleating Mantle",
         waist="Ioskeha Belt",
-        legs="Taeon Tights", -- 6%
+        legs="Valorous Hose", -- 6%
         feet="Flamma Gambieras +2"
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
-        body="Valorous Mail",
-        legs="Carmine Cuisses +1",
+        ear1="Cessance Earring",
+        ring2="Flamma Ring",
+        back="Updraft Mantle",
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Lissome Necklace",
-        legs="Sulevia's Cuisses +1"
+        legs="Sulevia's Cuisses +2"
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
-        head="Sulevia's Mask +1",
+        head="Sulevia's Mask +2",
         neck="Twilight Torque",
         body="Jumalik Mail",
         ring1="Sulevia's Ring",
         ring2="Patricius Ring",
-        hands="Sulevia's Gauntlets +1",
+        hands="Sulevia's Gauntlets +2",
         waist="Sailfi Belt +1",
         feet="Amm Greaves"
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
-        head="Ighwa Cap",
         ring2="Patricius Ring",
         body="Founder's Breastplate",
-        hands="Crusher Gauntlets",
         back="Repulse Mantle",
-        legs="Cizin Breeches +1",
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
-        head="Ighwa Cap",
         ring2="Patricius Ring",
         body="Founder's Breastplate",
-        hands="Crusher Gauntlets",
         back="Repulse Mantle",
-        legs="Cizin Breeches +1",
     })
 
     sets.engaged.War = set_combine(sets.engaged, {
-        hands="Emicho Gauntlets",
-        neck="Asperity Necklace",
+        hands="Flamma Manopolas +2",
+        neck="Anu Torque",
         ring2="Petrov Ring"
     })
     sets.engaged.War.Mid = set_combine(sets.engaged.Mid, {
-        neck="Defiant Collar",
+        -- neck="Defiant Collar",
     })
 
 	sets.engaged.Reraise = set_combine(sets.engaged, {

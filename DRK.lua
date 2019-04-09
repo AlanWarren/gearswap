@@ -631,6 +631,7 @@ function init_gear_sets()
 
     sets.idle.Field = set_combine(sets.idle.Town, {
         head="Ratri Sallet",
+        neck="Sanctity Necklace",
         body="Sulevia's Platemail +2",
     })
     sets.idle.Regen = set_combine(sets.idle.Field, {
