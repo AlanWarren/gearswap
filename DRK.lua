@@ -176,7 +176,7 @@ function init_gear_sets()
     Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     Ankou.VIT = { name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
 
-    sets.TreasureHunter = { waist="Chaac Belt" }
+    sets.TreasureHunter = { head="White rarab cap +1", waist="Chaac Belt" }
 
     Odyssean = {}
     Odyssean.Legs = {}
@@ -499,6 +499,11 @@ function init_gear_sets()
     sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
         body="Fallen's Cuirass +3",
         waist="Olseni Belt",
+    })
+
+    sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS.Catastrophe, {
+        head="Valorous Mask",
+        feet="Sulevia's Leggings +2"
     })
 
     -- CROSS REAPER

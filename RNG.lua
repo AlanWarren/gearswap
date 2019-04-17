@@ -200,7 +200,7 @@ function init_gear_sets()
             ear1="Etiolation Earring",
             ear2="Eabani Earring",
             body="Meghanada Cuirie +2",
-            hands="Regal Gloves",
+            hands="Oshosi Gloves",
             ring1="Meghanada Ring",
             ring2="Defending Ring",
             back=Belenus.STP,

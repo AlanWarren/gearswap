@@ -199,7 +199,7 @@ function init_gear_sets()
         head="Jhakri Coronal +1",
         neck="Mizukage-no-Kubikazari",
         ear1="Friomisi Earring",
-        ear2="Crematio Earring",
+        ear2="Regal Earring",
         body="Jhakri Robe +1",
         hands="Amalric Gages", 
         ring1="Shiva Ring",
@@ -213,7 +213,7 @@ function init_gear_sets()
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
         ear1="Friomisi Earring",
         neck="Erra Pendant",
-        ear2="Gwati Earring", 
+        -- ear2="Gwati Earring", 
         hands="Amalric Gages", 
         --feet="Bokwus Boots"
     })
@@ -226,7 +226,7 @@ function init_gear_sets()
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
         main="Grioavolr",
         sub="Enki Strap",
-        ear2="Crematio Earring",
+        ear1="Crematio Earring",
         head="Mallquis Chapeau +1",
         hands="Mallquis Cuffs +1",
         body="Mallquis Saio +1",
@@ -237,7 +237,7 @@ function init_gear_sets()
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
         ear1="Friomisi Earring",
-        ear2="Gwati Earring", 
+        ear2="Regal Earring",
         neck="Erra Pendant",
         legs="Merlinic Shalwar",
         ring1="Sangoma Ring",

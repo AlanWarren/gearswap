@@ -100,7 +100,7 @@ function init_gear_sets()
     }
 
 	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais" }
-	sets.TreasureHunter = {waist="Chaac Belt"}
+	sets.TreasureHunter = {head="White rarab cap +1", waist="Chaac Belt"}
 
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
     }) 

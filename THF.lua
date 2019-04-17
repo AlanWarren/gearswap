@@ -89,7 +89,7 @@ function init_gear_sets()
     Toutatis.STP = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
     Toutatis.WSD = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
-    sets.TreasureHunter = {hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
+    sets.TreasureHunter = {head="White rarab cap +1", hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
     sets.CapacityMantle = {back="Mecistopins Mantle"}
 

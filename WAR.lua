@@ -139,6 +139,7 @@ function init_gear_sets()
          feet="Ejekamal Boots"
      }
      sets.midcast.RA = {
+         head="White rarab cap +1",
          neck="Iqabi Necklace",
          ear2="Tripudio Earring",
          hands="Buremte Gloves",

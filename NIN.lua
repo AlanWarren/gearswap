@@ -137,7 +137,6 @@ function init_gear_sets()
 
     -- Waltz (chr and vit)
     sets.precast.Waltz = {
-        head="Hachiya Hatsuburi +1",
         hands="Herculean Gloves",
         waist="Chaac Belt",
         legs="Nahtirah Trousers",
@@ -169,7 +168,7 @@ function init_gear_sets()
     --------------------------------------
     -- Utility Sets for rules below
     --------------------------------------
-    sets.TreasureHunter = { waist="Chaac Belt" }
+    sets.TreasureHunter = { head="White rarab cap +1", waist="Chaac Belt" }
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
     -- sets.WSBack         = { back="Trepidity Mantle" }

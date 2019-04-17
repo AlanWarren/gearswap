@@ -105,7 +105,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA.Meditate = {
         head="Wakido Kabuto",
-        hands="Saotome Kote +2",
+        hands="Sakonji Kote +1",
         back=Smertrios.TP
     }
     sets.precast.JA.Seigan = {head="Unkai Kabuto +2"}
@@ -133,7 +133,7 @@ function init_gear_sets()
         hands="Buremte Gloves",
     }
     sets.midcast.RA = {
-        head="Terminal Helm",
+        head="White rarab cap +1",
         body="Kyujutsugi",
         neck="Iqabi Necklace",
         hands="Ryuo Tekko",
@@ -309,7 +309,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back=Smertrios.TP,
         waist="Windbuffet Belt +1",
-        legs="Kasuga Haidate +1",
+        legs="Ryuo Hakama",
         feet="Danzo Sune-ate"
     }
     sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
@@ -322,7 +322,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
    	    body="Hizamaru Haramaki +2",
-        hands="Wakido Kote +2",
+        hands="Sakonji Kote +1",
         ring1="Dark Ring",
         back=Smertrios.TP,
         waist="Flume Belt",
@@ -355,7 +355,7 @@ function init_gear_sets()
         --hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Defending Ring",
-    	back="Solemnity Cape",
+    	back=Smertrios.TP,
         waist="Flume Belt",
         --legs="Otronif Brais +1",
         --feet="Otronif Boots +1"
@@ -368,7 +368,7 @@ function init_gear_sets()
     
     sets.defense.MDT = set_combine(sets.defense.PDT, {
          neck="Twilight Torque",
-      	 back="Solemnity Cape",
+    	back=Smertrios.TP,
     })
     
     sets.Kiting = {feet="Danzo Sune-ate"}
@@ -416,7 +416,7 @@ function init_gear_sets()
         -- body="Reiki Osode",
         -- back="Grounded Mantle +1",
         ear1="Zennaroi Earring",
-        legs="Ryuo Hakama",
+        legs="Flamma Dirs +1",
         -- ring1="Mars's Ring",
         -- legs="Acro Breeches",
     })
