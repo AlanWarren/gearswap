@@ -57,7 +57,7 @@ function job_setup()
 
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
-        gear.Xbox = "Gastraphetes"
+        gear.Xbow = "Gastraphetes"
         
         rng_rema = S{'Annihilator', 'Armageddon', 'Fomalhaut', 'Gastraphetes', 'Yoichinoyumi', 'Gandiva', 'Fail-Not'}       
         rng_sub_weapons = S{'Malevolence', 'Tauret', 'Perun +1', 
@@ -65,10 +65,11 @@ function job_setup()
         
         sam_sj = player.sub_job == 'SAM' or false
         
-        state.GastraAmmo = M{['description']='Marksmenship Ammo', "Quelling Bolt", "Abrasion Bolt"}
+        --state.GastraAmmo = M{['description']='Marksmenship Ammo', "Quelling Bolt", "Abrasion Bolt"}
+        state.GastraAmmo = M{['description']='Xbow Ammo', "Bloody Bolt", "Achiyalabopa Bolt"}
         state.GunAmmo = M{['description']='Gun Ammo', "Decimating Bullet", "Eradicating Bullet"}
 
-        DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = state.GunAmmo.current, [gear.Xbox] = state.GastraAmmo.current}
+        DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = state.GunAmmo.current, [gear.Xbow] = state.GastraAmmo.current}
         -- U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Eradicating Bullet"} 
 
         update_combat_form()
@@ -194,7 +195,6 @@ function init_gear_sets()
         
         sets.idle = {
             --sub="Nusku Shield",
-            -- ammo=DefaultAmmo[player.equipment.range],
             head="Meghanada Visor +2",
             neck="Sanctity Necklace",
             ear1="Etiolation Earring",
@@ -332,7 +332,6 @@ function init_gear_sets()
         ------------------------------------------------------------------
         sets.midcast.RA = { 
             -- ammo=DefaultAmmo[player.equipment.range],
-            ammo="Eradicating bullet",
             head="Arcadian Beret +3",
             neck="Scout's Gorget +2",
             ear1="Sherida Earring", 
@@ -412,7 +411,6 @@ function init_gear_sets()
        
         -- Weaponskill sets  
         sets.precast.WS = {
-            ammo="Eradicating bullet",
             head="Orion Beret +3",
             neck="Scout's Gorget +2",
             ear1="Sherida Earring",
@@ -1050,6 +1048,11 @@ function job_state_change(stateField, newValue, oldValue)
         if newValue ~= 'Normal' then
             send_command('@wait 2.5; input /ra <t>')
         end
+    end
+    if stateField == 'Xbow Ammo' then
+        equip({ammo=newValue})
+    elseif stateField == 'Gun Ammo' then 
+        equip({ammo=newValue})
     end
 end
 
