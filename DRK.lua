@@ -110,7 +110,7 @@ function job_setup()
     wsList = S{'Spiral Hell', 'Catastrophe', 'Torcleaver', 'Insurgency', 'Quietus', 'Cross Reaper'}
     -- Greatswords you use. 
     gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Raetic Algol +1', 'Caladbolg', 'Montante +1', 'Albion' }
-    scytheList = S{'Raetic Scythe', 'Deathbane', 'Twilight Scythe' }
+    scytheList = S{'Liberator', 'Apocalypse', 'Anguta', 'Raetic Scythe', 'Deathbane', 'Twilight Scythe' }
     remaWeapons = S{'Apocalypse', 'Anguta', 'Liberator', 'Caladbolg', 'Ragnarok'}
 
     shields = S{'Rinda Shield'}
@@ -206,7 +206,7 @@ function init_gear_sets()
     sets.precast.JA['Nether Void']  = {legs="Heathen's Flanchard +1"}
     sets.precast.JA['Dark Seal']    = {head="Fallen's burgeonet +1"}
     sets.precast.JA['Souleater']    = {head="Ignominy burgeonet +2"}
-    sets.precast.JA['Weapn Bash']   = {hands="Ignominy Gauntlets +1"}
+    sets.precast.JA['Weapn Bash']   = {hands="Ignominy Gauntlets +2"}
     sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +3"}
     sets.precast.JA['Last Resort']  = {back=Ankou.WSD}
 
@@ -462,7 +462,7 @@ function init_gear_sets()
         back=Ankou.VIT,
         legs="Fallen's Flanchard +3",
     })
-    sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Mid, {
+    sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Torcleaver, {
         neck="Abyssal Bead Necklace +1",
     })
     sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, {
@@ -1508,23 +1508,16 @@ end
 
 function select_default_macro_book()
     -- Default macro set/book
+        -- set_macro_page(5, 4)
     -- if player.sub_job == 'DNC' then
     --     set_macro_page(8, 4)
-    -- elseif scytheList:contains(player.equipment.main) then
-    --     if war_sj then
-    --         set_macro_page(9, 10)
-    --     else
-    --         set_macro_page(9, 4)
-    --     end
-    -- elseif gsList:contains(player.equipment.main) then
-    --     if war_sj then
-    --         set_macro_page(5, 10)
-    --     else
-    --         set_macro_page(5, 4)
-    --     end
-    -- elseif player.sub_job == 'SAM' then
-    --     set_macro_page(5, 4)
-    -- else
-    --     set_macro_page(5, 4)
-    -- end
+    if scytheList:contains(player.equipment.main) then
+        set_macro_page(6, 4)
+    elseif gsList:contains(player.equipment.main) then
+        set_macro_page(5, 4)
+    elseif player.sub_job == 'SAM' then
+        set_macro_page(5, 4)
+    else
+        set_macro_page(7, 4)
+    end
 end

@@ -66,8 +66,9 @@ function job_setup()
         sam_sj = player.sub_job == 'SAM' or false
         
         --state.GastraAmmo = M{['description']='Marksmenship Ammo', "Quelling Bolt", "Abrasion Bolt"}
-        state.GastraAmmo = M{['description']='Xbow Ammo', "Bloody Bolt", "Achiyalabopa Bolt"}
+        state.GastraAmmo = M{['description']='Xbow Ammo', "Bloody Bolt", "Eminent Bolt"}
         state.GunAmmo = M{['description']='Gun Ammo', "Decimating Bullet", "Eradicating Bullet"}
+        -- state.Ammo = M{['description']='Gastraphetes', "Bloody Bolt", "Achiyalabopa Bolt"}
 
         DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = state.GunAmmo.current, [gear.Xbow] = state.GastraAmmo.current}
         -- U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Eradicating Bullet"} 
@@ -326,6 +327,13 @@ function init_gear_sets()
             -- feet="Pursuer's Gaiters"
             feet="Arcadian Socks +3"
         })
+        sets.precast.RA.Gastraphetes = set_combine(sets.precast.RA, {
+            head="Orion Beret +3"
+        })
+        sets.precast.RA.Gastraphetes.F1 = set_combine(sets.precast.RA, {
+            feet="Arcadian Socks +3"
+        })
+        sets.precast.RA.Gastraphetes.F2 = sets.precast.RA.Gastraphetes.F1
         
         ------------------------------------------------------------------
         -- Default Base Gear Sets for Ranged Attacks. Geared for Gun
@@ -458,7 +466,8 @@ function init_gear_sets()
         })
         
         sets.precast.WS['Trueflight'] = {
-            head=HercHead.MAB,
+            -- head=HercHead.MAB,
+            head="Arcadian Beret +3",
             ear1="Friomisi Earring",
             ear2="Moonshade Earring",
             neck="Scout's Gorget +2",
