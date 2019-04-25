@@ -60,12 +60,18 @@ function job_setup()
         gear.Xbow = "Gastraphetes"
         
         rng_rema = S{'Annihilator', 'Armageddon', 'Fomalhaut', 'Gastraphetes', 'Yoichinoyumi', 'Gandiva', 'Fail-Not'}       
+
         rng_sub_weapons = S{'Malevolence', 'Tauret', 'Perun +1', 
             'Perun', 'Odium', 'Aphotic Kukri', 'Atoyac'}
         
         sam_sj = player.sub_job == 'SAM' or false
         
+        -- used for ammo swaps
+        rng_xbows = S{'Gastraphetes', 'Illapa'}
+        rng_guns = S{'Annihilator', 'Armageddon', 'Fomalhaut'}
+        rng_bows = S{'Yoichinoyumi', 'Gandiva', 'Fail-Not'}
         --state.GastraAmmo = M{['description']='Marksmenship Ammo', "Quelling Bolt", "Abrasion Bolt"}
+        state.AmmoToggle = M{['description']='Ammo Toggle', "Primary", "Secondary"}
         state.GastraAmmo = M{['description']='Xbow Ammo', "Bloody Bolt", "Eminent Bolt"}
         state.GunAmmo = M{['description']='Gun Ammo', "Decimating Bullet", "Eradicating Bullet"}
         -- state.Ammo = M{['description']='Gastraphetes', "Bloody Bolt", "Achiyalabopa Bolt"}
@@ -1058,8 +1064,19 @@ function job_state_change(stateField, newValue, oldValue)
             send_command('@wait 2.5; input /ra <t>')
         end
     end
-    if stateField == 'Xbow Ammo' then
-        equip({ammo=newValue})
+    -- if stateField == 'Ammo Toggle' then
+    --     -- if player.equipment.range 
+    --     if rng_xbows:contains(player.equipment.range) then
+    --         send_command('@input /console gs c cycle GastraAmmo')
+    --     elseif rng_guns:contains(player.equipment.range) then
+    --         send_command('@input /console gs c cycle GunAmmo')
+    --     end
+    -- end
+
+    if stateField == 'Xbow Ammo' then 
+        if rng_xbows:contains(player.equipment.range) then
+            equip({ammo=newValue})
+        end
     elseif stateField == 'Gun Ammo' then 
         equip({ammo=newValue})
     end
