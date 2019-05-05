@@ -175,7 +175,7 @@ function init_gear_sets()
         ear1="Loquacious Earring",
         hands="Leyline Gloves",
         body="Dread Jupon",
-        ring1="Prolix Ring",
+        ring1="Weatherspoon Ring",
         ring2="Kishar Ring",
         legs="Quiahuiz Trousers",
     }
@@ -377,7 +377,7 @@ function init_gear_sets()
         ear1="Eabani Earring",
         ear2="Etiolation Earring",
         body="Meghanada Cuirie +2",
-        hands="Regal Gloves",
+        hands="Meghanada Gloves +2",
         ring1="Meghanada Ring",
         ring2="Paguroidea Ring",
         back="Solemnity Cape",
@@ -402,7 +402,7 @@ function init_gear_sets()
 
     sets.idle.Regen = set_combine(sets.idle, {
         head="Meghanada Visor +2",
-        hands="Regal Gloves",
+        hands="Meghanada Gloves +2",
         body="Meghanada Cuirie +2",
         ring1="Meghanada Ring",
         ring2="Paguroidea Ring",

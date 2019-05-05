@@ -118,6 +118,7 @@ function init_gear_sets()
         ear2="Loquacious Earring",
         hands="Leyline Gloves",
         ring1="Prolix Ring",
+        ring2="Weatherspoon Ring"
     }
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {}
@@ -266,6 +267,7 @@ function init_gear_sets()
         hands="Flamma Manopolas +2",
         feet="Flamma Gambieras +2",
         back=Smertrios.WS,
+        ring2="Weatherspoon Ring"
         legs="Hizamaru Hizayoroi +2",
         waist="Soil Belt",
     })
@@ -408,6 +410,14 @@ function init_gear_sets()
         ring2="Flamma Ring",
         --body="Kendatsuba Samue",
         --legs="Kendatsuba Hakama",
+    })
+    sets.engaged.PDT = set_combine(sets.engaged, {
+        neck="Twilight Torque",
+        ring2="Defending Ring"
+    })
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
+        neck="Twilight Torque",
+        ring2="Defending Ring"
     })
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 

@@ -113,6 +113,7 @@ function init_gear_sets()
          body="Odyssean Chestplate",
          ear1="Loquacious Earring",
          hands="Leyline Gloves",
+         ring1="Weatherspoon Ring", -- 10 macc
          ring2="Prolix Ring",
          legs="Eschite Cuisses",
          Odyssean.Feet.FC

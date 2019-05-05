@@ -232,8 +232,8 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
         hands="Leyline Gloves",
-        ring1="Prolix Ring",
-        ring2="Kishar Ring",
+        ring1="Kishar Ring",
+        ring2="Weatherspoon Ring", -- 10 macc
         legs="Eschite Cuisses",
         back=Ankou.FC,
         feet=Odyssean.Feet.FC
@@ -257,6 +257,7 @@ function init_gear_sets()
         back="Grounded Mantle +1",
         waist="Sailfi Belt +1",
         legs="Carmine Cuisses +1",
+        ring2="Weatherspoon Ring", -- 10 macc
         feet=Odyssean.Feet.FC
     }
     -- sets.midcast.Trust =  {
@@ -292,7 +293,7 @@ function init_gear_sets()
         hands="Flamma Manopolas +2",
         waist="Casso Sash", -- 5
         ring1="Evanescence Ring", -- 10
-        ring2="Sangoma Ring", -- 8 macc
+        ring2="Weatherspoon Ring", -- 10 macc
         back=Niht.DarkMagic, -- 10
         legs="Fallen's Flanchard +3",  -- 18 + 39macc
         feet="Ratri Sollerets" -- macc 33
@@ -314,8 +315,8 @@ function init_gear_sets()
         neck="Erra Pendant", -- 10 + 17 macc
         body="Ignominy Cuirass +3",
         hands="Flamma Manopolas +2",
-        ring1="Sangoma Ring", -- 8 macc
-        ring2="Kishar Ring",
+        ring1="Kishar Ring",
+        ring2="Weatherspoon Ring", -- 10 macc
         waist="Eschan Stone",
         legs="Fallen's Flanchard +3",  -- 18 + 39macc
         back="Aput Mantle",
@@ -379,22 +380,26 @@ function init_gear_sets()
         head="Ignominy Burgonet +2", -- 17
         back="Chuparrosa Mantle",
         hands="Pavor Gauntlets",
+        ring1="Evanescence Ring", -- 10
         ring2="Kishar Ring",
     })
 
     sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
         hands="Heathen's Gauntlets +1",
+        ring1="Evanescence Ring", -- 10
         ring2="Kishar Ring",
     })
 
     sets.midcast['Absorb-TP'].Acc = set_combine(sets.midcast.Absorb.Acc, {
         hands="Heathen's Gauntlets +1",
+        ring1="Evanescence Ring", -- 10
         ring2="Kishar Ring",
     })
     sets.midcast.Absorb.Acc = set_combine(sets.midcast['Dark Magic'].Acc, {
         head="Flamma Zucchetto +2", -- 44 macc
         back="Chuparrosa Mantle",
         hands="Flamma Manopolas +2",
+        ring1="Evanescence Ring", -- 10
         ring2="Kishar Ring",
     })
 

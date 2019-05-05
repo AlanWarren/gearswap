@@ -212,7 +212,7 @@ function init_gear_sets()
         head=HercHead.TP,
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
-        ring1="Prolix Ring",
+        ring1="Weatherspoon Ring", -- 10 macc
         ring2="Kishar Ring",
         hands="Leyline Gloves",
         body="Dread Jupon",
@@ -229,7 +229,7 @@ function init_gear_sets()
         hands="Leyline Gloves",
         back="Grounded Mantle +1",
         ear1="Loquacious Earring",
-        ring1="Prolix Ring",
+        ring1="Weatherspoon Ring", -- 10 macc
         feet="Mochizuki Kyahan +1"
     }
 
@@ -242,8 +242,8 @@ function init_gear_sets()
         neck="Incanter's Torque",
         body="Mummu Jacket +2",
         hands="Mummu Wrists +2",
-        ring1="Sangoma Ring",
-        ring2="Mummu Ring",
+        ring1="Weatherspoon Ring", -- 10 macc
+        ring2="Sangoma Ring",
         --ring2="Haverton Ring",
         back="Yokaze Mantle",
         waist="Eschan Stone",

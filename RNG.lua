@@ -196,7 +196,8 @@ function init_gear_sets()
             body="Dread Jupon",
             legs="Quiahuiz Trousers",
             hands="Leyline Gloves",
-            ring1="Prolix Ring"
+            ring1="Prolix Ring",
+            ring2="Weatherspoon Ring",
         }
         sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
         
@@ -480,7 +481,7 @@ function init_gear_sets()
             hands="Carmine Finger Gauntlets +1",
             body="Samnuha Coat",
             ring1="Dingir Ring",
-            ring2="Ilabrat Ring",
+            ring2="Weatherspoon Ring",
             back=Belenus.TF,
             waist="Eschan Stone",
             legs="Herculean Trousers",

@@ -77,7 +77,7 @@ function init_gear_sets()
         ear2="Loquacious Earring",
         hands="Magavan Mitts",
         body="Shango Robe",
-        ring1="Prolix Ring",
+        ring1="Weatherspoon Ring",
         ring2="Kishar Ring",
         back="Lifestream Cape",
         waist="Witful Belt",
@@ -240,7 +240,7 @@ function init_gear_sets()
         ear2="Regal Earring",
         neck="Erra Pendant",
         legs="Merlinic Shalwar",
-        ring1="Sangoma Ring",
+        ring1="Weatherspoon Ring",
         back="Nantosuelta's Cape",
     })
 
@@ -254,7 +254,7 @@ function init_gear_sets()
         ear2="Lempo Earring",
         body="Azimuth Coat +1",
         hands="Mallquis Cuffs +1",
-        ring1="Perception Ring", 
+        ring1="Weatherspoon Ring",
         ring2="Sangoma Ring",
         back="Nantosuelta's Cape",
         legs="Merlinic Shalwar",

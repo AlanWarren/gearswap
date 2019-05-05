@@ -149,6 +149,7 @@ function init_gear_sets()
         hands="Leyline Gloves",
         legs="Limbo Trousers",
         ring1="Prolix Ring",
+        ring2="Weatherspoon Ring"
     }
     
 	-- Midcast Sets
@@ -257,7 +258,7 @@ function init_gear_sets()
         neck="Anu Torque",
         ear1="Sherida Earring",
         ear2="Cessance Earring",
-		body="Peltast's Plackart +1",
+		body="Sulevia's Platemail +2",
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",

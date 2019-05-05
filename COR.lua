@@ -171,7 +171,7 @@ function init_gear_sets()
         head=HercHead.TP,
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
-        ring1="Prolix Ring",
+        ring1="Weatherspoon Ring",
         ring2="Kishar Ring",
         body="Dread Jupon",
         hands="Leyline Gloves",
