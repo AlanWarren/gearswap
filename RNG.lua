@@ -70,9 +70,8 @@ function job_setup()
         rng_xbows = S{'Gastraphetes', 'Illapa'}
         rng_guns = S{'Annihilator', 'Armageddon', 'Fomalhaut'}
         rng_bows = S{'Yoichinoyumi', 'Gandiva', 'Fail-Not'}
-        --state.GastraAmmo = M{['description']='Marksmenship Ammo', "Quelling Bolt", "Abrasion Bolt"}
+        state.GastraAmmo = M{['description']='Xbow Ammo', "Quelling Bolt", "Abrasion Bolt"}
         state.AmmoToggle = M{['description']='Ammo Toggle', "Primary", "Secondary"}
-        state.GastraAmmo = M{['description']='Xbow Ammo', "Bloody Bolt", "Achiyalabopa Bolt"}
         state.GunAmmo = M{['description']='Gun Ammo', "Decimating Bullet", "Eradicating Bullet"}
         -- state.Ammo = M{['description']='Gastraphetes', "Bloody Bolt", "Achiyalabopa Bolt"}
 
@@ -101,8 +100,8 @@ function user_setup()
         send_command('bind !f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
         send_command('bind @f9 gs c cycle FlurryMode')
-        send_command('bind ^] gs c cycle WeaponskillMode')
-        send_command('bind !- gs equip sets.crafting')
+        -- send_command('bind ^] gs c cycle WeaponskillMode')
+        -- send_command('bind !- gs equip sets.crafting')
         send_command('bind ^- gs c cycle AutoRA')
         send_command('bind ^[ input /lockstyle on')
         send_command('bind ![ input /lockstyle off')
@@ -238,7 +237,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ring1="Ilabrat Ring",
             ring2="Dingir Ring",
-            hands="Regal Gloves",
+            hands="Adhemar Wristbands +1",
             back=Belenus.STP,
             legs="Carmine Cuisses +1",
             feet="Arcadian Socks +3"
