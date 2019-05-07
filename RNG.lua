@@ -71,8 +71,8 @@ function job_setup()
         rng_guns = S{'Annihilator', 'Armageddon', 'Fomalhaut'}
         rng_bows = S{'Yoichinoyumi', 'Gandiva', 'Fail-Not'}
         state.GastraAmmo = M{['description']='Xbow Ammo', "Quelling Bolt", "Abrasion Bolt"}
-        state.AmmoToggle = M{['description']='Ammo Toggle', "Primary", "Secondary"}
         state.GunAmmo = M{['description']='Gun Ammo', "Decimating Bullet", "Eradicating Bullet"}
+        state.AmmoToggle = M{['description']='Ammo Toggle', "Primary", "Secondary"}
         -- state.Ammo = M{['description']='Gastraphetes', "Bloody Bolt", "Achiyalabopa Bolt"}
 
         DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = state.GunAmmo.current, [gear.Xbow] = state.GastraAmmo.current}
