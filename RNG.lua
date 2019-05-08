@@ -342,10 +342,9 @@ function init_gear_sets()
         sets.precast.RA.Gastraphetes.F2 = sets.precast.RA.Gastraphetes.F1
         
         ------------------------------------------------------------------
-        -- Default Base Gear Sets for Ranged Attacks. Geared for Gun
+        -- Default Base Gear Sets for Ranged Attacks. Geared for Gastraphetes
         ------------------------------------------------------------------
         sets.midcast.RA = { 
-            -- ammo=DefaultAmmo[player.equipment.range],
             head="Arcadian Beret +3",
             neck="Scout's Gorget +2",
             ear1="Sherida Earring", 
@@ -353,7 +352,7 @@ function init_gear_sets()
             body="Orion Jerkin +3", 
             hands="Adhemar Wristbands +1",
             ring1="Ilabrat Ring",
-            ring2="Dingir Ring",
+            ring2="Rajas Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
             legs="Amini Brague +1", 
@@ -367,11 +366,12 @@ function init_gear_sets()
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             head="Meghanada Visor +2",
             neck="Scout's Gorget +2",
-            -- hands="Meghanada Gloves +2",
             ring1="Cacoethic Ring +1",
             legs="Mummu Kecks +2",
             feet="Mummu Gamashes +2"
         })
+
+        -- Double Shot 
         sets.midcast.RA.DoubleShot = set_combine(sets.midcast.RA, {
             hands="Oshosi Gloves",
             legs="Oshosi Trousers",
@@ -391,14 +391,20 @@ function init_gear_sets()
             feet="Oshosi Leggings"
         })
 
-        -- sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {
-        --     ear2="Dedition Earring"
-        -- })
-        -- sets.midcast.RA.Annihilator.AM = set_combine(sets.midcast.RA.Annihilator, {
-        --     legs="Mummu Kecks +2"
-        -- })
+        -- Annihilator
+        -- TODO: get crit+10% cape
+        sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {
+            head="Meghanada Visor +2",
+            body="Arcadian Jerkin +3",
+            ring2="Mummu Ring",
+        })
+        sets.midcast.RA.Annihilator.Mid = sets.midcast.RA.Mid
+        sets.midcast.RA.Annihilator.Acc = sets.midcast.RA.Acc
+        sets.midcast.RA.DoubleShot.Annihilator = sets.midcast.RA.DoubleShot
+        sets.midcast.RA.DoubleShot.Annihilator.Mid = sets.midcast.RA.DoubleShot.Mid
+        sets.midcast.RA.DoubleShot.Annihilator.Acc = sets.midcast.RA.DoubleShot.Acc
 
-        -- Bow base set.
+        -- Yoichinoyumi
         sets.midcast.RA.Yoichinoyumi = {
             head="Meghanada Visor +2",
             neck="Scout's Gorget +2",
@@ -979,32 +985,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
--- Special WS mode for weapon types
--- function get_custom_wsmode(spell, spellMap, ws_mode)
---     if spell.skill == 'Marksmanship' then
---         if player.equipment.range == 'Annihilator' then
---             return 'Annihilator'
---         elseif player.equipment.range == 'Armageddon' then
---             return 'Armageddon'
---         elseif player.equipment.range == 'Fomalhaut' then
---             return 'Fomalhaut'
---         elseif player.equipment.range == 'Gastraphetes' then
---             return 'Gastraphetes'
---         end
---     end
-
---     if spell.skill == 'Archery' then
---         if player.equipment.range == 'Yoichinoyumi' then
---             return 'Yoichinoyumi'
---         elseif player.equipment.range == 'Gandiva' then
---             return 'Gandiva'
---         elseif player.equipment.range == 'Fail-Not' then
---             return 'FailNot'
---         end
---     end
-
--- end
-
 
 function get_combat_weapon()
     state.CombatWeapon:reset()
