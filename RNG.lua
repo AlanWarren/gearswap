@@ -4,27 +4,14 @@
 
  === Notes ===
  -- Set format is as follows:
-    sets.midcast.RA.[CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
-    ex: sets.midcast.RA.SAM.Bow.Mid.SamRoll = {}
-    you can also append CustomRangedGroups to each other
+    -- sets.midcast.RA.[CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
+    -- You can create named sets based off any weapon in the rng_rema list below
+    -- you can also append CustomRangedGroups to each other
  
  -- These are the available sets per category
- -- CustomClass = SAM
  -- CombatForm = DW
  -- RangedMode = Normal, Mid, Acc
- -- CustomRangedGroup = SamRoll
 
- -- SamRoll is applied automatically whenever you have the roll on you. 
- -- SAM is used when you're RNG/SAM 
-
- * Auto RA
- - You can use the built in hotkey (CTRL -) or create a macro. (like below) Note "AutoRA" is case sensitive
-   /console gs c toggle AutoRA
- - You have to shoot once after toggling autora for it to begin.
- - AutoRA will use weaponskills @ 1000TP, depending on which weapon you're using. However, this will only
-   work if you set gear.Gun or gear.Bow to the weapon you're using. You also have to specify the desired
-   ws it should use, with the settings auto_gun_ws and auto_bow_ws. 
- 
  === Helpful Commands ===
     //gs validate
     //gs showswaps
@@ -50,11 +37,6 @@ function job_setup()
         -- settings
         state.CapacityMode = M(false, 'Capacity Point Mantle')
 
-        state.AutoRA = M{['description']='Auto RA', 'Normal', 'Shoot', 'WS' }
-        auto_gun_ws = "Coronach"
-        auto_bow_ws = "Namas Arrow"
-
-
         gear.Gun = "Annihilator"
         gear.Bow = "Yoichinoyumi"
         gear.Xbow = "Gastraphetes"
@@ -64,7 +46,7 @@ function job_setup()
         rng_sub_weapons = S{'Malevolence', 'Tauret', 'Perun +1', 
             'Perun', 'Odium', 'Aphotic Kukri', 'Atoyac'}
         
-        sam_sj = player.sub_job == 'SAM' or false
+        -- sam_sj = player.sub_job == 'SAM' or false
         
         -- used for ammo swaps
         rng_xbows = S{'Gastraphetes', 'Illapa'}
@@ -74,7 +56,8 @@ function job_setup()
         state.GunAmmo = M{['description']='Gun Ammo', "Decimating Bullet", "Eradicating Bullet"}
         state.AmmoToggle = M{['description']='Ammo Toggle', "Primary", "Secondary"}
         -- state.Ammo = M{['description']='Gastraphetes', "Bloody Bolt", "Achiyalabopa Bolt"}
-
+        
+        -- W.I.P ~
         DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = state.GunAmmo.current, [gear.Xbow] = state.GastraAmmo.current}
         -- U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Eradicating Bullet"} 
 
@@ -102,7 +85,6 @@ function user_setup()
         send_command('bind @f9 gs c cycle FlurryMode')
         -- send_command('bind ^] gs c cycle WeaponskillMode')
         -- send_command('bind !- gs equip sets.crafting')
-        send_command('bind ^- gs c cycle AutoRA')
         send_command('bind ^[ input /lockstyle on')
         send_command('bind ![ input /lockstyle off')
 end
@@ -547,16 +529,6 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +2"
         })
 
-        -- sets.precast.WS['Last Stand'].SAM = set_combine(sets.precast.WS, {
-        --     neck="Aqua Gorget",
-        --     ear1="Tripudio Earring",
-        --     ear2="Moonshade Earring",
-        --     hands="Amini Glovelettes +1",
-        --     ring2="Garuda Ring",
-        --     waist="Light Belt",
-        --     legs="Amini Brague +1", 
-        -- })
-        
         -- DETONATOR
         sets.Detonator = {
            ear2="Moonshade Earring",
@@ -591,15 +563,6 @@ function init_gear_sets()
         sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS.Mid, sets.Namas)
         sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS.Acc, sets.Namas)
         
-        -- sets.precast.WS['Namas Arrow'].SAM = set_combine(sets.precast.WS, {
-        --     neck="Aqua Gorget",
-        --     ear1="Enervating Earring",
-        --     ear2="Tripudio Earring",
-        --     waist="Light Belt",
-        --     back="Sylvan Chlamys",
-        --     legs="Amini Brague +1", 
-        -- })
-
         -- JISHNUS
         sets.Jishnus = {
             neck="Flame Gorget",
@@ -699,13 +662,6 @@ function job_pretarget(spell, action, spellMap, eventArgs)
     if state.Buff[spell.english] ~= nil then
         state.Buff[spell.english] = true
     end
-    -- If autora enabled, use WS automatically at 100+ TP
-    if spell.action_type == 'Ranged Attack' then
-        if player.tp >= 1000 and state.AutoRA.value == 'WS' and not buffactive.amnesia then
-            cancel_spell()
-            use_weaponskill()
-        end
-    end
 end 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
@@ -716,9 +672,9 @@ function job_precast(spell, action, spellMap, eventArgs)
             state.Buff[spell.english] = true
         end
         --add_to_chat(8, state.CombatForm)
-        if sam_sj then
-            classes.CustomClass = 'SAM'
-        end
+        -- if sam_sj then
+        --     classes.CustomClass = 'SAM'
+        -- end
 
         -- if spell.action_type == 'Ranged Attack' and player.equipment.range == gear.Bow then
         --     state.CombatWeapon:set('Bow')
@@ -801,11 +757,6 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-    -- autora
-    if state.AutoRA.value ~= 'Normal' then
-        use_ra(spell)
-    end
-
     if state.Buff[spell.name] ~= nil then
         state.Buff[spell.name] = not spell.interrupted or buffactive[spell.english]
     end
@@ -930,7 +881,7 @@ function job_update(cmdParams, eventArgs)
     update_combat_form()
     get_combat_weapon()
     get_custom_ranged_groups()
-    sam_sj = player.sub_job == 'SAM' or false
+    -- sam_sj = player.sub_job == 'SAM' or false
     -- called here incase buff_change failed to update value
     state.Buff.Camouflage = buffactive.camouflage or false
     state.Buff.Overkill = buffactive.overkill or false
@@ -942,40 +893,8 @@ function job_update(cmdParams, eventArgs)
     end
 end
  
----- Job-specific toggles.
---function job_toggle_state(field)
---    if field:lower() == 'autora' then
---        state.AutoRA = not state.AutoRA
---        return state.AutoRA
---    end
---end
- 
----- Request job-specific mode lists.
----- Return the list, and the current value for the requested field.
---function job_get_option_modes(field)
---    if field:lower() == 'autora' then
---        return state.AutoRA
---    end
---end
--- 
----- Set job-specific mode values.
----- Return true if we recognize and set the requested field.
---function job_set_option_mode(field, val)
---    if field:lower() == 'autora' then
---        state.AutoRA = val
---        return true
---    end
---end
- 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
-    local msg = ''
-    if state.AutoRA.value ~= 'Normal' then
-        msg = '[Auto RA: ON]['..state.AutoRA.value..']'
-    else
-        msg = '[Auto RA: OFF]'
-    end
-
     add_to_chat(122, 'Ranged: '..state.RangedMode.value..'/'..state.HybridMode.value..', WS: '..state.WeaponskillMode.value..', '..msg)
     
     eventArgs.handled = true
@@ -1030,20 +949,8 @@ function update_combat_form()
 end
 
  
-function use_weaponskill()
-    if player.equipment.range == gear.Bow then
-        send_command('input /ws "'..auto_bow_ws..'" <t>')
-    elseif player.equipment.range == gear.Gun then
-        send_command('input /ws "'..auto_gun_ws..'" <t>')
-    end
-end
-
 function job_state_change(stateField, newValue, oldValue)
-    if stateField == 'Auto RA' then
-        if newValue ~= 'Normal' then
-            send_command('@wait 2.5; input /ra <t>')
-        end
-    end
+    -- W.I.P ~
     -- if stateField == 'Ammo Toggle' then
     --     -- if player.equipment.range 
     --     if rng_xbows:contains(player.equipment.range) then
@@ -1062,38 +969,6 @@ function job_state_change(stateField, newValue, oldValue)
     end
 end
 
-function use_ra(spell)
-    
-    local delay = '2.2'
-    -- BOW
-    if player.equipment.range == gear.Bow then
-        if spell.type:lower() == 'weaponskill' then
-            delay = '2.25'
-         else
-             if buffactive["Courser's Roll"] then
-                 delay = '0.7' -- MAKE ADJUSTMENT HERE
-             elseif buffactive["Flurry II"] or buffactive.Overkill then
-                 delay = '0.5'
-             else
-                delay = '1.05' -- MAKE ADJUSTMENT HERE
-            end
-        end
-    else
-    -- GUN 
-        if spell.type:lower() == 'weaponskill' then
-            delay = '2.25' 
-        else
-            if buffactive["Courser's Roll"] then
-                delay = '0.7' -- MAKE ADJUSTMENT HERE
-            elseif buffactive.Overkill or buffactive['Flurry II'] then
-                delay = '0.5'
-            else
-                delay = '1.05' -- MAKE ADJUSTMENT HERE
-            end
-        end
-    end
-    send_command('@wait '..delay..'; input /ra <t>')
-end
 
 function camo_active()
     return state.Buff['Camouflage']
@@ -1149,6 +1024,7 @@ end
 --        add_to_chat(122,"SAM Roll")
 --    end
 --end
+
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
