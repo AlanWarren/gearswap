@@ -159,7 +159,7 @@ function init_gear_sets()
             feet="Eradicating Bullet Pouch"
         }
         -- Misc. Job Ability precasts
-        sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1"}
+        sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1", waist="Chaac Belt"}
         sets.precast.JA['Double Shot'] = {head="Amini Gapette"}
         sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}
         sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
@@ -350,7 +350,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Sherida Earring", 
             ear2="Dedition Earring",
-            body="Arcadian Jerkin +3", 
+            body="Orion Jerkin +3", 
             hands="Adhemar Wristbands +1",
             ring1="Ilabrat Ring",
             ring2="Dingir Ring",
@@ -665,9 +665,9 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Sherida Earring",
             ear2="Enervating Earring",
-            body="Mummu Jacket +2",
+            body="Orion Jerkin +3",
             hands="Orion Bracers +1",
-            ring1="Begrudging Ring",
+            ring1="Cacoethic Ring +1"
             ring2="Mummu Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
@@ -775,7 +775,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
         elseif state.RangedMode.current == 'Acc' then
             equip(sets.buff.Barrage.Acc)
         else
-            equip(sets.buff.Barrage.Acc)
+            equip(sets.buff.Barrage)
         end
         eventArgs.handled = true
     end
@@ -1174,8 +1174,8 @@ function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'WAR'then
             set_macro_page(3, 5)
-    elseif player.sub_job == 'SAM' then
-            set_macro_page(2, 5)
+    elseif player.sub_job == 'DNC' then
+            set_macro_page(4, 5)
     else
         set_macro_page(4, 5)
     end
