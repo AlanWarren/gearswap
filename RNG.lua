@@ -460,8 +460,8 @@ function init_gear_sets()
         })
         
         sets.precast.WS['Trueflight'] = {
-            -- head=HercHead.MAB,
-            head="Arcadian Beret +3",
+            head=HercHead.MAB,
+            -- head="Arcadian Beret +3",
             ear1="Friomisi Earring",
             ear2="Moonshade Earring",
             neck="Scout's Gorget +2",
@@ -636,7 +636,7 @@ function init_gear_sets()
             ear2="Enervating Earring",
             body="Orion Jerkin +3",
             hands="Orion Bracers +1",
-            ring1="Cacoethic Ring +1"
+            ring1="Cacoethic Ring +1",
             ring2="Mummu Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
@@ -700,11 +700,6 @@ function job_precast(spell, action, spellMap, eventArgs)
                 eventArgs.handled = true
             end
         end
-        -- Ammo checks
-        -- if spell.action_type == 'Ranged Attack' or
-        --   (spell.type == 'WeaponSkill' and (spell.skill == 'Marksmanship' or spell.skill == 'Archery')) then
-        --     check_ammo(spell, action, spellMap, eventArgs)
-        -- end
 end
  
 -- Run after the default precast() is done.
@@ -773,9 +768,7 @@ function job_buff_change(buff, gain)
     if state.Buff[buff] ~= nil then
         handle_equipping_gear(player.status)
     end
-    if buff == 'Velocity Shot' and gain then
-        windower.send_command('wait 290;input /echo **VELOCITY SHOT** Wearing off in 10 Sec.')
-    elseif buff == 'Double Shot' and gain then
+    if buff == 'Double Shot' and gain then
         windower.send_command('wait 90;input /echo **DOUBLE SHOT OFF**;wait 90;input /echo **DOUBLE SHOT READY**')
     elseif buff == 'Decoy Shot' and gain then
         windower.send_command('wait 170;input /echo **DECOY SHOT** Wearing off in 10 Sec.];wait 120;input /echo **DECOY SHOT READY**')
@@ -872,8 +865,8 @@ end
 -------------------------------------------------------------------------------------------------------------------
  
 -- Called for custom player commands.
-function job_self_command(cmdParams, eventArgs)
-end
+-- function job_self_command(cmdParams, eventArgs)
+-- end
  
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
@@ -895,7 +888,7 @@ end
  
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
-    add_to_chat(122, 'Ranged: '..state.RangedMode.value..'/'..state.HybridMode.value..', WS: '..state.WeaponskillMode.value..', '..msg)
+    add_to_chat(122, 'Ranged: '..state.RangedMode.value..'/'..state.HybridMode.value..', WS: '..state.WeaponskillMode.value)
     
     eventArgs.handled = true
  
@@ -972,51 +965,6 @@ end
 
 function camo_active()
     return state.Buff['Camouflage']
-end
--- Check for proper ammo when shooting or weaponskilling
-function check_ammo(spell, action, spellMap, eventArgs)
-    -- Filter ammo checks depending on Unlimited Shot
-    if state.Buff['Unlimited Shot'] then
-        if player.equipment.ammo ~= U_Shot_Ammo[player.equipment.range] then
-            if player.inventory[U_Shot_Ammo[player.equipment.range]] or player.wardrobe[U_Shot_Ammo[player.equipment.range]] then
-                add_to_chat(122,"Unlimited Shot active. Using custom ammo.")
-                equip({ammo=U_Shot_Ammo[player.equipment.range]})
-            elseif player.inventory[DefaultAmmo[player.equipment.range]] or player.wardrobe[DefaultAmmo[player.equipment.range]] then
-                add_to_chat(122,"Unlimited Shot active but no custom ammo available. Using default ammo.")
-                equip({ammo=DefaultAmmo[player.equipment.range]})
-            else
-                add_to_chat(122,"Unlimited Shot active but unable to find any custom or default ammo.")
-            end
-        end
-    else
-        if player.equipment.ammo == U_Shot_Ammo[player.equipment.range] and player.equipment.ammo ~= DefaultAmmo[player.equipment.range] then
-            if DefaultAmmo[player.equipment.range] then
-                if player.inventory[DefaultAmmo[player.equipment.range]] then
-                    add_to_chat(122,"Unlimited Shot not active. Using Default Ammo")
-                    equip({ammo=DefaultAmmo[player.equipment.range]})
-                else
-                    add_to_chat(122,"Default ammo unavailable.  Removing Unlimited Shot ammo.")
-                    equip({ammo=empty})
-                end
-            else
-                add_to_chat(122,"Unable to determine default ammo for current weapon.  Removing Unlimited Shot ammo.")
-                equip({ammo=empty})
-            end
-        elseif player.equipment.ammo == 'empty' then
-            if DefaultAmmo[player.equipment.range] then
-                if player.inventory[DefaultAmmo[player.equipment.range]] then
-                    add_to_chat(122,"Using Default Ammo")
-                    equip({ammo=DefaultAmmo[player.equipment.range]})
-                else
-                    add_to_chat(122,"Default ammo unavailable.  Leaving empty.")
-                end
-            else
-                add_to_chat(122,"Unable to determine default ammo for current weapon.  Leaving empty.")
-            end
-        elseif player.inventory[player.equipment.ammo].count < 15 then
-            add_to_chat(122,"Ammo '"..player.inventory[player.equipment.ammo].shortname.."' running low ("..player.inventory[player.equipment.ammo].count..")")
-        end
-    end
 end
 -- Orestes uses Samurai Roll. The total comes to 5!
 --function detect_cor_rolls(old,new,color,newcolor)
