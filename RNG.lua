@@ -144,7 +144,7 @@ function init_gear_sets()
         sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1", waist="Chaac Belt"}
         sets.precast.JA['Double Shot'] = {head="Amini Gapette"}
         sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}
-        sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +1"}
+        sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +3"}
         sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1", back=Belenus.Snap }
         sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
 
@@ -157,8 +157,8 @@ function init_gear_sets()
             body="Meghanada Cuirie +2",
             back=Belenus.STP,
             hands="Meghanada Gloves +2",
-            ring1="Ilabrat Ring",
-            ring2="Dingir Ring",
+            ring1="Dingir Ring",
+            ring2="Ilabrat Ring",
             legs="Arcadian Braccae +2", 
             feet="Arcadian Socks +3"
         })
@@ -217,8 +217,8 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Dedition Earring",
             neck="Scout's Gorget +2",
-            ring1="Ilabrat Ring",
-            ring2="Dingir Ring",
+            ring1="Dingir Ring",
+            ring2="Ilabrat Ring",
             hands="Adhemar Wristbands +1",
             back=Belenus.STP,
             legs="Carmine Cuisses +1",
@@ -296,30 +296,33 @@ function init_gear_sets()
         -- 50 snap in gear will cap
         -- Pieces that provide delay reduction via velocity shot, do NOT
         -- count towards cap.
+        -- TODO: Yemaya Belt + Pursuer's Pants
         ------------------------------------------------------------------
         sets.precast.RA = {
             head=TaeonHead.Snap, -- 9
             neck="Scout's gorget +2", -- 4
             body="Amini Caban +1", -- 7% VS
             hands="Carmine Finger Gauntlets +1",
-            back=Belenus.Snap, -- 2% VS / 10 snap (for now)
-            legs=AdhemarLegs.Snap, -- 9
+            back=Belenus.Snap, -- 2% VS / 10 snap 
+            legs="Orion Braccae +3", -- 15
             waist="Impulse Belt", -- 2
             feet="Meghanada Jambeaux +2" -- 10
         }
         sets.precast.RA.F1 = set_combine(sets.precast.RA, {
             head="Orion Beret +3"
+            legs=AdhemarLegs.Snap, -- 9
         })
         sets.precast.RA.F2 = set_combine(sets.precast.RA.F1, {
             -- waist="Yemaya Belt",
-            -- feet="Pursuer's Gaiters"
             feet="Arcadian Socks +3"
         })
         sets.precast.RA.Gastraphetes = set_combine(sets.precast.RA, {
             head="Orion Beret +3"
+            legs="Orion Braccae +3",
         })
         sets.precast.RA.Gastraphetes.F1 = set_combine(sets.precast.RA, {
             feet="Arcadian Socks +3"
+            legs=AdhemarLegs.Snap, -- 9
         })
         sets.precast.RA.Gastraphetes.F2 = sets.precast.RA.Gastraphetes.F1
         
@@ -346,10 +349,10 @@ function init_gear_sets()
             legs=AdhemarLegs.TP, 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
-            head="Meghanada Visor +2",
+            head="Orion Beret +3",
             neck="Scout's Gorget +2",
             ring1="Cacoethic Ring +1",
-            legs="Mummu Kecks +2",
+            legs="Orion Braccae +3",
             feet="Mummu Gamashes +2"
         })
 
@@ -637,10 +640,10 @@ function init_gear_sets()
             body="Orion Jerkin +3",
             hands="Orion Bracers +1",
             ring1="Cacoethic Ring +1",
-            ring2="Mummu Ring",
+            ring2="Ilabrat Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
-            legs="Mummu Kecks +2",
+            legs=AdhemarLegs.TP,
             feet="Arcadian Socks +3"
         }
         -- placeholder until I can get to it
