@@ -70,7 +70,7 @@ function user_setup()
         -- Options: Override default values
         state.OffenseMode:options('Normal', 'Melee')
         state.RangedMode:options('Normal', 'Mid', 'Acc')
-        state.HybridMode:options('Normal', 'PDT')
+        state.HybridMode:options('Normal', 'PDT', 'Dynamis')
         state.IdleMode:options('Normal', 'PDT')
         state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
         state.PhysicalDefenseMode:options('PDT')
@@ -351,6 +351,11 @@ function init_gear_sets()
             ring1="Cacoethic Ring +1",
             legs="Mummu Kecks +2",
             feet="Mummu Gamashes +2"
+        })
+        
+        -- test
+        sets.midcast.RA.Dynamis = set_combine(sets.midcast.RA.Mid, {
+            legs="Orion Braccae +3"
         })
 
         -- Double Shot 
@@ -668,38 +673,42 @@ end
  
 function job_precast(spell, action, spellMap, eventArgs)
         
-        if state.Buff[spell.english] ~= nil then
-            state.Buff[spell.english] = true
-        end
-        --add_to_chat(8, state.CombatForm)
-        -- if sam_sj then
-        --     classes.CustomClass = 'SAM'
-        -- end
+    if state.HybridMode.value == 'Dynamis' then
+        eventArgs.useMidcastGear = true
+    end
 
-        -- if spell.action_type == 'Ranged Attack' and player.equipment.range == gear.Bow then
-        --     state.CombatWeapon:set('Bow')
-        -- end
-        -- add support for RangedMode toggles to EES
-        if spell.english == 'Eagle Eye Shot' then
-            classes.JAMode = state.RangedMode.value
-        end
-        -- Safety checks for weaponskills 
-        if spell.type:lower() == 'weaponskill' then
-            if player.tp < 1000 then
-                    eventArgs.cancel = true
-                    return
-            end
-            if ((spell.target.distance >8 and spell.skill ~= 'Archery' and spell.skill ~= 'Marksmanship') or (spell.target.distance >21)) then
-                -- Cancel Action if distance is too great, saving TP
-                add_to_chat(122,"Outside WS Range! /Canceling")
+    if state.Buff[spell.english] ~= nil then
+        state.Buff[spell.english] = true
+    end
+    --add_to_chat(8, state.CombatForm)
+    -- if sam_sj then
+    --     classes.CustomClass = 'SAM'
+    -- end
+
+    -- if spell.action_type == 'Ranged Attack' and player.equipment.range == gear.Bow then
+    --     state.CombatWeapon:set('Bow')
+    -- end
+    -- add support for RangedMode toggles to EES
+    if spell.english == 'Eagle Eye Shot' then
+        classes.JAMode = state.RangedMode.value
+    end
+    -- Safety checks for weaponskills 
+    if spell.type:lower() == 'weaponskill' then
+        if player.tp < 1000 then
                 eventArgs.cancel = true
                 return
-            
-            elseif state.DefenseMode.value ~= 'None' then
-                -- Don't gearswap for weaponskills when Defense is on.
-                eventArgs.handled = true
-            end
         end
+        if ((spell.target.distance >8 and spell.skill ~= 'Archery' and spell.skill ~= 'Marksmanship') or (spell.target.distance >21)) then
+            -- Cancel Action if distance is too great, saving TP
+            add_to_chat(122,"Outside WS Range! /Canceling")
+            eventArgs.cancel = true
+            return
+        
+        elseif state.DefenseMode.value ~= 'None' then
+            -- Don't gearswap for weaponskills when Defense is on.
+            eventArgs.handled = true
+        end
+    end
 end
  
 -- Run after the default precast() is done.
