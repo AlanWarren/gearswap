@@ -96,8 +96,8 @@ function init_gear_sets()
     Valorous = {}
     Valorous.Hands = {}
     Valorous.Hands.TP = { name="Valorous Mitts", augments={'Accuracy+26','"Store TP"+6','AGI+10',}}
-    Valorous.Hands.WS = { name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%','Accuracy+6',}}
-    
+    Valorous.Hands.WS = { name="Valorous Mitts", augments={'Attack+19','Weapon skill damage +4%','VIT+7','Accuracy+10',}}
+
     Smertrios = {}
     Smertrios.TP = {name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
     Smertrios.WS = {name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
@@ -124,7 +124,6 @@ function init_gear_sets()
     sets.precast.Waltz = {}
 
     sets.Organizer = {
-        main="Tsurumaru",
         sub="Utu Grip",
         range="Yoichinoyumi",
         ammo="Cibitshavore",
@@ -267,7 +266,7 @@ function init_gear_sets()
         hands="Flamma Manopolas +2",
         feet="Flamma Gambieras +2",
         back=Smertrios.WS,
-        ring2="Weatherspoon Ring"
+        ring2="Weatherspoon Ring",
         legs="Hizamaru Hizayoroi +2",
         waist="Soil Belt",
     })
@@ -301,6 +300,7 @@ function init_gear_sets()
     sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
+        ammo="Ginsen",
         head="Rao Kabuto",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",

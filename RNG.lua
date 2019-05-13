@@ -157,17 +157,11 @@ function init_gear_sets()
             body="Meghanada Cuirie +2",
             back=Belenus.STP,
             hands="Meghanada Gloves +2",
+            waist="Kwahu Kachina Belt",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
             legs="Arcadian Braccae +2", 
             feet="Arcadian Socks +3"
-        })
-        sets.precast.JA['Eagle Eye Shot'].Mid = set_combine(sets.precast.JA['Eagle Eye Shot'], {
-            ring1="Cacoethic Ring +1",
-            feet="Arcadian Socks +3"
-        })
-        sets.precast.JA['Eagle Eye Shot'].Acc = set_combine(sets.precast.JA['Eagle Eye Shot'].Mid, {
-            waist="Kwahu Kachina Belt"
         })
 
         sets.precast.FC = {
@@ -309,7 +303,7 @@ function init_gear_sets()
             feet="Meghanada Jambeaux +2" -- 10
         }
         sets.precast.RA.F1 = set_combine(sets.precast.RA, {
-            head="Orion Beret +3"
+            head="Orion Beret +3",
             legs=AdhemarLegs.Snap, -- 9
         })
         sets.precast.RA.F2 = set_combine(sets.precast.RA.F1, {
@@ -317,11 +311,11 @@ function init_gear_sets()
             feet="Arcadian Socks +3"
         })
         sets.precast.RA.Gastraphetes = set_combine(sets.precast.RA, {
-            head="Orion Beret +3"
+            head="Orion Beret +3",
             legs="Orion Braccae +3",
         })
         sets.precast.RA.Gastraphetes.F1 = set_combine(sets.precast.RA, {
-            feet="Arcadian Socks +3"
+            feet="Arcadian Socks +3",
             legs=AdhemarLegs.Snap, -- 9
         })
         sets.precast.RA.Gastraphetes.F2 = sets.precast.RA.Gastraphetes.F1
@@ -350,7 +344,6 @@ function init_gear_sets()
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             head="Orion Beret +3",
-            neck="Scout's Gorget +2",
             ring1="Cacoethic Ring +1",
             legs="Orion Braccae +3",
             feet="Mummu Gamashes +2"
@@ -371,7 +364,7 @@ function init_gear_sets()
         })
         sets.midcast.RA.DoubleShot.Acc = set_combine(sets.midcast.RA.Acc, {
             hands="Oshosi Gloves",
-            legs="Oshosi Trousers",
+            -- legs="Oshosi Trousers",
             body="Arcadian Jerkin +3", 
             feet="Oshosi Leggings"
         })
@@ -646,12 +639,6 @@ function init_gear_sets()
             legs=AdhemarLegs.TP,
             feet="Arcadian Socks +3"
         }
-        -- placeholder until I can get to it
-        sets.buff.Barrage.Mid = sets.buff.Barrage
-        sets.buff.Barrage.Acc = set_combine(sets.buff.Barrage, {
-            hands="Mummu Wrists +2",
-            ring1="Cacoethic Ring +1"
-        })
         sets.buff.Camouflage =  {body="Orion Jerkin +3"}
 
         sets.Overkill =  {
@@ -671,38 +658,21 @@ end
  
 function job_precast(spell, action, spellMap, eventArgs)
         
-        if state.Buff[spell.english] ~= nil then
-            state.Buff[spell.english] = true
+    if state.Buff[spell.english] ~= nil then
+        state.Buff[spell.english] = true
+    end
+    -- Safety checks for weaponskills 
+    if spell.type:lower() == 'weaponskill' then
+        if player.tp < 1000 then
+            eventArgs.cancel = true
+            return
         end
-        --add_to_chat(8, state.CombatForm)
-        -- if sam_sj then
-        --     classes.CustomClass = 'SAM'
-        -- end
-
-        -- if spell.action_type == 'Ranged Attack' and player.equipment.range == gear.Bow then
-        --     state.CombatWeapon:set('Bow')
-        -- end
-        -- add support for RangedMode toggles to EES
-        if spell.english == 'Eagle Eye Shot' then
-            classes.JAMode = state.RangedMode.value
+        if spell.target.distance >21 then
+            add_to_chat(122,"Outside WS Range! /Canceling")
+            eventArgs.cancel = true
+            return
         end
-        -- Safety checks for weaponskills 
-        if spell.type:lower() == 'weaponskill' then
-            if player.tp < 1000 then
-                    eventArgs.cancel = true
-                    return
-            end
-            if ((spell.target.distance >8 and spell.skill ~= 'Archery' and spell.skill ~= 'Marksmanship') or (spell.target.distance >21)) then
-                -- Cancel Action if distance is too great, saving TP
-                add_to_chat(122,"Outside WS Range! /Canceling")
-                eventArgs.cancel = true
-                return
-            
-            elseif state.DefenseMode.value ~= 'None' then
-                -- Don't gearswap for weaponskills when Defense is on.
-                eventArgs.handled = true
-            end
-        end
+    end
 end
  
 -- Run after the default precast() is done.
@@ -728,27 +698,14 @@ end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-    -- Barrage
-    if spell.action_type == 'Ranged Attack' and state.Buff.Barrage then
-        if state.RangedMode.current == 'Mid' then
-            equip(sets.buff.Barrage.Mid)
-        elseif state.RangedMode.current == 'Acc' then
-            equip(sets.buff.Barrage.Acc)
-        else
-            equip(sets.buff.Barrage)
-        end
-        eventArgs.handled = true
-    end
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
     end
     if state.Buff.Overkill then
         equip(sets.Overkill)
     end
-    if spell.action_type == 'Ranged Attack' then
-        if state.CapacityMode.value then
-            equip(sets.CapacityMantle)
-        end
+    if spell.action_type == 'Ranged Attack' and state.CapacityMode.value then
+        equip(sets.CapacityMantle)
     end
 end
 
