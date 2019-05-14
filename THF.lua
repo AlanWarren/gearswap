@@ -76,6 +76,9 @@ function init_gear_sets()
     TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
     TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+8'}}
 
+    TaeonHead = {}
+    TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
+
     HercFeet = {}
     HercHead = {}
     
@@ -185,6 +188,7 @@ function init_gear_sets()
 
     -- Ranged snapshot gear
     sets.precast.RA = {
+        head=TaeonHead.Snap,
         hands=TaeonHands.Snap,
         legs="Adhemar Kecks",
         feet="Meghanada Jambeaux +2" -- 8
@@ -196,11 +200,11 @@ function init_gear_sets()
         ear2="Sherida Earring",
         body="Meghanada Cuirie +2",
         ring1="Dingir Ring",
-        ring2="Mummu Ring",
+        ring2="Cacoethic Ring +1",
         waist="Eschan Stone",
         back="Quarrel Mantle",
         legs="Adhemar Kecks",
-        feet="Mummu Gamashes +2"
+        feet="Meghanada Jambeaux +2" -- 8
     }
     --sets.midcast['Enfeebling Magic'] = sets.midcast.RA
 

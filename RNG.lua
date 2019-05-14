@@ -348,7 +348,7 @@ function init_gear_sets()
             legs="Orion Braccae +3",
             feet="Mummu Gamashes +2"
         })
-
+        
         -- Double Shot 
         sets.midcast.RA.DoubleShot = set_combine(sets.midcast.RA, {
             hands="Oshosi Gloves",

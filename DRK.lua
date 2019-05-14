@@ -574,7 +574,7 @@ function init_gear_sets()
     -- 40% STR 40% INT - Darkness Elemental
     sets.precast.WS['Shadow of Death'] = set_combine(sets.precast.WS['Entropy'], {
         head="Pixie Hairpin +1",
-        neck="Eddy Necklace",
+        neck="Abyssal Bead Necklace +1",
         body="Fallen's Cuirass +3",
         ear1="Friomisi Earring",
         hands="Carmine Finger Gauntlets +1",
@@ -600,7 +600,7 @@ function init_gear_sets()
     -- 50% MND / 50% STR Darkness Elemental
     sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {
         head="Pixie Hairpin +1",
-        neck="Eddy Necklace",
+        neck="Abyssal Bead Necklace +1",
         ear1="Friomisi Earring",
         body="Fallen's Cuirass +3",
         hands="Founder's Gauntlets",
