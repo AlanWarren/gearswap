@@ -481,7 +481,9 @@ function init_gear_sets()
             -- hands="Mummu Wrists +2",
         })
 
-        sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Trueflight']
+        sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Trueflight'], {
+            ear2="Moonshade Earring"
+        })
 
         -- CORONACH
         sets.precast.WS['Coronach'] = set_combine(sets.precast.WS, {
