@@ -345,15 +345,18 @@ function init_gear_sets()
     sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'].Mid, {neck="Breeze Gorget"})
 
     sets.precast.WS['Aeolian Edge'] = {
+        ammo="Seething Bomblet +1",
         neck="Sanctity Necklace",
         head=HercHead.MAB, 
+        ear1="Moonshade Earring",
+        ear2="Friomisi Earring",
         body="Herculean Vest",
-        hands="Leyline Gloves",
+        hands="Herculean Gloves",
         ring1="Mummu Ring",
         ring2="Dingir Ring",
         back="Toro Cape",
         waist="Thunder Belt",
-        legs="Limbo Trousers",
+        legs="Herculean Trousers",
         feet=HercFeet.MAB
     }
 
@@ -429,7 +432,7 @@ function init_gear_sets()
         head=HercHead.TP,
         neck="Twilight Torque",
         body="Emet Harness +1",
-        hands="Herculean Gloves",
+        hands="Meghanada Gloves +2",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
         back="Solemnity Cape",
@@ -442,7 +445,6 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Etiolation Earring",
         body="Herculean Vest",
-        hands="Herculean Gloves",
         ring1="Defending Ring",
         ring2="Epona's Ring",
         back="Solemnity Cape",
@@ -496,7 +498,7 @@ function init_gear_sets()
         head="Meghanada Visor +2",
         neck="Twilight Torque",
         body="Pillager's Vest +3",
-        hands="Herculean Gloves",
+        hands="Meghanada Gloves +2",
         ring1="Defending Ring",
         ring2="Epona's Ring",
         back="Solemnity Cape",
