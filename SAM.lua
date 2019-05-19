@@ -133,11 +133,13 @@ function init_gear_sets()
         hands="Buremte Gloves",
     }
     sets.midcast.RA = {
-        head="White rarab cap +1",
+        head="Terminal Helm",
         body="Kyujutsugi",
         neck="Iqabi Necklace",
         hands="Ryuo Tekko",
-        waist="Chaac Belt",
+        waist="Eschan Stone",
+        ring1="Cacoethic Ring +1",
+        ring2="Hajduk Ring",
         feet="Wakido Sune-ate +1"
     }	
     -- Don't need any special gear for Healing Waltz.
@@ -159,7 +161,7 @@ function init_gear_sets()
         neck="Ganesha's Mala",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
-        body="Valorous Mail",
+        body="Sakonji Domaru +3",
         hands=Valorous.Hands.WS,
         ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
@@ -178,15 +180,16 @@ function init_gear_sets()
     
     sets.precast.WS['Namas Arrow'] = {
         ammo=gear.RAarrow,
-        head="Valorous Mask",
+        head="Terminal Helm",
         neck="Aqua Gorget",
         ear1="Ishvara Earring",
-        ear2="Flame Pearl",
-        body="Valorous Mail",
+        ear2="Enervating Pearl",
+        body="Kyujutsugi",
+        hands="Ryuo Tekko",
         back=Smertrios.WS,
-        ring1="Niqmaddu Ring",
+        ring1="Cacoethic Ring +1",
         ring2="Garuda Ring",
-        waist="Metalsinger Belt",
+        waist="Eschan Stone",
         legs="Hizamaru Hizayoroi +2",
         feet="Wakido Sune-ate +1"
     }
@@ -225,7 +228,7 @@ function init_gear_sets()
         feet="Thereoid Greaves"
     })
     sets.precast.WS['Impulse Drive'].Mid = set_combine(sets.precast.WS['Impulse Drive'], {
-        feet="Flamma Gambieras +2"
+        hands=Valorous.Hands.WS,
     })
     sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS['Impulse Drive'].Mid, {})
     
@@ -253,7 +256,7 @@ function init_gear_sets()
         waist="Soil Belt",
     })
     sets.precast.WS['Tachi: Rana'].Mid = set_combine(sets.precast.WS['Tachi: Rana'], {
-        body="Sakonji Domaru +1"
+        body="Sakonji Domaru +3",
     })
     sets.precast.WS['Tachi: Rana'].Acc = set_combine(sets.precast.WS.Acc, {
         neck="Shadow Gorget",
@@ -262,7 +265,7 @@ function init_gear_sets()
     -- CHR Mod
     sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
         head="Flamma Zucchetto +2",
-        body="Flamma Korazin +1",
+        body="Sakonji Domaru +3",
         hands="Flamma Manopolas +2",
         feet="Flamma Gambieras +2",
         back=Smertrios.WS,
@@ -305,7 +308,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
-   	    body="Hizamaru Haramaki +2",
+        body="Sakonji Domaru +3",
         hands="Wakido Kote +2",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",

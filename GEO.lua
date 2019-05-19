@@ -200,7 +200,7 @@ function init_gear_sets()
         neck="Mizukage-no-Kubikazari",
         ear1="Friomisi Earring",
         ear2="Regal Earring",
-        body="Jhakri Robe +1",
+        body="Shamash Robe",
         hands="Amalric Gages", 
         ring1="Shiva Ring",
         ring2="Resonance Ring",
@@ -239,6 +239,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Regal Earring",
         neck="Erra Pendant",
+        body="Shamash Robe",
         legs="Merlinic Shalwar",
         ring1="Weatherspoon Ring",
         back="Nantosuelta's Cape",
@@ -252,7 +253,7 @@ function init_gear_sets()
         neck="Erra Pendant",
         ear1="Gwati Earring",
         ear2="Lempo Earring",
-        body="Azimuth Coat +1",
+        body="Shamash Robe",
         hands="Mallquis Cuffs +1",
         ring1="Weatherspoon Ring",
         ring2="Sangoma Ring",
@@ -313,7 +314,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {
         neck="Twilight Torque",
-        body="Azimuth Coat +1",
+        body="Shamash Robe",
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -330,7 +331,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Jhakri Robe +1",
+        body="Shamash Robe",
         hands="Bagua Mitaines",
         ring1="Dark Ring",
         ring2="Defending Ring",
@@ -342,7 +343,7 @@ function init_gear_sets()
     sets.idle.PDT = set_combine(sets.idle, {
         head="Hike Khat +1",
         neck="Twilight Torque",
-        body="Mallquis Saio +1",
+        body="Shamash Robe",
         hands="Geomancy Mitaines +1",
     	back="Solemnity Cape",
         feet="Azimuth Gaiters +1"
@@ -353,7 +354,7 @@ function init_gear_sets()
         main="Sucellus",
         head="Azimuth Hood +1",
         neck="Twilight Torque",
-        body="Mallquis Saio +1",
+        body="Shamash Robe",
         hands="Geomancy Mitaines +1",
         legs="Telchine Braconi",
         back="Lifestream Cape",
@@ -390,7 +391,7 @@ function init_gear_sets()
     --})
 
     sets.idle.Town = set_combine(sets.idle, {
-        body="Councilor's Garb",
+        body="Shamash Robe",
         hands="Amalric Gages", 
     })
 
@@ -403,7 +404,7 @@ function init_gear_sets()
         head="Welkin Crown",
         neck="Twilight Torque",
         ear1="Zennaroi Earring",
-        body="Azimuth Coat +1",
+        body="Shamash Robe",
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
         ring2="Defending Ring",
@@ -417,7 +418,7 @@ function init_gear_sets()
         --neck="Wiglen Gorget",
         ear1="Zennaroi Earring",
         ear2="Loquacious Earring",
-        body="Azimuth Coat +1",
+        body="Shamash Robe",
         hands="Geomancy Mitaines +1",
         --ring1="Defending Ring",
         --ring2="Shadow Ring",
@@ -446,7 +447,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Bladeborn Earring",
         ear2="Steelflash Earring",
-        body="Azimuth Coat +1",
+        body="Shamash Robe",
         --body="Vanir Cotehardie",
         hands="Geomancy Mitaines +1",
         ring1="Rajas Ring",

@@ -188,12 +188,10 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc', 'Refresh', 'Learning')
+    state.OffenseMode:options('Normal', 'Acc', 'Mid', 'Learning')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Learning')
-
-    gear.macc_hagondes = {name="Hagondes Cuffs", augments={'Phys. dmg. taken -3%','Mag. Acc.+29'}}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Chain Affinity" <me>')
@@ -227,39 +225,61 @@ function init_gear_sets()
     sets.buff.Diffusion = {feet="Luhlaza Charuqs"}
     sets.buff.Enchainment = {body="Luhlaza Jubbah"}
     sets.buff.Efflux = {legs="Mavi Tayt +2"}
-
     
     -- Precast Sets
     
     -- Precast sets to enhance JAs
     sets.precast.JA['Azure Lore'] = {hands="Mirage Bazubands +2"}
 
-
     -- Waltz set (chr and vit)
-    sets.precast.Waltz = {ammo="Sonia's Plectrum",
+    sets.precast.Waltz = {
+        ammo="Sonia's Plectrum",
         head="Uk'uxkaj Cap",
-        body="Vanir Cotehardie",hands="Buremte Gloves",ring1="Spiral Ring",
-        back="Iximulew Cape",waist="Caudata Belt",legs="Hagondes Pants",feet="Iuitl Gaiters +1"}
+        body="Vanir Cotehardie",
+        hands="Buremte Gloves",
+        ring1="Spiral Ring",
+        back="Iximulew Cape",
+        waist="Caudata Belt",
+        legs="Hagondes Pants",
+        feet="Iuitl Gaiters +1"
+    }
         
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
 
     -- Fast cast sets for spells
     
-    sets.precast.FC = {ammo="Impatiens",
-        head="Haruspex Hat",ear2="Loquacious Earring",
-        body="Luhlaza Jubbah",hands="Thaumas Gloves",ring1="Prolix Ring",
-        back="Swith Cape +1",waist="Witful Belt",legs="Enif Cosciales",feet="Chelona Boots +1"}
+    sets.precast.FC = {
+        ammo="Impatiens",
+        head="Haruspex Hat",
+        ear2="Loquacious Earring",
+        body="Luhlaza Jubbah",
+        hands="Thaumas Gloves",
+        ring1="Prolix Ring",
+        back="Swith Cape +1",
+        waist="Witful Belt",
+        legs="Enif Cosciales",
+        feet="Chelona Boots +1"
+    }
         
     sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Mavi Mintan +2"})
-
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head="Whirlpool Mask",neck=gear.ElementalGorget,ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Qaaxo Harness",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist=gear.ElementalBelt,legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
+        head="Whirlpool Mask",
+        neck=gear.ElementalGorget,
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+        body="Qaaxo Harness",
+        hands="Assimilator's Bazubands +1",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+        back="Atheling Mantle",
+        waist=gear.ElementalBelt,
+        legs="Manibozho Brais",
+        feet="Iuitl Gaiters +1"
+    }
     
     sets.precast.WS.acc = set_combine(sets.precast.WS, {hands="Buremte Gloves"})
 
@@ -343,7 +363,7 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].MagicAccuracy = {ammo="Mavi Tathlum",
         head="Luhlaza Keffiyeh",neck="Ej Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-        body="Vanir Cotehardie",hands=gear.macc_hagondes,ring2="Sangoma Ring",
+        body="Vanir Cotehardie",ring2="Sangoma Ring",
         back="Cornflower Cape",legs="Iuitl Tights",feet="Iuitl Gaiters +1"}
 
     -- Breath Spells --
@@ -440,49 +460,70 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
     
     -- Normal melee group
-    sets.engaged = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Luhlaza Jubbah",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
+    sets.engaged = {
+        ammo="Jukukik Feather",
+        head="Whirlpool Mask",
+        neck="Asperity Necklace",
+        ear1="Bladeborn Earring",
+        ear2="Steelflash Earring",
+        body="Luhlaza Jubbah",
+        hands="Assimilator's Bazubands +1",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+        back="Atheling Mantle",
+        waist="Windbuffet Belt",
+        legs="Manibozho Brais",
+        feet="Iuitl Gaiters +1"
+    }
 
-    sets.engaged.Acc = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Ej Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Luhlaza Jubbah",hands="Buremte Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Hurch'lan Sash",legs="Manibozho Brais",feet="Qaaxo Leggings"}
+    sets.engaged.Mid = set_combine(sets.engaged, {})
 
-    sets.engaged.Refresh = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
-        body="Luhlaza Jubbah",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Qaaxo Leggings"}
+    sets.engaged.Acc = set_combine(sets.engaged.Mid, {})
 
-    sets.engaged.DW = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Asperity Necklace",ear1="Heartseeker Earring",ear2="Dudgeon Earring",
-        body="Luhlaza Jubbah",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Atheling Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Iuitl Gaiters +1"}
+    sets.engaged.DW = {
+        ammo="Jukukik Feather",
+        head="Whirlpool Mask",
+        neck="Asperity Necklace",
+        ear1="Heartseeker Earring",
+        ear2="Dudgeon Earring",
+        body="Luhlaza Jubbah",
+        hands="Assimilator's Bazubands +1",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+        back="Atheling Mantle",
+        waist="Windbuffet Belt",
+        legs="Manibozho Brais",
+        feet="Iuitl Gaiters +1"
+    }
 
-    sets.engaged.DW.Acc = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Ej Necklace",ear1="Heartseeker Earring",ear2="Dudgeon Earring",
-        body="Luhlaza Jubbah",hands="Buremte Gloves",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Hurch'lan Sash",legs="Manibozho Brais",feet="Qaaxo Leggings"}
+    sets.engaged.DW.Acc = {
+        ammo="Jukukik Feather",
+        head="Whirlpool Mask",
+        neck="Ej Necklace",
+        ear1="Heartseeker Earring",
+        ear2="Dudgeon Earring",
+        body="Luhlaza Jubbah",
+        hands="Buremte Gloves",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+        back="Letalis Mantle",
+        waist="Hurch'lan Sash",
+        legs="Manibozho Brais",
+        feet="Qaaxo Leggings"
+    }
 
-    sets.engaged.DW.Refresh = {ammo="Jukukik Feather",
-        head="Whirlpool Mask",neck="Asperity Necklace",ear1="Heartseeker Earring",ear2="Dudgeon Earring",
-        body="Luhlaza Jubbah",hands="Assimilator's Bazubands +1",ring1="Rajas Ring",ring2="Epona's Ring",
-        back="Letalis Mantle",waist="Windbuffet Belt",legs="Manibozho Brais",feet="Qaaxo Leggings"}
+    sets.engaged.PDT = set_combine(sets.engaged, {})
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {})
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid.PDT, {})
+    sets.engaged.Low = set_combine(sets.engaged, {})
 
     sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
     sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)
 
     
-    sets.engaged.MaxHaste = set_combine(sets.engaged, {
-        --put gear here
-    })
-    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        --put gear here
-    })
-    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
-        --put gear here
-    })
+    sets.engaged.MaxHaste = set_combine(sets.engaged, { })
+    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, { })
+    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, { })
     sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {})
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {})
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, {})

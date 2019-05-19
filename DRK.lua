@@ -378,6 +378,9 @@ function init_gear_sets()
     -- Absorbs
     sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
         head="Ignominy Burgonet +2", -- 17
+        -- neck="Sanctity Necklace",
+        -- back="Niht Mantle",
+        -- hands="Flamma Manopolas +2",
         back="Chuparrosa Mantle",
         hands="Pavor Gauntlets",
         ring1="Evanescence Ring", -- 10
