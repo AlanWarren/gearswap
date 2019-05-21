@@ -1,7 +1,26 @@
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
-
+-- <slot01>cocoon</slot01> def - crawlers
+-- <slot02>tail slap</slot02>  stp - merrows arrapago reef
+-- <slot03>sickle slash</slot03> - STP - spiders aby mis coast
+-- <slot04>diffusion ray</slot04> STP bonus - Chariots aby uleguerand #07
+-- <slot05>anvil lightning</slot05> ACC bonus -  Escalent (ungeweder type = green/blue)
+-- <slot06>empty thrash</slot06> Da/Ta - craver promy mea
+-- <slot07>erratic flutter</slot07>
+-- <slot08>fantod</slot08> - stp (also attack buff) - hippogryph in risenjima
+-- <slot09>delta thrust</slot09> DW - peiste in aby mis coast #07
+-- <slot10>white wind</slot10> regen trait - puk (Waugyl) in aby altepa
+-- <slot11>barrier tusk</slot11> DT - olyphant aby uleguerant 
+-- <slot12>nat. meditation</slot12> acc bonus (attk boost when used) - chapuli in risenjima
+-- <slot13>sudden lunge</slot13> stp - ladybug aby altepa #01 or #03
+-- <slot14>thrashing assault</slot14>
+-- <slot15>vanity dive</slot15>
+-- <slot16>barbed crescent</slot16>
+-- <slot17>disseverment</slot17>
+-- <slot18>molting plumage</slot18>
+-- <slot19>occultation</slot19>
+-- <slot20>heavy strike</slot20>
 -- Initialization function for this job file.
 function get_sets()
     mote_include_version = 2
