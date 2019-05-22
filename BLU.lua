@@ -582,7 +582,12 @@ function init_gear_sets()
     sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)
 
     
-    sets.engaged.MaxHaste = set_combine(sets.engaged, { })
+    sets.engaged.MaxHaste = set_combine(sets.engaged, {
+        -- body="",
+        ear2="Cessance Earring",
+        legs="Samnuha Tights",
+        waist="Windbuffet Belt +1"
+     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, { })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, { })
     sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {})
