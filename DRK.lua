@@ -632,7 +632,7 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +1",
         ear1="Brutal Earring",
         ear2="Cessance Earring",
-        body="Ignominy Cuirass +3",
+        body="Makora Meikogai",
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",
@@ -645,7 +645,7 @@ function init_gear_sets()
     sets.idle.Field = set_combine(sets.idle.Town, {
         head="Ratri Sallet",
         neck="Sanctity Necklace",
-        body="Sulevia's Platemail +2",
+        body="Makora Meikogai",
     })
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="",

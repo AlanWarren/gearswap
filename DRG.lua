@@ -258,7 +258,7 @@ function init_gear_sets()
         neck="Anu Torque",
         ear1="Sherida Earring",
         ear2="Cessance Earring",
-		body="Sulevia's Platemail +2",
+   	    body="Makora Meikogai",
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",
@@ -271,7 +271,7 @@ function init_gear_sets()
 	sets.idle.Field = set_combine(sets.idle.Town, {
         head="Sulevia's Mask +2",
         neck="Sanctity Necklace",
-        body="Sulevia's Platemail +2",
+   	    body="Makora Meikogai",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         hands="Sulevia's Gauntlets +2",

@@ -326,7 +326,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-   	    body="Hizamaru Haramaki +2",
+        body="Makora Meikogai",
         hands="Sakonji Kote +1",
         ring1="Dark Ring",
         back=Smertrios.TP,
