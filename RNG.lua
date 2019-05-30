@@ -208,8 +208,8 @@ function init_gear_sets()
         sets.idle.Town = set_combine(sets.idle, {
             head="Arcadian Beret +3",
             body="Orion Jerkin +3", 
-            ear1="Telos Earring",
-            ear2="Dedition Earring",
+            ear1="Dedition Earring",
+            ear2="Telos Earring",
             neck="Scout's Gorget +2",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
@@ -326,8 +326,8 @@ function init_gear_sets()
         sets.midcast.RA = { 
             head="Arcadian Beret +3",
             neck="Scout's Gorget +2",
-            ear1="Telos Earring", 
-            ear2="Dedition Earring",
+            ear1="Dedition Earring",
+            ear2="Telos Earring", 
             body="Orion Jerkin +3", 
             hands="Adhemar Wristbands +1",
             ring1="Ilabrat Ring",
@@ -338,7 +338,7 @@ function init_gear_sets()
             feet="Arcadian Socks +3"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-            ear2="Enervating Earring",
+            ear1="Enervating Earring",
             body="Orion Jerkin +3", 
             legs=AdhemarLegs.TP, 
         })
@@ -386,8 +386,8 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi = {
             head="Meghanada Visor +2",
             neck="Scout's Gorget +2",
-            ear1="Telos Earring",
-            ear2="Dedition Earring",
+            ear1="Dedition Earring",
+            ear2="Telos Earring",
             body="Mummu Jacket +2",
             hands="Adhemar Wristbands +1",
             ring1="Ilabrat Ring",
@@ -398,7 +398,7 @@ function init_gear_sets()
             feet="Arcadian Socks +3"
         }
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
-            ear2="Enervating Earring",
+            ear1="Enervating Earring",
             hands="Adhemar Wristbands +1",
             legs=AdhemarLegs.TP,
         })
@@ -413,8 +413,8 @@ function init_gear_sets()
             head="Orion Beret +3",
             neck="Scout's Gorget +2",
             ear1="Sherida Earring",
-            ear2="Telos Earring",
-            body="Arcadian Jerkin +3",
+            ear2="Ishvara Earring",
+            body="Herculean Vest",
             hands="Meghanada Gloves +2",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
@@ -463,7 +463,7 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             neck="Scout's Gorget +2",
             hands="Carmine Finger Gauntlets +1",
-            body="Samnuha Coat",
+            body="Herculean Vest",
             ring1="Dingir Ring",
             ring2="Weatherspoon Ring",
             back=Belenus.MAB,
@@ -473,6 +473,7 @@ function init_gear_sets()
         }
         sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {
             -- body="Orion Jerkin +3",
+            body="Samnuha Coat",
             hands="Herculean Gloves",
         })
         sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
@@ -499,8 +500,6 @@ function init_gear_sets()
             legs="Arcadian Braccae +2", 
         })
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS['Coronach'], {
-            ear2="Enervating Earring",
-            body="Arcadian Jerkin +3", 
         })
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS['Coronach'].Mid, {
             body="Orion Jerkin +3", 
@@ -631,8 +630,8 @@ function init_gear_sets()
         sets.buff.Barrage = {
             head="Arcadian Beret +3",
             neck="Scout's Gorget +2",
-            ear1="Sherida Earring",
-            ear2="Enervating Earring",
+            ear1="Enervating Earring",
+            ear2="Telos Earring",
             body="Orion Jerkin +3",
             hands="Orion Bracers +1",
             ring1="Cacoethic Ring +1",
