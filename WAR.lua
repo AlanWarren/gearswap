@@ -373,6 +373,7 @@ function init_gear_sets()
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Ginsen",
          neck="Lissome Necklace",
+         ear1="Telos Earring",
          hands="Emicho Gauntlets",
          body="Valorous Mail",
      })
@@ -385,18 +386,19 @@ function init_gear_sets()
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
 
      sets.engaged.DW = set_combine(sets.engaged, {
-        ear1="Dudgeon Earring",
-        ear2="Heartseeker Earring",
+        ear1="Eabani Earring",
+        ear2="Suppanomimi",
         waist="Shetal Stone"
      })
      sets.engaged.OneHand = set_combine(sets.engaged, {
      })
 
      sets.engaged.GreatSword = set_combine(sets.engaged, {
-         ear1="Cessance Earring",
-         ear2="Tripudio Earring"
+         ear1="Brutal Earring",
+         ear2="Cessance Earring",
      })
      sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {
+         ear1="Telos Earring",
          --back="Grounded Mantle +1"
          --ring2="K'ayres RIng"
      })

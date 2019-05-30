@@ -215,6 +215,20 @@ function init_gear_sets()
         feet="Meghanada Jambeaux +2"
     }
 
+    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+        neck="Breeze Gorget",
+        body="Herculean Vest",
+        hands="Mummu Wrists +2",
+        ear1="Ishvara Earring",
+        ear2="Moonshade Earring",
+        ring1="Rajas Ring",
+        ring2="Epona's Ring",
+        waist="Metalsinger Belt",
+        legs="Meghanada Chausses +2",
+        waist="Thunder Belt",
+        feet=HercFeet.MAB
+    })
+
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, { 
@@ -337,7 +351,7 @@ function init_gear_sets()
         ammo=gear.RAbullet,
         head="Meghanada Visor +2",
         neck="Iskur Gorget",
-        ear1="Enervating Earring",
+        ear1="Telos Earring",
         ear2="Dedition Earring",
         body="Mummu Jacket +2",
         hands="Adhemar Wristbands +1",
@@ -352,7 +366,7 @@ function init_gear_sets()
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
         body="Laksamana's Frac +2",
-        ear2="Tripudio Earring",
+        ear2="Enervating Earring",
         ring1="Hajduk Ring",
         ring2="Cacoethic Ring +1",
         legs="Mummu Kecks +2",
@@ -401,8 +415,8 @@ function init_gear_sets()
         ammo=gear.RAbullet,
         head="Meghanada Visor +2",
         neck="Regal Necklace",
-        ear1="Etiolation Earring",
-        ear2="Eabani Earring",
+        ear1="Telos Earring",
+        ear2="Dedition Earring",
         body="Lanun Frac +3",
         hands="Regal Gloves",
         ring1="Dingir Ring",

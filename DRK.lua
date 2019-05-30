@@ -172,7 +172,7 @@ function init_gear_sets()
     Ankou = {}
     Ankou.FC  = { name="Ankou's Mantle", augments={'"Fast Cast"+10',}}
     Ankou.STP = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}}
-    Ankou.DA  = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-4%',}}
+    Ankou.DA  = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
     Ankou.WSD = { name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     Ankou.VIT = { name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
 
@@ -630,13 +630,13 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
         neck="Abyssal Bead Necklace +1",
-        ear1="Brutal Earring",
-        ear2="Cessance Earring",
+        ear1="Dedition Earring",
+        ear2="Telos Earring",
         body="Makora Meikogai",
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",
-        back=Ankou.STP,
+        back=Ankou.DA,
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
         feet="Volte Sollerets"
@@ -644,8 +644,11 @@ function init_gear_sets()
 
     sets.idle.Field = set_combine(sets.idle.Town, {
         head="Ratri Sallet",
+        ear1="Etiolation Earring",
+        ear2="Eabani Earring",
         neck="Sanctity Necklace",
         body="Makora Meikogai",
+        waist="Flume belt",
     })
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="",
@@ -719,7 +722,7 @@ function init_gear_sets()
         hands="Sulevia's Gauntlets +2", -- 5% pdt
         ring1="Niqmaddu Ring", 
         ring2="Defending Ring", -- 10% dt
-        back=Ankou.STP, -- 5% dt
+        back=Ankou.DA, -- 5% dt
         waist="Ioskeha Belt",
         legs="Sulevia's Cuisses +2", -- 7% dt
         feet="Volte Sollerets"  -- 4% pdt | 6% mdt
@@ -732,7 +735,7 @@ function init_gear_sets()
         hands="Sulevia's Gauntlets +2",
         ring1="Patricius Ring",
         ring2="Defending Ring",
-        back=Ankou.STP,
+        back=Ankou.DA,
         waist="Ioskeha Belt",
         legs="Sulevia's Cuisses +2",
         feet="Volte Sollerets" 
@@ -770,12 +773,13 @@ function init_gear_sets()
         feet="Flamma Gambieras +2"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
+        ear2="Telos Earring",
         body="Valorous Mail",
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         -- ammo="Hasty Pinion +1",
         ear1="Cessance Earring",
-        ear2="Zennaroi Earring",
+        ear2="Telos Earring",
         body="Fallen's Cuirass +3",
         back=Ankou.STP,
     })
@@ -812,7 +816,7 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +1",
         hands="Flamma Manopolas +2",
         ear1="Dedition Earring",
-        ear2="Tripudio Earring",
+        ear2="Telos Earring",
         ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
         back=Ankou.STP,
@@ -828,7 +832,7 @@ function init_gear_sets()
     sets.engaged.Liberator.Acc.AM3 = set_combine(sets.engaged.Liberator.Mid.AM3, {
         ammo="Seething Bomblet +1",
         ear1="Cessance Earring",
-        ear2="Zennaroi Earring",
+        ear2="Telos Earring",
         body="Fallen's Cuirass +3",
         waist="Ioskeha Belt",
         legs="Ignominy Flanchard +3",
@@ -882,14 +886,14 @@ function init_gear_sets()
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
         ear1="Cessance Earring",
-        ear2="Brutal Earring",
+        ear2="Telos Earring",
         hands="Sulevia's Gauntlets +2",
         back=Ankou.DA
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
         ammo="Seething Bomblet +1",
         ear1="Cessance Earring",
-        ear2="Zennaroi Earring",
+        ear2="Telos Earring",
         body="Fallen's Cuirass +3",
         hands="Sulevia's Gauntlets +2",
         back=Ankou.DA
@@ -987,6 +991,7 @@ function init_gear_sets()
     })
     sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {
         hands="Sulevia's Gauntlets +2",
+        ear2="Telos Earring",
         back=Ankou.DA
     })
     sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {

@@ -129,7 +129,7 @@ function init_gear_sets()
         Belenus = {}
         Belenus.STP = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Damage taken-5%',}}
         Belenus.WSD = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
-        Belenus.TF  = { name="Belenus's Cape", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+9','Weapon skill damage +10%',}}
+        Belenus.MAB  = { name="Belenus's Cape", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
         Belenus.Snap = {name="Belenus's Cape", augments={'"Snapshot"+10',}}
 
         sets.Organizer = {
@@ -208,7 +208,7 @@ function init_gear_sets()
         sets.idle.Town = set_combine(sets.idle, {
             head="Arcadian Beret +3",
             body="Orion Jerkin +3", 
-            ear1="Enervating Earring",
+            ear1="Telos Earring",
             ear2="Dedition Earring",
             neck="Scout's Gorget +2",
             ring1="Dingir Ring",
@@ -326,7 +326,7 @@ function init_gear_sets()
         sets.midcast.RA = { 
             head="Arcadian Beret +3",
             neck="Scout's Gorget +2",
-            ear1="Sherida Earring", 
+            ear1="Telos Earring", 
             ear2="Dedition Earring",
             body="Orion Jerkin +3", 
             hands="Adhemar Wristbands +1",
@@ -386,8 +386,8 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi = {
             head="Meghanada Visor +2",
             neck="Scout's Gorget +2",
-            ear1="Sherida Earring",
-            ear2="Enervating Earring",
+            ear1="Telos Earring",
+            ear2="Dedition Earring",
             body="Mummu Jacket +2",
             hands="Adhemar Wristbands +1",
             ring1="Ilabrat Ring",
@@ -398,6 +398,7 @@ function init_gear_sets()
             feet="Arcadian Socks +3"
         }
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
+            ear2="Enervating Earring",
             hands="Adhemar Wristbands +1",
             legs=AdhemarLegs.TP,
         })
@@ -412,7 +413,7 @@ function init_gear_sets()
             head="Orion Beret +3",
             neck="Scout's Gorget +2",
             ear1="Sherida Earring",
-            ear2="Tripudio Earring",
+            ear2="Telos Earring",
             body="Arcadian Jerkin +3",
             hands="Meghanada Gloves +2",
             ring1="Dingir Ring",
@@ -440,7 +441,7 @@ function init_gear_sets()
             body="Samnuha Coat",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
-            back=Belenus.TF,
+            back=Belenus.MAB,
             waist="Eschan Stone",
             legs="Herculean Trousers", 
             feet=HercFeet.MAB
@@ -465,7 +466,7 @@ function init_gear_sets()
             body="Samnuha Coat",
             ring1="Dingir Ring",
             ring2="Weatherspoon Ring",
-            back=Belenus.TF,
+            back=Belenus.MAB,
             waist="Eschan Stone",
             legs="Herculean Trousers",
             feet=HercFeet.MAB

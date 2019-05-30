@@ -93,6 +93,7 @@ function init_gear_sets()
     Toutatis.WSD = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
     sets.TreasureHunter = {head="White rarab cap +1", hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
+    sets.TreasureHunterRA = {hands="Plunderer's Armlets +1", waist="Chaac Belt"}
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
     sets.CapacityMantle = {back="Mecistopins Mantle"}
 
@@ -199,6 +200,7 @@ function init_gear_sets()
         ear1="Enervating Earring",
         ear2="Sherida Earring",
         body="Meghanada Cuirie +2",
+        hands="Adhemar Wristbands +1",
         ring1="Dingir Ring",
         ring2="Cacoethic Ring +1",
         waist="Eschan Stone",
@@ -369,7 +371,7 @@ function init_gear_sets()
     sets.midcast.Utsusemi = sets.midcast.FastRecast
 
     -- Ranged gear -- acc + TH
-    sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
+    -- sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
 
     sets.midcast.RA.Acc = sets.midcast.RA
 
@@ -397,7 +399,7 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
         head=HercHead.TP,
         neck="Assassin's Gorget +1",
-        ear1="Dedition Earring",
+        ear1="Telos Earring",
         ear2="Sherida Earring",
         body="Pillager's Vest +3",
         hands="Adhemar Wristbands +1",
@@ -464,7 +466,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo="Yamarang",
         head=HercHead.TP,
-        neck="Anu Torque",
+        neck="Assassin's Gorget +1",
         ear1="Eabani Earring",
         ear2="Suppanomimi",
         body="Samnuha Coat",
@@ -478,14 +480,13 @@ function init_gear_sets()
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         body="Samnuha Coat",
-        neck="Assassin's Gorget +1",
         ring1="Petrov Ring",
         legs="Pillager's culottes +3",
         -- feet="Mummu Gamashes +2"
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Assassin's Gorget +1",
-        ear1="Cessance Earring",
+        ear1="Telos Earring",
         ear2="Suppanomimi",
         body="Pillager's Vest +3",
         hands="Floral Gauntlets",
@@ -558,12 +559,14 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
         body="Pillager's Vest +3",
+        ear1="Telos Earring",
         neck="Assassin's Gorget +1",
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         waist="Patentia Sash",
         body="Pillager's Vest +3",
         neck="Assassin's Gorget +1",
+        ear1="Telos Earring",
         ear2="Sherida Earring",
         back=Toutatis.STP,
         feet="Mummu Gamashes +2"
@@ -590,7 +593,7 @@ function init_gear_sets()
     -- Haste 43%
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head=HercHead.TP,
-        neck="Anu Torque",
+        neck="Assassin's Gorget +1",
         ear1="Dedition Earring",
         ear2="Sherida Earring",
         body="Pillager's Vest +3",
@@ -603,15 +606,14 @@ function init_gear_sets()
         feet=HercFeet.TP
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, { 
-        neck="Assassin's Gorget +1",
-        ear1="Cessance Earring",
+        ear1="Telos Earring",
         body="Pillager's Vest +3",
         feet=HercFeet.TP
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.MaxHaste.Mid, {
         neck="Assassin's Gorget +1",
         hands="Adhemar Wristbands +1",
-        ear1="Zennaroi Earring",
+        ear1="Telos Earring",
         waist="Olseni Belt",
         ring1="Ilabrat Ring",
         back=Toutatis.STP,

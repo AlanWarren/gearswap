@@ -314,7 +314,7 @@ function init_gear_sets()
         body="Mochizuki Chainmail +3",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
-        ear2="Trux Earring",
+        ear2="Telos Earring",
         hands="Regal Gloves",
         legs="Kendatsuba Hakama",
         ring1="Epona's Ring",
@@ -387,7 +387,7 @@ function init_gear_sets()
 
     sets.engaged.Mid = set_combine(sets.engaged.Low, {
         ear1="Brutal Earring",
-        ear2="Suppanomimi",
+        ear2="Telos Earring",
         -- ring2="Mummu Ring",
         feet="Hizamaru Sune-ate +2"
     })
@@ -480,7 +480,7 @@ function init_gear_sets()
         head=HercHead.TP,
         neck="Moonbeam Nodowa",
         ear1="Brutal Earring",
-        ear2="Cessance Earring",
+        ear2="Dedition Earring",
         body="Kendatsuba Samue",
         hands="Adhemar Wristbands +1",
         ring1="Epona's Ring",
@@ -493,17 +493,18 @@ function init_gear_sets()
     -- Base set for hard content
     sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         neck="Moonbeam Nodowa",
-        ear1="Trux Earring",
+        ear2="Cessance Earring",
         back=Andartia.DEX,
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
         head=HercHead.TP,
+        ear1="Telos Earring",
         body="Kendatsuba Samue",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head=HercHead.TP,
         neck="Moonbeam Nodowa",
-        ear1="Zennaroi Earring",
+        ear1="Telos Earring",
         body="Mochizuki Chainmail +3",
         -- hands="Ryuo Tekko",
         ring1="Ilabrat Ring",
@@ -531,27 +532,26 @@ function init_gear_sets()
     -- 35% Haste 
     sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
         head=HercHead.TP,
-        ear1="Cessance Earring",
+        ear1="Brutal Earring",
         ear2="Suppanomimi",
         hands="Floral Gauntlets",
     })
     sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
         head=HercHead.TP,
         neck="Moonbeam Nodowa",
-        ear1="Cessance Earring",
         ear2="Suppanomimi",
         hands="Floral Gauntlets",
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Ryuo Somen",
         ear1="Cessance Earring",
-        ear2="Trux Earring",
+        ear2="Telos Earring",
         hands="Floral Gauntlets",
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
         head=HercHead.TP,
         ear1="Cessance Earring",
-        ear2="Zennaroi Earring",
+        ear2="Telos Earring",
         hands="Adhemar Wristbands +1",
         body="Kendatsuba Samue",
         legs="Kendatsuba Hakama",
@@ -605,7 +605,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
         neck="Moonbeam Nodowa",
-        ear1="Trux Earring",
+        ear1="Cessance Earring",
         ring2="Ilabrat Ring",
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {

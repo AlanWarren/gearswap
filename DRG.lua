@@ -338,7 +338,7 @@ function init_gear_sets()
 		head="Flamma Zucchetto +2",
         neck="Anu Torque",
         ear1="Sherida Earring",
-        ear2="Brutal Earring",
+        ear2="Dedition Earring",
 		body="Valorous Mail", 
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
@@ -350,12 +350,13 @@ function init_gear_sets()
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
-        ear1="Cessance Earring",
+        ear2="Telos Earring",
         ring2="Flamma Ring",
         back="Updraft Mantle",
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        ear1="Cessance Earring",
         neck="Lissome Necklace",
         legs="Sulevia's Cuisses +2"
     })

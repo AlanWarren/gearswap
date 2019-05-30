@@ -96,10 +96,10 @@ function init_gear_sets()
     Valorous = {}
     Valorous.Hands = {}
     Valorous.Hands.TP = { name="Valorous Mitts", augments={'Accuracy+26','"Store TP"+6','AGI+10',}}
-    Valorous.Hands.WS = { name="Valorous Mitts", augments={'Attack+19','Weapon skill damage +4%','VIT+7','Accuracy+10',}}
-
+    Valorous.Hands.WS = { name="Valorous Mitts", augments={'Accuracy+27','Weapon skill damage +4%','Accuracy+5 Attack+5','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
+    
     Smertrios = {}
-    Smertrios.TP = {name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Smertrios.TP = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','"Store TP"+10','Phys. dmg. taken-10%',}}
     Smertrios.WS = {name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     -- Precast Sets
     -- Precast sets to enhance JAs
@@ -223,7 +223,6 @@ function init_gear_sets()
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         waist="Metalsinger Belt",
-        hands="Ryuo Tekko",
         hands="Flamma Manopolas +2",
         feet="Thereoid Greaves"
     })
@@ -265,7 +264,7 @@ function init_gear_sets()
     -- CHR Mod
     sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
         head="Flamma Zucchetto +2",
-        body="Sakonji Domaru +3",
+        body="Flamma Korazin +2",
         hands="Flamma Manopolas +2",
         feet="Flamma Gambieras +2",
         back=Smertrios.WS,
@@ -304,17 +303,17 @@ function init_gear_sets()
         --main="Anahera Blade", 
         --sub="Pole Grip",
         ammo="Ginsen",
-        head="Rao Kabuto",
+        head="Flamma Zucchetto +2",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
-        ear2="Tripudio Earring",
+        ear2="Brutal Earring",
         body="Sakonji Domaru +3",
-        hands="Wakido Kote +2",
+        hands="Wakido Kote +3",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",
         back=Smertrios.TP,
         waist="Windbuffet Belt +1",
-        legs="Ryuo Hakama",
+        legs="Kendatsuba Hakama",
         feet="Danzo Sune-ate"
     }
     sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
@@ -394,10 +393,10 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
         neck="Moonbeam Nodowa",
-        ear1="Cessance Earring",
-        ear2="Brutal Earring",
+        ear1="Brutal Earring",
+        ear2="Dedition Earring",
         body="Kasuga Domaru +1",
-        hands="Wakido Kote +2",
+        hands="Wakido Kote +3",
         ring1="Niqmaddu Ring", 
         ring2="Petrov Ring", 
         back=Smertrios.TP,
@@ -409,10 +408,21 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged, {
         -- hands=Valorous.Hands.TP,
         body="Valorous Mail",
+        ear1="Telos Earring",
+        ear2="Cessance Earring",
         legs="Ryuo Hakama",
         ring2="Flamma Ring",
         --body="Kendatsuba Samue",
         --legs="Kendatsuba Hakama",
+    })
+    sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
+        -- head="Valorous Mask",
+        body="Kendatsuba Samue",
+        -- back="Grounded Mantle +1",
+        -- ear1="Zennaroi Earring",
+        legs="Kendatsuba Hakama",
+        -- ring1="Mars's Ring",
+        -- legs="Acro Breeches",
     })
     sets.engaged.PDT = set_combine(sets.engaged, {
         neck="Twilight Torque",
@@ -423,16 +433,6 @@ function init_gear_sets()
         ring2="Defending Ring"
     })
     
-    sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
-        -- head="Valorous Mask",
-        hands="Flamma Manopolas +2",
-        -- body="Reiki Osode",
-        -- back="Grounded Mantle +1",
-        ear1="Zennaroi Earring",
-        legs="Flamma Dirs +1",
-        -- ring1="Mars's Ring",
-        -- legs="Acro Breeches",
-    })
     
     sets.engaged.Yoichi = set_combine(sets.engaged, { 
         sub="Utu Grip",
@@ -455,7 +455,7 @@ function init_gear_sets()
         --head="Otronif Mask +1", 
    	    body="Founder's Breastplate",
         neck="Agitator's Collar",
-        hands="Wakido Kote +2",
+        hands="Wakido Kote +3",
         ring2="Patricius Ring",
         back=Smertrios.TP,
         waist="Flume Belt",
@@ -485,7 +485,6 @@ function init_gear_sets()
     })
     
     sets.engaged.Acc.Reraise = set_combine(sets.engaged.Reraise, {
-        hands="Miki. Gauntlets",
         ring1="Patricius Ring",
         feet="Wakido Sune-Ate +1", 
     })
