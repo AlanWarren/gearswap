@@ -82,7 +82,8 @@ function job_setup()
     -- Physical spells with Vit stat mod
     blue_magic_maps.PhysicalVit = S{
         'Body Slam','Cannonball','Delta Thrust','Glutinous Dart','Grand Slam',
-        'Power Attack','Quad. Continuum','Sprout Smack','Sub-zero Smash'
+        'Power Attack','Quad. Continuum','Sprout Smack','Sub-zero Smash',
+        'Sweeping Gouge'
     }
         
     -- Physical spells with Agi stat mod
@@ -119,12 +120,15 @@ function job_setup()
         'Diffusion Ray','Droning Whirlwind','Embalming Earth','Firespit','Foul Waters',
         'Ice Break','Leafstorm','Maelstrom','Rail Cannon','Regurgitation','Rending Deluge',
         'Retinal Glare','Subduction','Tem. Upheaval','Water Bomb', 'Tenebral Crush', 'Spectral Floe',
-        'Molting Plumage'
+        'Molting Plumage', 'Searing Tempest'
     }
 
+    blue_magic_maps.MagicalLight = S{
+        'Blinding Fulgor'
+    }
     -- Magical spells with a primary Mnd mod
     blue_magic_maps.MagicalMnd = S{
-        'Acrid Stream','Evryone. Grudge','Magic Hammer','Mind Blast'
+        'Acrid Stream','Evryone. Grudge','Magic Hammer','Mind Blast','Scouring Spate'
     }
 
     -- Magical spells with a primary Chr mod
@@ -134,12 +138,16 @@ function job_setup()
 
     -- Magical spells with a Vit stat mod (on top of Int)
     blue_magic_maps.MagicalVit = S{
-        'Thermal Pulse'
+        'Thermal Pulse', 'Entomb'
+    }
+
+    blue_magic_maps.MagicalAgi = S{
+        'Silent Storm'
     }
 
     -- Magical spells with a Dex stat mod (on top of Int)
     blue_magic_maps.MagicalDex = S{
-        'Charged Whisker','Gates of Hades'
+        'Charged Whisker','Gates of Hades','Anvil Lightning'
     }
             
     -- Magical spells (generally debuffs) that we want to focus on magic accuracy over damage.
@@ -402,6 +410,8 @@ function init_gear_sets()
     }
 
     sets.midcast['Blue Magic'].PhysicalAcc = set_combine(sets.midcast['Blue Magic'].Physical, {
+        ear1="Telos Earring",
+        ring1="Cacoethic Ring +1"
     })
 
     sets.midcast['Blue Magic'].PhysicalStr = set_combine(sets.midcast['Blue Magic'].Physical, {
@@ -447,13 +457,23 @@ function init_gear_sets()
         neck="Erra Pendant"
     })
     
+    sets.midcast['Blue Magic'].MagicalLight = set_combine(sets.midcast['Blue Magic'].Magical, {
+        ring1="Weatherspoon Ring"
+    })
     sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {})
+
+    sets.midcast['Blue Magic'].MagicalAgi = set_combine(sets.midcast['Blue Magic'].Magical, {
+        ring1="Garuda Ring",
+        ring2="Ilabrat Ring"
+    })
 
     sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical)
 
     sets.midcast['Blue Magic'].MagicalVit = set_combine(sets.midcast['Blue Magic'].Magical, {})
 
-    sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical)
+    sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {
+        ring1="Ilabrat Ring"
+    })
 
     sets.midcast['Blue Magic'].MagicAccuracy = set_combine(sets.midcast['Blue Magic'].Magical, {
         neck="Erra Pendant",
