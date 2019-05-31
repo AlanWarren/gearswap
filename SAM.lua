@@ -130,14 +130,19 @@ function init_gear_sets()
         back="Takaha Mantle"
     }
     sets.precast.RA = {
+        head="Otomi Helm",
         hands="Buremte Gloves",
+        feet="Ejekamal Boots"
     }
     sets.midcast.RA = {
         head="Terminal Helm",
-        body="Kyujutsugi",
+        body="Kendatsuba Samue",
+        legs="Kendatsuba Hakama",
         neck="Iqabi Necklace",
         hands="Ryuo Tekko",
-        waist="Eschan Stone",
+        waist="Chaac Belt",
+        ear2="Enervating Earring",
+        ear1="Telos Earring",
         ring1="Cacoethic Ring +1",
         ring2="Hajduk Ring",
         feet="Wakido Sune-ate +1"
@@ -183,14 +188,15 @@ function init_gear_sets()
         head="Terminal Helm",
         neck="Aqua Gorget",
         ear1="Ishvara Earring",
-        ear2="Enervating Pearl",
-        body="Kyujutsugi",
+        ear2="Telos Earring",
+        body="Kendatsuba Samue",
+        legs="Kendatsuba Hakama",
         hands="Ryuo Tekko",
         back=Smertrios.WS,
         ring1="Cacoethic Ring +1",
         ring2="Garuda Ring",
         waist="Eschan Stone",
-        legs="Hizamaru Hizayoroi +2",
+        -- legs="Hizamaru Hizayoroi +2",
         feet="Wakido Sune-ate +1"
     }
     sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS['Namas Arrow'], {
@@ -305,8 +311,8 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
         neck="Sanctity Necklace",
-        ear1="Cessance Earring",
-        ear2="Brutal Earring",
+        ear1="Telos Earring",
+        ear2="Dedition Earring",
         body="Sakonji Domaru +3",
         hands="Wakido Kote +3",
         ring1="Niqmaddu Ring",
@@ -321,7 +327,7 @@ function init_gear_sets()
     })
     
     sets.idle.Field = set_combine(sets.idle.Town, {
-        head="Rao Kabuto",
+        head="Valorous Mask",
         neck="Twilight Torque",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
@@ -335,6 +341,7 @@ function init_gear_sets()
     })
 
     sets.idle.Regen = set_combine(sets.idle.Town, {
+        head="Rao Kabuto",
         neck="Sanctity Necklace",
         ring2="Paguroidea Ring",
         head="Rao Kabuto",

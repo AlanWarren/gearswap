@@ -694,7 +694,7 @@ function init_gear_sets()
         waist="Shetal Stone"
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
-        ear2="Suppanomimi"
+        ear2="Suppanomimi",
         ring1="Cacoethic Ring +1",
     })
      sets.engaged.Learning.Haste_30 = set_combine(sets.engaged.Haste_30, sets.Learning)

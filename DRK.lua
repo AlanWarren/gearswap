@@ -632,7 +632,7 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +1",
         ear1="Dedition Earring",
         ear2="Telos Earring",
-        body="Makora Meikogai",
+        body="Ignominy Cuirass +3",
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",
