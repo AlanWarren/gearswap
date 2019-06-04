@@ -318,7 +318,7 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         head=HercHead.TP,
-        body="Mochizuki Chainmail +3",
+        body="Adhemar Jacket +1",
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Telos Earring",
@@ -378,7 +378,7 @@ function init_gear_sets()
         neck="Moonbeam Nodowa",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Mochizuki Chainmail +3",
+        body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
         ring1="Epona's Ring",
         ring2="Petrov Ring",
@@ -394,7 +394,7 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        body="Mochizuki Chainmail +3",
+        body="Adhemar Jacket +1",
         ring1="Cacoethic Ring +1",
         waist="Olseni Belt",
     })
@@ -405,7 +405,7 @@ function init_gear_sets()
         head="Hizamaru Somen +1",
         neck="Moonbeam Nodowa",
         ear2="Cessance Earring",
-        body="Reiki Osode",
+        body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         waist="Windbuffet Belt +1",
         back=Andartia.DEX,
@@ -499,7 +499,7 @@ function init_gear_sets()
         head=HercHead.TP,
         neck="Moonbeam Nodowa",
         ear1="Telos Earring",
-        body="Mochizuki Chainmail +3",
+        body="Adhemar Jacket +1",
         -- hands="Ryuo Tekko",
         ring1="Ilabrat Ring",
         ring2="Cacoethic Ring +1",
@@ -562,7 +562,7 @@ function init_gear_sets()
         neck="Moonbeam Nodowa",
         ear1="Brutal Earring",
         ear2="Suppanomimi", 
-        body="Mochizuki Chainmail +3",
+        body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         ring1="Epona's Ring",
         ring2="Ilabrat Ring",
@@ -602,7 +602,7 @@ function init_gear_sets()
         neck="Moonbeam Nodowa",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Mochizuki Chainmail +3",
+        body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
         ring1="Epona's Ring",
         ring2="Ilabrat Ring",
@@ -688,7 +688,7 @@ function init_gear_sets()
         head=HercHead.TP,
         neck="Shadow Gorget",
         ear1="Ishvara Earring",
-        body="Kendatsuba Samue",
+        body="Herculean Vest",
         hands="Mummu Wrists +2",
         ring1="Mummu Ring",
         ring2="Ilabrat Ring",
@@ -700,12 +700,13 @@ function init_gear_sets()
     
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         neck="Shadow Gorget",
+        body="Kendatsuba Samue",
         waist="Caudata Belt",
     })
     
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         ear1="Cessance Earring",
-        body="Mochizuki Chainmail +3",
+        body="Adhemar Jacket +1",
         legs="Kendatsuba Hakama",
     })
     

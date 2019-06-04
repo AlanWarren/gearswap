@@ -217,7 +217,8 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc', 'Mid', 'Learning')
+    state.OffenseMode:options('Normal', 'Mid', 'Acc', 'Learning')
+    state.HybridMode:options('Normal', 'PDT')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Learning')
@@ -260,7 +261,7 @@ function init_gear_sets()
 
     Rosmerta = {}
     Rosmerta.TP = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
-    Rosmerta.WS = {name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    Rosmerta.WS = {name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+1','Weapon skill damage +10%',}}
 
     sets.buff['Burst Affinity'] = { legs="Assimilator's Shalwar +1" }
     sets.buff['Chain Affinity'] = {
@@ -313,7 +314,7 @@ function init_gear_sets()
         ear2="Brutal Earring",
         body="Herculean Vest",
         hands="Jhakri Cuffs +2",
-        ring1="Rajas Ring",
+        ring1="Ifrit's Ring",
         ring2="Epona's Ring",
         back=Rosmerta.WS,
         waist="Windbuffet Belt +1",
@@ -399,7 +400,7 @@ function init_gear_sets()
         neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Cessance Earring",
-        body="Ayanmo Corazza +2",
+        body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         ring1="Rajas Ring",
         ring2="Ilabrat Ring",
@@ -578,7 +579,7 @@ function init_gear_sets()
     sets.idle.PDT = sets.idle
 
     sets.idle.Town = set_combine(sets.idle, {
-        head="Rawhide Mask",
+        head=HercHead.TP,
         hands="Adhemar Wristbands +1",
         ear1="Telos Earring",
         ear2="Regal Earring",
@@ -611,7 +612,7 @@ function init_gear_sets()
         neck="Lissome Necklace",
         ear1="Eabani Earring",
         ear2="Suppanomimi",
-        body="Samnuha Coat",
+        body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
@@ -630,18 +631,29 @@ function init_gear_sets()
         ear1="Telos Earring",
         waist="Olseni Belt",
         ring1="Cacoethic Ring +1",
-        body="Ayanmo Corazza +2"
     })
 
-    sets.engaged.PDT = set_combine(sets.engaged, {})
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {})
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid.PDT, {})
+    sets.engaged.PDT = set_combine(sets.engaged, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        body="Ayanmo Corazza +2",
+    })
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid.PDT, {
+        ring1="Defending Ring",
+        body="Ayanmo Corazza +2",
+    })
 
     sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
 
     
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
-        body="Ayanmo Corazza +2",
+        body="Adhemar Jacket +1",
         ear1="Telos Earring",
         ear2="Dedition Earring",
         legs="Samnuha Tights",
@@ -659,13 +671,28 @@ function init_gear_sets()
      })
      sets.engaged.Learning.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.Learning)
     
-    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {})
-    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {})
-    sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, {})
+    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
+    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
+    sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
 
     sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
         ear1="Telos Earring",
-        body="Ayanmo Corazza +2",
+        body="Adhemar Jacket +1",
         waist="Windbuffet Belt +1"
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {
@@ -680,14 +707,29 @@ function init_gear_sets()
     })
      sets.engaged.Learning.Haste_35 = set_combine(sets.engaged.Haste_35, sets.Learning)
 
-    sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, {})
-    sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {})
-    sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {})
+    sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
+    sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
+    sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
 
     -- 30% Haste 1626 / 798
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         ear1="Telos Earring",
-        body="Ayanmo Corazza +2",
+        body="Adhemar Jacket +1",
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
         ear2="Suppanomimi",
@@ -699,9 +741,24 @@ function init_gear_sets()
     })
      sets.engaged.Learning.Haste_30 = set_combine(sets.engaged.Haste_30, sets.Learning)
 
-    sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {})
-    sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {})
-    sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, {})
+    sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
+    sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
+    sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
 
 
     -- haste spell - 139 dex | 275 acc | 1150 total acc (with shigi R15)
@@ -711,9 +768,24 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_15 = sets.engaged.Acc.Haste_30
     sets.engaged.Acc.Haste_15 = sets.engaged.Acc.Haste_30
     
-    sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, {})
-    sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, {})
-    sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, {})
+    sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
+    sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
+    sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Ayanmo Corazza +2",
+    })
 
     sets.self_healing = {ring1="Kunaji Ring",ring2="Asklepian Ring"}
 end

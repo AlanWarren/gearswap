@@ -34,6 +34,7 @@ function job_setup()
         state.Buff['Double Shot'] = buffactive['Double Shot'] or false
 
         state.FlurryMode = M{['description']='Flurry Mode', 'Normal', 'Hi'}
+        state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
         -- settings
         state.CapacityMode = M(false, 'Capacity Point Mantle')
 
@@ -44,7 +45,7 @@ function job_setup()
         rng_rema = S{'Annihilator', 'Armageddon', 'Fomalhaut', 'Gastraphetes', 'Yoichinoyumi', 'Gandiva', 'Fail-Not'}       
 
         rng_sub_weapons = S{'Malevolence', 'Tauret', 'Perun +1', 
-            'Perun', 'Odium', 'Aphotic Kukri', 'Atoyac'}
+            'Perun', 'Odium', 'Atoyac', 'Kaja Sword', 'Naegling'}
         
         -- sam_sj = player.sub_job == 'SAM' or false
         
@@ -62,6 +63,7 @@ function job_setup()
         -- U_Shot_Ammo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = "Eradicating Bullet"} 
 
         update_combat_form()
+        determine_haste_group()
         get_combat_weapon()
         get_custom_ranged_groups()
 end
@@ -83,6 +85,7 @@ function user_setup()
         send_command('bind !f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
         send_command('bind @f9 gs c cycle FlurryMode')
+        send_command('bind @= gs c cycle HasteMode')
         -- send_command('bind ^] gs c cycle WeaponskillMode')
         -- send_command('bind !- gs equip sets.crafting')
         send_command('bind ^[ input /lockstyle on')
@@ -205,7 +208,7 @@ function init_gear_sets()
         })
         sets.idle.Town = set_combine(sets.idle, {
             head="Arcadian Beret +3",
-            body="Orion Jerkin +3", 
+            body="Adhemar Jacket +1",
             ear1="Dedition Earring",
             ear2="Telos Earring",
             neck="Scout's Gorget +2",
@@ -242,10 +245,10 @@ function init_gear_sets()
 
         sets.engaged.Melee = {
             head=HercHead.TP,
-            neck="Asperity Necklace",
+            neck="Scout's Gorget +2",
             ear1="Sherida Earring",
             ear2="Brutal Earring",
-            body="Mummu Jacket +2",
+            body="Adhemar Jacket +1",
             hands="Adhemar Wristbands +1",
             ring1="Petrov Ring",
             ring2="Epona's Ring",
@@ -254,7 +257,7 @@ function init_gear_sets()
             legs="Meghanada Chausses +2", 
             feet=HercFeet.TP
         }
-        sets.engaged.Bow.Melee = sets.engaged.Melee
+        -- sets.engaged.Bow.Melee = sets.engaged.Melee
 
         sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
             neck="Twilight Torque",
@@ -268,19 +271,26 @@ function init_gear_sets()
 
         sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
             head=HercHead.TP,
-            neck="Asperity Necklace",
-            ear1="Suppanomimi",
-            ear2="Eabani Earring",
-            body="Mummu Jacket +2",
+            neck="Scout's Gorget +2",
+            ear1="Eabani Earring",
+            ear2="Suppanomimi",
+            body="Adhemar Jacket +1",
             hands="Floral Gauntlets",
-            -- hands="Adhemar Wristbands +1",
             back=Belenus.STP,
-            --back="Grounded Mantle +1",
             waist="Patentia Sash",
-            -- legs="Meghanada Chausses +2",
             legs="Carmine Cuisses +1",
             feet=HercFeet.TP
-            --feet="Taeon Boots"
+        })
+        sets.engaged.DW.Melee.Haste_15 = set_combine(sets.engaged.DW.Melee, {
+            ear1="Sherida Earring",
+            legs="Meghanada Chausses +2"
+        })
+        sets.engaged.DW.Melee.Haste_30 = set_combine(sets.engaged.DW.Melee.Haste_15, {
+            hands="Adhemar Wristbands +1",
+            waist="Windbuffet Belt +1"
+        })
+        sets.engaged.DW.Melee.MaxHaste = set_combine(sets.engaged.DW.Melee.Haste_30, {
+            ear2="Telos Earring"
         })
 
         ------------------------------------------------------------------
@@ -725,9 +735,6 @@ function job_buff_change(buff, gain)
     --if S{"courser's roll"}:contains(buff:lower()) then
     --if string.find(buff:lower(), 'samba') then
 
-    if state.Buff[buff] ~= nil then
-        handle_equipping_gear(player.status)
-    end
     if buff == 'Double Shot' and gain then
         windower.send_command('wait 90;input /echo **DOUBLE SHOT OFF**;wait 90;input /echo **DOUBLE SHOT READY**')
     elseif buff == 'Decoy Shot' and gain then
@@ -758,14 +765,27 @@ function job_buff_change(buff, gain)
         end
     end
 
-    if buff == "Camouflage" or buff == "Overkill" or buff == "Samurai Roll" or buff == "Courser's Roll" then
+    -- if buff == "Camouflage" or buff == "Overkill" or buff == "Samurai Roll" or buff == "Courser's Roll" then
+    --     if not midaction() then
+    --         handle_equipping_gear(player.status)
+    --     end
+    -- end
+
+    if (( string.find(buff:lower(), 'flurry') and gain ) or buff:startswith('Aftermath')) then
+        get_custom_ranged_groups()
         if not midaction() then
             handle_equipping_gear(player.status)
         end
     end
-
-    if (( string.find(buff:lower(), 'flurry') and gain ) or buff:startswith('Aftermath')) then
-        get_custom_ranged_groups()
+    -- If we gain or lose any haste buffs, adjust which gear set we target.
+    if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
+        determine_haste_group()
+        if not midaction() then
+            handle_equipping_gear(player.status)
+        end
+    end
+    if state.Buff[buff] ~= nil then
+        state.Buff[buff] = gain
         if not midaction() then
             handle_equipping_gear(player.status)
         end
@@ -901,7 +921,57 @@ function update_combat_form()
     end
 end
 
- 
+function determine_haste_group()
+
+    classes.CustomMeleeGroups:clear()
+    -- assuming +4 for marches (ghorn has +5)
+    -- Haste (white magic) 15%
+    -- Haste Samba (Sub) 5%
+    -- Haste (Merited DNC) 10% (never account for this)
+    -- Victory March +0/+3/+4/+5    9.4/14%/15.6%/17.1% +0
+    -- Advancing March +0/+3/+4/+5  6.3/10.9%/12.5%/14%  +0
+    -- Embrava 30% with 500 enhancing skill
+    -- Mighty Guard - 15%
+    -- buffactive[580] = geo haste
+    -- buffactive[33] = regular haste
+    -- buffactive[604] = mighty guard
+    -- state.HasteMode = toggle for when you know Haste II is being cast on you
+    -- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
+    if state.HasteMode.value == 'Hi' then
+        if ( ( (buffactive[33] or buffactive[580] or buffactive.embrava) and (buffactive.march or buffactive[604]) ) or
+                ( buffactive[33] and (buffactive[580] or buffactive.embrava) ) or
+                ( buffactive.march == 2 and buffactive[604] ) ) then
+            add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
+            classes.CustomMeleeGroups:append('MaxHaste')
+        elseif ( ( buffactive[580] or buffactive[33] or buffactive.march == 2 ) or
+                ( buffactive.march == 1 and buffactive[604] ) ) then
+            add_to_chat(8, '-------------Haste 30%-------------')
+            classes.CustomMeleeGroups:append('Haste_30')
+        elseif ( buffactive.march == 1 or buffactive[604] ) then
+            add_to_chat(8, '-------------Haste 15%-------------')
+            classes.CustomMeleeGroups:append('Haste_15')
+        end
+    else
+        if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava or buffactive[604]) ) or  -- geo haste + anything
+            ( buffactive.embrava and (buffactive.march or buffactive[33] or buffactive[604]) ) or  -- embrava + anything
+            ( buffactive.march == 2 and (buffactive[33] or buffactive[604]) ) or  -- two marches + anything
+            ( buffactive[33] and buffactive[604] and buffactive.march ) then -- haste + mighty guard + any marches
+            add_to_chat(8, '-------------Max Haste Mode Enabled--------------')
+            classes.CustomMeleeGroups:append('MaxHaste')
+        elseif ( buffactive.march == 2 ) or -- two marches from ghorn
+            ( (buffactive[33] or buffactive[604]) and buffactive.march == 1 ) or  -- MG or haste + 1 march
+            ( buffactive[580] ) or  -- geo haste
+            ( buffactive[33] and buffactive[604] ) then  -- haste with MG
+            add_to_chat(8, '-------------Haste 30%-------------')
+            classes.CustomMeleeGroups:append('Haste_30')
+        elseif buffactive[33] or buffactive[604] or buffactive.march == 1 then
+            add_to_chat(8, '-------------Haste 15%-------------')
+            classes.CustomMeleeGroups:append('Haste_15')
+        end
+    end
+
+end
+
 function job_state_change(stateField, newValue, oldValue)
     -- W.I.P ~
     -- if stateField == 'Ammo Toggle' then

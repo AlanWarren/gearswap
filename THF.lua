@@ -469,7 +469,7 @@ function init_gear_sets()
         neck="Assassin's Gorget +1",
         ear1="Eabani Earring",
         ear2="Suppanomimi",
-        body="Samnuha Coat",
+        body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
@@ -479,7 +479,6 @@ function init_gear_sets()
         feet=HercFeet.TP
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
-        body="Samnuha Coat",
         ring1="Petrov Ring",
         legs="Pillager's culottes +3",
         -- feet="Mummu Gamashes +2"
@@ -488,7 +487,7 @@ function init_gear_sets()
         neck="Assassin's Gorget +1",
         ear1="Telos Earring",
         ear2="Suppanomimi",
-        body="Pillager's Vest +3",
+        body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
         back="Canny Cape",
         ring1="Ilabrat Ring",
@@ -519,10 +518,10 @@ function init_gear_sets()
    
     -- Haste sets 
     sets.engaged.Haste_15 = set_combine(sets.engaged, {
-        body="Pillager's Vest +3",
+        body="Adhemar Jacket +1",
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Mid, { 
-        body="Pillager's Vest +3",
+        body="Adhemar Jacket +1",
         neck="Assassin's Gorget +1",
     })
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc, {
@@ -530,14 +529,14 @@ function init_gear_sets()
     })
     sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, { 
         neck="Twilight Torque", 
-        body="Pillager's Vest +3",
+        body="Adhemar Jacket +1",
         ring1="Defending Ring", 
         back="Solemnity Cape",
         legs="Pillager's culottes +3",
         feet="Taeon Boots" 
     })
     sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.PDT.Haste_15, {
-        body="Pillager's Vest +3",
+        body="Adhemar Jacket +1",
         ring1="Patricius Ring",
         back="Canny Cape",
     })
