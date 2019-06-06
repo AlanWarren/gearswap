@@ -341,7 +341,7 @@ function init_gear_sets()
 
     -- Mix of HP boost, -Spell interruption%, and Dark Skill
     sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
-        ammo="Impatiens",
+        ammo="Staunch Tathlum",
         head="Ratri Sallet",
         ear1="Etiolation Earring",
         ear2="Eabani Earring", -- 3
@@ -643,6 +643,7 @@ function init_gear_sets()
     }
 
     sets.idle.Field = set_combine(sets.idle.Town, {
+        ammo="Staunch Tathlum",
         head="Ratri Sallet",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",

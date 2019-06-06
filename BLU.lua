@@ -290,7 +290,7 @@ function init_gear_sets()
     
     sets.precast.FC = {
         ammo="Impatiens",
-        head=HercHead.TP,
+        head="Amalric Coif",
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
         body="Dread Jupon",
@@ -361,6 +361,7 @@ function init_gear_sets()
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
+        ammo="Staunch Tathlum",
         head=HercHead.MAB,
         ear2="Loquacious Earring",
         --body="Luhlaza Jubbah",
@@ -511,19 +512,31 @@ function init_gear_sets()
      })
 
     sets.midcast['Blue Magic'].Healing = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
+        ammo="Staunch Tathlum",
         ear1="Mendicant's Earring",
         hands="Telchine Gloves"
     })
 
     sets.midcast['Blue Magic'].SkillBasedBuff = {
+        ammo="Staunch Tathlum",
         -- head="Mirage Keffiyeh",
+        neck="Incanter's Torque",
         body="Assimilator's Jubbah +1",
         -- back="Cornflower Cape",
         -- legs="Mavi Tayt +2",
         feet="Luhlaza Charuqs"
     }
 
-    sets.midcast['Blue Magic'].Buff = {}
+    sets.midcast['Blue Magic'].Buff = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
+        ammo="Staunch Tathlum",
+        neck="Incanter's Torque",
+        body="Assimilator's Jubbah +1",
+        feet="Luhlaza Charuqs"
+    })
+    sets.midcast['Blue Magic']['Battery Charge'] = set_combine(sets.midcast['Blue Magic'].Buff, {
+        head="Amalric Coif"
+    })
+    sets.midcast.Aquaveil = sets.midcast['Blue Magic']['Battery Charge']
     
     -- sets.midcast.Protect = {ring1="Sheltered Ring"}
     -- sets.midcast.Protectra = {ring1="Sheltered Ring"}
@@ -549,6 +562,7 @@ function init_gear_sets()
 
     -- Resting sets
     sets.resting = {
+        ammo="Staunch Tathlum",
         neck="Sanctity Necklace",
         body="Shamash Robe",
         hands="Herculean Gloves",
@@ -561,7 +575,7 @@ function init_gear_sets()
     
     -- Idle sets
     sets.idle = {
-        ammo="Ginsen",
+        ammo="Staunch Tathlum",
         head="Rawhide Mask",
         neck="Sanctity Necklace",
         ear1="Eabani Earring",
@@ -787,7 +801,7 @@ function init_gear_sets()
         body="Ayanmo Corazza +2",
     })
 
-    sets.self_healing = {ring1="Kunaji Ring",ring2="Asklepian Ring"}
+    --sets.self_healing = {ring1="Kunaji Ring",ring2="Asklepian Ring"}
 end
 
 -------------------------------------------------------------------------------------------------------------------

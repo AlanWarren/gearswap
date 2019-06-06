@@ -380,7 +380,7 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
-        ammo="Yamarang",
+        ammo="Staunch Tathlum",
         -- main="Taming Sari",
         head="Meghanada Visor +2",
         neck="Sanctity Necklace",
@@ -397,6 +397,7 @@ function init_gear_sets()
     }
 
     sets.idle.Town = set_combine(sets.idle, {
+        ammo="Yamarang",
         head=HercHead.TP,
         neck="Assassin's Gorget +1",
         ear1="Telos Earring",
@@ -431,6 +432,7 @@ function init_gear_sets()
     -- Defense sets
 
     sets.defense.PDT = {
+        ammo="Staunch Tathlum",
         head=HercHead.TP,
         neck="Twilight Torque",
         body="Emet Harness +1",
@@ -443,6 +445,7 @@ function init_gear_sets()
     }
 
     sets.defense.MDT = {
+        ammo="Staunch Tathlum",
         head="Meghanada Visor +1",
         neck="Twilight Torque",
         ear1="Etiolation Earring",
@@ -495,6 +498,7 @@ function init_gear_sets()
         feet=HercFeet.TP
     })
     sets.engaged.PDT = set_combine(sets.engaged, {
+        ammo="Staunch Tathlum",
         head="Meghanada Visor +2",
         neck="Twilight Torque",
         body="Pillager's Vest +3",

@@ -327,6 +327,7 @@ function init_gear_sets()
     })
     
     sets.idle.Field = set_combine(sets.idle.Town, {
+        ammo="Staunch Tathlum",
         head="Valorous Mask",
         neck="Twilight Torque",
         ear1="Etiolation Earring",
@@ -340,7 +341,7 @@ function init_gear_sets()
         feet="Danzo Sune-ate"
     })
 
-    sets.idle.Regen = set_combine(sets.idle.Town, {
+    sets.idle.Regen = set_combine(sets.idle.Field, {
         head="Rao Kabuto",
         neck="Sanctity Necklace",
         ring2="Paguroidea Ring",
@@ -432,10 +433,16 @@ function init_gear_sets()
         -- legs="Acro Breeches",
     })
     sets.engaged.PDT = set_combine(sets.engaged, {
+        ammo="Staunch Tathlum",
         neck="Twilight Torque",
         ring2="Defending Ring"
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
+        neck="Twilight Torque",
+        ring2="Defending Ring"
+    })
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid, {
+        ammo="Ginsen",
         neck="Twilight Torque",
         ring2="Defending Ring"
     })

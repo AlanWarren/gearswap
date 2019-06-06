@@ -269,6 +269,7 @@ function init_gear_sets()
     }
 	
 	sets.idle.Field = set_combine(sets.idle.Town, {
+        ammo="Staunch Tathlum",
         head="Sulevia's Mask +2",
         neck="Sanctity Necklace",
    	    body="Makora Meikogai",

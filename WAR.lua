@@ -268,7 +268,7 @@ function init_gear_sets()
      }
      
      sets.idle.Field = set_combine(sets.idle.Town, {
-         ammo="Ginsen",
+         ammo="Staunch Tathlum",
          head="Sulevia's Mask +2",
          ear1="Etiolation Earring",
          ear2="Eabani Earring",
@@ -295,6 +295,7 @@ function init_gear_sets()
 
      -- Defense sets
      sets.defense.PDT = {
+         ammo="Staunch Tathlum",
          head="Sulevia's Mask +2",
          neck="Agitator's Collar",
          body="Jumalik Mail",
@@ -323,6 +324,7 @@ function init_gear_sets()
      -- Defensive sets to combine with various weapon-specific sets below
      -- These allow hybrid acc/pdt sets for difficult content
      sets.Defensive = {
+         ammo="Staunch Tathlum",
          head="Sulevia's Mask +2",
          neck="Agitator's Collar",
          body="Jumalik Mail",
