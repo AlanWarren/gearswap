@@ -113,11 +113,16 @@ function init_gear_sets()
     
     HercFeet = {}
     HercHead = {}
+    HercLegs = {}
+
     HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
     
     HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
+    
+    HercLegs.TP = { name="Herculean Trousers", augments={'Accuracy+26','"Triple Atk."+4',}}
+    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +2%','STR+8','Mag. Acc.+5','"Mag.Atk.Bns."+6',}}
 
     TaeonHands = {}
     TaeonHands.Snap = {name="Taeon Gloves", augments={'"Snapshot"+5', 'Attack+22','"Snapshot"+5'}}
@@ -130,7 +135,7 @@ function init_gear_sets()
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
     sets.precast.JA['Futae'] = { hands="Hattori Tekko" }
     sets.precast.JA['Provoke'] = { 
-        ear1="Friomisi Earring",
+        ear1="Cryptic Earring",
         ear2="Trux Earring", 
         body="Emet Harness +1",
         ring1="Petrov Ring",
@@ -280,7 +285,7 @@ function init_gear_sets()
         ring1="Shiva Ring",
         ring2="Dingir Ring",
         waist="Eschan Stone",
-        legs="Herculean Trousers",
+        legs=HercLegs.MAB,
         feet=HercFeet.MAB
     }
     sets.Burst = set_combine(sets.midcast.ElementalNinjutsu, { hands="Hattori Tekko +1", feet=HercFeet.MAB})
@@ -322,7 +327,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Cessance Earring",
         ear2="Telos Earring",
-        hands="Regal Gloves",
+        hands="Adhemar Wristbands +1",
         legs="Kendatsuba Hakama",
         ring1="Epona's Ring",
         ring2="Ilabrat Ring",
@@ -424,10 +429,6 @@ function init_gear_sets()
     })
 
     sets.engaged.Innin = set_combine(sets.engaged, {
-        -- head="Hattori Zukin +1",
-        -- ear1="Dudgeon Earring",
-        -- ear2="Heartseeker Earring",
-        -- waist="Windbuffet Belt +1",
     })
     sets.engaged.Innin.Mid = sets.engaged.Mid
     sets.engaged.Innin.Acc = sets.engaged.Acc
@@ -499,6 +500,7 @@ function init_gear_sets()
         head=HercHead.TP,
         neck="Moonbeam Nodowa",
         ear1="Telos Earring",
+        ear2="Cessance Earring",
         body="Adhemar Jacket +1",
         -- hands="Ryuo Tekko",
         ring1="Ilabrat Ring",
@@ -700,13 +702,12 @@ function init_gear_sets()
     
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
         neck="Shadow Gorget",
-        body="Kendatsuba Samue",
         waist="Caudata Belt",
     })
     
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         ear1="Cessance Earring",
-        body="Adhemar Jacket +1",
+        body="Kendatsuba Samue",
         legs="Kendatsuba Hakama",
     })
     
@@ -780,7 +781,7 @@ function init_gear_sets()
         hands="Herculean Gloves",
         ring1="Garuda Ring",
         ring2="Dingir Ring",
-        legs="Herculean Trousers",
+        legs=HercLegs.MAB,
         waist="Thunder Belt",
         feet=HercFeet.MAB
     })

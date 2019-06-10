@@ -132,7 +132,7 @@ function user_setup()
     state.HybridMode:options('Normal', 'PDT')
     state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     state.CastingMode:options('Normal', 'Acc')
-    state.IdleMode:options('Normal')
+    state.IdleMode:options('Normal', 'Sphere')
     state.RestingMode:options('Normal')
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
     state.MagicalDefenseMode:options('MDT')
@@ -626,31 +626,36 @@ function init_gear_sets()
     sets.precast.WS.Requiescat.Acc = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Acc)
 
     -- Idle sets
-    sets.idle.Town = {
+    sets.idle = {
+        ammo="Staunch Tathlum",
+        head="Ratri Sallet",
+        neck="Sanctity Necklace",
+        ear1="Etiolation Earring",
+        ear2="Eabani Earring",
+        body="Sulevia's Platemail +2",
+        hands="Sulevia's Gauntlets +2",
+        ring1="Paguroidea Ring",
+        ring2="Defending Ring",
+        back=Ankou.STP,
+        waist="Flume belt",
+        legs="Carmine Cuisses +1",
+        feet="Volte Sollerets"
+    }
+    sets.idle.Town = set_combine(sets.idle, {
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
         neck="Abyssal Bead Necklace +1",
         ear1="Dedition Earring",
         ear2="Telos Earring",
         body="Ignominy Cuirass +3",
-        hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
-        ring2="Defending Ring",
         back=Ankou.DA,
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
         feet="Volte Sollerets"
-    }
-
-    sets.idle.Field = set_combine(sets.idle.Town, {
-        ammo="Staunch Tathlum",
-        head="Ratri Sallet",
-        ear1="Etiolation Earring",
-        ear2="Eabani Earring",
-        neck="Sanctity Necklace",
-        body="Makora Meikogai",
-        waist="Flume belt",
     })
+
+    sets.idle.Field = set_combine(sets.idle, { })
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="",
         neck="Sanctity Necklace",
@@ -675,6 +680,7 @@ function init_gear_sets()
         legs="Sulevia's Cuisses +2",
         feet="Volte Sollerets"
     })
+    sets.idle.Sphere = set_combine(sets.idle, { body="Makora Meikogai"  })
 
     -- Defense sets
     sets.defense.PDT = {
@@ -1164,6 +1170,9 @@ function customize_idle_set(idleSet)
     end
     if player.hpp < 70 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
+    end
+    if state.IdleMode.current == 'Sphere' then
+        idleSet = set_combine(idleSet, sets.idle.Sphere)
     end
     if state.HybridMode.current == 'PDT' then
         idleSet = set_combine(idleSet, sets.defense.PDT)

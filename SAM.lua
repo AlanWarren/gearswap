@@ -163,7 +163,7 @@ function init_gear_sets()
     sets.precast.WS = {
         ammo="Knobkierrie",
         head="Valorous Mask",
-        neck="Ganesha's Mala",
+        neck="Samurai's Nodowa +1",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
         body="Sakonji Domaru +3",
@@ -186,7 +186,7 @@ function init_gear_sets()
     sets.precast.WS['Namas Arrow'] = {
         ammo=gear.RAarrow,
         head="Terminal Helm",
-        neck="Aqua Gorget",
+        neck="Samurai's Nodowa +1",
         ear1="Ishvara Earring",
         ear2="Telos Earring",
         body="Kendatsuba Samue",
@@ -217,7 +217,7 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
-        neck="Aqua Gorget",
+        neck="Samurai's Nodowa +1",
         waist="Metalsinger Belt",
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
@@ -227,7 +227,7 @@ function init_gear_sets()
         head="Valorous Mask",
     })
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
-        neck="Shadow Gorget",
+        neck="Samurai's Nodowa +1",
         waist="Metalsinger Belt",
         hands="Flamma Manopolas +2",
         feet="Thereoid Greaves"
@@ -239,7 +239,7 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
         head="Flamma Zucchetto +2",
-        neck="Breeze Gorget",
+        neck="Samurai's Nodowa +1",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         waist="Thunder Belt",
@@ -250,14 +250,14 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {})
 
     sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS['Tachi: Shoha'], {
-        neck="Shadow Gorget",
+        neck="Samurai's Nodowa +1",
         waist="Soil Belt"
     })
     sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {})
     sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS['Stardiver'].Mid, {})
     
     sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {
-        neck="Shadow Gorget",
+        neck="Samurai's Nodowa +1",
         waist="Soil Belt",
     })
     sets.precast.WS['Tachi: Rana'].Mid = set_combine(sets.precast.WS['Tachi: Rana'], {
@@ -425,6 +425,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         -- head="Valorous Mask",
+        neck="Samurai's Nodowa +1",
         body="Kendatsuba Samue",
         -- back="Grounded Mantle +1",
         -- ear1="Zennaroi Earring",
@@ -455,12 +456,11 @@ function init_gear_sets()
     
     sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
         back=Smertrios.TP,
-        neck="Lissome Necklace",
+        neck="Samurai's Nodowa +1",
     })
     
     sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, {
         head="Valorous Mask",
-        neck="Lissome Necklace",
         ear1="Zennaroi Earring",
         back=Smertrios.TP,
     })

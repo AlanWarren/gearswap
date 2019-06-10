@@ -252,12 +252,16 @@ function init_gear_sets()
 
     HercFeet = {}
     HercHead = {}
+    HercLegs = {}
     --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
     HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
     
     HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
+
+    HercLegs.TP = { name="Herculean Trousers", augments={'Accuracy+26','"Triple Atk."+4',}}
+    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +2%','STR+8','Mag. Acc.+5','"Mag.Atk.Bns."+6',}}
 
     Rosmerta = {}
     Rosmerta.TP = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
@@ -354,7 +358,7 @@ function init_gear_sets()
         ring1="Jhakri Ring",
         ring2="Shiva Ring",
         back=Rosmerta.WS,
-        legs="Herculean Trousers",
+        legs=HercLegs.MAB,
         feet=HercFeet.MAB
     }
     
@@ -391,7 +395,13 @@ function init_gear_sets()
     })
     sets.midcast.Aspir = sets.midcast.Drain
         
-    sets.midcast['Blue Magic'] = {}
+    sets.midcast['Blue Magic'] = {
+        neck="Incanter's Torque",
+        body="Assimilator's Jubbah +1",
+        back="Cornflower Cape",
+        -- legs="Mavi Tayt +2",
+        feet="Luhlaza Charuqs"
+    }
     
     -- Physical Spells --
     
@@ -449,7 +459,7 @@ function init_gear_sets()
         hands="Jhakri Cuffs +2",
         ring1="Jhakri Ring",
         ring2="Shiva Ring",
-        back="Toro Cape",
+        back="Cornflower Cape",
         waist="Yamabuki-no-Obi",
         legs="Jhakri Slops +1",
         feet="Jhakri Pigaches +1"
@@ -465,8 +475,11 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {})
 
     sets.midcast['Blue Magic'].MagicalAgi = set_combine(sets.midcast['Blue Magic'].Magical, {
+        head=HercHead.MAB,
+        legs=HercLegs.MAB,
         ring1="Garuda Ring",
-        ring2="Ilabrat Ring"
+        ring2="Ilabrat Ring",
+        feet=HercFeet.MAB
     })
 
     sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical)
@@ -522,7 +535,7 @@ function init_gear_sets()
         -- head="Mirage Keffiyeh",
         neck="Incanter's Torque",
         body="Assimilator's Jubbah +1",
-        -- back="Cornflower Cape",
+        back="Cornflower Cape",
         -- legs="Mavi Tayt +2",
         feet="Luhlaza Charuqs"
     }
@@ -531,7 +544,8 @@ function init_gear_sets()
         ammo="Staunch Tathlum",
         neck="Incanter's Torque",
         body="Assimilator's Jubbah +1",
-        feet="Luhlaza Charuqs"
+        feet="Luhlaza Charuqs",
+        back="Cornflower Cape",
     })
     sets.midcast['Blue Magic']['Battery Charge'] = set_combine(sets.midcast['Blue Magic'].Buff, {
         head="Amalric Coif"
@@ -645,6 +659,7 @@ function init_gear_sets()
         ear1="Telos Earring",
         waist="Olseni Belt",
         ring1="Cacoethic Ring +1",
+        legs=HercLegs.TP
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
@@ -676,7 +691,7 @@ function init_gear_sets()
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         ear1="Telos Earring",
         ear2="Brutal Earring",
-        legs="Carmine Cuisses +1",
+        legs=HercLegs.TP
      })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         ear2="Cessance Earring",
@@ -712,12 +727,13 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {
         ear1="Telos Earring",
         ear2="Brutal Earring",
-        waist="Windbuffet Belt +1"
+        waist="Windbuffet Belt +1",
+        legs=HercLegs.TP
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
         ear2="Cessance Earring",
         ring1="Cacoethic Ring +1",
-        legs="Carmine Cuisses +1",
+        legs=HercLegs.TP
     })
      sets.engaged.Learning.Haste_35 = set_combine(sets.engaged.Haste_35, sets.Learning)
 
@@ -732,12 +748,14 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Ayanmo Corazza +2",
+        legs=HercLegs.TP
     })
     sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Ayanmo Corazza +2",
+        legs=HercLegs.TP
     })
 
     -- 30% Haste 1626 / 798
@@ -747,7 +765,8 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_35, {
         ear2="Suppanomimi",
-        waist="Shetal Stone"
+        waist="Shetal Stone",
+        legs=HercLegs.TP
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
         ear2="Suppanomimi",

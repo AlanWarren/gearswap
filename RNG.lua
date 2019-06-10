@@ -117,12 +117,17 @@ function init_gear_sets()
         
         HercFeet = {}
         HercHead = {}
+        HercLegs = {}
+
         HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
         HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
         
         HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
         HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
 
+        HercLegs.TP = { name="Herculean Trousers", augments={'Accuracy+26','"Triple Atk."+4',}}
+        HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +2%','STR+8','Mag. Acc.+5','"Mag.Atk.Bns."+6',}}
+        
         AdhemarLegs = {}
         AdhemarLegs.Snap = { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}}
         AdhemarLegs.TP = { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
@@ -451,7 +456,7 @@ function init_gear_sets()
             ring2="Ilabrat Ring",
             back=Belenus.MAB,
             waist="Eschan Stone",
-            legs="Herculean Trousers", 
+            legs=HercLegs.MAB,
             feet=HercFeet.MAB
         }
         sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS['Wildfire'], {
@@ -476,7 +481,7 @@ function init_gear_sets()
             ring2="Weatherspoon Ring",
             back=Belenus.MAB,
             waist="Eschan Stone",
-            legs="Herculean Trousers",
+            legs=HercLegs.MAB,
             feet=HercFeet.MAB
         }
         sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {

@@ -82,7 +82,7 @@ function init_gear_sets()
         back="Lifestream Cape",
         waist="Witful Belt",
         legs="Geomancy Pants +1",
-        feet="Chelona Boots"
+        feet="Merlinic Crackows"
     }
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -145,6 +145,7 @@ function init_gear_sets()
         back="Lifestream Cape",
         waist="Witful Belt", -- 4%
         legs="Geomancy Pants +1", -- 5%
+        feet="Merlinic Crackows"
     }
     sets.midcast.Trust =  {
          head="Azimuth hood +1",
@@ -169,7 +170,7 @@ function init_gear_sets()
         body="Bagua Tunic", -- 10
         back="Lifestream Cape", -- 9
         legs="Lengo Pants",
-        feet="Umbani Boots"
+        feet="Merlinic Crackows"
     }
 
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
@@ -281,6 +282,7 @@ function init_gear_sets()
         ring2="Excelsis Ring",
         body="Geomancy tunic +1",
         legs="Azimuth Tights +1",
+        feet="Merlinic Crackows"
     })
     sets.midcast.Drain = sets.midcast.Aspir
     sets.midcast.Stun = sets.midcast.Macc
@@ -455,7 +457,7 @@ function init_gear_sets()
         back="Kayapa Cape",
         waist="Windbuffet Belt +1",
         legs="Geomancy Pants +1",
-        feet="Umbani Boots"
+        feet="Merlinic Crackows"
     }
     sets.engaged.Melee = set_combine(sets.engaged, {
         main="Malevolence",
