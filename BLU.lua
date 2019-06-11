@@ -339,6 +339,12 @@ function init_gear_sets()
         waist="Thunder Belt",
         feet=HercFeet.MAB
     })
+    sets.precast.WS['Savage Blade'].Mid = set_combine(sets.precast.WS, {
+        legs=HercLegs.TP
+    })
+    sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Mid, {
+        body="Adhemar Jacket +1",
+    })
     
     sets.precast.WS.acc = set_combine(sets.precast.WS, {})
 

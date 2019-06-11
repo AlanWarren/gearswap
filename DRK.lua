@@ -632,7 +632,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Sulevia's Platemail +2",
+        body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
@@ -647,7 +647,7 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +1",
         ear1="Dedition Earring",
         ear2="Telos Earring",
-        body="Ignominy Cuirass +3",
+        body="Tartarus Platemail",
         ring1="Niqmaddu Ring",
         back=Ankou.DA,
         waist="Windbuffet Belt +1",
@@ -671,7 +671,7 @@ function init_gear_sets()
     sets.idle.Weak = set_combine(sets.defense.PDT, {
         head="Baghere Salade",
         neck="Sanctity Necklace",
-        body="Sulevia's Platemail +2",
+        body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
@@ -687,7 +687,7 @@ function init_gear_sets()
         ammo="Hasty Pinion +1", -- 2% haste
         head="Sulevia's Mask +2", -- 3% haste
         neck="Agitator's Collar",
-        body="Jumalik Mail", -- 3% haste
+        body="Tartarus Platemail",
         --body="Sulevia's Platemail +1", -- 1% haste
         hands="Sulevia's Gauntlets +2", -- 3% haste
         ear1="Etiolation Earring",
@@ -702,7 +702,7 @@ function init_gear_sets()
 
     sets.defense.MDT = set_combine(sets.defense.PDT, {
         neck="Twilight Torque",
-        body="Lugra Cloak +1",
+        body="Tartarus Platemail",
         ear1="Etiolation Earring",
         back="Impassive Mantle",
     })
@@ -725,7 +725,7 @@ function init_gear_sets()
         ammo="Hasty Pinion +1",
         head="Sulevia's Mask +2", -- 6% 
         neck="Agitator's Collar", -- 4% pdt
-        body="Valorous Mail",
+        body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2", -- 5% pdt
         ring1="Niqmaddu Ring", 
         ring2="Defending Ring", -- 10% dt
@@ -738,7 +738,7 @@ function init_gear_sets()
         ammo="Hasty Pinion +1",
         head="Sulevia's Mask +2",
         neck="Twilight Torque",
-        body="Valorous Mail",
+        body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2",
         ring1="Patricius Ring",
         ring2="Defending Ring",
@@ -752,7 +752,7 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Sulevia's Mask +2",
         neck="Agitator's Collar",
-        body="Sulevia's Platemail +2",
+        body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring", 
         ring2="Defending Ring",
@@ -795,7 +795,9 @@ function init_gear_sets()
     sets.engaged.Haste = set_combine(sets.engaged, {
         waist="Windbuffet Belt +1"
     })
-    sets.engaged.Haste.Mid = set_combine(sets.engaged.Mid, {})
+    sets.engaged.Haste.Mid = set_combine(sets.engaged.Mid, {
+        waist="Windbuffet Belt +1"
+    })
     sets.engaged.Haste.Acc = set_combine(sets.engaged.Acc, {})
 
     -- Hybrid
@@ -859,6 +861,7 @@ function init_gear_sets()
     -- Hybrid
     sets.engaged.Liberator.PDT = set_combine(sets.engaged.Liberator, {
         head="Sulevia's Mask +2",
+        body="Tartarus Platemail",
         neck="Abyssal Bead Necklace +1",
         hands="Sulevia's Gauntlets +2",
         ring2="Defending Ring",
@@ -868,7 +871,7 @@ function init_gear_sets()
     })
     sets.engaged.Liberator.Mid.PDT = set_combine(sets.engaged.Liberator.PDT, {
         ammo="Hasty Pinion +1",
-        body="Sulevia's Platemail +2"
+        body="Tartarus Platemail",
     })
     sets.engaged.Liberator.Acc.PDT = set_combine(sets.engaged.Liberator.Acc, sets.Defensive_Acc)
     -- Hybrid with AM3 up
@@ -922,6 +925,7 @@ function init_gear_sets()
     sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, {
         head="Sulevia's Mask +2",
         neck="Abyssal Bead Necklace +1",
+        body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2",
         ring2="Defending Ring",
         back=Ankou.DA,

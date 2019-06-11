@@ -58,7 +58,7 @@ function user_setup()
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
     state.HybridMode:options('Normal', 'PDT', 'Reraise')
     state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
-    state.IdleMode:options('Normal')
+    state.IdleMode:options('Normal', 'Sphere')
     state.RestingMode:options('Normal')
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
     state.MagicalDefenseMode:options('MDT')
@@ -310,10 +310,10 @@ function init_gear_sets()
         --sub="Pole Grip",
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
-        neck="Sanctity Necklace",
+        neck="Samurai's Nodowa +1",
         ear1="Telos Earring",
         ear2="Dedition Earring",
-        body="Sakonji Domaru +3",
+   	    body="Tartarus Platemail",
         hands="Wakido Kote +3",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",
@@ -332,7 +332,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Makora Meikogai",
+   	    body="Tartarus Platemail",
         hands="Sakonji Kote +1",
         ring1="Dark Ring",
         back=Smertrios.TP,
@@ -350,6 +350,8 @@ function init_gear_sets()
         back=Smertrios.TP,
         feet="Danzo Sune-ate"
     })
+
+    sets.idle.Sphere = set_combine(sets.idle, { body="Makora Meikogai"  })
     
     sets.idle.Weak = set_combine(sets.idle.Field, {
         -- head="Twilight Helm",
@@ -363,7 +365,7 @@ function init_gear_sets()
     sets.defense.PDT = {
         --head="Otronif Mask +1",
         neck="Agitator's Collar",
-   	    body="Founder's Breastplate",
+   	    body="Tartarus Platemail",
         --hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Defending Ring",
@@ -435,16 +437,19 @@ function init_gear_sets()
     })
     sets.engaged.PDT = set_combine(sets.engaged, {
         ammo="Staunch Tathlum",
+   	    body="Tartarus Platemail",
         neck="Twilight Torque",
         ring2="Defending Ring"
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
-        neck="Twilight Torque",
+        neck="Agitator's Collar",
+   	    body="Tartarus Platemail",
         ring2="Defending Ring"
     })
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid, {
         ammo="Ginsen",
-        neck="Twilight Torque",
+   	    body="Tartarus Platemail",
+        neck="Agitator's Collar",
         ring2="Defending Ring"
     })
     
@@ -467,7 +472,7 @@ function init_gear_sets()
     
     sets.engaged.PDT = set_combine(sets.engaged, { 
         --head="Otronif Mask +1", 
-   	    body="Founder's Breastplate",
+   	    body="Tartarus Platemail",
         neck="Agitator's Collar",
         hands="Wakido Kote +3",
         ring2="Patricius Ring",
@@ -478,12 +483,14 @@ function init_gear_sets()
     
     sets.engaged.Yoichi.PDT = set_combine(sets.engaged.PDT,  {
         sub="Utu Grip",
+   	    body="Tartarus Platemail",
         ammo=gear.RAarrow
     })
     
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, { 
          head="Lithelimb Cap",
          neck="Agitator's Collar",
+   	     body="Tartarus Platemail",
          ring1="Patricius Ring",
          ring2="Defending Ring"
     })

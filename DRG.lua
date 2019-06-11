@@ -36,6 +36,7 @@ end
 function user_setup()
 	-- Options: Override default values
 	state.OffenseMode:options('Normal', 'Mid', 'Acc')
+	state.IdleMode:options('Normal', 'Sphere')
 	state.HybridMode:options('Normal', 'PDT', 'Reraise')
 	state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
 	state.PhysicalDefenseMode:options('PDT', 'Reraise')
@@ -249,16 +250,13 @@ function init_gear_sets()
 	
 
 	-- Idle sets
-	sets.idle = {}
-
-	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-	sets.idle.Town = {
+	sets.idle = {
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
         neck="Anu Torque",
         ear1="Sherida Earring",
-        ear2="Cessance Earring",
-   	    body="Makora Meikogai",
+        ear2="Telos Earring",
+   	    body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",
@@ -267,12 +265,15 @@ function init_gear_sets()
         legs="Carmine Cuisses +1",
         feet="Flamma Gambieras +2"
     }
+
+	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
+	sets.idle.Town = set_combine(sets.idle, {})
 	
-	sets.idle.Field = set_combine(sets.idle.Town, {
+	sets.idle.Field = set_combine(sets.idle, {
         ammo="Staunch Tathlum",
         head="Sulevia's Mask +2",
         neck="Sanctity Necklace",
-   	    body="Makora Meikogai",
+   	    body="Tartarus Platemail",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         hands="Sulevia's Gauntlets +2",
@@ -282,6 +283,7 @@ function init_gear_sets()
         back="Impassive Mantle",
         feet="Sulevia's Leggings +2"
     })
+    sets.idle.Sphere = set_combine(sets.idle, { body="Makora Meikogai"  })
 
     sets.idle.Regen = set_combine(sets.idle.Field, {
         head="Valorous Mask",
@@ -301,7 +303,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Cessance Earring",
         ear2="Tripudio Earring",
-        body="Jumalik Mail",
+   	    body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2",
         ring1="Patricius Ring",
         ring2="Dark Ring",
@@ -365,7 +367,7 @@ function init_gear_sets()
     sets.engaged.PDT = set_combine(sets.engaged, {
         head="Sulevia's Mask +2",
         neck="Twilight Torque",
-        body="Jumalik Mail",
+   	    body="Tartarus Platemail",
         ring1="Sulevia's Ring",
         ring2="Patricius Ring",
         hands="Sulevia's Gauntlets +2",
@@ -374,12 +376,12 @@ function init_gear_sets()
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
         ring2="Patricius Ring",
-        body="Founder's Breastplate",
+   	    body="Tartarus Platemail",
         back="Repulse Mantle",
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
         ring2="Patricius Ring",
-        body="Founder's Breastplate",
+   	    body="Tartarus Platemail",
         back="Repulse Mantle",
     })
 
