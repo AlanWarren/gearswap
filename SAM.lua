@@ -322,9 +322,9 @@ function init_gear_sets()
         legs="Kendatsuba Hakama",
         feet="Danzo Sune-ate"
     }
-    sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
-        body="Councilor's Garb"
-    })
+    -- sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
+    --     body="Councilor's Garb"
+    -- })
     
     sets.idle.Field = set_combine(sets.idle.Town, {
         ammo="Staunch Tathlum",
@@ -753,15 +753,15 @@ end
 --    end
 --end
 -- Handle zone specific rules
-windower.register_event('Zone change', function(new,old)
-    determine_idle_group()
-end)
+-- windower.register_event('Zone change', function(new,old)
+--     determine_idle_group()
+-- end)
 
 function determine_idle_group()
     classes.CustomIdleGroups:clear()
-    if areas.Adoulin:contains(world.area) then
-    	classes.CustomIdleGroups:append('Adoulin')
-    end
+    -- if areas.Adoulin:contains(world.area) then
+    -- 	classes.CustomIdleGroups:append('Adoulin')
+    -- end
 end
 
 function get_combat_form()
