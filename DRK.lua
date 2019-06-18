@@ -192,7 +192,6 @@ function init_gear_sets()
         sub="Sangarius",
         ammo="Caladbolg",
         ring1="Apocalypse",
-        ring2="Loyalist Sabatons",
         ear2="Reraise Earring",
         neck="Utu Grip",
         grip="Pole Grip",
