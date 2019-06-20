@@ -265,7 +265,7 @@ function init_gear_sets()
 
     Rosmerta = {}
     Rosmerta.TP = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
-    Rosmerta.WS = {name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+1','Weapon skill damage +10%',}}
+    Rosmerta.WS = {name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+6','Weapon skill damage +10%',}}
 
     sets.buff['Burst Affinity'] = { legs="Assimilator's Shalwar +1" }
     sets.buff['Chain Affinity'] = {
@@ -332,6 +332,9 @@ function init_gear_sets()
         waist="Light Belt",
         feet="Thereoid Greaves"
     })
+    sets.precast.WS['Chant du Cygne'].Mid = set_combine(sets.precast.WS['Chant du Cygne'], {
+        feet="Ayanmo Gambieras +2"
+    })
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
         head=HercHead.MAB,
         neck="Breeze Gorget",
@@ -387,7 +390,7 @@ function init_gear_sets()
         body="Shamash Robe",
         hands="Jhakri Cuffs +2",
         legs="Jhakri Slops +1",
-        feet="Jhakri Pigaches +1",
+        feet="Jhakri Pigaches +2",
         neck="Erra Pendant",
         waist="Eschan Stone",
         ear1="Dark Earring",
@@ -457,18 +460,18 @@ function init_gear_sets()
     
     sets.midcast['Blue Magic'].Magical = {
         ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +1",
+        head="Jhakri Coronal +2",
         neck="Eddy Necklace",
         ear1="Friomisi Earring",
         ear2="Regal Earring",
         body="Shamash Robe",
-        hands="Jhakri Cuffs +2",
+        hands="Herculean Gloves",
         ring1="Jhakri Ring",
         ring2="Shiva Ring",
         back="Cornflower Cape",
         waist="Yamabuki-no-Obi",
-        legs="Jhakri Slops +1",
-        feet="Jhakri Pigaches +1"
+        legs=HercLegs.MAB,
+        feet="Jhakri Pigaches +2"
     }
 
     sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -590,7 +593,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         waist="Flume Belt",
         back="Kumbira Cape",
-        feet="Chelona Boots"
+        feet="Ayanmo Gambieras +2"
     }
     
     -- Idle sets
@@ -607,7 +610,7 @@ function init_gear_sets()
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
         back="Kumbira Cape",
-        feet=HercFeet.TP
+        feet="Ayanmo Gambieras +2"
     }
 
     sets.idle.PDT = sets.idle

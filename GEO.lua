@@ -197,7 +197,7 @@ function init_gear_sets()
         sub="Enki Strap",
         --sub="Wizzan Grip",
         --ammo="Witchstone",
-        head="Jhakri Coronal +1",
+        head="Jhakri Coronal +2",
         neck="Mizukage-no-Kubikazari",
         ear1="Friomisi Earring",
         ear2="Regal Earring",
@@ -208,7 +208,7 @@ function init_gear_sets()
         back="Nantosuelta's Cape",
         waist="Refoccilation Stone", 
         legs="Merlinic Shalwar",
-        feet="Jhakri Pigaches +1"
+        feet="Jhakri Pigaches +2"
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
@@ -370,7 +370,7 @@ function init_gear_sets()
     sets.idle.Melee = set_combine(sets.idle, {
         main="Malevolence",
         neck="Lissome Necklace",
-        feet="Jhakri Pigaches +1"
+        feet="Jhakri Pigaches +2"
         --sub="Bolelabunga"
     })
 

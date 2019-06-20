@@ -368,10 +368,11 @@ function init_gear_sets()
 
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        body="Laksamana's Frac +2",
+        body="Meghanada Cuirie +2",
         ear2="Enervating Earring",
         ring1="Hajduk Ring",
         ring2="Cacoethic Ring +1",
+        hands="Meghanada Gloves +2",
         legs="Mummu Kecks +2",
         feet="Meghanada Jambeaux +2"
     })

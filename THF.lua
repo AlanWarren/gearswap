@@ -93,8 +93,8 @@ function init_gear_sets()
     HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +2%','STR+8','Mag. Acc.+5','"Mag.Atk.Bns."+6',}}
 
     Toutatis = {}
-    Toutatis.STP = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
-    Toutatis.WSD = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    Toutatis.STP = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Toutatis.WSD = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
 
     sets.TreasureHunter = {head="White rarab cap +1", hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt"}
     sets.TreasureHunterRA = {hands="Plunderer's Armlets +1", waist="Chaac Belt"}
@@ -415,7 +415,7 @@ function init_gear_sets()
         hands="Meghanada Gloves +2",
         ring1="Meghanada Ring",
         ring2="Paguroidea Ring",
-        back="Solemnity Cape",
+        back=Toutatis.STP,
         waist="Flume Belt",
         legs="Mummu Kecks +2",
         feet="Jute Boots +1"
@@ -432,7 +432,7 @@ function init_gear_sets()
         ring1="Ilabrat Ring",
         ring2="Epona's Ring",
         legs="Pillager's culottes +3",
-        back=Toutatis.WSD,
+        back=Toutatis.STP,
         waist="Windbuffet Belt +1",
     })
 
@@ -464,7 +464,7 @@ function init_gear_sets()
         hands="Meghanada Gloves +2",
         ring1="Patricius Ring",
         ring2="Epona's Ring",
-        back="Solemnity Cape",
+        back=Toutatis.STP,
         waist="Flume Belt",
         legs="Mummu Kecks +2",
     }
@@ -530,7 +530,7 @@ function init_gear_sets()
         hands="Meghanada Gloves +2",
         ring1="Defending Ring",
         ring2="Epona's Ring",
-        back="Solemnity Cape",
+        back=Toutatis.STP,
         legs="Mummu Kecks +2",
         feet=HercFeet.TP
     })
@@ -560,7 +560,7 @@ function init_gear_sets()
         neck="Twilight Torque", 
         body="Adhemar Jacket +1",
         ring1="Defending Ring", 
-        back="Solemnity Cape",
+        back=Toutatis.STP,
         legs="Pillager's culottes +3",
         feet="Taeon Boots" 
     })
@@ -665,7 +665,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Mid.PDT.MaxHaste, {
         body="Pillager's Vest +3",
-        back="Canny Cape",
+        back=Toutatis.STP,
         waist="Olseni Belt"
     })
     

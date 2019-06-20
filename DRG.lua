@@ -66,6 +66,9 @@ function init_gear_sets()
 	--------------------------------------
 	-- Start defining the sets
 	--------------------------------------
+    Brigantia = {}
+    Brigantia.TP = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+    Brigantia.WS = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	-- Precast Sets
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Angon = {ammo="Angon",hands="Pteroslaver Finger Gauntlets"}
@@ -74,10 +77,6 @@ function init_gear_sets()
     sets.WSDayBonus     = { head="Gavialis Helm" }
 
     sets.Organizer = {
-        main="Olyndicus",
-        sub="Bloodrain Strap",
-        range="Upukirex",
-        back="Updraft Mantle",
     }
 
 	sets.precast.JA.Jump = {
@@ -90,7 +89,7 @@ function init_gear_sets()
         hands="Flamma Manopolas +2",
         ring1="Niqmaddu Ring",
         ring2="Petrov Ring",
-		back="Bleating Mantle",
+		back=Brigantia.TP,
         waist="Ioskeha Belt",
         legs="Sulevia's Cuisses +2",
         feet="Flamma Gambieras +2"
@@ -172,13 +171,12 @@ function init_gear_sets()
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
-		back="Bleating Mantle",
+		back=Brigantia.WS,
         waist="Windbuffet Belt +1",
         legs="Sulevia's Cuisses +2",
         feet="Flamma Gambieras +2"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-        back="Updraft Mantle",
         head="Valorous Mask",
     })
 	
@@ -189,7 +187,6 @@ function init_gear_sets()
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
         head="Valorous Mask",
-        back="Updraft Mantle",
     })
 	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})
 
@@ -197,13 +194,12 @@ function init_gear_sets()
         neck="Breeze Gorget",
         ear1="Ishvara Earring",
         body="Valorous Mail",
-        back="Buquwik Cape",
+		back=Brigantia.WS,
         waist="Windbuffet Belt +1",
-        back="Updraft Mantle",
         feet="Sulevia's Leggings +2"
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
-        back="Updraft Mantle",
+		back=Brigantia.WS,
     })
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
 
@@ -214,7 +210,7 @@ function init_gear_sets()
         feet="Thereoid Greaves"
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
-        back="Updraft Mantle",
+		back=Brigantia.WS,
     })
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {hands="Mikinaak Gauntlets"})
     
@@ -226,7 +222,7 @@ function init_gear_sets()
         feet="Thereoid Greaves"
     })
 	sets.precast.WS['Impulse Drive'].Mid = set_combine(sets.precast.WS['Impulse Drive'], {
-        back="Updraft Mantle",
+		back=Brigantia.WS,
     })
 	sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS['Impulse Drive'].Mid, {
     })
@@ -260,7 +256,7 @@ function init_gear_sets()
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",
-		back="Updraft Mantle",
+		back=Brigantia.TP,
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
         feet="Flamma Gambieras +2"
@@ -346,7 +342,7 @@ function init_gear_sets()
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Petrov Ring",
-        back="Bleating Mantle",
+		back=Brigantia.TP,
         waist="Ioskeha Belt",
         legs="Valorous Hose", -- 6%
         feet="Flamma Gambieras +2"
@@ -355,7 +351,8 @@ function init_gear_sets()
 	sets.engaged.Mid = set_combine(sets.engaged, {
         ear2="Telos Earring",
         ring2="Flamma Ring",
-        back="Updraft Mantle",
+        legs="Sulevia's Cuisses +2",
+		back=Brigantia.TP,
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -377,7 +374,7 @@ function init_gear_sets()
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
         ring2="Patricius Ring",
    	    body="Tartarus Platemail",
-        back="Repulse Mantle",
+		back=Brigantia.TP,
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
         ring2="Patricius Ring",

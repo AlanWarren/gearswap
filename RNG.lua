@@ -385,7 +385,7 @@ function init_gear_sets()
         -- Annihilator
         -- TODO: get crit+10% cape
         sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {
-            head="Meghanada Visor +2",
+            -- head="Meghanada Visor +2",
             body="Arcadian Jerkin +3",
             ring2="Mummu Ring",
         })
