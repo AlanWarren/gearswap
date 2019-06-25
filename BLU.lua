@@ -338,6 +338,7 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
         head=HercHead.MAB,
         neck="Breeze Gorget",
+        ear1="Ishvara Earring",
         ear2="Moonshade Earring",
         waist="Thunder Belt",
         feet=HercFeet.MAB
@@ -353,7 +354,14 @@ function init_gear_sets()
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
-        ear2="Regal Earring"
+        head="Jhakri Coronal +2",
+        body="Shamash Robe",
+        ear1="Brutal Earring",
+        ear2="Moonshade Earring",
+        legs="Jhakri Slops +1",
+        ring1="Globidonta Ring",
+        ring2="Epona's Ring",
+        feet="Jhakri Pigaches +2"
     })
 
     sets.precast.WS['Sanguine Blade'] = {
@@ -418,12 +426,12 @@ function init_gear_sets()
         ammo="Ginsen",
         head=HercHead.TP,
         neck="Asperity Necklace",
-        ear1="Brutal Earring",
-        ear2="Cessance Earring",
+        ear1="Flame Pearl",
+        ear2="Flame Pearl",
         body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         ring1="Rajas Ring",
-        ring2="Ilabrat Ring",
+        ring2="Ifrit Ring",
         back=Rosmerta.WS,
         waist="Metalsinger Belt",
         legs="Jhakri Slops +1",
@@ -460,13 +468,13 @@ function init_gear_sets()
     
     sets.midcast['Blue Magic'].Magical = {
         ammo="Pemphredo Tathlum",
-        head="Jhakri Coronal +2",
+        head=HercHead.MAB,
         neck="Eddy Necklace",
         ear1="Friomisi Earring",
         ear2="Regal Earring",
         body="Shamash Robe",
-        hands="Herculean Gloves",
-        ring1="Jhakri Ring",
+        hands="Jhakri Cuffs +2",
+        ring1="Shiva Ring",
         ring2="Shiva Ring",
         back="Cornflower Cape",
         waist="Yamabuki-no-Obi",
@@ -500,7 +508,7 @@ function init_gear_sets()
     })
 
     sets.midcast['Blue Magic'].MagicAccuracy = set_combine(sets.midcast['Blue Magic'].Magical, {
-        neck="Erra Pendant",
+        neck="Mirage Stole +1",
         back="Aput Mantle",
         ring1="Weatherspoon Ring",
         ring2="Sangoma Ring"
@@ -508,10 +516,10 @@ function init_gear_sets()
 
     -- Breath Spells --
     
-    sets.midcast['Blue Magic'].Breath = {
+    sets.midcast['Blue Magic'].Breath = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
         -- ammo="Mavi Tathlum",
         -- head="Luhlaza Keffiyeh",
-        -- neck="Ej Necklace",
+        neck="Mirage Stole +1",
         -- ear1="Lifestorm Earring",
         -- ear2="Psystorm Earring",
         -- body="Vanir Cotehardie",
@@ -522,7 +530,7 @@ function init_gear_sets()
         waist="Glassblower's Belt",
         -- legs="Enif Cosciales",
         -- feet="Iuitl Gaiters +1"
-    }
+    })
 
     -- Other Types --
     
@@ -542,7 +550,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].SkillBasedBuff = {
         ammo="Staunch Tathlum",
         -- head="Mirage Keffiyeh",
-        neck="Incanter's Torque",
+        neck="Mirage Stole +1",
         body="Assimilator's Jubbah +1",
         back="Cornflower Cape",
         -- legs="Mavi Tayt +2",
@@ -551,7 +559,7 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].Buff = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
         ammo="Staunch Tathlum",
-        neck="Incanter's Torque",
+        neck="Mirage Stole +1",
         body="Assimilator's Jubbah +1",
         feet="Luhlaza Charuqs",
         back="Cornflower Cape",
@@ -616,6 +624,7 @@ function init_gear_sets()
     sets.idle.PDT = sets.idle
 
     sets.idle.Town = set_combine(sets.idle, {
+        neck="Mirage Stole +1",
         head=HercHead.TP,
         hands="Adhemar Wristbands +1",
         ear1="Telos Earring",
@@ -661,7 +670,7 @@ function init_gear_sets()
 
     sets.engaged.Mid = set_combine(sets.engaged, {
         legs="Carmine Cuisses +1",
-        neck="Lissome Necklace"
+        neck="Mirage Stole +1",
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {

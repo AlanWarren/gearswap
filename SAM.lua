@@ -56,7 +56,7 @@ end
 function user_setup()
     -- Options: Override default values
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
-    state.HybridMode:options('Normal', 'PDT', 'Reraise')
+    state.HybridMode:options('Normal', 'PDT')
     state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     state.IdleMode:options('Normal', 'Sphere')
     state.RestingMode:options('Normal')
@@ -172,7 +172,7 @@ function init_gear_sets()
         ring2="Flamma Ring",
         back=Smertrios.WS,
         waist="Windbuffet Belt +1",
-        legs="Hizamaru Hizayoroi +2",
+        legs="Wakido Haidate +3",
         feet="Flamma Gambieras +2"
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -275,7 +275,7 @@ function init_gear_sets()
         feet="Flamma Gambieras +2",
         back=Smertrios.WS,
         ring2="Weatherspoon Ring",
-        legs="Hizamaru Hizayoroi +2",
+        legs="Wakido Haidate +3",
         waist="Soil Belt",
     })
     sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS['Tachi: Ageha']
@@ -319,7 +319,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back=Smertrios.TP,
         waist="Windbuffet Belt +1",
-        legs="Kendatsuba Hakama",
+        legs="Wakido Haidate +3",
         feet="Danzo Sune-ate"
     }
     -- sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
@@ -411,7 +411,7 @@ function init_gear_sets()
         ring2="Petrov Ring", 
         back=Smertrios.TP,
         waist="Ioskeha Belt",
-        legs="Kasuga Haidate +1",
+        legs="Ryuo Hakama",
         feet="Flamma Gambieras +2"
     }
     
@@ -436,9 +436,9 @@ function init_gear_sets()
         -- legs="Acro Breeches",
     })
     sets.engaged.PDT = set_combine(sets.engaged, {
-        ammo="Staunch Tathlum",
+        -- ammo="Staunch Tathlum",
    	    body="Tartarus Platemail",
-        neck="Twilight Torque",
+        -- neck="Twilight Torque",
         ring2="Defending Ring"
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
@@ -461,7 +461,7 @@ function init_gear_sets()
     
     sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
         back=Smertrios.TP,
-        neck="Samurai's Nodowa +1",
+        -- neck="Samurai's Nodowa +1",
     })
     
     sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, {
@@ -470,51 +470,21 @@ function init_gear_sets()
         back=Smertrios.TP,
     })
     
-    sets.engaged.PDT = set_combine(sets.engaged, { 
-        --head="Otronif Mask +1", 
-   	    body="Tartarus Platemail",
-        neck="Agitator's Collar",
-        hands="Wakido Kote +3",
-        ring2="Patricius Ring",
-        back=Smertrios.TP,
-        waist="Flume Belt",
-        feet="Loyalist Sabatons"
-    })
-    
     sets.engaged.Yoichi.PDT = set_combine(sets.engaged.PDT,  {
-        sub="Utu Grip",
+        ammo="Staunch Tathlum",
    	    body="Tartarus Platemail",
-        ammo=gear.RAarrow
+        neck="Twilight Torque",
+        ring2="Defending Ring"
     })
     
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, { 
-         head="Lithelimb Cap",
+        --  head="Lithelimb Cap",
          neck="Agitator's Collar",
    	     body="Tartarus Platemail",
          ring1="Patricius Ring",
          ring2="Defending Ring"
     })
     
-    sets.engaged.Reraise = set_combine(sets.engaged.PDT, {
-        head="Twilight Helm", 
-        body="Twilight Mail",
-    })
-    
-    sets.engaged.Reraise.Yoichi = set_combine(sets.engaged.Reraise, {
-        sub="Utu Grip",
-        ammo=gear.RAarrow
-    })
-    
-    sets.engaged.Acc.Reraise = set_combine(sets.engaged.Reraise, {
-        ring1="Patricius Ring",
-        feet="Wakido Sune-Ate +1", 
-    })
-    
-    sets.engaged.Acc.Reraise.Yoichi = set_combine(sets.engaged.Acc.Reraise, {
-        sub="Utu Grip",
-        ammo=gear.RAarrow
-    })
-    	
     sets.engaged.Amanomurakumo = set_combine(sets.engaged, {
     })
     sets.engaged.Amanomurakumo.AM = set_combine(sets.engaged, {

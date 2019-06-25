@@ -73,7 +73,7 @@ function init_gear_sets()
 
     sets.precast.FC = {
         main="Sucellus",
-        head="Welkin Crown",
+        head="Hyaline Hat",
         ear2="Loquacious Earring",
         hands="Magavan Mitts",
         body="Shango Robe",
