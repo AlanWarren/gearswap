@@ -313,7 +313,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         head=HercHead.TP,
-        neck="Defiant Collar",
+        neck="Mirage Stole +1",
         ear1="Ishvara Earring",
         ear2="Brutal Earring",
         body="Herculean Vest",
@@ -413,7 +413,7 @@ function init_gear_sets()
     sets.midcast.Aspir = sets.midcast.Drain
         
     sets.midcast['Blue Magic'] = {
-        neck="Incanter's Torque",
+        neck="Mirage Stole +1",
         body="Assimilator's Jubbah +1",
         back="Cornflower Cape",
         -- legs="Mavi Tayt +2",
@@ -425,7 +425,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].Physical = {
         ammo="Ginsen",
         head=HercHead.TP,
-        neck="Asperity Necklace",
+        neck="Mirage Stole +1",
         ear1="Flame Pearl",
         ear2="Flame Pearl",
         body="Adhemar Jacket +1",
@@ -483,7 +483,7 @@ function init_gear_sets()
     }
 
     sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {
-        neck="Erra Pendant"
+        neck="Mirage Stole +1",
     })
     
     sets.midcast['Blue Magic'].MagicalLight = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -655,7 +655,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo="Ginsen",
         head=HercHead.TP,
-        neck="Lissome Necklace",
+        neck="Mirage Stole +1",
         ear1="Eabani Earring",
         ear2="Suppanomimi",
         body="Adhemar Jacket +1",
@@ -701,14 +701,14 @@ function init_gear_sets()
     
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         body="Adhemar Jacket +1",
-        ear1="Telos Earring",
+        ear1="Brutal Earring",
         ear2="Dedition Earring",
         legs="Samnuha Tights",
         waist="Windbuffet Belt +1"
      })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         ear1="Telos Earring",
-        ear2="Brutal Earring",
+        ear2="Cessance Earring",
         legs=HercLegs.TP
      })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {

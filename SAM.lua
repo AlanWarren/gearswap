@@ -97,6 +97,11 @@ function init_gear_sets()
     Valorous.Hands = {}
     Valorous.Hands.TP = { name="Valorous Mitts", augments={'Accuracy+26','"Store TP"+6','AGI+10',}}
     Valorous.Hands.WS = { name="Valorous Mitts", augments={'Accuracy+27','Weapon skill damage +4%','Accuracy+5 Attack+5','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
+
+
+    Valorous.Feet = {}
+    Valorous.Feet.TP ={ name="Valorous Greaves", augments={'Accuracy+18 Attack+18','"Store TP"+5','Accuracy+10',}}
+    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Attack+28','Weapon skill damage +5%','DEX+7','Accuracy+3',}}
     
     Smertrios = {}
     Smertrios.TP = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
@@ -173,7 +178,7 @@ function init_gear_sets()
         back=Smertrios.WS,
         waist="Windbuffet Belt +1",
         legs="Wakido Haidate +3",
-        feet="Flamma Gambieras +2"
+        feet=Valorous.Feet.WS
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         -- head="Rao Kabuto",
@@ -229,8 +234,7 @@ function init_gear_sets()
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
         neck="Samurai's Nodowa +1",
         waist="Metalsinger Belt",
-        hands="Flamma Manopolas +2",
-        feet="Thereoid Greaves"
+        feet=Valorous.Feet.WS
     })
     sets.precast.WS['Impulse Drive'].Mid = set_combine(sets.precast.WS['Impulse Drive'], {
         hands=Valorous.Hands.WS,

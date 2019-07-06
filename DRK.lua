@@ -186,6 +186,10 @@ function init_gear_sets()
     Odyssean.Feet.FC = { name="Odyssean Greaves", augments={'Attack+20','"Fast Cast"+4','Accuracy+15',}}
     Odyssean.Feet.TP = { name="Odyssean Greaves", augments={'Accuracy+16 Attack+16','"Store TP"+4','DEX+1','Accuracy+13','Attack+15',}}
 
+    Valorous = {}
+    Valorous.Feet = {}
+    Valorous.Feet.TP ={ name="Valorous Greaves", augments={'Accuracy+18 Attack+18','"Store TP"+5','Accuracy+10',}}
+
  
     sets.Organizer = {
         main="Liberator",
@@ -627,7 +631,7 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {
         ammo="Staunch Tathlum",
-        head="Ratri Sallet",
+        head="Hjarrandi Helm",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
@@ -642,7 +646,7 @@ function init_gear_sets()
     }
     sets.idle.Town = set_combine(sets.idle, {
         ammo="Ginsen",
-        head="Flamma Zucchetto +2",
+        head="Hjarrandi Helm",
         neck="Abyssal Bead Necklace +1",
         ear1="Dedition Earring",
         ear2="Telos Earring",
@@ -684,22 +688,23 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = {
         ammo="Hasty Pinion +1", -- 2% haste
-        head="Sulevia's Mask +2", -- 3% haste
+        head="Hjarrandi Helm", -- no haste
         neck="Agitator's Collar",
-        body="Tartarus Platemail",
+        body="Tartarus Platemail", -- 3% haste
         --body="Sulevia's Platemail +1", -- 1% haste
         hands="Sulevia's Gauntlets +2", -- 3% haste
         ear1="Etiolation Earring",
         ring1="Patricius Ring",
         ring2="Defending Ring",
         back="Grounded Mantle +1", -- 2% haste
-        waist="Ioskeha Belt", -- 7% haste
+        waist="Sailfi Belt +1", -- 9% haste
         legs="Sulevia's Cuisses +2", -- 2% haste
         feet="Volte Sollerets" -- 3% haste
     }
     sets.defense.Reraise = sets.idle.Weak
 
     sets.defense.MDT = set_combine(sets.defense.PDT, {
+        head="Hjarrandi Helm", -- no haste
         neck="Twilight Torque",
         body="Tartarus Platemail",
         ear1="Etiolation Earring",
@@ -722,20 +727,20 @@ function init_gear_sets()
     sets.Defensive = {
         --sub="Gracile grip",
         ammo="Hasty Pinion +1",
-        head="Sulevia's Mask +2", -- 6% 
-        neck="Agitator's Collar", -- 4% pdt
-        body="Tartarus Platemail",
+        head="Hjarrandi Helm", -- 10% dt
+        -- neck="Agitator's Collar", -- 4% pdt
+        body="Tartarus Platemail", -- 10% dt
         hands="Sulevia's Gauntlets +2", -- 5% pdt
         ring1="Niqmaddu Ring", 
         ring2="Defending Ring", -- 10% dt
         back=Ankou.DA, -- 5% dt
-        waist="Ioskeha Belt",
+        waist="Sailfi Belt +1",
         legs="Sulevia's Cuisses +2", -- 7% dt
         feet="Volte Sollerets"  -- 4% pdt | 6% mdt
     }
     sets.Defensive_Mid = {
         ammo="Hasty Pinion +1",
-        head="Sulevia's Mask +2",
+        head="Hjarrandi Helm", -- no haste
         neck="Twilight Torque",
         body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2",
@@ -749,7 +754,7 @@ function init_gear_sets()
     -- Higher DT, less haste
     sets.DefensiveHigh = set_combine(sets.Defensive, {
         ammo="Ginsen",
-        head="Sulevia's Mask +2",
+        head="Hjarrandi Helm", -- no haste
         neck="Agitator's Collar",
         body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2",
@@ -830,7 +835,7 @@ function init_gear_sets()
         back=Ankou.STP,
         waist="Sailfi Belt +1",
         legs=Odyssean.Legs.TP,
-        feet="Flamma Gambieras +2"
+        feet=Valorous.Feet.TP,
     })
     sets.engaged.Liberator.Mid.AM3 = set_combine(sets.engaged.Liberator.AM3, {
         neck="Abyssal Bead Necklace +1",
@@ -844,6 +849,7 @@ function init_gear_sets()
         body="Fallen's Cuirass +3",
         waist="Ioskeha Belt",
         legs="Ignominy Flanchard +3",
+        feet="Flamma Gambieras +2"
     })
     sets.engaged.Haste.Liberator = set_combine(sets.engaged.Liberator, {
         waist="Windbuffet Belt +1"
@@ -859,7 +865,7 @@ function init_gear_sets()
     
     -- Hybrid
     sets.engaged.Liberator.PDT = set_combine(sets.engaged.Liberator, {
-        head="Sulevia's Mask +2",
+        head="Hjarrandi Helm",
         body="Tartarus Platemail",
         neck="Abyssal Bead Necklace +1",
         hands="Sulevia's Gauntlets +2",
@@ -922,7 +928,7 @@ function init_gear_sets()
 
     -- Hybrid
     sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, {
-        head="Sulevia's Mask +2",
+        head="Hjarrandi Helm",
         neck="Abyssal Bead Necklace +1",
         body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2",

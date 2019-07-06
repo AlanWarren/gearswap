@@ -302,7 +302,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         body="Hizamaru Haramaki +2",
-        hands="Regal Gloves",
+        hands="Floral Gauntlets",
         ring1="Dark Ring",
         ring2="Defending Ring",
         back="Solemnity Cape",

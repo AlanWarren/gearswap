@@ -324,7 +324,8 @@ function init_gear_sets()
 
 	sets.midcast.CorsairShot = {
         ammo=gear.QDbullet,
-        head=HercHead.MAB,
+        --head=HercHead.MAB,
+        head="White Rarab Cap +1",
         neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -333,7 +334,8 @@ function init_gear_sets()
         ring1="Dingir Ring",
         ring2="Ilabrat Ring",
         back="Gunslinger's Cape",
-        waist="Eschan Stone",
+        --waist="Eschan Stone",
+        waist="Chaac Belt",
         legs=HercLegs.MAB,
         feet=HercFeet.MAB
     }
@@ -422,7 +424,7 @@ function init_gear_sets()
         ear1="Telos Earring",
         ear2="Dedition Earring",
         body="Adhemar Jacket +1",
-        hands="Regal Gloves",
+        hands="Adhemar Wristbands +1",
         ring1="Dingir Ring",
         ring2="Ilabrat Ring",
         back=Camulus.STP,
