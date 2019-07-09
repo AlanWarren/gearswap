@@ -77,7 +77,6 @@ function init_gear_sets()
     Odyssean.Legs.WS = { name="Odyssean Cuisses", augments={'Accuracy+25','DEX+1','Weapon skill damage +7%','Accuracy+10 Attack+10',}}
     Odyssean.Feet = {}
     Odyssean.Feet.FC = { name="Odyssean Greaves", augments={'Attack+20','"Fast Cast"+4','Accuracy+15',}}
-    Odyssean.Feet.TP = { name="Odyssean Greaves", augments={'Accuracy+16 Attack+16','"Store TP"+4','DEX+1','Accuracy+13','Attack+15',}}
 
 
     Valorous = {}
@@ -147,7 +146,7 @@ function init_gear_sets()
      }
      sets.midcast.RA = {
          head="White rarab cap +1",
-         neck="Iqabi Necklace",
+        --  neck="Iqabi Necklace",
          ear2="Tripudio Earring",
          hands="Buremte Gloves",
          ring1="Beeline Ring",
@@ -181,7 +180,7 @@ function init_gear_sets()
          --body="Ravenous Breastplate",
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-         ear1="Zennaroi Earring",
+         ear1="Cessance Earring",
          waist="Olseni Belt",
      })
     

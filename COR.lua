@@ -56,7 +56,7 @@ function user_setup()
 
     state.AutoRA = M{['description']='Auto RA', 'Normal', 'Shoot', 'WS' }
 
-    cor_sub_weapons = S{"Tauret", "Arendsi Fleuret", "Vanir Knife", "Sabebus", "Aphotic Kukri", "Atoyac", "Surcouf's Jambiya"}
+    cor_sub_weapons = S{"Tauret", "Arendsi Fleuret", "Vanir Knife", "Sabebus", "Aphotic Kukri", "Atoyac", "Surcouf's Jambiya", "Fettering Blade"}
     auto_gun_ws = "Wildfire"
 
     get_combat_form()

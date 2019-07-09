@@ -133,7 +133,7 @@ function init_gear_sets()
 	sets.HB = {
         ammo="Ginsen",
 		head="Wyrm Armet",
-        neck="Lancer's Torque",
+        neck="Adad Amulet",
         ear1="Sherida Earring",
         ear2="Cessance Earring",
 		body="Valorous Mail",
@@ -240,7 +240,6 @@ function init_gear_sets()
     })
 	sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS['Impulse Drive'].Mid, {
     })
-
 	
 	-- Sets to return to when not performing an action.
 	

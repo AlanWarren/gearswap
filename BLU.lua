@@ -517,7 +517,7 @@ function init_gear_sets()
     -- Breath Spells --
     
     sets.midcast['Blue Magic'].Breath = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
-        -- ammo="Mavi Tathlum",
+        ammo="Mavi Tathlum",
         -- head="Luhlaza Keffiyeh",
         neck="Mirage Stole +1",
         -- ear1="Lifestorm Earring",
@@ -548,7 +548,7 @@ function init_gear_sets()
     })
 
     sets.midcast['Blue Magic'].SkillBasedBuff = {
-        ammo="Staunch Tathlum",
+        ammo="Mavi Tathlum",
         -- head="Mirage Keffiyeh",
         neck="Mirage Stole +1",
         body="Assimilator's Jubbah +1",
@@ -557,8 +557,11 @@ function init_gear_sets()
         feet="Luhlaza Charuqs"
     }
 
+    sets.midcast.Refresh = set_combine(sets.midcast.Macc, {
+        head="Amalric Coif"
+    })
     sets.midcast['Blue Magic'].Buff = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
-        ammo="Staunch Tathlum",
+        ammo="Mavi Tathlum",
         neck="Mirage Stole +1",
         body="Assimilator's Jubbah +1",
         feet="Luhlaza Charuqs",
