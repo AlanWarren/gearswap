@@ -111,6 +111,10 @@ function init_gear_sets()
     Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
     Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Weapon skill damage +10%',}}
     
+    AdhemarLegs = {}
+    AdhemarLegs.Snap = { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}}
+    AdhemarLegs.TP = { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
+    
     HercFeet = {}
     HercHead = {}
     HercLegs = {}
@@ -135,7 +139,7 @@ function init_gear_sets()
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
     sets.precast.JA['Futae'] = { hands="Hattori Tekko" }
     sets.precast.JA['Provoke'] = { 
-        ear1="Cryptic Earring",
+        -- ear1="Cryptic Earring",
         ear2="Trux Earring", 
         body="Emet Harness +1",
         ring1="Petrov Ring",
@@ -148,7 +152,6 @@ function init_gear_sets()
     sets.precast.Waltz = {
         hands="Herculean Gloves",
         waist="Chaac Belt",
-        legs="Nahtirah Trousers",
         feet="Hizamaru Sune-ate +1"
     }
     -- Don't need any special gear for Healing Waltz.
@@ -199,12 +202,12 @@ function init_gear_sets()
         head=TaeonHead.Snap,
         hands=TaeonHands.Snap,
         body="Pursuer's Doublet",
-        legs="Nahtirah Trousers",
-        feet="Wurrukatte Boots"
+        legs=AdhemarLegs.Snap, -- 9
+        -- feet="Wurrukatte Boots"
     }
     sets.midcast.RA = {
         head="Taeon Chapeau",
-        neck="Iqabi Necklace",
+        -- neck="Iqabi Necklace",
         body="Mochizuki Chainmail +3",
         hands="Hachiya Tekko +1",
         ring1="Hajduk Ring",
@@ -302,7 +305,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         body="Hizamaru Haramaki +2",
-        hands="Regal Gloves",
+        hands="Floral Gauntlets",
         ring1="Dark Ring",
         ring2="Defending Ring",
         back="Solemnity Cape",
@@ -342,7 +345,7 @@ function init_gear_sets()
 
     -- Defense sets
     sets.defense.PDT = {
-        head="Lithelimb Cap",
+        -- head="Lithelimb Cap",
         neck="Twilight Torque",
         body="Kendatsuba Samue",
         hands="Herculean Gloves",
@@ -351,11 +354,11 @@ function init_gear_sets()
         back="Solemnity Cape",
         waist="Flume Belt",
         legs="Mummu Kecks +1",
-        -- feet="Amm Greaves"
+        feet="Ahosi Leggings"
     }
 
     sets.defense.MDT = set_combine(sets.defense.PDT, {
-        head="Ptica Headgear",
+        -- head="Ptica Headgear",
         ear1="Etiolation Earring",
         neck="Twilight Torque",
         hands="Ryuo Tekko",
@@ -442,7 +445,7 @@ function init_gear_sets()
         back="Solemnity Cape",
         ring1="Defending Ring",
         legs="Ryuo Hakama",
-        -- feet="Amm greaves"
+        feet="Ahosi Leggings"
     }
     sets.AccPDT = {
         head="Rao Kabuto",
@@ -452,7 +455,7 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Defending Ring",
         legs="Kendatsuba Hakama",
-        feet="Loyalist Sabatons"
+        feet="Ahosi Leggings"
     }
 
     sets.engaged.PDT = set_combine(sets.engaged, sets.NormalPDT)
@@ -471,7 +474,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         back="Solemnity Cape",
         legs="Kendatsuba Hakama",
-        -- feet="Amm Greaves"
+        feet="Ahosi Leggings"
     }
 
     -- Delay Cap from spell + songs alone

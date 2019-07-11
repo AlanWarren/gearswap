@@ -40,7 +40,7 @@ function job_setup()
 
     state.YoichiAM = M(false, 'Cancel Yoichi AM Mode')
     -- list of weaponskills that make better use of otomi helm in low acc situations
-    wsList = S{'Tachi: Fudo', 'Tachi: Shoha'}
+    wsList = S{'Tachi: Shoha'}
 
     gear.RAarrow = {name="Eminent Arrow"}
     LugraWSList = S{'Tachi: Fudo', 'Tachi: Shoha', 'Namas Arrow', 'Impulse Drive', 'Stardiver'}
@@ -97,6 +97,11 @@ function init_gear_sets()
     Valorous.Hands = {}
     Valorous.Hands.TP = { name="Valorous Mitts", augments={'Accuracy+26','"Store TP"+6','AGI+10',}}
     Valorous.Hands.WS = { name="Valorous Mitts", augments={'Accuracy+27','Weapon skill damage +4%','Accuracy+5 Attack+5','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
+
+
+    Valorous.Feet = {}
+    Valorous.Feet.TP ={ name="Valorous Greaves", augments={'Accuracy+18 Attack+18','"Store TP"+5','Accuracy+10',}}
+    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Attack+28','Weapon skill damage +5%','DEX+7','Accuracy+3',}}
     
     Smertrios = {}
     Smertrios.TP = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
@@ -108,6 +113,7 @@ function init_gear_sets()
         hands="Sakonji Kote +1",
         back=Smertrios.TP
     }
+    sets.precast.JA.Sekkanoki = {hands="Unkai Kote +2" }
     sets.precast.JA.Seigan = {head="Unkai Kabuto +2"}
     sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto"}
     sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate"}
@@ -138,7 +144,7 @@ function init_gear_sets()
         head="Terminal Helm",
         body="Kendatsuba Samue",
         legs="Kendatsuba Hakama",
-        neck="Iqabi Necklace",
+        -- neck="Iqabi Necklace",
         hands="Ryuo Tekko",
         waist="Chaac Belt",
         ear2="Enervating Earring",
@@ -173,14 +179,13 @@ function init_gear_sets()
         back=Smertrios.WS,
         waist="Windbuffet Belt +1",
         legs="Wakido Haidate +3",
-        feet="Flamma Gambieras +2"
+        feet=Valorous.Feet.WS
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         -- head="Rao Kabuto",
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-        -- ring2="Mars's Ring",
-        -- hands="Mikinaak Gauntlets"
+        feet="Flamma Gambieras +2",
     })
     
     sets.precast.WS['Namas Arrow'] = {
@@ -197,7 +202,7 @@ function init_gear_sets()
         ring2="Garuda Ring",
         waist="Eschan Stone",
         -- legs="Hizamaru Hizayoroi +2",
-        feet="Wakido Sune-ate +1"
+        feet=Valorous.Feet.WS
     }
     sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS['Namas Arrow'], {
         body="Kyujutsugi",
@@ -225,17 +230,19 @@ function init_gear_sets()
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
         head="Valorous Mask",
+        feet="Flamma Gambieras +2",
     })
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
         neck="Samurai's Nodowa +1",
         waist="Metalsinger Belt",
-        hands="Flamma Manopolas +2",
-        feet="Thereoid Greaves"
+        feet=Valorous.Feet.WS
     })
     sets.precast.WS['Impulse Drive'].Mid = set_combine(sets.precast.WS['Impulse Drive'], {
         hands=Valorous.Hands.WS,
     })
-    sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS['Impulse Drive'].Mid, {})
+    sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS['Impulse Drive'].Mid, {
+        feet="Flamma Gambieras +2",
+    })
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
         head="Flamma Zucchetto +2",
@@ -357,9 +364,6 @@ function init_gear_sets()
         -- head="Twilight Helm",
     	-- body="Twilight Mail"
     })
-    sets.idle.Yoichi = set_combine(sets.idle.Field, {
-    	ammo=gear.RAarrow
-    })
     
     -- Defense sets
     sets.defense.PDT = {
@@ -430,7 +434,6 @@ function init_gear_sets()
         neck="Samurai's Nodowa +1",
         body="Kendatsuba Samue",
         -- back="Grounded Mantle +1",
-        -- ear1="Zennaroi Earring",
         legs="Kendatsuba Hakama",
         -- ring1="Mars's Ring",
         -- legs="Acro Breeches",
@@ -454,29 +457,6 @@ function init_gear_sets()
     })
     
     
-    sets.engaged.Yoichi = set_combine(sets.engaged, { 
-        sub="Utu Grip",
-        ammo=gear.RAarrow
-    })
-    
-    sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
-        back=Smertrios.TP,
-        -- neck="Samurai's Nodowa +1",
-    })
-    
-    sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, {
-        head="Valorous Mask",
-        ear1="Zennaroi Earring",
-        back=Smertrios.TP,
-    })
-    
-    sets.engaged.Yoichi.PDT = set_combine(sets.engaged.PDT,  {
-        ammo="Staunch Tathlum",
-   	    body="Tartarus Platemail",
-        neck="Twilight Torque",
-        ring2="Defending Ring"
-    })
-    
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, { 
         --  head="Lithelimb Cap",
          neck="Agitator's Collar",
@@ -496,7 +476,7 @@ function init_gear_sets()
     sets.engaged.Kogarasumaru.AM3 = set_combine(sets.engaged, {
     })
     
-    sets.buff.Sekkanoki = {hands="Unkai Kote +2"}
+    sets.buff.Sekkanoki = {hands="unkai kote +2"}
     sets.buff.Sengikori = {}
     sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate +1"}
     
@@ -543,13 +523,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-        -- if is_sc_element_today(spell) then
-        --     if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
-        --         -- do nothing
-        --     else
-        --         equip(sets.WSDayBonus)
-        --     end
-        -- end
+        if is_sc_element_today(spell) then
+            if wsList:contains(spell.english) then
+                equip(sets.WSDayBonus)
+            end
+        end
         if LugraWSList:contains(spell.english) then
             if world.time >= (17*60) or world.time <= (7*60) then
                 if spell.english:lower() == 'namas arrow' then

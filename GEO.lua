@@ -101,21 +101,22 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        --head="Nahtirah Hat",
+        head="Jhakri Coronal +2",
         neck=gear.ElementalGorget,
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
+        ear1="Brutal Earring",
+        ear2="Regal Earring",
         --body="Vanir Cotehardie",
         hands="Jhakri Cuffs +2",
         ring1="Ifrit Ring",
         ring2="Ifrit Ring",
         back="Buquwik Cape",
         waist=gear.ElementalBelt,
+        feet="Jhakri Pigaches +2"
     }
 
     sets.precast.WS['Flash Nova'] = {
         --ammo="Dosis Tathlum",
-        head="Welkin Crown",
+        head="Jhakri Coronal +2",
         neck="Eddy Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -123,6 +124,7 @@ function init_gear_sets()
         ring1="Acumen Ring",
         --ring2="Strendu Ring",
         back="Toro Cape",
+        feet="Jhakri Pigaches +2"
         --waist="Snow Belt",
     }
 
@@ -165,7 +167,7 @@ function init_gear_sets()
         head="Azimuth Hood +1", -- 10
         neck="Incanter's Torque", -- 10
         ear1="Gwati Earring",
-        ear2="Lempo Earring",
+        ear2="Regal Earring",
         hands="Geomancy Mitaines +1", -- 15
         body="Bagua Tunic", -- 10
         back="Lifestream Cape", -- 9
@@ -263,6 +265,9 @@ function init_gear_sets()
         waist="Yamabuki-no-obi", 
         feet="Mallquis CLogs +1"
     }
+    sets.midcast.Refresh = set_combine(sets.midcast.Macc, {
+        head="Amalric Coif"
+    })
     sets.midcast.Absorb = set_combine(sets.midcast.Macc, {
         head="Bagua Galero",
         neck="Erra Pendant",
@@ -403,9 +408,7 @@ function init_gear_sets()
 
     sets.defense.PDT = {
         range="Dunna",
-        head="Welkin Crown",
         neck="Twilight Torque",
-        ear1="Zennaroi Earring",
         body="Shamash Robe",
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
@@ -418,7 +421,6 @@ function init_gear_sets()
         range="Dunna",
         --head="Nahtirah Hat",
         --neck="Wiglen Gorget",
-        ear1="Zennaroi Earring",
         ear2="Loquacious Earring",
         body="Shamash Robe",
         hands="Geomancy Mitaines +1",

@@ -77,7 +77,12 @@ function init_gear_sets()
     Odyssean.Legs.WS = { name="Odyssean Cuisses", augments={'Accuracy+25','DEX+1','Weapon skill damage +7%','Accuracy+10 Attack+10',}}
     Odyssean.Feet = {}
     Odyssean.Feet.FC = { name="Odyssean Greaves", augments={'Attack+20','"Fast Cast"+4','Accuracy+15',}}
-    Odyssean.Feet.TP = { name="Odyssean Greaves", augments={'Accuracy+16 Attack+16','"Store TP"+4','DEX+1','Accuracy+13','Attack+15',}}
+
+
+    Valorous = {}
+    Valorous.Feet = {}
+    Valorous.Feet.TP ={ name="Valorous Greaves", augments={'Attack+14','"Store TP"+7','AGI+8','Accuracy+8',}}
+    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Attack+28','Weapon skill damage +5%','DEX+7','Accuracy+3',}}
 
      sets.Organizer = {
          main="Devivifier",
@@ -141,7 +146,7 @@ function init_gear_sets()
      }
      sets.midcast.RA = {
          head="White rarab cap +1",
-         neck="Iqabi Necklace",
+        --  neck="Iqabi Necklace",
          ear2="Tripudio Earring",
          hands="Buremte Gloves",
          ring1="Beeline Ring",
@@ -175,7 +180,7 @@ function init_gear_sets()
          --body="Ravenous Breastplate",
      })
      sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-         ear1="Zennaroi Earring",
+         ear1="Cessance Earring",
          waist="Olseni Belt",
      })
     
@@ -188,6 +193,7 @@ function init_gear_sets()
         ammo="Knobkierrie",
         neck="Breeze Gorget",
         waist="Metalsinger Belt",
+        feet=Valorous.Feet.WS
     })
      -- RESOLUTION
      -- 86-100% STR
@@ -296,11 +302,10 @@ function init_gear_sets()
      -- Defense sets
      sets.defense.PDT = {
          ammo="Staunch Tathlum",
-         head="Sulevia's Mask +2",
+         head="Hjarrandi Helm",
          neck="Agitator's Collar",
          body="Tartarus Platemail",
          hands="Sulevia's Gauntlets +2",
-         ear1="Zennaroi Earring",
          ring1="Sulevia's Ring",
          ring2="Patricius Ring",
          back="Impassive Mantle",
@@ -312,7 +317,7 @@ function init_gear_sets()
  
      sets.defense.MDT = set_combine(sets.defense.PDT, {
          neck="Twilight Torque",
-         ear1="Zennaroi Earring",
+         ear1="Telos Earring",
          ring2="K'ayres Ring",
          back="Impassive Mantle",
      })
@@ -325,33 +330,35 @@ function init_gear_sets()
      -- These allow hybrid acc/pdt sets for difficult content
      sets.Defensive = {
          ammo="Staunch Tathlum",
-         head="Sulevia's Mask +2",
+         head="Hjarrandi Helm",
          neck="Agitator's Collar",
          body="Tartarus Platemail",
          ring1="Sulevia's Ring",
          ring2="Defending Ring",
+         hands="Sulevia's Gauntlets +2",
          back="Impassive Mantle",
-         waist="Flume Belt",
+         waist="Sailfi Belt +1",
          legs="Sulevia's Cuisses +2",
          feet="Volte Sollerets"
      }
      sets.Defensive_Mid = {
-         head="Sulevia's Mask +2",
+         head="Hjarrandi Helm",
          neck="Agitator's Collar",
          body="Tartarus Platemail",
-         hands="Redan Gloves",
+         hands="Sulevia's Gauntlets +2",
          back="Impassive Mantle",
          ring1="Sulevia's Ring",
+         waist="Sailfi Belt +1",
          ring2="Defending Ring",
          feet="Sulevia's Leggings +2"
      }
      sets.Defensive_Acc = {
-         head="Sulevia's Mask +2",
+         head="Hjarrandi Helm",
          neck="Agitator's Collar",
-         hands="Redan Gloves",
+         hands="Sulevia's Gauntlets +2",
          body="Tartarus Platemail",
          ring1="Sulevia's Ring",
-         ring2="Defending Ring",
+         ring2="Patricius Ring",
          legs="Sulevia's Cuisses +2",
          feet="Sulevia's Leggings +2"
      }
@@ -364,7 +371,7 @@ function init_gear_sets()
          ear1="Brutal Earring",
          ear2="Cessance Earring",
     	 body="Valorous Mail",
-         hands="Valorous Mitts",
+         hands="Sulevia's Gauntlets +2",
          ring1="Niqmaddu Ring",
          ring2="Flamma Ring",
          back="Mauler's Mantle",
