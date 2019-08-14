@@ -76,8 +76,8 @@ function init_gear_sets()
     Valorous.Hands.WS = { name="Valorous Mitts", augments={'Accuracy+27','Weapon skill damage +4%','Accuracy+5 Attack+5','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
     
     Valorous.Feet = {}
-    Valorous.Feet.TP ={ name="Valorous Greaves", augments={'Accuracy+18 Attack+18','"Store TP"+5','Accuracy+10',}}
-    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Attack+28','Weapon skill damage +5%','DEX+7','Accuracy+3',}}
+    Valorous.Feet.TP = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
+    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Weapon skill damage +5%','STR+9','Accuracy+15','Attack+11',}}
     
     -- Precast Sets
 	-- Precast sets to enhance JAs
@@ -92,21 +92,25 @@ function init_gear_sets()
 	sets.precast.JA.Jump = {
         ammo="Ginsen",
 		head="Flamma Zucchetto +2",
-        neck="Anu Torque",
+        neck="Lissome Necklace",
         ear1="Sherida Earring",
         ear2="Telos Earring",
-		body="Peltast's Plackart +1",
-        hands="Crusher's Gauntlets",
+		body="Valorous Mail",
+        hands="Flamma Manopolas +2",
         ring1="Niqmaddu Ring",
         ring2="Petrov Ring",
 		back=Brigantia.TP,
-        waist="Ioskeha Belt",
-        legs="Sulevia's Cuisses +2",
+        waist="Olseni Belt",
+        legs="Pteroslaver Brais +2",
         feet="Ostro Greaves"
     }
 
 	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais" }
-	sets.TreasureHunter = {head="White rarab cap +1", waist="Chaac Belt"}
+    sets.TreasureHunter = { 
+        head="White rarab cap +1", 
+        waist="Chaac Belt",
+        feet=Valorous.Feet.TP
+     }
 
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
     }) 
@@ -115,7 +119,7 @@ function init_gear_sets()
     })
 	sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA.Jump, {
         legs="Peltast's Cuissots +1",
-        feet="Lancer's Schynbalds +2"
+        --feet="Lancer's Schynbalds +2"
     })
 	sets.precast.JA['Super Jump'] = sets.precast.JA.Jump
 
@@ -123,10 +127,11 @@ function init_gear_sets()
        -- hands="Lancer's Vambraces +2", 
         head="Vishap Armet +1"
     }
-	sets.precast.JA['Call Wyvern'] = {body="Wyrm Mail"}
+	sets.precast.JA['Call Wyvern'] = {body="Pteroslaver Mail"}
 	sets.precast.JA['Deep Breathing'] = {--head="Wyrm Armet +1" or Petroslaver Armet +1
     }
-	sets.precast.JA['Spirit Surge'] = { --body="Wyrm Mail +2"
+    sets.precast.JA['Spirit Surge'] = { --body="Wyrm Mail +2"
+        body="Pteroslaver Mail"
     }
 	
 	-- Healing Breath sets
@@ -144,6 +149,9 @@ function init_gear_sets()
         feet="Wym. Greaves +2"
     }
 
+    sets.MadrigalBonus = {
+        hands="Composer's Mitts"
+    }
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
     }
@@ -296,8 +304,8 @@ function init_gear_sets()
     sets.idle.Sphere = set_combine(sets.idle, { body="Makora Meikogai"  })
 
     sets.idle.Regen = set_combine(sets.idle.Field, {
-		head="Twilight Helm",
-		body="Kumarbi's Akar",
+		--head="Twilight Helm",
+		--body="Kumarbi's Akar",
         neck="Sanctity Necklace",
     })
 
@@ -352,7 +360,7 @@ function init_gear_sets()
         neck="Anu Torque",
         ear1="Sherida Earring",
         ear2="Dedition Earring",
-		body="Valorous Mail", 
+		body="Peltast's Plackart +1", 
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Petrov Ring",
@@ -364,8 +372,12 @@ function init_gear_sets()
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
         ear2="Telos Earring",
+        neck="Lissome Necklace",
+		body="Valorous Mail", 
         ring2="Flamma Ring",
-        legs="Sulevia's Cuisses +2",
+        legs="Pteroslaver Brais +2",
+        waist="Sailfi Belt +1",
+        hands="Flamma Manopolas +2",
 		back=Brigantia.TP,
     })
 
@@ -451,9 +463,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.CapacityMantle)
         end
         if is_sc_element_today(spell) then
-            if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
-                --do nothing
-            else
+            if wsList:contains(spell.english) then
                 equip(sets.WSDayBonus)
             end
         end
@@ -572,6 +582,11 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
+    if S{'madrigal'}:contains(buff:lower()) then
+        if buffactive.madrigal and state.OffenseMode.value == 'Acc' then
+            equip(sets.MadrigalBonus)
+        end
+    end
     if string.lower(buff) == "sleep" and gain and player.hp > 200 then
         equip(sets.Berserker)
     else

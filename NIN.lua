@@ -118,9 +118,13 @@ function init_gear_sets()
     HercFeet = {}
     HercHead = {}
     HercLegs = {}
+    HercHands = {}
 
-    HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
-    HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
+    HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
+    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','STR+8','"Mag.Atk.Bns."+15',}}
+
+    HercFeet.MAB = { name="Herculean Boots", augments={'AGI+1','"Mag.Atk.Bns."+28','"Refresh"+1','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
+    HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
     
     HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
@@ -150,7 +154,6 @@ function init_gear_sets()
 
     -- Waltz (chr and vit)
     sets.precast.Waltz = {
-        hands="Herculean Gloves",
         waist="Chaac Belt",
         feet="Hizamaru Sune-ate +1"
     }
@@ -164,6 +167,9 @@ function init_gear_sets()
         back=Andartia.DEX,
         waist="Olseni Belt",
         legs="Kendatsuba Hakama",
+    }
+    sets.MadrigalBonus = {
+        hands="Composer's Mitts"
     }
     -- sets.midcast.Trust =  {
     --     head="Hattori Zukin +1",
@@ -348,7 +354,7 @@ function init_gear_sets()
         -- head="Lithelimb Cap",
         neck="Twilight Torque",
         body="Kendatsuba Samue",
-        hands="Herculean Gloves",
+        hands=HercHands.R,
         ring1="Patricius Ring",
         ring2="Defending Ring",
         back="Solemnity Cape",
@@ -468,7 +474,6 @@ function init_gear_sets()
 
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
-        hands="Herculean Gloves",
         body="Emet Harness +1",
         waist="Flume Belt",
         ring1="Defending Ring",
@@ -781,7 +786,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         neck="Sanctity Necklace",
         body="Samnuha Coat",
-        hands="Herculean Gloves",
+        hands=HercHands.MAB,
         ring1="Garuda Ring",
         ring2="Dingir Ring",
         legs=HercLegs.MAB,
@@ -990,6 +995,11 @@ function job_buff_change(buff, gain)
         end
     end
 
+    if S{'madrigal'}:contains(buff:lower()) then
+        if buffactive.madrigal and state.OffenseMode.value == 'Acc' then
+            equip(sets.MadrigalBonus)
+        end
+    end
     if (buff == 'Innin' and gain or buffactive['Innin']) then
         state.CombatForm:set('Innin')
         if not midaction() then

@@ -32,6 +32,8 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
+    include('Mote-TreasureHunter')
+    state.TreasureMode:set('None')
     get_combat_form()
     --get_combat_weapon()
     update_melee_groups()
@@ -64,6 +66,7 @@ function user_setup()
     state.MagicalDefenseMode:options('MDT')
     
     -- Additional local binds
+    send_command('bind ^= gs c cycle treasuremode')
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
@@ -100,8 +103,20 @@ function init_gear_sets()
 
 
     Valorous.Feet = {}
-    Valorous.Feet.TP ={ name="Valorous Greaves", augments={'Accuracy+18 Attack+18','"Store TP"+5','Accuracy+10',}}
-    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Attack+28','Weapon skill damage +5%','DEX+7','Accuracy+3',}}
+    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Weapon skill damage +5%','STR+9','Accuracy+15','Attack+11',}}
+    Valorous.Feet.TP = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
+
+    sets.TreasureHunter = { 
+        head="White rarab cap +1", 
+        waist="Chaac Belt",
+        feet=Valorous.Feet.TP
+     }
+    sets.precast.JA['Provoke'] = { 
+        -- ear1="Cryptic Earring",
+        head="White rarab cap +1", 
+        waist="Chaac Belt",
+        feet=Valorous.Feet.TP
+    }
     
     Smertrios = {}
     Smertrios.TP = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
@@ -222,13 +237,16 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
+        ammo="Knobkierrie",
         neck="Samurai's Nodowa +1",
         waist="Metalsinger Belt",
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
+        ammo="Knobkierrie",
         --waist="Light Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
+        ammo="Knobkierrie",
         head="Valorous Mask",
         feet="Flamma Gambieras +2",
     })
@@ -483,6 +501,10 @@ function init_gear_sets()
     sets.thirdeye = {head="Unkai Kabuto +2", legs="Sakonji Haidate"}
     --sets.seigan = {hands="Otronif Gloves +1"}
     sets.bow = {ammo=gear.RAarrow}
+    
+    sets.MadrigalBonus = {
+        hands="Composer's Mitts"
+    }
 end
 
 
@@ -604,6 +626,9 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+    if state.TreasureMode.value == 'Fulltime' then
+        meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+    end
     if state.Buff['Seigan'] then
         if state.DefenseMode.value == 'PDT' then
     	    meleeSet = set_combine(meleeSet, sets.thirdeye)
@@ -649,6 +674,11 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
     end
 
+    if S{'madrigal'}:contains(buff:lower()) then
+        if buffactive.madrigal and state.OffenseMode.value == 'Acc' then
+            equip(sets.MadrigalBonus)
+        end
+    end
     if S{'aftermath'}:contains(buff:lower()) then
         classes.CustomMeleeGroups:clear()
        
@@ -686,6 +716,16 @@ function display_current_job_state(eventArgs)
 
 end
 
+-- State buff checks that will equip buff gear and mark the event as handled.
+function check_buff(buff_name, eventArgs)
+    if state.Buff[buff_name] then
+        equip(sets.buff[buff_name] or {})
+        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
+            equip(sets.TreasureHunter)
+        end
+        eventArgs.handled = true
+    end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------

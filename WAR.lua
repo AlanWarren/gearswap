@@ -16,6 +16,8 @@ end
  
 -- Setup vars that are user-independent.
 function job_setup()
+    include('Mote-TreasureHunter')
+    state.TreasureMode:set('None')
     state.CapacityMode = M(false, 'Capacity Point Mantle')
 
     --state.Buff.Souleater = buffactive.souleater or false
@@ -47,6 +49,7 @@ function user_setup()
     state.drain = M(false)
     
     -- Additional local binds
+    send_command('bind ^= gs c cycle treasuremode')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind ^` input /ja "Hasso" <me>')
     send_command('bind !` input /ja "Seigan" <me>')
@@ -75,14 +78,20 @@ function init_gear_sets()
     Odyssean.Legs = {}
     Odyssean.Legs.TP = { name="Odyssean Cuisses", augments={'"Triple Atk."+2','"Mag.Atk.Bns."+5','Quadruple Attack +1','Accuracy+17 Attack+17',}}
     Odyssean.Legs.WS = { name="Odyssean Cuisses", augments={'Accuracy+25','DEX+1','Weapon skill damage +7%','Accuracy+10 Attack+10',}}
-    Odyssean.Feet = {}
-    Odyssean.Feet.FC = { name="Odyssean Greaves", augments={'Attack+20','"Fast Cast"+4','Accuracy+15',}}
+    --Odyssean.Feet = {}
+    --Odyssean.Feet.FC = { name="Odyssean Greaves", augments={'Attack+20','"Fast Cast"+4','Accuracy+15',}}
 
 
     Valorous = {}
     Valorous.Feet = {}
-    Valorous.Feet.TP ={ name="Valorous Greaves", augments={'Attack+14','"Store TP"+7','AGI+8','Accuracy+8',}}
-    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Attack+28','Weapon skill damage +5%','DEX+7','Accuracy+3',}}
+    Valorous.Feet.TP = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
+    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Weapon skill damage +5%','STR+9','Accuracy+15','Attack+11',}}
+    
+    sets.TreasureHunter = { 
+        head="White rarab cap +1", 
+        waist="Chaac Belt",
+        feet=Valorous.Feet.TP
+     }
 
      sets.Organizer = {
          main="Devivifier",
@@ -92,10 +101,16 @@ function init_gear_sets()
          feet="Odyssean Greaves"
      }
 
+    sets.MadrigalBonus = {
+        hands="Composer's Mitts"
+    }
      -- Precast Sets
      -- Precast sets to enhance JAs
      --sets.precast.JA['Mighty Strikes'] = {hands="Fallen's Finger Gauntlets +1"}
      sets.precast.JA['Blood Rage'] = { body="Boii Lorica +1" }
+     sets.precast.JA['Provoke'] = { hands="Pummeler's Mufflers +1"}
+     sets.precast.JA['Berserk'] = { hands="Warrior's Calligae +2"}
+     sets.precast.JA['Aggressor'] = { head="Pummeler's Mask +1"}
 
      sets.CapacityMantle  = { back="Mecistopins Mantle" }
      --sets.Berserker       = { neck="Berserker's Torque" }
@@ -121,7 +136,7 @@ function init_gear_sets()
          ring1="Weatherspoon Ring", -- 10 macc
          ring2="Prolix Ring",
          legs="Eschite Cuisses",
-         Odyssean.Feet.FC
+         feet="Odyssean Greaves"
      }
      sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads" })
 
@@ -129,13 +144,13 @@ function init_gear_sets()
      sets.midcast.FastRecast = {
          ammo="Impatiens",
          head="Otomi Helm",
-         Odyssean.Feet.FC
+         feet="Odyssean Greaves"
      }
             
      -- Specific spells
      sets.midcast.Utsusemi = {
          head="Otomi Helm",
-         Odyssean.Feet.FC
+         feet="Odyssean Greaves"
      }
  
      -- Ranged for xbow
@@ -158,13 +173,12 @@ function init_gear_sets()
      -- WEAPONSKILL SETS
      -- General sets
      sets.precast.WS = {
-         ammo="Seeting Bomblet +1",
-        --  ammo="Knobkierrie",
+         ammo="Knobkierrie",
          head="Flamma Zucchetto +2",
          neck="Defiant Collar",
          ear1="Brutal Earring",
          ear2="Moonshade Earring",
-         body="Odyssean Chestplate",
+         body="Flamma Korazin +2",
          hands="Odyssean Gauntlets",
          ring1="Niqmaddu Ring",
          ring2="Flamma Ring",
@@ -210,6 +224,7 @@ function init_gear_sets()
      -- TORCLEAVER 
      -- VIT 80%
      sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
+         head="Odyssean Helm",
          ammo="Knobkierrie",
          neck="Aqua Gorget",
          legs=Odyssean.Legs.WS,
@@ -225,6 +240,13 @@ function init_gear_sets()
         neck="Shadow Gorget",
         waist="Soil Belt",
         legs="Sulevia's Cuisses +2",
+    })
+    sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
+        head="Valorous Mask",
+        neck="Shadow Gorget",
+        ear1="Ishvara Earring",
+        waist="Metalsinger Belt",
+        feet=Valorous.Feet.WS
     })
      -- Sword WS's
      -- SANGUINE BLADE
@@ -260,7 +282,7 @@ function init_gear_sets()
      -- Idle sets
      sets.idle.Town = {
          ammo="Ginsen",
-         head="Sulevia's Mask +2",
+         head="Hjarrandi Helm",
          neck="Sanctity Necklace",
          ear1="Etiolation Earring",
          ear2="Eabani Earring",
@@ -275,7 +297,7 @@ function init_gear_sets()
      
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Staunch Tathlum",
-         head="Sulevia's Mask +2",
+         head="Hjarrandi Helm",
          ear1="Etiolation Earring",
          ear2="Eabani Earring",
          neck="Sanctity Necklace",
@@ -292,7 +314,7 @@ function init_gear_sets()
      })
  
      sets.idle.Weak = {
-         head="Valorous Mask",
+         head="Hjarrandi Helm",
          body="Tartarus Platemail",
          ring2="Paguroidea Ring",
          back="Impassive Mantle",
@@ -383,10 +405,10 @@ function init_gear_sets()
          ammo="Ginsen",
          neck="Lissome Necklace",
          ear1="Telos Earring",
-         hands="Emicho Gauntlets",
          body="Valorous Mail",
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+         body="Flamma Korazin +2"
         --  back="Grounded Mantle +1",
      })
 
@@ -422,7 +444,7 @@ function init_gear_sets()
          --feet="Warrior's Calligae +2" 
      }
      sets.buff.Retaliation = { 
-         --feet="Ravager's Calligae +2" 
+         hands="Pummeler's Mufflers +1"
      }
     
 end
@@ -519,6 +541,9 @@ end
  
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+    if state.TreasureMode.value == 'Fulltime' then
+        meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+    end
     if state.Buff.Berserk and not state.Buff.Retaliation then
     	meleeSet = set_combine(meleeSet, sets.buff.Berserk)
     end
@@ -528,6 +553,15 @@ function customize_melee_set(meleeSet)
     return meleeSet
 end
  
+function check_buff(buff_name, eventArgs)
+    if state.Buff[buff_name] then
+        equip(sets.buff[buff_name] or {})
+        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
+            equip(sets.TreasureHunter)
+        end
+        eventArgs.handled = true
+    end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- General hooks for other events.
 -------------------------------------------------------------------------------------------------------------------
@@ -553,6 +587,11 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
     end
     
+    if S{'madrigal'}:contains(buff:lower()) then
+        if buffactive.madrigal and state.OffenseMode.value == 'Acc' then
+            equip(sets.MadrigalBonus)
+        end
+    end
     -- Warp ring rule, for any buff being lost
     if S{'Warp', 'Vocation', 'Capacity'}:contains(player.equipment.ring2) then
         if not buffactive['Dedication'] then

@@ -118,9 +118,13 @@ function init_gear_sets()
         HercFeet = {}
         HercHead = {}
         HercLegs = {}
+        HercHands = {}
 
-        HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
-        HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
+        HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
+        HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','STR+8','"Mag.Atk.Bns."+15',}}
+
+        HercFeet.MAB = { name="Herculean Boots", augments={'AGI+1','"Mag.Atk.Bns."+28','"Refresh"+1','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
+        HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
         
         HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
         HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
@@ -189,12 +193,12 @@ function init_gear_sets()
             ear1="Etiolation Earring",
             ear2="Eabani Earring",
             body="Meghanada Cuirie +2",
-            hands="Oshosi Gloves",
+            hands="Meghanada Gloves +2",
             ring1="Meghanada Ring",
             ring2="Defending Ring",
             back=Belenus.STP,
-            waist="Kwahu Kachina Belt",
-            legs="Oshosi Trousers",
+            waist="Flume Belt",
+            legs="Mummu Kecks +2",
             feet="Jute Boots +1" -- 10
         }
         sets.idle.Regen = set_combine(sets.idle, {
@@ -220,6 +224,7 @@ function init_gear_sets()
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
             hands="Adhemar Wristbands +1",
+            waist="Kwahu Kachina Belt",
             back=Belenus.STP,
             legs="Carmine Cuisses +1",
             feet="Arcadian Socks +3"
@@ -232,13 +237,13 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Tripudio Earring",
             body="Meghanada Cuirie +2",
-            hands="Regal Gloves",
+            hands="Meghanada Gloves +2",
             ring1="Dark Ring",
             ring2="Defending Ring",
             waist="Flume Belt",
             back=Belenus.STP,
             legs="Mummu Kecks +2",
-            feet="Meghanada Jambeaux +2" -- 10
+            feet="Ahosi Leggings"
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
             hands="Meghanada Gloves +2",
@@ -288,14 +293,14 @@ function init_gear_sets()
         })
         sets.engaged.DW.Melee.Haste_15 = set_combine(sets.engaged.DW.Melee, {
             ear1="Sherida Earring",
-            legs="Meghanada Chausses +2"
         })
         sets.engaged.DW.Melee.Haste_30 = set_combine(sets.engaged.DW.Melee.Haste_15, {
             hands="Adhemar Wristbands +1",
-            waist="Windbuffet Belt +1"
         })
         sets.engaged.DW.Melee.MaxHaste = set_combine(sets.engaged.DW.Melee.Haste_30, {
-            ear2="Telos Earring"
+            ear2="Telos Earring",
+            waist="Windbuffet Belt +1",
+            legs="Samnuha Tights"
         })
 
         ------------------------------------------------------------------
@@ -443,7 +448,13 @@ function init_gear_sets()
             body="Orion Jerkin +3",
             legs=AdhemarLegs.TP,
         })
-
+        sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+            ear2="Moonshade Earring",
+            ring1="Ifrit Ring",
+            ring2="Apate Ring",
+            waist="Metalsinger Belt",
+            feet="Meghanada Jambeaux +2"
+        })
         -- WILDFIRE
         sets.precast.WS['Wildfire'] = {
             head=HercHead.MAB,
@@ -461,7 +472,7 @@ function init_gear_sets()
         }
         sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS['Wildfire'], {
             body="Orion Jerkin +3",
-            hands="Herculean Gloves",
+            hands=HercHands.MAB,
             legs="Mummu Kecks +2"
         })
         sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS['Wildfire'].Mid, {
@@ -487,7 +498,7 @@ function init_gear_sets()
         sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {
             -- body="Orion Jerkin +3",
             body="Samnuha Coat",
-            hands="Herculean Gloves",
+            hands=HercHands.MAB,
         })
         sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
             --head="Mummu Bonnet +2",
