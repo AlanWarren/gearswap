@@ -47,6 +47,8 @@ function user_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 
+    state.FlurryMode = M{['description']='Flurry Mode', 'Normal', 'Hi'}
+
 	gear.RAbullet = "Decimating Bullet"
 	gear.WSbullet = "Decimating Bullet"
 	gear.MAbullet = "Decimating Bullet"
@@ -69,6 +71,7 @@ function user_setup()
 	send_command('bind !` input /ja "Bolter\'s Roll" <me>')
     send_command('bind != gs c toggle CapacityMode')
     
+    send_command('bind @f9 gs c cycle FlurryMode')
     send_command('bind ^- gs c cycle AutoRA')
     select_default_macro_book()
 end
@@ -634,7 +637,7 @@ function job_buff_change(buff, gain)
     if state.Buff[buff] ~= nil then
         handle_equipping_gear(player.status)
     end
-    if buff == 'Triple Shot' and gain then
+    if buff == 'Triple Shot' then
         if (buffactive['Triple Shot']) then
             state.CombatForm:set('Triple')
             if not midaction() then
@@ -649,7 +652,7 @@ function job_buff_change(buff, gain)
             end
         end
     end
-    if (( string.find(buff:lower(), 'flurry') and gain )) then
+    if (( string.find(buff:lower(), 'flurry') )) then
         get_custom_ranged_groups()
         if not midaction() then
             handle_equipping_gear(player.status)
@@ -678,10 +681,12 @@ end
 function get_custom_ranged_groups()
     classes.CustomRangedGroups:clear()
     -- Flurry I = 265, Flurry II = 581
-    if buffactive[265] then
-        classes.CustomRangedGroups:append('F1')
-    elseif buffactive[581] then
-        classes.CustomRangedGroups:append('F2')
+    if buffactive['Flurry'] then
+        if state.FlurryMode.value == 'Hi' then
+            classes.CustomRangedGroups:append('F2')
+        else
+            classes.CustomRangedGroups:append('F1')
+        end
     end
     
     -- relic aftermath is just "Aftermath", while empy + mythic are numbered
