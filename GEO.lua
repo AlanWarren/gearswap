@@ -182,8 +182,10 @@ function init_gear_sets()
     })
 
     sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
+        main="Daybreak",
         main="Serenity",
         neck="Incanter's Torque",
+        ear1="Mendicant's Earring",
         hands="Telchine Gloves",
     	back="Solemnity Cape",
     })
@@ -293,6 +295,7 @@ function init_gear_sets()
     sets.midcast.Stun = sets.midcast.Macc
     
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
+        main="Daybreak",
         neck="Erra Pendant",
         waist="Casso Sash",
         back="Nantosuelta's Cape",
@@ -302,6 +305,7 @@ function init_gear_sets()
         feet="Bagua Sandals"
     })
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.Macc, {
+        main="Daybreak",
         waist="Casso Sash",
         back="Nantosuelta's Cape",
         ring1="Kishar Ring",
@@ -331,7 +335,7 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {
-        main="Bolelabunga",
+        main="Daybreak",
         sub="Genbu's Shield",
         range="Dunna",
         head="Befouled Crown",
@@ -399,7 +403,7 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         body="Shamash Robe",
-        hands="Amalric Gages", 
+        --hands="Amalric Gages", 
     })
 
     sets.idle.Weak = sets.idle
@@ -433,7 +437,7 @@ function init_gear_sets()
 
     sets.Kiting = {}
 
-    sets.latent_refresh = {waist="Fucho-no-obi"}
+    sets.latent_refresh = {body="Jhakri Robe +2", waist="Fucho-no-obi"}
 
 
     --------------------------------------

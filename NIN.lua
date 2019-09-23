@@ -108,7 +108,7 @@ function init_gear_sets()
     -- Augments
     --------------------------------------
     Andartia = {}
-    Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+    Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','"Dbl.Atk."+10','Damage taken-5%'}}
     Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Weapon skill damage +10%',}}
     
     AdhemarLegs = {}
@@ -314,7 +314,7 @@ function init_gear_sets()
         hands="Floral Gauntlets",
         ring1="Dark Ring",
         ring2="Defending Ring",
-        back="Solemnity Cape",
+        back=Andartia.DEX,
         waist="Flume Belt",
         legs="Mummu Kecks +2",
         feet="Danzo Sune-ate"
@@ -338,8 +338,8 @@ function init_gear_sets()
         ear2="Telos Earring",
         hands="Adhemar Wristbands +1",
         legs="Kendatsuba Hakama",
-        ring1="Epona's Ring",
-        ring2="Ilabrat Ring",
+        ring1="Ilabrat Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1"
     })
@@ -395,7 +395,7 @@ function init_gear_sets()
         body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
         ring1="Epona's Ring",
-        ring2="Petrov Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         legs="Kendatsuba Hakama",
         waist="Shetal Stone",
@@ -404,7 +404,7 @@ function init_gear_sets()
     -- assumptions made about targe
     sets.engaged.Mid = set_combine(sets.engaged, {
         ear1="Telos Earring",
-        ring2="Ilabrat Ring",
+        -- ring2="Ilabrat Ring",
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -426,10 +426,26 @@ function init_gear_sets()
         legs="Quiahuiz Trousers",
         feet="Hachiya Kyahan +1"
     })
+    sets.Katanas = {
+        main="Kannagi",
+        sub="Taka",
+        ammo="Sekki Shuriken"
+    }
+    sets.Dagger = {
+        main="Platoon Dagger",
+        sub=empty,
+        ammo=empty
+    }
+    sets.Daggers = {
+        main="Malevolence",
+        sub="Malevolence",
+        ammo="Seki Shuriken"
+    }
     sets.Proc = {
         -- main="Knife",
         sub=empty,
-        ammo="Ginsen"
+        ammo="Ginsen",
+        neck="Carnal Torque"
     }
     sets.unProc = set_combine(sets.engaged, {
         main="Kannagi",
@@ -491,7 +507,7 @@ function init_gear_sets()
         body="Kendatsuba Samue",
         hands="Adhemar Wristbands +1",
         ring1="Epona's Ring",
-        ring2="Petrov Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Kendatsuba Hakama",
@@ -501,7 +517,7 @@ function init_gear_sets()
         head=HercHead.TP,
         ear1="Telos Earring",
         ear2="Cessance Earring",
-        ring2="Ilabrat Ring",
+        ring2="Gere Ring",
         body="Kendatsuba Samue",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
@@ -575,7 +591,7 @@ function init_gear_sets()
         body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         ring1="Epona's Ring",
-        ring2="Ilabrat Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Kendatsuba Hakama",
@@ -584,7 +600,6 @@ function init_gear_sets()
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
         neck="Moonbeam Nodowa",
         ear1="Cessance Earring",
-        ring2="Ilabrat Ring",
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         neck="Moonbeam Nodowa",
@@ -615,7 +630,7 @@ function init_gear_sets()
         body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
         ring1="Epona's Ring",
-        ring2="Ilabrat Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Patentia Sash",
         legs="Kendatsuba Hakama",
@@ -623,10 +638,10 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Haste_15, { -- 676
         neck="Moonbeam Nodowa",
-        ring1="Ilabrat Ring",
+        --ring1="Ilabrat Ring",
     })
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_30, {
-        ring2="Cacoethic Ring +1",
+        ring1="Cacoethic Ring +1",
         waist="Olseni Belt",
     })
     
@@ -653,7 +668,7 @@ function init_gear_sets()
         body="Kendatsuba Samue",
         hands="Adhemar Wristbands +1",
         ring1="Epona's Ring",
-        ring2="Ilabrat Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Hizamaru Hizayoroi +2",
@@ -700,6 +715,7 @@ function init_gear_sets()
         ear1="Ishvara Earring",
         body="Herculean Vest",
         hands="Mummu Wrists +2",
+        --hands="Kobo Kote",
         ring1="Mummu Ring",
         ring2="Ilabrat Ring",
         back=Andartia.AGI,
@@ -752,6 +768,7 @@ function init_gear_sets()
         ear2="Trux Earring",
         neck="Shadow Gorget",
         body="Herculean Vest",
+        ring2="Gere Ring",
         back=Andartia.DEX,
     }
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
@@ -767,6 +784,7 @@ function init_gear_sets()
         ear1="Lugra Earring +1",
         ear2="Moonshade Earring",
         body="Herculean Vest",
+        ring2="Gere Ring",
         legs="Hizamaru Hizayoroi +2",
         back=Andartia.AGI,
         waist="Metalsinger Belt",
@@ -805,6 +823,7 @@ function init_gear_sets()
         back=Andartia.AGI,
         feet=HercFeet.MAB
     })
+    sets.precast.WS['Blade: Teki'] = sets.precast.WS['Blade: Chi']
     sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
 
 end
@@ -819,7 +838,7 @@ function job_pretarget(spell, action, spellMap, eventArgs)
         state.Buff[spell.english] = true
     end
     if (spell.type:endswith('Magic') or spell.type == "Ninjutsu") and buffactive.silence then
-        cancel_spell()
+        --cancel_spell()
         send_command('input /item "Echo Drops" <me>')
     end
 end
@@ -835,11 +854,11 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
         -- If sneak is active when using, cancel before completion
-        send_command('cancel 71')
+        -- send_command('cancel 71')
     end
     if string.find(spell.english, 'Utsusemi') then
         if buffactive['Copy Image (3)'] or buffactive['Copy Image (4)'] then
-            cancel_spell()
+            --cancel_spell()
             eventArgs.cancel = true
             return
         end
@@ -896,11 +915,11 @@ function job_midcast(spell, action, spellMap, eventArgs)
     if nukeList:contains(spell.english) and buffactive['Futae'] then
         equip(sets.Burst)
     end
-    if spell.english == "Monomi: Ichi" then
-        if buffactive['Sneak'] then
-            send_command('@wait 1.7;cancel sneak')
-        end
-    end
+    -- if spell.english == "Monomi: Ichi" then
+    --     if buffactive['Sneak'] then
+    --         send_command('@wait 2.7;cancel sneak')
+    --     end
+    -- end
 end
 
 -- Run after the general midcast() is done.

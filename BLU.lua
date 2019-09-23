@@ -597,7 +597,10 @@ function init_gear_sets()
         --back="Cornflower Cape",legs="Mavi Tayt +2",feet="Luhlaza Charuqs"}
 
 
-    sets.latent_refresh = {waist="Fucho-no-obi"}
+    sets.latent_refresh = {
+        body="Jhakri Robe +2",
+        waist="Fucho-no-obi"
+    }
 
     -- Resting sets
     sets.resting = {
@@ -635,6 +638,7 @@ function init_gear_sets()
         neck="Mirage Stole +1",
         head=HercHead.TP,
         hands="Adhemar Wristbands +1",
+        body="Shamash Robe",
         ear1="Telos Earring",
         ear2="Regal Earring",
         ring1="Weatherspoon Ring",
@@ -644,6 +648,8 @@ function init_gear_sets()
 
     sets.idle.Learning = set_combine(sets.idle, sets.Learning)
 
+    sets.idle.Refresh = set_combine(sets.idle.Regen, {
+    })
     
     -- Defense sets
     sets.defense.PDT = { }

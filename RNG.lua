@@ -226,8 +226,8 @@ function init_gear_sets()
             hands="Adhemar Wristbands +1",
             waist="Kwahu Kachina Belt",
             back=Belenus.STP,
-            legs="Carmine Cuisses +1",
-            feet="Arcadian Socks +3"
+            legs="Orion Braccae +3",
+            feet="Jute Boots +1"
         })
  
         -- Engaged sets
@@ -487,7 +487,7 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             neck="Scout's Gorget +2",
             hands="Carmine Finger Gauntlets +1",
-            body="Herculean Vest",
+            body="Samnuha Coat",
             ring1="Dingir Ring",
             ring2="Weatherspoon Ring",
             back=Belenus.MAB,

@@ -18,6 +18,8 @@ function job_setup()
     state.Buff['Trick Attack'] = buffactive['trick attack'] or false
     state.Buff['Feint'] = buffactive['feint'] or false
     state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
+    state.Runes = M{['description']='Runes', "Ignis", "Gelus", "Flabra", "Tellus", "Sulpor", "Unda", "Lux", "Tenebrae"}
+    state.UseRune = M(false, 'Use Rune')
 
     include('Mote-TreasureHunter')
     determine_haste_group()
@@ -49,6 +51,8 @@ function user_setup()
     send_command('bind !- gs c cycle targetmode')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind !- gs equip sets.crafting')
+    send_command('bind @[ gs c cycle Runes')
+    send_command('bind ^] gs c toggle UseRune')
 
     send_command('bind @f9 gs c cycle HasteMode')
     send_command('bind ^[ input /lockstyle on')
@@ -115,11 +119,11 @@ function init_gear_sets()
     sets.buff['Sneak Attack'] = {
         ammo="Yetshila",
         head="Meghanada Visor +2",
-        neck="Moepapa Medal",
+        neck="Assassin's Gorget +1",
         body="Meghanada Cuirie +2",
         hands="Meghanada Gloves +2",
-        ring1="Ilabrat Ring",
-        ring2="Mummu Ring",
+        ring1="Mummu Ring",
+        ring2="Ilabrat Ring",
         waist="Chaac Belt",
         back=Toutatis.WSD,
         legs="Pillager's Culottes +3",
@@ -129,7 +133,7 @@ function init_gear_sets()
     sets.buff['Trick Attack'] = {
         ammo="Tengu-no-hane",
         head=HercHead.TP,
-        neck="Moepapa Medal",
+        neck="Assassin's Gorget +1",
         ear2="Sherida Earring",
         body="Mummu Jacket +2",
         hands="Pillager's Armlets +1",
@@ -223,7 +227,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         head="Pillager's bonnet +3",
-        neck="Moepapa Medal",
+        neck="Assassin's Gorget +1",
         ear1="Moonshade Earring",
         ear2="Ishvara Earring",
         body="Herculean Vest",
@@ -286,7 +290,7 @@ function init_gear_sets()
         ear1="Moonshade Earring",
         ear2="Sherida Earring",
         ring1="Mummu Ring",
-        ring2="Epona's Ring",
+        ring2="Gere Ring",
         hands="Mummu Wrists +2",
         waist="Soil Belt",
         legs="Pillager's culottes +3",
@@ -312,8 +316,8 @@ function init_gear_sets()
         body="Herculean Vest",
         ear1="Moonshade Earring",
         ear2="Sherida Earring",
-        ring1="Ifrit Ring",
-        ring2="Epona's Ring",
+        ring1="Epona's Ring",
+        ring2="Gere Ring",
         hands="Meghanada Gloves +2",
         waist="Metalsinger Belt",
         legs="Meghanada Chausses +2",
@@ -327,8 +331,8 @@ function init_gear_sets()
         ear2="Sherida Earring",
         body="Herculean Vest",
         hands="Meghanada Gloves +2",
-        ring1="Ilabrat Ring",
-        ring2="Mummu Ring",
+        ring1="Mummu Ring",
+        ring2="Ilabrat Ring",
         waist="Snow Belt",
         back=Toutatis.WSD,
         legs="Pillager's culottes +3",
@@ -435,7 +439,7 @@ function init_gear_sets()
         body="Pillager's Vest +3",
         hands="Adhemar Wristbands +1",
         ring1="Ilabrat Ring",
-        ring2="Epona's Ring",
+        ring2="Gere Ring",
         legs="Pillager's culottes +3",
         back=Toutatis.STP,
         waist="Windbuffet Belt +1",
@@ -504,15 +508,15 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
-        ring1="Petrov Ring",
-        ring2="Epona's Ring",
-        back="Canny Cape",
+        ring2="Gere Ring",
+        ring1="Epona's Ring",
+        back=Toutatis.STP,
         waist="Patentia Sash",
         legs="Pillager's culottes +3",
         feet=HercFeet.TP
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
-        ring1="Petrov Ring",
+        --ring1="Petrov Ring",
         legs="Pillager's culottes +3",
         -- feet="Mummu Gamashes +2"
     })
@@ -522,8 +526,8 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
-        back="Canny Cape",
-        ring1="Ilabrat Ring",
+        back=Toutatis.STP,
+        ring2="Ilabrat Ring",
         waist="Olseni Belt",
         feet=HercFeet.TP
     })
@@ -533,15 +537,14 @@ function init_gear_sets()
         neck="Twilight Torque",
         body="Pillager's Vest +3",
         hands="Meghanada Gloves +2",
-        ring1="Defending Ring",
-        ring2="Epona's Ring",
+        ring2="Defending Ring",
         back=Toutatis.STP,
         legs="Mummu Kecks +2",
         feet=HercFeet.TP
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
         body="Pillager's Vest +3",
-        ring1="Patricius Ring",
+        --ring1="Patricius Ring",
         back="Canny Cape",
     })
     sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
@@ -564,14 +567,14 @@ function init_gear_sets()
     sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, { 
         neck="Twilight Torque", 
         body="Adhemar Jacket +1",
-        ring1="Defending Ring", 
+        ring2="Defending Ring", 
         back=Toutatis.STP,
         legs="Pillager's culottes +3",
         feet="Taeon Boots" 
     })
     sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.PDT.Haste_15, {
         body="Adhemar Jacket +1",
-        ring1="Patricius Ring",
+        ring2="Patricius Ring",
         back="Canny Cape",
     })
     sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Mid.PDT.Haste_15, {
@@ -608,14 +611,14 @@ function init_gear_sets()
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { 
         neck="Twilight Torque", 
         body="Pillager's Vest +3",
-        ring1="Defending Ring", 
+        ring2="Defending Ring", 
         back="Solemnity Cape",
         legs="Pillager's culottes +3",
         feet=HercFeet.TP
     })
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, {
         body="Pillager's Vest +3",
-        ring1="Patricius Ring",
+        ring2="Patricius Ring",
         back=Toutatis.STP,
     })
     sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Mid.PDT.Haste_30, {
@@ -628,12 +631,12 @@ function init_gear_sets()
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head=HercHead.TP,
         neck="Assassin's Gorget +1",
-        ear1="Dedition Earring",
+        ear1="Brutal Earring",
         ear2="Sherida Earring",
         body="Pillager's Vest +3",
         hands="Adhemar Wristbands +1",
-        ring1="Petrov Ring",
-        ring2="Epona's Ring",
+        ring2="Gere Ring",
+        ring1="Epona's Ring",
         back=Toutatis.STP,
         waist="Windbuffet Belt +1",
         legs="Pillager's culottes +3",
@@ -650,7 +653,7 @@ function init_gear_sets()
         hands="Adhemar Wristbands +1",
         ear1="Telos Earring",
         waist="Olseni Belt",
-        ring1="Ilabrat Ring",
+        ring2="Ilabrat Ring",
         back=Toutatis.STP,
         legs="Pillager's culottes +3",
         feet="Mummu Gamashes +2"
@@ -658,14 +661,14 @@ function init_gear_sets()
     sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         neck="Twilight Torque", 
         body="Pillager's Vest +3",
-        ring1="Defending Ring", 
+        ring2="Defending Ring", 
         back=Toutatis.STP,
         legs="Mummu Kecks +2",
         feet=HercFeet.TP
     })
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.PDT.MaxHaste, {
         body="Pillager's Vest +3",
-        ring1="Patricius Ring",
+        ring2="Patricius Ring",
         back=Toutatis.STP,
     })
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Mid.PDT.MaxHaste, {
@@ -818,6 +821,49 @@ end
 function job_update(cmdParams, eventArgs)
     th_update(cmdParams, eventArgs)
     --determine_haste_group()
+end
+
+function job_state_change(stateField, newValue, oldValue)
+    if stateField == 'Capacity Point Mantle' then
+        gear.Back = newValue
+    elseif stateField == 'Runes' then
+        local msg = ''
+        if newValue == 'Ignis' then
+            msg = msg .. 'Increasing resistence against ICE and deals FIRE damage.'
+        elseif newValue == 'Gelus' then
+            msg = msg .. 'Increasing resistence against WIND and deals ICE damage.'
+        elseif newValue == 'Flabra' then
+            msg = msg .. 'Increasing resistence against EARTH and deals WIND damage.'
+        elseif newValue == 'Tellus' then
+            msg = msg .. 'Increasing resistence against LIGHTNING and deals EARTH damage.'
+        elseif newValue == 'Sulpor' then
+            msg = msg .. 'Increasing resistence against WATER and deals LIGHTNING damage.'
+        elseif newValue == 'Unda' then
+            msg = msg .. 'Increasing resistence against FIRE and deals WATER damage.'
+        elseif newValue == 'Lux' then
+            msg = msg .. 'Increasing resistence against DARK and deals LIGHT damage.'
+        elseif newValue == 'Tenebrae' then
+            msg = msg .. 'Increasing resistence against LIGHT and deals DARK damage.'
+        end
+        add_to_chat(123, msg)
+   -- elseif stateField == 'moving' then
+   --     if state.Moving.value then
+   --         local res = require('resources')
+   --         local info = windower.ffxi.get_info()
+   --         local zone = res.zones[info.zone].name
+   --         if zone:match('Adoulin') then
+   --             equip(sets.Adoulin)
+   --         end
+   --         equip(select_movement())
+   --     end
+        
+    elseif stateField == 'Use Rune' then
+        send_command('@input /ja '..state.Runes.value..' <me>')
+    elseif stateField == 'Use Warp' then
+        add_to_chat(8, '------------WARPING-----------')
+        --equip({ring1="Warp Ring"})
+        send_command('input //gs equip sets.Warp;@wait 10.0;input /item "Warp Ring" <me>;')
+    end
 end
 -- Function to display the current relevant user state when doing an update.
 -- Return true if display was handled, and you don't want the default info shown.
@@ -985,6 +1031,8 @@ function select_default_macro_book()
         set_macro_page(4, 1)
     elseif player.sub_job == 'NIN' then
         set_macro_page(5, 2)
+    elseif player.sub_job == 'RUN' then
+        set_macro_page(5, 9)
     else
         set_macro_page(5, 2)
     end

@@ -24,7 +24,7 @@ function job_setup()
     state.Buff.Berserk = buffactive.berserk or false
     state.Buff.Retaliation = buffactive.retaliation or false
     
-    wsList = S{}
+    wsList = S{ 'Savage Blade', 'Impulse Drive', 'Torcleaver'}
     gsList = S{'Macbain', 'Kaquljaan', 'Nativus Halberd'}
     war_sub_weapons = S{"Sangarius", "Usonmunku", "Perun", "Tanmogayi"}
 
@@ -84,13 +84,14 @@ function init_gear_sets()
 
     Valorous = {}
     Valorous.Feet = {}
-    Valorous.Feet.TP = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
     Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Weapon skill damage +5%','STR+9','Accuracy+15','Attack+11',}}
+    Valorous.Feet.TH = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
+    Valorous.Feet.TP = { name="Valorous Greaves", augments={'Accuracy+27','"Store TP"+6','INT+1',}}
     
     sets.TreasureHunter = { 
         head="White rarab cap +1", 
         waist="Chaac Belt",
-        feet=Valorous.Feet.TP
+        feet=Valorous.Feet.TH
      }
 
      sets.Organizer = {
@@ -109,7 +110,7 @@ function init_gear_sets()
      --sets.precast.JA['Mighty Strikes'] = {hands="Fallen's Finger Gauntlets +1"}
      sets.precast.JA['Blood Rage'] = { body="Boii Lorica +1" }
      sets.precast.JA['Provoke'] = { hands="Pummeler's Mufflers +1"}
-     sets.precast.JA['Berserk'] = { hands="Warrior's Calligae +2"}
+     sets.precast.JA['Berserk'] = { hands="Warrior's Calligae +2", back="Cichol's Mantle"}
      sets.precast.JA['Aggressor'] = { head="Pummeler's Mask +1"}
 
      sets.CapacityMantle  = { back="Mecistopins Mantle" }
@@ -182,7 +183,7 @@ function init_gear_sets()
          hands="Odyssean Gauntlets",
          ring1="Niqmaddu Ring",
          ring2="Flamma Ring",
-         back="Mauler's Mantle",
+         back="Cichol's Mantle",
          waist="Windbuffet Belt +1",
          legs=Odyssean.Legs.WS,
          feet="Sulevia's Leggings +2"
@@ -248,6 +249,9 @@ function init_gear_sets()
         waist="Metalsinger Belt",
         feet=Valorous.Feet.WS
     })
+    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Impulse Drive'], {
+        neck="Breeze Gorget",
+    })
      -- Sword WS's
      -- SANGUINE BLADE
      -- 50% MND / 50% STR Darkness Elemental
@@ -266,7 +270,7 @@ function init_gear_sets()
      -- 73% MND - breath damage
      sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
-         back="Bleating Mantle",
+         back="Cichol's Mantle",
          waist="Soil Belt",
      })
      sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
@@ -396,7 +400,7 @@ function init_gear_sets()
          hands="Sulevia's Gauntlets +2",
          ring1="Niqmaddu Ring",
          ring2="Flamma Ring",
-         back="Mauler's Mantle",
+         back="Cichol's Mantle",
          waist="Ioskeha Belt",
          legs=Odyssean.Legs.TP,
          feet="Flamma Gambieras +2"

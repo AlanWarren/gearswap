@@ -47,9 +47,9 @@ function user_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 
-	gear.RAbullet = "Decimating Bullet"
-	gear.WSbullet = "Decimating Bullet"
-	gear.MAbullet = "Decimating Bullet"
+	gear.RAbullet = "Chrono Bullet"
+	gear.WSbullet = "Chrono Bullet"
+	gear.MAbullet = "Chrono Bullet"
 	gear.QDbullet = "Animikii Bullet"
 	--gear.QDbullet = "Adlivun Bullet"
 	options.ammo_warning_limit = 15

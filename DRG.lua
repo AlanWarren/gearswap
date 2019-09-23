@@ -76,8 +76,9 @@ function init_gear_sets()
     Valorous.Hands.WS = { name="Valorous Mitts", augments={'Accuracy+27','Weapon skill damage +4%','Accuracy+5 Attack+5','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
     
     Valorous.Feet = {}
-    Valorous.Feet.TP = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
     Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Weapon skill damage +5%','STR+9','Accuracy+15','Attack+11',}}
+    Valorous.Feet.TH = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
+    Valorous.Feet.TP = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
     
     -- Precast Sets
 	-- Precast sets to enhance JAs
@@ -109,7 +110,7 @@ function init_gear_sets()
     sets.TreasureHunter = { 
         head="White rarab cap +1", 
         waist="Chaac Belt",
-        feet=Valorous.Feet.TP
+        feet=Valorous.Feet.TH
      }
 
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {

@@ -104,18 +104,19 @@ function init_gear_sets()
 
     Valorous.Feet = {}
     Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Weapon skill damage +5%','STR+9','Accuracy+15','Attack+11',}}
-    Valorous.Feet.TP = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
+    Valorous.Feet.TH = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
+    Valorous.Feet.TP = { name="Valorous Greaves", augments={'Accuracy+27','"Store TP"+6','INT+1',}}
 
     sets.TreasureHunter = { 
         head="White rarab cap +1", 
         waist="Chaac Belt",
-        feet=Valorous.Feet.TP
+        feet=Valorous.Feet.TH
      }
     sets.precast.JA['Provoke'] = { 
         -- ear1="Cryptic Earring",
         head="White rarab cap +1", 
         waist="Chaac Belt",
-        feet=Valorous.Feet.TP
+        feet=Valorous.Feet.TH
     }
     
     Smertrios = {}
