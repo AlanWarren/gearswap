@@ -444,8 +444,10 @@ function init_gear_sets()
     }
 
     sets.midcast['Blue Magic'].PhysicalAcc = set_combine(sets.midcast['Blue Magic'].Physical, {
+        head="Malignance Chapeau",
         ear1="Telos Earring",
-        ring1="Cacoethic Ring +1"
+        ring1="Cacoethic Ring +1",
+        legs="Malignance Tights", 
     })
 
     sets.midcast['Blue Magic'].PhysicalStr = set_combine(sets.midcast['Blue Magic'].Physical, {
@@ -453,6 +455,7 @@ function init_gear_sets()
     })
 
     sets.midcast['Blue Magic'].PhysicalDex = set_combine(sets.midcast['Blue Magic'].Physical, {
+        head="Malignance Chapeau",
         legs="Samnuha Tights"
     })
 
@@ -497,7 +500,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {})
 
     sets.midcast['Blue Magic'].MagicalAgi = set_combine(sets.midcast['Blue Magic'].Magical, {
-        head=HercHead.MAB,
+        head="Malignance Chapeau",
         legs=HercLegs.MAB,
         ring1="Garuda Ring",
         ring2="Ilabrat Ring",
@@ -509,14 +512,17 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].MagicalVit = set_combine(sets.midcast['Blue Magic'].Magical, {})
 
     sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {
+        head="Malignance Chapeau",
         ring1="Ilabrat Ring"
     })
 
     sets.midcast['Blue Magic'].MagicAccuracy = set_combine(sets.midcast['Blue Magic'].Magical, {
+        head="Malignance Chapeau",
         neck="Mirage Stole +1",
         back="Aput Mantle",
         ring1="Weatherspoon Ring",
-        ring2="Sangoma Ring"
+        ring2="Sangoma Ring",
+        legs="Malignance Tights", 
     })
 
     -- Breath Spells --
@@ -562,7 +568,7 @@ function init_gear_sets()
         feet="Luhlaza Charuqs"
     }
 
-    sets.midcast.Refresh = set_combine(sets.midcast.Macc, {
+    sets.midcast.Refresh = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
         head="Amalric Coif"
     })
     sets.midcast['Blue Magic'].Buff = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
@@ -612,7 +618,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         waist="Flume Belt",
         back="Kumbira Cape",
-        feet="Ayanmo Gambieras +2"
+        feet=HercFeet.MAB
     }
     
     -- Idle sets
@@ -632,11 +638,18 @@ function init_gear_sets()
         feet=HercFeet.MAB
     }
 
-    sets.idle.PDT = sets.idle
+    sets.idle.PDT = set_combine(sets.idle, {
+        head="Malignance Chapeau",
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        legs="Malignance Tights", 
+        body="Ayanmo Corazza +2",
+        feet="Ayanmo Gambieras +2"
+    })
 
     sets.idle.Town = set_combine(sets.idle, {
         neck="Mirage Stole +1",
-        head=HercHead.TP,
+        head="Malignance Chapeau",
         hands="Adhemar Wristbands +1",
         body="Shamash Robe",
         ear1="Telos Earring",
@@ -683,7 +696,7 @@ function init_gear_sets()
     }
 
     sets.engaged.Mid = set_combine(sets.engaged, {
-        legs="Carmine Cuisses +1",
+        legs=HercLegs.TP,
         neck="Mirage Stole +1",
     })
 
@@ -691,15 +704,18 @@ function init_gear_sets()
         ear1="Telos Earring",
         waist="Olseni Belt",
         ring1="Cacoethic Ring +1",
-        legs=HercLegs.TP
+        legs="Malignance Tights", 
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
+        legs="Malignance Tights", 
         body="Ayanmo Corazza +2",
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
@@ -716,7 +732,7 @@ function init_gear_sets()
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         body="Adhemar Jacket +1",
         ear1="Brutal Earring",
-        ear2="Dedition Earring",
+        ear2="Cessance Earring",
         legs="Samnuha Tights",
         waist="Windbuffet Belt +1"
      })
@@ -726,9 +742,11 @@ function init_gear_sets()
         legs=HercLegs.TP
      })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+        head="Malignance Chapeau",
         ear2="Cessance Earring",
         ring1="Cacoethic Ring +1",
-        waist="Olseni Belt"
+        waist="Olseni Belt",
+        legs="Malignance Tights", 
      })
      sets.engaged.Learning.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.Learning)
     
@@ -763,6 +781,7 @@ function init_gear_sets()
         legs=HercLegs.TP
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
+        head="Malignance Chapeau",
         ear2="Cessance Earring",
         ring1="Cacoethic Ring +1",
         legs=HercLegs.TP
@@ -770,24 +789,28 @@ function init_gear_sets()
      sets.engaged.Learning.Haste_35 = set_combine(sets.engaged.Haste_35, sets.Learning)
 
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, {
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Ayanmo Corazza +2",
+        legs="Malignance Tights", 
     })
     sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Ayanmo Corazza +2",
-        legs=HercLegs.TP
+        legs="Malignance Tights", 
     })
     sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Ayanmo Corazza +2",
-        legs=HercLegs.TP
+        legs="Malignance Tights", 
     })
 
     -- 30% Haste 1626 / 798
@@ -801,28 +824,36 @@ function init_gear_sets()
         legs=HercLegs.TP
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_35, {
+        head="Malignance Chapeau",
         ear2="Suppanomimi",
         ring1="Cacoethic Ring +1",
+        legs="Malignance Tights", 
     })
      sets.engaged.Learning.Haste_30 = set_combine(sets.engaged.Haste_30, sets.Learning)
 
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Ayanmo Corazza +2",
+        legs="Malignance Tights", 
     })
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Ayanmo Corazza +2",
+        legs="Malignance Tights", 
     })
     sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, {
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Ayanmo Corazza +2",
+        legs="Malignance Tights", 
     })
 
 
@@ -834,22 +865,28 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_15 = sets.engaged.Acc.Haste_30
     
     sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, {
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Ayanmo Corazza +2",
+        legs="Malignance Tights", 
     })
     sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, {
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Ayanmo Corazza +2",
+        legs="Malignance Tights", 
     })
     sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, {
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Ayanmo Corazza +2",
+        legs="Malignance Tights", 
     })
 
     --sets.self_healing = {ring1="Kunaji Ring",ring2="Asklepian Ring"}

@@ -101,7 +101,7 @@ function job_setup()
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     -- Set the default to false if you'd rather SE always stay acitve
-    state.SouleaterMode = M(false, 'Soul Eater Mode')
+    state.SouleaterMode = M(true, 'Soul Eater Mode')
     -- state.LastResortMode = M(false, 'Last Resort Mode')
     -- Use Gavialis helm?
     use_gavialis = true
@@ -236,7 +236,7 @@ function init_gear_sets()
         ammo="Impatiens",
         head="Fallen's Burgonet +3",
         body="Fallen's Cuirass +3",
-        ear1="Etiolation Earring",
+        ear1="Malignance Earring",
         ear2="Loquacious Earring",
         hands="Leyline Gloves",
         ring1="Kishar Ring",
@@ -294,7 +294,7 @@ function init_gear_sets()
         head="Ratri Sallet +1", -- 45 macc
         --head="Ignominy Burgonet +2", -- 19
         neck="Erra Pendant", -- 10 dark + 17 macc
-        ear1="Gwati Earring",
+        ear1="Malignance Earring",
         ear2="Dark Earring", -- 3
         body="Fallen's Cuirass +3",
         hands="Flamma Manopolas +2",
@@ -334,8 +334,8 @@ function init_gear_sets()
         ammo="Pemphredo Tathlum", 
         head="Ratri Sallet +1", -- 45 macc
         neck="Eddy Necklace", -- 11 matk
-        ear1="Friomisi Earring", -- 10 matk
-        ear2="Crematio Earring", -- 6 matk 6 mdmg
+        ear1="Malignance Earring",
+        ear2="Friomisi Earring", -- 10 matk
         body="Fallen's Cuirass +3",
         hands="Carmine Finger Gauntlets +1",
         ring1="Resonance Ring", -- int 8
@@ -365,7 +365,7 @@ function init_gear_sets()
     -- Drain spells 
     sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
         head="Fallen's Burgeonet +3",
-        ear1="Gwati Earring",
+        ear1="Malignance Earring",
         ear2="Hirudinea Earring",
         ring2="Excelsis Ring",
         feet="Ratri Sollerets +1"
@@ -414,6 +414,15 @@ function init_gear_sets()
         ring2="Kishar Ring",
     })
 
+    sets.midcast['Blue Magic'] = set_combine(sets.midcast['Dark Magic'], {
+        ear2="Gwati Earring", -- 3
+        waist="Eschan Stone", -- 5
+        ring1="Sangoma Ring", -- 10
+        ring2="Weatherspoon Ring", -- 10 macc
+        back="Aput Mantle",
+        legs="Fallen's Flanchard +3",  -- 18 + 39macc
+        feet="Ratri Sollerets +1" -- macc 33
+    })
     -- Ranged for xbow
     sets.precast.RA = {
         --head="Otomi Helm",
@@ -546,6 +555,7 @@ function init_gear_sets()
         head="Ratri Sallet +1",
         neck="Abyssal Bead Necklace +2",
         body="Ignominy Cuirass +3",
+        ear1="Malignance Earring",
         waist="Soil Belt",
         ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
@@ -660,7 +670,7 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Ratri Sallet +1",
         neck="Abyssal Bead Necklace +2",
-        ear1="Dedition Earring",
+        ear1="Malignance Earring",
         ear2="Telos Earring",
         body="Tartarus Platemail",
         ring1="Niqmaddu Ring",

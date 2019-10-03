@@ -54,7 +54,7 @@ function job_setup()
         rng_guns = S{'Annihilator', 'Armageddon', 'Fomalhaut'}
         rng_bows = S{'Yoichinoyumi', 'Gandiva', 'Fail-Not'}
         state.GastraAmmo = M{['description']='Xbow Ammo', "Quelling Bolt", "Abrasion Bolt"}
-        state.GunAmmo = M{['description']='Gun Ammo', "Decimating Bullet", "Eradicating Bullet"}
+        state.GunAmmo = M{['description']='Gun Ammo', "Chrono Bullet", "Eradicating Bullet"}
         state.AmmoToggle = M{['description']='Ammo Toggle', "Primary", "Secondary"}
         -- state.Ammo = M{['description']='Gastraphetes', "Bloody Bolt", "Achiyalabopa Bolt"}
         
@@ -70,7 +70,7 @@ end
  
 function user_setup()
         -- Options: Override default values
-        state.OffenseMode:options('Normal', 'Melee')
+        state.OffenseMode:options('Normal', 'Melee', 'Dynamis')
         state.RangedMode:options('Normal', 'Mid', 'Acc')
         state.HybridMode:options('Normal', 'PDT')
         state.IdleMode:options('Normal', 'PDT')
@@ -188,7 +188,7 @@ function init_gear_sets()
         
         sets.idle = {
             --sub="Nusku Shield",
-            head="Meghanada Visor +2",
+            head="Malignance Chapeau",
             neck="Sanctity Necklace",
             ear1="Etiolation Earring",
             ear2="Eabani Earring",
@@ -226,23 +226,23 @@ function init_gear_sets()
             hands="Adhemar Wristbands +1",
             waist="Kwahu Kachina Belt",
             back=Belenus.STP,
-            legs="Orion Braccae +3",
+            legs="Malignance Tights", 
             feet="Jute Boots +1"
         })
  
         -- Engaged sets
         sets.engaged =  {
-            head="Meghanada Visor +2",
+            head="Malignance Chapeau",
             neck="Twilight Torque",
             ear1="Enervating Earring",
-            ear2="Tripudio Earring",
+            ear2="Telos Earring",
             body="Meghanada Cuirie +2",
             hands="Meghanada Gloves +2",
             ring1="Dark Ring",
             ring2="Defending Ring",
             waist="Flume Belt",
             back=Belenus.STP,
-            legs="Mummu Kecks +2",
+            legs="Malignance Tights", 
             feet="Ahosi Leggings"
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
@@ -266,6 +266,21 @@ function init_gear_sets()
             waist="Windbuffet Belt +1",
             legs="Meghanada Chausses +2", 
             feet=HercFeet.TP
+        }
+        -- if preshot didn't work, what would you wear?
+        sets.engaged.Dynamis = {
+            head="Arcadian Beret +3",
+            neck="Scout's Gorget +2",
+            ear1="Dedition Earring",
+            ear2="Telos Earring", 
+            body="Arcadian Jerkin +3", 
+            hands="Carmine Finger Gauntlets +1",
+            ring1="Ilabrat Ring",
+            ring2="Rajas Ring",
+            back=Belenus.Snap, -- 2% VS / 10 snap 
+            waist="Kwahu Kachina Belt", 
+            legs="Orion Braccae +3", -- 15
+            feet="Meghanada Jambeaux +2" -- 10
         }
         -- sets.engaged.Bow.Melee = sets.engaged.Melee
 
@@ -358,12 +373,12 @@ function init_gear_sets()
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             ear1="Enervating Earring",
             body="Orion Jerkin +3", 
-            legs=AdhemarLegs.TP, 
+            legs="Malignance Tights", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
-            head="Orion Beret +3",
+            head="Malignance Chapeau",
             ring1="Cacoethic Ring +1",
-            legs="Orion Braccae +3",
+            legs="Malignance Tights", 
             feet="Mummu Gamashes +2"
         })
         
@@ -382,7 +397,7 @@ function init_gear_sets()
         })
         sets.midcast.RA.DoubleShot.Acc = set_combine(sets.midcast.RA.Acc, {
             hands="Oshosi Gloves",
-            -- legs="Oshosi Trousers",
+            legs="Malignance Tights", 
             body="Arcadian Jerkin +3", 
             feet="Oshosi Leggings"
         })
@@ -395,7 +410,9 @@ function init_gear_sets()
             ring2="Mummu Ring",
         })
         sets.midcast.RA.Annihilator.Mid = sets.midcast.RA.Mid
-        sets.midcast.RA.Annihilator.Acc = sets.midcast.RA.Acc
+        sets.midcast.RA.Annihilator.Acc = set_combine(sets.midcast.RA.Acc, {
+            ammo="Eradicating Bullet"
+        })
         sets.midcast.RA.DoubleShot.Annihilator = sets.midcast.RA.DoubleShot
         sets.midcast.RA.DoubleShot.Annihilator.Mid = sets.midcast.RA.DoubleShot.Mid
         sets.midcast.RA.DoubleShot.Annihilator.Acc = sets.midcast.RA.DoubleShot.Acc
@@ -418,7 +435,7 @@ function init_gear_sets()
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1="Enervating Earring",
             hands="Adhemar Wristbands +1",
-            legs=AdhemarLegs.TP,
+            legs="Malignance Tights", 
         })
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
             hands="Meghanada Gloves +2",
@@ -482,12 +499,11 @@ function init_gear_sets()
         
         sets.precast.WS['Trueflight'] = {
             head=HercHead.MAB,
-            -- head="Arcadian Beret +3",
             ear1="Friomisi Earring",
             ear2="Moonshade Earring",
             neck="Scout's Gorget +2",
             hands="Carmine Finger Gauntlets +1",
-            body="Samnuha Coat",
+            body="Herculean Vest",
             ring1="Dingir Ring",
             ring2="Weatherspoon Ring",
             back=Belenus.MAB,
@@ -536,6 +552,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Sherida Earring",
             ear2="Moonshade Earring",
+            body="Arcadian Jerkin +3",
             back=Belenus.WSD,
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
@@ -1004,7 +1021,9 @@ function job_state_change(stateField, newValue, oldValue)
             equip({ammo=newValue})
         end
     elseif stateField == 'Gun Ammo' then 
-        equip({ammo=newValue})
+        if rng_guns:contains(player.equipment.range) then
+            equip({ammo=newValue})
+        end
     end
 end
 

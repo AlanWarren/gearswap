@@ -361,7 +361,7 @@ function init_gear_sets()
 	-- Ranged gear
 	sets.midcast.RA = {
         ammo=gear.RAbullet,
-        head="Meghanada Visor +2",
+        head="Malignance Chapeau",
         neck="Iskur Gorget",
         ear1="Telos Earring",
         ear2="Enervating Earring",
@@ -371,7 +371,7 @@ function init_gear_sets()
         ring2="Ilabrat Ring",
         back=Camulus.STP,
         waist="Kwahu Kachina Belt",
-        legs=AdhemarLegs.TP,
+        legs="Malignance Tights", 
         feet="Mummu Gamashes +2"
     }
 
@@ -381,7 +381,7 @@ function init_gear_sets()
         ring1="Hajduk Ring",
         ring2="Cacoethic Ring +1",
         hands="Meghanada Gloves +2",
-        legs="Mummu Kecks +2",
+        legs="Malignance Tights", 
         feet="Meghanada Jambeaux +2"
     })
 
@@ -402,7 +402,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
         ammo=gear.RAbullet,
-        head="Meghanada Visor +2",
+        head="Malignance Chapeau",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
@@ -449,7 +449,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back=Camulus.STP,
         waist="Flume Belt",
-        legs="Meghanada Chausses +2",
+        legs="Malignance Tights", 
         feet="Meghanada Jambeaux +2"
     })
 
@@ -466,7 +466,7 @@ function init_gear_sets()
 	
     sets.engaged = {
         ammo=gear.RAbullet,
-        head="Meghanada Visor +2",
+        head="Malignance Chapeau",
         neck="Twilight Torque",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
@@ -476,7 +476,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back=Camulus.STP,
         waist="Flume Belt",
-        legs="Mummu Kecks +2",
+        legs="Malignance Tights", 
         feet="Meghanada Jambeaux +2"
     }
 	-- Normal melee group

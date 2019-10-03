@@ -255,7 +255,7 @@ function init_gear_sets()
     -- skill ++ 
     sets.midcast.Ninjutsu = {
         --ammo="Pemphredo Tathlum",
-        head="Mummu Bonnet +2",
+        head="Malignance Chapeau",
         ear1="Gwati Earring",
         ear2="Lempo Earring",
         neck="Incanter's Torque",
@@ -266,7 +266,7 @@ function init_gear_sets()
         --ring2="Haverton Ring",
         back="Yokaze Mantle",
         waist="Eschan Stone",
-        legs="Mummu Kecks +2",
+        legs="Malignance Tights", 
         feet="Mummu Gamashes +2"
     }
     -- any ninjutsu cast on self
@@ -316,7 +316,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back=Andartia.DEX,
         waist="Flume Belt",
-        legs="Mummu Kecks +2",
+        legs="Malignance Tights", 
         feet="Danzo Sune-ate"
     }
 
@@ -337,7 +337,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Telos Earring",
         hands="Adhemar Wristbands +1",
-        legs="Kendatsuba Hakama",
+        legs="Malignance Tights", 
         ring1="Ilabrat Ring",
         ring2="Gere Ring",
         back=Andartia.DEX,
@@ -353,6 +353,7 @@ function init_gear_sets()
     sets.defense.PDT = {
         -- head="Lithelimb Cap",
         neck="Twilight Torque",
+        head="Malignance Chapeau",
         body="Kendatsuba Samue",
         hands=HercHands.R,
         ring1="Patricius Ring",
@@ -460,7 +461,7 @@ function init_gear_sets()
 
     -- Defenseive sets
     sets.NormalPDT = {
-        head="Lithelimb Cap",
+        head="Malignance Chapeau",
         body="Emet Harness +1",
         neck="Agitator's Collar",
         hands="Floral Gauntlets",
@@ -470,7 +471,7 @@ function init_gear_sets()
         feet="Ahosi Leggings"
     }
     sets.AccPDT = {
-        head="Rao Kabuto",
+        head="Malignance Chapeau",
         body="Kendatsuba Samue",
         neck="Agitator's Collar",
         hands="Floral Gauntlets",
@@ -521,7 +522,7 @@ function init_gear_sets()
         body="Kendatsuba Samue",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
-        head=HercHead.TP,
+        head="Malignance Chapeau",
         neck="Moonbeam Nodowa",
         ear1="Telos Earring",
         ear2="Cessance Earring",

@@ -74,6 +74,7 @@ function init_gear_sets()
     sets.precast.FC = {
         main="Sucellus",
         head="Hyaline Hat",
+        ear1="Malignance Earring",
         ear2="Loquacious Earring",
         hands="Magavan Mitts",
         body="Shango Robe",
@@ -118,7 +119,7 @@ function init_gear_sets()
         --ammo="Dosis Tathlum",
         head="Jhakri Coronal +2",
         neck="Eddy Necklace",
-        ear1="Friomisi Earring",
+        ear1="Malignance Earring",
         ear2="Crematio Earring",
         --hands="Yaoyotl Gloves",
         ring1="Acumen Ring",
@@ -166,7 +167,7 @@ function init_gear_sets()
         range="Dunna", 
         head="Azimuth Hood +1", -- 10
         neck="Incanter's Torque", -- 10
-        ear1="Gwati Earring",
+        ear1="Malignance Earring",
         ear2="Regal Earring",
         hands="Geomancy Mitaines +1", -- 15
         body="Bagua Tunic", -- 10
@@ -203,7 +204,7 @@ function init_gear_sets()
         --ammo="Witchstone",
         head="Jhakri Coronal +2",
         neck="Mizukage-no-Kubikazari",
-        ear1="Friomisi Earring",
+        ear1="Malignance Earring",
         ear2="Regal Earring",
         body="Shamash Robe",
         hands="Amalric Gages", 
@@ -216,7 +217,7 @@ function init_gear_sets()
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
-        ear1="Friomisi Earring",
+        ear1="Malignance Earring",
         neck="Erra Pendant",
         -- ear2="Gwati Earring", 
         hands="Amalric Gages", 
@@ -231,7 +232,7 @@ function init_gear_sets()
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
         main="Grioavolr",
         sub="Enki Strap",
-        ear1="Crematio Earring",
+        ear1="Malignance Earring",
         head="Mallquis Chapeau +1",
         hands="Mallquis Cuffs +1",
         body="Mallquis Saio +1",
@@ -241,7 +242,7 @@ function init_gear_sets()
     })
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
-        ear1="Friomisi Earring",
+        ear1="Malignance Earring",
         ear2="Regal Earring",
         neck="Erra Pendant",
         body="Shamash Robe",
@@ -256,8 +257,8 @@ function init_gear_sets()
         ammo="Pemphredo Tathlum",
         head="Mallquis Chapeau +1",
         neck="Erra Pendant",
-        ear1="Gwati Earring",
-        ear2="Lempo Earring",
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
         body="Shamash Robe",
         hands="Jhakri Cuffs +2",
         ring1="Weatherspoon Ring",
@@ -273,7 +274,8 @@ function init_gear_sets()
     sets.midcast.Absorb = set_combine(sets.midcast.Macc, {
         head="Bagua Galero",
         neck="Erra Pendant",
-        ear1="Gwati Earring",
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
         ring1="Evanescence Ring",
         ring2="Kishar Ring",
         body="Geomancy tunic +1",
@@ -402,6 +404,8 @@ function init_gear_sets()
     --})
 
     sets.idle.Town = set_combine(sets.idle, {
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
         body="Shamash Robe",
         --hands="Amalric Gages", 
     })
