@@ -313,6 +313,14 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",waist="Soil Belt"})
     
+    sets.midcast['Blue Magic'] = set_combine(sets.precast.WS['Tachi: Ageha'], {
+        ear2="Gwati Earring", -- 3
+        waist="Eschan Stone", -- 5
+        ring1="Sangoma Ring", -- 10
+        ring2="Weatherspoon Ring", -- 10 macc
+        back="Aput Mantle",
+        legs="Flamma Dirs +2"
+    })
     -- Midcast Sets
     sets.midcast.FastRecast = {
     	-- head="Otomi Helm",
