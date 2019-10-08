@@ -208,10 +208,10 @@ function init_gear_sets()
             ring2="Paguroidea Ring"
         })
         sets.idle.PDT = set_combine(sets.idle, {
-            head="Meghanada Visor +2",
+            head="Malignance Chapeau",
             body="Meghanada Cuirie +2",
-            hands="Meghanada Gloves +2",
-            legs="Mummu Kecks +2",
+            hands="Malignance Gloves",
+            legs="Malignance Tights",
             ring1="Dark Ring",
             ring2="Defending Ring"
         })
@@ -223,7 +223,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
-            hands="Adhemar Wristbands +1",
+            hands="Malignance Gloves",
             waist="Kwahu Kachina Belt",
             back=Belenus.STP,
             legs="Malignance Tights", 
@@ -237,7 +237,7 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Telos Earring",
             body="Meghanada Cuirie +2",
-            hands="Meghanada Gloves +2",
+            hands="Malignance Gloves",
             ring1="Dark Ring",
             ring2="Defending Ring",
             waist="Flume Belt",
@@ -246,10 +246,10 @@ function init_gear_sets()
             feet="Ahosi Leggings"
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
-            hands="Meghanada Gloves +2",
+            hands="Malignance Gloves",
             back=Belenus.STP,
             ring1="Dark Ring",
-            legs="Mummu Kecks +2"
+            legs="Malignance Tights", 
         })
         sets.engaged.Bow = set_combine(sets.engaged, {})
 
@@ -274,12 +274,12 @@ function init_gear_sets()
             ear1="Dedition Earring",
             ear2="Telos Earring", 
             body="Arcadian Jerkin +3", 
-            hands="Carmine Finger Gauntlets +1",
+            hands="Malignance Gloves",
             ring1="Ilabrat Ring",
             ring2="Rajas Ring",
             back=Belenus.Snap, -- 2% VS / 10 snap 
             waist="Kwahu Kachina Belt", 
-            legs="Orion Braccae +3", -- 15
+            legs="Malignance Tights", -- 15
             feet="Meghanada Jambeaux +2" -- 10
         }
         -- sets.engaged.Bow.Melee = sets.engaged.Melee
@@ -362,12 +362,12 @@ function init_gear_sets()
             ear1="Dedition Earring",
             ear2="Telos Earring", 
             body="Orion Jerkin +3", 
-            hands="Adhemar Wristbands +1",
+            hands="Malignance Gloves",
             ring1="Ilabrat Ring",
             ring2="Rajas Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
-            legs="Amini Brague +1", 
+            legs="Malignance Tights", 
             feet="Arcadian Socks +3"
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
@@ -396,7 +396,7 @@ function init_gear_sets()
             feet="Oshosi Leggings"
         })
         sets.midcast.RA.DoubleShot.Acc = set_combine(sets.midcast.RA.Acc, {
-            hands="Oshosi Gloves",
+            hands="Malignance Gloves",
             legs="Malignance Tights", 
             body="Arcadian Jerkin +3", 
             feet="Oshosi Leggings"
@@ -419,26 +419,26 @@ function init_gear_sets()
 
         -- Yoichinoyumi
         sets.midcast.RA.Yoichinoyumi = {
-            head="Meghanada Visor +2",
+            head="Malignance Chapeau",
             neck="Scout's Gorget +2",
             ear1="Dedition Earring",
             ear2="Telos Earring",
             body="Mummu Jacket +2",
-            hands="Adhemar Wristbands +1",
+            hands="Malignance Gloves",
             ring1="Ilabrat Ring",
             ring2="Rajas Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
-            legs="Amini Brague +1", 
+            legs="Malignance Tights", 
             feet="Arcadian Socks +3"
         }
         sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
             ear1="Enervating Earring",
-            hands="Adhemar Wristbands +1",
+            hands="Malignance Gloves",
             legs="Malignance Tights", 
         })
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
-            hands="Meghanada Gloves +2",
+            hands="Malignance Gloves",
             body="Orion Jerkin +3",
             ring2="Longshot Ring",
         })
@@ -679,7 +679,7 @@ function init_gear_sets()
             ring2="Ilabrat Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
-            legs=AdhemarLegs.TP,
+            legs="Malignance Tights",
             feet="Arcadian Socks +3"
         }
         sets.buff.Camouflage =  {body="Orion Jerkin +3"}

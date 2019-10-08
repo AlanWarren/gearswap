@@ -260,7 +260,7 @@ function init_gear_sets()
         ear2="Lempo Earring",
         neck="Incanter's Torque",
         body="Mummu Jacket +2",
-        hands="Mummu Wrists +2",
+        hands="Malignance Gloves",
         ring1="Weatherspoon Ring", -- 10 macc
         ring2="Sangoma Ring",
         --ring2="Haverton Ring",
@@ -355,7 +355,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         head="Malignance Chapeau",
         body="Kendatsuba Samue",
-        hands=HercHands.R,
+        hands="Malignance Gloves",
         ring1="Patricius Ring",
         ring2="Defending Ring",
         back="Solemnity Cape",
@@ -368,7 +368,7 @@ function init_gear_sets()
         -- head="Ptica Headgear",
         ear1="Etiolation Earring",
         neck="Twilight Torque",
-        hands="Ryuo Tekko",
+        hands="Malignance Gloves",
         -- feet="Amm Greaves"
     })
 
@@ -464,17 +464,17 @@ function init_gear_sets()
         head="Malignance Chapeau",
         body="Emet Harness +1",
         neck="Agitator's Collar",
-        hands="Floral Gauntlets",
+        hands="Malignance Gloves",
         back="Solemnity Cape",
         ring1="Defending Ring",
-        legs="Ryuo Hakama",
+        legs="Malignance Tights",
         feet="Ahosi Leggings"
     }
     sets.AccPDT = {
         head="Malignance Chapeau",
         body="Kendatsuba Samue",
         neck="Agitator's Collar",
-        hands="Floral Gauntlets",
+        hands="Malignance Gloves",
         ring1="Patricius Ring",
         ring2="Defending Ring",
         legs="Kendatsuba Hakama",
@@ -492,10 +492,12 @@ function init_gear_sets()
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
         body="Emet Harness +1",
+        head="Malignance Chapeau",
         waist="Flume Belt",
+        hands="Malignance Gloves",
         ring1="Defending Ring",
         back="Solemnity Cape",
-        legs="Kendatsuba Hakama",
+        legs="Malignance Tights",
         feet="Ahosi Leggings"
     }
 

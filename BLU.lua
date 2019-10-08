@@ -642,6 +642,7 @@ function init_gear_sets()
         head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
+        hands="Malignance Gloves",
         legs="Malignance Tights", 
         body="Ayanmo Corazza +2",
         feet="Ayanmo Gambieras +2"
@@ -650,7 +651,7 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
         neck="Mirage Stole +1",
         head="Malignance Chapeau",
-        hands="Adhemar Wristbands +1",
+        hands="Malignance Gloves",
         body="Shamash Robe",
         ear1="Telos Earring",
         ear2="Regal Earring",
@@ -711,6 +712,7 @@ function init_gear_sets()
         head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
+        hands="Malignance Gloves",
         legs="Malignance Tights", 
         body="Ayanmo Corazza +2",
     })
@@ -718,12 +720,17 @@ function init_gear_sets()
         head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
+        hands="Malignance Gloves",
         ring2="Patricius Ring",
+        legs="Malignance Tights", 
         body="Ayanmo Corazza +2",
     })
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid.PDT, {
+        head="Malignance Chapeau",
         ring1="Defending Ring",
         body="Ayanmo Corazza +2",
+        legs="Malignance Tights", 
+        hands="Malignance Gloves",
     })
 
     sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)

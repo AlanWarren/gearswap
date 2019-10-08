@@ -332,18 +332,18 @@ function init_gear_sets()
 	sets.midcast.CorsairShot = {
         ammo=gear.QDbullet,
         --head=HercHead.MAB,
-        head="White Rarab Cap +1",
+        head="Malignance Chapeau",
         neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Lanun Frac +3",
-        hands="Carmine Finger Gauntlets +1",
+        hands="Malignance Gloves",
         ring1="Dingir Ring",
         ring2="Ilabrat Ring",
         back="Gunslinger's Cape",
         --waist="Eschan Stone",
         waist="Chaac Belt",
-        legs=HercLegs.MAB,
+        legs="Malignance Tights",
         feet=HercFeet.MAB
     }
 
@@ -366,7 +366,7 @@ function init_gear_sets()
         ear1="Telos Earring",
         ear2="Enervating Earring",
         body="Mummu Jacket +2",
-        hands="Adhemar Wristbands +1",
+        hands="Malignance Gloves",
         ring1="Dingir Ring",
         ring2="Ilabrat Ring",
         back=Camulus.STP,
@@ -380,7 +380,7 @@ function init_gear_sets()
         body="Meghanada Cuirie +2",
         ring1="Hajduk Ring",
         ring2="Cacoethic Ring +1",
-        hands="Meghanada Gloves +2",
+        hands="Malignance Gloves",
         legs="Malignance Tights", 
         feet="Meghanada Jambeaux +2"
     })
@@ -408,7 +408,7 @@ function init_gear_sets()
         ear2="Eabani Earring",
         --body="Mekosuchinae Harness",
         body="Lanun Frac +3",
-        hands=HercHands.R,
+        hands="Malignance Gloves",
         ring1="Meghanada Ring",
         ring2="Roller's Ring",
         back=Camulus.STP,
@@ -425,12 +425,12 @@ function init_gear_sets()
 
 	sets.idle.Town = {
         ammo=gear.RAbullet,
-        head="Meghanada Visor +2",
+        head="Malignance Chapeau",
         neck="Regal Necklace",
         ear1="Telos Earring",
         ear2="Dedition Earring",
         body="Adhemar Jacket +1",
-        hands="Adhemar Wristbands +1",
+        hands="Malignance Gloves",
         ring1="Dingir Ring",
         ring2="Ilabrat Ring",
         back=Camulus.STP,
@@ -471,7 +471,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         body="Meghanada Cuirie +2",
-        hands="Meghanada Gloves +2",
+        hands="Malignance Gloves",
         ring1="Meghanada Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
