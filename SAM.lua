@@ -435,7 +435,7 @@ function init_gear_sets()
         neck="Moonbeam Nodowa",
         ear1="Brutal Earring",
         ear2="Dedition Earring",
-        body="Kasuga Domaru +1",
+        body="Kendatsuba Samue",
         hands="Wakido Kote +3",
         ring1="Niqmaddu Ring", 
         ring2="Petrov Ring", 
@@ -447,10 +447,11 @@ function init_gear_sets()
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         -- hands=Valorous.Hands.TP,
-        body="Valorous Mail",
+        neck="Samurai's Nodowa +1",
+        body="Kendatsuba Samue",
         ear1="Telos Earring",
         ear2="Cessance Earring",
-        legs="Ryuo Hakama",
+        legs="Kendatsuba Hakama",
         ring2="Flamma Ring",
         --body="Kendatsuba Samue",
         --legs="Kendatsuba Hakama",

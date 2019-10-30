@@ -1034,7 +1034,7 @@ function init_gear_sets()
     })
     sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {
         ammo="Seething Bomblet +1",
-        hands="Sulevia's Gauntlets +2",
+        hands="Flamma Manopolas +2",
         body="Flamma Korazin +2",
         legs="Ignominy Flanchard +3",
         back=Ankou.DA

@@ -193,12 +193,12 @@ function init_gear_sets()
             ear1="Etiolation Earring",
             ear2="Eabani Earring",
             body="Meghanada Cuirie +2",
-            hands="Meghanada Gloves +2",
+            hands="Malignance Gloves",
             ring1="Meghanada Ring",
-            ring2="Defending Ring",
+            ring2="Roller's Ring",
             back=Belenus.STP,
             waist="Flume Belt",
-            legs="Mummu Kecks +2",
+            legs="Malignance Tights",
             feet="Jute Boots +1" -- 10
         }
         sets.idle.Regen = set_combine(sets.idle, {
@@ -390,7 +390,7 @@ function init_gear_sets()
             feet="Oshosi Leggings"
         })
         sets.midcast.RA.DoubleShot.Mid = set_combine(sets.midcast.RA.Mid, {
-            hands="Oshosi Gloves",
+            hands="Malignance Gloves",
             legs="Oshosi Trousers",
             body="Arcadian Jerkin +3", 
             feet="Oshosi Leggings"

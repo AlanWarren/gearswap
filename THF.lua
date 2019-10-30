@@ -476,7 +476,7 @@ function init_gear_sets()
     sets.defense.PDT = {
         ammo="Staunch Tathlum",
         head="Malignance Chapeau",
-        neck="Twilight Torque",
+        neck="Assassin's Gorget +1",
         body="Meghanada Cuirie +2",
         hands="Malignance Gloves",
         ring1="Defending Ring",
@@ -489,7 +489,7 @@ function init_gear_sets()
     sets.defense.MDT = {
         ammo="Staunch Tathlum",
         head="Malignance Chapeau",
-        neck="Twilight Torque",
+        neck="Assassin's Gorget +1",
         ear1="Etiolation Earring",
         body="Herculean Vest",
         ring1="Defending Ring",
@@ -509,7 +509,7 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
-        ammo="Yamarang",
+        ammo="Yetshila",
         head=HercHead.TP,
         neck="Assassin's Gorget +1",
         ear1="Eabani Earring",
@@ -524,6 +524,7 @@ function init_gear_sets()
         feet=HercFeet.TP
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
+        ammo="Yamarang",
         --ring1="Petrov Ring",
         legs="Pillager's culottes +3",
         -- feet="Mummu Gamashes +2"
@@ -543,7 +544,7 @@ function init_gear_sets()
     sets.engaged.PDT = set_combine(sets.engaged, {
         ammo="Staunch Tathlum",
         head="Malignance Chapeau",
-        neck="Twilight Torque",
+        neck="Assassin's Gorget +1",
         body="Pillager's Vest +3",
         hands="Malignance Gloves",
         ring1="Defending Ring",
@@ -576,7 +577,7 @@ function init_gear_sets()
     })
     sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, { 
         head="Malignance Chapeau",
-        neck="Twilight Torque", 
+        neck="Assassin's Gorget +1",
         body="Adhemar Jacket +1",
         hands="Malignance Gloves",
         ring1="Defending Ring",
@@ -625,7 +626,7 @@ function init_gear_sets()
     })
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { 
         head="Malignance Chapeau",
-        neck="Twilight Torque", 
+        neck="Assassin's Gorget +1",
         body="Pillager's Vest +3",
         ring1="Defending Ring",
         ring2="Gere Ring",
@@ -679,7 +680,7 @@ function init_gear_sets()
     })
     sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Malignance Chapeau",
-        neck="Twilight Torque", 
+        neck="Assassin's Gorget +1",
         hands="Malignance Gloves",
         body="Pillager's Vest +3",
         ring1="Defending Ring",
