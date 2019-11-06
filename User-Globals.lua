@@ -2,6 +2,21 @@ Rings = S{'Capacity Ring', 'Warp Ring', 'Trizek Ring', 'Expertise Ring', 'Empero
 sets.reive = {neck="Ygnas's Resolve +1"}
 sets.crafting = { body="Alchemist's Apron", sub="Brewer's Scutum", head="Midras's Helm +1", main="Caduceus", neck="Alchemist's Torque", ring1="Craftmaster's ring", ring2="Orvail Ring" }
 
+equip_lock = S{
+    "Warp Ring",
+    "Capacity Ring",
+    "Vocation Ring",
+    "Trizek Ring",
+    "Endorsement Ring"
+}
+function user_handle_equipping_gear(status, eventArgs)
+    if equip_lock:contains(player.equipment.right_ring) then
+        disable('ring2')
+    else
+        enable('ring2')
+    end
+end
+
 function user_post_precast(spell, action, spellMap, eventArgs)
     -- reive mark
 	if spell.type:lower() == 'weaponskill' then

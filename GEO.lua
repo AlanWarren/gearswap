@@ -73,16 +73,17 @@ function init_gear_sets()
 
     sets.precast.FC = {
         main="Sucellus",
-        head="Welkin Crown",
+        head="Hyaline Hat",
+        ear1="Malignance Earring",
         ear2="Loquacious Earring",
         hands="Magavan Mitts",
         body="Shango Robe",
-        ring1="Prolix Ring",
+        ring1="Weatherspoon Ring",
         ring2="Kishar Ring",
         back="Lifestream Cape",
         waist="Witful Belt",
         legs="Geomancy Pants +1",
-        feet="Chelona Boots"
+        feet="Merlinic Crackows"
     }
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -101,28 +102,30 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        --head="Nahtirah Hat",
+        head="Jhakri Coronal +2",
         neck=gear.ElementalGorget,
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
+        ear1="Brutal Earring",
+        ear2="Regal Earring",
         --body="Vanir Cotehardie",
-        --hands="Yaoyotl Gloves",
+        hands="Jhakri Cuffs +2",
         ring1="Ifrit Ring",
         ring2="Ifrit Ring",
         back="Buquwik Cape",
         waist=gear.ElementalBelt,
+        feet="Jhakri Pigaches +2"
     }
 
     sets.precast.WS['Flash Nova'] = {
         --ammo="Dosis Tathlum",
-        head="Welkin Crown",
+        head="Jhakri Coronal +2",
         neck="Eddy Necklace",
-        ear1="Friomisi Earring",
+        ear1="Malignance Earring",
         ear2="Crematio Earring",
         --hands="Yaoyotl Gloves",
         ring1="Acumen Ring",
         --ring2="Strendu Ring",
         back="Toro Cape",
+        feet="Jhakri Pigaches +2"
         --waist="Snow Belt",
     }
 
@@ -145,6 +148,7 @@ function init_gear_sets()
         back="Lifestream Cape",
         waist="Witful Belt", -- 4%
         legs="Geomancy Pants +1", -- 5%
+        feet="Merlinic Crackows"
     }
     sets.midcast.Trust =  {
          head="Azimuth hood +1",
@@ -163,13 +167,13 @@ function init_gear_sets()
         range="Dunna", 
         head="Azimuth Hood +1", -- 10
         neck="Incanter's Torque", -- 10
-        ear1="Gwati Earring",
-        ear2="Lempo Earring",
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
         hands="Geomancy Mitaines +1", -- 15
         body="Bagua Tunic", -- 10
         back="Lifestream Cape", -- 9
-        legs="Geomancy Pants +1",
-        feet="Umbani Boots"
+        legs="Lengo Pants",
+        feet="Merlinic Crackows"
     }
 
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
@@ -179,8 +183,10 @@ function init_gear_sets()
     })
 
     sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
+        main="Daybreak",
         main="Serenity",
         neck="Incanter's Torque",
+        ear1="Mendicant's Earring",
         hands="Telchine Gloves",
     	back="Solemnity Cape",
     })
@@ -196,24 +202,24 @@ function init_gear_sets()
         sub="Enki Strap",
         --sub="Wizzan Grip",
         --ammo="Witchstone",
-        head="Jhakri Coronal +1",
+        head="Jhakri Coronal +2",
         neck="Mizukage-no-Kubikazari",
-        ear1="Friomisi Earring",
-        ear2="Crematio Earring",
-        body="Jhakri Robe +1",
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
+        body="Shamash Robe",
         hands="Amalric Gages", 
         ring1="Shiva Ring",
         ring2="Resonance Ring",
         back="Nantosuelta's Cape",
         waist="Refoccilation Stone", 
         legs="Merlinic Shalwar",
-        feet="Jhakri Pigaches +1"
+        feet="Jhakri Pigaches +2"
     }
     
     sets.midcast.HighTierNuke.Resistant = set_combine(sets.midcast.HighTierNuke, {
-        ear1="Friomisi Earring",
+        ear1="Malignance Earring",
         neck="Erra Pendant",
-        ear2="Gwati Earring", 
+        -- ear2="Gwati Earring", 
         hands="Amalric Gages", 
         --feet="Bokwus Boots"
     })
@@ -226,7 +232,7 @@ function init_gear_sets()
     sets.midcast.LowTierNuke = set_combine(sets.midcast.HighTierNuke, {
         main="Grioavolr",
         sub="Enki Strap",
-        ear2="Crematio Earring",
+        ear1="Malignance Earring",
         head="Mallquis Chapeau +1",
         hands="Mallquis Cuffs +1",
         body="Mallquis Saio +1",
@@ -236,11 +242,12 @@ function init_gear_sets()
     })
     
     sets.midcast.LowTierNuke.Resistant = set_combine(sets.midcast.LowTierNuke, {
-        ear1="Friomisi Earring",
-        ear2="Gwati Earring", 
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
         neck="Erra Pendant",
+        body="Shamash Robe",
         legs="Merlinic Shalwar",
-        ring1="Sangoma Ring",
+        ring1="Weatherspoon Ring",
         back="Nantosuelta's Cape",
     })
 
@@ -250,21 +257,25 @@ function init_gear_sets()
         ammo="Pemphredo Tathlum",
         head="Mallquis Chapeau +1",
         neck="Erra Pendant",
-        ear1="Gwati Earring",
-        ear2="Lempo Earring",
-        body="Azimuth Coat +1",
-        hands="Mallquis Cuffs +1",
-        ring1="Perception Ring", 
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
+        body="Shamash Robe",
+        hands="Jhakri Cuffs +2",
+        ring1="Weatherspoon Ring",
         ring2="Sangoma Ring",
         back="Nantosuelta's Cape",
         legs="Merlinic Shalwar",
         waist="Yamabuki-no-obi", 
         feet="Mallquis CLogs +1"
     }
+    sets.midcast.Refresh = set_combine(sets.midcast.Macc, {
+        head="Amalric Coif"
+    })
     sets.midcast.Absorb = set_combine(sets.midcast.Macc, {
         head="Bagua Galero",
         neck="Erra Pendant",
-        ear1="Gwati Earring",
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
         ring1="Evanescence Ring",
         ring2="Kishar Ring",
         body="Geomancy tunic +1",
@@ -280,11 +291,13 @@ function init_gear_sets()
         ring2="Excelsis Ring",
         body="Geomancy tunic +1",
         legs="Azimuth Tights +1",
+        feet="Merlinic Crackows"
     })
     sets.midcast.Drain = sets.midcast.Aspir
     sets.midcast.Stun = sets.midcast.Macc
     
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.Macc, {
+        main="Daybreak",
         neck="Erra Pendant",
         waist="Casso Sash",
         back="Nantosuelta's Cape",
@@ -294,6 +307,7 @@ function init_gear_sets()
         feet="Bagua Sandals"
     })
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.Macc, {
+        main="Daybreak",
         waist="Casso Sash",
         back="Nantosuelta's Cape",
         ring1="Kishar Ring",
@@ -313,7 +327,7 @@ function init_gear_sets()
     -- Resting sets
     sets.resting = {
         neck="Twilight Torque",
-        body="Azimuth Coat +1",
+        body="Shamash Robe",
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
         ring2="Paguroidea Ring",
@@ -323,14 +337,14 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {
-        main="Bolelabunga",
+        main="Daybreak",
         sub="Genbu's Shield",
         range="Dunna",
         head="Befouled Crown",
         neck="Twilight Torque",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Jhakri Robe +1",
+        body="Shamash Robe",
         hands="Bagua Mitaines",
         ring1="Dark Ring",
         ring2="Defending Ring",
@@ -342,7 +356,7 @@ function init_gear_sets()
     sets.idle.PDT = set_combine(sets.idle, {
         head="Hike Khat +1",
         neck="Twilight Torque",
-        body="Mallquis Saio +1",
+        body="Shamash Robe",
         hands="Geomancy Mitaines +1",
     	back="Solemnity Cape",
         feet="Azimuth Gaiters +1"
@@ -353,7 +367,7 @@ function init_gear_sets()
         main="Sucellus",
         head="Azimuth Hood +1",
         neck="Twilight Torque",
-        body="Mallquis Saio +1",
+        body="Shamash Robe",
         hands="Geomancy Mitaines +1",
         legs="Telchine Braconi",
         back="Lifestream Cape",
@@ -367,7 +381,7 @@ function init_gear_sets()
     sets.idle.Melee = set_combine(sets.idle, {
         main="Malevolence",
         neck="Lissome Necklace",
-        feet="Jhakri Pigaches +1"
+        feet="Jhakri Pigaches +2"
         --sub="Bolelabunga"
     })
 
@@ -390,8 +404,10 @@ function init_gear_sets()
     --})
 
     sets.idle.Town = set_combine(sets.idle, {
-        body="Councilor's Garb",
-        hands="Amalric Gages", 
+        ear1="Malignance Earring",
+        ear2="Regal Earring",
+        body="Shamash Robe",
+        --hands="Amalric Gages", 
     })
 
     sets.idle.Weak = sets.idle
@@ -400,10 +416,8 @@ function init_gear_sets()
 
     sets.defense.PDT = {
         range="Dunna",
-        head="Welkin Crown",
         neck="Twilight Torque",
-        ear1="Zennaroi Earring",
-        body="Azimuth Coat +1",
+        body="Shamash Robe",
         hands="Geomancy Mitaines +1",
         ring1="Dark Ring",
         ring2="Defending Ring",
@@ -415,9 +429,8 @@ function init_gear_sets()
         range="Dunna",
         --head="Nahtirah Hat",
         --neck="Wiglen Gorget",
-        ear1="Zennaroi Earring",
         ear2="Loquacious Earring",
-        body="Azimuth Coat +1",
+        body="Shamash Robe",
         hands="Geomancy Mitaines +1",
         --ring1="Defending Ring",
         --ring2="Shadow Ring",
@@ -428,7 +441,7 @@ function init_gear_sets()
 
     sets.Kiting = {}
 
-    sets.latent_refresh = {waist="Fucho-no-obi"}
+    sets.latent_refresh = {body="Jhakri Robe +2", waist="Fucho-no-obi"}
 
 
     --------------------------------------
@@ -444,17 +457,17 @@ function init_gear_sets()
     sets.engaged = {
         range="Dunna",
         neck="Asperity Necklace",
-        ear1="Bladeborn Earring",
-        ear2="Steelflash Earring",
-        body="Azimuth Coat +1",
+        ear1="Brutal Earring",
+        ear2="Telos Earring",
+        body="Shamash Robe",
         --body="Vanir Cotehardie",
         hands="Geomancy Mitaines +1",
         ring1="Rajas Ring",
-        ring2="K'ayres Ring",
+        ring2="Petrov Ring",
         back="Kayapa Cape",
         waist="Windbuffet Belt +1",
         legs="Geomancy Pants +1",
-        feet="Umbani Boots"
+        feet="Merlinic Crackows"
     }
     sets.engaged.Melee = set_combine(sets.engaged, {
         main="Malevolence",

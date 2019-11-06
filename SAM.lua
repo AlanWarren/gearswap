@@ -32,6 +32,8 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
+    include('Mote-TreasureHunter')
+    state.TreasureMode:set('None')
     get_combat_form()
     --get_combat_weapon()
     update_melee_groups()
@@ -40,10 +42,10 @@ function job_setup()
 
     state.YoichiAM = M(false, 'Cancel Yoichi AM Mode')
     -- list of weaponskills that make better use of otomi helm in low acc situations
-    wsList = S{'Tachi: Fudo', 'Tachi: Shoha'}
+    wsList = S{'Tachi: Shoha'}
 
     gear.RAarrow = {name="Eminent Arrow"}
-    LugraWSList = S{'Tachi: Fudo', 'Tachi: Shoha', 'Namas Arrow'}
+    LugraWSList = S{'Tachi: Fudo', 'Tachi: Shoha', 'Namas Arrow', 'Impulse Drive', 'Stardiver'}
 
     state.Buff.Sekkanoki = buffactive.sekkanoki or false
     state.Buff.Sengikori = buffactive.sengikori or false
@@ -56,14 +58,15 @@ end
 function user_setup()
     -- Options: Override default values
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
-    state.HybridMode:options('Normal', 'PDT', 'Reraise')
+    state.HybridMode:options('Normal', 'PDT')
     state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
-    state.IdleMode:options('Normal')
+    state.IdleMode:options('Normal', 'Sphere')
     state.RestingMode:options('Normal')
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
     state.MagicalDefenseMode:options('MDT')
     
     -- Additional local binds
+    send_command('bind ^= gs c cycle treasuremode')
     send_command('bind ^[ input /lockstyle on')
     send_command('bind ![ input /lockstyle off')
     send_command('bind != gs c toggle CapacityMode')
@@ -96,18 +99,36 @@ function init_gear_sets()
     Valorous = {}
     Valorous.Hands = {}
     Valorous.Hands.TP = { name="Valorous Mitts", augments={'Accuracy+26','"Store TP"+6','AGI+10',}}
-    Valorous.Hands.WS = { name="Valorous Mitts", augments={'Attack+27','Weapon skill damage +4%','Accuracy+6',}}
+    Valorous.Hands.WS = { name="Valorous Mitts", augments={'Accuracy+27','Weapon skill damage +4%','Accuracy+5 Attack+5','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
+
+
+    Valorous.Feet = {}
+    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Weapon skill damage +5%','STR+9','Accuracy+15','Attack+11',}}
+    Valorous.Feet.TH = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
+
+    sets.TreasureHunter = { 
+        head="White rarab cap +1", 
+        waist="Chaac Belt",
+        feet=Valorous.Feet.TH
+     }
+    sets.precast.JA['Provoke'] = { 
+        -- ear1="Cryptic Earring",
+        head="White rarab cap +1", 
+        waist="Chaac Belt",
+        feet=Valorous.Feet.TH
+    }
     
     Smertrios = {}
-    Smertrios.TP = {name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-4%',}}
-    Smertrios.WS = {name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    Smertrios.TP = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Smertrios.WS = {name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     -- Precast Sets
     -- Precast sets to enhance JAs
     sets.precast.JA.Meditate = {
         head="Wakido Kabuto",
-        hands="Saotome Kote +2",
+        hands="Sakonji Kote +1",
         back=Smertrios.TP
     }
+    sets.precast.JA.Sekkanoki = {hands="Unkai Kote +2" }
     sets.precast.JA.Seigan = {head="Unkai Kabuto +2"}
     sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto"}
     sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate"}
@@ -118,26 +139,33 @@ function init_gear_sets()
         ear2="Loquacious Earring",
         hands="Leyline Gloves",
         ring1="Prolix Ring",
+        ring2="Weatherspoon Ring"
     }
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {}
 
     sets.Organizer = {
-        main="Tsurumaru",
-        sub="Bloodrain Strap",
+        sub="Utu Grip",
         range="Yoichinoyumi",
         ammo="Cibitshavore",
         back="Takaha Mantle"
     }
     sets.precast.RA = {
+        head="Otomi Helm",
         hands="Buremte Gloves",
+        feet="Ejekamal Boots"
     }
     sets.midcast.RA = {
         head="Terminal Helm",
-        body="Kyujutsugi",
-        neck="Iqabi Necklace",
+        body="Kendatsuba Samue",
+        legs="Kendatsuba Hakama",
+        -- neck="Iqabi Necklace",
         hands="Ryuo Tekko",
         waist="Chaac Belt",
+        ear2="Enervating Earring",
+        ear1="Telos Earring",
+        ring1="Cacoethic Ring +1",
+        ring2="Hajduk Ring",
         feet="Wakido Sune-ate +1"
     }	
     -- Don't need any special gear for Healing Waltz.
@@ -156,39 +184,40 @@ function init_gear_sets()
     sets.precast.WS = {
         ammo="Knobkierrie",
         head="Valorous Mask",
-        neck="Ganesha's Mala",
+        neck="Samurai's Nodowa +1",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
-        body="Valorous Mail",
+        body="Sakonji Domaru +3",
         hands=Valorous.Hands.WS,
         ring1="Niqmaddu Ring",
         ring2="Flamma Ring",
         back=Smertrios.WS,
         waist="Windbuffet Belt +1",
-        legs="Hizamaru Hizayoroi +2",
-        feet="Flamma Gambieras +2"
+        legs="Wakido Haidate +3",
+        feet=Valorous.Feet.WS
     }
     sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         -- head="Rao Kabuto",
     })
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
-        -- ring2="Mars's Ring",
-        -- hands="Mikinaak Gauntlets"
+        feet="Flamma Gambieras +2",
     })
     
     sets.precast.WS['Namas Arrow'] = {
         ammo=gear.RAarrow,
-        head="Valorous Mask",
-        neck="Aqua Gorget",
+        head="Terminal Helm",
+        neck="Samurai's Nodowa +1",
         ear1="Ishvara Earring",
-        ear2="Flame Pearl",
-        body="Valorous Mail",
+        ear2="Telos Earring",
+        body="Kendatsuba Samue",
+        legs="Kendatsuba Hakama",
+        hands="Ryuo Tekko",
         back=Smertrios.WS,
-        ring1="Niqmaddu Ring",
+        ring1="Cacoethic Ring +1",
         ring2="Garuda Ring",
-        waist="Metalsinger Belt",
-        legs="Hizamaru Hizayoroi +2",
-        feet="Wakido Sune-ate +1"
+        waist="Eschan Stone",
+        -- legs="Hizamaru Hizayoroi +2",
+        feet=Valorous.Feet.WS
     }
     sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS['Namas Arrow'], {
         body="Kyujutsugi",
@@ -208,43 +237,72 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
-        neck="Aqua Gorget",
-        -- waist="Metalsinger Belt",
+        ammo="Knobkierrie",
+        neck="Samurai's Nodowa +1",
+        waist="Metalsinger Belt",
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
+        ammo="Knobkierrie",
         --waist="Light Belt"
     })
     sets.precast.WS['Tachi: Fudo'].Acc = set_combine(sets.precast.WS['Tachi: Fudo'].Mid, {
+        ammo="Knobkierrie",
         head="Valorous Mask",
+        feet="Flamma Gambieras +2",
+    })
+    sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
+        neck="Samurai's Nodowa +1",
+        waist="Metalsinger Belt",
+        feet=Valorous.Feet.WS
+    })
+    sets.precast.WS['Impulse Drive'].Mid = set_combine(sets.precast.WS['Impulse Drive'], {
+        hands=Valorous.Hands.WS,
+    })
+    sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS['Impulse Drive'].Mid, {
+        feet="Flamma Gambieras +2",
     })
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
-        neck="Breeze Gorget",
-        waist="Thunder Belt"
+        head="Flamma Zucchetto +2",
+        neck="Samurai's Nodowa +1",
+        ear1="Brutal Earring",
+        ear2="Moonshade Earring",
+        waist="Thunder Belt",
+        back=Smertrios.WS,
+        feet="Flamma Gambieras +2",
     })
-    sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS.Acc, {
-        neck="Breeze Gorget",
-        waist="Thunder Belt"
+    sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS['Tachi: Shoha'], {})
+    sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {})
+
+    sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS['Tachi: Shoha'], {
+        neck="Samurai's Nodowa +1",
+        waist="Soil Belt"
     })
-    sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {
-    })
+    sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {})
+    sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS['Stardiver'].Mid, {})
     
     sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {
-        neck="Shadow Gorget",
+        neck="Samurai's Nodowa +1",
         waist="Soil Belt",
     })
     sets.precast.WS['Tachi: Rana'].Mid = set_combine(sets.precast.WS['Tachi: Rana'], {
-        body="Sakonji Domaru +1"
+        body="Sakonji Domaru +3",
     })
     sets.precast.WS['Tachi: Rana'].Acc = set_combine(sets.precast.WS.Acc, {
         neck="Shadow Gorget",
         waist="Soil Belt",
     })
     -- CHR Mod
-    sets.precast.WS['Tachi: Ageha'] = {
-        --body="Unkai Domaru +2",
+    sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
+        head="Flamma Zucchetto +2",
+        body="Flamma Korazin +2",
+        hands="Flamma Manopolas +2",
+        feet="Flamma Gambieras +2",
+        back=Smertrios.WS,
+        ring2="Weatherspoon Ring",
+        legs="Wakido Haidate +3",
         waist="Soil Belt",
-    }
+    })
     sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS['Tachi: Ageha']
     
     sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Flame Gorget",waist="Light Belt"})
@@ -255,6 +313,14 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",waist="Soil Belt"})
     
+    sets.midcast['Blue Magic'] = set_combine(sets.precast.WS['Tachi: Ageha'], {
+        ear2="Gwati Earring", -- 3
+        waist="Eschan Stone", -- 5
+        ring1="Sangoma Ring", -- 10
+        ring2="Weatherspoon Ring", -- 10 macc
+        back="Aput Mantle",
+        legs="Flamma Dirs +2"
+    })
     -- Midcast Sets
     sets.midcast.FastRecast = {
     	-- head="Otomi Helm",
@@ -267,38 +333,40 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {
-        head="Twilight Helm",
-        body="Twilight Mail",
+        -- head="Twilight Helm",
+        -- body="Twilight Mail",
         ring2="Paguroidea Ring"
     }
     
     sets.idle.Town = {
         --main="Anahera Blade", 
         --sub="Pole Grip",
-        head="Rao Kabuto",
-        neck="Sanctity Necklace",
-        ear1="Cessance Earring",
-        ear2="Tripudio Earring",
-   	    body="Hizamaru Haramaki +2",
-        hands="Wakido Kote +2",
+        ammo="Ginsen",
+        head="Flamma Zucchetto +2",
+        neck="Samurai's Nodowa +1",
+        ear1="Telos Earring",
+        ear2="Dedition Earring",
+   	    body="Tartarus Platemail",
+        hands="Wakido Kote +3",
         ring1="Niqmaddu Ring",
         ring2="Defending Ring",
         back=Smertrios.TP,
         waist="Windbuffet Belt +1",
-        legs="Kasuga Haidate +1",
+        legs="Wakido Haidate +3",
         feet="Danzo Sune-ate"
     }
-    sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
-        body="Councilor's Garb"
-    })
+    -- sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
+    --     body="Councilor's Garb"
+    -- })
     
     sets.idle.Field = set_combine(sets.idle.Town, {
-        head="Rao Kabuto",
+        ammo="Staunch Tathlum",
+        head="Valorous Mask",
         neck="Twilight Torque",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-   	    body="Hizamaru Haramaki +2",
-        hands="Wakido Kote +2",
+   	    body="Tartarus Platemail",
+        hands="Sakonji Kote +1",
         ring1="Dark Ring",
         back=Smertrios.TP,
         waist="Flume Belt",
@@ -306,7 +374,8 @@ function init_gear_sets()
         feet="Danzo Sune-ate"
     })
 
-    sets.idle.Regen = set_combine(sets.idle.Town, {
+    sets.idle.Regen = set_combine(sets.idle.Field, {
+        head="Rao Kabuto",
         neck="Sanctity Necklace",
         ring2="Paguroidea Ring",
         head="Rao Kabuto",
@@ -314,24 +383,23 @@ function init_gear_sets()
         back=Smertrios.TP,
         feet="Danzo Sune-ate"
     })
+
+    sets.idle.Sphere = set_combine(sets.idle, { body="Makora Meikogai"  })
     
     sets.idle.Weak = set_combine(sets.idle.Field, {
-        head="Twilight Helm",
-    	body="Twilight Mail"
-    })
-    sets.idle.Yoichi = set_combine(sets.idle.Field, {
-    	ammo=gear.RAarrow
+        -- head="Twilight Helm",
+    	-- body="Twilight Mail"
     })
     
     -- Defense sets
     sets.defense.PDT = {
         --head="Otronif Mask +1",
         neck="Agitator's Collar",
-   	    body="Founder's Breastplate",
+   	    body="Tartarus Platemail",
         --hands="Otronif Gloves +1",
         ring1="Dark Ring",
         ring2="Defending Ring",
-    	back="Solemnity Cape",
+    	back=Smertrios.TP,
         waist="Flume Belt",
         --legs="Otronif Brais +1",
         --feet="Otronif Boots +1"
@@ -344,7 +412,7 @@ function init_gear_sets()
     
     sets.defense.MDT = set_combine(sets.defense.PDT, {
          neck="Twilight Torque",
-      	 back="Solemnity Cape",
+    	back=Smertrios.TP,
     })
     
     sets.Kiting = {feet="Danzo Sune-ate"}
@@ -361,102 +429,70 @@ function init_gear_sets()
     -- I generally use Anahera outside of Adoulin areas, so this set aims for 47 STP + 5 from Anahera (52 total)
     -- Note, this set assumes use of Cibitshavore (hence the arrow as ammo)
     sets.engaged = {
-        sub="Bloodrain Grip",
+        sub="Utu Grip",
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
-        neck="Moonbeam Nodowa",
-        ear1="Cessance Earring",
-        ear2="Brutal Earring",
-        body="Kasuga Domaru +1",
-        hands="Wakido Kote +2",
+        --neck="Moonbeam Nodowa",
+        neck="Samurai's Nodowa +1",
+        ear1="Brutal Earring",
+        ear2="Dedition Earring",
+        body="Kendatsuba Samue",
+        hands="Wakido Kote +3",
         ring1="Niqmaddu Ring", 
-        ring2="Flamma Ring", 
+        ring2="Petrov Ring", 
         back=Smertrios.TP,
         waist="Ioskeha Belt",
-        legs="Kasuga Haidate +1",
+        legs="Ryuo Hakama",
         feet="Flamma Gambieras +2"
     }
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         -- hands=Valorous.Hands.TP,
-        body="Valorous Mail",
-        legs="Ryuo Hakama",
+        neck="Samurai's Nodowa +1",
+        body="Kendatsuba Samue",
+        ear1="Telos Earring",
+        ear2="Cessance Earring",
+        legs="Kendatsuba Hakama",
+        ring2="Flamma Ring",
         --body="Kendatsuba Samue",
         --legs="Kendatsuba Hakama",
     })
-    
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         -- head="Valorous Mask",
-        hands="Flamma Manopolas +2",
-        -- body="Reiki Osode",
+        neck="Samurai's Nodowa +1",
+        body="Kendatsuba Samue",
         -- back="Grounded Mantle +1",
-        ear1="Zennaroi Earring",
-        legs="Ryuo Hakama",
+        legs="Kendatsuba Hakama",
         -- ring1="Mars's Ring",
         -- legs="Acro Breeches",
     })
-    
-    sets.engaged.Yoichi = set_combine(sets.engaged, { 
-        sub="Bloodrain Strap",
-        ammo=gear.RAarrow
+    sets.engaged.PDT = set_combine(sets.engaged, {
+        -- ammo="Staunch Tathlum",
+   	    body="Tartarus Platemail",
+        -- neck="Twilight Torque",
+        ring2="Defending Ring"
     })
-    
-    sets.engaged.Yoichi.Mid = set_combine(sets.engaged.Yoichi, {
-        back=Smertrios.TP,
-        neck="Lissome Necklace",
-    })
-    
-    sets.engaged.Yoichi.Acc = set_combine(sets.engaged.Yoichi.Mid, {
-        head="Valorous Mask",
-        neck="Lissome Necklace",
-        ear1="Zennaroi Earring",
-        back=Smertrios.TP,
-    })
-    
-    sets.engaged.PDT = set_combine(sets.engaged, { 
-        --head="Otronif Mask +1", 
-   	    body="Founder's Breastplate",
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
         neck="Agitator's Collar",
-        hands="Wakido Kote +2",
-        ring2="Patricius Ring",
-        back=Smertrios.TP,
-        waist="Flume Belt",
-        feet="Loyalist Sabatons"
+   	    body="Tartarus Platemail",
+        ring2="Defending Ring"
+    })
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid, {
+        ammo="Ginsen",
+   	    body="Tartarus Platemail",
+        neck="Agitator's Collar",
+        ring2="Defending Ring"
     })
     
-    sets.engaged.Yoichi.PDT = set_combine(sets.engaged.PDT,  {
-        sub="Bloodrain Strap",
-        ammo=gear.RAarrow
-    })
     
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, { 
-         head="Lithelimb Cap",
+        --  head="Lithelimb Cap",
          neck="Agitator's Collar",
+   	     body="Tartarus Platemail",
          ring1="Patricius Ring",
          ring2="Defending Ring"
     })
     
-    sets.engaged.Reraise = set_combine(sets.engaged.PDT, {
-        head="Twilight Helm", 
-        body="Twilight Mail",
-    })
-    
-    sets.engaged.Reraise.Yoichi = set_combine(sets.engaged.Reraise, {
-        sub="Bloodrain Strap",
-        ammo=gear.RAarrow
-    })
-    
-    sets.engaged.Acc.Reraise = set_combine(sets.engaged.Reraise, {
-        hands="Miki. Gauntlets",
-        ring1="Patricius Ring",
-        feet="Wakido Sune-Ate +1", 
-    })
-    
-    sets.engaged.Acc.Reraise.Yoichi = set_combine(sets.engaged.Acc.Reraise, {
-        sub="Bloodrain Strap",
-        ammo=gear.RAarrow
-    })
-    	
     sets.engaged.Amanomurakumo = set_combine(sets.engaged, {
     })
     sets.engaged.Amanomurakumo.AM = set_combine(sets.engaged, {
@@ -468,13 +504,17 @@ function init_gear_sets()
     sets.engaged.Kogarasumaru.AM3 = set_combine(sets.engaged, {
     })
     
-    sets.buff.Sekkanoki = {hands="Unkai Kote +2"}
+    sets.buff.Sekkanoki = {hands="unkai kote +2"}
     sets.buff.Sengikori = {}
     sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate +1"}
     
     sets.thirdeye = {head="Unkai Kabuto +2", legs="Sakonji Haidate"}
     --sets.seigan = {hands="Otronif Gloves +1"}
     sets.bow = {ammo=gear.RAarrow}
+    
+    sets.MadrigalBonus = {
+        hands="Composer's Mitts"
+    }
 end
 
 
@@ -515,13 +555,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-        -- if is_sc_element_today(spell) then
-        --     if state.OffenseMode.current == 'Normal' and wsList:contains(spell.english) then
-        --         -- do nothing
-        --     else
-        --         equip(sets.WSDayBonus)
-        --     end
-        -- end
+        if is_sc_element_today(spell) then
+            if wsList:contains(spell.english) then
+                equip(sets.WSDayBonus)
+            end
+        end
         if LugraWSList:contains(spell.english) then
             if world.time >= (17*60) or world.time <= (7*60) then
                 if spell.english:lower() == 'namas arrow' then
@@ -598,6 +636,9 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+    if state.TreasureMode.value == 'Fulltime' then
+        meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+    end
     if state.Buff['Seigan'] then
         if state.DefenseMode.value == 'PDT' then
     	    meleeSet = set_combine(meleeSet, sets.thirdeye)
@@ -643,6 +684,11 @@ function job_buff_change(buff, gain)
         handle_equipping_gear(player.status)
     end
 
+    if S{'madrigal'}:contains(buff:lower()) then
+        if buffactive.madrigal and state.OffenseMode.value == 'Acc' then
+            equip(sets.MadrigalBonus)
+        end
+    end
     if S{'aftermath'}:contains(buff:lower()) then
         classes.CustomMeleeGroups:clear()
        
@@ -680,6 +726,16 @@ function display_current_job_state(eventArgs)
 
 end
 
+-- State buff checks that will equip buff gear and mark the event as handled.
+function check_buff(buff_name, eventArgs)
+    if state.Buff[buff_name] then
+        equip(sets.buff[buff_name] or {})
+        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
+            equip(sets.TreasureHunter)
+        end
+        eventArgs.handled = true
+    end
+end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
@@ -695,15 +751,15 @@ end
 --    end
 --end
 -- Handle zone specific rules
-windower.register_event('Zone change', function(new,old)
-    determine_idle_group()
-end)
+-- windower.register_event('Zone change', function(new,old)
+--     determine_idle_group()
+-- end)
 
 function determine_idle_group()
     classes.CustomIdleGroups:clear()
-    if areas.Adoulin:contains(world.area) then
-    	classes.CustomIdleGroups:append('Adoulin')
-    end
+    -- if areas.Adoulin:contains(world.area) then
+    -- 	classes.CustomIdleGroups:append('Adoulin')
+    -- end
 end
 
 function get_combat_form()

@@ -39,7 +39,7 @@ function job_setup()
     state.Proc = M(false, 'Proc')
     state.unProc = M(false, 'unProc')
 
-    gear.RegularAmmo = 'Togakushi Shuriken'
+    gear.RegularAmmo = 'Seki Shuriken'
     gear.SangeAmmo = 'Happo Shuriken'
 
     wsList = S{'Blade: Hi', 'Blade: Kamu', 'Blade: Ten'}
@@ -61,10 +61,10 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     -- Options: Override default values
-    state.OffenseMode:options('Normal', 'Low', 'Mid', 'Acc')
+    state.OffenseMode:options('Normal', 'Mid', 'Acc')
     state.HybridMode:options('Normal', 'PDT', 'Proc')
     state.RangedMode:options('Normal', 'Acc')
-    state.WeaponskillMode:options('Normal', 'Low', 'Mid', 'Acc')
+    state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     state.PhysicalDefenseMode:options('PDT')
     state.MagicalDefenseMode:options('MDT')
 
@@ -108,21 +108,42 @@ function init_gear_sets()
     -- Augments
     --------------------------------------
     Andartia = {}
-    Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+    Andartia.DEX = {name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','"Dbl.Atk."+10','Damage taken-5%'}}
     Andartia.AGI = {name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Weapon skill damage +10%',}}
     
+    AdhemarLegs = {}
+    AdhemarLegs.Snap = { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}}
+    AdhemarLegs.TP = { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
+    
     HercFeet = {}
-    --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
-    HercFeet.MAB={ name="Herculean Boots", augments={'Mag. Acc.+14 "Mag.Atk.Bns."+14','Weapon skill damage +4%','Mag. Acc.+6','"Mag.Atk.Bns."+6',}}
-    HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+22 Attack+22','"Triple Atk."+3','STR+5','Attack+11',}}
+    HercHead = {}
+    HercLegs = {}
+    HercHands = {}
 
+    HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
+    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+1','STR+6','Mag. Acc.+5','"Mag.Atk.Bns."+12',}}
+
+    HercFeet.MAB = { name="Herculean Boots", augments={'AGI+1','"Mag.Atk.Bns."+28','"Refresh"+1','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
+    HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
+    
+    HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
+    HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
+    
+    HercLegs.TP = { name="Herculean Trousers", augments={'Accuracy+26','"Triple Atk."+4',}}
+    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +2%','STR+8','Mag. Acc.+5','"Mag.Atk.Bns."+6',}}
+
+    TaeonHands = {}
+    TaeonHands.Snap = {name="Taeon Gloves", augments={'"Snapshot"+5', 'Attack+22','"Snapshot"+5'}}
+    
+    TaeonHead = {}
+    TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
     --------------------------------------
     -- Job Abilties
     --------------------------------------
     sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
     sets.precast.JA['Futae'] = { hands="Hattori Tekko" }
     sets.precast.JA['Provoke'] = { 
-        ear1="Friomisi Earring",
+        -- ear1="Cryptic Earring",
         ear2="Trux Earring", 
         body="Emet Harness +1",
         ring1="Petrov Ring",
@@ -133,10 +154,7 @@ function init_gear_sets()
 
     -- Waltz (chr and vit)
     sets.precast.Waltz = {
-        head="Hachiya Hatsuburi +1",
-        hands="Herculean Gloves",
         waist="Chaac Belt",
-        legs="Nahtirah Trousers",
         feet="Hizamaru Sune-ate +1"
     }
     -- Don't need any special gear for Healing Waltz.
@@ -145,18 +163,19 @@ function init_gear_sets()
     sets.precast.Step = {
         body="Hattori Ningi +1",
         neck="Defiant Collar",
-        ear1="Zennaroi Earring",
         hands="Ryuo Tekko",
         back=Andartia.DEX,
         waist="Olseni Belt",
-        legs="Taeon Tights",
-        feet="Mochizuki Kyahan +1"
+        legs="Kendatsuba Hakama",
     }
-    sets.midcast.Trust =  {
-        head="Hattori Zukin +1",
-        hands="Ryuo Tekko",
-        feet="Hachiya Kyahan +1"
+    sets.MadrigalBonus = {
+        hands="Composer's Mitts"
     }
+    -- sets.midcast.Trust =  {
+    --     head="Hattori Zukin +1",
+    --     hands="Ryuo Tekko",
+    --     feet="Hachiya Kyahan +1"
+    -- }
     sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
         body="Apururu Unity shirt",
     })
@@ -165,12 +184,13 @@ function init_gear_sets()
     --------------------------------------
     -- Utility Sets for rules below
     --------------------------------------
-    sets.TreasureHunter = { waist="Chaac Belt" }
+    sets.TreasureHunter = { head="White rarab cap +1", waist="Chaac Belt" }
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
-    sets.WSBack         = { back="Trepidity Mantle" }
-    sets.BrutalLugra    = { ear1="Cessance Earring", ear2="Lugra Earring +1" }
-    sets.BrutalTrux     = { ear1="Cessance Earring", ear2="Trux Earring" }
+    -- sets.WSBack         = { back="Trepidity Mantle" }
+    sets.BrutalLugra    = { ear1="Brutal Earring", ear2="Lugra Earring +1" }
+    sets.BrutalIshvara  = { ear1="Brutal Earring", ear2="Ishvara Earring" }
+    sets.BrutalTrux     = { ear1="Brutal Earring", ear2="Trux Earring" }
     sets.BrutalMoon     = { ear1="Brutal Earring", ear2="Moonshade Earring" }
     sets.Rajas          = { ring1="Petrov Ring" }
 
@@ -178,20 +198,22 @@ function init_gear_sets()
     sets.SangeAmmo      = { ammo=gear.SangeAmmo }
 
     sets.NightAccAmmo   = { ammo="Ginsen" }
-    sets.DayAccAmmo     = { ammo="Tengu-no-Hane" }
+    sets.DayAccAmmo     = { ammo="Seething Bomblet +1" }
 
     --------------------------------------
     -- Ranged
     --------------------------------------
 
     sets.precast.RA = {
-        hands="Buremte Gloves",
-        legs="Nahtirah Trousers",
-        feet="Wurrukatte Boots"
+        head=TaeonHead.Snap,
+        hands=TaeonHands.Snap,
+        body="Pursuer's Doublet",
+        legs=AdhemarLegs.Snap, -- 9
+        -- feet="Wurrukatte Boots"
     }
     sets.midcast.RA = {
         head="Taeon Chapeau",
-        neck="Iqabi Necklace",
+        -- neck="Iqabi Necklace",
         body="Mochizuki Chainmail +3",
         hands="Hachiya Tekko +1",
         ring1="Hajduk Ring",
@@ -206,10 +228,10 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {
-        head="Herculean Helm",
+        head=HercHead.TP,
         ear1="Etiolation Earring",
         ear2="Loquacious Earring",
-        ring1="Prolix Ring",
+        ring1="Weatherspoon Ring", -- 10 macc
         ring2="Kishar Ring",
         hands="Leyline Gloves",
         body="Dread Jupon",
@@ -226,25 +248,25 @@ function init_gear_sets()
         hands="Leyline Gloves",
         back="Grounded Mantle +1",
         ear1="Loquacious Earring",
-        ring1="Prolix Ring",
+        ring1="Weatherspoon Ring", -- 10 macc
         feet="Mochizuki Kyahan +1"
     }
 
     -- skill ++ 
     sets.midcast.Ninjutsu = {
         --ammo="Pemphredo Tathlum",
-        head="Mummu Bonnet +2",
+        head="Hachiya Hatsuburi +2",
         ear1="Gwati Earring",
         ear2="Lempo Earring",
         neck="Incanter's Torque",
-        body="Mummu Jacket +2",
-        hands="Mummu Wrists +2",
-        ring1="Sangoma Ring",
-        ring2="Mummu Ring",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
+        ring1="Weatherspoon Ring", -- 10 macc
+        ring2="Sangoma Ring",
         --ring2="Haverton Ring",
         back="Yokaze Mantle",
         waist="Eschan Stone",
-        legs="Mummu Kecks +2",
+        legs="Malignance Tights", 
         feet="Mummu Gamashes +2"
     }
     -- any ninjutsu cast on self
@@ -262,7 +284,7 @@ function init_gear_sets()
     -- Nuking Ninjutsu (skill & magic attack)
     sets.midcast.ElementalNinjutsu = {
         --ammo="Seething Bomblet +1",
-        head="Mummu Bonnet +2",
+        head=HercHead.MAB,
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         neck="Sanctity Necklace",
@@ -272,7 +294,7 @@ function init_gear_sets()
         ring1="Shiva Ring",
         ring2="Dingir Ring",
         waist="Eschan Stone",
-        legs="Mummu Kecks +1",
+        legs=HercLegs.MAB,
         feet=HercFeet.MAB
     }
     sets.Burst = set_combine(sets.midcast.ElementalNinjutsu, { hands="Hattori Tekko +1", feet=HercFeet.MAB})
@@ -283,18 +305,18 @@ function init_gear_sets()
     sets.precast.Effusion.Swipe = sets.midcast.ElementalNinjutsu
 
     sets.idle = {
-        ammo="Togakushi Shuriken",
-        head="Rao Kabuto",
+        ammo="Seki Shuriken",
+        head="Malignance Chapeau",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Hizamaru Haramaki +2",
-        hands="Herculean Gloves",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
         ring1="Dark Ring",
         ring2="Defending Ring",
-        back="Solemnity Cape",
+        back=Andartia.DEX,
         waist="Flume Belt",
-        legs="Mummu Kecks +2",
+        legs="Malignance Tights", 
         feet="Danzo Sune-ate"
     }
 
@@ -303,19 +325,21 @@ function init_gear_sets()
         body="Hizamaru Haramaki +2",
         ring2="Paguroidea Ring"
     })
+
     sets.Adoulin = {
         body="Councilor's Garb",
     }
+
     sets.idle.Town = set_combine(sets.idle, {
-        head="Herculean Helm",
-        body="Mochizuki Chainmail +3",
-        neck="Sanctity Necklace",
+        head="Malignance Chapeau",
+        body="Adhemar Jacket +1",
+        neck="Ninja Nodowa +1",
         ear1="Cessance Earring",
-        ear2="Trux Earring",
+        ear2="Telos Earring",
         hands="Adhemar Wristbands +1",
-        legs="Kendatsuba Hakama",
-        ring1="Epona's Ring",
-        ring2="Ilabrat Ring",
+        legs="Malignance Tights", 
+        ring1="Ilabrat Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1"
     })
@@ -327,24 +351,25 @@ function init_gear_sets()
 
     -- Defense sets
     sets.defense.PDT = {
-        head="Lithelimb Cap",
+        -- head="Lithelimb Cap",
         neck="Twilight Torque",
+        head="Malignance Chapeau",
         body="Kendatsuba Samue",
-        hands="Herculean Gloves",
+        hands="Malignance Gloves",
         ring1="Patricius Ring",
         ring2="Defending Ring",
         back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Mummu Kecks +1",
-        feet="Amm Greaves"
+        legs="Malignance Tights",
+        feet="Ahosi Leggings"
     }
 
     sets.defense.MDT = set_combine(sets.defense.PDT, {
-        head="Ptica Headgear",
+        -- head="Ptica Headgear",
         ear1="Etiolation Earring",
         neck="Twilight Torque",
-        hands="Ryuo Tekko",
-        feet="Amm Greaves"
+        hands="Malignance Gloves",
+        -- feet="Amm Greaves"
     })
 
     sets.DayMovement = {feet="Danzo sune-ate"}
@@ -355,42 +380,36 @@ function init_gear_sets()
         sub="Shigi",
         neck="Taka",
         ear2="Reraise Earring",
-        shihei="Shihei",
-        inoshi="Inoshishinofuda",
-        shika="Shikanofuda",
-        chono="Chonofuda"
+        ear1="Shihei",
+        hands="Inoshishinofuda",
+        legs="Shikanofuda",
+        feet="Chonofuda"
     }
 
     -- Normal melee group without buffs
     sets.engaged = {
         ammo=gear.RegularAmmo,
         head="Ryuo Somen",
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Mochizuki Chainmail +3",
+        body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
         ring1="Epona's Ring",
-        ring2="Ilabrat Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
-        waist="Shetal Stone",
         legs="Kendatsuba Hakama",
-        feet="Hizamaru Sune-ate +1"
+        waist="Shetal Stone",
+        feet="Hizamaru Sune-ate +2"
     }
     -- assumptions made about targe
-    sets.engaged.Low = set_combine(sets.engaged, {
-        ear1="Cessance Earring",
-    })
-
-    sets.engaged.Mid = set_combine(sets.engaged.Low, {
-        ear1="Brutal Earring",
-        ear2="Suppanomimi",
-        -- ring2="Mummu Ring",
-        feet="Hizamaru Sune-ate +1"
+    sets.engaged.Mid = set_combine(sets.engaged, {
+        ear1="Telos Earring",
+        -- ring2="Ilabrat Ring",
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        body="Mochizuki Chainmail +3",
+        body="Adhemar Jacket +1",
         ring1="Cacoethic Ring +1",
         waist="Olseni Belt",
     })
@@ -399,19 +418,35 @@ function init_gear_sets()
     -- using this as weak / proc set now
     sets.NoDW = set_combine(sets.engaged, {
         head="Hizamaru Somen +1",
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ear2="Cessance Earring",
-        body="Reiki Osode",
+        body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         waist="Windbuffet Belt +1",
         back=Andartia.DEX,
         legs="Quiahuiz Trousers",
         feet="Hachiya Kyahan +1"
     })
+    sets.Katanas = {
+        main="Kannagi",
+        sub="Taka",
+        ammo="Sekki Shuriken"
+    }
+    sets.Dagger = {
+        main="Platoon Dagger",
+        sub=empty,
+        ammo=empty
+    }
+    sets.Daggers = {
+        main="Malevolence",
+        sub="Malevolence",
+        ammo="Seki Shuriken"
+    }
     sets.Proc = {
         -- main="Knife",
         sub=empty,
-        ammo="Ginsen"
+        ammo="Ginsen",
+        neck="Carnal Torque"
     }
     sets.unProc = set_combine(sets.engaged, {
         main="Kannagi",
@@ -420,88 +455,80 @@ function init_gear_sets()
     })
 
     sets.engaged.Innin = set_combine(sets.engaged, {
-        -- head="Hattori Zukin +1",
-        -- ear1="Dudgeon Earring",
-        -- ear2="Heartseeker Earring",
-        -- waist="Windbuffet Belt +1",
     })
-    sets.engaged.Innin.Low = sets.engaged.Low
     sets.engaged.Innin.Mid = sets.engaged.Mid
     sets.engaged.Innin.Acc = sets.engaged.Acc
 
     -- Defenseive sets
     sets.NormalPDT = {
-        head="Lithelimb Cap",
-        body="Emet Harness +1",
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
         neck="Agitator's Collar",
-        hands="Floral Gauntlets",
+        hands="Malignance Gloves",
         back="Solemnity Cape",
         ring1="Defending Ring",
-        legs="Ryuo Hakama",
-        feet="Amm greaves"
+        legs="Malignance Tights",
+        feet="Ahosi Leggings"
     }
     sets.AccPDT = {
-        head="Rao Kabuto",
+        head="Malignance Chapeau",
         body="Kendatsuba Samue",
         neck="Agitator's Collar",
-        hands="Floral Gauntlets",
+        hands="Malignance Gloves",
         ring1="Patricius Ring",
         ring2="Defending Ring",
         legs="Kendatsuba Hakama",
-        feet="Loyalist Sabatons"
+        feet="Ahosi Leggings"
     }
 
     sets.engaged.PDT = set_combine(sets.engaged, sets.NormalPDT)
-    sets.engaged.Low.PDT = set_combine(sets.engaged.Low, sets.NormalPDT)
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.NormalPDT)
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.AccPDT)
 
     sets.engaged.Innin.PDT = set_combine(sets.engaged.Innin, sets.NormalPDT )
-    sets.engaged.Innin.Low.PDT = sets.engaged.Low.PDT
     sets.engaged.Innin.Mid.PDT = sets.engaged.Mid.PDT
     sets.engaged.Innin.Acc.PDT = sets.engaged.Acc.PDT
 
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
-        hands="Herculean Gloves",
-        body="Emet Harness +1",
+        body="Malignance Tabard",
+        head="Malignance Chapeau",
         waist="Flume Belt",
+        hands="Malignance Gloves",
         ring1="Defending Ring",
         back="Solemnity Cape",
-        legs="Kendatsuba Hakama",
-        feet="Amm Greaves"
+        legs="Malignance Tights",
+        feet="Ahosi Leggings"
     }
 
     -- Delay Cap from spell + songs alone
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
-        head="Herculean Helm",
-        neck="Moonbeam Nodowa",
+        head=HercHead.TP,
+        neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
         ear2="Cessance Earring",
         body="Kendatsuba Samue",
         hands="Adhemar Wristbands +1",
         ring1="Epona's Ring",
-        ring2="Ilabrat Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Kendatsuba Hakama",
         feet=HercFeet.TP
     })
-    -- Base set for hard content
-    sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        neck="Moonbeam Nodowa",
-        ear1="Trux Earring",
-        back=Andartia.DEX,
-    })
-    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
-        head="Herculean Helm",
+    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        head=HercHead.TP,
+        ear1="Telos Earring",
+        ear2="Cessance Earring",
+        ring2="Gere Ring",
         body="Kendatsuba Samue",
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
-        head="Herculean Helm",
-        neck="Moonbeam Nodowa",
-        ear1="Zennaroi Earring",
-        body="Mochizuki Chainmail +3",
+        head="Malignance Chapeau",
+        neck="Ninja Nodowa +1",
+        ear1="Telos Earring",
+        ear2="Cessance Earring",
+        body="Adhemar Jacket +1",
         -- hands="Ryuo Tekko",
         ring1="Ilabrat Ring",
         ring2="Cacoethic Ring +1",
@@ -510,120 +537,89 @@ function init_gear_sets()
         feet="Mummu Gamashes +2"
     })
     sets.engaged.Innin.MaxHaste     = sets.engaged.MaxHaste
-    sets.engaged.Innin.Low.MaxHaste = sets.engaged.Low.MaxHaste
     sets.engaged.Innin.Mid.MaxHaste = sets.engaged.Mid.MaxHaste
     sets.engaged.Innin.Acc.MaxHaste = sets.engaged.Acc.MaxHaste
 
     -- Defensive sets
     sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HastePDT)
-    sets.engaged.Low.PDT.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, sets.AccPDT)
 
     sets.engaged.Innin.PDT.MaxHaste = sets.engaged.Innin.MaxHaste
-    sets.engaged.Innin.Low.PDT.MaxHaste = sets.engaged.Low.PDT.MaxHaste
     sets.engaged.Innin.Mid.PDT.MaxHaste = sets.engaged.Mid.PDT.MaxHaste
     sets.engaged.Innin.Acc.PDT.MaxHaste = sets.engaged.Acc.PDT.MaxHaste
 
     -- 35% Haste 
     sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
-        head="Herculean Helm",
-        ear1="Cessance Earring",
-        ear2="Suppanomimi",
-        hands="Floral Gauntlets",
-    })
-    sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
-        head="Herculean Helm",
-        neck="Moonbeam Nodowa",
-        ear1="Cessance Earring",
+        head=HercHead.TP,
+        ear1="Brutal Earring",
         ear2="Suppanomimi",
         hands="Floral Gauntlets",
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Ryuo Somen",
+        neck="Ninja Nodowa +1",
         ear1="Cessance Earring",
-        ear2="Trux Earring",
+        ear2="Telos Earring",
         hands="Floral Gauntlets",
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
-        head="Herculean Helm",
+        head=HercHead.TP,
         ear1="Cessance Earring",
-        ear2="Zennaroi Earring",
+        ear2="Telos Earring",
         hands="Adhemar Wristbands +1",
         body="Kendatsuba Samue",
         legs="Kendatsuba Hakama",
-        feet="Hizamaru Sune-ate +1"
+        feet="Hizamaru Sune-ate +2"
     })
 
     sets.engaged.Innin.Haste_35 = set_combine(sets.engaged.Haste_35, { })
-    sets.engaged.Innin.Low.Haste_35 = sets.engaged.Low.Haste_35
     sets.engaged.Innin.Mid.Haste_35 = sets.engaged.Mid.Haste_35
     sets.engaged.Innin.Acc.Haste_35 = sets.engaged.Acc.Haste_35
 
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, sets.engaged.HastePDT)
-    sets.engaged.Low.PDT.Haste_35 = set_combine(sets.engaged.Low.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, sets.engaged.AccPDT)
 
     sets.engaged.Innin.PDT.Haste_35 = set_combine(sets.engaged.Innin.Haste_35, sets.engaged.HastePDT)
-    sets.engaged.Innin.Low.PDT.Haste_35 = sets.engaged.Low.PDT.Haste_35
     sets.engaged.Innin.Mid.PDT.Haste_35 = sets.engaged.Mid.PDT.Haste_35
     sets.engaged.Innin.Acc.PDT.Haste_35 = sets.engaged.Acc.PDT.Haste_35
 
     -- 30% Haste 1626 / 798  +260 acc
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
-        head="Herculean Helm",
-        neck="Moonbeam Nodowa",
+        head=HercHead.TP,
+        neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
         ear2="Suppanomimi", 
-        body="Mochizuki Chainmail +3",
+        body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         ring1="Epona's Ring",
-        ring2="Ilabrat Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Kendatsuba Hakama",
-        feet="Hizamaru Sune-ate +1" 
-    })
-    -- Using Low for high-def targets. (stacking attack + acc)
-    sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Haste_30, {
-        head="Herculean Helm",
-        neck="Moonbeam Nodowa",
-        ear1="Brutal Earring",
-        ear2="Suppanomimi",
-        body="Mochizuki Chainmail +3",
-        hands="Adhemar Wristbands +1",
-        ring1="Epona's Ring",
-        ring2="Ilabrat Ring",
-        back=Andartia.DEX,
-        waist="Windbuffet Belt +1",
-        legs="Kendatsuba Hakama",
-        feet="Hizamaru Sune-ate +1" 
+        feet="Hizamaru Sune-ate +2" 
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
-        neck="Moonbeam Nodowa",
-        ear1="Trux Earring",
-        ring2="Ilabrat Ring",
+        neck="Ninja Nodowa +1",
+        ear1="Cessance Earring",
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ring1="Cacoethic Ring +1",
         back=Andartia.DEX,
         waist="Olseni Belt",
     })
 
     sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, { })
-    sets.engaged.Innin.Low.Haste_30 = sets.engaged.Low.Haste_30
     sets.engaged.Innin.Mid.Haste_30 = sets.engaged.Mid.Haste_30
     sets.engaged.Innin.Acc.Haste_30 = sets.engaged.Acc.Haste_30
 
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.engaged.HastePDT)
-    sets.engaged.Low.PDT.Haste_30 = set_combine(sets.engaged.Low.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, sets.engaged.AccPDT)
 
     sets.engaged.Innin.PDT.Haste_30 = set_combine(sets.engaged.Innin.Haste_30, sets.engaged.HastePDT)
-    sets.engaged.Innin.Low.PDT.Haste_30 = sets.engaged.Low.PDT.Haste_30
     sets.engaged.Innin.Mid.PDT.Haste_30 = sets.engaged.Mid.PDT.Haste_30
     sets.engaged.Innin.Acc.PDT.Haste_30 = sets.engaged.Acc.PDT.Haste_30
 
@@ -631,43 +627,36 @@ function init_gear_sets()
     -- haste spell - 139 dex | 275 acc | 1150 total acc (with shigi R15)
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
         head="Ryuo Somen",
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
-        body="Mochizuki Chainmail +3",
+        body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
         ring1="Epona's Ring",
-        ring2="Ilabrat Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Patentia Sash",
         legs="Kendatsuba Hakama",
         feet=HercFeet.TP
     })
-    sets.engaged.Low.Haste_15 = set_combine(sets.engaged.Haste_15, {
-        ear1="Cessance Earring",
-        neck="Moonbeam Nodowa",
-    })
-    sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Low.Haste_15, { -- 676
-        neck="Moonbeam Nodowa",
-        ring1="Ilabrat Ring",
+    sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Haste_15, { -- 676
+        neck="Ninja Nodowa +1",
+        --ring1="Ilabrat Ring",
     })
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_30, {
-        ring2="Cacoethic Ring +1",
+        ring1="Cacoethic Ring +1",
         waist="Olseni Belt",
     })
     
     sets.engaged.Innin.Haste_15 = set_combine(sets.engaged.Haste_15, { })
-    sets.engaged.Innin.Low.Haste_15 = sets.engaged.Low.Haste_15
     sets.engaged.Innin.Mid.Haste_15 = sets.engaged.Mid.Haste_15
     sets.engaged.Innin.Acc.Haste_15 = sets.engaged.Acc.Haste_15
     
     sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, sets.engaged.HastePDT)
-    sets.engaged.Low.PDT.Haste_15 = set_combine(sets.engaged.Low.Haste_15, sets.engaged.HastePDT)
     sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, sets.engaged.HastePDT)
     sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, sets.engaged.AccPDT)
     
     sets.engaged.Innin.PDT.Haste_15 = set_combine(sets.engaged.Innin.Haste_15, sets.engaged.HastePDT)
-    sets.engaged.Innin.Low.PDT.Haste_15 = sets.engaged.Low.PDT.Haste_15
     sets.engaged.Innin.Mid.PDT.Haste_15 = sets.engaged.Mid.PDT.Haste_15
     sets.engaged.Innin.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT.Haste_15
     
@@ -675,23 +664,21 @@ function init_gear_sets()
     
     -- Weaponskills 
     sets.precast.WS = {
-        head="Herculean Helm",
-        neck="Defiant Collar",
+        head="Hachiya Hatsuburi +2",
+        neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         body="Kendatsuba Samue",
         hands="Adhemar Wristbands +1",
         ring1="Epona's Ring",
-        ring2="Ilabrat Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         legs="Hizamaru Hizayoroi +2",
         feet=HercFeet.TP
     }
     
-    sets.precast.WS.Mid = set_combine(sets.precast.WS, {
-    })
-    sets.precast.WS.Low = sets.precast.WS.Mid
+    sets.precast.WS.Mid = set_combine(sets.precast.WS, { })
     
     sets.precast.WS.Acc = set_combine(sets.precast.WS.Mid, {
         body="Mochizuki Chainmail +3",
@@ -706,65 +693,59 @@ function init_gear_sets()
         waist="Windbuffet Belt +1",
     }
     sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
-    sets.precast.WS['Blade: Kamu'].Low = set_combine(sets.precast.WS.Low, sets.Kamu)
     sets.precast.WS['Blade: Kamu'].Mid = set_combine(sets.precast.WS.Mid, sets.Kamu)
     sets.precast.WS['Blade: Kamu'].Acc = set_combine(sets.precast.WS.Acc, sets.Kamu, {waist="Caudata Belt"})
     
     -- BLADE: JIN
     sets.Jin = {
         ammo="Yetshila",
-        head="Herculean Helm",
+        head=HercHead.TP,
         neck="Breeze Gorget",
         hands="Ryuo Tekko",
         waist="Windbuffet Belt +1",
     }
     sets.precast.WS['Blade: Jin'] = set_combine(sets.precast.WS, sets.Jin)
-    sets.precast.WS['Blade: Jin'].Low = set_combine(sets.precast.WS['Blade: Jin'], {
-        neck="Breeze Gorget",
-        waist="Thunder Belt",
-    })
-    sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS['Blade: Jin'].Low, {
+    sets.precast.WS['Blade: Jin'].Mid = set_combine(sets.precast.WS['Blade: Jin'], {
     })
     sets.precast.WS['Blade: Jin'].Acc = set_combine(sets.precast.WS['Blade: Jin'].Mid, {
     })
     
     -- BLADE: HI
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-        --ammo="Yetshila",
-        head="Herculean Helm",
+        ammo="Yetshila",
+        head="Hachiya Hatsuburi +2",
         neck="Shadow Gorget",
         ear1="Ishvara Earring",
-        body="Kendatsuba Samue",
+        body="Herculean Vest",
         hands="Mummu Wrists +2",
-        ring1="Mummu Ring",
-        ring2="Ilabrat Ring",
+        --hands="Ryuo Tekko",
+        ring1="Ilabrat Ring",
+        ring2="Mummu Ring",
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
         legs="Mummu Kecks +2",
+        --legs="Hizamaru Hizayoroi +2",
         feet="Mummu Gamashes +2"
     })
     
-    sets.precast.WS['Blade: Hi'].Low = set_combine(sets.precast.WS['Blade: Hi'], {
-        neck="Shadow Gorget",
-    })
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-        neck="Shadow Gorget",
         waist="Caudata Belt",
     })
     
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
         ear1="Cessance Earring",
-        body="Mochizuki Chainmail +3",
+        body="Kendatsuba Samue",
         legs="Kendatsuba Hakama",
     })
     
     -- BLADE: SHUN
     sets.Shun = {
-        head="Herculean Helm",
+        head=HercHead.TP,
         neck="Flame Gorget",
         hands="Adhemar Wristbands +1",
-        body="Herculean Vest",
-        ring2="Ilabrat Ring",
+        body="Adhemar Jacket +1",
+        ring1="Epona's Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Light Belt",
         legs="Samnuha Tights",
@@ -772,7 +753,6 @@ function init_gear_sets()
     }
     
     sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, sets.Shun)
-    sets.precast.WS['Blade: Shun'].Low = set_combine(sets.precast.WS.Low, sets.Shun)
     sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
     sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
     
@@ -783,7 +763,6 @@ function init_gear_sets()
         back=Andartia.DEX,
     }
     sets.precast.WS['Blade: Rin'] = set_combine(sets.precast.WS, sets.Rin)
-    sets.precast.WS['Blade: Rin'].Low = set_combine(sets.precast.WS.Low, sets.Rin)
     sets.precast.WS['Blade: Rin'].Mid = set_combine(sets.precast.WS.Mid, sets.Rin)
     sets.precast.WS['Blade: Rin'].Acc = set_combine(sets.precast.WS.Acc, sets.Rin, {waist="Light Belt"})
     
@@ -793,13 +772,11 @@ function init_gear_sets()
         ear2="Trux Earring",
         neck="Shadow Gorget",
         body="Herculean Vest",
+        ring2="Gere Ring",
         back=Andartia.DEX,
     }
     sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, sets.Ku)
-    sets.precast.WS['Blade: Ku'].Low = set_combine(sets.precast.WS['Blade: Ku'], {
-        waist="Soil Belt"
-    })
-    sets.precast.WS['Blade: Ku'].Mid = sets.precast.WS['Blade: Ku'].Low
+    sets.precast.WS['Blade: Ku'].Mid = sets.precast.WS['Blade: Ku']
     sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'].Mid, {
         legs="Samnuha Tights",
         feet=HercFeet.TP
@@ -811,16 +788,14 @@ function init_gear_sets()
         ear1="Lugra Earring +1",
         ear2="Moonshade Earring",
         body="Herculean Vest",
+        ring2="Gere Ring",
         legs="Hizamaru Hizayoroi +2",
         back=Andartia.AGI,
         waist="Metalsinger Belt",
     }
     
     sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, sets.Ten)
-    sets.precast.WS['Blade: Ten'].Low = set_combine(sets.precast.WS['Blade: Ten'], {
-        body="Herculean Vest",
-    })
-    sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS['Blade: Ten'].Low, {
+    sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS['Blade: Ten'], {
         waist="Caudata Belt"
     })
     sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid, {
@@ -829,25 +804,30 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-        head="Mochizuki Hatsuburi +1",
+        head=HercHead.MAB,
         ear1="Friomisi Earring",
         neck="Sanctity Necklace",
         body="Samnuha Coat",
-        hands="Leyline Gloves",
+        hands=HercHands.MAB,
         ring1="Garuda Ring",
         ring2="Dingir Ring",
-        legs="Shneddick Tights +1",
+        legs=HercLegs.MAB,
         waist="Thunder Belt",
         feet=HercFeet.MAB
     })
     sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS['Aeolian Edge'], {
-        ring1="Garuda Ring",
+        head=HercHead.MAB,
+        neck="Sanctity Necklace",
+        hands="Adhemar Wristbands +1",
+        body="Herculean Vest",
+        ring1="Ilabrat Ring",
         ring2="Dingir Ring",
-        waist="Caudata Belt",
+        waist="Eschan Stone",
         legs="Hizamaru Hizayoroi +2",
         back=Andartia.AGI,
         feet=HercFeet.MAB
     })
+    sets.precast.WS['Blade: Teki'] = sets.precast.WS['Blade: Chi']
     sets.precast.WS['Blade: To'] = sets.precast.WS['Blade: Chi']
 
 end
@@ -862,7 +842,7 @@ function job_pretarget(spell, action, spellMap, eventArgs)
         state.Buff[spell.english] = true
     end
     if (spell.type:endswith('Magic') or spell.type == "Ninjutsu") and buffactive.silence then
-        cancel_spell()
+        --cancel_spell()
         send_command('input /item "Echo Drops" <me>')
     end
 end
@@ -878,11 +858,11 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
     if spell.name == 'Spectral Jig' and buffactive.sneak then
         -- If sneak is active when using, cancel before completion
-        send_command('cancel 71')
+        -- send_command('cancel 71')
     end
     if string.find(spell.english, 'Utsusemi') then
         if buffactive['Copy Image (3)'] or buffactive['Copy Image (4)'] then
-            cancel_spell()
+            --cancel_spell()
             eventArgs.cancel = true
             return
         end
@@ -928,11 +908,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
                 equip(sets.BrutalTrux)
             end
         elseif spell.english == 'Blade: Hi' or spell.english == 'Blade: Ten' then
-            if world.time >= (17*60) or world.time <= (7*60) then
-                equip(sets.BrutalLugra)
-            else
-                equip(sets.BrutalMoon)
-            end
+            equip(sets.BrutalIshvara)
         end
 
     end
@@ -943,11 +919,11 @@ function job_midcast(spell, action, spellMap, eventArgs)
     if nukeList:contains(spell.english) and buffactive['Futae'] then
         equip(sets.Burst)
     end
-    if spell.english == "Monomi: Ichi" then
-        if buffactive['Sneak'] then
-            send_command('@wait 1.7;cancel sneak')
-        end
-    end
+    -- if spell.english == "Monomi: Ichi" then
+    --     if buffactive['Sneak'] then
+    --         send_command('@wait 2.7;cancel sneak')
+    --     end
+    -- end
 end
 
 -- Run after the general midcast() is done.
@@ -1042,6 +1018,11 @@ function job_buff_change(buff, gain)
         end
     end
 
+    if S{'madrigal'}:contains(buff:lower()) then
+        if buffactive.madrigal and state.OffenseMode.value == 'Acc' then
+            equip(sets.MadrigalBonus)
+        end
+    end
     if (buff == 'Innin' and gain or buffactive['Innin']) then
         state.CombatForm:set('Innin')
         if not midaction() then
