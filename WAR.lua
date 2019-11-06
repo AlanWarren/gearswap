@@ -109,7 +109,7 @@ function init_gear_sets()
      --sets.precast.JA['Mighty Strikes'] = {hands="Fallen's Finger Gauntlets +1"}
      sets.precast.JA['Blood Rage'] = { body="Boii Lorica +1" }
      sets.precast.JA['Provoke'] = { hands="Pummeler's Mufflers +1"}
-     sets.precast.JA['Berserk'] = { hands="Warrior's Calligae +2", back="Cichol's Mantle"}
+     sets.precast.JA['Berserk'] = { body="Pummeler's Lorica +1", hands="Warrior's Calligae +2", back="Cichol's Mantle"}
      sets.precast.JA['Aggressor'] = { head="Pummeler's Mask +1"}
 
      sets.CapacityMantle  = { back="Mecistopins Mantle" }

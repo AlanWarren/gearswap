@@ -121,7 +121,7 @@ function init_gear_sets()
     HercHands = {}
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
-    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','STR+8','"Mag.Atk.Bns."+15',}}
+    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+1','STR+6','Mag. Acc.+5','"Mag.Atk.Bns."+12',}}
 
     HercFeet.MAB = { name="Herculean Boots", augments={'AGI+1','"Mag.Atk.Bns."+28','"Refresh"+1','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
@@ -255,11 +255,11 @@ function init_gear_sets()
     -- skill ++ 
     sets.midcast.Ninjutsu = {
         --ammo="Pemphredo Tathlum",
-        head="Malignance Chapeau",
+        head="Hachiya Hatsuburi +2",
         ear1="Gwati Earring",
         ear2="Lempo Earring",
         neck="Incanter's Torque",
-        body="Mummu Jacket +2",
+        body="Malignance Tabard",
         hands="Malignance Gloves",
         ring1="Weatherspoon Ring", -- 10 macc
         ring2="Sangoma Ring",
@@ -306,12 +306,12 @@ function init_gear_sets()
 
     sets.idle = {
         ammo="Seki Shuriken",
-        head="Rao Kabuto",
+        head="Malignance Chapeau",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
-        body="Hizamaru Haramaki +2",
-        hands="Floral Gauntlets",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
         ring1="Dark Ring",
         ring2="Defending Ring",
         back=Andartia.DEX,
@@ -333,7 +333,7 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
         head="Malignance Chapeau",
         body="Adhemar Jacket +1",
-        neck="Sanctity Necklace",
+        neck="Ninja Nodowa +1",
         ear1="Cessance Earring",
         ear2="Telos Earring",
         hands="Adhemar Wristbands +1",
@@ -360,7 +360,7 @@ function init_gear_sets()
         ring2="Defending Ring",
         back="Solemnity Cape",
         waist="Flume Belt",
-        legs="Mummu Kecks +1",
+        legs="Malignance Tights",
         feet="Ahosi Leggings"
     }
 
@@ -390,7 +390,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo=gear.RegularAmmo,
         head="Ryuo Somen",
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Adhemar Jacket +1",
@@ -418,7 +418,7 @@ function init_gear_sets()
     -- using this as weak / proc set now
     sets.NoDW = set_combine(sets.engaged, {
         head="Hizamaru Somen +1",
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ear2="Cessance Earring",
         body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
@@ -462,7 +462,7 @@ function init_gear_sets()
     -- Defenseive sets
     sets.NormalPDT = {
         head="Malignance Chapeau",
-        body="Emet Harness +1",
+        body="Malignance Tabard",
         neck="Agitator's Collar",
         hands="Malignance Gloves",
         back="Solemnity Cape",
@@ -491,7 +491,7 @@ function init_gear_sets()
 
     sets.engaged.HastePDT = {
         neck="Agitator's Collar",
-        body="Emet Harness +1",
+        body="Malignance Tabard",
         head="Malignance Chapeau",
         waist="Flume Belt",
         hands="Malignance Gloves",
@@ -504,9 +504,9 @@ function init_gear_sets()
     -- Delay Cap from spell + songs alone
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head=HercHead.TP,
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
-        ear2="Dedition Earring",
+        ear2="Cessance Earring",
         body="Kendatsuba Samue",
         hands="Adhemar Wristbands +1",
         ring1="Epona's Ring",
@@ -525,7 +525,7 @@ function init_gear_sets()
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Malignance Chapeau",
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ear1="Telos Earring",
         ear2="Cessance Earring",
         body="Adhemar Jacket +1",
@@ -558,7 +558,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Ryuo Somen",
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ear1="Cessance Earring",
         ear2="Telos Earring",
         hands="Floral Gauntlets",
@@ -588,7 +588,7 @@ function init_gear_sets()
     -- 30% Haste 1626 / 798  +260 acc
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
         head=HercHead.TP,
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
         ear2="Suppanomimi", 
         body="Adhemar Jacket +1",
@@ -601,11 +601,11 @@ function init_gear_sets()
         feet="Hizamaru Sune-ate +2" 
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ear1="Cessance Earring",
     })
     sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ring1="Cacoethic Ring +1",
         back=Andartia.DEX,
         waist="Olseni Belt",
@@ -627,7 +627,7 @@ function init_gear_sets()
     -- haste spell - 139 dex | 275 acc | 1150 total acc (with shigi R15)
     sets.engaged.Haste_15 = set_combine(sets.engaged.Haste_30, {
         head="Ryuo Somen",
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         body="Adhemar Jacket +1",
@@ -640,7 +640,7 @@ function init_gear_sets()
         feet=HercFeet.TP
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Haste_15, { -- 676
-        neck="Moonbeam Nodowa",
+        neck="Ninja Nodowa +1",
         --ring1="Ilabrat Ring",
     })
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc.Haste_30, {
@@ -664,8 +664,8 @@ function init_gear_sets()
     
     -- Weaponskills 
     sets.precast.WS = {
-        head=HercHead.TP,
-        neck="Defiant Collar",
+        head="Hachiya Hatsuburi +2",
+        neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         body="Kendatsuba Samue",
@@ -712,23 +712,23 @@ function init_gear_sets()
     
     -- BLADE: HI
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-        --ammo="Yetshila",
-        head=HercHead.TP,
+        ammo="Yetshila",
+        head="Hachiya Hatsuburi +2",
         neck="Shadow Gorget",
         ear1="Ishvara Earring",
         body="Herculean Vest",
         hands="Mummu Wrists +2",
-        --hands="Kobo Kote",
-        ring1="Mummu Ring",
-        ring2="Ilabrat Ring",
+        --hands="Ryuo Tekko",
+        ring1="Ilabrat Ring",
+        ring2="Mummu Ring",
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
         legs="Mummu Kecks +2",
+        --legs="Hizamaru Hizayoroi +2",
         feet="Mummu Gamashes +2"
     })
     
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-        neck="Shadow Gorget",
         waist="Caudata Belt",
     })
     
@@ -743,8 +743,9 @@ function init_gear_sets()
         head=HercHead.TP,
         neck="Flame Gorget",
         hands="Adhemar Wristbands +1",
-        body="Herculean Vest",
-        ring2="Ilabrat Ring",
+        body="Adhemar Jacket +1",
+        ring1="Epona's Ring",
+        ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Light Belt",
         legs="Samnuha Tights",

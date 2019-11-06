@@ -89,7 +89,7 @@ function init_gear_sets()
     HercHands = {}
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
-    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','STR+8','"Mag.Atk.Bns."+15',}}
+    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+1','STR+6','Mag. Acc.+5','"Mag.Atk.Bns."+12',}}
     
     HercFeet.MAB = { name="Herculean Boots", augments={'AGI+1','"Mag.Atk.Bns."+28','"Refresh"+1','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
@@ -211,8 +211,8 @@ function init_gear_sets()
         neck="Iskur Gorget",
         ear1="Enervating Earring",
         ear2="Telos Earring",
-        body="Meghanada Cuirie +2",
-        hands="Malignance Chapeau",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
         ring1="Dingir Ring",
         ring2="Cacoethic Ring +1",
         waist="Eschan Stone",
@@ -223,7 +223,7 @@ function init_gear_sets()
     --sets.midcast['Enfeebling Magic'] = sets.midcast.RA
 
     sets.midcast['Enfeebling Magic'] = set_combine(sets.TreasureHunter, {
-        body="Mummu Jacket +2",
+        body="Malignance Tabard",
         neck="Assassin's Gorget +1",
         ear1="Lempo Earring",
         ear2="Gwati Earring",
@@ -428,7 +428,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Eabani Earring",
         ear2="Etiolation Earring",
-        body="Meghanada Cuirie +2",
+        body="Malignance Tabard",
         hands="Malignance Gloves",
         ring1="Meghanada Ring",
         ring2="Paguroidea Ring",
@@ -462,7 +462,7 @@ function init_gear_sets()
     })
     sets.idle.PDT = set_combine(sets.idle, {
         head="Malignance Chapeau",
-        body="Meghanada Cuirie +2",
+        body="Malignance Tabard",
         hands="Malignance Gloves",
         legs="Malignance Tights", 
         ring1="Defending Ring",
@@ -477,7 +477,7 @@ function init_gear_sets()
         ammo="Staunch Tathlum",
         head="Malignance Chapeau",
         neck="Assassin's Gorget +1",
-        body="Meghanada Cuirie +2",
+        body="Malignance Tabard",
         hands="Malignance Gloves",
         ring1="Defending Ring",
         ring2="Gere Ring",
@@ -491,7 +491,8 @@ function init_gear_sets()
         head="Malignance Chapeau",
         neck="Assassin's Gorget +1",
         ear1="Etiolation Earring",
-        body="Herculean Vest",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
         ring1="Defending Ring",
         ring2="Gere Ring",
         back="Solemnity Cape",
@@ -545,7 +546,7 @@ function init_gear_sets()
         ammo="Staunch Tathlum",
         head="Malignance Chapeau",
         neck="Assassin's Gorget +1",
-        body="Pillager's Vest +3",
+        body="Malignance Tabard",
         hands="Malignance Gloves",
         ring1="Defending Ring",
         ring2="Gere Ring",
@@ -578,7 +579,7 @@ function init_gear_sets()
     sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, { 
         head="Malignance Chapeau",
         neck="Assassin's Gorget +1",
-        body="Adhemar Jacket +1",
+        body="Malignance Tabard",
         hands="Malignance Gloves",
         ring1="Defending Ring",
         ring2="Gere Ring",
@@ -587,13 +588,17 @@ function init_gear_sets()
         feet="Taeon Boots" 
     })
     sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.PDT.Haste_15, {
-        body="Adhemar Jacket +1",
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
         ring2="Patricius Ring",
         legs="Malignance Tights",
         back="Canny Cape",
     })
     sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Mid.PDT.Haste_15, {
-        body="Pillager's Vest +3",
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
         back="Canny Cape",
         legs="Malignance Tights",
         waist="Olseni Belt"
@@ -627,23 +632,28 @@ function init_gear_sets()
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, { 
         head="Malignance Chapeau",
         neck="Assassin's Gorget +1",
-        body="Pillager's Vest +3",
+        body="Malignance Tabard",
         ring1="Defending Ring",
         ring2="Gere Ring",
         back="Solemnity Cape",
-        legs="Pillager's culottes +3",
+        hands="Malignance Gloves",
+        legs="Malignance Tights",
         feet=HercFeet.TP
     })
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, {
-        body="Pillager's Vest +3",
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
         ring2="Patricius Ring",
         hands="Malignance Gloves",
+        legs="Malignance Tights",
         back=Toutatis.STP,
     })
     sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Mid.PDT.Haste_30, {
-        body="Pillager's Vest +3",
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
         back=Toutatis.STP,
         hands="Malignance Gloves",
+        legs="Malignance Tights",
         waist="Olseni Belt"
     })
 
@@ -682,7 +692,7 @@ function init_gear_sets()
         head="Malignance Chapeau",
         neck="Assassin's Gorget +1",
         hands="Malignance Gloves",
-        body="Pillager's Vest +3",
+        body="Malignance Tabard",
         ring1="Defending Ring",
         ring2="Gere Ring",
         back=Toutatis.STP,

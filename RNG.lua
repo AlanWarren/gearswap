@@ -121,7 +121,7 @@ function init_gear_sets()
         HercHands = {}
 
         HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
-        HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','STR+8','"Mag.Atk.Bns."+15',}}
+        HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+1','STR+6','Mag. Acc.+5','"Mag.Atk.Bns."+12',}}
 
         HercFeet.MAB = { name="Herculean Boots", augments={'AGI+1','"Mag.Atk.Bns."+28','"Refresh"+1','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
         HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
@@ -236,7 +236,7 @@ function init_gear_sets()
             neck="Twilight Torque",
             ear1="Enervating Earring",
             ear2="Telos Earring",
-            body="Meghanada Cuirie +2",
+            body="Malignance Tabard",
             hands="Malignance Gloves",
             ring1="Dark Ring",
             ring2="Defending Ring",
@@ -247,6 +247,7 @@ function init_gear_sets()
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
             hands="Malignance Gloves",
+            body="Malignance Tabard",
             back=Belenus.STP,
             ring1="Dark Ring",
             legs="Malignance Tights", 
@@ -273,7 +274,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Dedition Earring",
             ear2="Telos Earring", 
-            body="Arcadian Jerkin +3", 
+            body="Malignance Tabard",
             hands="Malignance Gloves",
             ring1="Ilabrat Ring",
             ring2="Rajas Ring",
@@ -361,7 +362,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Dedition Earring",
             ear2="Telos Earring", 
-            body="Orion Jerkin +3", 
+            body="Malignance Tabard",
             hands="Malignance Gloves",
             ring1="Ilabrat Ring",
             ring2="Rajas Ring",
@@ -398,7 +399,7 @@ function init_gear_sets()
         sets.midcast.RA.DoubleShot.Acc = set_combine(sets.midcast.RA.Acc, {
             hands="Malignance Gloves",
             legs="Malignance Tights", 
-            body="Arcadian Jerkin +3", 
+            body="Malignance Tabard",
             feet="Oshosi Leggings"
         })
 
@@ -423,7 +424,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Dedition Earring",
             ear2="Telos Earring",
-            body="Mummu Jacket +2",
+            body="Malignance Tabard", 
             hands="Malignance Gloves",
             ring1="Ilabrat Ring",
             ring2="Rajas Ring",
