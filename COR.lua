@@ -137,11 +137,11 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         neck="Regal Necklace",
-        body="Lanun Frac +3",
+        body="Malignance Tabard",
         ring1="Dark Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
-        legs="Mummu Kecks +2",
+        legs="Malignance Tights",
         feet="Lanun Bottes +1"
     }
     
