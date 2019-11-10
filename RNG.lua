@@ -192,7 +192,7 @@ function init_gear_sets()
             neck="Sanctity Necklace",
             ear1="Etiolation Earring",
             ear2="Eabani Earring",
-            body="Meghanada Cuirie +2",
+            body="Malignance Tabard",
             hands="Malignance Gloves",
             ring1="Meghanada Ring",
             ring2="Roller's Ring",
@@ -209,15 +209,15 @@ function init_gear_sets()
         })
         sets.idle.PDT = set_combine(sets.idle, {
             head="Malignance Chapeau",
-            body="Meghanada Cuirie +2",
+            body="Malignance Tabard",
             hands="Malignance Gloves",
             legs="Malignance Tights",
             ring1="Dark Ring",
             ring2="Defending Ring"
         })
         sets.idle.Town = set_combine(sets.idle, {
-            head="Arcadian Beret +3",
-            body="Adhemar Jacket +1",
+            head="Malignance Chapeau",
+            body="Malignance Tabard",
             ear1="Dedition Earring",
             ear2="Telos Earring",
             neck="Scout's Gorget +2",

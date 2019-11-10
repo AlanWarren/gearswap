@@ -305,7 +305,7 @@ function init_gear_sets()
     })
     sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS['Tachi: Ageha']
     
-    sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {neck="Flame Gorget",waist="Light Belt"})
+    sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {waist="Light Belt"})
     
     sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {neck="Aqua Gorget",waist="Windbuffet Belt +1"})
     
@@ -436,7 +436,7 @@ function init_gear_sets()
         neck="Samurai's Nodowa +1",
         ear1="Brutal Earring",
         ear2="Dedition Earring",
-        body="Kendatsuba Samue",
+        body="Kasuga Domaru +1",
         hands="Wakido Kote +3",
         ring1="Niqmaddu Ring", 
         ring2="Petrov Ring", 

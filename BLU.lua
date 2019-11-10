@@ -445,6 +445,7 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].PhysicalAcc = set_combine(sets.midcast['Blue Magic'].Physical, {
         head="Malignance Chapeau",
+        --body="Malignance Tabard",
         ear1="Telos Earring",
         ring1="Cacoethic Ring +1",
         legs="Malignance Tights", 
