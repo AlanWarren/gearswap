@@ -122,8 +122,8 @@ function init_gear_sets()
 
         HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
         HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+1','STR+6','Mag. Acc.+5','"Mag.Atk.Bns."+12',}}
-
-        HercFeet.MAB = { name="Herculean Boots", augments={'AGI+1','"Mag.Atk.Bns."+28','"Refresh"+1','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
+        
+        HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
         HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
         
         HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
@@ -216,17 +216,17 @@ function init_gear_sets()
             ring2="Defending Ring"
         })
         sets.idle.Town = set_combine(sets.idle, {
-            head="Malignance Chapeau",
-            body="Malignance Tabard",
+            head="Arcadian Beret +3",
+            body="Orion Jerkin +3",
             ear1="Dedition Earring",
             ear2="Telos Earring",
             neck="Scout's Gorget +2",
             ring1="Dingir Ring",
             ring2="Ilabrat Ring",
-            hands="Malignance Gloves",
+            hands="Adhemar Wristbands +1",
             waist="Kwahu Kachina Belt",
             back=Belenus.STP,
-            legs="Malignance Tights", 
+            legs="Orion Braccae +3", 
             feet="Jute Boots +1"
         })
  
@@ -362,7 +362,8 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Dedition Earring",
             ear2="Telos Earring", 
-            body="Malignance Tabard",
+            body="Arcadian Jerkin +3", 
+            --body="Malignance Tabard",
             hands="Malignance Gloves",
             ring1="Ilabrat Ring",
             ring2="Rajas Ring",
@@ -504,7 +505,8 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             neck="Scout's Gorget +2",
             hands="Carmine Finger Gauntlets +1",
-            body="Herculean Vest",
+            --body="Herculean Vest",
+            body="Samnuha Coat",
             ring1="Dingir Ring",
             ring2="Weatherspoon Ring",
             back=Belenus.MAB,

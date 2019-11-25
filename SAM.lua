@@ -166,7 +166,7 @@ function init_gear_sets()
         ear1="Telos Earring",
         ring1="Cacoethic Ring +1",
         ring2="Hajduk Ring",
-        feet="Wakido Sune-ate +1"
+        feet="Wakido Sune-ate +2"
     }	
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}

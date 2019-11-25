@@ -123,7 +123,7 @@ function init_gear_sets()
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
     HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+1','STR+6','Mag. Acc.+5','"Mag.Atk.Bns."+12',}}
 
-    HercFeet.MAB = { name="Herculean Boots", augments={'AGI+1','"Mag.Atk.Bns."+28','"Refresh"+1','Mag. Acc.+13 "Mag.Atk.Bns."+13',}}
+    HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
     
     HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
@@ -332,11 +332,11 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         head="Malignance Chapeau",
-        body="Adhemar Jacket +1",
+        body="Malignance Tabard",
         neck="Ninja Nodowa +1",
         ear1="Cessance Earring",
         ear2="Telos Earring",
-        hands="Adhemar Wristbands +1",
+        hands="Malignance Gloves",
         legs="Malignance Tights", 
         ring1="Ilabrat Ring",
         ring2="Gere Ring",
@@ -783,7 +783,7 @@ function init_gear_sets()
     })
     
     sets.Ten = {
-        head="Rao Kabuto",
+        head="Hachiya Hatsuburi +2",
         neck="Shadow Gorget",
         ear1="Lugra Earring +1",
         ear2="Moonshade Earring",
@@ -802,6 +802,7 @@ function init_gear_sets()
         legs="Samnuha Tights",
         feet=HercFeet.TP
     })
+    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, sets.Ten)
     
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
         head=HercHead.MAB,
