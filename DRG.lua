@@ -99,7 +99,7 @@ function init_gear_sets()
 		body="Valorous Mail",
         hands="Flamma Manopolas +2",
         ring1="Niqmaddu Ring",
-        ring2="Petrov Ring",
+        ring2="Regal Ring",
 		back=Brigantia.TP,
         waist="Olseni Belt",
         legs="Pteroslaver Brais +2",
@@ -178,18 +178,16 @@ function init_gear_sets()
 	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Vishap Armet +1" })
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {}
-
 	sets.precast.WS = {
         ammo="Knobkierrie",
         head="Valorous Mask", 
         neck="Ganesha's Mala",
-        ear1="Sherida Earring",
+        ear1="Thrud Earring",
         ear2="Moonshade Earring",
 		body="Valorous Mail",
         hands=Valorous.Hands.WS,
         ring1="Niqmaddu Ring",
-        ring2="Flamma Ring",
+        ring2="Regal Ring",
 		back=Brigantia.WS,
         waist="Windbuffet Belt +1",
         legs="Sulevia's Cuisses +2",
@@ -201,6 +199,7 @@ function init_gear_sets()
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
+        ear1="Sherida Earring",
         neck="Shadow Gorget",
         waist="Soil Belt"
     })
@@ -211,7 +210,7 @@ function init_gear_sets()
 
     sets.precast.WS["Camlann's Torment"] = set_combine(sets.precast.WS, {
         neck="Breeze Gorget",
-        ear1="Ishvara Earring",
+        ear1="Thrud Earring",
         body="Valorous Mail",
         hands=Valorous.Hands.WS,
 		back=Brigantia.WS,
@@ -237,7 +236,7 @@ function init_gear_sets()
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         waist="Metalsinger Belt",
-        ear1="Sherida Earring",
+        ear1="Thrud Earring",
         hands="Flamma Manopolas +2",
         legs="Peltast's Cuissots +1",
         feet=Valorous.Feet.WS
@@ -375,7 +374,7 @@ function init_gear_sets()
         ear2="Telos Earring",
         neck="Lissome Necklace",
 		body="Valorous Mail", 
-        ring2="Flamma Ring",
+        ring2="Regal Ring",
         legs="Pteroslaver Brais +2",
         waist="Sailfi Belt +1",
         hands="Flamma Manopolas +2",

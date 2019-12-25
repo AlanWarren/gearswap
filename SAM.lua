@@ -151,12 +151,12 @@ function init_gear_sets()
         back="Takaha Mantle"
     }
     sets.precast.RA = {
-        head="Otomi Helm",
+        head="Volte Tiara",
         hands="Buremte Gloves",
         feet="Ejekamal Boots"
     }
     sets.midcast.RA = {
-        head="Terminal Helm",
+        head="Volte Tiara",
         body="Kendatsuba Samue",
         legs="Kendatsuba Hakama",
         -- neck="Iqabi Necklace",
@@ -185,12 +185,12 @@ function init_gear_sets()
         ammo="Knobkierrie",
         head="Valorous Mask",
         neck="Samurai's Nodowa +1",
-        ear1="Ishvara Earring",
+        ear1="Thrud Earring",
         ear2="Moonshade Earring",
         body="Sakonji Domaru +3",
         hands=Valorous.Hands.WS,
         ring1="Niqmaddu Ring",
-        ring2="Flamma Ring",
+        ring2="Regal Ring",
         back=Smertrios.WS,
         waist="Windbuffet Belt +1",
         legs="Wakido Haidate +3",
@@ -207,14 +207,14 @@ function init_gear_sets()
         ammo=gear.RAarrow,
         head="Terminal Helm",
         neck="Samurai's Nodowa +1",
-        ear1="Ishvara Earring",
-        ear2="Telos Earring",
+        ear1="Thrud Earring",
+        ear2="Ishvara Earring",
         body="Kendatsuba Samue",
         legs="Kendatsuba Hakama",
         hands="Ryuo Tekko",
         back=Smertrios.WS,
-        ring1="Cacoethic Ring +1",
-        ring2="Garuda Ring",
+        ring1="Ilabrat Ring",
+        ring2="Regal Ring",
         waist="Eschan Stone",
         -- legs="Hizamaru Hizayoroi +2",
         feet=Valorous.Feet.WS
@@ -229,7 +229,7 @@ function init_gear_sets()
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
         neck="Breeze Gorget",
         body="Kyujutsugi",
-        ring2="Garuda Ring"
+        ring2="Regal Ring"
     })
     sets.precast.WS['Apex Arrow'].Mid = sets.precast.WS['Apex Arrow']
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
@@ -265,8 +265,6 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
         head="Flamma Zucchetto +2",
         neck="Samurai's Nodowa +1",
-        ear1="Brutal Earring",
-        ear2="Moonshade Earring",
         waist="Thunder Belt",
         back=Smertrios.WS,
         feet="Flamma Gambieras +2",
@@ -349,7 +347,7 @@ function init_gear_sets()
    	    body="Tartarus Platemail",
         hands="Wakido Kote +3",
         ring1="Niqmaddu Ring",
-        ring2="Defending Ring",
+        ring2="Regal Ring",
         back=Smertrios.TP,
         waist="Windbuffet Belt +1",
         legs="Wakido Haidate +3",
@@ -453,7 +451,8 @@ function init_gear_sets()
         ear1="Telos Earring",
         ear2="Cessance Earring",
         legs="Kendatsuba Hakama",
-        ring2="Flamma Ring",
+        ring1="Niqmaddu Ring", 
+        ring2="Regal Ring",
         --body="Kendatsuba Samue",
         --legs="Kendatsuba Hakama",
     })
@@ -461,9 +460,10 @@ function init_gear_sets()
         -- head="Valorous Mask",
         neck="Samurai's Nodowa +1",
         body="Kendatsuba Samue",
+        ring1="Flamma Ring",
+        ring2="Regal Ring",
         -- back="Grounded Mantle +1",
-        legs="Kendatsuba Hakama",
-        -- ring1="Mars's Ring",
+        legs="Wakido Haidate +3",
         -- legs="Acro Breeches",
     })
     sets.engaged.PDT = set_combine(sets.engaged, {

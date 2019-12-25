@@ -128,6 +128,7 @@ function init_gear_sets()
         
         HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
         HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
+        HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
         HercLegs.TP = { name="Herculean Trousers", augments={'Accuracy+26','"Triple Atk."+4',}}
         HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +2%','STR+8','Mag. Acc.+5','"Mag.Atk.Bns."+6',}}
@@ -157,6 +158,7 @@ function init_gear_sets()
         sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +3"}
         sets.precast.JA['Velocity Shot'] = {body="Amini Caban +1", back=Belenus.Snap }
         sets.precast.JA['Scavenge'] = {feet="Orion Socks +1"}
+        sets.precast.JA['Shadowbind'] = {hands="Orion Bracers +2"}
 
         sets.CapacityMantle = {back="Mecistopins Mantle"}
 
@@ -168,9 +170,9 @@ function init_gear_sets()
             back=Belenus.STP,
             hands="Meghanada Gloves +2",
             waist="Kwahu Kachina Belt",
-            ring1="Dingir Ring",
-            ring2="Ilabrat Ring",
-            legs="Arcadian Braccae +2", 
+            ring1="Ilabrat Ring",
+            ring2="Regal Ring",
+            legs="Arcadian Braccae +3", 
             feet="Arcadian Socks +3"
         })
 
@@ -217,33 +219,34 @@ function init_gear_sets()
         })
         sets.idle.Town = set_combine(sets.idle, {
             head="Arcadian Beret +3",
-            body="Orion Jerkin +3",
+            body="Malignance Tabard",
             ear1="Dedition Earring",
             ear2="Telos Earring",
             neck="Scout's Gorget +2",
-            ring1="Dingir Ring",
-            ring2="Ilabrat Ring",
-            hands="Adhemar Wristbands +1",
+            ring1="Ilabrat Ring",
+            ring2="Regal Ring",
+            hands="Malignance Gloves",
             waist="Kwahu Kachina Belt",
             back=Belenus.STP,
-            legs="Orion Braccae +3", 
+            legs="Arcadian Braccae +3", 
             feet="Jute Boots +1"
         })
  
         -- Engaged sets
         sets.engaged =  {
             head="Malignance Chapeau",
-            neck="Twilight Torque",
-            ear1="Enervating Earring",
-            ear2="Telos Earring",
+            neck="Scout's Gorget +2",
+            ear1="Dedition Earring",
+            ear2="Telos Earring", 
             body="Malignance Tabard",
+            --body="Malignance Tabard",
             hands="Malignance Gloves",
-            ring1="Dark Ring",
-            ring2="Defending Ring",
-            waist="Flume Belt",
+            ring1="Ilabrat Ring",
+            ring2="Regal Ring",
             back=Belenus.STP,
+            waist="Kwahu Kachina Belt", 
             legs="Malignance Tights", 
-            feet="Ahosi Leggings"
+            feet="Arcadian Socks +3"
         }
         sets.engaged.PDT = set_combine(sets.engaged, {
             hands="Malignance Gloves",
@@ -277,7 +280,7 @@ function init_gear_sets()
             body="Malignance Tabard",
             hands="Malignance Gloves",
             ring1="Ilabrat Ring",
-            ring2="Rajas Ring",
+            ring2="Regal Ring",
             back=Belenus.Snap, -- 2% VS / 10 snap 
             waist="Kwahu Kachina Belt", 
             legs="Malignance Tights", -- 15
@@ -366,7 +369,7 @@ function init_gear_sets()
             --body="Malignance Tabard",
             hands="Malignance Gloves",
             ring1="Ilabrat Ring",
-            ring2="Rajas Ring",
+            ring2="Regal Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt", 
             legs="Malignance Tights", 
@@ -379,7 +382,7 @@ function init_gear_sets()
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             head="Malignance Chapeau",
-            ring1="Cacoethic Ring +1",
+            -- ring1="Cacoethic Ring +1",
             legs="Malignance Tights", 
             feet="Mummu Gamashes +2"
         })
@@ -409,7 +412,7 @@ function init_gear_sets()
         sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {
             -- head="Meghanada Visor +2",
             body="Arcadian Jerkin +3",
-            ring2="Mummu Ring",
+            ring2="Regal Ring",
         })
         sets.midcast.RA.Annihilator.Mid = sets.midcast.RA.Mid
         sets.midcast.RA.Annihilator.Acc = set_combine(sets.midcast.RA.Acc, {
@@ -428,7 +431,7 @@ function init_gear_sets()
             body="Malignance Tabard", 
             hands="Malignance Gloves",
             ring1="Ilabrat Ring",
-            ring2="Rajas Ring",
+            ring2="Regal Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
             legs="Malignance Tights", 
@@ -453,11 +456,12 @@ function init_gear_sets()
             ear2="Ishvara Earring",
             body="Herculean Vest",
             hands="Meghanada Gloves +2",
-            ring1="Dingir Ring",
-            ring2="Ilabrat Ring",
+            -- ring1="Dingir Ring",
+            ring1="Ilabrat Ring",
+            ring2="Regal Ring",
             back=Belenus.WSD,
             waist="Kwahu Kachina Belt",
-            legs="Arcadian Braccae +2", 
+            legs="Arcadian Braccae +3", 
             feet="Arcadian Socks +3"
         }
         sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -470,20 +474,20 @@ function init_gear_sets()
         sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
             ear2="Moonshade Earring",
             ring1="Ifrit Ring",
-            ring2="Apate Ring",
+            ring2="Regal Ring",
             waist="Metalsinger Belt",
             feet="Meghanada Jambeaux +2"
         })
         -- WILDFIRE
         sets.precast.WS['Wildfire'] = {
-            head=HercHead.MAB,
+            head=HercHead.DM,
             ear1="Friomisi Earring",
             ear2="Crematio Earring",
             neck="Scout's Gorget +2",
             hands="Carmine Finger Gauntlets +1",
             body="Samnuha Coat",
-            ring1="Dingir Ring",
-            ring2="Ilabrat Ring",
+            ring1="Ilabrat Ring",
+            ring2="Dingir Ring",
             back=Belenus.MAB,
             waist="Eschan Stone",
             legs=HercLegs.MAB,
@@ -492,7 +496,7 @@ function init_gear_sets()
         sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS['Wildfire'], {
             body="Orion Jerkin +3",
             hands=HercHands.MAB,
-            legs="Mummu Kecks +2"
+            legs=HercLegs.MAB
         })
         sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS['Wildfire'].Mid, {
             body="Mummu Jacket +2",
@@ -500,7 +504,7 @@ function init_gear_sets()
         })
         
         sets.precast.WS['Trueflight'] = {
-            head=HercHead.MAB,
+            head=HercHead.DM,
             ear1="Friomisi Earring",
             ear2="Moonshade Earring",
             neck="Scout's Gorget +2",
@@ -512,6 +516,7 @@ function init_gear_sets()
             back=Belenus.MAB,
             waist="Eschan Stone",
             legs=HercLegs.MAB,
+            --legs="Arcadian Braccae +3", 
             feet=HercFeet.MAB
         }
         sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {
@@ -537,16 +542,16 @@ function init_gear_sets()
             ear2="Ishvara Earring",
             body="Herculean Vest",
             waist="Thunder Belt",
-            ring1="Dingir Ring",
-            ring2="Ilabrat Ring",
+            ring1="Ilabrat Ring",
+            ring2="Regal Ring",
             back=Belenus.WSD,
-            legs="Arcadian Braccae +2", 
+            legs="Arcadian Braccae +3", 
         })
         sets.precast.WS['Coronach'].Mid = set_combine(sets.precast.WS['Coronach'], {
         })
         sets.precast.WS['Coronach'].Acc = set_combine(sets.precast.WS['Coronach'].Mid, {
             body="Orion Jerkin +3", 
-            legs="Arcadian Braccae +2", 
+            legs="Arcadian Braccae +3", 
         })
 
         -- LAST STAND
@@ -557,17 +562,17 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             body="Arcadian Jerkin +3",
             back=Belenus.WSD,
-            ring1="Dingir Ring",
-            ring2="Ilabrat Ring",
+            ring1="Ilabrat Ring",
+            ring1="Regal Ring",
             waist="Light Belt",
-            legs="Arcadian Braccae +2", 
+            legs="Arcadian Braccae +3", 
             feet="Arcadian Socks +3"
         })
         sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS['Last Stand'], {
             body="Meghanada Cuirie +2",
         })
         sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'].Mid, {
-            legs="Arcadian Braccae +2",
+            legs="Arcadian Braccae +3", 
             feet="Meghanada Jambeaux +2"
         })
 
@@ -612,7 +617,7 @@ function init_gear_sets()
             waist="Light Belt",
             ring2="Mummu Ring",
             back=Belenus.WSD,
-            legs="Mummu Kecks +2",
+            legs="Arcadian Braccae +3", 
             feet="Thereoid Greaves"
         }
         sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, sets.Jishnus)
@@ -620,8 +625,7 @@ function init_gear_sets()
             neck="Flame Gorget",
             ear2="Moonshade Earring",
             waist="Light Belt",
-            legs="Mummu Kecks +2",
-            ring2="Rajas Ring",
+            legs="Arcadian Braccae +3", 
             feet="Mummu Gamashes +2"
 
         })
@@ -655,11 +659,11 @@ function init_gear_sets()
             ear1="Sherida Earring",
             ear2="Moonshade Earring",
             body="Mummu Jacket +2",
-            ring1="Ilabrat Ring",
-            ring2="Epona's Ring",
+            ring1="Epona's Ring",
+            ring2="Regal Ring",
             hands="Mummu Wrists +2",
             back=Belenus.WSD,
-            legs="Samnuha Tights",
+            legs="Arcadian Braccae +3", 
             feet="Thereoid Greaves"
         })
        
@@ -677,9 +681,9 @@ function init_gear_sets()
             ear1="Enervating Earring",
             ear2="Telos Earring",
             body="Orion Jerkin +3",
-            hands="Orion Bracers +1",
-            ring1="Cacoethic Ring +1",
-            ring2="Ilabrat Ring",
+            hands="Orion Bracers +2",
+            ring1="Ilabrat Ring",
+            ring2="Regal Ring",
             back=Belenus.STP,
             waist="Kwahu Kachina Belt",
             legs="Malignance Tights",
@@ -687,10 +691,10 @@ function init_gear_sets()
         }
         sets.buff.Camouflage =  {body="Orion Jerkin +3"}
 
-        sets.Overkill =  {
-            body="Arcadian Jerkin +3"
-        }
-        sets.Overkill.Preshot = set_combine(sets.precast.RA, sets.Overkill)
+        -- sets.Overkill =  {
+        --     body="Arcadian Jerkin +3"
+        -- }
+        -- sets.Overkill.Preshot = set_combine(sets.precast.RA, sets.Overkill)
 
 end
 
@@ -727,9 +731,8 @@ end
 function job_post_precast(spell, action, spellMap, eventArgs)
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
-    elseif state.Buff.Overkill then
-        equip(sets.Overkill.Preshot)
-    end
+    -- elseif state.Buff.Overkill then
+    --     equip(sets.Overkill.Preshot)
     if spell.type == 'WeaponSkill' then
         if spell.english == 'Trueflight' then
             if world.weather_element == 'Light' or world.day_element == 'Light' then
@@ -740,6 +743,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.CapacityMantle)
         end
     end
+    elseif state.Buff.Barrage then
+        equip(sets.buff.Barrage)
+    end
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -747,11 +753,14 @@ function job_midcast(spell, action, spellMap, eventArgs)
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
     end
-    if state.Buff.Overkill then
-        equip(sets.Overkill)
-    end
+    -- if state.Buff.Overkill then
+    --     equip(sets.Overkill)
+    -- end
     if spell.action_type == 'Ranged Attack' and state.CapacityMode.value then
         equip(sets.CapacityMantle)
+    end
+    elseif state.Buff.Barrage then
+        equip(sets.buff.Barrage)
     end
 end
 
@@ -761,7 +770,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     if state.Buff[spell.name] ~= nil then
         state.Buff[spell.name] = not spell.interrupted or buffactive[spell.english]
     end
-
 end
  
 -- Called when a player gains or loses a buff.

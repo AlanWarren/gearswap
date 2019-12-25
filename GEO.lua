@@ -254,7 +254,7 @@ function init_gear_sets()
     sets.midcast.Macc = { 
         main="Grioavolr",
         sub="Enki Strap", 
-        ammo="Pemphredo Tathlum",
+        --ammo="Pemphredo Tathlum",
         head="Mallquis Chapeau +1",
         neck="Erra Pendant",
         ear1="Malignance Earring",

@@ -264,12 +264,13 @@ function init_gear_sets()
     
     HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
+    HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
     HercLegs.TP = { name="Herculean Trousers", augments={'Accuracy+26','"Triple Atk."+4',}}
     HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +2%','STR+8','Mag. Acc.+5','"Mag.Atk.Bns."+6',}}
 
     Rosmerta = {}
-    Rosmerta.TP = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10'}}
+    Rosmerta.TP = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
     Rosmerta.WS = {name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 
     sets.buff['Burst Affinity'] = { legs="Assimilator's Shalwar +1" }
@@ -317,13 +318,13 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        head=HercHead.TP,
+        head=HercHead.DM,
         neck="Mirage Stole +1",
         ear1="Ishvara Earring",
         ear2="Brutal Earring",
         body="Herculean Vest",
         hands="Jhakri Cuffs +2",
-        ring1="Ifrit's Ring",
+        ring1="Ilabrat Ring",
         ring2="Epona's Ring",
         back=Rosmerta.WS,
         waist="Windbuffet Belt +1",
@@ -341,7 +342,7 @@ function init_gear_sets()
         feet="Ayanmo Gambieras +2"
     })
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-        head=HercHead.MAB,
+        head=HercHead.DM,
         neck="Breeze Gorget",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
@@ -364,7 +365,7 @@ function init_gear_sets()
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
         legs="Jhakri Slops +1",
-        ring1="Globidonta Ring",
+        ring1="Ilabrat Ring",
         ring2="Epona's Ring",
         feet="Jhakri Pigaches +2"
     })
@@ -435,8 +436,8 @@ function init_gear_sets()
         ear2="Flame Pearl",
         body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
-        ring1="Rajas Ring",
-        ring2="Ifrit Ring",
+        ring1="Ilabrat Ring",
+        ring2="Rajas Ring",
         back=Rosmerta.WS,
         waist="Metalsinger Belt",
         legs="Jhakri Slops +1",
@@ -445,7 +446,7 @@ function init_gear_sets()
 
     sets.midcast['Blue Magic'].PhysicalAcc = set_combine(sets.midcast['Blue Magic'].Physical, {
         head="Malignance Chapeau",
-        --body="Malignance Tabard",
+        body="Malignance Tabard",
         ear1="Telos Earring",
         ring1="Cacoethic Ring +1",
         legs="Malignance Tights", 
@@ -503,7 +504,7 @@ function init_gear_sets()
     sets.midcast['Blue Magic'].MagicalAgi = set_combine(sets.midcast['Blue Magic'].Magical, {
         head="Malignance Chapeau",
         legs=HercLegs.MAB,
-        ring1="Garuda Ring",
+        ring1="Rajas Ring",
         ring2="Ilabrat Ring",
         feet=HercFeet.MAB
     })
@@ -654,10 +655,10 @@ function init_gear_sets()
         neck="Mirage Stole +1",
         head="Malignance Chapeau",
         hands="Malignance Gloves",
-        body="Shamash Robe",
+        body="Malignance Tabard",
         ear1="Telos Earring",
         ear2="Regal Earring",
-        ring1="Weatherspoon Ring",
+        ring1="Defending Ring",
         ring2="Ilabrat Ring",
         back=Rosmerta.TP
     })
@@ -699,6 +700,7 @@ function init_gear_sets()
     }
 
     sets.engaged.Mid = set_combine(sets.engaged, {
+        head=HercHead.TP,
         legs=HercLegs.TP,
         neck="Mirage Stole +1",
     })

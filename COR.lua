@@ -30,6 +30,8 @@ function job_setup()
     state.CapacityMode = M(false, 'Capacity Point Mantle')
     state.Buff['Triple Shot'] = buffactive['Triple Shot'] or false
 
+    include('Mote-TreasureHunter')
+    state.TreasureMode:set('Tag')
 	define_roll_values()
 end
 
@@ -74,6 +76,11 @@ function user_setup()
     send_command('bind @f9 gs c cycle FlurryMode')
     send_command('bind ^- gs c cycle AutoRA')
     select_default_macro_book()
+    -- For th_action_check():
+    -- JA IDs for actions that always have TH: Provoke, Animated Flourish
+    info.default_ja_ids = S{35, 204}
+    -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
+    info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 end
 
 
@@ -106,7 +113,7 @@ function init_gear_sets()
     TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
 
     Camulus = {}
-    Camulus.STP = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Camulus.STP = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+6','"Store TP"+10','Phys. dmg. taken-10%',}}
     Camulus.WSD = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
     Camulus.Snap = {name="Camulus's Mantle", augments={'"Snapshot"+10',}}
 
@@ -123,6 +130,7 @@ function init_gear_sets()
     
     HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
+    HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
     HercLegs.TP = { name="Herculean Trousers", augments={'Accuracy+26','"Triple Atk."+4',}}
     HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +2%','STR+8','Mag. Acc.+5','"Mag.Atk.Bns."+6',}}
@@ -142,9 +150,10 @@ function init_gear_sets()
         ring2="Defending Ring",
         back=Camulus.STP,
         legs="Malignance Tights",
-        feet="Lanun Bottes +1"
+        feet="Lanun Bottes +2"
     }
     
+    sets.TreasureHunter = { head="White Rarab Cap +1", waist="Chaac Belt" }
 	--sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
 	sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
 	--sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Navarch's Tricorne +1"})
@@ -201,7 +210,7 @@ function init_gear_sets()
         feet="Meghanada Jambeaux +2"
     }
     sets.precast.RA.F1 = set_combine(sets.precast.RA, {
-        body="Laksamana's Frac +2"
+        body="Laksamana's Frac +3"
     })
     sets.precast.RA.F2 = set_combine(sets.precast.RA.F1, {
         -- waist="Yemaya Belt",
@@ -211,34 +220,33 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-        head="Meghanada Visor +2",
+        head=HercHead.DM,
         neck="Iskur Gorget",
         ear1="Ishvara Earring",
         ear2="Enervating Earring",
-        body="Laksamana's Frac +2",
+        body="Laksamana's Frac +3",
         hands="Meghanada Gloves +2",
         ring1="Dingir Ring",
         ring2="Ilabrat Ring",
         back=Camulus.WSD,
         waist="Kwahu Kachina Belt",
         legs=HercLegs.MAB, 
-        feet="Meghanada Jambeaux +2"
+        feet="Lanun Bottes +2"
     }
 
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
         neck="Breeze Gorget",
-        body="Herculean Vest",
+        body="Laksamana's Frac +3",
         hands="Meghanada Gloves +2",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
-        ring1="Rajas Ring",
+        ring1="Regal Ring",
         ring2="Epona's Ring",
         waist="Metalsinger Belt",
         legs="Meghanada Chausses +2",
         waist="Thunder Belt",
-        feet=HercFeet.MAB
+        feet="Lanun Bottes +2"
     })
-
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, { 
@@ -251,7 +259,7 @@ function init_gear_sets()
         ring2="Ilabrat Ring",
         waist="Soil Belt",
         legs="Meghanada Chausses +2",
-        feet=HercFeet.TP
+        feet="Lanun Bottes +2"
     })
 
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {legs="Samnuha Tights"})
@@ -263,25 +271,26 @@ function init_gear_sets()
         neck="Aqua Gorget",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
-        body="Laksamana's Frac +2",
-        ring1="Dingir Ring",
-        ring2="Apate Ring",
+        body="Laksamana's Frac +3",
+        ring1="Regal Ring",
+        ring2="Dingir Ring",
         legs="Meghanada Chausses +2",
         waist="Light Belt",
+        feet="Lanun Bottes +2"
     })
 	sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
         ammo=gear.WSbullet,
         ear1="Enervating Earring",
         ear2="Moonshade Earring",
-        ring1="Dingir Ring",
-        ring2="Apate Ring",
+        --ring1="Dingir Ring",
+        ring2="Dingir Ring",
         back=Camulus.WSD,
-        feet="Meghanada Jambeaux +2"
+        feet="Lanun Bottes +2"
     })
 
 	sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
-        head=HercHead.MAB,
+        head=HercHead.DM,
         neck="Sanctity Necklace",
         ear1="Ishvara Earring",
         ear2="Friomisi Earring",
@@ -292,7 +301,7 @@ function init_gear_sets()
         back=Camulus.WSD,
         waist="Eschan Stone",
         legs=HercLegs.MAB,
-        feet=HercFeet.MAB
+        feet="Lanun Bottes +2"
     }
     sets.precast.WS['Wildfire'].Acc = {
         body="Lanun Frac +3",
@@ -305,7 +314,7 @@ function init_gear_sets()
         hands=HercHands.MAB,
         legs="Mummu Kecks +2",
         --feet="Mummu Gamashes +2"
-        feet=HercFeet.MAB
+        feet="Lanun Bottes +2"
     })
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {
         ear2="Moonshade Earring"
@@ -338,13 +347,13 @@ function init_gear_sets()
         ear2="Crematio Earring",
         body="Lanun Frac +3",
         hands="Malignance Gloves",
-        ring1="Dingir Ring",
-        ring2="Ilabrat Ring",
+        ring1="Regal Ring",
+        ring2="Dingir Ring",
         back="Gunslinger's Cape",
         --waist="Eschan Stone",
         waist="Chaac Belt",
         legs="Malignance Tights",
-        feet=HercFeet.MAB
+        feet="Lanun Bottes +2"
     }
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
@@ -367,7 +376,7 @@ function init_gear_sets()
         ear2="Enervating Earring",
         body="Malignance Tabard",
         hands="Malignance Gloves",
-        ring1="Dingir Ring",
+        ring1="Regal Ring",
         ring2="Ilabrat Ring",
         back=Camulus.STP,
         waist="Kwahu Kachina Belt",
@@ -375,13 +384,10 @@ function init_gear_sets()
         feet="Mummu Gamashes +2"
     }
 
-
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        body="Malignance Tabard",
-        ring1="Hajduk Ring",
+        body="Laksamana's Frac +3",
+        --ring1="Hajduk Ring",
         ring2="Cacoethic Ring +1",
-        hands="Malignance Gloves",
-        legs="Malignance Tights", 
         feet="Meghanada Jambeaux +2"
     })
 
@@ -429,28 +435,35 @@ function init_gear_sets()
         neck="Regal Necklace",
         ear1="Telos Earring",
         ear2="Dedition Earring",
-        body="Adhemar Jacket +1",
+        body="Laksamana's Frac +3",
         hands="Malignance Gloves",
-        ring1="Dingir Ring",
+        ring1="Regal Ring",
         ring2="Ilabrat Ring",
         back=Camulus.STP,
         waist="Eschan Stone",
         legs="Carmine Cuisses +1",
-        feet="Herculean Boots"
+        feet="Lanun Bottes +2"
     }
+    sets.idle.PDT = set_combine(sets.idle.Town, {
+        head="Malignance Chapeau",
+        hands="Malignance Gloves",
+        body="Malignance Tabard",
+        legs="Malignance Tights", 
+        ring2="Defending Ring",
+    })
 	
 	-- Defense sets
 	sets.defense.PDT = set_combine(sets.idle, {
-        head="Meghanada Visor +2",
+        head="Malignance Chapeau",
         neck="Twilight Torque",
-        hands="Meghanada Gloves +2",
-        body="Lanun Frac +3",
+        hands="Malignance Gloves",
+        body="Malignance Tabard",
         ring1="Patricius Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Malignance Tights", 
-        feet="Meghanada Jambeaux +2"
+        feet="Lanun Bottes +2"
     })
 
 	sets.defense.MDT = sets.defense.PDT
@@ -472,12 +485,12 @@ function init_gear_sets()
         ear2="Eabani Earring",
         body="Malignance Tabard",
         hands="Malignance Gloves",
-        ring1="Meghanada Ring",
+        ring1="Regal Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Malignance Tights", 
-        feet="Meghanada Jambeaux +2"
+        feet="Lanun Bottes +2"
     }
 	-- Normal melee group
 	sets.engaged.Melee = {
@@ -501,13 +514,14 @@ function init_gear_sets()
         hands="Floral Gauntlets",
         body="Adhemar Jacket +1",
         legs="Carmine Cuisses +1",
-        waist="Patentia Sash",
+        waist="Shetal Stone",
         back=Camulus.STP,
         feet=HercFeet.TP
     })
     sets.engaged.DW.Melee = sets.engaged.DW
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee, {
+        head=HercHead.TP,
         waist="Olseni Belt",
     })
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Melee.DW, {
@@ -743,18 +757,13 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_form()
-    if cor_sub_weapons:contains(player.equipment.main) then
+    state.CombatForm:reset()
     --if player.equipment.main == gear.Stave then
-        if S{'NIN', 'DNC'}:contains(player.sub_job) and cor_sub_weapons:contains(player.equipment.sub) then
-            state.CombatForm:set("DW")
-        else
-            state.CombatForm:reset()
-        end
+    if S{'NIN', 'DNC'}:contains(player.sub_job) and cor_sub_weapons:contains(player.equipment.sub) then
+        state.CombatForm:set("DW")
     end
     if state.Buff['Triple Shot'] then
         state.CombatForm:set('Triple')
-    else
-        state.CombatForm:reset()
     end
 end
 
@@ -804,6 +813,20 @@ function display_roll_info(spell)
 	end
 end
 
+-- Check for various actions that we've specified in user code as being used with TH gear.
+-- This will only ever be called if TreasureMode is not 'None'.
+-- Category and Param are as specified in the action event packet.
+function th_action_check(category, param)
+    -- cateogry == 2  -- any ranged attack
+    if (category == 2) or 
+        --category == 4 or -- any magic action
+        (category == 3 and param == 30) or -- Aeolian Edge
+        (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
+        (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
+        then 
+            return true
+    end
+end
 -- Determine whether we have sufficient ammo for the action being attempted.
 function do_bullet_checks(spell, spellMap, eventArgs)
 	local bullet_name
@@ -882,6 +905,17 @@ function job_state_change(stateField, newValue, oldValue)
         if newValue ~= 'Normal' then
             send_command('@wait 2.5; input /ra <t>')
         end
+    end
+end
+
+-- State buff checks that will equip buff gear and mark the event as handled.
+function check_buff(buff_name, eventArgs)
+    if state.Buff[buff_name] then
+        equip(sets.buff[buff_name] or {})
+        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
+            equip(sets.TreasureHunter)
+        end
+        eventArgs.handled = true
     end
 end
 

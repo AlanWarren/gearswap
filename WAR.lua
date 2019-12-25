@@ -176,12 +176,12 @@ function init_gear_sets()
          ammo="Knobkierrie",
          head="Flamma Zucchetto +2",
          neck="Defiant Collar",
-         ear1="Brutal Earring",
+         ear1="Thrud Earring",
          ear2="Moonshade Earring",
          body="Flamma Korazin +2",
          hands="Odyssean Gauntlets",
          ring1="Niqmaddu Ring",
-         ring2="Flamma Ring",
+         ring2="Regal Ring",
          back="Cichol's Mantle",
          waist="Windbuffet Belt +1",
          legs=Odyssean.Legs.WS,
@@ -244,7 +244,7 @@ function init_gear_sets()
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
         head="Valorous Mask",
         neck="Shadow Gorget",
-        ear1="Ishvara Earring",
+        ear1="Thrud Earring",
         waist="Metalsinger Belt",
         feet=Valorous.Feet.WS
     })
@@ -287,12 +287,12 @@ function init_gear_sets()
          ammo="Ginsen",
          head="Hjarrandi Helm",
          neck="Sanctity Necklace",
-         ear1="Etiolation Earring",
-         ear2="Eabani Earring",
+         ear1="Brutal Earring",
+         ear2="Telos Earring",
          body="Tartarus Platemail",
          hands="Sulevia's Gauntlets +2",
          ring1="Niqmaddu Ring",
-         ring2="Defending Ring",
+         ring2="Regal Ring",
          waist="Flume Belt",
          legs=Odyssean.Legs.TP,
          feet="Hermes' Sandals"
@@ -398,7 +398,7 @@ function init_gear_sets()
     	 body="Valorous Mail",
          hands="Sulevia's Gauntlets +2",
          ring1="Niqmaddu Ring",
-         ring2="Flamma Ring",
+         ring2="Petrov Ring",
          back="Cichol's Mantle",
          waist="Ioskeha Belt",
          legs=Odyssean.Legs.TP,
@@ -408,6 +408,7 @@ function init_gear_sets()
          ammo="Ginsen",
          neck="Lissome Necklace",
          ear1="Telos Earring",
+         ring2="Regal Ring",
          body="Valorous Mail",
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {

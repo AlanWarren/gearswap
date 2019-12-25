@@ -300,7 +300,7 @@ function init_gear_sets()
         hands="Flamma Manopolas +2",
         waist="Casso Sash", -- 5
         ring1="Evanescence Ring", -- 10
-        ring2="Weatherspoon Ring", -- 10 macc
+        ring2="Regal Ring", -- 10 macc
         back=Niht.DarkMagic, -- 10
         legs="Fallen's Flanchard +3",  -- 18 + 39macc
         feet="Ratri Sollerets +1" -- macc 33
@@ -323,7 +323,7 @@ function init_gear_sets()
         body="Ignominy Cuirass +3",
         hands="Flamma Manopolas +2",
         ring1="Kishar Ring",
-        ring2="Weatherspoon Ring", -- 10 macc
+        ring2="Regal Ring", -- 10 macc
         waist="Eschan Stone",
         legs="Fallen's Flanchard +3",  -- 18 + 39macc
         back="Aput Mantle",
@@ -339,7 +339,7 @@ function init_gear_sets()
         body="Fallen's Cuirass +3",
         hands="Carmine Finger Gauntlets +1",
         ring1="Resonance Ring", -- int 8
-        ring2="Shiva Ring", -- matk 4
+        ring2="Regal Ring", -- matk 4
         waist="Eschan Stone", -- macc/matk 7
         legs="Eschite Cuisses", -- matk 25 
         back="Aput Mantle", -- mdmg 10
@@ -441,12 +441,12 @@ function init_gear_sets()
         ammo="Knobkierrie",
         head="Flamma Zucchetto +2",
         neck="Abyssal Bead Necklace +2",
-        ear1="Ishvara Earring",
+        ear1="Thrud Earring",
         ear2="Moonshade Earring",
         body="Ignominy Cuirass +3",
         hands="Odyssean Gauntlets",
         ring1="Niqmaddu Ring",
-        ring2="Flamma Ring",
+        ring2="Regal Ring",
         back=Ankou.WSD,
         waist="Windbuffet Belt +1",
         legs="Fallen's Flanchard +3",
@@ -463,7 +463,6 @@ function init_gear_sets()
     -- RESOLUTION
     -- 86-100% STR
     sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
-        ear1="Brutal Earring",
         neck="Breeze Gorget",
         --body="Valorous Mail",
         hands="Sulevia's Gauntlets +2",
@@ -504,7 +503,7 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +2",
         body="Ignominy Cuirass +3",
         legs="Fallen's Flanchard +3",
-        ring2="Flamma Ring",
+        ring2="Regal Ring",
         waist="Light Belt",
         feet="Ratri Sollerets +1"
     })
@@ -516,7 +515,7 @@ function init_gear_sets()
 
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
         head="Ratri Sallet +1",
-        ear2="Brutal Earring",
+        ear2="Ishvara Earring",
         neck="Abyssal Bead Necklace +2",
         body="Ignominy Cuirass +3",
         legs="Fallen's Flanchard +3",  
@@ -558,7 +557,7 @@ function init_gear_sets()
         ear1="Malignance Earring",
         waist="Soil Belt",
         ring1="Niqmaddu Ring",
-        ring2="Flamma Ring",
+        ring2="Regal Ring",
         legs="Fallen's Flanchard +3",  
         feet="Ratri Sollerets +1"
     })
@@ -670,10 +669,11 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Ratri Sallet +1",
         neck="Abyssal Bead Necklace +2",
-        ear1="Malignance Earring",
+        ear1="Dedition Earring",
         ear2="Telos Earring",
         body="Tartarus Platemail",
         ring1="Niqmaddu Ring",
+        ring2="Regal Ring",
         back=Ankou.DA,
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
@@ -797,7 +797,7 @@ function init_gear_sets()
         body="Valorous Mail",
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
-        ring2="Flamma Ring",
+        ring2="Petrov Ring",
         back=Ankou.DA,
         waist="Ioskeha Belt",
         legs="Ignominy Flanchard +3",
@@ -805,6 +805,7 @@ function init_gear_sets()
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         ear2="Telos Earring",
+        ring2="Regal Ring",
         body="Valorous Mail",
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -867,6 +868,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Telos Earring",
         body="Flamma Korazin +2",
+        ring2="Regal Ring",
         waist="Ioskeha Belt",
         legs="Ignominy Flanchard +3",
         feet="Flamma Gambieras +2"
@@ -924,6 +926,7 @@ function init_gear_sets()
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
         ear1="Cessance Earring",
         ear2="Telos Earring",
+        ring2="Regal Ring",
         hands="Sulevia's Gauntlets +2",
         back=Ankou.DA
     })
@@ -1030,6 +1033,7 @@ function init_gear_sets()
     sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {
         hands="Sulevia's Gauntlets +2",
         ear2="Telos Earring",
+        ring2="Regal Ring",
         back=Ankou.DA
     })
     sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {
