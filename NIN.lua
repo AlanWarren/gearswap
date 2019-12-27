@@ -39,7 +39,7 @@ function job_setup()
     state.Proc = M(false, 'Proc')
     state.unProc = M(false, 'unProc')
 
-    gear.RegularAmmo = 'Seki Shuriken'
+    gear.RegularAmmo = 'Date Shuriken'
     gear.SangeAmmo = 'Happo Shuriken'
 
     wsList = S{'Blade: Hi', 'Blade: Kamu', 'Blade: Ten'}
@@ -305,7 +305,7 @@ function init_gear_sets()
     sets.precast.Effusion.Swipe = sets.midcast.ElementalNinjutsu
 
     sets.idle = {
-        ammo="Seki Shuriken",
+        ammo=gear.RegularAmmo,
         head="Malignance Chapeau",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
@@ -441,7 +441,7 @@ function init_gear_sets()
     sets.Daggers = {
         main="Malevolence",
         sub="Malevolence",
-        ammo="Seki Shuriken"
+        ammo="Date Shuriken"
     }
     sets.Proc = {
         -- main="Knife",
@@ -735,6 +735,7 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
+        ammo=gear.RegularAmmo,
         waist="Caudata Belt",
     })
     

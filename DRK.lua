@@ -1067,6 +1067,7 @@ function init_gear_sets()
     sets.engaged.DW = set_combine(sets.engaged, {
         ear1="Eabani Earring",
         ear2="Suppanomimi",
+        hands="Emicho Gauntlets",
         waist="Patentia Sash",
         legs="Carmine Cuisses +1",
     })

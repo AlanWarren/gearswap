@@ -26,7 +26,7 @@ function job_setup()
     
     wsList = S{ 'Savage Blade', 'Impulse Drive', 'Torcleaver'}
     gsList = S{'Macbain', 'Kaquljaan', 'Nativus Halberd'}
-    war_sub_weapons = S{"Sangarius", "Usonmunku", "Perun", "Tanmogayi"}
+    war_sub_weapons = S{"Sangarius", "Usonmunku", "Perun", "Tanmogayi +1", "Reikiko", "Digirbalag"}
 
     get_combat_form()
     get_combat_weapon()
@@ -81,6 +81,9 @@ function init_gear_sets()
     --Odyssean.Feet = {}
     --Odyssean.Feet.FC = { name="Odyssean Greaves", augments={'Attack+20','"Fast Cast"+4','Accuracy+15',}}
 
+    Cichols = {}
+    Cichols.TP = { name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+    Cichols.WS = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 
     Valorous = {}
     Valorous.Feet = {}
@@ -109,7 +112,7 @@ function init_gear_sets()
      --sets.precast.JA['Mighty Strikes'] = {hands="Fallen's Finger Gauntlets +1"}
      sets.precast.JA['Blood Rage'] = { body="Boii Lorica +1" }
      sets.precast.JA['Provoke'] = { hands="Pummeler's Mufflers +1"}
-     sets.precast.JA['Berserk'] = { body="Pummeler's Lorica +1", hands="Warrior's Calligae +2", back="Cichol's Mantle"}
+     sets.precast.JA['Berserk'] = { body="Pummeler's Lorica +1", hands="Warrior's Calligae +2", back=Cichols.TP}
      sets.precast.JA['Aggressor'] = { head="Pummeler's Mask +1"}
 
      sets.CapacityMantle  = { back="Mecistopins Mantle" }
@@ -182,7 +185,7 @@ function init_gear_sets()
          hands="Odyssean Gauntlets",
          ring1="Niqmaddu Ring",
          ring2="Regal Ring",
-         back="Cichol's Mantle",
+         back=Cichols.WS,
          waist="Windbuffet Belt +1",
          legs=Odyssean.Legs.WS,
          feet="Sulevia's Leggings +2"
@@ -269,7 +272,7 @@ function init_gear_sets()
      -- 73% MND - breath damage
      sets.precast.WS.Requiescat = set_combine(sets.precast.WS, {
          neck="Shadow Gorget",
-         back="Cichol's Mantle",
+         back=Cichols.WS,
          waist="Soil Belt",
      })
      sets.precast.WS.Requiescat.Mid = set_combine(sets.precast.WS.Requiscat, sets.precast.WS.Mid)
@@ -399,7 +402,7 @@ function init_gear_sets()
          hands="Sulevia's Gauntlets +2",
          ring1="Niqmaddu Ring",
          ring2="Petrov Ring",
-         back="Cichol's Mantle",
+         back=Cichols.TP,
          waist="Ioskeha Belt",
          legs=Odyssean.Legs.TP,
          feet="Flamma Gambieras +2"
@@ -423,6 +426,7 @@ function init_gear_sets()
      sets.engaged.DW = set_combine(sets.engaged, {
         ear1="Eabani Earring",
         ear2="Suppanomimi",
+        hands="Emicho Gauntlets",
         waist="Shetal Stone"
      })
      sets.engaged.OneHand = set_combine(sets.engaged, {
