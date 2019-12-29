@@ -560,21 +560,21 @@ function job_post_precast(spell, action, spellMap, eventArgs)
                 equip(sets.WSDayBonus)
             end
         end
-        if LugraWSList:contains(spell.english) then
-            if world.time >= (17*60) or world.time <= (7*60) then
-                if spell.english:lower() == 'namas arrow' then
-                    equip(sets.LugraFlame)
-                else
-                    equip(sets.LugraMoonshade)
-                end
-            else
-                if spell.english:lower() == 'namas arrow' then
-                    equip(sets.FlameFlame)
-                else
-                    equip(sets.BrutalMoonshade)
-                end
-            end
-        end
+        -- if LugraWSList:contains(spell.english) then
+        --     if world.time >= (17*60) or world.time <= (7*60) then
+        --         if spell.english:lower() == 'namas arrow' then
+        --             equip(sets.LugraFlame)
+        --         else
+        --             equip(sets.LugraMoonshade)
+        --         end
+        --     else
+        --         if spell.english:lower() == 'namas arrow' then
+        --             equip(sets.FlameFlame)
+        --         else
+        --             equip(sets.BrutalMoonshade)
+        --         end
+        --     end
+        -- end
 		if state.Buff['Meikyo Shisui'] then
 			equip(sets.buff['Meikyo Shisui'])
 		end

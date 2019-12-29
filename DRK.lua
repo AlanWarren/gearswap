@@ -1141,23 +1141,23 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         --     return
         -- end
 
-        if player.tp > 2999 then
-            if wsList:contains(spell.english) then
-                equip(sets.IshvaraLugra)
-            else
-                equip(sets.BrutalLugra)
-            end
-        else -- use Lugra + moonshade
-            if world.time >= (17*60) or world.time <= (7*60) then
-                equip(sets.Lugra)
-            else
-                if wsList:contains(spell.english) then
-                    equip(sets.Ishvara)
-                else
-                    equip(sets.Brutal)
-                end
-            end
-        end
+        -- if player.tp > 2999 then
+        --     if wsList:contains(spell.english) then
+        --         equip(sets.IshvaraLugra)
+        --     else
+        --         equip(sets.BrutalLugra)
+        --     end
+        -- else -- use Lugra + moonshade
+        --     if world.time >= (17*60) or world.time <= (7*60) then
+        --         equip(sets.Lugra)
+        --     else
+        --         if wsList:contains(spell.english) then
+        --             equip(sets.Ishvara)
+        --         else
+        --             equip(sets.Brutal)
+        --         end
+        --     end
+        -- end
     end
 end
 

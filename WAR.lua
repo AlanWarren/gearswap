@@ -488,15 +488,15 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.CapacityMantle)
         end
         
-        if player.tp > 2999 then
-            equip(sets.BrutalLugra)
-        else -- use Lugra + moonshade
-            if world.time >= (17*60) or world.time <= (7*60) then
-                equip(sets.Lugra)
-            else
-                equip(sets.Brutal)
-            end
-        end
+        -- if player.tp > 2999 then
+        --     equip(sets.BrutalLugra)
+        -- else -- use Lugra + moonshade
+        --     if world.time >= (17*60) or world.time <= (7*60) then
+        --         equip(sets.Lugra)
+        --     else
+        --         equip(sets.Brutal)
+        --     end
+        -- end
         -- Use SOA neck piece for WS in rieves
         if buffactive['Reive Mark'] then
             equip(sets.reive)
