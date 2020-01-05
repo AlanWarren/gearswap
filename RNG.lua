@@ -70,7 +70,7 @@ end
  
 function user_setup()
         -- Options: Override default values
-        state.OffenseMode:options('Normal', 'Melee', 'Dynamis')
+        state.OffenseMode:options('Normal', 'Melee')
         state.RangedMode:options('Normal', 'Mid', 'Acc')
         state.HybridMode:options('Normal', 'PDT')
         state.IdleMode:options('Normal', 'PDT')
@@ -84,8 +84,8 @@ function user_setup()
         send_command('bind f9 gs c cycle RangedMode')
         send_command('bind !f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
-        send_command('bind @f9 gs c cycle FlurryMode')
-        send_command('bind @= gs c cycle HasteMode')
+        send_command('bind @f9 gs c cycle HasteMode')
+        send_command('bind @= gs c cycle FlurryMode')
         -- send_command('bind ^] gs c cycle WeaponskillMode')
         -- send_command('bind !- gs equip sets.crafting')
         send_command('bind ^[ input /lockstyle on')
@@ -219,7 +219,7 @@ function init_gear_sets()
         })
         sets.idle.Town = set_combine(sets.idle, {
             head="Arcadian Beret +3",
-            body="Malignance Tabard",
+            body="Orion Jerkin +3",
             ear1="Dedition Earring",
             ear2="Telos Earring",
             neck="Scout's Gorget +2",
@@ -270,21 +270,6 @@ function init_gear_sets()
             waist="Windbuffet Belt +1",
             legs="Meghanada Chausses +2", 
             feet=HercFeet.TP
-        }
-        -- if preshot didn't work, what would you wear?
-        sets.engaged.Dynamis = {
-            head="Arcadian Beret +3",
-            neck="Scout's Gorget +2",
-            ear1="Dedition Earring",
-            ear2="Telos Earring", 
-            body="Malignance Tabard",
-            hands="Malignance Gloves",
-            ring1="Ilabrat Ring",
-            ring2="Regal Ring",
-            back=Belenus.Snap, -- 2% VS / 10 snap 
-            waist="Kwahu Kachina Belt", 
-            legs="Malignance Tights", -- 15
-            feet="Meghanada Jambeaux +2" -- 10
         }
         -- sets.engaged.Bow.Melee = sets.engaged.Melee
 
@@ -486,15 +471,16 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             hands="Carmine Finger Gauntlets +1",
             body="Samnuha Coat",
-            ring1="Ilabrat Ring",
-            ring2="Dingir Ring",
+            ring1="Dingir Ring",
+            ring2="Regal Ring",
             back=Belenus.MAB,
             waist="Eschan Stone",
             legs=HercLegs.MAB,
             feet=HercFeet.MAB
         }
         sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS['Wildfire'], {
-            body="Orion Jerkin +3",
+            --head=HercHead.MAB,
+            body="Samnuha Coat",
             hands=HercHands.MAB,
             legs=HercLegs.MAB
         })
@@ -509,7 +495,6 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             neck="Scout's Gorget +2",
             hands="Carmine Finger Gauntlets +1",
-            --body="Herculean Vest",
             body="Samnuha Coat",
             ring1="Dingir Ring",
             ring2="Weatherspoon Ring",
@@ -520,7 +505,7 @@ function init_gear_sets()
             feet=HercFeet.MAB
         }
         sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {
-            -- body="Orion Jerkin +3",
+            --head=HercHead.MAB,
             body="Samnuha Coat",
             hands=HercHands.MAB,
         })
@@ -542,7 +527,7 @@ function init_gear_sets()
             ear2="Ishvara Earring",
             body="Herculean Vest",
             waist="Thunder Belt",
-            ring1="Ilabrat Ring",
+            ring1="Dingir Ring",
             ring2="Regal Ring",
             back=Belenus.WSD,
             legs="Arcadian Braccae +3", 
@@ -562,8 +547,8 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             body="Arcadian Jerkin +3",
             back=Belenus.WSD,
-            ring1="Ilabrat Ring",
-            ring1="Regal Ring",
+            ring1="Dingir Ring",
+            ring2="Regal Ring",
             waist="Light Belt",
             legs="Arcadian Braccae +3", 
             feet="Arcadian Socks +3"
@@ -617,6 +602,8 @@ function init_gear_sets()
             waist="Light Belt",
             ring2="Mummu Ring",
             back=Belenus.WSD,
+            ring1="Ilabrat Ring",
+            ring2="Regal Ring",
             legs="Arcadian Braccae +3", 
             feet="Thereoid Greaves"
         }
@@ -659,7 +646,7 @@ function init_gear_sets()
             ear1="Sherida Earring",
             ear2="Moonshade Earring",
             body="Mummu Jacket +2",
-            ring1="Epona's Ring",
+            ring1="Ilabrat Ring",
             ring2="Regal Ring",
             hands="Mummu Wrists +2",
             back=Belenus.WSD,
@@ -717,7 +704,7 @@ function job_precast(spell, action, spellMap, eventArgs)
             eventArgs.cancel = true
             return
         end
-        if spell.target.distance >21 then
+        if spell.target.distance > 22 then
             add_to_chat(122,"Outside WS Range! /Canceling")
             eventArgs.cancel = true
             return
@@ -731,6 +718,7 @@ end
 function job_post_precast(spell, action, spellMap, eventArgs)
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
+    end
     -- elseif state.Buff.Overkill then
     --     equip(sets.Overkill.Preshot)
     if spell.type == 'WeaponSkill' then
@@ -743,9 +731,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.CapacityMantle)
         end
     end
-    elseif state.Buff.Barrage then
-        equip(sets.buff.Barrage)
-    end
 end
  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -753,13 +738,13 @@ function job_midcast(spell, action, spellMap, eventArgs)
     if state.Buff.Camouflage then
         equip(sets.buff.Camouflage)
     end
-    -- if state.Buff.Overkill then
-    --     equip(sets.Overkill)
-    -- end
     if spell.action_type == 'Ranged Attack' and state.CapacityMode.value then
         equip(sets.CapacityMantle)
     end
-    elseif state.Buff.Barrage then
+end
+
+function job_post_midcast(spell, action, spellMap, eventArgs)
+    if buffactive["Barrage"] then
         equip(sets.buff.Barrage)
     end
 end
@@ -1026,7 +1011,6 @@ function job_state_change(stateField, newValue, oldValue)
     --         send_command('@input /console gs c cycle GunAmmo')
     --     end
     -- end
-
     if stateField == 'Xbow Ammo' then 
         if rng_xbows:contains(player.equipment.range) then
             equip({ammo=newValue})

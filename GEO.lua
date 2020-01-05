@@ -73,7 +73,7 @@ function init_gear_sets()
 
     sets.precast.FC = {
         main="Sucellus",
-        head="Hyaline Hat",
+        head="Amalric Coif",
         ear1="Malignance Earring",
         ear2="Loquacious Earring",
         hands="Magavan Mitts",
@@ -354,7 +354,6 @@ function init_gear_sets()
         feet="Geomancy Sandals"
     }
     sets.idle.PDT = set_combine(sets.idle, {
-        head="Hike Khat +1",
         neck="Twilight Torque",
         body="Shamash Robe",
         hands="Geomancy Mitaines +1",

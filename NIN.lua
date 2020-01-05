@@ -692,7 +692,7 @@ function init_gear_sets()
     
     sets.Kamu = {
         ammo="Ginsen",
-        neck="Breeze Gorget",
+        neck="Ninja Nodowa +1",
         head="Hachiya Hatsuburi +3",
         back=Andartia.AGI,
         legs="Hizamaru Hizayoroi +2",
@@ -706,7 +706,7 @@ function init_gear_sets()
     sets.Jin = {
         ammo="Yetshila",
         head=HercHead.TP,
-        neck="Breeze Gorget",
+        neck="Ninja Nodowa +1",
         hands="Ryuo Tekko",
         waist="Windbuffet Belt +1",
     }
@@ -720,7 +720,7 @@ function init_gear_sets()
     sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
         ammo="Yetshila",
         head="Hachiya Hatsuburi +3",
-        neck="Shadow Gorget",
+        neck="Ninja Nodowa +1",
         ear1="Ishvara Earring",
         body="Herculean Vest",
         hands="Mummu Wrists +2",
@@ -750,7 +750,7 @@ function init_gear_sets()
     sets.Shun = {
         ammo="Seething Bomblet +1",
         head=HercHead.DM,
-        neck="Flame Gorget",
+        neck="Ninja Nodowa +1",
         hands="Adhemar Wristbands +1",
         body="Adhemar Jacket +1",
         ring1="Regal Ring",
@@ -767,7 +767,7 @@ function init_gear_sets()
     
     -- BLADE: Rin
     sets.Rin = {
-        neck="Defiant Collar",
+        neck="Ninja Nodowa +1",
         waist="Windbuffet Belt +1",
         back=Andartia.DEX,
     }
@@ -778,7 +778,7 @@ function init_gear_sets()
     -- BLADE: KU 
     sets.Ku = {
         head="Rao Kabuto",
-        neck="Shadow Gorget",
+        neck="Ninja Nodowa +1",
         body="Adhemar Jacket +1",
         ring2="Gere Ring",
         back=Andartia.DEX,
@@ -792,10 +792,11 @@ function init_gear_sets()
     
     sets.Ten = {
         head=HercHead.DM,
-        neck="Shadow Gorget",
+        neck="Ninja Nodowa +1",
         ear1="Lugra Earring +1",
         ear2="Moonshade Earring",
         body="Herculean Vest",
+        hands="Regal Gloves",
         ring2="Gere Ring",
         legs="Hizamaru Hizayoroi +2",
         back=Andartia.AGI,
@@ -810,7 +811,19 @@ function init_gear_sets()
         legs="Samnuha Tights",
         feet=HercFeet.TP
     })
-    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, sets.Ten)
+    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, { 
+        head=HercHead.DM,
+        neck="Breeze Gorget",
+        ear1="Lugra Earring +1",
+        ear2="Moonshade Earring",
+        body="Herculean Vest",
+        hands="Regal Gloves",
+        ring2="Gere Ring",
+        legs="Hizamaru Hizayoroi +2",
+        back=Andartia.AGI,
+        waist="Metalsinger Belt",
+        feet="Hizamaru Sune-ate +2" 
+    })
     
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
         head=HercHead.DM,

@@ -166,6 +166,7 @@ function init_gear_sets()
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
+        head="Mummu Bonnet +2"
         --body="Mekosuchinae Harness",
         --legs="Nahtirah Trousers",
     }
