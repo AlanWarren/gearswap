@@ -504,7 +504,7 @@ function init_gear_sets()
 
     -- Delay Cap from spell + songs alone
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
         ear2="Cessance Earring",
@@ -518,7 +518,7 @@ function init_gear_sets()
         feet=HercFeet.TP
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         ear1="Telos Earring",
         ear2="Cessance Earring",
         ring2="Gere Ring",
@@ -552,7 +552,7 @@ function init_gear_sets()
 
     -- 35% Haste 
     sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         ear1="Brutal Earring",
         ear2="Suppanomimi",
         hands="Floral Gauntlets",
@@ -565,7 +565,7 @@ function init_gear_sets()
         hands="Floral Gauntlets",
     })
     sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         ear1="Telos Earring",
         ear2="Cessance Earring",
         hands="Adhemar Wristbands +1",
@@ -588,7 +588,7 @@ function init_gear_sets()
 
     -- 30% Haste 1626 / 798  +260 acc
     sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         neck="Ninja Nodowa +1",
         ear1="Brutal Earring",
         ear2="Suppanomimi", 
@@ -602,7 +602,7 @@ function init_gear_sets()
         feet="Hizamaru Sune-ate +2" 
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, {
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         neck="Ninja Nodowa +1",
         ear2="Cessance Earring",
         ring1="Ilabrat Ring",
@@ -705,7 +705,7 @@ function init_gear_sets()
     -- BLADE: JIN
     sets.Jin = {
         ammo="Yetshila",
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         neck="Ninja Nodowa +1",
         hands="Ryuo Tekko",
         waist="Windbuffet Belt +1",
@@ -740,7 +740,8 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
-        head=HercHead.DM,
+        --head=HercHead.DM,
+        head="Adhemar Bonnet +1",
         ear2="Cessance Earring",
         body="Kendatsuba Samue",
         legs="Kendatsuba Hakama",

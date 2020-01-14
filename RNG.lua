@@ -258,7 +258,7 @@ function init_gear_sets()
         sets.engaged.Bow = set_combine(sets.engaged, {})
 
         sets.engaged.Melee = {
-            head=HercHead.TP,
+            head="Adhemar Bonnet +1",
             neck="Scout's Gorget +2",
             ear1="Sherida Earring",
             ear2="Brutal Earring",
@@ -284,7 +284,7 @@ function init_gear_sets()
         sets.engaged.DW = sets.engaged
 
         sets.engaged.DW.Melee = set_combine(sets.engaged.Melee, {
-            head=HercHead.TP,
+            head="Adhemar Bonnet +1",
             neck="Scout's Gorget +2",
             ear1="Eabani Earring",
             ear2="Suppanomimi",

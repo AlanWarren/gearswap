@@ -430,7 +430,7 @@ function init_gear_sets()
     
     sets.midcast['Blue Magic'].Physical = {
         ammo="Ginsen",
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         neck="Mirage Stole +1",
         ear1="Flame Pearl",
         ear2="Flame Pearl",
@@ -685,7 +685,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
         ammo="Ginsen",
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         neck="Mirage Stole +1",
         ear1="Eabani Earring",
         ear2="Suppanomimi",
@@ -700,7 +700,7 @@ function init_gear_sets()
     }
 
     sets.engaged.Mid = set_combine(sets.engaged, {
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         legs=HercLegs.TP,
         neck="Mirage Stole +1",
     })

@@ -119,13 +119,13 @@ function init_gear_sets()
 
     sets.buff['Sneak Attack'] = {
         ammo="Yetshila",
-        head="Meghanada Visor +2",
+        head="Adhemar Bonnet +1",
         neck="Assassin's Gorget +1",
         body="Meghanada Cuirie +2",
-        hands="Meghanada Gloves +2",
+        hands="Malignance Gloves",
         ring1="Regal Ring",
         ring2="Ilabrat Ring",
-        waist="Chaac Belt",
+        -- waist="Chaac Belt",
         back=Toutatis.WSD,
         legs="Pillager's Culottes +3",
         feet="Mummu Gamashes +2"
@@ -133,7 +133,7 @@ function init_gear_sets()
 
     sets.buff['Trick Attack'] = {
         ammo="Tengu-no-hane",
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         neck="Assassin's Gorget +1",
         ear2="Sherida Earring",
         body="Mummu Jacket +2",
@@ -172,7 +172,7 @@ function init_gear_sets()
     }
     -- TH actions
     sets.precast.Step = {
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         neck="Assassin's Gorget +1",
         ear1="Brutal Earring",
         ear2="Sherida Earring",
@@ -441,11 +441,11 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         ammo="Yamarang",
-        head="Pillager's bonnet +3",
+        head="Adhemar Bonnet +1",
         neck="Assassin's Gorget +1",
         ear1="Telos Earring",
         ear2="Sherida Earring",
-        body="Pillager's Vest +3",
+        body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         ring1="Regal Ring",
         ring2="Gere Ring",
@@ -511,8 +511,8 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
-        ammo="Yetshila",
-        head=HercHead.TP,
+        ammo="Yamarang",
+        head="Adhemar Bonnet +1",
         neck="Assassin's Gorget +1",
         ear1="Eabani Earring",
         ear2="Suppanomimi",
@@ -526,14 +526,14 @@ function init_gear_sets()
         feet=HercFeet.TP
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         ammo="Yamarang",
         --ring1="Petrov Ring",
         legs="Pillager's culottes +3",
         -- feet="Mummu Gamashes +2"
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        head="Malignance Chapeau",
+        head="Pillager's Bonnet +3",
         neck="Assassin's Gorget +1",
         ear1="Telos Earring",
         ear2="Suppanomimi",
@@ -661,7 +661,7 @@ function init_gear_sets()
 
     -- Haste 43%
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         neck="Assassin's Gorget +1",
         ear1="Brutal Earring",
         ear2="Sherida Earring",
@@ -675,7 +675,7 @@ function init_gear_sets()
         feet=HercFeet.TP
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, { 
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         ear1="Telos Earring",
         body="Pillager's Vest +3",
         ring1="Regal Ring",

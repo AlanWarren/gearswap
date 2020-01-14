@@ -36,6 +36,8 @@ function job_setup()
 
     include('Mote-TreasureHunter')
     state.TreasureMode:set('None')
+    -- this is used for melee when single wielding
+    state.RAMode = M(false, 'RAMode')
     
     state.AutoRA = M{['description']='Auto RA', 'Normal', 'Shoot', 'WS' }
 
@@ -73,7 +75,7 @@ function user_setup()
     -- Additional local binds
     -- Cor doesn't use hybrid defense mode; using that for ranged mode adjustments.
     send_command('bind f9 gs c cycle OffenseMode')
-    send_command('bind !f9 gs c cycle OffenseMode')
+    send_command('bind !f9 gs c toggle RAMode')
     send_command('bind ^` input /ja "Double-up" <me>')
     send_command('bind !` input /ja "Bolter\'s Roll" <me>')
     send_command('bind != gs c toggle CapacityMode')
@@ -168,7 +170,7 @@ function init_gear_sets()
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
     --sets.precast.FoldDoubleBust = {hands="Lanun Gants"}
     
-    sets.precast.CorsairShot = {}
+    sets.precast.CorsairShot = { head="Laksamana's Tricorne +2" }
     
 
     -- Waltz set (chr and vit)
@@ -197,10 +199,10 @@ function init_gear_sets()
         head=HercHead.TP,
         ear1="Loquacious Earring",
         ear2="Etiolation Earring",
-        ring1="Weatherspoon Ring",
-        ring2="Kishar Ring",
         body="Dread Jupon",
         hands="Leyline Gloves",
+        ring1="Weatherspoon Ring",
+        ring2="Kishar Ring",
         legs="Quiahuiz Trousers",
     }
 
@@ -258,6 +260,7 @@ function init_gear_sets()
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, { 
+        head="Adhemar Bonnet +1",
         ear1="Cessance Earring",
         ear2="Moonshade Earring",
         body="Herculean Vest",
@@ -272,7 +275,18 @@ function init_gear_sets()
 
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {legs="Samnuha Tights"})
 
-    sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {ear2="Moonshade Earring", legs="Samnuha Tights"})
+    sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
+        head="Adhemar Bonnet +1",
+        body="Adhemar Jacket +1",
+        neck="Shadow Gorget",
+        ear1="Telos Earring",
+        ear2="Moonshade Earring",
+        hands="Meghanada Gloves +2",
+        ring1="Ilabrat Ring",
+        ring2="Regal Ring",
+        legs="Meghanada Chausses +2",
+        waist="Soil Belt",
+    })
 
     sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
         ammo=gear.WSbullet,
@@ -360,7 +374,7 @@ function init_gear_sets()
     sets.midcast.CorsairShot = {
         ammo=gear.QDbullet,
         --head=HercHead.MAB,
-        head="Malignance Chapeau",
+        head="Laksamana's Tricorne +2",
         neck="Sanctity Necklace",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
@@ -377,7 +391,7 @@ function init_gear_sets()
 
     sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
         body="Lanun Frac +3",
-        head="Malignance Chapeau",
+        head="Laksamana's Tricorne +2",
         ear1="Lempo Earring",
         ear2="Gwati Earring",
         feet="Navarch's Bottes +2"
@@ -411,9 +425,17 @@ function init_gear_sets()
     })
 
     sets.midcast.RA.TripleShot = set_combine(sets.midcast.RA, {
-        body="Chasseur's Frac +1"
+        head="Oshosi Mask",
+        body="Chasseur's Frac +1",
+        hands="Oshosi Gloves",
+        legs="Oshosi Trousers",
+        feet="Oshosi Leggings"
+    })
+    sets.midcast.RA.TripleShot.Mid = set_combine(sets.midcast.RA.TripleShot, {
+        body="Malignance Tabard",
     })
     sets.midcast.RA.TripleShot.Acc = set_combine(sets.midcast.RA.TripleShot, {
+        head="Malignance Chapeau",
         body="Malignance Tabard",
         ring2="Cacoethic Ring +1",
         feet="Meghanada Jambeaux +2"
@@ -450,12 +472,12 @@ function init_gear_sets()
 
     sets.idle.Town = {
         ammo=gear.RAbullet,
-        head="Malignance Chapeau",
+        head="Adhemar Bonnet +1",
         neck="Regal Necklace",
         ear1="Telos Earring",
         ear2="Dedition Earring",
-        body="Laksamana's Frac +3",
-        hands="Malignance Gloves",
+        body="Adhemar Jacket +1",
+        hands="Adhemar Wristbands +1",
         ring1="Ilabrat Ring",
         ring2="Regal Ring",
         back=Camulus.STP,
@@ -495,7 +517,7 @@ function init_gear_sets()
     
     sets.engaged = {
         ammo=gear.RAbullet,
-        head=HercHead.TP,
+        head="Adhemar Bonnet +1",
         ear1="Eabani Earring",
         ear2="Suppanomimi",
         neck="Iskur gorget",
@@ -508,6 +530,18 @@ function init_gear_sets()
         back=Camulus.STP,
         feet="Taeon Boots",
     }
+    -- sets.engaged.Single = set_combine(sets.engaged, {
+    --     ear1="Brutal Earring",
+    --     ear2="Cessance Earring",
+    --     hands="Adhemar Wristbands +1",
+    --     waist="Windbuffet Belt +1",
+    --     legs="Samnuha Tights",
+    --     feet=HercFeet.TP
+    -- })
+    -- sets.engaged.Single.Haste_15 = sets.engaged.Single
+    -- sets.engaged.Single.Haste_30 = sets.engaged.Single
+    -- sets.engaged.Single.MaxHaste = sets.engaged.Single
+
     sets.engaged.Ranged = {
         ammo=gear.RAbullet,
         head="Malignance Chapeau",
@@ -549,13 +583,13 @@ function init_gear_sets()
 
     sets.engaged.Mid = set_combine(sets.engaged, {
         neck="Lissome Necklace",
-        ring2="Ilabrat Ring"
+        ring1="Ilabrat Ring"
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.defense.PDT)
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         neck="Lissome Necklace",
-        ring2="Ilabrat Ring"
+        ring1="Ilabrat Ring"
     })
     sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Mid, {
         feet=HercFeet.TP
@@ -580,7 +614,7 @@ function init_gear_sets()
     sets.engaged.Mid.PDT.MaxHaste = sets.engaged.PDT
     
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        head=HercHead.TP,
+        head="Malignance Chapeau",
         waist="Olseni Belt",
     })
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.defense.PDT)
@@ -749,7 +783,7 @@ function job_buff_change(buff, gain)
             handle_equipping_gear(player.status)
         end
     else
-        if state.CombatForm.current ~= 'Ranged' then
+        if state.CombatForm.current ~= 'Ranged' or state.CombatForm ~= 'Single' then
             state.CombatForm:reset()
         end
         if not midaction() then
@@ -779,10 +813,9 @@ function job_buff_change(buff, gain)
 end
 
 function update_combat_form()
+    state.CombatForm:reset()
     if state.Buff['Triple Shot'] then
         state.CombatForm:set('TripleShot')
-    else
-        state.CombatForm:reset()
     end
 end
 -------------------------------------------------------------------------------------------------------------------
@@ -865,7 +898,11 @@ function get_combat_form()
     state.CombatForm:reset()
     --if player.equipment.main == gear.Stave then
     if cor_sub_weapons:contains(player.equipment.sub) then
-        state.CombatForm:set("Ranged")
+        if not state.RAMode.value then
+            state.CombatForm:set("Single")
+        else
+            state.CombatForm:set("Ranged")
+        end
     end
     if state.Buff['Triple Shot'] then
         state.CombatForm:set('Triple')
