@@ -34,9 +34,8 @@ Gavialis helm
 Status: enabled
 Setting: set use_gavialis = true below in job_setup. 
 
-Notes: Gavialis Helm will automatically be used for all weaponskills on their respective days of the week. If you would like to 
-exclude a weapon skill, you must add it to wsList below. (found in job_setup) You also need my User-Globals.lua for this
-to even work. 
+Notes: wslist defines weaponskills uused with Gavialis helm. This is a recent change Jan/2020, as it 
+used to be the opposite, where you defined ws's that you didn't want to use it.
 
 Ygna's Resolve +1 
 Status: enabled in Reive
@@ -106,8 +105,8 @@ function job_setup()
     -- Use Gavialis helm?
     use_gavialis = true
 
-    -- Weaponskills you do NOT want Gavialis helm used with (only considered if use_gavialis = true)
-    wsList = S{'Spiral Hell', 'Catastrophe', 'Torcleaver', 'Insurgency', 'Quietus', 'Cross Reaper'}
+    -- Weaponskills you want Gavialis helm used with (only considered if use_gavialis = true)
+    wsList = S{'Entropy', 'Resolution'}
     -- Greatswords you use. 
     gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Raetic Algol +1', 'Caladbolg', 'Montante +1', 'Albion' }
     scytheList = S{'Liberator', 'Apocalypse', 'Anguta', 'Raetic Scythe', 'Deathbane', 'Twilight Scythe' }
@@ -353,6 +352,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Eabani Earring", -- 3
         body="Heathen's Cuirass +1",
+        --body="Ratri Breastplate +1",
         hands="Fallen's Finger Gauntlets +1",
         back="Trepidity Mantle",
     })
@@ -501,7 +501,7 @@ function init_gear_sets()
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
         head="Ratri Sallet +1",
         neck="Abyssal Bead Necklace +2",
-        body="Ignominy Cuirass +3",
+        body="Ratri Breastplate +1",
         legs="Fallen's Flanchard +3",
         ring2="Regal Ring",
         waist="Light Belt",
@@ -510,14 +510,15 @@ function init_gear_sets()
     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {})
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
         ammo="Seething Bomblet +1",
-        body="Fallen's Cuirass +3",
+        body="Ratri Breastplate +1",
     })
 
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
         head="Ratri Sallet +1",
         ear2="Ishvara Earring",
         neck="Abyssal Bead Necklace +2",
-        body="Ignominy Cuirass +3",
+        --body="Ignominy Cuirass +3",
+        body="Ratri Breastplate +1",
         legs="Fallen's Flanchard +3",  
         waist="Soil Belt",
         feet="Ratri Sollerets +1"
@@ -537,7 +538,8 @@ function init_gear_sets()
     -- 60% STR / 60% MND
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
         head="Ratri Sallet +1",
-        body="Ignominy Cuirass +3",
+        --body="Ignominy Cuirass +3",
+        body="Ratri Breastplate +1",
         waist="Metalsinger Belt",
         legs="Fallen's Flanchard +3",
         feet="Ratri Sollerets +1"
@@ -573,7 +575,8 @@ function init_gear_sets()
     sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
         head="Ratri Sallet +1",
         neck="Abyssal Bead Necklace +2",
-        body="Ignominy Cuirass +3",
+        --body="Ignominy Cuirass +3",
+        body="Ratri Breastplate +1",
         hands="Odyssean Gauntlets",
         waist="Caudata Belt",
         legs="Fallen's Flanchard +3",  
@@ -669,9 +672,10 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Ratri Sallet +1",
         neck="Abyssal Bead Necklace +2",
-        ear1="Dedition Earring",
+        ear1="Thrud Earring",
         ear2="Telos Earring",
-        body="Tartarus Platemail",
+        --body="Tartarus Platemail",
+        body="Ratri Breastplate +1",
         ring1="Niqmaddu Ring",
         ring2="Regal Ring",
         back=Ankou.DA,
@@ -1120,15 +1124,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     -- Make sure abilities using head gear don't swap 
     if spell.type:lower() == 'weaponskill' then
         -- handle Gavialis Helm
-        -- if use_gavialis then
-        --     if is_sc_element_today(spell) then
-        --         if wsList:contains(spell.english) then
-        --             -- do nothing
-        --         else
-        --             equip(sets.WSDayBonus)
-        --         end
-        --     end
-        -- end
+        if use_gavialis then
+            if is_sc_element_today(spell) then
+                if wsList:contains(spell.english) then
+                    equip(sets.WSDayBonus)
+                end
+            end
+        end
         -- CP mantle must be worn when a mob dies, so make sure it's equipped for WS.
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
@@ -1140,6 +1142,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         --     --windower.chat.input:schedule(1, '/ws "Entropy" <t>')
         --     return
         -- end
+        if spell.english == 'Insurgency' then
+            if world.time >= (17*60) or world.time <= (7*60) then
+                equip(sets.Lugra)
+            end
+        end
 
         -- if player.tp > 2999 then
         --     if wsList:contains(spell.english) then
@@ -1294,13 +1301,13 @@ function job_buff_change(buff, gain)
         end
     end
     -- Drain II/III HP Boost. Set SE to stay on.
-    if buff == "Max HP Boost" and state.SouleaterMode.value then
-        if gain or buffactive['Max HP Boost'] then
-            state.SouleaterMode:set(false)
-        else
-            state.SouleaterMode:set(true)
-        end
-    end
+    -- if buff == "Max HP Boost" and state.SouleaterMode.value then
+    --     if gain or buffactive['Max HP Boost'] then
+    --         state.SouleaterMode:set(false)
+    --     else
+    --         state.SouleaterMode:set(true)
+    --     end
+    -- end
     -- Make sure SE stays on for BW
     if buff == 'Blood Weapon' and state.SouleaterMode.value then
         if gain or buffactive['Blood Weapon'] then

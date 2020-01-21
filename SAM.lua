@@ -360,15 +360,16 @@ function init_gear_sets()
     sets.idle.Field = set_combine(sets.idle.Town, {
         ammo="Staunch Tathlum",
         head="Valorous Mask",
-        neck="Twilight Torque",
+        neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
    	    body="Tartarus Platemail",
         hands="Sakonji Kote +1",
         ring1="Dark Ring",
+        ring2="Defending Ring",
         back=Smertrios.TP,
         waist="Flume Belt",
-        legs="Ryuo Hakama",
+        legs="Kendatsuba Hakama",
         feet="Danzo Sune-ate"
     })
 

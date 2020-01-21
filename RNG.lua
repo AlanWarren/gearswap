@@ -315,7 +315,8 @@ function init_gear_sets()
         -- TODO: Yemaya Belt + Pursuer's Pants
         ------------------------------------------------------------------
         sets.precast.RA = {
-            head=TaeonHead.Snap, -- 9
+            --head=TaeonHead.Snap, -- 9
+            head="Orion Beret +3",
             neck="Scout's gorget +2", -- 4
             body="Amini Caban +1", -- 7% VS
             hands="Carmine Finger Gauntlets +1",
@@ -474,7 +475,7 @@ function init_gear_sets()
             ring1="Dingir Ring",
             ring2="Regal Ring",
             back=Belenus.MAB,
-            waist="Eschan Stone",
+            waist="Sveltesse Gouriz +1",
             legs=HercLegs.MAB,
             feet=HercFeet.MAB
         }
@@ -499,7 +500,7 @@ function init_gear_sets()
             ring1="Dingir Ring",
             ring2="Weatherspoon Ring",
             back=Belenus.MAB,
-            waist="Eschan Stone",
+            waist="Sveltesse Gouriz +1",
             legs=HercLegs.MAB,
             --legs="Arcadian Braccae +3", 
             feet=HercFeet.MAB

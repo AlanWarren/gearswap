@@ -40,6 +40,7 @@ function job_setup()
     state.RAMode = M(false, 'RAMode')
     
     state.AutoRA = M{['description']='Auto RA', 'Normal', 'Shoot', 'WS' }
+    state.WeaponMode = M{['description']='Weapon Mode', 'Sword', 'Dagger'}
 
     cor_sub_weapons = S{"Nusku Shield"}
     auto_gun_ws = "Leaden Salute"
@@ -148,6 +149,7 @@ function init_gear_sets()
     AdhemarLegs.TP = { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
 
     sets.precast.CorsairRoll = {
+        --range="Compensator",
         head="Lanun Tricorne +1",
         hands="Chasseur's Gants +1",
         ear2="Etiolation Earring",
@@ -159,6 +161,9 @@ function init_gear_sets()
         legs="Malignance Tights",
         feet="Lanun Bottes +2"
     }
+    sets.Swords = {main="Naegling", sub="Tauret"}
+    sets.Daggers = {main="Tauret", sub="Odium"}
+    sets.Empty = {main=empty, sub=empty}
     
     sets.TreasureHunter = { head="White Rarab Cap +1", waist="Chaac Belt" }
     --sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
@@ -312,14 +317,14 @@ function init_gear_sets()
         ammo=gear.MAbullet,
         head=HercHead.DM,
         neck="Sanctity Necklace",
-        ear1="Ishvara Earring",
-        ear2="Friomisi Earring",
+        ear1="Friomisi Earring",
+        ear2="Crematio Earring",
         body="Lanun Frac +3",
         hands="Carmine Finger Gauntlets +1",
         ring1="Dingir Ring",
         ring2="Regal Ring",
         back=Camulus.WSD,
-        waist="Eschan Stone",
+        waist="Sveltesse Gouriz +1",
         legs=HercLegs.MAB,
         feet="Lanun Bottes +2"
     }
@@ -339,7 +344,7 @@ function init_gear_sets()
         ring1="Dingir Ring",
         ring2="Regal Ring",
         back=Camulus.WSD,
-        waist="Eschan Stone",
+        waist="Sveltesse Gouriz +1",
         legs=HercLegs.MAB,
         feet="Lanun Bottes +2"
     }
@@ -449,6 +454,7 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {
         ammo=gear.RAbullet,
+        --range="Fomalhaut",
         head="Malignance Chapeau",
         neck="Sanctity Necklace",
         ear1="Eabani Earring",
@@ -517,6 +523,7 @@ function init_gear_sets()
     
     sets.engaged = {
         ammo=gear.RAbullet,
+        --range="Fomalhaut",
         head="Adhemar Bonnet +1",
         ear1="Eabani Earring",
         ear2="Suppanomimi",
@@ -862,31 +869,7 @@ end
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
     local msg = ''
-    msg = msg .. 'MODE: '..state.OffenseMode.current
-    -- msg = msg .. ', Rng.: '..state.RangedMode.current
-    -- msg = msg .. ', WS.: '..state.WeaponskillMode.current
-    msg = msg .. ', QD.: '..state.CastingMode.current
-
-    -- if state.AutoRA.value ~= 'Normal' then
-    --     msg = '[Auto RA: ON]['..state.AutoRA.value..']'
-    -- else
-    --     msg = msg .. '[Auto RA: OFF]'
-    -- end
-    if state.DefenseMode.value ~= 'None' then
-        local defMode = state[state.DefenseMode.value ..'DefenseMode'].current
-        msg = msg .. ', Defense: '..state.DefenseMode.value..' '..defMode
-    end
-    -- if state.Kiting.value then
-    --     msg = msg .. ', Kiting'
-    -- end
-    if state.PCTargetMode.value ~= 'default' then
-        msg = msg .. ', Target PC: '..state.PCTargetMode.value
-    end
-    if state.SelectNPCTargets.value then
-        msg = msg .. ', Target NPCs'
-    end
-
-    msg = msg .. ', ROLL SIZE: ' .. ((state.LuzafRing.value and 'Large') or 'Small')
+    msg = msg .. 'WEAPONMODE: '..state.WeaponMode.current
     add_to_chat(122, msg)
     eventArgs.handled = true
 end
@@ -1098,7 +1081,16 @@ function job_state_change(stateField, newValue, oldValue)
         if newValue ~= 'Normal' then
             send_command('@wait 2.5; input /ra <t>')
         end
+    elseif stateField == 'Weapon Mode' then
+        if newValue == 'Sword' then
+            equip(sets.Empty)
+            send_command('@wait 1; input //gs equip sets.Swords')
+        elseif newValue == 'Dagger' then
+            equip(sets.Empty)
+            send_command('@wait 1; input //gs equip sets.Daggers')
+        end
     end
+
 end
 
 -- State buff checks that will equip buff gear and mark the event as handled.
