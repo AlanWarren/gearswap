@@ -98,8 +98,8 @@ function init_gear_sets()
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
     HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
-    HercLegs.TP = { name="Herculean Trousers", augments={'Accuracy+26','"Triple Atk."+4',}}
-    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +2%','STR+8','Mag. Acc.+5','"Mag.Atk.Bns."+6',}}
+    HercLegs.WSD = { name="Herculean Trousers", augments={'DEX+4','INT+7','Weapon skill damage +10%','Accuracy+3 Attack+3',}}
+    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+5','"Mag.Atk.Bns."+14',}} 
 
     Toutatis = {}
     Toutatis.STP = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
@@ -246,7 +246,7 @@ function init_gear_sets()
         ring2="Gere Ring",
         back=Toutatis.WSD,
         waist="Windbuffet Belt +1",
-        legs="Pillager's culottes +3",
+        legs=HercLegs.WSD,
         feet=HercFeet.TP
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -330,7 +330,7 @@ function init_gear_sets()
         ring2="Gere Ring",
         hands="Meghanada Gloves +2",
         waist="Metalsinger Belt",
-        legs="Meghanada Chausses +2",
+        legs=HercLegs.WSD,
         back=Toutatis.WSD,
         feet=HercFeet.TP
     })
@@ -344,16 +344,16 @@ function init_gear_sets()
         ring2="Ilabrat Ring",
         waist="Snow Belt",
         back=Toutatis.WSD,
-        legs="Pillager's culottes +3",
+        legs=HercLegs.WSD,
         feet=HercFeet.TP
     })
     sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {
-        legs="Pillager's culottes +3",
         body="Herculean Vest",
         back=Toutatis.WSD,
         feet="Mummu Gamashes +2"
     })
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
+        legs="Pillager's culottes +3",
         head="Pillager's bonnet +3",
         body="Pillager's Vest +3",
         waist="Olseni Belt"
@@ -379,7 +379,7 @@ function init_gear_sets()
         hands="Pillager's Armlets +1", 
         ring1="Regal Ring",
         ring2="Ilabrat Ring", 
-        legs="Pillager's culottes +3",
+        legs=HercLegs.WSD,
     })
     sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {
         head="Pillager's bonnet +3",
@@ -518,7 +518,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
-        ring1="Epona's Ring",
+        ring1="Hetairoi Ring",
         ring2="Gere Ring",
         back=Toutatis.STP,
         waist="Patentia Sash",
@@ -667,7 +667,7 @@ function init_gear_sets()
         ear2="Sherida Earring",
         body="Pillager's Vest +3",
         hands="Adhemar Wristbands +1",
-        ring1="Epona's Ring",
+        ring1="Hetairoi Ring",
         ring2="Gere Ring",
         back=Toutatis.STP,
         waist="Windbuffet Belt +1",

@@ -130,8 +130,8 @@ function init_gear_sets()
         HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
         HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
-        HercLegs.TP = { name="Herculean Trousers", augments={'Accuracy+26','"Triple Atk."+4',}}
-        HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +2%','STR+8','Mag. Acc.+5','"Mag.Atk.Bns."+6',}}
+        HercLegs.WSD = { name="Herculean Trousers", augments={'DEX+4','INT+7','Weapon skill damage +10%','Accuracy+3 Attack+3',}}
+        HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+5','"Mag.Atk.Bns."+14',}} 
         
         AdhemarLegs = {}
         AdhemarLegs.Snap = { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}}
@@ -264,7 +264,7 @@ function init_gear_sets()
             ear2="Brutal Earring",
             body="Adhemar Jacket +1",
             hands="Adhemar Wristbands +1",
-            ring1="Petrov Ring",
+            ring1="Hetairoi Ring",
             ring2="Epona's Ring",
             back="Grounded Mantle +1",
             waist="Windbuffet Belt +1",
@@ -509,6 +509,7 @@ function init_gear_sets()
             --head=HercHead.MAB,
             body="Samnuha Coat",
             hands=HercHands.MAB,
+            legs="Arcadian Braccae +3", 
         })
         sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
             --head="Mummu Bonnet +2",
@@ -546,7 +547,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Sherida Earring",
             ear2="Moonshade Earring",
-            body="Arcadian Jerkin +3",
+            body="Herculean Vest",
             back=Belenus.WSD,
             ring1="Dingir Ring",
             ring2="Regal Ring",
@@ -555,7 +556,7 @@ function init_gear_sets()
             feet="Arcadian Socks +3"
         })
         sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS['Last Stand'], {
-            body="Meghanada Cuirie +2",
+            body="Arcadian Jerkin +3",
         })
         sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'].Mid, {
             legs="Arcadian Braccae +3", 

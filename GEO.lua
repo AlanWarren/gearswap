@@ -235,7 +235,7 @@ function init_gear_sets()
         ear1="Malignance Earring",
         head="Mallquis Chapeau +1",
         hands="Mallquis Cuffs +1",
-        body="Mallquis Saio +1",
+        body="Mallquis Saio +2",
         ring2="Mallquis Ring",
         legs="Mallquis Trews +1",
         feet="Mallquis CLogs +1"

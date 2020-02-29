@@ -130,8 +130,8 @@ function init_gear_sets()
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
     HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
     
-    HercLegs.TP = { name="Herculean Trousers", augments={'Accuracy+26','"Triple Atk."+4',}}
-    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Weapon skill damage +2%','STR+8','Mag. Acc.+5','"Mag.Atk.Bns."+6',}}
+    HercLegs.WSD = { name="Herculean Trousers", augments={'DEX+4','INT+7','Weapon skill damage +10%','Accuracy+3 Attack+3',}}
+    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+5','"Mag.Atk.Bns."+14',}} 
 
     TaeonHands = {}
     TaeonHands.Snap = {name="Taeon Gloves", augments={'"Snapshot"+5', 'Attack+22','"Snapshot"+5'}}
@@ -395,7 +395,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
-        ring1="Epona's Ring",
+        ring1="Hetairoi Ring",
         ring2="Gere Ring",
         back=Andartia.DEX,
         legs="Kendatsuba Hakama",
@@ -510,7 +510,7 @@ function init_gear_sets()
         ear2="Cessance Earring",
         body="Kendatsuba Samue",
         hands="Adhemar Wristbands +1",
-        ring1="Epona's Ring",
+        ring1="Hetairoi Ring",
         ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
@@ -594,7 +594,7 @@ function init_gear_sets()
         ear2="Suppanomimi", 
         body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
-        ring1="Epona's Ring",
+        ring1="Hetairoi Ring",
         ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
@@ -635,7 +635,7 @@ function init_gear_sets()
         ear2="Suppanomimi",
         body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
-        ring1="Epona's Ring",
+        ring1="Hetairoi Ring",
         ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Patentia Sash",
@@ -679,7 +679,8 @@ function init_gear_sets()
         ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
-        legs="Hizamaru Hizayoroi +2",
+        legs=HercLegs.WSD,
+        --legs="Hizamaru Hizayoroi +2",
         feet=HercFeet.TP
     }
     
@@ -799,7 +800,8 @@ function init_gear_sets()
         body="Herculean Vest",
         hands="Regal Gloves",
         ring2="Gere Ring",
-        legs="Hizamaru Hizayoroi +2",
+        --legs="Hizamaru Hizayoroi +2",
+        legs=HercLegs.WSD,
         back=Andartia.AGI,
         waist="Metalsinger Belt",
     }
@@ -820,7 +822,8 @@ function init_gear_sets()
         body="Herculean Vest",
         hands="Regal Gloves",
         ring2="Gere Ring",
-        legs="Hizamaru Hizayoroi +2",
+        --legs="Hizamaru Hizayoroi +2",
+        legs=HercLegs.WSD,
         back=Andartia.AGI,
         waist="Metalsinger Belt",
         feet="Hizamaru Sune-ate +2" 

@@ -185,8 +185,11 @@ function init_gear_sets()
 
     Valorous = {}
     Valorous.Feet = {}
+    Valorous.Body = {}
     Valorous.Feet.TH = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
     Valorous.Feet.TP = { name="Valorous Greaves", augments={'Accuracy+27','"Store TP"+6','INT+1',}}
+    Valorous.Body.STP = { name="Valorous Mail", augments={'Accuracy+30','"Store TP"+6','DEX+3','Attack+14',}}
+    Valorous.Body.DA = { name="Valorous Mail", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+4','VIT+4','Attack+6',}}
 
     sets.TreasureHunter = { 
         head="White rarab cap +1", 
@@ -798,7 +801,7 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +2",
         ear1="Cessance Earring",
         ear2="Brutal Earring",
-        body="Valorous Mail",
+        body=Valorous.Body.STP,
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Petrov Ring",
@@ -810,7 +813,7 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged, {
         ear2="Telos Earring",
         ring2="Regal Ring",
-        body="Valorous Mail",
+        body=Valorous.Body.STP
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         -- ammo="Hasty Pinion +1",
@@ -850,13 +853,13 @@ function init_gear_sets()
     sets.engaged.Liberator.AM3 = set_combine(sets.engaged.Liberator, {
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
-        body="Valorous Mail",
+        body=Valorous.Body.STP,
         neck="Abyssal Bead Necklace +2",
         hands="Flamma Manopolas +2",
         ear1="Dedition Earring",
         ear2="Telos Earring",
         ring1="Niqmaddu Ring",
-        ring2="Flamma Ring",
+        ring2="Hetairoi Ring",
         back=Ankou.STP,
         waist="Sailfi Belt +1",
         legs=Odyssean.Legs.TP,
@@ -924,7 +927,9 @@ function init_gear_sets()
     sets.engaged.Apocalypse = set_combine(sets.engaged, {
         ear1="Cessance Earring",
         ear2="Brutal Earring",
+        body=Valorous.Body.DA,
         hands="Sulevia's Gauntlets +2",
+        ring2="Hetairoi Ring",
         back=Ankou.DA
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
@@ -1032,6 +1037,7 @@ function init_gear_sets()
     -- Caladbolg
     sets.engaged.Caladbolg = set_combine(sets.engaged.GreatSword, {
         hands="Sulevia's Gauntlets +2",
+        body=Valorous.Body.DA,
         back=Ankou.DA
     })
     sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {

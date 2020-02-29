@@ -298,6 +298,7 @@ function init_gear_sets()
          ring1="Niqmaddu Ring",
          ring2="Regal Ring",
          waist="Flume Belt",
+         back=Cichols.TP,
          legs=Odyssean.Legs.TP,
          feet="Hermes' Sandals"
      }
@@ -431,6 +432,7 @@ function init_gear_sets()
         waist="Shetal Stone"
      })
      sets.engaged.OneHand = set_combine(sets.engaged, {
+        ring1="Hetairoi Ring",
      })
 
      sets.engaged.GreatSword = set_combine(sets.engaged, {

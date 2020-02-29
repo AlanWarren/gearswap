@@ -114,6 +114,7 @@ function init_gear_sets()
      }
 
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
+        legs="Vishap Brais +2",
     }) 
 	sets.precast.JA['Soul Jump'] = set_combine(sets.precast.JA.Jump, {
         legs="Peltast's Cuissots +1"
@@ -190,7 +191,7 @@ function init_gear_sets()
         ring2="Regal Ring",
 		back=Brigantia.WS,
         waist="Windbuffet Belt +1",
-        legs="Sulevia's Cuisses +2",
+        legs="Vishap Brais +2",
         feet="Sulevia's Leggings +2"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -238,7 +239,7 @@ function init_gear_sets()
         waist="Metalsinger Belt",
         ear1="Thrud Earring",
         hands="Flamma Manopolas +2",
-        legs="Peltast's Cuissots +1",
+        legs="Vishap Brais +2",
         feet=Valorous.Feet.WS
     })
 	sets.precast.WS['Impulse Drive'].Mid = set_combine(sets.precast.WS['Impulse Drive'], {
