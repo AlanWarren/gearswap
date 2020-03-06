@@ -99,7 +99,7 @@ function init_gear_sets()
     HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
     HercLegs.WSD = { name="Herculean Trousers", augments={'DEX+4','INT+7','Weapon skill damage +10%','Accuracy+3 Attack+3',}}
-    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+5','"Mag.Atk.Bns."+14',}} 
+    HercLegs.MAB = { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+25','Crit.hit rate+3','AGI+12','Mag. Acc.+12',}} 
 
     Toutatis = {}
     Toutatis.STP = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
@@ -663,7 +663,7 @@ function init_gear_sets()
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head="Adhemar Bonnet +1",
         neck="Assassin's Gorget +1",
-        ear1="Brutal Earring",
+        ear1="Dedition Earring",
         ear2="Sherida Earring",
         body="Pillager's Vest +3",
         hands="Adhemar Wristbands +1",

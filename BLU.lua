@@ -267,7 +267,7 @@ function init_gear_sets()
     HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
     HercLegs.WSD = { name="Herculean Trousers", augments={'DEX+4','INT+7','Weapon skill damage +10%','Accuracy+3 Attack+3',}}
-    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+5','"Mag.Atk.Bns."+14',}} 
+    HercLegs.MAB = { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+25','Crit.hit rate+3','AGI+12','Mag. Acc.+12',}} 
 
     Rosmerta = {}
     Rosmerta.TP = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
