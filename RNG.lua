@@ -130,8 +130,8 @@ function init_gear_sets()
         HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
         HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
-        HercLegs.WSD = { name="Herculean Trousers", augments={'DEX+4','INT+7','Weapon skill damage +10%','Accuracy+3 Attack+3',}}
-        HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+5','"Mag.Atk.Bns."+14',}} 
+        HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
+        HercLegs.TH = { name="Herculean Trousers", augments={'Phys. dmg. taken -1%','VIT+10','"Treasure Hunter"+2','Accuracy+10 Attack+10','Mag. Acc.+19 "Mag.Atk.Bns."+19',}} 
         
         AdhemarLegs = {}
         AdhemarLegs.Snap = { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}}
@@ -152,7 +152,7 @@ function init_gear_sets()
             feet="Eradicating Bullet Pouch"
         }
         -- Misc. Job Ability precasts
-        sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1", waist="Chaac Belt"}
+        sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1", waist="Chaac Belt", legs=HercLegs.TH }
         sets.precast.JA['Double Shot'] = {head="Amini Gapette"}
         sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}
         sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +3"}
@@ -166,7 +166,7 @@ function init_gear_sets()
             head="Meghanada Visor +2", 
             ear1="Sherida Earring",
             ear2="Enervating Earring",
-            body="Meghanada Cuirie +2",
+            body="Nisroch Jerkin",
             back=Belenus.STP,
             hands="Meghanada Gloves +2",
             waist="Kwahu Kachina Belt",
@@ -219,7 +219,7 @@ function init_gear_sets()
         })
         sets.idle.Town = set_combine(sets.idle, {
             head="Arcadian Beret +3",
-            body="Orion Jerkin +3",
+            body="Nisroch Jerkin",
             ear1="Dedition Earring",
             ear2="Telos Earring",
             neck="Scout's Gorget +2",
@@ -351,7 +351,8 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Dedition Earring",
             ear2="Telos Earring", 
-            body="Arcadian Jerkin +3", 
+            --body="Arcadian Jerkin +3", 
+            body="Nisroch Jerkin",
             --body="Malignance Tabard",
             hands="Malignance Gloves",
             ring1="Ilabrat Ring",
@@ -363,11 +364,12 @@ function init_gear_sets()
         }
         sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
             ear1="Enervating Earring",
-            body="Orion Jerkin +3", 
+            body="Nisroch Jerkin",
             legs="Malignance Tights", 
         })
         sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
             head="Malignance Chapeau",
+            body="Malignance Tabard",
             -- ring1="Cacoethic Ring +1",
             legs="Malignance Tights", 
             feet="Mummu Gamashes +2"
@@ -397,7 +399,8 @@ function init_gear_sets()
         -- TODO: get crit+10% cape
         sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {
             -- head="Meghanada Visor +2",
-            body="Arcadian Jerkin +3",
+            --body="Arcadian Jerkin +3",
+            body="Nisroch Jerkin",
             ring2="Regal Ring",
         })
         sets.midcast.RA.Annihilator.Mid = sets.midcast.RA.Mid
@@ -414,7 +417,8 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Dedition Earring",
             ear2="Telos Earring",
-            body="Malignance Tabard", 
+            --body="Malignance Tabard", 
+            body="Nisroch Jerkin",
             hands="Malignance Gloves",
             ring1="Ilabrat Ring",
             ring2="Regal Ring",
@@ -430,7 +434,6 @@ function init_gear_sets()
         })
         sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
             hands="Malignance Gloves",
-            body="Orion Jerkin +3",
             ring2="Longshot Ring",
         })
        
@@ -509,12 +512,12 @@ function init_gear_sets()
             --head=HercHead.MAB,
             body="Samnuha Coat",
             hands=HercHands.MAB,
-            legs="Arcadian Braccae +3", 
+            legs=HercLegs.MAB,
         })
         sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
             --head="Mummu Bonnet +2",
             --body="Mummu Jacket +2",
-            -- legs="Mummu Kecks +2",
+            legs="Arcadian Braccae +3", 
             -- hands="Mummu Wrists +2",
         })
 
@@ -556,7 +559,8 @@ function init_gear_sets()
             feet="Arcadian Socks +3"
         })
         sets.precast.WS['Last Stand'].Mid = set_combine(sets.precast.WS['Last Stand'], {
-            body="Arcadian Jerkin +3",
+            --body="Arcadian Jerkin +3",
+            body="Nisroch Jerkin",
         })
         sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'].Mid, {
             legs="Arcadian Braccae +3", 
@@ -603,6 +607,7 @@ function init_gear_sets()
             ear2="Moonshade Earring",
             waist="Light Belt",
             ring2="Mummu Ring",
+            body="Nisroch Jerkin",
             back=Belenus.WSD,
             ring1="Ilabrat Ring",
             ring2="Regal Ring",
@@ -643,11 +648,11 @@ function init_gear_sets()
         sets.precast.WS['Refulgent Arrow'].Acc = sets.precast.WS['Sidewinder'].Acc
 
         sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-            head="Mummu Bonnet +2",
+            head="Adhemar Bonnet +1",
             neck="Scout's Gorget +2",
             ear1="Sherida Earring",
             ear2="Moonshade Earring",
-            body="Mummu Jacket +2",
+            body="Adhemar Jacket +1",
             ring1="Ilabrat Ring",
             ring2="Regal Ring",
             hands="Mummu Wrists +2",
@@ -669,7 +674,7 @@ function init_gear_sets()
             neck="Scout's Gorget +2",
             ear1="Enervating Earring",
             ear2="Telos Earring",
-            body="Orion Jerkin +3",
+            body="Nisroch Jerkin",
             hands="Orion Bracers +2",
             ring1="Ilabrat Ring",
             ring2="Regal Ring",
@@ -1043,7 +1048,7 @@ function select_default_macro_book()
     elseif player.sub_job == 'DNC' then
             set_macro_page(4, 5)
     else
-        set_macro_page(4, 5)
+        set_macro_page(3, 5)
     end
 end
 

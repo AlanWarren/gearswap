@@ -1,7 +1,10 @@
 -------------------------------------------------------------------------------------------------------------------
 -- Initialization function that defines sets and variables to be used.
 -------------------------------------------------------------------------------------------------------------------
-
+-- 1000
+-- 1000
+-- 2000
+-- 2000
 -- IMPORTANT: Make sure to also get the Mote-Include.lua file to go with this.
 
 --[[
@@ -68,8 +71,8 @@ function user_setup()
     
     gear.RAbullet = "Chrono Bullet"
     gear.WSbullet = "Chrono Bullet"
-    gear.MAbullet = "Chrono Bullet"
-    gear.QDbullet = "Animikii Bullet"
+    gear.MAbullet = "Living Bullet"
+    gear.QDbullet = "Living Bullet"
     --gear.QDbullet = "Adlivun Bullet"
     options.ammo_warning_limit = 15
 
@@ -113,7 +116,7 @@ function init_gear_sets()
     
     sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
     --sets.precast.JA['Snake Eye'] = {legs="Commodore Culottes +1"}
-    sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +1"}
+    sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
     --sets.precast.JA['Fold'] = {hands="Commodore Gants +2"}} 
     sets.CapacityMantle = {back="Mecistopins Mantle"}
@@ -122,9 +125,10 @@ function init_gear_sets()
     TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
 
     Camulus = {}
-    Camulus.STP = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+6','"Store TP"+10','Phys. dmg. taken-10%',}}
-    Camulus.WSD = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
-    Camulus.Snap = {name="Camulus's Mantle", augments={'"Snapshot"+10',}}
+    Camulus.STP  =  { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+6','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Camulus.WSD  =  { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
+    Camulus.Snap =  { name="Camulus's Mantle", augments={'"Snapshot"+10',}}
+    Camulus.MAB  =  { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+9','Weapon skill damage +10%',}}
 
     HercFeet = {}
     HercHead = {}
@@ -141,8 +145,8 @@ function init_gear_sets()
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
     HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
-    HercLegs.WSD = { name="Herculean Trousers", augments={'DEX+4','INT+7','Weapon skill damage +10%','Accuracy+3 Attack+3',}}
-    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+5','"Mag.Atk.Bns."+14',}} 
+    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
+    HercLegs.TH = { name="Herculean Trousers", augments={'Phys. dmg. taken -1%','VIT+10','"Treasure Hunter"+2','Accuracy+10 Attack+10','Mag. Acc.+19 "Mag.Atk.Bns."+19',}} 
 
     
     AdhemarLegs = {}
@@ -160,13 +164,13 @@ function init_gear_sets()
         ring2="Dark Ring",
         back=Camulus.STP,
         legs="Malignance Tights",
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     }
     sets.Swords = {main="Naegling", sub="Tauret"}
     sets.Daggers = {main="Tauret", sub="Odium"}
     sets.Empty = {main=empty, sub=empty}
     
-    sets.TreasureHunter = { head="White Rarab Cap +1", waist="Chaac Belt" }
+    sets.TreasureHunter = { head="White Rarab Cap +1", waist="Chaac Belt", legs=HercLegs.TH }
     --sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
     --sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Navarch's Tricorne +1"})
@@ -248,8 +252,8 @@ function init_gear_sets()
         ring2="Ilabrat Ring",
         back=Camulus.WSD,
         waist="Kwahu Kachina Belt",
-        legs=HercLegs.MAB, 
-        feet="Lanun Bottes +2"
+        legs="Meghanada Chausses +2",
+        feet="Lanun Bottes +3"
     }
 
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
@@ -262,9 +266,8 @@ function init_gear_sets()
         ring1="Regal Ring",
         ring2="Ifrit Ring",
         waist="Metalsinger Belt",
-        legs=HercLegs.WSD,
         waist="Thunder Belt",
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     })
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -279,7 +282,7 @@ function init_gear_sets()
         ring2="Ilabrat Ring",
         waist="Soil Belt",
         legs="Meghanada Chausses +2",
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     })
 
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {legs="Samnuha Tights"})
@@ -293,7 +296,6 @@ function init_gear_sets()
         hands="Meghanada Gloves +2",
         ring1="Regal Ring",
         ring2="Ilabrat Ring",
-        legs=HercLegs.WSD,
         waist="Soil Belt",
     })
 
@@ -305,9 +307,8 @@ function init_gear_sets()
         body="Laksamana's Frac +3",
         ring1="Regal Ring",
         ring2="Dingir Ring",
-        legs=HercLegs.WSD,
         waist="Light Belt",
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     })
     sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
         ammo=gear.WSbullet,
@@ -315,7 +316,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         back=Camulus.WSD,
         legs="Meghanada Chausses +2",
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     })
 
     sets.precast.WS['Wildfire'] = {
@@ -328,10 +329,10 @@ function init_gear_sets()
         hands="Carmine Finger Gauntlets +1",
         ring1="Regal Ring",
         ring2="Dingir Ring",
-        back=Camulus.WSD,
+        back=Camulus.MAB,
         waist="Sveltesse Gouriz +1",
         legs=HercLegs.MAB,
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     }
     sets.precast.WS['Wildfire'].Acc = {
         head=HercHead.MAB,
@@ -347,19 +348,19 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         body="Lanun Frac +3",
         hands="Carmine Finger Gauntlets +1",
-        ring1="Regal Ring",
+        ring1="Archon Ring",
         ring2="Dingir Ring",
-        back=Camulus.WSD,
+        back=Camulus.MAB,
         waist="Sveltesse Gouriz +1",
         legs=HercLegs.MAB,
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     }
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], { 
         body="Lanun Frac +3",
         hands=HercHands.MAB,
         -- legs="Mummu Kecks +2",
         --feet="Mummu Gamashes +2"
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     })
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {
         ear2="Moonshade Earring"
@@ -376,7 +377,7 @@ function init_gear_sets()
         ring1="Weatherspoon Ring",
         ring2="Kishar Ring",
         legs="Malignance Tights",
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     }
         
     -- Specific spells
@@ -397,7 +398,7 @@ function init_gear_sets()
         --waist="Eschan Stone",
         waist="Chaac Belt",
         legs="Malignance Tights",
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     }
 
     sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
@@ -418,8 +419,8 @@ function init_gear_sets()
         neck="Iskur Gorget",
         --neck="Commodore Charm +1",
         ear1="Telos Earring",
-        ear2="Enervating Earring",
-        body="Malignance Tabard",
+        ear2="Dedition Earring",
+        body="Nisroch Jerkin",
         hands="Malignance Gloves",
         ring1="Dingir Ring",
         ring2="Ilabrat Ring",
@@ -428,9 +429,12 @@ function init_gear_sets()
         legs="Malignance Tights", 
         feet="Mummu Gamashes +2"
     }
+    sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
+        ear2="Enervating Earring",
+    })
 
-    sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-        body="Laksamana's Frac +3",
+    sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
+        body="Malignance Tabard",
         --ring1="Hajduk Ring",
         ring1="Regal Ring",
         feet="Meghanada Jambeaux +2"
@@ -444,7 +448,7 @@ function init_gear_sets()
         feet="Oshosi Leggings"
     })
     sets.midcast.RA.TripleShot.Mid = set_combine(sets.midcast.RA.TripleShot, {
-        body="Malignance Tabard",
+        body="Oshosi Vest",
     })
     sets.midcast.RA.TripleShot.Acc = set_combine(sets.midcast.RA.TripleShot, {
         head="Malignance Chapeau",
@@ -475,7 +479,7 @@ function init_gear_sets()
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     }
     sets.idle.Regen = set_combine(sets.idle, {
         --head="Ocelomeh Headpiece +1",
@@ -486,19 +490,19 @@ function init_gear_sets()
     })
 
     sets.idle.Town = {
-        ammo=gear.RAbullet,
+        ammo=gear.MAbullet,
         head="Adhemar Bonnet +1",
         neck="Commodore Charm +1",
         ear1="Telos Earring",
         ear2="Dedition Earring",
-        body="Adhemar Jacket +1",
+        body="Nisroch Jerkin",
         hands="Adhemar Wristbands +1",
         ring1="Regal Ring",
         ring2="Ilabrat Ring",
         back=Camulus.STP,
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     }
     sets.idle.PDT = set_combine(sets.idle.Town, {
         head="Malignance Chapeau",
@@ -519,7 +523,7 @@ function init_gear_sets()
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Malignance Tights", 
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     })
 
     sets.defense.MDT = sets.defense.PDT
@@ -572,7 +576,7 @@ function init_gear_sets()
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Malignance Tights", 
-        feet="Lanun Bottes +2"
+        feet="Lanun Bottes +3"
     }
     sets.engaged.PDT = set_combine(sets.engaged, sets.defense.PDT)
         

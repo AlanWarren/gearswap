@@ -130,8 +130,8 @@ function init_gear_sets()
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
     HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
     
-    HercLegs.WSD = { name="Herculean Trousers", augments={'DEX+4','INT+7','Weapon skill damage +10%','Accuracy+3 Attack+3',}}
-    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+5','"Mag.Atk.Bns."+14',}} 
+    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
+    HercLegs.TH = { name="Herculean Trousers", augments={'Phys. dmg. taken -1%','VIT+10','"Treasure Hunter"+2','Accuracy+10 Attack+10','Mag. Acc.+19 "Mag.Atk.Bns."+19',}} 
 
     TaeonHands = {}
     TaeonHands.Snap = {name="Taeon Gloves", augments={'"Snapshot"+5', 'Attack+22','"Snapshot"+5'}}
@@ -185,7 +185,7 @@ function init_gear_sets()
     --------------------------------------
     -- Utility Sets for rules below
     --------------------------------------
-    sets.TreasureHunter = { head="White rarab cap +1", waist="Chaac Belt" }
+    sets.TreasureHunter = { head="White rarab cap +1", waist="Chaac Belt", legs=HercLegs.TH }
     sets.CapacityMantle = { back="Mecistopins Mantle" }
     sets.WSDayBonus     = { head="Gavialis Helm" }
     -- sets.WSBack         = { back="Trepidity Mantle" }
@@ -679,8 +679,8 @@ function init_gear_sets()
         ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
-        legs=HercLegs.WSD,
-        --legs="Hizamaru Hizayoroi +2",
+        --legs=HercLegs.WSD,
+        legs="Hizamaru Hizayoroi +2",
         feet=HercFeet.TP
     }
     
@@ -800,8 +800,8 @@ function init_gear_sets()
         body="Herculean Vest",
         hands="Regal Gloves",
         ring2="Gere Ring",
-        --legs="Hizamaru Hizayoroi +2",
-        legs=HercLegs.WSD,
+        legs="Hizamaru Hizayoroi +2",
+        --legs=HercLegs.WSD,
         back=Andartia.AGI,
         waist="Metalsinger Belt",
     }
@@ -822,8 +822,8 @@ function init_gear_sets()
         body="Herculean Vest",
         hands="Regal Gloves",
         ring2="Gere Ring",
-        --legs="Hizamaru Hizayoroi +2",
-        legs=HercLegs.WSD,
+        legs="Hizamaru Hizayoroi +2",
+        --legs=HercLegs.WSD,
         back=Andartia.AGI,
         waist="Metalsinger Belt",
         feet="Hizamaru Sune-ate +2" 
