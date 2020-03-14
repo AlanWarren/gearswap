@@ -186,8 +186,10 @@ function init_gear_sets()
     Valorous = {}
     Valorous.Feet = {}
     Valorous.Body = {}
+   
     Valorous.Feet.TH = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
     Valorous.Feet.TP = { name="Valorous Greaves", augments={'Accuracy+27','"Store TP"+6','INT+1',}}
+    
     Valorous.Body.STP = { name="Valorous Mail", augments={'Accuracy+30','"Store TP"+6','DEX+3','Attack+14',}}
     Valorous.Body.DA = { name="Valorous Mail", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+4','VIT+4','Attack+6',}}
 
@@ -302,7 +304,7 @@ function init_gear_sets()
         hands="Flamma Manopolas +2",
         waist="Casso Sash", -- 5
         ring1="Evanescence Ring", -- 10
-        ring2="Regal Ring", -- 10 macc
+        ring2="Archon Ring", 
         back=Niht.DarkMagic, -- 10
         legs="Fallen's Flanchard +3",  -- 18 + 39macc
         feet="Ratri Sollerets +1" -- macc 33
@@ -505,7 +507,7 @@ function init_gear_sets()
         head="Ratri Sallet +1",
         neck="Abyssal Bead Necklace +2",
         body="Ratri Breastplate +1",
-        legs="Fallen's Flanchard +3",
+        legs="Ratri Cuisses +1",
         ring2="Regal Ring",
         waist="Light Belt",
         feet="Ratri Sollerets +1"
@@ -522,7 +524,7 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +2",
         --body="Ignominy Cuirass +3",
         body="Ratri Breastplate +1",
-        legs="Fallen's Flanchard +3",  
+        legs="Ratri Cuisses +1",
         waist="Soil Belt",
         feet="Ratri Sollerets +1"
     })
@@ -544,14 +546,13 @@ function init_gear_sets()
         --body="Ignominy Cuirass +3",
         body="Ratri Breastplate +1",
         waist="Metalsinger Belt",
-        legs="Fallen's Flanchard +3",
+        legs="Ratri Cuisses +1",
         feet="Ratri Sollerets +1"
     })
     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {})
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
         ammo="Seething Bomblet +1",
         body="Fallen's Cuirass +3",
-        legs=Odyssean.Legs.WS
     })
     -- ENTROPY
     -- 86-100% INT 
@@ -582,7 +583,7 @@ function init_gear_sets()
         body="Ratri Breastplate +1",
         hands="Odyssean Gauntlets",
         waist="Caudata Belt",
-        legs="Fallen's Flanchard +3",  
+        feet="Ratri Cuisses +1",
         feet="Ratri Sollerets +1"
     })
     sets.precast.WS.Quietus.Mid = set_combine(sets.precast.WS.Quietus, {
@@ -611,8 +612,9 @@ function init_gear_sets()
         body="Fallen's Cuirass +3",
         ear1="Friomisi Earring",
         hands="Carmine Finger Gauntlets +1",
+        ring2="Archon Ring",
         back=Ankou.WSD,
-        legs="Fallen's Flanchard +3",  
+        feet="Ratri Cuisses +1",
         waist="Eschan Stone", -- macc/matk 7
         feet="Ratri Sollerets +1"
     })
@@ -637,6 +639,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         body="Fallen's Cuirass +3",
         hands="Founder's Gauntlets",
+        ring1="Archon Ring",
         back=Ankou.WSD,
         feet="Heathen's Sollerets +1"
     })

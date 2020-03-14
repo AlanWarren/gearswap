@@ -98,14 +98,14 @@ function init_gear_sets()
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
     HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
-    HercLegs.WSD = { name="Herculean Trousers", augments={'DEX+4','INT+7','Weapon skill damage +10%','Accuracy+3 Attack+3',}}
-    HercLegs.MAB = { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+25','Crit.hit rate+3','AGI+12','Mag. Acc.+12',}} 
+    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
+    HercLegs.TH = { name="Herculean Trousers", augments={'Phys. dmg. taken -1%','VIT+10','"Treasure Hunter"+2','Accuracy+10 Attack+10','Mag. Acc.+19 "Mag.Atk.Bns."+19',}} 
 
     Toutatis = {}
     Toutatis.STP = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
     Toutatis.WSD = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
 
-    sets.TreasureHunter = { head="White Rarab Cap +1", hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt" }
+    sets.TreasureHunter = { head="White Rarab Cap +1", hands="Plunderer's Armlets +1", feet="Raider's Poulaines +2", waist="Chaac Belt", legs=HercLegs.TH }
     sets.TreasureHunterRA = { hands="Plunderer's Armlets +1", waist="Chaac Belt" }
     sets.ExtraRegen = { head="Ocelomeh Headpiece +1" }
     sets.CapacityMantle = { back="Mecistopins Mantle" }
@@ -246,7 +246,7 @@ function init_gear_sets()
         ring2="Gere Ring",
         back=Toutatis.WSD,
         waist="Windbuffet Belt +1",
-        legs=HercLegs.WSD,
+        legs="Pillager's Culottes +3",
         feet=HercFeet.TP
     }
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -330,13 +330,14 @@ function init_gear_sets()
         ring2="Gere Ring",
         hands="Meghanada Gloves +2",
         waist="Metalsinger Belt",
-        legs=HercLegs.WSD,
+        legs="Meghanada Chausses +2",
         back=Toutatis.WSD,
         feet=HercFeet.TP
     })
 -- Testing italics
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
         neck="Assassin's Gorget +1",
+        ear1="Moonshade Earring",
         ear2="Sherida Earring",
         body="Herculean Vest",
         hands="Meghanada Gloves +2",
@@ -344,7 +345,6 @@ function init_gear_sets()
         ring2="Ilabrat Ring",
         waist="Snow Belt",
         back=Toutatis.WSD,
-        legs=HercLegs.WSD,
         feet=HercFeet.TP
     })
     sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {
@@ -379,7 +379,6 @@ function init_gear_sets()
         hands="Pillager's Armlets +1", 
         ring1="Regal Ring",
         ring2="Ilabrat Ring", 
-        legs=HercLegs.WSD,
     })
     sets.precast.WS['Shark Bite'].Acc = set_combine(sets.precast.WS['Shark Bite'], {
         head="Pillager's bonnet +3",
