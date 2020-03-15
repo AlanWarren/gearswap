@@ -431,10 +431,10 @@ function init_gear_sets()
     }
     sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
         ear2="Enervating Earring",
+        body="Malignance Tabard",
     })
 
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
-        body="Malignance Tabard",
         --ring1="Hajduk Ring",
         ring1="Regal Ring",
         feet="Meghanada Jambeaux +2"
