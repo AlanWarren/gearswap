@@ -353,13 +353,18 @@ function init_gear_sets()
     -- Mix of HP boost, -Spell interruption%, and Dark Skill
     sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
         ammo="Staunch Tathlum",
+        neck="Sanctity Necklace",
         head="Ratri Sallet +1",
         ear1="Etiolation Earring",
         ear2="Eabani Earring", -- 3
         body="Heathen's Cuirass +1",
         --body="Ratri Breastplate +1",
-        hands="Fallen's Finger Gauntlets +1",
+        hands="Flamma Manopolas +2",
         back="Trepidity Mantle",
+        ring2="Regal Ring", -- matk 4
+        waist="Eschan Stone",
+        legs="Ratri Cuisses +1",
+        feet="Ratri Sollerets +1"
     })
     sets.midcast['Dread Spikes'].Acc = set_combine(sets.midcast['Dark Magic'], {
         head="Ratri Sallet +1",
@@ -666,7 +671,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
         body="Tartarus Platemail",
-        hands="Sulevia's Gauntlets +2",
+        hands="Volte Moufles",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
         back=Ankou.STP,
@@ -710,7 +715,7 @@ function init_gear_sets()
         head="Hjarrandi Helm",
         neck="Sanctity Necklace",
         body="Tartarus Platemail",
-        hands="Sulevia's Gauntlets +2",
+        hands="Volte Moufles",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
         back=Ankou.STP,
@@ -727,7 +732,7 @@ function init_gear_sets()
         neck="Agitator's Collar",
         body="Tartarus Platemail", -- 3% haste
         --body="Sulevia's Platemail +1", -- 1% haste
-        hands="Sulevia's Gauntlets +2", -- 3% haste
+        hands="Volte Moufles",
         --ear1="Etiolation Earring",
         ring1="Patricius Ring",
         ring2="Defending Ring",
@@ -766,7 +771,7 @@ function init_gear_sets()
         head="Hjarrandi Helm", -- 10% dt
         neck="Agitator's Collar", -- 4% pdt
         body="Tartarus Platemail", -- 10% dt
-        hands="Sulevia's Gauntlets +2", -- 5% pdt
+        hands="Volte Moufles",
         ring1="Niqmaddu Ring", 
         ring2="Defending Ring", -- 10% dt
         waist="Sailfi Belt +1",
@@ -777,7 +782,7 @@ function init_gear_sets()
         head="Hjarrandi Helm", -- no haste
         neck="Agitator's Collar", -- 4% pdt
         body="Tartarus Platemail",
-        hands="Sulevia's Gauntlets +2",
+        hands="Volte Moufles",
         ring1="Patricius Ring",
         ring2="Defending Ring",
         waist="Sailfi Belt +1",
@@ -788,7 +793,7 @@ function init_gear_sets()
         ammo="Hasty Pinion +1",
         head="Hjarrandi Helm", -- no haste
         body="Flamma Korazin +2",
-        hands="Sulevia's Gauntlets +2",
+        hands="Volte Moufles",
         ring1="Patricius Ring",
         ring2="Sulevia's Ring",
         legs="Sulevia's Cuisses +2", -- 7% dt
@@ -903,7 +908,7 @@ function init_gear_sets()
         head="Hjarrandi Helm",
         body="Tartarus Platemail",
         neck="Abyssal Bead Necklace +2",
-        hands="Sulevia's Gauntlets +2",
+        hands="Volte Moufles",
         ring2="Defending Ring",
         back=Ankou.STP,
         waist="Sailfi Belt +1",
@@ -968,7 +973,7 @@ function init_gear_sets()
         head="Hjarrandi Helm",
         neck="Abyssal Bead Necklace +2",
         body="Tartarus Platemail",
-        hands="Sulevia's Gauntlets +2",
+        hands="Volte Moufles",
         ring2="Defending Ring",
         back=Ankou.DA,
         waist="Sailfi Belt +1",

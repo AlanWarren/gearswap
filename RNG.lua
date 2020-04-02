@@ -363,11 +363,13 @@ function init_gear_sets()
     }
     sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
         ear1="Enervating Earring",
+        body="Malignance Tabard",
         legs="Malignance Tights", 
     })
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
         head="Malignance Chapeau",
-        -- ring1="Cacoethic Ring +1",
+        ear1="Beyla Earring",
+        ring1="Cacoethic Ring +1",
         body="Orion Jerkin +3", 
         legs="Malignance Tights", 
         feet="Mummu Gamashes +2"
@@ -400,7 +402,9 @@ function init_gear_sets()
         body="Nisroch Jerkin",
         ring2="Regal Ring",
     })
-    sets.midcast.RA.Annihilator.Mid = sets.midcast.RA.Mid
+    sets.midcast.RA.Annihilator.Mid = set_combine(sets.midcast.RA.Mid, {
+        body="Nisroch Jerkin",
+    })
     sets.midcast.RA.Annihilator.Acc = set_combine(sets.midcast.RA.Acc, {
         ammo="Eradicating Bullet"
     })
@@ -414,7 +418,7 @@ function init_gear_sets()
         neck="Scout's Gorget +2",
         ear1="Dedition Earring",
         ear2="Telos Earring",
-        body="Malignance Tabard", 
+        body="Nisroch Jerkin",
         hands="Malignance Gloves",
         ring1="Ilabrat Ring",
         ring2="Regal Ring",
@@ -426,9 +430,11 @@ function init_gear_sets()
     sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
         ear1="Enervating Earring",
         hands="Malignance Gloves",
+        body="Malignance Tabard", 
         legs="Malignance Tights", 
     })
     sets.midcast.RA.Yoichinoyumi.Acc = set_combine(sets.midcast.RA.Yoichinoyumi.Mid, {
+        ear1="Beyla Earring",
         hands="Malignance Gloves",
         body="Orion Jerkin +3",
         ring2="Longshot Ring",
@@ -1046,7 +1052,7 @@ function select_default_macro_book()
     elseif player.sub_job == 'DNC' then
             set_macro_page(4, 5)
     else
-        set_macro_page(3, 5)
+        set_macro_page(4, 5)
     end
 end
 

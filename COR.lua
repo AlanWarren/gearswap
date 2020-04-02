@@ -33,17 +33,16 @@ function job_setup()
     state.warned = M(false)
     state.CapacityMode = M(false, 'Capacity Point Mantle')
     state.FlurryMode = M{['description']='Flurry Mode', 'Normal', 'Hi'}
-    state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
+    state.HasteMode = M{['description']='Haste Mode', 'Hi', 'Low'}
     
     state.Buff['Triple Shot'] = buffactive['Triple Shot'] or false
 
     include('Mote-TreasureHunter')
     state.TreasureMode:set('None')
-    -- this is used for melee when single wielding
-    state.RAMode = M(false, 'RAMode')
     
     state.AutoRA = M{['description']='Auto RA', 'Normal', 'Shoot', 'WS' }
-    state.WeaponMode = M{['description']='Weapon Mode', 'Sword', 'Dagger'}
+    state.GunSelector = M{['description']='Gun Selector', 'DeathPenalty', 'Fomalhaut'}
+    state.FightingMode = M{['description']='Fighting Mode', 'Shooting', 'Melee', 'Single'}
 
     cor_sub_weapons = S{"Nusku Shield"}
     auto_gun_ws = "Leaden Salute"
@@ -51,6 +50,7 @@ function job_setup()
     define_roll_values()
     determine_haste_group()
     get_combat_form()
+    initialize_weapons()
     get_custom_ranged_groups()
 end
 
@@ -79,13 +79,13 @@ function user_setup()
     -- Additional local binds
     -- Cor doesn't use hybrid defense mode; using that for ranged mode adjustments.
     send_command('bind f9 gs c cycle OffenseMode')
-    send_command('bind !f9 gs c toggle RAMode')
+    send_command('bind !f9 gs c toggle FightingMode')
+    send_command('bind @f9 gs c cycle GunSelector')
     send_command('bind ^` input /ja "Double-up" <me>')
     send_command('bind !` input /ja "Bolter\'s Roll" <me>')
     send_command('bind != gs c toggle CapacityMode')
     send_command('bind ^= gs c cycle treasuremode')
     send_command('bind @= gs c cycle FlurryMode')
-    send_command('bind @f9 gs c cycle HasteMode')
     send_command('bind ^- gs c cycle AutoRA')
     select_default_macro_book()
     -- For th_action_check():
@@ -125,10 +125,10 @@ function init_gear_sets()
     TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
 
     Camulus = {}
-    Camulus.STP  =  { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+6','"Store TP"+10','Phys. dmg. taken-10%',}}
+    Camulus.STP  =  { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Phys. dmg. taken-10%',}}
     Camulus.WSD  =  { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
     Camulus.Snap =  { name="Camulus's Mantle", augments={'"Snapshot"+10',}}
-    Camulus.MAB  =  { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+9','Weapon skill damage +10%',}}
+    Camulus.MAB  =  { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
 
     HercFeet = {}
     HercHead = {}
@@ -154,7 +154,9 @@ function init_gear_sets()
     AdhemarLegs.TP = { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
 
     sets.precast.CorsairRoll = {
-        --range="Compensator",
+        main={name="Rostam", bag="Wardrobe 4", priority=1},
+        sub={name="Tauret", priority=2},
+        range="Compensator",
         head="Lanun Tricorne +1",
         hands="Chasseur's Gants +1",
         ear2="Etiolation Earring",
@@ -166,9 +168,6 @@ function init_gear_sets()
         legs="Malignance Tights",
         feet="Lanun Bottes +3"
     }
-    sets.Swords = {main="Naegling", sub="Tauret"}
-    sets.Daggers = {main="Tauret", sub="Odium"}
-    sets.Empty = {main=empty, sub=empty}
     
     sets.TreasureHunter = { head="White Rarab Cap +1", waist="Chaac Belt", legs=HercLegs.TH }
     --sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
@@ -179,6 +178,45 @@ function init_gear_sets()
     
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
     --sets.precast.FoldDoubleBust = {hands="Lanun Gants"}
+
+    sets.Melee = {
+        main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
+        sub={name="Tauret", bag="Wardrobe 4", priority=1},
+        ranged=state.GunSelector.current
+    }
+    sets.Melee.engaged = sets.Melee
+
+    sets.DeathPenalty = {
+        range="Death Penalty"
+    }
+    sets.Fomalhaut = {
+        range="Fomalhaut"
+    }
+    sets.Shooting = {
+        main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
+        sub={name="Rostam", bag="Wardrobe 4", priority=1},
+    }
+    sets.Shooting.engaged = set_combine(sets.Shooting, {
+        head="Malignance Chapeau",
+        hands="Malignance Gloves",
+        body="Malignance Tabard",
+        legs="Malignance Tights", 
+        ring1="Defending Ring",
+        feet="Lanun Bottes +3"
+    })
+
+    sets.Single = {
+        main={name="Rostam", bag="Wardrobe 4", priority=1},
+        sub={name="Nusku Shield", priority=2},
+    }
+    sets.Single.engaged = set_combine(sets.Single, {
+        head="Malignance Chapeau",
+        hands="Malignance Gloves",
+        body="Malignance Tabard",
+        legs="Malignance Tights", 
+        ring1="Defending Ring",
+        feet="Lanun Bottes +3"
+    })
     
     sets.precast.CorsairShot = { head="Laksamana's Tricorne +2" }
     
@@ -355,6 +393,13 @@ function init_gear_sets()
         legs=HercLegs.MAB,
         feet="Lanun Bottes +3"
     }
+    sets.precast.WS['Leaden Salute'].Mid = set_combine(sets.precast.WS['Leaden Salute'], { 
+        body="Lanun Frac +3",
+        hands=HercHands.MAB,
+        -- legs="Mummu Kecks +2",
+        --feet="Mummu Gamashes +2"
+        feet="Lanun Bottes +3"
+    })
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], { 
         body="Lanun Frac +3",
         hands=HercHands.MAB,
@@ -436,7 +481,10 @@ function init_gear_sets()
 
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
         --ring1="Hajduk Ring",
+        ear2="Beyla Earring",
         ring1="Regal Ring",
+        ring2="Cacoethic Ring +1",
+        body="Laksamana's Frac +3",
         feet="Meghanada Jambeaux +2"
     })
 
@@ -447,10 +495,14 @@ function init_gear_sets()
         legs="Oshosi Trousers",
         feet="Oshosi Leggings"
     })
-    sets.midcast.RA.TripleShot.Mid = set_combine(sets.midcast.RA.TripleShot, {
+    sets.midcast.RA.TripleShot.Mid = set_combine(sets.midcast.RA.Mid, {
+        head="Oshosi Mask",
         body="Oshosi Vest",
+        hands="Oshosi Gloves",
+        legs="Oshosi Trousers",
+        feet="Oshosi Leggings"
     })
-    sets.midcast.RA.TripleShot.Acc = set_combine(sets.midcast.RA.TripleShot, {
+    sets.midcast.RA.TripleShot.Acc = set_combine(sets.midcast.RA.Acc, {
         head="Malignance Chapeau",
         body="Oshosi Vest",
         ring2="Cacoethic Ring +1",
@@ -510,6 +562,7 @@ function init_gear_sets()
         body="Malignance Tabard",
         legs="Malignance Tights", 
         ring1="Defending Ring",
+        feet="Lanun Bottes +3"
     })
     
     -- Defense sets
@@ -597,7 +650,8 @@ function init_gear_sets()
         body="Malignance Tabard",
         hands="Malignance Gloves",
         legs="Malignance Tights",
-        ring1="Defending Ring"
+        ring1="Defending Ring",
+        feet="Lanun Bottes +3"
     })
     sets.engaged.PDT.Haste_15 = sets.engaged.PDT
     sets.engaged.PDT.Haste_30 = sets.engaged.PDT
@@ -626,24 +680,24 @@ function init_gear_sets()
         body="Malignance Tabard",
         hands="Malignance Gloves",
         legs="Malignance Tights",
-        ring1="Defending Ring"
+        ring1="Defending Ring",
+        feet="Lanun Bottes +3"
     })
     sets.engaged.Mid.PDT.Haste_15 = sets.engaged.PDT
     sets.engaged.Mid.PDT.Haste_30 = sets.engaged.PDT
     sets.engaged.Mid.PDT.MaxHaste = sets.engaged.PDT
     
-    sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        head="Malignance Chapeau",
-        waist="Olseni Belt",
-    })
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.defense.PDT)
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         neck="Lissome Necklace",
         ear1="Telos Earring",
         ear2="Suppanomimi",
+        hands="Adhemar Wristbands +1",
         back=Camulus.STP
     })
+
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.defense.PDT)
+
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc, {
         feet=HercFeet.TP
     })
@@ -672,7 +726,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 function job_pretarget(spell, action, spellMap, eventArgs)
     -- If autora enabled, use WS automatically at 100+ TP
-    if spell.action_type == 'Ranged Attack' then
+    if spell.action_type == 'Ranged Attack' or spell.type == 'WeaponSkill' then
         if state.OffenseMode.current ~= 'Normal' and state.RangedMode:contains(state.OffenseMode.current) then
             state.RangedMode:set(state.OffenseMode.current)
         end
@@ -689,6 +743,10 @@ function job_precast(spell, action, spellMap, eventArgs)
     -- Check that proper ammo is available if we're using ranged attacks or similar.
     if spell.action_type == 'Ranged Attack' or spell.type == 'WeaponSkill' or spell.type == 'CorsairShot' then
         do_bullet_checks(spell, spellMap, eventArgs)
+
+        if state.OffenseMode.current ~= 'Normal' and state.RangedMode:contains(state.OffenseMode.current) then
+            state.RangedMode:set(state.OffenseMode.current)
+        end
     end
 
     if spell.type:lower() == 'weaponskill' then
@@ -718,6 +776,9 @@ function job_precast(spell, action, spellMap, eventArgs)
             eventArgs.handled = true
         end
     end
+    ---------------------------------------
+    equip(set_combine(sets[state.FightingMode.current], sets[state.GunSelector.current]))
+    ---------------------------------------
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -762,14 +823,14 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    return idleSet
+    return set_combine(idleSet, sets[state.FightingMode.current], sets[state.GunSelector.current])
 end
 
 function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    return meleeSet
+    return set_combine(meleeSet, sets[state.FightingMode.current].engaged, sets[state.GunSelector.current])
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -803,9 +864,7 @@ function job_buff_change(buff, gain)
             handle_equipping_gear(player.status)
         end
     else
-        if state.CombatForm.current ~= 'Ranged' or state.CombatForm ~= 'Single' then
-            state.CombatForm:reset()
-        end
+        state.CombatForm:reset()
         if not midaction() then
             handle_equipping_gear(player.status)
         end
@@ -859,7 +918,6 @@ function get_custom_ranged_groups()
             classes.CustomRangedGroups:append('F1')
         end
     end
-    
     -- relic aftermath is just "Aftermath", while empy + mythic are numbered
     -- if buffactive.Aftermath then
     --     classes.CustomRangedGroups:append('AM')
@@ -903,15 +961,27 @@ end
 function get_combat_form()
     state.CombatForm:reset()
     --if player.equipment.main == gear.Stave then
-    if cor_sub_weapons:contains(player.equipment.sub) then
-        if not state.RAMode.value then
-            state.CombatForm:set("Single")
-        else
-            state.CombatForm:set("Ranged")
-        end
-    end
+    -- if cor_sub_weapons:contains(player.equipment.sub) then
+    --     if not state.RAMode.value then
+    --         state.CombatForm:set("Single")
+    --     else
+    --         state.CombatForm:set("Ranged")
+    --     end
+    -- end
     if state.Buff['Triple Shot'] then
         state.CombatForm:set('Triple')
+    end
+end
+
+function initialize_weapons()
+    if player.equipment.range == 'Death Penalty' then
+        state.GunSelector:set('Death Penalty')
+    elseif player.equipment.range == 'Fomalhaut' then
+        state.GunSelector:set('Fomalhaut')
+    end
+    -- SJ
+    if player.sub_job ~= 'DNC' and player.sub_job ~= 'NIN' then
+        state.FightingMode:set('Single')
     end
 end
 
@@ -1104,16 +1174,9 @@ function job_state_change(stateField, newValue, oldValue)
         if newValue ~= 'Normal' then
             send_command('@wait 2.5; input /ra <t>')
         end
-    elseif stateField == 'Weapon Mode' then
-        if newValue == 'Sword' then
-            equip(sets.Empty)
-            send_command('@wait 1; input //gs equip sets.Swords')
-        elseif newValue == 'Dagger' then
-            equip(sets.Empty)
-            send_command('@wait 1; input //gs equip sets.Daggers')
-        end
+    --elseif stateField == 'Gun Selector' then
+        --equip({range=state.GunSelector.current})
     end
-
 end
 
 -- State buff checks that will equip buff gear and mark the event as handled.
