@@ -129,6 +129,7 @@ function init_gear_sets()
     Camulus.WSD  =  { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
     Camulus.Snap =  { name="Camulus's Mantle", augments={'"Snapshot"+10',}}
     Camulus.MAB  =  { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
+    Camulus.DA  =  { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}
 
     HercFeet = {}
     HercHead = {}
@@ -136,7 +137,7 @@ function init_gear_sets()
     HercHands = {}
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
-    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+1','STR+6','Mag. Acc.+5','"Mag.Atk.Bns."+12',}}
+    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
     
     HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
@@ -601,7 +602,7 @@ function init_gear_sets()
         ring1="Hetairoi Ring",
         ring2="Epona's Ring",
         waist="Shetal Stone",
-        back=Camulus.STP,
+        back=Camulus.DA,
         feet="Taeon Boots",
     }
     -- sets.engaged.Single = set_combine(sets.engaged, {
@@ -642,6 +643,7 @@ function init_gear_sets()
         ear1="Telos Earring",
         ear2="Suppanomimi",
         legs="Meghanada Chausses +2",
+        back=Camulus.DA,
         waist="Windbuffet Belt +1"
     })
 
@@ -693,7 +695,7 @@ function init_gear_sets()
         ear1="Telos Earring",
         ear2="Suppanomimi",
         hands="Adhemar Wristbands +1",
-        back=Camulus.STP
+        back=Camulus.DA
     })
 
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.defense.PDT)
@@ -975,7 +977,7 @@ end
 
 function initialize_weapons()
     if player.equipment.range == 'Death Penalty' then
-        state.GunSelector:set('Death Penalty')
+        state.GunSelector:set('DeathPenalty')
     elseif player.equipment.range == 'Fomalhaut' then
         state.GunSelector:set('Fomalhaut')
     end

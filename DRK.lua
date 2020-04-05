@@ -706,7 +706,6 @@ function init_gear_sets()
     })
     sets.idle.Refresh = set_combine(sets.idle.Regen, {
         head="Befouled Crown",
-        neck="Coatl Gorget +1",
         body="Jumalik mail",
         neck="Coatl Gorget +1"
     })
