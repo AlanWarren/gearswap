@@ -155,9 +155,9 @@ function init_gear_sets()
     AdhemarLegs.TP = { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
 
     sets.precast.CorsairRoll = {
-        main={name="Rostam", bag="Wardrobe 4", priority=1},
-        sub={name="Tauret", priority=2},
-        range="Compensator",
+        --main={name="Rostam", bag="Wardrobe 4", priority=1},
+        --sub={name="Tauret", priority=2},
+        --range="Compensator",
         head="Lanun Tricorne +1",
         hands="Chasseur's Gants +1",
         ear2="Etiolation Earring",
@@ -178,11 +178,12 @@ function init_gear_sets()
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
     
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
-    --sets.precast.FoldDoubleBust = {hands="Lanun Gants"}
+    sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
 
     sets.Melee = {
-        main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
-        sub={name="Tauret", bag="Wardrobe 4", priority=1},
+        --main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
+        main={name="Rostam", bag="Wardrobe 4", priority=1},
+        sub={name="Blurred Knife +1", bag="Wardrobe 4", priority=2},
         ranged=state.GunSelector.current
     }
     sets.Melee.engaged = sets.Melee
@@ -198,12 +199,12 @@ function init_gear_sets()
         sub={name="Rostam", bag="Wardrobe 4", priority=1},
     }
     sets.Shooting.engaged = set_combine(sets.Shooting, {
-        head="Malignance Chapeau",
-        hands="Malignance Gloves",
-        body="Malignance Tabard",
-        legs="Malignance Tights", 
-        ring1="Defending Ring",
-        feet="Lanun Bottes +3"
+        --head="Malignance Chapeau",
+        --hands="Malignance Gloves",
+        --body="Malignance Tabard",
+        --legs="Malignance Tights", 
+        --ring1="Defending Ring",
+        --feet="Lanun Bottes +3"
     })
 
     sets.Single = {
@@ -259,17 +260,17 @@ function init_gear_sets()
 
     sets.precast.RA = {
         ammo=gear.RAbullet,
-        head=TaeonHead.Snap,
-        neck="Commodore Charm +1",
-        hands="Carmine Finger Gauntlets +1",
-        back=Camulus.Snap,
-        body="Oshosi Vest",
-        waist="Impulse Belt",
-        legs=AdhemarLegs.Snap,
-        feet="Meghanada Jambeaux +2"
+        head=TaeonHead.Snap, -- 9
+        neck="Commodore Charm +2", -- 3
+        hands="Carmine Finger Gauntlets +1", -- 8 / 11 rapid
+        back=Camulus.Snap, -- 10 
+        body="Oshosi Vest", -- 12
+        waist="Impulse Belt", -- 2
+        legs=AdhemarLegs.Snap, -- 9  / 10 rapid
+        feet="Meghanada Jambeaux +2" -- 10 
     }
     sets.precast.RA.F1 = set_combine(sets.precast.RA, {
-        body="Oshosi Vest",
+        body="Laksamana's Frac +3"
     })
     sets.precast.RA.F2 = set_combine(sets.precast.RA.F1, {
         body="Laksamana's Frac +3"
@@ -282,7 +283,7 @@ function init_gear_sets()
     sets.precast.WS = {
         head=HercHead.DM,
         --neck="Iskur Gorget",
-        neck="Commodore Charm +1",
+        neck="Commodore Charm +2",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
         body="Laksamana's Frac +3",
@@ -312,7 +313,7 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, { 
         head="Adhemar Bonnet +1",
-        ear1="Cessance Earring",
+        ear1="Odr Earring",
         ear2="Moonshade Earring",
         body="Herculean Vest",
         neck="Shadow Gorget",
@@ -361,7 +362,7 @@ function init_gear_sets()
     sets.precast.WS['Wildfire'] = {
         ammo=gear.MAbullet,
         head=HercHead.DM,
-        neck="Commodore Charm +1",
+        neck="Commodore Charm +2",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Lanun Frac +3",
@@ -382,7 +383,7 @@ function init_gear_sets()
     sets.precast.WS['Leaden Salute'] = { 
         ammo=gear.MAbullet,
         head="Pixie Hairpin +1", 
-        neck="Commodore Charm +1",
+        neck="Commodore Charm +2",
         ear1="Friomisi Earring",
         ear2="Moonshade Earring",
         body="Lanun Frac +3",
@@ -433,7 +434,7 @@ function init_gear_sets()
         ammo=gear.QDbullet,
         --head=HercHead.MAB,
         head="Laksamana's Tricorne +2",
-        neck="Commodore Charm +1",
+        neck="Commodore Charm +2",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Lanun Frac +3",
@@ -483,6 +484,7 @@ function init_gear_sets()
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
         --ring1="Hajduk Ring",
         ear2="Beyla Earring",
+        neck="Commodore Charm +2",
         ring1="Regal Ring",
         ring2="Cacoethic Ring +1",
         body="Laksamana's Frac +3",
@@ -492,20 +494,24 @@ function init_gear_sets()
     sets.midcast.RA.TripleShot = set_combine(sets.midcast.RA, {
         head="Oshosi Mask",
         body="Chasseur's Frac +1",
-        hands="Oshosi Gloves",
+        hands="Lanun Gants +3",
+        ring1="Regal Ring",
         legs="Oshosi Trousers",
         feet="Oshosi Leggings"
     })
     sets.midcast.RA.TripleShot.Mid = set_combine(sets.midcast.RA.Mid, {
         head="Oshosi Mask",
         body="Oshosi Vest",
-        hands="Oshosi Gloves",
+        hands="Lanun Gants +3",
+        ring1="Regal Ring",
         legs="Oshosi Trousers",
         feet="Oshosi Leggings"
     })
     sets.midcast.RA.TripleShot.Acc = set_combine(sets.midcast.RA.Acc, {
         head="Malignance Chapeau",
         body="Oshosi Vest",
+        hands="Lanun Gants +3",
+        ring1="Regal Ring",
         ring2="Cacoethic Ring +1",
         feet="Oshosi Leggings"
     })
@@ -535,21 +541,23 @@ function init_gear_sets()
         feet="Lanun Bottes +3"
     }
     sets.idle.Regen = set_combine(sets.idle, {
-        --head="Ocelomeh Headpiece +1",
+        head="Meghanada Visor +2",
         neck="Sanctity Necklace",
+        hands="Meghanada Gloves +2",
         --neck="Commodore Charm +1",
         body="Meghanada Cuirie +2",
         ring1="Meghanada Ring",
+        ring2="Paguroidea Ring"
     })
 
     sets.idle.Town = {
         ammo=gear.MAbullet,
         head="Adhemar Bonnet +1",
-        neck="Commodore Charm +1",
+        neck="Commodore Charm +2",
         ear1="Telos Earring",
         ear2="Dedition Earring",
         body="Nisroch Jerkin",
-        hands="Adhemar Wristbands +1",
+        hands="Lanun Gants +3",
         ring1="Regal Ring",
         ring2="Ilabrat Ring",
         back=Camulus.STP,
@@ -599,7 +607,7 @@ function init_gear_sets()
         hands="Floral Gauntlets",
         body="Adhemar Jacket +1",
         legs="Carmine Cuisses +1",
-        ring1="Hetairoi Ring",
+        ring1="Petrov Ring",
         ring2="Epona's Ring",
         waist="Shetal Stone",
         back=Camulus.DA,
@@ -822,7 +830,7 @@ function get_custom_wsmode(spell, action, default_wsmode)
 end
 
 function customize_idle_set(idleSet)
-    if player.hpp < 90 then
+    if player.hpp < 80 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
     return set_combine(idleSet, sets[state.FightingMode.current], sets[state.GunSelector.current])

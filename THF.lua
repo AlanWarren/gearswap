@@ -297,7 +297,7 @@ function init_gear_sets()
         neck="Shadow Gorget",
         head="Pillager's bonnet +3",
         body="Pillager's Vest +3",
-        ear1="Moonshade Earring",
+        ear1="Odr Earring",
         ear2="Sherida Earring",
         ring1="Regal Ring",
         ring2="Mummu Ring",
@@ -336,10 +336,12 @@ function init_gear_sets()
     })
 -- Testing italics
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
+        ammo="Seething Bomblet +1",
         neck="Assassin's Gorget +1",
         ear1="Moonshade Earring",
-        ear2="Sherida Earring",
+        ear2="Odr Earring",
         body="Herculean Vest",
+        --body="Meghanada Cuirie +2",
         hands="Meghanada Gloves +2",
         ring1="Regal Ring",
         ring2="Ilabrat Ring",
@@ -348,9 +350,9 @@ function init_gear_sets()
         feet=HercFeet.TP
     })
     sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {
-        body="Herculean Vest",
+        ear2="Odr Earring",
+        body="Meghanada Cuirie +2",
         back=Toutatis.WSD,
-        feet="Mummu Gamashes +2"
     })
     sets.precast.WS["Rudra's Storm"].Acc = set_combine(sets.precast.WS["Rudra's Storm"], {
         legs="Pillager's culottes +3",
@@ -360,6 +362,7 @@ function init_gear_sets()
     })
     sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {
         ammo="Yetshila",
+        head="Pillager's bonnet +3",
         neck="Assassin's Gorget +1",
         body="Meghanada Cuirie +2"
     })
@@ -368,6 +371,7 @@ function init_gear_sets()
         body="Herculean Vest",
     })
     sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {
+        body="Meghanada Cuirie +2",
         neck="Assassin's Gorget +1",
     })
 
@@ -535,7 +539,7 @@ function init_gear_sets()
         head="Pillager's Bonnet +3",
         neck="Assassin's Gorget +1",
         ear1="Telos Earring",
-        ear2="Suppanomimi",
+        ear2="Odr Earring",
         body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
         back=Toutatis.STP,
@@ -626,7 +630,7 @@ function init_gear_sets()
         body="Pillager's Vest +3",
         neck="Assassin's Gorget +1",
         ear1="Telos Earring",
-        ear2="Sherida Earring",
+        ear2="Odr Earring",
         back=Toutatis.STP,
         feet="Mummu Gamashes +2"
     })
@@ -685,6 +689,7 @@ function init_gear_sets()
         neck="Assassin's Gorget +1",
         hands="Adhemar Wristbands +1",
         ear1="Telos Earring",
+        ear2="Odr Earring",
         waist="Olseni Belt",
         back=Toutatis.STP,
         legs="Pillager's culottes +3",

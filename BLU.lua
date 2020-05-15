@@ -266,8 +266,8 @@ function init_gear_sets()
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
     HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
-    HercLegs.WSD = { name="Herculean Trousers", augments={'DEX+4','INT+7','Weapon skill damage +10%','Accuracy+3 Attack+3',}}
-    HercLegs.MAB = { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+25','Crit.hit rate+3','AGI+12','Mag. Acc.+12',}} 
+    HercLegs.MAB = { name="Herculean Trousers", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+14',}}
+    HercLegs.TH = { name="Herculean Trousers", augments={'Phys. dmg. taken -1%','VIT+10','"Treasure Hunter"+2','Accuracy+10 Attack+10','Mag. Acc.+19 "Mag.Atk.Bns."+19',}} 
 
     Rosmerta = {}
     Rosmerta.TP = {name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
@@ -296,7 +296,7 @@ function init_gear_sets()
     sets.precast.Waltz['Healing Waltz'] = {}
 
     -- Fast cast sets for spells
-    sets.TreasureHunter = {head="White rarab cap +1", waist="Chaac Belt"}
+    sets.TreasureHunter = {head="White rarab cap +1", waist="Chaac Belt", legs=HercLegs.TH}
     
     sets.precast.FC = {
         ammo="Impatiens",
@@ -328,11 +328,12 @@ function init_gear_sets()
         ring2="Epona's Ring",
         back=Rosmerta.WS,
         waist="Windbuffet Belt +1",
-        legs=HercLegs.WSD,
+        legs="Samnuha Tights",
         feet=HercFeet.TP
     }
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
+        ear1="Odr Earring",
         ear2="Moonshade Earring",
         ring1="Ilabrat Ring",
         waist="Light Belt",
@@ -347,11 +348,10 @@ function init_gear_sets()
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
         waist="Thunder Belt",
-        legs=HercLegs.WSD,
+        legs="Samnuha Tights",
         feet=HercFeet.TP
     })
     sets.precast.WS['Savage Blade'].Mid = set_combine(sets.precast.WS, {
-        legs=HercLegs.WSD
     })
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Mid, {
         body="Adhemar Jacket +1",
@@ -365,7 +365,7 @@ function init_gear_sets()
         body="Shamash Robe",
         ear1="Brutal Earring",
         ear2="Moonshade Earring",
-        legs=HercLegs.WSD,
+        legs="Samnuha Tights",
         ring1="Ilabrat Ring",
         ring2="Epona's Ring",
         feet="Jhakri Pigaches +2"
@@ -433,8 +433,8 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Adhemar Bonnet +1",
         neck="Mirage Stole +1",
-        ear1="Flame Pearl",
-        ear2="Flame Pearl",
+        --ear1="Flame Pearl",
+        --ear2="Flame Pearl",
         body="Adhemar Jacket +1",
         hands="Adhemar Wristbands +1",
         ring1="Ilabrat Ring",
@@ -458,6 +458,7 @@ function init_gear_sets()
     })
 
     sets.midcast['Blue Magic'].PhysicalDex = set_combine(sets.midcast['Blue Magic'].Physical, {
+        ear1="Odr Earring",
         head="Malignance Chapeau",
         legs="Samnuha Tights"
     })

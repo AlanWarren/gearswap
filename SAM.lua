@@ -124,13 +124,13 @@ function init_gear_sets()
     -- Precast Sets
     -- Precast sets to enhance JAs
     sets.precast.JA.Meditate = {
-        head="Wakido Kabuto",
+        head="Wakido Kabuto +1",
         hands="Sakonji Kote +1",
         back=Smertrios.TP
     }
     sets.precast.JA.Sekkanoki = {hands="Unkai Kote +2" }
     sets.precast.JA.Seigan = {head="Unkai Kabuto +2"}
-    sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto"}
+    sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +1"}
     sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate"}
     --sets.precast.JA['Blade Bash'] = {hands="Saotome Kote +2"}
    
@@ -176,8 +176,8 @@ function init_gear_sets()
     sets.WSDayBonus      = { head="Gavialis Helm" }
     sets.LugraMoonshade  = { ear1="Lugra Earring +1", ear2="Moonshade Earring" }
     sets.BrutalMoonshade = { ear1="Brutal Earring", ear2="Moonshade Earring" }
-    sets.LugraFlame      = { ear1="Lugra Earring +1", ear2="Flame Pearl" }
-    sets.FlameFlame      = { ear1="Flame Pearl", ear2="Flame Pearl" }
+    --sets.LugraFlame      = { ear1="Lugra Earring +1", ear2="Flame Pearl" }
+    --sets.FlameFlame      = { ear1="Flame Pearl", ear2="Flame Pearl" }
        
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
@@ -301,7 +301,6 @@ function init_gear_sets()
         legs="Wakido Haidate +3",
         waist="Soil Belt",
     })
-    sets.precast.WS['Tachi: Jinpu'] = sets.precast.WS['Tachi: Ageha']
     
     sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {waist="Light Belt"})
     
@@ -309,7 +308,14 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {neck="Breeze Gorget",waist="Windbuffet Belt +1"})
     
-    sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {neck="Shadow Gorget",waist="Soil Belt"})
+    sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {
+        head="Kendatsuba Jinpachi +1",
+        body="Founder's Breastpalte",
+        hands="Founder's Gauntlets",
+        neck="Shadow Gorget",
+        waist="Soil Belt",
+        feet="Founder's Greaves"
+    })
     
     sets.midcast['Blue Magic'] = set_combine(sets.precast.WS['Tachi: Ageha'], {
         ear2="Gwati Earring", -- 3
@@ -337,20 +343,18 @@ function init_gear_sets()
     }
     
     sets.idle.Town = {
-        --main="Anahera Blade", 
-        --sub="Pole Grip",
         ammo="Ginsen",
-        head="Flamma Zucchetto +2",
+        head="Kendatsuba Jinpachi +1",
         neck="Samurai's Nodowa +1",
         ear1="Telos Earring",
         ear2="Dedition Earring",
-   	    body="Tartarus Platemail",
+   	    body="Kendatsuba Samue +1",
         hands="Wakido Kote +3",
         ring1="Niqmaddu Ring",
         ring2="Regal Ring",
         back=Smertrios.TP,
         waist="Windbuffet Belt +1",
-        legs="Wakido Haidate +3",
+        legs="Kendatsuba Hakama +1",
         feet="Danzo Sune-ate"
     }
     -- sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
@@ -364,12 +368,12 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Eabani Earring",
    	    body="Tartarus Platemail",
-        hands="Sakonji Kote +1",
+        hands="Kendatsuba Tekko +1",
         ring1="Dark Ring",
         ring2="Defending Ring",
         back=Smertrios.TP,
         waist="Flume Belt",
-        legs="Kendatsuba Hakama",
+        legs="Kendatsuba Hakama +1",
         feet="Danzo Sune-ate"
     })
 
@@ -448,50 +452,41 @@ function init_gear_sets()
     sets.engaged.Mid = set_combine(sets.engaged, {
         -- hands=Valorous.Hands.TP,
         neck="Samurai's Nodowa +1",
-        body="Kendatsuba Samue",
+        body="Kendatsuba Samue +1",
         ear1="Telos Earring",
         ear2="Cessance Earring",
-        legs="Kendatsuba Hakama",
+        legs="Kendatsuba Hakama +1",
         ring1="Niqmaddu Ring", 
         ring2="Regal Ring",
         --body="Kendatsuba Samue",
         --legs="Kendatsuba Hakama",
     })
+
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
-        -- head="Valorous Mask",
+        head="Kendatsuba Jinpachi +1",
         neck="Samurai's Nodowa +1",
-        body="Kendatsuba Samue",
+        body="Kendatsuba Samue +1",
         ring1="Flamma Ring",
         ring2="Regal Ring",
-        -- back="Grounded Mantle +1",
-        legs="Wakido Haidate +3",
-        -- legs="Acro Breeches",
+        feet="Kendatsuba Sune-ate +1"
     })
-    sets.engaged.PDT = set_combine(sets.engaged, {
+
+    sets.engaged.PDT = set_combine(sets.engaged.Acc, {
         -- ammo="Staunch Tathlum",
    	    body="Tartarus Platemail",
         -- neck="Twilight Torque",
         ring2="Defending Ring"
     })
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
         neck="Agitator's Collar",
    	    body="Tartarus Platemail",
         ring2="Defending Ring"
     })
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid, {
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid.PDT, {
         ammo="Ginsen",
    	    body="Tartarus Platemail",
         neck="Agitator's Collar",
         ring2="Defending Ring"
-    })
-    
-    
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, { 
-        --  head="Lithelimb Cap",
-         neck="Agitator's Collar",
-   	     body="Tartarus Platemail",
-         ring1="Patricius Ring",
-         ring2="Defending Ring"
     })
     
     sets.engaged.Amanomurakumo = set_combine(sets.engaged, {

@@ -220,6 +220,10 @@ function init_gear_sets()
     sets.precast.JA['Weapn Bash']   = {hands="Ignominy Gauntlets +2"}
     sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +3"}
     sets.precast.JA['Last Resort']  = {back=Ankou.WSD}
+    sets.precast.JA['Jump'] = sets.Jump
+    sets.precast.JA['High Jump'] = sets.Jump
+
+    sets.Jump = { feet="Ostro Greaves" }
 
     sets.CapacityMantle  = { back="Mecistopins Mantle" }
     sets.WSDayBonus      = { head="Gavialis Helm" }
@@ -359,7 +363,7 @@ function init_gear_sets()
         ear2="Eabani Earring", -- 3
         body="Heathen's Cuirass +1",
         --body="Ratri Breastplate +1",
-        hands="Flamma Manopolas +2",
+        hands="Ratri Gadlings +1",
         back="Trepidity Mantle",
         ring2="Regal Ring", -- matk 4
         waist="Eschan Stone",
@@ -369,7 +373,7 @@ function init_gear_sets()
     sets.midcast['Dread Spikes'].Acc = set_combine(sets.midcast['Dark Magic'], {
         head="Ratri Sallet +1",
         body="Heathen's Cuirass +1",
-        hands="Fallen's Finger Gauntlets +1"
+        --hands="Fallen's Finger Gauntlets +1"
     })
 
     -- Drain spells 
@@ -511,7 +515,9 @@ function init_gear_sets()
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
         head="Ratri Sallet +1",
         neck="Abyssal Bead Necklace +2",
-        body="Ratri Breastplate +1",
+        --body="Ratri Breastplate +1",
+        body="Ignominy Cuirass +3",
+        hands="Ratri Gadlings +1",
         legs="Ratri Cuisses +1",
         ring2="Regal Ring",
         waist="Light Belt",
@@ -527,15 +533,15 @@ function init_gear_sets()
         head="Ratri Sallet +1",
         ear2="Ishvara Earring",
         neck="Abyssal Bead Necklace +2",
-        --body="Ignominy Cuirass +3",
-        body="Ratri Breastplate +1",
+        body="Ignominy Cuirass +3",
+        hands="Ratri Gadlings +1",
         legs="Ratri Cuisses +1",
         waist="Soil Belt",
         feet="Ratri Sollerets +1"
     })
     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {})
     sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
-        body="Fallen's Cuirass +3",
+        body="Ratri Breastplate +1",
         waist="Olseni Belt",
     })
 
@@ -548,8 +554,9 @@ function init_gear_sets()
     -- 60% STR / 60% MND
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
         head="Ratri Sallet +1",
-        --body="Ignominy Cuirass +3",
-        body="Ratri Breastplate +1",
+        body="Ignominy Cuirass +3",
+        --body="Ratri Breastplate +1",
+        hands="Ratri Gadlings +1",
         waist="Metalsinger Belt",
         legs="Ratri Cuisses +1",
         feet="Ratri Sollerets +1"
@@ -562,15 +569,15 @@ function init_gear_sets()
     -- ENTROPY
     -- 86-100% INT 
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
-        head="Ratri Sallet +1",
+        head="Hjarrandi Helm",
         neck="Abyssal Bead Necklace +2",
         body="Ignominy Cuirass +3",
         ear1="Malignance Earring",
         waist="Soil Belt",
         ring1="Niqmaddu Ring",
         ring2="Regal Ring",
-        legs="Fallen's Flanchard +3",  
-        feet="Ratri Sollerets +1"
+        legs="Ignominy Flanchard +3", -- 5% haste
+        feet="Flamma Gambieras +2"
     })
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
     })
@@ -586,7 +593,7 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +2",
         --body="Ignominy Cuirass +3",
         body="Ratri Breastplate +1",
-        hands="Odyssean Gauntlets",
+        hands="Ratri Gadlings +1",
         waist="Caudata Belt",
         feet="Ratri Cuisses +1",
         feet="Ratri Sollerets +1"
@@ -604,6 +611,7 @@ function init_gear_sets()
     sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS['Entropy'], {
         neck="Abyssal Bead Necklace +2",
         body="Ignominy Cuirass +3",
+        legs="Fallen's Flanchard +3",  
         waist="Metalsinger belt",
     })
     sets.precast.WS['Spiral Hell'].Mid = set_combine(sets.precast.WS['Spiral Hell'], sets.precast.WS.Mid, { })
@@ -619,6 +627,7 @@ function init_gear_sets()
         hands="Carmine Finger Gauntlets +1",
         ring2="Archon Ring",
         back=Ankou.WSD,
+        legs="Fallen's Flanchard +3",  
         feet="Ratri Cuisses +1",
         waist="Eschan Stone", -- macc/matk 7
         feet="Ratri Sollerets +1"
@@ -683,10 +692,11 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Ratri Sallet +1",
         neck="Abyssal Bead Necklace +2",
-        ear1="Thrud Earring",
+        ear1="Dedition Earring",
         ear2="Telos Earring",
         --body="Tartarus Platemail",
         body="Ratri Breastplate +1",
+        hands="Ratri Gadlings +1",
         ring1="Niqmaddu Ring",
         ring2="Regal Ring",
         back=Ankou.DA,
