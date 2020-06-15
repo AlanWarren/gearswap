@@ -255,12 +255,16 @@ function init_gear_sets()
     HercHead = {}
     HercLegs = {}
     HercHands = {}
+    HercBody = {}
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
     HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+1','STR+6','Mag. Acc.+5','"Mag.Atk.Bns."+12',}}
     
     HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
+    
+    HercBody.MAB = { name="Herculean Vest", augments={'Haste+1','"Mag.Atk.Bns."+27','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
+    HercBody.WSD = { name="Herculean Vest", augments={'"Blood Pact" ability delay -4','AGI+3','Weapon skill damage +9%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
     
     HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
@@ -322,7 +326,7 @@ function init_gear_sets()
         neck="Mirage Stole +1",
         ear1="Ishvara Earring",
         ear2="Brutal Earring",
-        body="Herculean Vest",
+        body=HercBody.WSD,
         hands="Jhakri Cuffs +2",
         ring1="Ilabrat Ring",
         ring2="Epona's Ring",
@@ -385,7 +389,10 @@ function init_gear_sets()
         legs=HercLegs.MAB,
         feet=HercFeet.MAB
     }
-    
+   
+    sets.Organizer = {
+        back="Linkpearl",
+    }
     
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -544,7 +551,7 @@ function init_gear_sets()
         -- back="Refraction Cape",
         waist="Glassblower's Belt",
         -- legs="Enif Cosciales",
-        -- feet="Iuitl Gaiters +1"
+        feet="Malignance Boots"
     })
 
     -- Other Types --
@@ -622,7 +629,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
         waist="Flume Belt",
         back="Kumbira Cape",
-        feet="Ayanmo Gambieras +2"
+        feet="Malignance Boots"
     }
     
     -- Idle sets
@@ -639,7 +646,7 @@ function init_gear_sets()
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
         back="Kumbira Cape",
-        feet="Ayanmo Gambieras +2"
+        feet="Malignance Boots"
     }
 
     sets.idle.PDT = set_combine(sets.idle, {
@@ -649,7 +656,7 @@ function init_gear_sets()
         hands="Malignance Gloves",
         body="Malignance Tabard",
         legs="Malignance Tights", 
-        feet="Ayanmo Gambieras +2"
+        feet="Malignance Boots"
     })
 
     sets.idle.Town = set_combine(sets.idle, {
@@ -720,6 +727,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         hands="Malignance Gloves",
         legs="Malignance Tights", 
+        feet="Malignance Boots"
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
         head="Malignance Chapeau",

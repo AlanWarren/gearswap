@@ -124,13 +124,13 @@ function init_gear_sets()
     -- Precast Sets
     -- Precast sets to enhance JAs
     sets.precast.JA.Meditate = {
-        head="Wakido Kabuto +1",
+        head="Wakido Kabuto +2",
         hands="Sakonji Kote +1",
         back=Smertrios.TP
     }
     sets.precast.JA.Sekkanoki = {hands="Unkai Kote +2" }
     sets.precast.JA.Seigan = {head="Unkai Kabuto +2"}
-    sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +1"}
+    sets.precast.JA['Warding Circle'] = {head="Wakido Kabuto +2"}
     sets.precast.JA['Third Eye'] = {legs="Sakonji Haidate"}
     --sets.precast.JA['Blade Bash'] = {hands="Saotome Kote +2"}
    
@@ -145,10 +145,8 @@ function init_gear_sets()
     sets.precast.Waltz = {}
 
     sets.Organizer = {
-        sub="Utu Grip",
-        range="Yoichinoyumi",
-        ammo="Cibitshavore",
-        back="Takaha Mantle"
+        grip="Pearlsack",
+        waist="Linkpearl",
     }
     sets.precast.RA = {
         head="Volte Tiara",
@@ -184,7 +182,7 @@ function init_gear_sets()
     sets.precast.WS = {
         ammo="Knobkierrie",
         head="Valorous Mask",
-        neck="Samurai's Nodowa +1",
+        neck="Samurai's Nodowa +2",
         ear1="Thrud Earring",
         ear2="Moonshade Earring",
         body="Sakonji Domaru +3",
@@ -205,8 +203,8 @@ function init_gear_sets()
     
     sets.precast.WS['Namas Arrow'] = {
         ammo=gear.RAarrow,
-        head="Terminal Helm",
-        neck="Samurai's Nodowa +1",
+        head="Valorous Mask",
+        neck="Samurai's Nodowa +2",
         ear1="Thrud Earring",
         ear2="Ishvara Earring",
         body="Kendatsuba Samue",
@@ -238,7 +236,7 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
-        neck="Samurai's Nodowa +1",
+        neck="Samurai's Nodowa +2",
         waist="Metalsinger Belt",
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
@@ -251,7 +249,7 @@ function init_gear_sets()
         feet="Flamma Gambieras +2",
     })
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
-        neck="Samurai's Nodowa +1",
+        neck="Samurai's Nodowa +2",
         waist="Metalsinger Belt",
         feet=Valorous.Feet.WS
     })
@@ -264,7 +262,7 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
         head="Flamma Zucchetto +2",
-        neck="Samurai's Nodowa +1",
+        neck="Samurai's Nodowa +2",
         waist="Thunder Belt",
         back=Smertrios.WS,
         feet="Flamma Gambieras +2",
@@ -273,14 +271,14 @@ function init_gear_sets()
     sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {})
 
     sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS['Tachi: Shoha'], {
-        neck="Samurai's Nodowa +1",
+        neck="Samurai's Nodowa +2",
         waist="Soil Belt"
     })
     sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {})
     sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS['Stardiver'].Mid, {})
     
     sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS, {
-        neck="Samurai's Nodowa +1",
+        neck="Samurai's Nodowa +2",
         waist="Soil Belt",
     })
     sets.precast.WS['Tachi: Rana'].Mid = set_combine(sets.precast.WS['Tachi: Rana'], {
@@ -310,7 +308,7 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {
         head="Kendatsuba Jinpachi +1",
-        body="Founder's Breastpalte",
+        body="Founder's Breastplate",
         hands="Founder's Gauntlets",
         neck="Shadow Gorget",
         waist="Soil Belt",
@@ -345,7 +343,7 @@ function init_gear_sets()
     sets.idle.Town = {
         ammo="Ginsen",
         head="Kendatsuba Jinpachi +1",
-        neck="Samurai's Nodowa +1",
+        neck="Samurai's Nodowa +2",
         ear1="Telos Earring",
         ear2="Dedition Earring",
    	    body="Kendatsuba Samue +1",
@@ -436,7 +434,7 @@ function init_gear_sets()
         ammo="Ginsen",
         head="Flamma Zucchetto +2",
         --neck="Moonbeam Nodowa",
-        neck="Samurai's Nodowa +1",
+        neck="Samurai's Nodowa +2",
         ear1="Brutal Earring",
         ear2="Dedition Earring",
         body="Kasuga Domaru +1",
@@ -451,22 +449,21 @@ function init_gear_sets()
     
     sets.engaged.Mid = set_combine(sets.engaged, {
         -- hands=Valorous.Hands.TP,
-        neck="Samurai's Nodowa +1",
+        neck="Samurai's Nodowa +2",
         body="Kendatsuba Samue +1",
         ear1="Telos Earring",
         ear2="Cessance Earring",
         legs="Kendatsuba Hakama +1",
         ring1="Niqmaddu Ring", 
-        ring2="Regal Ring",
+        ring2="Flamma Ring",
         --body="Kendatsuba Samue",
         --legs="Kendatsuba Hakama",
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
         head="Kendatsuba Jinpachi +1",
-        neck="Samurai's Nodowa +1",
+        neck="Samurai's Nodowa +2",
         body="Kendatsuba Samue +1",
-        ring1="Flamma Ring",
         ring2="Regal Ring",
         feet="Kendatsuba Sune-ate +1"
     })
@@ -475,7 +472,9 @@ function init_gear_sets()
         -- ammo="Staunch Tathlum",
    	    body="Tartarus Platemail",
         -- neck="Twilight Torque",
-        ring2="Defending Ring"
+        ring2="Defending Ring",
+        legs="Kendatsuba Hakama +1",
+        feet="Kendatsuba Sune-ate +1"
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
         neck="Agitator's Collar",

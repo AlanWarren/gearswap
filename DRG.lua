@@ -68,7 +68,7 @@ function init_gear_sets()
 	--------------------------------------
     Brigantia = {}
     Brigantia.TP = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
-    Brigantia.WS = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+    Brigantia.WS = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+5','Weapon skill damage +10%',}}
     Brigantia.DAWS = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
 
     Valorous = {}
@@ -92,6 +92,8 @@ function init_gear_sets()
     sets.WSDayBonus     = { head="Gavialis Helm" }
 
     sets.Organizer = {
+        grip="Pearlsack",
+        waist="Linkpearl",
     }
 
 	sets.precast.JA.Jump = {

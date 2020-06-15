@@ -119,12 +119,16 @@ function init_gear_sets()
     HercHead = {}
     HercLegs = {}
     HercHands = {}
+    HercBody = {}
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
     HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
     
     HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
+    
+    HercBody.MAB = { name="Herculean Vest", augments={'Haste+1','"Mag.Atk.Bns."+27','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
+    HercBody.WSD = { name="Herculean Vest", augments={'"Blood Pact" ability delay -4','AGI+3','Weapon skill damage +9%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
     
     HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
@@ -144,12 +148,8 @@ function init_gear_sets()
     Belenus.Snap = {name="Belenus's Cape", augments={'"Snapshot"+10',}}
 
     sets.Organizer = {
-        main="Annihilator",
-        sub="Nusku Shield",
-        ammo="Perun +1",
         ear2="Reraise Earring",
-        range="Yoichinoyumi",
-        feet="Eradicating Bullet Pouch"
+        back="Linkpearl",
     }
     -- Misc. Job Ability precasts
     sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1", waist="Chaac Belt", legs=HercLegs.TH }
@@ -228,8 +228,8 @@ function init_gear_sets()
         hands="Malignance Gloves",
         waist="Kwahu Kachina Belt",
         back=Belenus.STP,
-        legs="Arcadian Braccae +3", 
-        feet="Jute Boots +1"
+        legs="Carmine Cuisses +1", 
+        feet="Malignance Boots"
     })
 
     -- Engaged sets
@@ -246,7 +246,7 @@ function init_gear_sets()
         back=Belenus.STP,
         waist="Kwahu Kachina Belt", 
         legs="Malignance Tights", 
-        feet="Arcadian Socks +3"
+        feet="Malignance Boots"
     }
     sets.engaged.PDT = set_combine(sets.engaged, {
         hands="Malignance Gloves",
@@ -359,7 +359,7 @@ function init_gear_sets()
         back=Belenus.STP,
         waist="Kwahu Kachina Belt", 
         legs="Malignance Tights", 
-        feet="Arcadian Socks +3"
+        feet="Malignance Boots"
     }
     sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
         ear1="Enervating Earring",
@@ -372,7 +372,7 @@ function init_gear_sets()
         ring1="Cacoethic Ring +1",
         body="Orion Jerkin +3", 
         legs="Malignance Tights", 
-        feet="Mummu Gamashes +2"
+        feet="Malignance Boots"
     })
     
     -- Double Shot 
@@ -425,7 +425,7 @@ function init_gear_sets()
         back=Belenus.STP,
         waist="Kwahu Kachina Belt",
         legs="Malignance Tights", 
-        feet="Arcadian Socks +3"
+        feet="Malignance Boots"
     }
     sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
         ear1="Enervating Earring",
@@ -446,7 +446,7 @@ function init_gear_sets()
         neck="Scout's Gorget +2",
         ear1="Sherida Earring",
         ear2="Ishvara Earring",
-        body="Herculean Vest",
+        body=HercBody.WSD,
         hands="Meghanada Gloves +2",
         -- ring1="Dingir Ring",
         ring1="Ilabrat Ring",
@@ -478,7 +478,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         neck="Scout's Gorget +2",
         hands="Carmine Finger Gauntlets +1",
-        body="Samnuha Coat",
+        body=HercBody.MAB,
         ring1="Dingir Ring",
         ring2="Regal Ring",
         back=Belenus.MAB,
@@ -503,7 +503,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         neck="Scout's Gorget +2",
         hands="Carmine Finger Gauntlets +1",
-        body="Samnuha Coat",
+        body=HercBody.MAB,
         ring1="Dingir Ring",
         ring2="Weatherspoon Ring",
         back=Belenus.MAB,
@@ -514,12 +514,12 @@ function init_gear_sets()
     }
     sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {
         head=HercHead.MAB,
-        body="Samnuha Coat",
         legs="Arcadian Braccae +3", 
         hands=HercHands.MAB,
         --legs="Arcadian Braccae +3", 
     })
     sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
+        body="Samnuha Coat",
         legs="Arcadian Braccae +3", 
         --head="Mummu Bonnet +2",
         --body="Mummu Jacket +2",
@@ -536,7 +536,7 @@ function init_gear_sets()
         neck="Scout's Gorget +2",
         ear1="Sherida Earring",
         ear2="Ishvara Earring",
-        body="Herculean Vest",
+        body=HercBody.WSD,
         waist="Thunder Belt",
         ring1="Dingir Ring",
         ring2="Regal Ring",
@@ -556,7 +556,7 @@ function init_gear_sets()
         neck="Scout's Gorget +2",
         ear1="Sherida Earring",
         ear2="Moonshade Earring",
-        body="Herculean Vest",
+        body="Arcadian Jerkin +3",
         back=Belenus.WSD,
         ring1="Dingir Ring",
         ring2="Regal Ring",
@@ -686,7 +686,7 @@ function init_gear_sets()
         back=Belenus.STP,
         waist="Kwahu Kachina Belt",
         legs="Malignance Tights",
-        feet="Arcadian Socks +3"
+        feet="Malignance Boots"
     }
     sets.buff.Camouflage =  {body="Orion Jerkin +3"}
 

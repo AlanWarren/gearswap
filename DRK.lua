@@ -200,14 +200,9 @@ function init_gear_sets()
      }
  
     sets.Organizer = {
-        main="Liberator",
-        sub="Sangarius",
-        ammo="Caladbolg",
-        ring1="Apocalypse",
         ear2="Reraise Earring",
-        neck="Utu Grip",
-        grip="Pole Grip",
-        waist="Mes. Haubergeon",
+        grip="Pearlsack",
+        waist="Linkpearl",
         back=Niht.DarkMagic,
     }
 
@@ -641,8 +636,8 @@ function init_gear_sets()
     -- DARK HARVEST 
     -- 40% STR 40% INT - Darkness Elemental
     sets.precast.WS['Dark Harvest'] = sets.precast.WS['Shadow of Death']
-    sets.precast.WS['Dark Harvest'].Mid = set_combine(sets.precast.WS['Shadow of Death'], {head="Terminal Helm", feet="Heathen's Sollerets +1"})
-    sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {head="Terminal Helm", feet="Heathen's Sollerets +1"})
+    sets.precast.WS['Dark Harvest'].Mid = set_combine(sets.precast.WS['Shadow of Death'], {})
+    sets.precast.WS['Dark Harvest'].Acc = set_combine(sets.precast.WS['Shadow of Death'], {})
 
     -- Sword WS's
     -- SANGUINE BLADE

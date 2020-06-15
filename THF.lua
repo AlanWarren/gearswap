@@ -87,9 +87,13 @@ function init_gear_sets()
     HercHead = {}
     HercLegs = {}
     HercHands = {}
+    HercBody = {}
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
     HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
+    
+    HercBody.MAB = { name="Herculean Vest", augments={'Haste+1','"Mag.Atk.Bns."+27','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
+    HercBody.WSD = { name="Herculean Vest", augments={'"Blood Pact" ability delay -4','AGI+3','Weapon skill damage +9%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
     
     HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
@@ -111,10 +115,8 @@ function init_gear_sets()
     sets.CapacityMantle = { back="Mecistopins Mantle" }
 
     sets.Organizer = {
-        main="Odium",
-        sub="Jugo Kukri",
-        ammo="Izhiikoh",
-        range="Raider's Boomerang"
+        grip="Pearlsack",
+        waist="Linkpearl",
     }
 
     sets.buff['Sneak Attack'] = {
@@ -220,7 +222,7 @@ function init_gear_sets()
         waist="Eschan Stone",
         back="Quarrel Mantle",
         legs="Malignance Tights", 
-        feet="Meghanada Jambeaux +2" -- 8
+        feet="Malignance Boots"
     }
     --sets.midcast['Enfeebling Magic'] = sets.midcast.RA
 
@@ -240,7 +242,7 @@ function init_gear_sets()
         neck="Assassin's Gorget +1",
         ear1="Moonshade Earring",
         ear2="Ishvara Earring",
-        body="Herculean Vest",
+        body=HercBody.WSD,
         hands="Meghanada Gloves +2",
         ring1="Regal Ring",
         ring2="Gere Ring",
@@ -323,7 +325,7 @@ function init_gear_sets()
         ammo="Seething Bomblet +1",
         neck="Breeze Gorget",
         head=HercHead.DM,
-        body="Herculean Vest",
+        body=HercBody.WSD,
         ear1="Moonshade Earring",
         ear2="Sherida Earring",
         ring1="Regal Ring",
@@ -340,7 +342,7 @@ function init_gear_sets()
         neck="Assassin's Gorget +1",
         ear1="Moonshade Earring",
         ear2="Odr Earring",
-        body="Herculean Vest",
+        body=HercBody.WSD,
         --body="Meghanada Cuirie +2",
         hands="Meghanada Gloves +2",
         ring1="Regal Ring",
@@ -368,7 +370,7 @@ function init_gear_sets()
     })
     sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {
         neck="Assassin's Gorget +1",
-        body="Herculean Vest",
+        body=HercBody.WSD,
     })
     sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {
         body="Meghanada Cuirie +2",
@@ -398,7 +400,7 @@ function init_gear_sets()
         head=HercHead.DM, 
         ear1="Moonshade Earring",
         ear2="Friomisi Earring",
-        body="Herculean Vest",
+        body=HercBody.WSD,
         hands=HercHands.MAB,
         ring1="Dingir Ring",
         ring2="Mummu Ring",
@@ -488,6 +490,7 @@ function init_gear_sets()
         back=Toutatis.STP,
         waist="Flume Belt",
         legs="Malignance Tights", 
+        feet="Malignance Boots"
     }
 
     sets.defense.MDT = {
@@ -501,7 +504,7 @@ function init_gear_sets()
         ring2="Gere Ring",
         back="Solemnity Cape",
         legs="Malignance Tights", 
-        feet=HercFeet.TP
+        feet="Malignance Boots"
     }
 
     sets.Kiting = {feet="Jute Boots +1"}
@@ -557,7 +560,7 @@ function init_gear_sets()
         ring2="Gere Ring",
         back=Toutatis.STP,
         legs="Malignance Tights", 
-        feet=HercFeet.TP
+        feet="Malignance Boots"
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
         body="Pillager's Vest +3",
@@ -590,7 +593,7 @@ function init_gear_sets()
         ring2="Gere Ring",
         back=Toutatis.STP,
         legs="Malignance Tights",
-        feet="Taeon Boots" 
+        feet="Malignance Boots"
     })
     sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.PDT.Haste_15, {
         head="Malignance Chapeau",

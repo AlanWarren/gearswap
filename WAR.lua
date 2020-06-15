@@ -96,13 +96,10 @@ function init_gear_sets()
         feet=Valorous.Feet.TH
      }
 
-     sets.Organizer = {
-         main="Devivifier",
-         sub="Sangarius",
-         neck="Bloodrain Strap",
-         legs="Odyssean Cuisses",
-         feet="Odyssean Greaves"
-     }
+    sets.Organizer = {
+        grip="Pearlsack",
+        waist="Linkpearl",
+    }
 
     sets.MadrigalBonus = {
         hands="Composer's Mitts"
@@ -112,8 +109,9 @@ function init_gear_sets()
      --sets.precast.JA['Mighty Strikes'] = {hands="Fallen's Finger Gauntlets +1"}
      sets.precast.JA['Blood Rage'] = { body="Boii Lorica +1" }
      sets.precast.JA['Provoke'] = set_combine(sets.TreasureHunter, { hands="Pummeler's Mufflers +1"})
-     sets.precast.JA['Berserk'] = { body="Pummeler's Lorica +1", hands="Warrior's Calligae +2", back=Cichols.TP}
-     sets.precast.JA['Aggressor'] = { head="Pummeler's Mask +1"}
+     sets.precast.JA['Berserk'] = { body="Pummeler's Lorica +1", hands="Agoge Calligae", back=Cichols.TP}
+     sets.precast.JA['Warcry'] = { head="Agoge Mask"}
+     sets.precast.JA['Aggressor'] = { head="Pummeler's Mask +1", body="Agoge Lorica"}
      sets.precast.JA['Restraint'] = { head="Ravager's Mufflers +2"}
 
      sets.CapacityMantle  = { back="Mecistopins Mantle" }

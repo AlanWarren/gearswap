@@ -72,7 +72,7 @@ function user_setup()
     gear.RAbullet = "Chrono Bullet"
     gear.WSbullet = "Chrono Bullet"
     gear.MAbullet = "Living Bullet"
-    gear.QDbullet = "Living Bullet"
+    gear.QDbullet = "Hauksbok Bullet"
     --gear.QDbullet = "Adlivun Bullet"
     options.ammo_warning_limit = 15
 
@@ -135,9 +135,13 @@ function init_gear_sets()
     HercHead = {}
     HercLegs = {}
     HercHands = {}
+    HercBody = {}
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
     HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
+    
+    HercBody.MAB = { name="Herculean Vest", augments={'Haste+1','"Mag.Atk.Bns."+27','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
+    HercBody.WSD = { name="Herculean Vest", augments={'"Blood Pact" ability delay -4','AGI+3','Weapon skill damage +9%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
     
     HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
@@ -155,9 +159,9 @@ function init_gear_sets()
     AdhemarLegs.TP = { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
 
     sets.precast.CorsairRoll = {
-        --main={name="Rostam", bag="Wardrobe 4", priority=1},
-        --sub={name="Tauret", priority=2},
-        --range="Compensator",
+        main={name="Rostam", bag="Wardrobe 4", priority=1},
+        sub={name="Tauret", priority=2},
+        range="Compensator",
         head="Lanun Tricorne +1",
         hands="Chasseur's Gants +1",
         ear2="Etiolation Earring",
@@ -199,12 +203,12 @@ function init_gear_sets()
         sub={name="Rostam", bag="Wardrobe 4", priority=1},
     }
     sets.Shooting.engaged = set_combine(sets.Shooting, {
-        --head="Malignance Chapeau",
-        --hands="Malignance Gloves",
-        --body="Malignance Tabard",
-        --legs="Malignance Tights", 
-        --ring1="Defending Ring",
-        --feet="Lanun Bottes +3"
+       head="Malignance Chapeau",
+       hands="Malignance Gloves",
+       body="Malignance Tabard",
+       legs="Malignance Tights", 
+       ring1="Defending Ring",
+       feet="Lanun Bottes +3"
     })
 
     sets.Single = {
@@ -237,6 +241,7 @@ function init_gear_sets()
         range="Doomsday",
         hands="Compensator",
         ammo="Nusku Shield",
+        back="Linkpearl",
         legs="Laksamana's Trews +1"
     }
         
@@ -315,7 +320,7 @@ function init_gear_sets()
         head="Adhemar Bonnet +1",
         ear1="Odr Earring",
         ear2="Moonshade Earring",
-        body="Herculean Vest",
+        body="Adhemar Jacket +1",
         neck="Shadow Gorget",
         hands="Mummu Wrists +2",
         ring1="Mummu Ring",
@@ -424,7 +429,7 @@ function init_gear_sets()
         ring1="Weatherspoon Ring",
         ring2="Kishar Ring",
         legs="Malignance Tights",
-        feet="Lanun Bottes +3"
+        feet="Malignance Boots"
     }
         
     -- Specific spells
@@ -438,13 +443,13 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         body="Lanun Frac +3",
-        hands="Malignance Gloves",
+        hands="Carmine Finger Gauntlets +1",
         ring1="Regal Ring",
         ring2="Dingir Ring",
-        back="Gunslinger's Cape",
-        --waist="Eschan Stone",
-        waist="Chaac Belt",
-        legs="Malignance Tights",
+        back=Camulus.MAB,
+        waist="Eschan Stone",
+        --waist="Chaac Belt",
+        legs=HercLegs.MAB,
         feet="Lanun Bottes +3"
     }
 
@@ -453,7 +458,7 @@ function init_gear_sets()
         head="Laksamana's Tricorne +2",
         ear1="Lempo Earring",
         ear2="Gwati Earring",
-        feet="Navarch's Bottes +2"
+        feet="Malignance Boots"
     })
 
     sets.midcast.CorsairShot['Light Shot'] = sets.midcast.CorsairShot.Acc
@@ -474,7 +479,7 @@ function init_gear_sets()
         back=Camulus.STP,
         waist="Kwahu Kachina Belt",
         legs="Malignance Tights", 
-        feet="Mummu Gamashes +2"
+        feet="Malignance Boots"
     }
     sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
         ear2="Enervating Earring",
@@ -488,7 +493,7 @@ function init_gear_sets()
         ring1="Regal Ring",
         ring2="Cacoethic Ring +1",
         body="Laksamana's Frac +3",
-        feet="Meghanada Jambeaux +2"
+        feet="Malignance Boots"
     })
 
     sets.midcast.RA.TripleShot = set_combine(sets.midcast.RA, {
@@ -513,7 +518,7 @@ function init_gear_sets()
         hands="Lanun Gants +3",
         ring1="Regal Ring",
         ring2="Cacoethic Ring +1",
-        feet="Oshosi Leggings"
+        feet="Malignance Boots"
     })
     
     -- Sets to return to when not performing an action.
@@ -538,7 +543,7 @@ function init_gear_sets()
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
-        feet="Lanun Bottes +3"
+        feet="Malignance Boots"
     }
     sets.idle.Regen = set_combine(sets.idle, {
         head="Meghanada Visor +2",
@@ -552,18 +557,18 @@ function init_gear_sets()
 
     sets.idle.Town = {
         ammo=gear.MAbullet,
-        head="Adhemar Bonnet +1",
+        head="Malignance Chapeau",
         neck="Commodore Charm +2",
-        ear1="Telos Earring",
-        ear2="Dedition Earring",
+        ear1="Eabani Earring",
+        ear2="Etiolation Earring",
         body="Nisroch Jerkin",
-        hands="Lanun Gants +3",
-        ring1="Regal Ring",
-        ring2="Ilabrat Ring",
+        hands="Malignance Gloves",
+        ring1="Defending Ring",
+        ring2="Roller's Ring",
         back=Camulus.STP,
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
-        feet="Lanun Bottes +3"
+        feet="Malignance Boots"
     }
     sets.idle.PDT = set_combine(sets.idle.Town, {
         head="Malignance Chapeau",
@@ -571,7 +576,7 @@ function init_gear_sets()
         body="Malignance Tabard",
         legs="Malignance Tights", 
         ring1="Defending Ring",
-        feet="Lanun Bottes +3"
+        feet="Malignance Boots"
     })
     
     -- Defense sets
@@ -585,7 +590,7 @@ function init_gear_sets()
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Malignance Tights", 
-        feet="Lanun Bottes +3"
+        feet="Malignance Boots"
     })
 
     sets.defense.MDT = sets.defense.PDT
@@ -638,7 +643,7 @@ function init_gear_sets()
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Malignance Tights", 
-        feet="Lanun Bottes +3"
+        feet="Malignance Boots"
     }
     sets.engaged.PDT = set_combine(sets.engaged, sets.defense.PDT)
         
@@ -661,7 +666,7 @@ function init_gear_sets()
         hands="Malignance Gloves",
         legs="Malignance Tights",
         ring1="Defending Ring",
-        feet="Lanun Bottes +3"
+        feet="Malignance Boots"
     })
     sets.engaged.PDT.Haste_15 = sets.engaged.PDT
     sets.engaged.PDT.Haste_30 = sets.engaged.PDT
@@ -691,7 +696,7 @@ function init_gear_sets()
         hands="Malignance Gloves",
         legs="Malignance Tights",
         ring1="Defending Ring",
-        feet="Lanun Bottes +3"
+        feet="Malignance Boots"
     })
     sets.engaged.Mid.PDT.Haste_15 = sets.engaged.PDT
     sets.engaged.Mid.PDT.Haste_30 = sets.engaged.PDT
