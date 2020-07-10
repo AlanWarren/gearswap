@@ -113,6 +113,7 @@ function init_gear_sets()
      sets.precast.JA['Warcry'] = { head="Agoge Mask"}
      sets.precast.JA['Aggressor'] = { head="Pummeler's Mask +1", body="Agoge Lorica"}
      sets.precast.JA['Restraint'] = { head="Ravager's Mufflers +2"}
+     sets.precast.JA['Warrior\'s Charge'] = { legs="Agoge Cuisses"}
 
      sets.CapacityMantle  = { back="Mecistopins Mantle" }
      --sets.Berserker       = { neck="Berserker's Torque" }
@@ -252,6 +253,7 @@ function init_gear_sets()
     })
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Impulse Drive'], {
         neck="Breeze Gorget",
+        legs="Boii Cuisses +1"
     })
      -- Sword WS's
      -- SANGUINE BLADE
@@ -305,7 +307,7 @@ function init_gear_sets()
          ammo="Staunch Tathlum",
          head="Hjarrandi Helm",
          ear1="Etiolation Earring",
-         ear2="Eabani Earring",
+         ear2="Infused Earring",
          neck="Sanctity Necklace",
          body="Tartarus Platemail",
          ring1="Paguroidea Ring",

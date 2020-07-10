@@ -248,6 +248,9 @@ function init_gear_sets()
         back=Ankou.FC,
         feet=Odyssean.Feet.FC
     }
+    sets.precast.FC['Drain'] = set_combine(sets.precast.FC, {
+        feet="Ratri Sollerets +1" -- macc 33
+    })
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, { 
         head="Cizin Helm +1",
@@ -355,7 +358,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         head="Ratri Sallet +1",
         ear1="Etiolation Earring",
-        ear2="Eabani Earring", -- 3
+        ear2="Infused Earring",
         body="Heathen's Cuirass +1",
         --body="Ratri Breastplate +1",
         hands="Ratri Gadlings +1",
@@ -673,7 +676,7 @@ function init_gear_sets()
         head="Hjarrandi Helm",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
-        ear2="Eabani Earring",
+        ear2="Infused Earring",
         body="Tartarus Platemail",
         hands="Volte Moufles",
         ring1="Paguroidea Ring",

@@ -364,7 +364,7 @@ function init_gear_sets()
         head="Valorous Mask",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
-        ear2="Eabani Earring",
+        ear2="Infused Earring",
    	    body="Tartarus Platemail",
         hands="Kendatsuba Tekko +1",
         ring1="Dark Ring",

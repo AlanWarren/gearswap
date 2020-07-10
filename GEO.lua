@@ -344,7 +344,7 @@ function init_gear_sets()
         head="Befouled Crown",
         neck="Twilight Torque",
         ear1="Etiolation Earring",
-        ear2="Eabani Earring",
+        ear2="Infused Earring",
         body="Shamash Robe",
         hands="Bagua Mitaines",
         ring1="Dark Ring",

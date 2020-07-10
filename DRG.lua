@@ -153,6 +153,7 @@ function init_gear_sets()
 		body=Valorous.Body.STP,
         hands="Flamma Manopolas +2",
         back="Updraft Mantle",
+        ring1="Dreki Ring",
         waist="Glassblower's Belt",
         legs="Vishap Brais +2",
         feet="Pteroslaver Greaves"
@@ -183,7 +184,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {
     }	
 		
-	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Vishap Armet +1" })
+	sets.midcast.Breath = set_combine(sets.midcast.FastRecast, { head="Vishap Armet +1", ring1="Dreki Ring" })
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
@@ -277,8 +278,8 @@ function init_gear_sets()
         ear1="Sherida Earring",
         ear2="Cessance Earring",
 		body="Twilight Mail",
-        ring1="Paguroidea Ring",
-        ring2="Defending Ring",
+        ring1="Defending Ring",
+        ring2="Paguroidea Ring",
 		back=Brigantia.TP,
         legs="Carmine Cuisses +1",
         feet="Flamma Gambieras +1"
@@ -293,8 +294,8 @@ function init_gear_sets()
         ear2="Telos Earring",
    	    body="Tartarus Platemail",
         hands="Sulevia's Gauntlets +2",
-        ring1="Paguroidea Ring",
-        ring2="Defending Ring",
+        ring1="Defending Ring",
+        ring2="Dreki Ring",
 		back=Brigantia.TP,
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
@@ -314,10 +315,10 @@ function init_gear_sets()
         neck="Sanctity Necklace",
    	    body="Tartarus Platemail",
         ear1="Etiolation Earring",
-        ear2="Eabani Earring",
+        ear2="Infused Earring",
         hands="Sulevia's Gauntlets +2",
-        ring1="Paguroidea Ring",
-        ring2="Defending Ring",
+        ring1="Defending Ring",
+        ring2="Dreki Ring",
         waist="Flume Belt",
 		back=Brigantia.TP,
         legs="Carmine Cuisses +1",
@@ -378,7 +379,7 @@ function init_gear_sets()
 		body="Peltast's Plackart +1",
         hands="Sulevia's Gauntlets +2",
         ring1="Niqmaddu Ring",
-        ring2="Petrov Ring",
+        ring2="Dreki Ring",
 		back=Brigantia.DAWS,
         waist="Ioskeha Belt",
         legs="Pteroslaver Brais +3",
@@ -389,7 +390,7 @@ function init_gear_sets()
         ear2="Telos Earring",
         neck="Lissome Necklace",
 		body=Valorous.Body.DA,
-        ring2="Flamma Ring",
+        ring2="Dreki Ring",
         legs="Pteroslaver Brais +3",
         waist="Ioskeha Belt",
 		back=Brigantia.TP,
@@ -409,7 +410,7 @@ function init_gear_sets()
         neck="Twilight Torque",
    	    body="Tartarus Platemail",
         ring1="Niqmaddu Ring",
-        ring2="Defending Ring",
+        ring2="Dreki Ring",
         hands="Sulevia's Gauntlets +2",
         waist="Sailfi Belt +1",
         feet="Amm Greaves"

@@ -42,7 +42,7 @@ function job_setup()
     
     state.AutoRA = M{['description']='Auto RA', 'Normal', 'Shoot', 'WS' }
     state.GunSelector = M{['description']='Gun Selector', 'DeathPenalty', 'Fomalhaut'}
-    state.FightingMode = M{['description']='Fighting Mode', 'Shooting', 'Melee', 'Single'}
+    state.FightingMode = M{['description']='Fighting Mode', 'Shooting', 'Melee', 'Single', 'Magic'}
 
     cor_sub_weapons = S{"Nusku Shield"}
     auto_gun_ws = "Leaden Salute"
@@ -186,11 +186,26 @@ function init_gear_sets()
 
     sets.Melee = {
         --main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
-        main={name="Rostam", bag="Wardrobe 4", priority=1},
+        main={name="Lanun Knife", bag="Wardrobe 4", priority=1},
         sub={name="Blurred Knife +1", bag="Wardrobe 4", priority=2},
         ranged=state.GunSelector.current
     }
     sets.Melee.engaged = sets.Melee
+    
+    sets.Magic = {
+        --main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
+        main={name="Lanun Knife", bag="Wardrobe 4", priority=1},
+        sub={name="Tauret", bag="Wardrobe 4", priority=2},
+        ranged=state.GunSelector.current
+    }
+    sets.Magic.engaged = set_combine(sets.Magic, {
+       head="Malignance Chapeau",
+       hands="Malignance Gloves",
+       body="Malignance Tabard",
+       legs="Malignance Tights", 
+       ring1="Defending Ring",
+       feet="Malignance Boots"
+    })
 
     sets.DeathPenalty = {
         range="Death Penalty"
@@ -208,7 +223,7 @@ function init_gear_sets()
        body="Malignance Tabard",
        legs="Malignance Tights", 
        ring1="Defending Ring",
-       feet="Lanun Bottes +3"
+       feet="Malignance Boots"
     })
 
     sets.Single = {
@@ -533,7 +548,7 @@ function init_gear_sets()
         head="Malignance Chapeau",
         neck="Sanctity Necklace",
         --neck="Commodore Charm +1",
-        ear1="Eabani Earring",
+        ear1="Infused Earring",
         ear2="Etiolation Earring",
         --body="Mekosuchinae Harness",
         body="Malignance Tabard",
@@ -559,7 +574,7 @@ function init_gear_sets()
         ammo=gear.MAbullet,
         head="Malignance Chapeau",
         neck="Commodore Charm +2",
-        ear1="Eabani Earring",
+        ear1="Infused Earring",
         ear2="Etiolation Earring",
         body="Nisroch Jerkin",
         hands="Malignance Gloves",

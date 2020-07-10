@@ -432,7 +432,7 @@ function init_gear_sets()
         -- main="Taming Sari",
         head="Turms Cap",
         neck="Sanctity Necklace",
-        ear1="Eabani Earring",
+        ear1="Infused Earring",
         ear2="Etiolation Earring",
         body="Malignance Tabard",
         hands="Malignance Gloves",

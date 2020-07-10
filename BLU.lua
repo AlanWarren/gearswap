@@ -259,6 +259,7 @@ function init_gear_sets()
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
     HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+1','STR+6','Mag. Acc.+5','"Mag.Atk.Bns."+12',}}
+    HercHands.WSD = { name="Herculean Gloves", augments={'Accuracy+23 Attack+23','Weapon skill damage +3%','STR+10','Accuracy+10','Attack+1',}}
     
     HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
@@ -351,6 +352,7 @@ function init_gear_sets()
         neck="Breeze Gorget",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
+        hands=HercHands.WSD,
         waist="Thunder Belt",
         legs="Samnuha Tights",
         feet=HercFeet.TP
@@ -637,7 +639,7 @@ function init_gear_sets()
         ammo="Staunch Tathlum",
         head="Rawhide Mask",
         neck="Sanctity Necklace",
-        ear1="Eabani Earring",
+        ear1="Infused Earring",
         ear2="Etiolation Earring",
         body="Shamash Robe",
         hands=HercHands.R,

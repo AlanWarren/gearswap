@@ -193,7 +193,7 @@ function init_gear_sets()
         head="Malignance Chapeau",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
-        ear2="Eabani Earring",
+        ear2="Infused Earring",
         body="Malignance Tabard",
         hands="Malignance Gloves",
         ring1="Meghanada Ring",
@@ -364,15 +364,15 @@ function init_gear_sets()
     sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
         ear1="Enervating Earring",
         body="Malignance Tabard",
-        legs="Malignance Tights", 
+        --legs="Malignance Tights", 
     })
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
         head="Malignance Chapeau",
         ear1="Beyla Earring",
         ring1="Cacoethic Ring +1",
         body="Orion Jerkin +3", 
-        legs="Malignance Tights", 
-        feet="Malignance Boots"
+        --legs="Malignance Tights", 
+        --feet="Malignance Boots"
     })
     
     -- Double Shot 
@@ -406,7 +406,7 @@ function init_gear_sets()
         body="Nisroch Jerkin",
     })
     sets.midcast.RA.Annihilator.Acc = set_combine(sets.midcast.RA.Acc, {
-        ammo="Eradicating Bullet"
+        --ammo="Eradicating Bullet"
     })
     sets.midcast.RA.DoubleShot.Annihilator = sets.midcast.RA.DoubleShot
     sets.midcast.RA.DoubleShot.Annihilator.Mid = sets.midcast.RA.DoubleShot.Mid
