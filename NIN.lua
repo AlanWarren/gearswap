@@ -147,7 +147,7 @@ function init_gear_sets()
     --------------------------------------
     -- Job Abilties
     --------------------------------------
-    sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +1" }
+    sets.precast.JA['Mijin Gakure'] = { legs="Mochizuki Hakama +3" }
     sets.precast.JA['Futae'] = { hands="Hattori Tekko +1" }
     sets.precast.JA['Provoke'] = { 
         -- ear1="Cryptic Earring",
@@ -173,7 +173,7 @@ function init_gear_sets()
         hands="Ryuo Tekko",
         back=Andartia.DEX,
         waist="Olseni Belt",
-        legs="Kendatsuba Hakama",
+        legs="Kendatsuba Hakama +1",
     }
     sets.MadrigalBonus = {
         hands="Composer's Mitts"
@@ -224,7 +224,7 @@ function init_gear_sets()
         hands="Hachiya Tekko +1",
         ring1="Hajduk Ring",
         back="Yokaze Mantle",
-        legs="Kendatsuba Hakama",
+        legs="Kendatsuba Hakama +1",
         feet="Taeon Boots"
     }
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
@@ -685,7 +685,7 @@ function init_gear_sets()
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
         --legs=HercLegs.WSD,
-        legs="Mochizuki Hakama +2",
+        legs="Mochizuki Hakama +3",
         feet="Kendatsuba Sune-ate +1"
     }
     
@@ -702,7 +702,7 @@ function init_gear_sets()
         head="Hachiya Hatsuburi +3",
         body=HercBody.WSD,
         back=Andartia.STR,
-        legs="Mochizuki Hakama +2",
+        legs="Mochizuki Hakama +3",
         waist="Windbuffet Belt +1",
     }
     sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, sets.Kamu)
@@ -738,7 +738,7 @@ function init_gear_sets()
         ring2="Gere Ring",
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
-        legs="Mummu Kecks +2",
+        legs="Mochizuki Hakama +3",
         --legs="Hizamaru Hizayoroi +2",
         feet="Mummu Gamashes +2"
     })
@@ -752,7 +752,6 @@ function init_gear_sets()
         --head=HercHead.DM,
         head="Adhemar Bonnet +1",
         body="Kendatsuba Samue +1",
-        legs="Kendatsuba Hakama +1",
     })
     
     -- BLADE: SHUN
@@ -812,7 +811,7 @@ function init_gear_sets()
         hands=HercHands.WSD,
         body=HercBody.WSD,
         ring2="Gere Ring",
-        legs="Mochizuki Hakama +2",
+        legs="Mochizuki Hakama +3",
         --legs=HercLegs.WSD,
         back=Andartia.STR,
         waist="Metalsinger Belt",
@@ -832,7 +831,7 @@ function init_gear_sets()
         body=HercBody.WSD,
         hands="Regal Gloves",
         ring2="Gere Ring",
-        legs="Mochizuki Hakama +2",
+        legs="Mochizuki Hakama +3",
         --legs=HercLegs.WSD,
         back=Andartia.STR,
         waist="Metalsinger Belt",
@@ -859,7 +858,7 @@ function init_gear_sets()
         ring1="Regal Ring",
         ring2="Dingir Ring",
         waist="Eschan Stone",
-        legs="Mochizuki Hakama +2",
+        legs="Mochizuki Hakama +3",
         back=Andartia.AGI,
         feet=HercFeet.MAB
     })
