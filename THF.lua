@@ -432,7 +432,7 @@ function init_gear_sets()
         -- main="Taming Sari",
         head="Turms Cap",
         neck="Sanctity Necklace",
-        ear1="Infused Earring",
+        ear1="Genmei Earring",
         ear2="Etiolation Earring",
         body="Malignance Tabard",
         hands="Malignance Gloves",
@@ -462,6 +462,7 @@ function init_gear_sets()
     sets.idle.Regen = set_combine(sets.idle, {
         head="Turms Cap",
         hands="Meghanada Gloves +2",
+        ear1="Infused Earring",
         body="Meghanada Cuirie +2",
         ring1="Meghanada Ring",
         ring2="Paguroidea Ring",

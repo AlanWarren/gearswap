@@ -475,12 +475,16 @@ function init_gear_sets()
     -- RESOLUTION
     -- 86-100% STR
     sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
+        head="Stinger Helm +1",
         neck="Breeze Gorget",
         --body="Valorous Mail",
         hands="Sulevia's Gauntlets +2",
         waist="Soil Belt",
         legs="Fallen's Flanchard +3",
         feet="Sulevia's Leggings +2"
+    })
+    sets.precast.WS.Resolution.Mid = set_combine(sets.precast.WS.Resolution, {
+        head="Flamma Zucchetto +2",
     })
     sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, {
         ammo="Seething Bomblet +1",
@@ -511,20 +515,23 @@ function init_gear_sets()
     -- 20% STR / 20% INT 
     -- Base set only used at 3000TP to put AM3 up
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
-        head="Ratri Sallet +1",
+        head="Stinger Helm +1",
         neck="Abyssal Bead Necklace +2",
         --body="Ratri Breastplate +1",
         body="Ignominy Cuirass +3",
         hands="Ratri Gadlings +1",
         legs="Ratri Cuisses +1",
         ring2="Regal Ring",
-        waist="Light Belt",
+        waist="Sailfi Belt +1",
         feet="Ratri Sollerets +1"
     })
-    sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {})
+    sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
+        head="Ratri Sallet +1",
+        waist="Light Belt",
+    })
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
         ammo="Seething Bomblet +1",
-        body="Ratri Breastplate +1",
+        body="Ignominy Cuirass +3",
     })
 
     sets.precast.WS.Catastrophe = set_combine(sets.precast.WS, {
@@ -532,14 +539,16 @@ function init_gear_sets()
         ear2="Ishvara Earring",
         neck="Abyssal Bead Necklace +2",
         body="Ignominy Cuirass +3",
+        --body="Ratri Breastplate +1",
         hands="Ratri Gadlings +1",
         legs="Ratri Cuisses +1",
-        waist="Soil Belt",
+        --waist="Soil Belt",
+        waist="Sailfi Belt +1",
         feet="Ratri Sollerets +1"
     })
     sets.precast.WS.Catastrophe.Mid = set_combine(sets.precast.WS.Catastrophe, {})
     sets.precast.WS.Catastrophe.Acc = set_combine(sets.precast.WS.Catastrophe.Mid, {
-        body="Ratri Breastplate +1",
+        --body="Ratri Breastplate +1",
         waist="Olseni Belt",
     })
 
@@ -551,7 +560,7 @@ function init_gear_sets()
     -- CROSS REAPER
     -- 60% STR / 60% MND
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-        head="Ratri Sallet +1",
+        head="Stinger Helm +1",
         body="Ignominy Cuirass +3",
         --body="Ratri Breastplate +1",
         hands="Ratri Gadlings +1",
@@ -559,7 +568,9 @@ function init_gear_sets()
         legs="Ratri Cuisses +1",
         feet="Ratri Sollerets +1"
     })
-    sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {})
+    sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
+
+    })
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
         ammo="Seething Bomblet +1",
         body="Fallen's Cuirass +3",
@@ -567,7 +578,7 @@ function init_gear_sets()
     -- ENTROPY
     -- 86-100% INT 
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
-        head="Hjarrandi Helm",
+        head="Stinger Helm +1",
         neck="Abyssal Bead Necklace +2",
         body="Ignominy Cuirass +3",
         ear1="Malignance Earring",
@@ -578,6 +589,7 @@ function init_gear_sets()
         feet="Flamma Gambieras +2"
     })
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
+        head="Hjarrandi Helm",
     })
     sets.precast.WS.Entropy.Acc = set_combine(sets.precast.WS.Entropy.Mid, {
         body="Fallen's Cuirass +3",
@@ -589,8 +601,8 @@ function init_gear_sets()
     sets.precast.WS.Quietus = set_combine(sets.precast.WS, {
         head="Ratri Sallet +1",
         neck="Abyssal Bead Necklace +2",
-        --body="Ignominy Cuirass +3",
-        body="Ratri Breastplate +1",
+        body="Ignominy Cuirass +3",
+        -- body="Ratri Breastplate +1",
         hands="Ratri Gadlings +1",
         waist="Caudata Belt",
         feet="Ratri Cuisses +1",
@@ -676,7 +688,7 @@ function init_gear_sets()
         head="Hjarrandi Helm",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
-        ear2="Infused Earring",
+        ear2="Genmei Earring",
         body="Tartarus Platemail",
         hands="Volte Moufles",
         ring1="Paguroidea Ring",
@@ -692,13 +704,13 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +2",
         ear1="Dedition Earring",
         ear2="Telos Earring",
-        --body="Tartarus Platemail",
-        body="Ratri Breastplate +1",
+        body="Tartarus Platemail",
+        --body="Ratri Breastplate +1",
         hands="Ratri Gadlings +1",
         ring1="Niqmaddu Ring",
         ring2="Regal Ring",
         back=Ankou.DA,
-        waist="Windbuffet Belt +1",
+        waist="Sailfi Belt +1",
         legs="Carmine Cuisses +1",
         feet="Ratri Sollerets +1"
     })
@@ -710,6 +722,7 @@ function init_gear_sets()
         head="",
         neck="Sanctity Necklace",
         body="Lugra Cloak +1",
+        ear2="Infused Earring",
         ring1="Paguroidea Ring",
     })
     sets.idle.Refresh = set_combine(sets.idle.Regen, {
@@ -803,6 +816,7 @@ function init_gear_sets()
         hands="Volte Moufles",
         ring1="Patricius Ring",
         ring2="Sulevia's Ring",
+        waist="Sailfi Belt +1",
         legs="Sulevia's Cuisses +2", -- 7% dt
         feet="Volte Sollerets",
     })
@@ -821,7 +835,7 @@ function init_gear_sets()
         ring1="Niqmaddu Ring",
         ring2="Petrov Ring",
         back=Ankou.DA,
-        waist="Ioskeha Belt",
+        waist="Sailfi Belt +1",
         legs="Ignominy Flanchard +3",
         feet="Flamma Gambieras +2"
     }
@@ -835,15 +849,17 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Telos Earring",
         body="Flamma Korazin +2",
+        waist="Ioskeha Belt",
         back=Ankou.STP,
     })
 
     -- These only apply when delay is capped.
     sets.engaged.Haste = set_combine(sets.engaged, {
-        waist="Windbuffet Belt +1"
+        waist="Sailfi Belt +1",
     })
     sets.engaged.Haste.Mid = set_combine(sets.engaged.Mid, {
-        waist="Windbuffet Belt +1"
+        waist="Sailfi Belt +1",
+        --waist="Windbuffet Belt +1"
     })
     sets.engaged.Haste.Acc = set_combine(sets.engaged.Acc, {})
 
@@ -896,10 +912,12 @@ function init_gear_sets()
         feet="Flamma Gambieras +2"
     })
     sets.engaged.Haste.Liberator = set_combine(sets.engaged.Liberator, {
-        waist="Windbuffet Belt +1"
+        --waist="Windbuffet Belt +1"
+        waist="Sailfi Belt +1",
     })
     sets.engaged.Haste.Liberator.Mid = set_combine(sets.engaged.Liberator.Mid, {
-        waist="Windbuffet Belt +1"
+        --waist="Windbuffet Belt +1"
+        waist="Sailfi Belt +1",
     })
     sets.engaged.Haste.Liberator.Acc = sets.engaged.Liberator.Acc
     
@@ -970,7 +988,8 @@ function init_gear_sets()
     --     waist="Ioskeha Belt"
     -- })
     sets.engaged.Haste.Apocalypse = set_combine(sets.engaged.Apocalypse, {
-        waist="Windbuffet Belt +1"
+        --waist="Windbuffet Belt +1"
+        waist="Sailfi Belt +1",
     })
     sets.engaged.Haste.Apocalypse.Mid = sets.engaged.Apocalypse.Mid
     sets.engaged.Haste.Apocalypse.Acc = sets.engaged.Apocalypse.Acc

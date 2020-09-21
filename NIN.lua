@@ -39,7 +39,7 @@ function job_setup()
     state.Proc = M(false, 'Proc')
     state.unProc = M(false, 'unProc')
 
-    gear.RegularAmmo = 'Date Shuriken'
+    gear.RegularAmmo = 'Seki Shuriken'
     gear.SangeAmmo = 'Happo Shuriken'
 
     wsList = S{'Blade: Hi', 'Blade: Kamu', 'Blade: Ten'}
@@ -313,11 +313,11 @@ function init_gear_sets()
 
     sets.idle = {
         ammo=gear.RegularAmmo,
-        head="Rao Kabuto",
+        head="Malignance Chapeau",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
-        ear2="Infused Earring",
-        body="Hizamaru Haramaki +2",
+        ear2="Genmei Earring",
+        body="Malignance Tabard",
         hands="Malignance Gloves",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
@@ -327,11 +327,12 @@ function init_gear_sets()
         feet="Danzo Sune-ate"
     }
 
-    --sets.idle.Regen = set_combine(sets.idle, {
-    --    head="Rao Kabuto",
-    --    body="Hizamaru Haramaki +2",
-    --    ring2="Paguroidea Ring"
-    --})
+    sets.idle.Regen = set_combine(sets.idle, {
+        head="Rao Kabuto",
+        body="Hizamaru Haramaki +2",
+        ear2="Infused Earring",
+        ring2="Paguroidea Ring"
+    })
 
     sets.Adoulin = {
         body="Councilor's Garb",
@@ -744,7 +745,6 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Blade: Hi'].Mid = set_combine(sets.precast.WS['Blade: Hi'], {
-        ammo=gear.RegularAmmo,
         waist="Caudata Belt",
     })
     
@@ -814,12 +814,12 @@ function init_gear_sets()
         legs="Mochizuki Hakama +3",
         --legs=HercLegs.WSD,
         back=Andartia.STR,
-        waist="Metalsinger Belt",
+        waist="Sailfi Belt +1",
     }
     
     sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, sets.Ten)
     sets.precast.WS['Blade: Ten'].Mid = set_combine(sets.precast.WS['Blade: Ten'], {
-        waist="Caudata Belt"
+        waist="Sailfi Belt +1"
     })
     sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid, {
     })
@@ -834,7 +834,7 @@ function init_gear_sets()
         legs="Mochizuki Hakama +3",
         --legs=HercLegs.WSD,
         back=Andartia.STR,
-        waist="Metalsinger Belt",
+        waist="Sailfi Belt +1",
         feet="Hizamaru Sune-ate +2" 
     })
     

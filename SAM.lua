@@ -151,7 +151,8 @@ function init_gear_sets()
     sets.precast.RA = {
         head="Volte Tiara",
         hands="Buremte Gloves",
-        feet="Ejekamal Boots"
+        feet="Ejekamal Boots",
+        legs="Volte Tights"
     }
     sets.midcast.RA = {
         head="Volte Tiara",
@@ -190,7 +191,7 @@ function init_gear_sets()
         ring1="Niqmaddu Ring",
         ring2="Regal Ring",
         back=Smertrios.WS,
-        waist="Windbuffet Belt +1",
+        waist="Sailfi Belt +1",
         legs="Wakido Haidate +3",
         feet=Valorous.Feet.WS
     }
@@ -235,11 +236,13 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
+        head="Stinger Helm +1",
         ammo="Knobkierrie",
         neck="Samurai's Nodowa +2",
-        waist="Metalsinger Belt",
+        waist="Sailfi Belt +1",
     })
     sets.precast.WS['Tachi: Fudo'].Mid = set_combine(sets.precast.WS['Tachi: Fudo'], {
+        head="Valorous Mask",
         ammo="Knobkierrie",
         --waist="Light Belt"
     })
@@ -249,11 +252,13 @@ function init_gear_sets()
         feet="Flamma Gambieras +2",
     })
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
+        head="Stinger Helm +1",
         neck="Samurai's Nodowa +2",
-        waist="Metalsinger Belt",
+        waist="Sailfi Belt +1",
         feet=Valorous.Feet.WS
     })
     sets.precast.WS['Impulse Drive'].Mid = set_combine(sets.precast.WS['Impulse Drive'], {
+        head="Valorous Mask",
         hands=Valorous.Hands.WS,
     })
     sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS['Impulse Drive'].Mid, {
@@ -261,13 +266,16 @@ function init_gear_sets()
     })
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
-        head="Flamma Zucchetto +2",
+        head="Stinger Helm +1",
+        --head="Flamma Zucchetto +2",
         neck="Samurai's Nodowa +2",
-        waist="Thunder Belt",
+        waist="Sailfi Belt +1",
         back=Smertrios.WS,
         feet="Flamma Gambieras +2",
     })
-    sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS['Tachi: Shoha'], {})
+    sets.precast.WS['Tachi: Shoha'].Mid = set_combine(sets.precast.WS['Tachi: Shoha'], {
+        waist="Thunder Belt",
+    })
     sets.precast.WS['Tachi: Shoha'].Acc = set_combine(sets.precast.WS['Tachi: Shoha'].Mid, {})
 
     sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS['Tachi: Shoha'], {
@@ -364,7 +372,7 @@ function init_gear_sets()
         head="Valorous Mask",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
-        ear2="Infused Earring",
+        ear2="Genmei Earring",
    	    body="Tartarus Platemail",
         hands="Kendatsuba Tekko +1",
         ring1="Dark Ring",
@@ -379,6 +387,7 @@ function init_gear_sets()
         head="Rao Kabuto",
         neck="Sanctity Necklace",
         ring2="Paguroidea Ring",
+        ear2="Infused Earring",
         head="Rao Kabuto",
    	    body="Hizamaru Haramaki +2",
         back=Smertrios.TP,
@@ -442,7 +451,7 @@ function init_gear_sets()
         ring1="Niqmaddu Ring", 
         ring2="Petrov Ring", 
         back=Smertrios.TP,
-        waist="Ioskeha Belt",
+        waist="Sailfi Belt +1",
         legs="Ryuo Hakama",
         feet="Flamma Gambieras +2"
     }
@@ -454,6 +463,7 @@ function init_gear_sets()
         ear1="Telos Earring",
         ear2="Cessance Earring",
         legs="Kendatsuba Hakama +1",
+        waist="Ioskeha Belt",
         ring1="Niqmaddu Ring", 
         ring2="Flamma Ring",
         --body="Kendatsuba Samue",

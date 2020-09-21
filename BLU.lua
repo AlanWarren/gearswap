@@ -257,7 +257,7 @@ function init_gear_sets()
     HercHands = {}
     HercBody = {}
 
-    HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
+    HercHands.R = { name="Herculean Gloves", augments={'VIT+5','Pet: INT+7','"Refresh"+2','Mag. Acc.+8 "Mag.Atk.Bns."+8',}}
     HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+20 "Mag.Atk.Bns."+20','Crit.hit rate+1','STR+6','Mag. Acc.+5','"Mag.Atk.Bns."+12',}}
     HercHands.WSD = { name="Herculean Gloves", augments={'Accuracy+23 Attack+23','Weapon skill damage +3%','STR+10','Accuracy+10','Attack+1',}}
     

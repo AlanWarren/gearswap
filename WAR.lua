@@ -24,7 +24,7 @@ function job_setup()
     state.Buff.Berserk = buffactive.berserk or false
     state.Buff.Retaliation = buffactive.retaliation or false
     
-    wsList = S{ 'Savage Blade', 'Impulse Drive', 'Torcleaver'}
+    wsList = S{ 'Savage Blade', 'Impulse Drive', 'Torcleaver', 'Ukko\'s Fury', 'Upheaval'}
     gsList = S{'Macbain', 'Kaquljaan', 'Nativus Halberd'}
     war_sub_weapons = S{"Sangarius", "Usonmunku", "Perun", "Tanmogayi +1", "Reikiko", "Digirbalag"}
 
@@ -87,8 +87,14 @@ function init_gear_sets()
 
     Valorous = {}
     Valorous.Feet = {}
-    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Weapon skill damage +5%','STR+9','Accuracy+15','Attack+11',}}
+    Valorous.Body = {}
+   
     Valorous.Feet.TH = { name="Valorous Greaves", augments={'CHR+13','INT+1','"Treasure Hunter"+2','Accuracy+12 Attack+12','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
+    Valorous.Feet.TP = { name="Valorous Greaves", augments={'Accuracy+27','"Store TP"+6','INT+1',}}
+    Valorous.Feet.WS ={ name="Valorous Greaves", augments={'Weapon skill damage +5%','STR+9','Accuracy+15','Attack+11',}}
+    
+    Valorous.Body.STP = { name="Valorous Mail", augments={'Accuracy+30','"Store TP"+6','DEX+3','Attack+14',}}
+    Valorous.Body.DA = { name="Valorous Mail", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+4','VIT+4','Attack+6',}}
     
     sets.TreasureHunter = { 
         head="White rarab cap +1", 
@@ -109,10 +115,11 @@ function init_gear_sets()
      --sets.precast.JA['Mighty Strikes'] = {hands="Fallen's Finger Gauntlets +1"}
      sets.precast.JA['Blood Rage'] = { body="Boii Lorica +1" }
      sets.precast.JA['Provoke'] = set_combine(sets.TreasureHunter, { hands="Pummeler's Mufflers +1"})
-     sets.precast.JA['Berserk'] = { body="Pummeler's Lorica +1", hands="Agoge Calligae", back=Cichols.TP}
+     sets.precast.JA['Berserk'] = { body="Pummeler's Lorica +2", hands="Agoge Calligae", back=Cichols.TP, feet="Agoge Calligae"}
      sets.precast.JA['Warcry'] = { head="Agoge Mask"}
+     sets.precast.JA['Retaliation'] = { hands="Pummeler's Mufflers +1"}
      sets.precast.JA['Aggressor'] = { head="Pummeler's Mask +1", body="Agoge Lorica"}
-     sets.precast.JA['Restraint'] = { head="Ravager's Mufflers +2"}
+     sets.precast.JA['Restraint'] = { hands="Ravager's Mufflers +2"}
      sets.precast.JA['Warrior\'s Charge'] = { legs="Agoge Cuisses"}
 
      sets.CapacityMantle  = { back="Mecistopins Mantle" }
@@ -177,22 +184,23 @@ function init_gear_sets()
      -- General sets
      sets.precast.WS = {
          ammo="Knobkierrie",
-         head="Flamma Zucchetto +2",
+         head="Valorous Mask",
          neck="Defiant Collar",
          ear1="Thrud Earring",
          ear2="Moonshade Earring",
-         body="Flamma Korazin +2",
+         body="Pummeler's Lorica +2",
          hands="Odyssean Gauntlets",
          ring1="Niqmaddu Ring",
          ring2="Regal Ring",
          back=Cichols.WS,
-         waist="Windbuffet Belt +1",
+         waist="Sailfi Belt +1",
          legs=Odyssean.Legs.WS,
          feet="Sulevia's Leggings +2"
      }
 
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
         --  ammo="Ginsen",
+         --body="Flamma Korazin +2",
         --  head="Valorous Mask",
          --body="Ravenous Breastplate",
      })
@@ -202,27 +210,38 @@ function init_gear_sets()
      })
     
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {
+        head="Odyssean Helm",
         neck="Flame Gorget",
+    	--body=Valorous.Body.DA, 
         waist="Light Belt",
+    })
+    sets.precast.WS['Upheaval'].Mid = set_combine(sets.precast.WS['Upheaval'], {
+        head="Stinger Helm +1",
     })
  
     sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
         neck="Breeze Gorget",
-        waist="Metalsinger Belt",
+        waist="Sailfi Belt +1",
         feet=Valorous.Feet.WS
     })
      -- RESOLUTION
      -- 86-100% STR
-     sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
+     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
+         head="Hjarrandi Helm",
          neck="Breeze Gorget",
-         waist="Soil Belt"
+         hands="Sulevia's Gauntlets +2",
+         legs="Sulevia's Cuisses +2",
+    	 body=Valorous.Body.DA, 
+         waist="Soil Belt",
+         feet="Flamma Gambieras +2"
      })
-     sets.precast.WS.Resolution.Mid = set_combine(sets.precast.WS.Resolution, {
+     sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS.Resolution, {
+         head="Flamma Zucchetto +2",
          ammo="Ginsen",
          head="Valorous Mask",
      })
-     sets.precast.WS.Resolution.Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
+     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
 
      -- TORCLEAVER 
      -- VIT 80%
@@ -248,12 +267,13 @@ function init_gear_sets()
         head="Valorous Mask",
         neck="Shadow Gorget",
         ear1="Thrud Earring",
-        waist="Metalsinger Belt",
+        waist="Sailfi Belt +1",
         feet=Valorous.Feet.WS
     })
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Impulse Drive'], {
         neck="Breeze Gorget",
-        legs="Boii Cuisses +1"
+        legs="Boii Cuisses +1",
+        waist="Sailfi Belt +1",
     })
      -- Sword WS's
      -- SANGUINE BLADE
@@ -294,12 +314,12 @@ function init_gear_sets()
          ear1="Brutal Earring",
          ear2="Telos Earring",
          body="Tartarus Platemail",
-         hands="Sulevia's Gauntlets +2",
+         hands="Volte Moufles",
          ring1="Niqmaddu Ring",
          ring2="Regal Ring",
-         waist="Flume Belt",
+         waist="Sailfi Belt +1",
          back=Cichols.TP,
-         legs=Odyssean.Legs.TP,
+         legs="Volte Tights",
          feet="Hermes' Sandals"
      }
      
@@ -307,18 +327,21 @@ function init_gear_sets()
          ammo="Staunch Tathlum",
          head="Hjarrandi Helm",
          ear1="Etiolation Earring",
-         ear2="Infused Earring",
+         ear2="Genmei Earring",
          neck="Sanctity Necklace",
          body="Tartarus Platemail",
          ring1="Paguroidea Ring",
          ring2="Defending Ring",
-         hands="Sulevia's Gauntlets +2",
+         hands="Volte Moufles",
          back="Impassive Mantle",
-         waist="Flume Belt",
+         waist="Asklepian Belt",
          legs="Sulevia's Cuisses +2",
          feet="Hermes' Sandals"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
+         ear2="Infused Earring",
+         hands="Volte Moufles",
+         ring1="Paguroidea Ring",
      })
  
      sets.idle.Weak = {
@@ -335,11 +358,11 @@ function init_gear_sets()
          head="Hjarrandi Helm",
          neck="Agitator's Collar",
          body="Tartarus Platemail",
-         hands="Sulevia's Gauntlets +2",
+         hands="Volte Moufles",
          ring1="Sulevia's Ring",
          ring2="Patricius Ring",
          back="Impassive Mantle",
-         waist="Flume Belt",
+         waist="Sailfi Belt +1",
          legs="Sulevia's Cuisses +2",
          feet="Volte Sollerets"
      }
@@ -363,9 +386,8 @@ function init_gear_sets()
          head="Hjarrandi Helm",
          neck="Agitator's Collar",
          body="Tartarus Platemail",
-         ring1="Sulevia's Ring",
          ring2="Defending Ring",
-         hands="Sulevia's Gauntlets +2",
+         hands="Volte Moufles",
          back="Impassive Mantle",
          waist="Sailfi Belt +1",
          legs="Sulevia's Cuisses +2",
@@ -375,9 +397,8 @@ function init_gear_sets()
          head="Hjarrandi Helm",
          neck="Agitator's Collar",
          body="Tartarus Platemail",
-         hands="Sulevia's Gauntlets +2",
+         hands="Volte Moufles",
          back="Impassive Mantle",
-         ring1="Sulevia's Ring",
          waist="Sailfi Belt +1",
          ring2="Defending Ring",
          feet="Sulevia's Leggings +2"
@@ -387,7 +408,6 @@ function init_gear_sets()
          neck="Agitator's Collar",
          hands="Sulevia's Gauntlets +2",
          body="Tartarus Platemail",
-         ring1="Sulevia's Ring",
          ring2="Patricius Ring",
          legs="Sulevia's Cuisses +2",
          feet="Sulevia's Leggings +2"
@@ -399,13 +419,15 @@ function init_gear_sets()
          head="Flamma Zucchetto +2",
          neck="Lissome Necklace",
          ear1="Brutal Earring",
-         ear2="Cessance Earring",
-    	 body="Valorous Mail",
+         ear2="Dedition Earring",
+    	 body=Valorous.Body.STP, 
          hands="Sulevia's Gauntlets +2",
          ring1="Niqmaddu Ring",
          ring2="Petrov Ring",
          back=Cichols.TP,
-         waist="Ioskeha Belt",
+         --waist="Ioskeha Belt",
+         waist="Sailfi Belt +1",
+         --legs="Pummeler's Cuisses +2",
          legs=Odyssean.Legs.TP,
          feet="Flamma Gambieras +2"
      }
@@ -413,8 +435,11 @@ function init_gear_sets()
          ammo="Ginsen",
          neck="Lissome Necklace",
          ear1="Telos Earring",
-         ring2="Regal Ring",
-         body="Valorous Mail",
+         ear2="Cessance Earring",
+         hands="Flamma Manopolas +2",
+         ring2="Flamma Ring",
+         waist="Ioskeha Belt",
+    	 --body="Flamma Korazin +2"
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          body="Flamma Korazin +2"

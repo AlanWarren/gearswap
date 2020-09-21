@@ -193,7 +193,7 @@ function init_gear_sets()
         head="Malignance Chapeau",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
-        ear2="Infused Earring",
+        ear2="Genmei Earring",
         body="Malignance Tabard",
         hands="Malignance Gloves",
         ring1="Meghanada Ring",
@@ -207,6 +207,7 @@ function init_gear_sets()
         --head="Ocelomeh Headpiece +1",
         --body="Kheper Jacket",
         neck="Sanctity Necklace",
+        ear2="Infused Earring",
         ring2="Paguroidea Ring"
     })
     sets.idle.PDT = set_combine(sets.idle, {
@@ -467,7 +468,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         ring1="Ifrit Ring",
         ring2="Regal Ring",
-        waist="Metalsinger Belt",
+        waist="Sailfi Belt +1",
         legs=HercLegs.WSD,
         feet="Meghanada Jambeaux +2"
     })

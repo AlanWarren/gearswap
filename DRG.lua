@@ -86,7 +86,7 @@ function init_gear_sets()
     Valorous.Body.DA = { name="Valorous Mail", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+4','VIT+4','Attack+6',}}
     -- Precast Sets
 	-- Precast sets to enhance JAs
-	sets.precast.JA.Angon = {ammo="Angon",hands="Pteroslaver Finger Gauntlets"}
+	sets.precast.JA.Angon = {ammo="Angon",hands="Pteroslaver Finger Gauntlets +1"}
     sets.CapacityMantle = {back="Mecistopins Mantle"}
     --sets.Berserker = {neck="Berserker's Torque"}
     sets.WSDayBonus     = { head="Gavialis Helm" }
@@ -102,7 +102,8 @@ function init_gear_sets()
         neck="Anu Torque",
         ear1="Sherida Earring",
         ear2="Telos Earring",
-        hands="Flamma Manopolas +2",
+        --hands="Flamma Manopolas +2",
+        hands="Vishap Finger Gauntlets +1",
         body="Pteroslaver Mail +3",
         ring1="Niqmaddu Ring",
         ring2="Petrov Ring",
@@ -112,7 +113,7 @@ function init_gear_sets()
         feet="Ostro Greaves"
     }
 
-	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais +2" }
+	sets.precast.JA['Ancient Circle'] = { legs="Vishap Brais +3" }
     sets.TreasureHunter = { 
         head="White rarab cap +1", 
         waist="Chaac Belt",
@@ -120,7 +121,7 @@ function init_gear_sets()
      }
 
 	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA.Jump, {
-        --legs="Vishap Brais +2",
+        legs="Vishap Brais +3",
     }) 
 	sets.precast.JA['Soul Jump'] = set_combine(sets.precast.JA.Jump, {
 		body="Vishap Mail +2",
@@ -146,7 +147,7 @@ function init_gear_sets()
 	-- Healing Breath sets
 	sets.HB = {
         ammo="Ginsen",
-		head="Wyrm Armet",
+		head="Pteroslaver Armet +3",
         neck="Adad Amulet",
         ear1="Sherida Earring",
         ear2="Cessance Earring",
@@ -155,7 +156,7 @@ function init_gear_sets()
         back="Updraft Mantle",
         ring1="Dreki Ring",
         waist="Glassblower's Belt",
-        legs="Vishap Brais +2",
+        legs="Vishap Brais +3",
         feet="Pteroslaver Greaves"
     }
 
@@ -190,7 +191,7 @@ function init_gear_sets()
 	sets.precast.WS = {
         ammo="Knobkierrie",
         head="Valorous Mask", 
-        neck="Ganesha's Mala",
+        neck="Dragoon's Collar +2",
         ear1="Thrud Earring",
         ear2="Moonshade Earring",
 		body=Valorous.Body.DA,
@@ -198,17 +199,17 @@ function init_gear_sets()
         ring1="Niqmaddu Ring",
         ring2="Regal Ring",
 		back=Brigantia.WS,
-        waist="Windbuffet Belt +1",
-        legs="Vishap Brais +2",
+        waist="Sailfi Belt +1",
+        legs="Vishap Brais +3",
         feet="Sulevia's Leggings +2"
     }
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         head="Valorous Mask",
     })
-	
-	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+
 	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
-		head="Flamma Zucchetto +2",
+		--head="Flamma Zucchetto +2",
+	    head="Stinger Helm +1",
         ear1="Sherida Earring",
         neck="Shadow Gorget",
         waist="Soil Belt",
@@ -218,37 +219,49 @@ function init_gear_sets()
         feet="Flamma Gambieras +2"
     })
 	sets.precast.WS['Stardiver'].Mid = set_combine(sets.precast.WS['Stardiver'], {
-		head="Flamma Zucchetto +2",
+		--head="Flamma Zucchetto +2",
+		head="Pteroslaver Armet +3",
         ear1="Sherida Earring",
-        neck="Shadow Gorget",
+        neck="Dragoon's Collar +2",
         waist="Soil Belt",
         hands="Sulevia's Gauntlets +2",
         feet="Flamma Gambieras +2"
     })
-	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {neck="Shadow Gorget",waist="Soil Belt"})
+	sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS.Acc, {
+		head="Pteroslaver Armet +3",
+        neck="Dragoon's Collar +2",
+        body="Pteroslaver Mail +3",
+        waist="Soil Belt",
+        legs="Vishap Brais +3",
+    })
 
     sets.precast.WS["Camlann's Torment"] = set_combine(sets.precast.WS, {
+        head="Valorous Mask", 
         neck="Breeze Gorget",
         ear1="Thrud Earring",
         ear2="Ishvara Earring",
-        body=Valorous.Body.STP,
+        body=Valorous.Body.DA,
         hands=Valorous.Hands.WS,
 		back=Brigantia.WS,
         waist="Breeze Belt",
+        legs="Vishap Brais +3",
         feet="Sulevia's Leggings +2"
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
+	    head="Stinger Helm +1",
 		back=Brigantia.WS,
     })
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
 
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
-        waist="Windbuffet Belt +1",
+	    head="Stinger Helm +1",
+        waist="Sailfi Belt +1",
         hands="Flamma Manopolas +2",
         legs="Peltast's Cuissots +1",
         feet=Valorous.Feet.WS
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
+        head="Valorous Mask", 
 		back=Brigantia.WS,
     })
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {})
@@ -257,8 +270,8 @@ function init_gear_sets()
         neck="Shadow Gorget",
         ear1="Thrud Earring",
         hands="Flamma Manopolas +2",
-        waist="Metalsinger Belt",
-        legs="Vishap Brais +2",
+        waist="Sailfi Belt +1",
+        legs="Vishap Brais +3",
         feet=Valorous.Feet.WS
     })
 	sets.precast.WS['Impulse Drive'].Mid = set_combine(sets.precast.WS['Impulse Drive'], {
@@ -273,11 +286,11 @@ function init_gear_sets()
 	
 	-- Resting sets
 	sets.resting = {
-        head="Twilight Helm",
-        neck="Twilight Torque",
+        --head="Twilight Helm",
+        --neck="Twilight Torque",
         ear1="Sherida Earring",
         ear2="Cessance Earring",
-		body="Twilight Mail",
+		--body="Twilight Mail",
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
 		back=Brigantia.TP,
@@ -289,7 +302,7 @@ function init_gear_sets()
 	sets.idle = {
         ammo="Ginsen",
         head="Hjarrandi Helm",
-        neck="Anu Torque",
+        neck="Dragoon's Collar +2",
         ear1="Sherida Earring",
         ear2="Telos Earring",
    	    body="Tartarus Platemail",
@@ -297,14 +310,17 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Dreki Ring",
 		back=Brigantia.TP,
-        waist="Windbuffet Belt +1",
+        waist="Asklepian Belt",
         legs="Carmine Cuisses +1",
         feet="Sulevia's Leggings +2"
     }
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle.Town = set_combine(sets.idle, {
+        head="Pteroslaver Armet +3",
         ring1="Niqmaddu Ring",
+        neck="Dragoon's Collar +2",
+        waist="Sailfi Belt +1",
         --body="Pteroslaver Mail +3",
         ring2="Regal Ring",
     })
@@ -315,7 +331,7 @@ function init_gear_sets()
         neck="Sanctity Necklace",
    	    body="Tartarus Platemail",
         ear1="Etiolation Earring",
-        ear2="Infused Earring",
+        ear2="Genmei Earring",
         hands="Sulevia's Gauntlets +2",
         ring1="Defending Ring",
         ring2="Dreki Ring",
@@ -329,12 +345,13 @@ function init_gear_sets()
     sets.idle.Regen = set_combine(sets.idle.Field, {
 		--head="Twilight Helm",
 		--body="Kumarbi's Akar",
+        ear2="Infused Earring",
         neck="Sanctity Necklace",
     })
 
 	sets.idle.Weak = set_combine(sets.idle.Field, {
-		head="Twilight Helm",
-		body="Twilight Mail",
+		--head="Twilight Helm",
+		--body="Twilight Mail",
     })
 	
 	-- Defense sets
@@ -376,20 +393,22 @@ function init_gear_sets()
         neck="Anu Torque",
         ear1="Sherida Earring",
         ear2="Dedition Earring",
-		body="Peltast's Plackart +1",
-        hands="Sulevia's Gauntlets +2",
+		body=Valorous.Body.STP,
+        hands="Flamma Manopolas +2",
         ring1="Niqmaddu Ring",
-        ring2="Dreki Ring",
-		back=Brigantia.DAWS,
-        waist="Ioskeha Belt",
+        ring2="Petrov Ring",
+		back=Brigantia.TP,
+        waist="Sailfi Belt +1",
         legs="Pteroslaver Brais +3",
         feet="Flamma Gambieras +2"
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
-        ear2="Telos Earring",
-        neck="Lissome Necklace",
-		body=Valorous.Body.DA,
+        head="Hjarrandi Helm",
+        ear2="Brutal Earring",
+        neck="Dragoon's Collar +2",
+        hands="Sulevia's Gauntlets +2",
+		body=Valorous.Body.STP,
         ring2="Dreki Ring",
         legs="Pteroslaver Brais +3",
         waist="Ioskeha Belt",
@@ -398,7 +417,7 @@ function init_gear_sets()
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         ear1="Cessance Earring",
-        neck="Lissome Necklace",
+        neck="Dragoon's Collar +2",
         hands="Flamma Manopolas +2",
         ring2="Regal Ring",
 		body=Valorous.Body.STP,
@@ -407,23 +426,25 @@ function init_gear_sets()
 
     sets.engaged.PDT = set_combine(sets.engaged, {
         head="Hjarrandi Helm",
-        neck="Twilight Torque",
+        neck="Dragoon's Collar +2",
    	    body="Tartarus Platemail",
         ring1="Niqmaddu Ring",
         ring2="Dreki Ring",
         hands="Sulevia's Gauntlets +2",
+        legs="Arke Cosciales",
         waist="Sailfi Belt +1",
-        feet="Amm Greaves"
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
         head="Hjarrandi Helm",
    	    body="Tartarus Platemail",
         ring2="Patricius Ring",
+        legs="Arke Cosciales",
 		back=Brigantia.TP,
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
         ring2="Patricius Ring",
    	    body="Tartarus Platemail",
+        legs="Arke Cosciales",
 		back=Brigantia.TP,
     })
 
@@ -473,11 +494,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-        --if is_sc_element_today(spell) then
-        --    if wsList:contains(spell.english) then
-        --        equip(sets.WSDayBonus)
-        --    end
-        --end
+        if is_sc_element_today(spell) then
+            if wsList:contains(spell.english) then
+                equip(sets.WSDayBonus)
+            end
+        end
     end
 end
 
