@@ -102,8 +102,8 @@ function init_gear_sets()
         neck="Anu Torque",
         ear1="Sherida Earring",
         ear2="Telos Earring",
-        --hands="Flamma Manopolas +2",
-        hands="Vishap Finger Gauntlets +1",
+        hands="Flamma Manopolas +2",
+        --hands="Vishap Finger Gauntlets +1",
         body="Pteroslaver Mail +3",
         ring1="Niqmaddu Ring",
         ring2="Petrov Ring",
@@ -195,7 +195,7 @@ function init_gear_sets()
         ear1="Thrud Earring",
         ear2="Moonshade Earring",
 		body=Valorous.Body.DA,
-        hands=Valorous.Hands.WS,
+        hands="Pteroslaver Finger Gauntlets +2",
         ring1="Niqmaddu Ring",
         ring2="Regal Ring",
 		back=Brigantia.WS,
@@ -236,19 +236,19 @@ function init_gear_sets()
     })
 
     sets.precast.WS["Camlann's Torment"] = set_combine(sets.precast.WS, {
-        head="Valorous Mask", 
+	    head="Stinger Helm +1",
         neck="Breeze Gorget",
         ear1="Thrud Earring",
         ear2="Ishvara Earring",
         body=Valorous.Body.DA,
-        hands=Valorous.Hands.WS,
+        hands="Pteroslaver Finger Gauntlets +2",
 		back=Brigantia.WS,
         waist="Breeze Belt",
         legs="Vishap Brais +3",
         feet="Sulevia's Leggings +2"
     })
 	sets.precast.WS["Camlann's Torment"].Mid = set_combine(sets.precast.WS["Camlann's Torment"], {
-	    head="Stinger Helm +1",
+        head="Valorous Mask", 
 		back=Brigantia.WS,
     })
 	sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"].Mid, {})
@@ -317,7 +317,7 @@ function init_gear_sets()
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle.Town = set_combine(sets.idle, {
-        head="Pteroslaver Armet +3",
+        head="Stinger Helm +1",
         ring1="Niqmaddu Ring",
         neck="Dragoon's Collar +2",
         waist="Sailfi Belt +1",
@@ -404,12 +404,13 @@ function init_gear_sets()
     }
 
 	sets.engaged.Mid = set_combine(sets.engaged, {
-        head="Hjarrandi Helm",
+  --      head="Hjarrandi Helm",
+		head="Flamma Zucchetto +2",
         ear2="Brutal Earring",
         neck="Dragoon's Collar +2",
         hands="Sulevia's Gauntlets +2",
 		body=Valorous.Body.STP,
-        ring2="Dreki Ring",
+        ring2="Flamma Ring",
         legs="Pteroslaver Brais +3",
         waist="Ioskeha Belt",
 		back=Brigantia.TP,

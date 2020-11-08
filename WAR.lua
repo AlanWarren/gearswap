@@ -185,7 +185,7 @@ function init_gear_sets()
      sets.precast.WS = {
          ammo="Knobkierrie",
          head="Valorous Mask",
-         neck="Defiant Collar",
+         neck="Warrior's Bead Necklace +2",
          ear1="Thrud Earring",
          ear2="Moonshade Earring",
          body="Pummeler's Lorica +2",
@@ -310,7 +310,7 @@ function init_gear_sets()
      sets.idle.Town = {
          ammo="Ginsen",
          head="Hjarrandi Helm",
-         neck="Sanctity Necklace",
+         neck="Warrior's Bead Necklace +2",
          ear1="Brutal Earring",
          ear2="Telos Earring",
          body="Tartarus Platemail",
@@ -344,13 +344,13 @@ function init_gear_sets()
          ring1="Paguroidea Ring",
      })
  
-     sets.idle.Weak = {
+     sets.idle.Weak = set_combine(sets.idle.Field, {
          head="Hjarrandi Helm",
          body="Tartarus Platemail",
          ring2="Paguroidea Ring",
          back="Impassive Mantle",
          waist="Flume Belt",
-     }
+     })
 
      -- Defense sets
      sets.defense.PDT = {
@@ -405,7 +405,7 @@ function init_gear_sets()
      }
      sets.Defensive_Acc = {
          head="Hjarrandi Helm",
-         neck="Agitator's Collar",
+         neck="Warrior's Bead Necklace +2",
          hands="Sulevia's Gauntlets +2",
          body="Tartarus Platemail",
          ring2="Patricius Ring",
@@ -417,10 +417,10 @@ function init_gear_sets()
      sets.engaged = {
          ammo="Ginsen",
          head="Flamma Zucchetto +2",
-         neck="Lissome Necklace",
+         neck="Warrior's Bead Necklace +2",
          ear1="Brutal Earring",
          ear2="Dedition Earring",
-    	 body=Valorous.Body.STP, 
+    	 body=Valorous.Body.DA, 
          hands="Sulevia's Gauntlets +2",
          ring1="Niqmaddu Ring",
          ring2="Petrov Ring",
@@ -429,20 +429,22 @@ function init_gear_sets()
          waist="Sailfi Belt +1",
          --legs="Pummeler's Cuisses +2",
          legs=Odyssean.Legs.TP,
-         feet="Flamma Gambieras +2"
+         feet="Tatenashi Sune-ate +1"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Ginsen",
-         neck="Lissome Necklace",
+         neck="Warrior's Bead Necklace +2",
          ear1="Telos Earring",
          ear2="Cessance Earring",
          hands="Flamma Manopolas +2",
          ring2="Flamma Ring",
          waist="Ioskeha Belt",
+         feet="Tatenashi Sune-ate +1"
     	 --body="Flamma Korazin +2"
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-         body="Flamma Korazin +2"
+         body="Flamma Korazin +2",
+         legs="Sulevia's Cuisses +2"
         --  back="Grounded Mantle +1",
      })
 
@@ -457,7 +459,14 @@ function init_gear_sets()
         waist="Shetal Stone"
      })
      sets.engaged.OneHand = set_combine(sets.engaged, {
-        ring1="Hetairoi Ring",
+         body="Flamma Korazin +2",
+         ear1="Telos Earring",
+         ear2="Cessance Earring",
+         waist="Ioskeha Belt",
+         legs="Sulevia's Cuisses +2",
+         --ring2="Hetairoi Ring"
+         ring2="Flamma Ring"
+        --ring1="Hetairoi Ring",
      })
 
      sets.engaged.GreatSword = set_combine(sets.engaged, {
@@ -473,8 +482,8 @@ function init_gear_sets()
      })
 
      sets.engaged.Reraise = set_combine(sets.engaged, {
-     	head="Twilight Helm",neck="Twilight Torque",
-     	body="Twilight Mail"
+     	--head="Twilight Helm",neck="Twilight Torque",
+     	--body="Twilight Mail"
      })
      sets.buff.Berserk = { 
          --feet="Warrior's Calligae +2" 
@@ -677,7 +686,7 @@ function get_combat_form()
     --end
     if S{'NIN', 'DNC'}:contains(player.sub_job) and war_sub_weapons:contains(player.equipment.sub) then
         state.CombatForm:set("DW")
-    elseif S{'SAM', 'WAR'}:contains(player.sub_job) and player.equipment.sub == 'Rinda Shield' then
+    elseif S{'SAM', 'WAR'}:contains(player.sub_job) and player.equipment.sub == 'Blurred Shield' then
         state.CombatForm:set("OneHand")
     else
         state.CombatForm:reset()

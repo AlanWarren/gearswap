@@ -962,13 +962,13 @@ function init_gear_sets()
         ear2="Brutal Earring",
         body=Valorous.Body.DA,
         hands="Sulevia's Gauntlets +2",
-        ring2="Hetairoi Ring",
+        ring2="Petrov Ring",
         back=Ankou.DA
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
         ear1="Cessance Earring",
         ear2="Telos Earring",
-        ring2="Regal Ring",
+        ring2="Flamma Ring",
         hands="Sulevia's Gauntlets +2",
         back=Ankou.DA
     })
@@ -977,6 +977,7 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Telos Earring",
         body="Flamma Korazin +2",
+        ring2="Regal Ring",
         hands="Sulevia's Gauntlets +2",
         back=Ankou.DA
     })

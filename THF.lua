@@ -670,7 +670,7 @@ function init_gear_sets()
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head="Adhemar Bonnet +1",
         neck="Assassin's Gorget +1",
-        ear1="Dedition Earring",
+        ear1="Brutal Earring",
         ear2="Sherida Earring",
         body="Pillager's Vest +3",
         hands="Adhemar Wristbands +1",

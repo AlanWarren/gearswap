@@ -453,7 +453,8 @@ function init_gear_sets()
         back=Smertrios.TP,
         waist="Sailfi Belt +1",
         legs="Ryuo Hakama",
-        feet="Flamma Gambieras +2"
+        --feet="Flamma Gambieras +2"
+        feet="Tatenashi Sune-ate +1"
     }
     
     sets.engaged.Mid = set_combine(sets.engaged, {
@@ -466,6 +467,7 @@ function init_gear_sets()
         waist="Ioskeha Belt",
         ring1="Niqmaddu Ring", 
         ring2="Flamma Ring",
+        feet="Tatenashi Sune-ate +1"
         --body="Kendatsuba Samue",
         --legs="Kendatsuba Hakama",
     })
@@ -474,6 +476,7 @@ function init_gear_sets()
         head="Kendatsuba Jinpachi +1",
         neck="Samurai's Nodowa +2",
         body="Kendatsuba Samue +1",
+        legs="Kendatsuba Hakama +1",
         ring2="Regal Ring",
         feet="Kendatsuba Sune-ate +1"
     })
@@ -487,7 +490,7 @@ function init_gear_sets()
         feet="Kendatsuba Sune-ate +1"
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
-        neck="Agitator's Collar",
+        --neck="Agitator's Collar",
    	    body="Tartarus Platemail",
         ring2="Defending Ring"
     })

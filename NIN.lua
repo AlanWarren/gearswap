@@ -508,7 +508,7 @@ function init_gear_sets()
         head="Adhemar Bonnet +1",
         neck="Ninja Nodowa +2",
         ear1="Telos Earring",
-        ear2="Dedition Earring",
+        ear2="Brutal Earring",
         body="Kendatsuba Samue +1",
         hands="Adhemar Wristbands +1",
         ring1="Epona's Ring",
@@ -517,7 +517,7 @@ function init_gear_sets()
         waist="Windbuffet Belt +1",
        -- legs="Samnuha Tights",
         legs="Kendatsuba Hakama +1",
-        feet=HercFeet.TP
+        feet="Kendatsuba Sune-ate +1"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Kendatsuba Jinpachi +1",
@@ -525,7 +525,8 @@ function init_gear_sets()
         ear2="Brutal Earring",
         ring2="Gere Ring",
         body="Kendatsuba Samue +1",
-        legs="Kendatsuba Hakama +1"
+        legs="Kendatsuba Hakama +1",
+        feet="Kendatsuba Sune-ate +1"
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         head="Kendatsuba Jinpachi +1",
