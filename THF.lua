@@ -115,8 +115,8 @@ function init_gear_sets()
     sets.CapacityMantle = { back="Mecistopins Mantle" }
 
     sets.Organizer = {
-        grip="Pearlsack",
-        waist="Linkpearl",
+        --grip="Pearlsack",
+        --waist="Linkpearl",
     }
 
     sets.buff['Sneak Attack'] = {
@@ -134,7 +134,7 @@ function init_gear_sets()
     }
 
     sets.buff['Trick Attack'] = {
-        ammo="Tengu-no-hane",
+        --ammo="Tengu-no-hane",
         head="Adhemar Bonnet +1",
         neck="Assassin's Gorget +1",
         ear2="Sherida Earring",
@@ -331,7 +331,7 @@ function init_gear_sets()
         ring1="Regal Ring",
         ring2="Gere Ring",
         hands="Meghanada Gloves +2",
-        waist="Metalsinger Belt",
+        waist="Sailfi Belt +1",
         legs="Meghanada Chausses +2",
         back=Toutatis.WSD,
         feet=HercFeet.TP
@@ -530,7 +530,7 @@ function init_gear_sets()
         back=Toutatis.STP,
         waist="Patentia Sash",
         legs="Pillager's culottes +3",
-        feet=HercFeet.TP
+        feet="Plunderer's Poulaines +2"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         head="Adhemar Bonnet +1",
@@ -621,7 +621,7 @@ function init_gear_sets()
         -- ear1="Sherida Earring",
         -- ear2="Suppanomimi",
         back=Toutatis.STP,
-        feet=HercFeet.TP
+        feet="Plunderer's Poulaines +2"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
         body="Pillager's Vest +3",
@@ -679,14 +679,14 @@ function init_gear_sets()
         back=Toutatis.STP,
         waist="Windbuffet Belt +1",
         legs="Pillager's culottes +3",
-        feet=HercFeet.TP
+        feet="Plunderer's Poulaines +2"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, { 
         head="Adhemar Bonnet +1",
         ear1="Telos Earring",
         body="Pillager's Vest +3",
         ring1="Regal Ring",
-        feet=HercFeet.TP
+        feet="Plunderer's Poulaines +2"
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.MaxHaste.Mid, {
         head="Pillager's bonnet +3",

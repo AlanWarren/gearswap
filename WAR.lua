@@ -103,8 +103,8 @@ function init_gear_sets()
      }
 
     sets.Organizer = {
-        grip="Pearlsack",
-        waist="Linkpearl",
+        --grip="Pearlsack",
+        --waist="Linkpearl",
     }
 
     sets.MadrigalBonus = {
@@ -117,7 +117,8 @@ function init_gear_sets()
      sets.precast.JA['Provoke'] = set_combine(sets.TreasureHunter, { hands="Pummeler's Mufflers +1"})
      sets.precast.JA['Berserk'] = { body="Pummeler's Lorica +2", hands="Agoge Calligae", back=Cichols.TP, feet="Agoge Calligae"}
      sets.precast.JA['Warcry'] = { head="Agoge Mask"}
-     sets.precast.JA['Retaliation'] = { hands="Pummeler's Mufflers +1"}
+     sets.precast.JA['Mighty Strikes'] = { head="Agoge Mufflers"}
+     sets.precast.JA['Retaliation'] = { hands="Pummeler's Mufflers +1", feet="Ravager's Calligae +2"}
      sets.precast.JA['Aggressor'] = { head="Pummeler's Mask +1", body="Agoge Lorica"}
      sets.precast.JA['Restraint'] = { hands="Ravager's Mufflers +2"}
      sets.precast.JA['Warrior\'s Charge'] = { legs="Agoge Cuisses"}
@@ -429,21 +430,25 @@ function init_gear_sets()
          waist="Sailfi Belt +1",
          --legs="Pummeler's Cuisses +2",
          legs=Odyssean.Legs.TP,
-         feet="Tatenashi Sune-ate +1"
+         feet="Flamma Gambieras +2"
      }
      sets.engaged.Mid = set_combine(sets.engaged, {
          ammo="Ginsen",
          neck="Warrior's Bead Necklace +2",
-         ear1="Telos Earring",
+         ear1="Brutal Earring",
          ear2="Cessance Earring",
-         hands="Flamma Manopolas +2",
+         --hands="Flamma Manopolas +2",
+         hands="Sulevia's Gauntlets +2",
          ring2="Flamma Ring",
          waist="Ioskeha Belt",
+         legs="Tatenashi Haidate +1",
          feet="Tatenashi Sune-ate +1"
     	 --body="Flamma Korazin +2"
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
          body="Flamma Korazin +2",
+         ear1="Telos Earring",
+         hands="Flamma Manopolas +2",
          legs="Sulevia's Cuisses +2"
         --  back="Grounded Mantle +1",
      })
