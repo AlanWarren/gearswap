@@ -125,7 +125,7 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA.Meditate = {
         head="Wakido Kabuto +2",
-        hands="Sakonji Kote +1",
+        hands="Sakonji Kote +3",
         back=Smertrios.TP
     }
     sets.precast.JA.Sekkanoki = {hands="Unkai Kote +2" }
@@ -151,20 +151,21 @@ function init_gear_sets()
     sets.precast.RA = {
         head="Volte Tiara",
         hands="Buremte Gloves",
+        ring2="Crepuscular Ring",
         feet="Ejekamal Boots",
         legs="Volte Tights"
     }
     sets.midcast.RA = {
-        head="Volte Tiara",
+        head="Nyame Helm",
         body="Kendatsuba Samue",
         legs="Kendatsuba Hakama",
         -- neck="Iqabi Necklace",
         hands="Ryuo Tekko",
         waist="Chaac Belt",
-        ear2="Enervating Earring",
         ear1="Telos Earring",
+        ear2="Crepuscular Earring",
         ring1="Cacoethic Ring +1",
-        ring2="Hajduk Ring",
+        ring2="Crepuscular Ring",
         feet="Wakido Sune-ate +2"
     }	
     -- Don't need any special gear for Healing Waltz.
@@ -316,20 +317,19 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {
         head="Kendatsuba Jinpachi +1",
-        body="Founder's Breastplate",
-        hands="Founder's Gauntlets",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
         neck="Shadow Gorget",
         waist="Soil Belt",
-        feet="Founder's Greaves"
+        feet="Nyame Sollerets"
     })
     
     sets.midcast['Blue Magic'] = set_combine(sets.precast.WS['Tachi: Ageha'], {
-        ear2="Gwati Earring", -- 3
+        ear2="Crepuscular Earring", -- 3
         waist="Eschan Stone", -- 5
-        ring1="Sangoma Ring", -- 10
+        ring1="Crepuscular Ring", -- 10
         ring2="Weatherspoon Ring", -- 10 macc
         back="Aput Mantle",
-        legs="Flamma Dirs +2"
     })
     -- Midcast Sets
     sets.midcast.FastRecast = {
@@ -343,19 +343,18 @@ function init_gear_sets()
     
     -- Resting sets
     sets.resting = {
-        -- head="Twilight Helm",
-        -- body="Twilight Mail",
         ring2="Paguroidea Ring"
     }
     
     sets.idle.Town = {
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
         head="Kendatsuba Jinpachi +1",
         neck="Samurai's Nodowa +2",
         ear1="Telos Earring",
         ear2="Dedition Earring",
    	    body="Kendatsuba Samue +1",
-        hands="Wakido Kote +3",
+        --hands="Wakido Kote +3",
+        hands="Sakonji Kote +3",
         ring1="Niqmaddu Ring",
         ring2="Regal Ring",
         back=Smertrios.TP,
@@ -374,7 +373,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Genmei Earring",
    	    body="Tartarus Platemail",
-        hands="Kendatsuba Tekko +1",
+        hands="Sakonji Kote +3",
         ring1="Dark Ring",
         ring2="Defending Ring",
         back=Smertrios.TP,
@@ -397,16 +396,15 @@ function init_gear_sets()
     sets.idle.Sphere = set_combine(sets.idle, { body="Makora Meikogai"  })
     
     sets.idle.Weak = set_combine(sets.idle.Field, {
-        -- head="Twilight Helm",
-    	-- body="Twilight Mail"
     })
     
     -- Defense sets
     sets.defense.PDT = {
         --head="Otronif Mask +1",
+        ammo="Crepuscular Pebble",
         neck="Agitator's Collar",
    	    body="Tartarus Platemail",
-        --hands="Otronif Gloves +1",
+        hands="Sakonji Kote +3",
         ring1="Dark Ring",
         ring2="Defending Ring",
     	back=Smertrios.TP,
@@ -416,8 +414,8 @@ function init_gear_sets()
     }
     
     sets.defense.Reraise = set_combine(sets.defense.PDT, {
-    	head="Twilight Helm",
-    	body="Twilight Mail"
+    	head="Nyame Helm",
+    	body="Nyame Mail"
     })
     
     sets.defense.MDT = set_combine(sets.defense.PDT, {
@@ -427,7 +425,7 @@ function init_gear_sets()
     
     sets.Kiting = {feet="Danzo Sune-ate"}
     
-    sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+    sets.Reraise = {head="Nyame Helm",body="Nyame Mail"}
     
     -- Engaged sets
     
@@ -440,7 +438,7 @@ function init_gear_sets()
     -- Note, this set assumes use of Cibitshavore (hence the arrow as ammo)
     sets.engaged = {
         sub="Utu Grip",
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
         head="Flamma Zucchetto +2",
         --neck="Moonbeam Nodowa",
         neck="Samurai's Nodowa +2",
@@ -452,7 +450,8 @@ function init_gear_sets()
         ring2="Petrov Ring", 
         back=Smertrios.TP,
         waist="Sailfi Belt +1",
-        legs="Ryuo Hakama",
+        --legs="Ryuo Hakama",
+        legs="Kendatsuba Hakama +1",
         --feet="Flamma Gambieras +2"
         feet="Tatenashi Sune-ate +1"
     }
@@ -472,7 +471,8 @@ function init_gear_sets()
         --legs="Kendatsuba Hakama",
     })
 
-    sets.engaged.Acc = set_combine(sets.engaged.Mid, { 
+    sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        ear2="Crepuscular Earring", 
         head="Kendatsuba Jinpachi +1",
         neck="Samurai's Nodowa +2",
         body="Kendatsuba Samue +1",
@@ -482,8 +482,10 @@ function init_gear_sets()
     })
 
     sets.engaged.PDT = set_combine(sets.engaged.Acc, {
+        ammo="Crepuscular Pebble",
         -- ammo="Staunch Tathlum",
    	    body="Tartarus Platemail",
+        hands="Sakonji Kote +3",
         -- neck="Twilight Torque",
         ring2="Defending Ring",
         legs="Kendatsuba Hakama +1",
@@ -495,7 +497,7 @@ function init_gear_sets()
         ring2="Defending Ring"
     })
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid.PDT, {
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
    	    body="Tartarus Platemail",
         neck="Agitator's Collar",
         ring2="Defending Ring"

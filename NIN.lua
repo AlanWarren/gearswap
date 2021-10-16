@@ -225,7 +225,7 @@ function init_gear_sets()
         ring1="Hajduk Ring",
         back="Yokaze Mantle",
         legs="Kendatsuba Hakama +1",
-        feet="Taeon Boots"
+        feet="Malignance Boots"
     }
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
         body="Mochizuki Chainmail +3"
@@ -252,7 +252,6 @@ function init_gear_sets()
         --ammo="Impatiens",
         body="Dread Jupon",
         hands="Leyline Gloves",
-        back="Grounded Mantle +1",
         ear1="Loquacious Earring",
         ring1="Weatherspoon Ring", -- 10 macc
         feet="Mochizuki Kyahan +1"
@@ -263,17 +262,17 @@ function init_gear_sets()
         --ammo="Pemphredo Tathlum",
         head="Hachiya Hatsuburi +3",
         ear1="Gwati Earring",
-        ear2="Lempo Earring",
+        ear2="Crepuscular Earring",
         neck="Incanter's Torque",
         body="Malignance Tabard",
         hands="Malignance Gloves",
         ring1="Weatherspoon Ring", -- 10 macc
-        ring2="Sangoma Ring",
+        ring2="Crepuscular Ring",
         --ring2="Haverton Ring",
         back="Yokaze Mantle",
         waist="Eschan Stone",
         legs="Malignance Tights", 
-        feet="Mummu Gamashes +2"
+        feet="Nyame Sollerets"
     }
     -- any ninjutsu cast on self
     sets.midcast.SelfNinjutsu = sets.midcast.Ninjutsu
@@ -360,7 +359,7 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = {
         -- head="Lithelimb Cap",
-        neck="Twilight Torque",
+        --neck="Twilight Torque",
         head="Malignance Chapeau",
         body="Malignance Tabard",
         hands="Malignance Gloves",
@@ -431,7 +430,7 @@ function init_gear_sets()
     })
     sets.Katanas = {
         main="Kannagi",
-        sub="Taka",
+        sub="Fudo Masamune",
         ammo="Sekki Shuriken"
     }
     sets.Dagger = {
@@ -440,20 +439,20 @@ function init_gear_sets()
         ammo=empty
     }
     sets.Daggers = {
-        main="Malevolence",
+        main="Tauret",
         sub="Malevolence",
         ammo="Date Shuriken"
     }
     sets.Proc = {
         -- main="Knife",
         sub=empty,
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
         neck="Carnal Torque"
     }
     sets.unProc = set_combine(sets.engaged, {
-        main="Kannagi",
-        sub="Taka",
-        ammo="Togakushi Shuriken"
+        main="Tauret",
+        sub="Malevolence",
+        ammo="Seki Shuriken"
     })
 
     sets.engaged.Innin = set_combine(sets.engaged, {
@@ -465,7 +464,7 @@ function init_gear_sets()
     sets.NormalPDT = {
         head="Malignance Chapeau",
         body="Malignance Tabard",
-        neck="Agitator's Collar",
+        --neck="Agitator's Collar",
         hands="Malignance Gloves",
         back=Andartia.DEX,
         ring1="Defending Ring",
@@ -475,7 +474,7 @@ function init_gear_sets()
     sets.AccPDT = {
         head="Malignance Chapeau",
         body="Kendatsuba Samue +1",
-        neck="Agitator's Collar",
+        --neck="Agitator's Collar",
         hands="Malignance Gloves",
         ring1="Patricius Ring",
         ring2="Defending Ring",
@@ -492,12 +491,12 @@ function init_gear_sets()
     sets.engaged.Innin.Acc.PDT = sets.engaged.Acc.PDT
 
     sets.engaged.HastePDT = {
-        neck="Agitator's Collar",
+        --neck="Agitator's Collar",
         body="Malignance Tabard",
         head="Malignance Chapeau",
-        waist="Flume Belt",
+        --waist="Flume Belt",
         hands="Malignance Gloves",
-        ring1="Defending Ring",
+        --ring1="Defending Ring",
         back=Andartia.DEX,
         legs="Malignance Tights",
         feet="Malignance Boots"
@@ -536,7 +535,7 @@ function init_gear_sets()
         body="Kendatsuba Samue +1",
         hands="Kendatsuba Tekko +1",
         ring1="Ilabrat Ring",
-        ring2="Cacoethic Ring +1",
+        ring2="Regal Ring",
         back=Andartia.DEX,
         waist="Olseni Belt",
         legs="Kendatsuba Hakama +1",
@@ -699,7 +698,7 @@ function init_gear_sets()
     })
     
     sets.Kamu = {
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
         neck="Ninja Nodowa +2",
         head="Hachiya Hatsuburi +3",
         body=HercBody.WSD,
@@ -741,7 +740,6 @@ function init_gear_sets()
         back=Andartia.AGI,
         waist="Windbuffet Belt +1",
         legs="Mochizuki Hakama +3",
-        --legs="Hizamaru Hizayoroi +2",
         feet="Mummu Gamashes +2"
     })
     
@@ -1020,6 +1018,9 @@ function customize_melee_set(meleeSet)
     end
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
+    end
+    if state.Proc.value then 
+        meleeSet = set_combine(meleeSet, sets.Proc)
     end
     if state.Buff.Migawari and state.HybridMode.value == 'PDT' then
         meleeSet = set_combine(meleeSet, sets.buff.Migawari)

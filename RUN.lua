@@ -72,7 +72,7 @@ function init_gear_sets()
         body="Vanir Cotehardie",
         hands="Spolia Cuffs",
         ring1="Acumen Ring",
-        ring2="Sangoma Ring",
+        ring2="Crepuscular Ring",
         back="Evasionist's Cape",
         legs="Shneddick Tights +1",
         feet="Weatherspoon Souliers +1"

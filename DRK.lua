@@ -203,6 +203,9 @@ function init_gear_sets()
         ear2="Reraise Earring",
         grip="Pearlsack",
         waist="Linkpearl",
+        head="Caladbolg",
+        hands="Liberator",
+        feet="Apocalypse",
         back=Niht.DarkMagic,
     }
 
@@ -210,8 +213,8 @@ function init_gear_sets()
     -- Precast sets to enhance JAs
     sets.precast.JA['Diabolic Eye'] = {hands="Fallen's Finger Gauntlets +1"}
     sets.precast.JA['Nether Void']  = {legs="Heathen's Flanchard +1"}
-    sets.precast.JA['Dark Seal']    = {head="Fallen's burgeonet +2"}
-    sets.precast.JA['Souleater']    = {head="Ignominy burgeonet +2"}
+    sets.precast.JA['Dark Seal']    = {head="Fallen's burgeonet +3"}
+    sets.precast.JA['Souleater']    = {head="Ignominy burgonet +2"}
     sets.precast.JA['Weapn Bash']   = {hands="Ignominy Gauntlets +2"}
     sets.precast.JA['Blood Weapon'] = {body="Fallen's Cuirass +3"}
     sets.precast.JA['Last Resort']  = {back=Ankou.WSD}
@@ -237,7 +240,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {
         ammo="Impatiens",
-        head="Fallen's Burgonet +3",
+        head="Fallen's Burgeonet +3",
         body="Fallen's Cuirass +3",
         ear1="Malignance Earring",
         ear2="Loquacious Earring",
@@ -254,7 +257,6 @@ function init_gear_sets()
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, { 
         head="Cizin Helm +1",
-        neck="Stoicheion Medal" 
     })
     sets.precast.FC['Enfeebling Magic'] = set_combine(sets.precast.FC, {
         head="Cizin Helm +1",
@@ -267,7 +269,6 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         ammo="Impatiens",
         head="Fallen's Burgeonet +3",
-        back="Grounded Mantle +1",
         waist="Sailfi Belt +1",
         legs="Carmine Cuisses +1",
         ring2="Weatherspoon Ring", -- 10 macc
@@ -289,9 +290,7 @@ function init_gear_sets()
         ammo="Impatiens",
         --head="Otomi Helm",
         neck="Incanter's Torque",
-        body="Founder's Breastplate",
         hands="Leyline Gloves",
-        back="Grounded Mantle +1",
         feet=Odyssean.Feet.FC
     }
 
@@ -301,7 +300,7 @@ function init_gear_sets()
         --head="Ignominy Burgonet +2", -- 19
         neck="Erra Pendant", -- 10 dark + 17 macc
         ear1="Malignance Earring",
-        ear2="Dark Earring", -- 3
+        ear2="Crepuscular Earring", -- 3
         body="Fallen's Cuirass +3",
         hands="Flamma Manopolas +2",
         waist="Casso Sash", -- 5
@@ -324,7 +323,7 @@ function init_gear_sets()
 
     sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Dark Magic'], {
         ammo="Pemphredo Tathlum", 
-        head="Befouled Crown",
+        head="Nyame Helm",
         neck="Erra Pendant", -- 10 + 17 macc
         body="Ignominy Cuirass +3",
         hands="Flamma Manopolas +2",
@@ -349,7 +348,7 @@ function init_gear_sets()
         waist="Eschan Stone", -- macc/matk 7
         legs="Eschite Cuisses", -- matk 25 
         back="Aput Mantle", -- mdmg 10
-        feet="Founder's Greaves" -- matk 29
+        feet="Nyame Sollerets" -- matk 29
     }
 
     -- Mix of HP boost, -Spell interruption%, and Dark Skill
@@ -427,9 +426,9 @@ function init_gear_sets()
     })
 
     sets.midcast['Blue Magic'] = set_combine(sets.midcast['Dark Magic'], {
-        ear2="Gwati Earring", -- 3
+        ear2="Crepuscular Earring", -- 3
         waist="Eschan Stone", -- 5
-        ring1="Sangoma Ring", -- 10
+        ring1="Crepuscular Ring", -- 10
         ring2="Weatherspoon Ring", -- 10 macc
         back="Aput Mantle",
         legs="Fallen's Flanchard +3",  -- 18 + 39macc
@@ -662,10 +661,10 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +2",
         ear1="Friomisi Earring",
         body="Fallen's Cuirass +3",
-        hands="Founder's Gauntlets",
+        hands="Nyame Gauntlets",
         ring1="Archon Ring",
         back=Ankou.WSD,
-        feet="Heathen's Sollerets +1"
+        feet="Nyame Sollerets"
     })
     sets.precast.WS['Sanguine Blade'].Mid = set_combine(sets.precast.WS['Sanguine Blade'], sets.precast.WS.Mid)
     sets.precast.WS['Sanguine Blade'].Acc = set_combine(sets.precast.WS['Sanguine Blade'], sets.precast.WS.Acc)
@@ -685,11 +684,11 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {
         ammo="Staunch Tathlum",
-        head="Hjarrandi Helm",
+        head="Nyame Helm",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Genmei Earring",
-        body="Tartarus Platemail",
+        body="Nyame Mail",
         hands="Volte Moufles",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
@@ -699,12 +698,12 @@ function init_gear_sets()
         feet="Volte Sollerets"
     }
     sets.idle.Town = set_combine(sets.idle, {
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
         head="Ratri Sallet +1",
         neck="Abyssal Bead Necklace +2",
         ear1="Dedition Earring",
         ear2="Telos Earring",
-        body="Tartarus Platemail",
+        body="Nyame Mail",
         --body="Ratri Breastplate +1",
         hands="Ratri Gadlings +1",
         ring1="Niqmaddu Ring",
@@ -732,25 +731,25 @@ function init_gear_sets()
     })
 
     sets.idle.Weak = set_combine(sets.defense.PDT, {
-        head="Hjarrandi Helm",
+        head="Nyame Helm",
         neck="Sanctity Necklace",
-        body="Tartarus Platemail",
+        body="Nyame Mail",
         hands="Volte Moufles",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
         back=Ankou.STP,
         waist="Flume Belt",
-        legs="Sulevia's Cuisses +2",
-        feet="Volte Sollerets"
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
     })
     sets.idle.Sphere = set_combine(sets.idle, { body="Makora Meikogai"  })
 
     -- Defense sets
     sets.defense.PDT = {
-        ammo="Hasty Pinion +1", -- 2% haste
+        ammo="Crepuscular Pebble",
         head="Hjarrandi Helm", -- no haste
-        neck="Agitator's Collar",
-        body="Tartarus Platemail", -- 3% haste
+        neck="Abyssal Bead Necklace +2",
+        body="Nyame Mail", -- 3% haste
         --body="Sulevia's Platemail +1", -- 1% haste
         hands="Volte Moufles",
         --ear1="Etiolation Earring",
@@ -768,14 +767,13 @@ function init_gear_sets()
         neck="Twilight Torque",
         body="Tartarus Platemail",
         ear1="Etiolation Earring",
-        back="Impassive Mantle",
     })
 
     sets.Kiting = {
         legs="Carmine Cuisses +1",
     }
 
-    sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+    sets.Reraise = {head="Nyame Helm",body="Nyame Mail"}
 
     -- sets.HighHaste = {
     --     ammo="Ginsen",
@@ -787,45 +785,35 @@ function init_gear_sets()
     -- do not specify a cape so that DA/STP capes are used appropriately
     sets.Defensive = {
         --sub="Gracile grip",
-        ammo="Hasty Pinion +1",
-        head="Hjarrandi Helm", -- 10% dt
-        neck="Agitator's Collar", -- 4% pdt
-        body="Tartarus Platemail", -- 10% dt
-        hands="Volte Moufles",
-        ring1="Niqmaddu Ring", 
         ring2="Defending Ring", -- 10% dt
-        waist="Sailfi Belt +1",
-        feet="Volte Sollerets"  -- 4% pdt | 6% mdt
+        head="Nyame Helm", -- 10% dt
+        body="Nyame Mail", -- 10% dt
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"  -- 4% pdt | 6% mdt
     }
     sets.Defensive_Mid = {
-        ammo="Hasty Pinion +1",
-        head="Hjarrandi Helm", -- no haste
-        neck="Agitator's Collar", -- 4% pdt
-        body="Tartarus Platemail",
-        hands="Volte Moufles",
-        ring1="Patricius Ring",
-        ring2="Defending Ring",
-        waist="Sailfi Belt +1",
-        feet="Volte Sollerets" 
+        head="Hjarrandi Helm", -- 10% dt
+        body="Nyame Mail", -- 10% dt
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"  -- 4% pdt | 6% mdt
     }
     -- Higher DT, less haste
     sets.DefensiveHigh = set_combine(sets.Defensive, {
-        ammo="Hasty Pinion +1",
-        head="Hjarrandi Helm", -- no haste
-        body="Flamma Korazin +2",
-        hands="Volte Moufles",
-        ring1="Patricius Ring",
-        ring2="Sulevia's Ring",
-        waist="Sailfi Belt +1",
-        legs="Sulevia's Cuisses +2", -- 7% dt
-        feet="Volte Sollerets",
+        ammo="Seething Bomblet +1",
+        head="Nyame Helm", -- 10% dt
+        body="Nyame Mail", -- 10% dt
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"  -- 4% pdt | 6% mdt
     })
     sets.Defensive_Acc = set_combine(sets.Defensive_Mid, sets.DefensiveHigh)
 
     -- Base set (global catch-all set)
     sets.engaged = {
         -- sub="Bloodrain Strap",
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
         head="Flamma Zucchetto +2",
         neck="Abyssal Bead Necklace +2",
         ear1="Cessance Earring",
@@ -882,7 +870,7 @@ function init_gear_sets()
 
     -- Liberator AM3
     sets.engaged.Liberator.AM3 = set_combine(sets.engaged.Liberator, {
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
         head="Flamma Zucchetto +2",
         body=Valorous.Body.STP,
         neck="Abyssal Bead Necklace +2",
@@ -997,6 +985,7 @@ function init_gear_sets()
 
     -- Hybrid
     sets.engaged.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse, {
+        ammo="Crepuscular Pebble",
         head="Hjarrandi Helm",
         neck="Abyssal Bead Necklace +2",
         body="Tartarus Platemail",
@@ -1131,9 +1120,9 @@ function init_gear_sets()
     sets.engaged.SW.Acc = set_combine(sets.engaged.Acc, {})
 
     sets.engaged.Reraise = set_combine(sets.engaged, {
-        head="Twilight Helm",
+        head="Nyame Helm",
         neck="Twilight Torque",
-        body="Twilight Mail"
+        body="Nyame Mail"
     })
 
     sets.buff.Souleater = { 

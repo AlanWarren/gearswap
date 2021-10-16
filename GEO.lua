@@ -125,7 +125,6 @@ function init_gear_sets()
         --hands="Yaoyotl Gloves",
         ring1="Acumen Ring",
         --ring2="Strendu Ring",
-        back="Toro Cape",
         feet="Jhakri Pigaches +2"
         --waist="Snow Belt",
     }

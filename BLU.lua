@@ -385,7 +385,6 @@ function init_gear_sets()
         ear2="Regal Earring",
         body="Shamash Robe",
         hands="Jhakri Cuffs +2",
-        ring1="Jhakri Ring",
         ring2="Shiva Ring",
         back=Rosmerta.WS,
         legs=HercLegs.MAB,
@@ -417,7 +416,7 @@ function init_gear_sets()
         feet="Jhakri Pigaches +2",
         neck="Erra Pendant",
         waist="Eschan Stone",
-        ear1="Dark Earring",
+        ear1="Crepuscular Earring",
         ear2="Regal Earring",
         left_ring="Evanescence Ring",
         right_ring="Weather. Ring",
@@ -439,7 +438,7 @@ function init_gear_sets()
     -- Physical Spells --
     
     sets.midcast['Blue Magic'].Physical = {
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
         head="Adhemar Bonnet +1",
         neck="Mirage Stole +1",
         --ear1="Flame Pearl",
@@ -534,7 +533,7 @@ function init_gear_sets()
         neck="Mirage Stole +1",
         back="Aput Mantle",
         ring1="Weatherspoon Ring",
-        ring2="Sangoma Ring",
+        ring2="Crepuscular Ring",
         legs="Malignance Tights", 
     })
 
@@ -593,6 +592,9 @@ function init_gear_sets()
     })
     sets.midcast['Blue Magic']['Battery Charge'] = set_combine(sets.midcast['Blue Magic'].Buff, {
         head="Amalric Coif"
+    })
+    sets.midcast['Blue Magic']['Diamondhide'] = set_combine(sets.midcast['Blue Magic'].Buff, {
+        waist="Siegel Sash",
     })
     sets.midcast.Aquaveil = sets.midcast['Blue Magic']['Battery Charge']
     
@@ -694,7 +696,7 @@ function init_gear_sets()
     
     -- Normal melee group
     sets.engaged = {
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
         head="Adhemar Bonnet +1",
         neck="Mirage Stole +1",
         ear1="Eabani Earring",
@@ -773,6 +775,7 @@ function init_gear_sets()
      sets.engaged.Learning.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.Learning)
     
     sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        ammo="Crepuscular Pebble",
         neck="Twilight Torque",
         head="Malignance Chapeau",
         body="Malignance Tabard",
@@ -780,14 +783,17 @@ function init_gear_sets()
         legs="Malignance Tights",
         ring1="Defending Ring",
         ring2="Patricius Ring",
+        feet="Malignance Boots"
     })
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+        ammo="Crepuscular Pebble",
         neck="Twilight Torque",
         body="Malignance Tabard",
         ring1="Defending Ring",
         ring2="Patricius Ring",
     })
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, {
+        ammo="Crepuscular Pebble",
         neck="Twilight Torque",
         body="Malignance Tabard",
         ring1="Defending Ring",
@@ -814,28 +820,37 @@ function init_gear_sets()
      sets.engaged.Learning.Haste_35 = set_combine(sets.engaged.Haste_35, sets.Learning)
 
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, {
+        ammo="Crepuscular Pebble",
         head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
+        hands="Malignance Gloves",
         body="Malignance Tabard",
         legs="Malignance Tights", 
+        feet="Malignance Boots"
     })
     sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
+        ammo="Crepuscular Pebble",
         head="Malignance Chapeau",
         neck="Twilight Torque",
+        hands="Malignance Gloves",
         ring1="Defending Ring",
         ring2="Patricius Ring",
         body="Malignance Tabard",
         legs="Malignance Tights", 
+        feet="Malignance Boots"
     })
     sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {
+        ammo="Crepuscular Pebble",
         head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
+        hands="Malignance Gloves",
         body="Malignance Tabard",
         legs="Malignance Tights", 
+        feet="Malignance Boots"
     })
 
     -- 30% Haste 1626 / 798
@@ -857,28 +872,37 @@ function init_gear_sets()
      sets.engaged.Learning.Haste_30 = set_combine(sets.engaged.Haste_30, sets.Learning)
 
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
+        ammo="Crepuscular Pebble",
         head="Malignance Chapeau",
-        neck="Twilight Torque",
+        --neck="Twilight Torque",
         ring1="Defending Ring",
-        ring2="Patricius Ring",
+        --ring2="Patricius Ring",
         body="Malignance Tabard",
         legs="Malignance Tights", 
+        hands="Malignance Gloves",
+        feet="Malignance Boots"
     })
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
+        ammo="Crepuscular Pebble",
         head="Malignance Chapeau",
-        neck="Twilight Torque",
+        --neck="Twilight Torque",
         ring1="Defending Ring",
-        ring2="Patricius Ring",
+        --ring2="Patricius Ring",
         body="Malignance Tabard",
         legs="Malignance Tights", 
+        hands="Malignance Gloves",
+        feet="Malignance Boots"
     })
     sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, {
+        ammo="Crepuscular Pebble",
         head="Malignance Chapeau",
-        neck="Twilight Torque",
+        --neck="Twilight Torque",
         ring1="Defending Ring",
-        ring2="Patricius Ring",
+        --ring2="Patricius Ring",
         body="Malignance Tabard",
         legs="Malignance Tights", 
+        hands="Malignance Gloves",
+        feet="Malignance Boots"
     })
 
 

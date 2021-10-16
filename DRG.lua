@@ -68,7 +68,7 @@ function init_gear_sets()
 	--------------------------------------
     Brigantia = {}
     Brigantia.TP = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
-    Brigantia.WS = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+5','Weapon skill damage +10%',}}
+    Brigantia.WS = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
     Brigantia.DAWS = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
 
     Valorous = {}
@@ -97,7 +97,7 @@ function init_gear_sets()
     }
 
 	sets.precast.JA.Jump = {
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
 		head="Flamma Zucchetto +2",
         neck="Anu Torque",
         ear1="Sherida Earring",
@@ -146,7 +146,7 @@ function init_gear_sets()
 	
 	-- Healing Breath sets
 	sets.HB = {
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
 		head="Pteroslaver Armet +3",
         neck="Adad Amulet",
         ear1="Sherida Earring",
@@ -286,11 +286,9 @@ function init_gear_sets()
 	
 	-- Resting sets
 	sets.resting = {
-        --head="Twilight Helm",
         --neck="Twilight Torque",
         ear1="Sherida Earring",
         ear2="Cessance Earring",
-		--body="Twilight Mail",
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
 		back=Brigantia.TP,
@@ -300,7 +298,7 @@ function init_gear_sets()
 
 	-- Idle sets
 	sets.idle = {
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
         head="Hjarrandi Helm",
         neck="Dragoon's Collar +2",
         ear1="Sherida Earring",
@@ -343,20 +341,19 @@ function init_gear_sets()
     sets.idle.Sphere = set_combine(sets.idle, { body="Makora Meikogai"  })
 
     sets.idle.Regen = set_combine(sets.idle.Field, {
-		--head="Twilight Helm",
-		--body="Kumarbi's Akar",
         ear2="Infused Earring",
         neck="Sanctity Necklace",
     })
 
 	sets.idle.Weak = set_combine(sets.idle.Field, {
-		--head="Twilight Helm",
-		--body="Twilight Mail",
+		head="Nyame Helm",
+		body="Nyame Mail",
     })
 	
 	-- Defense sets
 	sets.defense.PDT = {
         -- ammo="Hasty Pinion +1",
+        ammo="Crepuscular Pebble",
         head="Hjarrandi Helm",
         neck="Twilight Torque",
         ear1="Cessance Earring",
@@ -365,14 +362,12 @@ function init_gear_sets()
         hands="Sulevia's Gauntlets +2",
         ring1="Patricius Ring",
         ring2="Dark Ring",
-        back="Impassive Mantle",
         waist="Sailfi Belt +1",
         legs="Sulevia's Cuisses +2",
         feet="Sulevia's Leggings +2"
     }
 
 	sets.defense.MDT = set_combine(sets.defense.PDT, {
-         back="Impassive Mantle",
     })
 
 	sets.Kiting = {
@@ -388,7 +383,7 @@ function init_gear_sets()
 	
 	-- Normal melee group
 	sets.engaged = {
-        ammo="Ginsen",
+        ammo="Coiste Bodhar",
 		head="Flamma Zucchetto +2",
         neck="Anu Torque",
         ear1="Sherida Earring",
@@ -426,6 +421,7 @@ function init_gear_sets()
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
+        ammo="Crepuscular Pebble",
         head="Hjarrandi Helm",
         neck="Dragoon's Collar +2",
    	    body="Tartarus Platemail",

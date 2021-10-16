@@ -41,8 +41,9 @@ function job_setup()
     state.TreasureMode:set('None')
     
     state.AutoRA = M{['description']='Auto RA', 'Normal', 'Shoot', 'WS' }
-    state.GunSelector = M{['description']='Gun Selector', 'DeathPenalty', 'Fomalhaut'}
-    state.FightingMode = M{['description']='Fighting Mode', 'Shooting', 'Melee', 'Single', 'Magic'}
+    state.GunSelector = M{['description']='Gun Selector', 'DeathPenalty', 'Fomalhaut', 'Armageddon', 'Anarchy'}
+    state.FightingMode = M{['description']='Fighting Mode', 'Default', 'Melee', 'Sword', 'DualSword'}
+    state.ShootingMode = M{['description']='Shooting Mode', 'Default', 'Standard', 'Magic', 'Single'}
 
     cor_sub_weapons = S{"Nusku Shield"}
     auto_gun_ws = "Leaden Salute"
@@ -70,6 +71,7 @@ function user_setup()
 
     
     gear.RAbullet = "Chrono Bullet"
+    gear.Accbullet = "Devastating Bullet"
     gear.WSbullet = "Chrono Bullet"
     gear.MAbullet = "Living Bullet"
     gear.QDbullet = "Hauksbok Bullet"
@@ -162,7 +164,7 @@ function init_gear_sets()
         main={name="Rostam", bag="Wardrobe 4", priority=1},
         sub={name="Tauret", priority=2},
         range="Compensator",
-        head="Lanun Tricorne +1",
+        head="Lanun Tricorne +3",
         hands="Chasseur's Gants +1",
         ear2="Etiolation Earring",
         neck="Regal Necklace",
@@ -192,6 +194,18 @@ function init_gear_sets()
     }
     sets.Melee.engaged = sets.Melee
     
+    sets.Sword = { 
+        main={name="Naegling", bag="Wardrobe 4", priority=1},
+        sub={name="Nusku Shield", priority=2},
+    }
+    sets.Sword.engaged = sets.Sword
+    
+    sets.DualSword = { 
+        main={name="Naegling", bag="Wardrobe 4", priority=1},
+        sub={name="Blurred Knife +1", bag="Wardrobe 4", priority=2},
+    }
+    sets.DualSword.engaged = sets.DualSword
+    
     sets.Magic = {
         --main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
         main={name="Lanun Knife", bag="Wardrobe 4", priority=1},
@@ -210,14 +224,20 @@ function init_gear_sets()
     sets.DeathPenalty = {
         range="Death Penalty"
     }
+    sets.Armageddon = {
+        range="Armageddon"
+    }
     sets.Fomalhaut = {
         range="Fomalhaut"
     }
-    sets.Shooting = {
+    sets.Anarchy = {
+        range="Anarchy"
+    }
+    sets.Standard = {
         main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
         sub={name="Rostam", bag="Wardrobe 4", priority=1},
     }
-    sets.Shooting.engaged = set_combine(sets.Shooting, {
+    sets.Standard.engaged = set_combine(sets.Standard, {
        head="Malignance Chapeau",
        hands="Malignance Gloves",
        body="Malignance Tabard",
@@ -236,9 +256,12 @@ function init_gear_sets()
         body="Malignance Tabard",
         legs="Malignance Tights", 
         ring1="Defending Ring",
-        feet="Lanun Bottes +3"
+        feet="Malignance Boots"
     })
-    
+    -- this allows you to equip any weapon in main + sub without this code forcing other weapons
+    sets.Default = {
+        ranged=state.GunSelector.current
+    } -- do nothing. useful for equipping whateveer you want
     sets.precast.CorsairShot = { head="Laksamana's Tricorne +2" }
     
 
@@ -285,6 +308,7 @@ function init_gear_sets()
         hands="Carmine Finger Gauntlets +1", -- 8 / 11 rapid
         back=Camulus.Snap, -- 10 
         body="Oshosi Vest", -- 12
+        ring2="Crepuscular Ring", -- 3
         waist="Impulse Belt", -- 2
         legs=AdhemarLegs.Snap, -- 9  / 10 rapid
         feet="Meghanada Jambeaux +2" -- 10 
@@ -325,7 +349,7 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         ring1="Regal Ring",
         ring2="Ifrit Ring",
-        waist="Metalsinger Belt",
+        waist="Sailfi Belt +1",
         waist="Thunder Belt",
         feet="Lanun Bottes +3"
     })
@@ -338,7 +362,7 @@ function init_gear_sets()
         body="Adhemar Jacket +1",
         neck="Shadow Gorget",
         hands="Mummu Wrists +2",
-        ring1="Mummu Ring",
+        ring1="Regal Ring",
         ring2="Ilabrat Ring",
         waist="Soil Belt",
         legs="Meghanada Chausses +2",
@@ -361,6 +385,7 @@ function init_gear_sets()
 
     sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
         ammo=gear.WSbullet,
+        head="Lanun Tricorne +3",
         neck="Aqua Gorget",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
@@ -372,7 +397,8 @@ function init_gear_sets()
     })
     sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
         ammo=gear.WSbullet,
-        ear1="Enervating Earring",
+        head="Lanun Tricorne +3",
+        ear1="Beyla Earring",
         ear2="Moonshade Earring",
         back=Camulus.WSD,
         legs="Meghanada Chausses +2",
@@ -394,11 +420,11 @@ function init_gear_sets()
         legs=HercLegs.MAB,
         feet="Lanun Bottes +3"
     }
-    sets.precast.WS['Wildfire'].Acc = {
+    sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS['Wildfire'], {
         head=HercHead.MAB,
         body="Lanun Frac +3",
         hands=HercHands.MAB
-    }
+    })
 
     sets.precast.WS['Leaden Salute'] = { 
         ammo=gear.MAbullet,
@@ -418,16 +444,15 @@ function init_gear_sets()
     sets.precast.WS['Leaden Salute'].Mid = set_combine(sets.precast.WS['Leaden Salute'], { 
         body="Lanun Frac +3",
         hands=HercHands.MAB,
-        -- legs="Mummu Kecks +2",
-        --feet="Mummu Gamashes +2"
         feet="Lanun Bottes +3"
     })
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], { 
         body="Lanun Frac +3",
         hands=HercHands.MAB,
-        -- legs="Mummu Kecks +2",
-        --feet="Mummu Gamashes +2"
         feet="Lanun Bottes +3"
+    })
+    sets.precast.WS['Hot Shot'] = set_combine(sets.precast.WS['Wildfire'], {
+        ear2="Moonshade Earring"
     })
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {
         ear2="Moonshade Earring"
@@ -437,8 +462,6 @@ function init_gear_sets()
     sets.midcast.FastRecast = {
         head="Malignance Chapeau",
         hands="Malignance Gloves",
-        ear1="Lempo Earring",
-        ear2="Gwati Earring",
         body="Malignance Tabard",
         back=Camulus.STP,
         ring1="Weatherspoon Ring",
@@ -459,7 +482,7 @@ function init_gear_sets()
         ear2="Crematio Earring",
         body="Lanun Frac +3",
         hands="Carmine Finger Gauntlets +1",
-        ring1="Regal Ring",
+        ring1="Regal Ring", 
         ring2="Dingir Ring",
         back=Camulus.MAB,
         waist="Eschan Stone",
@@ -471,8 +494,7 @@ function init_gear_sets()
     sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
         body="Lanun Frac +3",
         head="Laksamana's Tricorne +2",
-        ear1="Lempo Earring",
-        ear2="Gwati Earring",
+        ear1="Crepuscular Earring",
         feet="Malignance Boots"
     })
 
@@ -489,33 +511,49 @@ function init_gear_sets()
         ear2="Dedition Earring",
         body="Nisroch Jerkin",
         hands="Malignance Gloves",
-        ring1="Dingir Ring",
+        ring1="Crepuscular Ring",
         ring2="Ilabrat Ring",
         back=Camulus.STP,
         waist="Kwahu Kachina Belt",
         legs="Malignance Tights", 
         feet="Malignance Boots"
     }
+    sets.midcast.RA.AME = set_combine(sets.midcast.RA, {
+        head="Meghanada Visor +2",
+        body="Nisroch Jerkin",
+        hands="Mummu Wrists +2",
+        waist="Kwahu Kachina Belt",
+    })
     sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-        ear2="Enervating Earring",
+        ear2="Crepuscular Earring",
         body="Malignance Tabard",
+    })
+    sets.midcast.RA.Mid.AME = set_combine(sets.midcast.RA.Mid, {
+        head="Meghanada Visor +2",
+        body="Nisroch Jerkin",
+        waist="Kwahu Kachina Belt",
     })
 
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
         --ring1="Hajduk Ring",
+        ammo=gear.Accbullet,
         ear2="Beyla Earring",
         neck="Commodore Charm +2",
-        ring1="Regal Ring",
-        ring2="Cacoethic Ring +1",
         body="Laksamana's Frac +3",
+        ring1="Crepuscular Ring",
+        ring2="Regal Ring", 
         feet="Malignance Boots"
+    })
+    sets.midcast.RA.Acc.AME = set_combine(sets.midcast.RA.Acc, {
+        head="Meghanada Visor +2",
+        waist="Kwahu Kachina Belt",
     })
 
     sets.midcast.RA.TripleShot = set_combine(sets.midcast.RA, {
         head="Oshosi Mask",
         body="Chasseur's Frac +1",
         hands="Lanun Gants +3",
-        ring1="Regal Ring",
+        --ring1="Regal Ring",
         legs="Oshosi Trousers",
         feet="Oshosi Leggings"
     })
@@ -523,16 +561,16 @@ function init_gear_sets()
         head="Oshosi Mask",
         body="Oshosi Vest",
         hands="Lanun Gants +3",
-        ring1="Regal Ring",
+        --ring1="Regal Ring",
         legs="Oshosi Trousers",
         feet="Oshosi Leggings"
     })
     sets.midcast.RA.TripleShot.Acc = set_combine(sets.midcast.RA.Acc, {
+        ammo=gear.Accbullet,
         head="Malignance Chapeau",
         body="Oshosi Vest",
         hands="Lanun Gants +3",
-        ring1="Regal Ring",
-        ring2="Cacoethic Ring +1",
+        --ring1="Regal Ring",
         feet="Malignance Boots"
     })
     
@@ -566,7 +604,7 @@ function init_gear_sets()
         hands="Meghanada Gloves +2",
         ear1="Infused Earring",
         --neck="Commodore Charm +1",
-        body="Meghanada Cuirie +2",
+        body="Nyame Mail",
         ring1="Meghanada Ring",
         ring2="Paguroidea Ring"
     })
@@ -575,12 +613,12 @@ function init_gear_sets()
         ammo=gear.MAbullet,
         head="Malignance Chapeau",
         neck="Commodore Charm +2",
-        ear1="Genmei Earring",
-        ear2="Etiolation Earring",
+        ear1="Telos Earring",
+        ear2="Crepuscular Earring",
         body="Nisroch Jerkin",
         hands="Malignance Gloves",
-        ring1="Defending Ring",
-        ring2="Roller's Ring",
+        ring1="Crepuscular Ring",
+        ring2="Defending Ring",
         back=Camulus.STP,
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
@@ -591,7 +629,7 @@ function init_gear_sets()
         hands="Malignance Gloves",
         body="Malignance Tabard",
         legs="Malignance Tights", 
-        ring1="Defending Ring",
+        ring2="Defending Ring",
         feet="Malignance Boots"
     })
     
@@ -601,8 +639,8 @@ function init_gear_sets()
         neck="Twilight Torque",
         hands="Malignance Gloves",
         body="Malignance Tabard",
-        ring1="Defending Ring",
-        ring2="Patricius Ring",
+        ring1="Patricius Ring",
+        ring2="Defending Ring",
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Malignance Tights", 
@@ -632,7 +670,7 @@ function init_gear_sets()
         ring2="Epona's Ring",
         waist="Shetal Stone",
         back=Camulus.DA,
-        feet="Taeon Boots",
+        feet=HercFeet.TP
     }
     -- sets.engaged.Single = set_combine(sets.engaged, {
     --     ear1="Brutal Earring",
@@ -651,10 +689,10 @@ function init_gear_sets()
         head="Malignance Chapeau",
         neck="Iskur Gorget",
         ear1="Telos Earring",
-        ear2="Enervating Earring",
+        ear2="Crepuscular Earring",
         body="Malignance Tabard",
         hands="Malignance Gloves",
-        ring1="Regal Ring",
+        ring1="Crepuscular Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
         waist="Flume Belt",
@@ -681,7 +719,7 @@ function init_gear_sets()
         body="Malignance Tabard",
         hands="Malignance Gloves",
         legs="Malignance Tights",
-        ring1="Defending Ring",
+        ring2="Defending Ring",
         feet="Malignance Boots"
     })
     sets.engaged.PDT.Haste_15 = sets.engaged.PDT
@@ -711,7 +749,7 @@ function init_gear_sets()
         body="Malignance Tabard",
         hands="Malignance Gloves",
         legs="Malignance Tights",
-        ring1="Defending Ring",
+        ring2="Defending Ring",
         feet="Malignance Boots"
     })
     sets.engaged.Mid.PDT.Haste_15 = sets.engaged.PDT
@@ -745,11 +783,25 @@ function init_gear_sets()
         body="Malignance Tabard",
         hands="Malignance Gloves",
         legs="Malignance Tights",
-        ring1="Defending Ring"
+        ring2="Defending Ring"
     })
     sets.engaged.Acc.PDT.Haste_15 = sets.engaged.PDT
     sets.engaged.Acc.PDT.Haste_30 = sets.engaged.PDT
     sets.engaged.Acc.PDT.MaxHaste = sets.engaged.PDT
+end
+
+function get_cor_gearset()
+    local set = {}
+    if state.FightingMode.current ~= 'Default' then 
+        ---------------------------------------
+        set = set_combine(sets[state.FightingMode.current], sets[state.GunSelector.current])
+        ---------------------------------------
+    elseif state.ShootingMode.current ~= 'Default' then 
+        ---------------------------------------
+        set = set_combine(sets[state.ShootingMode.current], sets[state.GunSelector.current])
+        ---------------------------------------
+    end
+    return set
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -807,9 +859,8 @@ function job_precast(spell, action, spellMap, eventArgs)
             eventArgs.handled = true
         end
     end
-    ---------------------------------------
-    equip(set_combine(sets[state.FightingMode.current], sets[state.GunSelector.current]))
-    ---------------------------------------
+    local gearset = get_cor_gearset()
+    equip(gearset)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -837,7 +888,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     end
 end
 
-
 -------------------------------------------------------------------------------------------------------------------
 -- Customization hooks for idle and melee sets, after they've been automatically constructed.
 -------------------------------------------------------------------------------------------------------------------
@@ -854,14 +904,16 @@ function customize_idle_set(idleSet)
     if player.hpp < 80 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    return set_combine(idleSet, sets[state.FightingMode.current], sets[state.GunSelector.current])
+    local gearset = get_cor_gearset()
+    return set_combine(idleSet, gearset)
 end
 
 function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    return set_combine(meleeSet, sets[state.FightingMode.current].engaged, sets[state.GunSelector.current])
+    local gearset = get_cor_gearset()
+    return set_combine(meleeSet, gearset)
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -920,6 +972,35 @@ function job_buff_change(buff, gain)
             handle_equipping_gear(player.status)
         end
     end
+
+    if buff:startswith('Aftermath') then
+        if player.equipment.range == 'Armageddon' then
+            classes.CustomRangedGroups:clear()
+
+            if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
+                classes.CustomRangedGroups:append('AME')
+                add_to_chat(8, '-------------Armageddon AM3 UP-------------')
+            end
+            if (buff == "Aftermath: Lv.2" and gain) or buffactive['Aftermath: Lv.2'] then
+                classes.CustomRangedGroups:append('AME')
+                add_to_chat(8, '-------------Armageddon AM2 UP-------------')
+            end
+            if (buff == "Aftermath: Lv.1" and gain) or buffactive['Aftermath: Lv.1'] then
+                classes.CustomRangedGroups:append('AME')
+                add_to_chat(8, '-------------Armageddon AM1 UP-------------')
+            end
+
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
+        else
+            classes.CustomRangedGroups:clear()
+
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
+        end
+    end
 end
 
 function update_combat_form()
@@ -949,16 +1030,22 @@ function get_custom_ranged_groups()
             classes.CustomRangedGroups:append('F1')
         end
     end
+
+    if player.equipment.range == 'Armageddon' then
+        if buffactive['Aftermath: Lv.1'] or buffactive['Aftermath: Lv.2'] or buffactive['Aftermath Lv.3'] then
+            classes.CustomRangedGroups:append('AME')
+        end
+    else
     -- relic aftermath is just "Aftermath", while empy + mythic are numbered
-    -- if buffactive.Aftermath then
-    --     classes.CustomRangedGroups:append('AM')
-    -- elseif buffactive['Aftermath: Lv.1'] then
-    --     classes.CustomRangedGroups:append('AM1')
-    -- elseif buffactive['Aftermath: Lv.2'] then
-    --     classes.CustomRangedGroups:append('AM2')
-    -- elseif buffactive['Aftermath: Lv.3'] then
-    --     classes.CustomRangedGroups:append('AM2')
-    -- end
+    -- cor has no relic, so we ignore that one
+        if buffactive['Aftermath: Lv.1'] then
+            classes.CustomRangedGroups:append('AM1')
+        elseif buffactive['Aftermath: Lv.2'] then
+            classes.CustomRangedGroups:append('AM2')
+        elseif buffactive['Aftermath: Lv.3'] then
+            classes.CustomRangedGroups:append('AM2')
+        end
+    end
 end
 -- Job-specific toggles.
 function job_toggle_state(field)
@@ -971,17 +1058,21 @@ end
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
     local msg = ''
-    msg = msg .. 'Off.: '..state.OffenseMode.current
-    msg = msg .. ', Rng.: '..state.RangedMode.current
-    msg = msg .. ', WS.: '..state.WeaponskillMode.current
-    msg = msg .. ', QD.: '..state.CastingMode.current
+    msg = msg .. 'RA: '..state.RangedMode.current
+    if state.FightingMode.current ~= 'Default' then 
+        msg = msg .. ', Fighting: '..state.FightingMode.current
+    end
+    if state.ShootingMode.current ~= 'Default' then 
+        msg = msg .. ', Shooting: '..state.ShootingMode.current
+    end
+    msg = msg .. ', Gun: '..state.GunSelector.current
 
     if state.DefenseMode.value ~= 'None' then
         local defMode = state[state.DefenseMode.value ..'DefenseMode'].current
         msg = msg .. ', Defense: '..state.DefenseMode.value..' '..defMode
     end
 
-    msg = msg .. ', Roll Size: ' .. ((state.LuzafRing.value and 'Large') or 'Small')
+    msg = msg .. ', Roll Sz: ' .. ((state.LuzafRing.value and 'Large') or 'Small')
     add_to_chat(122, msg)
     eventArgs.handled = true
 end
@@ -1009,11 +1100,19 @@ function initialize_weapons()
         state.GunSelector:set('DeathPenalty')
     elseif player.equipment.range == 'Fomalhaut' then
         state.GunSelector:set('Fomalhaut')
+    elseif player.equipment.range == 'Anarchy' then
+        state.GunSelector:set('Anarchy')
+    elseif player.equipment.range == 'Armageddon' then
+        state.GunSelector:set('Armageddon')
     end
     -- SJ
-    if player.sub_job ~= 'DNC' and player.sub_job ~= 'NIN' then
-        state.FightingMode:set('Single')
-    end
+    --if player.sub_job ~= 'DNC' and player.sub_job ~= 'NIN' then
+    --    if state.FightingMode.current == 'Sword' then 
+    --        state.FightingMode:set('Sword')
+    --    else 
+    --        state.ShootingMode:set('Single')
+    --    end
+    --end
 end
 
 function determine_haste_group()
@@ -1205,6 +1304,11 @@ function job_state_change(stateField, newValue, oldValue)
         if newValue ~= 'Normal' then
             send_command('@wait 2.5; input /ra <t>')
         end
+    -- reset these when toggled
+    elseif stateField == 'Shooting Mode' then
+        state.FightingMode:set('Default')
+    elseif stateField == 'Fighting Mode' then
+        state.ShootingMode:set('Default')
     --elseif stateField == 'Gun Selector' then
         --equip({range=state.GunSelector.current})
     end

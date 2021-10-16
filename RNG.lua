@@ -4,9 +4,9 @@
 
  === Notes ===
  -- Set format is as follows:
-    -- sets.midcast.RA.[CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
-    -- You can create named sets based off any weapon in the rng_rema list below
-    -- you can also append CustomRangedGroups to each other
+	-- sets.midcast.RA.[CustomClass][CombatForm][CombatWeapon][RangedMode][CustomRangedGroup]
+	-- You can create named sets based off any weapon in the rng_rema list below
+	-- you can also append CustomRangedGroups to each other
  
  -- These are the available sets per category
  -- CombatForm = DW
@@ -165,13 +165,13 @@ function init_gear_sets()
     sets.precast.JA['Eagle Eye Shot'] = set_combine(sets.midcast.RA, {
         head="Meghanada Visor +2", 
         ear1="Sherida Earring",
-        ear2="Enervating Earring",
+        ear2="Crepuscular Earring",
         body="Nisroch Jerkin",
         back=Belenus.STP,
         hands="Malignance Gloves",
         waist="Kwahu Kachina Belt",
-        ring1="Ilabrat Ring",
-        ring2="Regal Ring",
+        ring1="Regal Ring",
+        ring2="Ilabrat Ring",
         legs="Arcadian Braccae +3", 
         feet="Arcadian Socks +3"
     })
@@ -224,7 +224,7 @@ function init_gear_sets()
         ear1="Dedition Earring",
         ear2="Telos Earring",
         neck="Scout's Gorget +2",
-        ring1="Ilabrat Ring",
+        ring1="Crepuscular Ring",
         ring2="Regal Ring",
         hands="Malignance Gloves",
         waist="Kwahu Kachina Belt",
@@ -242,8 +242,8 @@ function init_gear_sets()
         body="Malignance Tabard",
         --body="Malignance Tabard",
         hands="Malignance Gloves",
-        ring1="Ilabrat Ring",
-        ring2="Regal Ring",
+        ring1="Crepuscular Ring",
+        ring2="Ilabrat Ring",
         back=Belenus.STP,
         waist="Kwahu Kachina Belt", 
         legs="Malignance Tights", 
@@ -267,7 +267,7 @@ function init_gear_sets()
         hands="Adhemar Wristbands +1",
         ring1="Hetairoi Ring",
         ring2="Epona's Ring",
-        back="Grounded Mantle +1",
+        back=Belenus.STP,
         waist="Windbuffet Belt +1",
         legs="Meghanada Chausses +2", 
         feet=HercFeet.TP
@@ -279,7 +279,6 @@ function init_gear_sets()
         ring1="Patricius Ring",
         ring2="Defending Ring",
         back=Belenus.STP,
-        legs="Mummu Kecks +2"
     })
 
     sets.engaged.DW = sets.engaged
@@ -317,11 +316,12 @@ function init_gear_sets()
     ------------------------------------------------------------------
     sets.precast.RA = {
         --head=TaeonHead.Snap, -- 9
-        head="Orion Beret +3",
+        head="Orion Beret +3", -- rapid 18
         neck="Scout's gorget +2", -- 4
         body="Amini Caban +1", -- 7% VS
-        hands="Carmine Finger Gauntlets +1",
+        hands="Carmine Finger Gauntlets +1", -- 8 snap / 11 rapid
         back=Belenus.Snap, -- 2% VS / 10 snap 
+        ring1="Crepuscular Ring", -- 3
         legs="Orion Braccae +3", -- 15
         waist="Impulse Belt", -- 2
         feet="Meghanada Jambeaux +2" -- 10
@@ -353,25 +353,25 @@ function init_gear_sets()
         ear1="Dedition Earring",
         ear2="Telos Earring", 
         body="Nisroch Jerkin",
-        --body="Malignance Tabard",
         hands="Malignance Gloves",
-        ring1="Ilabrat Ring",
-        ring2="Regal Ring",
+        ring1="Crepuscular Ring",
+        ring2="Ilabrat Ring",
         back=Belenus.STP,
         waist="Kwahu Kachina Belt", 
         legs="Malignance Tights", 
         feet="Malignance Boots"
     }
     sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
-        ear1="Enervating Earring",
+        ear1="Crepuscular Earring",
         body="Malignance Tabard",
         --legs="Malignance Tights", 
     })
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
         head="Malignance Chapeau",
         ear1="Beyla Earring",
-        ring1="Cacoethic Ring +1",
+        --ring1="Cacoethic Ring +1",
         body="Orion Jerkin +3", 
+        ring2="Regal Ring",
         --legs="Malignance Tights", 
         --feet="Malignance Boots"
     })
@@ -401,7 +401,7 @@ function init_gear_sets()
     sets.midcast.RA.Annihilator = set_combine(sets.midcast.RA, {
         -- head="Meghanada Visor +2",
         body="Nisroch Jerkin",
-        ring2="Regal Ring",
+        --ring2="Regal Ring",
     })
     sets.midcast.RA.Annihilator.Mid = set_combine(sets.midcast.RA.Mid, {
         body="Nisroch Jerkin",
@@ -413,6 +413,34 @@ function init_gear_sets()
     sets.midcast.RA.DoubleShot.Annihilator.Mid = sets.midcast.RA.DoubleShot.Mid
     sets.midcast.RA.DoubleShot.Annihilator.Acc = sets.midcast.RA.DoubleShot.Acc
 
+    sets.midcast.RA.Armageddon = set_combine(sets.midcast.RA, {
+        body="Nisroch Jerkin",
+    })
+    sets.midcast.RA.Armageddon.AME = set_combine(sets.midcast.RA.Armageddon, {
+        head="Meghanada Visor +2",
+        body="Nisroch Jerkin",
+        hands="Mummu Wrists +2"
+    })
+    sets.midcast.RA.Armageddon.Mid = set_combine(sets.midcast.RA.Mid, {
+        body="Nisroch Jerkin",
+    })
+    sets.midcast.RA.Armageddon.Mid.AME = set_combine(sets.midcast.RA.Armageddon.Mid, {
+        head="Meghanada Visor +2",
+        body="Nisroch Jerkin",
+        hands="Mummu Wrists +2"
+    })
+    sets.midcast.RA.Armageddon.Acc = set_combine(sets.midcast.RA.Acc, {
+        --ammo="Eradicating Bullet"
+    })
+    sets.midcast.RA.Armageddon.Acc.AME = set_combine(sets.midcast.RA.Armageddon.Acc, {
+        head="Meghanada Visor +2",
+        body="Nisroch Jerkin",
+        hands="Mummu Wrists +2"
+    })
+    sets.midcast.RA.DoubleShot.Armageddon = sets.midcast.RA.DoubleShot
+    sets.midcast.RA.DoubleShot.Armageddon.Mid = sets.midcast.RA.DoubleShot.Mid
+    sets.midcast.RA.DoubleShot.Armageddon.Acc = sets.midcast.RA.DoubleShot.Acc
+
     -- Yoichinoyumi
     sets.midcast.RA.Yoichinoyumi = {
         head="Malignance Chapeau",
@@ -421,15 +449,15 @@ function init_gear_sets()
         ear2="Telos Earring",
         body="Nisroch Jerkin",
         hands="Malignance Gloves",
-        ring1="Ilabrat Ring",
-        ring2="Regal Ring",
+        ring1="Crepuscular Ring",
+        ring2="Ilabrat Ring",
         back=Belenus.STP,
         waist="Kwahu Kachina Belt",
         legs="Malignance Tights", 
         feet="Malignance Boots"
     }
     sets.midcast.RA.Yoichinoyumi.Mid = set_combine(sets.midcast.RA.Yoichinoyumi, {
-        ear1="Enervating Earring",
+        ear1="Crepuscular Earring",
         hands="Malignance Gloves",
         body="Malignance Tabard", 
         legs="Malignance Tights", 
@@ -438,7 +466,7 @@ function init_gear_sets()
         ear1="Beyla Earring",
         hands="Malignance Gloves",
         body="Orion Jerkin +3",
-        ring2="Longshot Ring",
+        ring2="Regal Ring",
     })
     
     -- Weaponskill sets  
@@ -450,8 +478,8 @@ function init_gear_sets()
         body=HercBody.WSD,
         hands="Meghanada Gloves +2",
         -- ring1="Dingir Ring",
-        ring1="Ilabrat Ring",
-        ring2="Regal Ring",
+        ring1="Regal Ring",
+        ring2="Ilabrat Ring",
         back=Belenus.WSD,
         waist="Kwahu Kachina Belt",
         legs="Arcadian Braccae +3", 
@@ -480,8 +508,8 @@ function init_gear_sets()
         neck="Scout's Gorget +2",
         hands="Carmine Finger Gauntlets +1",
         body=HercBody.MAB,
-        ring1="Dingir Ring",
-        ring2="Regal Ring",
+        ring1="Regal Ring",
+        ring2="Dingir Ring",
         back=Belenus.MAB,
         waist="Sveltesse Gouriz +1",
         legs=HercLegs.MAB,
@@ -494,9 +522,13 @@ function init_gear_sets()
         legs=HercLegs.MAB
     })
     sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS['Wildfire'].Mid, {
-        body="Mummu Jacket +2",
+        body="Nyame Mail",
         hands="Mummu Wrists +2",
     })
+    -- every other weapon uses standard ammo set via toggle
+    sets.precast.WS['Wildfire'].Gun = set_combine(sets.precast.WS['Wildfire'], { ammo="Devastating Bullet"})
+    sets.precast.WS['Wildfire'].Mid.Gun = set_combine(sets.precast.WS['Wildfire'].Mid, { ammo="Devastating Bullet"})
+    sets.precast.WS['Wildfire'].Acc.Gun = set_combine(sets.precast.WS['Wildfire'].Acc, { ammo="Devastating Bullet"})
     
     sets.precast.WS['Trueflight'] = {
         head=HercHead.DM,
@@ -505,8 +537,8 @@ function init_gear_sets()
         neck="Scout's Gorget +2",
         hands="Carmine Finger Gauntlets +1",
         body=HercBody.MAB,
-        ring1="Dingir Ring",
-        ring2="Weatherspoon Ring",
+        ring1="Weatherspoon Ring",
+        ring2="Dingir Ring",
         back=Belenus.MAB,
         waist="Sveltesse Gouriz +1",
         legs=HercLegs.MAB,
@@ -522,11 +554,10 @@ function init_gear_sets()
     sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
         body="Samnuha Coat",
         legs="Arcadian Braccae +3", 
-        --head="Mummu Bonnet +2",
-        --body="Mummu Jacket +2",
-        -- legs="Mummu Kecks +2",
-        -- hands="Mummu Wrists +2",
     })
+    sets.precast.WS['Trueflight'].Gun = set_combine(sets.precast.WS['Trueflight'], {ammo="Devastating Bullet"})
+    sets.precast.WS['Trueflight'].Mid.Gun = set_combine(sets.precast.WS['Trueflight'].Mid, {ammo="Devastating Bullet"})
+    sets.precast.WS['Trueflight'].Acc.Gun = set_combine(sets.precast.WS['Trueflight'].Acc, {ammo="Devastating Bullet"})
 
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Trueflight'], {
         ear2="Moonshade Earring"
@@ -539,8 +570,8 @@ function init_gear_sets()
         ear2="Ishvara Earring",
         body=HercBody.WSD,
         waist="Thunder Belt",
-        ring1="Dingir Ring",
-        ring2="Regal Ring",
+        ring1="Regal Ring",
+        ring2="Dingir Ring",
         back=Belenus.WSD,
         legs="Arcadian Braccae +3", 
     })
@@ -557,10 +588,10 @@ function init_gear_sets()
         neck="Scout's Gorget +2",
         ear1="Sherida Earring",
         ear2="Moonshade Earring",
-        body="Arcadian Jerkin +3",
+        body=HercBody.WSD,
         back=Belenus.WSD,
-        ring1="Dingir Ring",
-        ring2="Regal Ring",
+        ring1="Regal Ring",
+        ring2="Dingir Ring",
         waist="Light Belt",
         legs="Arcadian Braccae +3", 
         feet="Arcadian Socks +3"
@@ -613,12 +644,10 @@ function init_gear_sets()
         ear2="Moonshade Earring",
         waist="Light Belt",
         body="Nisroch Jerkin",
-        ring2="Mummu Ring",
         back=Belenus.WSD,
-        ring1="Ilabrat Ring",
-        ring2="Regal Ring",
+        ring1="Regal Ring",
+        ring2="Ilabrat Ring",
         legs="Arcadian Braccae +3", 
-        feet="Thereoid Greaves"
     }
     sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, sets.Jishnus)
     sets.precast.WS['Jishnu\'s Radiance'].Mid = set_combine(sets.precast.WS.Mid, {
@@ -658,9 +687,9 @@ function init_gear_sets()
         neck="Scout's Gorget +2",
         ear1="Sherida Earring",
         ear2="Odr Earring",
-        body="Mummu Jacket +2",
-        ring1="Ilabrat Ring",
-        ring2="Regal Ring",
+        body="Meghanada Cuirie +2",
+        ring1="Regal Ring",
+        ring2="Ilabrat Ring",
         hands="Mummu Wrists +2",
         back=Belenus.WSD,
         legs="Arcadian Braccae +3", 
@@ -678,12 +707,12 @@ function init_gear_sets()
     sets.buff.Barrage = {
         head="Arcadian Beret +3",
         neck="Scout's Gorget +2",
-        ear1="Enervating Earring",
+        ear1="Crepuscular Earring",
         ear2="Telos Earring",
-        body="Nisroch Jerkin",
+        body="Orion Jerkin +3",
         hands="Orion Bracers +2",
-        ring1="Ilabrat Ring",
-        ring2="Regal Ring",
+        ring1="Regal Ring",
+        ring2="Ilabrat Ring",
         back=Belenus.STP,
         waist="Kwahu Kachina Belt",
         legs="Malignance Tights",
@@ -807,6 +836,44 @@ function job_buff_change(buff, gain)
         end
     end
 
+    if buff:startswith('Aftermath') then
+        if player.equipment.range == 'Armageddon' then
+            classes.CustomRangedGroups:clear()
+
+            if (buff == "Aftermath: Lv.3" and gain) or buffactive['Aftermath: Lv.3'] then
+                classes.CustomRangedGroups:append('AME')
+                add_to_chat(8, '-------------Empy AM3 UP-------------')
+            -- elseif (buff == "Aftermath: Lv.3" and not gain) then
+            --     add_to_chat(8, '-------------Mythic AM3 DOWN-------------')
+            end
+            if (buff == "Aftermath: Lv.2" and gain) or buffactive['Aftermath: Lv.2'] then
+                classes.CustomRangedGroups:append('AME')
+                add_to_chat(8, '-------------Empy AM2 UP-------------')
+            -- elseif (buff == "Aftermath: Lv.3" and not gain) then
+            --     add_to_chat(8, '-------------Mythic AM3 DOWN-------------')
+            end
+            if (buff == "Aftermath: Lv.1" and gain) or buffactive['Aftermath: Lv.1'] then
+                classes.CustomRangedGroups:append('AME')
+                add_to_chat(8, '-------------Empy AM1 UP-------------')
+            -- elseif (buff == "Aftermath: Lv.3" and not gain) then
+            --     add_to_chat(8, '-------------Mythic AM3 DOWN-------------')
+            end
+
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
+        else
+            classes.CustomRangedGroups:clear()
+
+            if buff == "Aftermath" and gain or buffactive.Aftermath then
+                classes.CustomRangedGroups:append('AM')
+            end
+
+            if not midaction() then
+                handle_equipping_gear(player.status)
+            end
+        end
+    end
     -- if buff == "Camouflage" or buff == "Overkill" or buff == "Samurai Roll" or buff == "Courser's Roll" then
     --     if not midaction() then
     --         handle_equipping_gear(player.status)
@@ -920,6 +987,12 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
+function get_custom_wsmode(spell, spellMap, default_wsmode)
+    if player.equipment.range == 'Armageddon' or player.equipment.range == 'Annihilator' or player.equipment.range == 'Fomalhaut' then
+        return 'Gun'
+    end
+end
+
 function get_combat_weapon()
     state.CombatWeapon:reset()
     if rng_rema:contains(player.equipment.range) then
@@ -940,15 +1013,21 @@ function get_custom_ranged_groups()
 
     end
     
+    if player.equipment.range == 'Armageddon' then
+        if buffactive['Aftermath: Lv.3'] or buffactive['Aftermath: Lv.1'] or buffactive['Aftermath Lv.2'] then
+            classes.CustomRangedGroups:append('AME')
+        end
+    else
     -- relic aftermath is just "Aftermath", while empy + mythic are numbered
-    if buffactive.Aftermath then
-        classes.CustomRangedGroups:append('AM')
-    elseif buffactive['Aftermath: Lv.1'] then
-        classes.CustomRangedGroups:append('AM1')
-    elseif buffactive['Aftermath: Lv.2'] then
-        classes.CustomRangedGroups:append('AM2')
-    elseif buffactive['Aftermath: Lv.3'] then
-        classes.CustomRangedGroups:append('AM2')
+        if buffactive.Aftermath then
+            classes.CustomRangedGroups:append('AM')
+        elseif buffactive['Aftermath: Lv.1'] then
+            classes.CustomRangedGroups:append('AM1')
+        elseif buffactive['Aftermath: Lv.2'] then
+            classes.CustomRangedGroups:append('AM2')
+        elseif buffactive['Aftermath: Lv.3'] then
+            classes.CustomRangedGroups:append('AM2')
+        end
     end
 end
 
