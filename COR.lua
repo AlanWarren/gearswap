@@ -168,11 +168,11 @@ function init_gear_sets()
         hands="Chasseur's Gants +1",
         ear2="Etiolation Earring",
         neck="Regal Necklace",
-        body="Malignance Tabard",
-        ring1="Defending Ring",
-        ring2="Dark Ring",
+        body="Nyame Mail",
+        ring1="Dark Ring",
+        ring2="Defending Ring",
         back=Camulus.STP,
-        legs="Malignance Tights",
+        legs="Nyame Flanchard",
         feet="Lanun Bottes +3"
     }
     
@@ -217,7 +217,7 @@ function init_gear_sets()
        hands="Malignance Gloves",
        body="Malignance Tabard",
        legs="Malignance Tights", 
-       ring1="Defending Ring",
+       ring2="Defending Ring",
        feet="Malignance Boots"
     })
 
@@ -242,7 +242,7 @@ function init_gear_sets()
        hands="Malignance Gloves",
        body="Malignance Tabard",
        legs="Malignance Tights", 
-       ring1="Defending Ring",
+       ring2="Defending Ring",
        feet="Malignance Boots"
     })
 
@@ -255,7 +255,7 @@ function init_gear_sets()
         hands="Malignance Gloves",
         body="Malignance Tabard",
         legs="Malignance Tights", 
-        ring1="Defending Ring",
+        ring2="Defending Ring",
         feet="Malignance Boots"
     })
     -- this allows you to equip any weapon in main + sub without this code forcing other weapons
@@ -505,6 +505,14 @@ function init_gear_sets()
     sets.midcast.CorsairShot['Light Shot'] = sets.midcast.CorsairShot.Acc
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
+    sets.Nyame = {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    }
+
     -- Ranged gear
     sets.midcast.RA = {
         ammo=gear.RAbullet,
@@ -595,8 +603,8 @@ function init_gear_sets()
         --body="Mekosuchinae Harness",
         body="Malignance Tabard",
         hands="Malignance Gloves",
-        ring1="Defending Ring",
-        ring2="Roller's Ring",
+        ring1="Roller's Ring",
+        ring2="Defending Ring",
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
@@ -615,40 +623,28 @@ function init_gear_sets()
 
     sets.idle.Town = {
         ammo=gear.MAbullet,
-        head="Malignance Chapeau",
+        head="Nyame Helm",
         neck="Commodore Charm +2",
         ear1="Telos Earring",
         ear2="Crepuscular Earring",
-        body="Nisroch Jerkin",
-        hands="Malignance Gloves",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
         ring1="Crepuscular Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
-        feet="Malignance Boots"
+        feet="Nyame Sollerets"
     }
-    sets.idle.PDT = set_combine(sets.idle.Town, {
-        head="Malignance Chapeau",
-        hands="Malignance Gloves",
-        body="Malignance Tabard",
-        legs="Malignance Tights", 
-        ring2="Defending Ring",
-        feet="Malignance Boots"
-    })
+    sets.idle.PDT = set_combine(sets.idle.Town, sets.Nyame)
     
     -- Defense sets
-    sets.defense.PDT = set_combine(sets.idle, {
-        head="Malignance Chapeau",
+    sets.defense.PDT = set_combine(sets.idle, sets.Nyame, {
         neck="Twilight Torque",
-        hands="Malignance Gloves",
-        body="Malignance Tabard",
-        ring1="Patricius Ring",
-        ring2="Defending Ring",
+        ring2="Patricius Ring",
+        ring1="Defending Ring",
         back=Camulus.STP,
         waist="Flume Belt",
-        legs="Malignance Tights", 
-        feet="Malignance Boots"
     })
 
     sets.defense.MDT = sets.defense.PDT
@@ -718,14 +714,7 @@ function init_gear_sets()
         waist="Windbuffet Belt +1"
     })
 
-    sets.engaged.PDT = set_combine(sets.engaged, {
-        head="Malignance Chapeau",
-        body="Malignance Tabard",
-        hands="Malignance Gloves",
-        legs="Malignance Tights",
-        ring2="Defending Ring",
-        feet="Malignance Boots"
-    })
+    sets.engaged.PDT = set_combine(sets.engaged, sets.Nyame)
     sets.engaged.PDT.Haste_15 = sets.engaged.PDT
     sets.engaged.PDT.Haste_30 = sets.engaged.PDT
     sets.engaged.PDT.MaxHaste = sets.engaged.PDT
@@ -748,14 +737,7 @@ function init_gear_sets()
         legs="Meghanada Chausses +2",
         waist="Windbuffet Belt +1"
     })
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
-        head="Malignance Chapeau",
-        body="Malignance Tabard",
-        hands="Malignance Gloves",
-        legs="Malignance Tights",
-        ring2="Defending Ring",
-        feet="Malignance Boots"
-    })
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Nyame)
     sets.engaged.Mid.PDT.Haste_15 = sets.engaged.PDT
     sets.engaged.Mid.PDT.Haste_30 = sets.engaged.PDT
     sets.engaged.Mid.PDT.MaxHaste = sets.engaged.PDT
@@ -782,13 +764,7 @@ function init_gear_sets()
         ear2="Cessance Earring",
         waist="Olseni Belt",
     })
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
-        head="Malignance Chapeau",
-        body="Malignance Tabard",
-        hands="Malignance Gloves",
-        legs="Malignance Tights",
-        ring2="Defending Ring"
-    })
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Nyame)
     sets.engaged.Acc.PDT.Haste_15 = sets.engaged.PDT
     sets.engaged.Acc.PDT.Haste_30 = sets.engaged.PDT
     sets.engaged.Acc.PDT.MaxHaste = sets.engaged.PDT
