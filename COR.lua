@@ -447,12 +447,13 @@ function init_gear_sets()
     }
     sets.precast.WS['Leaden Salute'].Mid = set_combine(sets.precast.WS['Leaden Salute'], { 
         body="Lanun Frac +3",
-        hands=HercHands.MAB,
+        hands="Nyame Gauntlets",
         feet="Lanun Bottes +3"
     })
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], { 
         body="Lanun Frac +3",
-        hands=HercHands.MAB,
+        ear1="Crepuscular Earring",
+        hands="Nyame Gauntlets",
         feet="Lanun Bottes +3"
     })
     sets.precast.WS['Hot Shot'] = set_combine(sets.precast.WS['Wildfire'], {
