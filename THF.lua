@@ -166,7 +166,7 @@ function init_gear_sets()
     }
     sets.precast.JA['Despoil'] = {feet="Raider's Poulaines +2"}
     sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
-    sets.precast.JA['Feint'] = {hands="Plunderer's Armlets +1"} -- {legs="Assassin's Culottes +2"}
+    sets.precast.JA['Feint'] = {hands="Plunderer's Armlets +1", legs="Plunderer's Culottes +2"} -- {legs="Assassin's Culottes +2"}
 
     sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
     sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
@@ -338,7 +338,7 @@ function init_gear_sets()
         ring2="Gere Ring",
         hands="Meghanada Gloves +2",
         waist="Sailfi Belt +1",
-        legs="Meghanada Chausses +2",
+        legs="Plunderer's Culottes +2",
         back=Toutatis.WSD,
         feet=HercFeet.TP
     })
@@ -353,6 +353,7 @@ function init_gear_sets()
         hands="Meghanada Gloves +2",
         ring1="Regal Ring",
         ring2="Ilabrat Ring",
+        legs="Plunderer's Culottes +2",
         waist="Snow Belt",
         back=Toutatis.WSD,
         feet=HercFeet.TP
