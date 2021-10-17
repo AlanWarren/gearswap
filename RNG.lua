@@ -110,7 +110,7 @@ function init_gear_sets()
     -- Augmented gear
     TaeonHands = {}
     TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
-    TaeonHands.Snap = {name="Taeon Gloves", augments={'"Snapshot"+5', 'Attack+22','"Snapshot"+5'}}
+    TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+5','"Snapshot"+5',}}
     
     TaeonHead = {}
     TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
@@ -150,6 +150,14 @@ function init_gear_sets()
     sets.Organizer = {
         ear2="Reraise Earring",
         back="Linkpearl",
+        main="Annihilator",
+        head="Gastraphetes",
+        body="Armageddon",
+        hands="Naegling", 
+        legs="Fomalhaut",
+        feet="Malevolence",
+        ring1="Perun +1",
+        ring2="Perun"
     }
     -- Misc. Job Ability precasts
     sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1", waist="Chaac Belt", legs=HercLegs.TH }

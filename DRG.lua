@@ -86,13 +86,13 @@ function init_gear_sets()
     Valorous.Body.DA = { name="Valorous Mail", augments={'Accuracy+20 Attack+20','"Dbl.Atk."+4','VIT+4','Attack+6',}}
     -- Precast Sets
 	-- Precast sets to enhance JAs
-	sets.precast.JA.Angon = {ammo="Angon",hands="Pteroslaver Finger Gauntlets +1"}
+	sets.precast.JA.Angon = {ammo="Angon",hands="Pteroslaver Finger Gauntlets +2"}
     sets.CapacityMantle = {back="Mecistopins Mantle"}
     --sets.Berserker = {neck="Berserker's Torque"}
     sets.WSDayBonus     = { head="Gavialis Helm" }
 
     sets.Organizer = {
-        grip="Pearlsack",
+        hands="Pearlsack",
         waist="Linkpearl",
     }
 
@@ -293,7 +293,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring",
 		back=Brigantia.TP,
         legs="Carmine Cuisses +1",
-        feet="Flamma Gambieras +1"
+        feet="Flamma Gambieras +2"
     }
 
 	-- Idle sets
@@ -308,7 +308,7 @@ function init_gear_sets()
         ring1="Defending Ring",
         ring2="Dreki Ring",
 		back=Brigantia.TP,
-        waist="Asklepian Belt",
+        --waist="Asklepian Belt",
         legs="Carmine Cuisses +1",
         feet="Sulevia's Leggings +2"
     }

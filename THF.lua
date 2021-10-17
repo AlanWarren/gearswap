@@ -78,7 +78,7 @@ function init_gear_sets()
     --------------------------------------
     TaeonHands = {}
     TaeonHands.TA = {name="Taeon Gloves", augments={'DEX+6','Accuracy+17 Attack+17','"Triple Atk."+2'}}
-    TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+10'}}
+    TaeonHands.Snap = {name="Taeon Gloves", augments={'Attack+22','"Snapshot"+5','"Snapshot"+5',}}
 
     TaeonHead = {}
     TaeonHead.Snap = { name="Taeon Chapeau", augments={'Accuracy+20 Attack+20','"Snapshot"+5','"Snapshot"+4',}}
@@ -115,6 +115,11 @@ function init_gear_sets()
     sets.CapacityMantle = { back="Mecistopins Mantle" }
 
     sets.Organizer = {
+        hands="Naegling", 
+        main="Aeneas",
+        sub="Tauret", 
+        head="Sandung",
+        legs="Shijo",
         --grip="Pearlsack",
         --waist="Linkpearl",
     }
@@ -138,7 +143,7 @@ function init_gear_sets()
         head="Adhemar Bonnet +1",
         neck="Assassin's Gorget +1",
         ear2="Sherida Earring",
-        body="Mummu Jacket +2",
+        body="Pillager's vest +3",
         hands="Pillager's Armlets +1",
         ring1="Regal Ring",
         ring2="Ilabrat Ring",
@@ -168,7 +173,7 @@ function init_gear_sets()
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
-        head="Mummu Bonnet +2"
+        --head="Mummu Bonnet +2"
         --body="Mekosuchinae Harness",
         --legs="Nahtirah Trousers",
     }
@@ -221,7 +226,7 @@ function init_gear_sets()
         ring1="Cacoethic Ring +1",
         ring2="Crepuscular Ring", -- 3
         waist="Eschan Stone",
-        back="Quarrel Mantle",
+        --back="Quarrel Mantle",
         legs="Malignance Tights", 
         feet="Malignance Boots"
     }
@@ -503,7 +508,7 @@ function init_gear_sets()
         hands="Malignance Gloves",
         ring1="Defending Ring",
         ring2="Gere Ring",
-        back="Solemnity Cape",
+        --back="Solemnity Cape",
         legs="Malignance Tights", 
         feet="Malignance Boots"
     }

@@ -393,6 +393,9 @@ function init_gear_sets()
    
     sets.Organizer = {
         back="Linkpearl",
+        main="Naegling", 
+        sub="Colada",
+        body="Nibiru Cudgel"
     }
     
     -- Midcast Sets

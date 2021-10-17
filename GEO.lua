@@ -33,7 +33,7 @@ function user_setup()
 
     gear.default.weaponskill_waist = "Windbuffet Belt +1"
 
-    geo_sub_weapons = S{"Nehushtan", "Bolelabunga"}
+    geo_sub_weapons = S{"Bolelabunga"}
 
     select_default_macro_book()
     send_command('bind != gs c toggle CapacityMode')
@@ -65,9 +65,13 @@ function init_gear_sets()
     sets.CapacityMantle  = { back="Mecistopins Mantle" }
 
     sets.Organizer = {
-        main="Nehushtan", 
+        -- main="Nehushtan", 
         ear2="Reraise Earring",
         back="Linkpearl",
+        main="Sucellus",
+        sub="Bolelabunga",
+        hands="Daybreak",
+        back="Grioavolr"
     }
 
     -- Fast cast sets for spells
@@ -111,7 +115,7 @@ function init_gear_sets()
         hands="Jhakri Cuffs +2",
         ring1="Ifrit Ring",
         ring2="Ifrit Ring",
-        back="Buquwik Cape",
+        --back="Buquwik Cape",
         waist=gear.ElementalBelt,
         feet="Jhakri Pigaches +2"
     }
@@ -123,7 +127,7 @@ function init_gear_sets()
         ear1="Malignance Earring",
         ear2="Crematio Earring",
         --hands="Yaoyotl Gloves",
-        ring1="Acumen Ring",
+        --ring1="Acumen Ring",
         --ring2="Strendu Ring",
         feet="Jhakri Pigaches +2"
         --waist="Snow Belt",
@@ -155,11 +159,11 @@ function init_gear_sets()
          hands="Amalric Gages", 
          body="Azimuth Coat +1",
          legs="Azimuth Tights +1",
-         feet="Helios Boots"
+         --feet="Helios Boots"
     }
-     sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
-         body="Apururu Unity shirt",
-     })
+    --  sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
+    --      body="Apururu Unity shirt",
+    --  })
 
     sets.midcast.Geomancy = {
         main="Grioavolr",
@@ -184,11 +188,11 @@ function init_gear_sets()
 
     sets.midcast.Cure = set_combine(sets.midcast.FastRecast, {
         main="Daybreak",
-        main="Serenity",
+        --main="Serenity",
         neck="Incanter's Torque",
         ear1="Mendicant's Earring",
         hands="Telchine Gloves",
-    	back="Solemnity Cape",
+    	--back="Solemnity Cape",
     })
     
     sets.midcast.Curaga = sets.midcast.Cure
@@ -262,7 +266,7 @@ function init_gear_sets()
         body="Shamash Robe",
         hands="Jhakri Cuffs +2",
         ring1="Weatherspoon Ring",
-        ring2="Sangoma Ring",
+        ring2="Crepuscular Ring",
         back="Nantosuelta's Cape",
         legs="Merlinic Shalwar",
         waist="Yamabuki-no-obi", 
@@ -348,7 +352,7 @@ function init_gear_sets()
         hands="Bagua Mitaines",
         ring1="Dark Ring",
         ring2="Defending Ring",
-    	back="Solemnity Cape",
+    	back="Nantosuelta's Cape",
         waist="Fucho-no-obi",
         legs="Merlinic Shalwar",
         feet="Geomancy Sandals"
@@ -357,7 +361,7 @@ function init_gear_sets()
         neck="Twilight Torque",
         body="Shamash Robe",
         hands="Geomancy Mitaines +1",
-    	back="Solemnity Cape",
+    	back="Nantosuelta's Cape",
         feet="Azimuth Gaiters +1"
     })
 
@@ -455,7 +459,7 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {
         range="Dunna",
-        neck="Asperity Necklace",
+        --neck="Asperity Necklace",
         ear1="Brutal Earring",
         ear2="Telos Earring",
         body="Shamash Robe",

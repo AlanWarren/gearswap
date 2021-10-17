@@ -104,6 +104,10 @@ function init_gear_sets()
      }
 
     sets.Organizer = {
+        main="Chango",
+        sub="Naegling", 
+        body="Montante +1",
+        hands="Shining One"
         --grip="Pearlsack",
         --waist="Linkpearl",
     }
@@ -290,7 +294,6 @@ function init_gear_sets()
          ear1="Friomisi Earring",
          hands="Odyssean Gauntlets",
          legs="Limbo Trousers",
-         ring2="Acumen Ring",
      })
      sets.precast.WS['Sanguine Blade'].Mid = set_combine(sets.precast.WS['Sanguine Blade'], sets.precast.WS.Mid)
      sets.precast.WS['Sanguine Blade'].Acc = set_combine(sets.precast.WS['Sanguine Blade'], sets.precast.WS.Acc)
@@ -339,7 +342,7 @@ function init_gear_sets()
          ring1="Paguroidea Ring",
          ring2="Defending Ring",
          hands="Volte Moufles",
-         waist="Asklepian Belt",
+         --waist="Asklepian Belt",
          legs="Sulevia's Cuisses +2",
          feet="Hermes' Sandals"
      })
@@ -374,7 +377,6 @@ function init_gear_sets()
      sets.defense.MDT = set_combine(sets.defense.PDT, {
          neck="Twilight Torque",
          ear1="Telos Earring",
-         ring2="K'ayres Ring",
      })
  
      sets.Kiting = {feet="Hermes' Sandals"}

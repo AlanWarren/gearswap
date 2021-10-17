@@ -151,8 +151,8 @@ function init_gear_sets()
     sets.precast.JA['Futae'] = { hands="Hattori Tekko +1" }
     sets.precast.JA['Provoke'] = { 
         -- ear1="Cryptic Earring",
-        ear2="Trux Earring", 
-        body="Emet Harness +1",
+        -- ear2="Trux Earring", 
+        -- body="Emet Harness +1",
         ring1="Petrov Ring",
         ring2="Supershear Ring",
         feet="Mochizuki Kyahan +1"
@@ -162,18 +162,13 @@ function init_gear_sets()
     -- Waltz (chr and vit)
     sets.precast.Waltz = {
         waist="Chaac Belt",
-        feet="Hizamaru Sune-ate +1"
+        feet="Hizamaru Sune-ate +2"
     }
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
     -- Set for acc on steps, since Yonin drops acc a fair bit
     sets.precast.Step = {
-        body="Hattori Ningi +1",
-        neck="Defiant Collar",
-        hands="Ryuo Tekko",
         back=Andartia.DEX,
-        waist="Olseni Belt",
-        legs="Kendatsuba Hakama +1",
     }
     sets.MadrigalBonus = {
         hands="Composer's Mitts"
@@ -183,9 +178,9 @@ function init_gear_sets()
     --     hands="Ryuo Tekko",
     --     feet="Hachiya Kyahan +1"
     -- }
-    sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
-        body="Apururu Unity shirt",
-    })
+    -- sets.midcast["Apururu (UC)"] = set_combine(sets.midcast.Trust, {
+    --     body="Apururu Unity shirt",
+    -- })
     sets.Warp = { ring1="Warp Ring" }
 
     --------------------------------------
@@ -213,7 +208,8 @@ function init_gear_sets()
     sets.precast.RA = {
         head=TaeonHead.Snap,
         hands=TaeonHands.Snap,
-        body="Pursuer's Doublet",
+        --body="Pursuer's Doublet",
+        ring1="Crepuscular Ring",
         legs=AdhemarLegs.Snap, -- 9
         -- feet="Wurrukatte Boots"
     }
@@ -222,7 +218,7 @@ function init_gear_sets()
         -- neck="Iqabi Necklace",
         body="Mochizuki Chainmail +3",
         hands="Hachiya Tekko +1",
-        ring1="Hajduk Ring",
+        ring1="Crepuscular Ring",
         back="Yokaze Mantle",
         legs="Kendatsuba Hakama +1",
         feet="Malignance Boots"
@@ -282,7 +278,7 @@ function init_gear_sets()
         feet="Iga Kyahan +2"
     })
     sets.midcast.Migawari = set_combine(sets.midcast.Ninjutsu, {
-        body="Hattori Ningi +1", 
+        --body="Hattori Ningi +1", 
         back=Andartia.DEX,
     })
 
@@ -333,9 +329,9 @@ function init_gear_sets()
         ring2="Paguroidea Ring"
     })
 
-    sets.Adoulin = {
-        body="Councilor's Garb",
-    }
+    -- sets.Adoulin = {
+    --     body="Councilor's Garb",
+    -- }
     sets.idle.Town = sets.idle
     sets.idle.Town = set_combine(sets.idle, {
         head="Kendatsuba Jinpachi +1",
@@ -385,6 +381,12 @@ function init_gear_sets()
     sets.Organizer = {
         grip="Pearlsack",
         waist="Linkpearl",
+        main="Naegling", 
+        sub="Kannagi",
+        head="Heishi Shorinken",
+        body="Shigi",
+        legs="Fudo Masamune",
+        feet="Tauret"
     }
 
     -- Normal melee group without buffs
@@ -419,7 +421,7 @@ function init_gear_sets()
     -- set for fooling around without dual wield
     -- using this as weak / proc set now
     sets.NoDW = set_combine(sets.engaged, {
-        head="Hizamaru Somen +1",
+        head="Nyame Helm",
         neck="Ninja Nodowa +2",
         ear2="Cessance Earring",
         body="Adhemar Jacket +1",
@@ -433,11 +435,11 @@ function init_gear_sets()
         sub="Fudo Masamune",
         ammo="Sekki Shuriken"
     }
-    sets.Dagger = {
-        main="Platoon Dagger",
-        sub=empty,
-        ammo=empty
-    }
+    -- sets.Dagger = {
+    --     main="Platoon Dagger",
+    --     sub=empty,
+    --     ammo=empty
+    -- }
     sets.Daggers = {
         main="Tauret",
         sub="Malevolence",
@@ -828,7 +830,7 @@ function init_gear_sets()
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
         body=HercBody.WSD,
-        hands="Regal Gloves",
+        --hands="Regal Gloves",
         ring2="Gere Ring",
         legs="Mochizuki Hakama +3",
         --legs=HercLegs.WSD,

@@ -188,28 +188,28 @@ function init_gear_sets()
 
     sets.Melee = {
         --main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
-        main={name="Lanun Knife", bag="Wardrobe 4", priority=1},
-        sub={name="Blurred Knife +1", bag="Wardrobe 4", priority=2},
+        main={name="Lanun Knife", bag="Inventory", priority=1},
+        sub={name="Blurred Knife +1", bag="Inventory", priority=2},
         ranged=state.GunSelector.current
     }
     sets.Melee.engaged = sets.Melee
     
     sets.Sword = { 
-        main={name="Naegling", bag="Wardrobe 4", priority=1},
+        main={name="Naegling", bag="Inventory", priority=1},
         sub={name="Nusku Shield", priority=2},
     }
     sets.Sword.engaged = sets.Sword
     
     sets.DualSword = { 
-        main={name="Naegling", bag="Wardrobe 4", priority=1},
-        sub={name="Blurred Knife +1", bag="Wardrobe 4", priority=2},
+        main={name="Naegling", bag="Inventory", priority=1},
+        sub={name="Blurred Knife +1", bag="Inventory", priority=2},
     }
     sets.DualSword.engaged = sets.DualSword
     
     sets.Magic = {
         --main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
-        main={name="Lanun Knife", bag="Wardrobe 4", priority=1},
-        sub={name="Tauret", bag="Wardrobe 4", priority=2},
+        main={name="Lanun Knife", bag="Inventory", priority=1},
+        sub={name="Tauret", bag="Inventory", priority=2},
         ranged=state.GunSelector.current
     }
     sets.Magic.engaged = set_combine(sets.Magic, {
@@ -234,7 +234,7 @@ function init_gear_sets()
         range="Anarchy"
     }
     sets.Standard = {
-        main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
+        main={name="Lanun Knife", bag="Inventory", priority=2},
         sub={name="Rostam", bag="Wardrobe 4", priority=1},
     }
     sets.Standard.engaged = set_combine(sets.Standard, {
@@ -273,14 +273,18 @@ function init_gear_sets()
     }
 
     sets.Organizer = {
-        main="Fettering Blade",
-        sub="Odium",
-        ear2="Reraise Earring",
-        range="Doomsday",
+        main="Tauret",
+        sub="Fomalhaut",
+        range="Death Penalty",
+        ear1="Nusku Shield",
+        ear2="Armageddon",
         hands="Compensator",
         ammo="Nusku Shield",
         back="Linkpearl",
-        legs="Laksamana's Trews +1"
+        waist="Lanun Knife",
+        ring1="Naegling", 
+        ring2="Anarchy",
+        legs="Blurred Knife +1"
     }
         
     -- Don't need any special gear for Healing Waltz.

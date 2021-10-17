@@ -147,6 +147,10 @@ function init_gear_sets()
     sets.Organizer = {
         grip="Pearlsack",
         waist="Linkpearl",
+        head="Masamune",
+        hands="Shining One",
+        legs="Dojikiri Yasutsuna",
+        feet="Fusenaikyo"
     }
     sets.precast.RA = {
         head="Volte Tiara",
@@ -157,8 +161,8 @@ function init_gear_sets()
     }
     sets.midcast.RA = {
         head="Nyame Helm",
-        body="Kendatsuba Samue",
-        legs="Kendatsuba Hakama",
+        body="Kendatsuba Samue +1",
+        legs="Kendatsuba Hakama +1",
         -- neck="Iqabi Necklace",
         hands="Ryuo Tekko",
         waist="Chaac Belt",
@@ -209,8 +213,8 @@ function init_gear_sets()
         neck="Samurai's Nodowa +2",
         ear1="Thrud Earring",
         ear2="Ishvara Earring",
-        body="Kendatsuba Samue",
-        legs="Kendatsuba Hakama",
+        body="Kendatsuba Samue +1",
+        legs="Kendatsuba Hakama +1",
         hands="Ryuo Tekko",
         back=Smertrios.WS,
         ring1="Ilabrat Ring",
@@ -220,20 +224,20 @@ function init_gear_sets()
         feet=Valorous.Feet.WS
     }
     sets.precast.WS['Namas Arrow'].Mid = set_combine(sets.precast.WS['Namas Arrow'], {
-        body="Kyujutsugi",
+        body="Nyame Mail",
     })
     sets.precast.WS['Namas Arrow'].Acc = set_combine(sets.precast.WS['Namas Arrow'].Mid, {
-        ring2="Hajduk Ring"
+        ring2="Crepuscular Ring"
     })
     
     sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Namas Arrow'], {
         neck="Breeze Gorget",
-        body="Kyujutsugi",
+        body="Nyame Mail",
         ring2="Regal Ring"
     })
     sets.precast.WS['Apex Arrow'].Mid = sets.precast.WS['Apex Arrow']
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
-        ring2="Longshot Ring"
+        ring2="Crepuscular Ring"
     })
     
     sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
@@ -334,7 +338,6 @@ function init_gear_sets()
     -- Midcast Sets
     sets.midcast.FastRecast = {
     	-- head="Otomi Helm",
-        -- body="Kyujutsugi",
     	-- legs="Wakido Haidate +1",
         -- feet="Ejekamal Boots"
         waist="Sailfi Belt +1"
