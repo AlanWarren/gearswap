@@ -301,8 +301,8 @@ function init_gear_sets()
         neck="Erra Pendant", -- 10 dark + 17 macc
         ear1="Malignance Earring",
         ear2="Crepuscular Earring", -- 3
-        body="Fallen's Cuirass +3",
-        hands="Flamma Manopolas +2",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
         waist="Casso Sash", -- 5
         ring1="Evanescence Ring", -- 10
         ring2="Archon Ring", 
@@ -317,7 +317,7 @@ function init_gear_sets()
 
     sets.midcast['Dark Magic'].Acc = set_combine(sets.midcast['Dark Magic'], {
         head="Ratri Sallet +1", -- 45 macc
-        hands="Leyline Gloves",
+        --hands="Leyline Gloves",
         waist="Eschan Stone"
     })
 
@@ -326,27 +326,27 @@ function init_gear_sets()
         head="Nyame Helm",
         neck="Erra Pendant", -- 10 + 17 macc
         body="Ignominy Cuirass +3",
-        hands="Flamma Manopolas +2",
+        hands="Nyame Gauntlets",
         ring1="Kishar Ring",
         ring2="Regal Ring", -- 10 macc
         waist="Eschan Stone",
         legs="Fallen's Flanchard +3",  -- 18 + 39macc
         back="Aput Mantle",
-        feet="Flamma Gambieras +2"
+        feet="Nyame Sollerets"
     })
 
     sets.midcast['Elemental Magic'] = {
         ammo="Pemphredo Tathlum", 
-        head="Ratri Sallet +1", -- 45 macc
+        head="Nyame Helm", -- 45 macc
         neck="Eddy Necklace", -- 11 matk
         ear1="Malignance Earring",
         ear2="Friomisi Earring", -- 10 matk
-        body="Fallen's Cuirass +3",
-        hands="Carmine Finger Gauntlets +1",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
         ring1="Resonance Ring", -- int 8
         ring2="Regal Ring", -- matk 4
         waist="Eschan Stone", -- macc/matk 7
-        legs="Eschite Cuisses", -- matk 25 
+        legs="Nyame Flanchard", -- matk 25 
         back="Aput Mantle", -- mdmg 10
         feet="Nyame Sollerets" -- matk 29
     }

@@ -50,13 +50,17 @@ function job_setup()
         -- sam_sj = player.sub_job == 'SAM' or false
         
         -- used for ammo swaps
-        rng_xbows = S{'Gastraphetes', 'Illapa'}
-        rng_guns = S{'Annihilator', 'Armageddon', 'Fomalhaut'}
-        rng_bows = S{'Yoichinoyumi', 'Gandiva', 'Fail-Not'}
+        -- rng_xbows = S{'Gastraphetes', 'Illapa'}
+        -- rng_guns = S{'Annihilator', 'Armageddon', 'Fomalhaut'}
+        -- rng_bows = S{'Yoichinoyumi', 'Gandiva', 'Fail-Not'}
+        state.GunSelector = M{['description']='Gun Selector', 'Annihilator', 'Gastraphetes', 'Armageddon'}
         state.GastraAmmo = M{['description']='Xbow Ammo', "Quelling Bolt", "Abrasion Bolt"}
         state.GunAmmo = M{['description']='Gun Ammo', "Chrono Bullet", "Eradicating Bullet"}
         state.AmmoToggle = M{['description']='Ammo Toggle', "Primary", "Secondary"}
+        state.FightingMode = M{['description']='Fighting Mode', 'Default', 'Melee', 'Sword', 'DualSword'}
+        --state.ShootingMode = M{['description']='Shooting Mode', 'Default', 'Standard', 'Magic', 'Single'}
         -- state.Ammo = M{['description']='Gastraphetes', "Bloody Bolt", "Achiyalabopa Bolt"}
+        state.ShootingMode = M{['description']='Shooting Mode', 'Default', 'Standard', 'Magic', 'Single'}
         
         -- W.I.P ~
         DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = state.GunAmmo.current, [gear.Xbow] = state.GastraAmmo.current}
@@ -77,11 +81,13 @@ function user_setup()
         state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
         state.PhysicalDefenseMode:options('PDT')
         state.MagicalDefenseMode:options('MDT')
+    
  
         select_default_macro_book()
 
         send_command('bind != gs c toggle CapacityMode')
         send_command('bind f9 gs c cycle RangedMode')
+        -- send_command('bind !f9 gs c toggle FightingMode')
         send_command('bind !f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
         send_command('bind @f9 gs c cycle HasteMode')
@@ -146,12 +152,56 @@ function init_gear_sets()
     Belenus.WSD = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
     Belenus.MAB  = { name="Belenus's Cape", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%',}}
     Belenus.Snap = {name="Belenus's Cape", augments={'"Snapshot"+10',}}
+    
+    sets.Annihilator = {
+        range="Annihilator",
+        ammo=state.GunAmmo.current,
+    }
+    sets.Armageddon = {
+        range="Armageddon",
+        ammo=state.GunAmmo.current,
+    }
+    sets.Fomalhaut = {
+        range="Fomalhaut",
+        ammo=state.GunAmmo.current,
+    }
+    sets.Gastraphetes = {
+        range="Gastraphetes",
+        ammo=state.GastraAmmo.current,
+    }
+    sets.Default = {
+        ranged=state.GunSelector.current
+    } -- do nothing. useful for equipping whateveer you want
+    sets.Magic = {
+        --main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
+        main={name="Malevolence", bag="Inventory", priority=1},
+        sub={name="Malevolence", bag="Wardrobe 4", priority=2},
+        ranged=state.GunSelector.current
+    }
+    sets.Standard = {
+        main={name="Perun +1", bag="Inventory", priority=1},
+        sub={name="Perun", bag="Inventory", priority=2},
+        ranged=state.GunSelector.current
+    }
+    sets.Standard.engaged = set_combine(sets.Standard, {
+       head="Nyame Helm",
+       body="Nyame Mail",
+       hands="Nyame Gauntlets",
+       ring2="Defending Ring",
+       legs="Nyame Flanchard",
+       feet="Nyame Sollerets"
+    })
+    sets.Single = {
+        main={name="Perun +1", bag="Inventory", priority=1},
+        sub={name="Nusku Shield", priority=2},
+    }
 
     sets.Organizer = {
         ear2="Reraise Earring",
         back="Linkpearl",
         main="Annihilator",
         head="Gastraphetes",
+        neck="Nusku Shield",
         body="Armageddon",
         hands="Naegling", 
         legs="Fomalhaut",
@@ -227,43 +277,40 @@ function init_gear_sets()
         ring2="Defending Ring"
     })
     sets.idle.Town = set_combine(sets.idle, {
-        head="Arcadian Beret +3",
-        body="Nisroch Jerkin",
-        ear1="Dedition Earring",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        ear1="Crepuscular Earring",
         ear2="Telos Earring",
         neck="Scout's Gorget +2",
         ring1="Crepuscular Ring",
         ring2="Regal Ring",
-        hands="Malignance Gloves",
+        hands="Nyame Gauntlets",
         waist="Kwahu Kachina Belt",
         back=Belenus.STP,
         legs="Carmine Cuisses +1", 
-        feet="Malignance Boots"
+        feet="Nyame Sollerets"
     })
+    
+    sets.Nyame = {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    }
 
     -- Engaged sets
-    sets.engaged =  {
-        head="Malignance Chapeau",
+    sets.engaged =  set_combine(sets.Nyame, {
         neck="Scout's Gorget +2",
         ear1="Dedition Earring",
         ear2="Telos Earring", 
-        body="Malignance Tabard",
         --body="Malignance Tabard",
-        hands="Malignance Gloves",
         ring1="Crepuscular Ring",
         ring2="Ilabrat Ring",
         back=Belenus.STP,
         waist="Kwahu Kachina Belt", 
-        legs="Malignance Tights", 
-        feet="Malignance Boots"
-    }
-    sets.engaged.PDT = set_combine(sets.engaged, {
-        hands="Malignance Gloves",
-        body="Malignance Tabard",
-        back=Belenus.STP,
-        ring1="Dark Ring",
-        legs="Malignance Tights", 
     })
+    sets.engaged.PDT = set_combine(sets.engaged, sets.Nyame)
     sets.engaged.Bow = set_combine(sets.engaged, {})
 
     sets.engaged.Melee = {
@@ -282,7 +329,7 @@ function init_gear_sets()
     }
     -- sets.engaged.Bow.Melee = sets.engaged.Melee
 
-    sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
+    sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, sets.Nyame, {
         neck="Twilight Torque",
         ring1="Patricius Ring",
         ring2="Defending Ring",
@@ -448,8 +495,7 @@ function init_gear_sets()
     sets.midcast.RA.DoubleShot.Armageddon = sets.midcast.RA.DoubleShot
     sets.midcast.RA.DoubleShot.Armageddon.Mid = sets.midcast.RA.DoubleShot.Mid
     sets.midcast.RA.DoubleShot.Armageddon.Acc = sets.midcast.RA.DoubleShot.Acc
-
-    -- Yoichinoyumi
+-- Yoichinoyumi
     sets.midcast.RA.Yoichinoyumi = {
         head="Malignance Chapeau",
         neck="Scout's Gorget +2",
@@ -525,13 +571,13 @@ function init_gear_sets()
     }
     sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS['Wildfire'], {
         --head=HercHead.MAB,
-        body="Samnuha Coat",
-        hands=HercHands.MAB,
-        legs=HercLegs.MAB
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard"
     })
     sets.precast.WS['Wildfire'].Acc = set_combine(sets.precast.WS['Wildfire'].Mid, {
         body="Nyame Mail",
-        hands="Mummu Wrists +2",
+        hands="Nyame Gauntlets",
     })
     -- every other weapon uses standard ammo set via toggle
     sets.precast.WS['Wildfire'].Gun = set_combine(sets.precast.WS['Wildfire'], { ammo="Devastating Bullet"})
@@ -556,11 +602,11 @@ function init_gear_sets()
     sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {
         head=HercHead.MAB,
         legs="Arcadian Braccae +3", 
-        hands=HercHands.MAB,
+        hands="Nyame Gauntlets",
         --legs="Arcadian Braccae +3", 
     })
     sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
-        body="Samnuha Coat",
+        body="Nyame Mail",
         legs="Arcadian Braccae +3", 
     })
     sets.precast.WS['Trueflight'].Gun = set_combine(sets.precast.WS['Trueflight'], {ammo="Devastating Bullet"})
@@ -735,6 +781,20 @@ function init_gear_sets()
 
 end
 
+function get_rng_gearset()
+    local set = {}
+    if state.FightingMode.current ~= 'Default' then 
+        ---------------------------------------
+        set = set_combine(sets[state.FightingMode.current], sets[state.GunSelector.current])
+        ---------------------------------------
+    elseif state.ShootingMode.current ~= 'Default' then 
+        ---------------------------------------
+        set = set_combine(sets[state.ShootingMode.current], sets[state.GunSelector.current])
+        ---------------------------------------
+    end
+    return set
+end
+
 function job_pretarget(spell, action, spellMap, eventArgs)
     if state.Buff[spell.english] ~= nil then
         state.Buff[spell.english] = true
@@ -760,6 +820,8 @@ function job_precast(spell, action, spellMap, eventArgs)
             return
         end
     end
+    local gearset = get_rng_gearset()
+    equip(gearset)
 end
  
 -- Run after the default precast() is done.
@@ -928,7 +990,8 @@ function customize_idle_set(idleSet)
     if player.hpp < 90 then
         idleSet = set_combine(idleSet, sets.idle.Regen)
     end
-    return idleSet
+    local gearset = get_rng_gearset()
+    return set_combine(idleSet, gearset)
 end
  
 function customize_melee_set(meleeSet)
@@ -941,7 +1004,8 @@ function customize_melee_set(meleeSet)
     if state.CapacityMode.value then
         meleeSet = set_combine(meleeSet, sets.CapacityMantle)
     end
-    return meleeSet
+    local gearset = get_rng_gearset()
+    return set_combine(meleeSet, gearset)
 end
  
 function job_status_change(newStatus, oldStatus, eventArgs)
@@ -1112,13 +1176,20 @@ function job_state_change(stateField, newValue, oldValue)
     --     end
     -- end
     if stateField == 'Xbow Ammo' then 
-        if rng_xbows:contains(player.equipment.range) then
+        -- if rng_xbows:contains(player.equipment.range) then
+        if state.GunSelector.current == 'Gastraphetes' then
             equip({ammo=newValue})
         end
     elseif stateField == 'Gun Ammo' then 
-        if rng_guns:contains(player.equipment.range) then
+        if state.GunSelector.current ~= 'Gastraphetes' then
             equip({ammo=newValue})
         end
+    elseif stateField == 'Shooting Mode' then
+        state.FightingMode:set('Default')
+    elseif stateField == 'Fighting Mode' then
+        state.ShootingMode:set('Default')
+    --elseif stateField == 'Gun Selector' then
+        --equip({range=state.GunSelector.current})
     end
 end
 
