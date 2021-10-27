@@ -10,7 +10,7 @@ This lua has a few MODES you can toggle with hotkeys or macros, and there's a fe
 ::MODES::
 
 SouleaterMode 
-Status: OFF by default. 
+Status: OFF by default.  this is old
 Hotkey: Toggle this with @F9 (window key + F9). 
 Macro: /console gs c togggle SouleaterMode
 
@@ -29,13 +29,6 @@ Notes: It will full-time whichever piece of gear you specify in sets.CapacityMan
 Extra Info: You can change the default (true|false) status of any MODE by changing their values in job_setup()
 
 ::RULES::
-
-Gavialis helm
-Status: enabled
-Setting: set use_gavialis = true below in job_setup. 
-
-Notes: wslist defines weaponskills uused with Gavialis helm. This is a recent change Jan/2020, as it 
-used to be the opposite, where you defined ws's that you didn't want to use it.
 
 Ygna's Resolve +1 
 Status: enabled in Reive
@@ -101,18 +94,12 @@ function job_setup()
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     -- Set the default to false if you'd rather SE always stay acitve
     state.SouleaterMode = M(true, 'Soul Eater Mode')
-    -- state.LastResortMode = M(false, 'Last Resort Mode')
-    -- Use Gavialis helm?
-    use_gavialis = true
-
-    -- Weaponskills you want Gavialis helm used with (only considered if use_gavialis = true)
-    wsList = S{'Entropy', 'Resolution'}
     -- Greatswords you use. 
     gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Raetic Algol +1', 'Caladbolg', 'Montante +1', 'Albion' }
     scytheList = S{'Liberator', 'Apocalypse', 'Anguta', 'Raetic Scythe', 'Deathbane', 'Twilight Scythe' }
     remaWeapons = S{'Apocalypse', 'Anguta', 'Liberator', 'Caladbolg', 'Ragnarok', 'Redemption'}
 
-    shields = S{'Rinda Shield'}
+    --shields = S{'Rinda Shield'}
     -- Mote has capitalization errors in the default Absorb mappings, so we use our own
     absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
     -- Offhand weapons used to activate DW mode
@@ -450,7 +437,7 @@ function init_gear_sets()
     -- General sets
     sets.precast.WS = {
         ammo="Knobkierrie",
-        head="Flamma Zucchetto +2",
+        head="Sakpata's Helm",
         neck="Abyssal Bead Necklace +2",
         ear1="Thrud Earring",
         ear2="Moonshade Earring",
@@ -474,8 +461,9 @@ function init_gear_sets()
     -- RESOLUTION
     -- 86-100% STR
     sets.precast.WS.Resolution = set_combine(sets.precast.WS, {
-        head="Stinger Helm +1",
+        head="Sakpata's Helm",
         neck="Breeze Gorget",
+        body="Sakpata's Plate",
         --body="Valorous Mail",
         hands="Sulevia's Gauntlets +2",
         waist="Soil Belt",
@@ -494,7 +482,7 @@ function init_gear_sets()
     -- TORCLEAVER 
     -- VIT 80%
     sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
-        head="Odyssean Helm",
+        head="Sakpata's Helm",
         body="Ignominy Cuirass +3",
         neck="Abyssal Bead Necklace +2",
         waist="Light Belt",
@@ -502,7 +490,7 @@ function init_gear_sets()
         legs="Fallen's Flanchard +3",
     })
     sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Torcleaver, {
-        head="Fallen's Burgeonet +3",
+        head="Odyssean Helm",
         neck="Abyssal Bead Necklace +2",
     })
     sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, {
@@ -514,18 +502,20 @@ function init_gear_sets()
     -- 20% STR / 20% INT 
     -- Base set only used at 3000TP to put AM3 up
     sets.precast.WS.Insurgency = set_combine(sets.precast.WS, {
-        head="Stinger Helm +1",
+        head="Sakpata's Helm",
         neck="Abyssal Bead Necklace +2",
         --body="Ratri Breastplate +1",
-        body="Ignominy Cuirass +3",
+        body="Sakpata's Plate",
         hands="Ratri Gadlings +1",
-        legs="Ratri Cuisses +1",
+        -- legs="Ratri Cuisses +1",
+        legs="Fallen's Flanchard +3",
         ring2="Regal Ring",
         waist="Sailfi Belt +1",
         feet="Ratri Sollerets +1"
     })
     sets.precast.WS.Insurgency.Mid = set_combine(sets.precast.WS.Insurgency, {
         head="Ratri Sallet +1",
+        body="Ignominy Cuirass +3",
         waist="Light Belt",
     })
     sets.precast.WS.Insurgency.Acc = set_combine(sets.precast.WS.Insurgency.Mid, {
@@ -540,7 +530,8 @@ function init_gear_sets()
         body="Ignominy Cuirass +3",
         --body="Ratri Breastplate +1",
         hands="Ratri Gadlings +1",
-        legs="Ratri Cuisses +1",
+        -- legs="Ratri Cuisses +1",
+        legs="Fallen's Flanchard +3",
         --waist="Soil Belt",
         waist="Sailfi Belt +1",
         feet="Ratri Sollerets +1"
@@ -559,15 +550,19 @@ function init_gear_sets()
     -- CROSS REAPER
     -- 60% STR / 60% MND
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
-        head="Stinger Helm +1",
+        head="Sakpata's Helm",
         body="Ignominy Cuirass +3",
         --body="Ratri Breastplate +1",
-        hands="Ratri Gadlings +1",
+        hands="Sakpata's Gauntlets",
         waist="Metalsinger Belt",
-        legs="Ratri Cuisses +1",
+        -- legs="Ratri Cuisses +1",
+        legs="Fallen's Flanchard +3",
         feet="Ratri Sollerets +1"
     })
     sets.precast.WS['Cross Reaper'].Mid = set_combine(sets.precast.WS['Cross Reaper'], {
+        head="Ratri Sallet +1",
+        hands="Ratri Gadlings +1",
+        feet="Ratri Sollerets +1"
 
     })
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
@@ -577,15 +572,18 @@ function init_gear_sets()
     -- ENTROPY
     -- 86-100% INT 
     sets.precast.WS.Entropy = set_combine(sets.precast.WS, {
-        head="Stinger Helm +1",
+        ammo="Crepuscular Pebble",
+        head="Sakpata's Helm",
         neck="Abyssal Bead Necklace +2",
-        body="Ignominy Cuirass +3",
         ear1="Malignance Earring",
-        waist="Soil Belt",
+        ear2="Moonshade Earring",
+        body="Sakpata's Plate",
+        hands="Sakpata's Gauntlets",
         ring1="Niqmaddu Ring",
         ring2="Regal Ring",
+        waist="Soil Belt",
         legs="Ignominy Flanchard +3", -- 5% haste
-        feet="Flamma Gambieras +2"
+        feet="Sakpata's Leggings"
     })
     sets.precast.WS.Entropy.Mid = set_combine(sets.precast.WS.Entropy, {
         head="Hjarrandi Helm",
@@ -633,11 +631,10 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +2",
         body="Fallen's Cuirass +3",
         ear1="Friomisi Earring",
-        hands="Carmine Finger Gauntlets +1",
+        hands="Nyame Gauntlets",
         ring2="Archon Ring",
         back=Ankou.WSD,
-        legs="Fallen's Flanchard +3",  
-        feet="Ratri Cuisses +1",
+        legs="Nyame Flanchard",  
         waist="Eschan Stone", -- macc/matk 7
         feet="Ratri Sollerets +1"
     })
@@ -684,11 +681,11 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {
         ammo="Staunch Tathlum",
-        head="Nyame Helm",
+        head="Sakpata's Helm",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Genmei Earring",
-        body="Nyame Mail",
+        body="Sakpata's Plate",
         hands="Volte Moufles",
         ring1="Paguroidea Ring",
         ring2="Defending Ring",
@@ -703,7 +700,7 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +2",
         ear1="Dedition Earring",
         ear2="Telos Earring",
-        body="Nyame Mail",
+        body="Sakpata's Plate",
         --body="Ratri Breastplate +1",
         hands="Ratri Gadlings +1",
         ring1="Niqmaddu Ring",
@@ -747,26 +744,21 @@ function init_gear_sets()
     -- Defense sets
     sets.defense.PDT = {
         ammo="Crepuscular Pebble",
-        head="Hjarrandi Helm", -- no haste
         neck="Abyssal Bead Necklace +2",
-        body="Nyame Mail", -- 3% haste
-        --body="Sulevia's Platemail +1", -- 1% haste
-        hands="Volte Moufles",
-        --ear1="Etiolation Earring",
-        ring1="Patricius Ring",
+        head="Sakpata's Helm", -- no haste
+        body="Sakpata's Plate", -- 3% haste
+        hands="Sakpata's Gauntlets",
+        legs="Sakpata's Cuisses", -- 5% haste
+        feet="Sakpata's Leggings", -- 3% haste
+        --ring1="Patricius Ring",
         ring2="Defending Ring",
-        -- back="Grounded Mantle +1", -- 2% haste
         waist="Sailfi Belt +1", -- 9% haste
-        -- legs="Ignominy Flanchard +3", -- 5% haste
-        feet="Volte Sollerets" -- 3% haste
     }
     sets.defense.Reraise = sets.idle.Weak
 
     sets.defense.MDT = set_combine(sets.defense.PDT, {
-        head="Hjarrandi Helm", -- no haste
         neck="Twilight Torque",
-        body="Tartarus Platemail",
-        ear1="Etiolation Earring",
+        ring2="Defending Ring",
     })
 
     sets.Kiting = {
@@ -784,31 +776,15 @@ function init_gear_sets()
     -- These allow hybrid acc/pdt sets for difficult content
     -- do not specify a cape so that DA/STP capes are used appropriately
     sets.Defensive = {
-        --sub="Gracile grip",
-        ring2="Defending Ring", -- 10% dt
-        head="Nyame Helm", -- 10% dt
-        body="Nyame Mail", -- 10% dt
-        hands="Nyame Gauntlets",
-        legs="Nyame Flanchard",
-        feet="Nyame Sollerets"  -- 4% pdt | 6% mdt
-    }
-    sets.Defensive_Mid = {
-        head="Hjarrandi Helm", -- 10% dt
-        body="Nyame Mail", -- 10% dt
-        hands="Nyame Gauntlets",
-        legs="Nyame Flanchard",
-        feet="Nyame Sollerets"  -- 4% pdt | 6% mdt
+        head="Sakpata's Helm", -- 10% dt
+        body="Sakpata's Plate", -- 10% dt
+        hands="Sakpata's Gauntlets",
+        legs="Sakpata's Cuisses",
+        feet="Sakpata's Leggings"  -- 4% pdt | 6% mdt
     }
     -- Higher DT, less haste
-    sets.DefensiveHigh = set_combine(sets.Defensive, {
-        ammo="Seething Bomblet +1",
-        head="Nyame Helm", -- 10% dt
-        body="Nyame Mail", -- 10% dt
-        hands="Nyame Gauntlets",
-        legs="Nyame Flanchard",
-        feet="Nyame Sollerets"  -- 4% pdt | 6% mdt
-    })
-    sets.Defensive_Acc = set_combine(sets.Defensive_Mid, sets.DefensiveHigh)
+    sets.DefensiveHigh = set_combine(sets.Defensive, { ammo="Seething Bomblet +1" })
+    sets.Defensive_Acc = set_combine(sets.Defensive, sets.DefensiveHigh)
 
     -- Base set (global catch-all set)
     sets.engaged = {
@@ -818,8 +794,9 @@ function init_gear_sets()
         neck="Abyssal Bead Necklace +2",
         ear1="Cessance Earring",
         ear2="Brutal Earring",
-        body=Valorous.Body.STP,
-        hands="Sulevia's Gauntlets +2",
+        --body=Valorous.Body.STP,
+        body="Sakpata's Plate",
+        hands="Sakpata's Gauntlets",
         ring1="Niqmaddu Ring",
         ring2="Petrov Ring",
         back=Ankou.DA,
@@ -829,14 +806,13 @@ function init_gear_sets()
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         ear2="Telos Earring",
+        waist="Ioskeha Belt",
         ring2="Regal Ring",
-        body=Valorous.Body.STP
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         -- ammo="Hasty Pinion +1",
         ear1="Cessance Earring",
         ear2="Telos Earring",
-        body="Flamma Korazin +2",
         waist="Ioskeha Belt",
         back=Ankou.STP,
     })
@@ -849,11 +825,13 @@ function init_gear_sets()
         waist="Sailfi Belt +1",
         --waist="Windbuffet Belt +1"
     })
-    sets.engaged.Haste.Acc = set_combine(sets.engaged.Acc, {})
+    sets.engaged.Haste.Acc = set_combine(sets.engaged.Acc, {
+        waist="Ioskeha Belt",
+    })
 
     -- Hybrid
     sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive)
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
 
     -- Hybrid with capped delay
@@ -933,7 +911,7 @@ function init_gear_sets()
     sets.engaged.Liberator.Acc.PDT = set_combine(sets.engaged.Liberator.Acc, sets.DefensiveHigh)
     -- Hybrid with AM3 up
     sets.engaged.Liberator.PDT.AM3 = set_combine(sets.engaged.Liberator.AM3, sets.Defensive)
-    sets.engaged.Liberator.Mid.PDT.AM3 = set_combine(sets.engaged.Liberator.Mid.AM3, sets.Defensive_Mid)
+    sets.engaged.Liberator.Mid.PDT.AM3 = set_combine(sets.engaged.Liberator.Mid.AM3, sets.Defensive)
     sets.engaged.Liberator.Acc.PDT.AM3 = set_combine(sets.engaged.Liberator.Acc.AM3, sets.DefensiveHigh)
     -- Hybrid with capped delay
     sets.engaged.Haste.Liberator.PDT = set_combine(sets.engaged.Liberator.PDT, sets.DefensiveHigh)
@@ -941,15 +919,15 @@ function init_gear_sets()
     sets.engaged.Haste.Liberator.Acc.PDT = set_combine(sets.engaged.Liberator.Acc.PDT, sets.DefensiveHigh)
     -- Hybrid with capped delay + AM3 up
     sets.engaged.Haste.Liberator.PDT.AM3 = set_combine(sets.engaged.Liberator.PDT.AM3, sets.Defensive)
-    sets.engaged.Haste.Liberator.Mid.PDT.AM3 = set_combine(sets.engaged.Liberator.Mid.PDT.AM3, sets.Defensive_Mid)
+    sets.engaged.Haste.Liberator.Mid.PDT.AM3 = set_combine(sets.engaged.Liberator.Mid.PDT.AM3, sets.Defensive)
     sets.engaged.Haste.Liberator.Acc.PDT.AM3 = set_combine(sets.engaged.Liberator.Acc.PDT.AM3, sets.DefensiveHigh)
 
     -- Apocalypse
     sets.engaged.Apocalypse = set_combine(sets.engaged, {
         ear1="Cessance Earring",
         ear2="Brutal Earring",
-        body=Valorous.Body.DA,
-        hands="Sulevia's Gauntlets +2",
+        body="Sakpata's Plate",
+        hands="Sakpata's Gauntlets",
         ring2="Petrov Ring",
         back=Ankou.DA
     })
@@ -957,16 +935,16 @@ function init_gear_sets()
         ear1="Cessance Earring",
         ear2="Telos Earring",
         ring2="Flamma Ring",
-        hands="Sulevia's Gauntlets +2",
+        hands="Sakpata's Gauntlets",
         back=Ankou.DA
     })
     sets.engaged.Apocalypse.Acc = set_combine(sets.engaged.Acc, {
         ammo="Seething Bomblet +1",
         ear1="Cessance Earring",
         ear2="Telos Earring",
-        body="Flamma Korazin +2",
+        body="Sakpata's Plate",
         ring2="Regal Ring",
-        hands="Sulevia's Gauntlets +2",
+        hands="Sakpata's Gauntlets",
         back=Ankou.DA
     })
     
@@ -988,18 +966,19 @@ function init_gear_sets()
         ammo="Crepuscular Pebble",
         head="Hjarrandi Helm",
         neck="Abyssal Bead Necklace +2",
-        body="Tartarus Platemail",
-        hands="Volte Moufles",
+        body="Sakpata's Plate",
+        hands="Sakpata's Gauntlets",
         ring2="Defending Ring",
         back=Ankou.DA,
         waist="Sailfi Belt +1",
-        feet="Volte Sollerets" 
+        legs="Sakpata's Cuisses",
+        feet="Sakpata's Leggings" 
     })
-    sets.engaged.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive_Mid)
+    sets.engaged.Apocalypse.Mid.PDT = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive)
     sets.engaged.Apocalypse.Acc.PDT = set_combine(sets.engaged.Apocalypse.Acc, sets.Defensive_Acc)
     -- Hybrid with relic AM 
     -- sets.engaged.Apocalypse.PDT.AM = set_combine(sets.engaged.Apocalypse, sets.Defensive)
-    -- sets.engaged.Apocalypse.Mid.PDT.AM = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive_Mid)
+    -- sets.engaged.Apocalypse.Mid.PDT.AM = set_combine(sets.engaged.Apocalypse.Mid, sets.Defensive)
     -- sets.engaged.Apocalypse.Acc.PDT.AM = set_combine(sets.engaged.Apocalypse.Acc, sets.Defensive_Acc)
     -- Hybrid with capped delay
     sets.engaged.Haste.Apocalypse.PDT = set_combine(sets.engaged.Apocalypse.PDT, sets.DefensiveHigh)
@@ -1016,7 +995,7 @@ function init_gear_sets()
     sets.engaged.Scythe.Acc = set_combine(sets.engaged.Acc, {})
 
     sets.engaged.Scythe.PDT = set_combine(sets.engaged.Scythe, sets.Defensive)
-    sets.engaged.Scythe.Mid.PDT = set_combine(sets.engaged.Scythe.Mid, sets.Defensive_Mid)
+    sets.engaged.Scythe.Mid.PDT = set_combine(sets.engaged.Scythe.Mid, sets.Defensive)
     sets.engaged.Scythe.Acc.PDT = set_combine(sets.engaged.Scythe.Acc, sets.Defensive_Acc)
 
     sets.engaged.Haste.Scythe = set_combine(sets.engaged.Haste, {})
@@ -1029,16 +1008,14 @@ function init_gear_sets()
 
     -- generic great sword
     sets.engaged.GreatSword = set_combine(sets.engaged, {
-        hands="Flamma Manopolas +2"
     })
     sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {})
     sets.engaged.GreatSword.Acc = set_combine(sets.engaged.Acc, {
-        body="Flamma Korazin +2",
         legs="Ignominy Flanchard +3",
     })
 
     sets.engaged.GreatSword.PDT = set_combine(sets.engaged.GreatSword, sets.Defensive)
-    sets.engaged.GreatSword.Mid.PDT = set_combine(sets.engaged.GreatSword.Mid, sets.Defensive_Mid)
+    sets.engaged.GreatSword.Mid.PDT = set_combine(sets.engaged.GreatSword.Mid, sets.Defensive)
     sets.engaged.GreatSword.Acc.PDT = set_combine(sets.engaged.GreatSword.Acc, sets.Defensive_Acc)
 
     sets.engaged.Haste.GreatSword = set_combine(sets.engaged.Haste, {})
@@ -1055,42 +1032,42 @@ function init_gear_sets()
     sets.engaged.Ragnarok.Acc = set_combine(sets.engaged.GreatSword.Acc, {})
     
     sets.engaged.Ragnarok.PDT = set_combine(sets.engaged.Ragnarok, sets.Defensive)
-    sets.engaged.Ragnarok.Mid.PDT = set_combine(sets.engaged.Ragnarok.Mid, sets.Defensive_Mid)
+    sets.engaged.Ragnarok.Mid.PDT = set_combine(sets.engaged.Ragnarok.Mid, sets.Defensive)
     sets.engaged.Ragnarok.Acc.PDT = set_combine(sets.engaged.Ragnarok.Acc, sets.Defensive_Acc)
     
     -- Caladbolg
     sets.engaged.Caladbolg = set_combine(sets.engaged.GreatSword, {
-        hands="Sulevia's Gauntlets +2",
-        body=Valorous.Body.DA,
+        hands="Sakpata's Gauntlets",
+        body="Sakpata's Plate",
         back=Ankou.DA
     })
     sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {
-        hands="Sulevia's Gauntlets +2",
+        hands="Sakpata's Gauntlets",
         ear2="Telos Earring",
         ring2="Regal Ring",
         back=Ankou.DA
     })
     sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {
         ammo="Seething Bomblet +1",
-        hands="Flamma Manopolas +2",
-        body="Flamma Korazin +2",
+        hands="Sakpata's Gauntlets",
+        body="Sakpata's Plate",
         legs="Ignominy Flanchard +3",
         back=Ankou.DA
     })
     
     sets.engaged.Caladbolg.PDT = set_combine(sets.engaged.Caladbolg, sets.Defensive)
-    sets.engaged.Caladbolg.Mid.PDT = set_combine(sets.engaged.Caladbolg.Mid, sets.Defensive_Mid)
+    sets.engaged.Caladbolg.Mid.PDT = set_combine(sets.engaged.Caladbolg.Mid, sets.Defensive)
     sets.engaged.Caladbolg.Acc.PDT = set_combine(sets.engaged.Caladbolg.Acc, sets.Defensive_Acc)
     
     sets.engaged.Haste.Caladbolg = set_combine(sets.engaged.Caladbolg, { 
         waist="Windbuffet Belt +1"
     })
     sets.engaged.Haste.Caladbolg.Mid = set_combine(sets.engaged.Caladbolg.Mid, {
-        hands="Sulevia's Gauntlets +2",
+        hands="Sakpata's Gauntlets",
         waist="Windbuffet Belt +1"
     })
     sets.engaged.Haste.Caladbolg.Acc = set_combine(sets.engaged.Caladbolg.Acc, {
-        hands="Sulevia's Gauntlets +2",
+        hands="Sakpata's Gauntlets",
     })
 
     sets.engaged.Haste.Caladbolg.PDT = set_combine(sets.engaged.Caladbolg.PDT, sets.DefensiveHigh)
@@ -1154,13 +1131,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     -- Make sure abilities using head gear don't swap 
     if spell.type:lower() == 'weaponskill' then
         -- handle Gavialis Helm
-        if use_gavialis then
-            if is_sc_element_today(spell) then
-                if wsList:contains(spell.english) then
-                    equip(sets.WSDayBonus)
-                end
-            end
-        end
         -- CP mantle must be worn when a mob dies, so make sure it's equipped for WS.
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
@@ -1178,23 +1148,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             end
         end
 
-        -- if player.tp > 2999 then
-        --     if wsList:contains(spell.english) then
-        --         equip(sets.IshvaraLugra)
-        --     else
-        --         equip(sets.BrutalLugra)
-        --     end
-        -- else -- use Lugra + moonshade
-        --     if world.time >= (17*60) or world.time <= (7*60) then
-        --         equip(sets.Lugra)
-        --     else
-        --         if wsList:contains(spell.english) then
-        --             equip(sets.Ishvara)
-        --         else
-        --             equip(sets.Brutal)
-        --         end
-        --     end
-        -- end
     end
 end
 

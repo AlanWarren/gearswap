@@ -48,10 +48,9 @@ function job_setup()
             'Perun', 'Odium', 'Atoyac', 'Kaja Sword', 'Naegling'}
         
         -- sam_sj = player.sub_job == 'SAM' or false
-        
         -- used for ammo swaps
         -- rng_xbows = S{'Gastraphetes', 'Illapa'}
-        -- rng_guns = S{'Annihilator', 'Armageddon', 'Fomalhaut'}
+        rng_guns = S{'Annihilator', 'Armageddon', 'Fomalhaut'}
         -- rng_bows = S{'Yoichinoyumi', 'Gandiva', 'Fail-Not'}
         state.GunSelector = M{['description']='Gun Selector', 'Annihilator', 'Gastraphetes', 'Armageddon'}
         state.GastraAmmo = M{['description']='Xbow Ammo', "Quelling Bolt", "Abrasion Bolt"}
@@ -60,7 +59,7 @@ function job_setup()
         state.FightingMode = M{['description']='Fighting Mode', 'Default', 'Melee', 'Sword', 'DualSword'}
         --state.ShootingMode = M{['description']='Shooting Mode', 'Default', 'Standard', 'Magic', 'Single'}
         -- state.Ammo = M{['description']='Gastraphetes', "Bloody Bolt", "Achiyalabopa Bolt"}
-        state.ShootingMode = M{['description']='Shooting Mode', 'Default', 'Standard', 'Magic', 'Single'}
+        state.ShootingMode = M{['description']='Shooting Mode', 'Default', 'Standard', 'Magic', 'Single', 'SingleMagic'}
         
         -- W.I.P ~
         DefaultAmmo = {[gear.Bow] = "Achiyalabopa arrow", [gear.Gun] = state.GunAmmo.current, [gear.Xbow] = state.GastraAmmo.current}
@@ -194,7 +193,28 @@ function init_gear_sets()
     sets.Single = {
         main={name="Perun +1", bag="Inventory", priority=1},
         sub={name="Nusku Shield", priority=2},
+        ranged=state.GunSelector.current
     }
+    sets.Single.engaged = set_combine(sets.Single, {
+       head="Nyame Helm",
+       body="Nyame Mail",
+       hands="Nyame Gauntlets",
+       ring2="Defending Ring",
+       legs="Nyame Flanchard",
+       feet="Nyame Sollerets"
+    })
+    sets.SingleMagic = {
+        main={name="Malevolence", bag="Inventory", priority=1},
+        sub={name="Nusku Shield", priority=2},
+    }
+    sets.SingleMagic.engaged = set_combine(sets.Single, {
+       head="Nyame Helm",
+       body="Nyame Mail",
+       hands="Nyame Gauntlets",
+       ring2="Defending Ring",
+       legs="Nyame Flanchard",
+       feet="Nyame Sollerets"
+    })
 
     sets.Organizer = {
         ear2="Reraise Earring",
@@ -1167,23 +1187,23 @@ end
 
 function job_state_change(stateField, newValue, oldValue)
     -- W.I.P ~
-    -- if stateField == 'Ammo Toggle' then
-    --     -- if player.equipment.range 
-    --     if rng_xbows:contains(player.equipment.range) then
-    --         send_command('@input /console gs c cycle GastraAmmo')
-    --     elseif rng_guns:contains(player.equipment.range) then
-    --         send_command('@input /console gs c cycle GunAmmo')
-    --     end
-    -- end
+     --if stateField == 'Ammo Toggle' then
+     --    if player.equipment.range == 'Gastraphetes' then
+     --    --if rng_xbows:contains(player.equipment.range) then
+     --        send_command('@input /console gs c cycle GastraAmmo')
+     --    elseif rng_guns:contains(player.equipment.range) then
+     --        send_command('@input /console gs c cycle GunAmmo')
+     --    end
+     --end
     if stateField == 'Xbow Ammo' then 
         -- if rng_xbows:contains(player.equipment.range) then
-        if state.GunSelector.current == 'Gastraphetes' then
-            equip({ammo=newValue})
-        end
+        -- if state.GunSelector.current == 'Gastraphetes' then
+        equip({ammo=newValue})
+        -- end
     elseif stateField == 'Gun Ammo' then 
-        if state.GunSelector.current ~= 'Gastraphetes' then
-            equip({ammo=newValue})
-        end
+        -- if state.GunSelector.current ~= 'Gastraphetes' then
+        equip({ammo=newValue})
+        -- end
     elseif stateField == 'Shooting Mode' then
         state.FightingMode:set('Default')
     elseif stateField == 'Fighting Mode' then

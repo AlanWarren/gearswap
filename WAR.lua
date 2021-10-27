@@ -193,12 +193,12 @@ function init_gear_sets()
      -- General sets
      sets.precast.WS = {
          ammo="Knobkierrie",
-         head="Valorous Mask",
+         head="Sakpata's Helm",
          neck="Warrior's Bead Necklace +2",
          ear1="Thrud Earring",
          ear2="Moonshade Earring",
          body="Pummeler's Lorica +3",
-         hands="Odyssean Gauntlets",
+         hands="Sakpata's Gauntlets",
          ring1="Niqmaddu Ring",
          ring2="Regal Ring",
          back=Cichols.WS,
@@ -208,6 +208,7 @@ function init_gear_sets()
      }
 
      sets.precast.WS.Mid = set_combine(sets.precast.WS, {
+         hands="Odyssean Gauntlets",
         --  ammo="Ginsen",
          --body="Flamma Korazin +2",
         --  head="Valorous Mask",
@@ -219,8 +220,7 @@ function init_gear_sets()
      })
     
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {
-        head="Odyssean Helm",
-        neck="Flame Gorget",
+         neck="Flame Gorget",
          back=Cichols.VIT,
     	--body=Valorous.Body.DA, 
         waist="Light Belt",
@@ -322,28 +322,28 @@ function init_gear_sets()
          neck="Warrior's Bead Necklace +2",
          ear1="Brutal Earring",
          ear2="Telos Earring",
-         body="Tartarus Platemail",
+         body="Sakpata's Plate",
          hands="Volte Moufles",
          ring1="Niqmaddu Ring",
          ring2="Regal Ring",
          waist="Sailfi Belt +1",
          back=Cichols.TP,
-         legs="Volte Tights",
+         legs="Sakpata's Cuisses",
          feet="Hermes' Sandals"
      }
      
      sets.idle.Field = set_combine(sets.idle.Town, {
          ammo="Staunch Tathlum",
-         head="Hjarrandi Helm",
+         head="Sakpata's Helm",
          ear1="Etiolation Earring",
          ear2="Genmei Earring",
          neck="Sanctity Necklace",
-         body="Tartarus Platemail",
+         body="Sakpata's Plate",
          ring1="Paguroidea Ring",
          ring2="Defending Ring",
          hands="Volte Moufles",
          --waist="Asklepian Belt",
-         legs="Sulevia's Cuisses +2",
+         legs="Sakpata's Cuisses",
          feet="Hermes' Sandals"
      })
      sets.idle.Regen = set_combine(sets.idle.Field, {
@@ -362,15 +362,15 @@ function init_gear_sets()
      -- Defense sets
      sets.defense.PDT = {
          ammo="Staunch Tathlum",
-         head="Hjarrandi Helm",
+         head="Sakpata's Helm", -- no haste
+         body="Sakpata's Plate", -- 3% haste
+         hands="Sakpata's Gauntlets",
+         legs="Sakpata's Cuisses", -- 5% haste
+         feet="Sakpata's Leggings", -- 3% haste
          neck="Agitator's Collar",
-         body="Tartarus Platemail",
-         hands="Volte Moufles",
          ring1="Niqmaddu Ring",
          ring2="Defending Ring",
          waist="Sailfi Belt +1",
-         legs="Sulevia's Cuisses +2",
-         feet="Volte Sollerets"
      }
      sets.defense.Reraise = sets.idle.Weak
  
@@ -387,33 +387,19 @@ function init_gear_sets()
      -- These allow hybrid acc/pdt sets for difficult content
      sets.Defensive = {
          ammo="Crepuscular Pebble",
-         head="Hjarrandi Helm",
+         head="Sakpata's Helm", -- no haste
+         body="Sakpata's Plate", -- 3% haste
+         hands="Sakpata's Gauntlets",
+         legs="Sakpata's Cuisses", -- 5% haste
+         feet="Sakpata's Leggings", -- 3% haste
          neck="Agitator's Collar",
-         body="Tartarus Platemail",
          ring2="Defending Ring",
-         hands="Volte Moufles",
          waist="Sailfi Belt +1",
-         legs="Sulevia's Cuisses +2",
-         feet="Volte Sollerets"
      }
-     sets.Defensive_Mid = {
-         head="Hjarrandi Helm",
-         neck="Agitator's Collar",
-         body="Tartarus Platemail",
-         hands="Volte Moufles",
-         waist="Sailfi Belt +1",
-         ring2="Defending Ring",
-         feet="Sulevia's Leggings +2"
-     }
-     sets.Defensive_Acc = {
-         head="Hjarrandi Helm",
+     sets.Defensive_Acc = set_combine(sets.Defensive, {
          neck="Warrior's Bead Necklace +2",
-         hands="Sulevia's Gauntlets +2",
-         body="Tartarus Platemail",
-         ring2="Patricius Ring",
-         legs="Sulevia's Cuisses +2",
-         feet="Sulevia's Leggings +2"
-     }
+         ring2="Regal Ring",
+     })
  
      -- Engaged set, assumes Liberator
      sets.engaged = {
@@ -422,8 +408,8 @@ function init_gear_sets()
          neck="Warrior's Bead Necklace +2",
          ear1="Brutal Earring",
          ear2="Dedition Earring",
-    	 body=Valorous.Body.DA, 
-         hands="Sulevia's Gauntlets +2",
+    	 body="Sakpata's Plate", 
+         hands="Sakpata's Gauntlets",
          ring1="Niqmaddu Ring",
          ring2="Petrov Ring",
          back=Cichols.TP,
@@ -440,7 +426,8 @@ function init_gear_sets()
          ear1="Brutal Earring",
          ear2="Cessance Earring",
          --hands="Flamma Manopolas +2",
-         hands="Sulevia's Gauntlets +2",
+         hands="Sakpata's Gauntlets",
+         ring1="Niqmaddu Ring",
          ring2="Flamma Ring",
          waist="Ioskeha Belt",
          legs="Tatenashi Haidate +1",
@@ -448,15 +435,15 @@ function init_gear_sets()
     	 --body="Flamma Korazin +2"
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-         body="Flamma Korazin +2",
+         body="Sakpata's Plate",
          ear1="Telos Earring",
-         hands="Flamma Manopolas +2",
-         legs="Sulevia's Cuisses +2"
+         hands="Sakpata's Gauntlets",
+         legs="Sakpata's Cuisses"
         --  back="Grounded Mantle +1",
      })
 
      sets.engaged.PDT = set_combine(sets.engaged, sets.Defensive)
-     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive_Mid)
+     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Defensive)
      sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Defensive_Acc)
 
      sets.engaged.DW = set_combine(sets.engaged, {
@@ -466,8 +453,8 @@ function init_gear_sets()
         waist="Shetal Stone"
      })
      sets.engaged.OneHand = set_combine(sets.engaged, {
-         head="Hjarrandi Helm",
-    	 body=Valorous.Body.DA, 
+         head="Sakpata's Helm",
+    	 body="Sakpata's Plate", 
          ear1="Telos Earring",
          ear2="Cessance Earring",
          waist="Ioskeha Belt",
@@ -479,7 +466,7 @@ function init_gear_sets()
      })
      sets.engaged.OneHand.PDT = set_combine(sets.engaged.OneHand, sets.Defensive)
      sets.engaged.OneHand.Mid = set_combine(sets.engaged.OneHand, {
-         body="Flamma Korazin +2",
+         body="Sakpata's Plate",
      })
      sets.engaged.OneHand.Mid.PDT = set_combine(sets.engaged.OneHand.Mid, sets.Defensive)
 
