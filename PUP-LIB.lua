@@ -314,8 +314,8 @@ end
 function toggleHubStyle()
     texts.clear(main_text_hub)
     if state.useLightMode.value then
-        hud_x_pos = 0     
-        hud_y_pos = -3
+        hud_x_pos = pos_x
+        hud_y_pos = pos_y
         hud_font_size = 8
         hud_padding = 4
         hud_alpha = 0

@@ -1,26 +1,40 @@
 -------------------------------------------------------------------------------------------------------------------
 -- Initialization function that defines sets and variables to be used.
 -------------------------------------------------------------------------------------------------------------------
--- 1000
--- 1000
--- 2000
--- 2000
--- IMPORTANT: Make sure to also get the Mote-Include.lua file to go with this.
-
 --[[
     gs c toggle luzaf -- Toggles use of Luzaf Ring on and off
+    gs c toggle compensator -- Toggles use of Compensator for rolls on and off. helpful when you don't want to lose TP
     
-    Offense mode is melee or ranged.  Used ranged offense mode if you are engaged
-    for ranged weaponskills, but not actually meleeing.
-    Acc on offense mode (which is intended for melee) will currently use .Acc weaponskill
-    mode for both melee and ranged weaponskills.  Need to fix that in core.
---]]
+    This lua assumes you have 3 macros or keybinds to cycle GunMode, ShootingMode, and FightingModes. You may not like this, but
+    i find it very convenient to easily switch between weapons / modes while playing COR
 
+    NOTE: GunMode is automatically set to whichever weapon is equipped when this lua is loaded. You can also hit F12 to update it. 
+
+    NOTE: Cycling through Fighting Mode resets Shooting mode, and cycling through Shooting Mode resets Fighting Mode. These two modes 
+    do not combine. Only one can be used at a time.  They were broken into two because I got tired of cycling through so many groups.
+    NOTE: if you don't like cycles, you can do macro's for specific modes. i.e. - /console gs c set FightingMode Melee  
+   
+    Fighting Modes
+    sets.engaged.Melee applies when Melee or DualSword fighting modes are selected 
+    sets.engaged.Sword is a single handed melee mode
+
+    Shooting Modes
+    sets.engaged  is used for all these sets.  
+
+    Note: if you want to prevent losing TP when doing rolls, you can toggle compensator mode to off, and set your shooting mode to 'Single'
+    this should put your Rollstam in your main hand and keep it there. 
+
+    Aftermath 
+    the 'AME' set is used when empyrean aftermath is up 
+
+    Haste modes 
+    You are welcome to use Haste_15, and Haste_30 sets, but it's too much hassle so I'm only using the MaxHaste set to take what little few 
+    pieces of dual weild gear COR wears off in favor of better pieces
+--]]
 ---------------------------- SET ORDER OF PRECEDENCE ----------------------------------
 -- sets.engaged.[CombatForm][CombatWeapon][Offense or HybridMode][CustomMeleeGroups or CustomClass]
 -- Initialization function for this job file.
 function get_sets()
-    -- Load and initialize the include file.
     mote_include_version = 2
     include('Mote-Include.lua')
     include('organizer-lib')
@@ -30,6 +44,7 @@ end
 function job_setup()
     -- Whether to use Luzaf's Ring
     state.LuzafRing = M(false, "Luzaf's Ring")
+    state.Compensator = M(true, "Compensator")
     state.warned = M(false)
     state.CapacityMode = M(false, 'Capacity Point Mantle')
     state.FlurryMode = M{['description']='Flurry Mode', 'Normal', 'Hi'}
@@ -43,7 +58,7 @@ function job_setup()
     state.AutoRA = M{['description']='Auto RA', 'Normal', 'Shoot', 'WS' }
     state.GunSelector = M{['description']='Gun Selector', 'DeathPenalty', 'Fomalhaut', 'Armageddon', 'Anarchy'}
     state.FightingMode = M{['description']='Fighting Mode', 'Default', 'Melee', 'Sword', 'DualSword'}
-    state.ShootingMode = M{['description']='Shooting Mode', 'Default', 'Standard', 'Magic', 'Single'}
+    state.ShootingMode = M{['description']='Shooting Mode', 'Default', 'Shooting', 'Magic', 'Single'}
 
     cor_sub_weapons = S{"Nusku Shield"}
     auto_gun_ws = "Leaden Salute"
@@ -112,6 +127,7 @@ function init_gear_sets()
     -- Start defining the sets
     --------------------------------------
     
+    sets.Obi = { waist="Anrin Obi" }
     -- Precast Sets
 
     -- Precast sets to enhance JAs
@@ -160,10 +176,7 @@ function init_gear_sets()
     AdhemarLegs.Snap = { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}}
     AdhemarLegs.TP = { name="Adhemar Kecks", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
 
-    sets.precast.CorsairRoll = {
-        main={name="Rostam", bag="Wardrobe 4", priority=1},
-        sub={name="Tauret", priority=2},
-        range="Compensator",
+    sets.roll = { 
         head="Lanun Tricorne +3",
         hands="Chasseur's Gants +1",
         ear2="Etiolation Earring",
@@ -175,15 +188,35 @@ function init_gear_sets()
         legs="Nyame Flanchard",
         feet="Lanun Bottes +3"
     }
+
+    sets.precast.CorsairRoll = set_combine(sets.roll, {
+        main={name="Rostam", bag="Wardrobe 4", priority=1},
+        sub={name="Tauret", priority=2},
+    })
+    sets.precast.CorsairRoll.Single = set_combine(sets.roll, {
+        main={name="Rostam", bag="Wardrobe 4", priority=1},
+    })
+    
+    sets.Nyame = {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    }
     
     sets.TreasureHunter = { head="White Rarab Cap +1", waist="Chaac Belt", legs=HercLegs.TH }
     --sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Navarch's Culottes +1"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Navarch's Bottes +2"})
+    sets.precast.CorsairRoll["Courser's Roll"].Single = set_combine(sets.precast.CorsairRoll.Single, {feet="Navarch's Bottes +2"})
     --sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Navarch's Tricorne +1"})
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
+    sets.precast.CorsairRoll["Tactician's Roll"].Single = set_combine(sets.precast.CorsairRoll.Single, {body="Chasseur's Frac +1"})
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
+    sets.precast.CorsairRoll["Allies' Roll"].Single = set_combine(sets.precast.CorsairRoll.Single, {hands="Chasseur's Gants +1"})
     
     sets.precast.LuzafRing = {ring1="Luzaf's Ring"}
+    sets.precast.Compensator = {range="Compensator"}
     sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
 
     sets.Melee = {
@@ -192,19 +225,39 @@ function init_gear_sets()
         sub={name="Blurred Knife +1", bag="Inventory", priority=2},
         ranged=state.GunSelector.current
     }
-    sets.Melee.engaged = sets.Melee
+    sets.Melee.engaged = set_combine(sets.Melee, {
+        head="Adhemar Bonnet +1",
+        ear1="Telos Earring",
+        ear2="Suppanomimi",
+        neck="Iskur gorget",
+        hands="Adhemar Wristbands +1",
+        body="Adhemar Jacket +1",
+        legs="Meghanada Chausses +2",
+        ring1="Petrov Ring",
+        ring2="Epona's Ring",
+        waist="Shetal Stone",
+        back=Camulus.DA,
+        feet=HercFeet.TP
+    })
+    sets.Melee.engaged.PDT = set_combine(sets.Melee.engaged, sets.Nyame)
     
     sets.Sword = { 
         main={name="Naegling", bag="Inventory", priority=1},
         sub={name="Nusku Shield", priority=2},
     }
-    sets.Sword.engaged = sets.Sword
+    sets.Sword.engaged = set_combine(sets.Melee.engaged, sets.Sword, {
+        ear2="Cessance Earring",
+        hands="Adhemar Wristbands +1",
+        waist="Windbuffet Belt +1",
+    })
+    sets.Sword.engaged.PDT = set_combine(sets.Sword.engaged, sets.Nyame)
     
     sets.DualSword = { 
         main={name="Naegling", bag="Inventory", priority=1},
         sub={name="Blurred Knife +1", bag="Inventory", priority=2},
     }
-    sets.DualSword.engaged = sets.DualSword
+    sets.DualSword.engaged = set_combine(sets.Melee.engaged, sets.DualSword)
+    sets.DualSword.engaged.PDT = set_combine(sets.DualSword.engaged, sets.Nyame)
     
     sets.Magic = {
         --main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
@@ -212,14 +265,8 @@ function init_gear_sets()
         sub={name="Tauret", bag="Inventory", priority=2},
         ranged=state.GunSelector.current
     }
-    sets.Magic.engaged = set_combine(sets.Magic, {
-       head="Malignance Chapeau",
-       hands="Malignance Gloves",
-       body="Malignance Tabard",
-       legs="Malignance Tights", 
-       ring2="Defending Ring",
-       feet="Malignance Boots"
-    })
+    sets.Magic.engaged = sets.Magic
+    sets.Magic.engaged.PDT = sets.Magic
 
     sets.DeathPenalty = {
         range="Death Penalty"
@@ -233,37 +280,27 @@ function init_gear_sets()
     sets.Anarchy = {
         range="Anarchy"
     }
-    sets.Standard = {
+    sets.Shooting = {
         main={name="Lanun Knife", bag="Inventory", priority=2},
         sub={name="Rostam", bag="Wardrobe 4", priority=1},
     }
-    sets.Standard.engaged = set_combine(sets.Standard, {
-       head="Malignance Chapeau",
-       hands="Malignance Gloves",
-       body="Malignance Tabard",
-       legs="Malignance Tights", 
-       ring2="Defending Ring",
-       feet="Malignance Boots"
-    })
+    sets.Shooting.engaged = sets.Shooting
+    sets.Shooting.engaged.PDT = sets.Shooting
 
     sets.Single = {
         main={name="Rostam", bag="Wardrobe 4", priority=1},
         sub={name="Nusku Shield", priority=2},
     }
-    sets.Single.engaged = set_combine(sets.Single, {
-        head="Malignance Chapeau",
-        hands="Malignance Gloves",
-        body="Malignance Tabard",
-        legs="Malignance Tights", 
-        ring2="Defending Ring",
-        feet="Malignance Boots"
-    })
+    sets.Single.engaged = sets.Single
+    sets.Single.engaged.PDT = sets.Single
     -- this allows you to equip any weapon in main + sub without this code forcing other weapons
     sets.Default = {
         ranged=state.GunSelector.current
     } -- do nothing. useful for equipping whateveer you want
+    sets.Default.engaged = sets.Default
+    sets.Default.engaged.PDT = sets.Default
+
     sets.precast.CorsairShot = { head="Laksamana's Tricorne +2" }
-    
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {
@@ -506,14 +543,6 @@ function init_gear_sets()
     sets.midcast.CorsairShot['Light Shot'] = sets.midcast.CorsairShot.Acc
     sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
-    sets.Nyame = {
-        head="Nyame Helm",
-        body="Nyame Mail",
-        hands="Nyame Gauntlets", 
-        legs="Nyame Flanchard",
-        feet="Nyame Sollerets"
-    }
-
     -- Ranged gear
     sets.midcast.RA = {
         ammo=gear.RAbullet,
@@ -596,20 +625,20 @@ function init_gear_sets()
     sets.idle = {
         ammo=gear.RAbullet,
         --range="Fomalhaut",
-        head="Malignance Chapeau",
+        head="Nyame Helm",
         neck="Sanctity Necklace",
         --neck="Commodore Charm +1",
         ear1="Genmei Earring",
         ear2="Etiolation Earring",
         --body="Mekosuchinae Harness",
-        body="Malignance Tabard",
-        hands="Malignance Gloves",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
         ring1="Roller's Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
         waist="Flume Belt",
         legs="Carmine Cuisses +1",
-        feet="Malignance Boots"
+        feet="Nyame Sollerets"
     }
     sets.idle.Regen = set_combine(sets.idle, {
         head="Meghanada Visor +2",
@@ -624,18 +653,18 @@ function init_gear_sets()
 
     sets.idle.Town = {
         ammo=gear.MAbullet,
-        head="Nyame Helm",
+        head="Lanun Tricorne +3",
         neck="Commodore Charm +2",
         ear1="Telos Earring",
         ear2="Crepuscular Earring",
-        body="Nyame Mail",
-        hands="Nyame Gauntlets",
+        body="Lanun Frac +3",
+        hands="Lanun Gants +3",
         ring1="Crepuscular Ring",
         ring2="Defending Ring",
         back=Camulus.STP,
         waist="Windbuffet Belt +1",
         legs="Carmine Cuisses +1",
-        feet="Nyame Sollerets"
+        feet="Lanun Bottes +3"
     }
     sets.idle.PDT = set_combine(sets.idle.Town, sets.Nyame)
     
@@ -653,39 +682,7 @@ function init_gear_sets()
     sets.Kiting = {legs="Carmine Cuisses +1"}
 
     -- Engaged sets
-    -- now cater to melee role. If you equip Nusku shield (or anything specified in cor_sub_weapons) 
-    -- "Ranged" mode will be triggered, which assumes you want DT + MEVA
-    
     sets.engaged = {
-        ammo=gear.RAbullet,
-        --range="Fomalhaut",
-        head="Adhemar Bonnet +1",
-        ear1="Eabani Earring",
-        ear2="Suppanomimi",
-        neck="Iskur gorget",
-        --neck="Commodore Charm +1",
-        hands="Floral Gauntlets",
-        body="Adhemar Jacket +1",
-        legs="Carmine Cuisses +1",
-        ring1="Petrov Ring",
-        ring2="Epona's Ring",
-        waist="Shetal Stone",
-        back=Camulus.DA,
-        feet=HercFeet.TP
-    }
-    -- sets.engaged.Single = set_combine(sets.engaged, {
-    --     ear1="Brutal Earring",
-    --     ear2="Cessance Earring",
-    --     hands="Adhemar Wristbands +1",
-    --     waist="Windbuffet Belt +1",
-    --     legs="Samnuha Tights",
-    --     feet=HercFeet.TP
-    -- })
-    -- sets.engaged.Single.Haste_15 = sets.engaged.Single
-    -- sets.engaged.Single.Haste_30 = sets.engaged.Single
-    -- sets.engaged.Single.MaxHaste = sets.engaged.Single
-
-    sets.engaged.Ranged = {
         ammo=gear.RAbullet,
         head="Malignance Chapeau",
         neck="Iskur Gorget",
@@ -701,86 +698,93 @@ function init_gear_sets()
         feet="Malignance Boots"
     }
     sets.engaged.PDT = set_combine(sets.engaged, sets.defense.PDT)
-        
-    sets.engaged.Haste_15 = sets.engaged
-    sets.engaged.Haste_30 = set_combine(sets.engaged, {
-       hands="Adhemar Wristbands +1",
-       feet=HercFeet.TP
-    })
-    sets.engaged.MaxHaste = set_combine(sets.engaged.Haste_30, {
+   -- TODO: Get rid of haste sets 
+    sets.engaged.Melee = set_combine(sets.engaged, {
+        head="Adhemar Bonnet +1",
         ear1="Telos Earring",
         ear2="Suppanomimi",
+        neck="Iskur gorget",
+        hands="Adhemar Wristbands +1",
+        body="Adhemar Jacket +1",
         legs="Meghanada Chausses +2",
+        ring1="Petrov Ring",
+        ring2="Epona's Ring",
+        waist="Shetal Stone",
         back=Camulus.DA,
-        waist="Windbuffet Belt +1"
+        feet=HercFeet.TP
     })
+    sets.engaged.Melee.MaxHaste = set_combine(sets.engaged.Melee, {
+        ear2="Cessance Earring",
+        waist="Sailfi Belt +1"
+    })
+    sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, sets.Nyame)
+    sets.engaged.Melee.PDT.MaxHaste = set_combine(sets.engaged.Melee.PDT, sets.engaged.Melee.MaxHaste)
 
-    sets.engaged.PDT = set_combine(sets.engaged, sets.Nyame)
-    sets.engaged.PDT.Haste_15 = sets.engaged.PDT
-    sets.engaged.PDT.Haste_30 = sets.engaged.PDT
-    sets.engaged.PDT.MaxHaste = sets.engaged.PDT
-
-    sets.engaged.Mid = set_combine(sets.engaged, {
+    sets.engaged.Mid = sets.engaged -- just for shooting
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.defense.PDT)
+   
+    sets.engaged.Melee.Mid = set_combine(sets.engaged.Melee, {
         neck="Lissome Necklace",
         ring2="Ilabrat Ring"
     })
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.defense.PDT)
-    
-    sets.engaged.Mid.Haste_15 = set_combine(sets.engaged.Mid, {
-        feet=HercFeet.TP
+    sets.engaged.Melee.Mid.MaxHaste = set_combine(sets.engaged.Melee.Mid, {
+        ear2="Odr Earring",
+        waist="Olseni Belt"
     })
-    sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Mid.Haste_15, {
-        hands="Adhemar Wristbands +1",
-    })
-    sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Mid.Haste_30, {
-        ear1="Telos Earring",
-        ear2="Suppanomimi",
-        legs="Meghanada Chausses +2",
-        waist="Windbuffet Belt +1"
-    })
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.Nyame)
-    sets.engaged.Mid.PDT.Haste_15 = sets.engaged.PDT
-    sets.engaged.Mid.PDT.Haste_30 = sets.engaged.PDT
-    sets.engaged.Mid.PDT.MaxHaste = sets.engaged.PDT
-    
+    sets.engaged.Melee.Mid.PDT = set_combine(sets.engaged.Melee.Mid, sets.Nyame)
 
-    sets.engaged.Acc = set_combine(sets.engaged.Mid, {
-        neck="Lissome Necklace",
-        ear1="Telos Earring",
-        ear2="Suppanomimi",
-        hands="Adhemar Wristbands +1",
-        back=Camulus.DA
-    })
-
+    sets.engaged.Acc = sets.engaged -- just for shooting
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.defense.PDT)
 
-    sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc, {
-        feet=HercFeet.TP
+    sets.engaged.Melee.Acc = set_combine(sets.engaged.Melee.Mid, {
+        head="Malignance Chapeau",
+        waist="Olseni Belt",
+        feet="Malignance Boots"
     })
-    sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Acc.Haste_15, {
-        hands="Adhemar Wristbands +1",
-    })
-    sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Acc.Haste_30, {
+    sets.engaged.Melee.Acc.PDT = set_combine(sets.engaged.Melee.Acc, sets.Nyame)
+    
+    sets.engaged.Sword = set_combine(sets.engaged, {
+        head="Adhemar Bonnet +1",
         ear1="Telos Earring",
         ear2="Cessance Earring",
-        waist="Olseni Belt",
+        neck="Iskur gorget",
+        hands="Adhemar Wristbands +1",
+        body="Adhemar Jacket +1",
+        legs="Meghanada Chausses +2",
+        ring1="Petrov Ring",
+        ring2="Epona's Ring",
+        waist="Windbuffet Belt +1",
+        back=Camulus.DA,
+        feet=HercFeet.TP
     })
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.Nyame)
-    sets.engaged.Acc.PDT.Haste_15 = sets.engaged.PDT
-    sets.engaged.Acc.PDT.Haste_30 = sets.engaged.PDT
-    sets.engaged.Acc.PDT.MaxHaste = sets.engaged.PDT
+    sets.engaged.Sword.MaxHaste = sets.engaged.Sword
+    sets.engaged.Sword.PDT = set_combine(sets.engaged.Sword, sets.Nyame)
+    sets.engaged.Sword.Mid = set_combine(sets.engaged.Sword, {
+        neck="Lissome Necklace",
+        ring2="Ilabrat Ring"
+    })
+    sets.engaged.Sword.Mid.MaxHaste = sets.engaged.Sword.Mid
+    
+    sets.engaged.Sword.Mid.PDT = set_combine(sets.engaged.Sword.Mid, sets.Nyame)
+    sets.engaged.Sword.Acc = set_combine(sets.engaged.Sword.Mid, {
+        ear2="Odr Earring",
+        waist="Olseni Belt",
+        feet="Malignance Boots"
+    })
+    sets.engaged.Sword.Acc.MaxHaste = sets.engaged.Sword.Acc
+    sets.engaged.Sword.Acc.PDT = set_combine(sets.engaged.Sword.Acc, sets.Nyame)
 end
 
 function get_cor_gearset()
     local set = {}
     if state.FightingMode.current ~= 'Default' then 
-        ---------------------------------------
-        set = set_combine(sets[state.FightingMode.current], sets[state.GunSelector.current])
-        ---------------------------------------
+       ---------------------------------------
+       set = set_combine(sets[state.FightingMode.current], sets[state.GunSelector.current])
+       ---------------------------------------
     elseif state.ShootingMode.current ~= 'Default' then 
-        ---------------------------------------
-        set = set_combine(sets[state.ShootingMode.current], sets[state.GunSelector.current])
-        ---------------------------------------
+       ---------------------------------------
+       set = set_combine(sets[state.ShootingMode.current], sets[state.GunSelector.current])
+       ---------------------------------------
     end
     return set
 end
@@ -829,9 +833,15 @@ function job_precast(spell, action, spellMap, eventArgs)
             eventArgs.handled = true
         end
     end
-    -- gear sets
+    if (spell.type == 'CorsairRoll') then 
+        if state.ShootingMode.current == 'Single' then
+            classes.CustomClass = 'Single'
+        end
+    end
     if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") and state.LuzafRing.value then
         equip(sets.precast.LuzafRing)
+    elseif (spell.type == 'CorsairRoll' or spell.english == "Double-Up") and state.Compensator.value then
+        equip(sets.precast.Compensator)
     elseif spell.type == 'CorsairShot' and state.CastingMode.value == 'Resistant' then
         classes.CustomClass = 'Acc'
     elseif spell.english == 'Fold' and buffactive['Bust'] == 2 then
@@ -846,6 +856,14 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' then
+        if state.CapacityMode.value then
+            equip(sets.CapacityMantle)
+        end
+        if spell.english == 'Leaden Salute' then
+            if world.weather_element == 'Dark' or world.day_element == 'Dark' then
+                equip(sets.Obi)
+            end
+        end
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
@@ -928,7 +946,9 @@ function job_buff_change(buff, gain)
             handle_equipping_gear(player.status)
         end
     else
-        state.CombatForm:reset()
+        if state.CombatForm.current ~= 'Melee' then 
+            state.CombatForm:reset()
+        end
         if not midaction() then
             handle_equipping_gear(player.status)
         end
@@ -1063,16 +1083,13 @@ end
 -------------------------------------------------------------------------------------------------------------------
 function get_combat_form()
     state.CombatForm:reset()
-    --if player.equipment.main == gear.Stave then
-    -- if cor_sub_weapons:contains(player.equipment.sub) then
-    --     if not state.RAMode.value then
-    --         state.CombatForm:set("Single")
-    --     else
-    --         state.CombatForm:set("Ranged")
-    --     end
-    -- end
     if state.Buff['Triple Shot'] then
         state.CombatForm:set('Triple')
+    end
+    if state.FightingMode.current == 'Melee' or state.FightingMode.current == 'DualSword' then 
+        state.CombatForm:set('Melee')
+    elseif state.FightingMode.current == 'Sword' then 
+        state.CombatForm:set('Sword')
     end
 end
 
@@ -1290,8 +1307,8 @@ function job_state_change(stateField, newValue, oldValue)
         state.FightingMode:set('Default')
     elseif stateField == 'Fighting Mode' then
         state.ShootingMode:set('Default')
-    --elseif stateField == 'Gun Selector' then
-        --equip({range=state.GunSelector.current})
+    elseif stateField == 'Gun Selector' then
+        equip({range=state.GunSelector.current})
     end
 end
 

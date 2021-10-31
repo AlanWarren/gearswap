@@ -253,11 +253,11 @@ function init_gear_sets()
     --Adjust to your reforge level
     --Sets up a Key, Value Pair
     Artifact_Foire = {}
-    Artifact_Foire.Head_PRegen = "Foire Taj"
-    Artifact_Foire.Body_WSD_PTank = "Foire Tobe"
+    Artifact_Foire.Head_PRegen = "Foire Taj +1"
+    Artifact_Foire.Body_WSD_PTank = "Foire Tobe +1"
     Artifact_Foire.Hands_Mane_Overload = "Foire Dastanas +1"
     Artifact_Foire.Legs_PCure = "Foire Churidars +1"
-    Artifact_Foire.Feet_Repair_PMagic = "Puppetry Babouches"
+    Artifact_Foire.Feet_Repair_PMagic = "Puppetry Babouches +1"
 
     Relic_Pitre = {}
     Relic_Pitre.Head_PRegen = "Pitre Taj +2" --Enhances Optimization
@@ -433,7 +433,16 @@ function init_gear_sets()
 
     sets.precast.WS["Stringing Pummel"].Mod = set_combine(sets.precast.WS, {})
 
-    sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {})
+    sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
+        ear1="Brutal Earring",
+        ear2="Moonshade Earring",
+        body="Mpaca's Doublet",
+        hands="Mpaca's Gloves'",
+        neck="Breeze Gorget"
+    })
+    sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS["Victory Smite"], {
+        neck="Lissome Necklace"
+    })
 
     sets.precast.WS["Shijin Spiral"] =
         set_combine(
@@ -478,7 +487,7 @@ function init_gear_sets()
         --head="Ryuo Somen",
         head=HercHead.TP,
         neck="Lissome Necklace",
-        ear1="Dedition Earring",
+        ear1="Mache Earring",
         ear2="Telos Earring",
         body="Mpaca's Doublet",
         hands="Mpaca's Gloves",
@@ -537,10 +546,10 @@ function init_gear_sets()
         head="Mpaca's Cap",
         neck="Lissome Necklace",
         ear1="Crepuscular Earring",
-        ear2="Telos Earring",
+        ear2="Mache Earring",
         body="Mpaca's Doublet",
         hands="Mpaca's Gloves",
-        ring1="Varar Ring",
+        ring1="Niqmaddu Ring",
         ring2="Gere Ring",
         back="Visucius's Mantle",
         waist="Moonbow Belt",
