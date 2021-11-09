@@ -225,39 +225,39 @@ function init_gear_sets()
         sub={name="Blurred Knife +1", bag="Inventory", priority=2},
         ranged=state.GunSelector.current
     }
-    sets.Melee.engaged = set_combine(sets.Melee, {
-        head="Adhemar Bonnet +1",
-        ear1="Telos Earring",
-        ear2="Suppanomimi",
-        neck="Iskur gorget",
-        hands="Adhemar Wristbands +1",
-        body="Adhemar Jacket +1",
-        legs="Meghanada Chausses +2",
-        ring1="Petrov Ring",
-        ring2="Epona's Ring",
-        waist="Shetal Stone",
-        back=Camulus.DA,
-        feet=HercFeet.TP
-    })
-    sets.Melee.engaged.PDT = set_combine(sets.Melee.engaged, sets.Nyame)
+    -- sets.Melee.engaged = set_combine(sets.Melee, {
+    --     head="Adhemar Bonnet +1",
+    --     ear1="Telos Earring",
+    --     ear2="Suppanomimi",
+    --     neck="Iskur gorget",
+    --     hands="Adhemar Wristbands +1",
+    --     body="Adhemar Jacket +1",
+    --     legs="Meghanada Chausses +2",
+    --     ring1="Petrov Ring",
+    --     ring2="Epona's Ring",
+    --     waist="Shetal Stone",
+    --     back=Camulus.DA,
+    --     feet=HercFeet.TP
+    -- })
+    -- sets.Melee.engaged.PDT = set_combine(sets.Melee.engaged, sets.Nyame)
     
     sets.Sword = { 
         main={name="Naegling", bag="Inventory", priority=1},
         sub={name="Nusku Shield", priority=2},
     }
-    sets.Sword.engaged = set_combine(sets.Melee.engaged, sets.Sword, {
-        ear2="Cessance Earring",
-        hands="Adhemar Wristbands +1",
-        waist="Windbuffet Belt +1",
-    })
-    sets.Sword.engaged.PDT = set_combine(sets.Sword.engaged, sets.Nyame)
+    -- sets.Sword.engaged = set_combine(sets.Melee, sets.Sword, {
+    --     ear2="Cessance Earring",
+    --     hands="Adhemar Wristbands +1",
+    --     waist="Windbuffet Belt +1",
+    -- })
+    -- sets.Sword.engaged.PDT = set_combine(sets.Sword.engaged, sets.Nyame)
     
     sets.DualSword = { 
         main={name="Naegling", bag="Inventory", priority=1},
         sub={name="Blurred Knife +1", bag="Inventory", priority=2},
     }
-    sets.DualSword.engaged = set_combine(sets.Melee.engaged, sets.DualSword)
-    sets.DualSword.engaged.PDT = set_combine(sets.DualSword.engaged, sets.Nyame)
+    -- sets.DualSword.engaged = set_combine(sets.Melee, sets.DualSword)
+    -- sets.DualSword.engaged.PDT = set_combine(sets.DualSword.engaged, sets.Nyame)
     
     sets.Magic = {
         --main={name="Lanun Knife", bag="Wardrobe 4", priority=2},
@@ -265,8 +265,8 @@ function init_gear_sets()
         sub={name="Tauret", bag="Inventory", priority=2},
         ranged=state.GunSelector.current
     }
-    sets.Magic.engaged = sets.Magic
-    sets.Magic.engaged.PDT = sets.Magic
+    -- sets.Magic.engaged = sets.Magic
+    -- sets.Magic.engaged.PDT = sets.Magic
 
     sets.DeathPenalty = {
         range="Death Penalty"
@@ -278,27 +278,27 @@ function init_gear_sets()
         range="Fomalhaut"
     }
     sets.Anarchy = {
-        range="Anarchy"
+        range="Anarchy +2"
     }
     sets.Shooting = {
         main={name="Lanun Knife", bag="Inventory", priority=2},
         sub={name="Rostam", bag="Wardrobe 4", priority=1},
     }
-    sets.Shooting.engaged = sets.Shooting
-    sets.Shooting.engaged.PDT = sets.Shooting
+    -- sets.Shooting.engaged = sets.Shooting
+    -- sets.Shooting.engaged.PDT = sets.Shooting
 
     sets.Single = {
         main={name="Rostam", bag="Wardrobe 4", priority=1},
         sub={name="Nusku Shield", priority=2},
     }
-    sets.Single.engaged = sets.Single
-    sets.Single.engaged.PDT = sets.Single
+    -- sets.Single.engaged = sets.Single
+    -- sets.Single.engaged.PDT = sets.Single
     -- this allows you to equip any weapon in main + sub without this code forcing other weapons
     sets.Default = {
         ranged=state.GunSelector.current
     } -- do nothing. useful for equipping whateveer you want
-    sets.Default.engaged = sets.Default
-    sets.Default.engaged.PDT = sets.Default
+    -- sets.Default.engaged = sets.Default
+    -- sets.Default.engaged.PDT = sets.Default
 
     sets.precast.CorsairShot = { head="Laksamana's Tricorne +2" }
 
@@ -320,7 +320,7 @@ function init_gear_sets()
         back="Linkpearl",
         waist="Lanun Knife",
         ring1="Naegling", 
-        ring2="Anarchy",
+        ring2="Anarchy +2",
         legs="Blurred Knife +1"
     }
         
@@ -344,21 +344,22 @@ function init_gear_sets()
 
     sets.precast.RA = {
         ammo=gear.RAbullet,
-        head=TaeonHead.Snap, -- 9
-        neck="Commodore Charm +2", -- 3
-        hands="Carmine Finger Gauntlets +1", -- 8 / 11 rapid
+        head="Chasseur's Tricorne +1",
+        neck="Commodore Charm +2", -- 4
+        hands="Lanun Gants +3", -- 13
         back=Camulus.Snap, -- 10 
         body="Oshosi Vest", -- 12
         ring2="Crepuscular Ring", -- 3
-        waist="Impulse Belt", -- 2
+        waist="Yemaya Belt", -- 0 / 5 rapid
         legs=AdhemarLegs.Snap, -- 9  / 10 rapid
         feet="Meghanada Jambeaux +2" -- 10 
     }
     sets.precast.RA.F1 = set_combine(sets.precast.RA, {
-        body="Laksamana's Frac +3"
+        body="Laksamana's Frac +3",
     })
     sets.precast.RA.F2 = set_combine(sets.precast.RA.F1, {
-        body="Laksamana's Frac +3"
+        body="Laksamana's Frac +3",
+        hands="Carmine Finger Gauntlets +1", -- 8 / 11 rapid
         -- waist="Yemaya Belt",
         -- feet="Pursuer's Gaiters"
     })
@@ -484,7 +485,7 @@ function init_gear_sets()
     }
     sets.precast.WS['Leaden Salute'].Mid = set_combine(sets.precast.WS['Leaden Salute'], { 
         body="Lanun Frac +3",
-        hands="Nyame Gauntlets",
+        hands="Carmine Finger Gauntlets +1",
         feet="Lanun Bottes +3"
     })
     sets.precast.WS['Leaden Salute'].Acc = set_combine(sets.precast.WS['Leaden Salute'], { 
@@ -556,7 +557,7 @@ function init_gear_sets()
         ring1="Crepuscular Ring",
         ring2="Ilabrat Ring",
         back=Camulus.STP,
-        waist="Kwahu Kachina Belt",
+        waist="Yemaya Belt",
         legs="Malignance Tights", 
         feet="Malignance Boots"
     }
@@ -584,7 +585,8 @@ function init_gear_sets()
         body="Laksamana's Frac +3",
         ring1="Crepuscular Ring",
         ring2="Regal Ring", 
-        feet="Malignance Boots"
+        feet="Malignance Boots",
+        waist="Kwahu Kachina Belt",
     })
     sets.midcast.RA.Acc.AME = set_combine(sets.midcast.RA.Acc, {
         head="Meghanada Visor +2",
@@ -651,21 +653,21 @@ function init_gear_sets()
         ring2="Paguroidea Ring"
     })
 
-    sets.idle.Town = {
-        ammo=gear.MAbullet,
-        head="Lanun Tricorne +3",
-        neck="Commodore Charm +2",
-        ear1="Telos Earring",
-        ear2="Crepuscular Earring",
-        body="Lanun Frac +3",
-        hands="Lanun Gants +3",
-        ring1="Crepuscular Ring",
-        ring2="Defending Ring",
-        back=Camulus.STP,
-        waist="Windbuffet Belt +1",
-        legs="Carmine Cuisses +1",
-        feet="Lanun Bottes +3"
-    }
+    sets.idle.Town = sets.idle
+    --     ammo=gear.MAbullet,
+    --     head="Lanun Tricorne +3",
+    --     neck="Commodore Charm +2",
+    --     ear1="Telos Earring",
+    --     ear2="Crepuscular Earring",
+    --     body="Lanun Frac +3",
+    --     hands="Lanun Gants +3",
+    --     ring1="Crepuscular Ring",
+    --     ring2="Defending Ring",
+    --     back=Camulus.STP,
+    --     waist="Windbuffet Belt +1",
+    --     legs="Carmine Cuisses +1",
+    --     feet="Lanun Bottes +3"
+    -- }
     sets.idle.PDT = set_combine(sets.idle.Town, sets.Nyame)
     
     -- Defense sets
@@ -701,23 +703,34 @@ function init_gear_sets()
    -- TODO: Get rid of haste sets 
     sets.engaged.Melee = set_combine(sets.engaged, {
         head="Adhemar Bonnet +1",
-        ear1="Telos Earring",
+        ear1="Eabani Earring",
         ear2="Suppanomimi",
         neck="Iskur gorget",
-        hands="Adhemar Wristbands +1",
+        hands="Floral Gauntlets",
         body="Adhemar Jacket +1",
         legs="Meghanada Chausses +2",
         ring1="Petrov Ring",
         ring2="Epona's Ring",
         waist="Shetal Stone",
         back=Camulus.DA,
+        feet="Taeon Boots"
+    })
+    sets.engaged.Melee.Haste_30 = set_combine(sets.engaged.Melee, {
+        hands="Adhemar Wristbands +1",
         feet=HercFeet.TP
     })
-    sets.engaged.Melee.MaxHaste = set_combine(sets.engaged.Melee, {
+    sets.engaged.Melee.MaxHaste = set_combine(sets.engaged.Melee.Haste_30, {
+        ear1="Telos Earring",
         ear2="Cessance Earring",
-        waist="Sailfi Belt +1"
+        waist="Sailfi Belt +1",
     })
-    sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, sets.Nyame)
+    sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+
+    })
     sets.engaged.Melee.PDT.MaxHaste = set_combine(sets.engaged.Melee.PDT, sets.engaged.Melee.MaxHaste)
 
     sets.engaged.Mid = sets.engaged -- just for shooting
@@ -725,11 +738,17 @@ function init_gear_sets()
    
     sets.engaged.Melee.Mid = set_combine(sets.engaged.Melee, {
         neck="Lissome Necklace",
-        ring2="Ilabrat Ring"
+        ring2="Ilabrat Ring",
+        feet=HercFeet.TP
+    })
+    sets.engaged.Melee.Mid.Haste_30 = set_combine(sets.engaged.Melee.Mid, {
+        hands="Adhemar Wristbands +1",
     })
     sets.engaged.Melee.Mid.MaxHaste = set_combine(sets.engaged.Melee.Mid, {
+        waist="Olseni Belt",
+        ear1="Telos Earring",
         ear2="Odr Earring",
-        waist="Olseni Belt"
+        hands="Adhemar Wristbands +1",
     })
     sets.engaged.Melee.Mid.PDT = set_combine(sets.engaged.Melee.Mid, sets.Nyame)
 
@@ -738,8 +757,17 @@ function init_gear_sets()
 
     sets.engaged.Melee.Acc = set_combine(sets.engaged.Melee.Mid, {
         head="Malignance Chapeau",
+        ear1="Telos Earring",
+        ear2="Odr Earring",
         waist="Olseni Belt",
         feet="Malignance Boots"
+    })
+    sets.engaged.Melee.Acc.Haste_30 = set_combine(sets.engaged.Melee.Acc, {
+        waist="Shetal Stone",
+    })
+    sets.engaged.Melee.Acc.MaxHaste = set_combine(sets.engaged.Melee.Acc, {
+        hands="Adhemar Wristbands +1",
+        feet="Malignance Boots",
     })
     sets.engaged.Melee.Acc.PDT = set_combine(sets.engaged.Melee.Acc, sets.Nyame)
     
@@ -1098,7 +1126,7 @@ function initialize_weapons()
         state.GunSelector:set('DeathPenalty')
     elseif player.equipment.range == 'Fomalhaut' then
         state.GunSelector:set('Fomalhaut')
-    elseif player.equipment.range == 'Anarchy' then
+    elseif player.equipment.range == 'Anarchy +2' then
         state.GunSelector:set('Anarchy')
     elseif player.equipment.range == 'Armageddon' then
         state.GunSelector:set('Armageddon')

@@ -214,7 +214,8 @@ function init_gear_sets()
         hands=TaeonHands.Snap,
         legs="Adhemar Kecks",
         ring2="Crepuscular Ring", -- 3
-        feet="Meghanada Jambeaux +2" -- 10
+        feet="Meghanada Jambeaux +2", -- 10
+        waist="Yemaya Belt"
     }
     sets.midcast.RA = {
         head="Malignance Chapeau",
@@ -225,7 +226,7 @@ function init_gear_sets()
         hands="Malignance Gloves",
         ring1="Cacoethic Ring +1",
         ring2="Crepuscular Ring", -- 3
-        waist="Eschan Stone",
+        waist="Yemaya Belt",
         --back="Quarrel Mantle",
         legs="Malignance Tights", 
         feet="Malignance Boots"

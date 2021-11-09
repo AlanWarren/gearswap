@@ -273,7 +273,7 @@ function init_gear_sets()
     sets.idle.Pet.Engaged = {
         main="Sakpata's Fists",
         head="Mpaca's Cap",
-        neck="Sanctity Necklace",
+        neck="Shulmanu Collar",
         ear1="Crepuscular Earring",
         ear2="Telos Earring",
         body="Mpaca's Doublet",
@@ -292,11 +292,13 @@ function init_gear_sets()
     })
 
     sets.idle.Pet.Engaged.Nuke = set_combine(sets.idle.Pet.Engaged, {
+        neck="Adad Amulet"
         -- legs="Cirque Pantaloni +2",
         -- feet="Cirque Scarpe +2"
     })
 
     sets.idle.Pet.Engaged.Magic = set_combine(sets.idle.Pet.Engaged, {
+        neck="Adad Amulet"
         -- legs="Cirque Pantaloni +2",
         -- feet="Cirque Scarpe +2"
     })
@@ -307,7 +309,7 @@ function init_gear_sets()
     sets.defense.Evasion = {
         main="Sakpata's Fists",
         head="Malignance Chapeau",
-        neck="Twilight Torque",
+        neck="Adad Amulet",
         ear1="Crepuscular Earring",
         ear2="Telos Earring",
         body="Malignance Tabard",
@@ -323,7 +325,7 @@ function init_gear_sets()
     sets.defense.PDT = {
         main="Sakpata's Fists",
         head="Nyame Helm",
-        neck="Twilight Torque",
+        neck="Adad Amulet",
         ear1="Crepuscular Earring",
         ear2="Telos Earring",
         body="Mpaca's Doublet",
@@ -354,7 +356,7 @@ function init_gear_sets()
         main="Sakpata's Fists",
         --head="Ryuo Somen",
         head=HercHead.TP,
-        neck="Lissome Necklace",
+        neck="Shulmanu Collar",
         ear1="Dedition Earring",
         ear2="Telos Earring",
         body="Mpaca's Doublet",
@@ -370,7 +372,7 @@ function init_gear_sets()
     sets.engaged.PDT = {
         main="Sakpata's Fists",
         head="Rao Kabuto",
-        --neck="Twilight Torque",
+        neck="Adad Amulet",
         ear1="Crepuscular Earring",
         ear2="Telos Earring",
         body="Mpaca's Doublet",

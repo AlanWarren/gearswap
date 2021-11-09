@@ -157,7 +157,8 @@ function init_gear_sets()
         hands="Buremte Gloves",
         ring2="Crepuscular Ring",
         feet="Ejekamal Boots",
-        legs="Volte Tights"
+        legs="Volte Tights",
+        waist="Yemaya Belt"
     }
     sets.midcast.RA = {
         head="Nyame Helm",

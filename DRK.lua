@@ -95,15 +95,15 @@ function job_setup()
     -- Set the default to false if you'd rather SE always stay acitve
     state.SouleaterMode = M(true, 'Soul Eater Mode')
     -- Greatswords you use. 
-    gsList = S{'Malfeasance', 'Macbain', 'Kaquljaan', 'Mekosuchus Blade', 'Ragnarok', 'Raetic Algol', 'Raetic Algol +1', 'Caladbolg', 'Montante +1', 'Albion' }
-    scytheList = S{'Liberator', 'Apocalypse', 'Anguta', 'Raetic Scythe', 'Deathbane', 'Twilight Scythe' }
+    gsList = S{'Ragnarok', 'Caladbolg', 'Montante +1' }
+    scytheList = S{'Liberator', 'Apocalypse', 'Anguta', 'Redemption' }
     remaWeapons = S{'Apocalypse', 'Anguta', 'Liberator', 'Caladbolg', 'Ragnarok', 'Redemption'}
 
     --shields = S{'Rinda Shield'}
     -- Mote has capitalization errors in the default Absorb mappings, so we use our own
     absorbs = S{'Absorb-STR', 'Absorb-DEX', 'Absorb-VIT', 'Absorb-AGI', 'Absorb-INT', 'Absorb-MND', 'Absorb-CHR', 'Absorb-Attri', 'Absorb-ACC', 'Absorb-TP'}
     -- Offhand weapons used to activate DW mode
-    swordList = S{"Sangarius", "Sangarius +1", "Usonmunku", "Perun +1", "Tanmogayi"}
+    swordList = S{"Naegling", "Sangarius +1", "Usonmunku", "Perun +1", "Tanmogayi"}
 
     get_combat_form()
     get_combat_weapon()
@@ -153,7 +153,6 @@ function init_gear_sets()
     -- Augmented gear
     Niht = {}
     Niht.DarkMagic = {name="Niht Mantle", augments={'Attack+7','Dark magic skill +10','"Drain" and "Aspir" potency +25'}}
-    Niht.WSD = {name="Niht Mantle", augments={'Attack+14','Dark magic skill +4', '"Drain" and "Aspir" potency +17', 'Weapon skill damage +5%'}}
 
     Ankou = {}
     Ankou.FC  = { name="Ankou's Mantle", augments={'"Fast Cast"+10',}}
@@ -243,12 +242,13 @@ function init_gear_sets()
     })
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, { 
-        head="Cizin Helm +1",
+        head="Sakpata's Helm",
     })
     sets.precast.FC['Enfeebling Magic'] = set_combine(sets.precast.FC, {
-        head="Cizin Helm +1",
+        head="Sakpata's Helm",
     })
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
+        head="Sakpata's Helm",
         -- body="Jumalik Mail",
     })
 
@@ -483,7 +483,7 @@ function init_gear_sets()
     -- VIT 80%
     sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
         head="Sakpata's Helm",
-        body="Ignominy Cuirass +3",
+        body="Sakpata's Plate",
         neck="Abyssal Bead Necklace +2",
         waist="Light Belt",
         back=Ankou.VIT,
@@ -491,6 +491,7 @@ function init_gear_sets()
     })
     sets.precast.WS.Torcleaver.Mid = set_combine(sets.precast.WS.Torcleaver, {
         head="Odyssean Helm",
+        body="Ignominy Cuirass +3",
         neck="Abyssal Bead Necklace +2",
     })
     sets.precast.WS.Torcleaver.Acc = set_combine(sets.precast.WS.Torcleaver.Mid, {
@@ -543,7 +544,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS.Catastrophe, {
-        head="Valorous Mask",
+        head="Sakpata's Helm",
         feet="Sulevia's Leggings +2"
     })
 
@@ -563,7 +564,6 @@ function init_gear_sets()
         head="Ratri Sallet +1",
         hands="Ratri Gadlings +1",
         feet="Ratri Sollerets +1"
-
     })
     sets.precast.WS['Cross Reaper'].Acc = set_combine(sets.precast.WS['Cross Reaper'].Mid, {
         ammo="Seething Bomblet +1",
@@ -850,7 +850,7 @@ function init_gear_sets()
     sets.engaged.Liberator.AM3 = set_combine(sets.engaged.Liberator, {
         ammo="Coiste Bodhar",
         head="Flamma Zucchetto +2",
-        body=Valorous.Body.STP,
+        body="Hjarrandi Breastplate",
         neck="Abyssal Bead Necklace +2",
         hands="Flamma Manopolas +2",
         ear1="Dedition Earring",
@@ -897,13 +897,14 @@ function init_gear_sets()
     sets.engaged.Liberator.PDT = set_combine(sets.engaged.Liberator, {
         ammo="Hasty Pinion +1",
         head="Hjarrandi Helm",
-        body="Tartarus Platemail",
+        body="Sakpata's Plate",
         neck="Abyssal Bead Necklace +2",
-        hands="Volte Moufles",
-        ring2="Defending Ring",
+        hands="Sakpata's Gauntlets",
+        --ring2="Defending Ring",
         back=Ankou.STP,
         waist="Sailfi Belt +1",
-        feet="Volte Sollerets" 
+        legs="Sakpata's Cuisses",
+        feet="Sakpata's Leggings" 
     })
     sets.engaged.Liberator.Mid.PDT = set_combine(sets.engaged.Liberator.PDT, {
         ear1="Cessance Earring",
@@ -1037,17 +1038,20 @@ function init_gear_sets()
     
     -- Caladbolg
     sets.engaged.Caladbolg = set_combine(sets.engaged.GreatSword, {
+        head="Hjarrandi Helm",
         hands="Sakpata's Gauntlets",
         body="Sakpata's Plate",
         back=Ankou.DA
     })
     sets.engaged.Caladbolg.Mid = set_combine(sets.engaged.GreatSword.Mid, {
+        head="Flamma Zucchetto +2",
         hands="Sakpata's Gauntlets",
         ear2="Telos Earring",
         ring2="Regal Ring",
+        waist="Ioskeha Belt",
         back=Ankou.DA
     })
-    sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.GreatSword.Acc, {
+    sets.engaged.Caladbolg.Acc = set_combine(sets.engaged.Caladbolg.Mid, {
         ammo="Seething Bomblet +1",
         hands="Sakpata's Gauntlets",
         body="Sakpata's Plate",
@@ -1142,11 +1146,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         --     --windower.chat.input:schedule(1, '/ws "Entropy" <t>')
         --     return
         -- end
-        if spell.english == 'Insurgency' then
-            if world.time >= (17*60) or world.time <= (7*60) then
-                equip(sets.Lugra)
-            end
-        end
+        -- if spell.english == 'Insurgency' then
+        --     if world.time >= (17*60) or world.time <= (7*60) then
+        --         equip(sets.Lugra)
+        --     end
+        -- end
 
     end
 end
@@ -1203,9 +1207,9 @@ function customize_idle_set(idleSet)
     if state.IdleMode.current == 'Sphere' then
         idleSet = set_combine(idleSet, sets.idle.Sphere)
     end
-    if state.HybridMode.current == 'PDT' then
-        idleSet = set_combine(idleSet, sets.defense.PDT)
-    end
+    -- if state.HybridMode.current == 'PDT' then
+    --     idleSet = set_combine(idleSet, sets.defense.PDT)
+    -- end
     return idleSet
 end
 
@@ -1220,7 +1224,6 @@ function customize_melee_set(meleeSet)
     if state.Buff['Souleater'] then
         meleeSet = set_combine(meleeSet, sets.buff.Souleater)
     end
-    --meleeSet = set_combine(meleeSet, select_earring())
     return meleeSet
 end
 
@@ -1534,14 +1537,6 @@ function job_get_spell_map(spell, default_spell_map)
     -- if spell.type == 'Trust' then
     --     return 'Trust'
     -- end
-end
-
-function select_earring()
-    if world.time >= (17*60) or world.time <= (7*60) then
-        return sets.Lugra
-    else
-        return sets.Brutal
-    end
 end
 
 function update_melee_groups()

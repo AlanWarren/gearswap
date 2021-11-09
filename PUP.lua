@@ -232,8 +232,8 @@ function init_gear_sets()
     Animators = {}
     --Animators.Range = "Animator P II"
     Animators.Range = "Divinator II"
-    --Animators.Melee = "Animator P +1"
-    Animators.Melee = "Neo Animator"
+    Animators.Melee = "Animator P +1"
+    --Animators.Melee = "Neo Animator"
 
     HercFeet = {}
     HercHead = {}
@@ -250,6 +250,11 @@ function init_gear_sets()
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
     
     HercBody.WSD = { name="Herculean Vest", augments={'"Blood Pact" ability delay -4','AGI+3','Weapon skill damage +9%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
+    
+    Visucius = {}
+    Visucius.TP = { name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+8','"Dbl.Atk."+10',}}
+    Visucius.PET = { name="Visucius's Mantle", augments={'Pet: Acc.+7 Pet: R.Acc.+7 Pet: Atk.+7 Pet: R.Atk.+7','Accuracy+20 Attack+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10',}}
+    
     --Adjust to your reforge level
     --Sets up a Key, Value Pair
     Artifact_Foire = {}
@@ -272,28 +277,6 @@ function init_gear_sets()
     Empy_Karagoz.Hands = "Karagoz Guanti"
     Empy_Karagoz.Legs_Combat = "Karagoz Pantaloni +1"
     Empy_Karagoz.Feet_Tatical = "Karagoz Scarpe +1"
-
-    Visucius = {}
-    Visucius.PetDT = {
-        name = "Visucius's Mantle",
-        augments = {
-            "Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20",
-            "Accuracy+20 Attack+20",
-            "Pet: Accuracy+4 Pet: Rng. Acc.+4",
-            'Pet: "Regen"+10',
-            "Pet: Damage taken -5%"
-        }
-    }
-    Visucius.PetMagic = {
-        name = "Visucius's Mantle",
-        augments = {
-            "Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20",
-            "Accuracy+20 Attack+20",
-            "Pet: Accuracy+4 Pet: Rng. Acc.+4",
-            'Pet: "Regen"+10',
-            "Pet: Damage taken -5%"
-        }
-    }
 
     sets.organizer = { 
         main="Midnights",
@@ -332,7 +315,7 @@ function init_gear_sets()
         hands="Mpaca's Gloves",
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
-        back="Visucius's Mantle",
+        back=Visucius.PET,
         waist="Moonbow Belt",
         legs="Mpaca's Hose",
         feet="Hermes' Sandals"
@@ -380,8 +363,8 @@ function init_gear_sets()
     }
 
     sets.precast.JA["Repair"] = {
-        ammo = "Automat. Oil +3",
-        feet = Artifact_Foire.Feet_Repair_PMagic
+        ammo="Automat. Oil +3",
+        feet="Foire Babouches +1"
     }
 
     sets.precast.JA["Maintenance"] = set_combine(sets.precast.JA["Repair"], {})
@@ -391,12 +374,12 @@ function init_gear_sets()
         -- neck = "Buffoon's Collar +1",
         -- body = "Karagoz Farsetto",
         hands = Artifact_Foire.Hands_Mane_Overload,
-        back = "Visucius's Mantle",
+        back=Visucius.PET
         -- ear1 = "Burana Earring"
     }
 
     sets.precast.JA["Activate"] = {
-        back = "Visucius's Mantle", 
+        back=Visucius.PET,
         feet = "Mpaca's Boots"
     }
 
@@ -416,7 +399,7 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         head="Mpaca's Cap",
-        neck="Lissome Necklace",
+        neck="Shulmanu Collar",
         ear1="Ishvara Earring",
         ear2="Moonshade Earring",
         body=HercBody.WSD,
@@ -441,7 +424,7 @@ function init_gear_sets()
         neck="Breeze Gorget"
     })
     sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS["Victory Smite"], {
-        neck="Lissome Necklace"
+        neck="Shulmanu Collar"
     })
 
     sets.precast.WS["Shijin Spiral"] =
@@ -471,7 +454,7 @@ function init_gear_sets()
         hands="Nyame Gauntlets",
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
-        back="Visucius's Mantle",
+        back=Visucius.PET,
         waist="Moonbow Belt",
         legs="Nyame Flanchard",
         feet="Hermes' Sandals"
@@ -486,14 +469,14 @@ function init_gear_sets()
         main="Sakpata's Fists",
         --head="Ryuo Somen",
         head=HercHead.TP,
-        neck="Lissome Necklace",
+        neck="Shulmanu Collar",
         ear1="Mache Earring",
         ear2="Telos Earring",
-        body="Mpaca's Doublet",
+        body="Tali'ah Manteel +2",
         hands="Mpaca's Gloves",
         ring1="Niqmaddu Ring",
         ring2="Gere Ring",
-        back="Visucius's Mantle",
+        back=Visucius.TP,
         waist="Moonbow Belt",
         legs="Mpaca's Hose",
         feet=HercFeet.TP,
@@ -544,14 +527,15 @@ function init_gear_sets()
     sets.engaged.MasterPet = {
         main="Sakpata's Fists",
         head="Mpaca's Cap",
-        neck="Lissome Necklace",
+        neck="Shulmanu Collar",
         ear1="Crepuscular Earring",
         ear2="Mache Earring",
-        body="Mpaca's Doublet",
+        -- body="Mpaca's Doublet",
+        body="Tali'ah Manteel +2",
         hands="Mpaca's Gloves",
         ring1="Niqmaddu Ring",
         ring2="Gere Ring",
-        back="Visucius's Mantle",
+        back=Visucius.TP,
         waist="Moonbow Belt",
         legs="Mpaca's Hose",
         feet="Mpaca's Boots"
@@ -563,7 +547,8 @@ function init_gear_sets()
         Hybrid Mode = Acc
     ]]
     sets.engaged.MasterPet.Acc = set_combine(sets.engaged.MasterPet, {
-        head="Mpaca's Cap"
+        head="Mpaca's Cap",
+        body="Mpaca's Doublet",
     })
 
     -------------------------------------TP
@@ -630,7 +615,8 @@ function init_gear_sets()
     ]]
     sets.idle.Pet = set_combine(sets.idle, {
         ring2="Paguroidea Ring",
-        feet="Hermes' Sandals"
+        body="Mpaca's Doublet'",
+        -- feet="Hermes' Sandals"
     })
 
     --[[
@@ -679,7 +665,11 @@ function init_gear_sets()
     sets.idle.Pet.Engaged = set_combine(sets.engaged.MasterPet, {
         head="Rao Kabuto",
         main="Ohtas",
+        body="Mpaca's Doublet",
         waist="Klouskap Sash",
+        ring1="Varar Ring",
+        ring2="Varar Ring",
+        back=Visucius.PET,
     })
 
     --[[
@@ -689,6 +679,7 @@ function init_gear_sets()
     sets.idle.Pet.Engaged.Acc = set_combine(sets.engaged.MasterPet, {
         head="Rao Kabuto",
         main="Ohtas",
+        back=Visucius.PET,
         waist="Klouskap Sash",
     })
 
@@ -699,7 +690,9 @@ function init_gear_sets()
     sets.idle.Pet.Engaged.TP = set_combine(sets.engaged.MasterPet, {
         main="Ohtas",
         head="Rao Kabuto",
+        body="Mpaca's Doublet'",
         waist="Klouskap Sash",
+        back=Visucius.PET,
     })
 
     --[[
@@ -707,19 +700,23 @@ function init_gear_sets()
         Hybrid Mode = DT
     ]]
     sets.idle.Pet.Engaged.DT = set_combine(sets.engaged.MasterPet, {
+        head="Rao Kabuto",
         main="Midnights",
-        head="Nyame Helm", 
-        hands="Nyame Gauntlets", 
-        body="Nyame Mail",
-        ring2="Defending Ring",
-        legs="Tali'ah Seraweels +1"
+        body="Mpaca's Doublet",
+        waist="Klouskap Sash",
+        ring1="Varar Ring",
+        ring2="Varar Ring",
+        legs="Tali'ah Seraweels +1",
+        back=Visucius.PET,
     })
 
     --[[
         Idle Mode = Idle
         Hybrid Mode = Regen
     ]]
-    sets.idle.Pet.Engaged.Regen = sets.engaged.MasterPet
+    sets.idle.Pet.Engaged.Regen = set_combine(sets.engaged.MasterPet, {
+        back=Visucius.PET,
+    })
 
     --[[
         Idle Mode = Idle
@@ -729,7 +726,7 @@ function init_gear_sets()
         set_combine(
         sets.idle.Pet.Engaged,
         {
-            -- legs = Empy_Karagoz.Legs_Combat
+        back=Visucius.PET,
         }
     )
 
@@ -748,7 +745,7 @@ function init_gear_sets()
         hands="Mpaca's Gloves",
         ring1="Varar Ring",
         ring2="Gere Ring",
-        back="Visucius's Mantle",
+        back=Visucius.PET,
         waist="Klouskap Sash",
         legs="Mpaca's Hose",
         feet="Mpaca's Boots"
@@ -775,7 +772,7 @@ function init_gear_sets()
         hands="Mpaca's Gloves",
         ring1="Varar Ring",
         ring2="Gere Ring",
-        back="Visucius's Mantle",
+        back=Visucius.PET,
         waist="Klouskap Sash",
         legs="Mpaca's Hose",
         feet="Mpaca's Boots"

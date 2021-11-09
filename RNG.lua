@@ -232,6 +232,13 @@ function init_gear_sets()
         ring1="Perun +1",
         ring2="Perun"
     }
+    sets.Malignance = { 
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
+        legs="Malignance Tights",
+        feet="Malignance Boots"
+    }
     -- Misc. Job Ability precasts
     sets.precast.JA['Bounty Shot'] = {hands="Amini Glovelettes +1", waist="Chaac Belt", legs=HercLegs.TH }
     sets.precast.JA['Double Shot'] = {head="Amini Gapette"}
@@ -271,17 +278,17 @@ function init_gear_sets()
     
     sets.idle = {
         --sub="Nusku Shield",
-        head="Malignance Chapeau",
+        head="Nyame Helm",
         neck="Sanctity Necklace",
         ear1="Etiolation Earring",
         ear2="Genmei Earring",
-        body="Malignance Tabard",
-        hands="Malignance Gloves",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
         ring1="Meghanada Ring",
         ring2="Roller's Ring",
         back=Belenus.STP,
         waist="Flume Belt",
-        legs="Malignance Tights",
+        legs="Nyame Flanchard",
         feet="Jute Boots +1" -- 10
     }
     sets.idle.Regen = set_combine(sets.idle, {
@@ -323,7 +330,7 @@ function init_gear_sets()
     }
 
     -- Engaged sets
-    sets.engaged =  set_combine(sets.Nyame, {
+    sets.engaged =  set_combine(sets.Malignance, {
         neck="Scout's Gorget +2",
         ear1="Dedition Earring",
         ear2="Telos Earring", 
@@ -390,23 +397,24 @@ function init_gear_sets()
     -- 50 snap in gear will cap
     -- Pieces that provide delay reduction via velocity shot, do NOT
     -- count towards cap.
-    -- TODO: Yemaya Belt + Pursuer's Pants
     ------------------------------------------------------------------
     sets.precast.RA = {
-        --head=TaeonHead.Snap, -- 9
-        head="Orion Beret +3", -- rapid 18
+        head=TaeonHead.Snap, -- 9
+        -- head="Orion Beret +3", -- rapid 18
         neck="Scout's gorget +2", -- 4
         body="Amini Caban +1", -- 7% VS
         hands="Carmine Finger Gauntlets +1", -- 8 snap / 11 rapid
         back=Belenus.Snap, -- 2% VS / 10 snap 
         ring1="Crepuscular Ring", -- 3
         legs="Orion Braccae +3", -- 15
-        waist="Impulse Belt", -- 2
+        --waist="Impulse Belt", -- 2
+        waist="Yemaya Belt"
         feet="Meghanada Jambeaux +2" -- 10
     }
     sets.precast.RA.F1 = set_combine(sets.precast.RA, {
         head="Orion Beret +3",
         legs=AdhemarLegs.Snap, -- 9
+        waist="Yemaya Belt"
     })
     sets.precast.RA.F2 = set_combine(sets.precast.RA.F1, {
         -- waist="Yemaya Belt",
@@ -435,13 +443,14 @@ function init_gear_sets()
         ring1="Crepuscular Ring",
         ring2="Ilabrat Ring",
         back=Belenus.STP,
-        waist="Kwahu Kachina Belt", 
+        waist="Yemaya Belt",
         legs="Malignance Tights", 
         feet="Malignance Boots"
     }
     sets.midcast.RA.Mid = set_combine(sets.midcast.RA, {
         ear1="Crepuscular Earring",
         body="Malignance Tabard",
+        waist="Kwahu Kachina Belt", 
         --legs="Malignance Tights", 
     })
     sets.midcast.RA.Acc = set_combine(sets.midcast.RA.Mid, {
@@ -497,15 +506,19 @@ function init_gear_sets()
     sets.midcast.RA.Armageddon.AME = set_combine(sets.midcast.RA.Armageddon, {
         head="Meghanada Visor +2",
         body="Nisroch Jerkin",
-        hands="Mummu Wrists +2"
+        hands="Mummu Wrists +2",
+        waist="Kwahu Kachina Belt", 
     })
     sets.midcast.RA.Armageddon.Mid = set_combine(sets.midcast.RA.Mid, {
+        head="Meghanada Visor +2",
         body="Nisroch Jerkin",
+        waist="Kwahu Kachina Belt", 
     })
     sets.midcast.RA.Armageddon.Mid.AME = set_combine(sets.midcast.RA.Armageddon.Mid, {
         head="Meghanada Visor +2",
         body="Nisroch Jerkin",
         hands="Mummu Wrists +2"
+        waist="Kwahu Kachina Belt", 
     })
     sets.midcast.RA.Armageddon.Acc = set_combine(sets.midcast.RA.Acc, {
         --ammo="Eradicating Bullet"
@@ -625,11 +638,13 @@ function init_gear_sets()
     sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {
         head=HercHead.MAB,
         legs="Arcadian Braccae +3", 
-        hands="Nyame Gauntlets",
+        --hands="Nyame Gauntlets",
+        hands="Carmine Finger Gauntlets +1",
         --legs="Arcadian Braccae +3", 
     })
     sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
         body="Nyame Mail",
+        hands="Nyame Gauntlets",
         legs="Arcadian Braccae +3", 
     })
     sets.precast.WS['Trueflight'].Gun = set_combine(sets.precast.WS['Trueflight'], {ammo="Devastating Bullet"})

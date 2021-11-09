@@ -107,7 +107,8 @@ function init_gear_sets()
         main="Chango",
         sub="Naegling", 
         body="Montante +1",
-        hands="Shining One"
+        hands="Shining One",
+        ring1="Blurred Shield +1"
         --grip="Pearlsack",
         --waist="Linkpearl",
     }
@@ -145,7 +146,7 @@ function init_gear_sets()
      -- Fast cast sets for spells
      sets.precast.FC = {
          ammo="Impatiens",
-         head="Cizin Helm +1",
+         head="Sakpata's Helm",
          body="Odyssean Chestplate",
          ear1="Loquacious Earring",
          hands="Leyline Gloves",
@@ -232,6 +233,7 @@ function init_gear_sets()
  
     sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {
         ammo="Knobkierrie",
+    	body="Hjarrandi Breastplate",
         neck="Breeze Gorget",
         waist="Sailfi Belt +1",
         feet=Valorous.Feet.WS
@@ -257,7 +259,7 @@ function init_gear_sets()
      -- TORCLEAVER 
      -- VIT 80%
      sets.precast.WS.Torcleaver = set_combine(sets.precast.WS, {
-         head="Odyssean Helm",
+         head="Sakpata's Helm",
          ammo="Knobkierrie",
          neck="Aqua Gorget",
          legs=Odyssean.Legs.WS,
@@ -284,7 +286,7 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS['Impulse Drive'], {
         ammo="Knobkierrie",
         neck="Warrior's Bead Necklace +2",
-        legs=Odyssean.Legs.WS,
+        legs="Sakpata's Cuisses",
         waist="Sailfi Belt +1",
     })
      -- Sword WS's
@@ -453,8 +455,8 @@ function init_gear_sets()
         waist="Shetal Stone"
      })
      sets.engaged.OneHand = set_combine(sets.engaged, {
-         head="Sakpata's Helm",
-    	 body="Sakpata's Plate", 
+         head="Hjarrandi Helm",
+    	 body="Hjarrandi Breastplate", 
          ear1="Telos Earring",
          ear2="Cessance Earring",
          waist="Ioskeha Belt",
@@ -687,7 +689,7 @@ function get_combat_form()
     --end
     if S{'NIN', 'DNC'}:contains(player.sub_job) and war_sub_weapons:contains(player.equipment.sub) then
         state.CombatForm:set("DW")
-    elseif S{'SAM', 'WAR'}:contains(player.sub_job) and player.equipment.sub == 'Blurred Shield' then
+    elseif S{'SAM', 'WAR'}:contains(player.sub_job) and player.equipment.sub == 'Blurred Shield +1' then
         state.CombatForm:set("OneHand")
     else
         state.CombatForm:reset()

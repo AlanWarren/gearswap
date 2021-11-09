@@ -255,13 +255,14 @@ function init_gear_sets()
 
 	sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
 	    head="Stinger Helm +1",
+		body="Hjarrandi Breastplate",
         waist="Sailfi Belt +1",
         hands="Flamma Manopolas +2",
         legs="Peltast's Cuissots +1",
         feet=Valorous.Feet.WS
     })
 	sets.precast.WS['Drakesbane'].Mid = set_combine(sets.precast.WS['Drakesbane'], {
-        head="Valorous Mask", 
+        head="Valorous Mask",
 		back=Brigantia.WS,
     })
 	sets.precast.WS['Drakesbane'].Acc = set_combine(sets.precast.WS['Drakesbane'].Mid, {})
@@ -358,13 +359,13 @@ function init_gear_sets()
         neck="Twilight Torque",
         ear1="Cessance Earring",
         ear2="Telos Earring",
-   	    body="Tartarus Platemail",
-        hands="Sulevia's Gauntlets +2",
+   	    body="Nyame Mail",
+        hands="Nyame Gauntlets",
         ring1="Patricius Ring",
         ring2="Dark Ring",
         waist="Sailfi Belt +1",
-        legs="Sulevia's Cuisses +2",
-        feet="Sulevia's Leggings +2"
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
     }
 
 	sets.defense.MDT = set_combine(sets.defense.PDT, {
@@ -388,7 +389,7 @@ function init_gear_sets()
         neck="Anu Torque",
         ear1="Sherida Earring",
         ear2="Dedition Earring",
-		body=Valorous.Body.STP,
+		body="Hjarrandi Breastplate",
         hands="Flamma Manopolas +2",
         ring1="Niqmaddu Ring",
         ring2="Petrov Ring",
@@ -402,9 +403,9 @@ function init_gear_sets()
   --      head="Hjarrandi Helm",
 		head="Flamma Zucchetto +2",
         ear2="Brutal Earring",
-        neck="Dragoon's Collar +2",
+        neck="Shulmanu Collar",
         hands="Sulevia's Gauntlets +2",
-		body=Valorous.Body.STP,
+		body="Hjarrandi Breastplate",
         ring2="Flamma Ring",
         legs="Pteroslaver Brais +3",
         waist="Ioskeha Belt",
@@ -413,10 +414,10 @@ function init_gear_sets()
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
         ear1="Cessance Earring",
-        neck="Dragoon's Collar +2",
+        neck="Shulmanu Collar",
         hands="Flamma Manopolas +2",
         ring2="Regal Ring",
-		body=Valorous.Body.STP,
+		body="Hjarrandi Breastplate",
         legs="Sulevia's Cuisses +2"
     })
 
@@ -424,25 +425,31 @@ function init_gear_sets()
         ammo="Crepuscular Pebble",
         head="Hjarrandi Helm",
         neck="Dragoon's Collar +2",
-   	    body="Tartarus Platemail",
+		body="Hjarrandi Breastplate",
         ring1="Niqmaddu Ring",
         ring2="Dreki Ring",
-        hands="Sulevia's Gauntlets +2",
-        legs="Arke Cosciales",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
         waist="Sailfi Belt +1",
+        feet="Nyame Sollerets"
     })
 	sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
         head="Hjarrandi Helm",
-   	    body="Tartarus Platemail",
+   	    body="Nyame Mail",
         ring2="Patricius Ring",
-        legs="Arke Cosciales",
 		back=Brigantia.TP,
+        hands="Nyame Gauntlets",
+   	    body="Nyame Mail",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
     })
 	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
         ring2="Patricius Ring",
-   	    body="Tartarus Platemail",
-        legs="Arke Cosciales",
 		back=Brigantia.TP,
+        hands="Nyame Gauntlets",
+   	    body="Nyame Mail",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
     })
 
     sets.engaged.War = set_combine(sets.engaged, {
