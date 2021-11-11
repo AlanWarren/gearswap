@@ -244,6 +244,7 @@ function init_gear_sets()
     sets.Sword = { 
         main={name="Naegling", bag="Inventory", priority=1},
         sub={name="Nusku Shield", priority=2},
+        ranged=state.GunSelector.current
     }
     -- sets.Sword.engaged = set_combine(sets.Melee, sets.Sword, {
     --     ear2="Cessance Earring",
@@ -255,6 +256,7 @@ function init_gear_sets()
     sets.DualSword = { 
         main={name="Naegling", bag="Inventory", priority=1},
         sub={name="Blurred Knife +1", bag="Inventory", priority=2},
+        ranged=state.GunSelector.current
     }
     -- sets.DualSword.engaged = set_combine(sets.Melee, sets.DualSword)
     -- sets.DualSword.engaged.PDT = set_combine(sets.DualSword.engaged, sets.Nyame)
@@ -283,6 +285,7 @@ function init_gear_sets()
     sets.Shooting = {
         main={name="Lanun Knife", bag="Inventory", priority=2},
         sub={name="Rostam", bag="Wardrobe 4", priority=1},
+        ranged=state.GunSelector.current
     }
     -- sets.Shooting.engaged = sets.Shooting
     -- sets.Shooting.engaged.PDT = sets.Shooting
@@ -290,6 +293,7 @@ function init_gear_sets()
     sets.Single = {
         main={name="Rostam", bag="Wardrobe 4", priority=1},
         sub={name="Nusku Shield", priority=2},
+        ranged=state.GunSelector.current
     }
     -- sets.Single.engaged = sets.Single
     -- sets.Single.engaged.PDT = sets.Single
@@ -884,9 +888,6 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
     if spell.type == 'WeaponSkill' then
-        if state.CapacityMode.value then
-            equip(sets.CapacityMantle)
-        end
         if spell.english == 'Leaden Salute' then
             if world.weather_element == 'Dark' or world.day_element == 'Dark' then
                 equip(sets.Obi)
@@ -962,13 +963,10 @@ function job_buff_change(buff, gain)
     if not gain and player.equipment.ring1 == 'Warp Ring' then
         equip({ring1="Warp Ring"})
     end
-   
-    if buff == 'Triple Shot' and gain then
-        windower.send_command('wait 90;input /echo **TRIPLE SHOT OFF**;wait 210;input /echo **TRIPLE SHOT READY**')
-    end
 
     -- DoubleShot CombatForm
     if (buff == 'Triple Shot' and gain or buffactive['Triple Shot']) then
+        windower.send_command('wait 90;input /echo **TRIPLE SHOT OFF**;wait 210;input /echo **TRIPLE SHOT READY**')
         state.CombatForm:set('TripleShot')
         if not midaction() then
             handle_equipping_gear(player.status)
@@ -1032,12 +1030,6 @@ function job_buff_change(buff, gain)
     end
 end
 
-function update_combat_form()
-    state.CombatForm:reset()
-    if state.Buff['Triple Shot'] then
-        state.CombatForm:set('TripleShot')
-    end
-end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------
@@ -1112,7 +1104,7 @@ end
 function get_combat_form()
     state.CombatForm:reset()
     if state.Buff['Triple Shot'] then
-        state.CombatForm:set('Triple')
+        state.CombatForm:set('TripleShot')
     end
     if state.FightingMode.current == 'Melee' or state.FightingMode.current == 'DualSword' then 
         state.CombatForm:set('Melee')

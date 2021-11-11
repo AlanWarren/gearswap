@@ -374,8 +374,8 @@ function init_gear_sets()
         -- neck = "Buffoon's Collar +1",
         -- body = "Karagoz Farsetto",
         hands = Artifact_Foire.Hands_Mane_Overload,
-        back=Visucius.PET
-        -- ear1 = "Burana Earring"
+        back=Visucius.PET,
+        ear1="Burana Earring"
     }
 
     sets.precast.JA["Activate"] = {
@@ -614,6 +614,7 @@ function init_gear_sets()
         Idle Mode = Idle
     ]]
     sets.idle.Pet = set_combine(sets.idle, {
+        ear2="Burana Earring",
         ring2="Paguroidea Ring",
         body="Mpaca's Doublet'",
         -- feet="Hermes' Sandals"
@@ -667,6 +668,8 @@ function init_gear_sets()
         main="Ohtas",
         body="Mpaca's Doublet",
         waist="Klouskap Sash",
+        ear1="Crepuscular Earring",
+        ear2="Burana Earring",
         ring1="Varar Ring",
         ring2="Varar Ring",
         back=Visucius.PET,
@@ -680,7 +683,12 @@ function init_gear_sets()
         head="Rao Kabuto",
         main="Ohtas",
         back=Visucius.PET,
+        body="Mpaca's Doublet",
         waist="Klouskap Sash",
+        ear1="Crepuscular Earring",
+        ear2="Burana Earring",
+        ring1="Varar Ring",
+        ring2="Varar Ring",
     })
 
     --[[
@@ -688,10 +696,14 @@ function init_gear_sets()
         Hybrid Mode = TP
     ]]
     sets.idle.Pet.Engaged.TP = set_combine(sets.engaged.MasterPet, {
-        main="Ohtas",
         head="Rao Kabuto",
-        body="Mpaca's Doublet'",
+        main="Ohtas",
+        body="Mpaca's Doublet",
         waist="Klouskap Sash",
+        ear1="Crepuscular Earring",
+        ear2="Burana Earring",
+        ring1="Varar Ring",
+        ring2="Varar Ring",
         back=Visucius.PET,
     })
 
@@ -703,6 +715,8 @@ function init_gear_sets()
         head="Rao Kabuto",
         main="Midnights",
         body="Mpaca's Doublet",
+        ear1="Crepuscular Earring",
+        ear2="Burana Earring",
         waist="Klouskap Sash",
         ring1="Varar Ring",
         ring2="Varar Ring",
@@ -715,6 +729,7 @@ function init_gear_sets()
         Hybrid Mode = Regen
     ]]
     sets.idle.Pet.Engaged.Regen = set_combine(sets.engaged.MasterPet, {
+        ear2="Burana Earring",
         back=Visucius.PET,
     })
 
