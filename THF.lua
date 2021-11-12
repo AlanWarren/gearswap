@@ -409,11 +409,12 @@ function init_gear_sets()
         ear1="Moonshade Earring",
         ear2="Friomisi Earring",
         body=HercBody.WSD,
-        hands=HercHands.MAB,
+        --hands=HercHands.MAB,
+        hands="Plunderer's Armlets +1",
         ring1="Regal Ring",
         ring2="Dingir Ring",
-        waist="Thunder Belt",
-        legs=HercLegs.MAB,
+        waist="Chaac Belt",
+        legs=HercLegs.TH,
         feet=HercFeet.MAB
     }
 

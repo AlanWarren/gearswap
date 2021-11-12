@@ -359,7 +359,7 @@ function init_gear_sets()
     }
 
     sets.precast.JA["Overdrive"] = {
-        -- body = Relic_Pitre.Body_PTP
+        body=Relic_Pitre.Body_PTP
     }
 
     sets.precast.JA["Repair"] = {
@@ -666,7 +666,7 @@ function init_gear_sets()
     sets.idle.Pet.Engaged = set_combine(sets.engaged.MasterPet, {
         head="Rao Kabuto",
         main="Ohtas",
-        body="Mpaca's Doublet",
+        body=Relic_Pitre.Body_PTP,
         waist="Klouskap Sash",
         ear1="Crepuscular Earring",
         ear2="Burana Earring",
@@ -683,7 +683,7 @@ function init_gear_sets()
         head="Rao Kabuto",
         main="Ohtas",
         back=Visucius.PET,
-        body="Mpaca's Doublet",
+        body=Relic_Pitre.Body_PTP,
         waist="Klouskap Sash",
         ear1="Crepuscular Earring",
         ear2="Burana Earring",
@@ -698,7 +698,7 @@ function init_gear_sets()
     sets.idle.Pet.Engaged.TP = set_combine(sets.engaged.MasterPet, {
         head="Rao Kabuto",
         main="Ohtas",
-        body="Mpaca's Doublet",
+        body=Relic_Pitre.Body_PTP,
         waist="Klouskap Sash",
         ear1="Crepuscular Earring",
         ear2="Burana Earring",
