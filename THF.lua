@@ -37,7 +37,7 @@ end
 function user_setup()
     -- Options: Override default values
     state.OffenseMode:options('Normal', 'Mid', 'Acc')
-    state.HybridMode:options('Normal', 'PDT')
+    state.HybridMode:options('Normal', 'PDT', 'EVA')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
     state.IdleMode:options('Normal')
@@ -188,7 +188,7 @@ function init_gear_sets()
         ring2="Ilabrat Ring",
         waist="Chaac Belt",
         legs="Pillager's Culottes +3",
-        feet="Raider's Poulaines +2"
+        feet="Raider's Poulaines +3"
     }
     sets.precast.Flourish1 = sets.TreasureHunter
     sets.precast.JA.Provoke = sets.TreasureHunter
@@ -218,18 +218,18 @@ function init_gear_sets()
         waist="Yemaya Belt"
     }
     sets.midcast.RA = {
-        head="Malignance Chapeau",
         neck="Iskur Gorget",
         ear1="Crepuscular Earring",
         ear2="Telos Earring",
+        head="Malignance Chapeau",
         body="Malignance Tabard",
         hands="Malignance Gloves",
+        legs="Malignance Tights", 
+        feet="Malignance Boots",
         ring1="Cacoethic Ring +1",
         ring2="Crepuscular Ring", -- 3
         waist="Yemaya Belt",
         --back="Quarrel Mantle",
-        legs="Malignance Tights", 
-        feet="Malignance Boots"
     }
     --sets.midcast['Enfeebling Magic'] = sets.midcast.RA
 
@@ -547,21 +547,42 @@ function init_gear_sets()
         waist="Olseni Belt",
         feet="Plunderer's Poulaines +3"
     })
-    sets.engaged.PDT = set_combine(sets.engaged, sets.Nyame, {
+    sets.engaged.EVA = set_combine(sets.engaged, {
+        ammo="Crepuscular Pebble",
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
+        legs="Malignance Tights", 
+        feet="Malignance Boots",
+        neck="Assassin's Gorget +1",
+        ring1="Ilabrat Ring",
+        ring2="Gere Ring",
+        back=Toutatis.STP,
+    })
+    sets.engaged.Mid.EVA = set_combine(sets.engaged.EVA, {
         ammo="Yamarang",
+    })
+    sets.engaged.Acc.EVA = set_combine(sets.engaged.EVA, {
+        waist="Olseni Belt"
+    })
+
+    sets.engaged.PDT = set_combine(sets.engaged, {
+        ammo="Crepuscular Pebble",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
         neck="Assassin's Gorget +1",
         ring1="Defending Ring",
         ring2="Gere Ring",
         back=Toutatis.STP,
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
-        body="Pillager's Vest +3",
-        --ring1="Patricius Ring",
-        back="Canny Cape",
+        ammo="Yamarang",
+        ring1="Ilabrat Ring"
     })
     sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT, {
-        body="Pillager's Vest +3",
-        back="Canny Cape",
         waist="Olseni Belt"
     })
    
@@ -576,39 +597,18 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_15 = set_combine(sets.engaged.Acc, {
         hands="Adhemar Wristbands +1",
     })
-    sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, sets.Nyame, { 
-        neck="Assassin's Gorget +1",
-        ring1="Defending Ring",
-        ring2="Gere Ring",
-        back=Toutatis.STP,
-    })
-    sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.PDT.Haste_15, {
-        ammo="Yamarang",
-        head="Nyame Helm",
-        body="Nyame Mail",
-        hands="Nyame Gauntlets",
-        legs="Nyame Flanchard",
-        feet="Nyame Sollerets",
-        -- ring2="Patricius Ring",
-        --back="Canny Cape",
-    })
-    sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Mid.PDT.Haste_15, {
-        head="Nyame Helm",
-        body="Nyame Mail",
-        hands="Nyame Gauntlets",
-        legs="Nyame Flanchard",
-        feet="Nyame Sollerets",
-        -- back="Canny Cape",
-        waist="Olseni Belt",
-    })
+    sets.engaged.EVA.Haste_15 = sets.engaged.EVA
+    sets.engaged.Mid.EVA.Haste_15 = sets.engaged.Mid.EVA
+    sets.engaged.Acc.EVA.Haste_15 = sets.engaged.Acc.EVA
+    
+    sets.engaged.PDT.Haste_15 = sets.engaged.PDT
+    sets.engaged.Mid.PDT.Haste_15 = sets.engaged.Mid.PDT
+    sets.engaged.Acc.PDT.Haste_15 = sets.engaged.Acc.PDT
     
     -- 30
     sets.engaged.Haste_30 = set_combine(sets.engaged, {
         body="Pillager's Vest +3",
         hands="Adhemar Wristbands +1",
-        -- hands="Regal Gloves",
-        -- ear1="Sherida Earring",
-        -- ear2="Suppanomimi",
         back=Toutatis.STP,
         feet="Plunderer's Poulaines +3"
     })
@@ -627,21 +627,13 @@ function init_gear_sets()
         back=Toutatis.STP,
         feet="Mummu Gamashes +2"
     })
-    sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, sets.Nyame, { 
-        ammo="Yamarang",
-        neck="Assassin's Gorget +1",
-        ring1="Defending Ring",
-        ring2="Gere Ring",
-        back=Toutatis.STP,
-    })
-    sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.PDT.Haste_30, {
-        ring2="Patricius Ring",
-        back=Toutatis.STP,
-    })
-    sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Mid.PDT.Haste_30, {
-        back=Toutatis.STP,
-        waist="Olseni Belt"
-    })
+    sets.engaged.EVA.Haste_30 = sets.engaged.EVA
+    sets.engaged.Mid.EVA.Haste_30 = sets.engaged.Mid.EVA
+    sets.engaged.Acc.EVA.Haste_30 = sets.engaged.Acc.EVA
+    
+    sets.engaged.PDT.Haste_30 = sets.engaged.PDT
+    sets.engaged.Mid.PDT.Haste_30 = sets.engaged.Mid.PDT
+    sets.engaged.Acc.PDT.Haste_30 = sets.engaged.Acc.PDT
 
     -- Haste 43%
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
@@ -656,14 +648,14 @@ function init_gear_sets()
         back=Toutatis.STP,
         waist="Windbuffet Belt +1",
         legs="Pillager's culottes +3",
-        feet="Plunderer's Poulaines +2"
+        feet="Plunderer's Poulaines +3"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, { 
         head="Adhemar Bonnet +1",
         ear1="Telos Earring",
         body="Pillager's Vest +3",
         ring1="Regal Ring",
-        feet="Plunderer's Poulaines +2"
+        feet="Plunderer's Poulaines +3"
     })
     sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.MaxHaste.Mid, {
         head="Pillager's bonnet +3",
@@ -674,23 +666,45 @@ function init_gear_sets()
         waist="Olseni Belt",
         back=Toutatis.STP,
         legs="Pillager's culottes +3",
-        feet="Mummu Gamashes +2"
+        -- feet="Mummu Gamashes +2"
     })
-    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.Nyame, {
-        ammo="Yamarang",
+    sets.engaged.EVA.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        ammo="Crepuscular Pebble",
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
+        legs="Malignance Tights", 
+        feet="Malignance Boots",
+        neck="Assassin's Gorget +1",
+        ring1="Defending Ring",
+        ring2="Gere Ring",
+        back=Toutatis.STP,
+    })
+    sets.engaged.Mid.EVA.MaxHaste = set_combine(sets.engaged.EVA.MaxHaste, {
+        ring1="Ilabrat Ring",
+        back=Toutatis.STP,
+    })
+    sets.engaged.Acc.EVA.MaxHaste = set_combine(sets.engaged.Mid.EVA.MaxHaste, {
+        waist="Olseni Belt"
+    })
+    
+    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        ammo="Crepuscular Pebble",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
         neck="Assassin's Gorget +1",
         ring1="Defending Ring",
         ring2="Gere Ring",
         back=Toutatis.STP,
     })
     sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.PDT.MaxHaste, {
-        body="Pillager's Vest +3",
-        ring2="Patricius Ring",
+        ring1="Ilabrat Ring",
         back=Toutatis.STP,
     })
     sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Mid.PDT.MaxHaste, {
-        body="Pillager's Vest +3",
-        back=Toutatis.STP,
         waist="Olseni Belt"
     })
     
