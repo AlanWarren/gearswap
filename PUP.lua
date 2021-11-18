@@ -241,7 +241,7 @@ function init_gear_sets()
     HercBody = {}
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
-    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
+    --HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
     HercHands.WSD = { name="Herculean Gloves", augments={'Accuracy+23 Attack+23','Weapon skill damage +3%','STR+10','Accuracy+10','Attack+1',}}
     
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
@@ -306,18 +306,18 @@ function init_gear_sets()
     sets.idle = {
         main="Sakpata's Fists",
         --head="Pitre Taj",
-        head="Rao Kabuto",
+        head="Nyame Helm",
         neck="Sanctity Necklace",
         ear1="Infused Earring",
         ear2="Genmei Earring",
         --body="Foire Tobe",
         body="Hizamaru Haramaki +2",
-        hands="Mpaca's Gloves",
+        hands="Nyame Gauntlets",
         ring1="Defending Ring",
         ring2="Paguroidea Ring",
         back=Visucius.PET,
         waist="Moonbow Belt",
-        legs="Mpaca's Hose",
+        legs="Nyame Flanchard",
         feet="Hermes' Sandals"
     }
 
@@ -371,7 +371,7 @@ function init_gear_sets()
 
     sets.precast.JA.Maneuver = {
         main="Midnights",
-        -- neck = "Buffoon's Collar +1",
+        neck="Buffoon's Collar",
         -- body = "Karagoz Farsetto",
         hands = Artifact_Foire.Hands_Mane_Overload,
         back=Visucius.PET,
@@ -417,27 +417,30 @@ function init_gear_sets()
     sets.precast.WS["Stringing Pummel"].Mod = set_combine(sets.precast.WS, {})
 
     sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
-        ear1="Brutal Earring",
+        ear1="Schere Earring",
         ear2="Moonshade Earring",
         body="Mpaca's Doublet",
         hands="Mpaca's Gloves'",
         neck="Breeze Gorget"
     })
     sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS["Victory Smite"], {
-        neck="Shulmanu Collar"
+        ear1="Schere Earring",
+        neck="Shulmanu Collar",
+        body="Tali'ah Manteel +2",
     })
 
     sets.precast.WS["Shijin Spiral"] =
         set_combine(
         sets.precast.WS, {
-            head=HercHead.DM,
+            ear1="Schere Earring",
+            head="Malignance Chapeau",
             neck="Flame Gorget",
-            waist="Light Belt"
+            hands="Malignance Gloves",
+            body="Tali'ah Manteel +2",
+            waist="Moonbow Belt"
         }
 
     )
-
-    sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS, {})
 
     -------------------------------------Idle
     --[[
@@ -471,8 +474,9 @@ function init_gear_sets()
         head=HercHead.TP,
         neck="Shulmanu Collar",
         ear1="Mache Earring",
-        ear2="Telos Earring",
-        body="Tali'ah Manteel +2",
+        ear2="Schere Earring",
+        --body="Tali'ah Manteel +2",
+        body="Mpaca's Doublet",
         hands="Mpaca's Gloves",
         ring1="Niqmaddu Ring",
         ring2="Gere Ring",
@@ -530,8 +534,8 @@ function init_gear_sets()
         neck="Shulmanu Collar",
         ear1="Crepuscular Earring",
         ear2="Mache Earring",
-        -- body="Mpaca's Doublet",
-        body="Tali'ah Manteel +2",
+        body="Mpaca's Doublet",
+        --body="Tali'ah Manteel +2",
         hands="Mpaca's Gloves",
         ring1="Niqmaddu Ring",
         ring2="Gere Ring",
@@ -616,7 +620,7 @@ function init_gear_sets()
     sets.idle.Pet = set_combine(sets.idle, {
         ear2="Burana Earring",
         ring2="Paguroidea Ring",
-        body="Mpaca's Doublet'",
+        --body="",
         -- feet="Hermes' Sandals"
     })
 

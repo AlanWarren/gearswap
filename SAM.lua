@@ -274,6 +274,7 @@ function init_gear_sets()
     
     sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
         head="Mpaca's Cap",
+        ear1="Schere Earring",
         --head="Flamma Zucchetto +2",
         neck="Samurai's Nodowa +2",
         waist="Sailfi Belt +1",
@@ -287,6 +288,7 @@ function init_gear_sets()
 
     sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS['Tachi: Shoha'], {
         head="Mpaca's Cap",
+        ear1="Schere Earring",
         neck="Samurai's Nodowa +2",
         waist="Soil Belt"
     })
@@ -451,7 +453,7 @@ function init_gear_sets()
         head="Flamma Zucchetto +2",
         --neck="Moonbeam Nodowa",
         neck="Samurai's Nodowa +2",
-        ear1="Brutal Earring",
+        ear1="Schere Earring",
         ear2="Dedition Earring",
         body="Kendatsuba Samue +1",
         hands="Wakido Kote +3",
@@ -469,7 +471,8 @@ function init_gear_sets()
         -- hands=Valorous.Hands.TP,
         neck="Samurai's Nodowa +2",
         body="Kendatsuba Samue +1",
-        ear1="Telos Earring",
+        --ear1="Telos Earring",
+        ear1="Schere Earring",
         ear2="Cessance Earring",
         legs="Kendatsuba Hakama +1",
         waist="Ioskeha Belt",
@@ -481,7 +484,9 @@ function init_gear_sets()
     })
 
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        ear1="Telos Earring",
         --ear2="Crepuscular Earring", 
+        ammo="Ginsen",
         head="Kendatsuba Jinpachi +1",
         neck="Samurai's Nodowa +2",
         hands="Kendatsuba Tekko +1",

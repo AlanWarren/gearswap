@@ -123,7 +123,7 @@ function init_gear_sets()
     HercHands = {}
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
-    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
+    --HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
     HercHands.WSD = { name="Herculean Gloves", augments={'Accuracy+23 Attack+23','Weapon skill damage +3%','STR+10','Accuracy+10','Attack+1',}}
 
     HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
@@ -871,7 +871,7 @@ function init_gear_sets()
         ear1="Friomisi Earring",
         neck="Sanctity Necklace",
         body="Nyame Mail",
-        hands=HercHands.MAB,
+        hands="Nyame Gauntlets",
         ring1="Regal Ring",
         ring2="Dingir Ring",
         legs="Nyame Flanchard",

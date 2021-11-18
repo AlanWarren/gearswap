@@ -464,8 +464,9 @@ function init_gear_sets()
         head="Sakpata's Helm",
         neck="Breeze Gorget",
         body="Sakpata's Plate",
+        ear1="Schere Earring",
         --body="Valorous Mail",
-        hands="Sulevia's Gauntlets +2",
+        hands="Sakpata's Gauntlets",
         waist="Soil Belt",
         legs="Fallen's Flanchard +3",
         feet="Sulevia's Leggings +2"
@@ -553,6 +554,7 @@ function init_gear_sets()
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
         head="Sakpata's Helm",
         body="Ignominy Cuirass +3",
+        ear1="Schere Earring",
         --body="Ratri Breastplate +1",
         hands="Sakpata's Gauntlets",
         waist="Metalsinger Belt",
@@ -575,7 +577,7 @@ function init_gear_sets()
         ammo="Crepuscular Pebble",
         head="Sakpata's Helm",
         neck="Abyssal Bead Necklace +2",
-        ear1="Malignance Earring",
+        ear1="Schere Earring",
         ear2="Moonshade Earring",
         body="Sakpata's Plate",
         hands="Sakpata's Gauntlets",
@@ -810,6 +812,7 @@ function init_gear_sets()
         ring2="Regal Ring",
     })
     sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        ammo="Ginsen",
         -- ammo="Hasty Pinion +1",
         ear1="Cessance Earring",
         ear2="Telos Earring",
@@ -840,9 +843,14 @@ function init_gear_sets()
     sets.engaged.Haste.Acc.PDT = set_combine(sets.engaged.Acc.PDT, sets.DefensiveHigh)
 
     -- Liberator
-    sets.engaged.Liberator = sets.engaged
-    sets.engaged.Liberator.Mid = sets.engaged.Mid
+    sets.engaged.Liberator = set_combine(sets.engaged, {
+        ear1="Schere Earring",
+    })
+    sets.engaged.Liberator.Mid = set_combine(sets.engaged.Mid, {
+        ear1="Schere Earring",
+    })
     sets.engaged.Liberator.Acc = set_combine(sets.engaged.Acc, {
+        ear1="Schere Earring",
         body="Flamma Korazin +2",
     })
 
@@ -925,7 +933,8 @@ function init_gear_sets()
 
     -- Apocalypse
     sets.engaged.Apocalypse = set_combine(sets.engaged, {
-        ear1="Cessance Earring",
+        -- ear1="Cessance Earring",
+        ear1="Schere Earring",
         ear2="Brutal Earring",
         body="Sakpata's Plate",
         hands="Sakpata's Gauntlets",
@@ -933,7 +942,8 @@ function init_gear_sets()
         back=Ankou.DA
     })
     sets.engaged.Apocalypse.Mid = set_combine(sets.engaged.Mid, {
-        ear1="Cessance Earring",
+        -- ear1="Cessance Earring",
+        ear1="Schere Earring",
         ear2="Telos Earring",
         ring2="Flamma Ring",
         hands="Sakpata's Gauntlets",

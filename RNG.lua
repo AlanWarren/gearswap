@@ -128,15 +128,15 @@ function init_gear_sets()
     HercBody = {}
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
-    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
+    --HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
     
     HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
     
-    HercBody.MAB = { name="Herculean Vest", augments={'Haste+1','"Mag.Atk.Bns."+27','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
+    --HercBody.MAB = { name="Herculean Vest", augments={'Haste+1','"Mag.Atk.Bns."+27','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
     HercBody.WSD = { name="Herculean Vest", augments={'"Blood Pact" ability delay -4','AGI+3','Weapon skill damage +9%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
     
-    HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
+    --HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
     HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
@@ -582,12 +582,12 @@ function init_gear_sets()
     })
     -- WILDFIRE
     sets.precast.WS['Wildfire'] = {
-        head=HercHead.DM,
+        head="",
+        body="Cohort Cloak +1",
         ear1="Friomisi Earring",
         ear2="Crematio Earring",
         neck="Scout's Gorget +2",
         hands="Carmine Finger Gauntlets +1",
-        body=HercBody.MAB,
         ring1="Regal Ring",
         ring2="Dingir Ring",
         back=Belenus.MAB,
@@ -596,8 +596,7 @@ function init_gear_sets()
         feet=HercFeet.MAB
     }
     sets.precast.WS['Wildfire'].Mid = set_combine(sets.precast.WS['Wildfire'], {
-        --head=HercHead.MAB,
-        body="Nyame Mail",
+        --body="Nyame Mail",
         hands="Nyame Gauntlets",
         legs="Nyame Flanchard"
     })
@@ -611,29 +610,29 @@ function init_gear_sets()
     sets.precast.WS['Wildfire'].Acc.Gun = set_combine(sets.precast.WS['Wildfire'].Acc, { ammo="Devastating Bullet"})
     
     sets.precast.WS['Trueflight'] = {
-        head=HercHead.DM,
+        head="",
+        body="Cohort Cloak +1",
         ear1="Friomisi Earring",
         ear2="Moonshade Earring",
         neck="Scout's Gorget +2",
         hands="Carmine Finger Gauntlets +1",
-        body=HercBody.MAB,
         ring1="Weatherspoon Ring",
         ring2="Dingir Ring",
         back=Belenus.MAB,
         waist="Sveltesse Gouriz +1",
-        legs=HercLegs.MAB,
+        --legs=HercLegs.MAB,
+        legs="Arcadian Braccae +3", 
         --legs="Arcadian Braccae +3", 
         feet=HercFeet.MAB
     }
     sets.precast.WS['Trueflight'].Mid = set_combine(sets.precast.WS['Trueflight'], {
-        head=HercHead.MAB,
         legs="Arcadian Braccae +3", 
-        --hands="Nyame Gauntlets",
-        hands="Carmine Finger Gauntlets +1",
+        hands="Nyame Gauntlets",
+        --hands="Carmine Finger Gauntlets +1",
         --legs="Arcadian Braccae +3", 
     })
     sets.precast.WS['Trueflight'].Acc = set_combine(sets.precast.WS['Trueflight'].Mid, {
-        body="Nyame Mail",
+        -- body="Nyame Mail",
         hands="Nyame Gauntlets",
         legs="Arcadian Braccae +3", 
     })

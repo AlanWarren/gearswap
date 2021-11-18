@@ -218,7 +218,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
     state.OffenseMode:options('Normal', 'Mid', 'Acc', 'Learning')
-    state.HybridMode:options('Normal', 'PDT')
+    state.HybridMode:options('Normal', 'PDT', 'EVA')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Learning')
@@ -488,10 +488,10 @@ function init_gear_sets()
 
 
     -- Magical Spells --
-    
     sets.midcast['Blue Magic'].Magical = {
         ammo="Pemphredo Tathlum",
-        head=HercHead.MAB,
+        --head=HercHead.MAB,
+        head="White rarab cap +1",
         neck="Eddy Necklace",
         ear1="Friomisi Earring",
         ear2="Regal Earring",
@@ -500,8 +500,9 @@ function init_gear_sets()
         ring1="Shiva Ring",
         ring2="Shiva Ring",
         back="Cornflower Cape",
-        waist="Yamabuki-no-Obi",
-        legs=HercLegs.MAB,
+        --waist="Yamabuki-no-Obi",
+        waist="Chaac Belt",
+        legs=HercLegs.TH,
         feet="Jhakri Pigaches +2"
     }
 
@@ -728,29 +729,58 @@ function init_gear_sets()
     })
 
     sets.engaged.PDT = set_combine(sets.engaged, {
-        head="Malignance Chapeau",
-        body="Malignance Tabard",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard", 
+        feet="Nyame Sollerets",
         neck="Twilight Torque",
         ring1="Defending Ring",
+    })
+    sets.engaged.EVA = set_combine(sets.engaged, {
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
         hands="Malignance Gloves",
         legs="Malignance Tights", 
-        feet="Malignance Boots"
+        feet="Malignance Boots",
+        neck="Twilight Torque",
+        ring1="Defending Ring",
     })
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
-        head="Malignance Chapeau",
-        body="Malignance Tabard",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard", 
+        feet="Nyame Sollerets",
         neck="Twilight Torque",
         ring1="Defending Ring",
-        hands="Malignance Gloves",
         ring2="Patricius Ring",
+    })
+    sets.engaged.Mid.EVA = set_combine(sets.engaged.Mid, {
+        head="Malignance Chapeau",
+        body="Malignance Tabard",
+        hands="Malignance Gloves",
         legs="Malignance Tights", 
+        feet="Malignance Boots",
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
     })
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid.PDT, {
-        head="Malignance Chapeau",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard", 
+        feet="Nyame Sollerets",
         ring1="Defending Ring",
+    })
+    sets.engaged.Acc.EVA = set_combine(sets.engaged.Mid.EVA, {
+        head="Malignance Chapeau",
         body="Malignance Tabard",
-        legs="Malignance Tights", 
         hands="Malignance Gloves",
+        legs="Malignance Tights", 
+        feet="Malignance Boots",
+        ring1="Defending Ring",
     })
 
     sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
@@ -777,7 +807,7 @@ function init_gear_sets()
      })
      sets.engaged.Learning.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.Learning)
     
-    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+    sets.engaged.EVA.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         ammo="Crepuscular Pebble",
         neck="Twilight Torque",
         head="Malignance Chapeau",
@@ -788,17 +818,51 @@ function init_gear_sets()
         ring2="Patricius Ring",
         feet="Malignance Boots"
     })
-    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+    sets.engaged.Mid.EVA.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
         ammo="Crepuscular Pebble",
         neck="Twilight Torque",
         body="Malignance Tabard",
         ring1="Defending Ring",
         ring2="Patricius Ring",
     })
-    sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, {
+    sets.engaged.Acc.EVA.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, {
         ammo="Crepuscular Pebble",
         neck="Twilight Torque",
         body="Malignance Tabard",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+    })
+    
+    sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+        ammo="Crepuscular Pebble",
+        neck="Twilight Torque",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+    })
+    sets.engaged.Mid.PDT.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+        ammo="Crepuscular Pebble",
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+    })
+    sets.engaged.Acc.PDT.MaxHaste = set_combine(sets.engaged.Acc.MaxHaste, {
+        ammo="Crepuscular Pebble",
+        neck="Twilight Torque",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
         ring1="Defending Ring",
         ring2="Patricius Ring",
     })
@@ -824,6 +888,39 @@ function init_gear_sets()
 
     sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.Haste_35, {
         ammo="Crepuscular Pebble",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+    })
+    sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
+        ammo="Crepuscular Pebble",
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+    })
+    sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {
+        ammo="Crepuscular Pebble",
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+    })
+    sets.engaged.EVA.Haste_35 = set_combine(sets.engaged.Haste_35, {
+        ammo="Crepuscular Pebble",
         head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
@@ -833,7 +930,7 @@ function init_gear_sets()
         legs="Malignance Tights", 
         feet="Malignance Boots"
     })
-    sets.engaged.Mid.PDT.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
+    sets.engaged.Mid.EVA.Haste_35 = set_combine(sets.engaged.Mid.Haste_35, {
         ammo="Crepuscular Pebble",
         head="Malignance Chapeau",
         neck="Twilight Torque",
@@ -844,7 +941,7 @@ function init_gear_sets()
         legs="Malignance Tights", 
         feet="Malignance Boots"
     })
-    sets.engaged.Acc.PDT.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {
+    sets.engaged.Acc.EVA.Haste_35 = set_combine(sets.engaged.Acc.Haste_35, {
         ammo="Crepuscular Pebble",
         head="Malignance Chapeau",
         neck="Twilight Torque",
@@ -876,32 +973,53 @@ function init_gear_sets()
 
     sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.Haste_30, {
         ammo="Crepuscular Pebble",
-        head="Malignance Chapeau",
-        --neck="Twilight Torque",
         ring1="Defending Ring",
-        --ring2="Patricius Ring",
-        body="Malignance Tabard",
-        legs="Malignance Tights", 
-        hands="Malignance Gloves",
-        feet="Malignance Boots"
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
     })
     sets.engaged.Mid.PDT.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         ammo="Crepuscular Pebble",
-        head="Malignance Chapeau",
-        --neck="Twilight Torque",
         ring1="Defending Ring",
-        --ring2="Patricius Ring",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+    })
+    sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, {
+        ammo="Crepuscular Pebble",
+        ring1="Defending Ring",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+    })
+    sets.engaged.EVA.Haste_30 = set_combine(sets.engaged.Haste_30, {
+        ammo="Crepuscular Pebble",
+        head="Malignance Chapeau",
+        ring1="Defending Ring",
         body="Malignance Tabard",
         legs="Malignance Tights", 
         hands="Malignance Gloves",
         feet="Malignance Boots"
     })
-    sets.engaged.Acc.PDT.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, {
+    sets.engaged.Mid.EVA.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
         ammo="Crepuscular Pebble",
         head="Malignance Chapeau",
-        --neck="Twilight Torque",
         ring1="Defending Ring",
-        --ring2="Patricius Ring",
+        body="Malignance Tabard",
+        legs="Malignance Tights", 
+        hands="Malignance Gloves",
+        feet="Malignance Boots"
+    })
+    sets.engaged.Acc.EVA.Haste_30 = set_combine(sets.engaged.Acc.Haste_30, {
+        ammo="Crepuscular Pebble",
+        head="Malignance Chapeau",
+        ring1="Defending Ring",
         body="Malignance Tabard",
         legs="Malignance Tights", 
         hands="Malignance Gloves",
@@ -917,14 +1035,36 @@ function init_gear_sets()
     sets.engaged.Acc.Haste_15 = sets.engaged.Acc.Haste_30
     
     sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.Haste_15, {
-        head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
         ring2="Patricius Ring",
-        body="Malignance Tabard",
-        legs="Malignance Tights", 
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
     })
     sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+    })
+    sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, {
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+    })
+    sets.engaged.EVA.Haste_15 = set_combine(sets.engaged.Haste_15, {
         head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",
@@ -932,7 +1072,15 @@ function init_gear_sets()
         body="Malignance Tabard",
         legs="Malignance Tights", 
     })
-    sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, {
+    sets.engaged.Mid.EVA.Haste_15 = set_combine(sets.engaged.Mid.Haste_15, {
+        head="Malignance Chapeau",
+        neck="Twilight Torque",
+        ring1="Defending Ring",
+        ring2="Patricius Ring",
+        body="Malignance Tabard",
+        legs="Malignance Tights", 
+    })
+    sets.engaged.Acc.EVA.Haste_15 = set_combine(sets.engaged.Acc.Haste_15, {
         head="Malignance Chapeau",
         neck="Twilight Torque",
         ring1="Defending Ring",

@@ -90,7 +90,7 @@ function init_gear_sets()
     HercBody = {}
 
     HercHands.R = { name="Herculean Gloves", augments={'AGI+9','Accuracy+3','"Refresh"+1',}}
-    HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
+    --HercHands.MAB = { name="Herculean Gloves", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','INT+4','Mag. Acc.+8','"Mag.Atk.Bns."+13',}}
     
     HercBody.MAB = { name="Herculean Vest", augments={'Haste+1','"Mag.Atk.Bns."+27','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
     HercBody.WSD = { name="Herculean Vest", augments={'"Blood Pact" ability delay -4','AGI+3','Weapon skill damage +9%','Mag. Acc.+4 "Mag.Atk.Bns."+4',}}
@@ -98,7 +98,7 @@ function init_gear_sets()
     HercFeet.MAB = { name="Herculean Boots", augments={'Mag. Acc.+30','"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
     HercFeet.TP = { name="Herculean Boots", augments={'Accuracy+21 Attack+21','"Triple Atk."+4','DEX+8',}}
     --HercFeet.TH = { name="Herculean Boots", augments={'AGI+1','Weapon Skill Acc.+3','"Treasure Hunter"+1','Accuracy+19 Attack+19','Mag. Acc.+7 "Mag.Atk.Bns."+7',}}
-    HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
+    --HercHead.MAB = {name="Herculean Helm", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','Weapon skill damage +3%','INT+1','Mag. Acc.+3','"Mag.Atk.Bns."+8',}}
     HercHead.TP = { name="Herculean Helm", augments={'Accuracy+25','"Triple Atk."+4','AGI+6','Attack+14',}}
     HercHead.DM = { name="Herculean Helm", augments={'Pet: STR+9','Mag. Acc.+10 "Mag.Atk.Bns."+10','Weapon skill damage +9%','Accuracy+12 Attack+12',}}
 
@@ -341,7 +341,7 @@ function init_gear_sets()
         waist="Sailfi Belt +1",
         legs="Plunderer's Culottes +2",
         back=Toutatis.WSD,
-        feet=HercFeet.TP
+        feet="Plunderer's Poulaines +3"
     })
 -- Testing italics
     sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
@@ -357,7 +357,7 @@ function init_gear_sets()
         legs="Plunderer's Culottes +2",
         waist="Snow Belt",
         back=Toutatis.WSD,
-        feet=HercFeet.TP
+        feet="Plunderer's Poulaines +3"
     })
     sets.precast.WS["Rudra's Storm"].Mid = set_combine(sets.precast.WS["Rudra's Storm"], {
         ear2="Odr Earring",
@@ -526,7 +526,7 @@ function init_gear_sets()
         back=Toutatis.STP,
         waist="Patentia Sash",
         legs="Pillager's culottes +3",
-        feet="Plunderer's Poulaines +2"
+        feet="Plunderer's Poulaines +3"
     }
     sets.engaged.Mid = set_combine(sets.engaged, {
         ammo="Yamarang",
@@ -545,7 +545,7 @@ function init_gear_sets()
         back=Toutatis.STP,
         ring1="Regal Ring",
         waist="Olseni Belt",
-        feet=HercFeet.TP
+        feet="Plunderer's Poulaines +3"
     })
     sets.engaged.PDT = set_combine(sets.engaged, sets.Nyame, {
         ammo="Yamarang",
@@ -584,21 +584,22 @@ function init_gear_sets()
     })
     sets.engaged.Mid.PDT.Haste_15 = set_combine(sets.engaged.PDT.Haste_15, {
         ammo="Yamarang",
-        head="Malignance Chapeau",
-        body="Malignance Tabard",
-        hands="Malignance Gloves",
-        ring2="Patricius Ring",
-        legs="Malignance Tights",
-        back="Canny Cape",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+        -- ring2="Patricius Ring",
+        --back="Canny Cape",
     })
     sets.engaged.Acc.PDT.Haste_15 = set_combine(sets.engaged.Mid.PDT.Haste_15, {
-        head="Malignance Chapeau",
-        body="Malignance Tabard",
-        hands="Malignance Gloves",
-        back="Canny Cape",
-        legs="Malignance Tights",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+        -- back="Canny Cape",
         waist="Olseni Belt",
-        feet="Malignance Boots"
     })
     
     -- 30
@@ -609,7 +610,7 @@ function init_gear_sets()
         -- ear1="Sherida Earring",
         -- ear2="Suppanomimi",
         back=Toutatis.STP,
-        feet="Plunderer's Poulaines +2"
+        feet="Plunderer's Poulaines +3"
     })
     sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Haste_30, { 
         body="Pillager's Vest +3",

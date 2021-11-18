@@ -413,6 +413,7 @@ function init_gear_sets()
     })
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+        ammo="Ginsen",
         ear1="Cessance Earring",
         neck="Shulmanu Collar",
         hands="Flamma Manopolas +2",

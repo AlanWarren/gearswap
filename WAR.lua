@@ -147,7 +147,6 @@ function init_gear_sets()
      sets.precast.FC = {
          ammo="Impatiens",
          head="Sakpata's Helm",
-         body="Odyssean Chestplate",
          ear1="Loquacious Earring",
          hands="Leyline Gloves",
          ring1="Weatherspoon Ring", -- 10 macc
@@ -243,16 +242,17 @@ function init_gear_sets()
      sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
          head="Hjarrandi Helm",
          neck="Breeze Gorget",
-         hands="Sulevia's Gauntlets +2",
-         legs="Sulevia's Cuisses +2",
-    	 body=Valorous.Body.DA, 
+         ear1="Schere Earring",
+         hands="Sakpata's Gauntlets",
+         legs="Sakpata's Cuisses",
+    	 body="Sakpata's Plate'",
          waist="Soil Belt",
          feet="Flamma Gambieras +2"
      })
      sets.precast.WS['Resolution'].Mid = set_combine(sets.precast.WS.Resolution, {
          head="Flamma Zucchetto +2",
          ammo="Coiste Bodhar",
-         head="Valorous Mask",
+         --head="Valorous Mask",
      })
      sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Resolution.Mid, sets.precast.WS.Acc) 
 
@@ -274,7 +274,7 @@ function init_gear_sets()
     sets.precast.WS.Stardiver = set_combine(sets.precast.WS, {
         neck="Shadow Gorget",
         waist="Soil Belt",
-        legs="Sulevia's Cuisses +2",
+        legs="Sakpata's Cuisses",
     })
     sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
         head="Valorous Mask",
@@ -408,7 +408,7 @@ function init_gear_sets()
          ammo="Coiste Bodhar",
          head="Flamma Zucchetto +2",
          neck="Warrior's Bead Necklace +2",
-         ear1="Brutal Earring",
+         ear1="Schere Earring",
          ear2="Dedition Earring",
     	 body="Sakpata's Plate", 
          hands="Sakpata's Gauntlets",
@@ -425,8 +425,8 @@ function init_gear_sets()
          head="Hjarrandi Helm",
          ammo="Coiste Bodhar",
          neck="Warrior's Bead Necklace +2",
-         ear1="Brutal Earring",
-         ear2="Cessance Earring",
+         ear1="Schere Earring",
+         ear2="Brutal Earring",
          --hands="Flamma Manopolas +2",
          hands="Sakpata's Gauntlets",
          ring1="Niqmaddu Ring",
@@ -437,6 +437,7 @@ function init_gear_sets()
     	 --body="Flamma Korazin +2"
      })
      sets.engaged.Acc = set_combine(sets.engaged.Mid, {
+         ammo="Ginsen",
          body="Sakpata's Plate",
          ear1="Telos Earring",
          hands="Sakpata's Gauntlets",
@@ -473,8 +474,8 @@ function init_gear_sets()
      sets.engaged.OneHand.Mid.PDT = set_combine(sets.engaged.OneHand.Mid, sets.Defensive)
 
      sets.engaged.GreatSword = set_combine(sets.engaged, {
-         ear1="Brutal Earring",
-         ear2="Cessance Earring",
+         ear1="Schere Earring",
+         ear2="Brutal Earring",
      })
      sets.engaged.GreatSword.Mid = set_combine(sets.engaged.Mid, {
          ear1="Telos Earring",
