@@ -656,21 +656,21 @@ function init_gear_sets()
         ring2="Paguroidea Ring"
     })
 
-    sets.idle.Town = sets.idle
-    --     ammo=gear.MAbullet,
-    --     head="Lanun Tricorne +3",
-    --     neck="Commodore Charm +2",
-    --     ear1="Telos Earring",
-    --     ear2="Crepuscular Earring",
-    --     body="Lanun Frac +3",
-    --     hands="Lanun Gants +3",
-    --     ring1="Crepuscular Ring",
-    --     ring2="Defending Ring",
-    --     back=Camulus.STP,
-    --     waist="Windbuffet Belt +1",
-    --     legs="Carmine Cuisses +1",
-    --     feet="Lanun Bottes +3"
-    -- }
+    sets.idle.Town = {
+        ammo=gear.MAbullet,
+        head="Lanun Tricorne +3",
+        neck="Commodore Charm +2",
+        ear1="Telos Earring",
+        ear2="Crepuscular Earring",
+        body="Lanun Frac +3",
+        hands="Lanun Gants +3",
+        ring1="Ilabrat Ring",
+        ring2="Regal Ring",
+        back=Camulus.STP,
+        waist="Sailfi Belt +1",
+        legs="Carmine Cuisses +1",
+        feet="Lanun Bottes +3"
+    }
     sets.idle.PDT = set_combine(sets.idle.Town, sets.Nyame)
     
     -- Defense sets
@@ -734,7 +734,20 @@ function init_gear_sets()
         feet="Nyame Sollerets"
 
     })
-    sets.engaged.Melee.PDT.MaxHaste = set_combine(sets.engaged.Melee.PDT, sets.engaged.Melee.MaxHaste)
+    sets.engaged.Melee.PDT.Haste_30 = set_combine(sets.engaged.Melee.Haste_30, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    })
+    sets.engaged.Melee.PDT.MaxHaste = set_combine(sets.engaged.Melee.MaxHaste, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    })
 
     sets.engaged.Mid = sets.engaged -- just for shooting
     sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, sets.defense.PDT)
@@ -753,7 +766,27 @@ function init_gear_sets()
         ear2="Odr Earring",
         hands="Adhemar Wristbands +1",
     })
-    sets.engaged.Melee.Mid.PDT = set_combine(sets.engaged.Melee.Mid, sets.Nyame)
+    sets.engaged.Melee.Mid.PDT = set_combine(sets.engaged.Melee.Mid, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    })
+    sets.engaged.Melee.Mid.PDT.Haste_30 = set_combine(sets.engaged.Melee.Mid.Haste_30, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    })
+    sets.engaged.Melee.Mid.PDT.MaxHaste = set_combine(sets.engaged.Melee.Mid.MaxHaste, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    })
 
     sets.engaged.Acc = sets.engaged -- just for shooting
     sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, sets.defense.PDT)
@@ -773,6 +806,8 @@ function init_gear_sets()
         feet="Malignance Boots",
     })
     sets.engaged.Melee.Acc.PDT = set_combine(sets.engaged.Melee.Acc, sets.Nyame)
+    sets.engaged.Melee.Acc.PDT.Haste_30 = set_combine(sets.engaged.Melee.Acc.Haste_30, sets.Nyame)
+    sets.engaged.Melee.Acc.PDT.MaxHaste = set_combine(sets.engaged.Melee.Acc.MaxHaste, sets.Nyame)
     
     sets.engaged.Sword = set_combine(sets.engaged, {
         head="Adhemar Bonnet +1",
@@ -788,22 +823,33 @@ function init_gear_sets()
         back=Camulus.DA,
         feet=HercFeet.TP
     })
+    sets.engaged.Sword.Haste_30 = sets.engaged.Sword
     sets.engaged.Sword.MaxHaste = sets.engaged.Sword
     sets.engaged.Sword.PDT = set_combine(sets.engaged.Sword, sets.Nyame)
+    sets.engaged.Sword.PDT.Haste_30 = set_combine(sets.engaged.Sword, sets.Nyame)
+    sets.engaged.Sword.PDT.MaxHaste = set_combine(sets.engaged.Sword, sets.Nyame)
+    
     sets.engaged.Sword.Mid = set_combine(sets.engaged.Sword, {
         neck="Lissome Necklace",
         ring2="Ilabrat Ring"
     })
+    sets.engaged.Sword.Mid.Haste_30 = sets.engaged.Sword.Mid
     sets.engaged.Sword.Mid.MaxHaste = sets.engaged.Sword.Mid
     
     sets.engaged.Sword.Mid.PDT = set_combine(sets.engaged.Sword.Mid, sets.Nyame)
+    sets.engaged.Sword.Mid.PDT.Haste_30 = set_combine(sets.engaged.Sword.Mid, sets.Nyame)
+    sets.engaged.Sword.Mid.PDT.MaxHaste = set_combine(sets.engaged.Sword.Mid, sets.Nyame)
+
     sets.engaged.Sword.Acc = set_combine(sets.engaged.Sword.Mid, {
         ear2="Odr Earring",
         waist="Olseni Belt",
         feet="Malignance Boots"
     })
+    sets.engaged.Sword.Acc.Haste_30 = sets.engaged.Sword.Acc
     sets.engaged.Sword.Acc.MaxHaste = sets.engaged.Sword.Acc
     sets.engaged.Sword.Acc.PDT = set_combine(sets.engaged.Sword.Acc, sets.Nyame)
+    sets.engaged.Sword.Acc.PDT.Haste_30 = set_combine(sets.engaged.Sword.Acc, sets.Nyame)
+    sets.engaged.Sword.Acc.PDT.MaxHaste = set_combine(sets.engaged.Sword.Acc, sets.Nyame)
 end
 
 function get_cor_gearset()

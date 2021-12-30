@@ -52,7 +52,7 @@ function job_setup()
         -- rng_xbows = S{'Gastraphetes', 'Illapa'}
         rng_guns = S{'Annihilator', 'Armageddon', 'Fomalhaut'}
         -- rng_bows = S{'Yoichinoyumi', 'Gandiva', 'Fail-Not'}
-        state.GunSelector = M{['description']='Gun Selector', 'Annihilator', 'Gastraphetes', 'Armageddon', 'Fomalhaut'}
+        state.GunSelector = M{['description']='Gun Selector', 'Annihilator', 'Gastraphetes', 'Armageddon', 'Fomalhaut', 'Anarchy'}
         state.GastraAmmo = M{['description']='Xbow Ammo', "Quelling Bolt", "Abrasion Bolt"}
         state.GunAmmo = M{['description']='Gun Ammo', "Chrono Bullet", "Eradicating Bullet"}
         state.AmmoToggle = M{['description']='Ammo Toggle', "Primary", "Secondary"}
@@ -86,9 +86,9 @@ function user_setup()
         select_default_macro_book()
 
         send_command('bind != gs c toggle CapacityMode')
-        send_command('bind f9 gs c cycle RangedMode')
+        send_command('bind !f9 gs c cycle RangedMode')
         -- send_command('bind !f9 gs c toggle FightingMode')
-        send_command('bind !f9 gs c cycle OffenseMode')
+        send_command('bind f9 gs c cycle OffenseMode')
         send_command('bind ^f9 gs c cycle HybridMode')
         send_command('bind @f9 gs c cycle HasteMode')
         send_command('bind @= gs c cycle FlurryMode')
@@ -167,6 +167,10 @@ function init_gear_sets()
     }
     sets.Gastraphetes = {
         range="Gastraphetes",
+        ammo=state.GastraAmmo.current,
+    }
+    sets.Anarchy = { 
+        range="Anarchy +2",
         ammo=state.GastraAmmo.current,
     }
     sets.Default = {
@@ -302,18 +306,18 @@ function init_gear_sets()
         ring2="Defending Ring"
     })
     sets.idle.Town = set_combine(sets.idle, {
-        head="Nyame Helm",
-        body="Nyame Mail",
+        head="Arcadian Beret +3",
+        body="Nisroch Jerkin",
         ear1="Crepuscular Earring",
         ear2="Telos Earring",
         neck="Scout's Gorget +2",
-        ring1="Crepuscular Ring",
-        ring2="Regal Ring",
-        hands="Nyame Gauntlets",
-        waist="Kwahu Kachina Belt",
+        ring1="Regal Ring",
+        ring2="Crepuscular Ring",
+        hands="Malignance Gloves",
+        waist="Yemaya Belt",
         back=Belenus.STP,
         legs="Carmine Cuisses +1", 
-        feet="Nyame Sollerets"
+        feet="Malignance Boots"
     })
     
     sets.Nyame = {
@@ -344,20 +348,25 @@ function init_gear_sets()
     sets.engaged.Melee = {
         head="Adhemar Bonnet +1",
         neck="Scout's Gorget +2",
-        ear1="Sherida Earring",
-        ear2="Brutal Earring",
+        ear1="Eabani Earring",
+        ear2="Suppanomimi",
         body="Adhemar Jacket +1",
         hands="Floral Gauntlets",
         ring1="Epona's Ring",
         ring2="Petrov Ring",
         back=Belenus.STP,
-        waist="Windbuffet Belt +1",
-        legs="Meghanada Chausses +2", 
+        waist="Patentia Sash",
+        legs="Tatenashi Haidate +1", 
         feet=HercFeet.TP
     }
     sets.engaged.Melee.Haste_30 = set_combine(sets.engaged.Melee, {
         hands="Adhemar Wristbands +1",
         feet=HercFeet.TP
+    })
+    sets.engaged.Melee.MaxHaste = set_combine(sets.engaged.Melee.Haste_30, {
+        ear1="Sherida Earring",
+        ear2="Brutal Earring",
+        waist="Sailfi Belt +1",
     })
     sets.engaged.Melee.PDT = set_combine(sets.engaged.Melee, {
         head="Nyame Helm",
@@ -373,14 +382,91 @@ function init_gear_sets()
         legs="Nyame Flanchard",
         feet="Nyame Sollerets"
     })
-    -- sets.engaged.Bow.Melee = sets.engaged.Melee
+
     sets.engaged.Melee.Mid = set_combine(sets.engaged.Melee, {
         neck="Lissome Necklace",
         ring2="Ilabrat Ring",
-        feet=HercFeet.TP
+        body="Tatenashi Haramaki +1",
+        feet="Tatenashi Sune-ate +1"
     })
+    sets.engaged.Melee.Mid.Haste_30 = set_combine(sets.engaged.Melee.Mid, {
+        hands="Adhemar Wristbands +1",
+    })
+    sets.engaged.Melee.Mid.MaxHaste = set_combine(sets.engaged.Melee.Mid, {
+        waist="Olseni Belt",
+        ear1="Telos Earring",
+        ear2="Odr Earring",
+        hands="Adhemar Wristbands +1",
+    })
+    sets.engaged.Melee.Mid.PDT = set_combine(sets.engaged.Melee.Mid, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    })
+    sets.engaged.Melee.Mid.PDT.Haste_30 = set_combine(sets.engaged.Melee.Mid.Haste_30, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    })
+    sets.engaged.Melee.Mid.PDT.MaxHaste = set_combine(sets.engaged.Melee.Mid.MaxHaste, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    })
+    sets.engaged.Acc = sets.engaged -- just for shooting
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid, sets.engaged.PDT)
 
-    sets.engaged.Melee.Mid.PDT = set_combine(sets.engaged.Melee.Mid, sets.Nyame)
+    sets.engaged.Melee.Acc = set_combine(sets.engaged.Melee.Mid, {
+        head="Malignance Chapeau",
+        ear1="Telos Earring",
+        ear2="Odr Earring",
+        body="Adhemar Jacket +1",
+        hands="Floral Gauntlets",
+        waist="Patentia Sash",
+        ring1="Regal Ring",
+        ring2="Ilabrat Ring",
+        legs="Tatenashi Haidate +1",
+        feet="Tatenashi Sune-ate +1"
+    })
+    sets.engaged.Melee.Acc.Haste_30 = set_combine(sets.engaged.Melee.Acc, {
+        hands="Adhemar Wristbands +1",
+        waist="Olseni Belt",
+        --hands="Tatenashi Gote +1",
+    })
+    sets.engaged.Melee.Acc.MaxHaste = set_combine(sets.engaged.Melee.Acc, {
+        body="Tatenashi Haramaki +1",
+        waist="Olseni Belt",
+        ear1="Telos Earring",
+        ear2="Odr Earring",
+        --hands="Adhemar Wristbands +1",
+    })
+    sets.engaged.Melee.Acc.PDT = set_combine(sets.engaged.Melee.Acc, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    })
+    sets.engaged.Melee.Acc.PDT.Haste_30 = set_combine(sets.engaged.Melee.Acc.Haste_30, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    })
+    sets.engaged.Melee.Acc.PDT.MaxHaste = set_combine(sets.engaged.Melee.Acc.MaxHaste, {
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets", 
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets"
+    })
 
     ------------------------------------------------------------------
     -- Preshot / Snapshot sets 
@@ -448,7 +534,7 @@ function init_gear_sets()
         ear1="Beyla Earring",
         --ring1="Cacoethic Ring +1",
         body="Orion Jerkin +3", 
-        ring2="Regal Ring",
+        ring1="Regal Ring",
         --legs="Malignance Tights", 
         --feet="Malignance Boots"
     })
@@ -546,7 +632,7 @@ function init_gear_sets()
         ear1="Beyla Earring",
         hands="Malignance Gloves",
         body="Orion Jerkin +3",
-        ring2="Regal Ring",
+        ring1="Regal Ring",
     })
     
     -- Weaponskill sets  
@@ -574,8 +660,8 @@ function init_gear_sets()
     })
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
         ear2="Moonshade Earring",
-        ring1="Ifrit Ring",
-        ring2="Regal Ring",
+        ring1="Regal Ring",
+        ring2="Ifrit Ring",
         waist="Sailfi Belt +1",
         legs=HercLegs.WSD,
         feet="Meghanada Jambeaux +2"

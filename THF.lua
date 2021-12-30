@@ -373,6 +373,7 @@ function init_gear_sets()
     sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"].Mid, {
         ammo="Yetshila",
         head="Pillager's bonnet +3",
+        ear2="Sherida Earring",
         neck="Assassin's Gorget +1",
         body="Meghanada Cuirie +2"
     })
@@ -406,14 +407,14 @@ function init_gear_sets()
         ammo="Seething Bomblet +1",
         neck="Sanctity Necklace",
         head=HercHead.DM, 
+        body=HercBody.WSD,
         ear1="Moonshade Earring",
         ear2="Friomisi Earring",
-        body=HercBody.WSD,
         --hands=HercHands.MAB,
         hands="Plunderer's Armlets +1",
         ring1="Regal Ring",
         ring2="Dingir Ring",
-        waist="Chaac Belt",
+        waist="Eschan Stone",
         legs=HercLegs.TH,
         feet=HercFeet.MAB
     }
@@ -449,13 +450,13 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ear1="Genmei Earring",
         ear2="Etiolation Earring",
-        body="Malignance Tabard",
-        hands="Malignance Gloves",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
         ring1="Meghanada Ring",
         ring2="Paguroidea Ring",
         back=Toutatis.STP,
         waist="Flume Belt",
-        legs="Malignance Tights", 
+        legs="Nyame Flanchard", 
         feet="Jute Boots +1"
     }
 
@@ -548,7 +549,7 @@ function init_gear_sets()
         feet="Plunderer's Poulaines +3"
     })
     sets.engaged.EVA = set_combine(sets.engaged, {
-        ammo="Crepuscular Pebble",
+        ammo="Yamarang",
         head="Malignance Chapeau",
         body="Malignance Tabard",
         hands="Malignance Gloves",
@@ -639,7 +640,7 @@ function init_gear_sets()
     sets.engaged.MaxHaste = set_combine(sets.engaged, {
         head="Adhemar Bonnet +1",
         neck="Assassin's Gorget +1",
-        ear1="Brutal Earring",
+        ear1="Dedition Earring",
         ear2="Sherida Earring",
         body="Pillager's Vest +3",
         hands="Adhemar Wristbands +1",
@@ -652,7 +653,7 @@ function init_gear_sets()
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, { 
         head="Adhemar Bonnet +1",
-        ear1="Telos Earring",
+        ear1="Brutal Earring",
         body="Pillager's Vest +3",
         ring1="Regal Ring",
         feet="Plunderer's Poulaines +3"
@@ -669,15 +670,18 @@ function init_gear_sets()
         -- feet="Mummu Gamashes +2"
     })
     sets.engaged.EVA.MaxHaste = set_combine(sets.engaged.MaxHaste, {
-        ammo="Crepuscular Pebble",
+        ammo="Yamarang",
         head="Malignance Chapeau",
         body="Malignance Tabard",
         hands="Malignance Gloves",
         legs="Malignance Tights", 
         feet="Malignance Boots",
         neck="Assassin's Gorget +1",
-        ring1="Defending Ring",
-        ring2="Gere Ring",
+        ear1="Eabani Earring",
+        ear2="Infused Earring",
+        ring1="Ilabrat Ring",
+        ring2="Regal Ring",
+        waist="Sveltesse Gouriz +1",
         back=Toutatis.STP,
     })
     sets.engaged.Mid.EVA.MaxHaste = set_combine(sets.engaged.EVA.MaxHaste, {

@@ -439,11 +439,12 @@ function init_gear_sets()
         head="Nyame Helm",
         neck="Ninja Nodowa +2",
         ear2="Cessance Earring",
-        body="Adhemar Jacket +1",
-        hands="Adhemar Wristbands +1",
+        body="Tatenashi Haramaki +1",
+        hands="Tatenashi Gote +1",
         waist="Windbuffet Belt +1",
+        legs="Tatenashi Haidate +1",
         back=Andartia.DEX,
-        feet="Hachiya Kyahan +2"
+        feet="Tatenashi Sune-ate +1"
     })
     sets.Katanas = {
         main="Kannagi",
@@ -495,15 +496,15 @@ function init_gear_sets()
         neck="Ninja Nodowa +2",
         ear1="Telos Earring",
         ear2="Brutal Earring",
-        body="Kendatsuba Samue +1",
+        body="Tatenashi Haramaki +1",
         hands="Adhemar Wristbands +1",
         ring1="Epona's Ring",
         ring2="Gere Ring",
         back=Andartia.DEX,
         waist="Windbuffet Belt +1",
        -- legs="Samnuha Tights",
-        legs="Kendatsuba Hakama +1",
-        feet="Kendatsuba Sune-ate +1"
+        legs="Tatenashi Haidate +1",
+        feet="Tatenashi Sune-ate +1"
     })
     sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.MaxHaste, {
         head="Kendatsuba Jinpachi +1",

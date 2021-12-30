@@ -362,14 +362,15 @@ function init_gear_sets()
         neck="Samurai's Nodowa +2",
         ear1="Telos Earring",
         ear2="Dedition Earring",
-   	    body="Kendatsuba Samue +1",
+   	    --body="Kendatsuba Samue +1",
+        body="Tatenashi Haramaki +1",
         --hands="Wakido Kote +3",
-        hands="Sakonji Kote +3",
+        hands="Tatenashi Gote +1",
         ring1="Niqmaddu Ring",
         ring2="Regal Ring",
         back=Smertrios.TP,
         waist="Windbuffet Belt +1",
-        legs="Kendatsuba Hakama +1",
+        legs="Tatenashi Haidate +1",
         feet="Danzo Sune-ate"
     }
     -- sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
@@ -383,7 +384,7 @@ function init_gear_sets()
         ear1="Etiolation Earring",
         ear2="Genmei Earring",
    	    body="Nyame Mail",
-        hands="Sakonji Kote +3",
+        hands="Nyame Gauntlets",
         ring1="Dark Ring",
         ring2="Defending Ring",
         back=Smertrios.TP,
@@ -455,14 +456,14 @@ function init_gear_sets()
         neck="Samurai's Nodowa +2",
         ear1="Schere Earring",
         ear2="Dedition Earring",
-        body="Kendatsuba Samue +1",
+        body="Tatenashi Haramaki +1",
         hands="Wakido Kote +3",
         ring1="Niqmaddu Ring", 
         ring2="Petrov Ring", 
         back=Smertrios.TP,
         waist="Sailfi Belt +1",
         --legs="Ryuo Hakama",
-        legs="Kendatsuba Hakama +1",
+        legs="Tatenashi Haidate +1",
         --feet="Flamma Gambieras +2"
         feet="Tatenashi Sune-ate +1"
     }
@@ -496,25 +497,26 @@ function init_gear_sets()
         feet="Kendatsuba Sune-ate +1"
     })
 
-    sets.engaged.PDT = set_combine(sets.engaged.Acc, {
+    sets.engaged.PDT = set_combine(sets.engaged, {
         head="Mpaca's Cap",
-        --ammo="Crepuscular Pebble",
    	    body="Mpaca's Doublet",
         hands="Mpaca's Gloves",
-        --ring2="Defending Ring",
         legs="Mpaca's Hose",
         feet="Mpaca's Boots"
     })
-    sets.engaged.Mid.PDT = set_combine(sets.engaged.PDT, {
-        --neck="Agitator's Collar",
-   	    --body="Nyame Mail",
-        ring2="Flamma Ring"
+    sets.engaged.Mid.PDT = set_combine(sets.engaged.Mid, {
+        head="Mpaca's Cap",
+   	    body="Mpaca's Doublet",
+        hands="Mpaca's Gloves",
+        legs="Mpaca's Hose",
+        feet="Mpaca's Boots"
     })
-    sets.engaged.Acc.PDT = set_combine(sets.engaged.Mid.PDT, {
-        --ammo="Coiste Bodhar",
-   	    --body="Nyame Mail",
-        --neck="Agitator's Collar",
-        ring1="Niqmaddu Ring"
+    sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc, {
+        head="Mpaca's Cap",
+   	    body="Mpaca's Doublet",
+        hands="Mpaca's Gloves",
+        legs="Mpaca's Hose",
+        feet="Mpaca's Boots"
     })
     
     sets.engaged.Amanomurakumo = set_combine(sets.engaged, {
